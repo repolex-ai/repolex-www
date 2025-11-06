@@ -1,0 +1,25 @@
+title: repolex.ai
+description: Semantic code intelligence through RDF knowledge graphs
+url: https://repolex.ai
+baseurl: ""
+
+markdown: kramdown
+permalink: /blog/:year/:month/:day/:title/
+
+collections:
+  posts:
+    output: true
+    permalink: /blog/:year/:month/:day/:title/
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+exclude:
+  - README.md
+  - CLAUDE.md
+  - Gemfile
+  - Gemfile.lock
