@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% if page.title %}{{ page.title }} - {% endif %}repolex.ai</title>
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
 <body>
     <header>
-        <h1><a href="/" style="text-decoration: none; color: black;">repolex.ai</a></h1>
+        <h1><a href="{{ '/' | relative_url }}" style="text-decoration: none; color: black;">repolex.ai</a></h1>
     </header>
 
     <main>
@@ -16,7 +16,7 @@
     </main>
 
     <footer style="text-align: center; margin-top: 3rem; padding-top: 1rem; border-top: 1px solid black;">
-        <p><a href="/">Home</a> | <a href="/blog.html">Blog</a> | <a href="https://github.com/repolex-ai">GitHub</a></p>
+        <p><a href="{{ '/' | relative_url }}">Home</a> | <a href="{{ '/blog.html' | relative_url }}">Blog</a> | <a href="https://github.com/repolex-ai">GitHub</a></p>
     </footer>
 </body>
 </html>
