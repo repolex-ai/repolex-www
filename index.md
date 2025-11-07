@@ -18,5 +18,5 @@ layout: default
 </section>
 
 <section class="links">
-    <p><a href="{{ '/blog.html' | relative_url }}">Technical Blog</a> | <a href="https://github.com/repolex-ai">GitHub</a></p>
+    <p><a href="{{ '/blog' | relative_url }}">Technical Blog</a> | <a href="https://github.com/repolex-ai">GitHub</a></p>
 </section>
