@@ -1,7 +1,7 @@
 title: repolex.ai
 description: Semantic code intelligence through RDF knowledge graphs
-url: https://repolex-ai.github.io
-baseurl: "/repolex-www"
+url: https://repolex.ai
+baseurl: ""
 
 markdown: kramdown
 permalink: /blog/:year/:month/:day/:title/
