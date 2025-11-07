@@ -1,22 +1,18 @@
 ---
-layout: default
+layout: blog-sidebar
 title: Blog
 ---
 
-<h2>Technical Blog</h2>
+{% if site.posts.size > 0 %}
+{% assign latest_post = site.posts.first %}
+<article>
+    <h1>{{ latest_post.title }}</h1>
+    <time datetime="{{ latest_post.date | date_to_xmlschema }}">{{ latest_post.date | date: "%B %-d, %Y" }}</time>
 
-<ul class="blog-list">
-{% for post in site.posts %}
-    <li>
-        <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-        <p class="post-date">{{ post.date | date: "%B %-d, %Y" }}</p>
-        {% if post.excerpt %}
-        <p>{{ post.excerpt | strip_html }}</p>
-        {% endif %}
-    </li>
-{% endfor %}
-</ul>
-
-{% if site.posts.size == 0 %}
+    <div class="content">
+        {{ latest_post.content }}
+    </div>
+</article>
+{% else %}
 <p>No posts yet. Check back soon!</p>
 {% endif %}

@@ -1,12 +1,12 @@
 ---
-layout: default
+layout: blog-sidebar
 ---
 
 <article>
-    <h2>{{ page.title }}</h2>
-    <p class="post-meta">{{ page.date | date: "%B %-d, %Y" }}</p>
+    <h1>{{ page.title }}</h1>
+    <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
 
-    {{ content }}
+    <div class="content">
+        {{ content }}
+    </div>
 </article>
-
-<p style="margin-top: 2rem;"><a href="{{ '/blog' | relative_url }}">← Back to blog</a></p>
