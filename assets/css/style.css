@@ -232,7 +232,7 @@ body.blog-layout {
 .content-area {
     margin-left: 300px;
     padding: 3rem 4rem;
-    max-width: 800px;
+    max-width: 1200px;
     flex: 1;
 }
 
@@ -266,6 +266,75 @@ body.blog-layout {
     font-size: 0.9rem;
 }
 
+/* TOC layout */
+.post-with-toc {
+    display: flex;
+    gap: 3rem;
+    position: relative;
+}
+
+.post-content {
+    flex: 1;
+    max-width: 700px;
+}
+
+.toc-sidebar {
+    width: 250px;
+    flex-shrink: 0;
+}
+
+.toc-sticky {
+    position: sticky;
+    top: 2rem;
+}
+
+.toc-sidebar h4 {
+    font-size: 1rem;
+    font-weight: normal;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid black;
+}
+
+.toc-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.toc-h2 {
+    margin-bottom: 0.5rem;
+}
+
+.toc-h3 {
+    margin-bottom: 0.25rem;
+}
+
+.toc-sublist {
+    list-style: none;
+    padding-left: 1rem;
+    margin-top: 0.25rem;
+}
+
+.toc-link {
+    font-size: 0.9rem;
+    text-decoration: none;
+    color: #333;
+    display: block;
+    padding: 0.25rem 0;
+    line-height: 1.4;
+}
+
+.toc-link:hover {
+    color: black;
+    text-decoration: underline;
+}
+
+.toc-h3 .toc-link {
+    font-size: 0.85rem;
+    color: #666;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
     body.blog-layout {
@@ -288,5 +357,27 @@ body.blog-layout {
     .blog-footer {
         position: relative;
         width: 100%;
+    }
+
+    .post-with-toc {
+        flex-direction: column;
+    }
+
+    .post-content {
+        max-width: 100%;
+    }
+
+    .toc-sidebar {
+        width: 100%;
+        order: -1;
+        margin-bottom: 2rem;
+    }
+
+    .toc-sticky {
+        position: relative;
+        top: 0;
+        background: #f5f5f5;
+        padding: 1rem;
+        border: 1px solid black;
     }
 }
