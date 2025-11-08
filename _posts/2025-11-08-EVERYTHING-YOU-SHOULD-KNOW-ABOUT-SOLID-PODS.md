@@ -1,11 +1,10 @@
 ---
 layout: post
-title: "Everything You Should Know About Solid Pods: From the Semantic Web to the Agent Age"
+title: "Everything You Should Know about Solid Pods: From the Semantic Web to the Agent Age"
 date: 2025-11-08
 author: just checking
 ---
-**Author:** spacegoatai & lux
-**Date:** November 8, 2025
+**Author:** spacegoatai & goodlux
 **Status:** Research Article
 
 
