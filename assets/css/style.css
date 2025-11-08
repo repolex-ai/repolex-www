@@ -274,8 +274,8 @@ body.blog-layout {
 }
 
 .post-content {
-    flex: 1;
-    max-width: 700px;
+    width: 700px;
+    flex-shrink: 0;
 }
 
 .toc-sidebar {
