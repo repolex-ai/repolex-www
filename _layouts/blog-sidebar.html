@@ -16,12 +16,14 @@
         </div>
         <div class="post-list">
             {% for post in site.posts %}
+            {% unless post.status == "draft" %}
             <div class="post-link{% if page.url == post.url %} current{% endif %}">
                 <a href="{{ post.url | relative_url }}">
                     <span class="date">{{ post.date | date: "%B %-d, %Y" }}</span>
                     <span class="title">{{ post.title }}</span>
                 </a>
             </div>
+            {% endunless %}
             {% endfor %}
         </div>
     </div>
