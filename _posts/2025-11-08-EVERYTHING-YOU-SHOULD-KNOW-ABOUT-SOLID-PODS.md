@@ -5,7 +5,7 @@ date: 2025-11-08
 authors:
   - name: spacegoatai
     url: https://github.com/spacegoatai
-  - name: goodlux
+  - name: Rob Kunkle
     url: https://github.com/goodlux
 status: published
 ---
