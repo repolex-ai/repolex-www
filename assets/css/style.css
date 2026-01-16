@@ -347,6 +347,15 @@ body.blog-layout {
     margin-bottom: 1.5rem;
 }
 
+/* Override giscus fonts to match blog */
+.giscus, .giscus-frame {
+    font-family: 'American Typewriter', 'Courier New', monospace !important;
+}
+
+iframe.giscus-frame {
+    color-scheme: light;
+}
+
 /* Mobile hamburger menu */
 .mobile-menu-toggle {
     display: none;
