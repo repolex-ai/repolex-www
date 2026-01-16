@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
 <body class="blog-layout">
-    <div class="nav-sidebar">
+    <button class="mobile-menu-toggle" id="menuToggle">☰ Menu</button>
+
+    <div class="nav-sidebar" id="navSidebar">
         <div class="nav-header">
             <h2><a href="{{ '/' | relative_url }}">repolex.ai</a></h2>
             <p class="nav-subtitle">Tech Notes</p>
@@ -30,5 +32,41 @@
     <footer class="blog-footer">
         <p><a href="{{ '/' | relative_url }}">Home</a> | <a href="{{ '/blog' | relative_url }}">Blog</a> | <a href="https://github.com/repolex-ai">GitHub</a></p>
     </footer>
+
+    <script>
+    // Mobile menu toggle
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuToggle = document.getElementById('menuToggle');
+        const navSidebar = document.getElementById('navSidebar');
+
+        if (menuToggle && navSidebar) {
+            menuToggle.addEventListener('click', function() {
+                navSidebar.classList.toggle('open');
+                this.textContent = navSidebar.classList.contains('open') ? '✕ Close' : '☰ Menu';
+            });
+
+            // Close menu when clicking a link on mobile
+            const postLinks = navSidebar.querySelectorAll('.post-link a');
+            postLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    if (window.innerWidth <= 768) {
+                        navSidebar.classList.remove('open');
+                        menuToggle.textContent = '☰ Menu';
+                    }
+                });
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768 &&
+                    !navSidebar.contains(e.target) &&
+                    e.target !== menuToggle) {
+                    navSidebar.classList.remove('open');
+                    menuToggle.textContent = '☰ Menu';
+                }
+            });
+        }
+    });
+    </script>
 </body>
 </html>

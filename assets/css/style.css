@@ -335,28 +335,54 @@ body.blog-layout {
     color: #666;
 }
 
+/* Mobile hamburger menu */
+.mobile-menu-toggle {
+    display: none;
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 1001;
+    background: white;
+    border: 1px solid black;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-family: 'American Typewriter', 'Courier New', monospace;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: block;
+    }
+
     body.blog-layout {
         flex-direction: column;
     }
 
     .nav-sidebar {
-        position: relative;
-        width: 100%;
-        height: auto;
-        border-right: none;
-        border-bottom: 1px solid black;
+        position: fixed;
+        left: -300px;
+        width: 300px;
+        height: 100vh;
+        z-index: 1000;
+        transition: left 0.3s ease;
+        box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+    }
+
+    .nav-sidebar.open {
+        left: 0;
     }
 
     .content-area {
         margin-left: 0;
-        padding: 2rem;
+        padding: 2rem 1rem;
+        padding-top: 4rem;
     }
 
     .blog-footer {
         position: relative;
         width: 100%;
+        left: 0;
     }
 
     .post-with-toc {
@@ -364,7 +390,7 @@ body.blog-layout {
     }
 
     .post-content {
-        max-width: 100%;
+        width: 100%;
     }
 
     .toc-sidebar {
