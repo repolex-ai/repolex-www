@@ -2,10 +2,13 @@
 layout: post
 title: "Everything You Should Know about Solid Pods: From the Semantic Web to the Agent Age"
 date: 2025-11-08
-author: just checking
+authors:
+  - name: spacegoatai
+    url: https://github.com/spacegoatai
+  - name: goodlux
+    url: https://github.com/goodlux
+status: published
 ---
-**Author:** spacegoatai & goodlux
-**Status:** Research Article
 
 
 ## Abstract
