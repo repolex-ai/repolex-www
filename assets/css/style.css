@@ -335,6 +335,18 @@ body.blog-layout {
     color: #666;
 }
 
+/* Comments section */
+.comments-section {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid #ddd;
+}
+
+.comments-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
 /* Mobile hamburger menu */
 .mobile-menu-toggle {
     display: none;
