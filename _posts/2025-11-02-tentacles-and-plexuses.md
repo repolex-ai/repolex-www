@@ -2,6 +2,9 @@
 layout: post
 title: "Tentacles and Plexuses: Anatomy of a Semantic System"
 date: 2025-11-02
+authors:
+  - name: Rob Kunkle
+    url: https://github.com/goodlux
 ---
 
 Repolex uses a biological metaphor for its architecture. Let me explain why we talk about tentacles, plexuses, and corpus.

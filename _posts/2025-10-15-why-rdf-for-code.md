@@ -2,6 +2,9 @@
 layout: post
 title: "Why RDF for Code Analysis?"
 date: 2025-10-15
+authors:
+  - name: Rob Kunkle
+    url: https://github.com/goodlux
 ---
 
 Most code analysis tools use custom databases or JSON blobs. We chose RDF and SPARQL. Here's why.

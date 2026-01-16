@@ -2,6 +2,9 @@
 layout: post
 title: "OwlReady2 meets Oxigraph: Best of Both Worlds"
 date: 2025-10-28
+authors:
+  - name: Rob Kunkle
+    url: https://github.com/goodlux
 ---
 
 Building Repolex required choosing between two excellent but different RDF tools. We ended up using both.
