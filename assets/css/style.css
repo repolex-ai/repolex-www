@@ -144,6 +144,20 @@ blockquote {
     font-style: italic;
 }
 
+/* Article content spacing */
+article .content p {
+    margin-bottom: 1.5rem;
+}
+
+/* Image styling */
+article .content img {
+    max-width: 800px;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 2rem auto;
+}
+
 /* Blog sidebar layout */
 body.blog-layout {
     max-width: 100%;
