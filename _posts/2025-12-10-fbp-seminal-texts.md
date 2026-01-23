@@ -19,7 +19,7 @@ Flow-Based Programming (FBP) represents one of the most prescient yet underutili
 
 The convergence of AI-assisted development, semantic web technologies, and the demand for compositional, auditable systems creates an unprecedented opportunity to resurrect and extend Morrison's vision. FBP's inherent properties—deterministic concurrency, visual representation, and component reusability—align precisely with the requirements of next-generation software infrastructure.
 
-## 1. The Origin Text
+## The Origin Text
 
 ### [Flow-Based Programming: A New Approach to Application Development](https://jpaulm.github.io/fbp/book.html)
 
@@ -29,7 +29,7 @@ This is the definitive text on FBP, written by its inventor after two decades of
 
 Key contributions of this text include the formalization of Information Packets (IPs) as first-class data entities with defined lifecycles, the concept of bounded buffers providing natural backpressure, and the separation of network topology from component implementation. Morrison demonstrates how the same components can be rewired without modification to solve different problems—a compositionality that remains elusive in most programming paradigms.
 
-## 2. Theoretical Foundations
+## Theoretical Foundations
 
 ### Kahn Process Networks
 
@@ -51,7 +51,7 @@ Tony Hoare's CSP provides an alternative formal model for process communication 
 
 Carl Hewitt's Actor Model shares FBP's emphasis on message-passing concurrency but differs in crucial ways. Actors are addressed entities that can create new actors and change behavior between messages, while FBP processes are anonymous components in a fixed topology. FBP's static network structure enables visual programming and topological reasoning that dynamic actor systems cannot easily support.
 
-## 3. Category Theory Connections
+## Category Theory Connections
 
 ### String Diagrams and Monoidal Categories
 
@@ -67,7 +67,7 @@ This connection has explosive implications. Category theory provides a unified f
 
 This accessible introduction to applied category theory dedicates significant attention to signal flow graphs and their categorical semantics. Fong and Spivak demonstrate how engineering diagrams—including dataflow networks—can be given precise compositional meaning. Their treatment of operads and decorated cospans provides tools for defining domain-specific FBP variants with guaranteed compositional properties.
 
-## 4. Dataflow Architecture Research
+## Dataflow Architecture Research
 
 ### Static and Dynamic Dataflow
 
@@ -77,7 +77,7 @@ This accessible introduction to applied category theory dedicates significant at
 
 The dataflow architecture research program at MIT, led by Jack Dennis and later Arvind, pursued hardware implementations of dataflow execution. While commercial dataflow machines never achieved widespread adoption, this research produced invaluable insights into parallel execution models, token matching, and the relationship between program structure and execution semantics. FBP can be understood as a software realization of dataflow principles on conventional hardware.
 
-## 5. Systems Engineering Convergence
+## Systems Engineering Convergence
 
 ### SysML v2 and Model-Based Systems Engineering
 
@@ -89,7 +89,7 @@ The systems engineering community has independently converged on flow-based repr
 
 This convergence is significant: aerospace, defense, and automotive industries are adopting flow-based system representations at scale. FBP provides a computational execution model for these otherwise static diagrams.
 
-## 6. Modern Implementations & Validation
+## Modern Implementations & Validation
 
 Several modern projects have demonstrated FBP's continued relevance:
 
@@ -99,7 +99,7 @@ Several modern projects have demonstrated FBP's continued relevance:
 - **[LabVIEW](https://www.ni.com/en-us/shop/labview.html)** (National Instruments, 1986-present): Dataflow visual programming for scientific instrumentation. Four decades of continuous development and billions in revenue.
 - **[Unreal Engine Blueprints](https://docs.unrealengine.com/5.0/en-US/blueprints-visual-scripting-in-unreal-engine/)** (Epic Games): Visual scripting system enabling non-programmers to create game logic.
 
-## 7. Why Now: The Convergence Thesis
+## Why Now: The Convergence Thesis
 
 Several technological and market forces create an unprecedented opportunity for FBP-based tools:
 
