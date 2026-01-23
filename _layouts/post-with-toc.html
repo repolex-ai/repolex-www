@@ -68,16 +68,35 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
     }
 
+    // Helper function to create a clean slug from heading text
+    function slugify(text) {
+        return text
+            .toLowerCase()
+            .replace(/[^a-z0-9\s-]/g, '') // Remove special chars
+            .replace(/\s+/g, '-')          // Spaces to hyphens
+            .replace(/-+/g, '-')           // Collapse multiple hyphens
+            .replace(/^-|-$/g, '');        // Trim hyphens from ends
+    }
+
     const toc = document.createElement('ul');
     toc.className = 'toc-list';
 
     let currentH2 = null;
+    const usedIds = new Set();
 
     headings.forEach((heading, index) => {
-        // Add ID to heading for linking
-        if (!heading.id) {
-            heading.id = 'heading-' + index;
+        // Always generate a clean ID from the heading text
+        let baseId = slugify(heading.textContent);
+        let id = baseId;
+        let counter = 1;
+        
+        // Ensure unique IDs
+        while (usedIds.has(id)) {
+            id = baseId + '-' + counter;
+            counter++;
         }
+        usedIds.add(id);
+        heading.id = id;
 
         const li = document.createElement('li');
         const a = document.createElement('a');
