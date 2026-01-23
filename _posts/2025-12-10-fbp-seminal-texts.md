@@ -1,11 +1,19 @@
 ---
 layout: post
 title: "Flow-Based Programming: Seminal Texts & Theoretical Foundations"
+subtitle: "A research brief prepared by <a href='https://repolex.ai'>repolex.ai</a> in conjunction with <a href='https://asimov.systems'>ASIMOV Systems</a>"
 date: 2025-12-10
 authors:
   - name: Rob Kunkle
     url: https://github.com/goodlux
+  - name: SpaceGoatAI
+    url: https://github.com/spacegoatai
 ---
+
+<figure>
+  <img src="/assets/images/fbp_graph.png" alt="Flow-Based Programming network diagram">
+  <figcaption>An FBP network: components as black boxes connected by typed ports, with data flowing through bounded buffers</figcaption>
+</figure>
 
 Flow-Based Programming (FBP) represents one of the most prescient yet underutilized paradigms in computing history. Invented by J. Paul Morrison at IBM in the early 1970s, FBP anticipated by decades the architectural patterns now dominating modern software: microservices, stream processing, reactive systems, and visual programming environments.
 

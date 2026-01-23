@@ -5,6 +5,9 @@ layout: blog-sidebar
 <div class="post-with-toc">
     <article class="post-content">
         <h1>{{ page.title }}</h1>
+        {% if page.subtitle %}
+        <p class="post-subtitle">{{ page.subtitle }}</p>
+        {% endif %}
         <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
 
         {% if page.authors %}

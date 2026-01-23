@@ -114,6 +114,17 @@ a:hover {
     margin-bottom: 1rem;
 }
 
+.post-subtitle {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #555;
+    margin: 0.5rem 0 1rem 0;
+}
+
+.post-subtitle a {
+    color: #555;
+}
+
 article {
     margin-bottom: 2rem;
 }
@@ -155,7 +166,25 @@ article .content img {
     width: 100%;
     height: auto;
     display: block;
+    margin: 2rem auto 0.5rem auto;
+}
+
+/* Figure captions */
+article .content figure {
     margin: 2rem auto;
+    max-width: 800px;
+}
+
+article .content figure img {
+    margin: 0 auto 0.5rem auto;
+}
+
+article .content figcaption {
+    font-size: 0.85rem;
+    font-style: italic;
+    color: #666;
+    text-align: center;
+    margin-top: 0.5rem;
 }
 
 /* Blog sidebar layout */
