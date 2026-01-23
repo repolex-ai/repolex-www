@@ -21,9 +21,9 @@ The convergence of AI-assisted development, semantic web technologies, and the d
 
 ## 1. The Origin Text
 
-### Flow-Based Programming: A New Approach to Application Development
+### [Flow-Based Programming: A New Approach to Application Development](https://jpaulm.github.io/fbp/book.html)
 
-> **Morrison, J. Paul.** *Flow-Based Programming.*[^morrison] Van Nostrand Reinhold, 1994. 2nd Edition: CreateSpace, 2010.
+> **Morrison, J. Paul.** Van Nostrand Reinhold, 1994. 2nd Edition: CreateSpace, 2010.
 
 This is the definitive text on FBP, written by its inventor after two decades of practical application at IBM and other organizations. Morrison developed FBP (originally called "Data Flow") while working on batch processing systems for a Canadian bank in 1969-1971, discovering that decomposing applications into networks of asynchronous processes connected by bounded buffers produced systems that were easier to understand, maintain, and modify than conventional procedural code.
 
@@ -33,7 +33,7 @@ Key contributions of this text include the formalization of Information Packets 
 
 ### Kahn Process Networks
 
-> **Kahn, Gilles.** "The Semantics of a Simple Language for Parallel Programming."[^kahn] Information Processing 74, North-Holland Publishing, 1974.
+> **Kahn, Gilles.** ["The Semantics of a Simple Language for Parallel Programming."](https://www.cs.columbia.edu/~sedwards/papers/kahn1974semantics.pdf) Information Processing 74, North-Holland Publishing, 1974.
 
 Gilles Kahn's foundational paper provides the mathematical semantics that underpin FBP's determinism. Kahn proved that networks of monotonic processes communicating through unbounded FIFO channels produce deterministic results regardless of scheduling—a profound result that distinguishes FBP from other concurrent programming models. While Morrison developed FBP independently, Kahn's theoretical framework provides the formal basis for reasoning about FBP network behavior.
 
@@ -41,13 +41,13 @@ The key insight is that Kahn networks are *confluent*: no matter how processes a
 
 ### Communicating Sequential Processes
 
-> **Hoare, C.A.R.** "Communicating Sequential Processes."[^hoare] Communications of the ACM, 21(8), 1978.
+> **Hoare, C.A.R.** ["Communicating Sequential Processes."](https://www.cs.cmu.edu/~crary/819-f09/Hoare78.pdf) Communications of the ACM, 21(8), 1978.
 
 Tony Hoare's CSP provides an alternative formal model for process communication that influenced FBP's development. While CSP uses synchronous rendezvous (both sender and receiver must be ready simultaneously), FBP's buffered connections provide greater flexibility and natural flow control.
 
 ### The Actor Model
 
-> **Hewitt, Carl; Bishop, Peter; Steiger, Richard.** "A Universal Modular ACTOR Formalism for Artificial Intelligence."[^hewitt] IJCAI, 1973.
+> **Hewitt, Carl; Bishop, Peter; Steiger, Richard.** ["A Universal Modular ACTOR Formalism for Artificial Intelligence."](https://www.researchgate.net/publication/220812785_A_Universal_Modular_ACTOR_Formalism_for_Artificial_Intelligence) IJCAI, 1973.
 
 Carl Hewitt's Actor Model shares FBP's emphasis on message-passing concurrency but differs in crucial ways. Actors are addressed entities that can create new actors and change behavior between messages, while FBP processes are anonymous components in a fixed topology. FBP's static network structure enables visual programming and topological reasoning that dynamic actor systems cannot easily support.
 
@@ -55,7 +55,7 @@ Carl Hewitt's Actor Model shares FBP's emphasis on message-passing concurrency b
 
 ### String Diagrams and Monoidal Categories
 
-> **Selinger, Peter.** "A Survey of Graphical Languages for Monoidal Categories."[^selinger] New Structures for Physics, Springer, 2010.
+> **Selinger, Peter.** ["A Survey of Graphical Languages for Monoidal Categories."](https://arxiv.org/abs/0908.3347) New Structures for Physics, Springer, 2010.
 
 A profound realization emerges when examining FBP through the lens of category theory: FBP networks are *string diagrams* in monoidal categories. This is not merely an analogy—it is a precise mathematical correspondence. Components are morphisms, wires are objects, parallel composition is the monoidal product, and sequential composition is ordinary categorical composition.
 
@@ -63,7 +63,7 @@ This connection has explosive implications. Category theory provides a unified f
 
 ### Seven Sketches in Compositionality
 
-> **Fong, Brendan and Spivak, David I.** *Seven Sketches in Compositionality.*[^fong-spivak] MIT Press, 2019.
+> **Fong, Brendan and Spivak, David I.** MIT Press, 2019. (Available: [arXiv:1803.05316](https://arxiv.org/abs/1803.05316))
 
 This accessible introduction to applied category theory dedicates significant attention to signal flow graphs and their categorical semantics. Fong and Spivak demonstrate how engineering diagrams—including dataflow networks—can be given precise compositional meaning. Their treatment of operads and decorated cospans provides tools for defining domain-specific FBP variants with guaranteed compositional properties.
 
@@ -71,9 +71,9 @@ This accessible introduction to applied category theory dedicates significant at
 
 ### Static and Dynamic Dataflow
 
-> **Dennis, Jack B.** "First Version of a Data Flow Procedure Language."[^dennis] MIT, 1974.
+> **Dennis, Jack B.** ["First Version of a Data Flow Procedure Language."](https://dspace.mit.edu/handle/1721.1/148889) MIT, 1974.
 
-> **Arvind and Nikhil, R.S.** "Executing a Program on the MIT Tagged-Token Dataflow Architecture."[^arvind] IEEE Trans. Computers, 1990.
+> **Arvind and Nikhil, R.S.** ["Executing a Program on the MIT Tagged-Token Dataflow Architecture."](https://ui.adsabs.harvard.edu/abs/1990ITCmp..39..300A/abstract) IEEE Trans. Computers, 1990.
 
 The dataflow architecture research program at MIT, led by Jack Dennis and later Arvind, pursued hardware implementations of dataflow execution. While commercial dataflow machines never achieved widespread adoption, this research produced invaluable insights into parallel execution models, token matching, and the relationship between program structure and execution semantics. FBP can be understood as a software realization of dataflow principles on conventional hardware.
 
@@ -81,9 +81,9 @@ The dataflow architecture research program at MIT, led by Jack Dennis and later 
 
 ### SysML v2 and Model-Based Systems Engineering
 
-> **Object Management Group.** "SysML v2 Specification."[^sysml] OMG, 2023.
+> **Object Management Group.** ["SysML v2 Specification."](https://www.omg.org/sysml/sysmlv2/) OMG, 2023.
 
-> **Elaasar, Maged et al.** "The Case for Integrated Model-Centric Engineering."[^opencaesar] NASA JPL / OpenCAESAR, 2019.
+> **Elaasar, Maged et al.** ["The Case for Integrated Model-Centric Engineering."](https://www.opencaesar.io/papers/2019-04-02-The-Case-For-Integrated-Model-Centric-Engineering.html) NASA JPL / OpenCAESAR, 2019.
 
 The systems engineering community has independently converged on flow-based representations through SysML v2's Action/Flow semantics. Notably, SysML v2's KerML (Kernel Modeling Language) provides foundational semantics that map to OWL2-DL, enabling integration with semantic web technologies. NASA JPL's OpenCAESAR project bridges SysML with OML (Ontological Modeling Language), demonstrating the viability of connecting visual dataflow models to RDF-based knowledge graphs.
 
@@ -93,11 +93,11 @@ This convergence is significant: aerospace, defense, and automotive industries a
 
 Several modern projects have demonstrated FBP's continued relevance:
 
-- **NoFlo**[^noflo] (Henri Bergius, 2011-present): JavaScript FBP runtime with visual editor, used in production at The Grid and other companies.
-- **Node-RED**[^nodered] (IBM Emerging Technology, 2013-present): Visual programming tool for IoT and event-driven applications. Deployed globally in industrial and home automation contexts.
-- **Apache NiFi**[^nifi] (NSA/Apache Foundation): Enterprise data flow system handling petabytes at major organizations.
-- **LabVIEW**[^labview] (National Instruments, 1986-present): Dataflow visual programming for scientific instrumentation. Four decades of continuous development and billions in revenue.
-- **Unreal Engine Blueprints**[^blueprints] (Epic Games): Visual scripting system enabling non-programmers to create game logic.
+- **[NoFlo](https://noflojs.org)** (Henri Bergius, 2011-present): JavaScript FBP runtime with visual editor, used in production at The Grid and other companies.
+- **[Node-RED](https://nodered.org)** (IBM Emerging Technology, 2013-present): Visual programming tool for IoT and event-driven applications. Deployed globally in industrial and home automation contexts.
+- **[Apache NiFi](https://nifi.apache.org)** (NSA/Apache Foundation): Enterprise data flow system handling petabytes at major organizations.
+- **[LabVIEW](https://www.ni.com/en-us/shop/labview.html)** (National Instruments, 1986-present): Dataflow visual programming for scientific instrumentation. Four decades of continuous development and billions in revenue.
+- **[Unreal Engine Blueprints](https://docs.unrealengine.com/5.0/en-US/blueprints-visual-scripting-in-unreal-engine/)** (Epic Games): Visual scripting system enabling non-programmers to create game logic.
 
 ## 7. Why Now: The Convergence Thesis
 
@@ -122,37 +122,16 @@ The company that builds this platform will define how the next generation of sof
 ## Essential Reading List
 
 ### Primary Sources
-- Morrison, J.P. (2010). *Flow-Based Programming*, 2nd Edition.[^morrison]
-- Kahn, G. (1974). "The Semantics of a Simple Language for Parallel Programming."[^kahn]
-- Hoare, C.A.R. (1978). "Communicating Sequential Processes."[^hoare]
+- Morrison, J.P. (2010). [*Flow-Based Programming*](https://jpaulm.github.io/fbp/book.html), 2nd Edition.
+- Kahn, G. (1974). ["The Semantics of a Simple Language for Parallel Programming."](https://www.cs.columbia.edu/~sedwards/papers/kahn1974semantics.pdf)
+- Hoare, C.A.R. (1978). ["Communicating Sequential Processes."](https://www.cs.cmu.edu/~crary/819-f09/Hoare78.pdf)
 
 ### Theoretical Background
-- Fong, B. & Spivak, D. (2019). *Seven Sketches in Compositionality*.[^fong-spivak]
-- Selinger, P. (2010). "A Survey of Graphical Languages for Monoidal Categories."[^selinger]
-- Baez, J. & Stay, M. (2011). "Physics, Topology, Logic and Computation: A Rosetta Stone."[^baez]
+- Fong, B. & Spivak, D. (2019). [*Seven Sketches in Compositionality*](https://arxiv.org/abs/1803.05316).
+- Selinger, P. (2010). ["A Survey of Graphical Languages for Monoidal Categories."](https://arxiv.org/abs/0908.3347)
+- Baez, J. & Stay, M. (2011). ["Physics, Topology, Logic and Computation: A Rosetta Stone."](https://arxiv.org/abs/0903.0340)
 
 ### Online Resources
-- J. Paul Morrison's FBP Website[^morrison-site]
-- NoFlo Project[^noflo]
-- FBP Google Group[^fbp-group]
-
----
-
-[^morrison]: https://jpaulm.github.io/fbp/book.html
-[^kahn]: https://www.cs.columbia.edu/~sedwards/papers/kahn1974semantics.pdf
-[^hoare]: https://www.cs.cmu.edu/~crary/819-f09/Hoare78.pdf
-[^hewitt]: https://www.researchgate.net/publication/220812785_A_Universal_Modular_ACTOR_Formalism_for_Artificial_Intelligence
-[^selinger]: https://arxiv.org/abs/0908.3347
-[^fong-spivak]: https://arxiv.org/abs/1803.05316
-[^dennis]: https://dspace.mit.edu/handle/1721.1/148889
-[^arvind]: https://ui.adsabs.harvard.edu/abs/1990ITCmp..39..300A/abstract
-[^sysml]: https://www.omg.org/sysml/sysmlv2/
-[^opencaesar]: https://www.opencaesar.io/papers/2019-04-02-The-Case-For-Integrated-Model-Centric-Engineering.html
-[^noflo]: https://noflojs.org
-[^nodered]: https://nodered.org
-[^nifi]: https://nifi.apache.org
-[^labview]: https://www.ni.com/en-us/shop/labview.html
-[^blueprints]: https://docs.unrealengine.com/5.0/en-US/blueprints-visual-scripting-in-unreal-engine/
-[^baez]: https://arxiv.org/abs/0903.0340
-[^morrison-site]: https://jpaulmorrison.com/fbp
-[^fbp-group]: https://groups.google.com/g/flow-based-programming
+- J. Paul Morrison's FBP Website: [jpaulmorrison.com/fbp](https://jpaulmorrison.com/fbp)
+- NoFlo Project: [noflojs.org](https://noflojs.org)
+- FBP Google Group: [groups.google.com/g/flow-based-programming](https://groups.google.com/g/flow-based-programming)
