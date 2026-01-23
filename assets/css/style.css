@@ -119,6 +119,7 @@ a:hover {
     font-style: italic;
     color: #888;
     margin: 0.5rem 0 1.5rem 0;
+    padding: 0 2rem;
 }
 
 .post-subtitle a {
@@ -186,6 +187,7 @@ article .content figcaption {
     text-align: center;
     margin-top: 0.5rem;
     margin-bottom: 2rem;
+    padding: 0 3rem;
 }
 
 /* Blog sidebar layout */
