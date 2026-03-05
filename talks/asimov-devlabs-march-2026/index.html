@@ -1,0 +1,699 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repolex: From Weekend Hack to 173 Languages — ASIMOV DevLabs</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/monokai.css">
+    <style>
+        :root {
+            --green: #4ec9b0;
+            --blue: #569cd6;
+            --yellow: #dcdcaa;
+            --purple: #c586c0;
+            --orange: #ce9178;
+            --dim: #888;
+            --bg: #1e1e1e;
+        }
+        .reveal { font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace; }
+        .reveal h1, .reveal h2, .reveal h3 { font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace; text-transform: none; font-weight: 400; }
+        .reveal h1 { font-size: 1.6em; color: var(--green); margin-bottom: 0.2em; }
+        .reveal h2 { font-size: 1.15em; color: var(--green); margin-bottom: 0.3em; }
+        .reveal h3 { font-size: 0.9em; color: var(--blue); }
+        .reveal p, .reveal li { font-size: 0.65em; line-height: 1.5; }
+        .reveal .subtitle { color: var(--dim); font-size: 0.6em; margin-top: 0.3em; }
+        .reveal section { padding-top: 0.5em; }
+        .reveal .accent { color: var(--green); }
+        .reveal .accent-blue { color: var(--blue); }
+        .reveal .accent-yellow { color: var(--yellow); }
+        .reveal .accent-purple { color: var(--purple); }
+        .reveal .accent-orange { color: var(--orange); }
+        .reveal .dim { color: var(--dim); }
+        .reveal code { font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace; }
+        .reveal pre { font-size: 0.5em; box-shadow: none; margin: 0.4em 0; }
+        .reveal pre code { max-height: 400px; padding: 0.7em; border-radius: 6px; }
+        .reveal .slide-number { font-size: 0.5em; }
+        .reveal section { text-align: left; }
+        .reveal section.center-slide { text-align: center; }
+        .reveal .columns { display: flex; gap: 2em; align-items: flex-start; }
+        .reveal .col { flex: 1; }
+        .reveal .card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 0.6em 0.8em; margin: 0.3em 0; }
+        .reveal .card h3 { margin: 0 0 0.2em 0; font-size: 0.8em; }
+        .reveal .card p, .reveal .card code { font-size: 0.58em; }
+        .reveal .card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5em; }
+        .reveal .timeline { position: relative; padding-left: 2em; }
+        .reveal .timeline::before { content: ''; position: absolute; left: 0.5em; top: 0; bottom: 0; width: 2px; background: var(--green); }
+        .reveal .timeline-item { position: relative; margin-bottom: 1em; }
+        .reveal .timeline-item::before { content: ''; position: absolute; left: -1.75em; top: 0.4em; width: 10px; height: 10px; border-radius: 50%; background: var(--green); }
+        .reveal .timeline-item.done::before { background: var(--green); }
+        .reveal .timeline-item.wip::before { background: var(--yellow); }
+        .reveal .timeline-item.next::before { background: var(--dim); border: 2px solid var(--dim); background: transparent; }
+        .reveal .big-number { font-size: 2.4em; color: var(--green); font-weight: bold; }
+        .reveal .thought-bubble { background: rgba(78, 201, 176, 0.1); border-left: 3px solid var(--green); padding: 0.5em 1em; margin: 0.5em 0; border-radius: 0 8px 8px 0; font-style: italic; }
+        .reveal .vs-table { width: 100%; border-collapse: collapse; font-size: 0.6em; }
+        .reveal .vs-table th { color: var(--green); border-bottom: 1px solid rgba(255,255,255,0.2); padding: 0.5em; text-align: left; }
+        .reveal .vs-table td { padding: 0.5em; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .reveal .vs-table .check { color: var(--green); }
+        .reveal .vs-table .cross { color: #f44; }
+        .reveal ul { list-style: none; padding-left: 0; }
+        .reveal ul li::before { content: ''; }
+        .reveal .tag { display: inline-block; padding: 0.15em 0.5em; border-radius: 4px; font-size: 0.6em; margin: 0.1em; }
+        .reveal .tag-green { background: rgba(78, 201, 176, 0.2); color: var(--green); }
+        .reveal .tag-blue { background: rgba(86, 156, 214, 0.2); color: var(--blue); }
+        .reveal .tag-purple { background: rgba(197, 134, 192, 0.2); color: var(--purple); }
+        .reveal .tag-yellow { background: rgba(220, 220, 170, 0.2); color: var(--yellow); }
+    </style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- ============ SLIDE 1: TITLE ============ -->
+<section class="center-slide" data-background-color="#1e1e1e">
+    <h1>repolex</h1>
+    <p class="subtitle" style="font-size: 0.8em; color: var(--dim);">From Weekend Hack to 173 Languages</p>
+    <p style="font-size: 0.6em; color: var(--dim); margin-top: 1em;">
+        Rob Kunkle
+    </p>
+    <p style="font-size: 0.5em; color: var(--dim); margin-top: 0.3em;">
+        x/twitter: <a href="https://twitter.com/lux" style="color: var(--green); text-decoration: none;">@lux</a>
+        <br>
+        linkedin: <a href="https://www.linkedin.com/in/robkunkle/" style="color: var(--blue); text-decoration: none;">linkedin.com/in/robkunkle</a>
+    </p>
+    <p style="font-size: 0.55em; color: var(--dim); margin-top: 1em;">
+        <span class="accent" style="font-size: 0.9em;">ASIMOV DevLabs</span> &mdash; Circuit Launch, Oakland
+        <br>
+        March 2026
+    </p>
+</section>
+
+<!-- ============ SLIDE 2: HOW IT STARTED ============ -->
+<section data-background-color="#1e1e1e">
+    <h2>How It Started</h2>
+    <div class="thought-bubble">
+        "I need a tool that lets an agent actually <em>understand</em> a codebase&mdash;not just grep through it."
+    </div>
+    <p><span class="accent">1 week.</span> Claude + Python. Built a parser that turned Python repos into RDF graphs, queryable with SPARQL.</p>
+    <div style="text-align: center; font-size: 0.6em; color: var(--dim); margin-top: 0.5em;">
+        <code>.py files</code> &rarr; <code>Python AST + inspect</code> &rarr; <code>RDF triples</code> &rarr; <code>SPARQL queries</code>
+    </div>
+</section>
+
+<!-- ============ SLIDE 3: HOW AGENTS SEE CODE ============ -->
+<section data-background-color="#1e1e1e">
+    <h2>How Agents See Code Today</h2>
+    <table class="vs-table">
+        <tr>
+            <th style="width: 50%;">Current Approach</th>
+            <th style="width: 50%;">With Structured Graphs</th>
+        </tr>
+        <tr>
+            <td><code>grep -r "def " *.py</code></td>
+            <td><code>?func a python:function_definition</code></td>
+        </tr>
+        <tr>
+            <td>String matching, regex, glob</td>
+            <td>Typed nodes with relationships</td>
+        </tr>
+        <tr>
+            <td>No understanding of structure</td>
+            <td>AST + LSP + dataflow</td>
+        </tr>
+        <tr>
+            <td>Context window = search results</td>
+            <td>Precise graph queries</td>
+        </tr>
+        <tr>
+            <td>Hopes the right file is nearby</td>
+            <td>Traverses cross-file dependencies</td>
+        </tr>
+    </table>
+    <p class="dim" style="font-size: 0.55em;">Markdown, grep, glob, regex&mdash;these are approximations. Graphs are the actual structure.</p>
+</section>
+
+<!-- ============ SLIDE 4: IT WORKED ============ -->
+<section data-background-color="#1e1e1e">
+    <h2>It Worked!</h2>
+    <pre><code class="language-sparql">SELECT ?func ?name ?startRow
+WHERE {
+  ?func a python:function_definition ;
+        ts-core:text ?name ;
+        ts-core:startRow ?startRow .
+}
+ORDER BY ?startRow</code></pre>
+    <p>An agent could ask structured questions about code and get precise answers. No hallucination. No guessing file locations.</p>
+    <p>Agents are <em>extremely</em> adept at using SPARQL for generalized queries.</p>
+    <p class="dim" style="font-size: 0.6em;">Find all functions, trace imports, map class hierarchies&mdash;all as graph queries.</p>
+</section>
+
+<!-- ============ SLIDE 3b: WHAT THIS UNLOCKED ============ -->
+<section data-background-color="#1e1e1e">
+    <h2>What This Unlocked</h2>
+    <div class="card-grid">
+        <div class="card">
+            <h3 class="accent-yellow">Dead code &amp; uncalled functions</h3>
+            <p>Query for functions that exist but are never referenced anywhere. Instant cleanup list.</p>
+        </div>
+        <div class="card">
+            <h3 class="accent-yellow">Cross-repo comparison</h3>
+            <p>"Compare our repo to our competitor's." Same graph schema, same queries, side by side.</p>
+        </div>
+        <div class="card">
+            <h3 class="accent-yellow">Great documentation</h3>
+            <p>Agents can generate accurate docs because they have the full structural picture, not just string matches.</p>
+        </div>
+        <div class="card">
+            <h3 class="accent-yellow">General <em>grounded</em> analysis</h3>
+            <p>Everything grounded in actual code facts.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ============ SLIDE 4: THE DAN STORY ============ -->
+<section class="center-slide" data-background-color="#1e1e1e">
+    <p style="font-size: 1.2em; margin-top: 2em;">Asked my friend Dan to try it...</p>
+</section>
+
+<!-- ============ SLIDE 4b: THE RUBY PROBLEM ============ -->
+<section class="center-slide" data-background-color="#1e1e1e">
+    <p style="font-size: 1.6em; color: var(--orange); margin-top: 2em;">"Sorry, our codebase is Ruby."</p>
+    <p class="dim" style="font-size: 0.65em; margin-top: 1em;">And just like that, the real project began.</p>
+</section>
+
+<!-- ============ SLIDE 5: THE PROBLEM STATEMENT ============ -->
+<section data-background-color="#1e1e1e">
+    <h2>The Problem</h2>
+    <p>I knew this was a powerful idea. Store codebases as RDF, give agents SPARQL, and they get clear vision of the full repo.</p>
+    <p>But how could I make this readily available to <span class="accent">everyone</span>?</p>
+    <p>Not just Python. Not just my repos. A universal code intelligence layer that any agent could use against any codebase, regardless of the language.</p>
+</section>
+
+<!-- ============ SLIDE 6b: COMPETITIVE ANALYSIS ============ -->
+<section data-background-color="#1e1e1e">
+    <h2>The Competitive Analysis <span class="dim" style="font-size: 0.7em;">ca. 6 months ago</span></h2>
+    <div class="thought-bubble">
+        Is anyone else even doing this already?
+    </div>
+    <p>It turned out: <span class="accent">No, nobody is using SPARQL for code understanding.</span></p>
+    <p style="margin-top: 0.5em;">Instead I found:</p>
+    <ul style="font-size: 0.55em; margin-top: 0.3em; padding-left: 1.2em; list-style: disc;">
+        <li style="margin-bottom: 0.3em;"><span class="accent-blue">VS Code plugins</span> &mdash; various tooling for working on a local repo. Tightly coupled to one IDE, not composable.</li>
+        <li style="margin-bottom: 0.3em;"><span class="accent-blue">RAG / embedding tools</span> &mdash; quick similarity search over code. Good for finding related snippets, but no structural understanding.</li>
+        <li style="margin-bottom: 0.3em;"><span class="accent-blue">MCP tools (e.g. Serena)</span> &mdash; leverage LSP for code navigation, but a pain to install and use. Not pre-computed or distributable.</li>
+        <li style="margin-bottom: 0.3em;"><span class="accent-blue">Context aggregators (e.g. Context7)</span> &mdash; pull info from the web to give agents more context. Often rely on LLM aggregation, not grounded in structure.</li>
+        <li><span class="accent-blue">And interestingly...</span> a defunct Java project called <span class="accent-purple">"Web of Code"</span> that sought to link all of Java code into a single linked semantic graph.</li>
+    </ul>
+</section>
+
+<!-- ============ SLIDE 7: WHAT I DIDN'T WANT TO BUILD ============ -->
+<section data-background-color="#1e1e1e">
+    <h2>Problems I Didn't Want to Solve</h2>
+    <div class="card-grid">
+        <div class="card" style="border-color: rgba(244,68,68,0.3);">
+            <h3 style="color: #f44;">Not another coding assistant</h3>
+            <p>Cursor, Copilot, Claude Code&mdash;that space is covered.</p>
+        </div>
+        <div class="card" style="border-color: rgba(244,68,68,0.3);">
+            <h3 style="color: #f44;">Not realtime live graphs</h3>
+            <p>IDE plugins that parse on every keystroke? That's an LSP's job.</p>
+        </div>
+        <div class="card" style="border-color: rgba(244,68,68,0.3);">
+            <h3 style="color: #f44;">Not another free MCP plugin</h3>
+            <p>How would I even benefit from this?</p>
+        </div>
+        <div class="card" style="border-color: rgba(244,68,68,0.3);">
+            <h3 style="color: #f44;">Not a molecule graph view of code</h3>
+            <p>That no one actually ever uses.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ============ SLIDE 8: PROBLEMS I DID WANT TO SOLVE ============ -->
+<section data-background-color="#1e1e1e">
+    <h2>Problems I <em>Did</em> Want to Solve</h2>
+    <p>Look at a repo, at a given commit, and give an agent the full picture.</p>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5em; margin-top: 0.5em;">
+        <div class="card" style="border-color: rgba(76,175,80,0.3);">
+            <h3 style="color: #4caf50;">Agent superpowers</h3>
+            <ul style="font-size: 0.45em; padding-left: 1em; list-style: disc; line-height: 1.6; margin-top: 0.2em;">
+                <li>Seeing structure across files</li>
+                <li>Seeing dead code / unused files</li>
+                <li>See what functions call a given function</li>
+                <li>Control flow and dataflow throughout the repo</li>
+            </ul>
+        </div>
+        <div class="card" style="border-color: rgba(76,175,80,0.3);">
+            <h3 style="color: #4caf50;">User ergonomics</h3>
+            <ul style="font-size: 0.45em; padding-left: 1em; list-style: disc; line-height: 1.6; margin-top: 0.2em;">
+                <li>No complicated installs</li>
+                <li>As fast as possible</li>
+            </ul>
+        </div>
+        <div class="card" style="border-color: rgba(76,175,80,0.3);">
+            <h3 style="color: #4caf50;">Universal / Cross-repo</h3>
+            <ul style="font-size: 0.45em; padding-left: 1em; list-style: disc; line-height: 1.6; margin-top: 0.2em;">
+                <li>Works with any language</li>
+                <li>Dependency code included in analysis</li>
+            </ul>
+        </div>
+        <div class="card" style="border-color: rgba(76,175,80,0.3);">
+            <h3 style="color: #4caf50;">Built for LLMs</h3>
+            <ul style="font-size: 0.45em; padding-left: 1em; list-style: disc; line-height: 1.6; margin-top: 0.2em;">
+                <li>Tooling developed with LLMs as the primary user</li>
+                <li>Reduce the number of tool calls</li>
+                <li>Reduce token expense</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- ============ SLIDE 9: TREE-SITTER ============ -->
+<section data-background-color="#1e1e1e">
+    <h2>Move to Tree-sitter</h2>
+    <p><span class="big-number">173</span> <span style="font-size: 0.7em;">languages</span></p>
+    <p>Tree-sitter gives us fast, incremental AST parsing for basically every language that matters. One parser to rule them all.</p>
+    <div class="thought-bubble">
+        Great, 173 languages! But... how do you organize the ontology for 173 different AST schemas?
+    </div>
+    <p class="dim" style="font-size: 0.55em;">Python has <code>function_definition</code>, Ruby has <code>method</code>, Go has <code>function_declaration</code>&mdash;same concept, different names.</p>
+</section>
+
+<!-- ============ SLIDE 10: ONTOLOGY ============ -->
+<section data-background-color="#1e1e1e">
+    <h2>Ontology-Driven Development</h2>
+    <p>The ontology isn't documentation&mdash;it's the <span class="accent">source of truth</span> that drives everything:</p>
+    <div style="text-align: center; margin: 0.3em 0;">
+        <svg viewBox="0 0 800 300" width="650" style="font-family: monospace;">
+            <!-- Central ontology -->
+            <rect x="280" y="20" width="240" height="60" rx="8" fill="none" stroke="#4ec9b0" stroke-width="2"/>
+            <text x="400" y="55" text-anchor="middle" fill="#4ec9b0" font-size="16">OWL/RDFS Ontology</text>
+            <!-- Lines down -->
+            <line x1="330" y1="80" x2="130" y2="140" stroke="#569cd6" stroke-width="1.5" stroke-dasharray="4"/>
+            <line x1="400" y1="80" x2="400" y2="140" stroke="#569cd6" stroke-width="1.5" stroke-dasharray="4"/>
+            <line x1="470" y1="80" x2="670" y2="140" stroke="#569cd6" stroke-width="1.5" stroke-dasharray="4"/>
+            <!-- Boxes -->
+            <rect x="40" y="140" width="180" height="50" rx="6" fill="rgba(86,156,214,0.15)" stroke="#569cd6"/>
+            <text x="130" y="170" text-anchor="middle" fill="#569cd6" font-size="13">Parser field types</text>
+            <rect x="310" y="140" width="180" height="50" rx="6" fill="rgba(86,156,214,0.15)" stroke="#569cd6"/>
+            <text x="400" y="170" text-anchor="middle" fill="#569cd6" font-size="13">RDFS reasoning rules</text>
+            <rect x="580" y="140" width="180" height="50" rx="6" fill="rgba(86,156,214,0.15)" stroke="#569cd6"/>
+            <text x="670" y="170" text-anchor="middle" fill="#569cd6" font-size="13">SPARQL prefixes</text>
+            <!-- More lines -->
+            <line x1="130" y1="190" x2="130" y2="230" stroke="#dcdcaa" stroke-width="1.5" stroke-dasharray="4"/>
+            <line x1="400" y1="190" x2="400" y2="230" stroke="#dcdcaa" stroke-width="1.5" stroke-dasharray="4"/>
+            <line x1="670" y1="190" x2="670" y2="230" stroke="#dcdcaa" stroke-width="1.5" stroke-dasharray="4"/>
+            <!-- Results -->
+            <rect x="40" y="230" width="180" height="50" rx="6" fill="rgba(220,220,170,0.1)" stroke="#dcdcaa"/>
+            <text x="130" y="260" text-anchor="middle" fill="#dcdcaa" font-size="12">Terminal vs Structural</text>
+            <rect x="310" y="230" width="180" height="50" rx="6" fill="rgba(220,220,170,0.1)" stroke="#dcdcaa"/>
+            <text x="400" y="260" text-anchor="middle" fill="#dcdcaa" font-size="12">Cross-lang unification</text>
+            <rect x="580" y="230" width="180" height="50" rx="6" fill="rgba(220,220,170,0.1)" stroke="#dcdcaa"/>
+            <text x="670" y="260" text-anchor="middle" fill="#dcdcaa" font-size="12">Auto-injected queries</text>
+        </svg>
+    </div>
+    <p class="dim" style="font-size: 0.55em;">Change the ontology, and the parser, materializer, and query tool all adapt. Zero code changes.</p>
+</section>
+
+<!-- ============ SLIDE 11: REAL ONTOLOGY EXAMPLE ============ -->
+<section data-background-color="#1e1e1e">
+    <h2>What the Ontology Looks Like</h2>
+    <div class="columns">
+        <div class="col">
+            <h3>Language-Specific (Python)</h3>
+            <pre><code class="language-turtle">python:function_definition
+    a owl:Class ;
+    rdfs:subClassOf ts-core:Node ;
+    rdfs:subClassOf repolex:function_definition .
+
+python:name
+    a owl:DatatypeProperty ;
+    python:isTerminalField true .</code></pre>
+        </div>
+        <div class="col">
+            <h3>Cross-Language (Repolex)</h3>
+            <pre><code class="language-turtle">repolex:function_definition
+    a owl:Class ;
+    rdfs:subClassOf ts-core:Node .
+
+# Ruby, Go, Java all map here too:
+ruby:method
+    rdfs:subClassOf repolex:function_definition .
+go:function_declaration
+    rdfs:subClassOf repolex:function_definition .</code></pre>
+        </div>
+    </div>
+    <p class="dim" style="font-size: 0.55em;">RDFS reasoning materializes the cross-language types at parse time. Query once, get results across all languages.</p>
+</section>
+
+<!-- ============ SLIDE 12: BIG AST PROBLEM ============ -->
+<section data-background-color="#1e1e1e">
+    <h2>The Big-AST Graph Problem</h2>
+    <div class="thought-bubble">
+        Great! We can now parse 173 different languages into our AST graph... but it takes a-long-time, and this graph is... <strong>BIG</strong>. I wonder what happens when I make a single code change...
+    </div>
+</section>
+
+<!-- ============ SLIDE 13: GIT INTERNALS ============ -->
+<section data-background-color="#1e1e1e">
+    <h2>Making It Faster: Mirroring Git's Internals</h2>
+    <p>Key insight: Git already content-addresses files. <span class="accent">Same content = same blob hash</span>, regardless of filename or location.</p>
+    <div style="text-align: center; margin: 0.3em 0;">
+        <svg viewBox="0 0 750 250" width="620" style="font-family: monospace;">
+            <!-- Commit boxes -->
+            <rect x="20" y="20" width="140" height="45" rx="6" fill="rgba(197,134,192,0.15)" stroke="#c586c0"/>
+            <text x="90" y="47" text-anchor="middle" fill="#c586c0" font-size="12">Commit abc123</text>
+            <rect x="20" y="85" width="140" height="45" rx="6" fill="rgba(197,134,192,0.15)" stroke="#c586c0"/>
+            <text x="90" y="112" text-anchor="middle" fill="#c586c0" font-size="12">Commit def456</text>
+            <!-- Arrow to filetree -->
+            <line x1="160" y1="42" x2="220" y2="70" stroke="#888" stroke-width="1"/>
+            <line x1="160" y1="107" x2="220" y2="95" stroke="#888" stroke-width="1"/>
+            <!-- Filetree -->
+            <rect x="220" y="55" width="130" height="55" rx="6" fill="rgba(86,156,214,0.15)" stroke="#569cd6"/>
+            <text x="285" y="78" text-anchor="middle" fill="#569cd6" font-size="11">filetree</text>
+            <text x="285" y="98" text-anchor="middle" fill="#888" font-size="10">blob_hash &rarr; path</text>
+            <!-- Arrows to blobs -->
+            <line x1="350" y1="70" x2="420" y2="42" stroke="#4ec9b0" stroke-width="1.5"/>
+            <line x1="350" y1="82" x2="420" y2="82" stroke="#4ec9b0" stroke-width="1.5"/>
+            <line x1="350" y1="95" x2="420" y2="130" stroke="#4ec9b0" stroke-width="1.5"/>
+            <!-- Blob boxes -->
+            <rect x="420" y="20" width="150" height="40" rx="6" fill="rgba(78,201,176,0.15)" stroke="#4ec9b0"/>
+            <text x="495" y="44" text-anchor="middle" fill="#4ec9b0" font-size="11">blob/e7f2a1 (AST)</text>
+            <rect x="420" y="65" width="150" height="40" rx="6" fill="rgba(78,201,176,0.15)" stroke="#4ec9b0"/>
+            <text x="495" y="89" text-anchor="middle" fill="#4ec9b0" font-size="11">blob/3bc9d4 (AST)</text>
+            <rect x="420" y="110" width="150" height="40" rx="6" fill="rgba(78,201,176,0.15)" stroke="#4ec9b0"/>
+            <text x="495" y="134" text-anchor="middle" fill="#4ec9b0" font-size="11">blob/a1f8e2 (AST)</text>
+            <!-- Shared blob note -->
+            <text x="495" y="175" text-anchor="middle" fill="#dcdcaa" font-size="11">Content-addressed:</text>
+            <text x="495" y="192" text-anchor="middle" fill="#dcdcaa" font-size="11">parse once, reuse forever</text>
+            <!-- Stats -->
+            <rect x="420" y="210" width="310" height="35" rx="6" fill="rgba(220,220,170,0.1)" stroke="#dcdcaa" stroke-dasharray="4"/>
+            <text x="575" y="232" text-anchor="middle" fill="#dcdcaa" font-size="11">Typical repo: 80-90% of blobs unchanged between commits</text>
+        </svg>
+    </div>
+    <p class="dim" style="font-size: 0.55em;">Stored as gzipped N-Quads. Append-only commits + content-addressed blobs = efficient incremental updates.</p>
+</section>
+
+<!-- ============ SLIDE 13: LSP DEEP DIVE ============ -->
+<section data-background-color="#1e1e1e">
+    <h2>Adding Semantics: LSP via Multilspy</h2>
+    <div class="columns">
+        <div class="col">
+            <h3>Tree-sitter alone (syntax)</h3>
+            <pre><code class="language-python"># We see:
+import jmespath
+
+# Tree-sitter gives us:
+#   import_statement
+#     dotted_name: "jmespath"
+#
+# But where does jmespath
+# come from? No idea.</code></pre>
+        </div>
+        <div class="col">
+            <h3>+ LSP resolution (semantics)</h3>
+            <pre><code class="language-turtle"># Now we know:
+?import a repolex:lsp.import_statement ;
+  repolex:scm.resolution_node ?node .
+
+?node ts-core:sourceFile
+  "/site-packages/jmespath/__init__.py" ;
+  ts-core:startRow 1 .</code></pre>
+        </div>
+    </div>
+    <p>SCM queries (<code>.scm</code> files) capture resolution nodes from tree-sitter. Multilspy resolves them to actual definitions.</p>
+    <p class="dim" style="font-size: 0.55em;">Currently supporting 11 languages via Microsoft's multilspy. Enables call graphs, cross-file navigation.</p>
+</section>
+
+<!-- ============ SLIDE 14: GRAPH LAYERS ============ -->
+<section data-background-color="#1e1e1e">
+    <h2>The Graph Layers</h2>
+    <div class="card-grid">
+        <div class="card">
+            <h3 class="accent">AST</h3>
+            <p>Structural syntax from tree-sitter. Every node, field, relationship in the source code.</p>
+            <p><code class="dim">?func a python:function_definition</code></p>
+        </div>
+        <div class="card">
+            <h3 class="accent-blue">LSP</h3>
+            <p>Semantic resolution via multilspy. Where things are defined, what calls what.</p>
+            <p><code class="dim">?node a repolex:lsp.call_site</code></p>
+        </div>
+        <div class="card">
+            <h3 class="accent-purple">Dataflow</h3>
+            <p>How data moves through the code. Variable assignments, return values, parameter passing.</p>
+            <p><code class="dim">?assign repolex:flowsTo ?usage</code></p>
+        </div>
+        <div class="card">
+            <h3 class="accent-yellow">Control Flow</h3>
+            <p>Execution paths, branches, loops. Which code runs under what conditions.</p>
+            <p><code class="dim">?block repolex:branchesTo ?target</code></p>
+        </div>
+    </div>
+    <p class="dim" style="font-size: 0.55em; text-align: center;">Each layer is a separate named graph. Compose them for richer queries.</p>
+</section>
+
+<!-- ============ SLIDE 15: COMPOSABILITY ============ -->
+<section data-background-color="#1e1e1e">
+    <h2>Solving the Dependency Problem: Composable Pre-Parsed Graphs</h2>
+    <p>The dependency question: your code imports libraries. Those libraries import other libraries. How do you query across all of them?</p>
+    <div style="text-align: center; margin: 0.3em 0;">
+        <svg viewBox="0 0 700 200" width="580" style="font-family: monospace;">
+            <!-- Your repo -->
+            <rect x="20" y="60" width="160" height="70" rx="8" fill="rgba(78,201,176,0.15)" stroke="#4ec9b0" stroke-width="2"/>
+            <text x="100" y="88" text-anchor="middle" fill="#4ec9b0" font-size="13">your-app</text>
+            <text x="100" y="108" text-anchor="middle" fill="#888" font-size="10">AST + LSP graphs</text>
+            <!-- Dep 1 -->
+            <rect x="260" y="15" width="160" height="55" rx="6" fill="rgba(86,156,214,0.15)" stroke="#569cd6"/>
+            <text x="340" y="38" text-anchor="middle" fill="#569cd6" font-size="12">flask</text>
+            <text x="340" y="55" text-anchor="middle" fill="#888" font-size="10">pre-parsed graph</text>
+            <!-- Dep 2 -->
+            <rect x="260" y="85" width="160" height="55" rx="6" fill="rgba(86,156,214,0.15)" stroke="#569cd6"/>
+            <text x="340" y="108" text-anchor="middle" fill="#569cd6" font-size="12">sqlalchemy</text>
+            <text x="340" y="125" text-anchor="middle" fill="#888" font-size="10">pre-parsed graph</text>
+            <!-- Arrows -->
+            <line x1="180" y1="80" x2="260" y2="42" stroke="#4ec9b0" stroke-width="1.5"/>
+            <line x1="180" y1="105" x2="260" y2="112" stroke="#4ec9b0" stroke-width="1.5"/>
+            <!-- Combined -->
+            <rect x="500" y="45" width="180" height="100" rx="8" fill="rgba(220,220,170,0.1)" stroke="#dcdcaa" stroke-width="2"/>
+            <text x="590" y="78" text-anchor="middle" fill="#dcdcaa" font-size="13">Unified SPARQL</text>
+            <text x="590" y="98" text-anchor="middle" fill="#dcdcaa" font-size="13">Endpoint</text>
+            <text x="590" y="125" text-anchor="middle" fill="#888" font-size="10">query across everything</text>
+            <!-- Arrows to combined -->
+            <line x1="420" y1="42" x2="500" y2="80" stroke="#dcdcaa" stroke-width="1.5"/>
+            <line x1="420" y1="112" x2="500" y2="105" stroke="#dcdcaa" stroke-width="1.5"/>
+        </svg>
+    </div>
+    <p>We use <span class="accent-blue">deps.dev</span> to resolve dependencies to their actual GitHub repos, and address all code with the <code>org/repo</code> structure. Load multiple graphs into one store. Named graphs keep them organized. SPARQL queries span them all.</p>
+</section>
+
+<!-- ============ SLIDE 16: EXAMPLE QUERIES ============ -->
+<section data-background-color="#1e1e1e">
+    <h2>What You Can Ask</h2>
+    <div class="card-grid">
+        <div class="card">
+            <h3 class="accent-yellow">Dead Code Detection</h3>
+            <pre style="font-size: 0.5em; margin: 0.5em 0;"><code class="language-sparql">SELECT ?func ?name
+WHERE {
+  ?func a repolex:function_definition ;
+        ts-core:text ?name .
+  FILTER NOT EXISTS {
+    ?call repolex:lsp.call_site ?func
+  }
+}</code></pre>
+        </div>
+        <div class="card">
+            <h3 class="accent-yellow">Import Map</h3>
+            <pre style="font-size: 0.5em; margin: 0.5em 0;"><code class="language-sparql">SELECT ?file ?module
+WHERE {
+  ?node a repolex:lsp.import_statement ;
+    repolex:scm.resolution_node ?res .
+  ?res ts-core:sourceFile ?file .
+  ?node ts-core:text ?module .
+}</code></pre>
+        </div>
+        <div class="card">
+            <h3 class="accent-yellow">Architecture Overview</h3>
+            <pre style="font-size: 0.5em; margin: 0.5em 0;"><code class="language-sparql">SELECT ?class ?method (COUNT(?call) as ?n)
+WHERE {
+  ?class a repolex:class_definition ;
+         ts-core:text ?name .
+  ?method a repolex:function_definition .
+  ?call repolex:lsp.call_site ?method .
+} GROUP BY ?class ?method</code></pre>
+        </div>
+        <div class="card">
+            <h3 class="accent-yellow">Cross-Repo Dependencies</h3>
+            <pre style="font-size: 0.5em; margin: 0.5em 0;"><code class="language-sparql">SELECT ?yourFunc ?libFunc ?lib
+WHERE {
+  GRAPH ?yourGraph {
+    ?call repolex:lsp.call_site ?libFunc .
+    ?call ts-core:sourceFile ?yourFunc . }
+  GRAPH ?libGraph {
+    ?libFunc a repolex:function_definition . }
+}</code></pre>
+        </div>
+    </div>
+</section>
+
+<!-- ============ SLIDE 17: DISTRIBUTION ============ -->
+<section data-background-color="#1e1e1e">
+    <h2>Distribution on a Budget: repolex-forx</h2>
+    <p>No servers. No cloud compute bills. Just <span class="accent">GitHub</span>.</p>
+    <div style="text-align: center; margin: 0.3em 0;">
+        <svg viewBox="0 0 750 180" width="620" style="font-family: monospace;">
+            <!-- Step 1 -->
+            <rect x="20" y="50" width="140" height="70" rx="6" fill="rgba(78,201,176,0.15)" stroke="#4ec9b0"/>
+            <text x="90" y="78" text-anchor="middle" fill="#4ec9b0" font-size="12">GitHub Action</text>
+            <text x="90" y="96" text-anchor="middle" fill="#888" font-size="10">triggered on push</text>
+            <!-- Arrow -->
+            <text x="185" y="88" text-anchor="middle" fill="#888" font-size="16">&rarr;</text>
+            <!-- Step 2 -->
+            <rect x="210" y="50" width="140" height="70" rx="6" fill="rgba(86,156,214,0.15)" stroke="#569cd6"/>
+            <text x="280" y="75" text-anchor="middle" fill="#569cd6" font-size="12">repolex parse</text>
+            <text x="280" y="93" text-anchor="middle" fill="#888" font-size="10">incremental</text>
+            <text x="280" y="107" text-anchor="middle" fill="#888" font-size="10">content-addressed</text>
+            <!-- Arrow -->
+            <text x="375" y="88" text-anchor="middle" fill="#888" font-size="16">&rarr;</text>
+            <!-- Step 3 -->
+            <rect x="400" y="50" width="140" height="70" rx="6" fill="rgba(220,220,170,0.15)" stroke="#dcdcaa"/>
+            <text x="470" y="75" text-anchor="middle" fill="#dcdcaa" font-size="12">.nq.gz files</text>
+            <text x="470" y="93" text-anchor="middle" fill="#888" font-size="10">committed to repo</text>
+            <text x="470" y="107" text-anchor="middle" fill="#888" font-size="10">or GitHub Release</text>
+            <!-- Arrow -->
+            <text x="565" y="88" text-anchor="middle" fill="#888" font-size="16">&rarr;</text>
+            <!-- Step 4 -->
+            <rect x="590" y="50" width="140" height="70" rx="6" fill="rgba(197,134,192,0.15)" stroke="#c586c0"/>
+            <text x="660" y="75" text-anchor="middle" fill="#c586c0" font-size="12">git clone</text>
+            <text x="660" y="93" text-anchor="middle" fill="#888" font-size="10">or git pull</text>
+            <text x="660" y="107" text-anchor="middle" fill="#888" font-size="10">instant graphs</text>
+            <!-- Cost -->
+            <text x="375" y="160" text-anchor="middle" fill="#4ec9b0" font-size="14">Infrastructure cost: $0</text>
+        </svg>
+    </div>
+    <div style="background: rgba(78,201,176,0.08); border: 1px solid rgba(78,201,176,0.3); border-radius: 8px; padding: 0.3em 0.6em; margin-top: 0.3em;">
+        <h3 style="color: #4ec9b0; font-size: 0.65em; margin: 0;">Did you know? If your repos and org are public:</h3>
+        <ul style="font-size: 0.45em; padding-left: 1em; list-style: disc; line-height: 1.6; margin-top: 0.2em;">
+            <li>Up to <strong>20 GitHub Actions running at once</strong></li>
+            <li>That's 20 fast servers, running 24/7 (comparable to parsing on M2 Ultra locally)</li>
+            <li>Release assets up to 2GB each, 100MB per repo file</li>
+            <li>Up to <strong>100,000 repos per org</strong></li>
+            <li>This is enough to parse all of open source</li>
+        </ul>
+    </div>
+</section>
+
+<!-- ============ SLIDE 18: ASIMOV INTEGRATION ============ -->
+<section data-background-color="#1e1e1e">
+    <h2>ASIMOV Integration</h2>
+    <p>Repolex fits into ASIMOV as a <span class="accent">perception layer</span>&mdash;structured knowledge that feeds into ASIMOV's intelligence architecture.</p>
+    <div style="text-align: center; margin: 0.3em 0;">
+        <svg viewBox="0 0 600 250" width="480" style="font-family: monospace;">
+            <!-- ASIMOV layers -->
+            <rect x="150" y="10" width="300" height="45" rx="6" fill="rgba(197,134,192,0.15)" stroke="#c586c0"/>
+            <text x="300" y="37" text-anchor="middle" fill="#c586c0" font-size="13">Reasoning</text>
+            <rect x="150" y="65" width="300" height="45" rx="6" fill="rgba(86,156,214,0.15)" stroke="#569cd6"/>
+            <text x="300" y="92" text-anchor="middle" fill="#569cd6" font-size="13">Memory &amp; Identity</text>
+            <rect x="150" y="120" width="300" height="45" rx="6" fill="rgba(220,220,170,0.15)" stroke="#dcdcaa"/>
+            <text x="300" y="147" text-anchor="middle" fill="#dcdcaa" font-size="13">Knowledge Graphs</text>
+            <!-- Repolex box -->
+            <rect x="130" y="185" width="340" height="55" rx="8" fill="rgba(78,201,176,0.15)" stroke="#4ec9b0" stroke-width="2"/>
+            <text x="300" y="210" text-anchor="middle" fill="#4ec9b0" font-size="14" font-weight="bold">Repolex &mdash; Perception Layer</text>
+            <text x="300" y="228" text-anchor="middle" fill="#888" font-size="11">AST + LSP + Dataflow + CFG</text>
+            <!-- Arrow up -->
+            <line x1="300" y1="185" x2="300" y2="165" stroke="#4ec9b0" stroke-width="2"/>
+            <polygon points="295,167 300,160 305,167" fill="#4ec9b0"/>
+            <!-- Labels -->
+            <text x="30" y="37" text-anchor="start" fill="#888" font-size="10">ASIMOV</text>
+            <text x="30" y="55" text-anchor="start" fill="#888" font-size="10">layers</text>
+        </svg>
+    </div>
+    <p>Verifiable, local-first knowledge. No cloud dependency. The graphs carry provenance&mdash;you can trace every triple back to a specific commit, file, and line.</p>
+</section>
+
+<!-- ============ SLIDE 19: WHERE WE ARE ============ -->
+<section data-background-color="#1e1e1e">
+    <h2>Where We Are</h2>
+    <div class="timeline">
+        <div class="timeline-item done">
+            <p><span class="accent">Done</span></p>
+            <p class="dim" style="font-size: 0.6em;">Tree-sitter parsing for 173 languages &bull; Ontology-driven development &bull; Content-addressed blob storage &bull; Git history graphs &bull; RDFS cross-language reasoning &bull; lexq query tool with JSON-LD compaction &bull; SCM query capture &bull; LSP integration (11 languages via multilspy) &bull; Dataflow analysis &bull; Control flow graphs &bull; Slimmer AST graphs</p>
+        </div>
+        <div class="timeline-item wip">
+            <p><span class="accent-yellow">In Progress</span></p>
+            <p class="dim" style="font-size: 0.6em;">LLM query ergonomics &bull; Premade CONSTRUCT queries &bull; repolex-forx GitHub Actions pipeline fine-tuning &bull; ASIMOV module integration</p>
+        </div>
+        <div class="timeline-item next">
+            <p><span class="dim">Next</span></p>
+            <p class="dim" style="font-size: 0.6em;">Public-facing graph registry &bull; Parse 1,000 open source repos &bull; AI training set publication</p>
+        </div>
+    </div>
+</section>
+
+<!-- ============ SLIDE 20: THE BIGGER VISION ============ -->
+<section data-background-color="#1e1e1e">
+    <h2>Beyond Code</h2>
+    <p>We've built something that turns Git repositories into composable knowledge graphs.</p>
+    <p>But Git repos aren't just code.</p>
+    <div class="columns" style="font-size: 0.65em;">
+        <div class="col">
+            <p><span class="accent">Documentation</span> repos</p>
+            <p><span class="accent-blue">Config</span> repos (IaC, K8s)</p>
+            <p><span class="accent-purple">Data</span> repos</p>
+        </div>
+        <div class="col">
+            <p><span class="accent-yellow">Research</span> paper repos</p>
+            <p><span class="accent-orange">Legal</span> document repos</p>
+            <p><span class="dim">Anything versioned in Git</span></p>
+        </div>
+    </div>
+    <div class="thought-bubble">
+        Git repos as context graphs. Pre-parsed, composable, queryable. A public knowledge layer for AI.
+    </div>
+</section>
+
+<!-- ============ SLIDE 21: CLOSING ============ -->
+<section class="center-slide" data-background-color="#1e1e1e">
+    <h1>repolex.ai</h1>
+    <p style="font-size: 0.65em;">
+        <span class="accent">github.com/repolex-ai</span>
+    </p>
+    <p style="font-size: 0.6em; color: var(--dim); margin-top: 0.8em;">
+        Rob Kunkle
+    </p>
+    <p style="font-size: 0.5em; margin-top: 0.2em;">
+        x/twitter: <a href="https://twitter.com/lux" style="color: var(--green); text-decoration: none;">@lux</a>
+        <br>
+        linkedin: <a href="https://www.linkedin.com/in/robkunkle/" style="color: var(--blue); text-decoration: none;">linkedin.com/in/robkunkle</a>
+        <br>
+        <span style="color: var(--dim);">rob.kunkle@gmail.com</span>
+    </p>
+    <p class="dim" style="font-size: 0.55em; margin-top: 1em;">
+        <span class="tag tag-green">RDF</span>
+        <span class="tag tag-blue">SPARQL</span>
+        <span class="tag tag-purple">tree-sitter</span>
+        <span class="tag tag-yellow">knowledge graphs</span>
+    </p>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
+<script>
+Reveal.initialize({
+    hash: true,
+    slideNumber: true,
+    transition: 'fade',
+    transitionSpeed: 'fast',
+    width: 1200,
+    height: 700,
+    margin: 0.08,
+    center: false,
+    plugins: [ RevealHighlight ]
+});
+</script>
+</body>
+</html>
