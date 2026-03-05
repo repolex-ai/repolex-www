@@ -95,10 +95,6 @@
     <div class="thought-bubble">
         "I need a tool that lets an agent actually <em>understand</em> a codebase&mdash;not just grep through it."
     </div>
-    <p><span class="accent">1 week.</span> Claude + Python. Built a parser that turned Python repos into RDF graphs, queryable with SPARQL.</p>
-    <div style="text-align: center; font-size: 0.6em; color: var(--dim); margin-top: 0.5em;">
-        <code>.py files</code> &rarr; <code>Python AST + inspect</code> &rarr; <code>RDF triples</code> &rarr; <code>SPARQL queries</code>
-    </div>
 </section>
 
 <!-- ============ SLIDE 3: HOW AGENTS SEE CODE ============ -->
@@ -133,14 +129,46 @@
     <p class="dim" style="font-size: 0.55em;">Markdown, grep, glob, regex&mdash;these are approximations. Graphs are the actual structure.</p>
 </section>
 
+<!-- ============ SLIDE 3b: SO WE BUILT IT ============ -->
+<section data-background-color="#1e1e1e">
+    <h2>So we built it...</h2>
+    <p><span class="accent">1 week.</span> Claude + Python.</p>
+    <p>We built a parser that turned Python repos into RDF graphs, queryable with SPARQL.</p>
+    <div style="text-align: center; margin: 0.5em 0;">
+        <svg viewBox="0 0 700 80" width="580" style="font-family: monospace;">
+            <!-- .py files -->
+            <rect x="10" y="15" width="120" height="45" rx="6" fill="rgba(78,201,176,0.15)" stroke="#4ec9b0" stroke-width="1.5"/>
+            <text x="70" y="43" text-anchor="middle" fill="#4ec9b0" font-size="13">.py files</text>
+            <!-- Arrow -->
+            <line x1="135" y1="37" x2="175" y2="37" stroke="#888" stroke-width="1.5"/>
+            <polygon points="175,32 185,37 175,42" fill="#888"/>
+            <!-- Python AST + inspect -->
+            <rect x="190" y="15" width="160" height="45" rx="6" fill="rgba(86,156,214,0.15)" stroke="#569cd6" stroke-width="1.5"/>
+            <text x="270" y="43" text-anchor="middle" fill="#569cd6" font-size="12">Python AST + inspect</text>
+            <!-- Arrow -->
+            <line x1="355" y1="37" x2="395" y2="37" stroke="#888" stroke-width="1.5"/>
+            <polygon points="395,32 405,37 395,42" fill="#888"/>
+            <!-- RDF triples -->
+            <rect x="410" y="15" width="120" height="45" rx="6" fill="rgba(220,220,170,0.15)" stroke="#dcdcaa" stroke-width="1.5"/>
+            <text x="470" y="43" text-anchor="middle" fill="#dcdcaa" font-size="13">RDF triples</text>
+            <!-- Arrow -->
+            <line x1="535" y1="37" x2="575" y2="37" stroke="#888" stroke-width="1.5"/>
+            <polygon points="575,32 585,37 575,42" fill="#888"/>
+            <!-- SPARQL queries -->
+            <rect x="590" y="15" width="100" height="45" rx="6" fill="rgba(197,134,192,0.15)" stroke="#c586c0" stroke-width="1.5"/>
+            <text x="640" y="43" text-anchor="middle" fill="#c586c0" font-size="12">SPARQL</text>
+        </svg>
+    </div>
+</section>
+
 <!-- ============ SLIDE 4: IT WORKED ============ -->
 <section data-background-color="#1e1e1e">
     <h2>It Worked!</h2>
     <pre><code class="language-sparql">SELECT ?func ?name ?startRow
 WHERE {
   ?func a python:function_definition ;
-        ts-core:text ?name ;
-        ts-core:startRow ?startRow .
+        python:text ?name ;
+        python:startRow ?startRow .
 }
 ORDER BY ?startRow</code></pre>
     <p>An agent could ask structured questions about code and get precise answers. No hallucination. No guessing file locations.</p>
@@ -173,7 +201,7 @@ ORDER BY ?startRow</code></pre>
 
 <!-- ============ SLIDE 4: THE DAN STORY ============ -->
 <section class="center-slide" data-background-color="#1e1e1e">
-    <p style="font-size: 1.2em; margin-top: 2em;">Asked my friend Dan to try it...</p>
+    <p style="font-size: 1.0em; margin-top: 2em;">I even asked my friend Dan to try it ...</p>
 </section>
 
 <!-- ============ SLIDE 4b: THE RUBY PROBLEM ============ -->
@@ -184,7 +212,7 @@ ORDER BY ?startRow</code></pre>
 
 <!-- ============ SLIDE 5: THE PROBLEM STATEMENT ============ -->
 <section data-background-color="#1e1e1e">
-    <h2>The Problem</h2>
+    <h2>The Journey Begins</h2>
     <p>I knew this was a powerful idea. Store codebases as RDF, give agents SPARQL, and they get clear vision of the full repo.</p>
     <p>But how could I make this readily available to <span class="accent">everyone</span>?</p>
     <p>Not just Python. Not just my repos. A universal code intelligence layer that any agent could use against any codebase, regardless of the language.</p>
@@ -582,6 +610,7 @@ WHERE {
             <li>This is enough to parse all of open source</li>
         </ul>
     </div>
+    <p style="font-size: 0.5em; margin-top: 0.3em;"><a href="https://github.com/orgs/repolex-forx/repositories" style="color: var(--blue); text-decoration: none;">github.com/orgs/repolex-forx/repositories</a></p>
 </section>
 
 <!-- ============ SLIDE 18: ASIMOV INTEGRATION ============ -->
