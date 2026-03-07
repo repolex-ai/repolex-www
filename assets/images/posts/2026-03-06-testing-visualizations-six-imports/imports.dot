@@ -1,0 +1,86 @@
+digraph six_imports {
+  rankdir=LR;
+  node [shape=box, style=rounded, fontname="Arial"];
+  edge [color="#666666"];
+
+  // Source files
+  "documentation/conf.py" [label="documentation/conf.py", fillcolor="#E3F2FD", style="rounded,filled"];
+  "setup.py" [label="setup.py", fillcolor="#E3F2FD", style="rounded,filled"];
+  "six.py" [label="six.py", fillcolor="#E3F2FD", style="rounded,filled"];
+  "test_six.py" [label="test_six.py", fillcolor="#E3F2FD", style="rounded,filled"];
+
+  // Internal modules (six)
+  "six" [fillcolor="#C8E6C9", style="rounded,filled"];
+  "six.moves" [fillcolor="#C8E6C9", style="rounded,filled"];
+  "six.moves.configparser" [fillcolor="#C8E6C9", style="rounded,filled"];
+  "six.moves.queue" [fillcolor="#C8E6C9", style="rounded,filled"];
+  "six.moves.urllib.parse" [fillcolor="#C8E6C9", style="rounded,filled"];
+  "six.moves.urllib_parse" [fillcolor="#C8E6C9", style="rounded,filled"];
+
+  // External modules
+  "StringIO" [fillcolor="#F5F5F5", style="rounded,filled"];
+  "_tkinter" [fillcolor="#F5F5F5", style="rounded,filled"];
+  "abc" [fillcolor="#F5F5F5", style="rounded,filled"];
+  "dbm" [fillcolor="#F5F5F5", style="rounded,filled"];
+  "dbm.gnu" [fillcolor="#F5F5F5", style="rounded,filled"];
+  "dbm.ndbm" [fillcolor="#F5F5F5", style="rounded,filled"];
+  "distutils.core" [fillcolor="#F5F5F5", style="rounded,filled"];
+  "functools" [fillcolor="#F5F5F5", style="rounded,filled"];
+  "gdbm" [fillcolor="#F5F5F5", style="rounded,filled"];
+  "importlib.util" [fillcolor="#F5F5F5", style="rounded,filled"];
+  "io" [fillcolor="#F5F5F5", style="rounded,filled"];
+  "itertools" [fillcolor="#F5F5F5", style="rounded,filled"];
+  "logging" [fillcolor="#F5F5F5", style="rounded,filled"];
+  "operator" [fillcolor="#F5F5F5", style="rounded,filled"];
+  "os" [fillcolor="#F5F5F5", style="rounded,filled"];
+  "pytest" [fillcolor="#F5F5F5", style="rounded,filled"];
+  "setuptools" [fillcolor="#F5F5F5", style="rounded,filled"];
+  "struct" [fillcolor="#F5F5F5", style="rounded,filled"];
+  "sys" [fillcolor="#F5F5F5", style="rounded,filled"];
+  "types" [fillcolor="#F5F5F5", style="rounded,filled"];
+  "typing" [fillcolor="#F5F5F5", style="rounded,filled"];
+  "unittest" [fillcolor="#F5F5F5", style="rounded,filled"];
+
+  // Import relationships
+  "documentation/conf.py" -> "os";
+  "documentation/conf.py" -> "six";
+  "documentation/conf.py" -> "sys";
+  "setup.py" -> "distutils.core";
+  "setup.py" -> "setuptools";
+  "setup.py" -> "six";
+  "six.py" -> "StringIO";
+  "six.py" -> "functools";
+  "six.py" -> "importlib.util";
+  "six.py" -> "io";
+  "six.py" -> "itertools";
+  "six.py" -> "operator";
+  "six.py" -> "struct";
+  "six.py" -> "sys";
+  "six.py" -> "types";
+  "test_six.py" -> "_tkinter";
+  "test_six.py" -> "abc";
+  "test_six.py" -> "dbm";
+  "test_six.py" -> "dbm.gnu";
+  "test_six.py" -> "dbm.ndbm";
+  "test_six.py" -> "gdbm";
+  "test_six.py" -> "logging";
+  "test_six.py" -> "operator";
+  "test_six.py" -> "pytest";
+  "test_six.py" -> "six";
+  "test_six.py" -> "six";
+  "test_six.py" -> "six.moves";
+  "test_six.py" -> "six.moves";
+  "test_six.py" -> "six.moves";
+  "test_six.py" -> "six.moves";
+  "test_six.py" -> "six.moves";
+  "test_six.py" -> "six.moves";
+  "test_six.py" -> "six.moves";
+  "test_six.py" -> "six.moves.configparser";
+  "test_six.py" -> "six.moves.queue";
+  "test_six.py" -> "six.moves.urllib.parse";
+  "test_six.py" -> "six.moves.urllib_parse";
+  "test_six.py" -> "sys";
+  "test_six.py" -> "types";
+  "test_six.py" -> "typing";
+  "test_six.py" -> "unittest";
+}

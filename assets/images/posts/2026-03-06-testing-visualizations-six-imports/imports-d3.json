@@ -1,0 +1,403 @@
+{
+  "nodes": [
+    {
+      "id": "setup.py",
+      "name": "setup.py",
+      "type": "file",
+      "group": 1
+    },
+    {
+      "id": "setuptools",
+      "name": "setuptools",
+      "type": "module",
+      "group": 3
+    },
+    {
+      "id": "distutils.core",
+      "name": "distutils.core",
+      "type": "module",
+      "group": 3
+    },
+    {
+      "id": "six",
+      "name": "six",
+      "type": "module",
+      "group": 2
+    },
+    {
+      "id": "test_six.py",
+      "name": "test_six.py",
+      "type": "file",
+      "group": 1
+    },
+    {
+      "id": "six.moves.configparser",
+      "name": "six.moves.configparser",
+      "type": "module",
+      "group": 2
+    },
+    {
+      "id": "six.moves.queue",
+      "name": "six.moves.queue",
+      "type": "module",
+      "group": 2
+    },
+    {
+      "id": "_tkinter",
+      "name": "_tkinter",
+      "type": "module",
+      "group": 3
+    },
+    {
+      "id": "abc",
+      "name": "abc",
+      "type": "module",
+      "group": 3
+    },
+    {
+      "id": "dbm",
+      "name": "dbm",
+      "type": "module",
+      "group": 3
+    },
+    {
+      "id": "dbm.gnu",
+      "name": "dbm.gnu",
+      "type": "module",
+      "group": 3
+    },
+    {
+      "id": "dbm.ndbm",
+      "name": "dbm.ndbm",
+      "type": "module",
+      "group": 3
+    },
+    {
+      "id": "six.moves",
+      "name": "six.moves",
+      "type": "module",
+      "group": 2
+    },
+    {
+      "id": "gdbm",
+      "name": "gdbm",
+      "type": "module",
+      "group": 3
+    },
+    {
+      "id": "logging",
+      "name": "logging",
+      "type": "module",
+      "group": 3
+    },
+    {
+      "id": "operator",
+      "name": "operator",
+      "type": "module",
+      "group": 3
+    },
+    {
+      "id": "pytest",
+      "name": "pytest",
+      "type": "module",
+      "group": 3
+    },
+    {
+      "id": "sys",
+      "name": "sys",
+      "type": "module",
+      "group": 3
+    },
+    {
+      "id": "types",
+      "name": "types",
+      "type": "module",
+      "group": 3
+    },
+    {
+      "id": "typing",
+      "name": "typing",
+      "type": "module",
+      "group": 3
+    },
+    {
+      "id": "unittest",
+      "name": "unittest",
+      "type": "module",
+      "group": 3
+    },
+    {
+      "id": "six.moves.urllib.parse",
+      "name": "six.moves.urllib.parse",
+      "type": "module",
+      "group": 2
+    },
+    {
+      "id": "six.moves.urllib_parse",
+      "name": "six.moves.urllib_parse",
+      "type": "module",
+      "group": 2
+    },
+    {
+      "id": "six.py",
+      "name": "six.py",
+      "type": "file",
+      "group": 1
+    },
+    {
+      "id": "StringIO",
+      "name": "StringIO",
+      "type": "module",
+      "group": 3
+    },
+    {
+      "id": "functools",
+      "name": "functools",
+      "type": "module",
+      "group": 3
+    },
+    {
+      "id": "io",
+      "name": "io",
+      "type": "module",
+      "group": 3
+    },
+    {
+      "id": "itertools",
+      "name": "itertools",
+      "type": "module",
+      "group": 3
+    },
+    {
+      "id": "importlib.util",
+      "name": "importlib.util",
+      "type": "module",
+      "group": 3
+    },
+    {
+      "id": "struct",
+      "name": "struct",
+      "type": "module",
+      "group": 3
+    },
+    {
+      "id": "documentation/conf.py",
+      "name": "documentation/conf.py",
+      "type": "file",
+      "group": 1
+    },
+    {
+      "id": "os",
+      "name": "os",
+      "type": "module",
+      "group": 3
+    }
+  ],
+  "links": [
+    {
+      "source": "setup.py",
+      "target": "setuptools",
+      "value": 1
+    },
+    {
+      "source": "setup.py",
+      "target": "distutils.core",
+      "value": 1
+    },
+    {
+      "source": "setup.py",
+      "target": "six",
+      "value": 1
+    },
+    {
+      "source": "test_six.py",
+      "target": "six.moves.configparser",
+      "value": 1
+    },
+    {
+      "source": "test_six.py",
+      "target": "six.moves.queue",
+      "value": 1
+    },
+    {
+      "source": "test_six.py",
+      "target": "_tkinter",
+      "value": 1
+    },
+    {
+      "source": "test_six.py",
+      "target": "abc",
+      "value": 1
+    },
+    {
+      "source": "test_six.py",
+      "target": "dbm",
+      "value": 1
+    },
+    {
+      "source": "test_six.py",
+      "target": "dbm.gnu",
+      "value": 1
+    },
+    {
+      "source": "test_six.py",
+      "target": "dbm.ndbm",
+      "value": 1
+    },
+    {
+      "source": "test_six.py",
+      "target": "six.moves",
+      "value": 1
+    },
+    {
+      "source": "test_six.py",
+      "target": "six.moves",
+      "value": 1
+    },
+    {
+      "source": "test_six.py",
+      "target": "gdbm",
+      "value": 1
+    },
+    {
+      "source": "test_six.py",
+      "target": "six.moves",
+      "value": 1
+    },
+    {
+      "source": "test_six.py",
+      "target": "logging",
+      "value": 1
+    },
+    {
+      "source": "test_six.py",
+      "target": "six.moves",
+      "value": 1
+    },
+    {
+      "source": "test_six.py",
+      "target": "six",
+      "value": 1
+    },
+    {
+      "source": "test_six.py",
+      "target": "operator",
+      "value": 1
+    },
+    {
+      "source": "test_six.py",
+      "target": "pytest",
+      "value": 1
+    },
+    {
+      "source": "test_six.py",
+      "target": "six",
+      "value": 1
+    },
+    {
+      "source": "test_six.py",
+      "target": "six.moves",
+      "value": 1
+    },
+    {
+      "source": "test_six.py",
+      "target": "sys",
+      "value": 1
+    },
+    {
+      "source": "test_six.py",
+      "target": "types",
+      "value": 1
+    },
+    {
+      "source": "test_six.py",
+      "target": "typing",
+      "value": 1
+    },
+    {
+      "source": "test_six.py",
+      "target": "unittest",
+      "value": 1
+    },
+    {
+      "source": "test_six.py",
+      "target": "six.moves.urllib.parse",
+      "value": 1
+    },
+    {
+      "source": "test_six.py",
+      "target": "six.moves.urllib_parse",
+      "value": 1
+    },
+    {
+      "source": "test_six.py",
+      "target": "six.moves",
+      "value": 1
+    },
+    {
+      "source": "test_six.py",
+      "target": "six.moves",
+      "value": 1
+    },
+    {
+      "source": "six.py",
+      "target": "StringIO",
+      "value": 1
+    },
+    {
+      "source": "six.py",
+      "target": "functools",
+      "value": 1
+    },
+    {
+      "source": "six.py",
+      "target": "io",
+      "value": 1
+    },
+    {
+      "source": "six.py",
+      "target": "itertools",
+      "value": 1
+    },
+    {
+      "source": "six.py",
+      "target": "operator",
+      "value": 1
+    },
+    {
+      "source": "six.py",
+      "target": "importlib.util",
+      "value": 1
+    },
+    {
+      "source": "six.py",
+      "target": "struct",
+      "value": 1
+    },
+    {
+      "source": "six.py",
+      "target": "sys",
+      "value": 1
+    },
+    {
+      "source": "six.py",
+      "target": "types",
+      "value": 1
+    },
+    {
+      "source": "documentation/conf.py",
+      "target": "six",
+      "value": 1
+    },
+    {
+      "source": "documentation/conf.py",
+      "target": "os",
+      "value": 1
+    },
+    {
+      "source": "documentation/conf.py",
+      "target": "sys",
+      "value": 1
+    }
+  ]
+}
