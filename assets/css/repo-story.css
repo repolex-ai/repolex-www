@@ -1,0 +1,407 @@
+/* ============================================
+   Repo Stories — literary layout for repolex.ai
+   ============================================ */
+
+/* Reset the default body constraints */
+body.repo-story-layout {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    background: #faf8f4;
+    color: #1a1a1a;
+}
+
+/* --- Navigation --- */
+
+.story-nav {
+    padding: 1.5rem 2rem;
+    font-family: 'American Typewriter', 'Courier New', monospace;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.story-nav a {
+    color: #666;
+    text-decoration: none;
+}
+
+.story-nav a:hover {
+    color: #1a1a1a;
+    text-decoration: underline;
+}
+
+.story-nav .nav-sep {
+    color: #ccc;
+    margin: 0 0.5rem;
+}
+
+/* --- Article container --- */
+
+.story {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 2rem 2rem 4rem 2rem;
+}
+
+/* --- Header / Title Block --- */
+
+.story-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-bottom: 1rem;
+}
+
+.story-number {
+    font-family: 'American Typewriter', 'Courier New', monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #999;
+    margin-bottom: 1rem;
+}
+
+.story-ornament {
+    font-size: 1.4rem;
+    color: #bbb;
+    margin: 1rem 0;
+    line-height: 1;
+}
+
+.story-header h1 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 2.6rem;
+    font-weight: normal;
+    font-style: italic;
+    line-height: 1.2;
+    margin: 0.5rem 0;
+    border-bottom: none;
+    padding-bottom: 0;
+    color: #1a1a1a;
+}
+
+.story-subtitle {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: #666;
+    margin: 0.75rem 0;
+    line-height: 1.5;
+}
+
+.story-byline {
+    font-family: 'American Typewriter', 'Courier New', monospace;
+    font-size: 0.85rem;
+    color: #888;
+    margin-top: 1.5rem;
+    letter-spacing: 0.05em;
+}
+
+.story-byline a {
+    color: #555;
+}
+
+.story-repo {
+    font-family: 'Courier New', monospace;
+    font-size: 0.8rem;
+    color: #999;
+    margin-top: 0.5rem;
+}
+
+.story-repo a {
+    color: #999;
+}
+
+/* --- Epigraph --- */
+
+.story-epigraph {
+    margin: 2rem auto 3rem auto;
+    max-width: 500px;
+}
+
+.story-epigraph blockquote {
+    border-left: none;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1.05rem;
+    font-style: italic;
+    color: #555;
+    padding: 0;
+    margin: 0;
+    line-height: 1.7;
+}
+
+.story-epigraph cite {
+    display: block;
+    font-size: 0.85rem;
+    color: #999;
+    margin-top: 0.75rem;
+    font-style: normal;
+    letter-spacing: 0.05em;
+}
+
+/* --- Story Body --- */
+
+.story-body {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1.1rem;
+    line-height: 1.85;
+    color: #2a2a2a;
+}
+
+/* Drop cap on first paragraph */
+.story-body > p:first-of-type::first-letter {
+    font-family: Georgia, 'Times New Roman', serif;
+    float: left;
+    font-size: 5.2rem;
+    line-height: 0.75;
+    padding-right: 0.12em;
+    padding-top: 0.1em;
+    font-weight: bold;
+    color: #1a1a1a;
+}
+
+.story-body > p:first-of-type {
+    margin-top: 0;
+}
+
+.story-body p {
+    margin-bottom: 1.4rem;
+    text-align: justify;
+    hyphens: auto;
+}
+
+/* --- Headings as chapter markers --- */
+
+.story-body h2 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1.6rem;
+    font-weight: normal;
+    font-style: italic;
+    text-align: center;
+    margin: 3.5rem 0 0.5rem 0;
+    color: #1a1a1a;
+    border-bottom: none;
+}
+
+/* Decorative mark above h2 */
+.story-body h2::before {
+    content: '✦';
+    display: block;
+    font-size: 0.9rem;
+    color: #bbb;
+    margin-bottom: 0.75rem;
+    font-style: normal;
+}
+
+.story-body h3 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-style: italic;
+    margin: 2.5rem 0 0.75rem 0;
+    color: #333;
+}
+
+/* --- Horizontal rules as scene breaks --- */
+
+.story-body hr {
+    border: none;
+    text-align: center;
+    margin: 2.5rem 0;
+}
+
+.story-body hr::after {
+    content: '* \00a0\00a0 * \00a0\00a0 *';
+    color: #bbb;
+    font-size: 1rem;
+    letter-spacing: 0.3em;
+}
+
+/* --- Links --- */
+
+.story-body a {
+    color: #2a2a2a;
+    text-decoration: none;
+    border-bottom: 1px solid #ccc;
+    transition: border-color 0.2s;
+}
+
+.story-body a:hover {
+    border-bottom-color: #1a1a1a;
+}
+
+/* --- Blockquotes --- */
+
+.story-body blockquote {
+    border-left: 2px solid #ccc;
+    margin: 2rem 0 2rem 1rem;
+    padding: 0.5rem 0 0.5rem 1.5rem;
+    font-style: italic;
+    color: #555;
+}
+
+/* --- Code & pre --- */
+
+.story-body pre {
+    background: #f0ede6;
+    border: 1px solid #d5d0c4;
+    border-radius: 2px;
+    padding: 1.2rem;
+    font-size: 0.88rem;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+    line-height: 1.5;
+}
+
+.story-body code {
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+    background: #f0ede6;
+    padding: 0.15rem 0.35rem;
+    border-radius: 2px;
+}
+
+.story-body pre code {
+    background: none;
+    padding: 0;
+}
+
+/* --- Tables --- */
+
+.story-body table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    font-size: 0.95rem;
+}
+
+.story-body th {
+    font-family: 'American Typewriter', 'Courier New', monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-align: left;
+    padding: 0.6rem 0.8rem;
+    border-bottom: 2px solid #1a1a1a;
+    font-weight: normal;
+}
+
+.story-body td {
+    padding: 0.5rem 0.8rem;
+    border-bottom: 1px solid #ddd;
+    vertical-align: top;
+}
+
+.story-body tr:last-child td {
+    border-bottom: 1px solid #1a1a1a;
+}
+
+/* --- Lists --- */
+
+.story-body ul {
+    padding-left: 1.5rem;
+    margin: 1rem 0 1.5rem 0;
+}
+
+.story-body li {
+    margin-bottom: 0.5rem;
+}
+
+/* --- Strong / Em --- */
+
+.story-body strong {
+    font-weight: bold;
+    color: #1a1a1a;
+}
+
+.story-body em {
+    font-style: italic;
+}
+
+/* --- Images --- */
+
+.story-body img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 2rem auto;
+}
+
+/* --- Footer --- */
+
+.story-footer {
+    text-align: center;
+    margin-top: 4rem;
+    padding-top: 2rem;
+}
+
+.story-colophon {
+    max-width: 500px;
+    margin: 1.5rem auto;
+    font-family: 'American Typewriter', 'Courier New', monospace;
+    font-size: 0.8rem;
+    color: #888;
+    line-height: 1.6;
+}
+
+.colophon-heading {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #aaa;
+    margin-bottom: 0.5rem;
+}
+
+.story-colophon a {
+    color: #888;
+}
+
+.story-end-nav {
+    margin-top: 2rem;
+    font-family: 'American Typewriter', 'Courier New', monospace;
+    font-size: 0.85rem;
+}
+
+.story-end-nav a {
+    color: #666;
+    text-decoration: none;
+}
+
+.story-end-nav a:hover {
+    text-decoration: underline;
+}
+
+.story-end-nav .nav-sep {
+    color: #ccc;
+    margin: 0 0.75rem;
+}
+
+/* --- Responsive --- */
+
+@media (max-width: 768px) {
+    .story {
+        padding: 1.5rem 1.25rem 3rem 1.25rem;
+    }
+
+    .story-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .story-body {
+        font-size: 1rem;
+    }
+
+    .story-body > p:first-of-type::first-letter {
+        font-size: 4rem;
+    }
+
+    .story-body h2 {
+        font-size: 1.3rem;
+    }
+
+    .story-body p {
+        text-align: left;
+        hyphens: none;
+    }
+}

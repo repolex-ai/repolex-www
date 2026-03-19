@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if page.title %}{{ page.title }} - {% endif %}repolex.ai</title>
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/repo-story.css' | relative_url }}">
+</head>
+<body class="repo-story-layout">
+
+    <nav class="story-nav">
+        <a href="{{ '/' | relative_url }}">repolex.ai</a>
+        <span class="nav-sep">/</span>
+        <a href="{{ '/repo-stories/' | relative_url }}">Repo Stories</a>
+    </nav>
+
+    <article class="story">
+
+        <header class="story-header">
+            <p class="story-number">{{ page.story_number }}</p>
+            <div class="story-ornament">&#10086;</div>
+            <h1>{{ page.title }}</h1>
+            {% if page.subtitle %}
+            <p class="story-subtitle">{{ page.subtitle }}</p>
+            {% endif %}
+            <div class="story-ornament">&#10086;</div>
+            {% if page.authors %}
+            <p class="story-byline">
+                by
+                {% for author in page.authors %}
+                    <a href="{{ author.url }}">{{ author.name }}</a>{% unless forloop.last %} &amp; {% endunless %}
+                {% endfor %}
+            </p>
+            {% endif %}
+            {% if page.repository %}
+            <p class="story-repo">
+                <a href="{{ page.repository }}">{{ page.repository | remove: 'https://github.com/' }}</a>
+            </p>
+            {% endif %}
+        </header>
+
+        <div class="story-epigraph">
+            {% if page.epigraph %}
+            <blockquote>
+                <p>{{ page.epigraph }}</p>
+                {% if page.epigraph_attribution %}
+                <cite>— {{ page.epigraph_attribution }}</cite>
+                {% endif %}
+            </blockquote>
+            {% endif %}
+        </div>
+
+        <section class="story-body">
+            {{ content }}
+        </section>
+
+        <footer class="story-footer">
+            <div class="story-ornament">&#10086;</div>
+            <div class="story-colophon">
+                <p class="colophon-heading">Colophon</p>
+                <p>Every fact in this story was extracted from the <a href="https://repolex.ai">repolex</a> code knowledge graph using SPARQL queries. Every link is real. Every number is queryable.</p>
+            </div>
+            <div class="story-ornament">&#10086;</div>
+            <p class="story-end-nav">
+                <a href="{{ '/repo-stories/' | relative_url }}">&#8592; All Stories</a>
+                <span class="nav-sep">|</span>
+                <a href="{{ '/' | relative_url }}">Home</a>
+            </p>
+        </footer>
+
+    </article>
+
+</body>
+</html>

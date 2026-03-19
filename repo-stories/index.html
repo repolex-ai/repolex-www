@@ -1,0 +1,126 @@
+---
+layout: default
+title: Repo Stories
+---
+
+<style>
+    body {
+        background: #faf8f4;
+    }
+
+    .stories-header {
+        text-align: center;
+        margin: 2rem 0 3rem 0;
+    }
+
+    .stories-header h1 {
+        font-family: Georgia, 'Times New Roman', serif;
+        font-size: 2.8rem;
+        font-weight: normal;
+        font-style: italic;
+        border-bottom: none;
+        padding-bottom: 0;
+        margin-bottom: 0.5rem;
+    }
+
+    .stories-tagline {
+        font-size: 1rem;
+        color: #888;
+        font-style: italic;
+        font-family: Georgia, 'Times New Roman', serif;
+    }
+
+    .stories-ornament {
+        font-size: 1.4rem;
+        color: #bbb;
+        margin: 1.5rem 0;
+        text-align: center;
+    }
+
+    .stories-intro {
+        font-family: Georgia, 'Times New Roman', serif;
+        font-size: 1.05rem;
+        line-height: 1.7;
+        color: #444;
+        text-align: center;
+        max-width: 550px;
+        margin: 0 auto 3rem auto;
+    }
+
+    .story-card {
+        border-top: 1px solid #ddd;
+        padding: 2rem 0;
+    }
+
+    .story-card-number {
+        font-family: 'American Typewriter', 'Courier New', monospace;
+        font-size: 0.75rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: #aaa;
+        margin-bottom: 0.5rem;
+    }
+
+    .story-card h2 {
+        font-family: Georgia, 'Times New Roman', serif;
+        font-size: 1.6rem;
+        font-weight: normal;
+        font-style: italic;
+        margin: 0.25rem 0;
+    }
+
+    .story-card h2 a {
+        color: #1a1a1a;
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        transition: border-color 0.2s;
+    }
+
+    .story-card h2 a:hover {
+        border-bottom-color: #1a1a1a;
+    }
+
+    .story-card-subtitle {
+        font-family: Georgia, 'Times New Roman', serif;
+        font-size: 0.95rem;
+        color: #888;
+        font-style: italic;
+        margin: 0.25rem 0 0.75rem 0;
+    }
+
+    .story-card-meta {
+        font-family: 'American Typewriter', 'Courier New', monospace;
+        font-size: 0.8rem;
+        color: #999;
+    }
+
+    .story-card-meta a {
+        color: #999;
+    }
+</style>
+
+<div class="stories-header">
+    <h1>Repo Stories</h1>
+    <p class="stories-tagline">Code has stories. We query them.</p>
+</div>
+
+<div class="stories-ornament">&#10086;</div>
+
+<p class="stories-intro">
+    Every repository is a history — of people, decisions, and architecture.
+    These stories are extracted from the <a href="https://repolex.ai">repolex</a> knowledge graph
+    using SPARQL queries. Every fact is real. Every link is verifiable.
+</p>
+
+<div class="stories-ornament">&#10086;</div>
+
+<div class="story-card">
+    <p class="story-card-number">Repo Story No. 1</p>
+    <h2><a href="{{ '/repo-stories/lord-of-the-sdk' | relative_url }}">The Lord of the SDK</a></h2>
+    <p class="story-card-subtitle">A Code Intelligence Story of Anthropic's Claude Agent SDK</p>
+    <p class="story-card-meta">
+        March 19, 2026 &middot;
+        by <a href="https://github.com/spacegoatai">SpaceGoat</a> &amp;
+        <a href="https://github.com/goodlux">Rob Kunkle</a>
+    </p>
+</div>
