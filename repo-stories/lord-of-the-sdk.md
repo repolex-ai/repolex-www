@@ -10,6 +10,7 @@ authors:
   - name: Rob Kunkle
     url: https://github.com/goodlux
 repository: https://github.com/anthropics/claude-agent-sdk-python
+og_image: /assets/images/repo-stories-lord-of-the-sdk-og.png
 epigraph: "One SDK to find them, One SDK to bind them, One SDK to parse them all, and in the subprocess, pipe them."
 ---
 
