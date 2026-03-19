@@ -1,0 +1,1429 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix mermaid: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/mermaid/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+mermaid:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+mermaid:annotation a owl:Class ;
+    rdfs:label "annotation" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 371 .
+
+mermaid:arg_directive a owl:Class ;
+    rdfs:label "arg_directive" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 2 .
+
+mermaid:cardinality a owl:Class ;
+    rdfs:label "cardinality" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 118 .
+
+mermaid:class_annotation_line a owl:Class ;
+    rdfs:label "class_annotation_line" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 210 .
+
+mermaid:class_classifier_abstract a owl:Class ;
+    rdfs:label "class_classifier_abstract" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 372 .
+
+mermaid:class_classifier_static a owl:Class ;
+    rdfs:label "class_classifier_static" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 42 .
+
+mermaid:class_generics a owl:Class ;
+    rdfs:label "class_generics" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 204 .
+
+mermaid:class_label a owl:Class ;
+    rdfs:label "class_label" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 320 .
+
+mermaid:class_linetype_dotted a owl:Class ;
+    rdfs:label "class_linetype_dotted" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 319 .
+
+mermaid:class_linetype_solid a owl:Class ;
+    rdfs:label "class_linetype_solid" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 318 .
+
+mermaid:class_method_line a owl:Class ;
+    rdfs:label "class_method_line" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 209 .
+
+mermaid:class_name a owl:Class ;
+    rdfs:label "class_name" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 31,
+        202 .
+
+mermaid:class_name_body a owl:Class ;
+    rdfs:label "class_name_body" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 203 .
+
+mermaid:class_relation a owl:Class ;
+    rdfs:label "class_relation" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 205 .
+
+mermaid:class_reltype_aggregation a owl:Class ;
+    rdfs:label "class_reltype_aggregation" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 119 .
+
+mermaid:class_reltype_composition a owl:Class ;
+    rdfs:label "class_reltype_composition" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 316 .
+
+mermaid:class_reltype_dependency a owl:Class ;
+    rdfs:label "class_reltype_dependency" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 317 .
+
+mermaid:class_reltype_extension a owl:Class ;
+    rdfs:label "class_reltype_extension" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 315 .
+
+mermaid:class_stmt_annotation a owl:Class ;
+    rdfs:label "class_stmt_annotation" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 212 .
+
+mermaid:class_stmt_class a owl:Class ;
+    rdfs:label "class_stmt_class" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 208 .
+
+mermaid:class_stmt_method a owl:Class ;
+    rdfs:label "class_stmt_method" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 211 .
+
+mermaid:class_stmt_relation a owl:Class ;
+    rdfs:label "class_stmt_relation" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 201 .
+
+mermaid:class_style_name a owl:Class ;
+    rdfs:label "class_style_name" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 373 .
+
+mermaid:class_visibility_internal a owl:Class ;
+    rdfs:label "class_visibility_internal" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 374 .
+
+mermaid:class_visibility_private a owl:Class ;
+    rdfs:label "class_visibility_private" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 375 .
+
+mermaid:class_visibility_protected a owl:Class ;
+    rdfs:label "class_visibility_protected" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 38 .
+
+mermaid:class_visibility_public a owl:Class ;
+    rdfs:label "class_visibility_public" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 376 .
+
+mermaid:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 96 .
+
+mermaid:diagram_class a owl:Class ;
+    rdfs:label "diagram_class" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 199 .
+
+mermaid:diagram_er a owl:Class ;
+    rdfs:label "diagram_er" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 274 .
+
+mermaid:diagram_flow a owl:Class ;
+    rdfs:label "diagram_flow" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 241 .
+
+mermaid:diagram_gantt a owl:Class ;
+    rdfs:label "diagram_gantt" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 225 .
+
+mermaid:diagram_mindmap a owl:Class ;
+    rdfs:label "diagram_mindmap" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 290 .
+
+mermaid:diagram_pie a owl:Class ;
+    rdfs:label "diagram_pie" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 237 .
+
+mermaid:diagram_sequence a owl:Class ;
+    rdfs:label "diagram_sequence" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 174 .
+
+mermaid:diagram_state a owl:Class ;
+    rdfs:label "diagram_state" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 213 .
+
+mermaid:direction_bt a owl:Class ;
+    rdfs:label "direction_bt" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 305 .
+
+mermaid:direction_lr a owl:Class ;
+    rdfs:label "direction_lr" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 307 .
+
+mermaid:direction_rl a owl:Class ;
+    rdfs:label "direction_rl" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 306 .
+
+mermaid:direction_tb a owl:Class ;
+    rdfs:label "direction_tb" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 304 .
+
+mermaid:directive a owl:Class ;
+    rdfs:label "directive" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 172 .
+
+mermaid:dotted_arrow a owl:Class ;
+    rdfs:label "dotted_arrow" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 107 .
+
+mermaid:dotted_cross a owl:Class ;
+    rdfs:label "dotted_cross" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 111 .
+
+mermaid:dotted_open_arrow a owl:Class ;
+    rdfs:label "dotted_open_arrow" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 309 .
+
+mermaid:dotted_point a owl:Class ;
+    rdfs:label "dotted_point" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 112 .
+
+mermaid:er_attribute a owl:Class ;
+    rdfs:label "er_attribute" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 285 .
+
+mermaid:er_attribute_comment a owl:Class ;
+    rdfs:label "er_attribute_comment" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 289 .
+
+mermaid:er_attribute_key_type_fk a owl:Class ;
+    rdfs:label "er_attribute_key_type_fk" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 347 .
+
+mermaid:er_attribute_key_type_pk a owl:Class ;
+    rdfs:label "er_attribute_key_type_pk" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 346 .
+
+mermaid:er_attribute_name a owl:Class ;
+    rdfs:label "er_attribute_name" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 287 .
+
+mermaid:er_attribute_type a owl:Class ;
+    rdfs:label "er_attribute_type" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 286 .
+
+mermaid:er_cardinarity_one_or_more a owl:Class ;
+    rdfs:label "er_cardinarity_one_or_more" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 343 .
+
+mermaid:er_cardinarity_only_one a owl:Class ;
+    rdfs:label "er_cardinarity_only_one" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 165 .
+
+mermaid:er_cardinarity_zero_or_more a owl:Class ;
+    rdfs:label "er_cardinarity_zero_or_more" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 342 .
+
+mermaid:er_cardinarity_zero_or_one a owl:Class ;
+    rdfs:label "er_cardinarity_zero_or_one" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 341 .
+
+mermaid:er_entity_name a owl:Class ;
+    rdfs:label "er_entity_name" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 278 .
+
+mermaid:er_relation a owl:Class ;
+    rdfs:label "er_relation" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 279 .
+
+mermaid:er_reltype_identifying a owl:Class ;
+    rdfs:label "er_reltype_identifying" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 345 .
+
+mermaid:er_reltype_non_identifying a owl:Class ;
+    rdfs:label "er_reltype_non_identifying" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 344 .
+
+mermaid:er_role a owl:Class ;
+    rdfs:label "er_role" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 282 .
+
+mermaid:er_stmt_entity a owl:Class ;
+    rdfs:label "er_stmt_entity" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 276 .
+
+mermaid:er_stmt_entity_block a owl:Class ;
+    rdfs:label "er_stmt_entity_block" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 283 .
+
+mermaid:er_stmt_entity_block_inner a owl:Class ;
+    rdfs:label "er_stmt_entity_block_inner" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 284 .
+
+mermaid:er_stmt_entity_relation a owl:Class ;
+    rdfs:label "er_stmt_entity_relation" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 277 .
+
+mermaid:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+mermaid:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+mermaid:flow_arrow_text a owl:Class ;
+    rdfs:label "flow_arrow_text" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 251 .
+
+mermaid:flow_link_arrow a owl:Class ;
+    rdfs:label "flow_link_arrow" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 338 .
+
+mermaid:flow_link_arrow_start a owl:Class ;
+    rdfs:label "flow_link_arrow_start" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 339 .
+
+mermaid:flow_link_arrowtext a owl:Class ;
+    rdfs:label "flow_link_arrowtext" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 249 .
+
+mermaid:flow_link_middletext a owl:Class ;
+    rdfs:label "flow_link_middletext" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 250 .
+
+mermaid:flow_link_simplelink a owl:Class ;
+    rdfs:label "flow_link_simplelink" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 248 .
+
+mermaid:flow_node a owl:Class ;
+    rdfs:label "flow_node" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 246 .
+
+mermaid:flow_stmt_direction a owl:Class ;
+    rdfs:label "flow_stmt_direction" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 244 .
+
+mermaid:flow_stmt_subgraph a owl:Class ;
+    rdfs:label "flow_stmt_subgraph" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 271 .
+
+mermaid:flow_stmt_subgraph_inner a owl:Class ;
+    rdfs:label "flow_stmt_subgraph_inner" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 272 .
+
+mermaid:flow_stmt_vertice a owl:Class ;
+    rdfs:label "flow_stmt_vertice" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 245 .
+
+mermaid:flow_text_literal a owl:Class ;
+    rdfs:label "flow_text_literal" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 337 .
+
+mermaid:flow_text_quoted a owl:Class ;
+    rdfs:label "flow_text_quoted" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 151 .
+
+mermaid:flow_vertex a owl:Class ;
+    rdfs:label "flow_vertex" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 253 .
+
+mermaid:flow_vertex_circle a owl:Class ;
+    rdfs:label "flow_vertex_circle" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 256 .
+
+mermaid:flow_vertex_cylinder a owl:Class ;
+    rdfs:label "flow_vertex_cylinder" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 261 .
+
+mermaid:flow_vertex_diamond a owl:Class ;
+    rdfs:label "flow_vertex_diamond" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 263 .
+
+mermaid:flow_vertex_ellipse a owl:Class ;
+    rdfs:label "flow_vertex_ellipse" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 257 .
+
+mermaid:flow_vertex_hexagon a owl:Class ;
+    rdfs:label "flow_vertex_hexagon" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 264 .
+
+mermaid:flow_vertex_id a owl:Class ;
+    rdfs:label "flow_vertex_id" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 252 .
+
+mermaid:flow_vertex_inv_trapezoid a owl:Class ;
+    rdfs:label "flow_vertex_inv_trapezoid" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 267 .
+
+mermaid:flow_vertex_leanleft a owl:Class ;
+    rdfs:label "flow_vertex_leanleft" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 269 .
+
+mermaid:flow_vertex_leanright a owl:Class ;
+    rdfs:label "flow_vertex_leanright" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 268 .
+
+mermaid:flow_vertex_odd a owl:Class ;
+    rdfs:label "flow_vertex_odd" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 265 .
+
+mermaid:flow_vertex_rect a owl:Class ;
+    rdfs:label "flow_vertex_rect" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 260 .
+
+mermaid:flow_vertex_round a owl:Class ;
+    rdfs:label "flow_vertex_round" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 262 .
+
+mermaid:flow_vertex_square a owl:Class ;
+    rdfs:label "flow_vertex_square" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 255 .
+
+mermaid:flow_vertex_stadium a owl:Class ;
+    rdfs:label "flow_vertex_stadium" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 258 .
+
+mermaid:flow_vertex_subroutine a owl:Class ;
+    rdfs:label "flow_vertex_subroutine" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 259 .
+
+mermaid:flow_vertex_text a owl:Class ;
+    rdfs:label "flow_vertex_text" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 273 .
+
+mermaid:flow_vertex_trapezoid a owl:Class ;
+    rdfs:label "flow_vertex_trapezoid" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 266 .
+
+mermaid:flowchart_direction_bt a owl:Class ;
+    rdfs:label "flowchart_direction_bt" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 336 .
+
+mermaid:flowchart_direction_lr a owl:Class ;
+    rdfs:label "flowchart_direction_lr" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 333 .
+
+mermaid:flowchart_direction_rl a owl:Class ;
+    rdfs:label "flowchart_direction_rl" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 334 .
+
+mermaid:flowchart_direction_tb a owl:Class ;
+    rdfs:label "flowchart_direction_tb" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 335 .
+
+mermaid:gantt_axis_format a owl:Class ;
+    rdfs:label "gantt_axis_format" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 377 .
+
+mermaid:gantt_date_format a owl:Class ;
+    rdfs:label "gantt_date_format" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 329 .
+
+mermaid:gantt_end_dates a owl:Class ;
+    rdfs:label "gantt_end_dates" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 378 .
+
+mermaid:gantt_excludes a owl:Class ;
+    rdfs:label "gantt_excludes" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 379 .
+
+mermaid:gantt_includes a owl:Class ;
+    rdfs:label "gantt_includes" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 380 .
+
+mermaid:gantt_section a owl:Class ;
+    rdfs:label "gantt_section" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 381 .
+
+mermaid:gantt_stmt_axisformat a owl:Class ;
+    rdfs:label "gantt_stmt_axisformat" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 230 .
+
+mermaid:gantt_stmt_dateformat a owl:Class ;
+    rdfs:label "gantt_stmt_dateformat" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 227 .
+
+mermaid:gantt_stmt_excludes a owl:Class ;
+    rdfs:label "gantt_stmt_excludes" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 232 .
+
+mermaid:gantt_stmt_includes a owl:Class ;
+    rdfs:label "gantt_stmt_includes" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 231 .
+
+mermaid:gantt_stmt_inclusiveenddates a owl:Class ;
+    rdfs:label "gantt_stmt_inclusiveenddates" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 228 .
+
+mermaid:gantt_stmt_section a owl:Class ;
+    rdfs:label "gantt_stmt_section" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 235 .
+
+mermaid:gantt_stmt_task a owl:Class ;
+    rdfs:label "gantt_stmt_task" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 236 .
+
+mermaid:gantt_stmt_title a owl:Class ;
+    rdfs:label "gantt_stmt_title" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 234 .
+
+mermaid:gantt_stmt_todaymarker a owl:Class ;
+    rdfs:label "gantt_stmt_todaymarker" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 233 .
+
+mermaid:gantt_stmt_topaxis a owl:Class ;
+    rdfs:label "gantt_stmt_topaxis" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 229 .
+
+mermaid:gantt_task_data a owl:Class ;
+    rdfs:label "gantt_task_data" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 137 .
+
+mermaid:gantt_task_text a owl:Class ;
+    rdfs:label "gantt_task_text" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 330 .
+
+mermaid:gantt_title a owl:Class ;
+    rdfs:label "gantt_title" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 382 .
+
+mermaid:gantt_today_marker a owl:Class ;
+    rdfs:label "gantt_today_marker" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 383 .
+
+mermaid:gantt_top_axis a owl:Class ;
+    rdfs:label "gantt_top_axis" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 384 .
+
+mermaid:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+mermaid:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+mermaid:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+mermaid:md_text a owl:Class ;
+    rdfs:label "md_text" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 88 .
+
+mermaid:mmap_class a owl:Class ;
+    rdfs:label "mmap_class" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 302 .
+
+mermaid:mmap_icon a owl:Class ;
+    rdfs:label "mmap_icon" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 303 .
+
+mermaid:mmap_markdown a owl:Class ;
+    rdfs:label "mmap_markdown" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 293 .
+
+mermaid:mmap_node a owl:Class ;
+    rdfs:label "mmap_node" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 291 .
+
+mermaid:mmap_node_bang a owl:Class ;
+    rdfs:label "mmap_node_bang" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 300 .
+
+mermaid:mmap_node_circle a owl:Class ;
+    rdfs:label "mmap_node_circle" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 298 .
+
+mermaid:mmap_node_cloud a owl:Class ;
+    rdfs:label "mmap_node_cloud" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 299 .
+
+mermaid:mmap_node_content a owl:Class ;
+    rdfs:label "mmap_node_content" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 295 .
+
+mermaid:mmap_node_hexagon a owl:Class ;
+    rdfs:label "mmap_node_hexagon" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 301 .
+
+mermaid:mmap_node_id a owl:Class ;
+    rdfs:label "mmap_node_id" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 292 .
+
+mermaid:mmap_node_rounded a owl:Class ;
+    rdfs:label "mmap_node_rounded" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 297 .
+
+mermaid:mmap_node_square a owl:Class ;
+    rdfs:label "mmap_node_square" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 296 .
+
+mermaid:mmap_text a owl:Class ;
+    rdfs:label "mmap_text" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 294 .
+
+mermaid:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+mermaid:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+mermaid:note_content a owl:Class ;
+    rdfs:label "note_content" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 385 .
+
+mermaid:note_placement_left a owl:Class ;
+    rdfs:label "note_placement_left" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 313 .
+
+mermaid:note_placement_right a owl:Class ;
+    rdfs:label "note_placement_right" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 314 .
+
+mermaid:pie_label a owl:Class ;
+    rdfs:label "pie_label" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 332 .
+
+mermaid:pie_showdata a owl:Class ;
+    rdfs:label "pie_showdata" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 331 .
+
+mermaid:pie_stmt_element a owl:Class ;
+    rdfs:label "pie_stmt_element" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 240 .
+
+mermaid:pie_stmt_title a owl:Class ;
+    rdfs:label "pie_stmt_title" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 239 .
+
+mermaid:pie_title a owl:Class ;
+    rdfs:label "pie_title" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 139 .
+
+mermaid:pie_value a owl:Class ;
+    rdfs:label "pie_value" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 141 .
+
+mermaid:sequence_actor a owl:Class ;
+    rdfs:label "sequence_actor" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 179 .
+
+mermaid:sequence_alias a owl:Class ;
+    rdfs:label "sequence_alias" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 386 .
+
+mermaid:sequence_note_placement a owl:Class ;
+    rdfs:label "sequence_note_placement" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 191 .
+
+mermaid:sequence_signal_minus_sign a owl:Class ;
+    rdfs:label "sequence_signal_minus_sign" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 312 .
+
+mermaid:sequence_signal_plus_sign a owl:Class ;
+    rdfs:label "sequence_signal_plus_sign" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 311 .
+
+mermaid:sequence_signal_type a owl:Class ;
+    rdfs:label "sequence_signal_type" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 181 .
+
+mermaid:sequence_stmt_activate a owl:Class ;
+    rdfs:label "sequence_stmt_activate" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 184 .
+
+mermaid:sequence_stmt_actor a owl:Class ;
+    rdfs:label "sequence_stmt_actor" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 178 .
+
+mermaid:sequence_stmt_alt a owl:Class ;
+    rdfs:label "sequence_stmt_alt" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 197 .
+
+mermaid:sequence_stmt_alt_branch a owl:Class ;
+    rdfs:label "sequence_stmt_alt_branch" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 387 .
+
+mermaid:sequence_stmt_autonumber a owl:Class ;
+    rdfs:label "sequence_stmt_autonumber" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 183 .
+
+mermaid:sequence_stmt_deactivate a owl:Class ;
+    rdfs:label "sequence_stmt_deactivate" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 185 .
+
+mermaid:sequence_stmt_details a owl:Class ;
+    rdfs:label "sequence_stmt_details" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 190 .
+
+mermaid:sequence_stmt_link a owl:Class ;
+    rdfs:label "sequence_stmt_link" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 188 .
+
+mermaid:sequence_stmt_links a owl:Class ;
+    rdfs:label "sequence_stmt_links" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 187 .
+
+mermaid:sequence_stmt_loop a owl:Class ;
+    rdfs:label "sequence_stmt_loop" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 193 .
+
+mermaid:sequence_stmt_loop_inner a owl:Class ;
+    rdfs:label "sequence_stmt_loop_inner" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 388 .
+
+mermaid:sequence_stmt_note a owl:Class ;
+    rdfs:label "sequence_stmt_note" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 186 .
+
+mermaid:sequence_stmt_opt a owl:Class ;
+    rdfs:label "sequence_stmt_opt" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 195 .
+
+mermaid:sequence_stmt_opt_inner a owl:Class ;
+    rdfs:label "sequence_stmt_opt_inner" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 389 .
+
+mermaid:sequence_stmt_par a owl:Class ;
+    rdfs:label "sequence_stmt_par" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 198 .
+
+mermaid:sequence_stmt_participant a owl:Class ;
+    rdfs:label "sequence_stmt_participant" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 177 .
+
+mermaid:sequence_stmt_properties a owl:Class ;
+    rdfs:label "sequence_stmt_properties" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 189 .
+
+mermaid:sequence_stmt_rect a owl:Class ;
+    rdfs:label "sequence_stmt_rect" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 194 .
+
+mermaid:sequence_stmt_rect_inner a owl:Class ;
+    rdfs:label "sequence_stmt_rect_inner" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 390 .
+
+mermaid:sequence_stmt_signal a owl:Class ;
+    rdfs:label "sequence_stmt_signal" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 180 .
+
+mermaid:sequence_stmt_title a owl:Class ;
+    rdfs:label "sequence_stmt_title" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 192 .
+
+mermaid:sequence_text a owl:Class ;
+    rdfs:label "sequence_text" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 182 .
+
+mermaid:solid_arrow a owl:Class ;
+    rdfs:label "solid_arrow" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 106 .
+
+mermaid:solid_cross a owl:Class ;
+    rdfs:label "solid_cross" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 110 .
+
+mermaid:solid_open_arrow a owl:Class ;
+    rdfs:label "solid_open_arrow" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 108 .
+
+mermaid:solid_point a owl:Class ;
+    rdfs:label "solid_point" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 310 .
+
+mermaid:source_file a owl:Class ;
+    rdfs:label "source_file" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 171 .
+
+mermaid:state_alias a owl:Class ;
+    rdfs:label "state_alias" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 220 .
+
+mermaid:state_annotation_choice a owl:Class ;
+    rdfs:label "state_annotation_choice" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 328 .
+
+mermaid:state_annotation_fork a owl:Class ;
+    rdfs:label "state_annotation_fork" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 326 .
+
+mermaid:state_annotation_join a owl:Class ;
+    rdfs:label "state_annotation_join" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 327 .
+
+mermaid:state_arrow a owl:Class ;
+    rdfs:label "state_arrow" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 322 .
+
+mermaid:state_composite_body a owl:Class ;
+    rdfs:label "state_composite_body" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 218 .
+
+mermaid:state_description a owl:Class ;
+    rdfs:label "state_description" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 323 .
+
+mermaid:state_division a owl:Class ;
+    rdfs:label "state_division" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 325 .
+
+mermaid:state_hide_empty_description a owl:Class ;
+    rdfs:label "state_hide_empty_description" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 324 .
+
+mermaid:state_id a owl:Class ;
+    rdfs:label "state_id" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 129 .
+
+mermaid:state_name a owl:Class ;
+    rdfs:label "state_name" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 321 .
+
+mermaid:state_note a owl:Class ;
+    rdfs:label "state_note" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 223 .
+
+mermaid:state_note_placement a owl:Class ;
+    rdfs:label "state_note_placement" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 224 .
+
+mermaid:state_stmt_annotation a owl:Class ;
+    rdfs:label "state_stmt_annotation" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 219 .
+
+mermaid:state_stmt_arrow a owl:Class ;
+    rdfs:label "state_stmt_arrow" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 216 .
+
+mermaid:state_stmt_composite a owl:Class ;
+    rdfs:label "state_stmt_composite" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 217 .
+
+mermaid:state_stmt_hide_empty_description a owl:Class ;
+    rdfs:label "state_stmt_hide_empty_description" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 221 .
+
+mermaid:state_stmt_simple a owl:Class ;
+    rdfs:label "state_stmt_simple" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 215 .
+
+mermaid:title a owl:Class ;
+    rdfs:label "title" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 391 .
+
+mermaid:type_directive a owl:Class ;
+    rdfs:label "type_directive" ;
+    rdfs:isDefinedBy mermaid: ;
+    rdfs:subClassOf ast:Node ;
+    mermaid:isSupertype true ;
+    mermaid:nodeTypeId 99 .
+
+mermaid: a owl:Ontology ;
+    rdfs:label "Mermaid Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for mermaid" ;
+    owl:versionInfo "v0.25" ;
+    mermaid:abiVersion 14 ;
+    mermaid:fieldCount 0 ;
+    mermaid:languageName "None" ;
+    mermaid:nodeKindCount 392 .
+

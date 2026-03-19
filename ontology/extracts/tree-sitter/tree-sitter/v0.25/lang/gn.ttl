@@ -1,0 +1,292 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix gn: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/gn/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+gn:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+gn:array_access a owl:Class ;
+    rdfs:label "array_access" ;
+    rdfs:isDefinedBy gn: ;
+    rdfs:subClassOf ast:Node ;
+    gn:isSupertype true ;
+    gn:nodeTypeId 51 .
+
+gn:assignment_statement a owl:Class ;
+    rdfs:label "assignment_statement" ;
+    rdfs:isDefinedBy gn: ;
+    rdfs:subClassOf ast:Node ;
+    gn:isSupertype true ;
+    gn:nodeTypeId 45 .
+
+gn:binary_expression a owl:Class ;
+    rdfs:label "binary_expression" ;
+    rdfs:isDefinedBy gn: ;
+    rdfs:subClassOf ast:Node ;
+    gn:isSupertype true ;
+    gn:nodeTypeId 49 .
+
+gn:block a owl:Class ;
+    rdfs:label "block" ;
+    rdfs:isDefinedBy gn: ;
+    rdfs:subClassOf ast:Node ;
+    gn:isSupertype true ;
+    gn:nodeTypeId 44 .
+
+gn:boolean a owl:Class ;
+    rdfs:label "boolean" ;
+    rdfs:isDefinedBy gn: ;
+    rdfs:subClassOf ast:Node ;
+    gn:isSupertype true ;
+    gn:nodeTypeId 58 .
+
+gn:call_expression a owl:Class ;
+    rdfs:label "call_expression" ;
+    rdfs:isDefinedBy gn: ;
+    rdfs:subClassOf ast:Node ;
+    gn:isSupertype true ;
+    gn:nodeTypeId 50 .
+
+gn:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy gn: ;
+    rdfs:subClassOf ast:Node ;
+    gn:isSupertype true ;
+    gn:nodeTypeId 36 .
+
+gn:else_statement a owl:Class ;
+    rdfs:label "else_statement" ;
+    rdfs:isDefinedBy gn: ;
+    rdfs:subClassOf ast:Node ;
+    gn:isSupertype true ;
+    gn:nodeTypeId 42 .
+
+gn:escape_sequence a owl:Class ;
+    rdfs:label "escape_sequence" ;
+    rdfs:isDefinedBy gn: ;
+    rdfs:subClassOf ast:Node ;
+    gn:isSupertype true ;
+    gn:nodeTypeId 29 .
+
+gn:expansion a owl:Class ;
+    rdfs:label "expansion" ;
+    rdfs:isDefinedBy gn: ;
+    rdfs:subClassOf ast:Node ;
+    gn:isSupertype true ;
+    gn:nodeTypeId 57 .
+
+gn:field a owl:DatatypeProperty ;
+    rdfs:label "field (literal)" ;
+    rdfs:comment "Literal value for field field when it contains a terminal node" ;
+    gn:fieldId 5 ;
+    gn:isTerminalField true .
+
+gn:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+gn:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+gn:field_alternative a owl:ObjectProperty ;
+    rdfs:label "alternative (structural)" ;
+    rdfs:comment "Structural reference for alternative field when it contains a non-terminal node" ;
+    gn:fieldId 1 .
+
+gn:field_array a owl:ObjectProperty ;
+    rdfs:label "array (structural)" ;
+    rdfs:comment "Structural reference for array field when it contains a non-terminal node" ;
+    gn:fieldId 2 .
+
+gn:field_condition a owl:ObjectProperty ;
+    rdfs:label "condition (structural)" ;
+    rdfs:comment "Structural reference for condition field when it contains a non-terminal node" ;
+    gn:fieldId 3 .
+
+gn:field_consequence a owl:ObjectProperty ;
+    rdfs:label "consequence (structural)" ;
+    rdfs:comment "Structural reference for consequence field when it contains a non-terminal node" ;
+    gn:fieldId 4 .
+
+gn:field_index a owl:ObjectProperty ;
+    rdfs:label "index (structural)" ;
+    rdfs:comment "Structural reference for index field when it contains a non-terminal node" ;
+    gn:fieldId 7 .
+
+gn:field_left a owl:ObjectProperty ;
+    rdfs:label "left (structural)" ;
+    rdfs:comment "Structural reference for left field when it contains a non-terminal node" ;
+    gn:fieldId 9 .
+
+gn:field_list a owl:ObjectProperty ;
+    rdfs:label "list (structural)" ;
+    rdfs:comment "Structural reference for list field when it contains a non-terminal node" ;
+    gn:fieldId 10 .
+
+gn:field_operator a owl:ObjectProperty ;
+    rdfs:label "operator (structural)" ;
+    rdfs:comment "Structural reference for operator field when it contains a non-terminal node" ;
+    gn:fieldId 11 .
+
+gn:field_right a owl:ObjectProperty ;
+    rdfs:label "right (structural)" ;
+    rdfs:comment "Structural reference for right field when it contains a non-terminal node" ;
+    gn:fieldId 12 .
+
+gn:field_scope a owl:ObjectProperty ;
+    rdfs:label "scope (structural)" ;
+    rdfs:comment "Structural reference for scope field when it contains a non-terminal node" ;
+    gn:fieldId 13 .
+
+gn:foreach_statement a owl:Class ;
+    rdfs:label "foreach_statement" ;
+    rdfs:isDefinedBy gn: ;
+    rdfs:subClassOf ast:Node ;
+    gn:isSupertype true ;
+    gn:nodeTypeId 43 .
+
+gn:function a owl:DatatypeProperty ;
+    rdfs:label "function (literal)" ;
+    rdfs:comment "Literal value for function field when it contains a terminal node" ;
+    gn:fieldId 6 ;
+    gn:isTerminalField true .
+
+gn:hex a owl:Class ;
+    rdfs:label "hex" ;
+    rdfs:isDefinedBy gn: ;
+    rdfs:subClassOf ast:Node ;
+    gn:isSupertype true ;
+    gn:nodeTypeId 33 .
+
+gn:identifier a owl:Class ;
+    rdfs:label "identifier" ;
+    rdfs:isDefinedBy gn: ;
+    rdfs:subClassOf ast:Node ;
+    gn:isSupertype true ;
+    gn:nodeTypeId 1 .
+
+gn:if_statement a owl:Class ;
+    rdfs:label "if_statement" ;
+    rdfs:isDefinedBy gn: ;
+    rdfs:subClassOf ast:Node ;
+    gn:isSupertype true ;
+    gn:nodeTypeId 41 .
+
+gn:import_statement a owl:Class ;
+    rdfs:label "import_statement" ;
+    rdfs:isDefinedBy gn: ;
+    rdfs:subClassOf ast:Node ;
+    gn:isSupertype true ;
+    gn:nodeTypeId 40 .
+
+gn:integer a owl:Class ;
+    rdfs:label "integer" ;
+    rdfs:isDefinedBy gn: ;
+    rdfs:subClassOf ast:Node ;
+    gn:isSupertype true ;
+    gn:nodeTypeId 32 .
+
+gn:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+gn:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+gn:item a owl:DatatypeProperty ;
+    rdfs:label "item (literal)" ;
+    rdfs:comment "Literal value for item field when it contains a terminal node" ;
+    gn:fieldId 8 ;
+    gn:isTerminalField true .
+
+gn:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+gn:list a owl:Class ;
+    rdfs:label "list" ;
+    rdfs:isDefinedBy gn: ;
+    rdfs:subClassOf ast:Node ;
+    gn:isSupertype true ;
+    gn:nodeTypeId 54 .
+
+gn:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+gn:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+gn:parenthesized_expression a owl:Class ;
+    rdfs:label "parenthesized_expression" ;
+    rdfs:isDefinedBy gn: ;
+    rdfs:subClassOf ast:Node ;
+    gn:isSupertype true ;
+    gn:nodeTypeId 53 .
+
+gn:primary_expression a owl:Class ;
+    rdfs:label "primary_expression" ;
+    rdfs:isDefinedBy gn: ;
+    rdfs:subClassOf ast:Node ;
+    gn:isSupertype true ;
+    gn:nodeTypeId 47 .
+
+gn:scope_access a owl:Class ;
+    rdfs:label "scope_access" ;
+    rdfs:isDefinedBy gn: ;
+    rdfs:subClassOf ast:Node ;
+    gn:isSupertype true ;
+    gn:nodeTypeId 52 .
+
+gn:source_file a owl:Class ;
+    rdfs:label "source_file" ;
+    rdfs:isDefinedBy gn: ;
+    rdfs:subClassOf ast:Node ;
+    gn:isSupertype true ;
+    gn:nodeTypeId 38 .
+
+gn:string a owl:Class ;
+    rdfs:label "string" ;
+    rdfs:isDefinedBy gn: ;
+    rdfs:subClassOf ast:Node ;
+    gn:isSupertype true ;
+    gn:nodeTypeId 55 .
+
+gn:string_content a owl:Class ;
+    rdfs:label "string_content" ;
+    rdfs:isDefinedBy gn: ;
+    rdfs:subClassOf ast:Node ;
+    gn:isSupertype true ;
+    gn:nodeTypeId 56 .
+
+gn:unary_expression a owl:Class ;
+    rdfs:label "unary_expression" ;
+    rdfs:isDefinedBy gn: ;
+    rdfs:subClassOf ast:Node ;
+    gn:isSupertype true ;
+    gn:nodeTypeId 48 .
+
+gn: a owl:Ontology ;
+    rdfs:label "Gn Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for gn" ;
+    owl:versionInfo "v0.25" ;
+    gn:abiVersion 14 ;
+    gn:fieldCount 13 ;
+    gn:languageName "None" ;
+    gn:nodeKindCount 63 .
+

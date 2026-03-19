@@ -1,0 +1,858 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix bsl: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/bsl/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+bsl:ADDHANDLER_KEYWORD a owl:Class ;
+    rdfs:label "ADDHANDLER_KEYWORD" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 57 .
+
+bsl:ASYNC_KEYWORD a owl:Class ;
+    rdfs:label "ASYNC_KEYWORD" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 54 .
+
+bsl:AWAIT_KEYWORD a owl:Class ;
+    rdfs:label "AWAIT_KEYWORD" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 55 .
+
+bsl:BREAK_KEYWORD a owl:Class ;
+    rdfs:label "BREAK_KEYWORD" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 38 .
+
+bsl:CONTINUE_KEYWORD a owl:Class ;
+    rdfs:label "CONTINUE_KEYWORD" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 39 .
+
+bsl:DO_KEYWORD a owl:Class ;
+    rdfs:label "DO_KEYWORD" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 34 .
+
+bsl:EACH_KEYWORD a owl:Class ;
+    rdfs:label "EACH_KEYWORD" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 30 .
+
+bsl:ELSE_KEYWORD a owl:Class ;
+    rdfs:label "ELSE_KEYWORD" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 27 .
+
+bsl:ELSIF_KEYWORD a owl:Class ;
+    rdfs:label "ELSIF_KEYWORD" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 26 .
+
+bsl:ENDDO_KEYWORD a owl:Class ;
+    rdfs:label "ENDDO_KEYWORD" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 35 .
+
+bsl:ENDFUNCTION_KEYWORD a owl:Class ;
+    rdfs:label "ENDFUNCTION_KEYWORD" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 43 .
+
+bsl:ENDIF_KEYWORD a owl:Class ;
+    rdfs:label "ENDIF_KEYWORD" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 28 .
+
+bsl:ENDPROCEDURE_KEYWORD a owl:Class ;
+    rdfs:label "ENDPROCEDURE_KEYWORD" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 42 .
+
+bsl:ENDTRY_KEYWORD a owl:Class ;
+    rdfs:label "ENDTRY_KEYWORD" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 53 .
+
+bsl:EXCEPT_KEYWORD a owl:Class ;
+    rdfs:label "EXCEPT_KEYWORD" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 51 .
+
+bsl:EXPORT_KEYWORD a owl:Class ;
+    rdfs:label "EXPORT_KEYWORD" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 45 .
+
+bsl:FALSE_KEYWORD a owl:Class ;
+    rdfs:label "FALSE_KEYWORD" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 48 .
+
+bsl:FOR_KEYWORD a owl:Class ;
+    rdfs:label "FOR_KEYWORD" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 29 .
+
+bsl:FUNCTION_KEYWORD a owl:Class ;
+    rdfs:label "FUNCTION_KEYWORD" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 41 .
+
+bsl:GOTO_KEYWORD a owl:Class ;
+    rdfs:label "GOTO_KEYWORD" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 36 .
+
+bsl:IF_KEYWORD a owl:Class ;
+    rdfs:label "IF_KEYWORD" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 24 .
+
+bsl:IN_KEYWORD a owl:Class ;
+    rdfs:label "IN_KEYWORD" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 31 .
+
+bsl:NEW_KEYWORD a owl:Class ;
+    rdfs:label "NEW_KEYWORD" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 56 .
+
+bsl:NULL_KEYWORD a owl:Class ;
+    rdfs:label "NULL_KEYWORD" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 68 .
+
+bsl:PREPROC_ELSE_KEYWORD a owl:Class ;
+    rdfs:label "PREPROC_ELSE_KEYWORD" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 64 .
+
+bsl:PREPROC_ELSIF_KEYWORD a owl:Class ;
+    rdfs:label "PREPROC_ELSIF_KEYWORD" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 63 .
+
+bsl:PREPROC_ENDIF_KEYWORD a owl:Class ;
+    rdfs:label "PREPROC_ENDIF_KEYWORD" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 65 .
+
+bsl:PREPROC_ENDREGION_KEYWORD a owl:Class ;
+    rdfs:label "PREPROC_ENDREGION_KEYWORD" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 67 .
+
+bsl:PREPROC_IF_KEYWORD a owl:Class ;
+    rdfs:label "PREPROC_IF_KEYWORD" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 62 .
+
+bsl:PREPROC_REGION_KEYWORD a owl:Class ;
+    rdfs:label "PREPROC_REGION_KEYWORD" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 66 .
+
+bsl:PROCEDURE_KEYWORD a owl:Class ;
+    rdfs:label "PROCEDURE_KEYWORD" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 40 .
+
+bsl:RAISE_KEYWORD a owl:Class ;
+    rdfs:label "RAISE_KEYWORD" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 52 .
+
+bsl:REMOVEHANDLER_KEYWORD a owl:Class ;
+    rdfs:label "REMOVEHANDLER_KEYWORD" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 58 .
+
+bsl:RETURN_KEYWORD a owl:Class ;
+    rdfs:label "RETURN_KEYWORD" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 37 .
+
+bsl:THEN_KEYWORD a owl:Class ;
+    rdfs:label "THEN_KEYWORD" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 25 .
+
+bsl:TO_KEYWORD a owl:Class ;
+    rdfs:label "TO_KEYWORD" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 32 .
+
+bsl:TRUE_KEYWORD a owl:Class ;
+    rdfs:label "TRUE_KEYWORD" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 47 .
+
+bsl:TRY_KEYWORD a owl:Class ;
+    rdfs:label "TRY_KEYWORD" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 50 .
+
+bsl:UNDEFINED_KEYWORD a owl:Class ;
+    rdfs:label "UNDEFINED_KEYWORD" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 49 .
+
+bsl:VAL_KEYWORD a owl:Class ;
+    rdfs:label "VAL_KEYWORD" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 46 .
+
+bsl:VAR_KEYWORD a owl:Class ;
+    rdfs:label "VAR_KEYWORD" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 44 .
+
+bsl:WHILE_KEYWORD a owl:Class ;
+    rdfs:label "WHILE_KEYWORD" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 33 .
+
+bsl:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+bsl:access a owl:Class ;
+    rdfs:label "access" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 140 .
+
+bsl:add_handler_statement a owl:Class ;
+    rdfs:label "add_handler_statement" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 127 .
+
+bsl:annotation a owl:Class ;
+    rdfs:label "annotation" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94 .
+
+bsl:arguments a owl:Class ;
+    rdfs:label "arguments" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 145 .
+
+bsl:assignment_statement a owl:Class ;
+    rdfs:label "assignment_statement" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 111 .
+
+bsl:await_expression a owl:Class ;
+    rdfs:label "await_expression" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 137 .
+
+bsl:await_statement a owl:Class ;
+    rdfs:label "await_statement" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 129 .
+
+bsl:binary_expression a owl:Class ;
+    rdfs:label "binary_expression" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 132 .
+
+bsl:boolean a owl:Class ;
+    rdfs:label "boolean" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 148 .
+
+bsl:break_statement a owl:Class ;
+    rdfs:label "break_statement" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 123 .
+
+bsl:call_expression a owl:Class ;
+    rdfs:label "call_expression" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 136 .
+
+bsl:call_statement a owl:Class ;
+    rdfs:label "call_statement" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 110 .
+
+bsl:const_expression a owl:Class ;
+    rdfs:label "const_expression" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 159 .
+
+bsl:continue_statement a owl:Class ;
+    rdfs:label "continue_statement" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 122 .
+
+bsl:date a owl:Class ;
+    rdfs:label "date" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 96 .
+
+bsl:def a owl:DatatypeProperty ;
+    rdfs:label "def (literal)" ;
+    rdfs:comment "Literal value for def field when it contains a terminal node" ;
+    bsl:fieldId 6 ;
+    bsl:isTerminalField true .
+
+bsl:else_clause a owl:Class ;
+    rdfs:label "else_clause" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 118 .
+
+bsl:elseif_clause a owl:Class ;
+    rdfs:label "elseif_clause" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 117 .
+
+bsl:execute_statement a owl:Class ;
+    rdfs:label "execute_statement" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 124 .
+
+bsl:export a owl:DatatypeProperty ;
+    rdfs:label "export (literal)" ;
+    rdfs:comment "Literal value for export field when it contains a terminal node" ;
+    bsl:fieldId 7 ;
+    bsl:isTerminalField true .
+
+bsl:expression a owl:Class ;
+    rdfs:label "expression" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 130 .
+
+bsl:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+bsl:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+bsl:field_alternative a owl:ObjectProperty ;
+    rdfs:label "alternative (structural)" ;
+    rdfs:comment "Structural reference for alternative field when it contains a non-terminal node" ;
+    bsl:fieldId 1 .
+
+bsl:field_argument a owl:ObjectProperty ;
+    rdfs:label "argument (structural)" ;
+    rdfs:comment "Structural reference for argument field when it contains a non-terminal node" ;
+    bsl:fieldId 2 .
+
+bsl:field_arguments a owl:ObjectProperty ;
+    rdfs:label "arguments (structural)" ;
+    rdfs:comment "Structural reference for arguments field when it contains a non-terminal node" ;
+    bsl:fieldId 3 .
+
+bsl:field_condition a owl:ObjectProperty ;
+    rdfs:label "condition (structural)" ;
+    rdfs:comment "Structural reference for condition field when it contains a non-terminal node" ;
+    bsl:fieldId 4 .
+
+bsl:field_consequence a owl:ObjectProperty ;
+    rdfs:label "consequence (structural)" ;
+    rdfs:comment "Structural reference for consequence field when it contains a non-terminal node" ;
+    bsl:fieldId 5 .
+
+bsl:field_def a owl:ObjectProperty ;
+    rdfs:label "def (structural)" ;
+    rdfs:comment "Structural reference for def field when it contains a non-terminal node" ;
+    bsl:fieldId 6 .
+
+bsl:field_left a owl:ObjectProperty ;
+    rdfs:label "left (structural)" ;
+    rdfs:comment "Structural reference for left field when it contains a non-terminal node" ;
+    bsl:fieldId 8 .
+
+bsl:field_parameter a owl:ObjectProperty ;
+    rdfs:label "parameter (structural)" ;
+    rdfs:comment "Structural reference for parameter field when it contains a non-terminal node" ;
+    bsl:fieldId 11 .
+
+bsl:field_parameters a owl:ObjectProperty ;
+    rdfs:label "parameters (structural)" ;
+    rdfs:comment "Structural reference for parameters field when it contains a non-terminal node" ;
+    bsl:fieldId 12 .
+
+bsl:field_result a owl:ObjectProperty ;
+    rdfs:label "result (structural)" ;
+    rdfs:comment "Structural reference for result field when it contains a non-terminal node" ;
+    bsl:fieldId 13 .
+
+bsl:field_right a owl:ObjectProperty ;
+    rdfs:label "right (structural)" ;
+    rdfs:comment "Structural reference for right field when it contains a non-terminal node" ;
+    bsl:fieldId 14 .
+
+bsl:field_type a owl:ObjectProperty ;
+    rdfs:label "type (structural)" ;
+    rdfs:comment "Structural reference for type field when it contains a non-terminal node" ;
+    bsl:fieldId 15 .
+
+bsl:for_each_statement a owl:Class ;
+    rdfs:label "for_each_statement" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 121 .
+
+bsl:for_statement a owl:Class ;
+    rdfs:label "for_statement" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 120 .
+
+bsl:function_definition a owl:Class ;
+    rdfs:label "function_definition" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 105 .
+
+bsl:goto_statement a owl:Class ;
+    rdfs:label "goto_statement" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 125 .
+
+bsl:identifier a owl:Class ;
+    rdfs:label "identifier" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 1 .
+
+bsl:if_statement a owl:Class ;
+    rdfs:label "if_statement" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 116 .
+
+bsl:index a owl:Class ;
+    rdfs:label "index" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 160 .
+
+bsl:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+bsl:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+bsl:label_statement a owl:Class ;
+    rdfs:label "label_statement" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 126 .
+
+bsl:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+bsl:left a owl:DatatypeProperty ;
+    rdfs:label "left (literal)" ;
+    rdfs:comment "Literal value for left field when it contains a terminal node" ;
+    bsl:fieldId 8 ;
+    bsl:isTerminalField true .
+
+bsl:line_comment a owl:Class ;
+    rdfs:label "line_comment" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 151 .
+
+bsl:method_call a owl:Class ;
+    rdfs:label "method_call" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 144 .
+
+bsl:name a owl:DatatypeProperty ;
+    rdfs:label "name (literal)" ;
+    rdfs:comment "Literal value for name field when it contains a terminal node" ;
+    bsl:fieldId 9 ;
+    bsl:isTerminalField true .
+
+bsl:new_expression a owl:Class ;
+    rdfs:label "new_expression" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 134 .
+
+bsl:new_expression_method a owl:Class ;
+    rdfs:label "new_expression_method" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 135 .
+
+bsl:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+bsl:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+bsl:number a owl:Class ;
+    rdfs:label "number" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 95 .
+
+bsl:operator a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "operator",
+        "operator (literal)" ;
+    rdfs:comment "Literal value for operator field when it contains a terminal node" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:fieldId 10 ;
+    bsl:isSupertype true ;
+    bsl:isTerminalField true ;
+    bsl:nodeTypeId 10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        59,
+        60,
+        61 .
+
+bsl:parameter a owl:Class ;
+    rdfs:label "parameter" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 108 .
+
+bsl:parameters a owl:Class ;
+    rdfs:label "parameters" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 107 .
+
+bsl:preproc a owl:Class ;
+    rdfs:label "preproc" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76 .
+
+bsl:preprocessor a owl:Class ;
+    rdfs:label "preprocessor" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 146 .
+
+bsl:procedure_definition a owl:Class ;
+    rdfs:label "procedure_definition" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 104 .
+
+bsl:property a owl:Class ;
+    rdfs:label "property" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 161 .
+
+bsl:property_access a owl:Class ;
+    rdfs:label "property_access" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 139 .
+
+bsl:remove_handler_statement a owl:Class ;
+    rdfs:label "remove_handler_statement" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 128 .
+
+bsl:return_statement a owl:Class ;
+    rdfs:label "return_statement" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 112 .
+
+bsl:rise_error_statement a owl:Class ;
+    rdfs:label "rise_error_statement" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 114 .
+
+bsl:source_file a owl:Class ;
+    rdfs:label "source_file" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 102 .
+
+bsl:string a owl:Class ;
+    rdfs:label "string" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 149,
+        150 .
+
+bsl:string_content a owl:Class ;
+    rdfs:label "string_content" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 98 .
+
+bsl:ternary_expression a owl:Class ;
+    rdfs:label "ternary_expression" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 133 .
+
+bsl:try_statement a owl:Class ;
+    rdfs:label "try_statement" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 113 .
+
+bsl:type a owl:DatatypeProperty ;
+    rdfs:label "type (literal)" ;
+    rdfs:comment "Literal value for type field when it contains a terminal node" ;
+    bsl:fieldId 15 ;
+    bsl:isTerminalField true .
+
+bsl:unary_expression a owl:Class ;
+    rdfs:label "unary_expression" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 131 .
+
+bsl:val a owl:DatatypeProperty ;
+    rdfs:label "val (literal)" ;
+    rdfs:comment "Literal value for val field when it contains a terminal node" ;
+    bsl:fieldId 16 ;
+    bsl:isTerminalField true .
+
+bsl:var_definition a owl:Class ;
+    rdfs:label "var_definition" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 106 .
+
+bsl:var_name a owl:DatatypeProperty ;
+    rdfs:label "var_name (literal)" ;
+    rdfs:comment "Literal value for var_name field when it contains a terminal node" ;
+    bsl:fieldId 17 ;
+    bsl:isTerminalField true .
+
+bsl:var_statement a owl:Class ;
+    rdfs:label "var_statement" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 115 .
+
+bsl:while_statement a owl:Class ;
+    rdfs:label "while_statement" ;
+    rdfs:isDefinedBy bsl: ;
+    rdfs:subClassOf ast:Node ;
+    bsl:isSupertype true ;
+    bsl:nodeTypeId 119 .
+
+bsl: a owl:Ontology ;
+    rdfs:label "Bsl Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for bsl" ;
+    owl:versionInfo "v0.25" ;
+    bsl:abiVersion 15 ;
+    bsl:fieldCount 17 ;
+    bsl:languageName "bsl" ;
+    bsl:nodeKindCount 162 .
+

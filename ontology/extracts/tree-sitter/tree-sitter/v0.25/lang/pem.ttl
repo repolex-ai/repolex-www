@@ -1,0 +1,112 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pem: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/pem/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+pem:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+pem:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy pem: ;
+    rdfs:subClassOf ast:Node ;
+    pem:isSupertype true ;
+    pem:nodeTypeId 7 .
+
+pem:content a owl:Class ;
+    rdfs:label "content" ;
+    rdfs:isDefinedBy pem: ;
+    rdfs:subClassOf ast:Node ;
+    pem:isSupertype true ;
+    pem:nodeTypeId 9 .
+
+pem:dashes a owl:Class ;
+    rdfs:label "dashes" ;
+    rdfs:isDefinedBy pem: ;
+    rdfs:subClassOf ast:Node ;
+    pem:isSupertype true ;
+    pem:nodeTypeId 6 .
+
+pem:data a owl:Class ;
+    rdfs:label "data" ;
+    rdfs:isDefinedBy pem: ;
+    rdfs:subClassOf ast:Node ;
+    pem:isSupertype true ;
+    pem:nodeTypeId 12 .
+
+pem:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+pem:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+pem:footer a owl:Class ;
+    rdfs:label "footer" ;
+    rdfs:isDefinedBy pem: ;
+    rdfs:subClassOf ast:Node ;
+    pem:isSupertype true ;
+    pem:nodeTypeId 11 .
+
+pem:header a owl:Class ;
+    rdfs:label "header" ;
+    rdfs:isDefinedBy pem: ;
+    rdfs:subClassOf ast:Node ;
+    pem:isSupertype true ;
+    pem:nodeTypeId 10 .
+
+pem:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+pem:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+pem:label a owl:Class ;
+    rdfs:label "label" ;
+    rdfs:isDefinedBy pem: ;
+    rdfs:subClassOf ast:Node ;
+    pem:isSupertype true ;
+    pem:nodeTypeId 5 .
+
+pem:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+pem:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+pem:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+pem:pem a owl:Class ;
+    rdfs:label "pem" ;
+    rdfs:isDefinedBy pem: ;
+    rdfs:subClassOf ast:Node ;
+    pem:isSupertype true ;
+    pem:nodeTypeId 8 .
+
+pem: a owl:Ontology ;
+    rdfs:label "Pem Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for pem" ;
+    owl:versionInfo "v0.25" ;
+    pem:abiVersion 15 ;
+    pem:fieldCount 0 ;
+    pem:languageName "pem" ;
+    pem:nodeKindCount 15 .
+

@@ -1,0 +1,1425 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix fsharp: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/fsharp/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+fsharp:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+fsharp:access_modifier a owl:Class ;
+    rdfs:label "access_modifier" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 214 .
+
+fsharp:active_pattern a owl:Class ;
+    rdfs:label "active_pattern" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 373 .
+
+fsharp:active_pattern_op_name a owl:Class ;
+    rdfs:label "active_pattern_op_name" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 448 .
+
+fsharp:additional_constr_defn a owl:Class ;
+    rdfs:label "additional_constr_defn" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 354 .
+
+fsharp:anon_record_expression a owl:Class ;
+    rdfs:label "anon_record_expression" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 244 .
+
+fsharp:anon_record_type a owl:Class ;
+    rdfs:label "anon_record_type" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 296 .
+
+fsharp:anon_type_defn a owl:Class ;
+    rdfs:label "anon_type_defn" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 338 .
+
+fsharp:application_expression a owl:Class ;
+    rdfs:label "application_expression" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 275 .
+
+fsharp:argument_name_spec a owl:Class ;
+    rdfs:label "argument_name_spec" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 314 .
+
+fsharp:argument_patterns a owl:Class ;
+    rdfs:label "argument_patterns" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 228 .
+
+fsharp:argument_spec a owl:Class ;
+    rdfs:label "argument_spec" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 312 .
+
+fsharp:arguments_spec a owl:Class ;
+    rdfs:label "arguments_spec" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 313 .
+
+fsharp:array_expression a owl:Class ;
+    rdfs:label "array_expression" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 267 .
+
+fsharp:array_pattern a owl:Class ;
+    rdfs:label "array_pattern" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 233 .
+
+fsharp:as_pattern a owl:Class ;
+    rdfs:label "as_pattern" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 223 .
+
+fsharp:atomic_type a owl:Class ;
+    rdfs:label "atomic_type" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 303 .
+
+fsharp:attribute a owl:Class ;
+    rdfs:label "attribute" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 205 .
+
+fsharp:attribute_pattern a owl:Class ;
+    rdfs:label "attribute_pattern" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 221 .
+
+fsharp:attributes a owl:Class ;
+    rdfs:label "attributes" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 203 .
+
+fsharp:begin_end_expression a owl:Class ;
+    rdfs:label "begin_end_expression" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 271 .
+
+fsharp:bignum a owl:Class ;
+    rdfs:label "bignum" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 390 .
+
+fsharp:block a owl:DatatypeProperty ;
+    rdfs:label "block (literal)" ;
+    rdfs:comment "Literal value for block field when it contains a terminal node" ;
+    fsharp:fieldId 5 ;
+    fsharp:isTerminalField true .
+
+fsharp:block_comment a owl:Class ;
+    rdfs:label "block_comment" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 393 .
+
+fsharp:block_comment_content a owl:Class ;
+    rdfs:label "block_comment_content" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 191 .
+
+fsharp:bool a owl:Class ;
+    rdfs:label "bool" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 133 .
+
+fsharp:brace_expression a owl:Class ;
+    rdfs:label "brace_expression" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 243 .
+
+fsharp:byte a owl:Class ;
+    rdfs:label "byte" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 379 .
+
+fsharp:bytearray a owl:Class ;
+    rdfs:label "bytearray" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 367 .
+
+fsharp:ce_expression a owl:Class ;
+    rdfs:label "ce_expression" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 278 .
+
+fsharp:char a owl:Class ;
+    rdfs:label "char" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 360 .
+
+fsharp:class_as_reference a owl:Class ;
+    rdfs:label "class_as_reference" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 215 .
+
+fsharp:class_inherits_decl a owl:Class ;
+    rdfs:label "class_inherits_decl" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 355 .
+
+fsharp:compiler_directive_decl a owl:Class ;
+    rdfs:label "compiler_directive_decl" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 394 .
+
+fsharp:compound_type a owl:Class ;
+    rdfs:label "compound_type" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 290 .
+
+fsharp:condition a owl:DatatypeProperty ;
+    rdfs:label "condition (literal)" ;
+    rdfs:comment "Literal value for condition field when it contains a terminal node" ;
+    fsharp:fieldId 7 ;
+    fsharp:isTerminalField true .
+
+fsharp:conjunct_pattern a owl:Class ;
+    rdfs:label "conjunct_pattern" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 226 .
+
+fsharp:cons_pattern a owl:Class ;
+    rdfs:label "cons_pattern" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 224 .
+
+fsharp:const a owl:Class ;
+    rdfs:label "const" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 371 .
+
+fsharp:constrained_type a owl:Class ;
+    rdfs:label "constrained_type" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 294 .
+
+fsharp:constraint a owl:Class ;
+    rdfs:label "constraint" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 304 .
+
+fsharp:curried_spec a owl:Class ;
+    rdfs:label "curried_spec" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 311 .
+
+fsharp:decimal a owl:Class ;
+    rdfs:label "decimal" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 391 .
+
+fsharp:declaration_expression a owl:Class ;
+    rdfs:label "declaration_expression" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 262 .
+
+fsharp:delegate_signature a owl:Class ;
+    rdfs:label "delegate_signature" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 322 .
+
+fsharp:delegate_type_defn a owl:Class ;
+    rdfs:label "delegate_type_defn" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 321 .
+
+fsharp:disjunct_pattern a owl:Class ;
+    rdfs:label "disjunct_pattern" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 225 .
+
+fsharp:do a owl:Class ;
+    rdfs:label "do" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 208 .
+
+fsharp:do_expression a owl:Class ;
+    rdfs:label "do_expression" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 263 .
+
+fsharp:dot_expression a owl:Class ;
+    rdfs:label "dot_expression" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 276 .
+
+fsharp:elif_expression a owl:Class ;
+    rdfs:label "elif_expression" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 252 .
+
+fsharp:enum_type_case a owl:Class ;
+    rdfs:label "enum_type_case" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 331 .
+
+fsharp:enum_type_cases a owl:Class ;
+    rdfs:label "enum_type_cases" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 330 .
+
+fsharp:enum_type_defn a owl:Class ;
+    rdfs:label "enum_type_defn" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 329 .
+
+fsharp:exception_definition a owl:Class ;
+    rdfs:label "exception_definition" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 316 .
+
+fsharp:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+fsharp:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+fsharp:field_alternative a owl:ObjectProperty ;
+    rdfs:label "alternative (structural)" ;
+    rdfs:comment "Structural reference for alternative field when it contains a non-terminal node" ;
+    fsharp:fieldId 1 .
+
+fsharp:field_args a owl:ObjectProperty ;
+    rdfs:label "args (structural)" ;
+    rdfs:comment "Structural reference for args field when it contains a non-terminal node" ;
+    fsharp:fieldId 2 .
+
+fsharp:field_assignee a owl:ObjectProperty ;
+    rdfs:label "assignee (structural)" ;
+    rdfs:comment "Structural reference for assignee field when it contains a non-terminal node" ;
+    fsharp:fieldId 3 .
+
+fsharp:field_base a owl:ObjectProperty ;
+    rdfs:label "base (structural)" ;
+    rdfs:comment "Structural reference for base field when it contains a non-terminal node" ;
+    fsharp:fieldId 4 .
+
+fsharp:field_block a owl:ObjectProperty ;
+    rdfs:label "block (structural)" ;
+    rdfs:comment "Structural reference for block field when it contains a non-terminal node" ;
+    fsharp:fieldId 5 .
+
+fsharp:field_body a owl:ObjectProperty ;
+    rdfs:label "body (structural)" ;
+    rdfs:comment "Structural reference for body field when it contains a non-terminal node" ;
+    fsharp:fieldId 6 .
+
+fsharp:field_constraints a owl:ObjectProperty ;
+    rdfs:label "constraints (structural)" ;
+    rdfs:comment "Structural reference for constraints field when it contains a non-terminal node" ;
+    fsharp:fieldId 8 .
+
+fsharp:field_else a owl:ObjectProperty ;
+    rdfs:label "else (structural)" ;
+    rdfs:comment "Structural reference for else field when it contains a non-terminal node" ;
+    fsharp:fieldId 9 .
+
+fsharp:field_exception_name a owl:ObjectProperty ;
+    rdfs:label "exception_name (structural)" ;
+    rdfs:comment "Structural reference for exception_name field when it contains a non-terminal node" ;
+    fsharp:fieldId 10 .
+
+fsharp:field_field a owl:ObjectProperty ;
+    rdfs:label "field (structural)" ;
+    rdfs:comment "Structural reference for field field when it contains a non-terminal node" ;
+    fsharp:fieldId 11 .
+
+fsharp:field_from a owl:ObjectProperty ;
+    rdfs:label "from (structural)" ;
+    rdfs:comment "Structural reference for from field when it contains a non-terminal node" ;
+    fsharp:fieldId 12 .
+
+fsharp:field_guard a owl:ObjectProperty ;
+    rdfs:label "guard (structural)" ;
+    rdfs:comment "Structural reference for guard field when it contains a non-terminal node" ;
+    fsharp:fieldId 13 .
+
+fsharp:field_in a owl:ObjectProperty ;
+    rdfs:label "in (structural)" ;
+    rdfs:comment "Structural reference for in field when it contains a non-terminal node" ;
+    fsharp:fieldId 14 .
+
+fsharp:field_index a owl:ObjectProperty ;
+    rdfs:label "index (structural)" ;
+    rdfs:comment "Structural reference for index field when it contains a non-terminal node" ;
+    fsharp:fieldId 15 .
+
+fsharp:field_initializer a owl:Class ;
+    rdfs:label "field_initializer" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 356 .
+
+fsharp:field_initializers a owl:Class ;
+    rdfs:label "field_initializers" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 357 .
+
+fsharp:field_name a owl:ObjectProperty ;
+    rdfs:label "name (structural)" ;
+    rdfs:comment "Structural reference for name field when it contains a non-terminal node" ;
+    fsharp:fieldId 18 .
+
+fsharp:field_pattern a owl:Class,
+        owl:ObjectProperty ;
+    rdfs:label "field_pattern",
+        "pattern (structural)" ;
+    rdfs:comment "Structural reference for pattern field when it contains a non-terminal node" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:fieldId 19 ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 229 .
+
+fsharp:field_then a owl:ObjectProperty ;
+    rdfs:label "then (structural)" ;
+    rdfs:comment "Structural reference for then field when it contains a non-terminal node" ;
+    fsharp:fieldId 21 .
+
+fsharp:field_to a owl:ObjectProperty ;
+    rdfs:label "to (structural)" ;
+    rdfs:comment "Structural reference for to field when it contains a non-terminal node" ;
+    fsharp:fieldId 22 .
+
+fsharp:field_type_name a owl:ObjectProperty ;
+    rdfs:label "type_name (structural)" ;
+    rdfs:comment "Structural reference for type_name field when it contains a non-terminal node" ;
+    fsharp:fieldId 23 .
+
+fsharp:field_value a owl:ObjectProperty ;
+    rdfs:label "value (structural)" ;
+    rdfs:comment "Structural reference for value field when it contains a non-terminal node" ;
+    fsharp:fieldId 24 .
+
+fsharp:file a owl:Class ;
+    rdfs:label "file" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 196 .
+
+fsharp:flexible_type a owl:Class ;
+    rdfs:label "flexible_type" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 295 .
+
+fsharp:float a owl:Class ;
+    rdfs:label "float" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 392 .
+
+fsharp:for_expression a owl:Class ;
+    rdfs:label "for_expression" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 249 .
+
+fsharp:format_string a owl:Class ;
+    rdfs:label "format_string" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 362 .
+
+fsharp:format_string_eval a owl:Class ;
+    rdfs:label "format_string_eval" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 361 .
+
+fsharp:format_triple_quoted_string a owl:Class ;
+    rdfs:label "format_triple_quoted_string" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 369 .
+
+fsharp:fsi_directive_decl a owl:Class ;
+    rdfs:label "fsi_directive_decl" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 395 .
+
+fsharp:fun_expression a owl:Class ;
+    rdfs:label "fun_expression" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 255 .
+
+fsharp:function_declaration_left a owl:Class ;
+    rdfs:label "function_declaration_left" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 212 .
+
+fsharp:function_expression a owl:Class ;
+    rdfs:label "function_expression" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 258 .
+
+fsharp:function_or_value_defn a owl:Class ;
+    rdfs:label "function_or_value_defn" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 210 .
+
+fsharp:function_type a owl:Class ;
+    rdfs:label "function_type" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 289 .
+
+fsharp:generic_type a owl:Class ;
+    rdfs:label "generic_type" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 287 .
+
+fsharp:identifier a owl:Class ;
+    rdfs:label "identifier" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 1 .
+
+fsharp:identifier_pattern a owl:Class ;
+    rdfs:label "identifier_pattern" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 237 .
+
+fsharp:ieee32 a owl:Class ;
+    rdfs:label "ieee32" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 388 .
+
+fsharp:ieee64 a owl:Class ;
+    rdfs:label "ieee64" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 389 .
+
+fsharp:if_expression a owl:Class ;
+    rdfs:label "if_expression" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 254 .
+
+fsharp:import_decl a owl:Class ;
+    rdfs:label "import_decl" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 202 .
+
+fsharp:index_expression a owl:Class ;
+    rdfs:label "index_expression" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 260 .
+
+fsharp:infix_expression a owl:Class ;
+    rdfs:label "infix_expression" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 277 .
+
+fsharp:infix_op a owl:Class ;
+    rdfs:label "infix_op" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 377 .
+
+fsharp:instance a owl:DatatypeProperty ;
+    rdfs:label "instance (literal)" ;
+    rdfs:comment "Literal value for instance field when it contains a terminal node" ;
+    fsharp:fieldId 16 ;
+    fsharp:isTerminalField true .
+
+fsharp:int a owl:Class ;
+    rdfs:label "int" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 154 .
+
+fsharp:int16 a owl:Class ;
+    rdfs:label "int16" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 380 .
+
+fsharp:int32 a owl:Class ;
+    rdfs:label "int32" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 382 .
+
+fsharp:int64 a owl:Class ;
+    rdfs:label "int64" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 386 .
+
+fsharp:interface_implementation a owl:Class ;
+    rdfs:label "interface_implementation" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 343 .
+
+fsharp:interface_type_defn a owl:Class ;
+    rdfs:label "interface_type_defn" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 337 .
+
+fsharp:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+fsharp:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+fsharp:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+fsharp:line_comment a owl:Class ;
+    rdfs:label "line_comment" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 175 .
+
+fsharp:list_expression a owl:Class ;
+    rdfs:label "list_expression" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 266 .
+
+fsharp:list_pattern a owl:Class ;
+    rdfs:label "list_pattern" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 232 .
+
+fsharp:list_type a owl:Class ;
+    rdfs:label "list_type" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 292 .
+
+fsharp:literal_expression a owl:Class ;
+    rdfs:label "literal_expression" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 240 .
+
+fsharp:long_identifier a owl:Class ;
+    rdfs:label "long_identifier" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 372 .
+
+fsharp:long_identifier_or_op a owl:Class ;
+    rdfs:label "long_identifier_or_op" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 241 .
+
+fsharp:match_expression a owl:Class ;
+    rdfs:label "match_expression" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 257 .
+
+fsharp:member_defn a owl:Class ;
+    rdfs:label "member_defn" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 346 .
+
+fsharp:member_signature a owl:Class ;
+    rdfs:label "member_signature" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 310 .
+
+fsharp:method a owl:DatatypeProperty ;
+    rdfs:label "method (literal)" ;
+    rdfs:comment "Literal value for method field when it contains a terminal node" ;
+    fsharp:fieldId 17 ;
+    fsharp:isTerminalField true .
+
+fsharp:method_or_prop_defn a owl:Class ;
+    rdfs:label "method_or_prop_defn" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 353 .
+
+fsharp:module_abbrev a owl:Class ;
+    rdfs:label "module_abbrev" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 199 .
+
+fsharp:module_defn a owl:Class ;
+    rdfs:label "module_defn" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 200 .
+
+fsharp:mutate_expression a owl:Class ;
+    rdfs:label "mutate_expression" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 259 .
+
+fsharp:name a owl:DatatypeProperty ;
+    rdfs:label "name (literal)" ;
+    rdfs:comment "Literal value for name field when it contains a terminal node" ;
+    fsharp:fieldId 18 ;
+    fsharp:isTerminalField true .
+
+fsharp:named_field a owl:Class ;
+    rdfs:label "named_field" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 235 .
+
+fsharp:named_field_pattern a owl:Class ;
+    rdfs:label "named_field_pattern" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 236 .
+
+fsharp:named_module a owl:Class ;
+    rdfs:label "named_module" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 198 .
+
+fsharp:named_static_parameter a owl:Class ;
+    rdfs:label "named_static_parameter" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 300 .
+
+fsharp:namespace a owl:Class ;
+    rdfs:label "namespace" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 197 .
+
+fsharp:nativeint a owl:Class ;
+    rdfs:label "nativeint" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 384 .
+
+fsharp:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+fsharp:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+fsharp:object_expression a owl:Class ;
+    rdfs:label "object_expression" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 245 .
+
+fsharp:op_identifier a owl:Class ;
+    rdfs:label "op_identifier" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 137 .
+
+fsharp:optional_pattern a owl:Class ;
+    rdfs:label "optional_pattern" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 219 .
+
+fsharp:paren_expression a owl:Class ;
+    rdfs:label "paren_expression" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 272 .
+
+fsharp:paren_pattern a owl:Class ;
+    rdfs:label "paren_pattern" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 222 .
+
+fsharp:paren_type a owl:Class ;
+    rdfs:label "paren_type" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 288 .
+
+fsharp:postfix_type a owl:Class ;
+    rdfs:label "postfix_type" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 291 .
+
+fsharp:prefix_op a owl:Class ;
+    rdfs:label "prefix_op" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 376 .
+
+fsharp:prefixed_expression a owl:Class ;
+    rdfs:label "prefixed_expression" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 247 .
+
+fsharp:preproc_else a owl:Class ;
+    rdfs:label "preproc_else" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 398,
+        400,
+        402 .
+
+fsharp:preproc_if a owl:Class ;
+    rdfs:label "preproc_if" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 397,
+        399,
+        401 .
+
+fsharp:preproc_line a owl:Class ;
+    rdfs:label "preproc_line" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 396 .
+
+fsharp:primary_constr_args a owl:Class ;
+    rdfs:label "primary_constr_args" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 216 .
+
+fsharp:property_accessor a owl:Class ;
+    rdfs:label "property_accessor" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 350 .
+
+fsharp:property_or_ident a owl:Class ;
+    rdfs:label "property_or_ident" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 347 .
+
+fsharp:range_expression a owl:Class ;
+    rdfs:label "range_expression" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 268 .
+
+fsharp:record_field a owl:Class ;
+    rdfs:label "record_field" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 328 .
+
+fsharp:record_fields a owl:Class ;
+    rdfs:label "record_fields" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 327 .
+
+fsharp:record_pattern a owl:Class ;
+    rdfs:label "record_pattern" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 234 .
+
+fsharp:record_type_defn a owl:Class ;
+    rdfs:label "record_type_defn" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 326 .
+
+fsharp:repeat_pattern a owl:Class ;
+    rdfs:label "repeat_pattern" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 217 .
+
+fsharp:rule a owl:Class ;
+    rdfs:label "rule" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 269 .
+
+fsharp:rules a owl:Class ;
+    rdfs:label "rules" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 270 .
+
+fsharp:sbyte a owl:Class ;
+    rdfs:label "sbyte" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 378 .
+
+fsharp:sequential_expression a owl:Class ;
+    rdfs:label "sequential_expression" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 279 .
+
+fsharp:short_comp_expression a owl:Class ;
+    rdfs:label "short_comp_expression" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 281 .
+
+fsharp:simple_type a owl:Class ;
+    rdfs:label "simple_type" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 286 .
+
+fsharp:slice_range a owl:Class ;
+    rdfs:label "slice_range" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 284 .
+
+fsharp:slice_ranges a owl:Class ;
+    rdfs:label "slice_ranges" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 282 .
+
+fsharp:static_parameter_value a owl:Class ;
+    rdfs:label "static_parameter_value" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 315 .
+
+fsharp:static_type a owl:Class ;
+    rdfs:label "static_type" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 293 .
+
+fsharp:string a owl:Class ;
+    rdfs:label "string" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 364 .
+
+fsharp:target a owl:DatatypeProperty ;
+    rdfs:label "target (literal)" ;
+    rdfs:comment "Literal value for target field when it contains a terminal node" ;
+    fsharp:fieldId 20 ;
+    fsharp:isTerminalField true .
+
+fsharp:trait_member_constraint a owl:Class ;
+    rdfs:label "trait_member_constraint" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 309 .
+
+fsharp:triple_quoted_string a owl:Class ;
+    rdfs:label "triple_quoted_string" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 370 .
+
+fsharp:try_expression a owl:Class ;
+    rdfs:label "try_expression" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 256 .
+
+fsharp:tuple_expression a owl:Class ;
+    rdfs:label "tuple_expression" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 242 .
+
+fsharp:type_abbrev_defn a owl:Class ;
+    rdfs:label "type_abbrev_defn" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 323 .
+
+fsharp:type_argument a owl:Class ;
+    rdfs:label "type_argument" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 306 .
+
+fsharp:type_argument_constraints a owl:Class ;
+    rdfs:label "type_argument_constraints" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 305 .
+
+fsharp:type_argument_defn a owl:Class ;
+    rdfs:label "type_argument_defn" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 307 .
+
+fsharp:type_arguments a owl:Class ;
+    rdfs:label "type_arguments" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 308 .
+
+fsharp:type_attribute a owl:Class ;
+    rdfs:label "type_attribute" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 301 .
+
+fsharp:type_attributes a owl:Class ;
+    rdfs:label "type_attributes" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 302 .
+
+fsharp:type_check_pattern a owl:Class ;
+    rdfs:label "type_check_pattern" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 220 .
+
+fsharp:type_definition a owl:Class ;
+    rdfs:label "type_definition" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 317 .
+
+fsharp:type_extension a owl:Class ;
+    rdfs:label "type_extension" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 320 .
+
+fsharp:type_extension_elements a owl:Class ;
+    rdfs:label "type_extension_elements" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 341 .
+
+fsharp:type_name a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "type_name",
+        "type_name (literal)" ;
+    rdfs:comment "Literal value for type_name field when it contains a terminal node" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:fieldId 23 ;
+    fsharp:isSupertype true ;
+    fsharp:isTerminalField true ;
+    fsharp:nodeTypeId 319 .
+
+fsharp:typecast_expression a owl:Class ;
+    rdfs:label "typecast_expression" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 248 .
+
+fsharp:typed_expression a owl:Class ;
+    rdfs:label "typed_expression" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 261 .
+
+fsharp:typed_pattern a owl:Class ;
+    rdfs:label "typed_pattern" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 227 .
+
+fsharp:types a owl:Class ;
+    rdfs:label "types" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 297 .
+
+fsharp:uint16 a owl:Class ;
+    rdfs:label "uint16" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 381 .
+
+fsharp:uint32 a owl:Class ;
+    rdfs:label "uint32" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 383 .
+
+fsharp:uint64 a owl:Class ;
+    rdfs:label "uint64" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 387 .
+
+fsharp:unativeint a owl:Class ;
+    rdfs:label "unativeint" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 385 .
+
+fsharp:union_type_case a owl:Class ;
+    rdfs:label "union_type_case" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 334 .
+
+fsharp:union_type_cases a owl:Class ;
+    rdfs:label "union_type_cases" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 333 .
+
+fsharp:union_type_defn a owl:Class ;
+    rdfs:label "union_type_defn" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 332 .
+
+fsharp:union_type_field a owl:Class ;
+    rdfs:label "union_type_field" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 336 .
+
+fsharp:union_type_fields a owl:Class ;
+    rdfs:label "union_type_fields" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 335 .
+
+fsharp:unit a owl:Class ;
+    rdfs:label "unit" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 134 .
+
+fsharp:value_declaration a owl:Class ;
+    rdfs:label "value_declaration" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 207 .
+
+fsharp:value_declaration_left a owl:Class ;
+    rdfs:label "value_declaration_left" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 213 .
+
+fsharp:verbatim_bytearray a owl:Class ;
+    rdfs:label "verbatim_bytearray" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 368 .
+
+fsharp:verbatim_string a owl:Class ;
+    rdfs:label "verbatim_string" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 366 .
+
+fsharp:while_expression a owl:Class ;
+    rdfs:label "while_expression" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 250 .
+
+fsharp:wildcard_active_pattern_op a owl:Class ;
+    rdfs:label "wildcard_active_pattern_op" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 449 .
+
+fsharp:wildcard_pattern a owl:Class ;
+    rdfs:label "wildcard_pattern" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 450 .
+
+fsharp:with_field_expression a owl:Class ;
+    rdfs:label "with_field_expression" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 246 .
+
+fsharp:xint a owl:Class ;
+    rdfs:label "xint" ;
+    rdfs:isDefinedBy fsharp: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp:isSupertype true ;
+    fsharp:nodeTypeId 155 .
+
+fsharp: a owl:Ontology ;
+    rdfs:label "Fsharp Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for fsharp" ;
+    owl:versionInfo "v0.25" ;
+    fsharp:abiVersion 15 ;
+    fsharp:fieldCount 24 ;
+    fsharp:languageName "fsharp" ;
+    fsharp:nodeKindCount 451 .
+

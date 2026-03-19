@@ -1,0 +1,894 @@
+{
+  "git_version": "v3.1.46",
+  "gitpython_version": "3.1.46",
+  "extracted_at": "2026-02-26T10:01:17.771845",
+  "objects": {
+    "Commit": [
+      {
+        "name": "INDEX",
+        "python_type": "DiffConstants",
+        "xsd_type": null,
+        "is_object_property": true,
+        "sample_value": "<DiffConstants.INDEX: 2>"
+      },
+      {
+        "name": "Index",
+        "python_type": "DiffConstants",
+        "xsd_type": null,
+        "is_object_property": true,
+        "sample_value": "<DiffConstants.INDEX: 2>"
+      },
+      {
+        "name": "NULL_BIN_SHA",
+        "python_type": "bytes",
+        "xsd_type": "http://www.w3.org/2001/XMLSchema#hexBinary",
+        "is_object_property": false,
+        "sample_value": "b'\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00'"
+      },
+      {
+        "name": "NULL_HEX_SHA",
+        "python_type": "str",
+        "xsd_type": "http://www.w3.org/2001/XMLSchema#string",
+        "is_object_property": false,
+        "sample_value": "'0000000000000000000000000000000000000000'"
+      },
+      {
+        "name": "NULL_TREE",
+        "python_type": "DiffConstants",
+        "xsd_type": null,
+        "is_object_property": true,
+        "sample_value": "<DiffConstants.NULL_TREE: 1>"
+      },
+      {
+        "name": "TYPES",
+        "python_type": "tuple",
+        "xsd_type": null,
+        "is_object_property": true,
+        "sample_value": "(b'blob', b'tree', b'commit', b'tag')"
+      },
+      {
+        "name": "author",
+        "python_type": "Actor",
+        "xsd_type": null,
+        "is_object_property": true,
+        "sample_value": "<git.Actor \"lux <rob.kunkle@gmail.com>\">"
+      },
+      {
+        "name": "author_tz_offset",
+        "python_type": "int",
+        "xsd_type": "http://www.w3.org/2001/XMLSchema#integer",
+        "is_object_property": false,
+        "sample_value": "28800"
+      },
+      {
+        "name": "authored_date",
+        "python_type": "int",
+        "xsd_type": "http://www.w3.org/2001/XMLSchema#integer",
+        "is_object_property": false,
+        "sample_value": "1772115109"
+      },
+      {
+        "name": "authored_datetime",
+        "python_type": "datetime",
+        "xsd_type": "http://www.w3.org/2001/XMLSchema#dateTime",
+        "is_object_property": false,
+        "sample_value": "datetime.datetime(2026, 2, 26, 6, 11, 49, tzinfo=<git.objects.util.tzoffset object at 0x103a6d1d0>)"
+      },
+      {
+        "name": "binsha",
+        "python_type": "bytes",
+        "xsd_type": "http://www.w3.org/2001/XMLSchema#hexBinary",
+        "is_object_property": false,
+        "sample_value": "b'\\x86\\xc8[\\xee\\x11J|\\xe4u\\x86/\\xe2/U\\xce\\x8c\\xf6\\xd4\\xa4\\x1d'"
+      },
+      {
+        "name": "co_authors",
+        "python_type": "list",
+        "xsd_type": null,
+        "is_object_property": true,
+        "sample_value": "[]"
+      },
+      {
+        "name": "committed_date",
+        "python_type": "int",
+        "xsd_type": "http://www.w3.org/2001/XMLSchema#integer",
+        "is_object_property": false,
+        "sample_value": "1772115109"
+      },
+      {
+        "name": "committed_datetime",
+        "python_type": "datetime",
+        "xsd_type": "http://www.w3.org/2001/XMLSchema#dateTime",
+        "is_object_property": false,
+        "sample_value": "datetime.datetime(2026, 2, 26, 6, 11, 49, tzinfo=<git.objects.util.tzoffset object at 0x103a6d1d0>)"
+      },
+      {
+        "name": "committer",
+        "python_type": "Actor",
+        "xsd_type": null,
+        "is_object_property": true,
+        "sample_value": "<git.Actor \"lux <rob.kunkle@gmail.com>\">"
+      },
+      {
+        "name": "committer_tz_offset",
+        "python_type": "int",
+        "xsd_type": "http://www.w3.org/2001/XMLSchema#integer",
+        "is_object_property": false,
+        "sample_value": "28800"
+      },
+      {
+        "name": "conf_encoding",
+        "python_type": "str",
+        "xsd_type": "http://www.w3.org/2001/XMLSchema#string",
+        "is_object_property": false,
+        "sample_value": "'i18n.commitencoding'"
+      },
+      {
+        "name": "data_stream",
+        "python_type": "OStream",
+        "xsd_type": null,
+        "is_object_property": true,
+        "sample_value": "(b'\\x86\\xc8[\\xee\\x11J|\\xe4u\\x86/\\xe2/U\\xce\\x8c\\xf6\\xd4\\xa4\\x1d', b'commit', 1308, <git.cmd.Git.CatFi"
+      },
+      {
+        "name": "default_encoding",
+        "python_type": "str",
+        "xsd_type": "http://www.w3.org/2001/XMLSchema#string",
+        "is_object_property": false,
+        "sample_value": "'UTF-8'"
+      },
+      {
+        "name": "encoding",
+        "python_type": "str",
+        "xsd_type": "http://www.w3.org/2001/XMLSchema#string",
+        "is_object_property": false,
+        "sample_value": "'UTF-8'"
+      },
+      {
+        "name": "env_author_date",
+        "python_type": "str",
+        "xsd_type": "http://www.w3.org/2001/XMLSchema#string",
+        "is_object_property": false,
+        "sample_value": "'GIT_AUTHOR_DATE'"
+      },
+      {
+        "name": "env_committer_date",
+        "python_type": "str",
+        "xsd_type": "http://www.w3.org/2001/XMLSchema#string",
+        "is_object_property": false,
+        "sample_value": "'GIT_COMMITTER_DATE'"
+      },
+      {
+        "name": "gpgsig",
+        "python_type": "str",
+        "xsd_type": "http://www.w3.org/2001/XMLSchema#string",
+        "is_object_property": false,
+        "sample_value": "''"
+      },
+      {
+        "name": "hexsha",
+        "python_type": "str",
+        "xsd_type": "http://www.w3.org/2001/XMLSchema#string",
+        "is_object_property": false,
+        "sample_value": "'86c85bee114a7ce475862fe22f55ce8cf6d4a41d'"
+      },
+      {
+        "name": "message",
+        "python_type": "str",
+        "xsd_type": "http://www.w3.org/2001/XMLSchema#string",
+        "is_object_property": false,
+        "sample_value": "\"Add repolex:File class and fix git ontology with IndexObject\\n\\nMajor improvements to ontology stru"
+      },
+      {
+        "name": "name_rev",
+        "python_type": "str",
+        "xsd_type": "http://www.w3.org/2001/XMLSchema#string",
+        "is_object_property": false,
+        "sample_value": "'86c85bee114a7ce475862fe22f55ce8cf6d4a41d main'"
+      },
+      {
+        "name": "parents",
+        "python_type": "tuple",
+        "xsd_type": null,
+        "is_object_property": true,
+        "sample_value": "(<git.Commit \"89d5163f9c536cbde14cfaa1ab2fbdc0705b7bad\">,)"
+      },
+      {
+        "name": "repo",
+        "python_type": "Repo",
+        "xsd_type": null,
+        "is_object_property": true,
+        "sample_value": "<git.repo.base.Repo '/Users/rob/repos/repolex-ai/ontology-builder/.git'>"
+      },
+      {
+        "name": "size",
+        "python_type": "int",
+        "xsd_type": "http://www.w3.org/2001/XMLSchema#integer",
+        "is_object_property": false,
+        "sample_value": "1308"
+      },
+      {
+        "name": "stats",
+        "python_type": "Stats",
+        "xsd_type": null,
+        "is_object_property": true,
+        "sample_value": "<git.util.Stats object at 0x1035d3d30>"
+      },
+      {
+        "name": "summary",
+        "python_type": "str",
+        "xsd_type": "http://www.w3.org/2001/XMLSchema#string",
+        "is_object_property": false,
+        "sample_value": "'Add repolex:File class and fix git ontology with IndexObject'"
+      },
+      {
+        "name": "trailers",
+        "python_type": "dict",
+        "xsd_type": null,
+        "is_object_property": true,
+        "sample_value": "{'Co-Authored-By': 'Claude <noreply@anthropic.com>'}"
+      },
+      {
+        "name": "trailers_dict",
+        "python_type": "dict",
+        "xsd_type": null,
+        "is_object_property": true,
+        "sample_value": "{'Co-Authored-By': ['Claude <noreply@anthropic.com>']}"
+      },
+      {
+        "name": "trailers_list",
+        "python_type": "list",
+        "xsd_type": null,
+        "is_object_property": true,
+        "sample_value": "[('Co-Authored-By', 'Claude <noreply@anthropic.com>')]"
+      },
+      {
+        "name": "tree",
+        "python_type": "Tree",
+        "xsd_type": null,
+        "is_object_property": true,
+        "sample_value": "<git.Tree \"4630ab48b59b56cfccc2499d61031526ec3797c6\">"
+      },
+      {
+        "name": "type",
+        "python_type": "str",
+        "xsd_type": "http://www.w3.org/2001/XMLSchema#string",
+        "is_object_property": false,
+        "sample_value": "'commit'"
+      }
+    ],
+    "Tree": [
+      {
+        "name": "INDEX",
+        "python_type": "DiffConstants",
+        "xsd_type": null,
+        "is_object_property": true,
+        "sample_value": "<DiffConstants.INDEX: 2>"
+      },
+      {
+        "name": "Index",
+        "python_type": "DiffConstants",
+        "xsd_type": null,
+        "is_object_property": true,
+        "sample_value": "<DiffConstants.INDEX: 2>"
+      },
+      {
+        "name": "NULL_BIN_SHA",
+        "python_type": "bytes",
+        "xsd_type": "http://www.w3.org/2001/XMLSchema#hexBinary",
+        "is_object_property": false,
+        "sample_value": "b'\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00'"
+      },
+      {
+        "name": "NULL_HEX_SHA",
+        "python_type": "str",
+        "xsd_type": "http://www.w3.org/2001/XMLSchema#string",
+        "is_object_property": false,
+        "sample_value": "'0000000000000000000000000000000000000000'"
+      },
+      {
+        "name": "NULL_TREE",
+        "python_type": "DiffConstants",
+        "xsd_type": null,
+        "is_object_property": true,
+        "sample_value": "<DiffConstants.NULL_TREE: 1>"
+      },
+      {
+        "name": "TYPES",
+        "python_type": "tuple",
+        "xsd_type": null,
+        "is_object_property": true,
+        "sample_value": "(b'blob', b'tree', b'commit', b'tag')"
+      },
+      {
+        "name": "abspath",
+        "python_type": "str",
+        "xsd_type": "http://www.w3.org/2001/XMLSchema#string",
+        "is_object_property": false,
+        "sample_value": "'/Users/rob/repos/repolex-ai/ontology-builder'"
+      },
+      {
+        "name": "binsha",
+        "python_type": "bytes",
+        "xsd_type": "http://www.w3.org/2001/XMLSchema#hexBinary",
+        "is_object_property": false,
+        "sample_value": "b'F0\\xabH\\xb5\\x9bV\\xcf\\xcc\\xc2I\\x9da\\x03\\x15&\\xec7\\x97\\xc6'"
+      },
+      {
+        "name": "blob_id",
+        "python_type": "int",
+        "xsd_type": "http://www.w3.org/2001/XMLSchema#integer",
+        "is_object_property": false,
+        "sample_value": "8"
+      },
+      {
+        "name": "blobs",
+        "python_type": "list",
+        "xsd_type": null,
+        "is_object_property": true,
+        "sample_value": "[<git.Blob \"7d37cdd3535590b11115b753e83fcafefea79014\">, <git.Blob \"b9580841f0665544019417f2beac1791b"
+      },
+      {
+        "name": "cache",
+        "python_type": "TreeModifier",
+        "xsd_type": null,
+        "is_object_property": true,
+        "sample_value": "<git.objects.tree.TreeModifier object at 0x103a860e0>"
+      },
+      {
+        "name": "commit_id",
+        "python_type": "int",
+        "xsd_type": "http://www.w3.org/2001/XMLSchema#integer",
+        "is_object_property": false,
+        "sample_value": "14"
+      },
+      {
+        "name": "data_stream",
+        "python_type": "OStream",
+        "xsd_type": null,
+        "is_object_property": true,
+        "sample_value": "(b'F0\\xabH\\xb5\\x9bV\\xcf\\xcc\\xc2I\\x9da\\x03\\x15&\\xec7\\x97\\xc6', b'tree', 462, <git.cmd.Git.CatFileCont"
+      },
+      {
+        "name": "hexsha",
+        "python_type": "str",
+        "xsd_type": "http://www.w3.org/2001/XMLSchema#string",
+        "is_object_property": false,
+        "sample_value": "'4630ab48b59b56cfccc2499d61031526ec3797c6'"
+      },
+      {
+        "name": "mode",
+        "python_type": "int",
+        "xsd_type": "http://www.w3.org/2001/XMLSchema#integer",
+        "is_object_property": false,
+        "sample_value": "16384"
+      },
+      {
+        "name": "name",
+        "python_type": "str",
+        "xsd_type": "http://www.w3.org/2001/XMLSchema#string",
+        "is_object_property": false,
+        "sample_value": "''"
+      },
+      {
+        "name": "path",
+        "python_type": "str",
+        "xsd_type": "http://www.w3.org/2001/XMLSchema#string",
+        "is_object_property": false,
+        "sample_value": "''"
+      },
+      {
+        "name": "repo",
+        "python_type": "Repo",
+        "xsd_type": null,
+        "is_object_property": true,
+        "sample_value": "<git.repo.base.Repo '/Users/rob/repos/repolex-ai/ontology-builder/.git'>"
+      },
+      {
+        "name": "size",
+        "python_type": "int",
+        "xsd_type": "http://www.w3.org/2001/XMLSchema#integer",
+        "is_object_property": false,
+        "sample_value": "462"
+      },
+      {
+        "name": "symlink_id",
+        "python_type": "int",
+        "xsd_type": "http://www.w3.org/2001/XMLSchema#integer",
+        "is_object_property": false,
+        "sample_value": "10"
+      },
+      {
+        "name": "tree_id",
+        "python_type": "int",
+        "xsd_type": "http://www.w3.org/2001/XMLSchema#integer",
+        "is_object_property": false,
+        "sample_value": "4"
+      },
+      {
+        "name": "trees",
+        "python_type": "list",
+        "xsd_type": null,
+        "is_object_property": true,
+        "sample_value": "[<git.Tree \"dd6fe91f3f10b34d985b81f369474f7867ae7f92\">, <git.Tree \"d647b32c0f1ec69ed2351db831e5a7ea6"
+      },
+      {
+        "name": "type",
+        "python_type": "str",
+        "xsd_type": "http://www.w3.org/2001/XMLSchema#string",
+        "is_object_property": false,
+        "sample_value": "'tree'"
+      }
+    ],
+    "Blob": [
+      {
+        "name": "DEFAULT_MIME_TYPE",
+        "python_type": "str",
+        "xsd_type": "http://www.w3.org/2001/XMLSchema#string",
+        "is_object_property": false,
+        "sample_value": "'text/plain'"
+      },
+      {
+        "name": "NULL_BIN_SHA",
+        "python_type": "bytes",
+        "xsd_type": "http://www.w3.org/2001/XMLSchema#hexBinary",
+        "is_object_property": false,
+        "sample_value": "b'\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00'"
+      },
+      {
+        "name": "NULL_HEX_SHA",
+        "python_type": "str",
+        "xsd_type": "http://www.w3.org/2001/XMLSchema#string",
+        "is_object_property": false,
+        "sample_value": "'0000000000000000000000000000000000000000'"
+      },
+      {
+        "name": "TYPES",
+        "python_type": "tuple",
+        "xsd_type": null,
+        "is_object_property": true,
+        "sample_value": "(b'blob', b'tree', b'commit', b'tag')"
+      },
+      {
+        "name": "abspath",
+        "python_type": "str",
+        "xsd_type": "http://www.w3.org/2001/XMLSchema#string",
+        "is_object_property": false,
+        "sample_value": "'/Users/rob/repos/repolex-ai/ontology-builder/.DS_Store'"
+      },
+      {
+        "name": "binsha",
+        "python_type": "bytes",
+        "xsd_type": "http://www.w3.org/2001/XMLSchema#hexBinary",
+        "is_object_property": false,
+        "sample_value": "b'}7\\xcd\\xd3SU\\x90\\xb1\\x11\\x15\\xb7S\\xe8?\\xca\\xfe\\xfe\\xa7\\x90\\x14'"
+      },
+      {
+        "name": "data_stream",
+        "python_type": "OStream",
+        "xsd_type": null,
+        "is_object_property": true,
+        "sample_value": "(b'}7\\xcd\\xd3SU\\x90\\xb1\\x11\\x15\\xb7S\\xe8?\\xca\\xfe\\xfe\\xa7\\x90\\x14', b'blob', 6148, <git.cmd.Git.CatF"
+      },
+      {
+        "name": "executable_mode",
+        "python_type": "int",
+        "xsd_type": "http://www.w3.org/2001/XMLSchema#integer",
+        "is_object_property": false,
+        "sample_value": "33261"
+      },
+      {
+        "name": "file_mode",
+        "python_type": "int",
+        "xsd_type": "http://www.w3.org/2001/XMLSchema#integer",
+        "is_object_property": false,
+        "sample_value": "33188"
+      },
+      {
+        "name": "hexsha",
+        "python_type": "str",
+        "xsd_type": "http://www.w3.org/2001/XMLSchema#string",
+        "is_object_property": false,
+        "sample_value": "'7d37cdd3535590b11115b753e83fcafefea79014'"
+      },
+      {
+        "name": "link_mode",
+        "python_type": "int",
+        "xsd_type": "http://www.w3.org/2001/XMLSchema#integer",
+        "is_object_property": false,
+        "sample_value": "40960"
+      },
+      {
+        "name": "mime_type",
+        "python_type": "str",
+        "xsd_type": "http://www.w3.org/2001/XMLSchema#string",
+        "is_object_property": false,
+        "sample_value": "'text/plain'"
+      },
+      {
+        "name": "mode",
+        "python_type": "int",
+        "xsd_type": "http://www.w3.org/2001/XMLSchema#integer",
+        "is_object_property": false,
+        "sample_value": "33188"
+      },
+      {
+        "name": "name",
+        "python_type": "str",
+        "xsd_type": "http://www.w3.org/2001/XMLSchema#string",
+        "is_object_property": false,
+        "sample_value": "'.DS_Store'"
+      },
+      {
+        "name": "path",
+        "python_type": "str",
+        "xsd_type": "http://www.w3.org/2001/XMLSchema#string",
+        "is_object_property": false,
+        "sample_value": "'.DS_Store'"
+      },
+      {
+        "name": "repo",
+        "python_type": "Repo",
+        "xsd_type": null,
+        "is_object_property": true,
+        "sample_value": "<git.repo.base.Repo '/Users/rob/repos/repolex-ai/ontology-builder/.git'>"
+      },
+      {
+        "name": "size",
+        "python_type": "int",
+        "xsd_type": "http://www.w3.org/2001/XMLSchema#integer",
+        "is_object_property": false,
+        "sample_value": "6148"
+      },
+      {
+        "name": "type",
+        "python_type": "str",
+        "xsd_type": "http://www.w3.org/2001/XMLSchema#string",
+        "is_object_property": false,
+        "sample_value": "'blob'"
+      }
+    ],
+    "Reference": [
+      {
+        "name": "abspath",
+        "python_type": "str",
+        "xsd_type": "http://www.w3.org/2001/XMLSchema#string",
+        "is_object_property": false,
+        "sample_value": "'/Users/rob/repos/repolex-ai/ontology-builder/.git/HEAD'"
+      },
+      {
+        "name": "commit",
+        "python_type": "Commit",
+        "xsd_type": null,
+        "is_object_property": true,
+        "sample_value": "<git.Commit \"86c85bee114a7ce475862fe22f55ce8cf6d4a41d\">"
+      },
+      {
+        "name": "is_detached",
+        "python_type": "bool",
+        "xsd_type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "is_object_property": false,
+        "sample_value": "False"
+      },
+      {
+        "name": "name",
+        "python_type": "str",
+        "xsd_type": "http://www.w3.org/2001/XMLSchema#string",
+        "is_object_property": false,
+        "sample_value": "'HEAD'"
+      },
+      {
+        "name": "object",
+        "python_type": "Commit",
+        "xsd_type": null,
+        "is_object_property": true,
+        "sample_value": "<git.Commit \"86c85bee114a7ce475862fe22f55ce8cf6d4a41d\">"
+      },
+      {
+        "name": "path",
+        "python_type": "str",
+        "xsd_type": "http://www.w3.org/2001/XMLSchema#string",
+        "is_object_property": false,
+        "sample_value": "'HEAD'"
+      },
+      {
+        "name": "ref",
+        "python_type": "Head",
+        "xsd_type": null,
+        "is_object_property": true,
+        "sample_value": "<git.Head \"refs/heads/main\">"
+      },
+      {
+        "name": "reference",
+        "python_type": "Head",
+        "xsd_type": null,
+        "is_object_property": true,
+        "sample_value": "<git.Head \"refs/heads/main\">"
+      },
+      {
+        "name": "repo",
+        "python_type": "Repo",
+        "xsd_type": null,
+        "is_object_property": true,
+        "sample_value": "<git.repo.base.Repo '/Users/rob/repos/repolex-ai/ontology-builder/.git'>"
+      }
+    ],
+    "Actor": [
+      {
+        "name": "conf_email",
+        "python_type": "str",
+        "xsd_type": "http://www.w3.org/2001/XMLSchema#string",
+        "is_object_property": false,
+        "sample_value": "'email'"
+      },
+      {
+        "name": "conf_name",
+        "python_type": "str",
+        "xsd_type": "http://www.w3.org/2001/XMLSchema#string",
+        "is_object_property": false,
+        "sample_value": "'name'"
+      },
+      {
+        "name": "email",
+        "python_type": "str",
+        "xsd_type": "http://www.w3.org/2001/XMLSchema#string",
+        "is_object_property": false,
+        "sample_value": "'rob.kunkle@gmail.com'"
+      },
+      {
+        "name": "env_author_email",
+        "python_type": "str",
+        "xsd_type": "http://www.w3.org/2001/XMLSchema#string",
+        "is_object_property": false,
+        "sample_value": "'GIT_AUTHOR_EMAIL'"
+      },
+      {
+        "name": "env_author_name",
+        "python_type": "str",
+        "xsd_type": "http://www.w3.org/2001/XMLSchema#string",
+        "is_object_property": false,
+        "sample_value": "'GIT_AUTHOR_NAME'"
+      },
+      {
+        "name": "env_committer_email",
+        "python_type": "str",
+        "xsd_type": "http://www.w3.org/2001/XMLSchema#string",
+        "is_object_property": false,
+        "sample_value": "'GIT_COMMITTER_EMAIL'"
+      },
+      {
+        "name": "env_committer_name",
+        "python_type": "str",
+        "xsd_type": "http://www.w3.org/2001/XMLSchema#string",
+        "is_object_property": false,
+        "sample_value": "'GIT_COMMITTER_NAME'"
+      },
+      {
+        "name": "name",
+        "python_type": "str",
+        "xsd_type": "http://www.w3.org/2001/XMLSchema#string",
+        "is_object_property": false,
+        "sample_value": "'lux'"
+      },
+      {
+        "name": "name_email_regex",
+        "python_type": "Pattern",
+        "xsd_type": null,
+        "is_object_property": true,
+        "sample_value": "re.compile('(.*) <(.*?)>')"
+      },
+      {
+        "name": "name_only_regex",
+        "python_type": "Pattern",
+        "xsd_type": null,
+        "is_object_property": true,
+        "sample_value": "re.compile('<(.*)>')"
+      }
+    ],
+    "Repository": [
+      {
+        "name": "DAEMON_EXPORT_FILE",
+        "python_type": "str",
+        "xsd_type": "http://www.w3.org/2001/XMLSchema#string",
+        "is_object_property": false,
+        "sample_value": "'git-daemon-export-ok'"
+      },
+      {
+        "name": "active_branch",
+        "python_type": "Head",
+        "xsd_type": null,
+        "is_object_property": true,
+        "sample_value": "<git.Head \"refs/heads/main\">"
+      },
+      {
+        "name": "alternates",
+        "python_type": "list",
+        "xsd_type": null,
+        "is_object_property": true,
+        "sample_value": "[]"
+      },
+      {
+        "name": "bare",
+        "python_type": "bool",
+        "xsd_type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "is_object_property": false,
+        "sample_value": "False"
+      },
+      {
+        "name": "branches",
+        "python_type": "IterableList",
+        "xsd_type": null,
+        "is_object_property": true,
+        "sample_value": "[<git.Head \"refs/heads/main\">]"
+      },
+      {
+        "name": "common_dir",
+        "python_type": "str",
+        "xsd_type": "http://www.w3.org/2001/XMLSchema#string",
+        "is_object_property": false,
+        "sample_value": "'/Users/rob/repos/repolex-ai/ontology-builder/.git'"
+      },
+      {
+        "name": "config_level",
+        "python_type": "tuple",
+        "xsd_type": null,
+        "is_object_property": true,
+        "sample_value": "('system', 'user', 'global', 'repository')"
+      },
+      {
+        "name": "daemon_export",
+        "python_type": "bool",
+        "xsd_type": "http://www.w3.org/2001/XMLSchema#boolean",
+        "is_object_property": false,
+        "sample_value": "False"
+      },
+      {
+        "name": "description",
+        "python_type": "str",
+        "xsd_type": "http://www.w3.org/2001/XMLSchema#string",
+        "is_object_property": false,
+        "sample_value": "\"Unnamed repository; edit this file 'description' to name the repository.\""
+      },
+      {
+        "name": "git_dir",
+        "python_type": "str",
+        "xsd_type": "http://www.w3.org/2001/XMLSchema#string",
+        "is_object_property": false,
+        "sample_value": "'/Users/rob/repos/repolex-ai/ontology-builder/.git'"
+      },
+      {
+        "name": "head",
+        "python_type": "HEAD",
+        "xsd_type": null,
+        "is_object_property": true,
+        "sample_value": "<git.HEAD \"HEAD\">"
+      },
+      {
+        "name": "heads",
+        "python_type": "IterableList",
+        "xsd_type": null,
+        "is_object_property": true,
+        "sample_value": "[<git.Head \"refs/heads/main\">]"
+      },
+      {
+        "name": "index",
+        "python_type": "IndexFile",
+        "xsd_type": null,
+        "is_object_property": true,
+        "sample_value": "<git.index.base.IndexFile object at 0x108dacd60>"
+      },
+      {
+        "name": "odb",
+        "python_type": "GitCmdObjectDB",
+        "xsd_type": null,
+        "is_object_property": true,
+        "sample_value": "<git.db.GitCmdObjectDB object at 0x103a0af90>"
+      },
+      {
+        "name": "re_author_committer_start",
+        "python_type": "Pattern",
+        "xsd_type": null,
+        "is_object_property": true,
+        "sample_value": "re.compile('^(author|committer)')"
+      },
+      {
+        "name": "re_envvars",
+        "python_type": "Pattern",
+        "xsd_type": null,
+        "is_object_property": true,
+        "sample_value": "re.compile('(\\\\$(\\\\{\\\\s?)?[a-zA-Z_]\\\\w*(\\\\}\\\\s?)?|%\\\\s?[a-zA-Z_]\\\\w*\\\\s?%)')"
+      },
+      {
+        "name": "re_hexsha_only",
+        "python_type": "Pattern",
+        "xsd_type": null,
+        "is_object_property": true,
+        "sample_value": "re.compile('^[0-9A-Fa-f]{40}$')"
+      },
+      {
+        "name": "re_hexsha_shortened",
+        "python_type": "Pattern",
+        "xsd_type": null,
+        "is_object_property": true,
+        "sample_value": "re.compile('^[0-9A-Fa-f]{4,40}$')"
+      },
+      {
+        "name": "re_tab_full_line",
+        "python_type": "Pattern",
+        "xsd_type": null,
+        "is_object_property": true,
+        "sample_value": "re.compile('^\\\\t(.*)$')"
+      },
+      {
+        "name": "re_whitespace",
+        "python_type": "Pattern",
+        "xsd_type": null,
+        "is_object_property": true,
+        "sample_value": "re.compile('\\\\s+')"
+      },
+      {
+        "name": "references",
+        "python_type": "IterableList",
+        "xsd_type": null,
+        "is_object_property": true,
+        "sample_value": "[<git.Head \"refs/heads/main\">, <git.RemoteReference \"refs/remotes/origin/HEAD\">, <git.RemoteReferenc"
+      },
+      {
+        "name": "refs",
+        "python_type": "IterableList",
+        "xsd_type": null,
+        "is_object_property": true,
+        "sample_value": "[<git.Head \"refs/heads/main\">, <git.RemoteReference \"refs/remotes/origin/HEAD\">, <git.RemoteReferenc"
+      },
+      {
+        "name": "remotes",
+        "python_type": "IterableList",
+        "xsd_type": null,
+        "is_object_property": true,
+        "sample_value": "[<git.Remote \"origin\">]"
+      },
+      {
+        "name": "submodules",
+        "python_type": "IterableList",
+        "xsd_type": null,
+        "is_object_property": true,
+        "sample_value": "[]"
+      },
+      {
+        "name": "tags",
+        "python_type": "IterableList",
+        "xsd_type": null,
+        "is_object_property": true,
+        "sample_value": "[]"
+      },
+      {
+        "name": "unsafe_git_clone_options",
+        "python_type": "list",
+        "xsd_type": null,
+        "is_object_property": true,
+        "sample_value": "['--upload-pack', '-u', '--config', '-c']"
+      },
+      {
+        "name": "untracked_files",
+        "python_type": "list",
+        "xsd_type": null,
+        "is_object_property": true,
+        "sample_value": "[]"
+      },
+      {
+        "name": "working_dir",
+        "python_type": "str",
+        "xsd_type": "http://www.w3.org/2001/XMLSchema#string",
+        "is_object_property": false,
+        "sample_value": "'/Users/rob/repos/repolex-ai/ontology-builder'"
+      },
+      {
+        "name": "working_tree_dir",
+        "python_type": "str",
+        "xsd_type": "http://www.w3.org/2001/XMLSchema#string",
+        "is_object_property": false,
+        "sample_value": "'/Users/rob/repos/repolex-ai/ontology-builder'"
+      }
+    ]
+  }
+}

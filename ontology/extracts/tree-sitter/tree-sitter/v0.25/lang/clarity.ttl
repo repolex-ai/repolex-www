@@ -1,0 +1,456 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix clarity: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/clarity/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+clarity:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+clarity:ascii_string_lit a owl:Class ;
+    rdfs:label "ascii_string_lit" ;
+    rdfs:isDefinedBy clarity: ;
+    rdfs:subClassOf ast:Node ;
+    clarity:isSupertype true ;
+    clarity:nodeTypeId 215 .
+
+clarity:ascii_string_type a owl:Class ;
+    rdfs:label "ascii_string_type" ;
+    rdfs:isDefinedBy clarity: ;
+    rdfs:subClassOf ast:Node ;
+    clarity:isSupertype true ;
+    clarity:nodeTypeId 200 .
+
+clarity:basic_native_form a owl:Class ;
+    rdfs:label "basic_native_form" ;
+    rdfs:isDefinedBy clarity: ;
+    rdfs:subClassOf ast:Node ;
+    clarity:isSupertype true ;
+    clarity:nodeTypeId 189 .
+
+clarity:bool_lit a owl:Class ;
+    rdfs:label "bool_lit" ;
+    rdfs:isDefinedBy clarity: ;
+    rdfs:subClassOf ast:Node ;
+    clarity:isSupertype true ;
+    clarity:nodeTypeId 211 .
+
+clarity:buffer_lit a owl:Class ;
+    rdfs:label "buffer_lit" ;
+    rdfs:isDefinedBy clarity: ;
+    rdfs:subClassOf ast:Node ;
+    clarity:isSupertype true ;
+    clarity:nodeTypeId 214 .
+
+clarity:buffer_type a owl:Class ;
+    rdfs:label "buffer_type" ;
+    rdfs:isDefinedBy clarity: ;
+    rdfs:subClassOf ast:Node ;
+    clarity:isSupertype true ;
+    clarity:nodeTypeId 199 .
+
+clarity:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy clarity: ;
+    rdfs:subClassOf ast:Node ;
+    clarity:isSupertype true ;
+    clarity:nodeTypeId 171 .
+
+clarity:constant_definition a owl:Class ;
+    rdfs:label "constant_definition" ;
+    rdfs:isDefinedBy clarity: ;
+    rdfs:subClassOf ast:Node ;
+    clarity:isSupertype true ;
+    clarity:nodeTypeId 181 .
+
+clarity:contract_function_call a owl:Class ;
+    rdfs:label "contract_function_call" ;
+    rdfs:isDefinedBy clarity: ;
+    rdfs:subClassOf ast:Node ;
+    clarity:isSupertype true ;
+    clarity:nodeTypeId 190 .
+
+clarity:contract_principal_lit a owl:Class ;
+    rdfs:label "contract_principal_lit" ;
+    rdfs:isDefinedBy clarity: ;
+    rdfs:subClassOf ast:Node ;
+    clarity:isSupertype true ;
+    clarity:nodeTypeId 213 .
+
+clarity:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+clarity:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+clarity:field_key_type a owl:ObjectProperty ;
+    rdfs:label "key_type (structural)" ;
+    rdfs:comment "Structural reference for key_type field when it contains a non-terminal node" ;
+    clarity:fieldId 2 .
+
+clarity:field_operator a owl:ObjectProperty ;
+    rdfs:label "operator (structural)" ;
+    rdfs:comment "Structural reference for operator field when it contains a non-terminal node" ;
+    clarity:fieldId 3 .
+
+clarity:field_value a owl:ObjectProperty ;
+    rdfs:label "value (structural)" ;
+    rdfs:comment "Structural reference for value field when it contains a non-terminal node" ;
+    clarity:fieldId 6 .
+
+clarity:field_value_type a owl:ObjectProperty ;
+    rdfs:label "value_type (structural)" ;
+    rdfs:comment "Structural reference for value_type field when it contains a non-terminal node" ;
+    clarity:fieldId 7 .
+
+clarity:function_definition a owl:Class ;
+    rdfs:label "function_definition" ;
+    rdfs:isDefinedBy clarity: ;
+    rdfs:subClassOf ast:Node ;
+    clarity:isSupertype true ;
+    clarity:nodeTypeId 184 .
+
+clarity:function_parameter a owl:Class ;
+    rdfs:label "function_parameter" ;
+    rdfs:isDefinedBy clarity: ;
+    rdfs:subClassOf ast:Node ;
+    clarity:isSupertype true ;
+    clarity:nodeTypeId 194 .
+
+clarity:function_signature a owl:Class ;
+    rdfs:label "function_signature" ;
+    rdfs:isDefinedBy clarity: ;
+    rdfs:subClassOf ast:Node ;
+    clarity:isSupertype true ;
+    clarity:nodeTypeId 193 .
+
+clarity:function_signature_for_trait a owl:Class ;
+    rdfs:label "function_signature_for_trait" ;
+    rdfs:isDefinedBy clarity: ;
+    rdfs:subClassOf ast:Node ;
+    clarity:isSupertype true ;
+    clarity:nodeTypeId 195 .
+
+clarity:fungible_token_definition a owl:Class ;
+    rdfs:label "fungible_token_definition" ;
+    rdfs:isDefinedBy clarity: ;
+    rdfs:subClassOf ast:Node ;
+    clarity:isSupertype true ;
+    clarity:nodeTypeId 179 .
+
+clarity:global a owl:Class ;
+    rdfs:label "global" ;
+    rdfs:isDefinedBy clarity: ;
+    rdfs:subClassOf ast:Node ;
+    clarity:isSupertype true ;
+    clarity:nodeTypeId 223 .
+
+clarity:identifier a owl:Class ;
+    rdfs:label "identifier" ;
+    rdfs:isDefinedBy clarity: ;
+    rdfs:subClassOf ast:Node ;
+    clarity:isSupertype true ;
+    clarity:nodeTypeId 1 .
+
+clarity:int_lit a owl:Class ;
+    rdfs:label "int_lit" ;
+    rdfs:isDefinedBy clarity: ;
+    rdfs:subClassOf ast:Node ;
+    clarity:isSupertype true ;
+    clarity:nodeTypeId 210 .
+
+clarity:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+clarity:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+clarity:key a owl:DatatypeProperty ;
+    rdfs:label "key (literal)" ;
+    rdfs:comment "Literal value for key field when it contains a terminal node" ;
+    clarity:fieldId 1 ;
+    clarity:isTerminalField true .
+
+clarity:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+clarity:let_expression a owl:Class ;
+    rdfs:label "let_expression" ;
+    rdfs:isDefinedBy clarity: ;
+    rdfs:subClassOf ast:Node ;
+    clarity:isSupertype true ;
+    clarity:nodeTypeId 191 .
+
+clarity:list_lit a owl:Class ;
+    rdfs:label "list_lit" ;
+    rdfs:isDefinedBy clarity: ;
+    rdfs:subClassOf ast:Node ;
+    clarity:isSupertype true ;
+    clarity:nodeTypeId 216 .
+
+clarity:list_lit_token a owl:Class ;
+    rdfs:label "list_lit_token" ;
+    rdfs:isDefinedBy clarity: ;
+    rdfs:subClassOf ast:Node ;
+    clarity:isSupertype true ;
+    clarity:nodeTypeId 217 .
+
+clarity:list_type a owl:Class ;
+    rdfs:label "list_type" ;
+    rdfs:isDefinedBy clarity: ;
+    rdfs:subClassOf ast:Node ;
+    clarity:isSupertype true ;
+    clarity:nodeTypeId 202 .
+
+clarity:local_binding a owl:Class ;
+    rdfs:label "local_binding" ;
+    rdfs:isDefinedBy clarity: ;
+    rdfs:subClassOf ast:Node ;
+    clarity:isSupertype true ;
+    clarity:nodeTypeId 192 .
+
+clarity:mapping_definition a owl:Class ;
+    rdfs:label "mapping_definition" ;
+    rdfs:isDefinedBy clarity: ;
+    rdfs:subClassOf ast:Node ;
+    clarity:isSupertype true ;
+    clarity:nodeTypeId 183 .
+
+clarity:native_identifier a owl:Class ;
+    rdfs:label "native_identifier" ;
+    rdfs:isDefinedBy clarity: ;
+    rdfs:subClassOf ast:Node ;
+    clarity:isSupertype true ;
+    clarity:nodeTypeId 222 .
+
+clarity:native_type a owl:Class ;
+    rdfs:label "native_type" ;
+    rdfs:isDefinedBy clarity: ;
+    rdfs:subClassOf ast:Node ;
+    clarity:isSupertype true ;
+    clarity:nodeTypeId 198 .
+
+clarity:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+clarity:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+clarity:non_fungible_token_definition a owl:Class ;
+    rdfs:label "non_fungible_token_definition" ;
+    rdfs:isDefinedBy clarity: ;
+    rdfs:subClassOf ast:Node ;
+    clarity:isSupertype true ;
+    clarity:nodeTypeId 180 .
+
+clarity:none_lit a owl:Class ;
+    rdfs:label "none_lit" ;
+    rdfs:isDefinedBy clarity: ;
+    rdfs:subClassOf ast:Node ;
+    clarity:isSupertype true ;
+    clarity:nodeTypeId 48 .
+
+clarity:operator a owl:DatatypeProperty ;
+    rdfs:label "operator (literal)" ;
+    rdfs:comment "Literal value for operator field when it contains a terminal node" ;
+    clarity:fieldId 3 ;
+    clarity:isTerminalField true .
+
+clarity:optional_type a owl:Class ;
+    rdfs:label "optional_type" ;
+    rdfs:isDefinedBy clarity: ;
+    rdfs:subClassOf ast:Node ;
+    clarity:isSupertype true ;
+    clarity:nodeTypeId 203 .
+
+clarity:parameter_type a owl:Class ;
+    rdfs:label "parameter_type" ;
+    rdfs:isDefinedBy clarity: ;
+    rdfs:subClassOf ast:Node ;
+    clarity:isSupertype true ;
+    clarity:nodeTypeId 196 .
+
+clarity:private_function a owl:Class ;
+    rdfs:label "private_function" ;
+    rdfs:isDefinedBy clarity: ;
+    rdfs:subClassOf ast:Node ;
+    clarity:isSupertype true ;
+    clarity:nodeTypeId 185 .
+
+clarity:public_function a owl:Class ;
+    rdfs:label "public_function" ;
+    rdfs:isDefinedBy clarity: ;
+    rdfs:subClassOf ast:Node ;
+    clarity:isSupertype true ;
+    clarity:nodeTypeId 187 .
+
+clarity:read_only_function a owl:Class ;
+    rdfs:label "read_only_function" ;
+    rdfs:isDefinedBy clarity: ;
+    rdfs:subClassOf ast:Node ;
+    clarity:isSupertype true ;
+    clarity:nodeTypeId 186 .
+
+clarity:response_lit a owl:Class ;
+    rdfs:label "response_lit" ;
+    rdfs:isDefinedBy clarity: ;
+    rdfs:subClassOf ast:Node ;
+    clarity:isSupertype true ;
+    clarity:nodeTypeId 221 .
+
+clarity:response_type a owl:Class ;
+    rdfs:label "response_type" ;
+    rdfs:isDefinedBy clarity: ;
+    rdfs:subClassOf ast:Node ;
+    clarity:isSupertype true ;
+    clarity:nodeTypeId 207 .
+
+clarity:some_lit a owl:Class ;
+    rdfs:label "some_lit" ;
+    rdfs:isDefinedBy clarity: ;
+    rdfs:subClassOf ast:Node ;
+    clarity:isSupertype true ;
+    clarity:nodeTypeId 218 .
+
+clarity:source a owl:Class ;
+    rdfs:label "source" ;
+    rdfs:isDefinedBy clarity: ;
+    rdfs:subClassOf ast:Node ;
+    clarity:isSupertype true ;
+    clarity:nodeTypeId 172 .
+
+clarity:standard_principal_lit a owl:Class ;
+    rdfs:label "standard_principal_lit" ;
+    rdfs:isDefinedBy clarity: ;
+    rdfs:subClassOf ast:Node ;
+    clarity:isSupertype true ;
+    clarity:nodeTypeId 212 .
+
+clarity:token_definition a owl:Class ;
+    rdfs:label "token_definition" ;
+    rdfs:isDefinedBy clarity: ;
+    rdfs:subClassOf ast:Node ;
+    clarity:isSupertype true ;
+    clarity:nodeTypeId 178 .
+
+clarity:trait_alias a owl:DatatypeProperty ;
+    rdfs:label "trait_alias (literal)" ;
+    rdfs:comment "Literal value for trait_alias field when it contains a terminal node" ;
+    clarity:fieldId 4 ;
+    clarity:isTerminalField true .
+
+clarity:trait_definition a owl:Class ;
+    rdfs:label "trait_definition" ;
+    rdfs:isDefinedBy clarity: ;
+    rdfs:subClassOf ast:Node ;
+    clarity:isSupertype true ;
+    clarity:nodeTypeId 175 .
+
+clarity:trait_implementation a owl:Class ;
+    rdfs:label "trait_implementation" ;
+    rdfs:isDefinedBy clarity: ;
+    rdfs:subClassOf ast:Node ;
+    clarity:isSupertype true ;
+    clarity:nodeTypeId 176 .
+
+clarity:trait_name a owl:DatatypeProperty ;
+    rdfs:label "trait_name (literal)" ;
+    rdfs:comment "Literal value for trait_name field when it contains a terminal node" ;
+    clarity:fieldId 5 ;
+    clarity:isTerminalField true .
+
+clarity:trait_type a owl:Class ;
+    rdfs:label "trait_type" ;
+    rdfs:isDefinedBy clarity: ;
+    rdfs:subClassOf ast:Node ;
+    clarity:isSupertype true ;
+    clarity:nodeTypeId 197 .
+
+clarity:trait_usage a owl:Class ;
+    rdfs:label "trait_usage" ;
+    rdfs:isDefinedBy clarity: ;
+    rdfs:subClassOf ast:Node ;
+    clarity:isSupertype true ;
+    clarity:nodeTypeId 177 .
+
+clarity:tuple_lit a owl:Class ;
+    rdfs:label "tuple_lit" ;
+    rdfs:isDefinedBy clarity: ;
+    rdfs:subClassOf ast:Node ;
+    clarity:isSupertype true ;
+    clarity:nodeTypeId 219 .
+
+clarity:tuple_type a owl:Class ;
+    rdfs:label "tuple_type" ;
+    rdfs:isDefinedBy clarity: ;
+    rdfs:subClassOf ast:Node ;
+    clarity:isSupertype true ;
+    clarity:nodeTypeId 205 .
+
+clarity:tuple_type_for_trait a owl:Class ;
+    rdfs:label "tuple_type_for_trait" ;
+    rdfs:isDefinedBy clarity: ;
+    rdfs:subClassOf ast:Node ;
+    clarity:isSupertype true ;
+    clarity:nodeTypeId 204 .
+
+clarity:uint_lit a owl:Class ;
+    rdfs:label "uint_lit" ;
+    rdfs:isDefinedBy clarity: ;
+    rdfs:subClassOf ast:Node ;
+    clarity:isSupertype true ;
+    clarity:nodeTypeId 36 .
+
+clarity:utf8_string_lit a owl:Class ;
+    rdfs:label "utf8_string_lit" ;
+    rdfs:isDefinedBy clarity: ;
+    rdfs:subClassOf ast:Node ;
+    clarity:isSupertype true ;
+    clarity:nodeTypeId 46 .
+
+clarity:utf8_string_type a owl:Class ;
+    rdfs:label "utf8_string_type" ;
+    rdfs:isDefinedBy clarity: ;
+    rdfs:subClassOf ast:Node ;
+    clarity:isSupertype true ;
+    clarity:nodeTypeId 201 .
+
+clarity:value a owl:DatatypeProperty ;
+    rdfs:label "value (literal)" ;
+    rdfs:comment "Literal value for value field when it contains a terminal node" ;
+    clarity:fieldId 6 ;
+    clarity:isTerminalField true .
+
+clarity:variable_definition a owl:Class ;
+    rdfs:label "variable_definition" ;
+    rdfs:isDefinedBy clarity: ;
+    rdfs:subClassOf ast:Node ;
+    clarity:isSupertype true ;
+    clarity:nodeTypeId 182 .
+
+clarity: a owl:Ontology ;
+    rdfs:label "Clarity Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for clarity" ;
+    owl:versionInfo "v0.25" ;
+    clarity:abiVersion 15 ;
+    clarity:fieldCount 7 ;
+    clarity:languageName "clarity" ;
+    clarity:nodeKindCount 234 .
+

@@ -1,0 +1,2225 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pascal: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/pascal/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+pascal:_dummy a owl:DatatypeProperty ;
+    rdfs:label "_dummy (literal)" ;
+    rdfs:comment "Literal value for _dummy field when it contains a terminal node" ;
+    pascal:fieldId 1 ;
+    pascal:isTerminalField true .
+
+pascal:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+pascal:args a owl:DatatypeProperty ;
+    rdfs:label "args (literal)" ;
+    rdfs:comment "Literal value for args field when it contains a terminal node" ;
+    pascal:fieldId 2 ;
+    pascal:isTerminalField true .
+
+pascal:arrInitializer a owl:Class ;
+    rdfs:label "arrInitializer" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 325 .
+
+pascal:asm a owl:Class ;
+    rdfs:label "asm" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 201,
+        219 .
+
+pascal:asmBody a owl:Class ;
+    rdfs:label "asmBody" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 232 .
+
+pascal:assignment a owl:Class ;
+    rdfs:label "assignment" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 225 .
+
+pascal:block a owl:Class ;
+    rdfs:label "block" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 200 .
+
+pascal:blockTr a owl:Class ;
+    rdfs:label "blockTr" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 218 .
+
+pascal:case a owl:Class ;
+    rdfs:label "case" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 199,
+        217 .
+
+pascal:caseCase a owl:Class ;
+    rdfs:label "caseCase" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 198,
+        216 .
+
+pascal:caseLabel a owl:Class ;
+    rdfs:label "caseLabel" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 229 .
+
+pascal:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 179 .
+
+pascal:condition a owl:DatatypeProperty ;
+    rdfs:label "condition (literal)" ;
+    rdfs:comment "Literal value for condition field when it contains a terminal node" ;
+    pascal:fieldId 6 ;
+    pascal:isTerminalField true .
+
+pascal:declArg a owl:Class ;
+    rdfs:label "declArg" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 316 .
+
+pascal:declArgs a owl:Class ;
+    rdfs:label "declArgs" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 315 .
+
+pascal:declArray a owl:Class ;
+    rdfs:label "declArray" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 292 .
+
+pascal:declClass a owl:Class ;
+    rdfs:label "declClass" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 297 .
+
+pascal:declConst a owl:Class ;
+    rdfs:label "declConst" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 285 .
+
+pascal:declConsts a owl:Class ;
+    rdfs:label "declConsts" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 281 .
+
+pascal:declEnum a owl:Class ;
+    rdfs:label "declEnum" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 289 .
+
+pascal:declEnumValue a owl:Class ;
+    rdfs:label "declEnumValue" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 290 .
+
+pascal:declExport a owl:Class ;
+    rdfs:label "declExport" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 288 .
+
+pascal:declExports a owl:Class ;
+    rdfs:label "declExports" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 278 .
+
+pascal:declField a owl:Class ;
+    rdfs:label "declField" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 304,
+        309 .
+
+pascal:declFile a owl:Class ;
+    rdfs:label "declFile" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 293 .
+
+pascal:declHelper a owl:Class ;
+    rdfs:label "declHelper" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 299 .
+
+pascal:declIntf a owl:Class ;
+    rdfs:label "declIntf" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 298 .
+
+pascal:declLabel a owl:Class ;
+    rdfs:label "declLabel" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 287 .
+
+pascal:declLabels a owl:Class ;
+    rdfs:label "declLabels" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 286 .
+
+pascal:declMetaClass a owl:Class ;
+    rdfs:label "declMetaClass" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 296 .
+
+pascal:declProc a owl:Class ;
+    rdfs:label "declProc" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 272,
+        283 .
+
+pascal:declProcRef a owl:Class ;
+    rdfs:label "declProcRef" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 295 .
+
+pascal:declProp a owl:Class ;
+    rdfs:label "declProp" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 305 .
+
+pascal:declPropArgs a owl:Class ;
+    rdfs:label "declPropArgs" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 306 .
+
+pascal:declSection a owl:Class ;
+    rdfs:label "declSection" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 302 .
+
+pascal:declSet a owl:Class ;
+    rdfs:label "declSet" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 291 .
+
+pascal:declString a owl:Class ;
+    rdfs:label "declString" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 294 .
+
+pascal:declType a owl:Class ;
+    rdfs:label "declType" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 282 .
+
+pascal:declTypes a owl:Class ;
+    rdfs:label "declTypes" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 279 .
+
+pascal:declUses a owl:Class ;
+    rdfs:label "declUses" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 277 .
+
+pascal:declVar a owl:Class ;
+    rdfs:label "declVar" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 284 .
+
+pascal:declVariant a owl:Class ;
+    rdfs:label "declVariant" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 307 .
+
+pascal:declVariantClause a owl:Class ;
+    rdfs:label "declVariantClause" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 308 .
+
+pascal:declVars a owl:Class ;
+    rdfs:label "declVars" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 280 .
+
+pascal:defProc a owl:Class ;
+    rdfs:label "defProc" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 271 .
+
+pascal:defaultValue a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "defaultValue",
+        "defaultValue (literal)" ;
+    rdfs:comment "Literal value for defaultValue field when it contains a terminal node" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:fieldId 7 ;
+    pascal:isSupertype true ;
+    pascal:isTerminalField true ;
+    pascal:nodeTypeId 276 .
+
+pascal:dispid a owl:DatatypeProperty ;
+    rdfs:label "dispid (literal)" ;
+    rdfs:comment "Literal value for dispid field when it contains a terminal node" ;
+    pascal:fieldId 8 ;
+    pascal:isTerminalField true .
+
+pascal:end a owl:DatatypeProperty ;
+    rdfs:label "end (literal)" ;
+    rdfs:comment "Literal value for end field when it contains a terminal node" ;
+    pascal:fieldId 10 ;
+    pascal:isTerminalField true .
+
+pascal:entity a owl:DatatypeProperty ;
+    rdfs:label "entity (literal)" ;
+    rdfs:comment "Literal value for entity field when it contains a terminal node" ;
+    pascal:fieldId 11 ;
+    pascal:isTerminalField true .
+
+pascal:except a owl:DatatypeProperty ;
+    rdfs:label "except (literal)" ;
+    rdfs:comment "Literal value for except field when it contains a terminal node" ;
+    pascal:fieldId 12 ;
+    pascal:isTerminalField true .
+
+pascal:exception a owl:DatatypeProperty ;
+    rdfs:label "exception (literal)" ;
+    rdfs:comment "Literal value for exception field when it contains a terminal node" ;
+    pascal:fieldId 13 ;
+    pascal:isTerminalField true .
+
+pascal:exceptionElse a owl:Class ;
+    rdfs:label "exceptionElse" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 196 .
+
+pascal:exceptionHandler a owl:Class ;
+    rdfs:label "exceptionHandler" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 195,
+        213 .
+
+pascal:exprArgs a owl:Class ;
+    rdfs:label "exprArgs" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 244 .
+
+pascal:exprBinary a owl:Class ;
+    rdfs:label "exprBinary" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 239,
+        245 .
+
+pascal:exprBrackets a owl:Class ;
+    rdfs:label "exprBrackets" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 248 .
+
+pascal:exprCall a owl:Class ;
+    rdfs:label "exprCall" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 242 .
+
+pascal:exprDot a owl:Class ;
+    rdfs:label "exprDot" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 237 .
+
+pascal:exprParens a owl:Class ;
+    rdfs:label "exprParens" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 247 .
+
+pascal:exprSubscript a owl:Class ;
+    rdfs:label "exprSubscript" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 241 .
+
+pascal:exprTpl a owl:Class ;
+    rdfs:label "exprTpl" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 240 .
+
+pascal:exprUnary a owl:Class ;
+    rdfs:label "exprUnary" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 238,
+        246 .
+
+pascal:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+pascal:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+pascal:field_args a owl:ObjectProperty ;
+    rdfs:label "args (structural)" ;
+    rdfs:comment "Structural reference for args field when it contains a non-terminal node" ;
+    pascal:fieldId 2 .
+
+pascal:field_assign a owl:ObjectProperty ;
+    rdfs:label "assign (structural)" ;
+    rdfs:comment "Structural reference for assign field when it contains a non-terminal node" ;
+    pascal:fieldId 3 .
+
+pascal:field_attribute a owl:ObjectProperty ;
+    rdfs:label "attribute (structural)" ;
+    rdfs:comment "Structural reference for attribute field when it contains a non-terminal node" ;
+    pascal:fieldId 4 .
+
+pascal:field_body a owl:ObjectProperty ;
+    rdfs:label "body (structural)" ;
+    rdfs:comment "Structural reference for body field when it contains a non-terminal node" ;
+    pascal:fieldId 5 .
+
+pascal:field_condition a owl:ObjectProperty ;
+    rdfs:label "condition (structural)" ;
+    rdfs:comment "Structural reference for condition field when it contains a non-terminal node" ;
+    pascal:fieldId 6 .
+
+pascal:field_defaultValue a owl:ObjectProperty ;
+    rdfs:label "defaultValue (structural)" ;
+    rdfs:comment "Structural reference for defaultValue field when it contains a non-terminal node" ;
+    pascal:fieldId 7 .
+
+pascal:field_dispid a owl:ObjectProperty ;
+    rdfs:label "dispid (structural)" ;
+    rdfs:comment "Structural reference for dispid field when it contains a non-terminal node" ;
+    pascal:fieldId 8 .
+
+pascal:field_else a owl:ObjectProperty ;
+    rdfs:label "else (structural)" ;
+    rdfs:comment "Structural reference for else field when it contains a non-terminal node" ;
+    pascal:fieldId 9 .
+
+pascal:field_end a owl:ObjectProperty ;
+    rdfs:label "end (structural)" ;
+    rdfs:comment "Structural reference for end field when it contains a non-terminal node" ;
+    pascal:fieldId 10 .
+
+pascal:field_entity a owl:ObjectProperty ;
+    rdfs:label "entity (structural)" ;
+    rdfs:comment "Structural reference for entity field when it contains a non-terminal node" ;
+    pascal:fieldId 11 .
+
+pascal:field_except a owl:ObjectProperty ;
+    rdfs:label "except (structural)" ;
+    rdfs:comment "Structural reference for except field when it contains a non-terminal node" ;
+    pascal:fieldId 12 .
+
+pascal:field_exception a owl:ObjectProperty ;
+    rdfs:label "exception (structural)" ;
+    rdfs:comment "Structural reference for exception field when it contains a non-terminal node" ;
+    pascal:fieldId 13 .
+
+pascal:field_finally a owl:ObjectProperty ;
+    rdfs:label "finally (structural)" ;
+    rdfs:comment "Structural reference for finally field when it contains a non-terminal node" ;
+    pascal:fieldId 14 .
+
+pascal:field_guid a owl:ObjectProperty ;
+    rdfs:label "guid (structural)" ;
+    rdfs:comment "Structural reference for guid field when it contains a non-terminal node" ;
+    pascal:fieldId 16 .
+
+pascal:field_header a owl:ObjectProperty ;
+    rdfs:label "header (structural)" ;
+    rdfs:comment "Structural reference for header field when it contains a non-terminal node" ;
+    pascal:fieldId 17 .
+
+pascal:field_implements a owl:ObjectProperty ;
+    rdfs:label "implements (structural)" ;
+    rdfs:comment "Structural reference for implements field when it contains a non-terminal node" ;
+    pascal:fieldId 18 .
+
+pascal:field_index a owl:ObjectProperty ;
+    rdfs:label "index (structural)" ;
+    rdfs:comment "Structural reference for index field when it contains a non-terminal node" ;
+    pascal:fieldId 19 .
+
+pascal:field_iterable a owl:ObjectProperty ;
+    rdfs:label "iterable (structural)" ;
+    rdfs:comment "Structural reference for iterable field when it contains a non-terminal node" ;
+    pascal:fieldId 20 .
+
+pascal:field_iterator a owl:ObjectProperty ;
+    rdfs:label "iterator (structural)" ;
+    rdfs:comment "Structural reference for iterator field when it contains a non-terminal node" ;
+    pascal:fieldId 21 .
+
+pascal:field_label a owl:ObjectProperty ;
+    rdfs:label "label (structural)" ;
+    rdfs:comment "Structural reference for label field when it contains a non-terminal node" ;
+    pascal:fieldId 22 .
+
+pascal:field_lhs a owl:ObjectProperty ;
+    rdfs:label "lhs (structural)" ;
+    rdfs:comment "Structural reference for lhs field when it contains a non-terminal node" ;
+    pascal:fieldId 23 .
+
+pascal:field_local a owl:ObjectProperty ;
+    rdfs:label "local (structural)" ;
+    rdfs:comment "Structural reference for local field when it contains a non-terminal node" ;
+    pascal:fieldId 24 .
+
+pascal:field_name a owl:ObjectProperty ;
+    rdfs:label "name (structural)" ;
+    rdfs:comment "Structural reference for name field when it contains a non-terminal node" ;
+    pascal:fieldId 25 .
+
+pascal:field_operand a owl:ObjectProperty ;
+    rdfs:label "operand (structural)" ;
+    rdfs:comment "Structural reference for operand field when it contains a non-terminal node" ;
+    pascal:fieldId 26 .
+
+pascal:field_parent a owl:ObjectProperty ;
+    rdfs:label "parent (structural)" ;
+    rdfs:comment "Structural reference for parent field when it contains a non-terminal node" ;
+    pascal:fieldId 28 .
+
+pascal:field_rhs a owl:ObjectProperty ;
+    rdfs:label "rhs (structural)" ;
+    rdfs:comment "Structural reference for rhs field when it contains a non-terminal node" ;
+    pascal:fieldId 30 .
+
+pascal:field_start a owl:ObjectProperty ;
+    rdfs:label "start (structural)" ;
+    rdfs:comment "Structural reference for start field when it contains a non-terminal node" ;
+    pascal:fieldId 32 .
+
+pascal:field_stored a owl:ObjectProperty ;
+    rdfs:label "stored (structural)" ;
+    rdfs:comment "Structural reference for stored field when it contains a non-terminal node" ;
+    pascal:fieldId 33 .
+
+pascal:field_then a owl:ObjectProperty ;
+    rdfs:label "then (structural)" ;
+    rdfs:comment "Structural reference for then field when it contains a non-terminal node" ;
+    pascal:fieldId 34 .
+
+pascal:field_try a owl:ObjectProperty ;
+    rdfs:label "try (structural)" ;
+    rdfs:comment "Structural reference for try field when it contains a non-terminal node" ;
+    pascal:fieldId 35 .
+
+pascal:field_type a owl:ObjectProperty ;
+    rdfs:label "type (structural)" ;
+    rdfs:comment "Structural reference for type field when it contains a non-terminal node" ;
+    pascal:fieldId 36 .
+
+pascal:field_value a owl:ObjectProperty ;
+    rdfs:label "value (structural)" ;
+    rdfs:comment "Structural reference for value field when it contains a non-terminal node" ;
+    pascal:fieldId 37 .
+
+pascal:field_variable a owl:ObjectProperty ;
+    rdfs:label "variable (structural)" ;
+    rdfs:comment "Structural reference for variable field when it contains a non-terminal node" ;
+    pascal:fieldId 38 .
+
+pascal:finalization a owl:Class ;
+    rdfs:label "finalization" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 187 .
+
+pascal:finally a owl:DatatypeProperty ;
+    rdfs:label "finally (literal)" ;
+    rdfs:comment "Literal value for finally field when it contains a terminal node" ;
+    pascal:fieldId 14 ;
+    pascal:isTerminalField true .
+
+pascal:for a owl:Class ;
+    rdfs:label "for" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 193,
+        211 .
+
+pascal:foreach a owl:Class ;
+    rdfs:label "foreach" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 194,
+        212 .
+
+pascal:genericArg a owl:Class ;
+    rdfs:label "genericArg" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 260 .
+
+pascal:genericArgs a owl:Class ;
+    rdfs:label "genericArgs" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 259 .
+
+pascal:genericDot a owl:Class ;
+    rdfs:label "genericDot" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 256,
+        312 .
+
+pascal:genericTpl a owl:Class ;
+    rdfs:label "genericTpl" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 257 .
+
+pascal:getter a owl:DatatypeProperty ;
+    rdfs:label "getter (literal)" ;
+    rdfs:comment "Literal value for getter field when it contains a terminal node" ;
+    pascal:fieldId 15 ;
+    pascal:isTerminalField true .
+
+pascal:goto a owl:Class ;
+    rdfs:label "goto" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 205,
+        223 .
+
+pascal:guid a owl:Class ;
+    rdfs:label "guid" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 300 .
+
+pascal:identifier a owl:Class ;
+    rdfs:label "identifier" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 1 .
+
+pascal:if a owl:Class ;
+    rdfs:label "if" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 189,
+        207 .
+
+pascal:ifElse a owl:Class ;
+    rdfs:label "ifElse" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 190,
+        208 .
+
+pascal:implementation a owl:Class ;
+    rdfs:label "implementation" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 185 .
+
+pascal:implements a owl:DatatypeProperty ;
+    rdfs:label "implements (literal)" ;
+    rdfs:comment "Literal value for implements field when it contains a terminal node" ;
+    pascal:fieldId 18 ;
+    pascal:isTerminalField true .
+
+pascal:index a owl:DatatypeProperty ;
+    rdfs:label "index (literal)" ;
+    rdfs:comment "Literal value for index field when it contains a terminal node" ;
+    pascal:fieldId 19 ;
+    pascal:isTerminalField true .
+
+pascal:inherited a owl:Class ;
+    rdfs:label "inherited" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 236 .
+
+pascal:initialization a owl:Class ;
+    rdfs:label "initialization" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 186 .
+
+pascal:interface a owl:Class ;
+    rdfs:label "interface" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 184 .
+
+pascal:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+pascal:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+pascal:iterable a owl:DatatypeProperty ;
+    rdfs:label "iterable (literal)" ;
+    rdfs:comment "Literal value for iterable field when it contains a terminal node" ;
+    pascal:fieldId 20 ;
+    pascal:isTerminalField true .
+
+pascal:iterator a owl:DatatypeProperty ;
+    rdfs:label "iterator (literal)" ;
+    rdfs:comment "Literal value for iterator field when it contains a terminal node" ;
+    pascal:fieldId 21 ;
+    pascal:isTerminalField true .
+
+pascal:kAbsolute a owl:Class ;
+    rdfs:label "kAbsolute" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 43 .
+
+pascal:kAbstract a owl:Class ;
+    rdfs:label "kAbstract" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 130 .
+
+pascal:kAdd a owl:Class ;
+    rdfs:label "kAdd" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 74 .
+
+pascal:kAlias a owl:Class ;
+    rdfs:label "kAlias" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 172 .
+
+pascal:kAnd a owl:Class ;
+    rdfs:label "kAnd" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 89 .
+
+pascal:kArray a owl:Class ;
+    rdfs:label "kArray" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 59 .
+
+pascal:kAs a owl:Class ;
+    rdfs:label "kAs" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 94 .
+
+pascal:kAsm a owl:Class ;
+    rdfs:label "kAsm" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 33 .
+
+pascal:kAssembler a owl:Class ;
+    rdfs:label "kAssembler" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 156 .
+
+pascal:kAssign a owl:Class ;
+    rdfs:label "kAssign" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 80 .
+
+pascal:kAssignAdd a owl:Class ;
+    rdfs:label "kAssignAdd" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 81 .
+
+pascal:kAssignDiv a owl:Class ;
+    rdfs:label "kAssignDiv" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 84 .
+
+pascal:kAssignMul a owl:Class ;
+    rdfs:label "kAssignMul" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 83 .
+
+pascal:kAssignSub a owl:Class ;
+    rdfs:label "kAssignSub" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 82 .
+
+pascal:kAt a owl:Class ;
+    rdfs:label "kAt" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 78 .
+
+pascal:kBegin a owl:Class ;
+    rdfs:label "kBegin" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 31 .
+
+pascal:kCase a owl:Class ;
+    rdfs:label "kCase" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 111 .
+
+pascal:kCdecl a owl:Class ;
+    rdfs:label "kCdecl" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 139 .
+
+pascal:kClass a owl:Class ;
+    rdfs:label "kClass" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 53 .
+
+pascal:kConst a owl:Class ;
+    rdfs:label "kConst" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 36 .
+
+pascal:kConstref a owl:Class ;
+    rdfs:label "kConstref" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 37 .
+
+pascal:kConstructor a owl:Class ;
+    rdfs:label "kConstructor" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 116 .
+
+pascal:kCppdecl a owl:Class ;
+    rdfs:label "kCppdecl" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 140 .
+
+pascal:kCvar a owl:Class ;
+    rdfs:label "kCvar" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 151 .
+
+pascal:kDefault a owl:Class ;
+    rdfs:label "kDefault" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 48 .
+
+pascal:kDelayed a owl:Class ;
+    rdfs:label "kDelayed" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 173 .
+
+pascal:kDeprecated a owl:Class ;
+    rdfs:label "kDeprecated" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 147 .
+
+pascal:kDestructor a owl:Class ;
+    rdfs:label "kDestructor" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 117 .
+
+pascal:kDispId a owl:Class ;
+    rdfs:label "kDispId" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 52 .
+
+pascal:kDispInterface a owl:Class ;
+    rdfs:label "kDispInterface" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 26 .
+
+pascal:kDiv a owl:Class ;
+    rdfs:label "kDiv" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 87 .
+
+pascal:kDo a owl:Class ;
+    rdfs:label "kDo" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 102 .
+
+pascal:kDot a owl:Class ;
+    rdfs:label "kDot" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 327 .
+
+pascal:kDownto a owl:Class ;
+    rdfs:label "kDownto" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 98 .
+
+pascal:kDynamic a owl:Class ;
+    rdfs:label "kDynamic" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 132 .
+
+pascal:kElse a owl:Class ;
+    rdfs:label "kElse" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 101 .
+
+pascal:kEnd a owl:Class ;
+    rdfs:label "kEnd" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 32 .
+
+pascal:kEndDot a owl:Class ;
+    rdfs:label "kEndDot" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 326 .
+
+pascal:kEq a owl:Class ;
+    rdfs:label "kEq" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 69 .
+
+pascal:kExcept a owl:Class ;
+    rdfs:label "kExcept" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 107 .
+
+pascal:kExperimental a owl:Class ;
+    rdfs:label "kExperimental" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 148 .
+
+pascal:kExport a owl:Class ;
+    rdfs:label "kExport" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 152 .
+
+pascal:kExports a owl:Class ;
+    rdfs:label "kExports" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 42 .
+
+pascal:kExternal a owl:Class ;
+    rdfs:label "kExternal" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 144 .
+
+pascal:kFalse a owl:Class ;
+    rdfs:label "kFalse" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 176 .
+
+pascal:kFar a owl:Class ;
+    rdfs:label "kFar" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 153 .
+
+pascal:kFdiv a owl:Class ;
+    rdfs:label "kFdiv" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 77 .
+
+pascal:kFile a owl:Class ;
+    rdfs:label "kFile" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 60 .
+
+pascal:kFinalization a owl:Class ;
+    rdfs:label "kFinalization" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 29 .
+
+pascal:kFinally a owl:Class ;
+    rdfs:label "kFinally" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 108 .
+
+pascal:kFor a owl:Class ;
+    rdfs:label "kFor" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 96 .
+
+pascal:kForward a owl:Class ;
+    rdfs:label "kForward" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 127 .
+
+pascal:kFunction a owl:Class ;
+    rdfs:label "kFunction" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 114 .
+
+pascal:kGeneric a owl:Class ;
+    rdfs:label "kGeneric" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 66 .
+
+pascal:kGoto a owl:Class ;
+    rdfs:label "kGoto" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 113 .
+
+pascal:kGt a owl:Class ;
+    rdfs:label "kGt" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 71 .
+
+pascal:kGte a owl:Class ;
+    rdfs:label "kGte" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 73 .
+
+pascal:kHardfloat a owl:Class ;
+    rdfs:label "kHardfloat" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 162 .
+
+pascal:kHat a owl:Class ;
+    rdfs:label "kHat" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 79 .
+
+pascal:kHelper a owl:Class ;
+    rdfs:label "kHelper" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 64 .
+
+pascal:kIf a owl:Class ;
+    rdfs:label "kIf" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 99 .
+
+pascal:kImplementation a owl:Class ;
+    rdfs:label "kImplementation" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 27 .
+
+pascal:kImplements a owl:Class ;
+    rdfs:label "kImplements" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 47 .
+
+pascal:kIn a owl:Class ;
+    rdfs:label "kIn" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 95 .
+
+pascal:kIndex a owl:Class ;
+    rdfs:label "kIndex" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 51 .
+
+pascal:kInherited a owl:Class ;
+    rdfs:label "kInherited" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 136 .
+
+pascal:kInitialization a owl:Class ;
+    rdfs:label "kInitialization" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 28 .
+
+pascal:kInline a owl:Class ;
+    rdfs:label "kInline" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 137 .
+
+pascal:kInterface a owl:Class ;
+    rdfs:label "kInterface" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 25 .
+
+pascal:kInterrupt a owl:Class ;
+    rdfs:label "kInterrupt" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 158 .
+
+pascal:kIocheck a owl:Class ;
+    rdfs:label "kIocheck" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 160 .
+
+pascal:kIs a owl:Class ;
+    rdfs:label "kIs" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 93 .
+
+pascal:kLabel a owl:Class ;
+    rdfs:label "kLabel" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 41 .
+
+pascal:kLibrary a owl:Class ;
+    rdfs:label "kLibrary" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 22 .
+
+pascal:kLocal a owl:Class ;
+    rdfs:label "kLocal" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 161 .
+
+pascal:kLt a owl:Class ;
+    rdfs:label "kLt" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 68 .
+
+pascal:kLte a owl:Class ;
+    rdfs:label "kLte" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 72 .
+
+pascal:kMessage a owl:Class ;
+    rdfs:label "kMessage" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 146 .
+
+pascal:kMod a owl:Class ;
+    rdfs:label "kMod" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 88 .
+
+pascal:kMs_abi_cdecl a owl:Class ;
+    rdfs:label "kMs_abi_cdecl" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 165 .
+
+pascal:kMs_abi_default a owl:Class ;
+    rdfs:label "kMs_abi_default" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 164 .
+
+pascal:kMul a owl:Class ;
+    rdfs:label "kMul" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 76 .
+
+pascal:kMwpascal a owl:Class ;
+    rdfs:label "kMwpascal" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 143 .
+
+pascal:kName a owl:Class ;
+    rdfs:label "kName" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 145 .
+
+pascal:kNear a owl:Class ;
+    rdfs:label "kNear" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 154 .
+
+pascal:kNeq a owl:Class ;
+    rdfs:label "kNeq" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 70 .
+
+pascal:kNil a owl:Class ;
+    rdfs:label "kNil" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 174 .
+
+pascal:kNodefault a owl:Class ;
+    rdfs:label "kNodefault" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 49 .
+
+pascal:kNoreturn a owl:Class ;
+    rdfs:label "kNoreturn" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 159 .
+
+pascal:kNostackframe a owl:Class ;
+    rdfs:label "kNostackframe" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 157 .
+
+pascal:kNot a owl:Class ;
+    rdfs:label "kNot" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 92 .
+
+pascal:kObjccategory a owl:Class ;
+    rdfs:label "kObjccategory" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 57 .
+
+pascal:kObjcclass a owl:Class ;
+    rdfs:label "kObjcclass" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 56 .
+
+pascal:kObjcprotocol a owl:Class ;
+    rdfs:label "kObjcprotocol" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 58 .
+
+pascal:kObject a owl:Class ;
+    rdfs:label "kObject" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 54 .
+
+pascal:kOf a owl:Class ;
+    rdfs:label "kOf" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 63 .
+
+pascal:kOn a owl:Class ;
+    rdfs:label "kOn" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 110 .
+
+pascal:kOperator a owl:Class ;
+    rdfs:label "kOperator" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 118 .
+
+pascal:kOptional a owl:Class ;
+    rdfs:label "kOptional" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 126 .
+
+pascal:kOr a owl:Class ;
+    rdfs:label "kOr" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 85 .
+
+pascal:kOut a owl:Class ;
+    rdfs:label "kOut" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 39 .
+
+pascal:kOverload a owl:Class ;
+    rdfs:label "kOverload" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 134 .
+
+pascal:kOverride a owl:Class ;
+    rdfs:label "kOverride" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 133 .
+
+pascal:kPacked a owl:Class ;
+    rdfs:label "kPacked" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 65 .
+
+pascal:kPascal a owl:Class ;
+    rdfs:label "kPascal" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 141 .
+
+pascal:kPlatform a owl:Class ;
+    rdfs:label "kPlatform" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 149 .
+
+pascal:kPrivate a owl:Class ;
+    rdfs:label "kPrivate" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 123 .
+
+pascal:kProcedure a owl:Class ;
+    rdfs:label "kProcedure" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 115 .
+
+pascal:kProgram a owl:Class ;
+    rdfs:label "kProgram" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 21 .
+
+pascal:kProperty a owl:Class ;
+    rdfs:label "kProperty" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 44 .
+
+pascal:kProtected a owl:Class ;
+    rdfs:label "kProtected" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 122 .
+
+pascal:kPublic a owl:Class ;
+    rdfs:label "kPublic" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 121 .
+
+pascal:kPublished a owl:Class ;
+    rdfs:label "kPublished" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 120 .
+
+pascal:kRaise a owl:Class ;
+    rdfs:label "kRaise" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 109 .
+
+pascal:kRead a owl:Class ;
+    rdfs:label "kRead" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 45 .
+
+pascal:kRecord a owl:Class ;
+    rdfs:label "kRecord" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 55 .
+
+pascal:kReference a owl:Class ;
+    rdfs:label "kReference" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 119 .
+
+pascal:kRegister a owl:Class ;
+    rdfs:label "kRegister" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 142 .
+
+pascal:kReintroduce a owl:Class ;
+    rdfs:label "kReintroduce" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 135 .
+
+pascal:kRepeat a owl:Class ;
+    rdfs:label "kRepeat" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 104 .
+
+pascal:kRequired a owl:Class ;
+    rdfs:label "kRequired" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 125 .
+
+pascal:kResourcestring a owl:Class ;
+    rdfs:label "kResourcestring" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 38 .
+
+pascal:kSafecall a owl:Class ;
+    rdfs:label "kSafecall" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 155 .
+
+pascal:kSaveregisters a owl:Class ;
+    rdfs:label "kSaveregisters" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 166 .
+
+pascal:kSealed a owl:Class ;
+    rdfs:label "kSealed" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 131 .
+
+pascal:kSet a owl:Class ;
+    rdfs:label "kSet" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 62 .
+
+pascal:kShl a owl:Class ;
+    rdfs:label "kShl" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 90 .
+
+pascal:kShr a owl:Class ;
+    rdfs:label "kShr" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 91 .
+
+pascal:kSoftfloat a owl:Class ;
+    rdfs:label "kSoftfloat" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 163 .
+
+pascal:kSpecialize a owl:Class ;
+    rdfs:label "kSpecialize" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 67 .
+
+pascal:kStatic a owl:Class ;
+    rdfs:label "kStatic" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 128 .
+
+pascal:kStdcall a owl:Class ;
+    rdfs:label "kStdcall" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 138 .
+
+pascal:kStored a owl:Class ;
+    rdfs:label "kStored" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 50 .
+
+pascal:kStrict a owl:Class ;
+    rdfs:label "kStrict" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 124 .
+
+pascal:kString a owl:Class ;
+    rdfs:label "kString" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 61 .
+
+pascal:kSub a owl:Class ;
+    rdfs:label "kSub" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 75 .
+
+pascal:kSysv_abi_cdecl a owl:Class ;
+    rdfs:label "kSysv_abi_cdecl" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 168 .
+
+pascal:kSysv_abi_default a owl:Class ;
+    rdfs:label "kSysv_abi_default" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 167 .
+
+pascal:kThen a owl:Class ;
+    rdfs:label "kThen" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 100 .
+
+pascal:kThreadvar a owl:Class ;
+    rdfs:label "kThreadvar" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 35 .
+
+pascal:kTo a owl:Class ;
+    rdfs:label "kTo" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 97 .
+
+pascal:kTrue a owl:Class ;
+    rdfs:label "kTrue" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 175 .
+
+pascal:kTry a owl:Class ;
+    rdfs:label "kTry" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 106 .
+
+pascal:kType a owl:Class ;
+    rdfs:label "kType" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 40 .
+
+pascal:kUnimplemented a owl:Class ;
+    rdfs:label "kUnimplemented" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 150 .
+
+pascal:kUnit a owl:Class ;
+    rdfs:label "kUnit" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 23 .
+
+pascal:kUntil a owl:Class ;
+    rdfs:label "kUntil" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 105 .
+
+pascal:kUses a owl:Class ;
+    rdfs:label "kUses" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 24 .
+
+pascal:kVar a owl:Class ;
+    rdfs:label "kVar" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 34 .
+
+pascal:kVarargs a owl:Class ;
+    rdfs:label "kVarargs" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 170 .
+
+pascal:kVectorcall a owl:Class ;
+    rdfs:label "kVectorcall" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 169 .
+
+pascal:kVirtual a owl:Class ;
+    rdfs:label "kVirtual" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 129 .
+
+pascal:kWhile a owl:Class ;
+    rdfs:label "kWhile" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 103 .
+
+pascal:kWinapi a owl:Class ;
+    rdfs:label "kWinapi" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 171 .
+
+pascal:kWith a owl:Class ;
+    rdfs:label "kWith" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 112 .
+
+pascal:kWrite a owl:Class ;
+    rdfs:label "kWrite" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 46 .
+
+pascal:kXor a owl:Class ;
+    rdfs:label "kXor" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 86 .
+
+pascal:label a owl:Class ;
+    rdfs:label "label" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 228 .
+
+pascal:lambda a owl:Class ;
+    rdfs:label "lambda" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 235 .
+
+pascal:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+pascal:legacyFormat a owl:Class ;
+    rdfs:label "legacyFormat" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 243 .
+
+pascal:lhs a owl:DatatypeProperty ;
+    rdfs:label "lhs (literal)" ;
+    rdfs:comment "Literal value for lhs field when it contains a terminal node" ;
+    pascal:fieldId 23 ;
+    pascal:isTerminalField true .
+
+pascal:library a owl:Class ;
+    rdfs:label "library" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 182 .
+
+pascal:literalChar a owl:Class ;
+    rdfs:label "literalChar" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 264 .
+
+pascal:literalNumber a owl:Class ;
+    rdfs:label "literalNumber" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 265 .
+
+pascal:literalString a owl:Class ;
+    rdfs:label "literalString" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 262 .
+
+pascal:moduleName a owl:Class ;
+    rdfs:label "moduleName" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 188 .
+
+pascal:name a owl:DatatypeProperty ;
+    rdfs:label "name (literal)" ;
+    rdfs:comment "Literal value for name field when it contains a terminal node" ;
+    pascal:fieldId 25 ;
+    pascal:isTerminalField true .
+
+pascal:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+pascal:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+pascal:operand a owl:DatatypeProperty ;
+    rdfs:label "operand (literal)" ;
+    rdfs:comment "Literal value for operand field when it contains a terminal node" ;
+    pascal:fieldId 26 ;
+    pascal:isTerminalField true .
+
+pascal:operator a owl:DatatypeProperty ;
+    rdfs:label "operator (literal)" ;
+    rdfs:comment "Literal value for operator field when it contains a terminal node" ;
+    pascal:fieldId 27 ;
+    pascal:isTerminalField true .
+
+pascal:operatorName a owl:Class ;
+    rdfs:label "operatorName" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 314 .
+
+pascal:pp a owl:Class ;
+    rdfs:label "pp" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 12,
+        13,
+        14,
+        178 .
+
+pascal:procAttribute a owl:Class ;
+    rdfs:label "procAttribute" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 319 .
+
+pascal:procExternal a owl:Class ;
+    rdfs:label "procExternal" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 321 .
+
+pascal:program a owl:Class ;
+    rdfs:label "program" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 181 .
+
+pascal:raise a owl:Class ;
+    rdfs:label "raise" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 203,
+        221 .
+
+pascal:range a owl:Class ;
+    rdfs:label "range" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 268 .
+
+pascal:recInitializer a owl:Class ;
+    rdfs:label "recInitializer" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 323 .
+
+pascal:recInitializerField a owl:Class ;
+    rdfs:label "recInitializerField" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 324 .
+
+pascal:repeat a owl:Class ;
+    rdfs:label "repeat" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 192,
+        210 .
+
+pascal:resultName a owl:DatatypeProperty ;
+    rdfs:label "resultName (literal)" ;
+    rdfs:comment "Literal value for resultName field when it contains a terminal node" ;
+    pascal:fieldId 29 ;
+    pascal:isTerminalField true .
+
+pascal:rhs a owl:DatatypeProperty ;
+    rdfs:label "rhs (literal)" ;
+    rdfs:comment "Literal value for rhs field when it contains a terminal node" ;
+    pascal:fieldId 30 ;
+    pascal:isTerminalField true .
+
+pascal:root a owl:Class ;
+    rdfs:label "root" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 180 .
+
+pascal:rttiAttributes a owl:Class ;
+    rdfs:label "rttiAttributes" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 320 .
+
+pascal:setter a owl:DatatypeProperty ;
+    rdfs:label "setter (literal)" ;
+    rdfs:comment "Literal value for setter field when it contains a terminal node" ;
+    pascal:fieldId 31 ;
+    pascal:isTerminalField true .
+
+pascal:statement a owl:Class ;
+    rdfs:label "statement" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 204,
+        222 .
+
+pascal:statements a owl:Class ;
+    rdfs:label "statements" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 231 .
+
+pascal:stored a owl:DatatypeProperty ;
+    rdfs:label "stored (literal)" ;
+    rdfs:comment "Literal value for stored field when it contains a terminal node" ;
+    pascal:fieldId 33 ;
+    pascal:isTerminalField true .
+
+pascal:try a owl:Class ;
+    rdfs:label "try" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 197,
+        215 .
+
+pascal:type a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "type",
+        "type (literal)" ;
+    rdfs:comment "Literal value for type field when it contains a terminal node" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:fieldId 36 ;
+    pascal:isSupertype true ;
+    pascal:isTerminalField true ;
+    pascal:nodeTypeId 249 .
+
+pascal:typeref a owl:Class ;
+    rdfs:label "typeref" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 250 .
+
+pascal:typerefArgs a owl:Class ;
+    rdfs:label "typerefArgs" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 255 .
+
+pascal:typerefDot a owl:Class ;
+    rdfs:label "typerefDot" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 252 .
+
+pascal:typerefPtr a owl:Class ;
+    rdfs:label "typerefPtr" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 254 .
+
+pascal:typerefTpl a owl:Class ;
+    rdfs:label "typerefTpl" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 253 .
+
+pascal:unit a owl:Class ;
+    rdfs:label "unit" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 183 .
+
+pascal:value a owl:DatatypeProperty ;
+    rdfs:label "value (literal)" ;
+    rdfs:comment "Literal value for value field when it contains a terminal node" ;
+    pascal:fieldId 37 ;
+    pascal:isTerminalField true .
+
+pascal:varAssignDef a owl:Class ;
+    rdfs:label "varAssignDef" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 226 .
+
+pascal:varDef a owl:Class ;
+    rdfs:label "varDef" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 227 .
+
+pascal:variable a owl:DatatypeProperty ;
+    rdfs:label "variable (literal)" ;
+    rdfs:comment "Literal value for variable field when it contains a terminal node" ;
+    pascal:fieldId 38 ;
+    pascal:isTerminalField true .
+
+pascal:while a owl:Class ;
+    rdfs:label "while" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 191,
+        209 .
+
+pascal:with a owl:Class ;
+    rdfs:label "with" ;
+    rdfs:isDefinedBy pascal: ;
+    rdfs:subClassOf ast:Node ;
+    pascal:isSupertype true ;
+    pascal:nodeTypeId 202,
+        220 .
+
+pascal: a owl:Ontology ;
+    rdfs:label "Pascal Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for pascal" ;
+    owl:versionInfo "v0.25" ;
+    pascal:abiVersion 14 ;
+    pascal:fieldCount 38 ;
+    pascal:languageName "None" ;
+    pascal:nodeKindCount 371 .
+

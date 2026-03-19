@@ -1,0 +1,226 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix requirements: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/requirements/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+requirements:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+requirements:argument a owl:Class ;
+    rdfs:label "argument" ;
+    rdfs:isDefinedBy requirements: ;
+    rdfs:subClassOf ast:Node ;
+    requirements:isSupertype true ;
+    requirements:nodeTypeId 83 .
+
+requirements:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy requirements: ;
+    rdfs:subClassOf ast:Node ;
+    requirements:isSupertype true ;
+    requirements:nodeTypeId 64 .
+
+requirements:env_var a owl:Class ;
+    rdfs:label "env_var" ;
+    rdfs:isDefinedBy requirements: ;
+    rdfs:subClassOf ast:Node ;
+    requirements:isSupertype true ;
+    requirements:nodeTypeId 85 .
+
+requirements:extras a owl:Class ;
+    rdfs:label "extras" ;
+    rdfs:isDefinedBy requirements: ;
+    rdfs:subClassOf ast:Node ;
+    requirements:isSupertype true ;
+    requirements:nodeTypeId 68 .
+
+requirements:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+requirements:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+requirements:file a owl:Class ;
+    rdfs:label "file" ;
+    rdfs:isDefinedBy requirements: ;
+    rdfs:subClassOf ast:Node ;
+    requirements:isSupertype true ;
+    requirements:nodeTypeId 66 .
+
+requirements:global_opt a owl:Class ;
+    rdfs:label "global_opt" ;
+    rdfs:isDefinedBy requirements: ;
+    rdfs:subClassOf ast:Node ;
+    requirements:isSupertype true ;
+    requirements:nodeTypeId 81 .
+
+requirements:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+requirements:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+requirements:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+requirements:linebreak a owl:Class ;
+    rdfs:label "linebreak" ;
+    rdfs:isDefinedBy requirements: ;
+    rdfs:subClassOf ast:Node ;
+    requirements:isSupertype true ;
+    requirements:nodeTypeId 86 .
+
+requirements:marker_op a owl:Class ;
+    rdfs:label "marker_op" ;
+    rdfs:isDefinedBy requirements: ;
+    rdfs:subClassOf ast:Node ;
+    requirements:isSupertype true ;
+    requirements:nodeTypeId 30,
+        31,
+        74 .
+
+requirements:marker_spec a owl:Class ;
+    rdfs:label "marker_spec" ;
+    rdfs:isDefinedBy requirements: ;
+    rdfs:subClassOf ast:Node ;
+    requirements:isSupertype true ;
+    requirements:nodeTypeId 73 .
+
+requirements:marker_var a owl:Class ;
+    rdfs:label "marker_var" ;
+    rdfs:isDefinedBy requirements: ;
+    rdfs:subClassOf ast:Node ;
+    requirements:isSupertype true ;
+    requirements:nodeTypeId 75 .
+
+requirements:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+requirements:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+requirements:option a owl:Class ;
+    rdfs:label "option" ;
+    rdfs:isDefinedBy requirements: ;
+    rdfs:subClassOf ast:Node ;
+    requirements:isSupertype true ;
+    requirements:nodeTypeId 32,
+        33,
+        34,
+        35,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54 .
+
+requirements:package a owl:Class ;
+    rdfs:label "package" ;
+    rdfs:isDefinedBy requirements: ;
+    rdfs:subClassOf ast:Node ;
+    requirements:isSupertype true ;
+    requirements:nodeTypeId 1 .
+
+requirements:path a owl:Class ;
+    rdfs:label "path" ;
+    rdfs:isDefinedBy requirements: ;
+    rdfs:subClassOf ast:Node ;
+    requirements:isSupertype true ;
+    requirements:nodeTypeId 3 .
+
+requirements:quoted_string a owl:Class ;
+    rdfs:label "quoted_string" ;
+    rdfs:isDefinedBy requirements: ;
+    rdfs:subClassOf ast:Node ;
+    requirements:isSupertype true ;
+    requirements:nodeTypeId 84 .
+
+requirements:requirement a owl:Class ;
+    rdfs:label "requirement" ;
+    rdfs:isDefinedBy requirements: ;
+    rdfs:subClassOf ast:Node ;
+    requirements:isSupertype true ;
+    requirements:nodeTypeId 67 .
+
+requirements:requirement_opt a owl:Class ;
+    rdfs:label "requirement_opt" ;
+    rdfs:isDefinedBy requirements: ;
+    rdfs:subClassOf ast:Node ;
+    requirements:isSupertype true ;
+    requirements:nodeTypeId 82 .
+
+requirements:url a owl:Class ;
+    rdfs:label "url" ;
+    rdfs:isDefinedBy requirements: ;
+    rdfs:subClassOf ast:Node ;
+    requirements:isSupertype true ;
+    requirements:nodeTypeId 70 .
+
+requirements:url_spec a owl:Class ;
+    rdfs:label "url_spec" ;
+    rdfs:isDefinedBy requirements: ;
+    rdfs:subClassOf ast:Node ;
+    requirements:isSupertype true ;
+    requirements:nodeTypeId 69 .
+
+requirements:version a owl:Class ;
+    rdfs:label "version" ;
+    rdfs:isDefinedBy requirements: ;
+    rdfs:subClassOf ast:Node ;
+    requirements:isSupertype true ;
+    requirements:nodeTypeId 13 .
+
+requirements:version_cmp a owl:Class ;
+    rdfs:label "version_cmp" ;
+    rdfs:isDefinedBy requirements: ;
+    rdfs:subClassOf ast:Node ;
+    requirements:isSupertype true ;
+    requirements:nodeTypeId 14 .
+
+requirements:version_spec a owl:Class ;
+    rdfs:label "version_spec" ;
+    rdfs:isDefinedBy requirements: ;
+    rdfs:subClassOf ast:Node ;
+    requirements:isSupertype true ;
+    requirements:nodeTypeId 71 .
+
+requirements: a owl:Ontology ;
+    rdfs:label "Requirements Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for requirements" ;
+    owl:versionInfo "v0.25" ;
+    requirements:abiVersion 14 ;
+    requirements:fieldCount 3 ;
+    requirements:languageName "None" ;
+    requirements:nodeKindCount 95 .
+

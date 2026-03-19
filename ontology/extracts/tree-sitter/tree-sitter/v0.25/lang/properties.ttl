@@ -1,0 +1,130 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix properties: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/properties/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+properties:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+properties:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy properties: ;
+    rdfs:subClassOf ast:Node ;
+    properties:isSupertype true ;
+    properties:nodeTypeId 12 .
+
+properties:default a owl:DatatypeProperty ;
+    rdfs:label "default (literal)" ;
+    rdfs:comment "Literal value for default field when it contains a terminal node" ;
+    properties:fieldId 1 ;
+    properties:isTerminalField true .
+
+properties:escape a owl:Class ;
+    rdfs:label "escape" ;
+    rdfs:isDefinedBy properties: ;
+    rdfs:subClassOf ast:Node ;
+    properties:isSupertype true ;
+    properties:nodeTypeId 27 .
+
+properties:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+properties:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+properties:field_default a owl:ObjectProperty ;
+    rdfs:label "default (structural)" ;
+    rdfs:comment "Structural reference for default field when it contains a non-terminal node" ;
+    properties:fieldId 1 .
+
+properties:file a owl:Class ;
+    rdfs:label "file" ;
+    rdfs:isDefinedBy properties: ;
+    rdfs:subClassOf ast:Node ;
+    properties:isSupertype true ;
+    properties:nodeTypeId 17 .
+
+properties:index a owl:Class ;
+    rdfs:label "index" ;
+    rdfs:isDefinedBy properties: ;
+    rdfs:subClassOf ast:Node ;
+    properties:isSupertype true ;
+    properties:nodeTypeId 35 .
+
+properties:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+properties:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+properties:key a owl:Class ;
+    rdfs:label "key" ;
+    rdfs:isDefinedBy properties: ;
+    rdfs:subClassOf ast:Node ;
+    properties:isSupertype true ;
+    properties:nodeTypeId 19 .
+
+properties:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+properties:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+properties:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+properties:property a owl:Class ;
+    rdfs:label "property" ;
+    rdfs:isDefinedBy properties: ;
+    rdfs:subClassOf ast:Node ;
+    properties:isSupertype true ;
+    properties:nodeTypeId 18 .
+
+properties:secret a owl:Class ;
+    rdfs:label "secret" ;
+    rdfs:isDefinedBy properties: ;
+    rdfs:subClassOf ast:Node ;
+    properties:isSupertype true ;
+    properties:nodeTypeId 36 .
+
+properties:substitution a owl:Class ;
+    rdfs:label "substitution" ;
+    rdfs:isDefinedBy properties: ;
+    rdfs:subClassOf ast:Node ;
+    properties:isSupertype true ;
+    properties:nodeTypeId 22 .
+
+properties:value a owl:Class ;
+    rdfs:label "value" ;
+    rdfs:isDefinedBy properties: ;
+    rdfs:subClassOf ast:Node ;
+    properties:isSupertype true ;
+    properties:nodeTypeId 21 .
+
+properties: a owl:Ontology ;
+    rdfs:label "Properties Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for properties" ;
+    owl:versionInfo "v0.25" ;
+    properties:abiVersion 14 ;
+    properties:fieldCount 1 ;
+    properties:languageName "None" ;
+    properties:nodeKindCount 37 .
+

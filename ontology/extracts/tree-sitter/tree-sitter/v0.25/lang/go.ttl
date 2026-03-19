@@ -1,0 +1,999 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix go: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/go/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+go:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+go:argument_list a owl:Class ;
+    rdfs:label "argument_list" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 173,
+        174 .
+
+go:array_type a owl:Class ;
+    rdfs:label "array_type" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 123 .
+
+go:assignment_statement a owl:Class ;
+    rdfs:label "assignment_statement" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 146 .
+
+go:binary_expression a owl:Class ;
+    rdfs:label "binary_expression" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 187 .
+
+go:blank_identifier a owl:Class ;
+    rdfs:label "blank_identifier" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 8 .
+
+go:block a owl:Class ;
+    rdfs:label "block" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 136 .
+
+go:break_statement a owl:Class ;
+    rdfs:label "break_statement" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 151 .
+
+go:call_expression a owl:Class ;
+    rdfs:label "call_expression" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 171 .
+
+go:channel_type a owl:Class ;
+    rdfs:label "channel_type" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 134 .
+
+go:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 94 .
+
+go:communication_case a owl:Class ;
+    rdfs:label "communication_case" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 168 .
+
+go:composite_literal a owl:Class ;
+    rdfs:label "composite_literal" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 181 .
+
+go:const_declaration a owl:Class ;
+    rdfs:label "const_declaration" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 102 .
+
+go:const_spec a owl:Class ;
+    rdfs:label "const_spec" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 103 .
+
+go:continue_statement a owl:Class ;
+    rdfs:label "continue_statement" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 152 .
+
+go:dec_statement a owl:Class ;
+    rdfs:label "dec_statement" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 145 .
+
+go:default_case a owl:Class ;
+    rdfs:label "default_case" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 163 .
+
+go:defer_statement a owl:Class ;
+    rdfs:label "defer_statement" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 156 .
+
+go:dot a owl:Class ;
+    rdfs:label "dot" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 99 .
+
+go:empty_statement a owl:Class ;
+    rdfs:label "empty_statement" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 139 .
+
+go:escape_sequence a owl:Class ;
+    rdfs:label "escape_sequence" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 85 .
+
+go:expression_case a owl:Class ;
+    rdfs:label "expression_case" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 162 .
+
+go:expression_list a owl:Class ;
+    rdfs:label "expression_list" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 117 .
+
+go:expression_statement a owl:Class ;
+    rdfs:label "expression_statement" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 141 .
+
+go:expression_switch_statement a owl:Class ;
+    rdfs:label "expression_switch_statement" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 161 .
+
+go:fallthrough_statement a owl:Class ;
+    rdfs:label "fallthrough_statement" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 150 .
+
+go:false a owl:Class ;
+    rdfs:label "false" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 92 .
+
+go:field a owl:DatatypeProperty ;
+    rdfs:label "field (literal)" ;
+    rdfs:comment "Literal value for field field when it contains a terminal node" ;
+    go:fieldId 12 ;
+    go:isTerminalField true .
+
+go:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+go:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+go:field_alias a owl:ObjectProperty ;
+    rdfs:label "alias (structural)" ;
+    rdfs:comment "Structural reference for alias field when it contains a non-terminal node" ;
+    go:fieldId 1 .
+
+go:field_alternative a owl:ObjectProperty ;
+    rdfs:label "alternative (structural)" ;
+    rdfs:comment "Structural reference for alternative field when it contains a non-terminal node" ;
+    go:fieldId 2 .
+
+go:field_arguments a owl:ObjectProperty ;
+    rdfs:label "arguments (structural)" ;
+    rdfs:comment "Structural reference for arguments field when it contains a non-terminal node" ;
+    go:fieldId 3 .
+
+go:field_body a owl:ObjectProperty ;
+    rdfs:label "body (structural)" ;
+    rdfs:comment "Structural reference for body field when it contains a non-terminal node" ;
+    go:fieldId 4 .
+
+go:field_capacity a owl:ObjectProperty ;
+    rdfs:label "capacity (structural)" ;
+    rdfs:comment "Structural reference for capacity field when it contains a non-terminal node" ;
+    go:fieldId 5 .
+
+go:field_channel a owl:ObjectProperty ;
+    rdfs:label "channel (structural)" ;
+    rdfs:comment "Structural reference for channel field when it contains a non-terminal node" ;
+    go:fieldId 6 .
+
+go:field_communication a owl:ObjectProperty ;
+    rdfs:label "communication (structural)" ;
+    rdfs:comment "Structural reference for communication field when it contains a non-terminal node" ;
+    go:fieldId 7 .
+
+go:field_condition a owl:ObjectProperty ;
+    rdfs:label "condition (structural)" ;
+    rdfs:comment "Structural reference for condition field when it contains a non-terminal node" ;
+    go:fieldId 8 .
+
+go:field_consequence a owl:ObjectProperty ;
+    rdfs:label "consequence (structural)" ;
+    rdfs:comment "Structural reference for consequence field when it contains a non-terminal node" ;
+    go:fieldId 9 .
+
+go:field_declaration a owl:Class ;
+    rdfs:label "field_declaration" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 129 .
+
+go:field_declaration_list a owl:Class ;
+    rdfs:label "field_declaration_list" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 128 .
+
+go:field_element a owl:ObjectProperty ;
+    rdfs:label "element (structural)" ;
+    rdfs:comment "Structural reference for element field when it contains a non-terminal node" ;
+    go:fieldId 10 .
+
+go:field_end a owl:ObjectProperty ;
+    rdfs:label "end (structural)" ;
+    rdfs:comment "Structural reference for end field when it contains a non-terminal node" ;
+    go:fieldId 11 .
+
+go:field_function a owl:ObjectProperty ;
+    rdfs:label "function (structural)" ;
+    rdfs:comment "Structural reference for function field when it contains a non-terminal node" ;
+    go:fieldId 13 .
+
+go:field_identifier a owl:Class ;
+    rdfs:label "field_identifier" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 214 .
+
+go:field_index a owl:ObjectProperty ;
+    rdfs:label "index (structural)" ;
+    rdfs:comment "Structural reference for index field when it contains a non-terminal node" ;
+    go:fieldId 14 .
+
+go:field_initializer a owl:ObjectProperty ;
+    rdfs:label "initializer (structural)" ;
+    rdfs:comment "Structural reference for initializer field when it contains a non-terminal node" ;
+    go:fieldId 15 .
+
+go:field_key a owl:ObjectProperty ;
+    rdfs:label "key (structural)" ;
+    rdfs:comment "Structural reference for key field when it contains a non-terminal node" ;
+    go:fieldId 16 .
+
+go:field_left a owl:ObjectProperty ;
+    rdfs:label "left (structural)" ;
+    rdfs:comment "Structural reference for left field when it contains a non-terminal node" ;
+    go:fieldId 18 .
+
+go:field_length a owl:ObjectProperty ;
+    rdfs:label "length (structural)" ;
+    rdfs:comment "Structural reference for length field when it contains a non-terminal node" ;
+    go:fieldId 19 .
+
+go:field_name a owl:ObjectProperty ;
+    rdfs:label "name (structural)" ;
+    rdfs:comment "Structural reference for name field when it contains a non-terminal node" ;
+    go:fieldId 20 .
+
+go:field_operand a owl:ObjectProperty ;
+    rdfs:label "operand (structural)" ;
+    rdfs:comment "Structural reference for operand field when it contains a non-terminal node" ;
+    go:fieldId 21 .
+
+go:field_operator a owl:ObjectProperty ;
+    rdfs:label "operator (structural)" ;
+    rdfs:comment "Structural reference for operator field when it contains a non-terminal node" ;
+    go:fieldId 22 .
+
+go:field_parameters a owl:ObjectProperty ;
+    rdfs:label "parameters (structural)" ;
+    rdfs:comment "Structural reference for parameters field when it contains a non-terminal node" ;
+    go:fieldId 24 .
+
+go:field_path a owl:ObjectProperty ;
+    rdfs:label "path (structural)" ;
+    rdfs:comment "Structural reference for path field when it contains a non-terminal node" ;
+    go:fieldId 25 .
+
+go:field_receiver a owl:ObjectProperty ;
+    rdfs:label "receiver (structural)" ;
+    rdfs:comment "Structural reference for receiver field when it contains a non-terminal node" ;
+    go:fieldId 26 .
+
+go:field_result a owl:ObjectProperty ;
+    rdfs:label "result (structural)" ;
+    rdfs:comment "Structural reference for result field when it contains a non-terminal node" ;
+    go:fieldId 27 .
+
+go:field_right a owl:ObjectProperty ;
+    rdfs:label "right (structural)" ;
+    rdfs:comment "Structural reference for right field when it contains a non-terminal node" ;
+    go:fieldId 28 .
+
+go:field_start a owl:ObjectProperty ;
+    rdfs:label "start (structural)" ;
+    rdfs:comment "Structural reference for start field when it contains a non-terminal node" ;
+    go:fieldId 29 .
+
+go:field_tag a owl:ObjectProperty ;
+    rdfs:label "tag (structural)" ;
+    rdfs:comment "Structural reference for tag field when it contains a non-terminal node" ;
+    go:fieldId 30 .
+
+go:field_type a owl:ObjectProperty ;
+    rdfs:label "type (structural)" ;
+    rdfs:comment "Structural reference for type field when it contains a non-terminal node" ;
+    go:fieldId 31 .
+
+go:field_type_arguments a owl:ObjectProperty ;
+    rdfs:label "type_arguments (structural)" ;
+    rdfs:comment "Structural reference for type_arguments field when it contains a non-terminal node" ;
+    go:fieldId 32 .
+
+go:field_type_parameters a owl:ObjectProperty ;
+    rdfs:label "type_parameters (structural)" ;
+    rdfs:comment "Structural reference for type_parameters field when it contains a non-terminal node" ;
+    go:fieldId 33 .
+
+go:field_update a owl:ObjectProperty ;
+    rdfs:label "update (structural)" ;
+    rdfs:comment "Structural reference for update field when it contains a non-terminal node" ;
+    go:fieldId 34 .
+
+go:field_value a owl:ObjectProperty ;
+    rdfs:label "value (structural)" ;
+    rdfs:comment "Structural reference for value field when it contains a non-terminal node" ;
+    go:fieldId 35 .
+
+go:float_literal a owl:Class ;
+    rdfs:label "float_literal" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 87 .
+
+go:for_clause a owl:Class ;
+    rdfs:label "for_clause" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 159 .
+
+go:for_statement a owl:Class ;
+    rdfs:label "for_statement" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 158 .
+
+go:func_literal a owl:Class ;
+    rdfs:label "func_literal" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 185 .
+
+go:function_declaration a owl:Class ;
+    rdfs:label "function_declaration" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 107 .
+
+go:function_type a owl:Class ;
+    rdfs:label "function_type" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 135 .
+
+go:generic_type a owl:Class ;
+    rdfs:label "generic_type" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 120 .
+
+go:go_statement a owl:Class ;
+    rdfs:label "go_statement" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 155 .
+
+go:goto_statement a owl:Class ;
+    rdfs:label "goto_statement" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 153 .
+
+go:identifier a owl:Class ;
+    rdfs:label "identifier" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 1,
+        60,
+        61 .
+
+go:if_statement a owl:Class ;
+    rdfs:label "if_statement" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 157 .
+
+go:imaginary_literal a owl:Class ;
+    rdfs:label "imaginary_literal" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 88 .
+
+go:implicit_length_array_type a owl:Class ;
+    rdfs:label "implicit_length_array_type" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 124 .
+
+go:import_declaration a owl:Class ;
+    rdfs:label "import_declaration" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 97 .
+
+go:import_spec a owl:Class ;
+    rdfs:label "import_spec" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 98 .
+
+go:import_spec_list a owl:Class ;
+    rdfs:label "import_spec_list" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 100 .
+
+go:inc_statement a owl:Class ;
+    rdfs:label "inc_statement" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 144 .
+
+go:index_expression a owl:Class ;
+    rdfs:label "index_expression" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 176 .
+
+go:int_literal a owl:Class ;
+    rdfs:label "int_literal" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 86 .
+
+go:interface_type a owl:Class ;
+    rdfs:label "interface_type" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 130 .
+
+go:interpreted_string_literal a owl:Class ;
+    rdfs:label "interpreted_string_literal" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 190 .
+
+go:interpreted_string_literal_content a owl:Class ;
+    rdfs:label "interpreted_string_literal_content" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 83 .
+
+go:iota a owl:Class ;
+    rdfs:label "iota" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 93 .
+
+go:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+go:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+go:keyed_element a owl:Class ;
+    rdfs:label "keyed_element" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 184 .
+
+go:label a owl:DatatypeProperty ;
+    rdfs:label "label (literal)" ;
+    rdfs:comment "Literal value for label field when it contains a terminal node" ;
+    go:fieldId 17 ;
+    go:isTerminalField true .
+
+go:label_name a owl:Class ;
+    rdfs:label "label_name" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 215 .
+
+go:labeled_statement a owl:Class ;
+    rdfs:label "labeled_statement" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 148,
+        149 .
+
+go:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+go:literal_element a owl:Class ;
+    rdfs:label "literal_element" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 183 .
+
+go:literal_value a owl:Class ;
+    rdfs:label "literal_value" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 182 .
+
+go:map_type a owl:Class ;
+    rdfs:label "map_type" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 133 .
+
+go:method_declaration a owl:Class ;
+    rdfs:label "method_declaration" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 108 .
+
+go:method_elem a owl:Class ;
+    rdfs:label "method_elem" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 131 .
+
+go:name a owl:DatatypeProperty ;
+    rdfs:label "name (literal)" ;
+    rdfs:comment "Literal value for name field when it contains a terminal node" ;
+    go:fieldId 20 ;
+    go:isTerminalField true .
+
+go:negated_type a owl:Class ;
+    rdfs:label "negated_type" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 127 .
+
+go:nil a owl:Class ;
+    rdfs:label "nil" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 90 .
+
+go:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+go:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+go:package a owl:DatatypeProperty ;
+    rdfs:label "package (literal)" ;
+    rdfs:comment "Literal value for package field when it contains a terminal node" ;
+    go:fieldId 23 ;
+    go:isTerminalField true .
+
+go:package_clause a owl:Class ;
+    rdfs:label "package_clause" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 96 .
+
+go:package_identifier a owl:Class ;
+    rdfs:label "package_identifier" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 216 .
+
+go:parameter_declaration a owl:Class ;
+    rdfs:label "parameter_declaration" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 112 .
+
+go:parameter_list a owl:Class ;
+    rdfs:label "parameter_list" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 111 .
+
+go:parenthesized_expression a owl:Class ;
+    rdfs:label "parenthesized_expression" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 170 .
+
+go:parenthesized_type a owl:Class ;
+    rdfs:label "parenthesized_type" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 118 .
+
+go:pointer_type a owl:Class ;
+    rdfs:label "pointer_type" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 122 .
+
+go:qualified_type a owl:Class ;
+    rdfs:label "qualified_type" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 188 .
+
+go:range_clause a owl:Class ;
+    rdfs:label "range_clause" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 160 .
+
+go:raw_string_literal a owl:Class ;
+    rdfs:label "raw_string_literal" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 189 .
+
+go:raw_string_literal_content a owl:Class ;
+    rdfs:label "raw_string_literal_content" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 81 .
+
+go:receive_statement a owl:Class ;
+    rdfs:label "receive_statement" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 143 .
+
+go:return_statement a owl:Class ;
+    rdfs:label "return_statement" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 154 .
+
+go:rune_literal a owl:Class ;
+    rdfs:label "rune_literal" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 89 .
+
+go:select_statement a owl:Class ;
+    rdfs:label "select_statement" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 167 .
+
+go:selector_expression a owl:Class ;
+    rdfs:label "selector_expression" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 175 .
+
+go:send_statement a owl:Class ;
+    rdfs:label "send_statement" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 142 .
+
+go:short_var_declaration a owl:Class ;
+    rdfs:label "short_var_declaration" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 147 .
+
+go:slice_expression a owl:Class ;
+    rdfs:label "slice_expression" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 177 .
+
+go:slice_type a owl:Class ;
+    rdfs:label "slice_type" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 125 .
+
+go:source_file a owl:Class ;
+    rdfs:label "source_file" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 95 .
+
+go:statement_list a owl:Class ;
+    rdfs:label "statement_list" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 137 .
+
+go:struct_type a owl:Class ;
+    rdfs:label "struct_type" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 126 .
+
+go:true a owl:Class ;
+    rdfs:label "true" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 91 .
+
+go:type a owl:DatatypeProperty ;
+    rdfs:label "type (literal)" ;
+    rdfs:comment "Literal value for type field when it contains a terminal node" ;
+    go:fieldId 31 ;
+    go:isTerminalField true .
+
+go:type_alias a owl:Class ;
+    rdfs:label "type_alias" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 114 .
+
+go:type_arguments a owl:Class ;
+    rdfs:label "type_arguments" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 121 .
+
+go:type_assertion_expression a owl:Class ;
+    rdfs:label "type_assertion_expression" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 178 .
+
+go:type_case a owl:Class ;
+    rdfs:label "type_case" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 166 .
+
+go:type_constraint a owl:Class ;
+    rdfs:label "type_constraint" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 217 .
+
+go:type_conversion_expression a owl:Class ;
+    rdfs:label "type_conversion_expression" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 179 .
+
+go:type_declaration a owl:Class ;
+    rdfs:label "type_declaration" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 115 .
+
+go:type_elem a owl:Class ;
+    rdfs:label "type_elem" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 132 .
+
+go:type_identifier a owl:Class ;
+    rdfs:label "type_identifier" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 218 .
+
+go:type_instantiation_expression a owl:Class ;
+    rdfs:label "type_instantiation_expression" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 180 .
+
+go:type_parameter_declaration a owl:Class ;
+    rdfs:label "type_parameter_declaration" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 110 .
+
+go:type_parameter_list a owl:Class ;
+    rdfs:label "type_parameter_list" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 109 .
+
+go:type_spec a owl:Class ;
+    rdfs:label "type_spec" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 116 .
+
+go:type_switch_statement a owl:Class ;
+    rdfs:label "type_switch_statement" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 164 .
+
+go:unary_expression a owl:Class ;
+    rdfs:label "unary_expression" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 186 .
+
+go:var_declaration a owl:Class ;
+    rdfs:label "var_declaration" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 104 .
+
+go:var_spec a owl:Class ;
+    rdfs:label "var_spec" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 105 .
+
+go:var_spec_list a owl:Class ;
+    rdfs:label "var_spec_list" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 106 .
+
+go:variadic_argument a owl:Class ;
+    rdfs:label "variadic_argument" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 172 .
+
+go:variadic_parameter_declaration a owl:Class ;
+    rdfs:label "variadic_parameter_declaration" ;
+    rdfs:isDefinedBy go: ;
+    rdfs:subClassOf ast:Node ;
+    go:isSupertype true ;
+    go:nodeTypeId 113 .
+
+go: a owl:Ontology ;
+    rdfs:label "Go Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for go" ;
+    owl:versionInfo "v0.25" ;
+    go:abiVersion 15 ;
+    go:fieldCount 35 ;
+    go:languageName "go" ;
+    go:nodeKindCount 219 .
+

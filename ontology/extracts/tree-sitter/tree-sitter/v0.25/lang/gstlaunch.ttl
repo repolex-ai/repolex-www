@@ -1,0 +1,175 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix gstlaunch: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/gstlaunch/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+gstlaunch:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+gstlaunch:bin a owl:Class ;
+    rdfs:label "bin" ;
+    rdfs:isDefinedBy gstlaunch: ;
+    rdfs:subClassOf ast:Node ;
+    gstlaunch:isSupertype true ;
+    gstlaunch:nodeTypeId 18 .
+
+gstlaunch:cap a owl:Class ;
+    rdfs:label "cap" ;
+    rdfs:isDefinedBy gstlaunch: ;
+    rdfs:subClassOf ast:Node ;
+    gstlaunch:isSupertype true ;
+    gstlaunch:nodeTypeId 24 .
+
+gstlaunch:caps a owl:Class ;
+    rdfs:label "caps" ;
+    rdfs:isDefinedBy gstlaunch: ;
+    rdfs:subClassOf ast:Node ;
+    gstlaunch:isSupertype true ;
+    gstlaunch:nodeTypeId 23 .
+
+gstlaunch:element a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "element",
+        "element (literal)" ;
+    rdfs:comment "Literal value for element field when it contains a terminal node" ;
+    rdfs:isDefinedBy gstlaunch: ;
+    rdfs:subClassOf ast:Node ;
+    gstlaunch:fieldId 1 ;
+    gstlaunch:isSupertype true ;
+    gstlaunch:isTerminalField true ;
+    gstlaunch:nodeTypeId 16 .
+
+gstlaunch:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+gstlaunch:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+gstlaunch:field_value a owl:ObjectProperty ;
+    rdfs:label "value (structural)" ;
+    rdfs:comment "Structural reference for value field when it contains a non-terminal node" ;
+    gstlaunch:fieldId 5 .
+
+gstlaunch:fragment a owl:Class ;
+    rdfs:label "fragment" ;
+    rdfs:isDefinedBy gstlaunch: ;
+    rdfs:subClassOf ast:Node ;
+    gstlaunch:isSupertype true ;
+    gstlaunch:nodeTypeId 15 .
+
+gstlaunch:identifier a owl:Class ;
+    rdfs:label "identifier" ;
+    rdfs:isDefinedBy gstlaunch: ;
+    rdfs:subClassOf ast:Node ;
+    gstlaunch:isSupertype true ;
+    gstlaunch:nodeTypeId 10 .
+
+gstlaunch:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+gstlaunch:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+gstlaunch:key a owl:DatatypeProperty ;
+    rdfs:label "key (literal)" ;
+    rdfs:comment "Literal value for key field when it contains a terminal node" ;
+    gstlaunch:fieldId 2 ;
+    gstlaunch:isTerminalField true .
+
+gstlaunch:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+gstlaunch:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+gstlaunch:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+gstlaunch:pad a owl:DatatypeProperty ;
+    rdfs:label "pad (literal)" ;
+    rdfs:comment "Literal value for pad field when it contains a terminal node" ;
+    gstlaunch:fieldId 3 ;
+    gstlaunch:isTerminalField true .
+
+gstlaunch:pipeline a owl:Class ;
+    rdfs:label "pipeline" ;
+    rdfs:isDefinedBy gstlaunch: ;
+    rdfs:subClassOf ast:Node ;
+    gstlaunch:isSupertype true ;
+    gstlaunch:nodeTypeId 14 .
+
+gstlaunch:property a owl:Class ;
+    rdfs:label "property" ;
+    rdfs:isDefinedBy gstlaunch: ;
+    rdfs:subClassOf ast:Node ;
+    gstlaunch:isSupertype true ;
+    gstlaunch:nodeTypeId 21 .
+
+gstlaunch:reference a owl:Class ;
+    rdfs:label "reference" ;
+    rdfs:isDefinedBy gstlaunch: ;
+    rdfs:subClassOf ast:Node ;
+    gstlaunch:isSupertype true ;
+    gstlaunch:nodeTypeId 20 .
+
+gstlaunch:simple_element a owl:Class ;
+    rdfs:label "simple_element" ;
+    rdfs:isDefinedBy gstlaunch: ;
+    rdfs:subClassOf ast:Node ;
+    gstlaunch:isSupertype true ;
+    gstlaunch:nodeTypeId 19 .
+
+gstlaunch:string_content a owl:Class ;
+    rdfs:label "string_content" ;
+    rdfs:isDefinedBy gstlaunch: ;
+    rdfs:subClassOf ast:Node ;
+    gstlaunch:isSupertype true ;
+    gstlaunch:nodeTypeId 3 .
+
+gstlaunch:string_literal a owl:Class ;
+    rdfs:label "string_literal" ;
+    rdfs:isDefinedBy gstlaunch: ;
+    rdfs:subClassOf ast:Node ;
+    gstlaunch:isSupertype true ;
+    gstlaunch:nodeTypeId 17 .
+
+gstlaunch:type a owl:DatatypeProperty ;
+    rdfs:label "type (literal)" ;
+    rdfs:comment "Literal value for type field when it contains a terminal node" ;
+    gstlaunch:fieldId 4 ;
+    gstlaunch:isTerminalField true .
+
+gstlaunch:value a owl:Class ;
+    rdfs:label "value" ;
+    rdfs:isDefinedBy gstlaunch: ;
+    rdfs:subClassOf ast:Node ;
+    gstlaunch:isSupertype true ;
+    gstlaunch:nodeTypeId 22 .
+
+gstlaunch: a owl:Ontology ;
+    rdfs:label "Gstlaunch Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for gstlaunch" ;
+    owl:versionInfo "v0.25" ;
+    gstlaunch:abiVersion 14 ;
+    gstlaunch:fieldCount 5 ;
+    gstlaunch:languageName "None" ;
+    gstlaunch:nodeKindCount 32 .
+

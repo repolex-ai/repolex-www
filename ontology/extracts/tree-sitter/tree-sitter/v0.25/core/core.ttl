@@ -1,0 +1,210 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ast: a owl:Ontology ;
+    rdfs:label "AST Core Ontology" ;
+    rdfs:comment "Core ontology for tree-sitter AST nodes. Extracted by introspection from tree-sitter Python bindings." ;
+    owl:versionInfo "v0.25" .
+
+ast:childCount a owl:DatatypeProperty ;
+    rdfs:label "childCount" ;
+    rdfs:comment "Total number of children (named + anonymous)" ;
+    rdfs:domain ast:Node ;
+    rdfs:range xsd:nonNegativeInteger .
+
+ast:column a owl:DatatypeProperty ;
+    rdfs:label "column" ;
+    rdfs:comment "Column number in source code (0-indexed)" ;
+    rdfs:domain ast:Point ;
+    rdfs:range xsd:nonNegativeInteger .
+
+ast:descendantCount a owl:DatatypeProperty ;
+    rdfs:label "descendantCount" ;
+    rdfs:comment "Total number of descendants in subtree" ;
+    rdfs:domain ast:Node ;
+    rdfs:range xsd:nonNegativeInteger .
+
+ast:endByte a owl:DatatypeProperty ;
+    rdfs:label "endByte" ;
+    rdfs:comment "Ending byte offset in source code (exclusive)" ;
+    rdfs:domain ast:Node ;
+    rdfs:range xsd:nonNegativeInteger .
+
+ast:endColumn a owl:DatatypeProperty ;
+    rdfs:label "endColumn" ;
+    rdfs:comment "Ending column number in source code (0-indexed). Convenience property derived from end_point tuple." ;
+    rdfs:domain ast:Node ;
+    rdfs:range xsd:nonNegativeInteger .
+
+ast:endPoint a owl:ObjectProperty ;
+    rdfs:label "endPoint" ;
+    rdfs:comment "Ending position in source code (Point object with row and column)" ;
+    rdfs:domain ast:Node ;
+    rdfs:range ast:Point .
+
+ast:endRow a owl:DatatypeProperty ;
+    rdfs:label "endRow" ;
+    rdfs:comment "Ending row (line) number in source code (0-indexed). Convenience property derived from end_point tuple." ;
+    rdfs:domain ast:Node ;
+    rdfs:range xsd:nonNegativeInteger .
+
+ast:grammarId a owl:DatatypeProperty ;
+    rdfs:label "grammarId" ;
+    rdfs:comment "Numeric ID of the grammar this node belongs to" ;
+    rdfs:domain ast:Node ;
+    rdfs:range xsd:integer .
+
+ast:grammarName a owl:DatatypeProperty ;
+    rdfs:label "grammarName" ;
+    rdfs:comment "Name of the grammar/language (e.g., 'python', 'javascript')" ;
+    rdfs:domain ast:Node ;
+    rdfs:range xsd:string .
+
+ast:hasChanges a owl:DatatypeProperty ;
+    rdfs:label "hasChanges" ;
+    rdfs:comment "Whether this node changed between parses (incremental parsing)" ;
+    rdfs:domain ast:Node ;
+    rdfs:range xsd:boolean .
+
+ast:hasError a owl:DatatypeProperty ;
+    rdfs:label "hasError" ;
+    rdfs:comment "Whether this node or any descendant has an error" ;
+    rdfs:domain ast:Node ;
+    rdfs:range xsd:boolean .
+
+ast:id a owl:DatatypeProperty ;
+    rdfs:label "id" ;
+    rdfs:comment "Unique numeric identifier for this node" ;
+    rdfs:domain ast:Node ;
+    rdfs:range xsd:nonNegativeInteger .
+
+ast:isError a owl:DatatypeProperty ;
+    rdfs:label "isError" ;
+    rdfs:comment "Whether this node represents a syntax error" ;
+    rdfs:domain ast:Node ;
+    rdfs:range xsd:boolean .
+
+ast:isExtra a owl:DatatypeProperty ;
+    rdfs:label "isExtra" ;
+    rdfs:comment "Whether this node is extra (e.g., comments, whitespace)" ;
+    rdfs:domain ast:Node ;
+    rdfs:range xsd:boolean .
+
+ast:isMissing a owl:DatatypeProperty ;
+    rdfs:label "isMissing" ;
+    rdfs:comment "Whether this node was inserted by error recovery" ;
+    rdfs:domain ast:Node ;
+    rdfs:range xsd:boolean .
+
+ast:isNamed a owl:DatatypeProperty ;
+    rdfs:label "isNamed" ;
+    rdfs:comment "Whether this is a named node (semantic) vs anonymous (punctuation)" ;
+    rdfs:domain ast:Node ;
+    rdfs:range xsd:boolean .
+
+ast:kindId a owl:DatatypeProperty ;
+    rdfs:label "kindId" ;
+    rdfs:comment "Numeric ID for this node kind in the language grammar" ;
+    rdfs:domain ast:Node ;
+    rdfs:range xsd:integer .
+
+ast:namedChildCount a owl:DatatypeProperty ;
+    rdfs:label "namedChildCount" ;
+    rdfs:comment "Number of named children only" ;
+    rdfs:domain ast:Node ;
+    rdfs:range xsd:nonNegativeInteger .
+
+ast:nextNamedSibling a owl:ObjectProperty ;
+    rdfs:label "nextNamedSibling" ;
+    rdfs:comment "The next named sibling node" ;
+    rdfs:domain ast:Node ;
+    rdfs:range ast:Node .
+
+ast:nextParseState a owl:DatatypeProperty ;
+    rdfs:label "nextParseState" ;
+    rdfs:comment "The parse state after this node" ;
+    rdfs:domain ast:Node ;
+    rdfs:range xsd:nonNegativeInteger .
+
+ast:nextSibling a owl:ObjectProperty ;
+    rdfs:label "nextSibling" ;
+    rdfs:comment "The next sibling node" ;
+    rdfs:domain ast:Node ;
+    rdfs:range ast:Node .
+
+ast:parent a owl:ObjectProperty ;
+    rdfs:label "parent" ;
+    rdfs:comment "The parent node in the AST" ;
+    rdfs:domain ast:Node ;
+    rdfs:range ast:Node .
+
+ast:parseState a owl:DatatypeProperty ;
+    rdfs:label "parseState" ;
+    rdfs:comment "The parse state at the start of this node" ;
+    rdfs:domain ast:Node ;
+    rdfs:range xsd:nonNegativeInteger .
+
+ast:prevNamedSibling a owl:ObjectProperty ;
+    rdfs:label "prevNamedSibling" ;
+    rdfs:comment "The previous named sibling node" ;
+    rdfs:domain ast:Node ;
+    rdfs:range ast:Node .
+
+ast:prevSibling a owl:ObjectProperty ;
+    rdfs:label "prevSibling" ;
+    rdfs:comment "The previous sibling node" ;
+    rdfs:domain ast:Node ;
+    rdfs:range ast:Node .
+
+ast:row a owl:DatatypeProperty ;
+    rdfs:label "row" ;
+    rdfs:comment "Row (line) number in source code (0-indexed)" ;
+    rdfs:domain ast:Point ;
+    rdfs:range xsd:nonNegativeInteger .
+
+ast:startByte a owl:DatatypeProperty ;
+    rdfs:label "startByte" ;
+    rdfs:comment "Starting byte offset in source code (0-indexed)" ;
+    rdfs:domain ast:Node ;
+    rdfs:range xsd:nonNegativeInteger .
+
+ast:startColumn a owl:DatatypeProperty ;
+    rdfs:label "startColumn" ;
+    rdfs:comment "Starting column number in source code (0-indexed). Convenience property derived from start_point tuple." ;
+    rdfs:domain ast:Node ;
+    rdfs:range xsd:nonNegativeInteger .
+
+ast:startPoint a owl:ObjectProperty ;
+    rdfs:label "startPoint" ;
+    rdfs:comment "Starting position in source code (Point object with row and column)" ;
+    rdfs:domain ast:Node ;
+    rdfs:range ast:Point .
+
+ast:startRow a owl:DatatypeProperty ;
+    rdfs:label "startRow" ;
+    rdfs:comment "Starting row (line) number in source code (0-indexed). Convenience property derived from start_point tuple." ;
+    rdfs:domain ast:Node ;
+    rdfs:range xsd:nonNegativeInteger .
+
+ast:text a owl:DatatypeProperty ;
+    rdfs:label "text" ;
+    rdfs:comment "The source code text for this node" ;
+    rdfs:domain ast:Node ;
+    rdfs:range xsd:string .
+
+ast:type a owl:DatatypeProperty ;
+    rdfs:label "type" ;
+    rdfs:comment "The node's type as a string (e.g., 'class_definition', 'identifier')" ;
+    rdfs:domain ast:Node ;
+    rdfs:range xsd:string .
+
+ast:Point a owl:Class ;
+    rdfs:label "Point" ;
+    rdfs:comment "A position in source code, with row and column." .
+
+ast:Node a owl:Class ;
+    rdfs:label "Node" ;
+    rdfs:comment "Base class for all tree-sitter AST nodes. All language-specific node types (e.g., lang:class_definition) are subclasses of this." .
+

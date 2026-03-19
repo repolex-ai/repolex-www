@@ -1,0 +1,196 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix html: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/html/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+html:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+html:attribute a owl:Class ;
+    rdfs:label "attribute" ;
+    rdfs:isDefinedBy html: ;
+    rdfs:subClassOf ast:Node ;
+    html:isSupertype true ;
+    html:nodeTypeId 37 .
+
+html:attribute_name a owl:Class ;
+    rdfs:label "attribute_name" ;
+    rdfs:isDefinedBy html: ;
+    rdfs:subClassOf ast:Node ;
+    html:isSupertype true ;
+    html:nodeTypeId 9 .
+
+html:attribute_value a owl:Class ;
+    rdfs:label "attribute_value" ;
+    rdfs:isDefinedBy html: ;
+    rdfs:subClassOf ast:Node ;
+    html:isSupertype true ;
+    html:nodeTypeId 10,
+        13,
+        15 .
+
+html:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy html: ;
+    rdfs:subClassOf ast:Node ;
+    html:isSupertype true ;
+    html:nodeTypeId 24 .
+
+html:doctype a owl:Class ;
+    rdfs:label "doctype" ;
+    rdfs:isDefinedBy html: ;
+    rdfs:subClassOf ast:Node ;
+    html:isSupertype true ;
+    html:nodeTypeId 26 .
+
+html:document a owl:Class ;
+    rdfs:label "document" ;
+    rdfs:isDefinedBy html: ;
+    rdfs:subClassOf ast:Node ;
+    html:isSupertype true ;
+    html:nodeTypeId 25 .
+
+html:element a owl:Class ;
+    rdfs:label "element" ;
+    rdfs:isDefinedBy html: ;
+    rdfs:subClassOf ast:Node ;
+    html:isSupertype true ;
+    html:nodeTypeId 28 .
+
+html:end_tag a owl:Class ;
+    rdfs:label "end_tag" ;
+    rdfs:isDefinedBy html: ;
+    rdfs:subClassOf ast:Node ;
+    html:isSupertype true ;
+    html:nodeTypeId 35 .
+
+html:entity a owl:Class ;
+    rdfs:label "entity" ;
+    rdfs:isDefinedBy html: ;
+    rdfs:subClassOf ast:Node ;
+    html:isSupertype true ;
+    html:nodeTypeId 11 .
+
+html:erroneous_end_tag a owl:Class ;
+    rdfs:label "erroneous_end_tag" ;
+    rdfs:isDefinedBy html: ;
+    rdfs:subClassOf ast:Node ;
+    html:isSupertype true ;
+    html:nodeTypeId 36 .
+
+html:erroneous_end_tag_name a owl:Class ;
+    rdfs:label "erroneous_end_tag_name" ;
+    rdfs:isDefinedBy html: ;
+    rdfs:subClassOf ast:Node ;
+    html:isSupertype true ;
+    html:nodeTypeId 21 .
+
+html:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+html:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+html:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+html:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+html:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+html:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+html:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+html:quoted_attribute_value a owl:Class ;
+    rdfs:label "quoted_attribute_value" ;
+    rdfs:isDefinedBy html: ;
+    rdfs:subClassOf ast:Node ;
+    html:isSupertype true ;
+    html:nodeTypeId 38 .
+
+html:raw_text a owl:Class ;
+    rdfs:label "raw_text" ;
+    rdfs:isDefinedBy html: ;
+    rdfs:subClassOf ast:Node ;
+    html:isSupertype true ;
+    html:nodeTypeId 23 .
+
+html:script_element a owl:Class ;
+    rdfs:label "script_element" ;
+    rdfs:isDefinedBy html: ;
+    rdfs:subClassOf ast:Node ;
+    html:isSupertype true ;
+    html:nodeTypeId 29 .
+
+html:self_closing_tag a owl:Class ;
+    rdfs:label "self_closing_tag" ;
+    rdfs:isDefinedBy html: ;
+    rdfs:subClassOf ast:Node ;
+    html:isSupertype true ;
+    html:nodeTypeId 34 .
+
+html:start_tag a owl:Class ;
+    rdfs:label "start_tag" ;
+    rdfs:isDefinedBy html: ;
+    rdfs:subClassOf ast:Node ;
+    html:isSupertype true ;
+    html:nodeTypeId 31,
+        32,
+        33 .
+
+html:style_element a owl:Class ;
+    rdfs:label "style_element" ;
+    rdfs:isDefinedBy html: ;
+    rdfs:subClassOf ast:Node ;
+    html:isSupertype true ;
+    html:nodeTypeId 30 .
+
+html:tag_name a owl:Class ;
+    rdfs:label "tag_name" ;
+    rdfs:isDefinedBy html: ;
+    rdfs:subClassOf ast:Node ;
+    html:isSupertype true ;
+    html:nodeTypeId 17,
+        18,
+        19,
+        20 .
+
+html:text a owl:Class ;
+    rdfs:label "text" ;
+    rdfs:isDefinedBy html: ;
+    rdfs:subClassOf ast:Node ;
+    html:isSupertype true ;
+    html:nodeTypeId 16 .
+
+html: a owl:Ontology ;
+    rdfs:label "Html Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for html" ;
+    owl:versionInfo "v0.25" ;
+    html:abiVersion 14 ;
+    html:fieldCount 0 ;
+    html:languageName "None" ;
+    html:nodeKindCount 41 .
+

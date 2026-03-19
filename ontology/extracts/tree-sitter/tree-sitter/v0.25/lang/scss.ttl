@@ -1,0 +1,716 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix scss: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/scss/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+scss:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+scss:adjacent_sibling_selector a owl:Class ;
+    rdfs:label "adjacent_sibling_selector" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 114 .
+
+scss:argument a owl:Class ;
+    rdfs:label "argument" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 141 .
+
+scss:arguments a owl:Class ;
+    rdfs:label "arguments" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 116,
+        117,
+        135,
+        140 .
+
+scss:at_keyword a owl:Class ;
+    rdfs:label "at_keyword" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 8,
+        57 .
+
+scss:at_root_statement a owl:Class ;
+    rdfs:label "at_root_statement" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 150 .
+
+scss:at_rule a owl:Class ;
+    rdfs:label "at_rule" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 100 .
+
+scss:attribute_name a owl:Class ;
+    rdfs:label "attribute_name" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 175 .
+
+scss:attribute_selector a owl:Class ;
+    rdfs:label "attribute_selector" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 110 .
+
+scss:binary_expression a owl:Class ;
+    rdfs:label "binary_expression" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 134 .
+
+scss:binary_query a owl:Class ;
+    rdfs:label "binary_query" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 123 .
+
+scss:block a owl:Class ;
+    rdfs:label "block" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 103 .
+
+scss:call_expression a owl:Class ;
+    rdfs:label "call_expression" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 133 .
+
+scss:charset_statement a owl:Class ;
+    rdfs:label "charset_statement" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 92 .
+
+scss:child_selector a owl:Class ;
+    rdfs:label "child_selector" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 111 .
+
+scss:class_name a owl:Class ;
+    rdfs:label "class_name" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 176 .
+
+scss:class_selector a owl:Class ;
+    rdfs:label "class_selector" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 106 .
+
+scss:color_value a owl:Class ;
+    rdfs:label "color_value" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 128 .
+
+scss:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 59 .
+
+scss:condition a owl:DatatypeProperty ;
+    rdfs:label "condition (literal)" ;
+    rdfs:comment "Literal value for condition field when it contains a terminal node" ;
+    scss:fieldId 1 ;
+    scss:isTerminalField true .
+
+scss:debug_statement a owl:Class ;
+    rdfs:label "debug_statement" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 149 .
+
+scss:declaration a owl:Class ;
+    rdfs:label "declaration" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 118,
+        119 .
+
+scss:default a owl:DatatypeProperty ;
+    rdfs:label "default (literal)" ;
+    rdfs:comment "Literal value for default field when it contains a terminal node" ;
+    scss:fieldId 2 ;
+    scss:isTerminalField true .
+
+scss:descendant_selector a owl:Class ;
+    rdfs:label "descendant_selector" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 112 .
+
+scss:each_statement a owl:Class ;
+    rdfs:label "each_statement" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 154 .
+
+scss:else_clause a owl:Class ;
+    rdfs:label "else_clause" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 153 .
+
+scss:else_if_clause a owl:Class ;
+    rdfs:label "else_if_clause" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 152 .
+
+scss:error_statement a owl:Class ;
+    rdfs:label "error_statement" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 147 .
+
+scss:extend_statement a owl:Class ;
+    rdfs:label "extend_statement" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 146 .
+
+scss:feature_name a owl:Class ;
+    rdfs:label "feature_name" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 177 .
+
+scss:feature_query a owl:Class ;
+    rdfs:label "feature_query" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 121 .
+
+scss:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+scss:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+scss:field_condition a owl:ObjectProperty ;
+    rdfs:label "condition (structural)" ;
+    rdfs:comment "Structural reference for condition field when it contains a non-terminal node" ;
+    scss:fieldId 1 .
+
+scss:field_default a owl:ObjectProperty ;
+    rdfs:label "default (structural)" ;
+    rdfs:comment "Structural reference for default field when it contains a non-terminal node" ;
+    scss:fieldId 2 .
+
+scss:field_from a owl:ObjectProperty ;
+    rdfs:label "from (structural)" ;
+    rdfs:comment "Structural reference for from field when it contains a non-terminal node" ;
+    scss:fieldId 3 .
+
+scss:field_through a owl:ObjectProperty ;
+    rdfs:label "through (structural)" ;
+    rdfs:comment "Structural reference for through field when it contains a non-terminal node" ;
+    scss:fieldId 6 .
+
+scss:field_value a owl:ObjectProperty ;
+    rdfs:label "value (structural)" ;
+    rdfs:comment "Structural reference for value field when it contains a non-terminal node" ;
+    scss:fieldId 7 .
+
+scss:float_value a owl:Class ;
+    rdfs:label "float_value" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 131 .
+
+scss:for_statement a owl:Class ;
+    rdfs:label "for_statement" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 155 .
+
+scss:forward_statement a owl:Class ;
+    rdfs:label "forward_statement" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 137 .
+
+scss:from a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "from",
+        "from (literal)" ;
+    rdfs:comment "Literal value for from field when it contains a terminal node" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:fieldId 3 ;
+    scss:isSupertype true ;
+    scss:isTerminalField true ;
+    scss:nodeTypeId 97 .
+
+scss:function_name a owl:Class ;
+    rdfs:label "function_name" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 178 .
+
+scss:function_statement a owl:Class ;
+    rdfs:label "function_statement" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 142 .
+
+scss:grid_value a owl:Class ;
+    rdfs:label "grid_value" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 132 .
+
+scss:id_name a owl:Class ;
+    rdfs:label "id_name" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 179 .
+
+scss:id_selector a owl:Class ;
+    rdfs:label "id_selector" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 109 .
+
+scss:identifier a owl:Class ;
+    rdfs:label "identifier" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 56,
+        83 .
+
+scss:if_statement a owl:Class ;
+    rdfs:label "if_statement" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 151 .
+
+scss:import_statement a owl:Class ;
+    rdfs:label "import_statement" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 90 .
+
+scss:important a owl:Class ;
+    rdfs:label "important" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 34 .
+
+scss:include_statement a owl:Class ;
+    rdfs:label "include_statement" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 139 .
+
+scss:integer_value a owl:Class ;
+    rdfs:label "integer_value" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 130 .
+
+scss:interpolation a owl:Class ;
+    rdfs:label "interpolation" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 158 .
+
+scss:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+scss:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+scss:js_comment a owl:Class ;
+    rdfs:label "js_comment" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 58 .
+
+scss:key a owl:DatatypeProperty ;
+    rdfs:label "key (literal)" ;
+    rdfs:comment "Literal value for key field when it contains a terminal node" ;
+    scss:fieldId 4 ;
+    scss:isTerminalField true .
+
+scss:keyframe_block a owl:Class ;
+    rdfs:label "keyframe_block" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 96 .
+
+scss:keyframe_block_list a owl:Class ;
+    rdfs:label "keyframe_block_list" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 95 .
+
+scss:keyframes_name a owl:Class ;
+    rdfs:label "keyframes_name" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 180 .
+
+scss:keyframes_statement a owl:Class ;
+    rdfs:label "keyframes_statement" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 94 .
+
+scss:keyword_query a owl:Class ;
+    rdfs:label "keyword_query" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 181 .
+
+scss:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+scss:list_value a owl:Class ;
+    rdfs:label "list_value" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 157 .
+
+scss:media_statement a owl:Class ;
+    rdfs:label "media_statement" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 91 .
+
+scss:mixin_statement a owl:Class ;
+    rdfs:label "mixin_statement" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 138 .
+
+scss:name a owl:DatatypeProperty ;
+    rdfs:label "name (literal)" ;
+    rdfs:comment "Literal value for name field when it contains a terminal node" ;
+    scss:fieldId 5 ;
+    scss:isTerminalField true .
+
+scss:namespace_name a owl:Class ;
+    rdfs:label "namespace_name" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 182 .
+
+scss:namespace_selector a owl:Class ;
+    rdfs:label "namespace_selector" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 115 .
+
+scss:namespace_statement a owl:Class ;
+    rdfs:label "namespace_statement" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 93 .
+
+scss:nesting_selector a owl:Class ;
+    rdfs:label "nesting_selector" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 14 .
+
+scss:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+scss:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+scss:parameter a owl:Class ;
+    rdfs:label "parameter" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 144 .
+
+scss:parameters a owl:Class ;
+    rdfs:label "parameters" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 143 .
+
+scss:parenthesized_query a owl:Class ;
+    rdfs:label "parenthesized_query" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 122 .
+
+scss:parenthesized_value a owl:Class ;
+    rdfs:label "parenthesized_value" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 127 .
+
+scss:placeholder a owl:Class ;
+    rdfs:label "placeholder" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 159 .
+
+scss:plain_value a owl:Class ;
+    rdfs:label "plain_value" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 60 .
+
+scss:postcss_statement a owl:Class ;
+    rdfs:label "postcss_statement" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 99 .
+
+scss:property_name a owl:Class ;
+    rdfs:label "property_name" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 183 .
+
+scss:pseudo_class_selector a owl:Class ;
+    rdfs:label "pseudo_class_selector" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 107 .
+
+scss:pseudo_element_selector a owl:Class ;
+    rdfs:label "pseudo_element_selector" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 108 .
+
+scss:return_statement a owl:Class ;
+    rdfs:label "return_statement" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 145 .
+
+scss:rule_set a owl:Class ;
+    rdfs:label "rule_set" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 101 .
+
+scss:selector_query a owl:Class ;
+    rdfs:label "selector_query" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 125 .
+
+scss:selectors a owl:Class ;
+    rdfs:label "selectors" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 102 .
+
+scss:sibling_selector a owl:Class ;
+    rdfs:label "sibling_selector" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 113 .
+
+scss:string_value a owl:Class ;
+    rdfs:label "string_value" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 129 .
+
+scss:stylesheet a owl:Class ;
+    rdfs:label "stylesheet" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 89 .
+
+scss:supports_statement a owl:Class ;
+    rdfs:label "supports_statement" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 98 .
+
+scss:tag_name a owl:Class ;
+    rdfs:label "tag_name" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 184 .
+
+scss:through a owl:DatatypeProperty ;
+    rdfs:label "through (literal)" ;
+    rdfs:comment "Literal value for through field when it contains a terminal node" ;
+    scss:fieldId 6 ;
+    scss:isTerminalField true .
+
+scss:to a owl:Class ;
+    rdfs:label "to" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 12 .
+
+scss:unary_query a owl:Class ;
+    rdfs:label "unary_query" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 124 .
+
+scss:unit a owl:Class ;
+    rdfs:label "unit" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 48 .
+
+scss:universal_selector a owl:Class ;
+    rdfs:label "universal_selector" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 105 .
+
+scss:use_statement a owl:Class ;
+    rdfs:label "use_statement" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 136 .
+
+scss:value a owl:DatatypeProperty ;
+    rdfs:label "value (literal)" ;
+    rdfs:comment "Literal value for value field when it contains a terminal node" ;
+    scss:fieldId 7 ;
+    scss:isTerminalField true .
+
+scss:variable a owl:Class ;
+    rdfs:label "variable" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 84 .
+
+scss:warn_statement a owl:Class ;
+    rdfs:label "warn_statement" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 148 .
+
+scss:while_statement a owl:Class ;
+    rdfs:label "while_statement" ;
+    rdfs:isDefinedBy scss: ;
+    rdfs:subClassOf ast:Node ;
+    scss:isSupertype true ;
+    scss:nodeTypeId 156 .
+
+scss: a owl:Ontology ;
+    rdfs:label "Scss Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for scss" ;
+    owl:versionInfo "v0.25" ;
+    scss:abiVersion 14 ;
+    scss:fieldCount 7 ;
+    scss:languageName "None" ;
+    scss:nodeKindCount 185 .
+

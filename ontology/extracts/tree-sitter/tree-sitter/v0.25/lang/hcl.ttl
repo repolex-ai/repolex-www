@@ -1,0 +1,514 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix hcl: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/hcl/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+hcl:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+hcl:attr_splat a owl:Class ;
+    rdfs:label "attr_splat" ;
+    rdfs:isDefinedBy hcl: ;
+    rdfs:subClassOf ast:Node ;
+    hcl:isSupertype true ;
+    hcl:nodeTypeId 84 .
+
+hcl:attribute a owl:Class ;
+    rdfs:label "attribute" ;
+    rdfs:isDefinedBy hcl: ;
+    rdfs:subClassOf ast:Node ;
+    hcl:isSupertype true ;
+    hcl:nodeTypeId 58 .
+
+hcl:binary_operation a owl:Class ;
+    rdfs:label "binary_operation" ;
+    rdfs:isDefinedBy hcl: ;
+    rdfs:subClassOf ast:Node ;
+    hcl:isSupertype true ;
+    hcl:nodeTypeId 99 .
+
+hcl:block a owl:Class ;
+    rdfs:label "block" ;
+    rdfs:isDefinedBy hcl: ;
+    rdfs:subClassOf ast:Node ;
+    hcl:isSupertype true ;
+    hcl:nodeTypeId 59 .
+
+hcl:block_end a owl:Class ;
+    rdfs:label "block_end" ;
+    rdfs:isDefinedBy hcl: ;
+    rdfs:subClassOf ast:Node ;
+    hcl:isSupertype true ;
+    hcl:nodeTypeId 61 .
+
+hcl:block_start a owl:Class ;
+    rdfs:label "block_start" ;
+    rdfs:isDefinedBy hcl: ;
+    rdfs:subClassOf ast:Node ;
+    hcl:isSupertype true ;
+    hcl:nodeTypeId 60 .
+
+hcl:body a owl:Class ;
+    rdfs:label "body" ;
+    rdfs:isDefinedBy hcl: ;
+    rdfs:subClassOf ast:Node ;
+    hcl:isSupertype true ;
+    hcl:nodeTypeId 57 .
+
+hcl:bool_lit a owl:Class ;
+    rdfs:label "bool_lit" ;
+    rdfs:isDefinedBy hcl: ;
+    rdfs:subClassOf ast:Node ;
+    hcl:isSupertype true ;
+    hcl:nodeTypeId 66 .
+
+hcl:collection_value a owl:Class ;
+    rdfs:label "collection_value" ;
+    rdfs:isDefinedBy hcl: ;
+    rdfs:subClassOf ast:Node ;
+    hcl:isSupertype true ;
+    hcl:nodeTypeId 68 .
+
+hcl:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy hcl: ;
+    rdfs:subClassOf ast:Node ;
+    hcl:isSupertype true ;
+    hcl:nodeTypeId 46 .
+
+hcl:conditional a owl:Class ;
+    rdfs:label "conditional" ;
+    rdfs:isDefinedBy hcl: ;
+    rdfs:subClassOf ast:Node ;
+    hcl:isSupertype true ;
+    hcl:nodeTypeId 96 .
+
+hcl:config_file a owl:Class ;
+    rdfs:label "config_file" ;
+    rdfs:isDefinedBy hcl: ;
+    rdfs:subClassOf ast:Node ;
+    hcl:isSupertype true ;
+    hcl:nodeTypeId 56 .
+
+hcl:ellipsis a owl:Class ;
+    rdfs:label "ellipsis" ;
+    rdfs:isDefinedBy hcl: ;
+    rdfs:subClassOf ast:Node ;
+    hcl:isSupertype true ;
+    hcl:nodeTypeId 24 .
+
+hcl:expression a owl:Class ;
+    rdfs:label "expression" ;
+    rdfs:isDefinedBy hcl: ;
+    rdfs:subClassOf ast:Node ;
+    hcl:isSupertype true ;
+    hcl:nodeTypeId 62 .
+
+hcl:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+hcl:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+hcl:field_key a owl:ObjectProperty ;
+    rdfs:label "key (structural)" ;
+    rdfs:comment "Structural reference for key field when it contains a non-terminal node" ;
+    hcl:fieldId 1 .
+
+hcl:field_val a owl:ObjectProperty ;
+    rdfs:label "val (structural)" ;
+    rdfs:comment "Structural reference for val field when it contains a non-terminal node" ;
+    hcl:fieldId 2 .
+
+hcl:for_cond a owl:Class ;
+    rdfs:label "for_cond" ;
+    rdfs:isDefinedBy hcl: ;
+    rdfs:subClassOf ast:Node ;
+    hcl:isSupertype true ;
+    hcl:nodeTypeId 90 .
+
+hcl:for_expr a owl:Class ;
+    rdfs:label "for_expr" ;
+    rdfs:isDefinedBy hcl: ;
+    rdfs:subClassOf ast:Node ;
+    hcl:isSupertype true ;
+    hcl:nodeTypeId 86 .
+
+hcl:for_intro a owl:Class ;
+    rdfs:label "for_intro" ;
+    rdfs:isDefinedBy hcl: ;
+    rdfs:subClassOf ast:Node ;
+    hcl:isSupertype true ;
+    hcl:nodeTypeId 89 .
+
+hcl:for_object_expr a owl:Class ;
+    rdfs:label "for_object_expr" ;
+    rdfs:isDefinedBy hcl: ;
+    rdfs:subClassOf ast:Node ;
+    hcl:isSupertype true ;
+    hcl:nodeTypeId 88 .
+
+hcl:for_tuple_expr a owl:Class ;
+    rdfs:label "for_tuple_expr" ;
+    rdfs:isDefinedBy hcl: ;
+    rdfs:subClassOf ast:Node ;
+    hcl:isSupertype true ;
+    hcl:nodeTypeId 87 .
+
+hcl:full_splat a owl:Class ;
+    rdfs:label "full_splat" ;
+    rdfs:isDefinedBy hcl: ;
+    rdfs:subClassOf ast:Node ;
+    hcl:isSupertype true ;
+    hcl:nodeTypeId 85 .
+
+hcl:function_arguments a owl:Class ;
+    rdfs:label "function_arguments" ;
+    rdfs:isDefinedBy hcl: ;
+    rdfs:subClassOf ast:Node ;
+    hcl:isSupertype true ;
+    hcl:nodeTypeId 95 .
+
+hcl:function_call a owl:Class ;
+    rdfs:label "function_call" ;
+    rdfs:isDefinedBy hcl: ;
+    rdfs:subClassOf ast:Node ;
+    hcl:isSupertype true ;
+    hcl:nodeTypeId 92 .
+
+hcl:get_attr a owl:Class ;
+    rdfs:label "get_attr" ;
+    rdfs:isDefinedBy hcl: ;
+    rdfs:subClassOf ast:Node ;
+    hcl:isSupertype true ;
+    hcl:nodeTypeId 82 .
+
+hcl:heredoc_identifier a owl:Class ;
+    rdfs:label "heredoc_identifier" ;
+    rdfs:isDefinedBy hcl: ;
+    rdfs:subClassOf ast:Node ;
+    hcl:isSupertype true ;
+    hcl:nodeTypeId 55 .
+
+hcl:heredoc_start a owl:Class ;
+    rdfs:label "heredoc_start" ;
+    rdfs:isDefinedBy hcl: ;
+    rdfs:subClassOf ast:Node ;
+    hcl:isSupertype true ;
+    hcl:nodeTypeId 103 .
+
+hcl:heredoc_template a owl:Class ;
+    rdfs:label "heredoc_template" ;
+    rdfs:isDefinedBy hcl: ;
+    rdfs:subClassOf ast:Node ;
+    hcl:isSupertype true ;
+    hcl:nodeTypeId 102 .
+
+hcl:identifier a owl:Class ;
+    rdfs:label "identifier" ;
+    rdfs:isDefinedBy hcl: ;
+    rdfs:subClassOf ast:Node ;
+    hcl:isSupertype true ;
+    hcl:nodeTypeId 4 .
+
+hcl:index a owl:Class ;
+    rdfs:label "index" ;
+    rdfs:isDefinedBy hcl: ;
+    rdfs:subClassOf ast:Node ;
+    hcl:isSupertype true ;
+    hcl:nodeTypeId 79 .
+
+hcl:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+hcl:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+hcl:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+hcl:legacy_index a owl:Class ;
+    rdfs:label "legacy_index" ;
+    rdfs:isDefinedBy hcl: ;
+    rdfs:subClassOf ast:Node ;
+    hcl:isSupertype true ;
+    hcl:nodeTypeId 81 .
+
+hcl:literal_value a owl:Class ;
+    rdfs:label "literal_value" ;
+    rdfs:isDefinedBy hcl: ;
+    rdfs:subClassOf ast:Node ;
+    hcl:isSupertype true ;
+    hcl:nodeTypeId 64 .
+
+hcl:new_index a owl:Class ;
+    rdfs:label "new_index" ;
+    rdfs:isDefinedBy hcl: ;
+    rdfs:subClassOf ast:Node ;
+    hcl:isSupertype true ;
+    hcl:nodeTypeId 80 .
+
+hcl:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+hcl:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+hcl:null_lit a owl:Class ;
+    rdfs:label "null_lit" ;
+    rdfs:isDefinedBy hcl: ;
+    rdfs:subClassOf ast:Node ;
+    hcl:isSupertype true ;
+    hcl:nodeTypeId 11 .
+
+hcl:numeric_lit a owl:Class ;
+    rdfs:label "numeric_lit" ;
+    rdfs:isDefinedBy hcl: ;
+    rdfs:subClassOf ast:Node ;
+    hcl:isSupertype true ;
+    hcl:nodeTypeId 65 .
+
+hcl:object a owl:Class ;
+    rdfs:label "object" ;
+    rdfs:isDefinedBy hcl: ;
+    rdfs:subClassOf ast:Node ;
+    hcl:isSupertype true ;
+    hcl:nodeTypeId 74 .
+
+hcl:object_elem a owl:Class ;
+    rdfs:label "object_elem" ;
+    rdfs:isDefinedBy hcl: ;
+    rdfs:subClassOf ast:Node ;
+    hcl:isSupertype true ;
+    hcl:nodeTypeId 78 .
+
+hcl:object_end a owl:Class ;
+    rdfs:label "object_end" ;
+    rdfs:isDefinedBy hcl: ;
+    rdfs:subClassOf ast:Node ;
+    hcl:isSupertype true ;
+    hcl:nodeTypeId 76 .
+
+hcl:object_start a owl:Class ;
+    rdfs:label "object_start" ;
+    rdfs:isDefinedBy hcl: ;
+    rdfs:subClassOf ast:Node ;
+    hcl:isSupertype true ;
+    hcl:nodeTypeId 75 .
+
+hcl:operation a owl:Class ;
+    rdfs:label "operation" ;
+    rdfs:isDefinedBy hcl: ;
+    rdfs:subClassOf ast:Node ;
+    hcl:isSupertype true ;
+    hcl:nodeTypeId 97 .
+
+hcl:quoted_template a owl:Class ;
+    rdfs:label "quoted_template" ;
+    rdfs:isDefinedBy hcl: ;
+    rdfs:subClassOf ast:Node ;
+    hcl:isSupertype true ;
+    hcl:nodeTypeId 101 .
+
+hcl:quoted_template_end a owl:Class ;
+    rdfs:label "quoted_template_end" ;
+    rdfs:isDefinedBy hcl: ;
+    rdfs:subClassOf ast:Node ;
+    hcl:isSupertype true ;
+    hcl:nodeTypeId 49 .
+
+hcl:quoted_template_start a owl:Class ;
+    rdfs:label "quoted_template_start" ;
+    rdfs:isDefinedBy hcl: ;
+    rdfs:subClassOf ast:Node ;
+    hcl:isSupertype true ;
+    hcl:nodeTypeId 48 .
+
+hcl:splat a owl:Class ;
+    rdfs:label "splat" ;
+    rdfs:isDefinedBy hcl: ;
+    rdfs:subClassOf ast:Node ;
+    hcl:isSupertype true ;
+    hcl:nodeTypeId 83 .
+
+hcl:string_lit a owl:Class ;
+    rdfs:label "string_lit" ;
+    rdfs:isDefinedBy hcl: ;
+    rdfs:subClassOf ast:Node ;
+    hcl:isSupertype true ;
+    hcl:nodeTypeId 67 .
+
+hcl:strip_marker a owl:Class ;
+    rdfs:label "strip_marker" ;
+    rdfs:isDefinedBy hcl: ;
+    rdfs:subClassOf ast:Node ;
+    hcl:isSupertype true ;
+    hcl:nodeTypeId 42 .
+
+hcl:template_directive a owl:Class ;
+    rdfs:label "template_directive" ;
+    rdfs:isDefinedBy hcl: ;
+    rdfs:subClassOf ast:Node ;
+    hcl:isSupertype true ;
+    hcl:nodeTypeId 107 .
+
+hcl:template_directive_end a owl:Class ;
+    rdfs:label "template_directive_end" ;
+    rdfs:isDefinedBy hcl: ;
+    rdfs:subClassOf ast:Node ;
+    hcl:isSupertype true ;
+    hcl:nodeTypeId 54 .
+
+hcl:template_directive_start a owl:Class ;
+    rdfs:label "template_directive_start" ;
+    rdfs:isDefinedBy hcl: ;
+    rdfs:subClassOf ast:Node ;
+    hcl:isSupertype true ;
+    hcl:nodeTypeId 53 .
+
+hcl:template_else_intro a owl:Class ;
+    rdfs:label "template_else_intro" ;
+    rdfs:isDefinedBy hcl: ;
+    rdfs:subClassOf ast:Node ;
+    hcl:isSupertype true ;
+    hcl:nodeTypeId 113 .
+
+hcl:template_expr a owl:Class ;
+    rdfs:label "template_expr" ;
+    rdfs:isDefinedBy hcl: ;
+    rdfs:subClassOf ast:Node ;
+    hcl:isSupertype true ;
+    hcl:nodeTypeId 100 .
+
+hcl:template_for a owl:Class ;
+    rdfs:label "template_for" ;
+    rdfs:isDefinedBy hcl: ;
+    rdfs:subClassOf ast:Node ;
+    hcl:isSupertype true ;
+    hcl:nodeTypeId 108 .
+
+hcl:template_for_end a owl:Class ;
+    rdfs:label "template_for_end" ;
+    rdfs:isDefinedBy hcl: ;
+    rdfs:subClassOf ast:Node ;
+    hcl:isSupertype true ;
+    hcl:nodeTypeId 110 .
+
+hcl:template_for_start a owl:Class ;
+    rdfs:label "template_for_start" ;
+    rdfs:isDefinedBy hcl: ;
+    rdfs:subClassOf ast:Node ;
+    hcl:isSupertype true ;
+    hcl:nodeTypeId 109 .
+
+hcl:template_if a owl:Class ;
+    rdfs:label "template_if" ;
+    rdfs:isDefinedBy hcl: ;
+    rdfs:subClassOf ast:Node ;
+    hcl:isSupertype true ;
+    hcl:nodeTypeId 111 .
+
+hcl:template_if_end a owl:Class ;
+    rdfs:label "template_if_end" ;
+    rdfs:isDefinedBy hcl: ;
+    rdfs:subClassOf ast:Node ;
+    hcl:isSupertype true ;
+    hcl:nodeTypeId 114 .
+
+hcl:template_if_intro a owl:Class ;
+    rdfs:label "template_if_intro" ;
+    rdfs:isDefinedBy hcl: ;
+    rdfs:subClassOf ast:Node ;
+    hcl:isSupertype true ;
+    hcl:nodeTypeId 112 .
+
+hcl:template_interpolation a owl:Class ;
+    rdfs:label "template_interpolation" ;
+    rdfs:isDefinedBy hcl: ;
+    rdfs:subClassOf ast:Node ;
+    hcl:isSupertype true ;
+    hcl:nodeTypeId 106 .
+
+hcl:template_interpolation_end a owl:Class ;
+    rdfs:label "template_interpolation_end" ;
+    rdfs:isDefinedBy hcl: ;
+    rdfs:subClassOf ast:Node ;
+    hcl:isSupertype true ;
+    hcl:nodeTypeId 52 .
+
+hcl:template_interpolation_start a owl:Class ;
+    rdfs:label "template_interpolation_start" ;
+    rdfs:isDefinedBy hcl: ;
+    rdfs:subClassOf ast:Node ;
+    hcl:isSupertype true ;
+    hcl:nodeTypeId 51 .
+
+hcl:template_literal a owl:Class ;
+    rdfs:label "template_literal" ;
+    rdfs:isDefinedBy hcl: ;
+    rdfs:subClassOf ast:Node ;
+    hcl:isSupertype true ;
+    hcl:nodeTypeId 105 .
+
+hcl:tuple a owl:Class ;
+    rdfs:label "tuple" ;
+    rdfs:isDefinedBy hcl: ;
+    rdfs:subClassOf ast:Node ;
+    hcl:isSupertype true ;
+    hcl:nodeTypeId 70 .
+
+hcl:tuple_end a owl:Class ;
+    rdfs:label "tuple_end" ;
+    rdfs:isDefinedBy hcl: ;
+    rdfs:subClassOf ast:Node ;
+    hcl:isSupertype true ;
+    hcl:nodeTypeId 72 .
+
+hcl:tuple_start a owl:Class ;
+    rdfs:label "tuple_start" ;
+    rdfs:isDefinedBy hcl: ;
+    rdfs:subClassOf ast:Node ;
+    hcl:isSupertype true ;
+    hcl:nodeTypeId 71 .
+
+hcl:unary_operation a owl:Class ;
+    rdfs:label "unary_operation" ;
+    rdfs:isDefinedBy hcl: ;
+    rdfs:subClassOf ast:Node ;
+    hcl:isSupertype true ;
+    hcl:nodeTypeId 98 .
+
+hcl:variable_expr a owl:Class ;
+    rdfs:label "variable_expr" ;
+    rdfs:isDefinedBy hcl: ;
+    rdfs:subClassOf ast:Node ;
+    hcl:isSupertype true ;
+    hcl:nodeTypeId 91 .
+
+hcl: a owl:Ontology ;
+    rdfs:label "Hcl Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for hcl" ;
+    owl:versionInfo "v0.25" ;
+    hcl:abiVersion 15 ;
+    hcl:fieldCount 2 ;
+    hcl:languageName "hcl" ;
+    hcl:nodeKindCount 121 .
+

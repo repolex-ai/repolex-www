@@ -1,0 +1,581 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix bicep: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/bicep/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+bicep:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+bicep:arguments a owl:Class ;
+    rdfs:label "arguments" ;
+    rdfs:isDefinedBy bicep: ;
+    rdfs:subClassOf ast:Node ;
+    bicep:isSupertype true ;
+    bicep:nodeTypeId 103 .
+
+bicep:array a owl:Class ;
+    rdfs:label "array" ;
+    rdfs:isDefinedBy bicep: ;
+    rdfs:subClassOf ast:Node ;
+    bicep:isSupertype true ;
+    bicep:nodeTypeId 107 .
+
+bicep:array_type a owl:Class ;
+    rdfs:label "array_type" ;
+    rdfs:isDefinedBy bicep: ;
+    rdfs:subClassOf ast:Node ;
+    bicep:isSupertype true ;
+    bicep:nodeTypeId 133 .
+
+bicep:assert_statement a owl:Class ;
+    rdfs:label "assert_statement" ;
+    rdfs:isDefinedBy bicep: ;
+    rdfs:subClassOf ast:Node ;
+    bicep:isSupertype true ;
+    bicep:nodeTypeId 96 .
+
+bicep:assignment_expression a owl:Class ;
+    rdfs:label "assignment_expression" ;
+    rdfs:isDefinedBy bicep: ;
+    rdfs:subClassOf ast:Node ;
+    bicep:isSupertype true ;
+    bicep:nodeTypeId 112 .
+
+bicep:binary_expression a owl:Class ;
+    rdfs:label "binary_expression" ;
+    rdfs:isDefinedBy bicep: ;
+    rdfs:subClassOf ast:Node ;
+    bicep:isSupertype true ;
+    bicep:nodeTypeId 119 .
+
+bicep:boolean a owl:Class ;
+    rdfs:label "boolean" ;
+    rdfs:isDefinedBy bicep: ;
+    rdfs:subClassOf ast:Node ;
+    bicep:isSupertype true ;
+    bicep:nodeTypeId 122 .
+
+bicep:call_expression a owl:Class ;
+    rdfs:label "call_expression" ;
+    rdfs:isDefinedBy bicep: ;
+    rdfs:subClassOf ast:Node ;
+    bicep:isSupertype true ;
+    bicep:nodeTypeId 101 .
+
+bicep:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy bicep: ;
+    rdfs:subClassOf ast:Node ;
+    bicep:isSupertype true ;
+    bicep:nodeTypeId 75 .
+
+bicep:compatible_identifier a owl:Class ;
+    rdfs:label "compatible_identifier" ;
+    rdfs:isDefinedBy bicep: ;
+    rdfs:subClassOf ast:Node ;
+    bicep:isSupertype true ;
+    bicep:nodeTypeId 129 .
+
+bicep:decorator a owl:Class ;
+    rdfs:label "decorator" ;
+    rdfs:isDefinedBy bicep: ;
+    rdfs:subClassOf ast:Node ;
+    bicep:isSupertype true ;
+    bicep:nodeTypeId 105 .
+
+bicep:decorators a owl:Class ;
+    rdfs:label "decorators" ;
+    rdfs:isDefinedBy bicep: ;
+    rdfs:subClassOf ast:Node ;
+    bicep:isSupertype true ;
+    bicep:nodeTypeId 106 .
+
+bicep:diagnostic_comment a owl:Class ;
+    rdfs:label "diagnostic_comment" ;
+    rdfs:isDefinedBy bicep: ;
+    rdfs:subClassOf ast:Node ;
+    bicep:isSupertype true ;
+    bicep:nodeTypeId 76 .
+
+bicep:escape_sequence a owl:Class ;
+    rdfs:label "escape_sequence" ;
+    rdfs:isDefinedBy bicep: ;
+    rdfs:subClassOf ast:Node ;
+    bicep:isSupertype true ;
+    bicep:nodeTypeId 66 .
+
+bicep:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+bicep:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+bicep:field_alternative a owl:ObjectProperty ;
+    rdfs:label "alternative (structural)" ;
+    rdfs:comment "Structural reference for alternative field when it contains a non-terminal node" ;
+    bicep:fieldId 1 .
+
+bicep:field_argument a owl:ObjectProperty ;
+    rdfs:label "argument (structural)" ;
+    rdfs:comment "Structural reference for argument field when it contains a non-terminal node" ;
+    bicep:fieldId 2 .
+
+bicep:field_arguments a owl:ObjectProperty ;
+    rdfs:label "arguments (structural)" ;
+    rdfs:comment "Structural reference for arguments field when it contains a non-terminal node" ;
+    bicep:fieldId 3 .
+
+bicep:field_body a owl:ObjectProperty ;
+    rdfs:label "body (structural)" ;
+    rdfs:comment "Structural reference for body field when it contains a non-terminal node" ;
+    bicep:fieldId 4 .
+
+bicep:field_condition a owl:ObjectProperty ;
+    rdfs:label "condition (structural)" ;
+    rdfs:comment "Structural reference for condition field when it contains a non-terminal node" ;
+    bicep:fieldId 5 .
+
+bicep:field_consequence a owl:ObjectProperty ;
+    rdfs:label "consequence (structural)" ;
+    rdfs:comment "Structural reference for consequence field when it contains a non-terminal node" ;
+    bicep:fieldId 6 .
+
+bicep:field_function a owl:ObjectProperty ;
+    rdfs:label "function (structural)" ;
+    rdfs:comment "Structural reference for function field when it contains a non-terminal node" ;
+    bicep:fieldId 7 .
+
+bicep:field_index a owl:ObjectProperty ;
+    rdfs:label "index (structural)" ;
+    rdfs:comment "Structural reference for index field when it contains a non-terminal node" ;
+    bicep:fieldId 8 .
+
+bicep:field_left a owl:ObjectProperty ;
+    rdfs:label "left (structural)" ;
+    rdfs:comment "Structural reference for left field when it contains a non-terminal node" ;
+    bicep:fieldId 10 .
+
+bicep:field_object a owl:ObjectProperty ;
+    rdfs:label "object (structural)" ;
+    rdfs:comment "Structural reference for object field when it contains a non-terminal node" ;
+    bicep:fieldId 12 .
+
+bicep:field_operator a owl:ObjectProperty ;
+    rdfs:label "operator (structural)" ;
+    rdfs:comment "Structural reference for operator field when it contains a non-terminal node" ;
+    bicep:fieldId 13 .
+
+bicep:field_returns a owl:ObjectProperty ;
+    rdfs:label "returns (structural)" ;
+    rdfs:comment "Structural reference for returns field when it contains a non-terminal node" ;
+    bicep:fieldId 16 .
+
+bicep:field_right a owl:ObjectProperty ;
+    rdfs:label "right (structural)" ;
+    rdfs:comment "Structural reference for right field when it contains a non-terminal node" ;
+    bicep:fieldId 17 .
+
+bicep:for_loop_parameters a owl:Class ;
+    rdfs:label "for_loop_parameters" ;
+    rdfs:isDefinedBy bicep: ;
+    rdfs:subClassOf ast:Node ;
+    bicep:isSupertype true ;
+    bicep:nodeTypeId 114 .
+
+bicep:for_statement a owl:Class ;
+    rdfs:label "for_statement" ;
+    rdfs:isDefinedBy bicep: ;
+    rdfs:subClassOf ast:Node ;
+    bicep:isSupertype true ;
+    bicep:nodeTypeId 113 .
+
+bicep:identifier a owl:Class ;
+    rdfs:label "identifier" ;
+    rdfs:isDefinedBy bicep: ;
+    rdfs:subClassOf ast:Node ;
+    bicep:isSupertype true ;
+    bicep:nodeTypeId 1 .
+
+bicep:if_statement a owl:Class ;
+    rdfs:label "if_statement" ;
+    rdfs:isDefinedBy bicep: ;
+    rdfs:subClassOf ast:Node ;
+    bicep:isSupertype true ;
+    bicep:nodeTypeId 110 .
+
+bicep:import_functionality a owl:Class ;
+    rdfs:label "import_functionality" ;
+    rdfs:isDefinedBy bicep: ;
+    rdfs:subClassOf ast:Node ;
+    bicep:isSupertype true ;
+    bicep:nodeTypeId 85 .
+
+bicep:import_statement a owl:Class ;
+    rdfs:label "import_statement" ;
+    rdfs:isDefinedBy bicep: ;
+    rdfs:subClassOf ast:Node ;
+    bicep:isSupertype true ;
+    bicep:nodeTypeId 83 .
+
+bicep:import_with_statement a owl:Class ;
+    rdfs:label "import_with_statement" ;
+    rdfs:isDefinedBy bicep: ;
+    rdfs:subClassOf ast:Node ;
+    bicep:isSupertype true ;
+    bicep:nodeTypeId 84 .
+
+bicep:infrastructure a owl:Class ;
+    rdfs:label "infrastructure" ;
+    rdfs:isDefinedBy bicep: ;
+    rdfs:subClassOf ast:Node ;
+    bicep:isSupertype true ;
+    bicep:nodeTypeId 79 .
+
+bicep:initializer a owl:DatatypeProperty ;
+    rdfs:label "initializer (literal)" ;
+    rdfs:comment "Literal value for initializer field when it contains a terminal node" ;
+    bicep:fieldId 9 ;
+    bicep:isTerminalField true .
+
+bicep:interpolation a owl:Class ;
+    rdfs:label "interpolation" ;
+    rdfs:isDefinedBy bicep: ;
+    rdfs:subClassOf ast:Node ;
+    bicep:isSupertype true ;
+    bicep:nodeTypeId 128 .
+
+bicep:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+bicep:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+bicep:lambda_expression a owl:Class ;
+    rdfs:label "lambda_expression" ;
+    rdfs:isDefinedBy bicep: ;
+    rdfs:subClassOf ast:Node ;
+    bicep:isSupertype true ;
+    bicep:nodeTypeId 102 .
+
+bicep:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+bicep:left a owl:DatatypeProperty ;
+    rdfs:label "left (literal)" ;
+    rdfs:comment "Literal value for left field when it contains a terminal node" ;
+    bicep:fieldId 10 ;
+    bicep:isTerminalField true .
+
+bicep:loop_enumerator a owl:Class ;
+    rdfs:label "loop_enumerator" ;
+    rdfs:isDefinedBy bicep: ;
+    rdfs:subClassOf ast:Node ;
+    bicep:isSupertype true ;
+    bicep:nodeTypeId 151 .
+
+bicep:loop_variable a owl:Class ;
+    rdfs:label "loop_variable" ;
+    rdfs:isDefinedBy bicep: ;
+    rdfs:subClassOf ast:Node ;
+    bicep:isSupertype true ;
+    bicep:nodeTypeId 152 .
+
+bicep:member_expression a owl:Class ;
+    rdfs:label "member_expression" ;
+    rdfs:isDefinedBy bicep: ;
+    rdfs:subClassOf ast:Node ;
+    bicep:isSupertype true ;
+    bicep:nodeTypeId 115 .
+
+bicep:metadata_declaration a owl:Class ;
+    rdfs:label "metadata_declaration" ;
+    rdfs:isDefinedBy bicep: ;
+    rdfs:subClassOf ast:Node ;
+    bicep:isSupertype true ;
+    bicep:nodeTypeId 88 .
+
+bicep:module_declaration a owl:Class ;
+    rdfs:label "module_declaration" ;
+    rdfs:isDefinedBy bicep: ;
+    rdfs:subClassOf ast:Node ;
+    bicep:isSupertype true ;
+    bicep:nodeTypeId 82 .
+
+bicep:name a owl:DatatypeProperty ;
+    rdfs:label "name (literal)" ;
+    rdfs:comment "Literal value for name field when it contains a terminal node" ;
+    bicep:fieldId 11 ;
+    bicep:isTerminalField true .
+
+bicep:negated_type a owl:Class ;
+    rdfs:label "negated_type" ;
+    rdfs:isDefinedBy bicep: ;
+    rdfs:subClassOf ast:Node ;
+    bicep:isSupertype true ;
+    bicep:nodeTypeId 135 .
+
+bicep:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+bicep:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+bicep:null a owl:Class ;
+    rdfs:label "null" ;
+    rdfs:isDefinedBy bicep: ;
+    rdfs:subClassOf ast:Node ;
+    bicep:isSupertype true ;
+    bicep:nodeTypeId 59 .
+
+bicep:nullable_return_type a owl:Class ;
+    rdfs:label "nullable_return_type" ;
+    rdfs:isDefinedBy bicep: ;
+    rdfs:subClassOf ast:Node ;
+    bicep:isSupertype true ;
+    bicep:nodeTypeId 153 .
+
+bicep:nullable_type a owl:Class ;
+    rdfs:label "nullable_type" ;
+    rdfs:isDefinedBy bicep: ;
+    rdfs:subClassOf ast:Node ;
+    bicep:isSupertype true ;
+    bicep:nodeTypeId 134 .
+
+bicep:number a owl:Class ;
+    rdfs:label "number" ;
+    rdfs:isDefinedBy bicep: ;
+    rdfs:subClassOf ast:Node ;
+    bicep:isSupertype true ;
+    bicep:nodeTypeId 56 .
+
+bicep:object a owl:Class ;
+    rdfs:label "object" ;
+    rdfs:isDefinedBy bicep: ;
+    rdfs:subClassOf ast:Node ;
+    bicep:isSupertype true ;
+    bicep:nodeTypeId 108 .
+
+bicep:object_property a owl:Class ;
+    rdfs:label "object_property" ;
+    rdfs:isDefinedBy bicep: ;
+    rdfs:subClassOf ast:Node ;
+    bicep:isSupertype true ;
+    bicep:nodeTypeId 109 .
+
+bicep:output_declaration a owl:Class ;
+    rdfs:label "output_declaration" ;
+    rdfs:isDefinedBy bicep: ;
+    rdfs:subClassOf ast:Node ;
+    bicep:isSupertype true ;
+    bicep:nodeTypeId 89 .
+
+bicep:parameter a owl:Class ;
+    rdfs:label "parameter" ;
+    rdfs:isDefinedBy bicep: ;
+    rdfs:subClassOf ast:Node ;
+    bicep:isSupertype true ;
+    bicep:nodeTypeId 98 .
+
+bicep:parameter_declaration a owl:Class ;
+    rdfs:label "parameter_declaration" ;
+    rdfs:isDefinedBy bicep: ;
+    rdfs:subClassOf ast:Node ;
+    bicep:isSupertype true ;
+    bicep:nodeTypeId 90 .
+
+bicep:parameterized_type a owl:Class ;
+    rdfs:label "parameterized_type" ;
+    rdfs:isDefinedBy bicep: ;
+    rdfs:subClassOf ast:Node ;
+    bicep:isSupertype true ;
+    bicep:nodeTypeId 138 .
+
+bicep:parameters a owl:Class ;
+    rdfs:label "parameters" ;
+    rdfs:isDefinedBy bicep: ;
+    rdfs:subClassOf ast:Node ;
+    bicep:isSupertype true ;
+    bicep:nodeTypeId 97 .
+
+bicep:parenthesized_expression a owl:Class ;
+    rdfs:label "parenthesized_expression" ;
+    rdfs:isDefinedBy bicep: ;
+    rdfs:subClassOf ast:Node ;
+    bicep:isSupertype true ;
+    bicep:nodeTypeId 104 .
+
+bicep:parenthesized_type a owl:Class ;
+    rdfs:label "parenthesized_type" ;
+    rdfs:isDefinedBy bicep: ;
+    rdfs:subClassOf ast:Node ;
+    bicep:isSupertype true ;
+    bicep:nodeTypeId 137 .
+
+bicep:primitive_type a owl:Class ;
+    rdfs:label "primitive_type" ;
+    rdfs:isDefinedBy bicep: ;
+    rdfs:subClassOf ast:Node ;
+    bicep:isSupertype true ;
+    bicep:nodeTypeId 132 .
+
+bicep:property a owl:DatatypeProperty ;
+    rdfs:label "property (literal)" ;
+    rdfs:comment "Literal value for property field when it contains a terminal node" ;
+    bicep:fieldId 14 ;
+    bicep:isTerminalField true .
+
+bicep:property_identifier a owl:Class ;
+    rdfs:label "property_identifier" ;
+    rdfs:isDefinedBy bicep: ;
+    rdfs:subClassOf ast:Node ;
+    bicep:isSupertype true ;
+    bicep:nodeTypeId 154 .
+
+bicep:resource a owl:DatatypeProperty ;
+    rdfs:label "resource (literal)" ;
+    rdfs:comment "Literal value for resource field when it contains a terminal node" ;
+    bicep:fieldId 15 ;
+    bicep:isTerminalField true .
+
+bicep:resource_declaration a owl:Class ;
+    rdfs:label "resource_declaration" ;
+    rdfs:isDefinedBy bicep: ;
+    rdfs:subClassOf ast:Node ;
+    bicep:isSupertype true ;
+    bicep:nodeTypeId 91 .
+
+bicep:resource_expression a owl:Class ;
+    rdfs:label "resource_expression" ;
+    rdfs:isDefinedBy bicep: ;
+    rdfs:subClassOf ast:Node ;
+    bicep:isSupertype true ;
+    bicep:nodeTypeId 117 .
+
+bicep:string a owl:Class ;
+    rdfs:label "string" ;
+    rdfs:isDefinedBy bicep: ;
+    rdfs:subClassOf ast:Node ;
+    bicep:isSupertype true ;
+    bicep:nodeTypeId 123 .
+
+bicep:string_content a owl:Class ;
+    rdfs:label "string_content" ;
+    rdfs:isDefinedBy bicep: ;
+    rdfs:subClassOf ast:Node ;
+    bicep:isSupertype true ;
+    bicep:nodeTypeId 61,
+        62,
+        63,
+        126 .
+
+bicep:subscript_expression a owl:Class ;
+    rdfs:label "subscript_expression" ;
+    rdfs:isDefinedBy bicep: ;
+    rdfs:subClassOf ast:Node ;
+    bicep:isSupertype true ;
+    bicep:nodeTypeId 116 .
+
+bicep:target_scope_assignment a owl:Class ;
+    rdfs:label "target_scope_assignment" ;
+    rdfs:isDefinedBy bicep: ;
+    rdfs:subClassOf ast:Node ;
+    bicep:isSupertype true ;
+    bicep:nodeTypeId 87 .
+
+bicep:ternary_expression a owl:Class ;
+    rdfs:label "ternary_expression" ;
+    rdfs:isDefinedBy bicep: ;
+    rdfs:subClassOf ast:Node ;
+    bicep:isSupertype true ;
+    bicep:nodeTypeId 118 .
+
+bicep:test_block a owl:Class ;
+    rdfs:label "test_block" ;
+    rdfs:isDefinedBy bicep: ;
+    rdfs:subClassOf ast:Node ;
+    bicep:isSupertype true ;
+    bicep:nodeTypeId 95 .
+
+bicep:type a owl:Class ;
+    rdfs:label "type" ;
+    rdfs:isDefinedBy bicep: ;
+    rdfs:subClassOf ast:Node ;
+    bicep:isSupertype true ;
+    bicep:nodeTypeId 130 .
+
+bicep:type_arguments a owl:Class ;
+    rdfs:label "type_arguments" ;
+    rdfs:isDefinedBy bicep: ;
+    rdfs:subClassOf ast:Node ;
+    bicep:isSupertype true ;
+    bicep:nodeTypeId 139 .
+
+bicep:type_declaration a owl:Class ;
+    rdfs:label "type_declaration" ;
+    rdfs:isDefinedBy bicep: ;
+    rdfs:subClassOf ast:Node ;
+    bicep:isSupertype true ;
+    bicep:nodeTypeId 92 .
+
+bicep:unary_expression a owl:Class ;
+    rdfs:label "unary_expression" ;
+    rdfs:isDefinedBy bicep: ;
+    rdfs:subClassOf ast:Node ;
+    bicep:isSupertype true ;
+    bicep:nodeTypeId 120 .
+
+bicep:union_type a owl:Class ;
+    rdfs:label "union_type" ;
+    rdfs:isDefinedBy bicep: ;
+    rdfs:subClassOf ast:Node ;
+    bicep:isSupertype true ;
+    bicep:nodeTypeId 136 .
+
+bicep:user_defined_function a owl:Class ;
+    rdfs:label "user_defined_function" ;
+    rdfs:isDefinedBy bicep: ;
+    rdfs:subClassOf ast:Node ;
+    bicep:isSupertype true ;
+    bicep:nodeTypeId 94 .
+
+bicep:using_statement a owl:Class ;
+    rdfs:label "using_statement" ;
+    rdfs:isDefinedBy bicep: ;
+    rdfs:subClassOf ast:Node ;
+    bicep:isSupertype true ;
+    bicep:nodeTypeId 86 .
+
+bicep:variable_declaration a owl:Class ;
+    rdfs:label "variable_declaration" ;
+    rdfs:isDefinedBy bicep: ;
+    rdfs:subClassOf ast:Node ;
+    bicep:isSupertype true ;
+    bicep:nodeTypeId 93 .
+
+bicep: a owl:Ontology ;
+    rdfs:label "Bicep Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for bicep" ;
+    owl:versionInfo "v0.25" ;
+    bicep:abiVersion 14 ;
+    bicep:fieldCount 17 ;
+    bicep:languageName "None" ;
+    bicep:nodeKindCount 155 .
+

@@ -1,0 +1,2476 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vhdl: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/vhdl/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+vhdl:PSL_Actual_Parameter a owl:Class ;
+    rdfs:label "PSL_Actual_Parameter" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 578 .
+
+vhdl:PSL_Actual_Parameter_List a owl:Class ;
+    rdfs:label "PSL_Actual_Parameter_List" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 577 .
+
+vhdl:PSL_Ambiguous_Instance a owl:Class ;
+    rdfs:label "PSL_Ambiguous_Instance" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 573 .
+
+vhdl:PSL_Any_Type a owl:Class ;
+    rdfs:label "PSL_Any_Type" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 665 .
+
+vhdl:PSL_Assert_Directive a owl:Class ;
+    rdfs:label "PSL_Assert_Directive" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 580 .
+
+vhdl:PSL_Assume_Directive a owl:Class ;
+    rdfs:label "PSL_Assume_Directive" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 581 .
+
+vhdl:PSL_Assume_Guarantee_Directive a owl:Class ;
+    rdfs:label "PSL_Assume_Guarantee_Directive" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 582 .
+
+vhdl:PSL_Boolean a owl:Class ;
+    rdfs:label "PSL_Boolean" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 666 .
+
+vhdl:PSL_Bounding_FL_Property a owl:Class ;
+    rdfs:label "PSL_Bounding_FL_Property" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 556 .
+
+vhdl:PSL_Braced_SERE a owl:Class ;
+    rdfs:label "PSL_Braced_SERE" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 541 .
+
+vhdl:PSL_Built_In_Function_Call a owl:Class ;
+    rdfs:label "PSL_Built_In_Function_Call" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 523 .
+
+vhdl:PSL_Clock_Declaration a owl:Class ;
+    rdfs:label "PSL_Clock_Declaration" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 526 .
+
+vhdl:PSL_Clocked_FL_Property a owl:Class ;
+    rdfs:label "PSL_Clocked_FL_Property" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 545 .
+
+vhdl:PSL_Clocked_SERE a owl:Class ;
+    rdfs:label "PSL_Clocked_SERE" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 542 .
+
+vhdl:PSL_Compound_SERE a owl:Class ;
+    rdfs:label "PSL_Compound_SERE" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 532,
+        533 .
+
+vhdl:PSL_Constant_Parameter_Specification a owl:Class ;
+    rdfs:label "PSL_Constant_Parameter_Specification" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 569 .
+
+vhdl:PSL_Count a owl:Class ;
+    rdfs:label "PSL_Count" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 539 .
+
+vhdl:PSL_Cover_Directive a owl:Class ;
+    rdfs:label "PSL_Cover_Directive" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 585 .
+
+vhdl:PSL_Expression a owl:Class ;
+    rdfs:label "PSL_Expression" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 522 .
+
+vhdl:PSL_Extended_Ocurrence_FL_Property a owl:Class ;
+    rdfs:label "PSL_Extended_Ocurrence_FL_Property" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 551 .
+
+vhdl:PSL_Factor_FL_Property a owl:Class ;
+    rdfs:label "PSL_Factor_FL_Property" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 550 .
+
+vhdl:PSL_Fairness_Directive a owl:Class ;
+    rdfs:label "PSL_Fairness_Directive" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 586 .
+
+vhdl:PSL_Formal_Parameter a owl:Class ;
+    rdfs:label "PSL_Formal_Parameter" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 567 .
+
+vhdl:PSL_Formal_Parameter_List a owl:Class ;
+    rdfs:label "PSL_Formal_Parameter_List" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 566 .
+
+vhdl:PSL_HDL_Type a owl:Class ;
+    rdfs:label "PSL_HDL_Type" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 571 .
+
+vhdl:PSL_Hierarchical_HDL_Name a owl:Class ;
+    rdfs:label "PSL_Hierarchical_HDL_Name" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 593 .
+
+vhdl:PSL_Identifier a owl:Class ;
+    rdfs:label "PSL_Identifier" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 667 .
+
+vhdl:PSL_Implication_FL_Property a owl:Class ;
+    rdfs:label "PSL_Implication_FL_Property" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 548 .
+
+vhdl:PSL_Index_Range a owl:Class ;
+    rdfs:label "PSL_Index_Range" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 560 .
+
+vhdl:PSL_Inherit_Spec a owl:Class ;
+    rdfs:label "PSL_Inherit_Spec" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 594 .
+
+vhdl:PSL_Invariant_FL_Property a owl:Class ;
+    rdfs:label "PSL_Invariant_FL_Property" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 546 .
+
+vhdl:PSL_Logical_FL_Property a owl:Class ;
+    rdfs:label "PSL_Logical_FL_Property" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 549 .
+
+vhdl:PSL_Number a owl:Class ;
+    rdfs:label "PSL_Number" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 668 .
+
+vhdl:PSL_Ocurrence_FL_Property a owl:Class ;
+    rdfs:label "PSL_Ocurrence_FL_Property" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 547 .
+
+vhdl:PSL_Parameter_Specification a owl:Class ;
+    rdfs:label "PSL_Parameter_Specification" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 536 .
+
+vhdl:PSL_Parameterized_Property a owl:Class ;
+    rdfs:label "PSL_Parameterized_Property" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 558 .
+
+vhdl:PSL_Parameterized_SERE a owl:Class ;
+    rdfs:label "PSL_Parameterized_SERE" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 534 .
+
+vhdl:PSL_Parameters_Definition a owl:Class ;
+    rdfs:label "PSL_Parameters_Definition" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 535 .
+
+vhdl:PSL_Parenthesized_FL_Property a owl:Class ;
+    rdfs:label "PSL_Parenthesized_FL_Property" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 543 .
+
+vhdl:PSL_Property_Declaration a owl:Class ;
+    rdfs:label "PSL_Property_Declaration" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 564 .
+
+vhdl:PSL_Property_Instance a owl:Class ;
+    rdfs:label "PSL_Property_Instance" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 669 .
+
+vhdl:PSL_Property_Replicator a owl:Class ;
+    rdfs:label "PSL_Property_Replicator" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 559 .
+
+vhdl:PSL_Repeated_SERE a owl:Class ;
+    rdfs:label "PSL_Repeated_SERE" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 538 .
+
+vhdl:PSL_Restrict_Directive a owl:Class ;
+    rdfs:label "PSL_Restrict_Directive" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 583 .
+
+vhdl:PSL_Restrict_Guarantee_Directive a owl:Class ;
+    rdfs:label "PSL_Restrict_Guarantee_Directive" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 584 .
+
+vhdl:PSL_Sequence_Declaration a owl:Class ;
+    rdfs:label "PSL_Sequence_Declaration" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 565 .
+
+vhdl:PSL_Sequence_Instance a owl:Class ;
+    rdfs:label "PSL_Sequence_Instance" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 670 .
+
+vhdl:PSL_Sequential_FL_Property a owl:Class ;
+    rdfs:label "PSL_Sequential_FL_Property" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 544 .
+
+vhdl:PSL_Simple_SERE a owl:Class ;
+    rdfs:label "PSL_Simple_SERE" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 528 .
+
+vhdl:PSL_Strong_Fairness_Directive a owl:Class ;
+    rdfs:label "PSL_Strong_Fairness_Directive" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 587 .
+
+vhdl:PSL_Suffix_Implication_FL_Property a owl:Class ;
+    rdfs:label "PSL_Suffix_Implication_FL_Property" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 557 .
+
+vhdl:PSL_Temporal_Parameter_Specification a owl:Class ;
+    rdfs:label "PSL_Temporal_Parameter_Specification" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 570 .
+
+vhdl:PSL_Termination_FL_Property a owl:Class ;
+    rdfs:label "PSL_Termination_FL_Property" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 555 .
+
+vhdl:PSL_Type_Class a owl:Class ;
+    rdfs:label "PSL_Type_Class" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 572 .
+
+vhdl:PSL_Union_Expression a owl:Class ;
+    rdfs:label "PSL_Union_Expression" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 524 .
+
+vhdl:PSL_VMode a owl:Class ;
+    rdfs:label "PSL_VMode" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 591 .
+
+vhdl:PSL_VProp a owl:Class ;
+    rdfs:label "PSL_VProp" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 590 .
+
+vhdl:PSL_VUnit a owl:Class ;
+    rdfs:label "PSL_VUnit" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 589 .
+
+vhdl:PSL_Value_Set a owl:Class ;
+    rdfs:label "PSL_Value_Set" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 561 .
+
+vhdl:PSL_Verification_Unit_Body a owl:Class ;
+    rdfs:label "PSL_Verification_Unit_Body" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 592 .
+
+vhdl:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+vhdl:absolute_pathname a owl:Class ;
+    rdfs:label "absolute_pathname" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 404 .
+
+vhdl:access_type_definition a owl:Class ;
+    rdfs:label "access_type_definition" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 306 .
+
+vhdl:actual_part a owl:DatatypeProperty ;
+    rdfs:label "actual_part (literal)" ;
+    rdfs:comment "Literal value for actual_part field when it contains a terminal node" ;
+    vhdl:fieldId 5 ;
+    vhdl:isTerminalField true .
+
+vhdl:aggregate a owl:Class ;
+    rdfs:label "aggregate" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 427 .
+
+vhdl:alias_declaration a owl:Class ;
+    rdfs:label "alias_declaration" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 360 .
+
+vhdl:all a owl:Class ;
+    rdfs:label "all" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 379 .
+
+vhdl:allocator a owl:Class ;
+    rdfs:label "allocator" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 435 .
+
+vhdl:alternative_conditional_expressions a owl:Class ;
+    rdfs:label "alternative_conditional_expressions" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 463 .
+
+vhdl:alternative_conditional_waveforms a owl:Class ;
+    rdfs:label "alternative_conditional_waveforms" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 460 .
+
+vhdl:alternative_selected_expressions a owl:Class ;
+    rdfs:label "alternative_selected_expressions" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 469 .
+
+vhdl:alternative_selected_waveforms a owl:Class ;
+    rdfs:label "alternative_selected_waveforms" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 467 .
+
+vhdl:ambiguous_name a owl:Class ;
+    rdfs:label "ambiguous_name" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 390 .
+
+vhdl:any a owl:Class ;
+    rdfs:label "any" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 671 .
+
+vhdl:architecture a owl:DatatypeProperty ;
+    rdfs:label "architecture (literal)" ;
+    rdfs:comment "Literal value for architecture field when it contains a terminal node" ;
+    vhdl:fieldId 6 ;
+    vhdl:isTerminalField true .
+
+vhdl:architecture_body a owl:Class ;
+    rdfs:label "architecture_body" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 260 .
+
+vhdl:array_constraint a owl:Class ;
+    rdfs:label "array_constraint" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 297 .
+
+vhdl:array_element_constraint a owl:Class ;
+    rdfs:label "array_element_constraint" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 672 .
+
+vhdl:ascending_range a owl:Class ;
+    rdfs:label "ascending_range" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 283 .
+
+vhdl:assertion_statement a owl:Class ;
+    rdfs:label "assertion_statement" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 440 .
+
+vhdl:association_list a owl:Class ;
+    rdfs:label "association_list" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 351 .
+
+vhdl:at_end a owl:DatatypeProperty ;
+    rdfs:label "at_end (literal)" ;
+    rdfs:comment "Literal value for at_end field when it contains a terminal node" ;
+    vhdl:fieldId 7 ;
+    vhdl:isTerminalField true .
+
+vhdl:attribute_declaration a owl:Class ;
+    rdfs:label "attribute_declaration" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 363 .
+
+vhdl:attribute_name a owl:Class ;
+    rdfs:label "attribute_name" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 282,
+        393 .
+
+vhdl:attribute_specification a owl:Class ;
+    rdfs:label "attribute_specification" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 370 .
+
+vhdl:based_integer a owl:Class ;
+    rdfs:label "based_integer" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 183 .
+
+vhdl:based_real a owl:Class ;
+    rdfs:label "based_real" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 184 .
+
+vhdl:binding_indication a owl:Class ;
+    rdfs:label "binding_indication" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 380 .
+
+vhdl:bit_string_literal a owl:Class ;
+    rdfs:label "bit_string_literal" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 520 .
+
+vhdl:block_configuration a owl:Class ;
+    rdfs:label "block_configuration" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 262 .
+
+vhdl:block_header a owl:Class ;
+    rdfs:label "block_header" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 673 .
+
+vhdl:block_specification a owl:Class ;
+    rdfs:label "block_specification" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 674 .
+
+vhdl:block_statement a owl:Class ;
+    rdfs:label "block_statement" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 491 .
+
+vhdl:boolean a owl:Class ;
+    rdfs:label "boolean" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 562 .
+
+vhdl:case_generate_alternative a owl:Class ;
+    rdfs:label "case_generate_alternative" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 504 .
+
+vhdl:case_generate_statement a owl:Class ;
+    rdfs:label "case_generate_statement" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 503 .
+
+vhdl:case_statement a owl:Class ;
+    rdfs:label "case_statement" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 478 .
+
+vhdl:case_statement_alternative a owl:Class ;
+    rdfs:label "case_statement_alternative" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 479 .
+
+vhdl:character_literal a owl:Class ;
+    rdfs:label "character_literal" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 518 .
+
+vhdl:choices a owl:Class ;
+    rdfs:label "choices" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 431 .
+
+vhdl:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 194 .
+
+vhdl:component a owl:DatatypeProperty ;
+    rdfs:label "component (literal)" ;
+    rdfs:comment "Literal value for component field when it contains a terminal node" ;
+    vhdl:fieldId 8 ;
+    vhdl:isTerminalField true .
+
+vhdl:component_configuration a owl:Class ;
+    rdfs:label "component_configuration" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 264 .
+
+vhdl:component_declaration a owl:Class ;
+    rdfs:label "component_declaration" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 364 .
+
+vhdl:component_header a owl:Class ;
+    rdfs:label "component_header" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 675 .
+
+vhdl:component_instantiation a owl:Class ;
+    rdfs:label "component_instantiation" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 497 .
+
+vhdl:component_instantiation_statement a owl:Class ;
+    rdfs:label "component_instantiation_statement" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 494 .
+
+vhdl:component_map_aspect a owl:Class ;
+    rdfs:label "component_map_aspect" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 676 .
+
+vhdl:concatenation a owl:Class ;
+    rdfs:label "concatenation" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 423 .
+
+vhdl:concurrent_statement_part a owl:Class ;
+    rdfs:label "concurrent_statement_part" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 489 .
+
+vhdl:condition a owl:Class ;
+    rdfs:label "condition" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 415 .
+
+vhdl:conditional_concurrent_signal_assignment a owl:Class ;
+    rdfs:label "conditional_concurrent_signal_assignment" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 677 .
+
+vhdl:conditional_expression a owl:Class ;
+    rdfs:label "conditional_expression" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 678 .
+
+vhdl:conditional_expressions a owl:Class ;
+    rdfs:label "conditional_expressions" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 462 .
+
+vhdl:conditional_force_assignment a owl:Class ;
+    rdfs:label "conditional_force_assignment" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 461 .
+
+vhdl:conditional_variable_assignment a owl:Class ;
+    rdfs:label "conditional_variable_assignment" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 471 .
+
+vhdl:conditional_waveform_assignment a owl:Class ;
+    rdfs:label "conditional_waveform_assignment" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 457 .
+
+vhdl:conditional_waveforms a owl:Class ;
+    rdfs:label "conditional_waveforms" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 459 .
+
+vhdl:configuration a owl:DatatypeProperty ;
+    rdfs:label "configuration (literal)" ;
+    rdfs:comment "Literal value for configuration field when it contains a terminal node" ;
+    vhdl:fieldId 9 ;
+    vhdl:isTerminalField true .
+
+vhdl:configuration_declaration a owl:Class ;
+    rdfs:label "configuration_declaration" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 261 .
+
+vhdl:configuration_instantiation a owl:Class ;
+    rdfs:label "configuration_instantiation" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 496 .
+
+vhdl:configuration_specification a owl:Class ;
+    rdfs:label "configuration_specification" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 376 .
+
+vhdl:constant_declaration a owl:Class ;
+    rdfs:label "constant_declaration" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 323 .
+
+vhdl:constant_interface_declaration a owl:Class ;
+    rdfs:label "constant_interface_declaration" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 331 .
+
+vhdl:constrained_array_definition a owl:Class ;
+    rdfs:label "constrained_array_definition" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 295 .
+
+vhdl:context_clause a owl:Class ;
+    rdfs:label "context_clause" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 514 .
+
+vhdl:context_declaration a owl:Class ;
+    rdfs:label "context_declaration" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 513 .
+
+vhdl:context_list a owl:Class ;
+    rdfs:label "context_list" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 517 .
+
+vhdl:context_reference a owl:Class ;
+    rdfs:label "context_reference" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 516 .
+
+vhdl:declarative_part a owl:Class ;
+    rdfs:label "declarative_part" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 311 .
+
+vhdl:default a owl:Class ;
+    rdfs:label "default" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 356 .
+
+vhdl:default_expression a owl:Class ;
+    rdfs:label "default_expression" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 412 .
+
+vhdl:delay_mechanism a owl:Class ;
+    rdfs:label "delay_mechanism" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 448 .
+
+vhdl:denotator a owl:DatatypeProperty ;
+    rdfs:label "denotator (literal)" ;
+    rdfs:comment "Literal value for denotator field when it contains a terminal node" ;
+    vhdl:fieldId 10 ;
+    vhdl:isTerminalField true .
+
+vhdl:descending_range a owl:Class ;
+    rdfs:label "descending_range" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 284 .
+
+vhdl:design_file a owl:Class ;
+    rdfs:label "design_file" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 258 .
+
+vhdl:design_unit a owl:Class ;
+    rdfs:label "design_unit" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 508 .
+
+vhdl:designator a owl:DatatypeProperty ;
+    rdfs:label "designator (literal)" ;
+    rdfs:comment "Literal value for designator field when it contains a terminal node" ;
+    vhdl:fieldId 11 ;
+    vhdl:isTerminalField true .
+
+vhdl:disconnection_specification a owl:Class ;
+    rdfs:label "disconnection_specification" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 384 .
+
+vhdl:element a owl:DatatypeProperty ;
+    rdfs:label "element (literal)" ;
+    rdfs:comment "Literal value for element field when it contains a terminal node" ;
+    vhdl:fieldId 12 ;
+    vhdl:isTerminalField true .
+
+vhdl:element_declaration a owl:Class ;
+    rdfs:label "element_declaration" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 302 .
+
+vhdl:else a owl:Class ;
+    rdfs:label "else" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 477 .
+
+vhdl:else_generate a owl:Class ;
+    rdfs:label "else_generate" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 502 .
+
+vhdl:elsif a owl:Class ;
+    rdfs:label "elsif" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 476 .
+
+vhdl:elsif_generate a owl:Class ;
+    rdfs:label "elsif_generate" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 501 .
+
+vhdl:entity a owl:DatatypeProperty ;
+    rdfs:label "entity (literal)" ;
+    rdfs:comment "Literal value for entity field when it contains a terminal node" ;
+    vhdl:fieldId 13 ;
+    vhdl:isTerminalField true .
+
+vhdl:entity_class a owl:Class ;
+    rdfs:label "entity_class" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 373 .
+
+vhdl:entity_class_entry a owl:Class ;
+    rdfs:label "entity_class_entry" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 367 .
+
+vhdl:entity_class_entry_list a owl:Class ;
+    rdfs:label "entity_class_entry_list" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 366 .
+
+vhdl:entity_declaration a owl:Class ;
+    rdfs:label "entity_declaration" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 259 .
+
+vhdl:entity_designator a owl:Class ;
+    rdfs:label "entity_designator" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 374 .
+
+vhdl:entity_header a owl:Class ;
+    rdfs:label "entity_header" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 679 .
+
+vhdl:entity_instantiation a owl:Class ;
+    rdfs:label "entity_instantiation" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 495 .
+
+vhdl:entity_name_list a owl:Class ;
+    rdfs:label "entity_name_list" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 371 .
+
+vhdl:entity_specification a owl:Class ;
+    rdfs:label "entity_specification" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 372 .
+
+vhdl:enumeration_type_definition a owl:Class ;
+    rdfs:label "enumeration_type_definition" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 285 .
+
+vhdl:exit_statement a owl:Class ;
+    rdfs:label "exit_statement" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 486 .
+
+vhdl:exponentiation a owl:Class ;
+    rdfs:label "exponentiation" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 425 .
+
+vhdl:expression a owl:Class ;
+    rdfs:label "expression" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 680 .
+
+vhdl:expression_list a owl:Class ;
+    rdfs:label "expression_list" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 391 .
+
+vhdl:extended_identifier a owl:Class ;
+    rdfs:label "extended_identifier" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 180 .
+
+vhdl:extended_simple_name a owl:Class ;
+    rdfs:label "extended_simple_name" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 681 .
+
+vhdl:external_constant_name a owl:Class ;
+    rdfs:label "external_constant_name" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 400 .
+
+vhdl:external_signal_name a owl:Class ;
+    rdfs:label "external_signal_name" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 401 .
+
+vhdl:external_variable_name a owl:Class ;
+    rdfs:label "external_variable_name" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 402 .
+
+vhdl:factor a owl:Class ;
+    rdfs:label "factor" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 417 .
+
+vhdl:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+vhdl:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+vhdl:field_Boolean a owl:ObjectProperty ;
+    rdfs:label "Boolean (structural)" ;
+    rdfs:comment "Structural reference for Boolean field when it contains a non-terminal node" ;
+    vhdl:fieldId 1 .
+
+vhdl:field_Property a owl:ObjectProperty ;
+    rdfs:label "Property (structural)" ;
+    rdfs:comment "Structural reference for Property field when it contains a non-terminal node" ;
+    vhdl:fieldId 2 .
+
+vhdl:field_SERE a owl:ObjectProperty ;
+    rdfs:label "SERE (structural)" ;
+    rdfs:comment "Structural reference for SERE field when it contains a non-terminal node" ;
+    vhdl:fieldId 3 .
+
+vhdl:field_Sequence a owl:ObjectProperty ;
+    rdfs:label "Sequence (structural)" ;
+    rdfs:comment "Structural reference for Sequence field when it contains a non-terminal node" ;
+    vhdl:fieldId 4 .
+
+vhdl:field_actual_part a owl:ObjectProperty ;
+    rdfs:label "actual_part (structural)" ;
+    rdfs:comment "Structural reference for actual_part field when it contains a non-terminal node" ;
+    vhdl:fieldId 5 .
+
+vhdl:field_at_end a owl:ObjectProperty ;
+    rdfs:label "at_end (structural)" ;
+    rdfs:comment "Structural reference for at_end field when it contains a non-terminal node" ;
+    vhdl:fieldId 7 .
+
+vhdl:field_component a owl:ObjectProperty ;
+    rdfs:label "component (structural)" ;
+    rdfs:comment "Structural reference for component field when it contains a non-terminal node" ;
+    vhdl:fieldId 8 .
+
+vhdl:field_configuration a owl:ObjectProperty ;
+    rdfs:label "configuration (structural)" ;
+    rdfs:comment "Structural reference for configuration field when it contains a non-terminal node" ;
+    vhdl:fieldId 9 .
+
+vhdl:field_denotator a owl:ObjectProperty ;
+    rdfs:label "denotator (structural)" ;
+    rdfs:comment "Structural reference for denotator field when it contains a non-terminal node" ;
+    vhdl:fieldId 10 .
+
+vhdl:field_element a owl:ObjectProperty ;
+    rdfs:label "element (structural)" ;
+    rdfs:comment "Structural reference for element field when it contains a non-terminal node" ;
+    vhdl:fieldId 12 .
+
+vhdl:field_entity a owl:ObjectProperty ;
+    rdfs:label "entity (structural)" ;
+    rdfs:comment "Structural reference for entity field when it contains a non-terminal node" ;
+    vhdl:fieldId 13 .
+
+vhdl:field_formal_part a owl:ObjectProperty ;
+    rdfs:label "formal_part (structural)" ;
+    rdfs:comment "Structural reference for formal_part field when it contains a non-terminal node" ;
+    vhdl:fieldId 14 .
+
+vhdl:field_function a owl:ObjectProperty ;
+    rdfs:label "function (structural)" ;
+    rdfs:comment "Structural reference for function field when it contains a non-terminal node" ;
+    vhdl:fieldId 15 .
+
+vhdl:field_guard a owl:ObjectProperty ;
+    rdfs:label "guard (structural)" ;
+    rdfs:comment "Structural reference for guard field when it contains a non-terminal node" ;
+    vhdl:fieldId 16 .
+
+vhdl:field_high a owl:ObjectProperty ;
+    rdfs:label "high (structural)" ;
+    rdfs:comment "Structural reference for high field when it contains a non-terminal node" ;
+    vhdl:fieldId 17 .
+
+vhdl:field_low a owl:ObjectProperty ;
+    rdfs:label "low (structural)" ;
+    rdfs:comment "Structural reference for low field when it contains a non-terminal node" ;
+    vhdl:fieldId 23 .
+
+vhdl:field_operator a owl:ObjectProperty ;
+    rdfs:label "operator (structural)" ;
+    rdfs:comment "Structural reference for operator field when it contains a non-terminal node" ;
+    vhdl:fieldId 27 .
+
+vhdl:field_prefix a owl:ObjectProperty ;
+    rdfs:label "prefix (structural)" ;
+    rdfs:comment "Structural reference for prefix field when it contains a non-terminal node" ;
+    vhdl:fieldId 29 .
+
+vhdl:field_procedure a owl:ObjectProperty ;
+    rdfs:label "procedure (structural)" ;
+    rdfs:comment "Structural reference for procedure field when it contains a non-terminal node" ;
+    vhdl:fieldId 30 .
+
+vhdl:field_reject a owl:ObjectProperty ;
+    rdfs:label "reject (structural)" ;
+    rdfs:comment "Structural reference for reject field when it contains a non-terminal node" ;
+    vhdl:fieldId 31 .
+
+vhdl:field_specification a owl:ObjectProperty ;
+    rdfs:label "specification (structural)" ;
+    rdfs:comment "Structural reference for specification field when it contains a non-terminal node" ;
+    vhdl:fieldId 32 .
+
+vhdl:field_target a owl:ObjectProperty ;
+    rdfs:label "target (structural)" ;
+    rdfs:comment "Structural reference for target field when it contains a non-terminal node" ;
+    vhdl:fieldId 34 .
+
+vhdl:field_template a owl:ObjectProperty ;
+    rdfs:label "template (structural)" ;
+    rdfs:comment "Structural reference for template field when it contains a non-terminal node" ;
+    vhdl:fieldId 35 .
+
+vhdl:field_uninstantiated a owl:ObjectProperty ;
+    rdfs:label "uninstantiated (structural)" ;
+    rdfs:comment "Structural reference for uninstantiated field when it contains a non-terminal node" ;
+    vhdl:fieldId 36 .
+
+vhdl:field_unit a owl:ObjectProperty ;
+    rdfs:label "unit (structural)" ;
+    rdfs:comment "Structural reference for unit field when it contains a non-terminal node" ;
+    vhdl:fieldId 37 .
+
+vhdl:file_declaration a owl:Class ;
+    rdfs:label "file_declaration" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 328 .
+
+vhdl:file_interface_declaration a owl:Class ;
+    rdfs:label "file_interface_declaration" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 334 .
+
+vhdl:file_open_information a owl:Class ;
+    rdfs:label "file_open_information" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 329 .
+
+vhdl:file_open_kind a owl:Class ;
+    rdfs:label "file_open_kind" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 682 .
+
+vhdl:file_type_definition a owl:Class ;
+    rdfs:label "file_type_definition" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 308 .
+
+vhdl:for_generate_statement a owl:Class ;
+    rdfs:label "for_generate_statement" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 498 .
+
+vhdl:for_loop a owl:Class ;
+    rdfs:label "for_loop" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 482 .
+
+vhdl:force_mode a owl:Class ;
+    rdfs:label "force_mode" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 447 .
+
+vhdl:formal_part a owl:DatatypeProperty ;
+    rdfs:label "formal_part (literal)" ;
+    rdfs:comment "Literal value for formal_part field when it contains a terminal node" ;
+    vhdl:fieldId 14 ;
+    vhdl:isTerminalField true .
+
+vhdl:full_type_declaration a owl:Class ;
+    rdfs:label "full_type_declaration" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 314 .
+
+vhdl:function a owl:DatatypeProperty ;
+    rdfs:label "function (literal)" ;
+    rdfs:comment "Literal value for function field when it contains a terminal node" ;
+    vhdl:fieldId 15 ;
+    vhdl:isTerminalField true .
+
+vhdl:function_body a owl:Class ;
+    rdfs:label "function_body" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 274 .
+
+vhdl:function_call a owl:Class ;
+    rdfs:label "function_call" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 433 .
+
+vhdl:function_declaration a owl:Class ;
+    rdfs:label "function_declaration" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 266 .
+
+vhdl:function_instantiation_declaration a owl:Class ;
+    rdfs:label "function_instantiation_declaration" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 276 .
+
+vhdl:function_interface_declaration a owl:Class ;
+    rdfs:label "function_interface_declaration" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 345 .
+
+vhdl:function_parameter_clause a owl:Class ;
+    rdfs:label "function_parameter_clause" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 272 .
+
+vhdl:generate_statement_body a owl:Class ;
+    rdfs:label "generate_statement_body" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 505 .
+
+vhdl:generate_statement_element a owl:Class ;
+    rdfs:label "generate_statement_element" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 263 .
+
+vhdl:generic_clause a owl:Class ;
+    rdfs:label "generic_clause" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 348 .
+
+vhdl:generic_map_aspect a owl:Class ;
+    rdfs:label "generic_map_aspect" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 355 .
+
+vhdl:group_constituent_list a owl:Class ;
+    rdfs:label "group_constituent_list" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 369 .
+
+vhdl:group_declaration a owl:Class ;
+    rdfs:label "group_declaration" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 368 .
+
+vhdl:group_template_declaration a owl:Class ;
+    rdfs:label "group_template_declaration" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 365 .
+
+vhdl:guarded_signal_specification a owl:Class ;
+    rdfs:label "guarded_signal_specification" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 385 .
+
+vhdl:identifier a owl:Class ;
+    rdfs:label "identifier" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 683 .
+
+vhdl:identifier_list a owl:Class ;
+    rdfs:label "identifier_list" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 305 .
+
+vhdl:if a owl:Class ;
+    rdfs:label "if" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 475 .
+
+vhdl:if_generate a owl:Class ;
+    rdfs:label "if_generate" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 500 .
+
+vhdl:if_generate_statement a owl:Class ;
+    rdfs:label "if_generate_statement" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 499 .
+
+vhdl:if_statement a owl:Class ;
+    rdfs:label "if_statement" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 474 .
+
+vhdl:incomplete_type_declaration a owl:Class ;
+    rdfs:label "incomplete_type_declaration" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 307 .
+
+vhdl:index_constraint a owl:Class ;
+    rdfs:label "index_constraint" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 299 .
+
+vhdl:index_subtype_definition a owl:Class ;
+    rdfs:label "index_subtype_definition" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 296 .
+
+vhdl:inertial a owl:Class ;
+    rdfs:label "inertial" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 450 .
+
+vhdl:inertial_expression a owl:Class ;
+    rdfs:label "inertial_expression" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 413 .
+
+vhdl:instance a owl:DatatypeProperty ;
+    rdfs:label "instance (literal)" ;
+    rdfs:comment "Literal value for instance field when it contains a terminal node" ;
+    vhdl:fieldId 18 ;
+    vhdl:isTerminalField true .
+
+vhdl:instantiation_list a owl:Class ;
+    rdfs:label "instantiation_list" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 378 .
+
+vhdl:integer_decimal a owl:Class ;
+    rdfs:label "integer_decimal" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 181 .
+
+vhdl:interface_subprogram_default a owl:Class ;
+    rdfs:label "interface_subprogram_default" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 346 .
+
+vhdl:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+vhdl:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+vhdl:label a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "label",
+        "label (literal)" ;
+    rdfs:comment "Literal value for label field when it contains a terminal node" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:fieldId 19 ;
+    vhdl:isSupertype true ;
+    vhdl:isTerminalField true ;
+    vhdl:nodeTypeId 506 .
+
+vhdl:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+vhdl:library a owl:DatatypeProperty ;
+    rdfs:label "library (literal)" ;
+    rdfs:comment "Literal value for library field when it contains a terminal node" ;
+    vhdl:fieldId 20 ;
+    vhdl:isTerminalField true .
+
+vhdl:library_clause a owl:Class ;
+    rdfs:label "library_clause" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 511 .
+
+vhdl:literal a owl:DatatypeProperty ;
+    rdfs:label "literal (literal)" ;
+    rdfs:comment "Literal value for literal field when it contains a terminal node" ;
+    vhdl:fieldId 21 ;
+    vhdl:isTerminalField true .
+
+vhdl:logical_expression a owl:Class ;
+    rdfs:label "logical_expression" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 419 .
+
+vhdl:logical_name_list a owl:Class ;
+    rdfs:label "logical_name_list" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 512 .
+
+vhdl:loop_label a owl:DatatypeProperty ;
+    rdfs:label "loop_label (literal)" ;
+    rdfs:comment "Literal value for loop_label field when it contains a terminal node" ;
+    vhdl:fieldId 22 ;
+    vhdl:isTerminalField true .
+
+vhdl:loop_statement a owl:Class ;
+    rdfs:label "loop_statement" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 480 .
+
+vhdl:mode a owl:Class ;
+    rdfs:label "mode" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 340,
+        341,
+        342 .
+
+vhdl:name a owl:DatatypeProperty ;
+    rdfs:label "name (literal)" ;
+    rdfs:comment "Literal value for name field when it contains a terminal node" ;
+    vhdl:fieldId 24 ;
+    vhdl:isTerminalField true .
+
+vhdl:name_or_label a owl:DatatypeProperty ;
+    rdfs:label "name_or_label (literal)" ;
+    rdfs:comment "Literal value for name_or_label field when it contains a terminal node" ;
+    vhdl:fieldId 25 ;
+    vhdl:isTerminalField true .
+
+vhdl:named_association_element a owl:Class ;
+    rdfs:label "named_association_element" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 354 .
+
+vhdl:named_element_association a owl:Class ;
+    rdfs:label "named_element_association" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 430 .
+
+vhdl:next_statement a owl:Class ;
+    rdfs:label "next_statement" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 484 .
+
+vhdl:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+vhdl:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+vhdl:null a owl:Class ;
+    rdfs:label "null" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 426 .
+
+vhdl:null_statement a owl:Class ;
+    rdfs:label "null_statement" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 488 .
+
+vhdl:numeric_type_definition a owl:Class ;
+    rdfs:label "numeric_type_definition" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 684 .
+
+vhdl:object a owl:DatatypeProperty ;
+    rdfs:label "object (literal)" ;
+    rdfs:comment "Literal value for object field when it contains a terminal node" ;
+    vhdl:fieldId 26 ;
+    vhdl:isTerminalField true .
+
+vhdl:open a owl:Class ;
+    rdfs:label "open" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 300 .
+
+vhdl:operator_symbol a owl:Class ;
+    rdfs:label "operator_symbol" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 685 .
+
+vhdl:others a owl:Class ;
+    rdfs:label "others" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 432 .
+
+vhdl:package a owl:DatatypeProperty ;
+    rdfs:label "package (literal)" ;
+    rdfs:comment "Literal value for package field when it contains a terminal node" ;
+    vhdl:fieldId 28 ;
+    vhdl:isTerminalField true .
+
+vhdl:package_body a owl:Class ;
+    rdfs:label "package_body" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 279 .
+
+vhdl:package_declaration a owl:Class ;
+    rdfs:label "package_declaration" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 278 .
+
+vhdl:package_header a owl:Class ;
+    rdfs:label "package_header" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 686 .
+
+vhdl:package_instantiation_declaration a owl:Class ;
+    rdfs:label "package_instantiation_declaration" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 280 .
+
+vhdl:package_interface_declaration a owl:Class ;
+    rdfs:label "package_interface_declaration" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 347 .
+
+vhdl:package_map_aspect a owl:Class ;
+    rdfs:label "package_map_aspect" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 687 .
+
+vhdl:package_pathname a owl:Class ;
+    rdfs:label "package_pathname" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 403 .
+
+vhdl:parameter_specification a owl:Class ;
+    rdfs:label "parameter_specification" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 483 .
+
+vhdl:parenthesized_expression a owl:Class ;
+    rdfs:label "parenthesized_expression" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 414 .
+
+vhdl:parenthesized_resolution a owl:Class ;
+    rdfs:label "parenthesized_resolution" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 319 .
+
+vhdl:pathname_element a owl:Class ;
+    rdfs:label "pathname_element" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 407 .
+
+vhdl:physical_literal a owl:Class ;
+    rdfs:label "physical_literal" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 290,
+        291 .
+
+vhdl:physical_type_definition a owl:Class ;
+    rdfs:label "physical_type_definition" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 287 .
+
+vhdl:port_clause a owl:Class ;
+    rdfs:label "port_clause" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 350 .
+
+vhdl:port_map_aspect a owl:Class ;
+    rdfs:label "port_map_aspect" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 358 .
+
+vhdl:positional_association_element a owl:Class ;
+    rdfs:label "positional_association_element" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 353 .
+
+vhdl:positional_element_association a owl:Class ;
+    rdfs:label "positional_element_association" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 429 .
+
+vhdl:predefined_designator a owl:Class ;
+    rdfs:label "predefined_designator" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 397,
+        398,
+        399 .
+
+vhdl:prefix a owl:DatatypeProperty ;
+    rdfs:label "prefix (literal)" ;
+    rdfs:comment "Literal value for prefix field when it contains a terminal node" ;
+    vhdl:fieldId 29 ;
+    vhdl:isTerminalField true .
+
+vhdl:primary_unit_declaration a owl:Class ;
+    rdfs:label "primary_unit_declaration" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 288 .
+
+vhdl:procedure a owl:DatatypeProperty ;
+    rdfs:label "procedure (literal)" ;
+    rdfs:comment "Literal value for procedure field when it contains a terminal node" ;
+    vhdl:fieldId 30 ;
+    vhdl:isTerminalField true .
+
+vhdl:procedure_body a owl:Class ;
+    rdfs:label "procedure_body" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 273 .
+
+vhdl:procedure_call_statement a owl:Class ;
+    rdfs:label "procedure_call_statement" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 473 .
+
+vhdl:procedure_declaration a owl:Class ;
+    rdfs:label "procedure_declaration" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 265 .
+
+vhdl:procedure_instantiation_declaration a owl:Class ;
+    rdfs:label "procedure_instantiation_declaration" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 275 .
+
+vhdl:procedure_interface_declaration a owl:Class ;
+    rdfs:label "procedure_interface_declaration" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 344 .
+
+vhdl:procedure_parameter_clause a owl:Class ;
+    rdfs:label "procedure_parameter_clause" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 271 .
+
+vhdl:process_statement a owl:Class ;
+    rdfs:label "process_statement" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 493 .
+
+vhdl:protected_type_body a owl:Class ;
+    rdfs:label "protected_type_body" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 310 .
+
+vhdl:protected_type_declaration a owl:Class ;
+    rdfs:label "protected_type_declaration" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 309 .
+
+vhdl:qualified_expression a owl:Class ;
+    rdfs:label "qualified_expression" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 434 .
+
+vhdl:range_constraint a owl:Class ;
+    rdfs:label "range_constraint" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 281 .
+
+vhdl:real_decimal a owl:Class ;
+    rdfs:label "real_decimal" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 182 .
+
+vhdl:record_constraint a owl:Class ;
+    rdfs:label "record_constraint" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 303 .
+
+vhdl:record_element_constraint a owl:Class ;
+    rdfs:label "record_element_constraint" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 304 .
+
+vhdl:record_element_resolution a owl:Class ;
+    rdfs:label "record_element_resolution" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 321 .
+
+vhdl:record_resolution a owl:Class ;
+    rdfs:label "record_resolution" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 320 .
+
+vhdl:record_type_definition a owl:Class ;
+    rdfs:label "record_type_definition" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 301 .
+
+vhdl:reduction a owl:Class ;
+    rdfs:label "reduction" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 416 .
+
+vhdl:relation a owl:Class ;
+    rdfs:label "relation" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 420 .
+
+vhdl:relative_pathname a owl:Class ;
+    rdfs:label "relative_pathname" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 405 .
+
+vhdl:report_statement a owl:Class ;
+    rdfs:label "report_statement" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 441 .
+
+vhdl:resolution_function a owl:Class ;
+    rdfs:label "resolution_function" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 318 .
+
+vhdl:return a owl:Class ;
+    rdfs:label "return" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 269 .
+
+vhdl:return_statement a owl:Class ;
+    rdfs:label "return_statement" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 487 .
+
+vhdl:same a owl:Class ;
+    rdfs:label "same" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 50 .
+
+vhdl:secondary_unit_declaration a owl:Class ;
+    rdfs:label "secondary_unit_declaration" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 289 .
+
+vhdl:selected_concurrent_signal_assignment a owl:Class ;
+    rdfs:label "selected_concurrent_signal_assignment" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 688 .
+
+vhdl:selected_expressions a owl:Class ;
+    rdfs:label "selected_expressions" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 468 .
+
+vhdl:selected_force_assignment a owl:Class ;
+    rdfs:label "selected_force_assignment" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 465 .
+
+vhdl:selected_name a owl:Class ;
+    rdfs:label "selected_name" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 389 .
+
+vhdl:selected_variable_assignment a owl:Class ;
+    rdfs:label "selected_variable_assignment" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 472 .
+
+vhdl:selected_waveform_assignment a owl:Class ;
+    rdfs:label "selected_waveform_assignment" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 464 .
+
+vhdl:selected_waveforms a owl:Class ;
+    rdfs:label "selected_waveforms" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 466 .
+
+vhdl:semicolon a owl:Class ;
+    rdfs:label "semicolon" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 689 .
+
+vhdl:sensitivity_list a owl:Class ;
+    rdfs:label "sensitivity_list" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 439 .
+
+vhdl:sequence_of_statements a owl:Class ;
+    rdfs:label "sequence_of_statements" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 436 .
+
+vhdl:severity_expression a owl:Class ;
+    rdfs:label "severity_expression" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 690 .
+
+vhdl:shared_variable_declaration a owl:Class ;
+    rdfs:label "shared_variable_declaration" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 327 .
+
+vhdl:shift_expression a owl:Class ;
+    rdfs:label "shift_expression" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 421 .
+
+vhdl:sign a owl:Class ;
+    rdfs:label "sign" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 418 .
+
+vhdl:signal_declaration a owl:Class ;
+    rdfs:label "signal_declaration" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 324 .
+
+vhdl:signal_interface_declaration a owl:Class ;
+    rdfs:label "signal_interface_declaration" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 332 .
+
+vhdl:signal_kind a owl:Class ;
+    rdfs:label "signal_kind" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 325 .
+
+vhdl:signal_list a owl:Class ;
+    rdfs:label "signal_list" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 386 .
+
+vhdl:signature a owl:Class ;
+    rdfs:label "signature" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 277 .
+
+vhdl:simple_concurrent_signal_assignment a owl:Class ;
+    rdfs:label "simple_concurrent_signal_assignment" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 691 .
+
+vhdl:simple_expression a owl:Class ;
+    rdfs:label "simple_expression" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 422 .
+
+vhdl:simple_force_assignment a owl:Class ;
+    rdfs:label "simple_force_assignment" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 445 .
+
+vhdl:simple_name a owl:Class ;
+    rdfs:label "simple_name" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 1 .
+
+vhdl:simple_release_assignment a owl:Class ;
+    rdfs:label "simple_release_assignment" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 446 .
+
+vhdl:simple_variable_assignment a owl:Class ;
+    rdfs:label "simple_variable_assignment" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 470 .
+
+vhdl:simple_waveform_assignment a owl:Class ;
+    rdfs:label "simple_waveform_assignment" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 444 .
+
+vhdl:slice_name a owl:Class ;
+    rdfs:label "slice_name" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 392 .
+
+vhdl:specification a owl:DatatypeProperty ;
+    rdfs:label "specification (literal)" ;
+    rdfs:comment "Literal value for specification field when it contains a terminal node" ;
+    vhdl:fieldId 32 ;
+    vhdl:isTerminalField true .
+
+vhdl:string_expression a owl:Class ;
+    rdfs:label "string_expression" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 692 .
+
+vhdl:string_literal a owl:Class ;
+    rdfs:label "string_literal" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 519 .
+
+vhdl:subprogram_header a owl:Class ;
+    rdfs:label "subprogram_header" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 693 .
+
+vhdl:subprogram_map_aspect a owl:Class ;
+    rdfs:label "subprogram_map_aspect" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 694 .
+
+vhdl:subtype_declaration a owl:Class ;
+    rdfs:label "subtype_declaration" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 316 .
+
+vhdl:subtype_indication a owl:Class ;
+    rdfs:label "subtype_indication" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 317 .
+
+vhdl:suffix a owl:DatatypeProperty ;
+    rdfs:label "suffix (literal)" ;
+    rdfs:comment "Literal value for suffix field when it contains a terminal node" ;
+    vhdl:fieldId 33 ;
+    vhdl:isTerminalField true .
+
+vhdl:target a owl:DatatypeProperty ;
+    rdfs:label "target (literal)" ;
+    rdfs:comment "Literal value for target field when it contains a terminal node" ;
+    vhdl:fieldId 34 ;
+    vhdl:isTerminalField true .
+
+vhdl:template a owl:DatatypeProperty ;
+    rdfs:label "template (literal)" ;
+    rdfs:comment "Literal value for template field when it contains a terminal node" ;
+    vhdl:fieldId 35 ;
+    vhdl:isTerminalField true .
+
+vhdl:term a owl:Class ;
+    rdfs:label "term" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 424 .
+
+vhdl:time_expression a owl:Class ;
+    rdfs:label "time_expression" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 695 .
+
+vhdl:tool_directive a owl:Class ;
+    rdfs:label "tool_directive" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 195 .
+
+vhdl:transport a owl:Class ;
+    rdfs:label "transport" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 449 .
+
+vhdl:type_interface_declaration a owl:Class ;
+    rdfs:label "type_interface_declaration" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 343 .
+
+vhdl:type_mark a owl:Class ;
+    rdfs:label "type_mark" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 322 .
+
+vhdl:unaffected a owl:Class ;
+    rdfs:label "unaffected" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 454 .
+
+vhdl:unbounded_array_definition a owl:Class ;
+    rdfs:label "unbounded_array_definition" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 294 .
+
+vhdl:uninstantiated a owl:DatatypeProperty ;
+    rdfs:label "uninstantiated (literal)" ;
+    rdfs:comment "Literal value for uninstantiated field when it contains a terminal node" ;
+    vhdl:fieldId 36 ;
+    vhdl:isTerminalField true .
+
+vhdl:unit a owl:DatatypeProperty ;
+    rdfs:label "unit (literal)" ;
+    rdfs:comment "Literal value for unit field when it contains a terminal node" ;
+    vhdl:fieldId 37 ;
+    vhdl:isTerminalField true .
+
+vhdl:use_clause a owl:Class ;
+    rdfs:label "use_clause" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 507 .
+
+vhdl:variable_declaration a owl:Class ;
+    rdfs:label "variable_declaration" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 326 .
+
+vhdl:variable_interface_declaration a owl:Class ;
+    rdfs:label "variable_interface_declaration" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 333 .
+
+vhdl:verification_unit_binding_indication a owl:Class ;
+    rdfs:label "verification_unit_binding_indication" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 382 .
+
+vhdl:verification_unit_list a owl:Class ;
+    rdfs:label "verification_unit_list" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 383 .
+
+vhdl:wait_statement a owl:Class ;
+    rdfs:label "wait_statement" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 438 .
+
+vhdl:waveform_element a owl:Class ;
+    rdfs:label "waveform_element" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 455 .
+
+vhdl:waveforms a owl:Class ;
+    rdfs:label "waveforms" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 453 .
+
+vhdl:while_loop a owl:Class ;
+    rdfs:label "while_loop" ;
+    rdfs:isDefinedBy vhdl: ;
+    rdfs:subClassOf ast:Node ;
+    vhdl:isSupertype true ;
+    vhdl:nodeTypeId 481 .
+
+vhdl: a owl:Ontology ;
+    rdfs:label "Vhdl Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for vhdl" ;
+    owl:versionInfo "v0.25" ;
+    vhdl:abiVersion 13 ;
+    vhdl:fieldCount 37 ;
+    vhdl:languageName "None" ;
+    vhdl:nodeKindCount 696 .
+

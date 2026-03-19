@@ -1,0 +1,574 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix graphql: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/graphql/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+graphql:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+graphql:alias a owl:Class ;
+    rdfs:label "alias" ;
+    rdfs:isDefinedBy graphql: ;
+    rdfs:subClassOf ast:Node ;
+    graphql:isSupertype true ;
+    graphql:nodeTypeId 102 .
+
+graphql:argument a owl:Class ;
+    rdfs:label "argument" ;
+    rdfs:isDefinedBy graphql: ;
+    rdfs:subClassOf ast:Node ;
+    graphql:isSupertype true ;
+    graphql:nodeTypeId 104 .
+
+graphql:arguments a owl:Class ;
+    rdfs:label "arguments" ;
+    rdfs:isDefinedBy graphql: ;
+    rdfs:subClassOf ast:Node ;
+    graphql:isSupertype true ;
+    graphql:nodeTypeId 103 .
+
+graphql:arguments_definition a owl:Class ;
+    rdfs:label "arguments_definition" ;
+    rdfs:isDefinedBy graphql: ;
+    rdfs:subClassOf ast:Node ;
+    graphql:isSupertype true ;
+    graphql:nodeTypeId 83 .
+
+graphql:boolean_value a owl:Class ;
+    rdfs:label "boolean_value" ;
+    rdfs:isDefinedBy graphql: ;
+    rdfs:subClassOf ast:Node ;
+    graphql:isSupertype true ;
+    graphql:nodeTypeId 108 .
+
+graphql:comma a owl:Class ;
+    rdfs:label "comma" ;
+    rdfs:isDefinedBy graphql: ;
+    rdfs:subClassOf ast:Node ;
+    graphql:isSupertype true ;
+    graphql:nodeTypeId 61 .
+
+graphql:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy graphql: ;
+    rdfs:subClassOf ast:Node ;
+    graphql:isSupertype true ;
+    graphql:nodeTypeId 60 .
+
+graphql:default_value a owl:Class ;
+    rdfs:label "default_value" ;
+    rdfs:isDefinedBy graphql: ;
+    rdfs:subClassOf ast:Node ;
+    graphql:isSupertype true ;
+    graphql:nodeTypeId 85 .
+
+graphql:definition a owl:Class ;
+    rdfs:label "definition" ;
+    rdfs:isDefinedBy graphql: ;
+    rdfs:subClassOf ast:Node ;
+    graphql:isSupertype true ;
+    graphql:nodeTypeId 64 .
+
+graphql:description a owl:Class ;
+    rdfs:label "description" ;
+    rdfs:isDefinedBy graphql: ;
+    rdfs:subClassOf ast:Node ;
+    graphql:isSupertype true ;
+    graphql:nodeTypeId 129 .
+
+graphql:directive a owl:Class ;
+    rdfs:label "directive" ;
+    rdfs:isDefinedBy graphql: ;
+    rdfs:subClassOf ast:Node ;
+    graphql:isSupertype true ;
+    graphql:nodeTypeId 119 .
+
+graphql:directive_definition a owl:Class ;
+    rdfs:label "directive_definition" ;
+    rdfs:isDefinedBy graphql: ;
+    rdfs:subClassOf ast:Node ;
+    graphql:isSupertype true ;
+    graphql:nodeTypeId 120 .
+
+graphql:directive_location a owl:Class ;
+    rdfs:label "directive_location" ;
+    rdfs:isDefinedBy graphql: ;
+    rdfs:subClassOf ast:Node ;
+    graphql:isSupertype true ;
+    graphql:nodeTypeId 122 .
+
+graphql:directive_locations a owl:Class ;
+    rdfs:label "directive_locations" ;
+    rdfs:isDefinedBy graphql: ;
+    rdfs:subClassOf ast:Node ;
+    graphql:isSupertype true ;
+    graphql:nodeTypeId 121 .
+
+graphql:directives a owl:Class ;
+    rdfs:label "directives" ;
+    rdfs:isDefinedBy graphql: ;
+    rdfs:subClassOf ast:Node ;
+    graphql:isSupertype true ;
+    graphql:nodeTypeId 118 .
+
+graphql:document a owl:Class ;
+    rdfs:label "document" ;
+    rdfs:isDefinedBy graphql: ;
+    rdfs:subClassOf ast:Node ;
+    graphql:isSupertype true ;
+    graphql:nodeTypeId 63 .
+
+graphql:enum_type_definition a owl:Class ;
+    rdfs:label "enum_type_definition" ;
+    rdfs:isDefinedBy graphql: ;
+    rdfs:subClassOf ast:Node ;
+    graphql:isSupertype true ;
+    graphql:nodeTypeId 95 .
+
+graphql:enum_type_extension a owl:Class ;
+    rdfs:label "enum_type_extension" ;
+    rdfs:isDefinedBy graphql: ;
+    rdfs:subClassOf ast:Node ;
+    graphql:isSupertype true ;
+    graphql:nodeTypeId 75 .
+
+graphql:enum_value a owl:Class ;
+    rdfs:label "enum_value" ;
+    rdfs:isDefinedBy graphql: ;
+    rdfs:subClassOf ast:Node ;
+    graphql:isSupertype true ;
+    graphql:nodeTypeId 109 .
+
+graphql:enum_value_definition a owl:Class ;
+    rdfs:label "enum_value_definition" ;
+    rdfs:isDefinedBy graphql: ;
+    rdfs:subClassOf ast:Node ;
+    graphql:isSupertype true ;
+    graphql:nodeTypeId 79 .
+
+graphql:enum_values_definition a owl:Class ;
+    rdfs:label "enum_values_definition" ;
+    rdfs:isDefinedBy graphql: ;
+    rdfs:subClassOf ast:Node ;
+    graphql:isSupertype true ;
+    graphql:nodeTypeId 78 .
+
+graphql:executable_definition a owl:Class ;
+    rdfs:label "executable_definition" ;
+    rdfs:isDefinedBy graphql: ;
+    rdfs:subClassOf ast:Node ;
+    graphql:isSupertype true ;
+    graphql:nodeTypeId 65 .
+
+graphql:executable_directive_location a owl:Class ;
+    rdfs:label "executable_directive_location" ;
+    rdfs:isDefinedBy graphql: ;
+    rdfs:subClassOf ast:Node ;
+    graphql:isSupertype true ;
+    graphql:nodeTypeId 123 .
+
+graphql:field a owl:Class ;
+    rdfs:label "field" ;
+    rdfs:isDefinedBy graphql: ;
+    rdfs:subClassOf ast:Node ;
+    graphql:isSupertype true ;
+    graphql:nodeTypeId 101 .
+
+graphql:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+graphql:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+graphql:field_definition a owl:Class ;
+    rdfs:label "field_definition" ;
+    rdfs:isDefinedBy graphql: ;
+    rdfs:subClassOf ast:Node ;
+    graphql:isSupertype true ;
+    graphql:nodeTypeId 82 .
+
+graphql:fields_definition a owl:Class ;
+    rdfs:label "fields_definition" ;
+    rdfs:isDefinedBy graphql: ;
+    rdfs:subClassOf ast:Node ;
+    graphql:isSupertype true ;
+    graphql:nodeTypeId 81 .
+
+graphql:float_value a owl:Class ;
+    rdfs:label "float_value" ;
+    rdfs:isDefinedBy graphql: ;
+    rdfs:subClassOf ast:Node ;
+    graphql:isSupertype true ;
+    graphql:nodeTypeId 27 .
+
+graphql:fragment_definition a owl:Class ;
+    rdfs:label "fragment_definition" ;
+    rdfs:isDefinedBy graphql: ;
+    rdfs:subClassOf ast:Node ;
+    graphql:isSupertype true ;
+    graphql:nodeTypeId 114 .
+
+graphql:fragment_name a owl:Class ;
+    rdfs:label "fragment_name" ;
+    rdfs:isDefinedBy graphql: ;
+    rdfs:subClassOf ast:Node ;
+    graphql:isSupertype true ;
+    graphql:nodeTypeId 115 .
+
+graphql:fragment_spread a owl:Class ;
+    rdfs:label "fragment_spread" ;
+    rdfs:isDefinedBy graphql: ;
+    rdfs:subClassOf ast:Node ;
+    graphql:isSupertype true ;
+    graphql:nodeTypeId 113 .
+
+graphql:implements_interfaces a owl:Class ;
+    rdfs:label "implements_interfaces" ;
+    rdfs:isDefinedBy graphql: ;
+    rdfs:subClassOf ast:Node ;
+    graphql:isSupertype true ;
+    graphql:nodeTypeId 80 .
+
+graphql:inline_fragment a owl:Class ;
+    rdfs:label "inline_fragment" ;
+    rdfs:isDefinedBy graphql: ;
+    rdfs:subClassOf ast:Node ;
+    graphql:isSupertype true ;
+    graphql:nodeTypeId 116 .
+
+graphql:input_fields_definition a owl:Class ;
+    rdfs:label "input_fields_definition" ;
+    rdfs:isDefinedBy graphql: ;
+    rdfs:subClassOf ast:Node ;
+    graphql:isSupertype true ;
+    graphql:nodeTypeId 77 .
+
+graphql:input_object_type_definition a owl:Class ;
+    rdfs:label "input_object_type_definition" ;
+    rdfs:isDefinedBy graphql: ;
+    rdfs:subClassOf ast:Node ;
+    graphql:isSupertype true ;
+    graphql:nodeTypeId 96 .
+
+graphql:input_object_type_extension a owl:Class ;
+    rdfs:label "input_object_type_extension" ;
+    rdfs:isDefinedBy graphql: ;
+    rdfs:subClassOf ast:Node ;
+    graphql:isSupertype true ;
+    graphql:nodeTypeId 76 .
+
+graphql:input_value_definition a owl:Class ;
+    rdfs:label "input_value_definition" ;
+    rdfs:isDefinedBy graphql: ;
+    rdfs:subClassOf ast:Node ;
+    graphql:isSupertype true ;
+    graphql:nodeTypeId 84 .
+
+graphql:int_value a owl:Class ;
+    rdfs:label "int_value" ;
+    rdfs:isDefinedBy graphql: ;
+    rdfs:subClassOf ast:Node ;
+    graphql:isSupertype true ;
+    graphql:nodeTypeId 26 .
+
+graphql:interface_type_definition a owl:Class ;
+    rdfs:label "interface_type_definition" ;
+    rdfs:isDefinedBy graphql: ;
+    rdfs:subClassOf ast:Node ;
+    graphql:isSupertype true ;
+    graphql:nodeTypeId 93 .
+
+graphql:interface_type_extension a owl:Class ;
+    rdfs:label "interface_type_extension" ;
+    rdfs:isDefinedBy graphql: ;
+    rdfs:subClassOf ast:Node ;
+    graphql:isSupertype true ;
+    graphql:nodeTypeId 73 .
+
+graphql:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+graphql:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+graphql:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+graphql:list_type a owl:Class ;
+    rdfs:label "list_type" ;
+    rdfs:isDefinedBy graphql: ;
+    rdfs:subClassOf ast:Node ;
+    graphql:isSupertype true ;
+    graphql:nodeTypeId 127 .
+
+graphql:list_value a owl:Class ;
+    rdfs:label "list_value" ;
+    rdfs:isDefinedBy graphql: ;
+    rdfs:subClassOf ast:Node ;
+    graphql:isSupertype true ;
+    graphql:nodeTypeId 110 .
+
+graphql:name a owl:Class ;
+    rdfs:label "name" ;
+    rdfs:isDefinedBy graphql: ;
+    rdfs:subClassOf ast:Node ;
+    graphql:isSupertype true ;
+    graphql:nodeTypeId 59 .
+
+graphql:named_type a owl:Class ;
+    rdfs:label "named_type" ;
+    rdfs:isDefinedBy graphql: ;
+    rdfs:subClassOf ast:Node ;
+    graphql:isSupertype true ;
+    graphql:nodeTypeId 126 .
+
+graphql:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+graphql:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+graphql:non_null_type a owl:Class ;
+    rdfs:label "non_null_type" ;
+    rdfs:isDefinedBy graphql: ;
+    rdfs:subClassOf ast:Node ;
+    graphql:isSupertype true ;
+    graphql:nodeTypeId 128 .
+
+graphql:null_value a owl:Class ;
+    rdfs:label "null_value" ;
+    rdfs:isDefinedBy graphql: ;
+    rdfs:subClassOf ast:Node ;
+    graphql:isSupertype true ;
+    graphql:nodeTypeId 30 .
+
+graphql:object_field a owl:Class ;
+    rdfs:label "object_field" ;
+    rdfs:isDefinedBy graphql: ;
+    rdfs:subClassOf ast:Node ;
+    graphql:isSupertype true ;
+    graphql:nodeTypeId 112 .
+
+graphql:object_type_definition a owl:Class ;
+    rdfs:label "object_type_definition" ;
+    rdfs:isDefinedBy graphql: ;
+    rdfs:subClassOf ast:Node ;
+    graphql:isSupertype true ;
+    graphql:nodeTypeId 92 .
+
+graphql:object_type_extension a owl:Class ;
+    rdfs:label "object_type_extension" ;
+    rdfs:isDefinedBy graphql: ;
+    rdfs:subClassOf ast:Node ;
+    graphql:isSupertype true ;
+    graphql:nodeTypeId 72 .
+
+graphql:object_value a owl:Class ;
+    rdfs:label "object_value" ;
+    rdfs:isDefinedBy graphql: ;
+    rdfs:subClassOf ast:Node ;
+    graphql:isSupertype true ;
+    graphql:nodeTypeId 111 .
+
+graphql:operation_definition a owl:Class ;
+    rdfs:label "operation_definition" ;
+    rdfs:isDefinedBy graphql: ;
+    rdfs:subClassOf ast:Node ;
+    graphql:isSupertype true ;
+    graphql:nodeTypeId 88 .
+
+graphql:operation_type a owl:Class ;
+    rdfs:label "operation_type" ;
+    rdfs:isDefinedBy graphql: ;
+    rdfs:subClassOf ast:Node ;
+    graphql:isSupertype true ;
+    graphql:nodeTypeId 89 .
+
+graphql:root_operation_type_definition a owl:Class ;
+    rdfs:label "root_operation_type_definition" ;
+    rdfs:isDefinedBy graphql: ;
+    rdfs:subClassOf ast:Node ;
+    graphql:isSupertype true ;
+    graphql:nodeTypeId 87 .
+
+graphql:scalar_type_definition a owl:Class ;
+    rdfs:label "scalar_type_definition" ;
+    rdfs:isDefinedBy graphql: ;
+    rdfs:subClassOf ast:Node ;
+    graphql:isSupertype true ;
+    graphql:nodeTypeId 91 .
+
+graphql:scalar_type_extension a owl:Class ;
+    rdfs:label "scalar_type_extension" ;
+    rdfs:isDefinedBy graphql: ;
+    rdfs:subClassOf ast:Node ;
+    graphql:isSupertype true ;
+    graphql:nodeTypeId 71 .
+
+graphql:schema_definition a owl:Class ;
+    rdfs:label "schema_definition" ;
+    rdfs:isDefinedBy graphql: ;
+    rdfs:subClassOf ast:Node ;
+    graphql:isSupertype true ;
+    graphql:nodeTypeId 68 .
+
+graphql:schema_extension a owl:Class ;
+    rdfs:label "schema_extension" ;
+    rdfs:isDefinedBy graphql: ;
+    rdfs:subClassOf ast:Node ;
+    graphql:isSupertype true ;
+    graphql:nodeTypeId 69 .
+
+graphql:selection a owl:Class ;
+    rdfs:label "selection" ;
+    rdfs:isDefinedBy graphql: ;
+    rdfs:subClassOf ast:Node ;
+    graphql:isSupertype true ;
+    graphql:nodeTypeId 100 .
+
+graphql:selection_set a owl:Class ;
+    rdfs:label "selection_set" ;
+    rdfs:isDefinedBy graphql: ;
+    rdfs:subClassOf ast:Node ;
+    graphql:isSupertype true ;
+    graphql:nodeTypeId 99 .
+
+graphql:source_file a owl:Class ;
+    rdfs:label "source_file" ;
+    rdfs:isDefinedBy graphql: ;
+    rdfs:subClassOf ast:Node ;
+    graphql:isSupertype true ;
+    graphql:nodeTypeId 62 .
+
+graphql:string_value a owl:Class ;
+    rdfs:label "string_value" ;
+    rdfs:isDefinedBy graphql: ;
+    rdfs:subClassOf ast:Node ;
+    graphql:isSupertype true ;
+    graphql:nodeTypeId 107 .
+
+graphql:type a owl:Class ;
+    rdfs:label "type" ;
+    rdfs:isDefinedBy graphql: ;
+    rdfs:subClassOf ast:Node ;
+    graphql:isSupertype true ;
+    graphql:nodeTypeId 125 .
+
+graphql:type_condition a owl:Class ;
+    rdfs:label "type_condition" ;
+    rdfs:isDefinedBy graphql: ;
+    rdfs:subClassOf ast:Node ;
+    graphql:isSupertype true ;
+    graphql:nodeTypeId 117 .
+
+graphql:type_definition a owl:Class ;
+    rdfs:label "type_definition" ;
+    rdfs:isDefinedBy graphql: ;
+    rdfs:subClassOf ast:Node ;
+    graphql:isSupertype true ;
+    graphql:nodeTypeId 90 .
+
+graphql:type_extension a owl:Class ;
+    rdfs:label "type_extension" ;
+    rdfs:isDefinedBy graphql: ;
+    rdfs:subClassOf ast:Node ;
+    graphql:isSupertype true ;
+    graphql:nodeTypeId 70 .
+
+graphql:type_system_definition a owl:Class ;
+    rdfs:label "type_system_definition" ;
+    rdfs:isDefinedBy graphql: ;
+    rdfs:subClassOf ast:Node ;
+    graphql:isSupertype true ;
+    graphql:nodeTypeId 66 .
+
+graphql:type_system_directive_location a owl:Class ;
+    rdfs:label "type_system_directive_location" ;
+    rdfs:isDefinedBy graphql: ;
+    rdfs:subClassOf ast:Node ;
+    graphql:isSupertype true ;
+    graphql:nodeTypeId 124 .
+
+graphql:type_system_extension a owl:Class ;
+    rdfs:label "type_system_extension" ;
+    rdfs:isDefinedBy graphql: ;
+    rdfs:subClassOf ast:Node ;
+    graphql:isSupertype true ;
+    graphql:nodeTypeId 67 .
+
+graphql:union_member_types a owl:Class ;
+    rdfs:label "union_member_types" ;
+    rdfs:isDefinedBy graphql: ;
+    rdfs:subClassOf ast:Node ;
+    graphql:isSupertype true ;
+    graphql:nodeTypeId 86 .
+
+graphql:union_type_definition a owl:Class ;
+    rdfs:label "union_type_definition" ;
+    rdfs:isDefinedBy graphql: ;
+    rdfs:subClassOf ast:Node ;
+    graphql:isSupertype true ;
+    graphql:nodeTypeId 94 .
+
+graphql:union_type_extension a owl:Class ;
+    rdfs:label "union_type_extension" ;
+    rdfs:isDefinedBy graphql: ;
+    rdfs:subClassOf ast:Node ;
+    graphql:isSupertype true ;
+    graphql:nodeTypeId 74 .
+
+graphql:value a owl:Class ;
+    rdfs:label "value" ;
+    rdfs:isDefinedBy graphql: ;
+    rdfs:subClassOf ast:Node ;
+    graphql:isSupertype true ;
+    graphql:nodeTypeId 105 .
+
+graphql:variable a owl:Class ;
+    rdfs:label "variable" ;
+    rdfs:isDefinedBy graphql: ;
+    rdfs:subClassOf ast:Node ;
+    graphql:isSupertype true ;
+    graphql:nodeTypeId 106 .
+
+graphql:variable_definition a owl:Class ;
+    rdfs:label "variable_definition" ;
+    rdfs:isDefinedBy graphql: ;
+    rdfs:subClassOf ast:Node ;
+    graphql:isSupertype true ;
+    graphql:nodeTypeId 98 .
+
+graphql:variable_definitions a owl:Class ;
+    rdfs:label "variable_definitions" ;
+    rdfs:isDefinedBy graphql: ;
+    rdfs:subClassOf ast:Node ;
+    graphql:isSupertype true ;
+    graphql:nodeTypeId 97 .
+
+graphql: a owl:Ontology ;
+    rdfs:label "Graphql Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for graphql" ;
+    owl:versionInfo "v0.25" ;
+    graphql:abiVersion 13 ;
+    graphql:fieldCount 0 ;
+    graphql:languageName "None" ;
+    graphql:nodeKindCount 142 .
+

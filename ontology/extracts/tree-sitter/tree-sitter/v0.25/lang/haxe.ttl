@@ -1,0 +1,513 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix haxe: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/haxe/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+haxe:_rhs_expression a owl:Class ;
+    rdfs:label "_rhs_expression" ;
+    rdfs:isDefinedBy haxe: ;
+    rdfs:subClassOf ast:Node ;
+    haxe:isSupertype true ;
+    haxe:nodeTypeId 19 .
+
+haxe:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+haxe:access_identifiers a owl:Class ;
+    rdfs:label "access_identifiers" ;
+    rdfs:isDefinedBy haxe: ;
+    rdfs:subClassOf ast:Node ;
+    haxe:isSupertype true ;
+    haxe:nodeTypeId 168 .
+
+haxe:arguments_list a owl:DatatypeProperty ;
+    rdfs:label "arguments_list (literal)" ;
+    rdfs:comment "Literal value for arguments_list field when it contains a terminal node" ;
+    haxe:fieldId 1 ;
+    haxe:isTerminalField true .
+
+haxe:array a owl:Class ;
+    rdfs:label "array" ;
+    rdfs:isDefinedBy haxe: ;
+    rdfs:subClassOf ast:Node ;
+    haxe:isSupertype true ;
+    haxe:nodeTypeId 184 .
+
+haxe:block a owl:Class ;
+    rdfs:label "block" ;
+    rdfs:isDefinedBy haxe: ;
+    rdfs:subClassOf ast:Node ;
+    haxe:isSupertype true ;
+    haxe:nodeTypeId 133,
+        146 .
+
+haxe:bool a owl:Class ;
+    rdfs:label "bool" ;
+    rdfs:isDefinedBy haxe: ;
+    rdfs:subClassOf ast:Node ;
+    haxe:isSupertype true ;
+    haxe:nodeTypeId 181 .
+
+haxe:built_in a owl:DatatypeProperty ;
+    rdfs:label "built_in (literal)" ;
+    rdfs:comment "Literal value for built_in field when it contains a terminal node" ;
+    haxe:fieldId 3 ;
+    haxe:isTerminalField true .
+
+haxe:call_expression a owl:Class ;
+    rdfs:label "call_expression" ;
+    rdfs:isDefinedBy haxe: ;
+    rdfs:subClassOf ast:Node ;
+    haxe:isSupertype true ;
+    haxe:nodeTypeId 152 .
+
+haxe:case_statement a owl:Class ;
+    rdfs:label "case_statement" ;
+    rdfs:isDefinedBy haxe: ;
+    rdfs:subClassOf ast:Node ;
+    haxe:isSupertype true ;
+    haxe:nodeTypeId 134 .
+
+haxe:cast_expression a owl:Class ;
+    rdfs:label "cast_expression" ;
+    rdfs:isDefinedBy haxe: ;
+    rdfs:subClassOf ast:Node ;
+    haxe:isSupertype true ;
+    haxe:nodeTypeId 135 .
+
+haxe:class_declaration a owl:Class ;
+    rdfs:label "class_declaration" ;
+    rdfs:isDefinedBy haxe: ;
+    rdfs:subClassOf ast:Node ;
+    haxe:isSupertype true ;
+    haxe:nodeTypeId 171 .
+
+haxe:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy haxe: ;
+    rdfs:subClassOf ast:Node ;
+    haxe:isSupertype true ;
+    haxe:nodeTypeId 106 .
+
+haxe:conditional_statement a owl:Class ;
+    rdfs:label "conditional_statement" ;
+    rdfs:isDefinedBy haxe: ;
+    rdfs:subClassOf ast:Node ;
+    haxe:isSupertype true ;
+    haxe:nodeTypeId 149 .
+
+haxe:constructor a owl:DatatypeProperty ;
+    rdfs:label "constructor (literal)" ;
+    rdfs:comment "Literal value for constructor field when it contains a terminal node" ;
+    haxe:fieldId 4 ;
+    haxe:isTerminalField true .
+
+haxe:escape_sequence a owl:Class ;
+    rdfs:label "escape_sequence" ;
+    rdfs:isDefinedBy haxe: ;
+    rdfs:subClassOf ast:Node ;
+    haxe:isSupertype true ;
+    haxe:nodeTypeId 105 .
+
+haxe:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+haxe:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+haxe:field_arguments_list a owl:ObjectProperty ;
+    rdfs:label "arguments_list (structural)" ;
+    rdfs:comment "Structural reference for arguments_list field when it contains a non-terminal node" ;
+    haxe:fieldId 1 .
+
+haxe:field_body a owl:ObjectProperty ;
+    rdfs:label "body (structural)" ;
+    rdfs:comment "Structural reference for body field when it contains a non-terminal node" ;
+    haxe:fieldId 2 .
+
+haxe:field_index a owl:ObjectProperty ;
+    rdfs:label "index (structural)" ;
+    rdfs:comment "Structural reference for index field when it contains a non-terminal node" ;
+    haxe:fieldId 5 .
+
+haxe:field_interface_name a owl:ObjectProperty ;
+    rdfs:label "interface_name (structural)" ;
+    rdfs:comment "Structural reference for interface_name field when it contains a non-terminal node" ;
+    haxe:fieldId 6 .
+
+haxe:field_literal a owl:ObjectProperty ;
+    rdfs:label "literal (structural)" ;
+    rdfs:comment "Structural reference for literal field when it contains a non-terminal node" ;
+    haxe:fieldId 7 .
+
+haxe:field_member a owl:ObjectProperty ;
+    rdfs:label "member (structural)" ;
+    rdfs:comment "Structural reference for member field when it contains a non-terminal node" ;
+    haxe:fieldId 8 .
+
+haxe:field_name a owl:ObjectProperty ;
+    rdfs:label "name (structural)" ;
+    rdfs:comment "Structural reference for name field when it contains a non-terminal node" ;
+    haxe:fieldId 9 .
+
+haxe:field_object a owl:ObjectProperty ;
+    rdfs:label "object (structural)" ;
+    rdfs:comment "Structural reference for object field when it contains a non-terminal node" ;
+    haxe:fieldId 10 .
+
+haxe:field_return_type a owl:ObjectProperty ;
+    rdfs:label "return_type (structural)" ;
+    rdfs:comment "Structural reference for return_type field when it contains a non-terminal node" ;
+    haxe:fieldId 11 .
+
+haxe:field_super_class_name a owl:ObjectProperty ;
+    rdfs:label "super_class_name (structural)" ;
+    rdfs:comment "Structural reference for super_class_name field when it contains a non-terminal node" ;
+    haxe:fieldId 12 .
+
+haxe:field_type a owl:ObjectProperty ;
+    rdfs:label "type (structural)" ;
+    rdfs:comment "Structural reference for type field when it contains a non-terminal node" ;
+    haxe:fieldId 13 .
+
+haxe:field_type_name a owl:ObjectProperty ;
+    rdfs:label "type_name (structural)" ;
+    rdfs:comment "Structural reference for type_name field when it contains a non-terminal node" ;
+    haxe:fieldId 14 .
+
+haxe:float a owl:Class ;
+    rdfs:label "float" ;
+    rdfs:isDefinedBy haxe: ;
+    rdfs:subClassOf ast:Node ;
+    haxe:isSupertype true ;
+    haxe:nodeTypeId 180 .
+
+haxe:function_arg a owl:Class ;
+    rdfs:label "function_arg" ;
+    rdfs:isDefinedBy haxe: ;
+    rdfs:subClassOf ast:Node ;
+    haxe:isSupertype true ;
+    haxe:nodeTypeId 176 .
+
+haxe:function_declaration a owl:Class ;
+    rdfs:label "function_declaration" ;
+    rdfs:isDefinedBy haxe: ;
+    rdfs:subClassOf ast:Node ;
+    haxe:isSupertype true ;
+    haxe:nodeTypeId 174 .
+
+haxe:function_type a owl:Class ;
+    rdfs:label "function_type" ;
+    rdfs:isDefinedBy haxe: ;
+    rdfs:subClassOf ast:Node ;
+    haxe:isSupertype true ;
+    haxe:nodeTypeId 144 .
+
+haxe:identifier a owl:Class ;
+    rdfs:label "identifier" ;
+    rdfs:isDefinedBy haxe: ;
+    rdfs:subClassOf ast:Node ;
+    haxe:isSupertype true ;
+    haxe:nodeTypeId 1,
+        142 .
+
+haxe:import_statement a owl:Class ;
+    rdfs:label "import_statement" ;
+    rdfs:isDefinedBy haxe: ;
+    rdfs:subClassOf ast:Node ;
+    haxe:isSupertype true ;
+    haxe:nodeTypeId 125 .
+
+haxe:index a owl:DatatypeProperty ;
+    rdfs:label "index (literal)" ;
+    rdfs:comment "Literal value for index field when it contains a terminal node" ;
+    haxe:fieldId 5 ;
+    haxe:isTerminalField true .
+
+haxe:integer a owl:Class ;
+    rdfs:label "integer" ;
+    rdfs:isDefinedBy haxe: ;
+    rdfs:subClassOf ast:Node ;
+    haxe:isSupertype true ;
+    haxe:nodeTypeId 179 .
+
+haxe:interface_declaration a owl:Class ;
+    rdfs:label "interface_declaration" ;
+    rdfs:isDefinedBy haxe: ;
+    rdfs:subClassOf ast:Node ;
+    haxe:isSupertype true ;
+    haxe:nodeTypeId 172 .
+
+haxe:interface_name a owl:DatatypeProperty ;
+    rdfs:label "interface_name (literal)" ;
+    rdfs:comment "Literal value for interface_name field when it contains a terminal node" ;
+    haxe:fieldId 6 ;
+    haxe:isTerminalField true .
+
+haxe:interpolation a owl:Class ;
+    rdfs:label "interpolation" ;
+    rdfs:isDefinedBy haxe: ;
+    rdfs:subClassOf ast:Node ;
+    haxe:isSupertype true ;
+    haxe:nodeTypeId 190 .
+
+haxe:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+haxe:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+haxe:keyword a owl:Class ;
+    rdfs:label "keyword" ;
+    rdfs:isDefinedBy haxe: ;
+    rdfs:subClassOf ast:Node ;
+    haxe:isSupertype true ;
+    haxe:nodeTypeId 193 .
+
+haxe:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+haxe:literal a owl:DatatypeProperty ;
+    rdfs:label "literal (literal)" ;
+    rdfs:comment "Literal value for literal field when it contains a terminal node" ;
+    haxe:fieldId 7 ;
+    haxe:isTerminalField true .
+
+haxe:map a owl:Class ;
+    rdfs:label "map" ;
+    rdfs:isDefinedBy haxe: ;
+    rdfs:subClassOf ast:Node ;
+    haxe:isSupertype true ;
+    haxe:nodeTypeId 185 .
+
+haxe:member a owl:DatatypeProperty ;
+    rdfs:label "member (literal)" ;
+    rdfs:comment "Literal value for member field when it contains a terminal node" ;
+    haxe:fieldId 8 ;
+    haxe:isTerminalField true .
+
+haxe:member_expression a owl:Class ;
+    rdfs:label "member_expression" ;
+    rdfs:isDefinedBy haxe: ;
+    rdfs:subClassOf ast:Node ;
+    haxe:isSupertype true ;
+    haxe:nodeTypeId 140 .
+
+haxe:metadata a owl:Class ;
+    rdfs:label "metadata" ;
+    rdfs:isDefinedBy haxe: ;
+    rdfs:subClassOf ast:Node ;
+    haxe:isSupertype true ;
+    haxe:nodeTypeId 147 .
+
+haxe:module a owl:Class ;
+    rdfs:label "module" ;
+    rdfs:isDefinedBy haxe: ;
+    rdfs:subClassOf ast:Node ;
+    haxe:isSupertype true ;
+    haxe:nodeTypeId 119 .
+
+haxe:name a owl:DatatypeProperty ;
+    rdfs:label "name (literal)" ;
+    rdfs:comment "Literal value for name field when it contains a terminal node" ;
+    haxe:fieldId 9 ;
+    haxe:isTerminalField true .
+
+haxe:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+haxe:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+haxe:null a owl:Class ;
+    rdfs:label "null" ;
+    rdfs:isDefinedBy haxe: ;
+    rdfs:subClassOf ast:Node ;
+    haxe:isSupertype true ;
+    haxe:nodeTypeId 183 .
+
+haxe:object a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "object",
+        "object (literal)" ;
+    rdfs:comment "Literal value for object field when it contains a terminal node" ;
+    rdfs:isDefinedBy haxe: ;
+    rdfs:subClassOf ast:Node ;
+    haxe:fieldId 10 ;
+    haxe:isSupertype true ;
+    haxe:isTerminalField true ;
+    haxe:nodeTypeId 186 .
+
+haxe:operator a owl:Class ;
+    rdfs:label "operator" ;
+    rdfs:isDefinedBy haxe: ;
+    rdfs:subClassOf ast:Node ;
+    haxe:isSupertype true ;
+    haxe:nodeTypeId 153 .
+
+haxe:package_name a owl:Class ;
+    rdfs:label "package_name" ;
+    rdfs:isDefinedBy haxe: ;
+    rdfs:subClassOf ast:Node ;
+    haxe:isSupertype true ;
+    haxe:nodeTypeId 122 .
+
+haxe:package_statement a owl:Class ;
+    rdfs:label "package_statement" ;
+    rdfs:isDefinedBy haxe: ;
+    rdfs:subClassOf ast:Node ;
+    haxe:isSupertype true ;
+    haxe:nodeTypeId 121 .
+
+haxe:pair a owl:Class ;
+    rdfs:label "pair" ;
+    rdfs:isDefinedBy haxe: ;
+    rdfs:subClassOf ast:Node ;
+    haxe:isSupertype true ;
+    haxe:nodeTypeId 188,
+        189 .
+
+haxe:preprocessor_statement a owl:Class ;
+    rdfs:label "preprocessor_statement" ;
+    rdfs:isDefinedBy haxe: ;
+    rdfs:subClassOf ast:Node ;
+    haxe:isSupertype true ;
+    haxe:nodeTypeId 120 .
+
+haxe:range_expression a owl:Class ;
+    rdfs:label "range_expression" ;
+    rdfs:isDefinedBy haxe: ;
+    rdfs:subClassOf ast:Node ;
+    haxe:isSupertype true ;
+    haxe:nodeTypeId 138 .
+
+haxe:reserved_keyword a owl:Class ;
+    rdfs:label "reserved_keyword" ;
+    rdfs:isDefinedBy haxe: ;
+    rdfs:subClassOf ast:Node ;
+    haxe:isSupertype true ;
+    haxe:nodeTypeId 194 .
+
+haxe:runtime_type_check_expression a owl:Class ;
+    rdfs:label "runtime_type_check_expression" ;
+    rdfs:isDefinedBy haxe: ;
+    rdfs:subClassOf ast:Node ;
+    haxe:isSupertype true ;
+    haxe:nodeTypeId 130 .
+
+haxe:string a owl:Class ;
+    rdfs:label "string" ;
+    rdfs:isDefinedBy haxe: ;
+    rdfs:subClassOf ast:Node ;
+    haxe:isSupertype true ;
+    haxe:nodeTypeId 182 .
+
+haxe:subscript_expression a owl:Class ;
+    rdfs:label "subscript_expression" ;
+    rdfs:isDefinedBy haxe: ;
+    rdfs:subClassOf ast:Node ;
+    haxe:isSupertype true ;
+    haxe:nodeTypeId 139 .
+
+haxe:super_class_name a owl:DatatypeProperty ;
+    rdfs:label "super_class_name (literal)" ;
+    rdfs:comment "Literal value for super_class_name field when it contains a terminal node" ;
+    haxe:fieldId 12 ;
+    haxe:isTerminalField true .
+
+haxe:switch_expression a owl:Class ;
+    rdfs:label "switch_expression" ;
+    rdfs:isDefinedBy haxe: ;
+    rdfs:subClassOf ast:Node ;
+    haxe:isSupertype true ;
+    haxe:nodeTypeId 131 .
+
+haxe:throw_statement a owl:Class ;
+    rdfs:label "throw_statement" ;
+    rdfs:isDefinedBy haxe: ;
+    rdfs:subClassOf ast:Node ;
+    haxe:isSupertype true ;
+    haxe:nodeTypeId 127 .
+
+haxe:type a owl:Class ;
+    rdfs:label "type" ;
+    rdfs:isDefinedBy haxe: ;
+    rdfs:subClassOf ast:Node ;
+    haxe:isSupertype true ;
+    haxe:nodeTypeId 145,
+        187 .
+
+haxe:type_name a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "type_name",
+        "type_name (literal)" ;
+    rdfs:comment "Literal value for type_name field when it contains a terminal node" ;
+    rdfs:isDefinedBy haxe: ;
+    rdfs:subClassOf ast:Node ;
+    haxe:fieldId 14 ;
+    haxe:isSupertype true ;
+    haxe:isTerminalField true ;
+    haxe:nodeTypeId 123 .
+
+haxe:type_params a owl:Class ;
+    rdfs:label "type_params" ;
+    rdfs:isDefinedBy haxe: ;
+    rdfs:subClassOf ast:Node ;
+    haxe:isSupertype true ;
+    haxe:nodeTypeId 169 .
+
+haxe:type_trace_expression a owl:Class ;
+    rdfs:label "type_trace_expression" ;
+    rdfs:isDefinedBy haxe: ;
+    rdfs:subClassOf ast:Node ;
+    haxe:isSupertype true ;
+    haxe:nodeTypeId 136 .
+
+haxe:typedef_declaration a owl:Class ;
+    rdfs:label "typedef_declaration" ;
+    rdfs:isDefinedBy haxe: ;
+    rdfs:subClassOf ast:Node ;
+    haxe:isSupertype true ;
+    haxe:nodeTypeId 173 .
+
+haxe:using_statement a owl:Class ;
+    rdfs:label "using_statement" ;
+    rdfs:isDefinedBy haxe: ;
+    rdfs:subClassOf ast:Node ;
+    haxe:isSupertype true ;
+    haxe:nodeTypeId 126 .
+
+haxe:variable_declaration a owl:Class ;
+    rdfs:label "variable_declaration" ;
+    rdfs:isDefinedBy haxe: ;
+    rdfs:subClassOf ast:Node ;
+    haxe:isSupertype true ;
+    haxe:nodeTypeId 177 .
+
+haxe: a owl:Ontology ;
+    rdfs:label "Haxe Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for haxe" ;
+    owl:versionInfo "v0.25" ;
+    haxe:abiVersion 14 ;
+    haxe:fieldCount 14 ;
+    haxe:languageName "None" ;
+    haxe:nodeKindCount 220 .
+

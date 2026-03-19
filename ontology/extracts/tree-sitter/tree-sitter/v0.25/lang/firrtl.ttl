@@ -1,0 +1,450 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix firrtl: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/firrtl/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+firrtl:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+firrtl:attach a owl:Class ;
+    rdfs:label "attach" ;
+    rdfs:isDefinedBy firrtl: ;
+    rdfs:subClassOf ast:Node ;
+    firrtl:isSupertype true ;
+    firrtl:nodeTypeId 162 .
+
+firrtl:circuit a owl:Class ;
+    rdfs:label "circuit" ;
+    rdfs:isDefinedBy firrtl: ;
+    rdfs:subClassOf ast:Node ;
+    firrtl:isSupertype true ;
+    firrtl:nodeTypeId 130 .
+
+firrtl:cmem a owl:Class ;
+    rdfs:label "cmem" ;
+    rdfs:isDefinedBy firrtl: ;
+    rdfs:subClassOf ast:Node ;
+    firrtl:isSupertype true ;
+    firrtl:nodeTypeId 144 .
+
+firrtl:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy firrtl: ;
+    rdfs:subClassOf ast:Node ;
+    firrtl:isSupertype true ;
+    firrtl:nodeTypeId 125 .
+
+firrtl:conditionally_valid a owl:Class ;
+    rdfs:label "conditionally_valid" ;
+    rdfs:isDefinedBy firrtl: ;
+    rdfs:subClassOf ast:Node ;
+    firrtl:isSupertype true ;
+    firrtl:nodeTypeId 172 .
+
+firrtl:connection a owl:Class ;
+    rdfs:label "connection" ;
+    rdfs:isDefinedBy firrtl: ;
+    rdfs:subClassOf ast:Node ;
+    firrtl:isSupertype true ;
+    firrtl:nodeTypeId 151 .
+
+firrtl:defname a owl:Class ;
+    rdfs:label "defname" ;
+    rdfs:isDefinedBy firrtl: ;
+    rdfs:subClassOf ast:Node ;
+    firrtl:isSupertype true ;
+    firrtl:nodeTypeId 137 .
+
+firrtl:dir a owl:Class ;
+    rdfs:label "dir" ;
+    rdfs:isDefinedBy firrtl: ;
+    rdfs:subClassOf ast:Node ;
+    firrtl:isSupertype true ;
+    firrtl:nodeTypeId 133 .
+
+firrtl:double a owl:Class ;
+    rdfs:label "double" ;
+    rdfs:isDefinedBy firrtl: ;
+    rdfs:subClassOf ast:Node ;
+    firrtl:isSupertype true ;
+    firrtl:nodeTypeId 117 .
+
+firrtl:else a owl:Class ;
+    rdfs:label "else" ;
+    rdfs:isDefinedBy firrtl: ;
+    rdfs:subClassOf ast:Node ;
+    firrtl:isSupertype true ;
+    firrtl:nodeTypeId 157 .
+
+firrtl:escape_sequence a owl:Class ;
+    rdfs:label "escape_sequence" ;
+    rdfs:isDefinedBy firrtl: ;
+    rdfs:subClassOf ast:Node ;
+    firrtl:isSupertype true ;
+    firrtl:nodeTypeId 123 .
+
+firrtl:field a owl:Class ;
+    rdfs:label "field" ;
+    rdfs:isDefinedBy firrtl: ;
+    rdfs:subClassOf ast:Node ;
+    firrtl:isSupertype true ;
+    firrtl:nodeTypeId 136 .
+
+firrtl:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+firrtl:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+firrtl:field_id a owl:Class ;
+    rdfs:label "field_id" ;
+    rdfs:isDefinedBy firrtl: ;
+    rdfs:subClassOf ast:Node ;
+    firrtl:isSupertype true ;
+    firrtl:nodeTypeId 174 .
+
+firrtl:identifier a owl:Class ;
+    rdfs:label "identifier" ;
+    rdfs:isDefinedBy firrtl: ;
+    rdfs:subClassOf ast:Node ;
+    firrtl:isSupertype true ;
+    firrtl:nodeTypeId 1 .
+
+firrtl:info a owl:Class ;
+    rdfs:label "info" ;
+    rdfs:isDefinedBy firrtl: ;
+    rdfs:subClassOf ast:Node ;
+    firrtl:isSupertype true ;
+    firrtl:nodeTypeId 62 .
+
+firrtl:inst a owl:Class ;
+    rdfs:label "inst" ;
+    rdfs:isDefinedBy firrtl: ;
+    rdfs:subClassOf ast:Node ;
+    firrtl:isSupertype true ;
+    firrtl:nodeTypeId 149 .
+
+firrtl:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+firrtl:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+firrtl:is_invalid a owl:Class ;
+    rdfs:label "is_invalid" ;
+    rdfs:isDefinedBy firrtl: ;
+    rdfs:subClassOf ast:Node ;
+    firrtl:isSupertype true ;
+    firrtl:nodeTypeId 153 .
+
+firrtl:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+firrtl:litType a owl:Class ;
+    rdfs:label "litType" ;
+    rdfs:isDefinedBy firrtl: ;
+    rdfs:subClassOf ast:Node ;
+    firrtl:isSupertype true ;
+    firrtl:nodeTypeId 165 .
+
+firrtl:literal a owl:Class ;
+    rdfs:label "literal" ;
+    rdfs:isDefinedBy firrtl: ;
+    rdfs:subClassOf ast:Node ;
+    firrtl:isSupertype true ;
+    firrtl:nodeTypeId 167 .
+
+firrtl:mdir a owl:Class ;
+    rdfs:label "mdir" ;
+    rdfs:isDefinedBy firrtl: ;
+    rdfs:subClassOf ast:Node ;
+    firrtl:isSupertype true ;
+    firrtl:nodeTypeId 163 .
+
+firrtl:memory a owl:Class ;
+    rdfs:label "memory" ;
+    rdfs:isDefinedBy firrtl: ;
+    rdfs:subClassOf ast:Node ;
+    firrtl:isSupertype true ;
+    firrtl:nodeTypeId 147 .
+
+firrtl:memory_field a owl:Class ;
+    rdfs:label "memory_field" ;
+    rdfs:isDefinedBy firrtl: ;
+    rdfs:subClassOf ast:Node ;
+    firrtl:isSupertype true ;
+    firrtl:nodeTypeId 154 .
+
+firrtl:module a owl:Class ;
+    rdfs:label "module" ;
+    rdfs:isDefinedBy firrtl: ;
+    rdfs:subClassOf ast:Node ;
+    firrtl:isSupertype true ;
+    firrtl:nodeTypeId 131 .
+
+firrtl:mux a owl:Class ;
+    rdfs:label "mux" ;
+    rdfs:isDefinedBy firrtl: ;
+    rdfs:subClassOf ast:Node ;
+    firrtl:isSupertype true ;
+    firrtl:nodeTypeId 171 .
+
+firrtl:node a owl:Class ;
+    rdfs:label "node" ;
+    rdfs:isDefinedBy firrtl: ;
+    rdfs:subClassOf ast:Node ;
+    firrtl:isSupertype true ;
+    firrtl:nodeTypeId 150 .
+
+firrtl:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+firrtl:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+firrtl:number a owl:Class ;
+    rdfs:label "number" ;
+    rdfs:isDefinedBy firrtl: ;
+    rdfs:subClassOf ast:Node ;
+    firrtl:isSupertype true ;
+    firrtl:nodeTypeId 177,
+        178 .
+
+firrtl:number_str a owl:Class ;
+    rdfs:label "number_str" ;
+    rdfs:isDefinedBy firrtl: ;
+    rdfs:subClassOf ast:Node ;
+    firrtl:isSupertype true ;
+    firrtl:nodeTypeId 116 .
+
+firrtl:parameter a owl:Class ;
+    rdfs:label "parameter" ;
+    rdfs:isDefinedBy firrtl: ;
+    rdfs:subClassOf ast:Node ;
+    firrtl:isSupertype true ;
+    firrtl:nodeTypeId 138 .
+
+firrtl:partial_connection a owl:Class ;
+    rdfs:label "partial_connection" ;
+    rdfs:isDefinedBy firrtl: ;
+    rdfs:subClassOf ast:Node ;
+    firrtl:isSupertype true ;
+    firrtl:nodeTypeId 152 .
+
+firrtl:port a owl:Class ;
+    rdfs:label "port" ;
+    rdfs:isDefinedBy firrtl: ;
+    rdfs:subClassOf ast:Node ;
+    firrtl:isSupertype true ;
+    firrtl:nodeTypeId 132 .
+
+firrtl:primitive_operation a owl:Class ;
+    rdfs:label "primitive_operation" ;
+    rdfs:isDefinedBy firrtl: ;
+    rdfs:subClassOf ast:Node ;
+    firrtl:isSupertype true ;
+    firrtl:nodeTypeId 173 .
+
+firrtl:primop a owl:Class ;
+    rdfs:label "primop" ;
+    rdfs:isDefinedBy firrtl: ;
+    rdfs:subClassOf ast:Node ;
+    firrtl:isSupertype true ;
+    firrtl:nodeTypeId 175 .
+
+firrtl:printf a owl:Class ;
+    rdfs:label "printf" ;
+    rdfs:isDefinedBy firrtl: ;
+    rdfs:subClassOf ast:Node ;
+    firrtl:isSupertype true ;
+    firrtl:nodeTypeId 159 .
+
+firrtl:qualifier a owl:Class ;
+    rdfs:label "qualifier" ;
+    rdfs:isDefinedBy firrtl: ;
+    rdfs:subClassOf ast:Node ;
+    firrtl:isSupertype true ;
+    firrtl:nodeTypeId 134 .
+
+firrtl:raw_string a owl:Class ;
+    rdfs:label "raw_string" ;
+    rdfs:isDefinedBy firrtl: ;
+    rdfs:subClassOf ast:Node ;
+    firrtl:isSupertype true ;
+    firrtl:nodeTypeId 180 .
+
+firrtl:rdwr a owl:Class ;
+    rdfs:label "rdwr" ;
+    rdfs:isDefinedBy firrtl: ;
+    rdfs:subClassOf ast:Node ;
+    firrtl:isSupertype true ;
+    firrtl:nodeTypeId 148 .
+
+firrtl:register a owl:Class ;
+    rdfs:label "register" ;
+    rdfs:isDefinedBy firrtl: ;
+    rdfs:subClassOf ast:Node ;
+    firrtl:isSupertype true ;
+    firrtl:nodeTypeId 146 .
+
+firrtl:relaxed_identifier a owl:Class ;
+    rdfs:label "relaxed_identifier" ;
+    rdfs:isDefinedBy firrtl: ;
+    rdfs:subClassOf ast:Node ;
+    firrtl:isSupertype true ;
+    firrtl:nodeTypeId 124 .
+
+firrtl:reset a owl:Class ;
+    rdfs:label "reset" ;
+    rdfs:isDefinedBy firrtl: ;
+    rdfs:subClassOf ast:Node ;
+    firrtl:isSupertype true ;
+    firrtl:nodeTypeId 140 .
+
+firrtl:reset_block a owl:Class ;
+    rdfs:label "reset_block" ;
+    rdfs:isDefinedBy firrtl: ;
+    rdfs:subClassOf ast:Node ;
+    firrtl:isSupertype true ;
+    firrtl:nodeTypeId 141 .
+
+firrtl:ruw a owl:Class ;
+    rdfs:label "ruw" ;
+    rdfs:isDefinedBy firrtl: ;
+    rdfs:subClassOf ast:Node ;
+    firrtl:isSupertype true ;
+    firrtl:nodeTypeId 164 .
+
+firrtl:skip a owl:Class ;
+    rdfs:label "skip" ;
+    rdfs:isDefinedBy firrtl: ;
+    rdfs:subClassOf ast:Node ;
+    firrtl:isSupertype true ;
+    firrtl:nodeTypeId 161 .
+
+firrtl:smem a owl:Class ;
+    rdfs:label "smem" ;
+    rdfs:isDefinedBy firrtl: ;
+    rdfs:subClassOf ast:Node ;
+    firrtl:isSupertype true ;
+    firrtl:nodeTypeId 145 .
+
+firrtl:source_file a owl:Class ;
+    rdfs:label "source_file" ;
+    rdfs:isDefinedBy firrtl: ;
+    rdfs:subClassOf ast:Node ;
+    firrtl:isSupertype true ;
+    firrtl:nodeTypeId 129 .
+
+firrtl:stop a owl:Class ;
+    rdfs:label "stop" ;
+    rdfs:isDefinedBy firrtl: ;
+    rdfs:subClassOf ast:Node ;
+    firrtl:isSupertype true ;
+    firrtl:nodeTypeId 158 .
+
+firrtl:string a owl:Class ;
+    rdfs:label "string" ;
+    rdfs:isDefinedBy firrtl: ;
+    rdfs:subClassOf ast:Node ;
+    firrtl:isSupertype true ;
+    firrtl:nodeTypeId 179 .
+
+firrtl:string_content a owl:Class ;
+    rdfs:label "string_content" ;
+    rdfs:isDefinedBy firrtl: ;
+    rdfs:subClassOf ast:Node ;
+    firrtl:isSupertype true ;
+    firrtl:nodeTypeId 120,
+        121 .
+
+firrtl:sub_access a owl:Class ;
+    rdfs:label "sub_access" ;
+    rdfs:isDefinedBy firrtl: ;
+    rdfs:subClassOf ast:Node ;
+    firrtl:isSupertype true ;
+    firrtl:nodeTypeId 170 .
+
+firrtl:sub_field a owl:Class ;
+    rdfs:label "sub_field" ;
+    rdfs:isDefinedBy firrtl: ;
+    rdfs:subClassOf ast:Node ;
+    firrtl:isSupertype true ;
+    firrtl:nodeTypeId 168 .
+
+firrtl:sub_index a owl:Class ;
+    rdfs:label "sub_index" ;
+    rdfs:isDefinedBy firrtl: ;
+    rdfs:subClassOf ast:Node ;
+    firrtl:isSupertype true ;
+    firrtl:nodeTypeId 169 .
+
+firrtl:suite a owl:Class ;
+    rdfs:label "suite" ;
+    rdfs:isDefinedBy firrtl: ;
+    rdfs:subClassOf ast:Node ;
+    firrtl:isSupertype true ;
+    firrtl:nodeTypeId 155 .
+
+firrtl:type a owl:Class ;
+    rdfs:label "type" ;
+    rdfs:isDefinedBy firrtl: ;
+    rdfs:subClassOf ast:Node ;
+    firrtl:isSupertype true ;
+    firrtl:nodeTypeId 135 .
+
+firrtl:uint a owl:Class ;
+    rdfs:label "uint" ;
+    rdfs:isDefinedBy firrtl: ;
+    rdfs:subClassOf ast:Node ;
+    firrtl:isSupertype true ;
+    firrtl:nodeTypeId 176 .
+
+firrtl:verif a owl:Class ;
+    rdfs:label "verif" ;
+    rdfs:isDefinedBy firrtl: ;
+    rdfs:subClassOf ast:Node ;
+    firrtl:isSupertype true ;
+    firrtl:nodeTypeId 160 .
+
+firrtl:when a owl:Class ;
+    rdfs:label "when" ;
+    rdfs:isDefinedBy firrtl: ;
+    rdfs:subClassOf ast:Node ;
+    firrtl:isSupertype true ;
+    firrtl:nodeTypeId 156 .
+
+firrtl:wire a owl:Class ;
+    rdfs:label "wire" ;
+    rdfs:isDefinedBy firrtl: ;
+    rdfs:subClassOf ast:Node ;
+    firrtl:isSupertype true ;
+    firrtl:nodeTypeId 143 .
+
+firrtl: a owl:Ontology ;
+    rdfs:label "Firrtl Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for firrtl" ;
+    owl:versionInfo "v0.25" ;
+    firrtl:abiVersion 14 ;
+    firrtl:fieldCount 0 ;
+    firrtl:languageName "None" ;
+    firrtl:nodeKindCount 194 .
+

@@ -1,0 +1,401 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix twig: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/twig/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+twig:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+twig:argument a owl:Class ;
+    rdfs:label "argument" ;
+    rdfs:isDefinedBy twig: ;
+    rdfs:subClassOf ast:Node ;
+    twig:isSupertype true ;
+    twig:nodeTypeId 118,
+        122 .
+
+twig:argument_name a owl:Class ;
+    rdfs:label "argument_name" ;
+    rdfs:isDefinedBy twig: ;
+    rdfs:subClassOf ast:Node ;
+    twig:isSupertype true ;
+    twig:nodeTypeId 119 .
+
+twig:argument_value a owl:Class ;
+    rdfs:label "argument_value" ;
+    rdfs:isDefinedBy twig: ;
+    rdfs:subClassOf ast:Node ;
+    twig:isSupertype true ;
+    twig:nodeTypeId 147 .
+
+twig:arguments a owl:Class ;
+    rdfs:label "arguments" ;
+    rdfs:isDefinedBy twig: ;
+    rdfs:subClassOf ast:Node ;
+    twig:isSupertype true ;
+    twig:nodeTypeId 117,
+        121 .
+
+twig:array a owl:Class ;
+    rdfs:label "array" ;
+    rdfs:isDefinedBy twig: ;
+    rdfs:subClassOf ast:Node ;
+    twig:isSupertype true ;
+    twig:nodeTypeId 112 .
+
+twig:arrow_function a owl:Class ;
+    rdfs:label "arrow_function" ;
+    rdfs:isDefinedBy twig: ;
+    rdfs:subClassOf ast:Node ;
+    twig:isSupertype true ;
+    twig:nodeTypeId 123 .
+
+twig:assignment_statement a owl:Class ;
+    rdfs:label "assignment_statement" ;
+    rdfs:isDefinedBy twig: ;
+    rdfs:subClassOf ast:Node ;
+    twig:isSupertype true ;
+    twig:nodeTypeId 93 .
+
+twig:attribute a owl:Class ;
+    rdfs:label "attribute" ;
+    rdfs:isDefinedBy twig: ;
+    rdfs:subClassOf ast:Node ;
+    twig:isSupertype true ;
+    twig:nodeTypeId 24,
+        25 .
+
+twig:binary_expression a owl:Class ;
+    rdfs:label "binary_expression" ;
+    rdfs:isDefinedBy twig: ;
+    rdfs:subClassOf ast:Node ;
+    twig:isSupertype true ;
+    twig:nodeTypeId 124 .
+
+twig:binary_operator a owl:Class ;
+    rdfs:label "binary_operator" ;
+    rdfs:isDefinedBy twig: ;
+    rdfs:subClassOf ast:Node ;
+    twig:isSupertype true ;
+    twig:nodeTypeId 126 .
+
+twig:boolean a owl:Class ;
+    rdfs:label "boolean" ;
+    rdfs:isDefinedBy twig: ;
+    rdfs:subClassOf ast:Node ;
+    twig:isSupertype true ;
+    twig:nodeTypeId 109 .
+
+twig:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy twig: ;
+    rdfs:subClassOf ast:Node ;
+    twig:isSupertype true ;
+    twig:nodeTypeId 90 .
+
+twig:conditional a owl:Class ;
+    rdfs:label "conditional" ;
+    rdfs:isDefinedBy twig: ;
+    rdfs:subClassOf ast:Node ;
+    twig:isSupertype true ;
+    twig:nodeTypeId 16,
+        17,
+        18,
+        19 .
+
+twig:content a owl:Class ;
+    rdfs:label "content" ;
+    rdfs:isDefinedBy twig: ;
+    rdfs:subClassOf ast:Node ;
+    twig:isSupertype true ;
+    twig:nodeTypeId 89 .
+
+twig:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+twig:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+twig:filter a owl:Class ;
+    rdfs:label "filter" ;
+    rdfs:isDefinedBy twig: ;
+    rdfs:subClassOf ast:Node ;
+    twig:isSupertype true ;
+    twig:nodeTypeId 120 .
+
+twig:filter_identifier a owl:Class ;
+    rdfs:label "filter_identifier" ;
+    rdfs:isDefinedBy twig: ;
+    rdfs:subClassOf ast:Node ;
+    twig:isSupertype true ;
+    twig:nodeTypeId 148 .
+
+twig:for_statement a owl:Class ;
+    rdfs:label "for_statement" ;
+    rdfs:isDefinedBy twig: ;
+    rdfs:subClassOf ast:Node ;
+    twig:isSupertype true ;
+    twig:nodeTypeId 94 .
+
+twig:from_statement a owl:Class ;
+    rdfs:label "from_statement" ;
+    rdfs:isDefinedBy twig: ;
+    rdfs:subClassOf ast:Node ;
+    twig:isSupertype true ;
+    twig:nodeTypeId 103 .
+
+twig:function_call a owl:Class ;
+    rdfs:label "function_call" ;
+    rdfs:isDefinedBy twig: ;
+    rdfs:subClassOf ast:Node ;
+    twig:isSupertype true ;
+    twig:nodeTypeId 116 .
+
+twig:function_identifier a owl:Class ;
+    rdfs:label "function_identifier" ;
+    rdfs:isDefinedBy twig: ;
+    rdfs:subClassOf ast:Node ;
+    twig:isSupertype true ;
+    twig:nodeTypeId 149 .
+
+twig:hash a owl:Class ;
+    rdfs:label "hash" ;
+    rdfs:isDefinedBy twig: ;
+    rdfs:subClassOf ast:Node ;
+    twig:isSupertype true ;
+    twig:nodeTypeId 113 .
+
+twig:hash_key a owl:Class ;
+    rdfs:label "hash_key" ;
+    rdfs:isDefinedBy twig: ;
+    rdfs:subClassOf ast:Node ;
+    twig:isSupertype true ;
+    twig:nodeTypeId 115 .
+
+twig:hash_value a owl:Class ;
+    rdfs:label "hash_value" ;
+    rdfs:isDefinedBy twig: ;
+    rdfs:subClassOf ast:Node ;
+    twig:isSupertype true ;
+    twig:nodeTypeId 150 .
+
+twig:if_statement a owl:Class ;
+    rdfs:label "if_statement" ;
+    rdfs:isDefinedBy twig: ;
+    rdfs:subClassOf ast:Node ;
+    twig:isSupertype true ;
+    twig:nodeTypeId 95 .
+
+twig:import_statement a owl:Class ;
+    rdfs:label "import_statement" ;
+    rdfs:isDefinedBy twig: ;
+    rdfs:subClassOf ast:Node ;
+    twig:isSupertype true ;
+    twig:nodeTypeId 102 .
+
+twig:interpolated_string a owl:Class ;
+    rdfs:label "interpolated_string" ;
+    rdfs:isDefinedBy twig: ;
+    rdfs:subClassOf ast:Node ;
+    twig:isSupertype true ;
+    twig:nodeTypeId 111 .
+
+twig:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+twig:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+twig:keyword a owl:Class ;
+    rdfs:label "keyword" ;
+    rdfs:isDefinedBy twig: ;
+    rdfs:subClassOf ast:Node ;
+    twig:isSupertype true ;
+    twig:nodeTypeId 11,
+        29,
+        30 .
+
+twig:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+twig:macro_statement a owl:Class ;
+    rdfs:label "macro_statement" ;
+    rdfs:isDefinedBy twig: ;
+    rdfs:subClassOf ast:Node ;
+    twig:isSupertype true ;
+    twig:nodeTypeId 99 .
+
+twig:method a owl:Class ;
+    rdfs:label "method" ;
+    rdfs:isDefinedBy twig: ;
+    rdfs:subClassOf ast:Node ;
+    twig:isSupertype true ;
+    twig:nodeTypeId 151 .
+
+twig:name a owl:Class ;
+    rdfs:label "name" ;
+    rdfs:isDefinedBy twig: ;
+    rdfs:subClassOf ast:Node ;
+    twig:isSupertype true ;
+    twig:nodeTypeId 152 .
+
+twig:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+twig:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+twig:null a owl:Class ;
+    rdfs:label "null" ;
+    rdfs:isDefinedBy twig: ;
+    rdfs:subClassOf ast:Node ;
+    twig:isSupertype true ;
+    twig:nodeTypeId 46 .
+
+twig:number a owl:Class ;
+    rdfs:label "number" ;
+    rdfs:isDefinedBy twig: ;
+    rdfs:subClassOf ast:Node ;
+    twig:isSupertype true ;
+    twig:nodeTypeId 54 .
+
+twig:operator a owl:Class ;
+    rdfs:label "operator" ;
+    rdfs:isDefinedBy twig: ;
+    rdfs:subClassOf ast:Node ;
+    twig:isSupertype true ;
+    twig:nodeTypeId 128,
+        130 .
+
+twig:output_directive a owl:Class ;
+    rdfs:label "output_directive" ;
+    rdfs:isDefinedBy twig: ;
+    rdfs:subClassOf ast:Node ;
+    twig:isSupertype true ;
+    twig:nodeTypeId 104 .
+
+twig:parameter a owl:Class ;
+    rdfs:label "parameter" ;
+    rdfs:isDefinedBy twig: ;
+    rdfs:subClassOf ast:Node ;
+    twig:isSupertype true ;
+    twig:nodeTypeId 101 .
+
+twig:parameters a owl:Class ;
+    rdfs:label "parameters" ;
+    rdfs:isDefinedBy twig: ;
+    rdfs:subClassOf ast:Node ;
+    twig:isSupertype true ;
+    twig:nodeTypeId 100 .
+
+twig:repeat a owl:Class ;
+    rdfs:label "repeat" ;
+    rdfs:isDefinedBy twig: ;
+    rdfs:subClassOf ast:Node ;
+    twig:isSupertype true ;
+    twig:nodeTypeId 14,
+        20 .
+
+twig:statement_directive a owl:Class ;
+    rdfs:label "statement_directive" ;
+    rdfs:isDefinedBy twig: ;
+    rdfs:subClassOf ast:Node ;
+    twig:isSupertype true ;
+    twig:nodeTypeId 91 .
+
+twig:string a owl:Class ;
+    rdfs:label "string" ;
+    rdfs:isDefinedBy twig: ;
+    rdfs:subClassOf ast:Node ;
+    twig:isSupertype true ;
+    twig:nodeTypeId 47 .
+
+twig:tag a owl:Class ;
+    rdfs:label "tag" ;
+    rdfs:isDefinedBy twig: ;
+    rdfs:subClassOf ast:Node ;
+    twig:isSupertype true ;
+    twig:nodeTypeId 21,
+        22,
+        23,
+        26,
+        31 .
+
+twig:tag_statement a owl:Class ;
+    rdfs:label "tag_statement" ;
+    rdfs:isDefinedBy twig: ;
+    rdfs:subClassOf ast:Node ;
+    twig:isSupertype true ;
+    twig:nodeTypeId 96,
+        97,
+        98 .
+
+twig:template a owl:Class ;
+    rdfs:label "template" ;
+    rdfs:isDefinedBy twig: ;
+    rdfs:subClassOf ast:Node ;
+    twig:isSupertype true ;
+    twig:nodeTypeId 88 .
+
+twig:ternary_expression a owl:Class ;
+    rdfs:label "ternary_expression" ;
+    rdfs:isDefinedBy twig: ;
+    rdfs:subClassOf ast:Node ;
+    twig:isSupertype true ;
+    twig:nodeTypeId 129 .
+
+twig:test a owl:Class ;
+    rdfs:label "test" ;
+    rdfs:isDefinedBy twig: ;
+    rdfs:subClassOf ast:Node ;
+    twig:isSupertype true ;
+    twig:nodeTypeId 153 .
+
+twig:test_expression a owl:Class ;
+    rdfs:label "test_expression" ;
+    rdfs:isDefinedBy twig: ;
+    rdfs:subClassOf ast:Node ;
+    twig:isSupertype true ;
+    twig:nodeTypeId 125 .
+
+twig:unary_expression a owl:Class ;
+    rdfs:label "unary_expression" ;
+    rdfs:isDefinedBy twig: ;
+    rdfs:subClassOf ast:Node ;
+    twig:isSupertype true ;
+    twig:nodeTypeId 127 .
+
+twig:variable a owl:Class ;
+    rdfs:label "variable" ;
+    rdfs:isDefinedBy twig: ;
+    rdfs:subClassOf ast:Node ;
+    twig:isSupertype true ;
+    twig:nodeTypeId 106 .
+
+twig: a owl:Ontology ;
+    rdfs:label "Twig Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for twig" ;
+    owl:versionInfo "v0.25" ;
+    twig:abiVersion 14 ;
+    twig:fieldCount 0 ;
+    twig:languageName "None" ;
+    twig:nodeKindCount 154 .
+

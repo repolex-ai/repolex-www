@@ -1,0 +1,4411 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix cobol: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/cobol/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+cobol:ADVANCING a owl:Class ;
+    rdfs:label "ADVANCING" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 876 .
+
+cobol:AFTER a owl:Class ;
+    rdfs:label "AFTER" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 877 .
+
+cobol:ALL a owl:Class ;
+    rdfs:label "ALL" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 878 .
+
+cobol:ALPHABETIC a owl:Class ;
+    rdfs:label "ALPHABETIC" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 879 .
+
+cobol:ALPHABETIC_LOWER a owl:Class ;
+    rdfs:label "ALPHABETIC_LOWER" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 880 .
+
+cobol:ALPHABETIC_UPPER a owl:Class ;
+    rdfs:label "ALPHABETIC_UPPER" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 881 .
+
+cobol:ALPHANUMERIC a owl:Class ;
+    rdfs:label "ALPHANUMERIC" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 882 .
+
+cobol:ALPHANUMERIC_EDITED a owl:Class ;
+    rdfs:label "ALPHANUMERIC_EDITED" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 883 .
+
+cobol:ALSO a owl:Class ;
+    rdfs:label "ALSO" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 884 .
+
+cobol:AND a owl:Class ;
+    rdfs:label "AND" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 885 .
+
+cobol:AND_EQ a owl:Class ;
+    rdfs:label "AND_EQ" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 509 .
+
+cobol:AND_GE a owl:Class ;
+    rdfs:label "AND_GE" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 508 .
+
+cobol:AND_GT a owl:Class ;
+    rdfs:label "AND_GT" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 507 .
+
+cobol:AND_LE a owl:Class ;
+    rdfs:label "AND_LE" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 506 .
+
+cobol:AND_LT a owl:Class ;
+    rdfs:label "AND_LT" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 505 .
+
+cobol:AND_NE a owl:Class ;
+    rdfs:label "AND_NE" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 510 .
+
+cobol:ANY a owl:Class ;
+    rdfs:label "ANY" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 886 .
+
+cobol:ARGUMENT_NUMBER a owl:Class ;
+    rdfs:label "ARGUMENT_NUMBER" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 887 .
+
+cobol:ARGUMENT_VALUE a owl:Class ;
+    rdfs:label "ARGUMENT_VALUE" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 888 .
+
+cobol:ASCENDING a owl:Class ;
+    rdfs:label "ASCENDING" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 889 .
+
+cobol:AUTO a owl:Class ;
+    rdfs:label "AUTO" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 890 .
+
+cobol:AUTOMATIC a owl:Class ;
+    rdfs:label "AUTOMATIC" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 891 .
+
+cobol:BACKGROUND_COLOR a owl:Class ;
+    rdfs:label "BACKGROUND_COLOR" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 892 .
+
+cobol:BEFORE a owl:Class ;
+    rdfs:label "BEFORE" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 893 .
+
+cobol:BELL a owl:Class ;
+    rdfs:label "BELL" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 894 .
+
+cobol:BINARY a owl:Class ;
+    rdfs:label "BINARY" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 895 .
+
+cobol:BINARY_CHAR a owl:Class ;
+    rdfs:label "BINARY_CHAR" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 897 .
+
+cobol:BINARY_C_LONG a owl:Class ;
+    rdfs:label "BINARY_C_LONG" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 896 .
+
+cobol:BINARY_DOUBLE a owl:Class ;
+    rdfs:label "BINARY_DOUBLE" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 898 .
+
+cobol:BINARY_LONG a owl:Class ;
+    rdfs:label "BINARY_LONG" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 899 .
+
+cobol:BINARY_SHORT a owl:Class ;
+    rdfs:label "BINARY_SHORT" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 900 .
+
+cobol:BLANK_LINE a owl:Class ;
+    rdfs:label "BLANK_LINE" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 901 .
+
+cobol:BLANK_SCREEN a owl:Class ;
+    rdfs:label "BLANK_SCREEN" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 902 .
+
+cobol:BLINK a owl:Class ;
+    rdfs:label "BLINK" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 903 .
+
+cobol:BY a owl:Class ;
+    rdfs:label "BY" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 904 .
+
+cobol:CHAINING a owl:Class ;
+    rdfs:label "CHAINING" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 905 .
+
+cobol:CHARACTERS a owl:Class ;
+    rdfs:label "CHARACTERS" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 906 .
+
+cobol:CLASS_NAME a owl:Class ;
+    rdfs:label "CLASS_NAME" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 907 .
+
+cobol:COLUMNS a owl:Class ;
+    rdfs:label "COLUMNS" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 908 .
+
+cobol:COMMAND_LINE a owl:Class ;
+    rdfs:label "COMMAND_LINE" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 909 .
+
+cobol:COMP a owl:Class ;
+    rdfs:label "COMP" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 910 .
+
+cobol:COMPUTATIONAL a owl:Class ;
+    rdfs:label "COMPUTATIONAL" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1089 .
+
+cobol:COMP_1 a owl:Class ;
+    rdfs:label "COMP_1" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 911 .
+
+cobol:COMP_2 a owl:Class ;
+    rdfs:label "COMP_2" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 912 .
+
+cobol:COMP_3 a owl:Class ;
+    rdfs:label "COMP_3" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 913 .
+
+cobol:COMP_4 a owl:Class ;
+    rdfs:label "COMP_4" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 914 .
+
+cobol:COMP_5 a owl:Class ;
+    rdfs:label "COMP_5" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 915 .
+
+cobol:COMP_X a owl:Class ;
+    rdfs:label "COMP_X" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 916 .
+
+cobol:CONCATENATE_FUNC a owl:Class ;
+    rdfs:label "CONCATENATE_FUNC" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 917 .
+
+cobol:CORRESPONDING a owl:Class ;
+    rdfs:label "CORRESPONDING" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 918 .
+
+cobol:CRT a owl:Class ;
+    rdfs:label "CRT" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 919 .
+
+cobol:CURRENT_DATE_FUNC a owl:Class ;
+    rdfs:label "CURRENT_DATE_FUNC" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 920 .
+
+cobol:CYCLE a owl:Class ;
+    rdfs:label "CYCLE" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 921 .
+
+cobol:DATE a owl:Class ;
+    rdfs:label "DATE" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 922 .
+
+cobol:DAY a owl:Class ;
+    rdfs:label "DAY" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 923 .
+
+cobol:DAY_OF_WEEK a owl:Class ;
+    rdfs:label "DAY_OF_WEEK" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 924 .
+
+cobol:DEFAULT a owl:Class ;
+    rdfs:label "DEFAULT" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 925 .
+
+cobol:DELIMITED a owl:Class ;
+    rdfs:label "DELIMITED" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 926 .
+
+cobol:DESCENDING a owl:Class ;
+    rdfs:label "DESCENDING" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 927 .
+
+cobol:DISK a owl:Class ;
+    rdfs:label "DISK" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 928 .
+
+cobol:DISPLAY a owl:Class ;
+    rdfs:label "DISPLAY" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 929 .
+
+cobol:DOWN a owl:Class ;
+    rdfs:label "DOWN" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 930 .
+
+cobol:DUPLICATES a owl:Class ;
+    rdfs:label "DUPLICATES" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 931 .
+
+cobol:DYNAMIC a owl:Class ;
+    rdfs:label "DYNAMIC" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 932 .
+
+cobol:EBCDIC a owl:Class ;
+    rdfs:label "EBCDIC" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 933 .
+
+cobol:END_ACCEPT a owl:Class ;
+    rdfs:label "END_ACCEPT" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 934 .
+
+cobol:END_ADD a owl:Class ;
+    rdfs:label "END_ADD" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 935 .
+
+cobol:END_CALL a owl:Class ;
+    rdfs:label "END_CALL" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 936 .
+
+cobol:END_COMPUTE a owl:Class ;
+    rdfs:label "END_COMPUTE" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 937 .
+
+cobol:END_DELETE a owl:Class ;
+    rdfs:label "END_DELETE" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 938 .
+
+cobol:END_DISPLAY a owl:Class ;
+    rdfs:label "END_DISPLAY" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 939 .
+
+cobol:END_DIVIDE a owl:Class ;
+    rdfs:label "END_DIVIDE" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 940 .
+
+cobol:END_EVALUATE a owl:Class ;
+    rdfs:label "END_EVALUATE" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 941 .
+
+cobol:END_IF a owl:Class ;
+    rdfs:label "END_IF" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 942 .
+
+cobol:END_MULTIPLY a owl:Class ;
+    rdfs:label "END_MULTIPLY" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 943 .
+
+cobol:END_PERFORM a owl:Class ;
+    rdfs:label "END_PERFORM" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 944 .
+
+cobol:END_READ a owl:Class ;
+    rdfs:label "END_READ" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 945 .
+
+cobol:END_RETURN a owl:Class ;
+    rdfs:label "END_RETURN" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 946 .
+
+cobol:END_REWRITE a owl:Class ;
+    rdfs:label "END_REWRITE" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 947 .
+
+cobol:END_SEARCH a owl:Class ;
+    rdfs:label "END_SEARCH" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 948 .
+
+cobol:END_START a owl:Class ;
+    rdfs:label "END_START" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 949 .
+
+cobol:END_STRING a owl:Class ;
+    rdfs:label "END_STRING" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 950 .
+
+cobol:END_SUBTRACT a owl:Class ;
+    rdfs:label "END_SUBTRACT" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 951 .
+
+cobol:END_UNSTRING a owl:Class ;
+    rdfs:label "END_UNSTRING" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 952 .
+
+cobol:END_WRITE a owl:Class ;
+    rdfs:label "END_WRITE" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 953 .
+
+cobol:ENVIRONMENT a owl:Class ;
+    rdfs:label "ENVIRONMENT" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 954 .
+
+cobol:ENVIRONMENT_VALUE a owl:Class ;
+    rdfs:label "ENVIRONMENT_VALUE" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 955 .
+
+cobol:EOL a owl:Class ;
+    rdfs:label "EOL" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 956 .
+
+cobol:EOS a owl:Class ;
+    rdfs:label "EOS" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 957 .
+
+cobol:ERASE a owl:Class ;
+    rdfs:label "ERASE" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 958 .
+
+cobol:ESCAPE a owl:Class ;
+    rdfs:label "ESCAPE" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 959 .
+
+cobol:EXCLUSIVE a owl:Class ;
+    rdfs:label "EXCLUSIVE" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 960 .
+
+cobol:EXTEND a owl:Class ;
+    rdfs:label "EXTEND" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 961 .
+
+cobol:EXTERNAL a owl:Class ;
+    rdfs:label "EXTERNAL" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 962 .
+
+cobol:FALSE a owl:Class ;
+    rdfs:label "FALSE" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1062 .
+
+cobol:FD a owl:Class ;
+    rdfs:label "FD" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 963 .
+
+cobol:FILE a owl:Class ;
+    rdfs:label "FILE" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1063 .
+
+cobol:FILE_ID a owl:Class ;
+    rdfs:label "FILE_ID" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 964 .
+
+cobol:FILLER a owl:Class ;
+    rdfs:label "FILLER" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 965 .
+
+cobol:FIRST a owl:Class ;
+    rdfs:label "FIRST" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 966 .
+
+cobol:FOREGROUND_COLOR a owl:Class ;
+    rdfs:label "FOREGROUND_COLOR" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 967 .
+
+cobol:FOREVER a owl:Class ;
+    rdfs:label "FOREVER" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 968 .
+
+cobol:FULL a owl:Class ;
+    rdfs:label "FULL" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 969 .
+
+cobol:GLOBAL a owl:Class ;
+    rdfs:label "GLOBAL" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 970 .
+
+cobol:HIGHLIGHT a owl:Class ;
+    rdfs:label "HIGHLIGHT" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 971 .
+
+cobol:HIGH_VALUE a owl:Class ;
+    rdfs:label "HIGH_VALUE" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 972 .
+
+cobol:IGNORE a owl:Class ;
+    rdfs:label "IGNORE" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 973 .
+
+cobol:INDEX a owl:Class ;
+    rdfs:label "INDEX" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 974 .
+
+cobol:INDEXED a owl:Class ;
+    rdfs:label "INDEXED" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 975 .
+
+cobol:INITIALIZED a owl:Class ;
+    rdfs:label "INITIALIZED" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 976 .
+
+cobol:INPUT a owl:Class ;
+    rdfs:label "INPUT" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 977 .
+
+cobol:I_O a owl:Class ;
+    rdfs:label "I_O" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 978 .
+
+cobol:KEY a owl:Class ;
+    rdfs:label "KEY" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 979 .
+
+cobol:LEADING a owl:Class ;
+    rdfs:label "LEADING" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 980 .
+
+cobol:LEFT a owl:Class ;
+    rdfs:label "LEFT" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 981 .
+
+cobol:LENGTH a owl:Class ;
+    rdfs:label "LENGTH" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 982 .
+
+cobol:LINE a owl:Class ;
+    rdfs:label "LINE" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 983 .
+
+cobol:LINES a owl:Class ;
+    rdfs:label "LINES" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 984 .
+
+cobol:LITERAL a owl:Class ;
+    rdfs:label "LITERAL" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 985 .
+
+cobol:LOCALE_DT_FUNC a owl:Class ;
+    rdfs:label "LOCALE_DT_FUNC" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 986 .
+
+cobol:LOCK a owl:Class ;
+    rdfs:label "LOCK" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 987 .
+
+cobol:LOWER_CASE_FUNC a owl:Class ;
+    rdfs:label "LOWER_CASE_FUNC" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 988 .
+
+cobol:LOWLIGHT a owl:Class ;
+    rdfs:label "LOWLIGHT" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 989 .
+
+cobol:LOW_VALUE a owl:Class ;
+    rdfs:label "LOW_VALUE" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 990 .
+
+cobol:MANUAL a owl:Class ;
+    rdfs:label "MANUAL" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 991 .
+
+cobol:MNEMONIC_NAME a owl:Class ;
+    rdfs:label "MNEMONIC_NAME" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 992 .
+
+cobol:NATIONAL a owl:Class ;
+    rdfs:label "NATIONAL" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 993 .
+
+cobol:NATIONAL_EDITED a owl:Class ;
+    rdfs:label "NATIONAL_EDITED" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 994 .
+
+cobol:NATIVE a owl:Class ;
+    rdfs:label "NATIVE" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 995 .
+
+cobol:NEGATIVE a owl:Class ;
+    rdfs:label "NEGATIVE" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 996 .
+
+cobol:NEXT a owl:Class ;
+    rdfs:label "NEXT" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 997 .
+
+cobol:NO a owl:Class ;
+    rdfs:label "NO" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 998 .
+
+cobol:NOT a owl:Class ;
+    rdfs:label "NOT" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 999 .
+
+cobol:NOT_ALPHABETIC a owl:Class ;
+    rdfs:label "NOT_ALPHABETIC" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 498 .
+
+cobol:NOT_ALPHABETIC_LOWER a owl:Class ;
+    rdfs:label "NOT_ALPHABETIC_LOWER" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 499 .
+
+cobol:NOT_ALPHABETIC_UPPER a owl:Class ;
+    rdfs:label "NOT_ALPHABETIC_UPPER" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 500 .
+
+cobol:NOT_CLASS_NAME a owl:Class ;
+    rdfs:label "NOT_CLASS_NAME" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 501 .
+
+cobol:NOT_NEGATIVE a owl:Class ;
+    rdfs:label "NOT_NEGATIVE" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 503 .
+
+cobol:NOT_NUMERIC a owl:Class ;
+    rdfs:label "NOT_NUMERIC" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 497 .
+
+cobol:NOT_OMITTED a owl:Class ;
+    rdfs:label "NOT_OMITTED" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 496 .
+
+cobol:NOT_POSITIVE a owl:Class ;
+    rdfs:label "NOT_POSITIVE" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 502 .
+
+cobol:NOT_ZERO a owl:Class ;
+    rdfs:label "NOT_ZERO" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 504 .
+
+cobol:NUMERIC a owl:Class ;
+    rdfs:label "NUMERIC" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1000 .
+
+cobol:NUMERIC_EDITED a owl:Class ;
+    rdfs:label "NUMERIC_EDITED" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1001 .
+
+cobol:NUMVALC_FUNC a owl:Class ;
+    rdfs:label "NUMVALC_FUNC" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1002 .
+
+cobol:OFF a owl:Class ;
+    rdfs:label "OFF" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1003 .
+
+cobol:OMITTED a owl:Class ;
+    rdfs:label "OMITTED" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1004 .
+
+cobol:ON a owl:Class ;
+    rdfs:label "ON" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1005 .
+
+cobol:ONLY a owl:Class ;
+    rdfs:label "ONLY" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1006 .
+
+cobol:OPTIONAL a owl:Class ;
+    rdfs:label "OPTIONAL" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1007 .
+
+cobol:OR a owl:Class ;
+    rdfs:label "OR" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1008 .
+
+cobol:OR_EQ a owl:Class ;
+    rdfs:label "OR_EQ" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 515 .
+
+cobol:OR_GE a owl:Class ;
+    rdfs:label "OR_GE" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 514 .
+
+cobol:OR_GT a owl:Class ;
+    rdfs:label "OR_GT" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 513 .
+
+cobol:OR_LE a owl:Class ;
+    rdfs:label "OR_LE" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 512 .
+
+cobol:OR_LT a owl:Class ;
+    rdfs:label "OR_LT" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 511 .
+
+cobol:OR_NE a owl:Class ;
+    rdfs:label "OR_NE" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 516 .
+
+cobol:OUTPUT a owl:Class ;
+    rdfs:label "OUTPUT" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1009 .
+
+cobol:OVERLINE a owl:Class ;
+    rdfs:label "OVERLINE" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1010 .
+
+cobol:PACKED_DECIMAL a owl:Class ;
+    rdfs:label "PACKED_DECIMAL" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1011 .
+
+cobol:PAGE a owl:Class ;
+    rdfs:label "PAGE" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1012 .
+
+cobol:PARAGRAPH a owl:Class ;
+    rdfs:label "PARAGRAPH" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1013 .
+
+cobol:PERFORM a owl:Class ;
+    rdfs:label "PERFORM" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1014 .
+
+cobol:POINTER a owl:Class ;
+    rdfs:label "POINTER" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1015 .
+
+cobol:POSITION a owl:Class ;
+    rdfs:label "POSITION" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1016 .
+
+cobol:POSITIVE a owl:Class ;
+    rdfs:label "POSITIVE" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1017 .
+
+cobol:PREVIOUS a owl:Class ;
+    rdfs:label "PREVIOUS" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1018 .
+
+cobol:PRINTER a owl:Class ;
+    rdfs:label "PRINTER" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1019 .
+
+cobol:PROCEDURE a owl:Class ;
+    rdfs:label "PROCEDURE" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1020 .
+
+cobol:PROCEED a owl:Class ;
+    rdfs:label "PROCEED" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1021 .
+
+cobol:PROGRAM a owl:Class ;
+    rdfs:label "PROGRAM" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1022 .
+
+cobol:PROGRAM_POINTER a owl:Class ;
+    rdfs:label "PROGRAM_POINTER" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1023 .
+
+cobol:PROMPT a owl:Class ;
+    rdfs:label "PROMPT" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1024 .
+
+cobol:QUOTE a owl:Class ;
+    rdfs:label "QUOTE" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1025 .
+
+cobol:RANDOM a owl:Class ;
+    rdfs:label "RANDOM" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1026 .
+
+cobol:READ a owl:Class ;
+    rdfs:label "READ" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1027 .
+
+cobol:RECORD a owl:Class ;
+    rdfs:label "RECORD" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1028 .
+
+cobol:REEL a owl:Class ;
+    rdfs:label "REEL" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1029 .
+
+cobol:REFERENCE a owl:Class ;
+    rdfs:label "REFERENCE" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1030 .
+
+cobol:RELATIVE a owl:Class ;
+    rdfs:label "RELATIVE" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1031 .
+
+cobol:REMOVAL a owl:Class ;
+    rdfs:label "REMOVAL" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1032 .
+
+cobol:REQUIRED a owl:Class ;
+    rdfs:label "REQUIRED" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1033 .
+
+cobol:REVERSE_FUNC a owl:Class ;
+    rdfs:label "REVERSE_FUNC" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1034 .
+
+cobol:REVERSE_VIDEO a owl:Class ;
+    rdfs:label "REVERSE_VIDEO" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1035 .
+
+cobol:REWIND a owl:Class ;
+    rdfs:label "REWIND" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1036 .
+
+cobol:RIGHT a owl:Class ;
+    rdfs:label "RIGHT" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1037 .
+
+cobol:ROUNDED a owl:Class ;
+    rdfs:label "ROUNDED" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1038 .
+
+cobol:SCROLL a owl:Class ;
+    rdfs:label "SCROLL" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1039 .
+
+cobol:SD a owl:Class ;
+    rdfs:label "SD" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1040 .
+
+cobol:SECTION a owl:Class ;
+    rdfs:label "SECTION" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1041 .
+
+cobol:SEPARATE a owl:Class ;
+    rdfs:label "SEPARATE" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1042 .
+
+cobol:SEQUENTIAL a owl:Class ;
+    rdfs:label "SEQUENTIAL" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1043 .
+
+cobol:SIGNED a owl:Class ;
+    rdfs:label "SIGNED" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1044 .
+
+cobol:SIGNED_INT a owl:Class ;
+    rdfs:label "SIGNED_INT" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1045 .
+
+cobol:SIGNED_LONG a owl:Class ;
+    rdfs:label "SIGNED_LONG" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1046 .
+
+cobol:SIGNED_SHORT a owl:Class ;
+    rdfs:label "SIGNED_SHORT" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1047 .
+
+cobol:SIZE a owl:Class ;
+    rdfs:label "SIZE" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1048 .
+
+cobol:SORT a owl:Class ;
+    rdfs:label "SORT" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1049 .
+
+cobol:SORT_MERGE a owl:Class ;
+    rdfs:label "SORT_MERGE" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1050 .
+
+cobol:SOURCE a owl:Class ;
+    rdfs:label "SOURCE" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1051 .
+
+cobol:SPACE a owl:Class ;
+    rdfs:label "SPACE" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1052 .
+
+cobol:STANDARD a owl:Class ;
+    rdfs:label "STANDARD" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1053 .
+
+cobol:STANDARD_1 a owl:Class ;
+    rdfs:label "STANDARD_1" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1054 .
+
+cobol:STANDARD_2 a owl:Class ;
+    rdfs:label "STANDARD_2" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1055 .
+
+cobol:SUBSTITUTE_CASE_FUNC a owl:Class ;
+    rdfs:label "SUBSTITUTE_CASE_FUNC" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1057 .
+
+cobol:SUBSTITUTE_FUNC a owl:Class ;
+    rdfs:label "SUBSTITUTE_FUNC" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1056 .
+
+cobol:SUPPRESS a owl:Class ;
+    rdfs:label "SUPPRESS" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1058 .
+
+cobol:THRU a owl:Class ;
+    rdfs:label "THRU" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1059 .
+
+cobol:TIME a owl:Class ;
+    rdfs:label "TIME" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1060 .
+
+cobol:TO a owl:Class ;
+    rdfs:label "TO" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1061 .
+
+cobol:TOK_NULL a owl:Class ;
+    rdfs:label "TOK_NULL" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1064 .
+
+cobol:TRAILING a owl:Class ;
+    rdfs:label "TRAILING" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1066 .
+
+cobol:TRIM_FUNCTION a owl:Class ;
+    rdfs:label "TRIM_FUNCTION" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1067 .
+
+cobol:TRUE a owl:Class ;
+    rdfs:label "TRUE" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1065 .
+
+cobol:UNDERLINE a owl:Class ;
+    rdfs:label "UNDERLINE" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1068 .
+
+cobol:UNIT a owl:Class ;
+    rdfs:label "UNIT" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1069 .
+
+cobol:UNSIGNED a owl:Class ;
+    rdfs:label "UNSIGNED" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1070 .
+
+cobol:UNSIGNED_INT a owl:Class ;
+    rdfs:label "UNSIGNED_INT" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1071 .
+
+cobol:UNSIGNED_LONG a owl:Class ;
+    rdfs:label "UNSIGNED_LONG" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1072 .
+
+cobol:UNSIGNED_SHORT a owl:Class ;
+    rdfs:label "UNSIGNED_SHORT" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1073 .
+
+cobol:UP a owl:Class ;
+    rdfs:label "UP" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1074 .
+
+cobol:UPDATE a owl:Class ;
+    rdfs:label "UPDATE" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1075 .
+
+cobol:UPON a owl:Class ;
+    rdfs:label "UPON" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1076 .
+
+cobol:UPPER_CASE_FUNC a owl:Class ;
+    rdfs:label "UPPER_CASE_FUNC" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1077 .
+
+cobol:USING a owl:Class ;
+    rdfs:label "USING" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1078 .
+
+cobol:VALUE a owl:Class ;
+    rdfs:label "VALUE" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1079 .
+
+cobol:VARYING a owl:Class ;
+    rdfs:label "VARYING" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1080 .
+
+cobol:WAIT a owl:Class ;
+    rdfs:label "WAIT" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1081 .
+
+cobol:WHEN_COMPILED_FUNC a owl:Class ;
+    rdfs:label "WHEN_COMPILED_FUNC" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1082 .
+
+cobol:WORD a owl:Class ;
+    rdfs:label "WORD" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1083 .
+
+cobol:WORDS a owl:Class ;
+    rdfs:label "WORDS" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1084 .
+
+cobol:YYYYDDD a owl:Class ;
+    rdfs:label "YYYYDDD" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1085 .
+
+cobol:YYYYMMDD a owl:Class ;
+    rdfs:label "YYYYMMDD" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1086 .
+
+cobol:ZERO a owl:Class ;
+    rdfs:label "ZERO" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1087 .
+
+cobol:ZEROS a owl:Class ;
+    rdfs:label "ZEROS" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 1088 .
+
+cobol:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+cobol:accept_statement a owl:Class ;
+    rdfs:label "accept_statement" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 694 .
+
+cobol:access_mode_clause a owl:Class ;
+    rdfs:label "access_mode_clause" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 586 .
+
+cobol:add_exp a owl:Class ;
+    rdfs:label "add_exp" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 642 .
+
+cobol:add_statement a owl:Class ;
+    rdfs:label "add_statement" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 700 .
+
+cobol:all a owl:DatatypeProperty ;
+    rdfs:label "all (literal)" ;
+    rdfs:comment "Literal value for all field when it contains a terminal node" ;
+    cobol:fieldId 1 ;
+    cobol:isTerminalField true .
+
+cobol:all_to_value a owl:Class ;
+    rdfs:label "all_to_value" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 774 .
+
+cobol:allocate_statement a owl:Class ;
+    rdfs:label "allocate_statement" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 704 .
+
+cobol:alphabet_literal a owl:Class ;
+    rdfs:label "alphabet_literal" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 555 .
+
+cobol:alphabet_name_clause a owl:Class ;
+    rdfs:label "alphabet_name_clause" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 553 .
+
+cobol:alter_option a owl:Class ;
+    rdfs:label "alter_option" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 706 .
+
+cobol:alter_statement a owl:Class ;
+    rdfs:label "alter_statement" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 705 .
+
+cobol:alternative_record_key a owl:Class ;
+    rdfs:label "alternative_record_key" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 587 .
+
+cobol:any_length_clause a owl:Class ;
+    rdfs:label "any_length_clause" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 667 .
+
+cobol:apply_clause a owl:Class ;
+    rdfs:label "apply_clause" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 580 .
+
+cobol:argument_number a owl:DatatypeProperty ;
+    rdfs:label "argument_number (literal)" ;
+    rdfs:comment "Literal value for argument_number field when it contains a terminal node" ;
+    cobol:fieldId 2 ;
+    cobol:isTerminalField true .
+
+cobol:argument_value a owl:DatatypeProperty ;
+    rdfs:label "argument_value (literal)" ;
+    rdfs:comment "Literal value for argument_value field when it contains a terminal node" ;
+    cobol:fieldId 3 ;
+    cobol:isTerminalField true .
+
+cobol:arithmetic_x a owl:Class ;
+    rdfs:label "arithmetic_x" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 790 .
+
+cobol:as_literal a owl:Class ;
+    rdfs:label "as_literal" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 528 .
+
+cobol:assign_clause a owl:Class ;
+    rdfs:label "assign_clause" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 582 .
+
+cobol:at a owl:DatatypeProperty ;
+    rdfs:label "at (literal)" ;
+    rdfs:comment "Literal value for at field when it contains a terminal node" ;
+    cobol:fieldId 4 ;
+    cobol:isTerminalField true .
+
+cobol:at_end a owl:Class ;
+    rdfs:label "at_end" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 807 .
+
+cobol:at_line_column a owl:Class ;
+    rdfs:label "at_line_column" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 696 .
+
+cobol:author_section a owl:Class ;
+    rdfs:label "author_section" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 531 .
+
+cobol:based_clause a owl:Class ;
+    rdfs:label "based_clause" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 663 .
+
+cobol:blank_clause a owl:Class ;
+    rdfs:label "blank_clause" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 662 .
+
+cobol:block_contains_clause a owl:Class ;
+    rdfs:label "block_contains_clause" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 609 .
+
+cobol:book a owl:DatatypeProperty ;
+    rdfs:label "book (literal)" ;
+    rdfs:comment "Literal value for book field when it contains a terminal node" ;
+    cobol:fieldId 5 ;
+    cobol:isTerminalField true .
+
+cobol:by a owl:DatatypeProperty ;
+    rdfs:label "by (literal)" ;
+    rdfs:comment "Literal value for by field when it contains a terminal node" ;
+    cobol:fieldId 6 ;
+    cobol:isTerminalField true .
+
+cobol:by_content a owl:Class ;
+    rdfs:label "by_content" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 714 .
+
+cobol:by_reference a owl:Class ;
+    rdfs:label "by_reference" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 713 .
+
+cobol:by_value a owl:Class ;
+    rdfs:label "by_value" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 715 .
+
+cobol:call_param_arg a owl:Class ;
+    rdfs:label "call_param_arg" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 711 .
+
+cobol:call_param_omitted a owl:Class ;
+    rdfs:label "call_param_omitted" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 710 .
+
+cobol:call_statement a owl:Class ;
+    rdfs:label "call_statement" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 707 .
+
+cobol:cancel_statement a owl:Class ;
+    rdfs:label "cancel_statement" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 725 .
+
+cobol:category a owl:DatatypeProperty ;
+    rdfs:label "category (literal)" ;
+    rdfs:comment "Literal value for category field when it contains a terminal node" ;
+    cobol:fieldId 8 ;
+    cobol:isTerminalField true .
+
+cobol:char_list a owl:DatatypeProperty ;
+    rdfs:label "char_list (literal)" ;
+    rdfs:comment "Literal value for char_list field when it contains a terminal node" ;
+    cobol:fieldId 9 ;
+    cobol:isTerminalField true .
+
+cobol:characters_by a owl:DatatypeProperty ;
+    rdfs:label "characters_by (literal)" ;
+    rdfs:comment "Literal value for characters_by field when it contains a terminal node" ;
+    cobol:fieldId 11 ;
+    cobol:isTerminalField true .
+
+cobol:class a owl:DatatypeProperty ;
+    rdfs:label "class (literal)" ;
+    rdfs:comment "Literal value for class field when it contains a terminal node" ;
+    cobol:fieldId 12 ;
+    cobol:isTerminalField true .
+
+cobol:class_item a owl:Class ;
+    rdfs:label "class_item" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 560 .
+
+cobol:class_name_clause a owl:Class ;
+    rdfs:label "class_name_clause" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 559 .
+
+cobol:close_arg a owl:Class ;
+    rdfs:label "close_arg" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 728 .
+
+cobol:close_option a owl:Class ;
+    rdfs:label "close_option" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 729 .
+
+cobol:close_statement a owl:Class ;
+    rdfs:label "close_statement" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 726 .
+
+cobol:code_set a owl:DatatypeProperty ;
+    rdfs:label "code_set (literal)" ;
+    rdfs:comment "Literal value for code_set field when it contains a terminal node" ;
+    cobol:fieldId 14 ;
+    cobol:isTerminalField true .
+
+cobol:code_set_clause a owl:Class ;
+    rdfs:label "code_set_clause" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 621 .
+
+cobol:collating_sequence_clause a owl:Class ;
+    rdfs:label "collating_sequence_clause" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 589 .
+
+cobol:column_number a owl:Class ;
+    rdfs:label "column_number" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 698 .
+
+cobol:column_y a owl:DatatypeProperty ;
+    rdfs:label "column_y (literal)" ;
+    rdfs:comment "Literal value for column_y field when it contains a terminal node" ;
+    cobol:fieldId 17 ;
+    cobol:isTerminalField true .
+
+cobol:comment a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "comment",
+        "comment (literal)" ;
+    rdfs:comment "Literal value for comment field when it contains a terminal node" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:fieldId 18 ;
+    cobol:isSupertype true ;
+    cobol:isTerminalField true ;
+    cobol:nodeTypeId 2 .
+
+cobol:comment_entry a owl:Class ;
+    rdfs:label "comment_entry" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 521 .
+
+cobol:compute_statement a owl:Class ;
+    rdfs:label "compute_statement" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 727 .
+
+cobol:configuration_section a owl:Class ;
+    rdfs:label "configuration_section" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 537 .
+
+cobol:constant_entry a owl:Class ;
+    rdfs:label "constant_entry" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 627 .
+
+cobol:continue_statement a owl:Class ;
+    rdfs:label "continue_statement" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 731 .
+
+cobol:copy_statement a owl:Class ;
+    rdfs:label "copy_statement" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 689 .
+
+cobol:crt a owl:DatatypeProperty ;
+    rdfs:label "crt (literal)" ;
+    rdfs:comment "Literal value for crt field when it contains a terminal node" ;
+    cobol:fieldId 24 ;
+    cobol:isTerminalField true .
+
+cobol:crt_status_clause a owl:Class ;
+    rdfs:label "crt_status_clause" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 564 .
+
+cobol:currency_sign_clause a owl:Class ;
+    rdfs:label "currency_sign_clause" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 561 .
+
+cobol:cursor_clause a owl:Class ;
+    rdfs:label "cursor_clause" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 563 .
+
+cobol:cyl_overflow a owl:DatatypeProperty ;
+    rdfs:label "cyl_overflow (literal)" ;
+    rdfs:comment "Literal value for cyl_overflow field when it contains a terminal node" ;
+    cobol:fieldId 25 ;
+    cobol:isTerminalField true .
+
+cobol:data_description a owl:Class ;
+    rdfs:label "data_description" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 625 .
+
+cobol:data_division a owl:Class ;
+    rdfs:label "data_division" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 603 .
+
+cobol:data_records_clause a owl:Class ;
+    rdfs:label "data_records_clause" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 614 .
+
+cobol:date_compiled_section a owl:Class ;
+    rdfs:label "date_compiled_section" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 534 .
+
+cobol:date_written_section a owl:Class ;
+    rdfs:label "date_written_section" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 533 .
+
+cobol:decimal a owl:Class ;
+    rdfs:label "decimal" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 31 .
+
+cobol:decimal_point_clause a owl:Class ;
+    rdfs:label "decimal_point_clause" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 562 .
+
+cobol:default a owl:DatatypeProperty ;
+    rdfs:label "default (literal)" ;
+    rdfs:comment "Literal value for default field when it contains a terminal node" ;
+    cobol:fieldId 26 ;
+    cobol:isTerminalField true .
+
+cobol:delete_statement a owl:Class ;
+    rdfs:label "delete_statement" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 732 .
+
+cobol:disp_attr a owl:Class ;
+    rdfs:label "disp_attr" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 737 .
+
+cobol:display_statement a owl:Class ;
+    rdfs:label "display_statement" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 733 .
+
+cobol:div_exp a owl:Class ;
+    rdfs:label "div_exp" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 645 .
+
+cobol:divide_statement a owl:Class ;
+    rdfs:label "divide_statement" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 741 .
+
+cobol:duplicates a owl:DatatypeProperty ;
+    rdfs:label "duplicates (literal)" ;
+    rdfs:comment "Literal value for duplicates field when it contains a terminal node" ;
+    cobol:fieldId 31 ;
+    cobol:isTerminalField true .
+
+cobol:else_header a owl:Class ;
+    rdfs:label "else_header" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 755 .
+
+cobol:else_if_header a owl:Class ;
+    rdfs:label "else_if_header" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 754 .
+
+cobol:end_program a owl:Class ;
+    rdfs:label "end_program" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 684 .
+
+cobol:entry_name a owl:Class ;
+    rdfs:label "entry_name" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 626 .
+
+cobol:environment a owl:DatatypeProperty ;
+    rdfs:label "environment (literal)" ;
+    rdfs:comment "Literal value for environment field when it contains a terminal node" ;
+    cobol:fieldId 32 ;
+    cobol:isTerminalField true .
+
+cobol:environment_division a owl:Class ;
+    rdfs:label "environment_division" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 536 .
+
+cobol:environment_name a owl:DatatypeProperty ;
+    rdfs:label "environment_name (literal)" ;
+    rdfs:comment "Literal value for environment_name field when it contains a terminal node" ;
+    cobol:fieldId 33 ;
+    cobol:isTerminalField true .
+
+cobol:environment_value a owl:DatatypeProperty ;
+    rdfs:label "environment_value (literal)" ;
+    rdfs:comment "Literal value for environment_value field when it contains a terminal node" ;
+    cobol:fieldId 34 ;
+    cobol:isTerminalField true .
+
+cobol:eop a owl:Class ;
+    rdfs:label "eop" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 846 .
+
+cobol:eq a owl:Class ;
+    rdfs:label "eq" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 767 .
+
+cobol:error a owl:Class ;
+    rdfs:label "error" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 5 .
+
+cobol:evaluate_header a owl:Class ;
+    rdfs:label "evaluate_header" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 743 .
+
+cobol:evaluate_subject a owl:Class ;
+    rdfs:label "evaluate_subject" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 744 .
+
+cobol:event_status a owl:Class ;
+    rdfs:label "event_status" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 566 .
+
+cobol:exit_statement a owl:Class ;
+    rdfs:label "exit_statement" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 749 .
+
+cobol:expr a owl:Class ;
+    rdfs:label "expr" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 756 .
+
+cobol:external_clause a owl:Class ;
+    rdfs:label "external_clause" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 648 .
+
+cobol:external_or_dynamic a owl:DatatypeProperty ;
+    rdfs:label "external_or_dynamic (literal)" ;
+    rdfs:comment "Literal value for external_or_dynamic field when it contains a terminal node" ;
+    cobol:fieldId 35 ;
+    cobol:isTerminalField true .
+
+cobol:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+cobol:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+cobol:field_at a owl:ObjectProperty ;
+    rdfs:label "at (structural)" ;
+    rdfs:comment "Structural reference for at field when it contains a non-terminal node" ;
+    cobol:fieldId 4 .
+
+cobol:field_by a owl:ObjectProperty ;
+    rdfs:label "by (structural)" ;
+    rdfs:comment "Structural reference for by field when it contains a non-terminal node" ;
+    cobol:fieldId 6 .
+
+cobol:field_byte_length_of a owl:ObjectProperty ;
+    rdfs:label "byte_length_of (structural)" ;
+    rdfs:comment "Structural reference for byte_length_of field when it contains a non-terminal node" ;
+    cobol:fieldId 7 .
+
+cobol:field_character a owl:ObjectProperty ;
+    rdfs:label "character (structural)" ;
+    rdfs:comment "Structural reference for character field when it contains a non-terminal node" ;
+    cobol:fieldId 10 .
+
+cobol:field_characters_by a owl:ObjectProperty ;
+    rdfs:label "characters_by (structural)" ;
+    rdfs:comment "Structural reference for characters_by field when it contains a non-terminal node" ;
+    cobol:fieldId 11 .
+
+cobol:field_close_nofeed_on a owl:ObjectProperty ;
+    rdfs:label "close_nofeed_on (structural)" ;
+    rdfs:comment "Structural reference for close_nofeed_on field when it contains a non-terminal node" ;
+    cobol:fieldId 13 .
+
+cobol:field_collating a owl:ObjectProperty ;
+    rdfs:label "collating (structural)" ;
+    rdfs:comment "Structural reference for collating field when it contains a non-terminal node" ;
+    cobol:fieldId 15 .
+
+cobol:field_column_x a owl:ObjectProperty ;
+    rdfs:label "column_x (structural)" ;
+    rdfs:comment "Structural reference for column_x field when it contains a non-terminal node" ;
+    cobol:fieldId 16 .
+
+cobol:field_column_y a owl:ObjectProperty ;
+    rdfs:label "column_y (structural)" ;
+    rdfs:comment "Structural reference for column_y field when it contains a non-terminal node" ;
+    cobol:fieldId 17 .
+
+cobol:field_commitment_control a owl:ObjectProperty ;
+    rdfs:label "commitment_control (structural)" ;
+    rdfs:comment "Structural reference for commitment_control field when it contains a non-terminal node" ;
+    cobol:fieldId 19 .
+
+cobol:field_condition a owl:ObjectProperty ;
+    rdfs:label "condition (structural)" ;
+    rdfs:comment "Structural reference for condition field when it contains a non-terminal node" ;
+    cobol:fieldId 20 .
+
+cobol:field_core_index_on a owl:ObjectProperty ;
+    rdfs:label "core_index_on (structural)" ;
+    rdfs:comment "Structural reference for core_index_on field when it contains a non-terminal node" ;
+    cobol:fieldId 21 .
+
+cobol:field_core_index_to a owl:ObjectProperty ;
+    rdfs:label "core_index_to (structural)" ;
+    rdfs:comment "Structural reference for core_index_to field when it contains a non-terminal node" ;
+    cobol:fieldId 22 .
+
+cobol:field_count a owl:ObjectProperty ;
+    rdfs:label "count (structural)" ;
+    rdfs:comment "Structural reference for count field when it contains a non-terminal node" ;
+    cobol:fieldId 23 .
+
+cobol:field_cyl_overflow a owl:ObjectProperty ;
+    rdfs:label "cyl_overflow (structural)" ;
+    rdfs:comment "Structural reference for cyl_overflow field when it contains a non-terminal node" ;
+    cobol:fieldId 25 .
+
+cobol:field_delimiter a owl:ObjectProperty ;
+    rdfs:label "delimiter (structural)" ;
+    rdfs:comment "Structural reference for delimiter field when it contains a non-terminal node" ;
+    cobol:fieldId 27 .
+
+cobol:field_depend a owl:ObjectProperty ;
+    rdfs:label "depend (structural)" ;
+    rdfs:comment "Structural reference for depend field when it contains a non-terminal node" ;
+    cobol:fieldId 28 .
+
+cobol:field_depending a owl:ObjectProperty ;
+    rdfs:label "depending (structural)" ;
+    rdfs:comment "Structural reference for depending field when it contains a non-terminal node" ;
+    cobol:fieldId 29 .
+
+cobol:field_dst a owl:ObjectProperty ;
+    rdfs:label "dst (structural)" ;
+    rdfs:comment "Structural reference for dst field when it contains a non-terminal node" ;
+    cobol:fieldId 30 .
+
+cobol:field_environment a owl:ObjectProperty ;
+    rdfs:label "environment (structural)" ;
+    rdfs:comment "Structural reference for environment field when it contains a non-terminal node" ;
+    cobol:fieldId 32 .
+
+cobol:field_for a owl:ObjectProperty ;
+    rdfs:label "for (structural)" ;
+    rdfs:comment "Structural reference for for field when it contains a non-terminal node" ;
+    cobol:fieldId 42 .
+
+cobol:field_forms_overlay_on a owl:ObjectProperty ;
+    rdfs:label "forms_overlay_on (structural)" ;
+    rdfs:comment "Structural reference for forms_overlay_on field when it contains a non-terminal node" ;
+    cobol:fieldId 43 .
+
+cobol:field_forms_overlay_to a owl:ObjectProperty ;
+    rdfs:label "forms_overlay_to (structural)" ;
+    rdfs:comment "Structural reference for forms_overlay_to field when it contains a non-terminal node" ;
+    cobol:fieldId 44 .
+
+cobol:field_from a owl:ObjectProperty ;
+    rdfs:label "from (structural)" ;
+    rdfs:comment "Structural reference for from field when it contains a non-terminal node" ;
+    cobol:fieldId 45 .
+
+cobol:field_giving a owl:ObjectProperty ;
+    rdfs:label "giving (structural)" ;
+    rdfs:comment "Structural reference for giving field when it contains a non-terminal node" ;
+    cobol:fieldId 46 .
+
+cobol:field_input a owl:ObjectProperty ;
+    rdfs:label "input (structural)" ;
+    rdfs:comment "Structural reference for input field when it contains a non-terminal node" ;
+    cobol:fieldId 48 .
+
+cobol:field_into a owl:ObjectProperty ;
+    rdfs:label "into (structural)" ;
+    rdfs:comment "Structural reference for into field when it contains a non-terminal node" ;
+    cobol:fieldId 50 .
+
+cobol:field_key a owl:ObjectProperty ;
+    rdfs:label "key (structural)" ;
+    rdfs:comment "Structural reference for key field when it contains a non-terminal node" ;
+    cobol:fieldId 52 .
+
+cobol:field_key_is_eq a owl:ObjectProperty ;
+    rdfs:label "key_is_eq (structural)" ;
+    rdfs:comment "Structural reference for key_is_eq field when it contains a non-terminal node" ;
+    cobol:fieldId 53 .
+
+cobol:field_key_list a owl:ObjectProperty ;
+    rdfs:label "key_list (structural)" ;
+    rdfs:comment "Structural reference for key_list field when it contains a non-terminal node" ;
+    cobol:fieldId 54 .
+
+cobol:field_key_spec a owl:ObjectProperty ;
+    rdfs:label "key_spec (structural)" ;
+    rdfs:comment "Structural reference for key_spec field when it contains a non-terminal node" ;
+    cobol:fieldId 55 .
+
+cobol:field_keys a owl:ObjectProperty ;
+    rdfs:label "keys (structural)" ;
+    rdfs:comment "Structural reference for keys field when it contains a non-terminal node" ;
+    cobol:fieldId 56 .
+
+cobol:field_left a owl:ObjectProperty ;
+    rdfs:label "left (structural)" ;
+    rdfs:comment "Structural reference for left field when it contains a non-terminal node" ;
+    cobol:fieldId 59 .
+
+cobol:field_length_of a owl:ObjectProperty ;
+    rdfs:label "length_of (structural)" ;
+    rdfs:comment "Structural reference for length_of field when it contains a non-terminal node" ;
+    cobol:fieldId 60 .
+
+cobol:field_lines a owl:ObjectProperty ;
+    rdfs:label "lines (structural)" ;
+    rdfs:comment "Structural reference for lines field when it contains a non-terminal node" ;
+    cobol:fieldId 62 .
+
+cobol:field_list a owl:ObjectProperty ;
+    rdfs:label "list (structural)" ;
+    rdfs:comment "Structural reference for list field when it contains a non-terminal node" ;
+    cobol:fieldId 63 .
+
+cobol:field_option a owl:ObjectProperty ;
+    rdfs:label "option (structural)" ;
+    rdfs:comment "Structural reference for option field when it contains a non-terminal node" ;
+    cobol:fieldId 71 .
+
+cobol:field_output a owl:ObjectProperty ;
+    rdfs:label "output (structural)" ;
+    rdfs:comment "Structural reference for output field when it contains a non-terminal node" ;
+    cobol:fieldId 74 .
+
+cobol:field_position_x a owl:ObjectProperty ;
+    rdfs:label "position_x (structural)" ;
+    rdfs:comment "Structural reference for position_x field when it contains a non-terminal node" ;
+    cobol:fieldId 75 .
+
+cobol:field_position_y a owl:ObjectProperty ;
+    rdfs:label "position_y (structural)" ;
+    rdfs:comment "Structural reference for position_y field when it contains a non-terminal node" ;
+    cobol:fieldId 76 .
+
+cobol:field_proc_name a owl:ObjectProperty ;
+    rdfs:label "proc_name (structural)" ;
+    rdfs:comment "Structural reference for proc_name field when it contains a non-terminal node" ;
+    cobol:fieldId 77 .
+
+cobol:field_procedure a owl:ObjectProperty ;
+    rdfs:label "procedure (structural)" ;
+    rdfs:comment "Structural reference for procedure field when it contains a non-terminal node" ;
+    cobol:fieldId 78 .
+
+cobol:field_procedure_name a owl:ObjectProperty ;
+    rdfs:label "procedure_name (structural)" ;
+    rdfs:comment "Structural reference for procedure_name field when it contains a non-terminal node" ;
+    cobol:fieldId 79 .
+
+cobol:field_record a owl:ObjectProperty ;
+    rdfs:label "record (structural)" ;
+    rdfs:comment "Structural reference for record field when it contains a non-terminal node" ;
+    cobol:fieldId 80 .
+
+cobol:field_record_name a owl:ObjectProperty ;
+    rdfs:label "record_name (structural)" ;
+    rdfs:comment "Structural reference for record_name field when it contains a non-terminal node" ;
+    cobol:fieldId 81 .
+
+cobol:field_reference a owl:ObjectProperty ;
+    rdfs:label "reference (structural)" ;
+    rdfs:comment "Structural reference for reference field when it contains a non-terminal node" ;
+    cobol:fieldId 82 .
+
+cobol:field_reference2 a owl:ObjectProperty ;
+    rdfs:label "reference2 (structural)" ;
+    rdfs:comment "Structural reference for reference2 field when it contains a non-terminal node" ;
+    cobol:fieldId 83 .
+
+cobol:field_region a owl:ObjectProperty ;
+    rdfs:label "region (structural)" ;
+    rdfs:comment "Structural reference for region field when it contains a non-terminal node" ;
+    cobol:fieldId 84 .
+
+cobol:field_remainder a owl:ObjectProperty ;
+    rdfs:label "remainder (structural)" ;
+    rdfs:comment "Structural reference for remainder field when it contains a non-terminal node" ;
+    cobol:fieldId 85 .
+
+cobol:field_replacing a owl:ObjectProperty ;
+    rdfs:label "replacing (structural)" ;
+    rdfs:comment "Structural reference for replacing field when it contains a non-terminal node" ;
+    cobol:fieldId 86 .
+
+cobol:field_returning a owl:ObjectProperty ;
+    rdfs:label "returning (structural)" ;
+    rdfs:comment "Structural reference for returning field when it contains a non-terminal node" ;
+    cobol:fieldId 87 .
+
+cobol:field_right a owl:ObjectProperty ;
+    rdfs:label "right (structural)" ;
+    rdfs:comment "Structural reference for right field when it contains a non-terminal node" ;
+    cobol:fieldId 88 .
+
+cobol:field_send a owl:ObjectProperty ;
+    rdfs:label "send (structural)" ;
+    rdfs:comment "Structural reference for send field when it contains a non-terminal node" ;
+    cobol:fieldId 89 .
+
+cobol:field_split_key_list a owl:ObjectProperty ;
+    rdfs:label "split_key_list (structural)" ;
+    rdfs:comment "Structural reference for split_key_list field when it contains a non-terminal node" ;
+    cobol:fieldId 91 .
+
+cobol:field_src a owl:ObjectProperty ;
+    rdfs:label "src (structural)" ;
+    rdfs:comment "Structural reference for src field when it contains a non-terminal node" ;
+    cobol:fieldId 92 .
+
+cobol:field_table_name a owl:ObjectProperty ;
+    rdfs:label "table_name (structural)" ;
+    rdfs:comment "Structural reference for table_name field when it contains a non-terminal node" ;
+    cobol:fieldId 94 .
+
+cobol:field_tallying a owl:ObjectProperty ;
+    rdfs:label "tallying (structural)" ;
+    rdfs:comment "Structural reference for tallying field when it contains a non-terminal node" ;
+    cobol:fieldId 95 .
+
+cobol:field_test a owl:ObjectProperty ;
+    rdfs:label "test (structural)" ;
+    rdfs:comment "Structural reference for test field when it contains a non-terminal node" ;
+    cobol:fieldId 96 .
+
+cobol:field_times a owl:ObjectProperty ;
+    rdfs:label "times (structural)" ;
+    rdfs:comment "Structural reference for times field when it contains a non-terminal node" ;
+    cobol:fieldId 97 .
+
+cobol:field_to a owl:ObjectProperty ;
+    rdfs:label "to (structural)" ;
+    rdfs:comment "Structural reference for to field when it contains a non-terminal node" ;
+    cobol:fieldId 98 .
+
+cobol:field_to_entry a owl:ObjectProperty ;
+    rdfs:label "to_entry (structural)" ;
+    rdfs:comment "Structural reference for to_entry field when it contains a non-terminal node" ;
+    cobol:fieldId 99 .
+
+cobol:field_tracks_on a owl:ObjectProperty ;
+    rdfs:label "tracks_on (structural)" ;
+    rdfs:comment "Structural reference for tracks_on field when it contains a non-terminal node" ;
+    cobol:fieldId 100 .
+
+cobol:field_two a owl:ObjectProperty ;
+    rdfs:label "two (structural)" ;
+    rdfs:comment "Structural reference for two field when it contains a non-terminal node" ;
+    cobol:fieldId 102 .
+
+cobol:field_until a owl:ObjectProperty ;
+    rdfs:label "until (structural)" ;
+    rdfs:comment "Structural reference for until field when it contains a non-terminal node" ;
+    cobol:fieldId 103 .
+
+cobol:field_using a owl:ObjectProperty ;
+    rdfs:label "using (structural)" ;
+    rdfs:comment "Structural reference for using field when it contains a non-terminal node" ;
+    cobol:fieldId 104 .
+
+cobol:field_val1 a owl:ObjectProperty ;
+    rdfs:label "val1 (structural)" ;
+    rdfs:comment "Structural reference for val1 field when it contains a non-terminal node" ;
+    cobol:fieldId 105 .
+
+cobol:field_val2 a owl:ObjectProperty ;
+    rdfs:label "val2 (structural)" ;
+    rdfs:comment "Structural reference for val2 field when it contains a non-terminal node" ;
+    cobol:fieldId 106 .
+
+cobol:field_value a owl:ObjectProperty ;
+    rdfs:label "value (structural)" ;
+    rdfs:comment "Structural reference for value field when it contains a non-terminal node" ;
+    cobol:fieldId 107 .
+
+cobol:field_varying a owl:ObjectProperty ;
+    rdfs:label "varying (structural)" ;
+    rdfs:comment "Structural reference for varying field when it contains a non-terminal node" ;
+    cobol:fieldId 108 .
+
+cobol:field_when_set_to_false a owl:ObjectProperty ;
+    rdfs:label "when_set_to_false (structural)" ;
+    rdfs:comment "Structural reference for when_set_to_false field when it contains a non-terminal node" ;
+    cobol:fieldId 109 .
+
+cobol:field_x a owl:ObjectProperty ;
+    rdfs:label "x (structural)" ;
+    rdfs:comment "Structural reference for x field when it contains a non-terminal node" ;
+    cobol:fieldId 112 .
+
+cobol:file_description a owl:Class ;
+    rdfs:label "file_description" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 605 .
+
+cobol:file_description_clause a owl:Class ;
+    rdfs:label "file_description_clause" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 608 .
+
+cobol:file_description_entry a owl:Class ;
+    rdfs:label "file_description_entry" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 607 .
+
+cobol:file_handler a owl:DatatypeProperty ;
+    rdfs:label "file_handler (literal)" ;
+    rdfs:comment "Literal value for file_handler field when it contains a terminal node" ;
+    cobol:fieldId 36 ;
+    cobol:isTerminalField true .
+
+cobol:file_name a owl:DatatypeProperty ;
+    rdfs:label "file_name (literal)" ;
+    rdfs:comment "Literal value for file_name field when it contains a terminal node" ;
+    cobol:fieldId 37 ;
+    cobol:isTerminalField true .
+
+cobol:file_name_list a owl:DatatypeProperty ;
+    rdfs:label "file_name_list (literal)" ;
+    rdfs:comment "Literal value for file_name_list field when it contains a terminal node" ;
+    cobol:fieldId 38 ;
+    cobol:isTerminalField true .
+
+cobol:file_or_sort a owl:DatatypeProperty ;
+    rdfs:label "file_or_sort (literal)" ;
+    rdfs:comment "Literal value for file_or_sort field when it contains a terminal node" ;
+    cobol:fieldId 39 ;
+    cobol:isTerminalField true .
+
+cobol:file_section a owl:Class ;
+    rdfs:label "file_section" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 604 .
+
+cobol:file_status_clause a owl:Class ;
+    rdfs:label "file_status_clause" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 590 .
+
+cobol:file_type a owl:Class ;
+    rdfs:label "file_type" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 606 .
+
+cobol:filler a owl:DatatypeProperty ;
+    rdfs:label "filler (literal)" ;
+    rdfs:comment "Literal value for filler field when it contains a terminal node" ;
+    cobol:fieldId 40 ;
+    cobol:isTerminalField true .
+
+cobol:flag_next a owl:DatatypeProperty ;
+    rdfs:label "flag_next (literal)" ;
+    rdfs:comment "Literal value for flag_next field when it contains a terminal node" ;
+    cobol:fieldId 41 ;
+    cobol:isTerminalField true .
+
+cobol:for a owl:DatatypeProperty ;
+    rdfs:label "for (literal)" ;
+    rdfs:comment "Literal value for for field when it contains a terminal node" ;
+    cobol:fieldId 42 ;
+    cobol:isTerminalField true .
+
+cobol:from a owl:DatatypeProperty ;
+    rdfs:label "from (literal)" ;
+    rdfs:comment "Literal value for from field when it contains a terminal node" ;
+    cobol:fieldId 45 ;
+    cobol:isTerminalField true .
+
+cobol:func_args a owl:Class ;
+    rdfs:label "func_args" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 861 .
+
+cobol:func_refmod a owl:Class ;
+    rdfs:label "func_refmod" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 856 .
+
+cobol:function_ a owl:Class ;
+    rdfs:label "function_" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 855 .
+
+cobol:ge a owl:Class ;
+    rdfs:label "ge" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 768 .
+
+cobol:giving a owl:DatatypeProperty ;
+    rdfs:label "giving (literal)" ;
+    rdfs:comment "Literal value for giving field when it contains a terminal node" ;
+    cobol:fieldId 46 ;
+    cobol:isTerminalField true .
+
+cobol:global_clause a owl:Class ;
+    rdfs:label "global_clause" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 649 .
+
+cobol:goback_statement a owl:Class ;
+    rdfs:label "goback_statement" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 750 .
+
+cobol:goto_statement a owl:Class ;
+    rdfs:label "goto_statement" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 751 .
+
+cobol:gt a owl:Class ;
+    rdfs:label "gt" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 771 .
+
+cobol:h_string a owl:Class ;
+    rdfs:label "h_string" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 867 .
+
+cobol:i_o_control a owl:Class ;
+    rdfs:label "i_o_control" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 574 .
+
+cobol:i_o_control_clause a owl:Class ;
+    rdfs:label "i_o_control_clause" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 575 .
+
+cobol:i_o_control_header a owl:Class ;
+    rdfs:label "i_o_control_header" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 576 .
+
+cobol:identification_division a owl:Class ;
+    rdfs:label "identification_division" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 526 .
+
+cobol:if_header a owl:Class ;
+    rdfs:label "if_header" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 753 .
+
+cobol:initialize_category_to_value a owl:Class ;
+    rdfs:label "initialize_category_to_value" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 775 .
+
+cobol:initialize_replacing_item a owl:Class ;
+    rdfs:label "initialize_replacing_item" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 777 .
+
+cobol:initialize_statement a owl:Class ;
+    rdfs:label "initialize_statement" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 773 .
+
+cobol:initialized a owl:DatatypeProperty ;
+    rdfs:label "initialized (literal)" ;
+    rdfs:comment "Literal value for initialized field when it contains a terminal node" ;
+    cobol:fieldId 47 ;
+    cobol:isTerminalField true .
+
+cobol:input_output_section a owl:Class ;
+    rdfs:label "input_output_section" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 570 .
+
+cobol:inspect_converting a owl:Class ;
+    rdfs:label "inspect_converting" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 783 .
+
+cobol:inspect_region a owl:Class ;
+    rdfs:label "inspect_region" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 784 .
+
+cobol:inspect_replacing a owl:Class ;
+    rdfs:label "inspect_replacing" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 780 .
+
+cobol:inspect_statement a owl:Class ;
+    rdfs:label "inspect_statement" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 778 .
+
+cobol:inspect_tallying a owl:Class ;
+    rdfs:label "inspect_tallying" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 779 .
+
+cobol:installation_section a owl:Class ;
+    rdfs:label "installation_section" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 532 .
+
+cobol:integer a owl:Class ;
+    rdfs:label "integer" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 30 .
+
+cobol:integer_list a owl:DatatypeProperty ;
+    rdfs:label "integer_list (literal)" ;
+    rdfs:comment "Literal value for integer_list field when it contains a terminal node" ;
+    cobol:fieldId 49 ;
+    cobol:isTerminalField true .
+
+cobol:into a owl:DatatypeProperty ;
+    rdfs:label "into (literal)" ;
+    rdfs:comment "Literal value for into field when it contains a terminal node" ;
+    cobol:fieldId 50 ;
+    cobol:isTerminalField true .
+
+cobol:invalid_key a owl:Class ;
+    rdfs:label "invalid_key" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 848 .
+
+cobol:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+cobol:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+cobol:is_class a owl:Class ;
+    rdfs:label "is_class" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 765 .
+
+cobol:is_common a owl:Class ;
+    rdfs:label "is_common" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 530 .
+
+cobol:is_global a owl:DatatypeProperty ;
+    rdfs:label "is_global (literal)" ;
+    rdfs:comment "Literal value for is_global field when it contains a terminal node" ;
+    cobol:fieldId 51 ;
+    cobol:isTerminalField true .
+
+cobol:is_initial a owl:Class ;
+    rdfs:label "is_initial" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 529 .
+
+cobol:is_not_class a owl:Class ;
+    rdfs:label "is_not_class" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 766 .
+
+cobol:justified_clause a owl:Class ;
+    rdfs:label "justified_clause" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 660 .
+
+cobol:key_is_eq a owl:DatatypeProperty ;
+    rdfs:label "key_is_eq (literal)" ;
+    rdfs:comment "Literal value for key_is_eq field when it contains a terminal node" ;
+    cobol:fieldId 53 ;
+    cobol:isTerminalField true .
+
+cobol:label a owl:Class ;
+    rdfs:label "label" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 752 .
+
+cobol:label_records_clause a owl:Class ;
+    rdfs:label "label_records_clause" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 611 .
+
+cobol:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+cobol:le a owl:Class ;
+    rdfs:label "le" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 769 .
+
+cobol:leading a owl:DatatypeProperty ;
+    rdfs:label "leading (literal)" ;
+    rdfs:comment "Literal value for leading field when it contains a terminal node" ;
+    cobol:fieldId 57 ;
+    cobol:isTerminalField true .
+
+cobol:leading_or_trailing a owl:DatatypeProperty ;
+    rdfs:label "leading_or_trailing (literal)" ;
+    rdfs:comment "Literal value for leading_or_trailing field when it contains a terminal node" ;
+    cobol:fieldId 58 ;
+    cobol:isTerminalField true .
+
+cobol:left a owl:DatatypeProperty ;
+    rdfs:label "left (literal)" ;
+    rdfs:comment "Literal value for left field when it contains a terminal node" ;
+    cobol:fieldId 59 ;
+    cobol:isTerminalField true .
+
+cobol:level_number a owl:Class ;
+    rdfs:label "level_number" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 6 .
+
+cobol:lib_name a owl:DatatypeProperty ;
+    rdfs:label "lib_name (literal)" ;
+    rdfs:comment "Literal value for lib_name field when it contains a terminal node" ;
+    cobol:fieldId 61 ;
+    cobol:isTerminalField true .
+
+cobol:linage_bottom a owl:Class ;
+    rdfs:label "linage_bottom" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 619 .
+
+cobol:linage_clause a owl:Class ;
+    rdfs:label "linage_clause" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 615 .
+
+cobol:linage_counter a owl:Class ;
+    rdfs:label "linage_counter" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 860 .
+
+cobol:linage_footing a owl:Class ;
+    rdfs:label "linage_footing" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 617 .
+
+cobol:linage_lines a owl:Class ;
+    rdfs:label "linage_lines" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 616 .
+
+cobol:linage_top a owl:Class ;
+    rdfs:label "linage_top" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 618 .
+
+cobol:line_number a owl:Class ;
+    rdfs:label "line_number" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 697 .
+
+cobol:line_or_lines a owl:Class ;
+    rdfs:label "line_or_lines" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 740 .
+
+cobol:linkage_section a owl:Class ;
+    rdfs:label "linkage_section" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 669 .
+
+cobol:local_storage_section a owl:Class ;
+    rdfs:label "local_storage_section" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 668 .
+
+cobol:locale_clause a owl:Class ;
+    rdfs:label "locale_clause" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 558 .
+
+cobol:lock a owl:DatatypeProperty ;
+    rdfs:label "lock (literal)" ;
+    rdfs:comment "Literal value for lock field when it contains a terminal node" ;
+    cobol:fieldId 64 ;
+    cobol:isTerminalField true .
+
+cobol:lock_mode a owl:Class ;
+    rdfs:label "lock_mode" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 593 .
+
+cobol:lock_mode_clause a owl:Class ;
+    rdfs:label "lock_mode_clause" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 592 .
+
+cobol:lock_with a owl:DatatypeProperty ;
+    rdfs:label "lock_with (literal)" ;
+    rdfs:comment "Literal value for lock_with field when it contains a terminal node" ;
+    cobol:fieldId 65 ;
+    cobol:isTerminalField true .
+
+cobol:lt a owl:Class ;
+    rdfs:label "lt" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 772 .
+
+cobol:merge_statement a owl:Class ;
+    rdfs:label "merge_statement" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 786 .
+
+cobol:mnemonic_name_clause a owl:Class ;
+    rdfs:label "mnemonic_name_clause" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 551 .
+
+cobol:mnemonic_names a owl:DatatypeProperty ;
+    rdfs:label "mnemonic_names (literal)" ;
+    rdfs:comment "Literal value for mnemonic_names field when it contains a terminal node" ;
+    cobol:fieldId 66 ;
+    cobol:isTerminalField true .
+
+cobol:mode a owl:DatatypeProperty ;
+    rdfs:label "mode (literal)" ;
+    rdfs:comment "Literal value for mode field when it contains a terminal node" ;
+    cobol:fieldId 67 ;
+    cobol:isTerminalField true .
+
+cobol:move_statement a owl:Class ;
+    rdfs:label "move_statement" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 787 .
+
+cobol:mul_exp a owl:Class ;
+    rdfs:label "mul_exp" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 644 .
+
+cobol:multiple_file a owl:Class ;
+    rdfs:label "multiple_file" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 579 .
+
+cobol:multiple_file_tape_clause a owl:Class ;
+    rdfs:label "multiple_file_tape_clause" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 578 .
+
+cobol:multiply_statement a owl:Class ;
+    rdfs:label "multiply_statement" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 793 .
+
+cobol:n_string a owl:Class ;
+    rdfs:label "n_string" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 868 .
+
+cobol:name a owl:DatatypeProperty ;
+    rdfs:label "name (literal)" ;
+    rdfs:comment "Literal value for name field when it contains a terminal node" ;
+    cobol:fieldId 68 ;
+    cobol:isTerminalField true .
+
+cobol:ne a owl:Class ;
+    rdfs:label "ne" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 770 .
+
+cobol:negative_exp a owl:Class ;
+    rdfs:label "negative_exp" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 641 .
+
+cobol:next_sentence_statement a owl:Class ;
+    rdfs:label "next_sentence_statement" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 850 .
+
+cobol:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+cobol:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+cobol:nominal_key_clause a owl:Class ;
+    rdfs:label "nominal_key_clause" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 602 .
+
+cobol:not_at_end a owl:Class ;
+    rdfs:label "not_at_end" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 808 .
+
+cobol:not_eop a owl:Class ;
+    rdfs:label "not_eop" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 847 .
+
+cobol:not_invalid_key a owl:Class ;
+    rdfs:label "not_invalid_key" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 849 .
+
+cobol:not_on_exception a owl:Class ;
+    rdfs:label "not_on_exception" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 723 .
+
+cobol:not_on_overflow a owl:Class ;
+    rdfs:label "not_on_overflow" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 724 .
+
+cobol:not_on_size_error a owl:Class ;
+    rdfs:label "not_on_size_error" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 703 .
+
+cobol:num a owl:DatatypeProperty ;
+    rdfs:label "num (literal)" ;
+    rdfs:comment "Literal value for num field when it contains a terminal node" ;
+    cobol:fieldId 69 ;
+    cobol:isTerminalField true .
+
+cobol:number a owl:Class ;
+    rdfs:label "number" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 863 .
+
+cobol:object_computer_memory a owl:Class ;
+    rdfs:label "object_computer_memory" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 545 .
+
+cobol:object_computer_paragraph a owl:Class ;
+    rdfs:label "object_computer_paragraph" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 542 .
+
+cobol:object_computer_segment a owl:Class ;
+    rdfs:label "object_computer_segment" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 548 .
+
+cobol:object_computer_sequence a owl:Class ;
+    rdfs:label "object_computer_sequence" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 546 .
+
+cobol:occurs_clause a owl:Class ;
+    rdfs:label "occurs_clause" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 656 .
+
+cobol:occurs_indexed a owl:Class ;
+    rdfs:label "occurs_indexed" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 659 .
+
+cobol:occurs_key a owl:Class ;
+    rdfs:label "occurs_key" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 658 .
+
+cobol:occurs_key_spec a owl:Class ;
+    rdfs:label "occurs_key_spec" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 657 .
+
+cobol:on_exception a owl:Class ;
+    rdfs:label "on_exception" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 721 .
+
+cobol:on_overflow a owl:Class ;
+    rdfs:label "on_overflow" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 722 .
+
+cobol:on_size_error a owl:Class ;
+    rdfs:label "on_size_error" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 702 .
+
+cobol:op a owl:DatatypeProperty ;
+    rdfs:label "op (literal)" ;
+    rdfs:comment "Literal value for op field when it contains a terminal node" ;
+    cobol:fieldId 70 ;
+    cobol:isTerminalField true .
+
+cobol:open_arg a owl:Class ;
+    rdfs:label "open_arg" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 796 .
+
+cobol:open_statement a owl:Class ;
+    rdfs:label "open_statement" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 795 .
+
+cobol:option a owl:DatatypeProperty ;
+    rdfs:label "option (literal)" ;
+    rdfs:comment "Literal value for option field when it contains a terminal node" ;
+    cobol:fieldId 71 ;
+    cobol:isTerminalField true .
+
+cobol:optional a owl:DatatypeProperty ;
+    rdfs:label "optional (literal)" ;
+    rdfs:comment "Literal value for optional field when it contains a terminal node" ;
+    cobol:fieldId 72 ;
+    cobol:isTerminalField true .
+
+cobol:order a owl:DatatypeProperty ;
+    rdfs:label "order (literal)" ;
+    rdfs:comment "Literal value for order field when it contains a terminal node" ;
+    cobol:fieldId 73 ;
+    cobol:isTerminalField true .
+
+cobol:organization_clause a owl:Class ;
+    rdfs:label "organization_clause" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 595 .
+
+cobol:padding_character_clause a owl:Class ;
+    rdfs:label "padding_character_clause" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 596 .
+
+cobol:paragraph_header a owl:Class ;
+    rdfs:label "paragraph_header" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 683 .
+
+cobol:perform_option a owl:Class ;
+    rdfs:label "perform_option" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 800 .
+
+cobol:perform_procedure a owl:Class ;
+    rdfs:label "perform_procedure" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 799 .
+
+cobol:perform_statement_call_proc a owl:Class ;
+    rdfs:label "perform_statement_call_proc" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 797 .
+
+cobol:perform_statement_loop a owl:Class ;
+    rdfs:label "perform_statement_loop" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 798 .
+
+cobol:perform_test a owl:Class ;
+    rdfs:label "perform_test" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 802 .
+
+cobol:perform_varying a owl:Class ;
+    rdfs:label "perform_varying" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 803 .
+
+cobol:period a owl:Class ;
+    rdfs:label "period" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 687 .
+
+cobol:picture_9 a owl:Class ;
+    rdfs:label "picture_9" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 652 .
+
+cobol:picture_a a owl:Class ;
+    rdfs:label "picture_a" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 20 .
+
+cobol:picture_clause a owl:Class ;
+    rdfs:label "picture_clause" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 650 .
+
+cobol:picture_edit a owl:Class ;
+    rdfs:label "picture_edit" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 21 .
+
+cobol:picture_n a owl:Class ;
+    rdfs:label "picture_n" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 16 .
+
+cobol:picture_x a owl:Class ;
+    rdfs:label "picture_x" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 15 .
+
+cobol:position_y a owl:DatatypeProperty ;
+    rdfs:label "position_y (literal)" ;
+    rdfs:comment "Literal value for position_y field when it contains a terminal node" ;
+    cobol:fieldId 76 ;
+    cobol:isTerminalField true .
+
+cobol:positive_exp a owl:Class ;
+    rdfs:label "positive_exp" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 640 .
+
+cobol:pow_exp a owl:Class ;
+    rdfs:label "pow_exp" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 646 .
+
+cobol:proc_name a owl:DatatypeProperty ;
+    rdfs:label "proc_name (literal)" ;
+    rdfs:comment "Literal value for proc_name field when it contains a terminal node" ;
+    cobol:fieldId 77 ;
+    cobol:isTerminalField true .
+
+cobol:procedure_declaratives a owl:Class ;
+    rdfs:label "procedure_declaratives" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 676 .
+
+cobol:procedure_division a owl:Class ;
+    rdfs:label "procedure_division" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 670 .
+
+cobol:procedure_param a owl:Class ;
+    rdfs:label "procedure_param" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 672 .
+
+cobol:procedure_returning a owl:Class ;
+    rdfs:label "procedure_returning" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 675 .
+
+cobol:procedure_type a owl:Class ;
+    rdfs:label "procedure_type" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 673 .
+
+cobol:procedure_using_chaining a owl:Class ;
+    rdfs:label "procedure_using_chaining" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 671 .
+
+cobol:program_definition a owl:Class ;
+    rdfs:label "program_definition" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 525 .
+
+cobol:program_name a owl:Class ;
+    rdfs:label "program_name" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 527 .
+
+cobol:qualified_word a owl:Class ;
+    rdfs:label "qualified_word" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 632 .
+
+cobol:read_statement a owl:Class ;
+    rdfs:label "read_statement" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 805 .
+
+cobol:record_clause a owl:Class ;
+    rdfs:label "record_clause" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 610 .
+
+cobol:record_delimiter_clause a owl:Class ;
+    rdfs:label "record_delimiter_clause" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 597 .
+
+cobol:record_description_list a owl:Class ;
+    rdfs:label "record_description_list" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 623 .
+
+cobol:record_key_clause a owl:Class ;
+    rdfs:label "record_key_clause" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 598 .
+
+cobol:recording_mode_clause a owl:Class ;
+    rdfs:label "recording_mode_clause" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 620 .
+
+cobol:redefines_clause a owl:Class ;
+    rdfs:label "redefines_clause" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 630 .
+
+cobol:reference a owl:DatatypeProperty ;
+    rdfs:label "reference (literal)" ;
+    rdfs:comment "Literal value for reference field when it contains a terminal node" ;
+    cobol:fieldId 82 ;
+    cobol:isTerminalField true .
+
+cobol:refmod a owl:Class ;
+    rdfs:label "refmod" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 635 .
+
+cobol:region a owl:DatatypeProperty ;
+    rdfs:label "region (literal)" ;
+    rdfs:comment "Literal value for region field when it contains a terminal node" ;
+    cobol:fieldId 84 ;
+    cobol:isTerminalField true .
+
+cobol:relative_key_clause a owl:Class ;
+    rdfs:label "relative_key_clause" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 599 .
+
+cobol:release_statement a owl:Class ;
+    rdfs:label "release_statement" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 809 .
+
+cobol:renames_clause a owl:Class ;
+    rdfs:label "renames_clause" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 666 .
+
+cobol:replacing_clause a owl:Class ;
+    rdfs:label "replacing_clause" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 690 .
+
+cobol:replacing_item a owl:Class ;
+    rdfs:label "replacing_item" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 781 .
+
+cobol:replacing_region a owl:Class ;
+    rdfs:label "replacing_region" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 782 .
+
+cobol:report_clase a owl:Class ;
+    rdfs:label "report_clase" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 622 .
+
+cobol:report_section a owl:Class ;
+    rdfs:label "report_section" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 22 .
+
+cobol:repository_name a owl:Class ;
+    rdfs:label "repository_name" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 569 .
+
+cobol:repository_paragraph a owl:Class ;
+    rdfs:label "repository_paragraph" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 567 .
+
+cobol:reserve_clause a owl:Class ;
+    rdfs:label "reserve_clause" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 600 .
+
+cobol:return_statement a owl:Class ;
+    rdfs:label "return_statement" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 810 .
+
+cobol:returning a owl:DatatypeProperty ;
+    rdfs:label "returning (literal)" ;
+    rdfs:comment "Literal value for returning field when it contains a terminal node" ;
+    cobol:fieldId 87 ;
+    cobol:isTerminalField true .
+
+cobol:rewrite_statement a owl:Class ;
+    rdfs:label "rewrite_statement" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 811 .
+
+cobol:right a owl:DatatypeProperty ;
+    rdfs:label "right (literal)" ;
+    rdfs:comment "Literal value for right field when it contains a terminal node" ;
+    cobol:fieldId 88 ;
+    cobol:isTerminalField true .
+
+cobol:same_clause a owl:Class ;
+    rdfs:label "same_clause" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 577 .
+
+cobol:screen_control a owl:Class ;
+    rdfs:label "screen_control" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 565 .
+
+cobol:screen_section a owl:Class ;
+    rdfs:label "screen_section" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 23 .
+
+cobol:scroll_lines a owl:Class ;
+    rdfs:label "scroll_lines" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 739 .
+
+cobol:search_statement a owl:Class ;
+    rdfs:label "search_statement" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 812 .
+
+cobol:section_header a owl:Class ;
+    rdfs:label "section_header" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 682 .
+
+cobol:security_section a owl:Class ;
+    rdfs:label "security_section" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 535 .
+
+cobol:select_statement a owl:Class ;
+    rdfs:label "select_statement" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 572 .
+
+cobol:send a owl:DatatypeProperty ;
+    rdfs:label "send (literal)" ;
+    rdfs:comment "Literal value for send field when it contains a terminal node" ;
+    cobol:fieldId 89 ;
+    cobol:isTerminalField true .
+
+cobol:set_environment a owl:Class ;
+    rdfs:label "set_environment" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 814 .
+
+cobol:set_statement a owl:Class ;
+    rdfs:label "set_statement" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 813 .
+
+cobol:set_to a owl:Class ;
+    rdfs:label "set_to" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 815 .
+
+cobol:set_to_on_off a owl:Class ;
+    rdfs:label "set_to_on_off" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 818 .
+
+cobol:set_to_true_false a owl:Class ;
+    rdfs:label "set_to_true_false" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 819 .
+
+cobol:set_up_down a owl:Class ;
+    rdfs:label "set_up_down" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 817 .
+
+cobol:sharing a owl:DatatypeProperty ;
+    rdfs:label "sharing (literal)" ;
+    rdfs:comment "Literal value for sharing field when it contains a terminal node" ;
+    cobol:fieldId 90 ;
+    cobol:isTerminalField true .
+
+cobol:sharing_clause a owl:Class ;
+    rdfs:label "sharing_clause" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 601 .
+
+cobol:sign_clause a owl:Class ;
+    rdfs:label "sign_clause" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 655 .
+
+cobol:size a owl:Class ;
+    rdfs:label "size" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 674 .
+
+cobol:size_is a owl:Class ;
+    rdfs:label "size_is" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 720 .
+
+cobol:size_is_auto a owl:Class ;
+    rdfs:label "size_is_auto" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 717 .
+
+cobol:size_is_default a owl:Class ;
+    rdfs:label "size_is_default" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 718 .
+
+cobol:sort_input_procedure a owl:Class ;
+    rdfs:label "sort_input_procedure" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 824 .
+
+cobol:sort_input_using a owl:Class ;
+    rdfs:label "sort_input_using" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 823 .
+
+cobol:sort_key a owl:Class ;
+    rdfs:label "sort_key" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 822 .
+
+cobol:sort_output_giving a owl:Class ;
+    rdfs:label "sort_output_giving" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 825 .
+
+cobol:sort_output_procedure a owl:Class ;
+    rdfs:label "sort_output_procedure" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 826 .
+
+cobol:sort_statement a owl:Class ;
+    rdfs:label "sort_statement" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 820 .
+
+cobol:source_computer_paragraph a owl:Class ;
+    rdfs:label "source_computer_paragraph" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 539 .
+
+cobol:special_name a owl:Class ;
+    rdfs:label "special_name" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 550 .
+
+cobol:special_name_mnemonic_on_off a owl:Class ;
+    rdfs:label "special_name_mnemonic_on_off" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 552 .
+
+cobol:special_names_paragraph a owl:Class ;
+    rdfs:label "special_names_paragraph" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 549 .
+
+cobol:src a owl:DatatypeProperty ;
+    rdfs:label "src (literal)" ;
+    rdfs:comment "Literal value for src field when it contains a terminal node" ;
+    cobol:fieldId 92 ;
+    cobol:isTerminalField true .
+
+cobol:start a owl:Class ;
+    rdfs:label "start" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 523 .
+
+cobol:start_key a owl:Class ;
+    rdfs:label "start_key" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 692 .
+
+cobol:start_statement a owl:Class ;
+    rdfs:label "start_statement" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 691 .
+
+cobol:stop_statement a owl:Class ;
+    rdfs:label "stop_statement" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 693 .
+
+cobol:string a owl:Class ;
+    rdfs:label "string" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 865 .
+
+cobol:string_item a owl:Class ;
+    rdfs:label "string_item" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 828 .
+
+cobol:string_statement a owl:Class ;
+    rdfs:label "string_statement" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 827 .
+
+cobol:sub_exp a owl:Class ;
+    rdfs:label "sub_exp" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 643 .
+
+cobol:subref a owl:Class ;
+    rdfs:label "subref" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 634 .
+
+cobol:subtract_statement a owl:Class ;
+    rdfs:label "subtract_statement" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 830 .
+
+cobol:supress a owl:DatatypeProperty ;
+    rdfs:label "supress (literal)" ;
+    rdfs:comment "Literal value for supress field when it contains a terminal node" ;
+    cobol:fieldId 93 ;
+    cobol:isTerminalField true .
+
+cobol:symbolic_characters_clause a owl:Class ;
+    rdfs:label "symbolic_characters_clause" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 557 .
+
+cobol:synchronized_clause a owl:Class ;
+    rdfs:label "synchronized_clause" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 661 .
+
+cobol:times a owl:DatatypeProperty ;
+    rdfs:label "times (literal)" ;
+    rdfs:comment "Literal value for times field when it contains a terminal node" ;
+    cobol:fieldId 97 ;
+    cobol:isTerminalField true .
+
+cobol:to a owl:DatatypeProperty ;
+    rdfs:label "to (literal)" ;
+    rdfs:comment "Literal value for to field when it contains a terminal node" ;
+    cobol:fieldId 98 ;
+    cobol:isTerminalField true .
+
+cobol:to_entry a owl:DatatypeProperty ;
+    rdfs:label "to_entry (literal)" ;
+    rdfs:comment "Literal value for to_entry field when it contains a terminal node" ;
+    cobol:fieldId 99 ;
+    cobol:isTerminalField true .
+
+cobol:trailing a owl:DatatypeProperty ;
+    rdfs:label "trailing (literal)" ;
+    rdfs:comment "Literal value for trailing field when it contains a terminal node" ;
+    cobol:fieldId 101 ;
+    cobol:isTerminalField true .
+
+cobol:two a owl:DatatypeProperty ;
+    rdfs:label "two (literal)" ;
+    rdfs:comment "Literal value for two field when it contains a terminal node" ;
+    cobol:fieldId 102 ;
+    cobol:isTerminalField true .
+
+cobol:unsigned_size_is a owl:Class ;
+    rdfs:label "unsigned_size_is" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 719 .
+
+cobol:unstring_delimited a owl:Class ;
+    rdfs:label "unstring_delimited" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 833 .
+
+cobol:unstring_delimited_item a owl:Class ;
+    rdfs:label "unstring_delimited_item" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 834 .
+
+cobol:unstring_into_item a owl:Class ;
+    rdfs:label "unstring_into_item" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 835 .
+
+cobol:unstring_statement a owl:Class ;
+    rdfs:label "unstring_statement" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 832 .
+
+cobol:unstring_tallying a owl:Class ;
+    rdfs:label "unstring_tallying" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 836 .
+
+cobol:usage_clause a owl:Class ;
+    rdfs:label "usage_clause" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 653 .
+
+cobol:use_statement a owl:Class ;
+    rdfs:label "use_statement" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 837 .
+
+cobol:val1 a owl:DatatypeProperty ;
+    rdfs:label "val1 (literal)" ;
+    rdfs:comment "Literal value for val1 field when it contains a terminal node" ;
+    cobol:fieldId 105 ;
+    cobol:isTerminalField true .
+
+cobol:val2 a owl:DatatypeProperty ;
+    rdfs:label "val2 (literal)" ;
+    rdfs:comment "Literal value for val2 field when it contains a terminal node" ;
+    cobol:fieldId 106 ;
+    cobol:isTerminalField true .
+
+cobol:value a owl:DatatypeProperty ;
+    rdfs:label "value (literal)" ;
+    rdfs:comment "Literal value for value field when it contains a terminal node" ;
+    cobol:fieldId 107 ;
+    cobol:isTerminalField true .
+
+cobol:value_clause a owl:Class ;
+    rdfs:label "value_clause" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 664 .
+
+cobol:value_item a owl:Class ;
+    rdfs:label "value_item" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 665 .
+
+cobol:value_of_clause a owl:Class ;
+    rdfs:label "value_of_clause" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 613 .
+
+cobol:varying a owl:DatatypeProperty ;
+    rdfs:label "varying (literal)" ;
+    rdfs:comment "Literal value for varying field when it contains a terminal node" ;
+    cobol:fieldId 108 ;
+    cobol:isTerminalField true .
+
+cobol:when a owl:Class ;
+    rdfs:label "when" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 745 .
+
+cobol:when_other a owl:Class ;
+    rdfs:label "when_other" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 748 .
+
+cobol:when_set_to_false a owl:DatatypeProperty ;
+    rdfs:label "when_set_to_false (literal)" ;
+    rdfs:comment "Literal value for when_set_to_false field when it contains a terminal node" ;
+    cobol:fieldId 109 ;
+    cobol:isTerminalField true .
+
+cobol:with_accp_attr a owl:Class ;
+    rdfs:label "with_accp_attr" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 699 .
+
+cobol:with_clause a owl:Class ;
+    rdfs:label "with_clause" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 736 .
+
+cobol:with_debugging_mode a owl:Class ;
+    rdfs:label "with_debugging_mode" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 541 .
+
+cobol:with_dups a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "with_dups",
+        "with_dups (literal)" ;
+    rdfs:comment "Literal value for with_dups field when it contains a terminal node" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:fieldId 110 ;
+    cobol:isSupertype true ;
+    cobol:isTerminalField true ;
+    cobol:nodeTypeId 588 .
+
+cobol:with_lock a owl:Class ;
+    rdfs:label "with_lock" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 806 .
+
+cobol:with_pointer a owl:Class ;
+    rdfs:label "with_pointer" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 829 .
+
+cobol:word a owl:DatatypeProperty ;
+    rdfs:label "word (literal)" ;
+    rdfs:comment "Literal value for word field when it contains a terminal node" ;
+    cobol:fieldId 111 ;
+    cobol:isTerminalField true .
+
+cobol:working_storage_section a owl:Class ;
+    rdfs:label "working_storage_section" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 624 .
+
+cobol:write_lock a owl:Class ;
+    rdfs:label "write_lock" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 843 .
+
+cobol:write_no_lock a owl:Class ;
+    rdfs:label "write_no_lock" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 844 .
+
+cobol:write_option a owl:Class ;
+    rdfs:label "write_option" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 845 .
+
+cobol:write_statement a owl:Class ;
+    rdfs:label "write_statement" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 841 .
+
+cobol:x a owl:DatatypeProperty ;
+    rdfs:label "x (literal)" ;
+    rdfs:comment "Literal value for x field when it contains a terminal node" ;
+    cobol:fieldId 112 ;
+    cobol:isTerminalField true .
+
+cobol:x_string a owl:Class ;
+    rdfs:label "x_string" ;
+    rdfs:isDefinedBy cobol: ;
+    rdfs:subClassOf ast:Node ;
+    cobol:isSupertype true ;
+    cobol:nodeTypeId 866 .
+
+cobol: a owl:Ontology ;
+    rdfs:label "Cobol Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for cobol" ;
+    owl:versionInfo "v0.25" ;
+    cobol:abiVersion 14 ;
+    cobol:fieldCount 112 ;
+    cobol:languageName "None" ;
+    cobol:nodeKindCount 1153 .
+

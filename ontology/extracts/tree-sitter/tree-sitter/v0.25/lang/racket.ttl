@@ -1,0 +1,280 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix racket: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/racket/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+racket:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+racket:block_comment a owl:Class ;
+    rdfs:label "block_comment" ;
+    rdfs:isDefinedBy racket: ;
+    rdfs:subClassOf ast:Node ;
+    racket:isSupertype true ;
+    racket:nodeTypeId 52 .
+
+racket:boolean a owl:Class ;
+    rdfs:label "boolean" ;
+    rdfs:isDefinedBy racket: ;
+    rdfs:subClassOf ast:Node ;
+    racket:isSupertype true ;
+    racket:nodeTypeId 9 .
+
+racket:box a owl:Class ;
+    rdfs:label "box" ;
+    rdfs:isDefinedBy racket: ;
+    rdfs:subClassOf ast:Node ;
+    racket:isSupertype true ;
+    racket:nodeTypeId 60 .
+
+racket:byte_string a owl:Class ;
+    rdfs:label "byte_string" ;
+    rdfs:isDefinedBy racket: ;
+    rdfs:subClassOf ast:Node ;
+    racket:isSupertype true ;
+    racket:nodeTypeId 56 .
+
+racket:character a owl:Class ;
+    rdfs:label "character" ;
+    rdfs:isDefinedBy racket: ;
+    rdfs:subClassOf ast:Node ;
+    racket:isSupertype true ;
+    racket:nodeTypeId 18 .
+
+racket:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy racket: ;
+    rdfs:subClassOf ast:Node ;
+    racket:isSupertype true ;
+    racket:nodeTypeId 51 .
+
+racket:decimal a owl:Class ;
+    rdfs:label "decimal" ;
+    rdfs:isDefinedBy racket: ;
+    rdfs:subClassOf ast:Node ;
+    racket:isSupertype true ;
+    racket:nodeTypeId 17 .
+
+racket:dot a owl:Class ;
+    rdfs:label "dot" ;
+    rdfs:isDefinedBy racket: ;
+    rdfs:subClassOf ast:Node ;
+    racket:isSupertype true ;
+    racket:nodeTypeId 2 .
+
+racket:escape_sequence a owl:Class ;
+    rdfs:label "escape_sequence" ;
+    rdfs:isDefinedBy racket: ;
+    rdfs:subClassOf ast:Node ;
+    racket:isSupertype true ;
+    racket:nodeTypeId 15 .
+
+racket:extension a owl:Class ;
+    rdfs:label "extension" ;
+    rdfs:isDefinedBy racket: ;
+    rdfs:subClassOf ast:Node ;
+    racket:isSupertype true ;
+    racket:nodeTypeId 74 .
+
+racket:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+racket:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+racket:graph a owl:Class ;
+    rdfs:label "graph" ;
+    rdfs:isDefinedBy racket: ;
+    rdfs:subClassOf ast:Node ;
+    racket:isSupertype true ;
+    racket:nodeTypeId 65 .
+
+racket:hash a owl:Class ;
+    rdfs:label "hash" ;
+    rdfs:isDefinedBy racket: ;
+    rdfs:subClassOf ast:Node ;
+    racket:isSupertype true ;
+    racket:nodeTypeId 64 .
+
+racket:here_string a owl:Class ;
+    rdfs:label "here_string" ;
+    rdfs:isDefinedBy racket: ;
+    rdfs:subClassOf ast:Node ;
+    racket:isSupertype true ;
+    racket:nodeTypeId 57 .
+
+racket:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+racket:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+racket:keyword a owl:Class ;
+    rdfs:label "keyword" ;
+    rdfs:isDefinedBy racket: ;
+    rdfs:subClassOf ast:Node ;
+    racket:isSupertype true ;
+    racket:nodeTypeId 20 .
+
+racket:lang_name a owl:Class ;
+    rdfs:label "lang_name" ;
+    rdfs:isDefinedBy racket: ;
+    rdfs:subClassOf ast:Node ;
+    racket:isSupertype true ;
+    racket:nodeTypeId 46 .
+
+racket:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+racket:list a owl:Class ;
+    rdfs:label "list" ;
+    rdfs:isDefinedBy racket: ;
+    rdfs:subClassOf ast:Node ;
+    racket:isSupertype true ;
+    racket:nodeTypeId 61 .
+
+racket:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+racket:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+racket:number a owl:Class ;
+    rdfs:label "number" ;
+    rdfs:isDefinedBy racket: ;
+    rdfs:subClassOf ast:Node ;
+    racket:isSupertype true ;
+    racket:nodeTypeId 16 .
+
+racket:program a owl:Class ;
+    rdfs:label "program" ;
+    rdfs:isDefinedBy racket: ;
+    rdfs:subClassOf ast:Node ;
+    racket:isSupertype true ;
+    racket:nodeTypeId 48 .
+
+racket:quasiquote a owl:Class ;
+    rdfs:label "quasiquote" ;
+    rdfs:isDefinedBy racket: ;
+    rdfs:subClassOf ast:Node ;
+    racket:isSupertype true ;
+    racket:nodeTypeId 67 .
+
+racket:quasisyntax a owl:Class ;
+    rdfs:label "quasisyntax" ;
+    rdfs:isDefinedBy racket: ;
+    rdfs:subClassOf ast:Node ;
+    racket:isSupertype true ;
+    racket:nodeTypeId 69 .
+
+racket:quote a owl:Class ;
+    rdfs:label "quote" ;
+    rdfs:isDefinedBy racket: ;
+    rdfs:subClassOf ast:Node ;
+    racket:isSupertype true ;
+    racket:nodeTypeId 66 .
+
+racket:regex a owl:Class ;
+    rdfs:label "regex" ;
+    rdfs:isDefinedBy racket: ;
+    rdfs:subClassOf ast:Node ;
+    racket:isSupertype true ;
+    racket:nodeTypeId 58 .
+
+racket:sexp_comment a owl:Class ;
+    rdfs:label "sexp_comment" ;
+    rdfs:isDefinedBy racket: ;
+    rdfs:subClassOf ast:Node ;
+    racket:isSupertype true ;
+    racket:nodeTypeId 53 .
+
+racket:string a owl:Class ;
+    rdfs:label "string" ;
+    rdfs:isDefinedBy racket: ;
+    rdfs:subClassOf ast:Node ;
+    racket:isSupertype true ;
+    racket:nodeTypeId 55 .
+
+racket:structure a owl:Class ;
+    rdfs:label "structure" ;
+    rdfs:isDefinedBy racket: ;
+    rdfs:subClassOf ast:Node ;
+    racket:isSupertype true ;
+    racket:nodeTypeId 63 .
+
+racket:symbol a owl:Class ;
+    rdfs:label "symbol" ;
+    rdfs:isDefinedBy racket: ;
+    rdfs:subClassOf ast:Node ;
+    racket:isSupertype true ;
+    racket:nodeTypeId 19 .
+
+racket:syntax a owl:Class ;
+    rdfs:label "syntax" ;
+    rdfs:isDefinedBy racket: ;
+    rdfs:subClassOf ast:Node ;
+    racket:isSupertype true ;
+    racket:nodeTypeId 68 .
+
+racket:unquote a owl:Class ;
+    rdfs:label "unquote" ;
+    rdfs:isDefinedBy racket: ;
+    rdfs:subClassOf ast:Node ;
+    racket:isSupertype true ;
+    racket:nodeTypeId 70 .
+
+racket:unquote_splicing a owl:Class ;
+    rdfs:label "unquote_splicing" ;
+    rdfs:isDefinedBy racket: ;
+    rdfs:subClassOf ast:Node ;
+    racket:isSupertype true ;
+    racket:nodeTypeId 71 .
+
+racket:unsyntax a owl:Class ;
+    rdfs:label "unsyntax" ;
+    rdfs:isDefinedBy racket: ;
+    rdfs:subClassOf ast:Node ;
+    racket:isSupertype true ;
+    racket:nodeTypeId 72 .
+
+racket:unsyntax_splicing a owl:Class ;
+    rdfs:label "unsyntax_splicing" ;
+    rdfs:isDefinedBy racket: ;
+    rdfs:subClassOf ast:Node ;
+    racket:isSupertype true ;
+    racket:nodeTypeId 73 .
+
+racket:vector a owl:Class ;
+    rdfs:label "vector" ;
+    rdfs:isDefinedBy racket: ;
+    rdfs:subClassOf ast:Node ;
+    racket:isSupertype true ;
+    racket:nodeTypeId 62 .
+
+racket: a owl:Ontology ;
+    rdfs:label "Racket Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for racket" ;
+    owl:versionInfo "v0.25" ;
+    racket:abiVersion 14 ;
+    racket:fieldCount 0 ;
+    racket:languageName "None" ;
+    racket:nodeKindCount 80 .
+

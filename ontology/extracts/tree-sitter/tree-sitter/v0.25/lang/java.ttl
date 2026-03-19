@@ -1,0 +1,1319 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix java: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/java/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+java:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+java:annotated_type a owl:Class ;
+    rdfs:label "annotated_type" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 265 .
+
+java:annotation a owl:Class ;
+    rdfs:label "annotation" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 211 .
+
+java:annotation_argument_list a owl:Class ;
+    rdfs:label "annotation_argument_list" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 212 .
+
+java:annotation_type_body a owl:Class ;
+    rdfs:label "annotation_type_body" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 252 .
+
+java:annotation_type_declaration a owl:Class ;
+    rdfs:label "annotation_type_declaration" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 251 .
+
+java:annotation_type_element_declaration a owl:Class ;
+    rdfs:label "annotation_type_element_declaration" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 253 .
+
+java:argument_list a owl:Class ;
+    rdfs:label "argument_list" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 168 .
+
+java:array_access a owl:Class ;
+    rdfs:label "array_access" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 166 .
+
+java:array_creation_expression a owl:Class ;
+    rdfs:label "array_creation_expression" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 158 .
+
+java:array_initializer a owl:Class ;
+    rdfs:label "array_initializer" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 262 .
+
+java:array_type a owl:Class ;
+    rdfs:label "array_type" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 268 .
+
+java:assert_statement a owl:Class ;
+    rdfs:label "assert_statement" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 189 .
+
+java:assignment_expression a owl:Class ;
+    rdfs:label "assignment_expression" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 149 .
+
+java:asterisk a owl:Class ;
+    rdfs:label "asterisk" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 228 .
+
+java:binary_expression a owl:Class ;
+    rdfs:label "binary_expression" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 150 .
+
+java:binary_integer_literal a owl:Class ;
+    rdfs:label "binary_integer_literal" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 5 .
+
+java:block a owl:Class ;
+    rdfs:label "block" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 186 .
+
+java:block_comment a owl:Class ;
+    rdfs:label "block_comment" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 137 .
+
+java:boolean_type a owl:Class ;
+    rdfs:label "boolean_type" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 130 .
+
+java:break_statement a owl:Class ;
+    rdfs:label "break_statement" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 191 .
+
+java:cast_expression a owl:Class ;
+    rdfs:label "cast_expression" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 148 .
+
+java:catch_clause a owl:Class ;
+    rdfs:label "catch_clause" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 198 .
+
+java:catch_formal_parameter a owl:Class ;
+    rdfs:label "catch_formal_parameter" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 199 .
+
+java:catch_type a owl:Class ;
+    rdfs:label "catch_type" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 200 .
+
+java:character_literal a owl:Class ;
+    rdfs:label "character_literal" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 10 .
+
+java:class_body a owl:Class ;
+    rdfs:label "class_body" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 242 .
+
+java:class_declaration a owl:Class ;
+    rdfs:label "class_declaration" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 233 .
+
+java:class_literal a owl:Class ;
+    rdfs:label "class_literal" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 161 .
+
+java:compact_constructor_declaration a owl:Class ;
+    rdfs:label "compact_constructor_declaration" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 280 .
+
+java:constant_declaration a owl:Class ;
+    rdfs:label "constant_declaration" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 258 .
+
+java:constructor a owl:DatatypeProperty ;
+    rdfs:label "constructor (literal)" ;
+    rdfs:comment "Literal value for constructor field when it contains a terminal node" ;
+    java:fieldId 7 ;
+    java:isTerminalField true .
+
+java:constructor_body a owl:Class ;
+    rdfs:label "constructor_body" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 246 .
+
+java:constructor_declaration a owl:Class ;
+    rdfs:label "constructor_declaration" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 244 .
+
+java:continue_statement a owl:Class ;
+    rdfs:label "continue_statement" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 192 .
+
+java:decimal_floating_point_literal a owl:Class ;
+    rdfs:label "decimal_floating_point_literal" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 6 .
+
+java:decimal_integer_literal a owl:Class ;
+    rdfs:label "decimal_integer_literal" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 2 .
+
+java:dimensions a owl:Class ;
+    rdfs:label "dimensions" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 173 .
+
+java:dimensions_expr a owl:Class ;
+    rdfs:label "dimensions_expr" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 159 .
+
+java:do_statement a owl:Class ;
+    rdfs:label "do_statement" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 190 .
+
+java:element_value_array_initializer a owl:Class ;
+    rdfs:label "element_value_array_initializer" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 215 .
+
+java:element_value_pair a owl:Class ;
+    rdfs:label "element_value_pair" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 213 .
+
+java:enhanced_for_statement a owl:Class ;
+    rdfs:label "enhanced_for_statement" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 208 .
+
+java:enum_body a owl:Class ;
+    rdfs:label "enum_body" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 230 .
+
+java:enum_body_declarations a owl:Class ;
+    rdfs:label "enum_body_declarations" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 231 .
+
+java:enum_constant a owl:Class ;
+    rdfs:label "enum_constant" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 232 .
+
+java:enum_declaration a owl:Class ;
+    rdfs:label "enum_declaration" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 229 .
+
+java:escape_sequence a owl:Class ;
+    rdfs:label "escape_sequence" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 19 .
+
+java:explicit_constructor_invocation a owl:Class ;
+    rdfs:label "explicit_constructor_invocation" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 247 .
+
+java:exports_module_directive a owl:Class ;
+    rdfs:label "exports_module_directive" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 222 .
+
+java:expression_statement a owl:Class ;
+    rdfs:label "expression_statement" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 187 .
+
+java:extends_interfaces a owl:Class ;
+    rdfs:label "extends_interfaces" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 256 .
+
+java:false a owl:Class ;
+    rdfs:label "false" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 9 .
+
+java:field a owl:DatatypeProperty ;
+    rdfs:label "field (literal)" ;
+    rdfs:comment "Literal value for field field when it contains a terminal node" ;
+    java:fieldId 11 ;
+    java:isTerminalField true .
+
+java:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+java:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+java:field_access a owl:Class ;
+    rdfs:label "field_access" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 164 .
+
+java:field_alternative a owl:ObjectProperty ;
+    rdfs:label "alternative (structural)" ;
+    rdfs:comment "Structural reference for alternative field when it contains a non-terminal node" ;
+    java:fieldId 1 .
+
+java:field_arguments a owl:ObjectProperty ;
+    rdfs:label "arguments (structural)" ;
+    rdfs:comment "Structural reference for arguments field when it contains a non-terminal node" ;
+    java:fieldId 2 .
+
+java:field_array a owl:ObjectProperty ;
+    rdfs:label "array (structural)" ;
+    rdfs:comment "Structural reference for array field when it contains a non-terminal node" ;
+    java:fieldId 3 .
+
+java:field_body a owl:ObjectProperty ;
+    rdfs:label "body (structural)" ;
+    rdfs:comment "Structural reference for body field when it contains a non-terminal node" ;
+    java:fieldId 4 .
+
+java:field_condition a owl:ObjectProperty ;
+    rdfs:label "condition (structural)" ;
+    rdfs:comment "Structural reference for condition field when it contains a non-terminal node" ;
+    java:fieldId 5 .
+
+java:field_consequence a owl:ObjectProperty ;
+    rdfs:label "consequence (structural)" ;
+    rdfs:comment "Structural reference for consequence field when it contains a non-terminal node" ;
+    java:fieldId 6 .
+
+java:field_declaration a owl:Class ;
+    rdfs:label "field_declaration" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 249 .
+
+java:field_declarator a owl:ObjectProperty ;
+    rdfs:label "declarator (structural)" ;
+    rdfs:comment "Structural reference for declarator field when it contains a non-terminal node" ;
+    java:fieldId 8 .
+
+java:field_dimensions a owl:ObjectProperty ;
+    rdfs:label "dimensions (structural)" ;
+    rdfs:comment "Structural reference for dimensions field when it contains a non-terminal node" ;
+    java:fieldId 9 .
+
+java:field_element a owl:ObjectProperty ;
+    rdfs:label "element (structural)" ;
+    rdfs:comment "Structural reference for element field when it contains a non-terminal node" ;
+    java:fieldId 10 .
+
+java:field_index a owl:ObjectProperty ;
+    rdfs:label "index (structural)" ;
+    rdfs:comment "Structural reference for index field when it contains a non-terminal node" ;
+    java:fieldId 12 .
+
+java:field_init a owl:ObjectProperty ;
+    rdfs:label "init (structural)" ;
+    rdfs:comment "Structural reference for init field when it contains a non-terminal node" ;
+    java:fieldId 13 .
+
+java:field_interfaces a owl:ObjectProperty ;
+    rdfs:label "interfaces (structural)" ;
+    rdfs:comment "Structural reference for interfaces field when it contains a non-terminal node" ;
+    java:fieldId 14 .
+
+java:field_left a owl:ObjectProperty ;
+    rdfs:label "left (structural)" ;
+    rdfs:comment "Structural reference for left field when it contains a non-terminal node" ;
+    java:fieldId 16 .
+
+java:field_module a owl:ObjectProperty ;
+    rdfs:label "module (structural)" ;
+    rdfs:comment "Structural reference for module field when it contains a non-terminal node" ;
+    java:fieldId 18 .
+
+java:field_modules a owl:ObjectProperty ;
+    rdfs:label "modules (structural)" ;
+    rdfs:comment "Structural reference for modules field when it contains a non-terminal node" ;
+    java:fieldId 19 .
+
+java:field_name a owl:ObjectProperty ;
+    rdfs:label "name (structural)" ;
+    rdfs:comment "Structural reference for name field when it contains a non-terminal node" ;
+    java:fieldId 20 .
+
+java:field_object a owl:ObjectProperty ;
+    rdfs:label "object (structural)" ;
+    rdfs:comment "Structural reference for object field when it contains a non-terminal node" ;
+    java:fieldId 21 .
+
+java:field_operand a owl:ObjectProperty ;
+    rdfs:label "operand (structural)" ;
+    rdfs:comment "Structural reference for operand field when it contains a non-terminal node" ;
+    java:fieldId 22 .
+
+java:field_operator a owl:ObjectProperty ;
+    rdfs:label "operator (structural)" ;
+    rdfs:comment "Structural reference for operator field when it contains a non-terminal node" ;
+    java:fieldId 23 .
+
+java:field_package a owl:ObjectProperty ;
+    rdfs:label "package (structural)" ;
+    rdfs:comment "Structural reference for package field when it contains a non-terminal node" ;
+    java:fieldId 24 .
+
+java:field_parameters a owl:ObjectProperty ;
+    rdfs:label "parameters (structural)" ;
+    rdfs:comment "Structural reference for parameters field when it contains a non-terminal node" ;
+    java:fieldId 25 .
+
+java:field_pattern a owl:ObjectProperty ;
+    rdfs:label "pattern (structural)" ;
+    rdfs:comment "Structural reference for pattern field when it contains a non-terminal node" ;
+    java:fieldId 26 .
+
+java:field_permits a owl:ObjectProperty ;
+    rdfs:label "permits (structural)" ;
+    rdfs:comment "Structural reference for permits field when it contains a non-terminal node" ;
+    java:fieldId 27 .
+
+java:field_provided a owl:ObjectProperty ;
+    rdfs:label "provided (structural)" ;
+    rdfs:comment "Structural reference for provided field when it contains a non-terminal node" ;
+    java:fieldId 28 .
+
+java:field_provider a owl:ObjectProperty ;
+    rdfs:label "provider (structural)" ;
+    rdfs:comment "Structural reference for provider field when it contains a non-terminal node" ;
+    java:fieldId 29 .
+
+java:field_resources a owl:ObjectProperty ;
+    rdfs:label "resources (structural)" ;
+    rdfs:comment "Structural reference for resources field when it contains a non-terminal node" ;
+    java:fieldId 30 .
+
+java:field_right a owl:ObjectProperty ;
+    rdfs:label "right (structural)" ;
+    rdfs:comment "Structural reference for right field when it contains a non-terminal node" ;
+    java:fieldId 31 .
+
+java:field_scope a owl:ObjectProperty ;
+    rdfs:label "scope (structural)" ;
+    rdfs:comment "Structural reference for scope field when it contains a non-terminal node" ;
+    java:fieldId 32 .
+
+java:field_superclass a owl:ObjectProperty ;
+    rdfs:label "superclass (structural)" ;
+    rdfs:comment "Structural reference for superclass field when it contains a non-terminal node" ;
+    java:fieldId 33 .
+
+java:field_template_argument a owl:ObjectProperty ;
+    rdfs:label "template_argument (structural)" ;
+    rdfs:comment "Structural reference for template_argument field when it contains a non-terminal node" ;
+    java:fieldId 34 .
+
+java:field_template_processor a owl:ObjectProperty ;
+    rdfs:label "template_processor (structural)" ;
+    rdfs:comment "Structural reference for template_processor field when it contains a non-terminal node" ;
+    java:fieldId 35 .
+
+java:field_type a owl:ObjectProperty ;
+    rdfs:label "type (structural)" ;
+    rdfs:comment "Structural reference for type field when it contains a non-terminal node" ;
+    java:fieldId 36 .
+
+java:field_type_arguments a owl:ObjectProperty ;
+    rdfs:label "type_arguments (structural)" ;
+    rdfs:comment "Structural reference for type_arguments field when it contains a non-terminal node" ;
+    java:fieldId 37 .
+
+java:field_type_parameters a owl:ObjectProperty ;
+    rdfs:label "type_parameters (structural)" ;
+    rdfs:comment "Structural reference for type_parameters field when it contains a non-terminal node" ;
+    java:fieldId 38 .
+
+java:field_update a owl:ObjectProperty ;
+    rdfs:label "update (structural)" ;
+    rdfs:comment "Structural reference for update field when it contains a non-terminal node" ;
+    java:fieldId 39 .
+
+java:field_value a owl:ObjectProperty ;
+    rdfs:label "value (structural)" ;
+    rdfs:comment "Structural reference for value field when it contains a non-terminal node" ;
+    java:fieldId 40 .
+
+java:finally_clause a owl:Class ;
+    rdfs:label "finally_clause" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 201 .
+
+java:floating_point_type a owl:Class ;
+    rdfs:label "floating_point_type" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 270 .
+
+java:for_statement a owl:Class ;
+    rdfs:label "for_statement" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 207 .
+
+java:formal_parameter a owl:Class ;
+    rdfs:label "formal_parameter" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 274 .
+
+java:formal_parameters a owl:Class ;
+    rdfs:label "formal_parameters" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 273 .
+
+java:generic_type a owl:Class ;
+    rdfs:label "generic_type" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 267 .
+
+java:guard a owl:Class ;
+    rdfs:label "guard" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 184 .
+
+java:hex_floating_point_literal a owl:Class ;
+    rdfs:label "hex_floating_point_literal" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 7 .
+
+java:hex_integer_literal a owl:Class ;
+    rdfs:label "hex_integer_literal" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 3 .
+
+java:identifier a owl:Class ;
+    rdfs:label "identifier" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 1 .
+
+java:if_statement a owl:Class ;
+    rdfs:label "if_statement" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 205 .
+
+java:import_declaration a owl:Class ;
+    rdfs:label "import_declaration" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 227 .
+
+java:inferred_parameters a owl:Class ;
+    rdfs:label "inferred_parameters" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 153 .
+
+java:instanceof_expression a owl:Class ;
+    rdfs:label "instanceof_expression" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 151 .
+
+java:integral_type a owl:Class ;
+    rdfs:label "integral_type" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 269 .
+
+java:interface_body a owl:Class ;
+    rdfs:label "interface_body" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 257 .
+
+java:interface_declaration a owl:Class ;
+    rdfs:label "interface_declaration" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 255 .
+
+java:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+java:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+java:key a owl:DatatypeProperty ;
+    rdfs:label "key (literal)" ;
+    rdfs:comment "Literal value for key field when it contains a terminal node" ;
+    java:fieldId 15 ;
+    java:isTerminalField true .
+
+java:labeled_statement a owl:Class ;
+    rdfs:label "labeled_statement" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 188 .
+
+java:lambda_expression a owl:Class ;
+    rdfs:label "lambda_expression" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 152 .
+
+java:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+java:left a owl:DatatypeProperty ;
+    rdfs:label "left (literal)" ;
+    rdfs:comment "Literal value for left field when it contains a terminal node" ;
+    java:fieldId 16 ;
+    java:isTerminalField true .
+
+java:line_comment a owl:Class ;
+    rdfs:label "line_comment" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 136 .
+
+java:local_variable_declaration a owl:Class ;
+    rdfs:label "local_variable_declaration" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 278 .
+
+java:marker_annotation a owl:Class ;
+    rdfs:label "marker_annotation" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 210 .
+
+java:method_declaration a owl:Class ;
+    rdfs:label "method_declaration" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 279 .
+
+java:method_invocation a owl:Class ;
+    rdfs:label "method_invocation" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 167 .
+
+java:method_reference a owl:Class ;
+    rdfs:label "method_reference" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 169 .
+
+java:modifiers a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "modifiers",
+        "modifiers (literal)" ;
+    rdfs:comment "Literal value for modifiers field when it contains a terminal node" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:fieldId 17 ;
+    java:isSupertype true ;
+    java:isTerminalField true ;
+    java:nodeTypeId 234 .
+
+java:module a owl:DatatypeProperty ;
+    rdfs:label "module (literal)" ;
+    rdfs:comment "Literal value for module field when it contains a terminal node" ;
+    java:fieldId 18 ;
+    java:isTerminalField true .
+
+java:module_body a owl:Class ;
+    rdfs:label "module_body" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 218 .
+
+java:module_declaration a owl:Class ;
+    rdfs:label "module_declaration" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 217 .
+
+java:modules a owl:DatatypeProperty ;
+    rdfs:label "modules (literal)" ;
+    rdfs:comment "Literal value for modules field when it contains a terminal node" ;
+    java:fieldId 19 ;
+    java:isTerminalField true .
+
+java:multiline_string_fragment a owl:Class ;
+    rdfs:label "multiline_string_fragment" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 144 .
+
+java:name a owl:DatatypeProperty ;
+    rdfs:label "name (literal)" ;
+    rdfs:comment "Literal value for name field when it contains a terminal node" ;
+    java:fieldId 20 ;
+    java:isTerminalField true .
+
+java:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+java:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+java:null_literal a owl:Class ;
+    rdfs:label "null_literal" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 20 .
+
+java:object a owl:DatatypeProperty ;
+    rdfs:label "object (literal)" ;
+    rdfs:comment "Literal value for object field when it contains a terminal node" ;
+    java:fieldId 21 ;
+    java:isTerminalField true .
+
+java:object_creation_expression a owl:Class ;
+    rdfs:label "object_creation_expression" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 162 .
+
+java:octal_integer_literal a owl:Class ;
+    rdfs:label "octal_integer_literal" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 4 .
+
+java:opens_module_directive a owl:Class ;
+    rdfs:label "opens_module_directive" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 223 .
+
+java:package a owl:DatatypeProperty ;
+    rdfs:label "package (literal)" ;
+    rdfs:comment "Literal value for package field when it contains a terminal node" ;
+    java:fieldId 24 ;
+    java:isTerminalField true .
+
+java:package_declaration a owl:Class ;
+    rdfs:label "package_declaration" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 226 .
+
+java:parameters a owl:DatatypeProperty ;
+    rdfs:label "parameters (literal)" ;
+    rdfs:comment "Literal value for parameters field when it contains a terminal node" ;
+    java:fieldId 25 ;
+    java:isTerminalField true .
+
+java:parenthesized_expression a owl:Class ;
+    rdfs:label "parenthesized_expression" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 160 .
+
+java:pattern a owl:Class ;
+    rdfs:label "pattern" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 179 .
+
+java:permits a owl:Class ;
+    rdfs:label "permits" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 241 .
+
+java:program a owl:Class ;
+    rdfs:label "program" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 138 .
+
+java:provided a owl:DatatypeProperty ;
+    rdfs:label "provided (literal)" ;
+    rdfs:comment "Literal value for provided field when it contains a terminal node" ;
+    java:fieldId 28 ;
+    java:isTerminalField true .
+
+java:provider a owl:DatatypeProperty ;
+    rdfs:label "provider (literal)" ;
+    rdfs:comment "Literal value for provider field when it contains a terminal node" ;
+    java:fieldId 29 ;
+    java:isTerminalField true .
+
+java:provides_module_directive a owl:Class ;
+    rdfs:label "provides_module_directive" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 225 .
+
+java:receiver_parameter a owl:Class ;
+    rdfs:label "receiver_parameter" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 275 .
+
+java:record_declaration a owl:Class ;
+    rdfs:label "record_declaration" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 250 .
+
+java:record_pattern a owl:Class ;
+    rdfs:label "record_pattern" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 181 .
+
+java:record_pattern_body a owl:Class ;
+    rdfs:label "record_pattern_body" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 182 .
+
+java:record_pattern_component a owl:Class ;
+    rdfs:label "record_pattern_component" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 183 .
+
+java:requires_modifier a owl:Class ;
+    rdfs:label "requires_modifier" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 221 .
+
+java:requires_module_directive a owl:Class ;
+    rdfs:label "requires_module_directive" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 220 .
+
+java:resource a owl:Class ;
+    rdfs:label "resource" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 204 .
+
+java:resource_specification a owl:Class ;
+    rdfs:label "resource_specification" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 203 .
+
+java:return_statement a owl:Class ;
+    rdfs:label "return_statement" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 193 .
+
+java:scope a owl:DatatypeProperty ;
+    rdfs:label "scope (literal)" ;
+    rdfs:comment "Literal value for scope field when it contains a terminal node" ;
+    java:fieldId 32 ;
+    java:isTerminalField true .
+
+java:scoped_identifier a owl:Class ;
+    rdfs:label "scoped_identifier" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 248 .
+
+java:scoped_type_identifier a owl:Class ;
+    rdfs:label "scoped_type_identifier" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 266 .
+
+java:spread_parameter a owl:Class ;
+    rdfs:label "spread_parameter" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 276 .
+
+java:static_initializer a owl:Class ;
+    rdfs:label "static_initializer" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 243 .
+
+java:string_fragment a owl:Class ;
+    rdfs:label "string_fragment" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 13 .
+
+java:string_interpolation a owl:Class ;
+    rdfs:label "string_interpolation" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 145 .
+
+java:string_literal a owl:Class ;
+    rdfs:label "string_literal" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 141 .
+
+java:super a owl:Class ;
+    rdfs:label "super" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 135 .
+
+java:super_interfaces a owl:Class ;
+    rdfs:label "super_interfaces" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 239 .
+
+java:superclass a owl:Class ;
+    rdfs:label "superclass" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 238 .
+
+java:switch_block a owl:Class ;
+    rdfs:label "switch_block" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 175 .
+
+java:switch_block_statement_group a owl:Class ;
+    rdfs:label "switch_block_statement_group" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 176 .
+
+java:switch_expression a owl:Class ;
+    rdfs:label "switch_expression" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 174 .
+
+java:switch_label a owl:Class ;
+    rdfs:label "switch_label" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 178 .
+
+java:switch_rule a owl:Class ;
+    rdfs:label "switch_rule" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 177 .
+
+java:synchronized_statement a owl:Class ;
+    rdfs:label "synchronized_statement" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 195 .
+
+java:template_expression a owl:Class ;
+    rdfs:label "template_expression" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 165 .
+
+java:ternary_expression a owl:Class ;
+    rdfs:label "ternary_expression" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 154 .
+
+java:this a owl:Class ;
+    rdfs:label "this" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 134 .
+
+java:throw_statement a owl:Class ;
+    rdfs:label "throw_statement" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 196 .
+
+java:throws a owl:Class ;
+    rdfs:label "throws" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 277 .
+
+java:true a owl:Class ;
+    rdfs:label "true" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 8 .
+
+java:try_statement a owl:Class ;
+    rdfs:label "try_statement" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 197 .
+
+java:try_with_resources_statement a owl:Class ;
+    rdfs:label "try_with_resources_statement" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 202 .
+
+java:type a owl:DatatypeProperty ;
+    rdfs:label "type (literal)" ;
+    rdfs:comment "Literal value for type field when it contains a terminal node" ;
+    java:fieldId 36 ;
+    java:isTerminalField true .
+
+java:type_arguments a owl:Class ;
+    rdfs:label "type_arguments" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 170 .
+
+java:type_bound a owl:Class ;
+    rdfs:label "type_bound" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 237 .
+
+java:type_identifier a owl:Class ;
+    rdfs:label "type_identifier" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 320 .
+
+java:type_list a owl:Class ;
+    rdfs:label "type_list" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 240 .
+
+java:type_parameter a owl:Class ;
+    rdfs:label "type_parameter" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 236 .
+
+java:type_parameters a owl:Class ;
+    rdfs:label "type_parameters" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 235 .
+
+java:type_pattern a owl:Class ;
+    rdfs:label "type_pattern" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 180 .
+
+java:unary_expression a owl:Class ;
+    rdfs:label "unary_expression" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 155 .
+
+java:underscore_pattern a owl:Class ;
+    rdfs:label "underscore_pattern" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 75 .
+
+java:update_expression a owl:Class ;
+    rdfs:label "update_expression" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 156 .
+
+java:uses_module_directive a owl:Class ;
+    rdfs:label "uses_module_directive" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 224 .
+
+java:variable_declarator a owl:Class ;
+    rdfs:label "variable_declarator" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 260 .
+
+java:void_type a owl:Class ;
+    rdfs:label "void_type" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 131 .
+
+java:while_statement a owl:Class ;
+    rdfs:label "while_statement" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 206 .
+
+java:wildcard a owl:Class ;
+    rdfs:label "wildcard" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 171 .
+
+java:yield_statement a owl:Class ;
+    rdfs:label "yield_statement" ;
+    rdfs:isDefinedBy java: ;
+    rdfs:subClassOf ast:Node ;
+    java:isSupertype true ;
+    java:nodeTypeId 194 .
+
+java: a owl:Ontology ;
+    rdfs:label "Java Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for java" ;
+    owl:versionInfo "v0.25" ;
+    java:abiVersion 14 ;
+    java:fieldCount 40 ;
+    java:languageName "None" ;
+    java:nodeKindCount 321 .
+

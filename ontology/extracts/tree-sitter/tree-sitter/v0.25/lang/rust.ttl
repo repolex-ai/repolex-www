@@ -1,0 +1,1449 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rust: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/rust/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+rust:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+rust:abstract_type a owl:Class ;
+    rdfs:label "abstract_type" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 235 .
+
+rust:alias a owl:DatatypeProperty ;
+    rdfs:label "alias (literal)" ;
+    rdfs:comment "Literal value for alias field when it contains a terminal node" ;
+    rust:fieldId 1 ;
+    rust:isTerminalField true .
+
+rust:argument a owl:DatatypeProperty ;
+    rdfs:label "argument (literal)" ;
+    rdfs:comment "Literal value for argument field when it contains a terminal node" ;
+    rust:fieldId 3 ;
+    rust:isTerminalField true .
+
+rust:arguments a owl:Class ;
+    rdfs:label "arguments" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 257 .
+
+rust:array_expression a owl:Class ;
+    rdfs:label "array_expression" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 258 .
+
+rust:array_type a owl:Class ;
+    rdfs:label "array_type" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 220 .
+
+rust:assignment_expression a owl:Class ;
+    rdfs:label "assignment_expression" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 251 .
+
+rust:associated_type a owl:Class ;
+    rdfs:label "associated_type" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 195 .
+
+rust:async_block a owl:Class ;
+    rdfs:label "async_block" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 290 .
+
+rust:attribute a owl:Class ;
+    rdfs:label "attribute" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 172 .
+
+rust:attribute_item a owl:Class ;
+    rdfs:label "attribute_item" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 170 .
+
+rust:await_expression a owl:Class ;
+    rdfs:label "await_expression" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 287 .
+
+rust:base_field_initializer a owl:Class ;
+    rdfs:label "base_field_initializer" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 266 .
+
+rust:binary_expression a owl:Class ;
+    rdfs:label "binary_expression" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 250 .
+
+rust:block a owl:Class ;
+    rdfs:label "block" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 293 .
+
+rust:block_comment a owl:Class ;
+    rdfs:label "block_comment" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 318 .
+
+rust:boolean_literal a owl:Class ;
+    rdfs:label "boolean_literal" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 313 .
+
+rust:bounded_type a owl:Class ;
+    rdfs:label "bounded_type" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 228 .
+
+rust:bracketed_type a owl:Class ;
+    rdfs:label "bracketed_type" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 217 .
+
+rust:break_expression a owl:Class ;
+    rdfs:label "break_expression" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 284 .
+
+rust:call_expression a owl:Class ;
+    rdfs:label "call_expression" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 256 .
+
+rust:captured_pattern a owl:Class ;
+    rdfs:label "captured_pattern" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 305 .
+
+rust:char_literal a owl:Class ;
+    rdfs:label "char_literal" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 130 .
+
+rust:closure_expression a owl:Class ;
+    rdfs:label "closure_expression" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 281 .
+
+rust:closure_parameters a owl:Class ;
+    rdfs:label "closure_parameters" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 282 .
+
+rust:compound_assignment_expr a owl:Class ;
+    rdfs:label "compound_assignment_expr" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 252 .
+
+rust:const_block a owl:Class ;
+    rdfs:label "const_block" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 280 .
+
+rust:const_item a owl:Class ;
+    rdfs:label "const_item" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 185 .
+
+rust:const_parameter a owl:Class ;
+    rdfs:label "const_parameter" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 200 .
+
+rust:continue_expression a owl:Class ;
+    rdfs:label "continue_expression" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 285 .
+
+rust:crate a owl:Class ;
+    rdfs:label "crate" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 145 .
+
+rust:declaration_list a owl:Class ;
+    rdfs:label "declaration_list" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 175 .
+
+rust:doc a owl:DatatypeProperty ;
+    rdfs:label "doc (literal)" ;
+    rdfs:comment "Literal value for doc field when it contains a terminal node" ;
+    rust:fieldId 10 ;
+    rust:isTerminalField true .
+
+rust:doc_comment a owl:Class ;
+    rdfs:label "doc_comment" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 155 .
+
+rust:dynamic_type a owl:Class ;
+    rdfs:label "dynamic_type" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 236 .
+
+rust:else_clause a owl:Class ;
+    rdfs:label "else_clause" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 271 .
+
+rust:empty_statement a owl:Class ;
+    rdfs:label "empty_statement" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 159 .
+
+rust:enum_item a owl:Class ;
+    rdfs:label "enum_item" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 178 .
+
+rust:enum_variant a owl:Class ;
+    rdfs:label "enum_variant" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 180 .
+
+rust:enum_variant_list a owl:Class ;
+    rdfs:label "enum_variant_list" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 179 .
+
+rust:escape_sequence a owl:Class ;
+    rdfs:label "escape_sequence" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 131 .
+
+rust:expression_statement a owl:Class ;
+    rdfs:label "expression_statement" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 160 .
+
+rust:extern_crate_declaration a owl:Class ;
+    rdfs:label "extern_crate_declaration" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 184 .
+
+rust:extern_modifier a owl:Class ;
+    rdfs:label "extern_modifier" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 214 .
+
+rust:field a owl:DatatypeProperty ;
+    rdfs:label "field (literal)" ;
+    rdfs:comment "Literal value for field field when it contains a terminal node" ;
+    rust:fieldId 12 ;
+    rust:isTerminalField true .
+
+rust:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+rust:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+rust:field_alias a owl:ObjectProperty ;
+    rdfs:label "alias (structural)" ;
+    rdfs:comment "Structural reference for alias field when it contains a non-terminal node" ;
+    rust:fieldId 1 .
+
+rust:field_alternative a owl:ObjectProperty ;
+    rdfs:label "alternative (structural)" ;
+    rdfs:comment "Structural reference for alternative field when it contains a non-terminal node" ;
+    rust:fieldId 2 .
+
+rust:field_argument a owl:ObjectProperty ;
+    rdfs:label "argument (structural)" ;
+    rdfs:comment "Structural reference for argument field when it contains a non-terminal node" ;
+    rust:fieldId 3 .
+
+rust:field_arguments a owl:ObjectProperty ;
+    rdfs:label "arguments (structural)" ;
+    rdfs:comment "Structural reference for arguments field when it contains a non-terminal node" ;
+    rust:fieldId 4 .
+
+rust:field_body a owl:ObjectProperty ;
+    rdfs:label "body (structural)" ;
+    rdfs:comment "Structural reference for body field when it contains a non-terminal node" ;
+    rust:fieldId 5 .
+
+rust:field_bounds a owl:ObjectProperty ;
+    rdfs:label "bounds (structural)" ;
+    rdfs:comment "Structural reference for bounds field when it contains a non-terminal node" ;
+    rust:fieldId 6 .
+
+rust:field_condition a owl:ObjectProperty ;
+    rdfs:label "condition (structural)" ;
+    rdfs:comment "Structural reference for condition field when it contains a non-terminal node" ;
+    rust:fieldId 7 .
+
+rust:field_consequence a owl:ObjectProperty ;
+    rdfs:label "consequence (structural)" ;
+    rdfs:comment "Structural reference for consequence field when it contains a non-terminal node" ;
+    rust:fieldId 8 .
+
+rust:field_declaration a owl:Class ;
+    rdfs:label "field_declaration" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 182 .
+
+rust:field_declaration_list a owl:Class ;
+    rdfs:label "field_declaration_list" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 181 .
+
+rust:field_default_type a owl:ObjectProperty ;
+    rdfs:label "default_type (structural)" ;
+    rdfs:comment "Structural reference for default_type field when it contains a non-terminal node" ;
+    rust:fieldId 9 .
+
+rust:field_element a owl:ObjectProperty ;
+    rdfs:label "element (structural)" ;
+    rdfs:comment "Structural reference for element field when it contains a non-terminal node" ;
+    rust:fieldId 11 .
+
+rust:field_expression a owl:Class ;
+    rdfs:label "field_expression" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 288 .
+
+rust:field_function a owl:ObjectProperty ;
+    rdfs:label "function (structural)" ;
+    rdfs:comment "Structural reference for function field when it contains a non-terminal node" ;
+    rust:fieldId 13 .
+
+rust:field_identifier a owl:Class ;
+    rdfs:label "field_identifier" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 351 .
+
+rust:field_initializer a owl:Class ;
+    rdfs:label "field_initializer" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 265 .
+
+rust:field_initializer_list a owl:Class ;
+    rdfs:label "field_initializer_list" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 263 .
+
+rust:field_left a owl:ObjectProperty ;
+    rdfs:label "left (structural)" ;
+    rdfs:comment "Structural reference for left field when it contains a non-terminal node" ;
+    rust:fieldId 15 .
+
+rust:field_length a owl:ObjectProperty ;
+    rdfs:label "length (structural)" ;
+    rdfs:comment "Structural reference for length field when it contains a non-terminal node" ;
+    rust:fieldId 16 .
+
+rust:field_list a owl:ObjectProperty ;
+    rdfs:label "list (structural)" ;
+    rdfs:comment "Structural reference for list field when it contains a non-terminal node" ;
+    rust:fieldId 17 .
+
+rust:field_macro a owl:ObjectProperty ;
+    rdfs:label "macro (structural)" ;
+    rdfs:comment "Structural reference for macro field when it contains a non-terminal node" ;
+    rust:fieldId 18 .
+
+rust:field_name a owl:ObjectProperty ;
+    rdfs:label "name (structural)" ;
+    rdfs:comment "Structural reference for name field when it contains a non-terminal node" ;
+    rust:fieldId 19 .
+
+rust:field_operator a owl:ObjectProperty ;
+    rdfs:label "operator (structural)" ;
+    rdfs:comment "Structural reference for operator field when it contains a non-terminal node" ;
+    rust:fieldId 20 .
+
+rust:field_parameters a owl:ObjectProperty ;
+    rdfs:label "parameters (structural)" ;
+    rdfs:comment "Structural reference for parameters field when it contains a non-terminal node" ;
+    rust:fieldId 22 .
+
+rust:field_path a owl:ObjectProperty ;
+    rdfs:label "path (structural)" ;
+    rdfs:comment "Structural reference for path field when it contains a non-terminal node" ;
+    rust:fieldId 23 .
+
+rust:field_pattern a owl:Class,
+        owl:ObjectProperty ;
+    rdfs:label "field_pattern",
+        "pattern (structural)" ;
+    rdfs:comment "Structural reference for pattern field when it contains a non-terminal node" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:fieldId 24 ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 300 .
+
+rust:field_return_type a owl:ObjectProperty ;
+    rdfs:label "return_type (structural)" ;
+    rdfs:comment "Structural reference for return_type field when it contains a non-terminal node" ;
+    rust:fieldId 25 .
+
+rust:field_right a owl:ObjectProperty ;
+    rdfs:label "right (structural)" ;
+    rdfs:comment "Structural reference for right field when it contains a non-terminal node" ;
+    rust:fieldId 26 .
+
+rust:field_trait a owl:ObjectProperty ;
+    rdfs:label "trait (structural)" ;
+    rdfs:comment "Structural reference for trait field when it contains a non-terminal node" ;
+    rust:fieldId 27 .
+
+rust:field_type a owl:ObjectProperty ;
+    rdfs:label "type (structural)" ;
+    rdfs:comment "Structural reference for type field when it contains a non-terminal node" ;
+    rust:fieldId 28 .
+
+rust:field_type_arguments a owl:ObjectProperty ;
+    rdfs:label "type_arguments (structural)" ;
+    rdfs:comment "Structural reference for type_arguments field when it contains a non-terminal node" ;
+    rust:fieldId 29 .
+
+rust:field_type_parameters a owl:ObjectProperty ;
+    rdfs:label "type_parameters (structural)" ;
+    rdfs:comment "Structural reference for type_parameters field when it contains a non-terminal node" ;
+    rust:fieldId 30 .
+
+rust:field_value a owl:ObjectProperty ;
+    rdfs:label "value (structural)" ;
+    rdfs:comment "Structural reference for value field when it contains a non-terminal node" ;
+    rust:fieldId 31 .
+
+rust:float_literal a owl:Class ;
+    rdfs:label "float_literal" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 151 .
+
+rust:for_expression a owl:Class ;
+    rdfs:label "for_expression" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 279 .
+
+rust:for_lifetimes a owl:Class ;
+    rdfs:label "for_lifetimes" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 221 .
+
+rust:foreign_mod_item a owl:Class ;
+    rdfs:label "foreign_mod_item" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 174 .
+
+rust:fragment_specifier a owl:Class ;
+    rdfs:label "fragment_specifier" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 167 .
+
+rust:function a owl:DatatypeProperty ;
+    rdfs:label "function (literal)" ;
+    rdfs:comment "Literal value for function field when it contains a terminal node" ;
+    rust:fieldId 13 ;
+    rust:isTerminalField true .
+
+rust:function_item a owl:Class ;
+    rdfs:label "function_item" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 188 .
+
+rust:function_modifiers a owl:Class ;
+    rdfs:label "function_modifiers" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 190 .
+
+rust:function_signature_item a owl:Class ;
+    rdfs:label "function_signature_item" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 189 .
+
+rust:function_type a owl:Class ;
+    rdfs:label "function_type" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 222 .
+
+rust:gen_block a owl:Class ;
+    rdfs:label "gen_block" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 291 .
+
+rust:generic_function a owl:Class ;
+    rdfs:label "generic_function" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 225 .
+
+rust:generic_pattern a owl:Class ;
+    rdfs:label "generic_pattern" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 295 .
+
+rust:generic_type a owl:Class ;
+    rdfs:label "generic_type" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 226 .
+
+rust:generic_type_with_turbofish a owl:Class ;
+    rdfs:label "generic_type_with_turbofish" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 227 .
+
+rust:higher_ranked_trait_bound a owl:Class ;
+    rdfs:label "higher_ranked_trait_bound" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 197 .
+
+rust:identifier a owl:Class ;
+    rdfs:label "identifier" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 1 .
+
+rust:if_expression a owl:Class ;
+    rdfs:label "if_expression" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 267 .
+
+rust:impl_item a owl:Class ;
+    rdfs:label "impl_item" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 193 .
+
+rust:index_expression a owl:Class ;
+    rdfs:label "index_expression" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 286 .
+
+rust:inner a owl:DatatypeProperty ;
+    rdfs:label "inner (literal)" ;
+    rdfs:comment "Literal value for inner field when it contains a terminal node" ;
+    rust:fieldId 14 ;
+    rust:isTerminalField true .
+
+rust:inner_attribute_item a owl:Class ;
+    rdfs:label "inner_attribute_item" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 171 .
+
+rust:inner_doc_comment_marker a owl:Class ;
+    rdfs:label "inner_doc_comment_marker" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 153,
+        316 .
+
+rust:integer_literal a owl:Class ;
+    rdfs:label "integer_literal" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 127 .
+
+rust:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+rust:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+rust:label a owl:Class ;
+    rdfs:label "label" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 283 .
+
+rust:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+rust:left a owl:DatatypeProperty ;
+    rdfs:label "left (literal)" ;
+    rdfs:comment "Literal value for left field when it contains a terminal node" ;
+    rust:fieldId 15 ;
+    rust:isTerminalField true .
+
+rust:let_chain a owl:Class ;
+    rdfs:label "let_chain" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 352 .
+
+rust:let_condition a owl:Class ;
+    rdfs:label "let_condition" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 268 .
+
+rust:let_declaration a owl:Class ;
+    rdfs:label "let_declaration" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 203 .
+
+rust:lifetime a owl:Class ;
+    rdfs:label "lifetime" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 219 .
+
+rust:lifetime_parameter a owl:Class ;
+    rdfs:label "lifetime_parameter" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 202 .
+
+rust:line_comment a owl:Class ;
+    rdfs:label "line_comment" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 314 .
+
+rust:loop_expression a owl:Class ;
+    rdfs:label "loop_expression" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 278 .
+
+rust:macro a owl:DatatypeProperty ;
+    rdfs:label "macro (literal)" ;
+    rdfs:comment "Literal value for macro field when it contains a terminal node" ;
+    rust:fieldId 18 ;
+    rust:isTerminalField true .
+
+rust:macro_definition a owl:Class ;
+    rdfs:label "macro_definition" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 161 .
+
+rust:macro_invocation a owl:Class ;
+    rdfs:label "macro_invocation" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 239 .
+
+rust:macro_rule a owl:Class ;
+    rdfs:label "macro_rule" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 162 .
+
+rust:match_arm a owl:Class ;
+    rdfs:label "match_arm" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 274,
+        275 .
+
+rust:match_block a owl:Class ;
+    rdfs:label "match_block" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 273 .
+
+rust:match_expression a owl:Class ;
+    rdfs:label "match_expression" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 272 .
+
+rust:match_pattern a owl:Class ;
+    rdfs:label "match_pattern" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 276 .
+
+rust:metavariable a owl:Class ;
+    rdfs:label "metavariable" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 146 .
+
+rust:mod_item a owl:Class ;
+    rdfs:label "mod_item" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 173 .
+
+rust:mut_pattern a owl:Class ;
+    rdfs:label "mut_pattern" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 302 .
+
+rust:mutable_specifier a owl:Class ;
+    rdfs:label "mutable_specifier" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 122 .
+
+rust:name a owl:DatatypeProperty ;
+    rdfs:label "name (literal)" ;
+    rdfs:comment "Literal value for name field when it contains a terminal node" ;
+    rust:fieldId 19 ;
+    rust:isTerminalField true .
+
+rust:negative_literal a owl:Class ;
+    rdfs:label "negative_literal" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 310 .
+
+rust:never_type a owl:Class ;
+    rdfs:label "never_type" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 234 .
+
+rust:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+rust:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+rust:or_pattern a owl:Class ;
+    rdfs:label "or_pattern" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 307 .
+
+rust:ordered_field_declaration_list a owl:Class ;
+    rdfs:label "ordered_field_declaration_list" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 183 .
+
+rust:outer a owl:DatatypeProperty ;
+    rdfs:label "outer (literal)" ;
+    rdfs:comment "Literal value for outer field when it contains a terminal node" ;
+    rust:fieldId 21 ;
+    rust:isTerminalField true .
+
+rust:outer_doc_comment_marker a owl:Class ;
+    rdfs:label "outer_doc_comment_marker" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 152,
+        317 .
+
+rust:parameter a owl:Class ;
+    rdfs:label "parameter" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 213 .
+
+rust:parameters a owl:Class ;
+    rdfs:label "parameters" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 210 .
+
+rust:parenthesized_expression a owl:Class ;
+    rdfs:label "parenthesized_expression" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 259 .
+
+rust:path a owl:DatatypeProperty ;
+    rdfs:label "path (literal)" ;
+    rdfs:comment "Literal value for path field when it contains a terminal node" ;
+    rust:fieldId 23 ;
+    rust:isTerminalField true .
+
+rust:pattern a owl:DatatypeProperty ;
+    rdfs:label "pattern (literal)" ;
+    rdfs:comment "Literal value for pattern field when it contains a terminal node" ;
+    rust:fieldId 24 ;
+    rust:isTerminalField true .
+
+rust:pointer_type a owl:Class ;
+    rdfs:label "pointer_type" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 233 .
+
+rust:primitive_type a owl:Class ;
+    rdfs:label "primitive_type" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48 .
+
+rust:qualified_type a owl:Class ;
+    rdfs:label "qualified_type" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 218 .
+
+rust:range_expression a owl:Class ;
+    rdfs:label "range_expression" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 246 .
+
+rust:range_pattern a owl:Class ;
+    rdfs:label "range_pattern" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 303 .
+
+rust:raw_string_literal a owl:Class ;
+    rdfs:label "raw_string_literal" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 312 .
+
+rust:ref_pattern a owl:Class ;
+    rdfs:label "ref_pattern" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 304 .
+
+rust:reference_expression a owl:Class ;
+    rdfs:label "reference_expression" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 249 .
+
+rust:reference_pattern a owl:Class ;
+    rdfs:label "reference_pattern" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 306 .
+
+rust:reference_type a owl:Class ;
+    rdfs:label "reference_type" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 232 .
+
+rust:remaining_field_pattern a owl:Class ;
+    rdfs:label "remaining_field_pattern" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 301 .
+
+rust:removed_trait_bound a owl:Class ;
+    rdfs:label "removed_trait_bound" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 198 .
+
+rust:return_expression a owl:Class ;
+    rdfs:label "return_expression" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 254 .
+
+rust:right a owl:DatatypeProperty ;
+    rdfs:label "right (literal)" ;
+    rdfs:comment "Literal value for right field when it contains a terminal node" ;
+    rust:fieldId 26 ;
+    rust:isTerminalField true .
+
+rust:scoped_identifier a owl:Class ;
+    rdfs:label "scoped_identifier" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 243 .
+
+rust:scoped_type_identifier a owl:Class ;
+    rdfs:label "scoped_type_identifier" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 244,
+        245 .
+
+rust:scoped_use_list a owl:Class ;
+    rdfs:label "scoped_use_list" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 206 .
+
+rust:self a owl:Class ;
+    rdfs:label "self" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 143 .
+
+rust:self_parameter a owl:Class ;
+    rdfs:label "self_parameter" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 211 .
+
+rust:shebang a owl:Class ;
+    rdfs:label "shebang" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 142 .
+
+rust:shorthand_field_identifier a owl:Class ;
+    rdfs:label "shorthand_field_identifier" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 353 .
+
+rust:shorthand_field_initializer a owl:Class ;
+    rdfs:label "shorthand_field_initializer" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 264 .
+
+rust:slice_pattern a owl:Class ;
+    rdfs:label "slice_pattern" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 297 .
+
+rust:source_file a owl:Class ;
+    rdfs:label "source_file" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 157 .
+
+rust:static_item a owl:Class ;
+    rdfs:label "static_item" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 186 .
+
+rust:string_content a owl:Class ;
+    rdfs:label "string_content" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 147,
+        149 .
+
+rust:string_literal a owl:Class ;
+    rdfs:label "string_literal" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 311 .
+
+rust:struct_expression a owl:Class ;
+    rdfs:label "struct_expression" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 262 .
+
+rust:struct_item a owl:Class ;
+    rdfs:label "struct_item" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 176 .
+
+rust:struct_pattern a owl:Class ;
+    rdfs:label "struct_pattern" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 299 .
+
+rust:super a owl:Class ;
+    rdfs:label "super" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 144 .
+
+rust:token_binding_pattern a owl:Class ;
+    rdfs:label "token_binding_pattern" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 165 .
+
+rust:token_repetition a owl:Class ;
+    rdfs:label "token_repetition" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 169 .
+
+rust:token_repetition_pattern a owl:Class ;
+    rdfs:label "token_repetition_pattern" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 166 .
+
+rust:token_tree a owl:Class ;
+    rdfs:label "token_tree" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 168,
+        240 .
+
+rust:token_tree_pattern a owl:Class ;
+    rdfs:label "token_tree_pattern" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 164 .
+
+rust:trait a owl:DatatypeProperty ;
+    rdfs:label "trait (literal)" ;
+    rdfs:comment "Literal value for trait field when it contains a terminal node" ;
+    rust:fieldId 27 ;
+    rust:isTerminalField true .
+
+rust:trait_bounds a owl:Class ;
+    rdfs:label "trait_bounds" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 196 .
+
+rust:trait_item a owl:Class ;
+    rdfs:label "trait_item" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 194 .
+
+rust:try_block a owl:Class ;
+    rdfs:label "try_block" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 292 .
+
+rust:try_expression a owl:Class ;
+    rdfs:label "try_expression" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 248 .
+
+rust:tuple_expression a owl:Class ;
+    rdfs:label "tuple_expression" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 260 .
+
+rust:tuple_pattern a owl:Class ;
+    rdfs:label "tuple_pattern" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 296 .
+
+rust:tuple_struct_pattern a owl:Class ;
+    rdfs:label "tuple_struct_pattern" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 298 .
+
+rust:tuple_type a owl:Class ;
+    rdfs:label "tuple_type" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 223 .
+
+rust:type a owl:DatatypeProperty ;
+    rdfs:label "type (literal)" ;
+    rdfs:comment "Literal value for type field when it contains a terminal node" ;
+    rust:fieldId 28 ;
+    rust:isTerminalField true .
+
+rust:type_arguments a owl:Class ;
+    rdfs:label "type_arguments" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 230 .
+
+rust:type_binding a owl:Class ;
+    rdfs:label "type_binding" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 231 .
+
+rust:type_cast_expression a owl:Class ;
+    rdfs:label "type_cast_expression" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 253 .
+
+rust:type_identifier a owl:Class ;
+    rdfs:label "type_identifier" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 354 .
+
+rust:type_item a owl:Class ;
+    rdfs:label "type_item" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 187 .
+
+rust:type_parameter a owl:Class ;
+    rdfs:label "type_parameter" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 201 .
+
+rust:type_parameters a owl:Class ;
+    rdfs:label "type_parameters" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 199 .
+
+rust:unary_expression a owl:Class ;
+    rdfs:label "unary_expression" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 247 .
+
+rust:union_item a owl:Class ;
+    rdfs:label "union_item" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 177 .
+
+rust:unit_expression a owl:Class ;
+    rdfs:label "unit_expression" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 261 .
+
+rust:unit_type a owl:Class ;
+    rdfs:label "unit_type" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 224 .
+
+rust:unsafe_block a owl:Class ;
+    rdfs:label "unsafe_block" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 289 .
+
+rust:use_as_clause a owl:Class ;
+    rdfs:label "use_as_clause" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 208 .
+
+rust:use_bounds a owl:Class ;
+    rdfs:label "use_bounds" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 229 .
+
+rust:use_declaration a owl:Class ;
+    rdfs:label "use_declaration" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 204 .
+
+rust:use_list a owl:Class ;
+    rdfs:label "use_list" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 207 .
+
+rust:use_wildcard a owl:Class ;
+    rdfs:label "use_wildcard" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 209 .
+
+rust:value a owl:DatatypeProperty ;
+    rdfs:label "value (literal)" ;
+    rdfs:comment "Literal value for value field when it contains a terminal node" ;
+    rust:fieldId 31 ;
+    rust:isTerminalField true .
+
+rust:variadic_parameter a owl:Class ;
+    rdfs:label "variadic_parameter" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 212 .
+
+rust:visibility_modifier a owl:Class ;
+    rdfs:label "visibility_modifier" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 215 .
+
+rust:where_clause a owl:Class ;
+    rdfs:label "where_clause" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 191 .
+
+rust:where_predicate a owl:Class ;
+    rdfs:label "where_predicate" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 192 .
+
+rust:while_expression a owl:Class ;
+    rdfs:label "while_expression" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 277 .
+
+rust:yield_expression a owl:Class ;
+    rdfs:label "yield_expression" ;
+    rdfs:isDefinedBy rust: ;
+    rdfs:subClassOf ast:Node ;
+    rust:isSupertype true ;
+    rust:nodeTypeId 255 .
+
+rust: a owl:Ontology ;
+    rdfs:label "Rust Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for rust" ;
+    owl:versionInfo "v0.25" ;
+    rust:abiVersion 15 ;
+    rust:fieldCount 31 ;
+    rust:languageName "rust" ;
+    rust:nodeKindCount 355 .
+

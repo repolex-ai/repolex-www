@@ -1,0 +1,1250 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix fsharp_signature: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/fsharp_signature/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+fsharp_signature:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+fsharp_signature:access_modifier a owl:Class ;
+    rdfs:label "access_modifier" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 203 .
+
+fsharp_signature:active_pattern a owl:Class ;
+    rdfs:label "active_pattern" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 334 .
+
+fsharp_signature:active_pattern_op_name a owl:Class ;
+    rdfs:label "active_pattern_op_name" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 399 .
+
+fsharp_signature:additional_constr_defn a owl:Class ;
+    rdfs:label "additional_constr_defn" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 316 .
+
+fsharp_signature:anon_record_expression a owl:Class ;
+    rdfs:label "anon_record_expression" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 231 .
+
+fsharp_signature:anon_record_type a owl:Class ;
+    rdfs:label "anon_record_type" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 283 .
+
+fsharp_signature:application_expression a owl:Class ;
+    rdfs:label "application_expression" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 262 .
+
+fsharp_signature:args a owl:DatatypeProperty ;
+    rdfs:label "args (literal)" ;
+    rdfs:comment "Literal value for args field when it contains a terminal node" ;
+    fsharp_signature:fieldId 2 ;
+    fsharp_signature:isTerminalField true .
+
+fsharp_signature:argument_name_spec a owl:Class ;
+    rdfs:label "argument_name_spec" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 301 .
+
+fsharp_signature:argument_patterns a owl:Class ;
+    rdfs:label "argument_patterns" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 215 .
+
+fsharp_signature:argument_spec a owl:Class ;
+    rdfs:label "argument_spec" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 299 .
+
+fsharp_signature:arguments_spec a owl:Class ;
+    rdfs:label "arguments_spec" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 300 .
+
+fsharp_signature:array_expression a owl:Class ;
+    rdfs:label "array_expression" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 254 .
+
+fsharp_signature:array_pattern a owl:Class ;
+    rdfs:label "array_pattern" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 220 .
+
+fsharp_signature:as_pattern a owl:Class ;
+    rdfs:label "as_pattern" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 210 .
+
+fsharp_signature:atomic_type a owl:Class ;
+    rdfs:label "atomic_type" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 290 .
+
+fsharp_signature:attribute a owl:Class ;
+    rdfs:label "attribute" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 194 .
+
+fsharp_signature:attribute_pattern a owl:Class ;
+    rdfs:label "attribute_pattern" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 208 .
+
+fsharp_signature:attributes a owl:Class ;
+    rdfs:label "attributes" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 192 .
+
+fsharp_signature:begin_end_expression a owl:Class ;
+    rdfs:label "begin_end_expression" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 258 .
+
+fsharp_signature:bignum a owl:Class ;
+    rdfs:label "bignum" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 351 .
+
+fsharp_signature:block a owl:DatatypeProperty ;
+    rdfs:label "block (literal)" ;
+    rdfs:comment "Literal value for block field when it contains a terminal node" ;
+    fsharp_signature:fieldId 5 ;
+    fsharp_signature:isTerminalField true .
+
+fsharp_signature:block_comment a owl:Class ;
+    rdfs:label "block_comment" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 354 .
+
+fsharp_signature:block_comment_content a owl:Class ;
+    rdfs:label "block_comment_content" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 185 .
+
+fsharp_signature:bool a owl:Class ;
+    rdfs:label "bool" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 125 .
+
+fsharp_signature:brace_expression a owl:Class ;
+    rdfs:label "brace_expression" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 230 .
+
+fsharp_signature:byte a owl:Class ;
+    rdfs:label "byte" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 340 .
+
+fsharp_signature:bytearray a owl:Class ;
+    rdfs:label "bytearray" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 328 .
+
+fsharp_signature:ce_expression a owl:Class ;
+    rdfs:label "ce_expression" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 265 .
+
+fsharp_signature:char a owl:Class ;
+    rdfs:label "char" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 321 .
+
+fsharp_signature:compiler_directive_decl a owl:Class ;
+    rdfs:label "compiler_directive_decl" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 355 .
+
+fsharp_signature:compound_type a owl:Class ;
+    rdfs:label "compound_type" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 277 .
+
+fsharp_signature:condition a owl:DatatypeProperty ;
+    rdfs:label "condition (literal)" ;
+    rdfs:comment "Literal value for condition field when it contains a terminal node" ;
+    fsharp_signature:fieldId 7 ;
+    fsharp_signature:isTerminalField true .
+
+fsharp_signature:conjunct_pattern a owl:Class ;
+    rdfs:label "conjunct_pattern" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 213 .
+
+fsharp_signature:cons_pattern a owl:Class ;
+    rdfs:label "cons_pattern" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 211 .
+
+fsharp_signature:const a owl:Class ;
+    rdfs:label "const" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 332 .
+
+fsharp_signature:constrained_type a owl:Class ;
+    rdfs:label "constrained_type" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 281 .
+
+fsharp_signature:constraint a owl:Class ;
+    rdfs:label "constraint" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 291 .
+
+fsharp_signature:curried_spec a owl:Class ;
+    rdfs:label "curried_spec" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 298 .
+
+fsharp_signature:decimal a owl:Class ;
+    rdfs:label "decimal" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 352 .
+
+fsharp_signature:declaration_expression a owl:Class ;
+    rdfs:label "declaration_expression" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 249 .
+
+fsharp_signature:disjunct_pattern a owl:Class ;
+    rdfs:label "disjunct_pattern" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 212 .
+
+fsharp_signature:do a owl:Class ;
+    rdfs:label "do" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 197 .
+
+fsharp_signature:do_expression a owl:Class ;
+    rdfs:label "do_expression" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 250 .
+
+fsharp_signature:dot_expression a owl:Class ;
+    rdfs:label "dot_expression" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 263 .
+
+fsharp_signature:elif_expression a owl:Class ;
+    rdfs:label "elif_expression" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 239 .
+
+fsharp_signature:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+fsharp_signature:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+fsharp_signature:field_alternative a owl:ObjectProperty ;
+    rdfs:label "alternative (structural)" ;
+    rdfs:comment "Structural reference for alternative field when it contains a non-terminal node" ;
+    fsharp_signature:fieldId 1 .
+
+fsharp_signature:field_args a owl:ObjectProperty ;
+    rdfs:label "args (structural)" ;
+    rdfs:comment "Structural reference for args field when it contains a non-terminal node" ;
+    fsharp_signature:fieldId 2 .
+
+fsharp_signature:field_assignee a owl:ObjectProperty ;
+    rdfs:label "assignee (structural)" ;
+    rdfs:comment "Structural reference for assignee field when it contains a non-terminal node" ;
+    fsharp_signature:fieldId 3 .
+
+fsharp_signature:field_base a owl:ObjectProperty ;
+    rdfs:label "base (structural)" ;
+    rdfs:comment "Structural reference for base field when it contains a non-terminal node" ;
+    fsharp_signature:fieldId 4 .
+
+fsharp_signature:field_block a owl:ObjectProperty ;
+    rdfs:label "block (structural)" ;
+    rdfs:comment "Structural reference for block field when it contains a non-terminal node" ;
+    fsharp_signature:fieldId 5 .
+
+fsharp_signature:field_body a owl:ObjectProperty ;
+    rdfs:label "body (structural)" ;
+    rdfs:comment "Structural reference for body field when it contains a non-terminal node" ;
+    fsharp_signature:fieldId 6 .
+
+fsharp_signature:field_constraints a owl:ObjectProperty ;
+    rdfs:label "constraints (structural)" ;
+    rdfs:comment "Structural reference for constraints field when it contains a non-terminal node" ;
+    fsharp_signature:fieldId 8 .
+
+fsharp_signature:field_else a owl:ObjectProperty ;
+    rdfs:label "else (structural)" ;
+    rdfs:comment "Structural reference for else field when it contains a non-terminal node" ;
+    fsharp_signature:fieldId 9 .
+
+fsharp_signature:field_field a owl:ObjectProperty ;
+    rdfs:label "field (structural)" ;
+    rdfs:comment "Structural reference for field field when it contains a non-terminal node" ;
+    fsharp_signature:fieldId 10 .
+
+fsharp_signature:field_from a owl:ObjectProperty ;
+    rdfs:label "from (structural)" ;
+    rdfs:comment "Structural reference for from field when it contains a non-terminal node" ;
+    fsharp_signature:fieldId 11 .
+
+fsharp_signature:field_guard a owl:ObjectProperty ;
+    rdfs:label "guard (structural)" ;
+    rdfs:comment "Structural reference for guard field when it contains a non-terminal node" ;
+    fsharp_signature:fieldId 12 .
+
+fsharp_signature:field_in a owl:ObjectProperty ;
+    rdfs:label "in (structural)" ;
+    rdfs:comment "Structural reference for in field when it contains a non-terminal node" ;
+    fsharp_signature:fieldId 13 .
+
+fsharp_signature:field_index a owl:ObjectProperty ;
+    rdfs:label "index (structural)" ;
+    rdfs:comment "Structural reference for index field when it contains a non-terminal node" ;
+    fsharp_signature:fieldId 14 .
+
+fsharp_signature:field_initializer a owl:Class ;
+    rdfs:label "field_initializer" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 317 .
+
+fsharp_signature:field_initializers a owl:Class ;
+    rdfs:label "field_initializers" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 318 .
+
+fsharp_signature:field_name a owl:ObjectProperty ;
+    rdfs:label "name (structural)" ;
+    rdfs:comment "Structural reference for name field when it contains a non-terminal node" ;
+    fsharp_signature:fieldId 17 .
+
+fsharp_signature:field_pattern a owl:Class,
+        owl:ObjectProperty ;
+    rdfs:label "field_pattern",
+        "pattern (structural)" ;
+    rdfs:comment "Structural reference for pattern field when it contains a non-terminal node" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:fieldId 18 ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 216 .
+
+fsharp_signature:field_then a owl:ObjectProperty ;
+    rdfs:label "then (structural)" ;
+    rdfs:comment "Structural reference for then field when it contains a non-terminal node" ;
+    fsharp_signature:fieldId 20 .
+
+fsharp_signature:field_to a owl:ObjectProperty ;
+    rdfs:label "to (structural)" ;
+    rdfs:comment "Structural reference for to field when it contains a non-terminal node" ;
+    fsharp_signature:fieldId 21 .
+
+fsharp_signature:field_value a owl:ObjectProperty ;
+    rdfs:label "value (structural)" ;
+    rdfs:comment "Structural reference for value field when it contains a non-terminal node" ;
+    fsharp_signature:fieldId 22 .
+
+fsharp_signature:file a owl:Class ;
+    rdfs:label "file" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 190 .
+
+fsharp_signature:flexible_type a owl:Class ;
+    rdfs:label "flexible_type" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 282 .
+
+fsharp_signature:float a owl:Class ;
+    rdfs:label "float" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 353 .
+
+fsharp_signature:for_expression a owl:Class ;
+    rdfs:label "for_expression" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 236 .
+
+fsharp_signature:format_string a owl:Class ;
+    rdfs:label "format_string" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 323 .
+
+fsharp_signature:format_string_eval a owl:Class ;
+    rdfs:label "format_string_eval" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 322 .
+
+fsharp_signature:format_triple_quoted_string a owl:Class ;
+    rdfs:label "format_triple_quoted_string" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 330 .
+
+fsharp_signature:fsi_directive_decl a owl:Class ;
+    rdfs:label "fsi_directive_decl" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 356 .
+
+fsharp_signature:fun_expression a owl:Class ;
+    rdfs:label "fun_expression" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 242 .
+
+fsharp_signature:function_declaration_left a owl:Class ;
+    rdfs:label "function_declaration_left" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 201 .
+
+fsharp_signature:function_expression a owl:Class ;
+    rdfs:label "function_expression" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 245 .
+
+fsharp_signature:function_or_value_defn a owl:Class ;
+    rdfs:label "function_or_value_defn" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 199 .
+
+fsharp_signature:function_type a owl:Class ;
+    rdfs:label "function_type" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 276 .
+
+fsharp_signature:generic_type a owl:Class ;
+    rdfs:label "generic_type" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 274 .
+
+fsharp_signature:identifier a owl:Class ;
+    rdfs:label "identifier" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 1 .
+
+fsharp_signature:identifier_pattern a owl:Class ;
+    rdfs:label "identifier_pattern" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 224 .
+
+fsharp_signature:ieee32 a owl:Class ;
+    rdfs:label "ieee32" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 349 .
+
+fsharp_signature:ieee64 a owl:Class ;
+    rdfs:label "ieee64" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 350 .
+
+fsharp_signature:if_expression a owl:Class ;
+    rdfs:label "if_expression" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 241 .
+
+fsharp_signature:index_expression a owl:Class ;
+    rdfs:label "index_expression" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 247 .
+
+fsharp_signature:infix_expression a owl:Class ;
+    rdfs:label "infix_expression" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 264 .
+
+fsharp_signature:infix_op a owl:Class ;
+    rdfs:label "infix_op" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 338 .
+
+fsharp_signature:instance a owl:DatatypeProperty ;
+    rdfs:label "instance (literal)" ;
+    rdfs:comment "Literal value for instance field when it contains a terminal node" ;
+    fsharp_signature:fieldId 15 ;
+    fsharp_signature:isTerminalField true .
+
+fsharp_signature:int a owl:Class ;
+    rdfs:label "int" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 146 .
+
+fsharp_signature:int16 a owl:Class ;
+    rdfs:label "int16" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 341 .
+
+fsharp_signature:int32 a owl:Class ;
+    rdfs:label "int32" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 343 .
+
+fsharp_signature:int64 a owl:Class ;
+    rdfs:label "int64" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 347 .
+
+fsharp_signature:interface_implementation a owl:Class ;
+    rdfs:label "interface_implementation" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 305 .
+
+fsharp_signature:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+fsharp_signature:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+fsharp_signature:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+fsharp_signature:line_comment a owl:Class ;
+    rdfs:label "line_comment" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 167 .
+
+fsharp_signature:list_expression a owl:Class ;
+    rdfs:label "list_expression" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 253 .
+
+fsharp_signature:list_pattern a owl:Class ;
+    rdfs:label "list_pattern" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 219 .
+
+fsharp_signature:list_type a owl:Class ;
+    rdfs:label "list_type" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 279 .
+
+fsharp_signature:literal_expression a owl:Class ;
+    rdfs:label "literal_expression" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 227 .
+
+fsharp_signature:long_identifier a owl:Class ;
+    rdfs:label "long_identifier" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 333 .
+
+fsharp_signature:long_identifier_or_op a owl:Class ;
+    rdfs:label "long_identifier_or_op" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 228 .
+
+fsharp_signature:match_expression a owl:Class ;
+    rdfs:label "match_expression" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 244 .
+
+fsharp_signature:member_defn a owl:Class ;
+    rdfs:label "member_defn" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 308 .
+
+fsharp_signature:member_signature a owl:Class ;
+    rdfs:label "member_signature" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 297 .
+
+fsharp_signature:method a owl:DatatypeProperty ;
+    rdfs:label "method (literal)" ;
+    rdfs:comment "Literal value for method field when it contains a terminal node" ;
+    fsharp_signature:fieldId 16 ;
+    fsharp_signature:isTerminalField true .
+
+fsharp_signature:method_or_prop_defn a owl:Class ;
+    rdfs:label "method_or_prop_defn" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 315 .
+
+fsharp_signature:module a owl:Class ;
+    rdfs:label "module" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 360 .
+
+fsharp_signature:mutate_expression a owl:Class ;
+    rdfs:label "mutate_expression" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 246 .
+
+fsharp_signature:name a owl:DatatypeProperty ;
+    rdfs:label "name (literal)" ;
+    rdfs:comment "Literal value for name field when it contains a terminal node" ;
+    fsharp_signature:fieldId 17 ;
+    fsharp_signature:isTerminalField true .
+
+fsharp_signature:named_field a owl:Class ;
+    rdfs:label "named_field" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 222 .
+
+fsharp_signature:named_field_pattern a owl:Class ;
+    rdfs:label "named_field_pattern" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 223 .
+
+fsharp_signature:named_static_parameter a owl:Class ;
+    rdfs:label "named_static_parameter" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 287 .
+
+fsharp_signature:namespace a owl:Class ;
+    rdfs:label "namespace" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 191 .
+
+fsharp_signature:nativeint a owl:Class ;
+    rdfs:label "nativeint" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 345 .
+
+fsharp_signature:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+fsharp_signature:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+fsharp_signature:object_expression a owl:Class ;
+    rdfs:label "object_expression" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 232 .
+
+fsharp_signature:op_identifier a owl:Class ;
+    rdfs:label "op_identifier" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 129 .
+
+fsharp_signature:optional_pattern a owl:Class ;
+    rdfs:label "optional_pattern" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 206 .
+
+fsharp_signature:paren_expression a owl:Class ;
+    rdfs:label "paren_expression" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 259 .
+
+fsharp_signature:paren_pattern a owl:Class ;
+    rdfs:label "paren_pattern" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 209 .
+
+fsharp_signature:paren_type a owl:Class ;
+    rdfs:label "paren_type" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 275 .
+
+fsharp_signature:pattern a owl:DatatypeProperty ;
+    rdfs:label "pattern (literal)" ;
+    rdfs:comment "Literal value for pattern field when it contains a terminal node" ;
+    fsharp_signature:fieldId 18 ;
+    fsharp_signature:isTerminalField true .
+
+fsharp_signature:postfix_type a owl:Class ;
+    rdfs:label "postfix_type" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 278 .
+
+fsharp_signature:prefix_op a owl:Class ;
+    rdfs:label "prefix_op" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 337 .
+
+fsharp_signature:prefixed_expression a owl:Class ;
+    rdfs:label "prefixed_expression" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 234 .
+
+fsharp_signature:preproc_else a owl:Class ;
+    rdfs:label "preproc_else" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 359 .
+
+fsharp_signature:preproc_if a owl:Class ;
+    rdfs:label "preproc_if" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 358 .
+
+fsharp_signature:preproc_line a owl:Class ;
+    rdfs:label "preproc_line" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 357 .
+
+fsharp_signature:property_accessor a owl:Class ;
+    rdfs:label "property_accessor" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 312 .
+
+fsharp_signature:property_or_ident a owl:Class ;
+    rdfs:label "property_or_ident" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 309 .
+
+fsharp_signature:range_expression a owl:Class ;
+    rdfs:label "range_expression" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 255 .
+
+fsharp_signature:record_field a owl:Class ;
+    rdfs:label "record_field" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 304 .
+
+fsharp_signature:record_fields a owl:Class ;
+    rdfs:label "record_fields" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 303 .
+
+fsharp_signature:record_pattern a owl:Class ;
+    rdfs:label "record_pattern" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 221 .
+
+fsharp_signature:repeat_pattern a owl:Class ;
+    rdfs:label "repeat_pattern" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 204 .
+
+fsharp_signature:rule a owl:Class ;
+    rdfs:label "rule" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 256 .
+
+fsharp_signature:rules a owl:Class ;
+    rdfs:label "rules" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 257 .
+
+fsharp_signature:sbyte a owl:Class ;
+    rdfs:label "sbyte" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 339 .
+
+fsharp_signature:sequential_expression a owl:Class ;
+    rdfs:label "sequential_expression" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 266 .
+
+fsharp_signature:short_comp_expression a owl:Class ;
+    rdfs:label "short_comp_expression" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 268 .
+
+fsharp_signature:simple_type a owl:Class ;
+    rdfs:label "simple_type" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 273 .
+
+fsharp_signature:slice_range a owl:Class ;
+    rdfs:label "slice_range" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 271 .
+
+fsharp_signature:slice_ranges a owl:Class ;
+    rdfs:label "slice_ranges" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 269 .
+
+fsharp_signature:static_parameter_value a owl:Class ;
+    rdfs:label "static_parameter_value" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 302 .
+
+fsharp_signature:static_type a owl:Class ;
+    rdfs:label "static_type" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 280 .
+
+fsharp_signature:string a owl:Class ;
+    rdfs:label "string" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 325 .
+
+fsharp_signature:target a owl:DatatypeProperty ;
+    rdfs:label "target (literal)" ;
+    rdfs:comment "Literal value for target field when it contains a terminal node" ;
+    fsharp_signature:fieldId 19 ;
+    fsharp_signature:isTerminalField true .
+
+fsharp_signature:trait_member_constraint a owl:Class ;
+    rdfs:label "trait_member_constraint" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 296 .
+
+fsharp_signature:triple_quoted_string a owl:Class ;
+    rdfs:label "triple_quoted_string" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 331 .
+
+fsharp_signature:try_expression a owl:Class ;
+    rdfs:label "try_expression" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 243 .
+
+fsharp_signature:tuple_expression a owl:Class ;
+    rdfs:label "tuple_expression" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 229 .
+
+fsharp_signature:type_argument a owl:Class ;
+    rdfs:label "type_argument" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 293 .
+
+fsharp_signature:type_argument_constraints a owl:Class ;
+    rdfs:label "type_argument_constraints" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 292 .
+
+fsharp_signature:type_argument_defn a owl:Class ;
+    rdfs:label "type_argument_defn" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 294 .
+
+fsharp_signature:type_arguments a owl:Class ;
+    rdfs:label "type_arguments" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 295 .
+
+fsharp_signature:type_attribute a owl:Class ;
+    rdfs:label "type_attribute" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 288 .
+
+fsharp_signature:type_attributes a owl:Class ;
+    rdfs:label "type_attributes" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 289 .
+
+fsharp_signature:type_check_pattern a owl:Class ;
+    rdfs:label "type_check_pattern" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 207 .
+
+fsharp_signature:typecast_expression a owl:Class ;
+    rdfs:label "typecast_expression" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 235 .
+
+fsharp_signature:typed_expression a owl:Class ;
+    rdfs:label "typed_expression" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 248 .
+
+fsharp_signature:typed_pattern a owl:Class ;
+    rdfs:label "typed_pattern" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 214 .
+
+fsharp_signature:types a owl:Class ;
+    rdfs:label "types" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 284 .
+
+fsharp_signature:uint16 a owl:Class ;
+    rdfs:label "uint16" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 342 .
+
+fsharp_signature:uint32 a owl:Class ;
+    rdfs:label "uint32" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 344 .
+
+fsharp_signature:uint64 a owl:Class ;
+    rdfs:label "uint64" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 348 .
+
+fsharp_signature:unativeint a owl:Class ;
+    rdfs:label "unativeint" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 346 .
+
+fsharp_signature:unit a owl:Class ;
+    rdfs:label "unit" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 126 .
+
+fsharp_signature:value_declaration a owl:Class ;
+    rdfs:label "value_declaration" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 196 .
+
+fsharp_signature:value_declaration_left a owl:Class ;
+    rdfs:label "value_declaration_left" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 202 .
+
+fsharp_signature:value_definition a owl:Class ;
+    rdfs:label "value_definition" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 362 .
+
+fsharp_signature:verbatim_bytearray a owl:Class ;
+    rdfs:label "verbatim_bytearray" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 329 .
+
+fsharp_signature:verbatim_string a owl:Class ;
+    rdfs:label "verbatim_string" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 327 .
+
+fsharp_signature:while_expression a owl:Class ;
+    rdfs:label "while_expression" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 237 .
+
+fsharp_signature:wildcard_active_pattern_op a owl:Class ;
+    rdfs:label "wildcard_active_pattern_op" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 400 .
+
+fsharp_signature:wildcard_pattern a owl:Class ;
+    rdfs:label "wildcard_pattern" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 401 .
+
+fsharp_signature:with_field_expression a owl:Class ;
+    rdfs:label "with_field_expression" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 233 .
+
+fsharp_signature:xint a owl:Class ;
+    rdfs:label "xint" ;
+    rdfs:isDefinedBy fsharp_signature: ;
+    rdfs:subClassOf ast:Node ;
+    fsharp_signature:isSupertype true ;
+    fsharp_signature:nodeTypeId 147 .
+
+fsharp_signature: a owl:Ontology ;
+    rdfs:label "Fsharp_Signature Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for fsharp_signature" ;
+    owl:versionInfo "v0.25" ;
+    fsharp_signature:abiVersion 14 ;
+    fsharp_signature:fieldCount 22 ;
+    fsharp_signature:languageName "None" ;
+    fsharp_signature:nodeKindCount 402 .
+

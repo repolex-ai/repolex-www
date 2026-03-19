@@ -1,0 +1,1685 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix objc: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/objc/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+objc:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+objc:abstract_array_declarator a owl:Class ;
+    rdfs:label "abstract_array_declarator" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 350 .
+
+objc:abstract_block_pointer_declarator a owl:Class ;
+    rdfs:label "abstract_block_pointer_declarator" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 497 .
+
+objc:abstract_function_declarator a owl:Class ;
+    rdfs:label "abstract_function_declarator" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 345 .
+
+objc:abstract_parenthesized_declarator a owl:Class ;
+    rdfs:label "abstract_parenthesized_declarator" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 336 .
+
+objc:abstract_pointer_declarator a owl:Class ;
+    rdfs:label "abstract_pointer_declarator" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 341 .
+
+objc:alias a owl:DatatypeProperty ;
+    rdfs:label "alias (literal)" ;
+    rdfs:comment "Literal value for alias field when it contains a terminal node" ;
+    objc:fieldId 1 ;
+    objc:isTerminalField true .
+
+objc:alignas_qualifier a owl:Class ;
+    rdfs:label "alignas_qualifier" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 355 .
+
+objc:alignof_expression a owl:Class ;
+    rdfs:label "alignof_expression" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 401 .
+
+objc:argument a owl:DatatypeProperty ;
+    rdfs:label "argument (literal)" ;
+    rdfs:comment "Literal value for argument field when it contains a terminal node" ;
+    objc:fieldId 3 ;
+    objc:isTerminalField true .
+
+objc:argument_list a owl:Class ;
+    rdfs:label "argument_list" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 309,
+        415 .
+
+objc:array_declarator a owl:Class ;
+    rdfs:label "array_declarator" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 347,
+        348,
+        349 .
+
+objc:array_literal a owl:Class ;
+    rdfs:label "array_literal" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 507 .
+
+objc:array_type_specifier a owl:Class ;
+    rdfs:label "array_type_specifier" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 500 .
+
+objc:assignment_expression a owl:Class ;
+    rdfs:label "assignment_expression" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 393 .
+
+objc:at_expression a owl:Class ;
+    rdfs:label "at_expression" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 504 .
+
+objc:atdef_field a owl:Class ;
+    rdfs:label "atdef_field" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 501 .
+
+objc:atomic_declaration a owl:Class ;
+    rdfs:label "atomic_declaration" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 478 .
+
+objc:attribute a owl:Class ;
+    rdfs:label "attribute" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 321 .
+
+objc:attribute_declaration a owl:Class ;
+    rdfs:label "attribute_declaration" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 322 .
+
+objc:attribute_specifier a owl:Class ;
+    rdfs:label "attribute_specifier" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 320 .
+
+objc:attributed_declarator a owl:Class ;
+    rdfs:label "attributed_declarator" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 337 .
+
+objc:attributed_statement a owl:Class ;
+    rdfs:label "attributed_statement" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 371 .
+
+objc:availability a owl:Class ;
+    rdfs:label "availability" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 432 .
+
+objc:availability_attribute_specifier a owl:Class ;
+    rdfs:label "availability_attribute_specifier" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 447 .
+
+objc:available_expression a owl:Class ;
+    rdfs:label "available_expression" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 486 .
+
+objc:base a owl:DatatypeProperty ;
+    rdfs:label "base (literal)" ;
+    rdfs:comment "Literal value for base field when it contains a terminal node" ;
+    objc:fieldId 6 ;
+    objc:isTerminalField true .
+
+objc:binary_expression a owl:Class ;
+    rdfs:label "binary_expression" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 310,
+        396 .
+
+objc:bitfield_clause a owl:Class ;
+    rdfs:label "bitfield_clause" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 365 .
+
+objc:block_literal a owl:Class ;
+    rdfs:label "block_literal" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 488 .
+
+objc:block_pointer_declarator a owl:Class ;
+    rdfs:label "block_pointer_declarator" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 494,
+        495,
+        496 .
+
+objc:break_statement a owl:Class ;
+    rdfs:label "break_statement" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 386 .
+
+objc:call_expression a owl:Class ;
+    rdfs:label "call_expression" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 308,
+        405 .
+
+objc:case_statement a owl:Class ;
+    rdfs:label "case_statement" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 380 .
+
+objc:cast_expression a owl:Class ;
+    rdfs:label "cast_expression" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 398 .
+
+objc:catch_clause a owl:Class ;
+    rdfs:label "catch_clause" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 482 .
+
+objc:category a owl:DatatypeProperty ;
+    rdfs:label "category (literal)" ;
+    rdfs:comment "Literal value for category field when it contains a terminal node" ;
+    objc:fieldId 8 ;
+    objc:isTerminalField true .
+
+objc:char_literal a owl:Class ;
+    rdfs:label "char_literal" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 424 .
+
+objc:character a owl:Class ;
+    rdfs:label "character" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 183 .
+
+objc:class a owl:DatatypeProperty ;
+    rdfs:label "class (literal)" ;
+    rdfs:comment "Literal value for class field when it contains a terminal node" ;
+    objc:fieldId 9 ;
+    objc:isTerminalField true .
+
+objc:class_declaration a owl:Class ;
+    rdfs:label "class_declaration" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 449 .
+
+objc:class_implementation a owl:Class ;
+    rdfs:label "class_implementation" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 454 .
+
+objc:class_interface a owl:Class ;
+    rdfs:label "class_interface" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 450 .
+
+objc:column a owl:DatatypeProperty ;
+    rdfs:label "column (literal)" ;
+    rdfs:comment "Literal value for column field when it contains a terminal node" ;
+    objc:fieldId 11 ;
+    objc:isTerminalField true .
+
+objc:comma_expression a owl:Class ;
+    rdfs:label "comma_expression" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 391 .
+
+objc:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 197 .
+
+objc:compatibility_alias_declaration a owl:Class ;
+    rdfs:label "compatibility_alias_declaration" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 464 .
+
+objc:compound_literal_expression a owl:Class ;
+    rdfs:label "compound_literal_expression" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 417 .
+
+objc:compound_statement a owl:Class ;
+    rdfs:label "compound_statement" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 352 .
+
+objc:concatenated_string a owl:Class ;
+    rdfs:label "concatenated_string" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 425 .
+
+objc:condition a owl:DatatypeProperty ;
+    rdfs:label "condition (literal)" ;
+    rdfs:comment "Literal value for condition field when it contains a terminal node" ;
+    objc:fieldId 12 ;
+    objc:isTerminalField true .
+
+objc:conditional_expression a owl:Class ;
+    rdfs:label "conditional_expression" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 392 .
+
+objc:continue_statement a owl:Class ;
+    rdfs:label "continue_statement" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 387 .
+
+objc:declaration a owl:Class ;
+    rdfs:label "declaration" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 313 .
+
+objc:declaration_list a owl:Class ;
+    rdfs:label "declaration_list" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 328 .
+
+objc:declarator a owl:DatatypeProperty ;
+    rdfs:label "declarator (literal)" ;
+    rdfs:comment "Literal value for declarator field when it contains a terminal node" ;
+    objc:fieldId 15 ;
+    objc:isTerminalField true .
+
+objc:designator a owl:DatatypeProperty ;
+    rdfs:label "designator (literal)" ;
+    rdfs:comment "Literal value for designator field when it contains a terminal node" ;
+    objc:fieldId 16 ;
+    objc:isTerminalField true .
+
+objc:dictionary_literal a owl:Class ;
+    rdfs:label "dictionary_literal" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 505 .
+
+objc:dictionary_pair a owl:Class ;
+    rdfs:label "dictionary_pair" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 506 .
+
+objc:directive a owl:DatatypeProperty ;
+    rdfs:label "directive (literal)" ;
+    rdfs:comment "Literal value for directive field when it contains a terminal node" ;
+    objc:fieldId 17 ;
+    objc:isTerminalField true .
+
+objc:do_statement a owl:Class ;
+    rdfs:label "do_statement" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 382 .
+
+objc:else_clause a owl:Class ;
+    rdfs:label "else_clause" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 378 .
+
+objc:encode_expression a owl:Class ;
+    rdfs:label "encode_expression" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 492 .
+
+objc:enum_specifier a owl:Class ;
+    rdfs:label "enum_specifier" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 358 .
+
+objc:enumerator a owl:Class ;
+    rdfs:label "enumerator" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 366 .
+
+objc:enumerator_list a owl:Class ;
+    rdfs:label "enumerator_list" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 359 .
+
+objc:escape_sequence a owl:Class ;
+    rdfs:label "escape_sequence" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 191 .
+
+objc:expression_statement a owl:Class ;
+    rdfs:label "expression_statement" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 375,
+        376 .
+
+objc:extension_expression a owl:Class ;
+    rdfs:label "extension_expression" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 414 .
+
+objc:false a owl:Class ;
+    rdfs:label "false" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 194 .
+
+objc:field a owl:DatatypeProperty ;
+    rdfs:label "field (literal)" ;
+    rdfs:comment "Literal value for field field when it contains a terminal node" ;
+    objc:fieldId 19 ;
+    objc:isTerminalField true .
+
+objc:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+objc:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+objc:field_alternative a owl:ObjectProperty ;
+    rdfs:label "alternative (structural)" ;
+    rdfs:comment "Structural reference for alternative field when it contains a non-terminal node" ;
+    objc:fieldId 2 .
+
+objc:field_argument a owl:ObjectProperty ;
+    rdfs:label "argument (structural)" ;
+    rdfs:comment "Structural reference for argument field when it contains a non-terminal node" ;
+    objc:fieldId 3 .
+
+objc:field_arguments a owl:ObjectProperty ;
+    rdfs:label "arguments (structural)" ;
+    rdfs:comment "Structural reference for arguments field when it contains a non-terminal node" ;
+    objc:fieldId 4 .
+
+objc:field_assembly_code a owl:ObjectProperty ;
+    rdfs:label "assembly_code (structural)" ;
+    rdfs:comment "Structural reference for assembly_code field when it contains a non-terminal node" ;
+    objc:fieldId 5 .
+
+objc:field_body a owl:ObjectProperty ;
+    rdfs:label "body (structural)" ;
+    rdfs:comment "Structural reference for body field when it contains a non-terminal node" ;
+    objc:fieldId 7 .
+
+objc:field_clobbers a owl:ObjectProperty ;
+    rdfs:label "clobbers (structural)" ;
+    rdfs:comment "Structural reference for clobbers field when it contains a non-terminal node" ;
+    objc:fieldId 10 .
+
+objc:field_condition a owl:ObjectProperty ;
+    rdfs:label "condition (structural)" ;
+    rdfs:comment "Structural reference for condition field when it contains a non-terminal node" ;
+    objc:fieldId 12 .
+
+objc:field_consequence a owl:ObjectProperty ;
+    rdfs:label "consequence (structural)" ;
+    rdfs:comment "Structural reference for consequence field when it contains a non-terminal node" ;
+    objc:fieldId 13 .
+
+objc:field_constraint a owl:ObjectProperty ;
+    rdfs:label "constraint (structural)" ;
+    rdfs:comment "Structural reference for constraint field when it contains a non-terminal node" ;
+    objc:fieldId 14 .
+
+objc:field_declaration a owl:Class ;
+    rdfs:label "field_declaration" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 364 .
+
+objc:field_declaration_list a owl:Class ;
+    rdfs:label "field_declaration_list" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 362 .
+
+objc:field_declarator a owl:ObjectProperty ;
+    rdfs:label "declarator (structural)" ;
+    rdfs:comment "Structural reference for declarator field when it contains a non-terminal node" ;
+    objc:fieldId 15 .
+
+objc:field_designator a owl:Class,
+        owl:ObjectProperty ;
+    rdfs:label "designator (structural)",
+        "field_designator" ;
+    rdfs:comment "Structural reference for designator field when it contains a non-terminal node" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:fieldId 16 ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 423 .
+
+objc:field_directive a owl:ObjectProperty ;
+    rdfs:label "directive (structural)" ;
+    rdfs:comment "Structural reference for directive field when it contains a non-terminal node" ;
+    objc:fieldId 17 .
+
+objc:field_end a owl:ObjectProperty ;
+    rdfs:label "end (structural)" ;
+    rdfs:comment "Structural reference for end field when it contains a non-terminal node" ;
+    objc:fieldId 18 .
+
+objc:field_expression a owl:Class ;
+    rdfs:label "field_expression" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 416 .
+
+objc:field_filename a owl:ObjectProperty ;
+    rdfs:label "filename (structural)" ;
+    rdfs:comment "Structural reference for filename field when it contains a non-terminal node" ;
+    objc:fieldId 20 .
+
+objc:field_function a owl:ObjectProperty ;
+    rdfs:label "function (structural)" ;
+    rdfs:comment "Structural reference for function field when it contains a non-terminal node" ;
+    objc:fieldId 21 .
+
+objc:field_goto_labels a owl:ObjectProperty ;
+    rdfs:label "goto_labels (structural)" ;
+    rdfs:comment "Structural reference for goto_labels field when it contains a non-terminal node" ;
+    objc:fieldId 22 .
+
+objc:field_identifier a owl:Class ;
+    rdfs:label "field_identifier" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 585 .
+
+objc:field_index a owl:ObjectProperty ;
+    rdfs:label "index (structural)" ;
+    rdfs:comment "Structural reference for index field when it contains a non-terminal node" ;
+    objc:fieldId 23 .
+
+objc:field_initializer a owl:ObjectProperty ;
+    rdfs:label "initializer (structural)" ;
+    rdfs:comment "Structural reference for initializer field when it contains a non-terminal node" ;
+    objc:fieldId 24 .
+
+objc:field_input_operands a owl:ObjectProperty ;
+    rdfs:label "input_operands (structural)" ;
+    rdfs:comment "Structural reference for input_operands field when it contains a non-terminal node" ;
+    objc:fieldId 25 .
+
+objc:field_left a owl:ObjectProperty ;
+    rdfs:label "left (structural)" ;
+    rdfs:comment "Structural reference for left field when it contains a non-terminal node" ;
+    objc:fieldId 27 .
+
+objc:field_operand a owl:ObjectProperty ;
+    rdfs:label "operand (structural)" ;
+    rdfs:comment "Structural reference for operand field when it contains a non-terminal node" ;
+    objc:fieldId 31 .
+
+objc:field_operator a owl:ObjectProperty ;
+    rdfs:label "operator (structural)" ;
+    rdfs:comment "Structural reference for operator field when it contains a non-terminal node" ;
+    objc:fieldId 32 .
+
+objc:field_output_operands a owl:ObjectProperty ;
+    rdfs:label "output_operands (structural)" ;
+    rdfs:comment "Structural reference for output_operands field when it contains a non-terminal node" ;
+    objc:fieldId 33 .
+
+objc:field_parameters a owl:ObjectProperty ;
+    rdfs:label "parameters (structural)" ;
+    rdfs:comment "Structural reference for parameters field when it contains a non-terminal node" ;
+    objc:fieldId 34 .
+
+objc:field_path a owl:ObjectProperty ;
+    rdfs:label "path (structural)" ;
+    rdfs:comment "Structural reference for path field when it contains a non-terminal node" ;
+    objc:fieldId 35 .
+
+objc:field_receiver a owl:ObjectProperty ;
+    rdfs:label "receiver (structural)" ;
+    rdfs:comment "Structural reference for receiver field when it contains a non-terminal node" ;
+    objc:fieldId 37 .
+
+objc:field_register a owl:ObjectProperty ;
+    rdfs:label "register (structural)" ;
+    rdfs:comment "Structural reference for register field when it contains a non-terminal node" ;
+    objc:fieldId 38 .
+
+objc:field_right a owl:ObjectProperty ;
+    rdfs:label "right (structural)" ;
+    rdfs:comment "Structural reference for right field when it contains a non-terminal node" ;
+    objc:fieldId 39 .
+
+objc:field_size a owl:ObjectProperty ;
+    rdfs:label "size (structural)" ;
+    rdfs:comment "Structural reference for size field when it contains a non-terminal node" ;
+    objc:fieldId 41 .
+
+objc:field_start a owl:ObjectProperty ;
+    rdfs:label "start (structural)" ;
+    rdfs:comment "Structural reference for start field when it contains a non-terminal node" ;
+    objc:fieldId 42 .
+
+objc:field_type a owl:ObjectProperty ;
+    rdfs:label "type (structural)" ;
+    rdfs:comment "Structural reference for type field when it contains a non-terminal node" ;
+    objc:fieldId 45 .
+
+objc:field_update a owl:ObjectProperty ;
+    rdfs:label "update (structural)" ;
+    rdfs:comment "Structural reference for update field when it contains a non-terminal node" ;
+    objc:fieldId 47 .
+
+objc:field_value a owl:ObjectProperty ;
+    rdfs:label "value (structural)" ;
+    rdfs:comment "Structural reference for value field when it contains a non-terminal node" ;
+    objc:fieldId 48 .
+
+objc:finally_clause a owl:Class ;
+    rdfs:label "finally_clause" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 483 .
+
+objc:for_statement a owl:Class ;
+    rdfs:label "for_statement" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 383 .
+
+objc:function_declarator a owl:Class ;
+    rdfs:label "function_declarator" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 342,
+        343,
+        344,
+        346 .
+
+objc:function_definition a owl:Class ;
+    rdfs:label "function_definition" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 311,
+        312 .
+
+objc:generic_arguments a owl:Class ;
+    rdfs:label "generic_arguments" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 459 .
+
+objc:generic_expression a owl:Class ;
+    rdfs:label "generic_expression" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 403 .
+
+objc:generic_specifier a owl:Class ;
+    rdfs:label "generic_specifier" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 498 .
+
+objc:gnu_asm_clobber_list a owl:Class ;
+    rdfs:label "gnu_asm_clobber_list" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 412 .
+
+objc:gnu_asm_expression a owl:Class ;
+    rdfs:label "gnu_asm_expression" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 406 .
+
+objc:gnu_asm_goto_list a owl:Class ;
+    rdfs:label "gnu_asm_goto_list" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 413 .
+
+objc:gnu_asm_input_operand a owl:Class ;
+    rdfs:label "gnu_asm_input_operand" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 411 .
+
+objc:gnu_asm_input_operand_list a owl:Class ;
+    rdfs:label "gnu_asm_input_operand_list" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 410 .
+
+objc:gnu_asm_output_operand a owl:Class ;
+    rdfs:label "gnu_asm_output_operand" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 409 .
+
+objc:gnu_asm_output_operand_list a owl:Class ;
+    rdfs:label "gnu_asm_output_operand_list" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 408 .
+
+objc:gnu_asm_qualifier a owl:Class ;
+    rdfs:label "gnu_asm_qualifier" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 407 .
+
+objc:goto_statement a owl:Class ;
+    rdfs:label "goto_statement" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 388 .
+
+objc:identifier a owl:Class ;
+    rdfs:label "identifier" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 1 .
+
+objc:if_statement a owl:Class ;
+    rdfs:label "if_statement" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 377 .
+
+objc:implementation_definition a owl:Class ;
+    rdfs:label "implementation_definition" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 466 .
+
+objc:init_declarator a owl:Class ;
+    rdfs:label "init_declarator" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 351 .
+
+objc:initializer_list a owl:Class ;
+    rdfs:label "initializer_list" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 419 .
+
+objc:initializer_pair a owl:Class ;
+    rdfs:label "initializer_pair" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 420 .
+
+objc:instance_variable a owl:Class ;
+    rdfs:label "instance_variable" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 461 .
+
+objc:instance_variables a owl:Class ;
+    rdfs:label "instance_variables" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 460 .
+
+objc:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+objc:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+objc:keyword_declarator a owl:Class ;
+    rdfs:label "keyword_declarator" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 470 .
+
+objc:label a owl:DatatypeProperty ;
+    rdfs:label "label (literal)" ;
+    rdfs:comment "Literal value for label field when it contains a terminal node" ;
+    objc:fieldId 26 ;
+    objc:isTerminalField true .
+
+objc:labeled_statement a owl:Class ;
+    rdfs:label "labeled_statement" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 374 .
+
+objc:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+objc:left a owl:DatatypeProperty ;
+    rdfs:label "left (literal)" ;
+    rdfs:comment "Literal value for left field when it contains a terminal node" ;
+    objc:fieldId 27 ;
+    objc:isTerminalField true .
+
+objc:linkage_specification a owl:Class ;
+    rdfs:label "linkage_specification" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 319 .
+
+objc:macro_type_specifier a owl:Class ;
+    rdfs:label "macro_type_specifier" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 429 .
+
+objc:member a owl:DatatypeProperty ;
+    rdfs:label "member (literal)" ;
+    rdfs:comment "Literal value for member field when it contains a terminal node" ;
+    objc:fieldId 28 ;
+    objc:isTerminalField true .
+
+objc:message_expression a owl:Class ;
+    rdfs:label "message_expression" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 489 .
+
+objc:method a owl:DatatypeProperty ;
+    rdfs:label "method (literal)" ;
+    rdfs:comment "Literal value for method field when it contains a terminal node" ;
+    objc:fieldId 29 ;
+    objc:isTerminalField true .
+
+objc:method_declaration a owl:Class ;
+    rdfs:label "method_declaration" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 474 .
+
+objc:method_definition a owl:Class ;
+    rdfs:label "method_definition" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 468 .
+
+objc:method_identifier a owl:Class ;
+    rdfs:label "method_identifier" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 508 .
+
+objc:method_parameter a owl:Class ;
+    rdfs:label "method_parameter" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 475,
+        476 .
+
+objc:method_type a owl:Class ;
+    rdfs:label "method_type" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 469 .
+
+objc:module_import a owl:Class ;
+    rdfs:label "module_import" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 435 .
+
+objc:ms_asm_block a owl:Class ;
+    rdfs:label "ms_asm_block" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 491 .
+
+objc:ms_based_modifier a owl:Class ;
+    rdfs:label "ms_based_modifier" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 324 .
+
+objc:ms_call_modifier a owl:Class ;
+    rdfs:label "ms_call_modifier" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 325 .
+
+objc:ms_declspec_modifier a owl:Class ;
+    rdfs:label "ms_declspec_modifier" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 323 .
+
+objc:ms_pointer_modifier a owl:Class ;
+    rdfs:label "ms_pointer_modifier" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 327 .
+
+objc:ms_restrict_modifier a owl:Class ;
+    rdfs:label "ms_restrict_modifier" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 62 .
+
+objc:ms_signed_ptr_modifier a owl:Class ;
+    rdfs:label "ms_signed_ptr_modifier" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 64 .
+
+objc:ms_unaligned_ptr_modifier a owl:Class ;
+    rdfs:label "ms_unaligned_ptr_modifier" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 326 .
+
+objc:ms_unsigned_ptr_modifier a owl:Class ;
+    rdfs:label "ms_unsigned_ptr_modifier" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 63 .
+
+objc:name a owl:DatatypeProperty ;
+    rdfs:label "name (literal)" ;
+    rdfs:comment "Literal value for name field when it contains a terminal node" ;
+    objc:fieldId 30 ;
+    objc:isTerminalField true .
+
+objc:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+objc:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+objc:null a owl:Class ;
+    rdfs:label "null" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 427 .
+
+objc:number_literal a owl:Class ;
+    rdfs:label "number_literal" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 177 .
+
+objc:objc_bridge a owl:Class ;
+    rdfs:label "objc_bridge" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 430 .
+
+objc:offsetof_expression a owl:Class ;
+    rdfs:label "offsetof_expression" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 402 .
+
+objc:parameter_declaration a owl:Class ;
+    rdfs:label "parameter_declaration" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 370 .
+
+objc:parameter_list a owl:Class ;
+    rdfs:label "parameter_list" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 368,
+        369 .
+
+objc:parameterized_arguments a owl:Class ;
+    rdfs:label "parameterized_arguments" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 458 .
+
+objc:parenthesized_declarator a owl:Class ;
+    rdfs:label "parenthesized_declarator" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 333,
+        334,
+        335 .
+
+objc:parenthesized_expression a owl:Class ;
+    rdfs:label "parenthesized_expression" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 305,
+        418 .
+
+objc:path a owl:DatatypeProperty ;
+    rdfs:label "path (literal)" ;
+    rdfs:comment "Literal value for path field when it contains a terminal node" ;
+    objc:fieldId 35 ;
+    objc:isTerminalField true .
+
+objc:platform a owl:Class ;
+    rdfs:label "platform" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 434 .
+
+objc:pointer_declarator a owl:Class ;
+    rdfs:label "pointer_declarator" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 338,
+        339,
+        340 .
+
+objc:pointer_expression a owl:Class ;
+    rdfs:label "pointer_expression" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 394 .
+
+objc:prefix a owl:DatatypeProperty ;
+    rdfs:label "prefix (literal)" ;
+    rdfs:comment "Literal value for prefix field when it contains a terminal node" ;
+    objc:fieldId 36 ;
+    objc:isTerminalField true .
+
+objc:preproc_arg a owl:Class ;
+    rdfs:label "preproc_arg" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 19 .
+
+objc:preproc_call a owl:Class ;
+    rdfs:label "preproc_call" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 293 .
+
+objc:preproc_def a owl:Class ;
+    rdfs:label "preproc_def" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 290 .
+
+objc:preproc_defined a owl:Class ;
+    rdfs:label "preproc_defined" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 306 .
+
+objc:preproc_directive a owl:Class ;
+    rdfs:label "preproc_directive" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 20 .
+
+objc:preproc_elif a owl:Class ;
+    rdfs:label "preproc_elif" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 297,
+        302,
+        438,
+        441,
+        444 .
+
+objc:preproc_elifdef a owl:Class ;
+    rdfs:label "preproc_elifdef" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 298,
+        303 .
+
+objc:preproc_else a owl:Class ;
+    rdfs:label "preproc_else" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 296,
+        301,
+        437,
+        440,
+        443 .
+
+objc:preproc_function_def a owl:Class ;
+    rdfs:label "preproc_function_def" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 291 .
+
+objc:preproc_if a owl:Class ;
+    rdfs:label "preproc_if" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 294,
+        299,
+        436,
+        439 .
+
+objc:preproc_ifdef a owl:Class ;
+    rdfs:label "preproc_ifdef" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 295,
+        300,
+        442 .
+
+objc:preproc_include a owl:Class ;
+    rdfs:label "preproc_include" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 289 .
+
+objc:preproc_linemarker a owl:Class ;
+    rdfs:label "preproc_linemarker" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 446 .
+
+objc:preproc_params a owl:Class ;
+    rdfs:label "preproc_params" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 292 .
+
+objc:preproc_undef a owl:Class ;
+    rdfs:label "preproc_undef" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 445 .
+
+objc:primitive_type a owl:Class ;
+    rdfs:label "primitive_type" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 131 .
+
+objc:property_attribute a owl:Class ;
+    rdfs:label "property_attribute" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 473 .
+
+objc:property_attributes_declaration a owl:Class ;
+    rdfs:label "property_attributes_declaration" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 472 .
+
+objc:property_declaration a owl:Class ;
+    rdfs:label "property_declaration" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 471 .
+
+objc:property_implementation a owl:Class ;
+    rdfs:label "property_implementation" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 467 .
+
+objc:protocol_declaration a owl:Class ;
+    rdfs:label "protocol_declaration" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 463 .
+
+objc:protocol_forward_declaration a owl:Class ;
+    rdfs:label "protocol_forward_declaration" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 448 .
+
+objc:protocol_qualifier a owl:Class ;
+    rdfs:label "protocol_qualifier" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 502 .
+
+objc:protocol_reference_list a owl:Class ;
+    rdfs:label "protocol_reference_list" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 457 .
+
+objc:qualified_protocol_interface_declaration a owl:Class ;
+    rdfs:label "qualified_protocol_interface_declaration" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 465 .
+
+objc:range_expression a owl:Class ;
+    rdfs:label "range_expression" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 487 .
+
+objc:return_statement a owl:Class ;
+    rdfs:label "return_statement" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 385 .
+
+objc:right a owl:DatatypeProperty ;
+    rdfs:label "right (literal)" ;
+    rdfs:comment "Literal value for right field when it contains a terminal node" ;
+    objc:fieldId 39 ;
+    objc:isTerminalField true .
+
+objc:row a owl:DatatypeProperty ;
+    rdfs:label "row (literal)" ;
+    rdfs:comment "Literal value for row field when it contains a terminal node" ;
+    objc:fieldId 40 ;
+    objc:isTerminalField true .
+
+objc:selector_expression a owl:Class ;
+    rdfs:label "selector_expression" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 485 .
+
+objc:sized_type_specifier a owl:Class ;
+    rdfs:label "sized_type_specifier" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 357 .
+
+objc:sizeof_expression a owl:Class ;
+    rdfs:label "sizeof_expression" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 400 .
+
+objc:statement_identifier a owl:Class ;
+    rdfs:label "statement_identifier" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 586 .
+
+objc:storage_class_specifier a owl:Class ;
+    rdfs:label "storage_class_specifier" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 353 .
+
+objc:string_content a owl:Class ;
+    rdfs:label "string_content" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 190 .
+
+objc:string_literal a owl:Class ;
+    rdfs:label "string_literal" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 426 .
+
+objc:struct_declaration a owl:Class ;
+    rdfs:label "struct_declaration" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 477 .
+
+objc:struct_declarator a owl:Class ;
+    rdfs:label "struct_declarator" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 480 .
+
+objc:struct_specifier a owl:Class ;
+    rdfs:label "struct_specifier" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 360 .
+
+objc:subscript_designator a owl:Class ;
+    rdfs:label "subscript_designator" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 421 .
+
+objc:subscript_expression a owl:Class ;
+    rdfs:label "subscript_expression" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 404 .
+
+objc:subscript_range_designator a owl:Class ;
+    rdfs:label "subscript_range_designator" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 422 .
+
+objc:superclass a owl:DatatypeProperty ;
+    rdfs:label "superclass (literal)" ;
+    rdfs:comment "Literal value for superclass field when it contains a terminal node" ;
+    objc:fieldId 43 ;
+    objc:isTerminalField true .
+
+objc:switch_statement a owl:Class ;
+    rdfs:label "switch_statement" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 379 .
+
+objc:symbol a owl:DatatypeProperty ;
+    rdfs:label "symbol (literal)" ;
+    rdfs:comment "Literal value for symbol field when it contains a terminal node" ;
+    objc:fieldId 44 ;
+    objc:isTerminalField true .
+
+objc:synchronized_statement a owl:Class ;
+    rdfs:label "synchronized_statement" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 493 .
+
+objc:system_lib_string a owl:Class ;
+    rdfs:label "system_lib_string" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 192 .
+
+objc:throw_statement a owl:Class ;
+    rdfs:label "throw_statement" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 484 .
+
+objc:translation_unit a owl:Class ;
+    rdfs:label "translation_unit" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 286 .
+
+objc:true a owl:Class ;
+    rdfs:label "true" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 193 .
+
+objc:try_statement a owl:Class ;
+    rdfs:label "try_statement" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 481 .
+
+objc:type a owl:DatatypeProperty ;
+    rdfs:label "type (literal)" ;
+    rdfs:comment "Literal value for type field when it contains a terminal node" ;
+    objc:fieldId 45 ;
+    objc:isTerminalField true .
+
+objc:type_definition a owl:Class ;
+    rdfs:label "type_definition" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 314 .
+
+objc:type_descriptor a owl:Class ;
+    rdfs:label "type_descriptor" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 399 .
+
+objc:type_identifier a owl:Class ;
+    rdfs:label "type_identifier" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 587 .
+
+objc:type_name a owl:Class ;
+    rdfs:label "type_name" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 503 .
+
+objc:type_qualifier a owl:Class ;
+    rdfs:label "type_qualifier" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 354 .
+
+objc:typedefed_specifier a owl:Class ;
+    rdfs:label "typedefed_specifier" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 499 .
+
+objc:typeof_specifier a owl:Class ;
+    rdfs:label "typeof_specifier" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 431 .
+
+objc:unary_expression a owl:Class ;
+    rdfs:label "unary_expression" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 307,
+        395 .
+
+objc:underlying_type a owl:DatatypeProperty ;
+    rdfs:label "underlying_type (literal)" ;
+    rdfs:comment "Literal value for underlying_type field when it contains a terminal node" ;
+    objc:fieldId 46 ;
+    objc:isTerminalField true .
+
+objc:union_specifier a owl:Class ;
+    rdfs:label "union_specifier" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 361 .
+
+objc:update_expression a owl:Class ;
+    rdfs:label "update_expression" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 397 .
+
+objc:va_arg_expression a owl:Class ;
+    rdfs:label "va_arg_expression" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 490 .
+
+objc:value a owl:DatatypeProperty ;
+    rdfs:label "value (literal)" ;
+    rdfs:comment "Literal value for value field when it contains a terminal node" ;
+    objc:fieldId 48 ;
+    objc:isTerminalField true .
+
+objc:variadic_parameter a owl:Class ;
+    rdfs:label "variadic_parameter" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 367 .
+
+objc:version a owl:Class ;
+    rdfs:label "version" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 433 .
+
+objc:version_number a owl:Class ;
+    rdfs:label "version_number" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 203 .
+
+objc:visibility_specification a owl:Class ;
+    rdfs:label "visibility_specification" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 462 .
+
+objc:while_statement a owl:Class ;
+    rdfs:label "while_statement" ;
+    rdfs:isDefinedBy objc: ;
+    rdfs:subClassOf ast:Node ;
+    objc:isSupertype true ;
+    objc:nodeTypeId 381 .
+
+objc: a owl:Ontology ;
+    rdfs:label "Objc Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for objc" ;
+    owl:versionInfo "v0.25" ;
+    objc:abiVersion 14 ;
+    objc:fieldCount 48 ;
+    objc:languageName "None" ;
+    objc:nodeKindCount 588 .
+

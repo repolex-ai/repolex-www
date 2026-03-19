@@ -1,0 +1,243 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix chatito: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/chatito/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+chatito:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+chatito:alias a owl:Class ;
+    rdfs:label "alias" ;
+    rdfs:isDefinedBy chatito: ;
+    rdfs:subClassOf ast:Node ;
+    chatito:isSupertype true ;
+    chatito:nodeTypeId 2 .
+
+chatito:alias_body a owl:Class ;
+    rdfs:label "alias_body" ;
+    rdfs:isDefinedBy chatito: ;
+    rdfs:subClassOf ast:Node ;
+    chatito:isSupertype true ;
+    chatito:nodeTypeId 37 .
+
+chatito:alias_def a owl:Class ;
+    rdfs:label "alias_def" ;
+    rdfs:isDefinedBy chatito: ;
+    rdfs:subClassOf ast:Node ;
+    chatito:isSupertype true ;
+    chatito:nodeTypeId 32 .
+
+chatito:alias_ref a owl:Class ;
+    rdfs:label "alias_ref" ;
+    rdfs:isDefinedBy chatito: ;
+    rdfs:subClassOf ast:Node ;
+    chatito:isSupertype true ;
+    chatito:nodeTypeId 39 .
+
+chatito:argument a owl:Class ;
+    rdfs:label "argument" ;
+    rdfs:isDefinedBy chatito: ;
+    rdfs:subClassOf ast:Node ;
+    chatito:isSupertype true ;
+    chatito:nodeTypeId 44 .
+
+chatito:arguments a owl:Class ;
+    rdfs:label "arguments" ;
+    rdfs:isDefinedBy chatito: ;
+    rdfs:subClassOf ast:Node ;
+    chatito:isSupertype true ;
+    chatito:nodeTypeId 43 .
+
+chatito:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy chatito: ;
+    rdfs:subClassOf ast:Node ;
+    chatito:isSupertype true ;
+    chatito:nodeTypeId 34 .
+
+chatito:content a owl:DatatypeProperty ;
+    rdfs:label "content (literal)" ;
+    rdfs:comment "Literal value for content field when it contains a terminal node" ;
+    chatito:fieldId 1 ;
+    chatito:isTerminalField true .
+
+chatito:escape a owl:Class ;
+    rdfs:label "escape" ;
+    rdfs:isDefinedBy chatito: ;
+    rdfs:subClassOf ast:Node ;
+    chatito:isSupertype true ;
+    chatito:nodeTypeId 24 .
+
+chatito:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+chatito:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+chatito:field_eq a owl:ObjectProperty ;
+    rdfs:label "eq (structural)" ;
+    rdfs:comment "Structural reference for eq field when it contains a non-terminal node" ;
+    chatito:fieldId 2 .
+
+chatito:field_key a owl:ObjectProperty ;
+    rdfs:label "key (structural)" ;
+    rdfs:comment "Structural reference for key field when it contains a non-terminal node" ;
+    chatito:fieldId 4 .
+
+chatito:field_quote a owl:ObjectProperty ;
+    rdfs:label "quote (structural)" ;
+    rdfs:comment "Structural reference for quote field when it contains a non-terminal node" ;
+    chatito:fieldId 5 .
+
+chatito:field_value a owl:ObjectProperty ;
+    rdfs:label "value (structural)" ;
+    rdfs:comment "Structural reference for value field when it contains a non-terminal node" ;
+    chatito:fieldId 6 .
+
+chatito:file a owl:Class ;
+    rdfs:label "file" ;
+    rdfs:isDefinedBy chatito: ;
+    rdfs:subClassOf ast:Node ;
+    chatito:isSupertype true ;
+    chatito:nodeTypeId 8 .
+
+chatito:import a owl:Class ;
+    rdfs:label "import" ;
+    rdfs:isDefinedBy chatito: ;
+    rdfs:subClassOf ast:Node ;
+    chatito:isSupertype true ;
+    chatito:nodeTypeId 33 .
+
+chatito:intent a owl:Class ;
+    rdfs:label "intent" ;
+    rdfs:isDefinedBy chatito: ;
+    rdfs:subClassOf ast:Node ;
+    chatito:isSupertype true ;
+    chatito:nodeTypeId 57 .
+
+chatito:intent_body a owl:Class ;
+    rdfs:label "intent_body" ;
+    rdfs:isDefinedBy chatito: ;
+    rdfs:subClassOf ast:Node ;
+    chatito:isSupertype true ;
+    chatito:nodeTypeId 35 .
+
+chatito:intent_def a owl:Class ;
+    rdfs:label "intent_def" ;
+    rdfs:isDefinedBy chatito: ;
+    rdfs:subClassOf ast:Node ;
+    chatito:isSupertype true ;
+    chatito:nodeTypeId 30 .
+
+chatito:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+chatito:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+chatito:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+chatito:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+chatito:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+chatito:number a owl:Class ;
+    rdfs:label "number" ;
+    rdfs:isDefinedBy chatito: ;
+    rdfs:subClassOf ast:Node ;
+    chatito:isSupertype true ;
+    chatito:nodeTypeId 15 .
+
+chatito:probability a owl:Class ;
+    rdfs:label "probability" ;
+    rdfs:isDefinedBy chatito: ;
+    rdfs:subClassOf ast:Node ;
+    chatito:isSupertype true ;
+    chatito:nodeTypeId 42 .
+
+chatito:slot a owl:Class ;
+    rdfs:label "slot" ;
+    rdfs:isDefinedBy chatito: ;
+    rdfs:subClassOf ast:Node ;
+    chatito:isSupertype true ;
+    chatito:nodeTypeId 58 .
+
+chatito:slot_body a owl:Class ;
+    rdfs:label "slot_body" ;
+    rdfs:isDefinedBy chatito: ;
+    rdfs:subClassOf ast:Node ;
+    chatito:isSupertype true ;
+    chatito:nodeTypeId 36 .
+
+chatito:slot_def a owl:Class ;
+    rdfs:label "slot_def" ;
+    rdfs:isDefinedBy chatito: ;
+    rdfs:subClassOf ast:Node ;
+    chatito:isSupertype true ;
+    chatito:nodeTypeId 31 .
+
+chatito:slot_ref a owl:Class ;
+    rdfs:label "slot_ref" ;
+    rdfs:isDefinedBy chatito: ;
+    rdfs:subClassOf ast:Node ;
+    chatito:isSupertype true ;
+    chatito:nodeTypeId 38 .
+
+chatito:source a owl:Class ;
+    rdfs:label "source" ;
+    rdfs:isDefinedBy chatito: ;
+    rdfs:subClassOf ast:Node ;
+    chatito:isSupertype true ;
+    chatito:nodeTypeId 28 .
+
+chatito:string a owl:Class ;
+    rdfs:label "string" ;
+    rdfs:isDefinedBy chatito: ;
+    rdfs:subClassOf ast:Node ;
+    chatito:isSupertype true ;
+    chatito:nodeTypeId 45 .
+
+chatito:variation a owl:Class ;
+    rdfs:label "variation" ;
+    rdfs:isDefinedBy chatito: ;
+    rdfs:subClassOf ast:Node ;
+    chatito:isSupertype true ;
+    chatito:nodeTypeId 41 .
+
+chatito:word a owl:Class ;
+    rdfs:label "word" ;
+    rdfs:isDefinedBy chatito: ;
+    rdfs:subClassOf ast:Node ;
+    chatito:isSupertype true ;
+    chatito:nodeTypeId 40 .
+
+chatito: a owl:Ontology ;
+    rdfs:label "Chatito Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for chatito" ;
+    owl:versionInfo "v0.25" ;
+    chatito:abiVersion 15 ;
+    chatito:fieldCount 6 ;
+    chatito:languageName "chatito" ;
+    chatito:nodeKindCount 59 .
+

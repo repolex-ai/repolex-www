@@ -1,0 +1,543 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix make: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/make/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+make:RECIPEPREFIX_assignment a owl:Class ;
+    rdfs:label "RECIPEPREFIX_assignment" ;
+    rdfs:isDefinedBy make: ;
+    rdfs:subClassOf ast:Node ;
+    make:isSupertype true ;
+    make:nodeTypeId 123 .
+
+make:VPATH_assignment a owl:Class ;
+    rdfs:label "VPATH_assignment" ;
+    rdfs:isDefinedBy make: ;
+    rdfs:subClassOf ast:Node ;
+    make:isSupertype true ;
+    make:nodeTypeId 122 .
+
+make:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+make:archive a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "archive",
+        "archive (literal)" ;
+    rdfs:comment "Literal value for archive field when it contains a terminal node" ;
+    rdfs:isDefinedBy make: ;
+    rdfs:subClassOf ast:Node ;
+    make:fieldId 1 ;
+    make:isSupertype true ;
+    make:isTerminalField true ;
+    make:nodeTypeId 158 .
+
+make:arg0 a owl:DatatypeProperty ;
+    rdfs:label "arg0 (literal)" ;
+    rdfs:comment "Literal value for arg0 field when it contains a terminal node" ;
+    make:fieldId 2 ;
+    make:isTerminalField true .
+
+make:arg1 a owl:DatatypeProperty ;
+    rdfs:label "arg1 (literal)" ;
+    rdfs:comment "Literal value for arg1 field when it contains a terminal node" ;
+    make:fieldId 3 ;
+    make:isTerminalField true .
+
+make:arguments a owl:Class ;
+    rdfs:label "arguments" ;
+    rdfs:isDefinedBy make: ;
+    rdfs:subClassOf ast:Node ;
+    make:isSupertype true ;
+    make:nodeTypeId 151 .
+
+make:automatic_variable a owl:Class ;
+    rdfs:label "automatic_variable" ;
+    rdfs:isDefinedBy make: ;
+    rdfs:subClassOf ast:Node ;
+    make:isSupertype true ;
+    make:nodeTypeId 148 .
+
+make:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy make: ;
+    rdfs:subClassOf ast:Node ;
+    make:isSupertype true ;
+    make:nodeTypeId 110 .
+
+make:concatenation a owl:Class ;
+    rdfs:label "concatenation" ;
+    rdfs:isDefinedBy make: ;
+    rdfs:subClassOf ast:Node ;
+    make:isSupertype true ;
+    make:nodeTypeId 155 .
+
+make:conditional a owl:Class ;
+    rdfs:label "conditional" ;
+    rdfs:isDefinedBy make: ;
+    rdfs:subClassOf ast:Node ;
+    make:isSupertype true ;
+    make:nodeTypeId 135 .
+
+make:define_directive a owl:Class ;
+    rdfs:label "define_directive" ;
+    rdfs:isDefinedBy make: ;
+    rdfs:subClassOf ast:Node ;
+    make:isSupertype true ;
+    make:nodeTypeId 126 .
+
+make:else_directive a owl:Class ;
+    rdfs:label "else_directive" ;
+    rdfs:isDefinedBy make: ;
+    rdfs:subClassOf ast:Node ;
+    make:isSupertype true ;
+    make:nodeTypeId 137 .
+
+make:elsif_directive a owl:Class ;
+    rdfs:label "elsif_directive" ;
+    rdfs:isDefinedBy make: ;
+    rdfs:subClassOf ast:Node ;
+    make:isSupertype true ;
+    make:nodeTypeId 136 .
+
+make:escape a owl:Class ;
+    rdfs:label "escape" ;
+    rdfs:isDefinedBy make: ;
+    rdfs:subClassOf ast:Node ;
+    make:isSupertype true ;
+    make:nodeTypeId 108 .
+
+make:export_directive a owl:Class ;
+    rdfs:label "export_directive" ;
+    rdfs:isDefinedBy make: ;
+    rdfs:subClassOf ast:Node ;
+    make:isSupertype true ;
+    make:nodeTypeId 130 .
+
+make:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+make:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+make:field_arg0 a owl:ObjectProperty ;
+    rdfs:label "arg0 (structural)" ;
+    rdfs:comment "Structural reference for arg0 field when it contains a non-terminal node" ;
+    make:fieldId 2 .
+
+make:field_arg1 a owl:ObjectProperty ;
+    rdfs:label "arg1 (structural)" ;
+    rdfs:comment "Structural reference for arg1 field when it contains a non-terminal node" ;
+    make:fieldId 3 .
+
+make:field_argument a owl:ObjectProperty ;
+    rdfs:label "argument (structural)" ;
+    rdfs:comment "Structural reference for argument field when it contains a non-terminal node" ;
+    make:fieldId 4 .
+
+make:field_condition a owl:ObjectProperty ;
+    rdfs:label "condition (structural)" ;
+    rdfs:comment "Structural reference for condition field when it contains a non-terminal node" ;
+    make:fieldId 5 .
+
+make:field_consequence a owl:ObjectProperty ;
+    rdfs:label "consequence (structural)" ;
+    rdfs:comment "Structural reference for consequence field when it contains a non-terminal node" ;
+    make:fieldId 6 .
+
+make:field_directories a owl:ObjectProperty ;
+    rdfs:label "directories (structural)" ;
+    rdfs:comment "Structural reference for directories field when it contains a non-terminal node" ;
+    make:fieldId 7 .
+
+make:field_filenames a owl:ObjectProperty ;
+    rdfs:label "filenames (structural)" ;
+    rdfs:comment "Structural reference for filenames field when it contains a non-terminal node" ;
+    make:fieldId 8 .
+
+make:field_function a owl:ObjectProperty ;
+    rdfs:label "function (structural)" ;
+    rdfs:comment "Structural reference for function field when it contains a non-terminal node" ;
+    make:fieldId 9 .
+
+make:field_members a owl:ObjectProperty ;
+    rdfs:label "members (structural)" ;
+    rdfs:comment "Structural reference for members field when it contains a non-terminal node" ;
+    make:fieldId 10 .
+
+make:field_name a owl:ObjectProperty ;
+    rdfs:label "name (structural)" ;
+    rdfs:comment "Structural reference for name field when it contains a non-terminal node" ;
+    make:fieldId 11 .
+
+make:field_normal a owl:ObjectProperty ;
+    rdfs:label "normal (structural)" ;
+    rdfs:comment "Structural reference for normal field when it contains a non-terminal node" ;
+    make:fieldId 12 .
+
+make:field_operator a owl:ObjectProperty ;
+    rdfs:label "operator (structural)" ;
+    rdfs:comment "Structural reference for operator field when it contains a non-terminal node" ;
+    make:fieldId 13 .
+
+make:field_order_only a owl:ObjectProperty ;
+    rdfs:label "order_only (structural)" ;
+    rdfs:comment "Structural reference for order_only field when it contains a non-terminal node" ;
+    make:fieldId 14 .
+
+make:field_pattern a owl:ObjectProperty ;
+    rdfs:label "pattern (structural)" ;
+    rdfs:comment "Structural reference for pattern field when it contains a non-terminal node" ;
+    make:fieldId 15 .
+
+make:field_prerequisite a owl:ObjectProperty ;
+    rdfs:label "prerequisite (structural)" ;
+    rdfs:comment "Structural reference for prerequisite field when it contains a non-terminal node" ;
+    make:fieldId 16 .
+
+make:field_replacement a owl:ObjectProperty ;
+    rdfs:label "replacement (structural)" ;
+    rdfs:comment "Structural reference for replacement field when it contains a non-terminal node" ;
+    make:fieldId 17 .
+
+make:field_string a owl:ObjectProperty ;
+    rdfs:label "string (structural)" ;
+    rdfs:comment "Structural reference for string field when it contains a non-terminal node" ;
+    make:fieldId 18 .
+
+make:field_target a owl:ObjectProperty ;
+    rdfs:label "target (structural)" ;
+    rdfs:comment "Structural reference for target field when it contains a non-terminal node" ;
+    make:fieldId 19 .
+
+make:field_target_or_pattern a owl:ObjectProperty ;
+    rdfs:label "target_or_pattern (structural)" ;
+    rdfs:comment "Structural reference for target_or_pattern field when it contains a non-terminal node" ;
+    make:fieldId 20 .
+
+make:field_text a owl:ObjectProperty ;
+    rdfs:label "text (structural)" ;
+    rdfs:comment "Structural reference for text field when it contains a non-terminal node" ;
+    make:fieldId 21 .
+
+make:field_value a owl:ObjectProperty ;
+    rdfs:label "value (structural)" ;
+    rdfs:comment "Structural reference for value field when it contains a non-terminal node" ;
+    make:fieldId 22 .
+
+make:field_variable a owl:ObjectProperty ;
+    rdfs:label "variable (structural)" ;
+    rdfs:comment "Structural reference for variable field when it contains a non-terminal node" ;
+    make:fieldId 23 .
+
+make:field_variables a owl:ObjectProperty ;
+    rdfs:label "variables (structural)" ;
+    rdfs:comment "Structural reference for variables field when it contains a non-terminal node" ;
+    make:fieldId 24 .
+
+make:function a owl:DatatypeProperty ;
+    rdfs:label "function (literal)" ;
+    rdfs:comment "Literal value for function field when it contains a terminal node" ;
+    make:fieldId 9 ;
+    make:isTerminalField true .
+
+make:function_call a owl:Class ;
+    rdfs:label "function_call" ;
+    rdfs:isDefinedBy make: ;
+    rdfs:subClassOf ast:Node ;
+    make:isSupertype true ;
+    make:nodeTypeId 150 .
+
+make:ifdef_directive a owl:Class ;
+    rdfs:label "ifdef_directive" ;
+    rdfs:isDefinedBy make: ;
+    rdfs:subClassOf ast:Node ;
+    make:isSupertype true ;
+    make:nodeTypeId 142 .
+
+make:ifeq_directive a owl:Class ;
+    rdfs:label "ifeq_directive" ;
+    rdfs:isDefinedBy make: ;
+    rdfs:subClassOf ast:Node ;
+    make:isSupertype true ;
+    make:nodeTypeId 140 .
+
+make:ifndef_directive a owl:Class ;
+    rdfs:label "ifndef_directive" ;
+    rdfs:isDefinedBy make: ;
+    rdfs:subClassOf ast:Node ;
+    make:isSupertype true ;
+    make:nodeTypeId 143 .
+
+make:ifneq_directive a owl:Class ;
+    rdfs:label "ifneq_directive" ;
+    rdfs:isDefinedBy make: ;
+    rdfs:subClassOf ast:Node ;
+    make:isSupertype true ;
+    make:nodeTypeId 141 .
+
+make:include_directive a owl:Class ;
+    rdfs:label "include_directive" ;
+    rdfs:isDefinedBy make: ;
+    rdfs:subClassOf ast:Node ;
+    make:isSupertype true ;
+    make:nodeTypeId 128 .
+
+make:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+make:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+make:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+make:list a owl:Class ;
+    rdfs:label "list" ;
+    rdfs:isDefinedBy make: ;
+    rdfs:subClassOf ast:Node ;
+    make:isSupertype true ;
+    make:nodeTypeId 153 .
+
+make:makefile a owl:Class ;
+    rdfs:label "makefile" ;
+    rdfs:isDefinedBy make: ;
+    rdfs:subClassOf ast:Node ;
+    make:isSupertype true ;
+    make:nodeTypeId 111 .
+
+make:name a owl:DatatypeProperty ;
+    rdfs:label "name (literal)" ;
+    rdfs:comment "Literal value for name field when it contains a terminal node" ;
+    make:fieldId 11 ;
+    make:isTerminalField true .
+
+make:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+make:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+make:override_directive a owl:Class ;
+    rdfs:label "override_directive" ;
+    rdfs:isDefinedBy make: ;
+    rdfs:subClassOf ast:Node ;
+    make:isSupertype true ;
+    make:nodeTypeId 132 .
+
+make:paths a owl:Class ;
+    rdfs:label "paths" ;
+    rdfs:isDefinedBy make: ;
+    rdfs:subClassOf ast:Node ;
+    make:isSupertype true ;
+    make:nodeTypeId 154 .
+
+make:pattern a owl:DatatypeProperty ;
+    rdfs:label "pattern (literal)" ;
+    rdfs:comment "Literal value for pattern field when it contains a terminal node" ;
+    make:fieldId 15 ;
+    make:isTerminalField true .
+
+make:pattern_list a owl:Class ;
+    rdfs:label "pattern_list" ;
+    rdfs:isDefinedBy make: ;
+    rdfs:subClassOf ast:Node ;
+    make:isSupertype true ;
+    make:nodeTypeId 176 .
+
+make:prerequisites a owl:Class ;
+    rdfs:label "prerequisites" ;
+    rdfs:isDefinedBy make: ;
+    rdfs:subClassOf ast:Node ;
+    make:isSupertype true ;
+    make:nodeTypeId 177 .
+
+make:private_directive a owl:Class ;
+    rdfs:label "private_directive" ;
+    rdfs:isDefinedBy make: ;
+    rdfs:subClassOf ast:Node ;
+    make:isSupertype true ;
+    make:nodeTypeId 134 .
+
+make:raw_text a owl:Class ;
+    rdfs:label "raw_text" ;
+    rdfs:isDefinedBy make: ;
+    rdfs:subClassOf ast:Node ;
+    make:isSupertype true ;
+    make:nodeTypeId 178 .
+
+make:recipe a owl:Class ;
+    rdfs:label "recipe" ;
+    rdfs:isDefinedBy make: ;
+    rdfs:subClassOf ast:Node ;
+    make:isSupertype true ;
+    make:nodeTypeId 117 .
+
+make:recipe_line a owl:Class ;
+    rdfs:label "recipe_line" ;
+    rdfs:isDefinedBy make: ;
+    rdfs:subClassOf ast:Node ;
+    make:isSupertype true ;
+    make:nodeTypeId 120 .
+
+make:replacement a owl:DatatypeProperty ;
+    rdfs:label "replacement (literal)" ;
+    rdfs:comment "Literal value for replacement field when it contains a terminal node" ;
+    make:fieldId 17 ;
+    make:isTerminalField true .
+
+make:rule a owl:Class ;
+    rdfs:label "rule" ;
+    rdfs:isDefinedBy make: ;
+    rdfs:subClassOf ast:Node ;
+    make:isSupertype true ;
+    make:nodeTypeId 113 .
+
+make:shell_assignment a owl:Class ;
+    rdfs:label "shell_assignment" ;
+    rdfs:isDefinedBy make: ;
+    rdfs:subClassOf ast:Node ;
+    make:isSupertype true ;
+    make:nodeTypeId 125 .
+
+make:shell_command a owl:Class ;
+    rdfs:label "shell_command" ;
+    rdfs:isDefinedBy make: ;
+    rdfs:subClassOf ast:Node ;
+    make:isSupertype true ;
+    make:nodeTypeId 179 .
+
+make:shell_function a owl:Class ;
+    rdfs:label "shell_function" ;
+    rdfs:isDefinedBy make: ;
+    rdfs:subClassOf ast:Node ;
+    make:isSupertype true ;
+    make:nodeTypeId 152 .
+
+make:shell_text a owl:Class ;
+    rdfs:label "shell_text" ;
+    rdfs:isDefinedBy make: ;
+    rdfs:subClassOf ast:Node ;
+    make:isSupertype true ;
+    make:nodeTypeId 160 .
+
+make:string a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "string",
+        "string (literal)" ;
+    rdfs:comment "Literal value for string field when it contains a terminal node" ;
+    rdfs:isDefinedBy make: ;
+    rdfs:subClassOf ast:Node ;
+    make:fieldId 18 ;
+    make:isSupertype true ;
+    make:isTerminalField true ;
+    make:nodeTypeId 156 .
+
+make:substitution_reference a owl:Class ;
+    rdfs:label "substitution_reference" ;
+    rdfs:isDefinedBy make: ;
+    rdfs:subClassOf ast:Node ;
+    make:isSupertype true ;
+    make:nodeTypeId 147 .
+
+make:targets a owl:Class ;
+    rdfs:label "targets" ;
+    rdfs:isDefinedBy make: ;
+    rdfs:subClassOf ast:Node ;
+    make:isSupertype true ;
+    make:nodeTypeId 180 .
+
+make:text a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "text",
+        "text (literal)" ;
+    rdfs:comment "Literal value for text field when it contains a terminal node" ;
+    rdfs:isDefinedBy make: ;
+    rdfs:subClassOf ast:Node ;
+    make:fieldId 21 ;
+    make:isSupertype true ;
+    make:isTerminalField true ;
+    make:nodeTypeId 162 .
+
+make:undefine_directive a owl:Class ;
+    rdfs:label "undefine_directive" ;
+    rdfs:isDefinedBy make: ;
+    rdfs:subClassOf ast:Node ;
+    make:isSupertype true ;
+    make:nodeTypeId 133 .
+
+make:unexport_directive a owl:Class ;
+    rdfs:label "unexport_directive" ;
+    rdfs:isDefinedBy make: ;
+    rdfs:subClassOf ast:Node ;
+    make:isSupertype true ;
+    make:nodeTypeId 131 .
+
+make:value a owl:DatatypeProperty ;
+    rdfs:label "value (literal)" ;
+    rdfs:comment "Literal value for value field when it contains a terminal node" ;
+    make:fieldId 22 ;
+    make:isTerminalField true .
+
+make:variable a owl:DatatypeProperty ;
+    rdfs:label "variable (literal)" ;
+    rdfs:comment "Literal value for variable field when it contains a terminal node" ;
+    make:fieldId 23 ;
+    make:isTerminalField true .
+
+make:variable_assignment a owl:Class ;
+    rdfs:label "variable_assignment" ;
+    rdfs:isDefinedBy make: ;
+    rdfs:subClassOf ast:Node ;
+    make:isSupertype true ;
+    make:nodeTypeId 124 .
+
+make:variable_reference a owl:Class ;
+    rdfs:label "variable_reference" ;
+    rdfs:isDefinedBy make: ;
+    rdfs:subClassOf ast:Node ;
+    make:isSupertype true ;
+    make:nodeTypeId 146 .
+
+make:vpath_directive a owl:Class ;
+    rdfs:label "vpath_directive" ;
+    rdfs:isDefinedBy make: ;
+    rdfs:subClassOf ast:Node ;
+    make:isSupertype true ;
+    make:nodeTypeId 129 .
+
+make:word a owl:Class ;
+    rdfs:label "word" ;
+    rdfs:isDefinedBy make: ;
+    rdfs:subClassOf ast:Node ;
+    make:isSupertype true ;
+    make:nodeTypeId 1,
+        45 .
+
+make: a owl:Ontology ;
+    rdfs:label "Make Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for make" ;
+    owl:versionInfo "v0.25" ;
+    make:abiVersion 13 ;
+    make:fieldCount 24 ;
+    make:languageName "None" ;
+    make:nodeKindCount 181 .
+

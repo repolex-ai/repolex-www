@@ -1,0 +1,492 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix fennel: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/fennel/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+fennel:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+fennel:accumulate a owl:Class ;
+    rdfs:label "accumulate" ;
+    rdfs:isDefinedBy fennel: ;
+    rdfs:subClassOf ast:Node ;
+    fennel:isSupertype true ;
+    fennel:nodeTypeId 90 .
+
+fennel:assignment a owl:Class ;
+    rdfs:label "assignment" ;
+    rdfs:isDefinedBy fennel: ;
+    rdfs:subClassOf ast:Node ;
+    fennel:isSupertype true ;
+    fennel:nodeTypeId 71 .
+
+fennel:binding a owl:Class ;
+    rdfs:label "binding" ;
+    rdfs:isDefinedBy fennel: ;
+    rdfs:subClassOf ast:Node ;
+    fennel:isSupertype true ;
+    fennel:nodeTypeId 65 .
+
+fennel:boolean a owl:Class ;
+    rdfs:label "boolean" ;
+    rdfs:isDefinedBy fennel: ;
+    rdfs:subClassOf ast:Node ;
+    fennel:isSupertype true ;
+    fennel:nodeTypeId 102 .
+
+fennel:collect a owl:Class ;
+    rdfs:label "collect" ;
+    rdfs:isDefinedBy fennel: ;
+    rdfs:subClassOf ast:Node ;
+    fennel:isSupertype true ;
+    fennel:nodeTypeId 88 .
+
+fennel:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy fennel: ;
+    rdfs:subClassOf ast:Node ;
+    fennel:isSupertype true ;
+    fennel:nodeTypeId 48 .
+
+fennel:each a owl:Class ;
+    rdfs:label "each" ;
+    rdfs:isDefinedBy fennel: ;
+    rdfs:subClassOf ast:Node ;
+    fennel:isSupertype true ;
+    fennel:nodeTypeId 52 .
+
+fennel:escape_sequence a owl:Class ;
+    rdfs:label "escape_sequence" ;
+    rdfs:isDefinedBy fennel: ;
+    rdfs:subClassOf ast:Node ;
+    fennel:isSupertype true ;
+    fennel:nodeTypeId 43 .
+
+fennel:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+fennel:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+fennel:field_docstring a owl:ObjectProperty ;
+    rdfs:label "docstring (structural)" ;
+    rdfs:comment "Structural reference for docstring field when it contains a non-terminal node" ;
+    fennel:fieldId 1 .
+
+fennel:field_guard a owl:ObjectProperty ;
+    rdfs:label "guard (structural)" ;
+    rdfs:comment "Structural reference for guard field when it contains a non-terminal node" ;
+    fennel:fieldId 2 .
+
+fennel:field_iterator a owl:ObjectProperty ;
+    rdfs:label "iterator (structural)" ;
+    rdfs:comment "Structural reference for iterator field when it contains a non-terminal node" ;
+    fennel:fieldId 3 .
+
+fennel:field_key a owl:ObjectProperty ;
+    rdfs:label "key (structural)" ;
+    rdfs:comment "Structural reference for key field when it contains a non-terminal node" ;
+    fennel:fieldId 4 .
+
+fennel:field_name a owl:ObjectProperty ;
+    rdfs:label "name (structural)" ;
+    rdfs:comment "Structural reference for name field when it contains a non-terminal node" ;
+    fennel:fieldId 5 .
+
+fennel:field_until a owl:ObjectProperty ;
+    rdfs:label "until (structural)" ;
+    rdfs:comment "Structural reference for until field when it contains a non-terminal node" ;
+    fennel:fieldId 6 .
+
+fennel:field_value a owl:ObjectProperty ;
+    rdfs:label "value (structural)" ;
+    rdfs:comment "Structural reference for value field when it contains a non-terminal node" ;
+    fennel:fieldId 7 .
+
+fennel:fn a owl:Class ;
+    rdfs:label "fn" ;
+    rdfs:isDefinedBy fennel: ;
+    rdfs:subClassOf ast:Node ;
+    fennel:isSupertype true ;
+    fennel:nodeTypeId 75 .
+
+fennel:for a owl:Class ;
+    rdfs:label "for" ;
+    rdfs:isDefinedBy fennel: ;
+    rdfs:subClassOf ast:Node ;
+    fennel:isSupertype true ;
+    fennel:nodeTypeId 54 .
+
+fennel:for_clause a owl:Class ;
+    rdfs:label "for_clause" ;
+    rdfs:isDefinedBy fennel: ;
+    rdfs:subClassOf ast:Node ;
+    fennel:isSupertype true ;
+    fennel:nodeTypeId 55 .
+
+fennel:global a owl:Class ;
+    rdfs:label "global" ;
+    rdfs:isDefinedBy fennel: ;
+    rdfs:subClassOf ast:Node ;
+    fennel:isSupertype true ;
+    fennel:nodeTypeId 58 .
+
+fennel:guard a owl:DatatypeProperty ;
+    rdfs:label "guard (literal)" ;
+    rdfs:comment "Literal value for guard field when it contains a terminal node" ;
+    fennel:fieldId 2 ;
+    fennel:isTerminalField true .
+
+fennel:guard_pattern a owl:Class ;
+    rdfs:label "guard_pattern" ;
+    rdfs:isDefinedBy fennel: ;
+    rdfs:subClassOf ast:Node ;
+    fennel:isSupertype true ;
+    fennel:nodeTypeId 82 .
+
+fennel:hashfn a owl:Class ;
+    rdfs:label "hashfn" ;
+    rdfs:isDefinedBy fennel: ;
+    rdfs:subClassOf ast:Node ;
+    fennel:isSupertype true ;
+    fennel:nodeTypeId 74 .
+
+fennel:icollect a owl:Class ;
+    rdfs:label "icollect" ;
+    rdfs:isDefinedBy fennel: ;
+    rdfs:subClassOf ast:Node ;
+    fennel:isSupertype true ;
+    fennel:nodeTypeId 89 .
+
+fennel:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+fennel:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+fennel:iter_bindings a owl:Class ;
+    rdfs:label "iter_bindings" ;
+    rdfs:isDefinedBy fennel: ;
+    rdfs:subClassOf ast:Node ;
+    fennel:isSupertype true ;
+    fennel:nodeTypeId 53 .
+
+fennel:iterator a owl:DatatypeProperty ;
+    rdfs:label "iterator (literal)" ;
+    rdfs:comment "Literal value for iterator field when it contains a terminal node" ;
+    fennel:fieldId 3 ;
+    fennel:isTerminalField true .
+
+fennel:key a owl:DatatypeProperty ;
+    rdfs:label "key (literal)" ;
+    rdfs:comment "Literal value for key field when it contains a terminal node" ;
+    fennel:fieldId 4 ;
+    fennel:isTerminalField true .
+
+fennel:lambda a owl:Class ;
+    rdfs:label "lambda" ;
+    rdfs:isDefinedBy fennel: ;
+    rdfs:subClassOf ast:Node ;
+    fennel:isSupertype true ;
+    fennel:nodeTypeId 76 .
+
+fennel:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+fennel:let a owl:Class ;
+    rdfs:label "let" ;
+    rdfs:isDefinedBy fennel: ;
+    rdfs:subClassOf ast:Node ;
+    fennel:isSupertype true ;
+    fennel:nodeTypeId 56 .
+
+fennel:let_clause a owl:Class ;
+    rdfs:label "let_clause" ;
+    rdfs:isDefinedBy fennel: ;
+    rdfs:subClassOf ast:Node ;
+    fennel:isSupertype true ;
+    fennel:nodeTypeId 57 .
+
+fennel:list a owl:Class ;
+    rdfs:label "list" ;
+    rdfs:isDefinedBy fennel: ;
+    rdfs:subClassOf ast:Node ;
+    fennel:isSupertype true ;
+    fennel:nodeTypeId 97 .
+
+fennel:local a owl:Class ;
+    rdfs:label "local" ;
+    rdfs:isDefinedBy fennel: ;
+    rdfs:subClassOf ast:Node ;
+    fennel:isSupertype true ;
+    fennel:nodeTypeId 59 .
+
+fennel:match a owl:Class ;
+    rdfs:label "match" ;
+    rdfs:isDefinedBy fennel: ;
+    rdfs:subClassOf ast:Node ;
+    fennel:isSupertype true ;
+    fennel:nodeTypeId 79 .
+
+fennel:multi_symbol a owl:Class ;
+    rdfs:label "multi_symbol" ;
+    rdfs:isDefinedBy fennel: ;
+    rdfs:subClassOf ast:Node ;
+    fennel:isSupertype true ;
+    fennel:nodeTypeId 104 .
+
+fennel:multi_symbol_method a owl:Class ;
+    rdfs:label "multi_symbol_method" ;
+    rdfs:isDefinedBy fennel: ;
+    rdfs:subClassOf ast:Node ;
+    fennel:isSupertype true ;
+    fennel:nodeTypeId 105 .
+
+fennel:multi_value_assignment a owl:Class ;
+    rdfs:label "multi_value_assignment" ;
+    rdfs:isDefinedBy fennel: ;
+    rdfs:subClassOf ast:Node ;
+    fennel:isSupertype true ;
+    fennel:nodeTypeId 69 .
+
+fennel:multi_value_binding a owl:Class ;
+    rdfs:label "multi_value_binding" ;
+    rdfs:isDefinedBy fennel: ;
+    rdfs:subClassOf ast:Node ;
+    fennel:isSupertype true ;
+    fennel:nodeTypeId 63 .
+
+fennel:multi_value_pattern a owl:Class ;
+    rdfs:label "multi_value_pattern" ;
+    rdfs:isDefinedBy fennel: ;
+    rdfs:subClassOf ast:Node ;
+    fennel:isSupertype true ;
+    fennel:nodeTypeId 84 .
+
+fennel:name a owl:DatatypeProperty ;
+    rdfs:label "name (literal)" ;
+    rdfs:comment "Literal value for name field when it contains a terminal node" ;
+    fennel:fieldId 5 ;
+    fennel:isTerminalField true .
+
+fennel:nil a owl:Class ;
+    rdfs:label "nil" ;
+    rdfs:isDefinedBy fennel: ;
+    rdfs:subClassOf ast:Node ;
+    fennel:isSupertype true ;
+    fennel:nodeTypeId 35 .
+
+fennel:nil_safe a owl:Class ;
+    rdfs:label "nil_safe" ;
+    rdfs:isDefinedBy fennel: ;
+    rdfs:subClassOf ast:Node ;
+    fennel:isSupertype true ;
+    fennel:nodeTypeId 36 .
+
+fennel:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+fennel:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+fennel:number a owl:Class ;
+    rdfs:label "number" ;
+    rdfs:isDefinedBy fennel: ;
+    rdfs:subClassOf ast:Node ;
+    fennel:isSupertype true ;
+    fennel:nodeTypeId 44 .
+
+fennel:parameters a owl:Class ;
+    rdfs:label "parameters" ;
+    rdfs:isDefinedBy fennel: ;
+    rdfs:subClassOf ast:Node ;
+    fennel:isSupertype true ;
+    fennel:nodeTypeId 78 .
+
+fennel:program a owl:Class ;
+    rdfs:label "program" ;
+    rdfs:isDefinedBy fennel: ;
+    rdfs:subClassOf ast:Node ;
+    fennel:isSupertype true ;
+    fennel:nodeTypeId 49 .
+
+fennel:quote a owl:Class ;
+    rdfs:label "quote" ;
+    rdfs:isDefinedBy fennel: ;
+    rdfs:subClassOf ast:Node ;
+    fennel:isSupertype true ;
+    fennel:nodeTypeId 91 .
+
+fennel:quoted_list a owl:Class ;
+    rdfs:label "quoted_list" ;
+    rdfs:isDefinedBy fennel: ;
+    rdfs:subClassOf ast:Node ;
+    fennel:isSupertype true ;
+    fennel:nodeTypeId 94 .
+
+fennel:quoted_sequential_table a owl:Class ;
+    rdfs:label "quoted_sequential_table" ;
+    rdfs:isDefinedBy fennel: ;
+    rdfs:subClassOf ast:Node ;
+    fennel:isSupertype true ;
+    fennel:nodeTypeId 95 .
+
+fennel:quoted_table a owl:Class ;
+    rdfs:label "quoted_table" ;
+    rdfs:isDefinedBy fennel: ;
+    rdfs:subClassOf ast:Node ;
+    fennel:isSupertype true ;
+    fennel:nodeTypeId 96 .
+
+fennel:sequential_table a owl:Class ;
+    rdfs:label "sequential_table" ;
+    rdfs:isDefinedBy fennel: ;
+    rdfs:subClassOf ast:Node ;
+    fennel:isSupertype true ;
+    fennel:nodeTypeId 98 .
+
+fennel:sequential_table_assignment a owl:Class ;
+    rdfs:label "sequential_table_assignment" ;
+    rdfs:isDefinedBy fennel: ;
+    rdfs:subClassOf ast:Node ;
+    fennel:isSupertype true ;
+    fennel:nodeTypeId 72 .
+
+fennel:sequential_table_binding a owl:Class ;
+    rdfs:label "sequential_table_binding" ;
+    rdfs:isDefinedBy fennel: ;
+    rdfs:subClassOf ast:Node ;
+    fennel:isSupertype true ;
+    fennel:nodeTypeId 66 .
+
+fennel:sequential_table_pattern a owl:Class ;
+    rdfs:label "sequential_table_pattern" ;
+    rdfs:isDefinedBy fennel: ;
+    rdfs:subClassOf ast:Node ;
+    fennel:isSupertype true ;
+    fennel:nodeTypeId 86 .
+
+fennel:set a owl:Class ;
+    rdfs:label "set" ;
+    rdfs:isDefinedBy fennel: ;
+    rdfs:subClassOf ast:Node ;
+    fennel:isSupertype true ;
+    fennel:nodeTypeId 61 .
+
+fennel:string a owl:Class ;
+    rdfs:label "string" ;
+    rdfs:isDefinedBy fennel: ;
+    rdfs:subClassOf ast:Node ;
+    fennel:isSupertype true ;
+    fennel:nodeTypeId 103 .
+
+fennel:symbol a owl:Class ;
+    rdfs:label "symbol" ;
+    rdfs:isDefinedBy fennel: ;
+    rdfs:subClassOf ast:Node ;
+    fennel:isSupertype true ;
+    fennel:nodeTypeId 1,
+        47 .
+
+fennel:table a owl:Class ;
+    rdfs:label "table" ;
+    rdfs:isDefinedBy fennel: ;
+    rdfs:subClassOf ast:Node ;
+    fennel:isSupertype true ;
+    fennel:nodeTypeId 100 .
+
+fennel:table_assignment a owl:Class ;
+    rdfs:label "table_assignment" ;
+    rdfs:isDefinedBy fennel: ;
+    rdfs:subClassOf ast:Node ;
+    fennel:isSupertype true ;
+    fennel:nodeTypeId 73 .
+
+fennel:table_binding a owl:Class ;
+    rdfs:label "table_binding" ;
+    rdfs:isDefinedBy fennel: ;
+    rdfs:subClassOf ast:Node ;
+    fennel:isSupertype true ;
+    fennel:nodeTypeId 67 .
+
+fennel:table_pair a owl:Class ;
+    rdfs:label "table_pair" ;
+    rdfs:isDefinedBy fennel: ;
+    rdfs:subClassOf ast:Node ;
+    fennel:isSupertype true ;
+    fennel:nodeTypeId 99 .
+
+fennel:table_pattern a owl:Class ;
+    rdfs:label "table_pattern" ;
+    rdfs:isDefinedBy fennel: ;
+    rdfs:subClassOf ast:Node ;
+    fennel:isSupertype true ;
+    fennel:nodeTypeId 87 .
+
+fennel:unquote a owl:Class ;
+    rdfs:label "unquote" ;
+    rdfs:isDefinedBy fennel: ;
+    rdfs:subClassOf ast:Node ;
+    fennel:isSupertype true ;
+    fennel:nodeTypeId 92 .
+
+fennel:until a owl:DatatypeProperty ;
+    rdfs:label "until (literal)" ;
+    rdfs:comment "Literal value for until field when it contains a terminal node" ;
+    fennel:fieldId 6 ;
+    fennel:isTerminalField true .
+
+fennel:value a owl:DatatypeProperty ;
+    rdfs:label "value (literal)" ;
+    rdfs:comment "Literal value for value field when it contains a terminal node" ;
+    fennel:fieldId 7 ;
+    fennel:isTerminalField true .
+
+fennel:var a owl:Class ;
+    rdfs:label "var" ;
+    rdfs:isDefinedBy fennel: ;
+    rdfs:subClassOf ast:Node ;
+    fennel:isSupertype true ;
+    fennel:nodeTypeId 60 .
+
+fennel:vararg a owl:Class ;
+    rdfs:label "vararg" ;
+    rdfs:isDefinedBy fennel: ;
+    rdfs:subClassOf ast:Node ;
+    fennel:isSupertype true ;
+    fennel:nodeTypeId 37 .
+
+fennel:where_pattern a owl:Class ;
+    rdfs:label "where_pattern" ;
+    rdfs:isDefinedBy fennel: ;
+    rdfs:subClassOf ast:Node ;
+    fennel:isSupertype true ;
+    fennel:nodeTypeId 83 .
+
+fennel: a owl:Ontology ;
+    rdfs:label "Fennel Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for fennel" ;
+    owl:versionInfo "v0.25" ;
+    fennel:abiVersion 14 ;
+    fennel:fieldCount 7 ;
+    fennel:languageName "None" ;
+    fennel:nodeKindCount 122 .
+

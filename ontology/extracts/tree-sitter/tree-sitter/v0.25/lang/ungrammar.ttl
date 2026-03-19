@@ -1,0 +1,161 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ungrammar: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/ungrammar/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ungrammar:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+ungrammar:alternation a owl:Class ;
+    rdfs:label "alternation" ;
+    rdfs:isDefinedBy ungrammar: ;
+    rdfs:subClassOf ast:Node ;
+    ungrammar:isSupertype true ;
+    ungrammar:nodeTypeId 22 .
+
+ungrammar:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy ungrammar: ;
+    rdfs:subClassOf ast:Node ;
+    ungrammar:isSupertype true ;
+    ungrammar:nodeTypeId 11 .
+
+ungrammar:definition a owl:Class ;
+    rdfs:label "definition" ;
+    rdfs:isDefinedBy ungrammar: ;
+    rdfs:subClassOf ast:Node ;
+    ungrammar:isSupertype true ;
+    ungrammar:nodeTypeId 26 .
+
+ungrammar:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+ungrammar:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+ungrammar:grammar a owl:Class ;
+    rdfs:label "grammar" ;
+    rdfs:isDefinedBy ungrammar: ;
+    rdfs:subClassOf ast:Node ;
+    ungrammar:isSupertype true ;
+    ungrammar:nodeTypeId 12 .
+
+ungrammar:identifier a owl:Class ;
+    rdfs:label "identifier" ;
+    rdfs:isDefinedBy ungrammar: ;
+    rdfs:subClassOf ast:Node ;
+    ungrammar:isSupertype true ;
+    ungrammar:nodeTypeId 1 .
+
+ungrammar:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+ungrammar:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+ungrammar:label a owl:Class ;
+    rdfs:label "label" ;
+    rdfs:isDefinedBy ungrammar: ;
+    rdfs:subClassOf ast:Node ;
+    ungrammar:isSupertype true ;
+    ungrammar:nodeTypeId 20 .
+
+ungrammar:label_name a owl:Class ;
+    rdfs:label "label_name" ;
+    rdfs:isDefinedBy ungrammar: ;
+    rdfs:subClassOf ast:Node ;
+    ungrammar:isSupertype true ;
+    ungrammar:nodeTypeId 27 .
+
+ungrammar:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+ungrammar:node a owl:Class ;
+    rdfs:label "node" ;
+    rdfs:isDefinedBy ungrammar: ;
+    rdfs:subClassOf ast:Node ;
+    ungrammar:isSupertype true ;
+    ungrammar:nodeTypeId 13 .
+
+ungrammar:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+ungrammar:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+ungrammar:node_rule a owl:Class ;
+    rdfs:label "node_rule" ;
+    rdfs:isDefinedBy ungrammar: ;
+    rdfs:subClassOf ast:Node ;
+    ungrammar:isSupertype true ;
+    ungrammar:nodeTypeId 18 .
+
+ungrammar:optional a owl:Class ;
+    rdfs:label "optional" ;
+    rdfs:isDefinedBy ungrammar: ;
+    rdfs:subClassOf ast:Node ;
+    ungrammar:isSupertype true ;
+    ungrammar:nodeTypeId 17 .
+
+ungrammar:repetition a owl:Class ;
+    rdfs:label "repetition" ;
+    rdfs:isDefinedBy ungrammar: ;
+    rdfs:subClassOf ast:Node ;
+    ungrammar:isSupertype true ;
+    ungrammar:nodeTypeId 16 .
+
+ungrammar:rule a owl:Class ;
+    rdfs:label "rule" ;
+    rdfs:isDefinedBy ungrammar: ;
+    rdfs:subClassOf ast:Node ;
+    ungrammar:isSupertype true ;
+    ungrammar:nodeTypeId 14 .
+
+ungrammar:sequence a owl:Class ;
+    rdfs:label "sequence" ;
+    rdfs:isDefinedBy ungrammar: ;
+    rdfs:subClassOf ast:Node ;
+    ungrammar:isSupertype true ;
+    ungrammar:nodeTypeId 21 .
+
+ungrammar:token a owl:Class ;
+    rdfs:label "token" ;
+    rdfs:isDefinedBy ungrammar: ;
+    rdfs:subClassOf ast:Node ;
+    ungrammar:isSupertype true ;
+    ungrammar:nodeTypeId 19 .
+
+ungrammar:token_identifier a owl:Class ;
+    rdfs:label "token_identifier" ;
+    rdfs:isDefinedBy ungrammar: ;
+    rdfs:subClassOf ast:Node ;
+    ungrammar:isSupertype true ;
+    ungrammar:nodeTypeId 10 .
+
+ungrammar: a owl:Ontology ;
+    rdfs:label "Ungrammar Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for ungrammar" ;
+    owl:versionInfo "v0.25" ;
+    ungrammar:abiVersion 14 ;
+    ungrammar:fieldCount 0 ;
+    ungrammar:languageName "None" ;
+    ungrammar:nodeKindCount 28 .
+

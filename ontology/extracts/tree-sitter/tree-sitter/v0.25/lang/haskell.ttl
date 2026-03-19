@@ -1,0 +1,1852 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix haskell: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/haskell/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+haskell:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+haskell:abstract_family a owl:Class ;
+    rdfs:label "abstract_family" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 219 .
+
+haskell:all_names a owl:Class ;
+    rdfs:label "all_names" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 538 .
+
+haskell:alternative a owl:Class ;
+    rdfs:label "alternative" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 262,
+        263 .
+
+haskell:alternatives a owl:Class ;
+    rdfs:label "alternatives" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 264,
+        265 .
+
+haskell:annotated a owl:Class ;
+    rdfs:label "annotated" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 166 .
+
+haskell:apply a owl:Class ;
+    rdfs:label "apply" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 182,
+        223,
+        275,
+        296 .
+
+haskell:arithmetic_sequence a owl:Class ;
+    rdfs:label "arithmetic_sequence" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 242 .
+
+haskell:as a owl:Class ;
+    rdfs:label "as" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 292 .
+
+haskell:associated_type a owl:Class ;
+    rdfs:label "associated_type" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 308 .
+
+haskell:bind a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "bind",
+        "bind (literal)" ;
+    rdfs:comment "Literal value for bind field when it contains a terminal node" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:fieldId 7 ;
+    haskell:isSupertype true ;
+    haskell:isTerminalField true ;
+    haskell:nodeTypeId 388 .
+
+haskell:binding_list a owl:Class ;
+    rdfs:label "binding_list" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 378,
+        379 .
+
+haskell:body a owl:DatatypeProperty ;
+    rdfs:label "body (literal)" ;
+    rdfs:comment "Literal value for body field when it contains a terminal node" ;
+    haskell:fieldId 9 ;
+    haskell:isTerminalField true .
+
+haskell:boolean a owl:Class ;
+    rdfs:label "boolean" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 539 .
+
+haskell:calling_convention a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "calling_convention",
+        "calling_convention (literal)" ;
+    rdfs:comment "Literal value for calling_convention field when it contains a terminal node" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:fieldId 10 ;
+    haskell:isSupertype true ;
+    haskell:isTerminalField true ;
+    haskell:nodeTypeId 59 .
+
+haskell:case a owl:Class ;
+    rdfs:label "case" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 266 .
+
+haskell:char a owl:Class ;
+    rdfs:label "char" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 76 .
+
+haskell:children a owl:Class ;
+    rdfs:label "children" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 310 .
+
+haskell:class a owl:Class ;
+    rdfs:label "class" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 369 .
+
+haskell:class_declarations a owl:Class ;
+    rdfs:label "class_declarations" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 368 .
+
+haskell:closed_family a owl:DatatypeProperty ;
+    rdfs:label "closed_family (literal)" ;
+    rdfs:comment "Literal value for closed_family field when it contains a terminal node" ;
+    haskell:fieldId 14 ;
+    haskell:isTerminalField true .
+
+haskell:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 128 .
+
+haskell:conditional a owl:Class ;
+    rdfs:label "conditional" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 250 .
+
+haskell:constructor a owl:Class ;
+    rdfs:label "constructor" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 540 .
+
+haskell:constructor_operator a owl:Class ;
+    rdfs:label "constructor_operator" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 451 .
+
+haskell:constructor_synonym a owl:Class ;
+    rdfs:label "constructor_synonym" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 541 .
+
+haskell:constructor_synonyms a owl:Class ;
+    rdfs:label "constructor_synonyms" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 398 .
+
+haskell:context a owl:Class ;
+    rdfs:label "context" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 198,
+        230,
+        234 .
+
+haskell:cpp a owl:Class ;
+    rdfs:label "cpp" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 130 .
+
+haskell:data_constructor a owl:Class ;
+    rdfs:label "data_constructor" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 342 .
+
+haskell:data_constructors a owl:Class ;
+    rdfs:label "data_constructors" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 343 .
+
+haskell:data_family a owl:Class ;
+    rdfs:label "data_family" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 352,
+        360 .
+
+haskell:data_instance a owl:Class ;
+    rdfs:label "data_instance" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 357,
+        363 .
+
+haskell:data_type a owl:Class ;
+    rdfs:label "data_type" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 346,
+        354,
+        361 .
+
+haskell:declarations a owl:Class ;
+    rdfs:label "declarations" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 318 .
+
+haskell:default_signature a owl:Class ;
+    rdfs:label "default_signature" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 364 .
+
+haskell:default_types a owl:Class ;
+    rdfs:label "default_types" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 396 .
+
+haskell:deriving a owl:Class ;
+    rdfs:label "deriving" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 331 .
+
+haskell:deriving_instance a owl:Class ;
+    rdfs:label "deriving_instance" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 374 .
+
+haskell:deriving_strategy a owl:Class ;
+    rdfs:label "deriving_strategy" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 330 .
+
+haskell:determined a owl:DatatypeProperty ;
+    rdfs:label "determined (literal)" ;
+    rdfs:comment "Literal value for determined field when it contains a terminal node" ;
+    haskell:fieldId 23 ;
+    haskell:isTerminalField true .
+
+haskell:do a owl:Class ;
+    rdfs:label "do" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 258 .
+
+haskell:do_module a owl:Class ;
+    rdfs:label "do_module" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 256 .
+
+haskell:element a owl:DatatypeProperty ;
+    rdfs:label "element (literal)" ;
+    rdfs:comment "Literal value for element field when it contains a terminal node" ;
+    haskell:fieldId 24 ;
+    haskell:isTerminalField true .
+
+haskell:empty_list a owl:Class ;
+    rdfs:label "empty_list" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 411 .
+
+haskell:entity a owl:Class ;
+    rdfs:label "entity" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 393 .
+
+haskell:equation a owl:Class ;
+    rdfs:label "equation" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 399 .
+
+haskell:equations a owl:Class ;
+    rdfs:label "equations" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 218 .
+
+haskell:error_sentinel a owl:Class ;
+    rdfs:label "error_sentinel" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 108 .
+
+haskell:exp a owl:Class ;
+    rdfs:label "exp" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 251 .
+
+haskell:explicit_type a owl:Class ;
+    rdfs:label "explicit_type" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 274 .
+
+haskell:export a owl:Class ;
+    rdfs:label "export" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 542 .
+
+haskell:exports a owl:Class ;
+    rdfs:label "exports" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 315 .
+
+haskell:expression a owl:DatatypeProperty ;
+    rdfs:label "expression (literal)" ;
+    rdfs:comment "Literal value for expression field when it contains a terminal node" ;
+    haskell:fieldId 30 ;
+    haskell:isTerminalField true .
+
+haskell:field a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "field",
+        "field (literal)" ;
+    rdfs:comment "Literal value for field field when it contains a terminal node" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:fieldId 31 ;
+    haskell:isSupertype true ;
+    haskell:isTerminalField true ;
+    haskell:nodeTypeId 327,
+        347 .
+
+haskell:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+haskell:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+haskell:field_alias a owl:ObjectProperty ;
+    rdfs:label "alias (structural)" ;
+    rdfs:comment "Structural reference for alias field when it contains a non-terminal node" ;
+    haskell:fieldId 1 .
+
+haskell:field_alternative a owl:ObjectProperty ;
+    rdfs:label "alternative (structural)" ;
+    rdfs:comment "Structural reference for alternative field when it contains a non-terminal node" ;
+    haskell:fieldId 2 .
+
+haskell:field_alternatives a owl:ObjectProperty ;
+    rdfs:label "alternatives (structural)" ;
+    rdfs:comment "Structural reference for alternatives field when it contains a non-terminal node" ;
+    haskell:fieldId 3 .
+
+haskell:field_argument a owl:ObjectProperty ;
+    rdfs:label "argument (structural)" ;
+    rdfs:comment "Structural reference for argument field when it contains a non-terminal node" ;
+    haskell:fieldId 4 .
+
+haskell:field_arrow a owl:ObjectProperty ;
+    rdfs:label "arrow (structural)" ;
+    rdfs:comment "Structural reference for arrow field when it contains a non-terminal node" ;
+    haskell:fieldId 5 .
+
+haskell:field_associativity a owl:ObjectProperty ;
+    rdfs:label "associativity (structural)" ;
+    rdfs:comment "Structural reference for associativity field when it contains a non-terminal node" ;
+    haskell:fieldId 6 .
+
+haskell:field_bind a owl:ObjectProperty ;
+    rdfs:label "bind (structural)" ;
+    rdfs:comment "Structural reference for bind field when it contains a non-terminal node" ;
+    haskell:fieldId 7 .
+
+haskell:field_binds a owl:ObjectProperty ;
+    rdfs:label "binds (structural)" ;
+    rdfs:comment "Structural reference for binds field when it contains a non-terminal node" ;
+    haskell:fieldId 8 .
+
+haskell:field_children a owl:ObjectProperty ;
+    rdfs:label "children (structural)" ;
+    rdfs:comment "Structural reference for children field when it contains a non-terminal node" ;
+    haskell:fieldId 11 .
+
+haskell:field_classes a owl:ObjectProperty ;
+    rdfs:label "classes (structural)" ;
+    rdfs:comment "Structural reference for classes field when it contains a non-terminal node" ;
+    haskell:fieldId 12 .
+
+haskell:field_classifier a owl:ObjectProperty ;
+    rdfs:label "classifier (structural)" ;
+    rdfs:comment "Structural reference for classifier field when it contains a non-terminal node" ;
+    haskell:fieldId 13 .
+
+haskell:field_closed_family a owl:ObjectProperty ;
+    rdfs:label "closed_family (structural)" ;
+    rdfs:comment "Structural reference for closed_family field when it contains a non-terminal node" ;
+    haskell:fieldId 14 .
+
+haskell:field_constraint a owl:ObjectProperty ;
+    rdfs:label "constraint (structural)" ;
+    rdfs:comment "Structural reference for constraint field when it contains a non-terminal node" ;
+    haskell:fieldId 15 .
+
+haskell:field_constructor a owl:ObjectProperty ;
+    rdfs:label "constructor (structural)" ;
+    rdfs:comment "Structural reference for constructor field when it contains a non-terminal node" ;
+    haskell:fieldId 16 .
+
+haskell:field_constructors a owl:ObjectProperty ;
+    rdfs:label "constructors (structural)" ;
+    rdfs:comment "Structural reference for constructors field when it contains a non-terminal node" ;
+    haskell:fieldId 17 .
+
+haskell:field_context a owl:ObjectProperty ;
+    rdfs:label "context (structural)" ;
+    rdfs:comment "Structural reference for context field when it contains a non-terminal node" ;
+    haskell:fieldId 18 .
+
+haskell:field_decl a owl:ObjectProperty ;
+    rdfs:label "decl (structural)" ;
+    rdfs:comment "Structural reference for decl field when it contains a non-terminal node" ;
+    haskell:fieldId 19 .
+
+haskell:field_declaration a owl:ObjectProperty ;
+    rdfs:label "declaration (structural)" ;
+    rdfs:comment "Structural reference for declaration field when it contains a non-terminal node" ;
+    haskell:fieldId 20 .
+
+haskell:field_declarations a owl:ObjectProperty ;
+    rdfs:label "declarations (structural)" ;
+    rdfs:comment "Structural reference for declarations field when it contains a non-terminal node" ;
+    haskell:fieldId 21 .
+
+haskell:field_deriving a owl:ObjectProperty ;
+    rdfs:label "deriving (structural)" ;
+    rdfs:comment "Structural reference for deriving field when it contains a non-terminal node" ;
+    haskell:fieldId 22 .
+
+haskell:field_element a owl:ObjectProperty ;
+    rdfs:label "element (structural)" ;
+    rdfs:comment "Structural reference for element field when it contains a non-terminal node" ;
+    haskell:fieldId 24 .
+
+haskell:field_else a owl:ObjectProperty ;
+    rdfs:label "else (structural)" ;
+    rdfs:comment "Structural reference for else field when it contains a non-terminal node" ;
+    haskell:fieldId 25 .
+
+haskell:field_entity a owl:ObjectProperty ;
+    rdfs:label "entity (structural)" ;
+    rdfs:comment "Structural reference for entity field when it contains a non-terminal node" ;
+    haskell:fieldId 26 .
+
+haskell:field_equation a owl:ObjectProperty ;
+    rdfs:label "equation (structural)" ;
+    rdfs:comment "Structural reference for equation field when it contains a non-terminal node" ;
+    haskell:fieldId 27 .
+
+haskell:field_export a owl:ObjectProperty ;
+    rdfs:label "export (structural)" ;
+    rdfs:comment "Structural reference for export field when it contains a non-terminal node" ;
+    haskell:fieldId 28 .
+
+haskell:field_exports a owl:ObjectProperty ;
+    rdfs:label "exports (structural)" ;
+    rdfs:comment "Structural reference for exports field when it contains a non-terminal node" ;
+    haskell:fieldId 29 .
+
+haskell:field_expression a owl:ObjectProperty ;
+    rdfs:label "expression (structural)" ;
+    rdfs:comment "Structural reference for expression field when it contains a non-terminal node" ;
+    haskell:fieldId 30 .
+
+haskell:field_field a owl:ObjectProperty ;
+    rdfs:label "field (structural)" ;
+    rdfs:comment "Structural reference for field field when it contains a non-terminal node" ;
+    haskell:fieldId 31 .
+
+haskell:field_fields a owl:ObjectProperty ;
+    rdfs:label "fields (structural)" ;
+    rdfs:comment "Structural reference for fields field when it contains a non-terminal node" ;
+    haskell:fieldId 32 .
+
+haskell:field_forall a owl:ObjectProperty ;
+    rdfs:label "forall (structural)" ;
+    rdfs:comment "Structural reference for forall field when it contains a non-terminal node" ;
+    haskell:fieldId 33 .
+
+haskell:field_from a owl:ObjectProperty ;
+    rdfs:label "from (structural)" ;
+    rdfs:comment "Structural reference for from field when it contains a non-terminal node" ;
+    haskell:fieldId 34 .
+
+haskell:field_function a owl:ObjectProperty ;
+    rdfs:label "function (structural)" ;
+    rdfs:comment "Structural reference for function field when it contains a non-terminal node" ;
+    haskell:fieldId 35 .
+
+haskell:field_fundep a owl:ObjectProperty ;
+    rdfs:label "fundep (structural)" ;
+    rdfs:comment "Structural reference for fundep field when it contains a non-terminal node" ;
+    haskell:fieldId 36 .
+
+haskell:field_fundeps a owl:ObjectProperty ;
+    rdfs:label "fundeps (structural)" ;
+    rdfs:comment "Structural reference for fundeps field when it contains a non-terminal node" ;
+    haskell:fieldId 37 .
+
+haskell:field_guard a owl:ObjectProperty ;
+    rdfs:label "guard (structural)" ;
+    rdfs:comment "Structural reference for guard field when it contains a non-terminal node" ;
+    haskell:fieldId 38 .
+
+haskell:field_guards a owl:ObjectProperty ;
+    rdfs:label "guards (structural)" ;
+    rdfs:comment "Structural reference for guards field when it contains a non-terminal node" ;
+    haskell:fieldId 39 .
+
+haskell:field_id a owl:ObjectProperty ;
+    rdfs:label "id (structural)" ;
+    rdfs:comment "Structural reference for id field when it contains a non-terminal node" ;
+    haskell:fieldId 40 .
+
+haskell:field_if a owl:ObjectProperty ;
+    rdfs:label "if (structural)" ;
+    rdfs:comment "Structural reference for if field when it contains a non-terminal node" ;
+    haskell:fieldId 41 .
+
+haskell:field_import a owl:ObjectProperty ;
+    rdfs:label "import (structural)" ;
+    rdfs:comment "Structural reference for import field when it contains a non-terminal node" ;
+    haskell:fieldId 43 .
+
+haskell:field_imports a owl:ObjectProperty ;
+    rdfs:label "imports (structural)" ;
+    rdfs:comment "Structural reference for imports field when it contains a non-terminal node" ;
+    haskell:fieldId 44 .
+
+haskell:field_key a owl:ObjectProperty ;
+    rdfs:label "key (structural)" ;
+    rdfs:comment "Structural reference for key field when it contains a non-terminal node" ;
+    haskell:fieldId 45 .
+
+haskell:field_kind a owl:ObjectProperty ;
+    rdfs:label "kind (structural)" ;
+    rdfs:comment "Structural reference for kind field when it contains a non-terminal node" ;
+    haskell:fieldId 46 .
+
+haskell:field_left_operand a owl:ObjectProperty ;
+    rdfs:label "left_operand (structural)" ;
+    rdfs:comment "Structural reference for left_operand field when it contains a non-terminal node" ;
+    haskell:fieldId 47 .
+
+haskell:field_match a owl:ObjectProperty ;
+    rdfs:label "match (structural)" ;
+    rdfs:comment "Structural reference for match field when it contains a non-terminal node" ;
+    haskell:fieldId 48 .
+
+haskell:field_minus a owl:ObjectProperty ;
+    rdfs:label "minus (structural)" ;
+    rdfs:comment "Structural reference for minus field when it contains a non-terminal node" ;
+    haskell:fieldId 50 .
+
+haskell:field_module a owl:ObjectProperty ;
+    rdfs:label "module (structural)" ;
+    rdfs:comment "Structural reference for module field when it contains a non-terminal node" ;
+    haskell:fieldId 51 .
+
+haskell:field_multiplicity a owl:ObjectProperty ;
+    rdfs:label "multiplicity (structural)" ;
+    rdfs:comment "Structural reference for multiplicity field when it contains a non-terminal node" ;
+    haskell:fieldId 52 .
+
+haskell:field_name a owl:Class,
+        owl:ObjectProperty ;
+    rdfs:label "field_name",
+        "name (structural)" ;
+    rdfs:comment "Structural reference for name field when it contains a non-terminal node" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:fieldId 53 ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 322 .
+
+haskell:field_names a owl:ObjectProperty ;
+    rdfs:label "names (structural)" ;
+    rdfs:comment "Structural reference for names field when it contains a non-terminal node" ;
+    haskell:fieldId 54 .
+
+haskell:field_namespace a owl:ObjectProperty ;
+    rdfs:label "namespace (structural)" ;
+    rdfs:comment "Structural reference for namespace field when it contains a non-terminal node" ;
+    haskell:fieldId 55 .
+
+haskell:field_operator a owl:ObjectProperty ;
+    rdfs:label "operator (structural)" ;
+    rdfs:comment "Structural reference for operator field when it contains a non-terminal node" ;
+    haskell:fieldId 57 .
+
+haskell:field_parameter a owl:ObjectProperty ;
+    rdfs:label "parameter (structural)" ;
+    rdfs:comment "Structural reference for parameter field when it contains a non-terminal node" ;
+    haskell:fieldId 59 .
+
+haskell:field_parens a owl:ObjectProperty ;
+    rdfs:label "parens (structural)" ;
+    rdfs:comment "Structural reference for parens field when it contains a non-terminal node" ;
+    haskell:fieldId 60 .
+
+haskell:field_path a owl:Class ;
+    rdfs:label "field_path" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 325 .
+
+haskell:field_pattern a owl:Class,
+        owl:ObjectProperty ;
+    rdfs:label "field_pattern",
+        "pattern (structural)" ;
+    rdfs:comment "Structural reference for pattern field when it contains a non-terminal node" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:fieldId 61 ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 290 .
+
+haskell:field_patterns a owl:ObjectProperty ;
+    rdfs:label "patterns (structural)" ;
+    rdfs:comment "Structural reference for patterns field when it contains a non-terminal node" ;
+    haskell:fieldId 62 .
+
+haskell:field_qualifier a owl:ObjectProperty ;
+    rdfs:label "qualifier (structural)" ;
+    rdfs:comment "Structural reference for qualifier field when it contains a non-terminal node" ;
+    haskell:fieldId 64 .
+
+haskell:field_qualifiers a owl:ObjectProperty ;
+    rdfs:label "qualifiers (structural)" ;
+    rdfs:comment "Structural reference for qualifiers field when it contains a non-terminal node" ;
+    haskell:fieldId 65 .
+
+haskell:field_quantifier a owl:ObjectProperty ;
+    rdfs:label "quantifier (structural)" ;
+    rdfs:comment "Structural reference for quantifier field when it contains a non-terminal node" ;
+    haskell:fieldId 66 .
+
+haskell:field_quoter a owl:ObjectProperty ;
+    rdfs:label "quoter (structural)" ;
+    rdfs:comment "Structural reference for quoter field when it contains a non-terminal node" ;
+    haskell:fieldId 67 .
+
+haskell:field_result a owl:ObjectProperty ;
+    rdfs:label "result (structural)" ;
+    rdfs:comment "Structural reference for result field when it contains a non-terminal node" ;
+    haskell:fieldId 68 .
+
+haskell:field_right_operand a owl:ObjectProperty ;
+    rdfs:label "right_operand (structural)" ;
+    rdfs:comment "Structural reference for right_operand field when it contains a non-terminal node" ;
+    haskell:fieldId 69 .
+
+haskell:field_signature a owl:ObjectProperty ;
+    rdfs:label "signature (structural)" ;
+    rdfs:comment "Structural reference for signature field when it contains a non-terminal node" ;
+    haskell:fieldId 72 .
+
+haskell:field_statement a owl:ObjectProperty ;
+    rdfs:label "statement (structural)" ;
+    rdfs:comment "Structural reference for statement field when it contains a non-terminal node" ;
+    haskell:fieldId 73 .
+
+haskell:field_step a owl:ObjectProperty ;
+    rdfs:label "step (structural)" ;
+    rdfs:comment "Structural reference for step field when it contains a non-terminal node" ;
+    haskell:fieldId 74 .
+
+haskell:field_subfield a owl:ObjectProperty ;
+    rdfs:label "subfield (structural)" ;
+    rdfs:comment "Structural reference for subfield field when it contains a non-terminal node" ;
+    haskell:fieldId 76 .
+
+haskell:field_synonym a owl:ObjectProperty ;
+    rdfs:label "synonym (structural)" ;
+    rdfs:comment "Structural reference for synonym field when it contains a non-terminal node" ;
+    haskell:fieldId 77 .
+
+haskell:field_then a owl:ObjectProperty ;
+    rdfs:label "then (structural)" ;
+    rdfs:comment "Structural reference for then field when it contains a non-terminal node" ;
+    haskell:fieldId 78 .
+
+haskell:field_to a owl:ObjectProperty ;
+    rdfs:label "to (structural)" ;
+    rdfs:comment "Structural reference for to field when it contains a non-terminal node" ;
+    haskell:fieldId 79 .
+
+haskell:field_transformation a owl:ObjectProperty ;
+    rdfs:label "transformation (structural)" ;
+    rdfs:comment "Structural reference for transformation field when it contains a non-terminal node" ;
+    haskell:fieldId 80 .
+
+haskell:field_type a owl:ObjectProperty ;
+    rdfs:label "type (structural)" ;
+    rdfs:comment "Structural reference for type field when it contains a non-terminal node" ;
+    haskell:fieldId 81 .
+
+haskell:field_update a owl:Class ;
+    rdfs:label "field_update" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 270 .
+
+haskell:field_variable a owl:ObjectProperty ;
+    rdfs:label "variable (structural)" ;
+    rdfs:comment "Structural reference for variable field when it contains a non-terminal node" ;
+    haskell:fieldId 82 .
+
+haskell:field_variables a owl:ObjectProperty ;
+    rdfs:label "variables (structural)" ;
+    rdfs:comment "Structural reference for variables field when it contains a non-terminal node" ;
+    haskell:fieldId 83 .
+
+haskell:field_via a owl:ObjectProperty ;
+    rdfs:label "via (structural)" ;
+    rdfs:comment "Structural reference for via field when it contains a non-terminal node" ;
+    haskell:fieldId 84 .
+
+haskell:fields a owl:Class ;
+    rdfs:label "fields" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 328 .
+
+haskell:fixity a owl:Class ;
+    rdfs:label "fixity" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 377 .
+
+haskell:float a owl:Class ;
+    rdfs:label "float" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 75 .
+
+haskell:forall a owl:Class ;
+    rdfs:label "forall" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 187,
+        189,
+        229 .
+
+haskell:forall_required a owl:Class ;
+    rdfs:label "forall_required" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 188,
+        190 .
+
+haskell:foreign_export a owl:Class ;
+    rdfs:label "foreign_export" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 395 .
+
+haskell:foreign_import a owl:Class ;
+    rdfs:label "foreign_import" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 394 .
+
+haskell:function a owl:Class ;
+    rdfs:label "function" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 196,
+        387 .
+
+haskell:function_head_parens a owl:Class ;
+    rdfs:label "function_head_parens" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 385 .
+
+haskell:fundep a owl:Class ;
+    rdfs:label "fundep" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 366 .
+
+haskell:fundeps a owl:Class ;
+    rdfs:label "fundeps" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 367 .
+
+haskell:gadt_constructor a owl:Class ;
+    rdfs:label "gadt_constructor" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 334 .
+
+haskell:gadt_constructors a owl:Class ;
+    rdfs:label "gadt_constructors" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 335 .
+
+haskell:generator a owl:Class ;
+    rdfs:label "generator" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 157 .
+
+haskell:group a owl:Class ;
+    rdfs:label "group" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 243 .
+
+haskell:guards a owl:Class ;
+    rdfs:label "guards" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 161 .
+
+haskell:haddock a owl:Class ;
+    rdfs:label "haddock" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 129 .
+
+haskell:haskell a owl:Class ;
+    rdfs:label "haskell" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 156 .
+
+haskell:header a owl:Class ;
+    rdfs:label "header" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 316 .
+
+haskell:id a owl:DatatypeProperty ;
+    rdfs:label "id (literal)" ;
+    rdfs:comment "Literal value for id field when it contains a terminal node" ;
+    haskell:fieldId 40 ;
+    haskell:isTerminalField true .
+
+haskell:implicit a owl:DatatypeProperty ;
+    rdfs:label "implicit (literal)" ;
+    rdfs:comment "Literal value for implicit field when it contains a terminal node" ;
+    haskell:fieldId 42 ;
+    haskell:isTerminalField true .
+
+haskell:implicit_parameter a owl:Class ;
+    rdfs:label "implicit_parameter" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 227 .
+
+haskell:implicit_variable a owl:Class ;
+    rdfs:label "implicit_variable" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 86 .
+
+haskell:import a owl:Class ;
+    rdfs:label "import" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 313 .
+
+haskell:import_list a owl:Class ;
+    rdfs:label "import_list" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 312 .
+
+haskell:import_name a owl:Class ;
+    rdfs:label "import_name" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 311 .
+
+haskell:import_package a owl:Class ;
+    rdfs:label "import_package" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 543 .
+
+haskell:imports a owl:Class ;
+    rdfs:label "imports" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 317 .
+
+haskell:inferred a owl:Class ;
+    rdfs:label "inferred" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 163 .
+
+haskell:infix a owl:Class ;
+    rdfs:label "infix" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 183,
+        205,
+        224,
+        280,
+        298,
+        338,
+        386 .
+
+haskell:infix_id a owl:Class ;
+    rdfs:label "infix_id" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 421,
+        422,
+        425,
+        426,
+        434,
+        435 .
+
+haskell:instance a owl:Class ;
+    rdfs:label "instance" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 373 .
+
+haskell:instance_declarations a owl:Class ;
+    rdfs:label "instance_declarations" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 371 .
+
+haskell:integer a owl:Class ;
+    rdfs:label "integer" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 375,
+        410 .
+
+haskell:invisible a owl:Class ;
+    rdfs:label "invisible" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 167 .
+
+haskell:irrefutable a owl:Class ;
+    rdfs:label "irrefutable" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 295 .
+
+haskell:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+haskell:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+haskell:kind_application a owl:Class ;
+    rdfs:label "kind_application" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 181 .
+
+haskell:kind_signature a owl:Class ;
+    rdfs:label "kind_signature" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 210 .
+
+haskell:label a owl:Class ;
+    rdfs:label "label" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 88 .
+
+haskell:lambda a owl:Class ;
+    rdfs:label "lambda" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 248 .
+
+haskell:lambda_case a owl:Class ;
+    rdfs:label "lambda_case" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 267 .
+
+haskell:lambda_cases a owl:Class ;
+    rdfs:label "lambda_cases" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 268 .
+
+haskell:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+haskell:lazy_field a owl:Class ;
+    rdfs:label "lazy_field" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 195 .
+
+haskell:left_section a owl:Class ;
+    rdfs:label "left_section" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 277 .
+
+haskell:let a owl:Class ;
+    rdfs:label "let" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 159 .
+
+haskell:let_in a owl:Class ;
+    rdfs:label "let_in" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 249 .
+
+haskell:linear_function a owl:Class ;
+    rdfs:label "linear_function" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 197 .
+
+haskell:list a owl:Class ;
+    rdfs:label "list" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 177,
+        241,
+        289 .
+
+haskell:list_comprehension a owl:Class ;
+    rdfs:label "list_comprehension" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 247 .
+
+haskell:literal a owl:Class ;
+    rdfs:label "literal" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 417 .
+
+haskell:local_binds a owl:Class ;
+    rdfs:label "local_binds" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 158,
+        391 .
+
+haskell:match a owl:Class ;
+    rdfs:label "match" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 259,
+        260,
+        381,
+        382 .
+
+haskell:matched a owl:DatatypeProperty ;
+    rdfs:label "matched (literal)" ;
+    rdfs:comment "Literal value for matched field when it contains a terminal node" ;
+    haskell:fieldId 49 ;
+    haskell:isTerminalField true .
+
+haskell:modifier a owl:Class ;
+    rdfs:label "modifier" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 192 .
+
+haskell:module a owl:Class ;
+    rdfs:label "module" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 306 .
+
+haskell:module_export a owl:Class ;
+    rdfs:label "module_export" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 314 .
+
+haskell:module_id a owl:Class ;
+    rdfs:label "module_id" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 544 .
+
+haskell:multi_way_if a owl:Class ;
+    rdfs:label "multi_way_if" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 269 .
+
+haskell:name a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "name",
+        "name (literal)" ;
+    rdfs:comment "Literal value for name field when it contains a terminal node" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:fieldId 53 ;
+    haskell:isSupertype true ;
+    haskell:isTerminalField true ;
+    haskell:nodeTypeId 87 .
+
+haskell:namespace a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "namespace",
+        "namespace (literal)" ;
+    rdfs:comment "Literal value for namespace field when it contains a terminal node" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:fieldId 55 ;
+    haskell:isSupertype true ;
+    haskell:isTerminalField true ;
+    haskell:nodeTypeId 307 .
+
+haskell:negation a owl:Class ;
+    rdfs:label "negation" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 279,
+        297 .
+
+haskell:newtype a owl:Class ;
+    rdfs:label "newtype" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 350,
+        356,
+        362 .
+
+haskell:newtype_constructor a owl:Class ;
+    rdfs:label "newtype_constructor" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 348 .
+
+haskell:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+haskell:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+haskell:number a owl:DatatypeProperty ;
+    rdfs:label "number (literal)" ;
+    rdfs:comment "Literal value for number field when it contains a terminal node" ;
+    haskell:fieldId 56 ;
+    haskell:isTerminalField true .
+
+haskell:operator a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "operator",
+        "operator (literal)" ;
+    rdfs:comment "Literal value for operator field when it contains a terminal node" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:fieldId 57 ;
+    haskell:isSupertype true ;
+    haskell:isTerminalField true ;
+    haskell:nodeTypeId 441,
+        443 .
+
+haskell:package a owl:DatatypeProperty ;
+    rdfs:label "package (literal)" ;
+    rdfs:comment "Literal value for package field when it contains a terminal node" ;
+    haskell:fieldId 58 ;
+    haskell:isTerminalField true .
+
+haskell:parens a owl:Class ;
+    rdfs:label "parens" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 164,
+        172,
+        203,
+        206,
+        225,
+        236,
+        284 .
+
+haskell:pattern_guard a owl:Class ;
+    rdfs:label "pattern_guard" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 545 .
+
+haskell:pattern_synonym a owl:Class ;
+    rdfs:label "pattern_synonym" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 400 .
+
+haskell:patterns a owl:Class ;
+    rdfs:label "patterns" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 300 .
+
+haskell:pragma a owl:Class ;
+    rdfs:label "pragma" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 131 .
+
+haskell:precedence a owl:DatatypeProperty ;
+    rdfs:label "precedence (literal)" ;
+    rdfs:comment "Literal value for precedence field when it contains a terminal node" ;
+    haskell:fieldId 63 ;
+    haskell:isTerminalField true .
+
+haskell:prefix a owl:Class ;
+    rdfs:label "prefix" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 332,
+        337 .
+
+haskell:prefix_id a owl:Class ;
+    rdfs:label "prefix_id" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 429,
+        431,
+        446,
+        449,
+        453,
+        456 .
+
+haskell:prefix_list a owl:Class ;
+    rdfs:label "prefix_list" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 546 .
+
+haskell:prefix_tuple a owl:Class ;
+    rdfs:label "prefix_tuple" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 414 .
+
+haskell:prefix_unboxed_sum a owl:Class ;
+    rdfs:label "prefix_unboxed_sum" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 416 .
+
+haskell:prefix_unboxed_tuple a owl:Class ;
+    rdfs:label "prefix_unboxed_tuple" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 415 .
+
+haskell:projection a owl:Class ;
+    rdfs:label "projection" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 273 .
+
+haskell:projection_selector a owl:Class ;
+    rdfs:label "projection_selector" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 272 .
+
+haskell:promoted a owl:Class ;
+    rdfs:label "promoted" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 178,
+        432,
+        437 .
+
+haskell:qualified a owl:Class ;
+    rdfs:label "qualified" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 323,
+        418,
+        423,
+        427,
+        430,
+        448,
+        455 .
+
+haskell:qualifiers a owl:Class ;
+    rdfs:label "qualifiers" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 246 .
+
+haskell:quantified_variables a owl:Class ;
+    rdfs:label "quantified_variables" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 171 .
+
+haskell:quasiquote a owl:Class ;
+    rdfs:label "quasiquote" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 406 .
+
+haskell:quasiquote_body a owl:Class ;
+    rdfs:label "quasiquote_body" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 133 .
+
+haskell:quote a owl:Class ;
+    rdfs:label "quote" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 408 .
+
+haskell:quoted_decls a owl:Class ;
+    rdfs:label "quoted_decls" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 407 .
+
+haskell:quoted_expression a owl:Class ;
+    rdfs:label "quoted_expression" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 547 .
+
+haskell:quoted_pattern a owl:Class ;
+    rdfs:label "quoted_pattern" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 548 .
+
+haskell:quoted_type a owl:Class ;
+    rdfs:label "quoted_type" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 549 .
+
+haskell:quoter a owl:Class ;
+    rdfs:label "quoter" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 405 .
+
+haskell:rec a owl:Class ;
+    rdfs:label "rec" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 254 .
+
+haskell:record a owl:Class ;
+    rdfs:label "record" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 271,
+        291,
+        333,
+        339 .
+
+haskell:result a owl:DatatypeProperty ;
+    rdfs:label "result (literal)" ;
+    rdfs:comment "Literal value for result field when it contains a terminal node" ;
+    haskell:fieldId 68 ;
+    haskell:isTerminalField true .
+
+haskell:right_section a owl:Class ;
+    rdfs:label "right_section" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 278 .
+
+haskell:role a owl:DatatypeProperty ;
+    rdfs:label "role (literal)" ;
+    rdfs:comment "Literal value for role field when it contains a terminal node" ;
+    haskell:fieldId 70 ;
+    haskell:isTerminalField true .
+
+haskell:role_annotation a owl:Class ;
+    rdfs:label "role_annotation" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 222 .
+
+haskell:safety a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "safety",
+        "safety (literal)" ;
+    rdfs:comment "Literal value for safety field when it contains a terminal node" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:fieldId 71 ;
+    haskell:isSupertype true ;
+    haskell:isTerminalField true ;
+    haskell:nodeTypeId 60 .
+
+haskell:signature a owl:Class ;
+    rdfs:label "signature" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 200,
+        231,
+        282,
+        301,
+        380,
+        397 .
+
+haskell:special a owl:Class ;
+    rdfs:label "special" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 341 .
+
+haskell:splice a owl:Class ;
+    rdfs:label "splice" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 403 .
+
+haskell:star a owl:Class ;
+    rdfs:label "star" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 179 .
+
+haskell:strategy a owl:DatatypeProperty ;
+    rdfs:label "strategy (literal)" ;
+    rdfs:comment "Literal value for strategy field when it contains a terminal node" ;
+    haskell:fieldId 75 ;
+    haskell:isTerminalField true .
+
+haskell:strict a owl:Class ;
+    rdfs:label "strict" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 294 .
+
+haskell:strict_field a owl:Class ;
+    rdfs:label "strict_field" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 194 .
+
+haskell:string a owl:Class ;
+    rdfs:label "string" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 77 .
+
+haskell:synonym a owl:DatatypeProperty ;
+    rdfs:label "synonym (literal)" ;
+    rdfs:comment "Literal value for synonym field when it contains a terminal node" ;
+    haskell:fieldId 77 ;
+    haskell:isTerminalField true .
+
+haskell:th_quoted_name a owl:Class ;
+    rdfs:label "th_quoted_name" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 235 .
+
+haskell:top_splice a owl:Class ;
+    rdfs:label "top_splice" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 404 .
+
+haskell:transform a owl:Class ;
+    rdfs:label "transform" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 244 .
+
+haskell:tuple a owl:Class ;
+    rdfs:label "tuple" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 174,
+        226,
+        238,
+        286 .
+
+haskell:type a owl:DatatypeProperty ;
+    rdfs:label "type (literal)" ;
+    rdfs:comment "Literal value for type field when it contains a terminal node" ;
+    haskell:fieldId 81 ;
+    haskell:isTerminalField true .
+
+haskell:type_application a owl:Class ;
+    rdfs:label "type_application" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 550 .
+
+haskell:type_binder a owl:Class ;
+    rdfs:label "type_binder" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 551 .
+
+haskell:type_family a owl:Class ;
+    rdfs:label "type_family" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 220,
+        358 .
+
+haskell:type_family_injectivity a owl:Class ;
+    rdfs:label "type_family_injectivity" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 215 .
+
+haskell:type_family_result a owl:Class ;
+    rdfs:label "type_family_result" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 214 .
+
+haskell:type_instance a owl:Class ;
+    rdfs:label "type_instance" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 213,
+        359 .
+
+haskell:type_params a owl:Class ;
+    rdfs:label "type_params" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 170 .
+
+haskell:type_patterns a owl:Class ;
+    rdfs:label "type_patterns" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 208 .
+
+haskell:type_role a owl:Class ;
+    rdfs:label "type_role" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 221 .
+
+haskell:type_synomym a owl:Class ;
+    rdfs:label "type_synomym" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 209 .
+
+haskell:typed_quote a owl:Class ;
+    rdfs:label "typed_quote" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 409 .
+
+haskell:unboxed_sum a owl:Class ;
+    rdfs:label "unboxed_sum" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 176,
+        240,
+        288,
+        340 .
+
+haskell:unboxed_tuple a owl:Class ;
+    rdfs:label "unboxed_tuple" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 175,
+        239,
+        287 .
+
+haskell:unboxed_unit a owl:Class ;
+    rdfs:label "unboxed_unit" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 413 .
+
+haskell:unit a owl:Class ;
+    rdfs:label "unit" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 412 .
+
+haskell:variable a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "variable",
+        "variable (literal)" ;
+    rdfs:comment "Literal value for variable field when it contains a terminal node" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:fieldId 82 ;
+    haskell:isSupertype true ;
+    haskell:isTerminalField true ;
+    haskell:nodeTypeId 1 .
+
+haskell:via a owl:Class ;
+    rdfs:label "via" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 329 .
+
+haskell:view_pattern a owl:Class ;
+    rdfs:label "view_pattern" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 303 .
+
+haskell:wildcard a owl:Class ;
+    rdfs:label "wildcard" ;
+    rdfs:isDefinedBy haskell: ;
+    rdfs:subClassOf ast:Node ;
+    haskell:isSupertype true ;
+    haskell:nodeTypeId 165,
+        180,
+        293 .
+
+haskell: a owl:Ontology ;
+    rdfs:label "Haskell Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for haskell" ;
+    owl:versionInfo "v0.25" ;
+    haskell:abiVersion 14 ;
+    haskell:fieldCount 84 ;
+    haskell:languageName "None" ;
+    haskell:nodeKindCount 552 .
+

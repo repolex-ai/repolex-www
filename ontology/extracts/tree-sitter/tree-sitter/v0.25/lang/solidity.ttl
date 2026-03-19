@@ -1,0 +1,1147 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix solidity: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/solidity/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+solidity:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+solidity:alias a owl:DatatypeProperty ;
+    rdfs:label "alias (literal)" ;
+    rdfs:comment "Literal value for alias field when it contains a terminal node" ;
+    solidity:fieldId 1 ;
+    solidity:isTerminalField true .
+
+solidity:any_pragma_token a owl:Class ;
+    rdfs:label "any_pragma_token" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 334 .
+
+solidity:any_source_type a owl:Class ;
+    rdfs:label "any_source_type" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 371 .
+
+solidity:array_access a owl:Class ;
+    rdfs:label "array_access" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 438 .
+
+solidity:assembly_flags a owl:Class ;
+    rdfs:label "assembly_flags" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 374 .
+
+solidity:assembly_statement a owl:Class ;
+    rdfs:label "assembly_statement" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 373 .
+
+solidity:assignment_expression a owl:Class ;
+    rdfs:label "assignment_expression" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 443 .
+
+solidity:augmented_assignment_expression a owl:Class ;
+    rdfs:label "augmented_assignment_expression" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 444 .
+
+solidity:binary_expression a owl:Class ;
+    rdfs:label "binary_expression" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 434 .
+
+solidity:block_statement a owl:Class ;
+    rdfs:label "block_statement" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 396 .
+
+solidity:boolean_literal a owl:Class ;
+    rdfs:label "boolean_literal" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 475 .
+
+solidity:break_statement a owl:Class ;
+    rdfs:label "break_statement" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 406 .
+
+solidity:call_argument a owl:Class ;
+    rdfs:label "call_argument" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 424 .
+
+solidity:call_expression a owl:Class ;
+    rdfs:label "call_expression" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 445 .
+
+solidity:call_struct_argument a owl:Class ;
+    rdfs:label "call_struct_argument" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 425 .
+
+solidity:catch_clause a owl:Class ;
+    rdfs:label "catch_clause" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 409 .
+
+solidity:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 328 .
+
+solidity:constant_variable_declaration a owl:Class ;
+    rdfs:label "constant_variable_declaration" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 349 .
+
+solidity:constructor_definition a owl:Class ;
+    rdfs:label "constructor_definition" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 418 .
+
+solidity:continue_statement a owl:Class ;
+    rdfs:label "continue_statement" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 405 .
+
+solidity:contract_body a owl:Class ;
+    rdfs:label "contract_body" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 358 .
+
+solidity:contract_declaration a owl:Class ;
+    rdfs:label "contract_declaration" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 350 .
+
+solidity:do_while_statement a owl:Class ;
+    rdfs:label "do_while_statement" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 404 .
+
+solidity:emit_statement a owl:Class ;
+    rdfs:label "emit_statement" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 411 .
+
+solidity:enum_body a owl:Class ;
+    rdfs:label "enum_body" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 364 .
+
+solidity:enum_declaration a owl:Class ;
+    rdfs:label "enum_declaration" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 363 .
+
+solidity:enum_value a owl:Class ;
+    rdfs:label "enum_value" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 528 .
+
+solidity:error_declaration a owl:Class ;
+    rdfs:label "error_declaration" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 351 .
+
+solidity:error_parameter a owl:Class ;
+    rdfs:label "error_parameter" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 352 .
+
+solidity:event_definition a owl:Class ;
+    rdfs:label "event_definition" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 365 .
+
+solidity:event_parameter a owl:Class ;
+    rdfs:label "event_parameter" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 367 .
+
+solidity:expression a owl:Class ;
+    rdfs:label "expression" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 427 .
+
+solidity:expression_statement a owl:Class ;
+    rdfs:label "expression_statement" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 400 .
+
+solidity:fallback_receive_definition a owl:Class ;
+    rdfs:label "fallback_receive_definition" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 419 .
+
+solidity:false a owl:Class ;
+    rdfs:label "false" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 474 .
+
+solidity:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+solidity:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+solidity:field_ancestor a owl:ObjectProperty ;
+    rdfs:label "ancestor (structural)" ;
+    rdfs:comment "Structural reference for ancestor field when it contains a non-terminal node" ;
+    solidity:fieldId 2 .
+
+solidity:field_ancestor_arguments a owl:ObjectProperty ;
+    rdfs:label "ancestor_arguments (structural)" ;
+    rdfs:comment "Structural reference for ancestor_arguments field when it contains a non-terminal node" ;
+    solidity:fieldId 3 .
+
+solidity:field_argument a owl:ObjectProperty ;
+    rdfs:label "argument (structural)" ;
+    rdfs:comment "Structural reference for argument field when it contains a non-terminal node" ;
+    solidity:fieldId 4 .
+
+solidity:field_attempt a owl:ObjectProperty ;
+    rdfs:label "attempt (structural)" ;
+    rdfs:comment "Structural reference for attempt field when it contains a non-terminal node" ;
+    solidity:fieldId 5 .
+
+solidity:field_base a owl:ObjectProperty ;
+    rdfs:label "base (structural)" ;
+    rdfs:comment "Structural reference for base field when it contains a non-terminal node" ;
+    solidity:fieldId 6 .
+
+solidity:field_body a owl:ObjectProperty ;
+    rdfs:label "body (structural)" ;
+    rdfs:comment "Structural reference for body field when it contains a non-terminal node" ;
+    solidity:fieldId 7 .
+
+solidity:field_condition a owl:ObjectProperty ;
+    rdfs:label "condition (structural)" ;
+    rdfs:comment "Structural reference for condition field when it contains a non-terminal node" ;
+    solidity:fieldId 8 .
+
+solidity:field_else a owl:ObjectProperty ;
+    rdfs:label "else (structural)" ;
+    rdfs:comment "Structural reference for else field when it contains a non-terminal node" ;
+    solidity:fieldId 9 .
+
+solidity:field_error a owl:ObjectProperty ;
+    rdfs:label "error (structural)" ;
+    rdfs:comment "Structural reference for error field when it contains a non-terminal node" ;
+    solidity:fieldId 10 .
+
+solidity:field_from a owl:ObjectProperty ;
+    rdfs:label "from (structural)" ;
+    rdfs:comment "Structural reference for from field when it contains a non-terminal node" ;
+    solidity:fieldId 11 .
+
+solidity:field_function a owl:ObjectProperty ;
+    rdfs:label "function (structural)" ;
+    rdfs:comment "Structural reference for function field when it contains a non-terminal node" ;
+    solidity:fieldId 12 .
+
+solidity:field_index a owl:ObjectProperty ;
+    rdfs:label "index (structural)" ;
+    rdfs:comment "Structural reference for index field when it contains a non-terminal node" ;
+    solidity:fieldId 14 .
+
+solidity:field_initial a owl:ObjectProperty ;
+    rdfs:label "initial (structural)" ;
+    rdfs:comment "Structural reference for initial field when it contains a non-terminal node" ;
+    solidity:fieldId 15 .
+
+solidity:field_key_type a owl:ObjectProperty ;
+    rdfs:label "key_type (structural)" ;
+    rdfs:comment "Structural reference for key_type field when it contains a non-terminal node" ;
+    solidity:fieldId 17 .
+
+solidity:field_left a owl:ObjectProperty ;
+    rdfs:label "left (structural)" ;
+    rdfs:comment "Structural reference for left field when it contains a non-terminal node" ;
+    solidity:fieldId 18 .
+
+solidity:field_location a owl:ObjectProperty ;
+    rdfs:label "location (structural)" ;
+    rdfs:comment "Structural reference for location field when it contains a non-terminal node" ;
+    solidity:fieldId 19 .
+
+solidity:field_name a owl:ObjectProperty ;
+    rdfs:label "name (structural)" ;
+    rdfs:comment "Structural reference for name field when it contains a non-terminal node" ;
+    solidity:fieldId 20 .
+
+solidity:field_object a owl:ObjectProperty ;
+    rdfs:label "object (structural)" ;
+    rdfs:comment "Structural reference for object field when it contains a non-terminal node" ;
+    solidity:fieldId 21 .
+
+solidity:field_operator a owl:ObjectProperty ;
+    rdfs:label "operator (structural)" ;
+    rdfs:comment "Structural reference for operator field when it contains a non-terminal node" ;
+    solidity:fieldId 22 .
+
+solidity:field_parameters a owl:ObjectProperty ;
+    rdfs:label "parameters (structural)" ;
+    rdfs:comment "Structural reference for parameters field when it contains a non-terminal node" ;
+    solidity:fieldId 23 .
+
+solidity:field_return_type a owl:ObjectProperty ;
+    rdfs:label "return_type (structural)" ;
+    rdfs:comment "Structural reference for return_type field when it contains a non-terminal node" ;
+    solidity:fieldId 25 .
+
+solidity:field_right a owl:ObjectProperty ;
+    rdfs:label "right (structural)" ;
+    rdfs:comment "Structural reference for right field when it contains a non-terminal node" ;
+    solidity:fieldId 26 .
+
+solidity:field_source a owl:ObjectProperty ;
+    rdfs:label "source (structural)" ;
+    rdfs:comment "Structural reference for source field when it contains a non-terminal node" ;
+    solidity:fieldId 27 .
+
+solidity:field_to a owl:ObjectProperty ;
+    rdfs:label "to (structural)" ;
+    rdfs:comment "Structural reference for to field when it contains a non-terminal node" ;
+    solidity:fieldId 28 .
+
+solidity:field_type a owl:ObjectProperty ;
+    rdfs:label "type (structural)" ;
+    rdfs:comment "Structural reference for type field when it contains a non-terminal node" ;
+    solidity:fieldId 29 .
+
+solidity:field_update a owl:ObjectProperty ;
+    rdfs:label "update (structural)" ;
+    rdfs:comment "Structural reference for update field when it contains a non-terminal node" ;
+    solidity:fieldId 30 .
+
+solidity:field_value a owl:ObjectProperty ;
+    rdfs:label "value (structural)" ;
+    rdfs:comment "Structural reference for value field when it contains a non-terminal node" ;
+    solidity:fieldId 31 .
+
+solidity:field_value_type a owl:ObjectProperty ;
+    rdfs:label "value_type (structural)" ;
+    rdfs:comment "Structural reference for value_type field when it contains a non-terminal node" ;
+    solidity:fieldId 33 .
+
+solidity:for_statement a owl:Class ;
+    rdfs:label "for_statement" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 402 .
+
+solidity:function a owl:DatatypeProperty ;
+    rdfs:label "function (literal)" ;
+    rdfs:comment "Literal value for function field when it contains a terminal node" ;
+    solidity:fieldId 12 ;
+    solidity:isTerminalField true .
+
+solidity:function_body a owl:Class ;
+    rdfs:label "function_body" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 426 .
+
+solidity:function_definition a owl:Class ;
+    rdfs:label "function_definition" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 420 .
+
+solidity:hex_string_literal a owl:Class ;
+    rdfs:label "hex_string_literal" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 476 .
+
+solidity:identifier a owl:Class ;
+    rdfs:label "identifier" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 1 .
+
+solidity:if_statement a owl:Class ;
+    rdfs:label "if_statement" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 401 .
+
+solidity:immutable a owl:Class ;
+    rdfs:label "immutable" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 172 .
+
+solidity:import_directive a owl:Class ;
+    rdfs:label "import_directive" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 339 .
+
+solidity:import_name a owl:DatatypeProperty ;
+    rdfs:label "import_name (literal)" ;
+    rdfs:comment "Literal value for import_name field when it contains a terminal node" ;
+    solidity:fieldId 13 ;
+    solidity:isTerminalField true .
+
+solidity:inheritance_specifier a owl:Class ;
+    rdfs:label "inheritance_specifier" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 357 .
+
+solidity:inline_array_expression a owl:Class ;
+    rdfs:label "inline_array_expression" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 433 .
+
+solidity:interface_declaration a owl:Class ;
+    rdfs:label "interface_declaration" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 353 .
+
+solidity:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+solidity:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+solidity:key_identifier a owl:DatatypeProperty ;
+    rdfs:label "key_identifier (literal)" ;
+    rdfs:comment "Literal value for key_identifier field when it contains a terminal node" ;
+    solidity:fieldId 16 ;
+    solidity:isTerminalField true .
+
+solidity:key_type a owl:DatatypeProperty ;
+    rdfs:label "key_type (literal)" ;
+    rdfs:comment "Literal value for key_type field when it contains a terminal node" ;
+    solidity:fieldId 17 ;
+    solidity:isTerminalField true .
+
+solidity:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+solidity:layout_specifier a owl:Class ;
+    rdfs:label "layout_specifier" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 356 .
+
+solidity:library_declaration a owl:Class ;
+    rdfs:label "library_declaration" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 354 .
+
+solidity:location a owl:DatatypeProperty ;
+    rdfs:label "location (literal)" ;
+    rdfs:comment "Literal value for location field when it contains a terminal node" ;
+    solidity:fieldId 19 ;
+    solidity:isTerminalField true .
+
+solidity:member_expression a owl:Class ;
+    rdfs:label "member_expression" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 437 .
+
+solidity:meta_type_expression a owl:Class ;
+    rdfs:label "meta_type_expression" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 447 .
+
+solidity:modifier_definition a owl:Class ;
+    rdfs:label "modifier_definition" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 417 .
+
+solidity:modifier_invocation a owl:Class ;
+    rdfs:label "modifier_invocation" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 422 .
+
+solidity:name a owl:DatatypeProperty ;
+    rdfs:label "name (literal)" ;
+    rdfs:comment "Literal value for name field when it contains a terminal node" ;
+    solidity:fieldId 20 ;
+    solidity:isTerminalField true .
+
+solidity:new_expression a owl:Class ;
+    rdfs:label "new_expression" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 431 .
+
+solidity:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+solidity:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+solidity:number_literal a owl:Class ;
+    rdfs:label "number_literal" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 469 .
+
+solidity:number_unit a owl:Class ;
+    rdfs:label "number_unit" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 472 .
+
+solidity:object a owl:DatatypeProperty ;
+    rdfs:label "object (literal)" ;
+    rdfs:comment "Literal value for object field when it contains a terminal node" ;
+    solidity:fieldId 21 ;
+    solidity:isTerminalField true .
+
+solidity:override_specifier a owl:Class ;
+    rdfs:label "override_specifier" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 416 .
+
+solidity:parameter a owl:Class ;
+    rdfs:label "parameter" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 454 .
+
+solidity:parenthesized_expression a owl:Class ;
+    rdfs:label "parenthesized_expression" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 442 .
+
+solidity:payable_conversion_expression a owl:Class ;
+    rdfs:label "payable_conversion_expression" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 446 .
+
+solidity:pragma_directive a owl:Class ;
+    rdfs:label "pragma_directive" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 332 .
+
+solidity:pragma_value a owl:Class ;
+    rdfs:label "pragma_value" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 336 .
+
+solidity:primitive_type a owl:Class ;
+    rdfs:label "primitive_type" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 460 .
+
+solidity:property a owl:DatatypeProperty ;
+    rdfs:label "property (literal)" ;
+    rdfs:comment "Literal value for property field when it contains a terminal node" ;
+    solidity:fieldId 24 ;
+    solidity:isTerminalField true .
+
+solidity:return_parameter a owl:Class ;
+    rdfs:label "return_parameter" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 453 .
+
+solidity:return_statement a owl:Class ;
+    rdfs:label "return_statement" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 410 .
+
+solidity:return_type_definition a owl:Class ;
+    rdfs:label "return_type_definition" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 421 .
+
+solidity:revert_arguments a owl:Class ;
+    rdfs:label "revert_arguments" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 529 .
+
+solidity:revert_statement a owl:Class ;
+    rdfs:label "revert_statement" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 407 .
+
+solidity:right a owl:DatatypeProperty ;
+    rdfs:label "right (literal)" ;
+    rdfs:comment "Literal value for right field when it contains a terminal node" ;
+    solidity:fieldId 26 ;
+    solidity:isTerminalField true .
+
+solidity:slice_access a owl:Class ;
+    rdfs:label "slice_access" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 439 .
+
+solidity:solidity_pragma_token a owl:Class ;
+    rdfs:label "solidity_pragma_token" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 333 .
+
+solidity:solidity_version a owl:Class ;
+    rdfs:label "solidity_version" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 7 .
+
+solidity:solidity_version_comparison_operator a owl:Class ;
+    rdfs:label "solidity_version_comparison_operator" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 338 .
+
+solidity:source a owl:DatatypeProperty ;
+    rdfs:label "source (literal)" ;
+    rdfs:comment "Literal value for source field when it contains a terminal node" ;
+    solidity:fieldId 27 ;
+    solidity:isTerminalField true .
+
+solidity:source_file a owl:Class ;
+    rdfs:label "source_file" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 329 .
+
+solidity:state_location a owl:Class ;
+    rdfs:label "state_location" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 415 .
+
+solidity:state_mutability a owl:Class ;
+    rdfs:label "state_mutability" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 414 .
+
+solidity:state_variable_declaration a owl:Class ;
+    rdfs:label "state_variable_declaration" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 412 .
+
+solidity:statement a owl:Class ;
+    rdfs:label "statement" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 372 .
+
+solidity:string a owl:Class ;
+    rdfs:label "string" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 480 .
+
+solidity:string_literal a owl:Class ;
+    rdfs:label "string_literal" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 468 .
+
+solidity:struct_body a owl:Class ;
+    rdfs:label "struct_body" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 362 .
+
+solidity:struct_declaration a owl:Class ;
+    rdfs:label "struct_declaration" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 360 .
+
+solidity:struct_expression a owl:Class ;
+    rdfs:label "struct_expression" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 440 .
+
+solidity:struct_field_assignment a owl:Class ;
+    rdfs:label "struct_field_assignment" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 441 .
+
+solidity:struct_member a owl:Class ;
+    rdfs:label "struct_member" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 361 .
+
+solidity:ternary_expression a owl:Class ;
+    rdfs:label "ternary_expression" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 430 .
+
+solidity:true a owl:Class ;
+    rdfs:label "true" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 473 .
+
+solidity:try_statement a owl:Class ;
+    rdfs:label "try_statement" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 408 .
+
+solidity:tuple_expression a owl:Class ;
+    rdfs:label "tuple_expression" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 432 .
+
+solidity:type_alias a owl:Class ;
+    rdfs:label "type_alias" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 530 .
+
+solidity:type_cast_expression a owl:Class ;
+    rdfs:label "type_cast_expression" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 429 .
+
+solidity:type_name a owl:Class ;
+    rdfs:label "type_name" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 448 .
+
+solidity:unary_expression a owl:Class ;
+    rdfs:label "unary_expression" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 435 .
+
+solidity:unchecked a owl:Class ;
+    rdfs:label "unchecked" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 152 .
+
+solidity:unicode_string_literal a owl:Class ;
+    rdfs:label "unicode_string_literal" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 479 .
+
+solidity:update_expression a owl:Class ;
+    rdfs:label "update_expression" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 436 .
+
+solidity:user_definable_operator a owl:Class ;
+    rdfs:label "user_definable_operator" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 368 .
+
+solidity:user_defined_type a owl:Class ;
+    rdfs:label "user_defined_type" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 456 .
+
+solidity:user_defined_type_definition a owl:Class ;
+    rdfs:label "user_defined_type_definition" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 348 .
+
+solidity:using_alias a owl:Class ;
+    rdfs:label "using_alias" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 370 .
+
+solidity:using_directive a owl:Class ;
+    rdfs:label "using_directive" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 369 .
+
+solidity:value_identifier a owl:DatatypeProperty ;
+    rdfs:label "value_identifier (literal)" ;
+    rdfs:comment "Literal value for value_identifier field when it contains a terminal node" ;
+    solidity:fieldId 32 ;
+    solidity:isTerminalField true .
+
+solidity:variable_declaration a owl:Class ;
+    rdfs:label "variable_declaration" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 398 .
+
+solidity:variable_declaration_statement a owl:Class ;
+    rdfs:label "variable_declaration_statement" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 397 .
+
+solidity:variable_declaration_tuple a owl:Class ;
+    rdfs:label "variable_declaration_tuple" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 399 .
+
+solidity:version_constraint a owl:DatatypeProperty ;
+    rdfs:label "version_constraint (literal)" ;
+    rdfs:comment "Literal value for version_constraint field when it contains a terminal node" ;
+    solidity:fieldId 34 ;
+    solidity:isTerminalField true .
+
+solidity:virtual a owl:Class ;
+    rdfs:label "virtual" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 178 .
+
+solidity:visibility a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "visibility",
+        "visibility (literal)" ;
+    rdfs:comment "Literal value for visibility field when it contains a terminal node" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:fieldId 35 ;
+    solidity:isSupertype true ;
+    solidity:isTerminalField true ;
+    solidity:nodeTypeId 413 .
+
+solidity:while_statement a owl:Class ;
+    rdfs:label "while_statement" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 403 .
+
+solidity:yul_assignment a owl:Class ;
+    rdfs:label "yul_assignment" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 389 .
+
+solidity:yul_block a owl:Class ;
+    rdfs:label "yul_block" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 386 .
+
+solidity:yul_boolean a owl:Class ;
+    rdfs:label "yul_boolean" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 384 .
+
+solidity:yul_break a owl:Class ;
+    rdfs:label "yul_break" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 377 .
+
+solidity:yul_continue a owl:Class ;
+    rdfs:label "yul_continue" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 378 .
+
+solidity:yul_decimal_number a owl:Class ;
+    rdfs:label "yul_decimal_number" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 56 .
+
+solidity:yul_evm_builtin a owl:Class ;
+    rdfs:label "yul_evm_builtin" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 395 .
+
+solidity:yul_for_statement a owl:Class ;
+    rdfs:label "yul_for_statement" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 392 .
+
+solidity:yul_function_call a owl:Class ;
+    rdfs:label "yul_function_call" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 390 .
+
+solidity:yul_function_definition a owl:Class ;
+    rdfs:label "yul_function_definition" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 394 .
+
+solidity:yul_hex_number a owl:Class ;
+    rdfs:label "yul_hex_number" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 57 .
+
+solidity:yul_hex_string_literal a owl:Class ;
+    rdfs:label "yul_hex_string_literal" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 385 .
+
+solidity:yul_identifier a owl:Class ;
+    rdfs:label "yul_identifier" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 379 .
+
+solidity:yul_if_statement a owl:Class ;
+    rdfs:label "yul_if_statement" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 391 .
+
+solidity:yul_label a owl:Class ;
+    rdfs:label "yul_label" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 376 .
+
+solidity:yul_leave a owl:Class ;
+    rdfs:label "yul_leave" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 52 .
+
+solidity:yul_path a owl:Class ;
+    rdfs:label "yul_path" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 381 .
+
+solidity:yul_string_literal a owl:Class ;
+    rdfs:label "yul_string_literal" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 383 .
+
+solidity:yul_switch_statement a owl:Class ;
+    rdfs:label "yul_switch_statement" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 393 .
+
+solidity:yul_variable_declaration a owl:Class ;
+    rdfs:label "yul_variable_declaration" ;
+    rdfs:isDefinedBy solidity: ;
+    rdfs:subClassOf ast:Node ;
+    solidity:isSupertype true ;
+    solidity:nodeTypeId 387 .
+
+solidity: a owl:Ontology ;
+    rdfs:label "Solidity Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for solidity" ;
+    owl:versionInfo "v0.25" ;
+    solidity:abiVersion 15 ;
+    solidity:fieldCount 35 ;
+    solidity:languageName "solidity" ;
+    solidity:nodeKindCount 531 .
+

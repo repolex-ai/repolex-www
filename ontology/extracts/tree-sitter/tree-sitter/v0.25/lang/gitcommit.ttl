@@ -1,0 +1,357 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix gitcommit: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/gitcommit/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+gitcommit:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+gitcommit:annotation a owl:Class ;
+    rdfs:label "annotation" ;
+    rdfs:isDefinedBy gitcommit: ;
+    rdfs:subClassOf ast:Node ;
+    gitcommit:isSupertype true ;
+    gitcommit:nodeTypeId 493 .
+
+gitcommit:arrow a owl:Class ;
+    rdfs:label "arrow" ;
+    rdfs:isDefinedBy gitcommit: ;
+    rdfs:subClassOf ast:Node ;
+    gitcommit:isSupertype true ;
+    gitcommit:nodeTypeId 188 .
+
+gitcommit:branch a owl:Class ;
+    rdfs:label "branch" ;
+    rdfs:isDefinedBy gitcommit: ;
+    rdfs:subClassOf ast:Node ;
+    gitcommit:isSupertype true ;
+    gitcommit:nodeTypeId 47,
+        469 .
+
+gitcommit:breaking_change a owl:Class ;
+    rdfs:label "breaking_change" ;
+    rdfs:isDefinedBy gitcommit: ;
+    rdfs:subClassOf ast:Node ;
+    gitcommit:isSupertype true ;
+    gitcommit:nodeTypeId 464 .
+
+gitcommit:change a owl:Class ;
+    rdfs:label "change" ;
+    rdfs:isDefinedBy gitcommit: ;
+    rdfs:subClassOf ast:Node ;
+    gitcommit:isSupertype true ;
+    gitcommit:nodeTypeId 472 .
+
+gitcommit:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy gitcommit: ;
+    rdfs:subClassOf ast:Node ;
+    gitcommit:isSupertype true ;
+    gitcommit:nodeTypeId 465 .
+
+gitcommit:deleted a owl:Class ;
+    rdfs:label "deleted" ;
+    rdfs:isDefinedBy gitcommit: ;
+    rdfs:subClassOf ast:Node ;
+    gitcommit:isSupertype true ;
+    gitcommit:nodeTypeId 474 .
+
+gitcommit:diff a owl:Class ;
+    rdfs:label "diff" ;
+    rdfs:isDefinedBy gitcommit: ;
+    rdfs:subClassOf ast:Node ;
+    gitcommit:isSupertype true ;
+    gitcommit:nodeTypeId 481 .
+
+gitcommit:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+gitcommit:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+gitcommit:filepath a owl:Class ;
+    rdfs:label "filepath" ;
+    rdfs:isDefinedBy gitcommit: ;
+    rdfs:subClassOf ast:Node ;
+    gitcommit:isSupertype true ;
+    gitcommit:nodeTypeId 187 .
+
+gitcommit:generated_comment a owl:Class ;
+    rdfs:label "generated_comment" ;
+    rdfs:isDefinedBy gitcommit: ;
+    rdfs:subClassOf ast:Node ;
+    gitcommit:isSupertype true ;
+    gitcommit:nodeTypeId 49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        467,
+        480 .
+
+gitcommit:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+gitcommit:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+gitcommit:kind a owl:DatatypeProperty ;
+    rdfs:label "kind (literal)" ;
+    rdfs:comment "Literal value for kind field when it contains a terminal node" ;
+    gitcommit:fieldId 1 ;
+    gitcommit:isTerminalField true .
+
+gitcommit:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+gitcommit:message a owl:Class ;
+    rdfs:label "message" ;
+    rdfs:isDefinedBy gitcommit: ;
+    rdfs:subClassOf ast:Node ;
+    gitcommit:isSupertype true ;
+    gitcommit:nodeTypeId 494 .
+
+gitcommit:message_line a owl:Class ;
+    rdfs:label "message_line" ;
+    rdfs:isDefinedBy gitcommit: ;
+    rdfs:subClassOf ast:Node ;
+    gitcommit:isSupertype true ;
+    gitcommit:nodeTypeId 462 .
+
+gitcommit:modified a owl:Class ;
+    rdfs:label "modified" ;
+    rdfs:isDefinedBy gitcommit: ;
+    rdfs:subClassOf ast:Node ;
+    gitcommit:isSupertype true ;
+    gitcommit:nodeTypeId 475 .
+
+gitcommit:new a owl:Class ;
+    rdfs:label "new" ;
+    rdfs:isDefinedBy gitcommit: ;
+    rdfs:subClassOf ast:Node ;
+    gitcommit:isSupertype true ;
+    gitcommit:nodeTypeId 473 .
+
+gitcommit:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+gitcommit:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+gitcommit:number a owl:Class ;
+    rdfs:label "number" ;
+    rdfs:isDefinedBy gitcommit: ;
+    rdfs:subClassOf ast:Node ;
+    gitcommit:isSupertype true ;
+    gitcommit:nodeTypeId 48 .
+
+gitcommit:prefix a owl:Class ;
+    rdfs:label "prefix" ;
+    rdfs:isDefinedBy gitcommit: ;
+    rdfs:subClassOf ast:Node ;
+    gitcommit:isSupertype true ;
+    gitcommit:nodeTypeId 460 .
+
+gitcommit:rebase_command a owl:Class ;
+    rdfs:label "rebase_command" ;
+    rdfs:isDefinedBy gitcommit: ;
+    rdfs:subClassOf ast:Node ;
+    gitcommit:isSupertype true ;
+    gitcommit:nodeTypeId 482 .
+
+gitcommit:renamed a owl:Class ;
+    rdfs:label "renamed" ;
+    rdfs:isDefinedBy gitcommit: ;
+    rdfs:subClassOf ast:Node ;
+    gitcommit:isSupertype true ;
+    gitcommit:nodeTypeId 476 .
+
+gitcommit:scissor a owl:Class ;
+    rdfs:label "scissor" ;
+    rdfs:isDefinedBy gitcommit: ;
+    rdfs:subClassOf ast:Node ;
+    gitcommit:isSupertype true ;
+    gitcommit:nodeTypeId 189 .
+
+gitcommit:scope a owl:Class ;
+    rdfs:label "scope" ;
+    rdfs:isDefinedBy gitcommit: ;
+    rdfs:subClassOf ast:Node ;
+    gitcommit:isSupertype true ;
+    gitcommit:nodeTypeId 9 .
+
+gitcommit:source a owl:Class ;
+    rdfs:label "source" ;
+    rdfs:isDefinedBy gitcommit: ;
+    rdfs:subClassOf ast:Node ;
+    gitcommit:isSupertype true ;
+    gitcommit:nodeTypeId 458 .
+
+gitcommit:subject a owl:Class ;
+    rdfs:label "subject" ;
+    rdfs:isDefinedBy gitcommit: ;
+    rdfs:subClassOf ast:Node ;
+    gitcommit:isSupertype true ;
+    gitcommit:nodeTypeId 459 .
+
+gitcommit:subject_prefix a owl:Class ;
+    rdfs:label "subject_prefix" ;
+    rdfs:isDefinedBy gitcommit: ;
+    rdfs:subClassOf ast:Node ;
+    gitcommit:isSupertype true ;
+    gitcommit:nodeTypeId 2,
+        3 .
+
+gitcommit:text a owl:Class ;
+    rdfs:label "text" ;
+    rdfs:isDefinedBy gitcommit: ;
+    rdfs:subClassOf ast:Node ;
+    gitcommit:isSupertype true ;
+    gitcommit:nodeTypeId 25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        364,
+        365,
+        366,
+        367,
+        368,
+        369,
+        370,
+        371,
+        372,
+        373,
+        374,
+        375,
+        376,
+        377,
+        378,
+        379,
+        380,
+        381,
+        382,
+        383,
+        384 .
+
+gitcommit:title a owl:Class ;
+    rdfs:label "title" ;
+    rdfs:isDefinedBy gitcommit: ;
+    rdfs:subClassOf ast:Node ;
+    gitcommit:isSupertype true ;
+    gitcommit:nodeTypeId 17,
+        22,
+        190 .
+
+gitcommit:token a owl:Class ;
+    rdfs:label "token" ;
+    rdfs:isDefinedBy gitcommit: ;
+    rdfs:subClassOf ast:Node ;
+    gitcommit:isSupertype true ;
+    gitcommit:nodeTypeId 13,
+        15 .
+
+gitcommit:trailer a owl:Class ;
+    rdfs:label "trailer" ;
+    rdfs:isDefinedBy gitcommit: ;
+    rdfs:subClassOf ast:Node ;
+    gitcommit:isSupertype true ;
+    gitcommit:nodeTypeId 463 .
+
+gitcommit:type a owl:Class ;
+    rdfs:label "type" ;
+    rdfs:isDefinedBy gitcommit: ;
+    rdfs:subClassOf ast:Node ;
+    gitcommit:isSupertype true ;
+    gitcommit:nodeTypeId 456 .
+
+gitcommit:typechange a owl:Class ;
+    rdfs:label "typechange" ;
+    rdfs:isDefinedBy gitcommit: ;
+    rdfs:subClassOf ast:Node ;
+    gitcommit:isSupertype true ;
+    gitcommit:nodeTypeId 477 .
+
+gitcommit:value a owl:Class ;
+    rdfs:label "value" ;
+    rdfs:isDefinedBy gitcommit: ;
+    rdfs:subClassOf ast:Node ;
+    gitcommit:isSupertype true ;
+    gitcommit:nodeTypeId 14,
+        23 .
+
+gitcommit: a owl:Ontology ;
+    rdfs:label "Gitcommit Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for gitcommit" ;
+    owl:versionInfo "v0.25" ;
+    gitcommit:abiVersion 14 ;
+    gitcommit:fieldCount 1 ;
+    gitcommit:languageName "None" ;
+    gitcommit:nodeKindCount 495 .
+

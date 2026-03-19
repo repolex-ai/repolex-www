@@ -1,0 +1,301 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix hyprlang: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/hyprlang/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+hyprlang:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+hyprlang:angle a owl:Class ;
+    rdfs:label "angle" ;
+    rdfs:isDefinedBy hyprlang: ;
+    rdfs:subClassOf ast:Node ;
+    hyprlang:isSupertype true ;
+    hyprlang:nodeTypeId 79 .
+
+hyprlang:arguments a owl:Class ;
+    rdfs:label "arguments" ;
+    rdfs:isDefinedBy hyprlang: ;
+    rdfs:subClassOf ast:Node ;
+    hyprlang:isSupertype true ;
+    hyprlang:nodeTypeId 64 .
+
+hyprlang:assignment a owl:Class ;
+    rdfs:label "assignment" ;
+    rdfs:isDefinedBy hyprlang: ;
+    rdfs:subClassOf ast:Node ;
+    hyprlang:isSupertype true ;
+    hyprlang:nodeTypeId 60 .
+
+hyprlang:boolean a owl:Class ;
+    rdfs:label "boolean" ;
+    rdfs:isDefinedBy hyprlang: ;
+    rdfs:subClassOf ast:Node ;
+    hyprlang:isSupertype true ;
+    hyprlang:nodeTypeId 69 .
+
+hyprlang:color a owl:Class ;
+    rdfs:label "color" ;
+    rdfs:isDefinedBy hyprlang: ;
+    rdfs:subClassOf ast:Node ;
+    hyprlang:isSupertype true ;
+    hyprlang:nodeTypeId 72 .
+
+hyprlang:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy hyprlang: ;
+    rdfs:subClassOf ast:Node ;
+    hyprlang:isSupertype true ;
+    hyprlang:nodeTypeId 86 .
+
+hyprlang:configuration a owl:Class ;
+    rdfs:label "configuration" ;
+    rdfs:isDefinedBy hyprlang: ;
+    rdfs:subClassOf ast:Node ;
+    hyprlang:isSupertype true ;
+    hyprlang:nodeTypeId 58 .
+
+hyprlang:declaration a owl:Class ;
+    rdfs:label "declaration" ;
+    rdfs:isDefinedBy hyprlang: ;
+    rdfs:subClassOf ast:Node ;
+    hyprlang:isSupertype true ;
+    hyprlang:nodeTypeId 59 .
+
+hyprlang:device a owl:DatatypeProperty ;
+    rdfs:label "device (literal)" ;
+    rdfs:comment "Literal value for device field when it contains a terminal node" ;
+    hyprlang:fieldId 1 ;
+    hyprlang:isTerminalField true .
+
+hyprlang:device_name a owl:Class ;
+    rdfs:label "device_name" ;
+    rdfs:isDefinedBy hyprlang: ;
+    rdfs:subClassOf ast:Node ;
+    hyprlang:isSupertype true ;
+    hyprlang:nodeTypeId 50 .
+
+hyprlang:display a owl:Class ;
+    rdfs:label "display" ;
+    rdfs:isDefinedBy hyprlang: ;
+    rdfs:subClassOf ast:Node ;
+    hyprlang:isSupertype true ;
+    hyprlang:nodeTypeId 77 .
+
+hyprlang:exec a owl:Class ;
+    rdfs:label "exec" ;
+    rdfs:isDefinedBy hyprlang: ;
+    rdfs:subClassOf ast:Node ;
+    hyprlang:isSupertype true ;
+    hyprlang:nodeTypeId 67 .
+
+hyprlang:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+hyprlang:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+hyprlang:field_value a owl:ObjectProperty ;
+    rdfs:label "value (structural)" ;
+    rdfs:comment "Structural reference for value field when it contains a non-terminal node" ;
+    hyprlang:fieldId 4 .
+
+hyprlang:gradient a owl:Class ;
+    rdfs:label "gradient" ;
+    rdfs:isDefinedBy hyprlang: ;
+    rdfs:subClassOf ast:Node ;
+    hyprlang:isSupertype true ;
+    hyprlang:nodeTypeId 75 .
+
+hyprlang:hex a owl:Class ;
+    rdfs:label "hex" ;
+    rdfs:isDefinedBy hyprlang: ;
+    rdfs:subClassOf ast:Node ;
+    hyprlang:isSupertype true ;
+    hyprlang:nodeTypeId 31 .
+
+hyprlang:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+hyprlang:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+hyprlang:keys a owl:Class ;
+    rdfs:label "keys" ;
+    rdfs:isDefinedBy hyprlang: ;
+    rdfs:subClassOf ast:Node ;
+    hyprlang:isSupertype true ;
+    hyprlang:nodeTypeId 81 .
+
+hyprlang:keyword a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "keyword",
+        "keyword (literal)" ;
+    rdfs:comment "Literal value for keyword field when it contains a terminal node" ;
+    rdfs:isDefinedBy hyprlang: ;
+    rdfs:subClassOf ast:Node ;
+    hyprlang:fieldId 2 ;
+    hyprlang:isSupertype true ;
+    hyprlang:isTerminalField true ;
+    hyprlang:nodeTypeId 61 .
+
+hyprlang:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+hyprlang:legacy_hex a owl:Class ;
+    rdfs:label "legacy_hex" ;
+    rdfs:isDefinedBy hyprlang: ;
+    rdfs:subClassOf ast:Node ;
+    hyprlang:isSupertype true ;
+    hyprlang:nodeTypeId 73 .
+
+hyprlang:mod a owl:Class ;
+    rdfs:label "mod" ;
+    rdfs:isDefinedBy hyprlang: ;
+    rdfs:subClassOf ast:Node ;
+    hyprlang:isSupertype true ;
+    hyprlang:nodeTypeId 80 .
+
+hyprlang:name a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "name",
+        "name (literal)" ;
+    rdfs:comment "Literal value for name field when it contains a terminal node" ;
+    rdfs:isDefinedBy hyprlang: ;
+    rdfs:subClassOf ast:Node ;
+    hyprlang:fieldId 3 ;
+    hyprlang:isSupertype true ;
+    hyprlang:isTerminalField true ;
+    hyprlang:nodeTypeId 49 .
+
+hyprlang:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+hyprlang:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+hyprlang:number a owl:Class ;
+    rdfs:label "number" ;
+    rdfs:isDefinedBy hyprlang: ;
+    rdfs:subClassOf ast:Node ;
+    hyprlang:isSupertype true ;
+    hyprlang:nodeTypeId 70 .
+
+hyprlang:number_tuple a owl:Class ;
+    rdfs:label "number_tuple" ;
+    rdfs:isDefinedBy hyprlang: ;
+    rdfs:subClassOf ast:Node ;
+    hyprlang:isSupertype true ;
+    hyprlang:nodeTypeId 76 .
+
+hyprlang:params a owl:Class ;
+    rdfs:label "params" ;
+    rdfs:isDefinedBy hyprlang: ;
+    rdfs:subClassOf ast:Node ;
+    hyprlang:isSupertype true ;
+    hyprlang:nodeTypeId 82 .
+
+hyprlang:position a owl:Class ;
+    rdfs:label "position" ;
+    rdfs:isDefinedBy hyprlang: ;
+    rdfs:subClassOf ast:Node ;
+    hyprlang:isSupertype true ;
+    hyprlang:nodeTypeId 78 .
+
+hyprlang:rgb a owl:Class ;
+    rdfs:label "rgb" ;
+    rdfs:isDefinedBy hyprlang: ;
+    rdfs:subClassOf ast:Node ;
+    hyprlang:isSupertype true ;
+    hyprlang:nodeTypeId 74 .
+
+hyprlang:rules a owl:Class ;
+    rdfs:label "rules" ;
+    rdfs:isDefinedBy hyprlang: ;
+    rdfs:subClassOf ast:Node ;
+    hyprlang:isSupertype true ;
+    hyprlang:nodeTypeId 66 .
+
+hyprlang:section a owl:Class ;
+    rdfs:label "section" ;
+    rdfs:isDefinedBy hyprlang: ;
+    rdfs:subClassOf ast:Node ;
+    hyprlang:isSupertype true ;
+    hyprlang:nodeTypeId 62 .
+
+hyprlang:source a owl:Class ;
+    rdfs:label "source" ;
+    rdfs:isDefinedBy hyprlang: ;
+    rdfs:subClassOf ast:Node ;
+    hyprlang:isSupertype true ;
+    hyprlang:nodeTypeId 63 .
+
+hyprlang:string a owl:Class ;
+    rdfs:label "string" ;
+    rdfs:isDefinedBy hyprlang: ;
+    rdfs:subClassOf ast:Node ;
+    hyprlang:isSupertype true ;
+    hyprlang:nodeTypeId 1,
+        54 .
+
+hyprlang:string_literal a owl:Class ;
+    rdfs:label "string_literal" ;
+    rdfs:isDefinedBy hyprlang: ;
+    rdfs:subClassOf ast:Node ;
+    hyprlang:isSupertype true ;
+    hyprlang:nodeTypeId 48 .
+
+hyprlang:value a owl:DatatypeProperty ;
+    rdfs:label "value (literal)" ;
+    rdfs:comment "Literal value for value field when it contains a terminal node" ;
+    hyprlang:fieldId 4 ;
+    hyprlang:isTerminalField true .
+
+hyprlang:variable a owl:Class ;
+    rdfs:label "variable" ;
+    rdfs:isDefinedBy hyprlang: ;
+    rdfs:subClassOf ast:Node ;
+    hyprlang:isSupertype true ;
+    hyprlang:nodeTypeId 83 .
+
+hyprlang:vec2 a owl:Class ;
+    rdfs:label "vec2" ;
+    rdfs:isDefinedBy hyprlang: ;
+    rdfs:subClassOf ast:Node ;
+    hyprlang:isSupertype true ;
+    hyprlang:nodeTypeId 71 .
+
+hyprlang:window_rule a owl:Class ;
+    rdfs:label "window_rule" ;
+    rdfs:isDefinedBy hyprlang: ;
+    rdfs:subClassOf ast:Node ;
+    hyprlang:isSupertype true ;
+    hyprlang:nodeTypeId 65 .
+
+hyprlang: a owl:Ontology ;
+    rdfs:label "Hyprlang Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for hyprlang" ;
+    owl:versionInfo "v0.25" ;
+    hyprlang:abiVersion 15 ;
+    hyprlang:fieldCount 4 ;
+    hyprlang:languageName "hyprlang" ;
+    hyprlang:nodeKindCount 94 .
+

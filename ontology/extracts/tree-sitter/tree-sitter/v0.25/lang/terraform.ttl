@@ -1,0 +1,514 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix terraform: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/terraform/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+terraform:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+terraform:attr_splat a owl:Class ;
+    rdfs:label "attr_splat" ;
+    rdfs:isDefinedBy terraform: ;
+    rdfs:subClassOf ast:Node ;
+    terraform:isSupertype true ;
+    terraform:nodeTypeId 84 .
+
+terraform:attribute a owl:Class ;
+    rdfs:label "attribute" ;
+    rdfs:isDefinedBy terraform: ;
+    rdfs:subClassOf ast:Node ;
+    terraform:isSupertype true ;
+    terraform:nodeTypeId 58 .
+
+terraform:binary_operation a owl:Class ;
+    rdfs:label "binary_operation" ;
+    rdfs:isDefinedBy terraform: ;
+    rdfs:subClassOf ast:Node ;
+    terraform:isSupertype true ;
+    terraform:nodeTypeId 99 .
+
+terraform:block a owl:Class ;
+    rdfs:label "block" ;
+    rdfs:isDefinedBy terraform: ;
+    rdfs:subClassOf ast:Node ;
+    terraform:isSupertype true ;
+    terraform:nodeTypeId 59 .
+
+terraform:block_end a owl:Class ;
+    rdfs:label "block_end" ;
+    rdfs:isDefinedBy terraform: ;
+    rdfs:subClassOf ast:Node ;
+    terraform:isSupertype true ;
+    terraform:nodeTypeId 61 .
+
+terraform:block_start a owl:Class ;
+    rdfs:label "block_start" ;
+    rdfs:isDefinedBy terraform: ;
+    rdfs:subClassOf ast:Node ;
+    terraform:isSupertype true ;
+    terraform:nodeTypeId 60 .
+
+terraform:body a owl:Class ;
+    rdfs:label "body" ;
+    rdfs:isDefinedBy terraform: ;
+    rdfs:subClassOf ast:Node ;
+    terraform:isSupertype true ;
+    terraform:nodeTypeId 57 .
+
+terraform:bool_lit a owl:Class ;
+    rdfs:label "bool_lit" ;
+    rdfs:isDefinedBy terraform: ;
+    rdfs:subClassOf ast:Node ;
+    terraform:isSupertype true ;
+    terraform:nodeTypeId 66 .
+
+terraform:collection_value a owl:Class ;
+    rdfs:label "collection_value" ;
+    rdfs:isDefinedBy terraform: ;
+    rdfs:subClassOf ast:Node ;
+    terraform:isSupertype true ;
+    terraform:nodeTypeId 68 .
+
+terraform:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy terraform: ;
+    rdfs:subClassOf ast:Node ;
+    terraform:isSupertype true ;
+    terraform:nodeTypeId 46 .
+
+terraform:conditional a owl:Class ;
+    rdfs:label "conditional" ;
+    rdfs:isDefinedBy terraform: ;
+    rdfs:subClassOf ast:Node ;
+    terraform:isSupertype true ;
+    terraform:nodeTypeId 96 .
+
+terraform:config_file a owl:Class ;
+    rdfs:label "config_file" ;
+    rdfs:isDefinedBy terraform: ;
+    rdfs:subClassOf ast:Node ;
+    terraform:isSupertype true ;
+    terraform:nodeTypeId 56 .
+
+terraform:ellipsis a owl:Class ;
+    rdfs:label "ellipsis" ;
+    rdfs:isDefinedBy terraform: ;
+    rdfs:subClassOf ast:Node ;
+    terraform:isSupertype true ;
+    terraform:nodeTypeId 24 .
+
+terraform:expression a owl:Class ;
+    rdfs:label "expression" ;
+    rdfs:isDefinedBy terraform: ;
+    rdfs:subClassOf ast:Node ;
+    terraform:isSupertype true ;
+    terraform:nodeTypeId 62 .
+
+terraform:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+terraform:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+terraform:field_key a owl:ObjectProperty ;
+    rdfs:label "key (structural)" ;
+    rdfs:comment "Structural reference for key field when it contains a non-terminal node" ;
+    terraform:fieldId 1 .
+
+terraform:field_val a owl:ObjectProperty ;
+    rdfs:label "val (structural)" ;
+    rdfs:comment "Structural reference for val field when it contains a non-terminal node" ;
+    terraform:fieldId 2 .
+
+terraform:for_cond a owl:Class ;
+    rdfs:label "for_cond" ;
+    rdfs:isDefinedBy terraform: ;
+    rdfs:subClassOf ast:Node ;
+    terraform:isSupertype true ;
+    terraform:nodeTypeId 90 .
+
+terraform:for_expr a owl:Class ;
+    rdfs:label "for_expr" ;
+    rdfs:isDefinedBy terraform: ;
+    rdfs:subClassOf ast:Node ;
+    terraform:isSupertype true ;
+    terraform:nodeTypeId 86 .
+
+terraform:for_intro a owl:Class ;
+    rdfs:label "for_intro" ;
+    rdfs:isDefinedBy terraform: ;
+    rdfs:subClassOf ast:Node ;
+    terraform:isSupertype true ;
+    terraform:nodeTypeId 89 .
+
+terraform:for_object_expr a owl:Class ;
+    rdfs:label "for_object_expr" ;
+    rdfs:isDefinedBy terraform: ;
+    rdfs:subClassOf ast:Node ;
+    terraform:isSupertype true ;
+    terraform:nodeTypeId 88 .
+
+terraform:for_tuple_expr a owl:Class ;
+    rdfs:label "for_tuple_expr" ;
+    rdfs:isDefinedBy terraform: ;
+    rdfs:subClassOf ast:Node ;
+    terraform:isSupertype true ;
+    terraform:nodeTypeId 87 .
+
+terraform:full_splat a owl:Class ;
+    rdfs:label "full_splat" ;
+    rdfs:isDefinedBy terraform: ;
+    rdfs:subClassOf ast:Node ;
+    terraform:isSupertype true ;
+    terraform:nodeTypeId 85 .
+
+terraform:function_arguments a owl:Class ;
+    rdfs:label "function_arguments" ;
+    rdfs:isDefinedBy terraform: ;
+    rdfs:subClassOf ast:Node ;
+    terraform:isSupertype true ;
+    terraform:nodeTypeId 95 .
+
+terraform:function_call a owl:Class ;
+    rdfs:label "function_call" ;
+    rdfs:isDefinedBy terraform: ;
+    rdfs:subClassOf ast:Node ;
+    terraform:isSupertype true ;
+    terraform:nodeTypeId 92 .
+
+terraform:get_attr a owl:Class ;
+    rdfs:label "get_attr" ;
+    rdfs:isDefinedBy terraform: ;
+    rdfs:subClassOf ast:Node ;
+    terraform:isSupertype true ;
+    terraform:nodeTypeId 82 .
+
+terraform:heredoc_identifier a owl:Class ;
+    rdfs:label "heredoc_identifier" ;
+    rdfs:isDefinedBy terraform: ;
+    rdfs:subClassOf ast:Node ;
+    terraform:isSupertype true ;
+    terraform:nodeTypeId 55 .
+
+terraform:heredoc_start a owl:Class ;
+    rdfs:label "heredoc_start" ;
+    rdfs:isDefinedBy terraform: ;
+    rdfs:subClassOf ast:Node ;
+    terraform:isSupertype true ;
+    terraform:nodeTypeId 103 .
+
+terraform:heredoc_template a owl:Class ;
+    rdfs:label "heredoc_template" ;
+    rdfs:isDefinedBy terraform: ;
+    rdfs:subClassOf ast:Node ;
+    terraform:isSupertype true ;
+    terraform:nodeTypeId 102 .
+
+terraform:identifier a owl:Class ;
+    rdfs:label "identifier" ;
+    rdfs:isDefinedBy terraform: ;
+    rdfs:subClassOf ast:Node ;
+    terraform:isSupertype true ;
+    terraform:nodeTypeId 4 .
+
+terraform:index a owl:Class ;
+    rdfs:label "index" ;
+    rdfs:isDefinedBy terraform: ;
+    rdfs:subClassOf ast:Node ;
+    terraform:isSupertype true ;
+    terraform:nodeTypeId 79 .
+
+terraform:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+terraform:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+terraform:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+terraform:legacy_index a owl:Class ;
+    rdfs:label "legacy_index" ;
+    rdfs:isDefinedBy terraform: ;
+    rdfs:subClassOf ast:Node ;
+    terraform:isSupertype true ;
+    terraform:nodeTypeId 81 .
+
+terraform:literal_value a owl:Class ;
+    rdfs:label "literal_value" ;
+    rdfs:isDefinedBy terraform: ;
+    rdfs:subClassOf ast:Node ;
+    terraform:isSupertype true ;
+    terraform:nodeTypeId 64 .
+
+terraform:new_index a owl:Class ;
+    rdfs:label "new_index" ;
+    rdfs:isDefinedBy terraform: ;
+    rdfs:subClassOf ast:Node ;
+    terraform:isSupertype true ;
+    terraform:nodeTypeId 80 .
+
+terraform:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+terraform:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+terraform:null_lit a owl:Class ;
+    rdfs:label "null_lit" ;
+    rdfs:isDefinedBy terraform: ;
+    rdfs:subClassOf ast:Node ;
+    terraform:isSupertype true ;
+    terraform:nodeTypeId 11 .
+
+terraform:numeric_lit a owl:Class ;
+    rdfs:label "numeric_lit" ;
+    rdfs:isDefinedBy terraform: ;
+    rdfs:subClassOf ast:Node ;
+    terraform:isSupertype true ;
+    terraform:nodeTypeId 65 .
+
+terraform:object a owl:Class ;
+    rdfs:label "object" ;
+    rdfs:isDefinedBy terraform: ;
+    rdfs:subClassOf ast:Node ;
+    terraform:isSupertype true ;
+    terraform:nodeTypeId 74 .
+
+terraform:object_elem a owl:Class ;
+    rdfs:label "object_elem" ;
+    rdfs:isDefinedBy terraform: ;
+    rdfs:subClassOf ast:Node ;
+    terraform:isSupertype true ;
+    terraform:nodeTypeId 78 .
+
+terraform:object_end a owl:Class ;
+    rdfs:label "object_end" ;
+    rdfs:isDefinedBy terraform: ;
+    rdfs:subClassOf ast:Node ;
+    terraform:isSupertype true ;
+    terraform:nodeTypeId 76 .
+
+terraform:object_start a owl:Class ;
+    rdfs:label "object_start" ;
+    rdfs:isDefinedBy terraform: ;
+    rdfs:subClassOf ast:Node ;
+    terraform:isSupertype true ;
+    terraform:nodeTypeId 75 .
+
+terraform:operation a owl:Class ;
+    rdfs:label "operation" ;
+    rdfs:isDefinedBy terraform: ;
+    rdfs:subClassOf ast:Node ;
+    terraform:isSupertype true ;
+    terraform:nodeTypeId 97 .
+
+terraform:quoted_template a owl:Class ;
+    rdfs:label "quoted_template" ;
+    rdfs:isDefinedBy terraform: ;
+    rdfs:subClassOf ast:Node ;
+    terraform:isSupertype true ;
+    terraform:nodeTypeId 101 .
+
+terraform:quoted_template_end a owl:Class ;
+    rdfs:label "quoted_template_end" ;
+    rdfs:isDefinedBy terraform: ;
+    rdfs:subClassOf ast:Node ;
+    terraform:isSupertype true ;
+    terraform:nodeTypeId 49 .
+
+terraform:quoted_template_start a owl:Class ;
+    rdfs:label "quoted_template_start" ;
+    rdfs:isDefinedBy terraform: ;
+    rdfs:subClassOf ast:Node ;
+    terraform:isSupertype true ;
+    terraform:nodeTypeId 48 .
+
+terraform:splat a owl:Class ;
+    rdfs:label "splat" ;
+    rdfs:isDefinedBy terraform: ;
+    rdfs:subClassOf ast:Node ;
+    terraform:isSupertype true ;
+    terraform:nodeTypeId 83 .
+
+terraform:string_lit a owl:Class ;
+    rdfs:label "string_lit" ;
+    rdfs:isDefinedBy terraform: ;
+    rdfs:subClassOf ast:Node ;
+    terraform:isSupertype true ;
+    terraform:nodeTypeId 67 .
+
+terraform:strip_marker a owl:Class ;
+    rdfs:label "strip_marker" ;
+    rdfs:isDefinedBy terraform: ;
+    rdfs:subClassOf ast:Node ;
+    terraform:isSupertype true ;
+    terraform:nodeTypeId 42 .
+
+terraform:template_directive a owl:Class ;
+    rdfs:label "template_directive" ;
+    rdfs:isDefinedBy terraform: ;
+    rdfs:subClassOf ast:Node ;
+    terraform:isSupertype true ;
+    terraform:nodeTypeId 107 .
+
+terraform:template_directive_end a owl:Class ;
+    rdfs:label "template_directive_end" ;
+    rdfs:isDefinedBy terraform: ;
+    rdfs:subClassOf ast:Node ;
+    terraform:isSupertype true ;
+    terraform:nodeTypeId 54 .
+
+terraform:template_directive_start a owl:Class ;
+    rdfs:label "template_directive_start" ;
+    rdfs:isDefinedBy terraform: ;
+    rdfs:subClassOf ast:Node ;
+    terraform:isSupertype true ;
+    terraform:nodeTypeId 53 .
+
+terraform:template_else_intro a owl:Class ;
+    rdfs:label "template_else_intro" ;
+    rdfs:isDefinedBy terraform: ;
+    rdfs:subClassOf ast:Node ;
+    terraform:isSupertype true ;
+    terraform:nodeTypeId 113 .
+
+terraform:template_expr a owl:Class ;
+    rdfs:label "template_expr" ;
+    rdfs:isDefinedBy terraform: ;
+    rdfs:subClassOf ast:Node ;
+    terraform:isSupertype true ;
+    terraform:nodeTypeId 100 .
+
+terraform:template_for a owl:Class ;
+    rdfs:label "template_for" ;
+    rdfs:isDefinedBy terraform: ;
+    rdfs:subClassOf ast:Node ;
+    terraform:isSupertype true ;
+    terraform:nodeTypeId 108 .
+
+terraform:template_for_end a owl:Class ;
+    rdfs:label "template_for_end" ;
+    rdfs:isDefinedBy terraform: ;
+    rdfs:subClassOf ast:Node ;
+    terraform:isSupertype true ;
+    terraform:nodeTypeId 110 .
+
+terraform:template_for_start a owl:Class ;
+    rdfs:label "template_for_start" ;
+    rdfs:isDefinedBy terraform: ;
+    rdfs:subClassOf ast:Node ;
+    terraform:isSupertype true ;
+    terraform:nodeTypeId 109 .
+
+terraform:template_if a owl:Class ;
+    rdfs:label "template_if" ;
+    rdfs:isDefinedBy terraform: ;
+    rdfs:subClassOf ast:Node ;
+    terraform:isSupertype true ;
+    terraform:nodeTypeId 111 .
+
+terraform:template_if_end a owl:Class ;
+    rdfs:label "template_if_end" ;
+    rdfs:isDefinedBy terraform: ;
+    rdfs:subClassOf ast:Node ;
+    terraform:isSupertype true ;
+    terraform:nodeTypeId 114 .
+
+terraform:template_if_intro a owl:Class ;
+    rdfs:label "template_if_intro" ;
+    rdfs:isDefinedBy terraform: ;
+    rdfs:subClassOf ast:Node ;
+    terraform:isSupertype true ;
+    terraform:nodeTypeId 112 .
+
+terraform:template_interpolation a owl:Class ;
+    rdfs:label "template_interpolation" ;
+    rdfs:isDefinedBy terraform: ;
+    rdfs:subClassOf ast:Node ;
+    terraform:isSupertype true ;
+    terraform:nodeTypeId 106 .
+
+terraform:template_interpolation_end a owl:Class ;
+    rdfs:label "template_interpolation_end" ;
+    rdfs:isDefinedBy terraform: ;
+    rdfs:subClassOf ast:Node ;
+    terraform:isSupertype true ;
+    terraform:nodeTypeId 52 .
+
+terraform:template_interpolation_start a owl:Class ;
+    rdfs:label "template_interpolation_start" ;
+    rdfs:isDefinedBy terraform: ;
+    rdfs:subClassOf ast:Node ;
+    terraform:isSupertype true ;
+    terraform:nodeTypeId 51 .
+
+terraform:template_literal a owl:Class ;
+    rdfs:label "template_literal" ;
+    rdfs:isDefinedBy terraform: ;
+    rdfs:subClassOf ast:Node ;
+    terraform:isSupertype true ;
+    terraform:nodeTypeId 105 .
+
+terraform:tuple a owl:Class ;
+    rdfs:label "tuple" ;
+    rdfs:isDefinedBy terraform: ;
+    rdfs:subClassOf ast:Node ;
+    terraform:isSupertype true ;
+    terraform:nodeTypeId 70 .
+
+terraform:tuple_end a owl:Class ;
+    rdfs:label "tuple_end" ;
+    rdfs:isDefinedBy terraform: ;
+    rdfs:subClassOf ast:Node ;
+    terraform:isSupertype true ;
+    terraform:nodeTypeId 72 .
+
+terraform:tuple_start a owl:Class ;
+    rdfs:label "tuple_start" ;
+    rdfs:isDefinedBy terraform: ;
+    rdfs:subClassOf ast:Node ;
+    terraform:isSupertype true ;
+    terraform:nodeTypeId 71 .
+
+terraform:unary_operation a owl:Class ;
+    rdfs:label "unary_operation" ;
+    rdfs:isDefinedBy terraform: ;
+    rdfs:subClassOf ast:Node ;
+    terraform:isSupertype true ;
+    terraform:nodeTypeId 98 .
+
+terraform:variable_expr a owl:Class ;
+    rdfs:label "variable_expr" ;
+    rdfs:isDefinedBy terraform: ;
+    rdfs:subClassOf ast:Node ;
+    terraform:isSupertype true ;
+    terraform:nodeTypeId 91 .
+
+terraform: a owl:Ontology ;
+    rdfs:label "Terraform Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for terraform" ;
+    owl:versionInfo "v0.25" ;
+    terraform:abiVersion 15 ;
+    terraform:fieldCount 2 ;
+    terraform:languageName "terraform" ;
+    terraform:nodeKindCount 121 .
+

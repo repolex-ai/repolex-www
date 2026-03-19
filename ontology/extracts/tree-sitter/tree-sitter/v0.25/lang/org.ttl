@@ -1,0 +1,505 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix org1: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/org/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+org1:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+org1:block a owl:Class ;
+    rdfs:label "block" ;
+    rdfs:isDefinedBy org1: ;
+    rdfs:subClassOf ast:Node ;
+    org1:isSupertype true ;
+    org1:nodeTypeId 147 .
+
+org1:body a owl:Class ;
+    rdfs:label "body" ;
+    rdfs:isDefinedBy org1: ;
+    rdfs:subClassOf ast:Node ;
+    org1:isSupertype true ;
+    org1:nodeTypeId 125 .
+
+org1:bullet a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "bullet",
+        "bullet (literal)" ;
+    rdfs:comment "Literal value for bullet field when it contains a terminal node" ;
+    rdfs:isDefinedBy org1: ;
+    rdfs:subClassOf ast:Node ;
+    org1:fieldId 2 ;
+    org1:isSupertype true ;
+    org1:isTerminalField true ;
+    org1:nodeTypeId 120 .
+
+org1:cell a owl:Class ;
+    rdfs:label "cell" ;
+    rdfs:isDefinedBy org1: ;
+    rdfs:subClassOf ast:Node ;
+    org1:isSupertype true ;
+    org1:nodeTypeId 154 .
+
+org1:checkbox a owl:Class ;
+    rdfs:label "checkbox" ;
+    rdfs:isDefinedBy org1: ;
+    rdfs:subClassOf ast:Node ;
+    org1:isSupertype true ;
+    org1:nodeTypeId 151 .
+
+org1:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy org1: ;
+    rdfs:subClassOf ast:Node ;
+    org1:isSupertype true ;
+    org1:nodeTypeId 145 .
+
+org1:contents a owl:Class ;
+    rdfs:label "contents" ;
+    rdfs:isDefinedBy org1: ;
+    rdfs:subClassOf ast:Node ;
+    org1:isSupertype true ;
+    org1:nodeTypeId 158 .
+
+org1:date a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "date",
+        "date (literal)" ;
+    rdfs:comment "Literal value for date field when it contains a terminal node" ;
+    rdfs:isDefinedBy org1: ;
+    rdfs:subClassOf ast:Node ;
+    org1:fieldId 5 ;
+    org1:isSupertype true ;
+    org1:isTerminalField true ;
+    org1:nodeTypeId 21 .
+
+org1:day a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "day",
+        "day (literal)" ;
+    rdfs:comment "Literal value for day field when it contains a terminal node" ;
+    rdfs:isDefinedBy org1: ;
+    rdfs:subClassOf ast:Node ;
+    org1:fieldId 6 ;
+    org1:isSupertype true ;
+    org1:isTerminalField true ;
+    org1:nodeTypeId 22 .
+
+org1:delay a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "delay",
+        "delay (literal)" ;
+    rdfs:comment "Literal value for delay field when it contains a terminal node" ;
+    rdfs:isDefinedBy org1: ;
+    rdfs:subClassOf ast:Node ;
+    org1:fieldId 7 ;
+    org1:isSupertype true ;
+    org1:isTerminalField true ;
+    org1:nodeTypeId 26 .
+
+org1:description a owl:Class ;
+    rdfs:label "description" ;
+    rdfs:isDefinedBy org1: ;
+    rdfs:subClassOf ast:Node ;
+    org1:isSupertype true ;
+    org1:nodeTypeId 185 .
+
+org1:directive a owl:Class ;
+    rdfs:label "directive" ;
+    rdfs:isDefinedBy org1: ;
+    rdfs:subClassOf ast:Node ;
+    org1:isSupertype true ;
+    org1:nodeTypeId 144 .
+
+org1:document a owl:Class ;
+    rdfs:label "document" ;
+    rdfs:isDefinedBy org1: ;
+    rdfs:subClassOf ast:Node ;
+    org1:isSupertype true ;
+    org1:nodeTypeId 124 .
+
+org1:drawer a owl:Class ;
+    rdfs:label "drawer" ;
+    rdfs:isDefinedBy org1: ;
+    rdfs:subClassOf ast:Node ;
+    org1:isSupertype true ;
+    org1:nodeTypeId 146 .
+
+org1:duration a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "duration",
+        "duration (literal)" ;
+    rdfs:comment "Literal value for duration field when it contains a terminal node" ;
+    rdfs:isDefinedBy org1: ;
+    rdfs:subClassOf ast:Node ;
+    org1:fieldId 10 ;
+    org1:isSupertype true ;
+    org1:isTerminalField true ;
+    org1:nodeTypeId 24 .
+
+org1:dynamic_block a owl:Class ;
+    rdfs:label "dynamic_block" ;
+    rdfs:isDefinedBy org1: ;
+    rdfs:subClassOf ast:Node ;
+    org1:isSupertype true ;
+    org1:nodeTypeId 148 .
+
+org1:end_name a owl:DatatypeProperty ;
+    rdfs:label "end_name (literal)" ;
+    rdfs:comment "Literal value for end_name field when it contains a terminal node" ;
+    org1:fieldId 11 ;
+    org1:isTerminalField true .
+
+org1:entry a owl:Class ;
+    rdfs:label "entry" ;
+    rdfs:isDefinedBy org1: ;
+    rdfs:subClassOf ast:Node ;
+    org1:isSupertype true ;
+    org1:nodeTypeId 137 .
+
+org1:entry_name a owl:Class ;
+    rdfs:label "entry_name" ;
+    rdfs:isDefinedBy org1: ;
+    rdfs:subClassOf ast:Node ;
+    org1:isSupertype true ;
+    org1:nodeTypeId 186 .
+
+org1:expr a owl:Class ;
+    rdfs:label "expr" ;
+    rdfs:isDefinedBy org1: ;
+    rdfs:subClassOf ast:Node ;
+    org1:isSupertype true ;
+    org1:nodeTypeId 27,
+        29,
+        163,
+        164,
+        165 .
+
+org1:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+org1:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+org1:field_body a owl:ObjectProperty ;
+    rdfs:label "body (structural)" ;
+    rdfs:comment "Structural reference for body field when it contains a non-terminal node" ;
+    org1:fieldId 1 .
+
+org1:field_checkbox a owl:ObjectProperty ;
+    rdfs:label "checkbox (structural)" ;
+    rdfs:comment "Structural reference for checkbox field when it contains a non-terminal node" ;
+    org1:fieldId 3 .
+
+org1:field_contents a owl:ObjectProperty ;
+    rdfs:label "contents (structural)" ;
+    rdfs:comment "Structural reference for contents field when it contains a non-terminal node" ;
+    org1:fieldId 4 .
+
+org1:field_description a owl:ObjectProperty ;
+    rdfs:label "description (structural)" ;
+    rdfs:comment "Structural reference for description field when it contains a non-terminal node" ;
+    org1:fieldId 8 .
+
+org1:field_directive a owl:ObjectProperty ;
+    rdfs:label "directive (structural)" ;
+    rdfs:comment "Structural reference for directive field when it contains a non-terminal node" ;
+    org1:fieldId 9 .
+
+org1:field_headline a owl:ObjectProperty ;
+    rdfs:label "headline (structural)" ;
+    rdfs:comment "Structural reference for headline field when it contains a non-terminal node" ;
+    org1:fieldId 13 .
+
+org1:field_item a owl:ObjectProperty ;
+    rdfs:label "item (structural)" ;
+    rdfs:comment "Structural reference for item field when it contains a non-terminal node" ;
+    org1:fieldId 14 .
+
+org1:field_plan a owl:ObjectProperty ;
+    rdfs:label "plan (structural)" ;
+    rdfs:comment "Structural reference for plan field when it contains a non-terminal node" ;
+    org1:fieldId 18 .
+
+org1:field_property_drawer a owl:ObjectProperty ;
+    rdfs:label "property_drawer (structural)" ;
+    rdfs:comment "Structural reference for property_drawer field when it contains a non-terminal node" ;
+    org1:fieldId 19 .
+
+org1:field_subsection a owl:ObjectProperty ;
+    rdfs:label "subsection (structural)" ;
+    rdfs:comment "Structural reference for subsection field when it contains a non-terminal node" ;
+    org1:fieldId 23 .
+
+org1:field_tags a owl:ObjectProperty ;
+    rdfs:label "tags (structural)" ;
+    rdfs:comment "Structural reference for tags field when it contains a non-terminal node" ;
+    org1:fieldId 25 .
+
+org1:field_timestamp a owl:ObjectProperty ;
+    rdfs:label "timestamp (structural)" ;
+    rdfs:comment "Structural reference for timestamp field when it contains a non-terminal node" ;
+    org1:fieldId 27 .
+
+org1:field_value a owl:ObjectProperty ;
+    rdfs:label "value (structural)" ;
+    rdfs:comment "Structural reference for value field when it contains a non-terminal node" ;
+    org1:fieldId 28 .
+
+org1:fndef a owl:Class ;
+    rdfs:label "fndef" ;
+    rdfs:isDefinedBy org1: ;
+    rdfs:subClassOf ast:Node ;
+    org1:isSupertype true ;
+    org1:nodeTypeId 142 .
+
+org1:formula a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "formula",
+        "formula (literal)" ;
+    rdfs:comment "Literal value for formula field when it contains a terminal node" ;
+    rdfs:isDefinedBy org1: ;
+    rdfs:subClassOf ast:Node ;
+    org1:fieldId 12 ;
+    org1:isSupertype true ;
+    org1:isTerminalField true ;
+    org1:nodeTypeId 156 .
+
+org1:headline a owl:Class ;
+    rdfs:label "headline" ;
+    rdfs:isDefinedBy org1: ;
+    rdfs:subClassOf ast:Node ;
+    org1:isSupertype true ;
+    org1:nodeTypeId 130 .
+
+org1:hr a owl:Class ;
+    rdfs:label "hr" ;
+    rdfs:isDefinedBy org1: ;
+    rdfs:subClassOf ast:Node ;
+    org1:isSupertype true ;
+    org1:nodeTypeId 155 .
+
+org1:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+org1:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+org1:item a owl:Class ;
+    rdfs:label "item" ;
+    rdfs:isDefinedBy org1: ;
+    rdfs:subClassOf ast:Node ;
+    org1:isSupertype true ;
+    org1:nodeTypeId 131 .
+
+org1:label a owl:DatatypeProperty ;
+    rdfs:label "label (literal)" ;
+    rdfs:comment "Literal value for label field when it contains a terminal node" ;
+    org1:fieldId 15 ;
+    org1:isTerminalField true .
+
+org1:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+org1:latex_env a owl:Class ;
+    rdfs:label "latex_env" ;
+    rdfs:isDefinedBy org1: ;
+    rdfs:subClassOf ast:Node ;
+    org1:isSupertype true ;
+    org1:nodeTypeId 157 .
+
+org1:list a owl:Class ;
+    rdfs:label "list" ;
+    rdfs:isDefinedBy org1: ;
+    rdfs:subClassOf ast:Node ;
+    org1:isSupertype true ;
+    org1:nodeTypeId 149 .
+
+org1:listitem a owl:Class ;
+    rdfs:label "listitem" ;
+    rdfs:isDefinedBy org1: ;
+    rdfs:subClassOf ast:Node ;
+    org1:isSupertype true ;
+    org1:nodeTypeId 150 .
+
+org1:name a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "name",
+        "name (literal)" ;
+    rdfs:comment "Literal value for name field when it contains a terminal node" ;
+    rdfs:isDefinedBy org1: ;
+    rdfs:subClassOf ast:Node ;
+    org1:fieldId 16 ;
+    org1:isSupertype true ;
+    org1:isTerminalField true ;
+    org1:nodeTypeId 43 .
+
+org1:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+org1:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+org1:paragraph a owl:Class ;
+    rdfs:label "paragraph" ;
+    rdfs:isDefinedBy org1: ;
+    rdfs:subClassOf ast:Node ;
+    org1:isSupertype true ;
+    org1:nodeTypeId 141 .
+
+org1:parameter a owl:DatatypeProperty ;
+    rdfs:label "parameter (literal)" ;
+    rdfs:comment "Literal value for parameter field when it contains a terminal node" ;
+    org1:fieldId 17 ;
+    org1:isTerminalField true .
+
+org1:plan a owl:Class ;
+    rdfs:label "plan" ;
+    rdfs:isDefinedBy org1: ;
+    rdfs:subClassOf ast:Node ;
+    org1:isSupertype true ;
+    org1:nodeTypeId 136 .
+
+org1:property a owl:Class ;
+    rdfs:label "property" ;
+    rdfs:isDefinedBy org1: ;
+    rdfs:subClassOf ast:Node ;
+    org1:isSupertype true ;
+    org1:nodeTypeId 135 .
+
+org1:property_drawer a owl:Class ;
+    rdfs:label "property_drawer" ;
+    rdfs:isDefinedBy org1: ;
+    rdfs:subClassOf ast:Node ;
+    org1:isSupertype true ;
+    org1:nodeTypeId 134 .
+
+org1:repeat a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "repeat",
+        "repeat (literal)" ;
+    rdfs:comment "Literal value for repeat field when it contains a terminal node" ;
+    rdfs:isDefinedBy org1: ;
+    rdfs:subClassOf ast:Node ;
+    org1:fieldId 20 ;
+    org1:isSupertype true ;
+    org1:isTerminalField true ;
+    org1:nodeTypeId 25 .
+
+org1:row a owl:Class ;
+    rdfs:label "row" ;
+    rdfs:isDefinedBy org1: ;
+    rdfs:subClassOf ast:Node ;
+    org1:isSupertype true ;
+    org1:nodeTypeId 153 .
+
+org1:section a owl:Class ;
+    rdfs:label "section" ;
+    rdfs:isDefinedBy org1: ;
+    rdfs:subClassOf ast:Node ;
+    org1:isSupertype true ;
+    org1:nodeTypeId 128 .
+
+org1:stars a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "stars",
+        "stars (literal)" ;
+    rdfs:comment "Literal value for stars field when it contains a terminal node" ;
+    rdfs:isDefinedBy org1: ;
+    rdfs:subClassOf ast:Node ;
+    org1:fieldId 21 ;
+    org1:isSupertype true ;
+    org1:isTerminalField true ;
+    org1:nodeTypeId 129 .
+
+org1:status a owl:DatatypeProperty ;
+    rdfs:label "status (literal)" ;
+    rdfs:comment "Literal value for status field when it contains a terminal node" ;
+    org1:fieldId 22 ;
+    org1:isTerminalField true .
+
+org1:table a owl:Class ;
+    rdfs:label "table" ;
+    rdfs:isDefinedBy org1: ;
+    rdfs:subClassOf ast:Node ;
+    org1:isSupertype true ;
+    org1:nodeTypeId 152 .
+
+org1:tag a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "tag",
+        "tag (literal)" ;
+    rdfs:comment "Literal value for tag field when it contains a terminal node" ;
+    rdfs:isDefinedBy org1: ;
+    rdfs:subClassOf ast:Node ;
+    org1:fieldId 24 ;
+    org1:isSupertype true ;
+    org1:isTerminalField true ;
+    org1:nodeTypeId 187 .
+
+org1:tag_list a owl:Class ;
+    rdfs:label "tag_list" ;
+    rdfs:isDefinedBy org1: ;
+    rdfs:subClassOf ast:Node ;
+    org1:isSupertype true ;
+    org1:nodeTypeId 132 .
+
+org1:time a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "time",
+        "time (literal)" ;
+    rdfs:comment "Literal value for time field when it contains a terminal node" ;
+    rdfs:isDefinedBy org1: ;
+    rdfs:subClassOf ast:Node ;
+    org1:fieldId 26 ;
+    org1:isSupertype true ;
+    org1:isTerminalField true ;
+    org1:nodeTypeId 23 .
+
+org1:timestamp a owl:Class ;
+    rdfs:label "timestamp" ;
+    rdfs:isDefinedBy org1: ;
+    rdfs:subClassOf ast:Node ;
+    org1:isSupertype true ;
+    org1:nodeTypeId 138 .
+
+org1:tsexp a owl:Class ;
+    rdfs:label "tsexp" ;
+    rdfs:isDefinedBy org1: ;
+    rdfs:subClassOf ast:Node ;
+    org1:isSupertype true ;
+    org1:nodeTypeId 139 .
+
+org1:value a owl:Class ;
+    rdfs:label "value" ;
+    rdfs:isDefinedBy org1: ;
+    rdfs:subClassOf ast:Node ;
+    org1:isSupertype true ;
+    org1:nodeTypeId 188 .
+
+org1: a owl:Ontology ;
+    rdfs:label "Org Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for org" ;
+    owl:versionInfo "v0.25" ;
+    org1:abiVersion 14 ;
+    org1:fieldCount 28 ;
+    org1:languageName "None" ;
+    org1:nodeKindCount 189 .
+

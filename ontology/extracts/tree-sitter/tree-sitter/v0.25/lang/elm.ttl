@@ -1,0 +1,950 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix elm: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/elm/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+elm:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+elm:alias a owl:Class ;
+    rdfs:label "alias" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 46 .
+
+elm:anonymous_function_expr a owl:Class ;
+    rdfs:label "anonymous_function_expr" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 137 .
+
+elm:anything_pattern a owl:Class ;
+    rdfs:label "anything_pattern" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 161 .
+
+elm:arg a owl:DatatypeProperty ;
+    rdfs:label "arg (literal)" ;
+    rdfs:comment "Literal value for arg field when it contains a terminal node" ;
+    elm:fieldId 1 ;
+    elm:isTerminalField true .
+
+elm:argPattern a owl:DatatypeProperty ;
+    rdfs:label "argPattern (literal)" ;
+    rdfs:comment "Literal value for argPattern field when it contains a terminal node" ;
+    elm:fieldId 2 ;
+    elm:isTerminalField true .
+
+elm:arrow a owl:Class ;
+    rdfs:label "arrow" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 51 .
+
+elm:as a owl:Class ;
+    rdfs:label "as" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 41 .
+
+elm:as_clause a owl:Class ;
+    rdfs:label "as_clause" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 100 .
+
+elm:associativity a owl:DatatypeProperty ;
+    rdfs:label "associativity (literal)" ;
+    rdfs:comment "Literal value for associativity field when it contains a terminal node" ;
+    elm:fieldId 4 ;
+    elm:isTerminalField true .
+
+elm:backslash a owl:Class ;
+    rdfs:label "backslash" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 53 .
+
+elm:bin_op_expr a owl:Class ;
+    rdfs:label "bin_op_expr" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 120 .
+
+elm:block_comment a owl:Class ;
+    rdfs:label "block_comment" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 86 .
+
+elm:body a owl:DatatypeProperty ;
+    rdfs:label "body (literal)" ;
+    rdfs:comment "Literal value for body field when it contains a terminal node" ;
+    elm:fieldId 6 ;
+    elm:isTerminalField true .
+
+elm:case a owl:Class ;
+    rdfs:label "case" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 43 .
+
+elm:case_of_branch a owl:Class ;
+    rdfs:label "case_of_branch" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 153 .
+
+elm:case_of_expr a owl:Class ;
+    rdfs:label "case_of_expr" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 151 .
+
+elm:char_constant_expr a owl:Class ;
+    rdfs:label "char_constant_expr" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 134 .
+
+elm:child a owl:DatatypeProperty ;
+    rdfs:label "child (literal)" ;
+    rdfs:comment "Literal value for child field when it contains a terminal node" ;
+    elm:fieldId 8 ;
+    elm:isTerminalField true .
+
+elm:close_char a owl:Class ;
+    rdfs:label "close_char" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 201 .
+
+elm:close_quote a owl:Class ;
+    rdfs:label "close_quote" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 202 .
+
+elm:colon a owl:Class ;
+    rdfs:label "colon" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 52 .
+
+elm:cons_pattern a owl:Class ;
+    rdfs:label "cons_pattern" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 157 .
+
+elm:content a owl:DatatypeProperty ;
+    rdfs:label "content (literal)" ;
+    rdfs:comment "Literal value for content field when it contains a terminal node" ;
+    elm:fieldId 10 ;
+    elm:isTerminalField true .
+
+elm:dot a owl:Class ;
+    rdfs:label "dot" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 55,
+        95 .
+
+elm:doubleDot a owl:DatatypeProperty ;
+    rdfs:label "doubleDot (literal)" ;
+    rdfs:comment "Literal value for doubleDot field when it contains a terminal node" ;
+    elm:fieldId 11 ;
+    elm:isTerminalField true .
+
+elm:double_dot a owl:Class ;
+    rdfs:label "double_dot" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 49 .
+
+elm:effect a owl:Class ;
+    rdfs:label "effect" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 38 .
+
+elm:eq a owl:Class ;
+    rdfs:label "eq" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 50 .
+
+elm:exposed_operator a owl:Class ;
+    rdfs:label "exposed_operator" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 94 .
+
+elm:exposed_type a owl:Class ;
+    rdfs:label "exposed_type" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 92 .
+
+elm:exposed_union_constructors a owl:Class ;
+    rdfs:label "exposed_union_constructors" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 93 .
+
+elm:exposed_value a owl:Class ;
+    rdfs:label "exposed_value" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 91 .
+
+elm:exposing a owl:Class ;
+    rdfs:label "exposing" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 42 .
+
+elm:exposing_list a owl:Class ;
+    rdfs:label "exposing_list" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 90 .
+
+elm:expr a owl:DatatypeProperty ;
+    rdfs:label "expr (literal)" ;
+    rdfs:comment "Literal value for expr field when it contains a terminal node" ;
+    elm:fieldId 13 ;
+    elm:isTerminalField true .
+
+elm:exprList a owl:DatatypeProperty ;
+    rdfs:label "exprList (literal)" ;
+    rdfs:comment "Literal value for exprList field when it contains a terminal node" ;
+    elm:fieldId 14 ;
+    elm:isTerminalField true .
+
+elm:expression a owl:DatatypeProperty ;
+    rdfs:label "expression (literal)" ;
+    rdfs:comment "Literal value for expression field when it contains a terminal node" ;
+    elm:fieldId 15 ;
+    elm:isTerminalField true .
+
+elm:field a owl:Class ;
+    rdfs:label "field" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 146 .
+
+elm:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+elm:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+elm:field_access_expr a owl:Class ;
+    rdfs:label "field_access_expr" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 128 .
+
+elm:field_accessor_function_expr a owl:Class ;
+    rdfs:label "field_accessor_function_expr" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 98 .
+
+elm:field_arg a owl:ObjectProperty ;
+    rdfs:label "arg (structural)" ;
+    rdfs:comment "Structural reference for arg field when it contains a non-terminal node" ;
+    elm:fieldId 1 .
+
+elm:field_argPattern a owl:ObjectProperty ;
+    rdfs:label "argPattern (structural)" ;
+    rdfs:comment "Structural reference for argPattern field when it contains a non-terminal node" ;
+    elm:fieldId 2 .
+
+elm:field_asClause a owl:ObjectProperty ;
+    rdfs:label "asClause (structural)" ;
+    rdfs:comment "Structural reference for asClause field when it contains a non-terminal node" ;
+    elm:fieldId 3 .
+
+elm:field_baseRecord a owl:ObjectProperty ;
+    rdfs:label "baseRecord (structural)" ;
+    rdfs:comment "Structural reference for baseRecord field when it contains a non-terminal node" ;
+    elm:fieldId 5 .
+
+elm:field_body a owl:ObjectProperty ;
+    rdfs:label "body (structural)" ;
+    rdfs:comment "Structural reference for body field when it contains a non-terminal node" ;
+    elm:fieldId 6 .
+
+elm:field_branch a owl:ObjectProperty ;
+    rdfs:label "branch (structural)" ;
+    rdfs:comment "Structural reference for branch field when it contains a non-terminal node" ;
+    elm:fieldId 7 .
+
+elm:field_child a owl:ObjectProperty ;
+    rdfs:label "child (structural)" ;
+    rdfs:comment "Structural reference for child field when it contains a non-terminal node" ;
+    elm:fieldId 8 .
+
+elm:field_constructor a owl:ObjectProperty ;
+    rdfs:label "constructor (structural)" ;
+    rdfs:comment "Structural reference for constructor field when it contains a non-terminal node" ;
+    elm:fieldId 9 .
+
+elm:field_exposing a owl:ObjectProperty ;
+    rdfs:label "exposing (structural)" ;
+    rdfs:comment "Structural reference for exposing field when it contains a non-terminal node" ;
+    elm:fieldId 12 .
+
+elm:field_expr a owl:ObjectProperty ;
+    rdfs:label "expr (structural)" ;
+    rdfs:comment "Structural reference for expr field when it contains a non-terminal node" ;
+    elm:fieldId 13 .
+
+elm:field_exprList a owl:ObjectProperty ;
+    rdfs:label "exprList (structural)" ;
+    rdfs:comment "Structural reference for exprList field when it contains a non-terminal node" ;
+    elm:fieldId 14 .
+
+elm:field_expression a owl:ObjectProperty ;
+    rdfs:label "expression (structural)" ;
+    rdfs:comment "Structural reference for expression field when it contains a non-terminal node" ;
+    elm:fieldId 15 .
+
+elm:field_field a owl:ObjectProperty ;
+    rdfs:label "field (structural)" ;
+    rdfs:comment "Structural reference for field field when it contains a non-terminal node" ;
+    elm:fieldId 16 .
+
+elm:field_fieldType a owl:ObjectProperty ;
+    rdfs:label "fieldType (structural)" ;
+    rdfs:comment "Structural reference for fieldType field when it contains a non-terminal node" ;
+    elm:fieldId 17 .
+
+elm:field_functionDeclarationLeft a owl:ObjectProperty ;
+    rdfs:label "functionDeclarationLeft (structural)" ;
+    rdfs:comment "Structural reference for functionDeclarationLeft field when it contains a non-terminal node" ;
+    elm:fieldId 18 .
+
+elm:field_moduleDeclaration a owl:ObjectProperty ;
+    rdfs:label "moduleDeclaration (structural)" ;
+    rdfs:comment "Structural reference for moduleDeclaration field when it contains a non-terminal node" ;
+    elm:fieldId 19 .
+
+elm:field_moduleName a owl:ObjectProperty ;
+    rdfs:label "moduleName (structural)" ;
+    rdfs:comment "Structural reference for moduleName field when it contains a non-terminal node" ;
+    elm:fieldId 20 .
+
+elm:field_name a owl:ObjectProperty ;
+    rdfs:label "name (structural)" ;
+    rdfs:comment "Structural reference for name field when it contains a non-terminal node" ;
+    elm:fieldId 21 .
+
+elm:field_param a owl:ObjectProperty ;
+    rdfs:label "param (structural)" ;
+    rdfs:comment "Structural reference for param field when it contains a non-terminal node" ;
+    elm:fieldId 23 .
+
+elm:field_part a owl:ObjectProperty ;
+    rdfs:label "part (structural)" ;
+    rdfs:comment "Structural reference for part field when it contains a non-terminal node" ;
+    elm:fieldId 24 .
+
+elm:field_pattern a owl:ObjectProperty ;
+    rdfs:label "pattern (structural)" ;
+    rdfs:comment "Structural reference for pattern field when it contains a non-terminal node" ;
+    elm:fieldId 25 .
+
+elm:field_patternAs a owl:ObjectProperty ;
+    rdfs:label "patternAs (structural)" ;
+    rdfs:comment "Structural reference for patternAs field when it contains a non-terminal node" ;
+    elm:fieldId 26 .
+
+elm:field_patternList a owl:ObjectProperty ;
+    rdfs:label "patternList (structural)" ;
+    rdfs:comment "Structural reference for patternList field when it contains a non-terminal node" ;
+    elm:fieldId 27 .
+
+elm:field_target a owl:ObjectProperty ;
+    rdfs:label "target (structural)" ;
+    rdfs:comment "Structural reference for target field when it contains a non-terminal node" ;
+    elm:fieldId 29 .
+
+elm:field_type a owl:Class ;
+    rdfs:label "field_type" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 115 .
+
+elm:field_typeExpression a owl:ObjectProperty ;
+    rdfs:label "typeExpression (structural)" ;
+    rdfs:comment "Structural reference for typeExpression field when it contains a non-terminal node" ;
+    elm:fieldId 30 .
+
+elm:field_typeName a owl:ObjectProperty ;
+    rdfs:label "typeName (structural)" ;
+    rdfs:comment "Structural reference for typeName field when it contains a non-terminal node" ;
+    elm:fieldId 31 .
+
+elm:field_typeVariable a owl:ObjectProperty ;
+    rdfs:label "typeVariable (structural)" ;
+    rdfs:comment "Structural reference for typeVariable field when it contains a non-terminal node" ;
+    elm:fieldId 32 .
+
+elm:field_unionVariant a owl:ObjectProperty ;
+    rdfs:label "unionVariant (structural)" ;
+    rdfs:comment "Structural reference for unionVariant field when it contains a non-terminal node" ;
+    elm:fieldId 33 .
+
+elm:field_valueDeclaration a owl:ObjectProperty ;
+    rdfs:label "valueDeclaration (structural)" ;
+    rdfs:comment "Structural reference for valueDeclaration field when it contains a non-terminal node" ;
+    elm:fieldId 35 .
+
+elm:file a owl:Class ;
+    rdfs:label "file" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 85 .
+
+elm:function_call_expr a owl:Class ;
+    rdfs:label "function_call_expr" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 125 .
+
+elm:function_declaration_left a owl:Class ;
+    rdfs:label "function_declaration_left" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 102 .
+
+elm:glsl_code_expr a owl:Class ;
+    rdfs:label "glsl_code_expr" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 170 .
+
+elm:glsl_content a owl:Class ;
+    rdfs:label "glsl_content" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 83 .
+
+elm:if_else_expr a owl:Class ;
+    rdfs:label "if_else_expr" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 147 .
+
+elm:import a owl:Class ;
+    rdfs:label "import" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 40 .
+
+elm:import_clause a owl:Class ;
+    rdfs:label "import_clause" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 99 .
+
+elm:infix a owl:Class ;
+    rdfs:label "infix" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 48 .
+
+elm:infix_declaration a owl:Class ;
+    rdfs:label "infix_declaration" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 169 .
+
+elm:invalid_string_escape a owl:Class ;
+    rdfs:label "invalid_string_escape" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 36 .
+
+elm:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+elm:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+elm:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+elm:let_in_expr a owl:Class ;
+    rdfs:label "let_in_expr" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 154 .
+
+elm:line_comment a owl:Class ;
+    rdfs:label "line_comment" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 4 .
+
+elm:list_expr a owl:Class ;
+    rdfs:label "list_expr" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 141 .
+
+elm:list_pattern a owl:Class ;
+    rdfs:label "list_pattern" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 163 .
+
+elm:lower_case_identifier a owl:Class ;
+    rdfs:label "lower_case_identifier" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 1,
+        9,
+        28,
+        29,
+        30 .
+
+elm:lower_pattern a owl:Class ;
+    rdfs:label "lower_pattern" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 160 .
+
+elm:lower_type_name a owl:Class ;
+    rdfs:label "lower_type_name" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 104 .
+
+elm:module a owl:Class ;
+    rdfs:label "module" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 37 .
+
+elm:module_declaration a owl:Class ;
+    rdfs:label "module_declaration" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 87 .
+
+elm:name a owl:DatatypeProperty ;
+    rdfs:label "name (literal)" ;
+    rdfs:comment "Literal value for name field when it contains a terminal node" ;
+    elm:fieldId 21 ;
+    elm:isTerminalField true .
+
+elm:negate_expr a owl:Class ;
+    rdfs:label "negate_expr" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 131 .
+
+elm:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+elm:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+elm:nullary_constructor_argument_pattern a owl:Class ;
+    rdfs:label "nullary_constructor_argument_pattern" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 165 .
+
+elm:number_constant_expr a owl:Class ;
+    rdfs:label "number_constant_expr" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 135 .
+
+elm:number_literal a owl:Class ;
+    rdfs:label "number_literal" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 34 .
+
+elm:of a owl:Class ;
+    rdfs:label "of" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 44 .
+
+elm:open_char a owl:Class ;
+    rdfs:label "open_char" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 14 .
+
+elm:open_quote a owl:Class ;
+    rdfs:label "open_quote" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 16,
+        18 .
+
+elm:operator a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "operator",
+        "operator (literal)" ;
+    rdfs:comment "Literal value for operator field when it contains a terminal node" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:fieldId 22 ;
+    elm:isSupertype true ;
+    elm:isTerminalField true ;
+    elm:nodeTypeId 121 .
+
+elm:operator_as_function_expr a owl:Class ;
+    rdfs:label "operator_as_function_expr" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 122 .
+
+elm:operator_identifier a owl:Class ;
+    rdfs:label "operator_identifier" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 82,
+        173 .
+
+elm:parenthesized_expr a owl:Class ;
+    rdfs:label "parenthesized_expr" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 132 .
+
+elm:part a owl:DatatypeProperty ;
+    rdfs:label "part (literal)" ;
+    rdfs:comment "Literal value for part field when it contains a terminal node" ;
+    elm:fieldId 24 ;
+    elm:isTerminalField true .
+
+elm:pattern a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "pattern",
+        "pattern (literal)" ;
+    rdfs:comment "Literal value for pattern field when it contains a terminal node" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:fieldId 25 ;
+    elm:isSupertype true ;
+    elm:isTerminalField true ;
+    elm:nodeTypeId 156 .
+
+elm:port a owl:Class ;
+    rdfs:label "port" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 47 .
+
+elm:port_annotation a owl:Class ;
+    rdfs:label "port_annotation" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 118 .
+
+elm:precedence a owl:DatatypeProperty ;
+    rdfs:label "precedence (literal)" ;
+    rdfs:comment "Literal value for precedence field when it contains a terminal node" ;
+    elm:fieldId 28 ;
+    elm:isTerminalField true .
+
+elm:record_base_identifier a owl:Class ;
+    rdfs:label "record_base_identifier" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 143 .
+
+elm:record_expr a owl:Class ;
+    rdfs:label "record_expr" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 142 .
+
+elm:record_pattern a owl:Class ;
+    rdfs:label "record_pattern" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 162 .
+
+elm:record_type a owl:Class ;
+    rdfs:label "record_type" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 114 .
+
+elm:regular_string_part a owl:Class ;
+    rdfs:label "regular_string_part" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 15,
+        17,
+        19 .
+
+elm:string_constant_expr a owl:Class ;
+    rdfs:label "string_constant_expr" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 136 .
+
+elm:string_escape a owl:Class ;
+    rdfs:label "string_escape" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 35 .
+
+elm:tuple_expr a owl:Class ;
+    rdfs:label "tuple_expr" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 139 .
+
+elm:tuple_pattern a owl:Class ;
+    rdfs:label "tuple_pattern" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 167 .
+
+elm:tuple_type a owl:Class ;
+    rdfs:label "tuple_type" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 116 .
+
+elm:type a owl:Class ;
+    rdfs:label "type" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 45 .
+
+elm:type_alias_declaration a owl:Class ;
+    rdfs:label "type_alias_declaration" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 107 .
+
+elm:type_annotation a owl:Class ;
+    rdfs:label "type_annotation" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 117 .
+
+elm:type_declaration a owl:Class ;
+    rdfs:label "type_declaration" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 103 .
+
+elm:type_expression a owl:Class ;
+    rdfs:label "type_expression" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 108 .
+
+elm:type_ref a owl:Class ;
+    rdfs:label "type_ref" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 110,
+        112 .
+
+elm:type_variable a owl:Class ;
+    rdfs:label "type_variable" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 113 .
+
+elm:underscore a owl:Class ;
+    rdfs:label "underscore" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 54 .
+
+elm:union_pattern a owl:Class ;
+    rdfs:label "union_pattern" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 164 .
+
+elm:union_variant a owl:Class ;
+    rdfs:label "union_variant" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 105 .
+
+elm:unitExpr a owl:DatatypeProperty ;
+    rdfs:label "unitExpr (literal)" ;
+    rdfs:comment "Literal value for unitExpr field when it contains a terminal node" ;
+    elm:fieldId 34 ;
+    elm:isTerminalField true .
+
+elm:unit_expr a owl:Class ;
+    rdfs:label "unit_expr" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 140 .
+
+elm:upper_case_identifier a owl:Class ;
+    rdfs:label "upper_case_identifier" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 8,
+        33 .
+
+elm:upper_case_qid a owl:Class ;
+    rdfs:label "upper_case_qid" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 96 .
+
+elm:value_declaration a owl:Class ;
+    rdfs:label "value_declaration" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 101 .
+
+elm:value_expr a owl:Class ;
+    rdfs:label "value_expr" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 138 .
+
+elm:value_qid a owl:Class ;
+    rdfs:label "value_qid" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 97 .
+
+elm:where a owl:Class ;
+    rdfs:label "where" ;
+    rdfs:isDefinedBy elm: ;
+    rdfs:subClassOf ast:Node ;
+    elm:isSupertype true ;
+    elm:nodeTypeId 39 .
+
+elm: a owl:Ontology ;
+    rdfs:label "Elm Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for elm" ;
+    owl:versionInfo "v0.25" ;
+    elm:abiVersion 15 ;
+    elm:fieldCount 35 ;
+    elm:languageName "elm" ;
+    elm:nodeKindCount 203 .
+

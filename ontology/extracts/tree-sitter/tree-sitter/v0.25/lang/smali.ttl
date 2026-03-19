@@ -1,0 +1,539 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix smali: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/smali/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+smali:Infinity a owl:Class ;
+    rdfs:label "Infinity" ;
+    rdfs:isDefinedBy smali: ;
+    rdfs:subClassOf ast:Node ;
+    smali:isSupertype true ;
+    smali:nodeTypeId 354 .
+
+smali:NaN a owl:Class ;
+    rdfs:label "NaN" ;
+    rdfs:isDefinedBy smali: ;
+    rdfs:subClassOf ast:Node ;
+    smali:isSupertype true ;
+    smali:nodeTypeId 353 .
+
+smali:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+smali:access_modifier a owl:Class ;
+    rdfs:label "access_modifier" ;
+    rdfs:isDefinedBy smali: ;
+    rdfs:subClassOf ast:Node ;
+    smali:isSupertype true ;
+    smali:nodeTypeId 413 .
+
+smali:access_modifiers a owl:Class ;
+    rdfs:label "access_modifiers" ;
+    rdfs:isDefinedBy smali: ;
+    rdfs:subClassOf ast:Node ;
+    smali:isSupertype true ;
+    smali:nodeTypeId 411 .
+
+smali:annotation_directive a owl:Class ;
+    rdfs:label "annotation_directive" ;
+    rdfs:isDefinedBy smali: ;
+    rdfs:subClassOf ast:Node ;
+    smali:isSupertype true ;
+    smali:nodeTypeId 374 .
+
+smali:annotation_key a owl:Class ;
+    rdfs:label "annotation_key" ;
+    rdfs:isDefinedBy smali: ;
+    rdfs:subClassOf ast:Node ;
+    smali:isSupertype true ;
+    smali:nodeTypeId 16 .
+
+smali:annotation_property a owl:Class ;
+    rdfs:label "annotation_property" ;
+    rdfs:isDefinedBy smali: ;
+    rdfs:subClassOf ast:Node ;
+    smali:isSupertype true ;
+    smali:nodeTypeId 376 .
+
+smali:annotation_value a owl:Class ;
+    rdfs:label "annotation_value" ;
+    rdfs:isDefinedBy smali: ;
+    rdfs:subClassOf ast:Node ;
+    smali:isSupertype true ;
+    smali:nodeTypeId 377 .
+
+smali:annotation_visibility a owl:Class ;
+    rdfs:label "annotation_visibility" ;
+    rdfs:isDefinedBy smali: ;
+    rdfs:subClassOf ast:Node ;
+    smali:isSupertype true ;
+    smali:nodeTypeId 375 .
+
+smali:array_data_directive a owl:Class ;
+    rdfs:label "array_data_directive" ;
+    rdfs:isDefinedBy smali: ;
+    rdfs:subClassOf ast:Node ;
+    smali:isSupertype true ;
+    smali:nodeTypeId 396 .
+
+smali:array_type a owl:Class ;
+    rdfs:label "array_type" ;
+    rdfs:isDefinedBy smali: ;
+    rdfs:subClassOf ast:Node ;
+    smali:isSupertype true ;
+    smali:nodeTypeId 409 .
+
+smali:body a owl:Class ;
+    rdfs:label "body" ;
+    rdfs:isDefinedBy smali: ;
+    rdfs:subClassOf ast:Node ;
+    smali:isSupertype true ;
+    smali:nodeTypeId 400 .
+
+smali:boolean a owl:Class ;
+    rdfs:label "boolean" ;
+    rdfs:isDefinedBy smali: ;
+    rdfs:subClassOf ast:Node ;
+    smali:isSupertype true ;
+    smali:nodeTypeId 421 .
+
+smali:catch_directive a owl:Class ;
+    rdfs:label "catch_directive" ;
+    rdfs:isDefinedBy smali: ;
+    rdfs:subClassOf ast:Node ;
+    smali:isSupertype true ;
+    smali:nodeTypeId 392 .
+
+smali:catchall_directive a owl:Class ;
+    rdfs:label "catchall_directive" ;
+    rdfs:isDefinedBy smali: ;
+    rdfs:subClassOf ast:Node ;
+    smali:isSupertype true ;
+    smali:nodeTypeId 393 .
+
+smali:character a owl:Class ;
+    rdfs:label "character" ;
+    rdfs:isDefinedBy smali: ;
+    rdfs:subClassOf ast:Node ;
+    smali:isSupertype true ;
+    smali:nodeTypeId 422 .
+
+smali:class_definition a owl:Class ;
+    rdfs:label "class_definition" ;
+    rdfs:isDefinedBy smali: ;
+    rdfs:subClassOf ast:Node ;
+    smali:isSupertype true ;
+    smali:nodeTypeId 367 .
+
+smali:class_directive a owl:Class ;
+    rdfs:label "class_directive" ;
+    rdfs:isDefinedBy smali: ;
+    rdfs:subClassOf ast:Node ;
+    smali:isSupertype true ;
+    smali:nodeTypeId 368 .
+
+smali:class_identifier a owl:Class ;
+    rdfs:label "class_identifier" ;
+    rdfs:isDefinedBy smali: ;
+    rdfs:subClassOf ast:Node ;
+    smali:isSupertype true ;
+    smali:nodeTypeId 397 .
+
+smali:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy smali: ;
+    rdfs:subClassOf ast:Node ;
+    smali:isSupertype true ;
+    smali:nodeTypeId 364 .
+
+smali:custom_invoke a owl:Class ;
+    rdfs:label "custom_invoke" ;
+    rdfs:isDefinedBy smali: ;
+    rdfs:subClassOf ast:Node ;
+    smali:isSupertype true ;
+    smali:nodeTypeId 407 .
+
+smali:element_width a owl:DatatypeProperty ;
+    rdfs:label "element_width (literal)" ;
+    rdfs:comment "Literal value for element_width field when it contains a terminal node" ;
+    smali:fieldId 1 ;
+    smali:isTerminalField true .
+
+smali:end a owl:DatatypeProperty ;
+    rdfs:label "end (literal)" ;
+    rdfs:comment "Literal value for end field when it contains a terminal node" ;
+    smali:fieldId 2 ;
+    smali:isTerminalField true .
+
+smali:end_local_directive a owl:Class ;
+    rdfs:label "end_local_directive" ;
+    rdfs:isDefinedBy smali: ;
+    rdfs:subClassOf ast:Node ;
+    smali:isSupertype true ;
+    smali:nodeTypeId 389 .
+
+smali:enum_reference a owl:Class ;
+    rdfs:label "enum_reference" ;
+    rdfs:isDefinedBy smali: ;
+    rdfs:subClassOf ast:Node ;
+    smali:isSupertype true ;
+    smali:nodeTypeId 414 .
+
+smali:epilogue_directive a owl:Class ;
+    rdfs:label "epilogue_directive" ;
+    rdfs:isDefinedBy smali: ;
+    rdfs:subClassOf ast:Node ;
+    smali:isSupertype true ;
+    smali:nodeTypeId 308 .
+
+smali:escape_sequence a owl:Class ;
+    rdfs:label "escape_sequence" ;
+    rdfs:isDefinedBy smali: ;
+    rdfs:subClassOf ast:Node ;
+    smali:isSupertype true ;
+    smali:nodeTypeId 358 .
+
+smali:expression a owl:Class ;
+    rdfs:label "expression" ;
+    rdfs:isDefinedBy smali: ;
+    rdfs:subClassOf ast:Node ;
+    smali:isSupertype true ;
+    smali:nodeTypeId 382 .
+
+smali:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+smali:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+smali:field_definition a owl:Class ;
+    rdfs:label "field_definition" ;
+    rdfs:isDefinedBy smali: ;
+    rdfs:subClassOf ast:Node ;
+    smali:isSupertype true ;
+    smali:nodeTypeId 372 .
+
+smali:field_end a owl:ObjectProperty ;
+    rdfs:label "end (structural)" ;
+    rdfs:comment "Structural reference for end field when it contains a non-terminal node" ;
+    smali:fieldId 2 .
+
+smali:field_identifier a owl:Class ;
+    rdfs:label "field_identifier" ;
+    rdfs:isDefinedBy smali: ;
+    rdfs:subClassOf ast:Node ;
+    smali:isSupertype true ;
+    smali:nodeTypeId 437 .
+
+smali:field_start a owl:ObjectProperty ;
+    rdfs:label "start (structural)" ;
+    rdfs:comment "Structural reference for start field when it contains a non-terminal node" ;
+    smali:fieldId 3 .
+
+smali:field_type a owl:Class ;
+    rdfs:label "field_type" ;
+    rdfs:isDefinedBy smali: ;
+    rdfs:subClassOf ast:Node ;
+    smali:isSupertype true ;
+    smali:nodeTypeId 438 .
+
+smali:float a owl:Class ;
+    rdfs:label "float" ;
+    rdfs:isDefinedBy smali: ;
+    rdfs:subClassOf ast:Node ;
+    smali:isSupertype true ;
+    smali:nodeTypeId 352 .
+
+smali:full_method_signature a owl:Class ;
+    rdfs:label "full_method_signature" ;
+    rdfs:isDefinedBy smali: ;
+    rdfs:subClassOf ast:Node ;
+    smali:isSupertype true ;
+    smali:nodeTypeId 406 .
+
+smali:identifier a owl:Class ;
+    rdfs:label "identifier" ;
+    rdfs:isDefinedBy smali: ;
+    rdfs:subClassOf ast:Node ;
+    smali:isSupertype true ;
+    smali:nodeTypeId 1,
+        366 .
+
+smali:implements_directive a owl:Class ;
+    rdfs:label "implements_directive" ;
+    rdfs:isDefinedBy smali: ;
+    rdfs:subClassOf ast:Node ;
+    smali:isSupertype true ;
+    smali:nodeTypeId 371 .
+
+smali:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+smali:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+smali:jmp_label a owl:Class ;
+    rdfs:label "jmp_label" ;
+    rdfs:isDefinedBy smali: ;
+    rdfs:subClassOf ast:Node ;
+    smali:isSupertype true ;
+    smali:nodeTypeId 399 .
+
+smali:label a owl:Class ;
+    rdfs:label "label" ;
+    rdfs:isDefinedBy smali: ;
+    rdfs:subClassOf ast:Node ;
+    smali:isSupertype true ;
+    smali:nodeTypeId 398 .
+
+smali:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+smali:line_directive a owl:Class ;
+    rdfs:label "line_directive" ;
+    rdfs:isDefinedBy smali: ;
+    rdfs:subClassOf ast:Node ;
+    smali:isSupertype true ;
+    smali:nodeTypeId 386 .
+
+smali:list a owl:Class ;
+    rdfs:label "list" ;
+    rdfs:isDefinedBy smali: ;
+    rdfs:subClassOf ast:Node ;
+    smali:isSupertype true ;
+    smali:nodeTypeId 416 .
+
+smali:local_directive a owl:Class ;
+    rdfs:label "local_directive" ;
+    rdfs:isDefinedBy smali: ;
+    rdfs:subClassOf ast:Node ;
+    smali:isSupertype true ;
+    smali:nodeTypeId 388 .
+
+smali:locals_directive a owl:Class ;
+    rdfs:label "locals_directive" ;
+    rdfs:isDefinedBy smali: ;
+    rdfs:subClassOf ast:Node ;
+    smali:isSupertype true ;
+    smali:nodeTypeId 387 .
+
+smali:method_definition a owl:Class ;
+    rdfs:label "method_definition" ;
+    rdfs:isDefinedBy smali: ;
+    rdfs:subClassOf ast:Node ;
+    smali:isSupertype true ;
+    smali:nodeTypeId 373 .
+
+smali:method_handle a owl:Class ;
+    rdfs:label "method_handle" ;
+    rdfs:isDefinedBy smali: ;
+    rdfs:subClassOf ast:Node ;
+    smali:isSupertype true ;
+    smali:nodeTypeId 404 .
+
+smali:method_identifier a owl:Class ;
+    rdfs:label "method_identifier" ;
+    rdfs:isDefinedBy smali: ;
+    rdfs:subClassOf ast:Node ;
+    smali:isSupertype true ;
+    smali:nodeTypeId 313 .
+
+smali:method_signature a owl:Class ;
+    rdfs:label "method_signature" ;
+    rdfs:isDefinedBy smali: ;
+    rdfs:subClassOf ast:Node ;
+    smali:isSupertype true ;
+    smali:nodeTypeId 402 .
+
+smali:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+smali:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+smali:null a owl:Class ;
+    rdfs:label "null" ;
+    rdfs:isDefinedBy smali: ;
+    rdfs:subClassOf ast:Node ;
+    smali:isSupertype true ;
+    smali:nodeTypeId 363 .
+
+smali:number a owl:Class ;
+    rdfs:label "number" ;
+    rdfs:isDefinedBy smali: ;
+    rdfs:subClassOf ast:Node ;
+    smali:isSupertype true ;
+    smali:nodeTypeId 351 .
+
+smali:opcode a owl:Class ;
+    rdfs:label "opcode" ;
+    rdfs:isDefinedBy smali: ;
+    rdfs:subClassOf ast:Node ;
+    smali:isSupertype true ;
+    smali:nodeTypeId 383 .
+
+smali:packed_switch_directive a owl:Class ;
+    rdfs:label "packed_switch_directive" ;
+    rdfs:isDefinedBy smali: ;
+    rdfs:subClassOf ast:Node ;
+    smali:isSupertype true ;
+    smali:nodeTypeId 394 .
+
+smali:param_directive a owl:Class ;
+    rdfs:label "param_directive" ;
+    rdfs:isDefinedBy smali: ;
+    rdfs:subClassOf ast:Node ;
+    smali:isSupertype true ;
+    smali:nodeTypeId 379 .
+
+smali:param_identifier a owl:Class ;
+    rdfs:label "param_identifier" ;
+    rdfs:isDefinedBy smali: ;
+    rdfs:subClassOf ast:Node ;
+    smali:isSupertype true ;
+    smali:nodeTypeId 439 .
+
+smali:parameter a owl:Class ;
+    rdfs:label "parameter" ;
+    rdfs:isDefinedBy smali: ;
+    rdfs:subClassOf ast:Node ;
+    smali:isSupertype true ;
+    smali:nodeTypeId 350 .
+
+smali:parameter_directive a owl:Class ;
+    rdfs:label "parameter_directive" ;
+    rdfs:isDefinedBy smali: ;
+    rdfs:subClassOf ast:Node ;
+    smali:isSupertype true ;
+    smali:nodeTypeId 380 .
+
+smali:parameters a owl:Class ;
+    rdfs:label "parameters" ;
+    rdfs:isDefinedBy smali: ;
+    rdfs:subClassOf ast:Node ;
+    smali:isSupertype true ;
+    smali:nodeTypeId 440 .
+
+smali:primitive_type a owl:Class ;
+    rdfs:label "primitive_type" ;
+    rdfs:isDefinedBy smali: ;
+    rdfs:subClassOf ast:Node ;
+    smali:isSupertype true ;
+    smali:nodeTypeId 410 .
+
+smali:prologue_directive a owl:Class ;
+    rdfs:label "prologue_directive" ;
+    rdfs:isDefinedBy smali: ;
+    rdfs:subClassOf ast:Node ;
+    smali:isSupertype true ;
+    smali:nodeTypeId 307 .
+
+smali:range a owl:Class ;
+    rdfs:label "range" ;
+    rdfs:isDefinedBy smali: ;
+    rdfs:subClassOf ast:Node ;
+    smali:isSupertype true ;
+    smali:nodeTypeId 417 .
+
+smali:registers_directive a owl:Class ;
+    rdfs:label "registers_directive" ;
+    rdfs:isDefinedBy smali: ;
+    rdfs:subClassOf ast:Node ;
+    smali:isSupertype true ;
+    smali:nodeTypeId 391 .
+
+smali:restart_local_directive a owl:Class ;
+    rdfs:label "restart_local_directive" ;
+    rdfs:isDefinedBy smali: ;
+    rdfs:subClassOf ast:Node ;
+    smali:isSupertype true ;
+    smali:nodeTypeId 390 .
+
+smali:source_directive a owl:Class ;
+    rdfs:label "source_directive" ;
+    rdfs:isDefinedBy smali: ;
+    rdfs:subClassOf ast:Node ;
+    smali:isSupertype true ;
+    smali:nodeTypeId 370 .
+
+smali:sparse_switch_directive a owl:Class ;
+    rdfs:label "sparse_switch_directive" ;
+    rdfs:isDefinedBy smali: ;
+    rdfs:subClassOf ast:Node ;
+    smali:isSupertype true ;
+    smali:nodeTypeId 395 .
+
+smali:start a owl:DatatypeProperty ;
+    rdfs:label "start (literal)" ;
+    rdfs:comment "Literal value for start field when it contains a terminal node" ;
+    smali:fieldId 3 ;
+    smali:isTerminalField true .
+
+smali:string a owl:Class ;
+    rdfs:label "string" ;
+    rdfs:isDefinedBy smali: ;
+    rdfs:subClassOf ast:Node ;
+    smali:isSupertype true ;
+    smali:nodeTypeId 419 .
+
+smali:string_fragment a owl:Class ;
+    rdfs:label "string_fragment" ;
+    rdfs:isDefinedBy smali: ;
+    rdfs:subClassOf ast:Node ;
+    smali:isSupertype true ;
+    smali:nodeTypeId 356 .
+
+smali:subannotation_directive a owl:Class ;
+    rdfs:label "subannotation_directive" ;
+    rdfs:isDefinedBy smali: ;
+    rdfs:subClassOf ast:Node ;
+    smali:isSupertype true ;
+    smali:nodeTypeId 378 .
+
+smali:super_directive a owl:Class ;
+    rdfs:label "super_directive" ;
+    rdfs:isDefinedBy smali: ;
+    rdfs:subClassOf ast:Node ;
+    smali:isSupertype true ;
+    smali:nodeTypeId 369 .
+
+smali:value a owl:DatatypeProperty ;
+    rdfs:label "value (literal)" ;
+    rdfs:comment "Literal value for value field when it contains a terminal node" ;
+    smali:fieldId 4 ;
+    smali:isTerminalField true .
+
+smali:variable a owl:Class ;
+    rdfs:label "variable" ;
+    rdfs:isDefinedBy smali: ;
+    rdfs:subClassOf ast:Node ;
+    smali:isSupertype true ;
+    smali:nodeTypeId 349 .
+
+smali: a owl:Ontology ;
+    rdfs:label "Smali Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for smali" ;
+    owl:versionInfo "v0.25" ;
+    smali:abiVersion 14 ;
+    smali:fieldCount 4 ;
+    smali:languageName "None" ;
+    smali:nodeKindCount 441 .
+

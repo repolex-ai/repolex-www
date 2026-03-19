@@ -1,0 +1,834 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pony: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/pony/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+pony:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+pony:actor_definition a owl:Class ;
+    rdfs:label "actor_definition" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 145 .
+
+pony:alias_type a owl:Class ;
+    rdfs:label "alias_type" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 165 .
+
+pony:aliased_type a owl:Class ;
+    rdfs:label "aliased_type" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 173 .
+
+pony:annotation a owl:Class ;
+    rdfs:label "annotation" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 155 .
+
+pony:any_type a owl:Class ;
+    rdfs:label "any_type" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 166 .
+
+pony:arguments a owl:Class ;
+    rdfs:label "arguments" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 192 .
+
+pony:array_literal a owl:Class ;
+    rdfs:label "array_literal" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 226 .
+
+pony:assignment_expression a owl:Class ;
+    rdfs:label "assignment_expression" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 188 .
+
+pony:base_type a owl:Class ;
+    rdfs:label "base_type" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 160 .
+
+pony:behavior a owl:Class ;
+    rdfs:label "behavior" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 154 .
+
+pony:binary_expression a owl:Class ;
+    rdfs:label "binary_expression" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 185 .
+
+pony:block a owl:Class ;
+    rdfs:label "block" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 181 .
+
+pony:block_comment a owl:Class ;
+    rdfs:label "block_comment" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 136 .
+
+pony:boolean a owl:Class ;
+    rdfs:label "boolean" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 233 .
+
+pony:box_type a owl:Class ;
+    rdfs:label "box_type" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 171 .
+
+pony:break_statement a owl:Class ;
+    rdfs:label "break_statement" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 221 .
+
+pony:call_expression a owl:Class ;
+    rdfs:label "call_expression" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 191 .
+
+pony:capability a owl:Class ;
+    rdfs:label "capability" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 156 .
+
+pony:case_statement a owl:Class ;
+    rdfs:label "case_statement" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 218 .
+
+pony:cast_expression a owl:Class ;
+    rdfs:label "cast_expression" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 190 .
+
+pony:chain_expression a owl:Class ;
+    rdfs:label "chain_expression" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 193 .
+
+pony:character a owl:Class ;
+    rdfs:label "character" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 231 .
+
+pony:character_content a owl:Class ;
+    rdfs:label "character_content" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 127 .
+
+pony:class_definition a owl:Class ;
+    rdfs:label "class_definition" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 146 .
+
+pony:compile_error a owl:Class ;
+    rdfs:label "compile_error" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 183 .
+
+pony:compile_intrinsic a owl:Class ;
+    rdfs:label "compile_intrinsic" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 50 .
+
+pony:constructor a owl:Class ;
+    rdfs:label "constructor" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 152 .
+
+pony:consume_statement a owl:Class ;
+    rdfs:label "consume_statement" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 222 .
+
+pony:continue_statement a owl:Class ;
+    rdfs:label "continue_statement" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 220 .
+
+pony:do_block a owl:Class ;
+    rdfs:label "do_block" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 215 .
+
+pony:else_block a owl:Class ;
+    rdfs:label "else_block" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 208 .
+
+pony:elseif_block a owl:Class ;
+    rdfs:label "elseif_block" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 205 .
+
+pony:elseiftype_block a owl:Class ;
+    rdfs:label "elseiftype_block" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 207 .
+
+pony:ephemeral_type a owl:Class ;
+    rdfs:label "ephemeral_type" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 174 .
+
+pony:error a owl:Class ;
+    rdfs:label "error" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 49 .
+
+pony:escape_sequence a owl:Class ;
+    rdfs:label "escape_sequence" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 130 .
+
+pony:ffi_identifier a owl:Class ;
+    rdfs:label "ffi_identifier" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 234 .
+
+pony:ffi_method a owl:Class ;
+    rdfs:label "ffi_method" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 141 .
+
+pony:field a owl:Class ;
+    rdfs:label "field" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 151 .
+
+pony:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+pony:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+pony:field_argument a owl:ObjectProperty ;
+    rdfs:label "argument (structural)" ;
+    rdfs:comment "Structural reference for argument field when it contains a non-terminal node" ;
+    pony:fieldId 1 .
+
+pony:field_callee a owl:ObjectProperty ;
+    rdfs:label "callee (structural)" ;
+    rdfs:comment "Structural reference for callee field when it contains a non-terminal node" ;
+    pony:fieldId 2 .
+
+pony:field_collection a owl:ObjectProperty ;
+    rdfs:label "collection (structural)" ;
+    rdfs:comment "Structural reference for collection field when it contains a non-terminal node" ;
+    pony:fieldId 3 .
+
+pony:field_default a owl:ObjectProperty ;
+    rdfs:label "default (structural)" ;
+    rdfs:comment "Structural reference for default field when it contains a non-terminal node" ;
+    pony:fieldId 4 .
+
+pony:field_left a owl:ObjectProperty ;
+    rdfs:label "left (structural)" ;
+    rdfs:comment "Structural reference for left field when it contains a non-terminal node" ;
+    pony:fieldId 5 .
+
+pony:field_name a owl:ObjectProperty ;
+    rdfs:label "name (structural)" ;
+    rdfs:comment "Structural reference for name field when it contains a non-terminal node" ;
+    pony:fieldId 6 .
+
+pony:field_operator a owl:ObjectProperty ;
+    rdfs:label "operator (structural)" ;
+    rdfs:comment "Structural reference for operator field when it contains a non-terminal node" ;
+    pony:fieldId 7 .
+
+pony:field_positional a owl:ObjectProperty ;
+    rdfs:label "positional (structural)" ;
+    rdfs:comment "Structural reference for positional field when it contains a non-terminal node" ;
+    pony:fieldId 8 .
+
+pony:field_returns a owl:ObjectProperty ;
+    rdfs:label "returns (structural)" ;
+    rdfs:comment "Structural reference for returns field when it contains a non-terminal node" ;
+    pony:fieldId 9 .
+
+pony:field_right a owl:ObjectProperty ;
+    rdfs:label "right (structural)" ;
+    rdfs:comment "Structural reference for right field when it contains a non-terminal node" ;
+    pony:fieldId 10 .
+
+pony:float a owl:Class ;
+    rdfs:label "float" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 123 .
+
+pony:for_statement a owl:Class ;
+    rdfs:label "for_statement" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 209 .
+
+pony:generic_expression a owl:Class ;
+    rdfs:label "generic_expression" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 187 .
+
+pony:generic_parameter a owl:Class ;
+    rdfs:label "generic_parameter" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 223 .
+
+pony:generic_parameters a owl:Class ;
+    rdfs:label "generic_parameters" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 224 .
+
+pony:identifier a owl:Class ;
+    rdfs:label "identifier" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 1 .
+
+pony:if_block a owl:Class ;
+    rdfs:label "if_block" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 203 .
+
+pony:if_statement a owl:Class ;
+    rdfs:label "if_statement" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 202 .
+
+pony:iftype_statement a owl:Class ;
+    rdfs:label "iftype_statement" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 206 .
+
+pony:interface_definition a owl:Class ;
+    rdfs:label "interface_definition" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 148 .
+
+pony:intersection_type a owl:Class ;
+    rdfs:label "intersection_type" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 177 .
+
+pony:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+pony:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+pony:iso_type a owl:Class ;
+    rdfs:label "iso_type" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 167 .
+
+pony:lambda_captures a owl:Class ;
+    rdfs:label "lambda_captures" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 198 .
+
+pony:lambda_expression a owl:Class ;
+    rdfs:label "lambda_expression" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 196 .
+
+pony:lambda_parameter a owl:Class ;
+    rdfs:label "lambda_parameter" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 197 .
+
+pony:lambda_parameters a owl:Class ;
+    rdfs:label "lambda_parameters" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 179 .
+
+pony:lambda_type a owl:Class ;
+    rdfs:label "lambda_type" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 180 .
+
+pony:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+pony:line_comment a owl:Class ;
+    rdfs:label "line_comment" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 134 .
+
+pony:location a owl:Class ;
+    rdfs:label "location" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 52 .
+
+pony:match_statement a owl:Class ;
+    rdfs:label "match_statement" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 217 .
+
+pony:member_expression a owl:Class ;
+    rdfs:label "member_expression" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 200 .
+
+pony:members a owl:Class ;
+    rdfs:label "members" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 144 .
+
+pony:method a owl:Class ;
+    rdfs:label "method" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 153 .
+
+pony:name a owl:DatatypeProperty ;
+    rdfs:label "name (literal)" ;
+    rdfs:comment "Literal value for name field when it contains a terminal node" ;
+    pony:fieldId 6 ;
+    pony:isTerminalField true .
+
+pony:named_argument a owl:Class ;
+    rdfs:label "named_argument" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 195 .
+
+pony:named_arguments a owl:Class ;
+    rdfs:label "named_arguments" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 194 .
+
+pony:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+pony:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+pony:number a owl:Class ;
+    rdfs:label "number" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 122 .
+
+pony:object_literal a owl:Class ;
+    rdfs:label "object_literal" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 227 .
+
+pony:parameter a owl:Class ;
+    rdfs:label "parameter" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 158 .
+
+pony:parameters a owl:Class ;
+    rdfs:label "parameters" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 157 .
+
+pony:parenthesized_expression a owl:Class ;
+    rdfs:label "parenthesized_expression" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 201 .
+
+pony:partial_application a owl:Class ;
+    rdfs:label "partial_application" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 199 .
+
+pony:platform_specifier a owl:Class ;
+    rdfs:label "platform_specifier" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 142 .
+
+pony:primitive_definition a owl:Class ;
+    rdfs:label "primitive_definition" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 147 .
+
+pony:read_type a owl:Class ;
+    rdfs:label "read_type" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 162 .
+
+pony:recover_statement a owl:Class ;
+    rdfs:label "recover_statement" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 216 .
+
+pony:ref_type a owl:Class ;
+    rdfs:label "ref_type" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 169 .
+
+pony:repeat_statement a owl:Class ;
+    rdfs:label "repeat_statement" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 214 .
+
+pony:return_statement a owl:Class ;
+    rdfs:label "return_statement" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 219 .
+
+pony:send_type a owl:Class ;
+    rdfs:label "send_type" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 163 .
+
+pony:share_type a owl:Class ;
+    rdfs:label "share_type" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 164 .
+
+pony:source_file a owl:Class ;
+    rdfs:label "source_file" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 138 .
+
+pony:string a owl:Class ;
+    rdfs:label "string" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 228 .
+
+pony:string_content a owl:Class ;
+    rdfs:label "string_content" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 128,
+        137 .
+
+pony:struct_definition a owl:Class ;
+    rdfs:label "struct_definition" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 150 .
+
+pony:tag_type a owl:Class ;
+    rdfs:label "tag_type" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 172 .
+
+pony:then_block a owl:Class ;
+    rdfs:label "then_block" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 204 .
+
+pony:this a owl:Class ;
+    rdfs:label "this" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 133 .
+
+pony:trait_definition a owl:Class ;
+    rdfs:label "trait_definition" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 149 .
+
+pony:trn_type a owl:Class ;
+    rdfs:label "trn_type" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 168 .
+
+pony:try_statement a owl:Class ;
+    rdfs:label "try_statement" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 211 .
+
+pony:tuple_expression a owl:Class ;
+    rdfs:label "tuple_expression" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 186 .
+
+pony:tuple_type a owl:Class ;
+    rdfs:label "tuple_type" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 175 .
+
+pony:type_alias a owl:Class ;
+    rdfs:label "type_alias" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 143 .
+
+pony:type_args a owl:Class ;
+    rdfs:label "type_args" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 161 .
+
+pony:type_parameters a owl:Class ;
+    rdfs:label "type_parameters" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 259 .
+
+pony:unary_expression a owl:Class ;
+    rdfs:label "unary_expression" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 184 .
+
+pony:union_type a owl:Class ;
+    rdfs:label "union_type" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 176 .
+
+pony:use_statement a owl:Class ;
+    rdfs:label "use_statement" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 140 .
+
+pony:val_type a owl:Class ;
+    rdfs:label "val_type" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 170 .
+
+pony:variable_declaration a owl:Class ;
+    rdfs:label "variable_declaration" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 189 .
+
+pony:viewpoint_type a owl:Class ;
+    rdfs:label "viewpoint_type" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 178 .
+
+pony:while_statement a owl:Class ;
+    rdfs:label "while_statement" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 210 .
+
+pony:with_elem a owl:Class ;
+    rdfs:label "with_elem" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 213 .
+
+pony:with_statement a owl:Class ;
+    rdfs:label "with_statement" ;
+    rdfs:isDefinedBy pony: ;
+    rdfs:subClassOf ast:Node ;
+    pony:isSupertype true ;
+    pony:nodeTypeId 212 .
+
+pony: a owl:Ontology ;
+    rdfs:label "Pony Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for pony" ;
+    owl:versionInfo "v0.25" ;
+    pony:abiVersion 14 ;
+    pony:fieldCount 10 ;
+    pony:languageName "None" ;
+    pony:nodeKindCount 260 .
+

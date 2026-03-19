@@ -1,0 +1,226 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix ninja: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/ninja/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ninja:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+ninja:body a owl:Class ;
+    rdfs:label "body" ;
+    rdfs:isDefinedBy ninja: ;
+    rdfs:subClassOf ast:Node ;
+    ninja:isSupertype true ;
+    ninja:nodeTypeId 34 .
+
+ninja:build a owl:Class ;
+    rdfs:label "build" ;
+    rdfs:isDefinedBy ninja: ;
+    rdfs:subClassOf ast:Node ;
+    ninja:isSupertype true ;
+    ninja:nodeTypeId 31 .
+
+ninja:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy ninja: ;
+    rdfs:subClassOf ast:Node ;
+    ninja:isSupertype true ;
+    ninja:nodeTypeId 22 .
+
+ninja:default a owl:Class ;
+    rdfs:label "default" ;
+    rdfs:isDefinedBy ninja: ;
+    rdfs:subClassOf ast:Node ;
+    ninja:isSupertype true ;
+    ninja:nodeTypeId 30 .
+
+ninja:dependencies a owl:Class ;
+    rdfs:label "dependencies" ;
+    rdfs:isDefinedBy ninja: ;
+    rdfs:subClassOf ast:Node ;
+    ninja:isSupertype true ;
+    ninja:nodeTypeId 49 .
+
+ninja:expansion a owl:Class ;
+    rdfs:label "expansion" ;
+    rdfs:isDefinedBy ninja: ;
+    rdfs:subClassOf ast:Node ;
+    ninja:isSupertype true ;
+    ninja:nodeTypeId 42 .
+
+ninja:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+ninja:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+ninja:field_explicit a owl:ObjectProperty ;
+    rdfs:label "explicit (structural)" ;
+    rdfs:comment "Structural reference for explicit field when it contains a non-terminal node" ;
+    ninja:fieldId 1 .
+
+ninja:field_implict a owl:ObjectProperty ;
+    rdfs:label "implict (structural)" ;
+    rdfs:comment "Structural reference for implict field when it contains a non-terminal node" ;
+    ninja:fieldId 2 .
+
+ninja:field_order_only a owl:ObjectProperty ;
+    rdfs:label "order_only (structural)" ;
+    rdfs:comment "Structural reference for order_only field when it contains a non-terminal node" ;
+    ninja:fieldId 4 .
+
+ninja:field_validation a owl:ObjectProperty ;
+    rdfs:label "validation (structural)" ;
+    rdfs:comment "Structural reference for validation field when it contains a non-terminal node" ;
+    ninja:fieldId 6 .
+
+ninja:field_value a owl:ObjectProperty ;
+    rdfs:label "value (structural)" ;
+    rdfs:comment "Structural reference for value field when it contains a non-terminal node" ;
+    ninja:fieldId 7 .
+
+ninja:identifier a owl:Class ;
+    rdfs:label "identifier" ;
+    rdfs:isDefinedBy ninja: ;
+    rdfs:subClassOf ast:Node ;
+    ninja:isSupertype true ;
+    ninja:nodeTypeId 1,
+        21 .
+
+ninja:include a owl:Class ;
+    rdfs:label "include" ;
+    rdfs:isDefinedBy ninja: ;
+    rdfs:subClassOf ast:Node ;
+    ninja:isSupertype true ;
+    ninja:nodeTypeId 32 .
+
+ninja:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+ninja:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+ninja:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+ninja:let a owl:Class ;
+    rdfs:label "let" ;
+    rdfs:isDefinedBy ninja: ;
+    rdfs:subClassOf ast:Node ;
+    ninja:isSupertype true ;
+    ninja:nodeTypeId 29 .
+
+ninja:manifest a owl:Class ;
+    rdfs:label "manifest" ;
+    rdfs:isDefinedBy ninja: ;
+    rdfs:subClassOf ast:Node ;
+    ninja:isSupertype true ;
+    ninja:nodeTypeId 25 .
+
+ninja:name a owl:DatatypeProperty ;
+    rdfs:label "name (literal)" ;
+    rdfs:comment "Literal value for name field when it contains a terminal node" ;
+    ninja:fieldId 3 ;
+    ninja:isTerminalField true .
+
+ninja:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+ninja:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+ninja:outputs a owl:Class ;
+    rdfs:label "outputs" ;
+    rdfs:isDefinedBy ninja: ;
+    rdfs:subClassOf ast:Node ;
+    ninja:isSupertype true ;
+    ninja:nodeTypeId 50 .
+
+ninja:path a owl:Class ;
+    rdfs:label "path" ;
+    rdfs:isDefinedBy ninja: ;
+    rdfs:subClassOf ast:Node ;
+    ninja:isSupertype true ;
+    ninja:nodeTypeId 38 .
+
+ninja:pool a owl:Class ;
+    rdfs:label "pool" ;
+    rdfs:isDefinedBy ninja: ;
+    rdfs:subClassOf ast:Node ;
+    ninja:isSupertype true ;
+    ninja:nodeTypeId 27 .
+
+ninja:quote a owl:Class ;
+    rdfs:label "quote" ;
+    rdfs:isDefinedBy ninja: ;
+    rdfs:subClassOf ast:Node ;
+    ninja:isSupertype true ;
+    ninja:nodeTypeId 40 .
+
+ninja:rule a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "rule",
+        "rule (literal)" ;
+    rdfs:comment "Literal value for rule field when it contains a terminal node" ;
+    rdfs:isDefinedBy ninja: ;
+    rdfs:subClassOf ast:Node ;
+    ninja:fieldId 5 ;
+    ninja:isSupertype true ;
+    ninja:isTerminalField true ;
+    ninja:nodeTypeId 28 .
+
+ninja:split a owl:Class ;
+    rdfs:label "split" ;
+    rdfs:isDefinedBy ninja: ;
+    rdfs:subClassOf ast:Node ;
+    ninja:isSupertype true ;
+    ninja:nodeTypeId 41 .
+
+ninja:subninja a owl:Class ;
+    rdfs:label "subninja" ;
+    rdfs:isDefinedBy ninja: ;
+    rdfs:subClassOf ast:Node ;
+    ninja:isSupertype true ;
+    ninja:nodeTypeId 33 .
+
+ninja:targets a owl:Class ;
+    rdfs:label "targets" ;
+    rdfs:isDefinedBy ninja: ;
+    rdfs:subClassOf ast:Node ;
+    ninja:isSupertype true ;
+    ninja:nodeTypeId 37 .
+
+ninja:text a owl:Class ;
+    rdfs:label "text" ;
+    rdfs:isDefinedBy ninja: ;
+    rdfs:subClassOf ast:Node ;
+    ninja:isSupertype true ;
+    ninja:nodeTypeId 35 .
+
+ninja: a owl:Ontology ;
+    rdfs:label "Ninja Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for ninja" ;
+    owl:versionInfo "v0.25" ;
+    ninja:abiVersion 13 ;
+    ninja:fieldCount 7 ;
+    ninja:languageName "None" ;
+    ninja:nodeKindCount 51 .
+

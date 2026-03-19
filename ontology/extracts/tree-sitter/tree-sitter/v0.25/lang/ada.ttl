@@ -1,0 +1,2058 @@
+@prefix ada: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/ada/> .
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ada:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+ada:abort_statement a owl:Class ;
+    rdfs:label "abort_statement" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 370 .
+
+ada:abortable_part a owl:DatatypeProperty ;
+    rdfs:label "abortable_part (literal)" ;
+    rdfs:comment "Literal value for abortable_part field when it contains a terminal node" ;
+    ada:fieldId 1 ;
+    ada:isTerminalField true .
+
+ada:accept_alternative a owl:Class ;
+    rdfs:label "accept_alternative" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 367 .
+
+ada:accept_statement a owl:Class ;
+    rdfs:label "accept_statement" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 372 .
+
+ada:access_definition a owl:Class ;
+    rdfs:label "access_definition" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 184 .
+
+ada:access_to_object_definition a owl:Class ;
+    rdfs:label "access_to_object_definition" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 182 .
+
+ada:access_to_subprogram_definition a owl:Class ;
+    rdfs:label "access_to_subprogram_definition" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 181 .
+
+ada:actual_parameter_part a owl:Class ;
+    rdfs:label "actual_parameter_part" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 185 .
+
+ada:allocator a owl:Class ;
+    rdfs:label "allocator" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 177 .
+
+ada:array_component_association a owl:Class ;
+    rdfs:label "array_component_association" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 253 .
+
+ada:array_delta_aggregate a owl:Class ;
+    rdfs:label "array_delta_aggregate" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 200 .
+
+ada:array_type_definition a owl:Class ;
+    rdfs:label "array_type_definition" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 221 .
+
+ada:aspect_association a owl:Class ;
+    rdfs:label "aspect_association" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 256 .
+
+ada:aspect_mark_list a owl:Class ;
+    rdfs:label "aspect_mark_list" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 260 .
+
+ada:aspect_specification a owl:Class ;
+    rdfs:label "aspect_specification" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 261 .
+
+ada:assignment_statement a owl:Class ;
+    rdfs:label "assignment_statement" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 394 .
+
+ada:asynchronous_select a owl:Class ;
+    rdfs:label "asynchronous_select" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 360 .
+
+ada:at_clause a owl:Class ;
+    rdfs:label "at_clause" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 263 .
+
+ada:attribute_definition_clause a owl:Class ;
+    rdfs:label "attribute_definition_clause" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 264 .
+
+ada:attribute_designator a owl:Class ;
+    rdfs:label "attribute_designator" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 140 .
+
+ada:binary_adding_operator a owl:Class ;
+    rdfs:label "binary_adding_operator" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 119 .
+
+ada:block_statement a owl:Class ;
+    rdfs:label "block_statement" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 375 .
+
+ada:body_stub a owl:Class ;
+    rdfs:label "body_stub" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 265 .
+
+ada:callable_entity_name a owl:DatatypeProperty ;
+    rdfs:label "callable_entity_name (literal)" ;
+    rdfs:comment "Literal value for callable_entity_name field when it contains a terminal node" ;
+    ada:fieldId 2 ;
+    ada:isTerminalField true .
+
+ada:case_expression a owl:Class ;
+    rdfs:label "case_expression" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 193 .
+
+ada:case_expression_alternative a owl:Class ;
+    rdfs:label "case_expression_alternative" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 194 .
+
+ada:case_statement a owl:Class ;
+    rdfs:label "case_statement" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 374 .
+
+ada:case_statement_alternative a owl:Class ;
+    rdfs:label "case_statement_alternative" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 373 .
+
+ada:character_literal a owl:Class ;
+    rdfs:label "character_literal" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 5 .
+
+ada:choice_parameter_specification a owl:Class ;
+    rdfs:label "choice_parameter_specification" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 278 .
+
+ada:chunk_specification a owl:Class ;
+    rdfs:label "chunk_specification" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 133 .
+
+ada:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 3 .
+
+ada:compilation a owl:Class ;
+    rdfs:label "compilation" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 117 .
+
+ada:compilation_unit a owl:Class ;
+    rdfs:label "compilation_unit" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 142 .
+
+ada:component_choice_list a owl:Class ;
+    rdfs:label "component_choice_list" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 195 .
+
+ada:component_clause a owl:Class ;
+    rdfs:label "component_clause" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 279 .
+
+ada:component_declaration a owl:Class ;
+    rdfs:label "component_declaration" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 246 .
+
+ada:component_definition a owl:Class ;
+    rdfs:label "component_definition" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 247 .
+
+ada:component_list a owl:Class ;
+    rdfs:label "component_list" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 244 .
+
+ada:conditional_entry_call a owl:Class ;
+    rdfs:label "conditional_entry_call" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 362 .
+
+ada:decimal_fixed_point_definition a owl:Class ;
+    rdfs:label "decimal_fixed_point_definition" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 235 .
+
+ada:declare_expression a owl:Class ;
+    rdfs:label "declare_expression" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 190 .
+
+ada:default_name a owl:DatatypeProperty ;
+    rdfs:label "default_name (literal)" ;
+    rdfs:comment "Literal value for default_name field when it contains a terminal node" ;
+    ada:fieldId 4 ;
+    ada:isTerminalField true .
+
+ada:default_subtype_mark a owl:DatatypeProperty ;
+    rdfs:label "default_subtype_mark (literal)" ;
+    rdfs:comment "Literal value for default_subtype_mark field when it contains a terminal node" ;
+    ada:fieldId 5 ;
+    ada:isTerminalField true .
+
+ada:defining_program_unit_name a owl:DatatypeProperty ;
+    rdfs:label "defining_program_unit_name (literal)" ;
+    rdfs:comment "Literal value for defining_program_unit_name field when it contains a terminal node" ;
+    ada:fieldId 6 ;
+    ada:isTerminalField true .
+
+ada:delay_alternative a owl:Class ;
+    rdfs:label "delay_alternative" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 363 .
+
+ada:delay_relative_statement a owl:Class ;
+    rdfs:label "delay_relative_statement" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 384 .
+
+ada:delay_until_statement a owl:Class ;
+    rdfs:label "delay_until_statement" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 383 .
+
+ada:delta_constraint a owl:Class ;
+    rdfs:label "delta_constraint" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 208 .
+
+ada:derived_type_definition a owl:Class ;
+    rdfs:label "derived_type_definition" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 238 .
+
+ada:digits_constraint a owl:Class ;
+    rdfs:label "digits_constraint" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 207 .
+
+ada:discrete_choice a owl:Class ;
+    rdfs:label "discrete_choice" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 255 .
+
+ada:discrete_choice_list a owl:Class ;
+    rdfs:label "discrete_choice_list" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 254 .
+
+ada:discriminant_association a owl:Class ;
+    rdfs:label "discriminant_association" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 156 .
+
+ada:discriminant_constraint a owl:Class ;
+    rdfs:label "discriminant_constraint" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 155 .
+
+ada:discriminant_specification a owl:Class ;
+    rdfs:label "discriminant_specification" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 219 .
+
+ada:discriminant_specification_list a owl:Class ;
+    rdfs:label "discriminant_specification_list" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 218 .
+
+ada:else_statements a owl:DatatypeProperty ;
+    rdfs:label "else_statements (literal)" ;
+    rdfs:comment "Literal value for else_statements field when it contains a terminal node" ;
+    ada:fieldId 7 ;
+    ada:isTerminalField true .
+
+ada:elsif_expression_item a owl:Class ;
+    rdfs:label "elsif_expression_item" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 344 .
+
+ada:elsif_statement_item a owl:Class ;
+    rdfs:label "elsif_statement_item" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 377 .
+
+ada:end_local_name a owl:DatatypeProperty ;
+    rdfs:label "end_local_name (literal)" ;
+    rdfs:comment "Literal value for end_local_name field when it contains a terminal node" ;
+    ada:fieldId 8 ;
+    ada:isTerminalField true .
+
+ada:endname a owl:DatatypeProperty ;
+    rdfs:label "endname (literal)" ;
+    rdfs:comment "Literal value for endname field when it contains a terminal node" ;
+    ada:fieldId 9 ;
+    ada:isTerminalField true .
+
+ada:entry_barrier a owl:Class ;
+    rdfs:label "entry_barrier" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 284 .
+
+ada:entry_body a owl:Class ;
+    rdfs:label "entry_body" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 283 .
+
+ada:entry_call_alternative a owl:Class ;
+    rdfs:label "entry_call_alternative" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 359 .
+
+ada:entry_declaration a owl:Class ;
+    rdfs:label "entry_declaration" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 282 .
+
+ada:entry_direct_name a owl:DatatypeProperty ;
+    rdfs:label "entry_direct_name (literal)" ;
+    rdfs:comment "Literal value for entry_direct_name field when it contains a terminal node" ;
+    ada:fieldId 10 ;
+    ada:isTerminalField true .
+
+ada:entry_identifier a owl:DatatypeProperty ;
+    rdfs:label "entry_identifier (literal)" ;
+    rdfs:comment "Literal value for entry_identifier field when it contains a terminal node" ;
+    ada:fieldId 11 ;
+    ada:isTerminalField true .
+
+ada:entry_index_specification a owl:Class ;
+    rdfs:label "entry_index_specification" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 285 .
+
+ada:entry_name a owl:DatatypeProperty ;
+    rdfs:label "entry_name (literal)" ;
+    rdfs:comment "Literal value for entry_name field when it contains a terminal node" ;
+    ada:fieldId 13 ;
+    ada:isTerminalField true .
+
+ada:enumeration_aggregate a owl:Class ;
+    rdfs:label "enumeration_aggregate" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 286 .
+
+ada:enumeration_representation_clause a owl:Class ;
+    rdfs:label "enumeration_representation_clause" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 287 .
+
+ada:enumeration_type_definition a owl:Class ;
+    rdfs:label "enumeration_type_definition" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 226 .
+
+ada:exception_choice a owl:Class ;
+    rdfs:label "exception_choice" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 289 .
+
+ada:exception_choice_list a owl:Class ;
+    rdfs:label "exception_choice_list" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 288 .
+
+ada:exception_declaration a owl:Class ;
+    rdfs:label "exception_declaration" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 290 .
+
+ada:exception_handler a owl:Class ;
+    rdfs:label "exception_handler" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 291 .
+
+ada:exception_name a owl:DatatypeProperty ;
+    rdfs:label "exception_name (literal)" ;
+    rdfs:comment "Literal value for exception_name field when it contains a terminal node" ;
+    ada:fieldId 14 ;
+    ada:isTerminalField true .
+
+ada:exception_renaming_declaration a owl:Class ;
+    rdfs:label "exception_renaming_declaration" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 349 .
+
+ada:exit_statement a owl:Class ;
+    rdfs:label "exit_statement" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 380 .
+
+ada:expression a owl:Class ;
+    rdfs:label "expression" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 162 .
+
+ada:expression_function_declaration a owl:Class ;
+    rdfs:label "expression_function_declaration" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 396 .
+
+ada:extended_return_object_declaration a owl:Class ;
+    rdfs:label "extended_return_object_declaration" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 387 .
+
+ada:extended_return_statement a owl:Class ;
+    rdfs:label "extended_return_statement" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 386 .
+
+ada:extension_aggregate a owl:Class ;
+    rdfs:label "extension_aggregate" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 198 .
+
+ada:factor_abs a owl:Class ;
+    rdfs:label "factor_abs" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 172 .
+
+ada:factor_not a owl:Class ;
+    rdfs:label "factor_not" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 173 .
+
+ada:factor_power a owl:Class ;
+    rdfs:label "factor_power" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 171 .
+
+ada:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+ada:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+ada:field_abortable_part a owl:ObjectProperty ;
+    rdfs:label "abortable_part (structural)" ;
+    rdfs:comment "Structural reference for abortable_part field when it contains a non-terminal node" ;
+    ada:fieldId 1 .
+
+ada:field_callable_entity_name a owl:ObjectProperty ;
+    rdfs:label "callable_entity_name (structural)" ;
+    rdfs:comment "Structural reference for callable_entity_name field when it contains a non-terminal node" ;
+    ada:fieldId 2 .
+
+ada:field_condition a owl:ObjectProperty ;
+    rdfs:label "condition (structural)" ;
+    rdfs:comment "Structural reference for condition field when it contains a non-terminal node" ;
+    ada:fieldId 3 .
+
+ada:field_default_name a owl:ObjectProperty ;
+    rdfs:label "default_name (structural)" ;
+    rdfs:comment "Structural reference for default_name field when it contains a non-terminal node" ;
+    ada:fieldId 4 .
+
+ada:field_default_subtype_mark a owl:ObjectProperty ;
+    rdfs:label "default_subtype_mark (structural)" ;
+    rdfs:comment "Structural reference for default_subtype_mark field when it contains a non-terminal node" ;
+    ada:fieldId 5 .
+
+ada:field_defining_program_unit_name a owl:ObjectProperty ;
+    rdfs:label "defining_program_unit_name (structural)" ;
+    rdfs:comment "Structural reference for defining_program_unit_name field when it contains a non-terminal node" ;
+    ada:fieldId 6 .
+
+ada:field_else_statements a owl:ObjectProperty ;
+    rdfs:label "else_statements (structural)" ;
+    rdfs:comment "Structural reference for else_statements field when it contains a non-terminal node" ;
+    ada:fieldId 7 .
+
+ada:field_end_local_name a owl:ObjectProperty ;
+    rdfs:label "end_local_name (structural)" ;
+    rdfs:comment "Structural reference for end_local_name field when it contains a non-terminal node" ;
+    ada:fieldId 8 .
+
+ada:field_endname a owl:ObjectProperty ;
+    rdfs:label "endname (structural)" ;
+    rdfs:comment "Structural reference for endname field when it contains a non-terminal node" ;
+    ada:fieldId 9 .
+
+ada:field_entry_index a owl:ObjectProperty ;
+    rdfs:label "entry_index (structural)" ;
+    rdfs:comment "Structural reference for entry_index field when it contains a non-terminal node" ;
+    ada:fieldId 12 .
+
+ada:field_exception_name a owl:ObjectProperty ;
+    rdfs:label "exception_name (structural)" ;
+    rdfs:comment "Structural reference for exception_name field when it contains a non-terminal node" ;
+    ada:fieldId 14 .
+
+ada:field_first_bit a owl:ObjectProperty ;
+    rdfs:label "first_bit (structural)" ;
+    rdfs:comment "Structural reference for first_bit field when it contains a non-terminal node" ;
+    ada:fieldId 15 .
+
+ada:field_generic_function_name a owl:ObjectProperty ;
+    rdfs:label "generic_function_name (structural)" ;
+    rdfs:comment "Structural reference for generic_function_name field when it contains a non-terminal node" ;
+    ada:fieldId 16 .
+
+ada:field_generic_name a owl:ObjectProperty ;
+    rdfs:label "generic_name (structural)" ;
+    rdfs:comment "Structural reference for generic_name field when it contains a non-terminal node" ;
+    ada:fieldId 17 .
+
+ada:field_generic_package_name a owl:ObjectProperty ;
+    rdfs:label "generic_package_name (structural)" ;
+    rdfs:comment "Structural reference for generic_package_name field when it contains a non-terminal node" ;
+    ada:fieldId 18 .
+
+ada:field_generic_procedure_name a owl:ObjectProperty ;
+    rdfs:label "generic_procedure_name (structural)" ;
+    rdfs:comment "Structural reference for generic_procedure_name field when it contains a non-terminal node" ;
+    ada:fieldId 19 .
+
+ada:field_global_set a owl:ObjectProperty ;
+    rdfs:label "global_set (structural)" ;
+    rdfs:comment "Structural reference for global_set field when it contains a non-terminal node" ;
+    ada:fieldId 20 .
+
+ada:field_is_abstract a owl:ObjectProperty ;
+    rdfs:label "is_abstract (structural)" ;
+    rdfs:comment "Structural reference for is_abstract field when it contains a non-terminal node" ;
+    ada:fieldId 21 .
+
+ada:field_is_all a owl:ObjectProperty ;
+    rdfs:label "is_all (structural)" ;
+    rdfs:comment "Structural reference for is_all field when it contains a non-terminal node" ;
+    ada:fieldId 22 .
+
+ada:field_is_limited a owl:ObjectProperty ;
+    rdfs:label "is_limited (structural)" ;
+    rdfs:comment "Structural reference for is_limited field when it contains a non-terminal node" ;
+    ada:fieldId 23 .
+
+ada:field_is_parallel a owl:ObjectProperty ;
+    rdfs:label "is_parallel (structural)" ;
+    rdfs:comment "Structural reference for is_parallel field when it contains a non-terminal node" ;
+    ada:fieldId 24 .
+
+ada:field_is_private a owl:ObjectProperty ;
+    rdfs:label "is_private (structural)" ;
+    rdfs:comment "Structural reference for is_private field when it contains a non-terminal node" ;
+    ada:fieldId 25 .
+
+ada:field_is_type a owl:ObjectProperty ;
+    rdfs:label "is_type (structural)" ;
+    rdfs:comment "Structural reference for is_type field when it contains a non-terminal node" ;
+    ada:fieldId 26 .
+
+ada:field_iterator_name a owl:ObjectProperty ;
+    rdfs:label "iterator_name (structural)" ;
+    rdfs:comment "Structural reference for iterator_name field when it contains a non-terminal node" ;
+    ada:fieldId 27 .
+
+ada:field_label_name a owl:ObjectProperty ;
+    rdfs:label "label_name (structural)" ;
+    rdfs:comment "Structural reference for label_name field when it contains a non-terminal node" ;
+    ada:fieldId 28 .
+
+ada:field_last_bit a owl:ObjectProperty ;
+    rdfs:label "last_bit (structural)" ;
+    rdfs:comment "Structural reference for last_bit field when it contains a non-terminal node" ;
+    ada:fieldId 29 .
+
+ada:field_left a owl:ObjectProperty ;
+    rdfs:label "left (structural)" ;
+    rdfs:comment "Structural reference for left field when it contains a non-terminal node" ;
+    ada:fieldId 30 .
+
+ada:field_local_name a owl:ObjectProperty ;
+    rdfs:label "local_name (structural)" ;
+    rdfs:comment "Structural reference for local_name field when it contains a non-terminal node" ;
+    ada:fieldId 31 .
+
+ada:field_loop_name a owl:ObjectProperty ;
+    rdfs:label "loop_name (structural)" ;
+    rdfs:comment "Structural reference for loop_name field when it contains a non-terminal node" ;
+    ada:fieldId 32 .
+
+ada:field_name a owl:ObjectProperty ;
+    rdfs:label "name (structural)" ;
+    rdfs:comment "Structural reference for name field when it contains a non-terminal node" ;
+    ada:fieldId 33 .
+
+ada:field_object_name a owl:ObjectProperty ;
+    rdfs:label "object_name (structural)" ;
+    rdfs:comment "Structural reference for object_name field when it contains a non-terminal node" ;
+    ada:fieldId 34 .
+
+ada:field_package_name a owl:ObjectProperty ;
+    rdfs:label "package_name (structural)" ;
+    rdfs:comment "Structural reference for package_name field when it contains a non-terminal node" ;
+    ada:fieldId 35 .
+
+ada:field_parameter_profile a owl:ObjectProperty ;
+    rdfs:label "parameter_profile (structural)" ;
+    rdfs:comment "Structural reference for parameter_profile field when it contains a non-terminal node" ;
+    ada:fieldId 36 .
+
+ada:field_parent_unit_name a owl:ObjectProperty ;
+    rdfs:label "parent_unit_name (structural)" ;
+    rdfs:comment "Structural reference for parent_unit_name field when it contains a non-terminal node" ;
+    ada:fieldId 37 .
+
+ada:field_position a owl:ObjectProperty ;
+    rdfs:label "position (structural)" ;
+    rdfs:comment "Structural reference for position field when it contains a non-terminal node" ;
+    ada:fieldId 38 .
+
+ada:field_predicate a owl:ObjectProperty ;
+    rdfs:label "predicate (structural)" ;
+    rdfs:comment "Structural reference for predicate field when it contains a non-terminal node" ;
+    ada:fieldId 39 .
+
+ada:field_prefix a owl:ObjectProperty ;
+    rdfs:label "prefix (structural)" ;
+    rdfs:comment "Structural reference for prefix field when it contains a non-terminal node" ;
+    ada:fieldId 40 .
+
+ada:field_range_attribute_reference a owl:ObjectProperty ;
+    rdfs:label "range_attribute_reference (structural)" ;
+    rdfs:comment "Structural reference for range_attribute_reference field when it contains a non-terminal node" ;
+    ada:fieldId 41 .
+
+ada:field_right a owl:ObjectProperty ;
+    rdfs:label "right (structural)" ;
+    rdfs:comment "Structural reference for right field when it contains a non-terminal node" ;
+    ada:fieldId 42 .
+
+ada:field_statements a owl:ObjectProperty ;
+    rdfs:label "statements (structural)" ;
+    rdfs:comment "Structural reference for statements field when it contains a non-terminal node" ;
+    ada:fieldId 45 .
+
+ada:field_subpool_handle_name a owl:ObjectProperty ;
+    rdfs:label "subpool_handle_name (structural)" ;
+    rdfs:comment "Structural reference for subpool_handle_name field when it contains a non-terminal node" ;
+    ada:fieldId 46 .
+
+ada:field_subtype_mark a owl:ObjectProperty ;
+    rdfs:label "subtype_mark (structural)" ;
+    rdfs:comment "Structural reference for subtype_mark field when it contains a non-terminal node" ;
+    ada:fieldId 47 .
+
+ada:field_subtype_name a owl:ObjectProperty ;
+    rdfs:label "subtype_name (structural)" ;
+    rdfs:comment "Structural reference for subtype_name field when it contains a non-terminal node" ;
+    ada:fieldId 48 .
+
+ada:field_variable_name a owl:ObjectProperty ;
+    rdfs:label "variable_name (structural)" ;
+    rdfs:comment "Structural reference for variable_name field when it contains a non-terminal node" ;
+    ada:fieldId 49 .
+
+ada:first_bit a owl:DatatypeProperty ;
+    rdfs:label "first_bit (literal)" ;
+    rdfs:comment "Literal value for first_bit field when it contains a terminal node" ;
+    ada:fieldId 15 ;
+    ada:isTerminalField true .
+
+ada:floating_point_definition a owl:Class ;
+    rdfs:label "floating_point_definition" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 232 .
+
+ada:formal_abstract_subprogram_declaration a owl:Class ;
+    rdfs:label "formal_abstract_subprogram_declaration" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 318 .
+
+ada:formal_access_type_definition a owl:Class ;
+    rdfs:label "formal_access_type_definition" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 314 .
+
+ada:formal_array_type_definition a owl:Class ;
+    rdfs:label "formal_array_type_definition" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 313 .
+
+ada:formal_complete_type_declaration a owl:Class ;
+    rdfs:label "formal_complete_type_declaration" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 302 .
+
+ada:formal_concrete_subprogram_declaration a owl:Class ;
+    rdfs:label "formal_concrete_subprogram_declaration" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 317 .
+
+ada:formal_decimal_fixed_point_definition a owl:Class ;
+    rdfs:label "formal_decimal_fixed_point_definition" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 312 .
+
+ada:formal_derived_type_definition a owl:Class ;
+    rdfs:label "formal_derived_type_definition" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 306 .
+
+ada:formal_discrete_type_definition a owl:Class ;
+    rdfs:label "formal_discrete_type_definition" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 307 .
+
+ada:formal_floating_point_definition a owl:Class ;
+    rdfs:label "formal_floating_point_definition" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 310 .
+
+ada:formal_incomplete_type_declaration a owl:Class ;
+    rdfs:label "formal_incomplete_type_declaration" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 303 .
+
+ada:formal_interface_type_definition a owl:Class ;
+    rdfs:label "formal_interface_type_definition" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 315 .
+
+ada:formal_modular_type_definition a owl:Class ;
+    rdfs:label "formal_modular_type_definition" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 309 .
+
+ada:formal_object_declaration a owl:Class ;
+    rdfs:label "formal_object_declaration" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 300 .
+
+ada:formal_ordinary_fixed_point_definition a owl:Class ;
+    rdfs:label "formal_ordinary_fixed_point_definition" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 311 .
+
+ada:formal_package_declaration a owl:Class ;
+    rdfs:label "formal_package_declaration" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 320 .
+
+ada:formal_part a owl:Class ;
+    rdfs:label "formal_part" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 292 .
+
+ada:formal_private_type_definition a owl:Class ;
+    rdfs:label "formal_private_type_definition" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 305 .
+
+ada:formal_signed_integer_type_definition a owl:Class ;
+    rdfs:label "formal_signed_integer_type_definition" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 308 .
+
+ada:formal_subprogram_declaration a owl:Class ;
+    rdfs:label "formal_subprogram_declaration" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 316 .
+
+ada:full_type_declaration a owl:Class ;
+    rdfs:label "full_type_declaration" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 211 .
+
+ada:function_call a owl:Class ;
+    rdfs:label "function_call" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 390 .
+
+ada:function_specification a owl:Class ;
+    rdfs:label "function_specification" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 293 .
+
+ada:general_access_modifier a owl:Class ;
+    rdfs:label "general_access_modifier" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 183 .
+
+ada:generic_formal_part a owl:Class ;
+    rdfs:label "generic_formal_part" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 295 .
+
+ada:generic_function_name a owl:DatatypeProperty ;
+    rdfs:label "generic_function_name (literal)" ;
+    rdfs:comment "Literal value for generic_function_name field when it contains a terminal node" ;
+    ada:fieldId 16 ;
+    ada:isTerminalField true .
+
+ada:generic_instantiation a owl:Class ;
+    rdfs:label "generic_instantiation" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 299 .
+
+ada:generic_name a owl:DatatypeProperty ;
+    rdfs:label "generic_name (literal)" ;
+    rdfs:comment "Literal value for generic_name field when it contains a terminal node" ;
+    ada:fieldId 17 ;
+    ada:isTerminalField true .
+
+ada:generic_package_declaration a owl:Class ;
+    rdfs:label "generic_package_declaration" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 298 .
+
+ada:generic_package_name a owl:DatatypeProperty ;
+    rdfs:label "generic_package_name (literal)" ;
+    rdfs:comment "Literal value for generic_package_name field when it contains a terminal node" ;
+    ada:fieldId 18 ;
+    ada:isTerminalField true .
+
+ada:generic_procedure_name a owl:DatatypeProperty ;
+    rdfs:label "generic_procedure_name (literal)" ;
+    rdfs:comment "Literal value for generic_procedure_name field when it contains a terminal node" ;
+    ada:fieldId 19 ;
+    ada:isTerminalField true .
+
+ada:generic_renaming_declaration a owl:Class ;
+    rdfs:label "generic_renaming_declaration" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 352 .
+
+ada:generic_subprogram_declaration a owl:Class ;
+    rdfs:label "generic_subprogram_declaration" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 297 .
+
+ada:global_aspect_definition a owl:Class ;
+    rdfs:label "global_aspect_definition" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 321 .
+
+ada:global_aspect_element a owl:Class ;
+    rdfs:label "global_aspect_element" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 322 .
+
+ada:global_mode a owl:Class ;
+    rdfs:label "global_mode" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 323 .
+
+ada:global_set a owl:DatatypeProperty ;
+    rdfs:label "global_set (literal)" ;
+    rdfs:comment "Literal value for global_set field when it contains a terminal node" ;
+    ada:fieldId 20 ;
+    ada:isTerminalField true .
+
+ada:gnatprep_declarative_if_statement a owl:Class ;
+    rdfs:label "gnatprep_declarative_if_statement" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 378 .
+
+ada:gnatprep_identifier a owl:Class ;
+    rdfs:label "gnatprep_identifier" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 2 .
+
+ada:gnatprep_if_statement a owl:Class ;
+    rdfs:label "gnatprep_if_statement" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 379 .
+
+ada:goto_statement a owl:Class ;
+    rdfs:label "goto_statement" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 381 .
+
+ada:guard a owl:Class ;
+    rdfs:label "guard" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 365 .
+
+ada:handled_sequence_of_statements a owl:Class ;
+    rdfs:label "handled_sequence_of_statements" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 324 .
+
+ada:identifier a owl:Class ;
+    rdfs:label "identifier" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 1 .
+
+ada:if_expression a owl:Class ;
+    rdfs:label "if_expression" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 343 .
+
+ada:if_statement a owl:Class ;
+    rdfs:label "if_statement" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 376 .
+
+ada:incomplete_type_declaration a owl:Class ;
+    rdfs:label "incomplete_type_declaration" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 217 .
+
+ada:index_constraint a owl:Class ;
+    rdfs:label "index_constraint" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 206 .
+
+ada:index_subtype_definition a owl:Class ;
+    rdfs:label "index_subtype_definition" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 225 .
+
+ada:interface_type_definition a owl:Class ;
+    rdfs:label "interface_type_definition" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 239 .
+
+ada:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+ada:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+ada:iterated_element_association a owl:Class ;
+    rdfs:label "iterated_element_association" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 134 .
+
+ada:iteration_scheme a owl:Class ;
+    rdfs:label "iteration_scheme" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 393 .
+
+ada:iterator_filter a owl:Class ;
+    rdfs:label "iterator_filter" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 138 .
+
+ada:iterator_name a owl:DatatypeProperty ;
+    rdfs:label "iterator_name (literal)" ;
+    rdfs:comment "Literal value for iterator_name field when it contains a terminal node" ;
+    ada:fieldId 27 ;
+    ada:isTerminalField true .
+
+ada:iterator_specification a owl:Class ;
+    rdfs:label "iterator_specification" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 139 .
+
+ada:known_discriminant_part a owl:Class ;
+    rdfs:label "known_discriminant_part" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 216 .
+
+ada:label a owl:Class ;
+    rdfs:label "label" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 326 .
+
+ada:label_name a owl:DatatypeProperty ;
+    rdfs:label "label_name (literal)" ;
+    rdfs:comment "Literal value for label_name field when it contains a terminal node" ;
+    ada:fieldId 28 ;
+    ada:isTerminalField true .
+
+ada:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+ada:last_bit a owl:DatatypeProperty ;
+    rdfs:label "last_bit (literal)" ;
+    rdfs:comment "Literal value for last_bit field when it contains a terminal node" ;
+    ada:fieldId 29 ;
+    ada:isTerminalField true .
+
+ada:left a owl:DatatypeProperty ;
+    rdfs:label "left (literal)" ;
+    rdfs:comment "Literal value for left field when it contains a terminal node" ;
+    ada:fieldId 30 ;
+    ada:isTerminalField true .
+
+ada:local_name a owl:DatatypeProperty ;
+    rdfs:label "local_name (literal)" ;
+    rdfs:comment "Literal value for local_name field when it contains a terminal node" ;
+    ada:fieldId 31 ;
+    ada:isTerminalField true .
+
+ada:loop_label a owl:Class ;
+    rdfs:label "loop_label" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 325 .
+
+ada:loop_name a owl:DatatypeProperty ;
+    rdfs:label "loop_name (literal)" ;
+    rdfs:comment "Literal value for loop_name field when it contains a terminal node" ;
+    ada:fieldId 32 ;
+    ada:isTerminalField true .
+
+ada:loop_parameter_specification a owl:Class ;
+    rdfs:label "loop_parameter_specification" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 136 .
+
+ada:loop_statement a owl:Class ;
+    rdfs:label "loop_statement" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 392 .
+
+ada:membership_choice_list a owl:Class ;
+    rdfs:label "membership_choice_list" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 166 .
+
+ada:mod_clause a owl:Class ;
+    rdfs:label "mod_clause" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 327 .
+
+ada:modular_type_definition a owl:Class ;
+    rdfs:label "modular_type_definition" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 230 .
+
+ada:multiplying_operator a owl:Class ;
+    rdfs:label "multiplying_operator" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 121 .
+
+ada:name a owl:DatatypeProperty ;
+    rdfs:label "name (literal)" ;
+    rdfs:comment "Literal value for name field when it contains a terminal node" ;
+    ada:fieldId 33 ;
+    ada:isTerminalField true .
+
+ada:named_array_aggregate a owl:Class ;
+    rdfs:label "named_array_aggregate" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 251 .
+
+ada:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+ada:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+ada:non_empty_declarative_part a owl:Class ;
+    rdfs:label "non_empty_declarative_part" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 281 .
+
+ada:non_empty_mode a owl:Class ;
+    rdfs:label "non_empty_mode" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 328 .
+
+ada:null_array_aggregate a owl:Class ;
+    rdfs:label "null_array_aggregate" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 250 .
+
+ada:null_exclusion a owl:Class ;
+    rdfs:label "null_exclusion" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 205 .
+
+ada:null_procedure_declaration a owl:Class ;
+    rdfs:label "null_procedure_declaration" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 329 .
+
+ada:null_statement a owl:Class ;
+    rdfs:label "null_statement" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 330 .
+
+ada:number_declaration a owl:Class ;
+    rdfs:label "number_declaration" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 331 .
+
+ada:numeric_literal a owl:Class ;
+    rdfs:label "numeric_literal" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 6 .
+
+ada:object_declaration a owl:Class ;
+    rdfs:label "object_declaration" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 332 .
+
+ada:object_name a owl:DatatypeProperty ;
+    rdfs:label "object_name (literal)" ;
+    rdfs:comment "Literal value for object_name field when it contains a terminal node" ;
+    ada:fieldId 34 ;
+    ada:isTerminalField true .
+
+ada:object_renaming_declaration a owl:Class ;
+    rdfs:label "object_renaming_declaration" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 348 .
+
+ada:ordinary_fixed_point_definition a owl:Class ;
+    rdfs:label "ordinary_fixed_point_definition" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 236 .
+
+ada:overriding_indicator a owl:Class ;
+    rdfs:label "overriding_indicator" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 337 .
+
+ada:package_body a owl:Class ;
+    rdfs:label "package_body" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 153 .
+
+ada:package_body_stub a owl:Class ;
+    rdfs:label "package_body_stub" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 267 .
+
+ada:package_declaration a owl:Class ;
+    rdfs:label "package_declaration" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 146 .
+
+ada:package_name a owl:DatatypeProperty ;
+    rdfs:label "package_name (literal)" ;
+    rdfs:comment "Literal value for package_name field when it contains a terminal node" ;
+    ada:fieldId 35 ;
+    ada:isTerminalField true .
+
+ada:package_renaming_declaration a owl:Class ;
+    rdfs:label "package_renaming_declaration" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 350 .
+
+ada:parameter_association a owl:Class ;
+    rdfs:label "parameter_association" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 186 .
+
+ada:parameter_specification a owl:Class ;
+    rdfs:label "parameter_specification" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 339 .
+
+ada:parent_unit_name a owl:DatatypeProperty ;
+    rdfs:label "parent_unit_name (literal)" ;
+    rdfs:comment "Literal value for parent_unit_name field when it contains a terminal node" ;
+    ada:fieldId 37 ;
+    ada:isTerminalField true .
+
+ada:positional_array_aggregate a owl:Class ;
+    rdfs:label "positional_array_aggregate" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 249 .
+
+ada:pragma_argument_association a owl:Class ;
+    rdfs:label "pragma_argument_association" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 342 .
+
+ada:pragma_g a owl:Class ;
+    rdfs:label "pragma_g" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 341 .
+
+ada:prefix a owl:DatatypeProperty ;
+    rdfs:label "prefix (literal)" ;
+    rdfs:comment "Literal value for prefix field when it contains a terminal node" ;
+    ada:fieldId 40 ;
+    ada:isTerminalField true .
+
+ada:primary_null a owl:Class ;
+    rdfs:label "primary_null" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 176 .
+
+ada:private_extension_declaration a owl:Class ;
+    rdfs:label "private_extension_declaration" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 213 .
+
+ada:private_type_declaration a owl:Class ;
+    rdfs:label "private_type_declaration" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 212 .
+
+ada:procedure_call_statement a owl:Class ;
+    rdfs:label "procedure_call_statement" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 389 .
+
+ada:procedure_specification a owl:Class ;
+    rdfs:label "procedure_specification" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 345 .
+
+ada:protected_body a owl:Class ;
+    rdfs:label "protected_body" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 276 .
+
+ada:protected_body_stub a owl:Class ;
+    rdfs:label "protected_body_stub" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 277 .
+
+ada:protected_definition a owl:Class ;
+    rdfs:label "protected_definition" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 273 .
+
+ada:protected_type_declaration a owl:Class ;
+    rdfs:label "protected_type_declaration" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 274 .
+
+ada:qualified_expression a owl:Class ;
+    rdfs:label "qualified_expression" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 141 .
+
+ada:quantified_expression a owl:Class ;
+    rdfs:label "quantified_expression" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 189 .
+
+ada:quantifier a owl:Class ;
+    rdfs:label "quantifier" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 192 .
+
+ada:raise_expression a owl:Class ;
+    rdfs:label "raise_expression" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 165 .
+
+ada:raise_statement a owl:Class ;
+    rdfs:label "raise_statement" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 391 .
+
+ada:range_attribute_designator a owl:Class ;
+    rdfs:label "range_attribute_designator" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 160 .
+
+ada:range_attribute_reference a owl:DatatypeProperty ;
+    rdfs:label "range_attribute_reference (literal)" ;
+    rdfs:comment "Literal value for range_attribute_reference field when it contains a terminal node" ;
+    ada:fieldId 41 ;
+    ada:isTerminalField true .
+
+ada:range_constraint a owl:Class ;
+    rdfs:label "range_constraint" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 161 .
+
+ada:range_g a owl:Class ;
+    rdfs:label "range_g" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 159 .
+
+ada:real_range_specification a owl:Class ;
+    rdfs:label "real_range_specification" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 233 .
+
+ada:record_aggregate a owl:Class ;
+    rdfs:label "record_aggregate" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 201 .
+
+ada:record_component_association_list a owl:Class ;
+    rdfs:label "record_component_association_list" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 202 .
+
+ada:record_definition a owl:Class ;
+    rdfs:label "record_definition" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 243 .
+
+ada:record_delta_aggregate a owl:Class ;
+    rdfs:label "record_delta_aggregate" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 199 .
+
+ada:record_extension_part a owl:Class ;
+    rdfs:label "record_extension_part" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 241 .
+
+ada:record_representation_clause a owl:Class ;
+    rdfs:label "record_representation_clause" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 346 .
+
+ada:record_type_definition a owl:Class ;
+    rdfs:label "record_type_definition" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 242 .
+
+ada:reduction_attribute_designator a owl:Class ;
+    rdfs:label "reduction_attribute_designator" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 130 .
+
+ada:reduction_specification a owl:Class ;
+    rdfs:label "reduction_specification" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 131 .
+
+ada:relation_membership a owl:Class ;
+    rdfs:label "relation_membership" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 164 .
+
+ada:relational_operator a owl:Class ;
+    rdfs:label "relational_operator" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 118 .
+
+ada:requeue_statement a owl:Class ;
+    rdfs:label "requeue_statement" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 371 .
+
+ada:result_profile a owl:Class ;
+    rdfs:label "result_profile" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 353 .
+
+ada:right a owl:DatatypeProperty ;
+    rdfs:label "right (literal)" ;
+    rdfs:comment "Literal value for right field when it contains a terminal node" ;
+    ada:fieldId 42 ;
+    ada:isTerminalField true .
+
+ada:select_alternative a owl:Class ;
+    rdfs:label "select_alternative" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 366 .
+
+ada:selected_component a owl:Class ;
+    rdfs:label "selected_component" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 124 .
+
+ada:selective_accept a owl:Class ;
+    rdfs:label "selective_accept" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 369 .
+
+ada:selector_name a owl:DatatypeProperty ;
+    rdfs:label "selector_name (literal)" ;
+    rdfs:comment "Literal value for selector_name field when it contains a terminal node" ;
+    ada:fieldId 43 ;
+    ada:isTerminalField true .
+
+ada:signed_integer_type_definition a owl:Class ;
+    rdfs:label "signed_integer_type_definition" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 237 .
+
+ada:simple_return_statement a owl:Class ;
+    rdfs:label "simple_return_statement" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 385 .
+
+ada:single_protected_declaration a owl:Class ;
+    rdfs:label "single_protected_declaration" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 275 .
+
+ada:single_task_declaration a owl:Class ;
+    rdfs:label "single_task_declaration" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 333 .
+
+ada:slice a owl:Class ;
+    rdfs:label "slice" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 127 .
+
+ada:statement_identifier a owl:DatatypeProperty ;
+    rdfs:label "statement_identifier (literal)" ;
+    rdfs:comment "Literal value for statement_identifier field when it contains a terminal node" ;
+    ada:fieldId 44 ;
+    ada:isTerminalField true .
+
+ada:statements a owl:DatatypeProperty ;
+    rdfs:label "statements (literal)" ;
+    rdfs:comment "Literal value for statements field when it contains a terminal node" ;
+    ada:fieldId 45 ;
+    ada:isTerminalField true .
+
+ada:string_literal a owl:Class ;
+    rdfs:label "string_literal" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 4 .
+
+ada:subpool_handle_name a owl:DatatypeProperty ;
+    rdfs:label "subpool_handle_name (literal)" ;
+    rdfs:comment "Literal value for subpool_handle_name field when it contains a terminal node" ;
+    ada:fieldId 46 ;
+    ada:isTerminalField true .
+
+ada:subpool_specification a owl:Class ;
+    rdfs:label "subpool_specification" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 179 .
+
+ada:subprogram_body a owl:Class ;
+    rdfs:label "subprogram_body" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 152 .
+
+ada:subprogram_body_stub a owl:Class ;
+    rdfs:label "subprogram_body_stub" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 266 .
+
+ada:subprogram_declaration a owl:Class ;
+    rdfs:label "subprogram_declaration" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 395 .
+
+ada:subprogram_default a owl:Class ;
+    rdfs:label "subprogram_default" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 319 .
+
+ada:subprogram_renaming_declaration a owl:Class ;
+    rdfs:label "subprogram_renaming_declaration" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 351 .
+
+ada:subtype_declaration a owl:Class ;
+    rdfs:label "subtype_declaration" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 398 .
+
+ada:subtype_mark a owl:DatatypeProperty ;
+    rdfs:label "subtype_mark (literal)" ;
+    rdfs:comment "Literal value for subtype_mark field when it contains a terminal node" ;
+    ada:fieldId 47 ;
+    ada:isTerminalField true .
+
+ada:subtype_name a owl:DatatypeProperty ;
+    rdfs:label "subtype_name (literal)" ;
+    rdfs:comment "Literal value for subtype_name field when it contains a terminal node" ;
+    ada:fieldId 48 ;
+    ada:isTerminalField true .
+
+ada:subunit a owl:Class ;
+    rdfs:label "subunit" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 150 .
+
+ada:target_name a owl:Class ;
+    rdfs:label "target_name" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 22 .
+
+ada:task_body a owl:Class ;
+    rdfs:label "task_body" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 268 .
+
+ada:task_body_stub a owl:Class ;
+    rdfs:label "task_body_stub" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 269 .
+
+ada:task_definition a owl:Class ;
+    rdfs:label "task_definition" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 336 .
+
+ada:task_type_declaration a owl:Class ;
+    rdfs:label "task_type_declaration" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 334 .
+
+ada:term a owl:Class ;
+    rdfs:label "term" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 169 .
+
+ada:terminate_alternative a owl:Class ;
+    rdfs:label "terminate_alternative" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 368 .
+
+ada:tick a owl:Class ;
+    rdfs:label "tick" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 20 .
+
+ada:timed_entry_call a owl:Class ;
+    rdfs:label "timed_entry_call" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 364 .
+
+ada:triggering_alternative a owl:Class ;
+    rdfs:label "triggering_alternative" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 361 .
+
+ada:unary_adding_operator a owl:Class ;
+    rdfs:label "unary_adding_operator" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 120 .
+
+ada:unknown_discriminant_part a owl:Class ;
+    rdfs:label "unknown_discriminant_part" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 215 .
+
+ada:use_clause a owl:Class ;
+    rdfs:label "use_clause" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 149 .
+
+ada:value_sequence a owl:Class ;
+    rdfs:label "value_sequence" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 132 .
+
+ada:variable_name a owl:DatatypeProperty ;
+    rdfs:label "variable_name (literal)" ;
+    rdfs:comment "Literal value for variable_name field when it contains a terminal node" ;
+    ada:fieldId 49 ;
+    ada:isTerminalField true .
+
+ada:variant a owl:Class ;
+    rdfs:label "variant" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 401 .
+
+ada:variant_list a owl:Class ;
+    rdfs:label "variant_list" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 400 .
+
+ada:variant_part a owl:Class ;
+    rdfs:label "variant_part" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 399 .
+
+ada:with_clause a owl:Class ;
+    rdfs:label "with_clause" ;
+    rdfs:isDefinedBy ada: ;
+    rdfs:subClassOf ast:Node ;
+    ada:isSupertype true ;
+    ada:nodeTypeId 148 .
+
+ada: a owl:Ontology ;
+    rdfs:label "Ada Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for ada" ;
+    owl:versionInfo "v0.25" ;
+    ada:abiVersion 14 ;
+    ada:fieldCount 49 ;
+    ada:languageName "None" ;
+    ada:nodeKindCount 452 .
+

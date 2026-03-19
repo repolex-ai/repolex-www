@@ -1,0 +1,223 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix udev: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/udev/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+udev:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+udev:assignment a owl:Class ;
+    rdfs:label "assignment" ;
+    rdfs:isDefinedBy udev: ;
+    rdfs:subClassOf ast:Node ;
+    udev:isSupertype true ;
+    udev:nodeTypeId 96 .
+
+udev:assignment_op a owl:Class ;
+    rdfs:label "assignment_op" ;
+    rdfs:isDefinedBy udev: ;
+    rdfs:subClassOf ast:Node ;
+    udev:isSupertype true ;
+    udev:nodeTypeId 43 .
+
+udev:attribute a owl:Class ;
+    rdfs:label "attribute" ;
+    rdfs:isDefinedBy udev: ;
+    rdfs:subClassOf ast:Node ;
+    udev:isSupertype true ;
+    udev:nodeTypeId 97 .
+
+udev:c_escape a owl:Class ;
+    rdfs:label "c_escape" ;
+    rdfs:isDefinedBy udev: ;
+    rdfs:subClassOf ast:Node ;
+    udev:isSupertype true ;
+    udev:nodeTypeId 107 .
+
+udev:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy udev: ;
+    rdfs:subClassOf ast:Node ;
+    udev:isSupertype true ;
+    udev:nodeTypeId 92 .
+
+udev:content a owl:Class ;
+    rdfs:label "content" ;
+    rdfs:isDefinedBy udev: ;
+    rdfs:subClassOf ast:Node ;
+    udev:isSupertype true ;
+    udev:nodeTypeId 102 .
+
+udev:env_var a owl:Class ;
+    rdfs:label "env_var" ;
+    rdfs:isDefinedBy udev: ;
+    rdfs:subClassOf ast:Node ;
+    udev:isSupertype true ;
+    udev:nodeTypeId 98 .
+
+udev:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+udev:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+udev:field_key a owl:ObjectProperty ;
+    rdfs:label "key (structural)" ;
+    rdfs:comment "Structural reference for key field when it contains a non-terminal node" ;
+    udev:fieldId 1 .
+
+udev:fmt_sub a owl:Class ;
+    rdfs:label "fmt_sub" ;
+    rdfs:isDefinedBy udev: ;
+    rdfs:subClassOf ast:Node ;
+    udev:isSupertype true ;
+    udev:nodeTypeId 108 .
+
+udev:import_type a owl:Class ;
+    rdfs:label "import_type" ;
+    rdfs:isDefinedBy udev: ;
+    rdfs:subClassOf ast:Node ;
+    udev:isSupertype true ;
+    udev:nodeTypeId 36 .
+
+udev:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+udev:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+udev:kernel_param a owl:Class ;
+    rdfs:label "kernel_param" ;
+    rdfs:isDefinedBy udev: ;
+    rdfs:subClassOf ast:Node ;
+    udev:isSupertype true ;
+    udev:nodeTypeId 99 .
+
+udev:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+udev:linebreak a owl:Class ;
+    rdfs:label "linebreak" ;
+    rdfs:isDefinedBy udev: ;
+    rdfs:subClassOf ast:Node ;
+    udev:isSupertype true ;
+    udev:nodeTypeId 91 .
+
+udev:match a owl:Class ;
+    rdfs:label "match" ;
+    rdfs:isDefinedBy udev: ;
+    rdfs:subClassOf ast:Node ;
+    udev:isSupertype true ;
+    udev:nodeTypeId 95 .
+
+udev:match_op a owl:Class ;
+    rdfs:label "match_op" ;
+    rdfs:isDefinedBy udev: ;
+    rdfs:subClassOf ast:Node ;
+    udev:isSupertype true ;
+    udev:nodeTypeId 42 .
+
+udev:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+udev:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+udev:number a owl:Class ;
+    rdfs:label "number" ;
+    rdfs:isDefinedBy udev: ;
+    rdfs:subClassOf ast:Node ;
+    udev:isSupertype true ;
+    udev:nodeTypeId 41 .
+
+udev:octal a owl:Class ;
+    rdfs:label "octal" ;
+    rdfs:isDefinedBy udev: ;
+    rdfs:subClassOf ast:Node ;
+    udev:isSupertype true ;
+    udev:nodeTypeId 40 .
+
+udev:pattern a owl:Class ;
+    rdfs:label "pattern" ;
+    rdfs:isDefinedBy udev: ;
+    rdfs:subClassOf ast:Node ;
+    udev:isSupertype true ;
+    udev:nodeTypeId 106 .
+
+udev:rule a owl:Class ;
+    rdfs:label "rule" ;
+    rdfs:isDefinedBy udev: ;
+    rdfs:subClassOf ast:Node ;
+    udev:isSupertype true ;
+    udev:nodeTypeId 94 .
+
+udev:rules a owl:Class ;
+    rdfs:label "rules" ;
+    rdfs:isDefinedBy udev: ;
+    rdfs:subClassOf ast:Node ;
+    udev:isSupertype true ;
+    udev:nodeTypeId 93 .
+
+udev:run_type a owl:Class ;
+    rdfs:label "run_type" ;
+    rdfs:isDefinedBy udev: ;
+    rdfs:subClassOf ast:Node ;
+    udev:isSupertype true ;
+    udev:nodeTypeId 35 .
+
+udev:seclabel a owl:Class ;
+    rdfs:label "seclabel" ;
+    rdfs:isDefinedBy udev: ;
+    rdfs:subClassOf ast:Node ;
+    udev:isSupertype true ;
+    udev:nodeTypeId 39 .
+
+udev:system_const a owl:Class ;
+    rdfs:label "system_const" ;
+    rdfs:isDefinedBy udev: ;
+    rdfs:subClassOf ast:Node ;
+    udev:isSupertype true ;
+    udev:nodeTypeId 34 .
+
+udev:value a owl:Class ;
+    rdfs:label "value" ;
+    rdfs:isDefinedBy udev: ;
+    rdfs:subClassOf ast:Node ;
+    udev:isSupertype true ;
+    udev:nodeTypeId 100,
+        101 .
+
+udev:var_sub a owl:Class ;
+    rdfs:label "var_sub" ;
+    rdfs:isDefinedBy udev: ;
+    rdfs:subClassOf ast:Node ;
+    udev:isSupertype true ;
+    udev:nodeTypeId 109 .
+
+udev: a owl:Ontology ;
+    rdfs:label "Udev Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for udev" ;
+    owl:versionInfo "v0.25" ;
+    udev:abiVersion 15 ;
+    udev:fieldCount 1 ;
+    udev:languageName "udev" ;
+    udev:nodeKindCount 115 .
+

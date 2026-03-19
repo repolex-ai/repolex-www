@@ -1,0 +1,168 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix gosum: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/gosum/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+gosum:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+gosum:build a owl:DatatypeProperty ;
+    rdfs:label "build (literal)" ;
+    rdfs:comment "Literal value for build field when it contains a terminal node" ;
+    gosum:fieldId 1 ;
+    gosum:isTerminalField true .
+
+gosum:checksum a owl:Class ;
+    rdfs:label "checksum" ;
+    rdfs:isDefinedBy gosum: ;
+    rdfs:subClassOf ast:Node ;
+    gosum:isSupertype true ;
+    gosum:nodeTypeId 20 .
+
+gosum:checksum_database a owl:Class ;
+    rdfs:label "checksum_database" ;
+    rdfs:isDefinedBy gosum: ;
+    rdfs:subClassOf ast:Node ;
+    gosum:isSupertype true ;
+    gosum:nodeTypeId 19 .
+
+gosum:checksum_value a owl:Class ;
+    rdfs:label "checksum_value" ;
+    rdfs:isDefinedBy gosum: ;
+    rdfs:subClassOf ast:Node ;
+    gosum:isSupertype true ;
+    gosum:nodeTypeId 22 .
+
+gosum:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+gosum:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+gosum:field_pre_release a owl:ObjectProperty ;
+    rdfs:label "pre_release (structural)" ;
+    rdfs:comment "Structural reference for pre_release field when it contains a non-terminal node" ;
+    gosum:fieldId 5 .
+
+gosum:hash a owl:Class ;
+    rdfs:label "hash" ;
+    rdfs:isDefinedBy gosum: ;
+    rdfs:subClassOf ast:Node ;
+    gosum:isSupertype true ;
+    gosum:nodeTypeId 15 .
+
+gosum:hash_version a owl:Class ;
+    rdfs:label "hash_version" ;
+    rdfs:isDefinedBy gosum: ;
+    rdfs:subClassOf ast:Node ;
+    gosum:isSupertype true ;
+    gosum:nodeTypeId 14 .
+
+gosum:hex_number a owl:Class ;
+    rdfs:label "hex_number" ;
+    rdfs:isDefinedBy gosum: ;
+    rdfs:subClassOf ast:Node ;
+    gosum:isSupertype true ;
+    gosum:nodeTypeId 18 .
+
+gosum:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+gosum:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+gosum:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+gosum:major a owl:DatatypeProperty ;
+    rdfs:label "major (literal)" ;
+    rdfs:comment "Literal value for major field when it contains a terminal node" ;
+    gosum:fieldId 2 ;
+    gosum:isTerminalField true .
+
+gosum:minor a owl:DatatypeProperty ;
+    rdfs:label "minor (literal)" ;
+    rdfs:comment "Literal value for minor field when it contains a terminal node" ;
+    gosum:fieldId 3 ;
+    gosum:isTerminalField true .
+
+gosum:module_path a owl:Class ;
+    rdfs:label "module_path" ;
+    rdfs:isDefinedBy gosum: ;
+    rdfs:subClassOf ast:Node ;
+    gosum:isSupertype true ;
+    gosum:nodeTypeId 3 .
+
+gosum:module_version a owl:Class ;
+    rdfs:label "module_version" ;
+    rdfs:isDefinedBy gosum: ;
+    rdfs:subClassOf ast:Node ;
+    gosum:isSupertype true ;
+    gosum:nodeTypeId 4 .
+
+gosum:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+gosum:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+gosum:number a owl:Class ;
+    rdfs:label "number" ;
+    rdfs:isDefinedBy gosum: ;
+    rdfs:subClassOf ast:Node ;
+    gosum:isSupertype true ;
+    gosum:nodeTypeId 16 .
+
+gosum:number_with_decimal a owl:Class ;
+    rdfs:label "number_with_decimal" ;
+    rdfs:isDefinedBy gosum: ;
+    rdfs:subClassOf ast:Node ;
+    gosum:isSupertype true ;
+    gosum:nodeTypeId 17 .
+
+gosum:patch a owl:DatatypeProperty ;
+    rdfs:label "patch (literal)" ;
+    rdfs:comment "Literal value for patch field when it contains a terminal node" ;
+    gosum:fieldId 4 ;
+    gosum:isTerminalField true .
+
+gosum:pre_release a owl:DatatypeProperty ;
+    rdfs:label "pre_release (literal)" ;
+    rdfs:comment "Literal value for pre_release field when it contains a terminal node" ;
+    gosum:fieldId 5 ;
+    gosum:isTerminalField true .
+
+gosum:version a owl:Class ;
+    rdfs:label "version" ;
+    rdfs:isDefinedBy gosum: ;
+    rdfs:subClassOf ast:Node ;
+    gosum:isSupertype true ;
+    gosum:nodeTypeId 21 .
+
+gosum: a owl:Ontology ;
+    rdfs:label "Gosum Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for gosum" ;
+    owl:versionInfo "v0.25" ;
+    gosum:abiVersion 14 ;
+    gosum:fieldCount 5 ;
+    gosum:languageName "None" ;
+    gosum:nodeKindCount 24 .
+

@@ -1,0 +1,202 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix groovy: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/groovy/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+groovy:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+groovy:arg_block a owl:Class ;
+    rdfs:label "arg_block" ;
+    rdfs:isDefinedBy groovy: ;
+    rdfs:subClassOf ast:Node ;
+    groovy:isSupertype true ;
+    groovy:nodeTypeId 50 .
+
+groovy:arg_spliter a owl:Class ;
+    rdfs:label "arg_spliter" ;
+    rdfs:isDefinedBy groovy: ;
+    rdfs:subClassOf ast:Node ;
+    groovy:isSupertype true ;
+    groovy:nodeTypeId 43 .
+
+groovy:block a owl:Class ;
+    rdfs:label "block" ;
+    rdfs:isDefinedBy groovy: ;
+    rdfs:subClassOf ast:Node ;
+    groovy:isSupertype true ;
+    groovy:nodeTypeId 39 .
+
+groovy:block_comment a owl:Class ;
+    rdfs:label "block_comment" ;
+    rdfs:isDefinedBy groovy: ;
+    rdfs:subClassOf ast:Node ;
+    groovy:isSupertype true ;
+    groovy:nodeTypeId 35 .
+
+groovy:command a owl:Class ;
+    rdfs:label "command" ;
+    rdfs:isDefinedBy groovy: ;
+    rdfs:subClassOf ast:Node ;
+    groovy:isSupertype true ;
+    groovy:nodeTypeId 40 .
+
+groovy:decorate a owl:Class ;
+    rdfs:label "decorate" ;
+    rdfs:isDefinedBy groovy: ;
+    rdfs:subClassOf ast:Node ;
+    groovy:isSupertype true ;
+    groovy:nodeTypeId 46 .
+
+groovy:end_command a owl:Class ;
+    rdfs:label "end_command" ;
+    rdfs:isDefinedBy groovy: ;
+    rdfs:subClassOf ast:Node ;
+    groovy:isSupertype true ;
+    groovy:nodeTypeId 41 .
+
+groovy:escape_sequence a owl:Class ;
+    rdfs:label "escape_sequence" ;
+    rdfs:isDefinedBy groovy: ;
+    rdfs:subClassOf ast:Node ;
+    groovy:isSupertype true ;
+    groovy:nodeTypeId 32 .
+
+groovy:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+groovy:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+groovy:func a owl:Class ;
+    rdfs:label "func" ;
+    rdfs:isDefinedBy groovy: ;
+    rdfs:subClassOf ast:Node ;
+    groovy:isSupertype true ;
+    groovy:nodeTypeId 49 .
+
+groovy:generics_class a owl:Class ;
+    rdfs:label "generics_class" ;
+    rdfs:isDefinedBy groovy: ;
+    rdfs:subClassOf ast:Node ;
+    groovy:isSupertype true ;
+    groovy:nodeTypeId 48 .
+
+groovy:generics_type a owl:DatatypeProperty ;
+    rdfs:label "generics_type (literal)" ;
+    rdfs:comment "Literal value for generics_type field when it contains a terminal node" ;
+    groovy:fieldId 1 ;
+    groovy:isTerminalField true .
+
+groovy:identifier a owl:Class ;
+    rdfs:label "identifier" ;
+    rdfs:isDefinedBy groovy: ;
+    rdfs:subClassOf ast:Node ;
+    groovy:isSupertype true ;
+    groovy:nodeTypeId 31 .
+
+groovy:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+groovy:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+groovy:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+groovy:leading_key a owl:Class ;
+    rdfs:label "leading_key" ;
+    rdfs:isDefinedBy groovy: ;
+    rdfs:subClassOf ast:Node ;
+    groovy:isSupertype true ;
+    groovy:nodeTypeId 7 .
+
+groovy:line_comment a owl:Class ;
+    rdfs:label "line_comment" ;
+    rdfs:isDefinedBy groovy: ;
+    rdfs:subClassOf ast:Node ;
+    groovy:isSupertype true ;
+    groovy:nodeTypeId 34 .
+
+groovy:list a owl:Class ;
+    rdfs:label "list" ;
+    rdfs:isDefinedBy groovy: ;
+    rdfs:subClassOf ast:Node ;
+    groovy:isSupertype true ;
+    groovy:nodeTypeId 52 .
+
+groovy:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+groovy:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+groovy:number a owl:Class ;
+    rdfs:label "number" ;
+    rdfs:isDefinedBy groovy: ;
+    rdfs:subClassOf ast:Node ;
+    groovy:isSupertype true ;
+    groovy:nodeTypeId 33 .
+
+groovy:operators a owl:Class ;
+    rdfs:label "operators" ;
+    rdfs:isDefinedBy groovy: ;
+    rdfs:subClassOf ast:Node ;
+    groovy:isSupertype true ;
+    groovy:nodeTypeId 44 .
+
+groovy:shebang a owl:Class ;
+    rdfs:label "shebang" ;
+    rdfs:isDefinedBy groovy: ;
+    rdfs:subClassOf ast:Node ;
+    groovy:isSupertype true ;
+    groovy:nodeTypeId 54 .
+
+groovy:source_file a owl:Class ;
+    rdfs:label "source_file" ;
+    rdfs:isDefinedBy groovy: ;
+    rdfs:subClassOf ast:Node ;
+    groovy:isSupertype true ;
+    groovy:nodeTypeId 38 .
+
+groovy:string a owl:Class ;
+    rdfs:label "string" ;
+    rdfs:isDefinedBy groovy: ;
+    rdfs:subClassOf ast:Node ;
+    groovy:isSupertype true ;
+    groovy:nodeTypeId 51 .
+
+groovy:unit a owl:Class ;
+    rdfs:label "unit" ;
+    rdfs:isDefinedBy groovy: ;
+    rdfs:subClassOf ast:Node ;
+    groovy:isSupertype true ;
+    groovy:nodeTypeId 45 .
+
+groovy: a owl:Ontology ;
+    rdfs:label "Groovy Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for groovy" ;
+    owl:versionInfo "v0.25" ;
+    groovy:abiVersion 14 ;
+    groovy:fieldCount 1 ;
+    groovy:languageName "None" ;
+    groovy:nodeKindCount 61 .
+

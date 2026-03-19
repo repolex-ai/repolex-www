@@ -1,0 +1,1203 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix powershell: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/powershell/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+powershell:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+powershell:additive_argument_expression a owl:Class ;
+    rdfs:label "additive_argument_expression" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 371 .
+
+powershell:additive_expression a owl:Class ;
+    rdfs:label "additive_expression" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 338 .
+
+powershell:argument_expression a owl:Class ;
+    rdfs:label "argument_expression" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 367 .
+
+powershell:argument_expression_list a owl:Class ;
+    rdfs:label "argument_expression_list" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 366 .
+
+powershell:argument_list a owl:Class ;
+    rdfs:label "argument_list" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 365 .
+
+powershell:array_expression a owl:Class ;
+    rdfs:label "array_expression" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 352 .
+
+powershell:array_literal_expression a owl:Class ;
+    rdfs:label "array_literal_expression" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 342 .
+
+powershell:array_type_name a owl:Class ;
+    rdfs:label "array_type_name" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 241 .
+
+powershell:assignement_operator a owl:Class ;
+    rdfs:label "assignement_operator" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 243 .
+
+powershell:assignment_expression a owl:Class ;
+    rdfs:label "assignment_expression" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 309 .
+
+powershell:attribute a owl:Class ;
+    rdfs:label "attribute" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 380 .
+
+powershell:attribute_argument a owl:Class ;
+    rdfs:label "attribute_argument" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 383 .
+
+powershell:attribute_arguments a owl:Class ;
+    rdfs:label "attribute_arguments" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 382 .
+
+powershell:attribute_list a owl:Class ;
+    rdfs:label "attribute_list" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 379 .
+
+powershell:attribute_name a owl:Class ;
+    rdfs:label "attribute_name" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 381 .
+
+powershell:bitwise_argument_expression a owl:Class ;
+    rdfs:label "bitwise_argument_expression" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 369 .
+
+powershell:bitwise_expression a owl:Class ;
+    rdfs:label "bitwise_expression" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 336 .
+
+powershell:block_name a owl:Class ;
+    rdfs:label "block_name" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 258 .
+
+powershell:braced_variable a owl:Class ;
+    rdfs:label "braced_variable" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 114 .
+
+powershell:cast_expression a owl:Class ;
+    rdfs:label "cast_expression" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 347 .
+
+powershell:catch_clause a owl:Class ;
+    rdfs:label "catch_clause" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 294 .
+
+powershell:catch_clauses a owl:Class ;
+    rdfs:label "catch_clauses" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 293 .
+
+powershell:catch_type_list a owl:Class ;
+    rdfs:label "catch_type_list" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 295 .
+
+powershell:class_attribute a owl:Class ;
+    rdfs:label "class_attribute" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 326 .
+
+powershell:class_method_definition a owl:Class ;
+    rdfs:label "class_method_definition" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 330 .
+
+powershell:class_method_parameter a owl:Class ;
+    rdfs:label "class_method_parameter" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 328 .
+
+powershell:class_method_parameter_list a owl:Class ;
+    rdfs:label "class_method_parameter_list" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 329 .
+
+powershell:class_property_definition a owl:Class ;
+    rdfs:label "class_property_definition" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 327 .
+
+powershell:class_statement a owl:Class ;
+    rdfs:label "class_statement" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 331 .
+
+powershell:command a owl:Class ;
+    rdfs:label "command" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 311 .
+
+powershell:command_argument_sep a owl:Class ;
+    rdfs:label "command_argument_sep" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 319 .
+
+powershell:command_elements a owl:Class ;
+    rdfs:label "command_elements" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 317 .
+
+powershell:command_invokation_operator a owl:Class ;
+    rdfs:label "command_invokation_operator" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 312 .
+
+powershell:command_name a owl:Class ;
+    rdfs:label "command_name" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 314 .
+
+powershell:command_name_expr a owl:Class ;
+    rdfs:label "command_name_expr" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 316 .
+
+powershell:command_parameter a owl:Class ;
+    rdfs:label "command_parameter" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 117 .
+
+powershell:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 1 .
+
+powershell:comparison_argument_expression a owl:Class ;
+    rdfs:label "comparison_argument_expression" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 370 .
+
+powershell:comparison_expression a owl:Class ;
+    rdfs:label "comparison_expression" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 337 .
+
+powershell:comparison_operator a owl:Class ;
+    rdfs:label "comparison_operator" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 246 .
+
+powershell:data_command a owl:Class ;
+    rdfs:label "data_command" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 301 .
+
+powershell:data_commands_allowed a owl:Class ;
+    rdfs:label "data_commands_allowed" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 299 .
+
+powershell:data_commands_list a owl:Class ;
+    rdfs:label "data_commands_list" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 300 .
+
+powershell:data_name a owl:Class ;
+    rdfs:label "data_name" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 298 .
+
+powershell:data_statement a owl:Class ;
+    rdfs:label "data_statement" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 297 .
+
+powershell:decimal_integer_literal a owl:Class ;
+    rdfs:label "decimal_integer_literal" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 2 .
+
+powershell:dimension a owl:Class ;
+    rdfs:label "dimension" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 377 .
+
+powershell:do_statement a owl:Class ;
+    rdfs:label "do_statement" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 285 .
+
+powershell:element_access a owl:Class ;
+    rdfs:label "element_access" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 362 .
+
+powershell:else_clause a owl:Class ;
+    rdfs:label "else_clause" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 266 .
+
+powershell:elseif_clause a owl:Class ;
+    rdfs:label "elseif_clause" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 265 .
+
+powershell:elseif_clauses a owl:Class ;
+    rdfs:label "elseif_clauses" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 264 .
+
+powershell:empty_statement a owl:Class ;
+    rdfs:label "empty_statement" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 262 .
+
+powershell:enum_member a owl:Class ;
+    rdfs:label "enum_member" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 333 .
+
+powershell:enum_statement a owl:Class ;
+    rdfs:label "enum_statement" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 332 .
+
+powershell:expandable_here_string_literal a owl:Class ;
+    rdfs:label "expandable_here_string_literal" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 239 .
+
+powershell:expandable_string_literal a owl:Class ;
+    rdfs:label "expandable_string_literal" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 238 .
+
+powershell:expression_with_unary_operator a owl:Class ;
+    rdfs:label "expression_with_unary_operator" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 344 .
+
+powershell:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+powershell:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+powershell:field_argument_expression_list a owl:ObjectProperty ;
+    rdfs:label "argument_expression_list (structural)" ;
+    rdfs:comment "Structural reference for argument_expression_list field when it contains a non-terminal node" ;
+    powershell:fieldId 1 .
+
+powershell:field_command_elements a owl:ObjectProperty ;
+    rdfs:label "command_elements (structural)" ;
+    rdfs:comment "Structural reference for command_elements field when it contains a non-terminal node" ;
+    powershell:fieldId 2 .
+
+powershell:field_command_name a owl:ObjectProperty ;
+    rdfs:label "command_name (structural)" ;
+    rdfs:comment "Structural reference for command_name field when it contains a non-terminal node" ;
+    powershell:fieldId 3 .
+
+powershell:field_condition a owl:ObjectProperty ;
+    rdfs:label "condition (structural)" ;
+    rdfs:comment "Structural reference for condition field when it contains a non-terminal node" ;
+    powershell:fieldId 4 .
+
+powershell:field_else_clause a owl:ObjectProperty ;
+    rdfs:label "else_clause (structural)" ;
+    rdfs:comment "Structural reference for else_clause field when it contains a non-terminal node" ;
+    powershell:fieldId 5 .
+
+powershell:field_elseif_clauses a owl:ObjectProperty ;
+    rdfs:label "elseif_clauses (structural)" ;
+    rdfs:comment "Structural reference for elseif_clauses field when it contains a non-terminal node" ;
+    powershell:fieldId 6 .
+
+powershell:field_for_condition a owl:ObjectProperty ;
+    rdfs:label "for_condition (structural)" ;
+    rdfs:comment "Structural reference for for_condition field when it contains a non-terminal node" ;
+    powershell:fieldId 7 .
+
+powershell:field_for_initializer a owl:ObjectProperty ;
+    rdfs:label "for_initializer (structural)" ;
+    rdfs:comment "Structural reference for for_initializer field when it contains a non-terminal node" ;
+    powershell:fieldId 8 .
+
+powershell:field_for_iterator a owl:ObjectProperty ;
+    rdfs:label "for_iterator (structural)" ;
+    rdfs:comment "Structural reference for for_iterator field when it contains a non-terminal node" ;
+    powershell:fieldId 9 .
+
+powershell:field_named_block_list a owl:ObjectProperty ;
+    rdfs:label "named_block_list (structural)" ;
+    rdfs:comment "Structural reference for named_block_list field when it contains a non-terminal node" ;
+    powershell:fieldId 10 .
+
+powershell:field_script_block_body a owl:ObjectProperty ;
+    rdfs:label "script_block_body (structural)" ;
+    rdfs:comment "Structural reference for script_block_body field when it contains a non-terminal node" ;
+    powershell:fieldId 11 .
+
+powershell:field_statement_list a owl:ObjectProperty ;
+    rdfs:label "statement_list (structural)" ;
+    rdfs:comment "Structural reference for statement_list field when it contains a non-terminal node" ;
+    powershell:fieldId 12 .
+
+powershell:field_statements a owl:ObjectProperty ;
+    rdfs:label "statements (structural)" ;
+    rdfs:comment "Structural reference for statements field when it contains a non-terminal node" ;
+    powershell:fieldId 13 .
+
+powershell:field_value a owl:ObjectProperty ;
+    rdfs:label "value (structural)" ;
+    rdfs:comment "Structural reference for value field when it contains a non-terminal node" ;
+    powershell:fieldId 14 .
+
+powershell:file_redirection_operator a owl:Class ;
+    rdfs:label "file_redirection_operator" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 244 .
+
+powershell:finally_clause a owl:Class ;
+    rdfs:label "finally_clause" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 296 .
+
+powershell:flow_control_statement a owl:Class ;
+    rdfs:label "flow_control_statement" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 289 .
+
+powershell:for_condition a owl:Class ;
+    rdfs:label "for_condition" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 281 .
+
+powershell:for_initializer a owl:Class ;
+    rdfs:label "for_initializer" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 280 .
+
+powershell:for_iterator a owl:Class ;
+    rdfs:label "for_iterator" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 282 .
+
+powershell:for_statement a owl:Class ;
+    rdfs:label "for_statement" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 279 .
+
+powershell:foreach_command a owl:Class ;
+    rdfs:label "foreach_command" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 321 .
+
+powershell:foreach_parameter a owl:Class ;
+    rdfs:label "foreach_parameter" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 278 .
+
+powershell:foreach_statement a owl:Class ;
+    rdfs:label "foreach_statement" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 277 .
+
+powershell:format_argument_expression a owl:Class ;
+    rdfs:label "format_argument_expression" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 373 .
+
+powershell:format_expression a owl:Class ;
+    rdfs:label "format_expression" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 340 .
+
+powershell:format_operator a owl:Class ;
+    rdfs:label "format_operator" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 247 .
+
+powershell:function_name a owl:Class ;
+    rdfs:label "function_name" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 287 .
+
+powershell:function_parameter_declaration a owl:Class ;
+    rdfs:label "function_parameter_declaration" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 288 .
+
+powershell:function_statement a owl:Class ;
+    rdfs:label "function_statement" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 286 .
+
+powershell:generic_token a owl:Class ;
+    rdfs:label "generic_token" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 115 .
+
+powershell:generic_type_arguments a owl:Class ;
+    rdfs:label "generic_type_arguments" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 378 .
+
+powershell:generic_type_name a owl:Class ;
+    rdfs:label "generic_type_name" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 242 .
+
+powershell:hash_entry a owl:Class ;
+    rdfs:label "hash_entry" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 356 .
+
+powershell:hash_literal_body a owl:Class ;
+    rdfs:label "hash_literal_body" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 355 .
+
+powershell:hash_literal_expression a owl:Class ;
+    rdfs:label "hash_literal_expression" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 354 .
+
+powershell:hexadecimal_integer_literal a owl:Class ;
+    rdfs:label "hexadecimal_integer_literal" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 3 .
+
+powershell:if_statement a owl:Class ;
+    rdfs:label "if_statement" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 263 .
+
+powershell:inlinescript_statement a owl:Class ;
+    rdfs:label "inlinescript_statement" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 302 .
+
+powershell:integer_literal a owl:Class ;
+    rdfs:label "integer_literal" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 236 .
+
+powershell:invokation_expression a owl:Class ;
+    rdfs:label "invokation_expression" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 363 .
+
+powershell:invokation_foreach_expression a owl:Class ;
+    rdfs:label "invokation_foreach_expression" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 364 .
+
+powershell:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+powershell:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+powershell:key_expression a owl:Class ;
+    rdfs:label "key_expression" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 357 .
+
+powershell:label a owl:Class ;
+    rdfs:label "label" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 157 .
+
+powershell:label_expression a owl:Class ;
+    rdfs:label "label_expression" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 290 .
+
+powershell:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+powershell:left_assignment_expression a owl:Class ;
+    rdfs:label "left_assignment_expression" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 308 .
+
+powershell:logical_argument_expression a owl:Class ;
+    rdfs:label "logical_argument_expression" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 368 .
+
+powershell:logical_expression a owl:Class ;
+    rdfs:label "logical_expression" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 335 .
+
+powershell:member_access a owl:Class ;
+    rdfs:label "member_access" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 360 .
+
+powershell:member_name a owl:Class ;
+    rdfs:label "member_name" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 361 .
+
+powershell:merging_redirection_operator a owl:Class ;
+    rdfs:label "merging_redirection_operator" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 245 .
+
+powershell:multiplicative_argument_expression a owl:Class ;
+    rdfs:label "multiplicative_argument_expression" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 372 .
+
+powershell:multiplicative_expression a owl:Class ;
+    rdfs:label "multiplicative_expression" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 339 .
+
+powershell:named_block a owl:Class ;
+    rdfs:label "named_block" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 257 .
+
+powershell:named_block_list a owl:Class ;
+    rdfs:label "named_block_list" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 256 .
+
+powershell:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+powershell:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+powershell:parallel_statement a owl:Class ;
+    rdfs:label "parallel_statement" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 303 .
+
+powershell:param_block a owl:Class ;
+    rdfs:label "param_block" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 251 .
+
+powershell:parameter_list a owl:Class ;
+    rdfs:label "parameter_list" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 252 .
+
+powershell:parenthesized_expression a owl:Class ;
+    rdfs:label "parenthesized_expression" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 350 .
+
+powershell:path_command_name a owl:Class ;
+    rdfs:label "path_command_name" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 315 .
+
+powershell:path_command_name_token a owl:Class ;
+    rdfs:label "path_command_name_token" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 198 .
+
+powershell:pipeline a owl:Class ;
+    rdfs:label "pipeline" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 305 .
+
+powershell:pipeline_chain a owl:Class ;
+    rdfs:label "pipeline_chain" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 306 .
+
+powershell:pipeline_chain_tail a owl:Class ;
+    rdfs:label "pipeline_chain_tail" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 307 .
+
+powershell:post_decrement_expression a owl:Class ;
+    rdfs:label "post_decrement_expression" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 359 .
+
+powershell:post_increment_expression a owl:Class ;
+    rdfs:label "post_increment_expression" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 358 .
+
+powershell:pre_decrement_expression a owl:Class ;
+    rdfs:label "pre_decrement_expression" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 346 .
+
+powershell:pre_increment_expression a owl:Class ;
+    rdfs:label "pre_increment_expression" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 345 .
+
+powershell:program a owl:Class ;
+    rdfs:label "program" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 234 .
+
+powershell:range_argument_expression a owl:Class ;
+    rdfs:label "range_argument_expression" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 374 .
+
+powershell:range_expression a owl:Class ;
+    rdfs:label "range_expression" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 341 .
+
+powershell:real_literal a owl:Class ;
+    rdfs:label "real_literal" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 4 .
+
+powershell:redirected_file_name a owl:Class ;
+    rdfs:label "redirected_file_name" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 325 .
+
+powershell:redirection a owl:Class ;
+    rdfs:label "redirection" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 324 .
+
+powershell:redirections a owl:Class ;
+    rdfs:label "redirections" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 323 .
+
+powershell:script_block a owl:Class ;
+    rdfs:label "script_block" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 250 .
+
+powershell:script_block_body a owl:Class ;
+    rdfs:label "script_block_body" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 255 .
+
+powershell:script_block_expression a owl:Class ;
+    rdfs:label "script_block_expression" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 353 .
+
+powershell:script_parameter a owl:Class ;
+    rdfs:label "script_parameter" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 253 .
+
+powershell:script_parameter_default a owl:Class ;
+    rdfs:label "script_parameter_default" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 254 .
+
+powershell:sequence_statement a owl:Class ;
+    rdfs:label "sequence_statement" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 304 .
+
+powershell:simple_name a owl:Class ;
+    rdfs:label "simple_name" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 19 .
+
+powershell:statement_block a owl:Class ;
+    rdfs:label "statement_block" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 259 .
+
+powershell:statement_list a owl:Class ;
+    rdfs:label "statement_list" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 260 .
+
+powershell:stop_parsing a owl:Class ;
+    rdfs:label "stop_parsing" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 199 .
+
+powershell:string_literal a owl:Class ;
+    rdfs:label "string_literal" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 237 .
+
+powershell:sub_expression a owl:Class ;
+    rdfs:label "sub_expression" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 351 .
+
+powershell:switch_body a owl:Class ;
+    rdfs:label "switch_body" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 273 .
+
+powershell:switch_clause a owl:Class ;
+    rdfs:label "switch_clause" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 275 .
+
+powershell:switch_clause_condition a owl:Class ;
+    rdfs:label "switch_clause_condition" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 276 .
+
+powershell:switch_clauses a owl:Class ;
+    rdfs:label "switch_clauses" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 274 .
+
+powershell:switch_condition a owl:Class ;
+    rdfs:label "switch_condition" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 271 .
+
+powershell:switch_filename a owl:Class ;
+    rdfs:label "switch_filename" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 272 .
+
+powershell:switch_parameter a owl:Class ;
+    rdfs:label "switch_parameter" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 270 .
+
+powershell:switch_parameters a owl:Class ;
+    rdfs:label "switch_parameters" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 269 .
+
+powershell:switch_statement a owl:Class ;
+    rdfs:label "switch_statement" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 268 .
+
+powershell:trap_statement a owl:Class ;
+    rdfs:label "trap_statement" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 291 .
+
+powershell:try_statement a owl:Class ;
+    rdfs:label "try_statement" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 292 .
+
+powershell:type_identifier a owl:Class ;
+    rdfs:label "type_identifier" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 20 .
+
+powershell:type_literal a owl:Class ;
+    rdfs:label "type_literal" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 375 .
+
+powershell:type_name a owl:Class ;
+    rdfs:label "type_name" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 240 .
+
+powershell:type_spec a owl:Class ;
+    rdfs:label "type_spec" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 376 .
+
+powershell:unary_expression a owl:Class ;
+    rdfs:label "unary_expression" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 343 .
+
+powershell:value a owl:DatatypeProperty ;
+    rdfs:label "value (literal)" ;
+    rdfs:comment "Literal value for value field when it contains a terminal node" ;
+    powershell:fieldId 14 ;
+    powershell:isTerminalField true .
+
+powershell:variable a owl:Class ;
+    rdfs:label "variable" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 248 .
+
+powershell:verbatim_command_argument a owl:Class ;
+    rdfs:label "verbatim_command_argument" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 322 .
+
+powershell:verbatim_here_string_characters a owl:Class ;
+    rdfs:label "verbatim_here_string_characters" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 18 .
+
+powershell:verbatim_string_characters a owl:Class ;
+    rdfs:label "verbatim_string_characters" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 17 .
+
+powershell:while_condition a owl:Class ;
+    rdfs:label "while_condition" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 284 .
+
+powershell:while_statement a owl:Class ;
+    rdfs:label "while_statement" ;
+    rdfs:isDefinedBy powershell: ;
+    rdfs:subClassOf ast:Node ;
+    powershell:isSupertype true ;
+    powershell:nodeTypeId 283 .
+
+powershell: a owl:Ontology ;
+    rdfs:label "Powershell Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for powershell" ;
+    owl:versionInfo "v0.25" ;
+    powershell:abiVersion 14 ;
+    powershell:fieldCount 14 ;
+    powershell:languageName "None" ;
+    powershell:nodeKindCount 418 .
+

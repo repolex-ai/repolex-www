@@ -1,0 +1,616 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix magik: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/magik/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+magik:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+magik:allresults a owl:Class ;
+    rdfs:label "allresults" ;
+    rdfs:isDefinedBy magik: ;
+    rdfs:subClassOf ast:Node ;
+    magik:isSupertype true ;
+    magik:nodeTypeId 200 .
+
+magik:argument a owl:Class ;
+    rdfs:label "argument" ;
+    rdfs:isDefinedBy magik: ;
+    rdfs:subClassOf ast:Node ;
+    magik:isSupertype true ;
+    magik:nodeTypeId 145 .
+
+magik:arithmetic_operator a owl:Class ;
+    rdfs:label "arithmetic_operator" ;
+    rdfs:isDefinedBy magik: ;
+    rdfs:subClassOf ast:Node ;
+    magik:isSupertype true ;
+    magik:nodeTypeId 209 .
+
+magik:assignment a owl:Class ;
+    rdfs:label "assignment" ;
+    rdfs:isDefinedBy magik: ;
+    rdfs:subClassOf ast:Node ;
+    magik:isSupertype true ;
+    magik:nodeTypeId 148 .
+
+magik:block a owl:Class ;
+    rdfs:label "block" ;
+    rdfs:isDefinedBy magik: ;
+    rdfs:subClassOf ast:Node ;
+    magik:isSupertype true ;
+    magik:nodeTypeId 147 .
+
+magik:call a owl:Class ;
+    rdfs:label "call" ;
+    rdfs:isDefinedBy magik: ;
+    rdfs:subClassOf ast:Node ;
+    magik:isSupertype true ;
+    magik:nodeTypeId 170 .
+
+magik:catch a owl:Class ;
+    rdfs:label "catch" ;
+    rdfs:isDefinedBy magik: ;
+    rdfs:subClassOf ast:Node ;
+    magik:isSupertype true ;
+    magik:nodeTypeId 155 .
+
+magik:character_literal a owl:Class ;
+    rdfs:label "character_literal" ;
+    rdfs:isDefinedBy magik: ;
+    rdfs:subClassOf ast:Node ;
+    magik:isSupertype true ;
+    magik:nodeTypeId 168 .
+
+magik:class a owl:Class ;
+    rdfs:label "class" ;
+    rdfs:isDefinedBy magik: ;
+    rdfs:subClassOf ast:Node ;
+    magik:isSupertype true ;
+    magik:nodeTypeId 183 .
+
+magik:clone a owl:Class ;
+    rdfs:label "clone" ;
+    rdfs:isDefinedBy magik: ;
+    rdfs:subClassOf ast:Node ;
+    magik:isSupertype true ;
+    magik:nodeTypeId 181 .
+
+magik:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy magik: ;
+    rdfs:subClassOf ast:Node ;
+    magik:isSupertype true ;
+    magik:nodeTypeId 137 .
+
+magik:condition a owl:DatatypeProperty ;
+    rdfs:label "condition (literal)" ;
+    rdfs:comment "Literal value for condition field when it contains a terminal node" ;
+    magik:fieldId 1 ;
+    magik:isTerminalField true .
+
+magik:constant a owl:Class ;
+    rdfs:label "constant" ;
+    rdfs:isDefinedBy magik: ;
+    rdfs:subClassOf ast:Node ;
+    magik:isSupertype true ;
+    magik:nodeTypeId 192 .
+
+magik:continue a owl:Class ;
+    rdfs:label "continue" ;
+    rdfs:isDefinedBy magik: ;
+    rdfs:subClassOf ast:Node ;
+    magik:isSupertype true ;
+    magik:nodeTypeId 163 .
+
+magik:documentation a owl:Class ;
+    rdfs:label "documentation" ;
+    rdfs:isDefinedBy magik: ;
+    rdfs:subClassOf ast:Node ;
+    magik:isSupertype true ;
+    magik:nodeTypeId 211 .
+
+magik:dynamic a owl:Class ;
+    rdfs:label "dynamic" ;
+    rdfs:isDefinedBy magik: ;
+    rdfs:subClassOf ast:Node ;
+    magik:isSupertype true ;
+    magik:nodeTypeId 193 .
+
+magik:dynamic_import a owl:Class ;
+    rdfs:label "dynamic_import" ;
+    rdfs:isDefinedBy magik: ;
+    rdfs:subClassOf ast:Node ;
+    magik:isSupertype true ;
+    magik:nodeTypeId 195 .
+
+magik:dynamic_variable a owl:Class ;
+    rdfs:label "dynamic_variable" ;
+    rdfs:isDefinedBy magik: ;
+    rdfs:subClassOf ast:Node ;
+    magik:isSupertype true ;
+    magik:nodeTypeId 105 .
+
+magik:elif a owl:Class ;
+    rdfs:label "elif" ;
+    rdfs:isDefinedBy magik: ;
+    rdfs:subClassOf ast:Node ;
+    magik:isSupertype true ;
+    magik:nodeTypeId 150 .
+
+magik:else a owl:Class ;
+    rdfs:label "else" ;
+    rdfs:isDefinedBy magik: ;
+    rdfs:subClassOf ast:Node ;
+    magik:isSupertype true ;
+    magik:nodeTypeId 151 .
+
+magik:exemplarname a owl:DatatypeProperty ;
+    rdfs:label "exemplarname (literal)" ;
+    rdfs:comment "Literal value for exemplarname field when it contains a terminal node" ;
+    magik:fieldId 2 ;
+    magik:isTerminalField true .
+
+magik:false a owl:Class ;
+    rdfs:label "false" ;
+    rdfs:isDefinedBy magik: ;
+    rdfs:subClassOf ast:Node ;
+    magik:isSupertype true ;
+    magik:nodeTypeId 176 .
+
+magik:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+magik:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+magik:field_condition a owl:ObjectProperty ;
+    rdfs:label "condition (structural)" ;
+    rdfs:comment "Structural reference for condition field when it contains a non-terminal node" ;
+    magik:fieldId 1 .
+
+magik:field_index a owl:ObjectProperty ;
+    rdfs:label "index (structural)" ;
+    rdfs:comment "Structural reference for index field when it contains a non-terminal node" ;
+    magik:fieldId 3 .
+
+magik:field_left a owl:ObjectProperty ;
+    rdfs:label "left (structural)" ;
+    rdfs:comment "Structural reference for left field when it contains a non-terminal node" ;
+    magik:fieldId 5 .
+
+magik:field_operator a owl:ObjectProperty ;
+    rdfs:label "operator (structural)" ;
+    rdfs:comment "Structural reference for operator field when it contains a non-terminal node" ;
+    magik:fieldId 8 .
+
+magik:field_receiver a owl:ObjectProperty ;
+    rdfs:label "receiver (structural)" ;
+    rdfs:comment "Structural reference for receiver field when it contains a non-terminal node" ;
+    magik:fieldId 10 .
+
+magik:field_right a owl:ObjectProperty ;
+    rdfs:label "right (structural)" ;
+    rdfs:comment "Structural reference for right field when it contains a non-terminal node" ;
+    magik:fieldId 11 .
+
+magik:finally a owl:Class ;
+    rdfs:label "finally" ;
+    rdfs:isDefinedBy magik: ;
+    rdfs:subClassOf ast:Node ;
+    magik:isSupertype true ;
+    magik:nodeTypeId 153 .
+
+magik:fragment a owl:Class ;
+    rdfs:label "fragment" ;
+    rdfs:isDefinedBy magik: ;
+    rdfs:subClassOf ast:Node ;
+    magik:isSupertype true ;
+    magik:nodeTypeId 140 .
+
+magik:gather a owl:Class ;
+    rdfs:label "gather" ;
+    rdfs:isDefinedBy magik: ;
+    rdfs:subClassOf ast:Node ;
+    magik:isSupertype true ;
+    magik:nodeTypeId 198 .
+
+magik:global a owl:Class ;
+    rdfs:label "global" ;
+    rdfs:isDefinedBy magik: ;
+    rdfs:subClassOf ast:Node ;
+    magik:isSupertype true ;
+    magik:nodeTypeId 189 .
+
+magik:global_reference a owl:Class ;
+    rdfs:label "global_reference" ;
+    rdfs:isDefinedBy magik: ;
+    rdfs:subClassOf ast:Node ;
+    magik:isSupertype true ;
+    magik:nodeTypeId 107 .
+
+magik:global_variable a owl:Class ;
+    rdfs:label "global_variable" ;
+    rdfs:isDefinedBy magik: ;
+    rdfs:subClassOf ast:Node ;
+    magik:isSupertype true ;
+    magik:nodeTypeId 106 .
+
+magik:handling a owl:Class ;
+    rdfs:label "handling" ;
+    rdfs:isDefinedBy magik: ;
+    rdfs:subClassOf ast:Node ;
+    magik:isSupertype true ;
+    magik:nodeTypeId 154 .
+
+magik:identifier a owl:Class ;
+    rdfs:label "identifier" ;
+    rdfs:isDefinedBy magik: ;
+    rdfs:subClassOf ast:Node ;
+    magik:isSupertype true ;
+    magik:nodeTypeId 204 .
+
+magik:if a owl:Class ;
+    rdfs:label "if" ;
+    rdfs:isDefinedBy magik: ;
+    rdfs:subClassOf ast:Node ;
+    magik:isSupertype true ;
+    magik:nodeTypeId 149 .
+
+magik:import a owl:Class ;
+    rdfs:label "import" ;
+    rdfs:isDefinedBy magik: ;
+    rdfs:subClassOf ast:Node ;
+    magik:isSupertype true ;
+    magik:nodeTypeId 194 .
+
+magik:index a owl:DatatypeProperty ;
+    rdfs:label "index (literal)" ;
+    rdfs:comment "Literal value for index field when it contains a terminal node" ;
+    magik:fieldId 3 ;
+    magik:isTerminalField true .
+
+magik:indexed_access a owl:Class ;
+    rdfs:label "indexed_access" ;
+    rdfs:isDefinedBy magik: ;
+    rdfs:subClassOf ast:Node ;
+    magik:isSupertype true ;
+    magik:nodeTypeId 172 .
+
+magik:invoke a owl:Class ;
+    rdfs:label "invoke" ;
+    rdfs:isDefinedBy magik: ;
+    rdfs:subClassOf ast:Node ;
+    magik:isSupertype true ;
+    magik:nodeTypeId 171 .
+
+magik:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+magik:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+magik:iterator a owl:Class ;
+    rdfs:label "iterator" ;
+    rdfs:isDefinedBy magik: ;
+    rdfs:subClassOf ast:Node ;
+    magik:isSupertype true ;
+    magik:nodeTypeId 158 .
+
+magik:label a owl:Class ;
+    rdfs:label "label" ;
+    rdfs:isDefinedBy magik: ;
+    rdfs:subClassOf ast:Node ;
+    magik:isSupertype true ;
+    magik:nodeTypeId 103 .
+
+magik:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+magik:leave a owl:Class ;
+    rdfs:label "leave" ;
+    rdfs:isDefinedBy magik: ;
+    rdfs:subClassOf ast:Node ;
+    magik:isSupertype true ;
+    magik:nodeTypeId 162 .
+
+magik:left a owl:DatatypeProperty ;
+    rdfs:label "left (literal)" ;
+    rdfs:comment "Literal value for left field when it contains a terminal node" ;
+    magik:fieldId 5 ;
+    magik:isTerminalField true .
+
+magik:local a owl:Class ;
+    rdfs:label "local" ;
+    rdfs:isDefinedBy magik: ;
+    rdfs:subClassOf ast:Node ;
+    magik:isSupertype true ;
+    magik:nodeTypeId 190 .
+
+magik:lock a owl:Class ;
+    rdfs:label "lock" ;
+    rdfs:isDefinedBy magik: ;
+    rdfs:subClassOf ast:Node ;
+    magik:isSupertype true ;
+    magik:nodeTypeId 165 .
+
+magik:logical_operator a owl:Class ;
+    rdfs:label "logical_operator" ;
+    rdfs:isDefinedBy magik: ;
+    rdfs:subClassOf ast:Node ;
+    magik:isSupertype true ;
+    magik:nodeTypeId 208 .
+
+magik:loop a owl:Class ;
+    rdfs:label "loop" ;
+    rdfs:isDefinedBy magik: ;
+    rdfs:subClassOf ast:Node ;
+    magik:isSupertype true ;
+    magik:nodeTypeId 152 .
+
+magik:loopbody a owl:Class ;
+    rdfs:label "loopbody" ;
+    rdfs:isDefinedBy magik: ;
+    rdfs:subClassOf ast:Node ;
+    magik:isSupertype true ;
+    magik:nodeTypeId 161 .
+
+magik:maybe a owl:Class ;
+    rdfs:label "maybe" ;
+    rdfs:isDefinedBy magik: ;
+    rdfs:subClassOf ast:Node ;
+    magik:isSupertype true ;
+    magik:nodeTypeId 177 .
+
+magik:message a owl:DatatypeProperty ;
+    rdfs:label "message (literal)" ;
+    rdfs:comment "Literal value for message field when it contains a terminal node" ;
+    magik:fieldId 6 ;
+    magik:isTerminalField true .
+
+magik:method a owl:Class ;
+    rdfs:label "method" ;
+    rdfs:isDefinedBy magik: ;
+    rdfs:subClassOf ast:Node ;
+    magik:isSupertype true ;
+    magik:nodeTypeId 143 .
+
+magik:name a owl:DatatypeProperty ;
+    rdfs:label "name (literal)" ;
+    rdfs:comment "Literal value for name field when it contains a terminal node" ;
+    magik:fieldId 7 ;
+    magik:isTerminalField true .
+
+magik:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+magik:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+magik:number a owl:Class ;
+    rdfs:label "number" ;
+    rdfs:isDefinedBy magik: ;
+    rdfs:subClassOf ast:Node ;
+    magik:isSupertype true ;
+    magik:nodeTypeId 104 .
+
+magik:package a owl:Class ;
+    rdfs:label "package" ;
+    rdfs:isDefinedBy magik: ;
+    rdfs:subClassOf ast:Node ;
+    magik:isSupertype true ;
+    magik:nodeTypeId 141 .
+
+magik:parenthesized_expression a owl:Class ;
+    rdfs:label "parenthesized_expression" ;
+    rdfs:isDefinedBy magik: ;
+    rdfs:subClassOf ast:Node ;
+    magik:isSupertype true ;
+    magik:nodeTypeId 201 .
+
+magik:pragma a owl:Class ;
+    rdfs:label "pragma" ;
+    rdfs:isDefinedBy magik: ;
+    rdfs:subClassOf ast:Node ;
+    magik:isSupertype true ;
+    magik:nodeTypeId 166 .
+
+magik:primitive a owl:Class ;
+    rdfs:label "primitive" ;
+    rdfs:isDefinedBy magik: ;
+    rdfs:subClassOf ast:Node ;
+    magik:isSupertype true ;
+    magik:nodeTypeId 157 .
+
+magik:procedure a owl:Class ;
+    rdfs:label "procedure" ;
+    rdfs:isDefinedBy magik: ;
+    rdfs:subClassOf ast:Node ;
+    magik:isSupertype true ;
+    magik:nodeTypeId 144 .
+
+magik:protect a owl:Class ;
+    rdfs:label "protect" ;
+    rdfs:isDefinedBy magik: ;
+    rdfs:subClassOf ast:Node ;
+    magik:isSupertype true ;
+    magik:nodeTypeId 164 .
+
+magik:raised_condition a owl:DatatypeProperty ;
+    rdfs:label "raised_condition (literal)" ;
+    rdfs:comment "Literal value for raised_condition field when it contains a terminal node" ;
+    magik:fieldId 9 ;
+    magik:isTerminalField true .
+
+magik:receiver a owl:DatatypeProperty ;
+    rdfs:label "receiver (literal)" ;
+    rdfs:comment "Literal value for receiver field when it contains a terminal node" ;
+    magik:fieldId 10 ;
+    magik:isTerminalField true .
+
+magik:regex_literal a owl:Class ;
+    rdfs:label "regex_literal" ;
+    rdfs:isDefinedBy magik: ;
+    rdfs:subClassOf ast:Node ;
+    magik:isSupertype true ;
+    magik:nodeTypeId 81 .
+
+magik:relational_operator a owl:Class ;
+    rdfs:label "relational_operator" ;
+    rdfs:isDefinedBy magik: ;
+    rdfs:subClassOf ast:Node ;
+    magik:isSupertype true ;
+    magik:nodeTypeId 207 .
+
+magik:return a owl:Class ;
+    rdfs:label "return" ;
+    rdfs:isDefinedBy magik: ;
+    rdfs:subClassOf ast:Node ;
+    magik:isSupertype true ;
+    magik:nodeTypeId 196 .
+
+magik:right a owl:DatatypeProperty ;
+    rdfs:label "right (literal)" ;
+    rdfs:comment "Literal value for right field when it contains a terminal node" ;
+    magik:fieldId 11 ;
+    magik:isTerminalField true .
+
+magik:scatter a owl:Class ;
+    rdfs:label "scatter" ;
+    rdfs:isDefinedBy magik: ;
+    rdfs:subClassOf ast:Node ;
+    magik:isSupertype true ;
+    magik:nodeTypeId 199 .
+
+magik:self a owl:Class ;
+    rdfs:label "self" ;
+    rdfs:isDefinedBy magik: ;
+    rdfs:subClassOf ast:Node ;
+    magik:isSupertype true ;
+    magik:nodeTypeId 180 .
+
+magik:slot_accessor a owl:Class ;
+    rdfs:label "slot_accessor" ;
+    rdfs:isDefinedBy magik: ;
+    rdfs:subClassOf ast:Node ;
+    magik:isSupertype true ;
+    magik:nodeTypeId 173 .
+
+magik:source_file a owl:Class ;
+    rdfs:label "source_file" ;
+    rdfs:isDefinedBy magik: ;
+    rdfs:subClassOf ast:Node ;
+    magik:isSupertype true ;
+    magik:nodeTypeId 138 .
+
+magik:string_literal a owl:Class ;
+    rdfs:label "string_literal" ;
+    rdfs:isDefinedBy magik: ;
+    rdfs:subClassOf ast:Node ;
+    magik:isSupertype true ;
+    magik:nodeTypeId 169 .
+
+magik:super a owl:Class ;
+    rdfs:label "super" ;
+    rdfs:isDefinedBy magik: ;
+    rdfs:subClassOf ast:Node ;
+    magik:isSupertype true ;
+    magik:nodeTypeId 179 .
+
+magik:symbol a owl:Class ;
+    rdfs:label "symbol" ;
+    rdfs:isDefinedBy magik: ;
+    rdfs:subClassOf ast:Node ;
+    magik:isSupertype true ;
+    magik:nodeTypeId 135 .
+
+magik:thisthread a owl:Class ;
+    rdfs:label "thisthread" ;
+    rdfs:isDefinedBy magik: ;
+    rdfs:subClassOf ast:Node ;
+    magik:isSupertype true ;
+    magik:nodeTypeId 182 .
+
+magik:throw a owl:Class ;
+    rdfs:label "throw" ;
+    rdfs:isDefinedBy magik: ;
+    rdfs:subClassOf ast:Node ;
+    magik:isSupertype true ;
+    magik:nodeTypeId 156 .
+
+magik:true a owl:Class ;
+    rdfs:label "true" ;
+    rdfs:isDefinedBy magik: ;
+    rdfs:subClassOf ast:Node ;
+    magik:isSupertype true ;
+    magik:nodeTypeId 175 .
+
+magik:try a owl:Class ;
+    rdfs:label "try" ;
+    rdfs:isDefinedBy magik: ;
+    rdfs:subClassOf ast:Node ;
+    magik:isSupertype true ;
+    magik:nodeTypeId 160 .
+
+magik:unary_operator a owl:Class ;
+    rdfs:label "unary_operator" ;
+    rdfs:isDefinedBy magik: ;
+    rdfs:subClassOf ast:Node ;
+    magik:isSupertype true ;
+    magik:nodeTypeId 210 .
+
+magik:unset a owl:Class ;
+    rdfs:label "unset" ;
+    rdfs:isDefinedBy magik: ;
+    rdfs:subClassOf ast:Node ;
+    magik:isSupertype true ;
+    magik:nodeTypeId 178 .
+
+magik:variable a owl:Class ;
+    rdfs:label "variable" ;
+    rdfs:isDefinedBy magik: ;
+    rdfs:subClassOf ast:Node ;
+    magik:isSupertype true ;
+    magik:nodeTypeId 203 .
+
+magik:vector a owl:Class ;
+    rdfs:label "vector" ;
+    rdfs:isDefinedBy magik: ;
+    rdfs:subClassOf ast:Node ;
+    magik:isSupertype true ;
+    magik:nodeTypeId 206 .
+
+magik:while a owl:Class ;
+    rdfs:label "while" ;
+    rdfs:isDefinedBy magik: ;
+    rdfs:subClassOf ast:Node ;
+    magik:isSupertype true ;
+    magik:nodeTypeId 159 .
+
+magik: a owl:Ontology ;
+    rdfs:label "Magik Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for magik" ;
+    owl:versionInfo "v0.25" ;
+    magik:abiVersion 14 ;
+    magik:fieldCount 11 ;
+    magik:languageName "None" ;
+    magik:nodeKindCount 229 .
+

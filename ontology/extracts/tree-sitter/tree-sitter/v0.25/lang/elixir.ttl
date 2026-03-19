@@ -1,0 +1,481 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix elixir: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/elixir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+elixir:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+elixir:access_call a owl:Class ;
+    rdfs:label "access_call" ;
+    rdfs:isDefinedBy elixir: ;
+    rdfs:subClassOf ast:Node ;
+    elixir:isSupertype true ;
+    elixir:nodeTypeId 195 .
+
+elixir:after_block a owl:Class ;
+    rdfs:label "after_block" ;
+    rdfs:isDefinedBy elixir: ;
+    rdfs:subClassOf ast:Node ;
+    elixir:isSupertype true ;
+    elixir:nodeTypeId 191 .
+
+elixir:alias a owl:Class ;
+    rdfs:label "alias" ;
+    rdfs:isDefinedBy elixir: ;
+    rdfs:subClassOf ast:Node ;
+    elixir:isSupertype true ;
+    elixir:nodeTypeId 7 .
+
+elixir:anonymous_function a owl:Class ;
+    rdfs:label "anonymous_function" ;
+    rdfs:isDefinedBy elixir: ;
+    rdfs:subClassOf ast:Node ;
+    elixir:isSupertype true ;
+    elixir:nodeTypeId 203 .
+
+elixir:arguments a owl:Class ;
+    rdfs:label "arguments" ;
+    rdfs:isDefinedBy elixir: ;
+    rdfs:subClassOf ast:Node ;
+    elixir:isSupertype true ;
+    elixir:nodeTypeId 186,
+        187,
+        189,
+        198,
+        199 .
+
+elixir:atom a owl:Class ;
+    rdfs:label "atom" ;
+    rdfs:isDefinedBy elixir: ;
+    rdfs:subClassOf ast:Node ;
+    elixir:isSupertype true ;
+    elixir:nodeTypeId 14 .
+
+elixir:binary_operator a owl:Class ;
+    rdfs:label "binary_operator" ;
+    rdfs:isDefinedBy elixir: ;
+    rdfs:subClassOf ast:Node ;
+    elixir:isSupertype true ;
+    elixir:nodeTypeId 171,
+        200,
+        201 .
+
+elixir:bitstring a owl:Class ;
+    rdfs:label "bitstring" ;
+    rdfs:isDefinedBy elixir: ;
+    rdfs:subClassOf ast:Node ;
+    elixir:isSupertype true ;
+    elixir:nodeTypeId 164 .
+
+elixir:block a owl:Class ;
+    rdfs:label "block" ;
+    rdfs:isDefinedBy elixir: ;
+    rdfs:subClassOf ast:Node ;
+    elixir:isSupertype true ;
+    elixir:nodeTypeId 127 .
+
+elixir:body a owl:Class ;
+    rdfs:label "body" ;
+    rdfs:isDefinedBy elixir: ;
+    rdfs:subClassOf ast:Node ;
+    elixir:isSupertype true ;
+    elixir:nodeTypeId 202 .
+
+elixir:boolean a owl:Class ;
+    rdfs:label "boolean" ;
+    rdfs:isDefinedBy elixir: ;
+    rdfs:subClassOf ast:Node ;
+    elixir:isSupertype true ;
+    elixir:nodeTypeId 129 .
+
+elixir:call a owl:Class ;
+    rdfs:label "call" ;
+    rdfs:isDefinedBy elixir: ;
+    rdfs:subClassOf ast:Node ;
+    elixir:isSupertype true ;
+    elixir:nodeTypeId 174 .
+
+elixir:catch_block a owl:Class ;
+    rdfs:label "catch_block" ;
+    rdfs:isDefinedBy elixir: ;
+    rdfs:subClassOf ast:Node ;
+    elixir:isSupertype true ;
+    elixir:nodeTypeId 193 .
+
+elixir:char a owl:Class ;
+    rdfs:label "char" ;
+    rdfs:isDefinedBy elixir: ;
+    rdfs:subClassOf ast:Node ;
+    elixir:isSupertype true ;
+    elixir:nodeTypeId 10 .
+
+elixir:charlist a owl:Class ;
+    rdfs:label "charlist" ;
+    rdfs:isDefinedBy elixir: ;
+    rdfs:subClassOf ast:Node ;
+    elixir:isSupertype true ;
+    elixir:nodeTypeId 154 .
+
+elixir:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy elixir: ;
+    rdfs:subClassOf ast:Node ;
+    elixir:isSupertype true ;
+    elixir:nodeTypeId 97 .
+
+elixir:do_block a owl:Class ;
+    rdfs:label "do_block" ;
+    rdfs:isDefinedBy elixir: ;
+    rdfs:subClassOf ast:Node ;
+    elixir:isSupertype true ;
+    elixir:nodeTypeId 190 .
+
+elixir:dot a owl:Class ;
+    rdfs:label "dot" ;
+    rdfs:isDefinedBy elixir: ;
+    rdfs:subClassOf ast:Node ;
+    elixir:isSupertype true ;
+    elixir:nodeTypeId 173,
+        182,
+        184 .
+
+elixir:else_block a owl:Class ;
+    rdfs:label "else_block" ;
+    rdfs:isDefinedBy elixir: ;
+    rdfs:subClassOf ast:Node ;
+    elixir:isSupertype true ;
+    elixir:nodeTypeId 194 .
+
+elixir:escape_sequence a owl:Class ;
+    rdfs:label "escape_sequence" ;
+    rdfs:isDefinedBy elixir: ;
+    rdfs:subClassOf ast:Node ;
+    elixir:isSupertype true ;
+    elixir:nodeTypeId 28 .
+
+elixir:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+elixir:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+elixir:field_key a owl:ObjectProperty ;
+    rdfs:label "key (structural)" ;
+    rdfs:comment "Structural reference for key field when it contains a non-terminal node" ;
+    elixir:fieldId 1 .
+
+elixir:field_left a owl:ObjectProperty ;
+    rdfs:label "left (structural)" ;
+    rdfs:comment "Structural reference for left field when it contains a non-terminal node" ;
+    elixir:fieldId 2 .
+
+elixir:field_operand a owl:ObjectProperty ;
+    rdfs:label "operand (structural)" ;
+    rdfs:comment "Structural reference for operand field when it contains a non-terminal node" ;
+    elixir:fieldId 3 .
+
+elixir:field_operator a owl:ObjectProperty ;
+    rdfs:label "operator (structural)" ;
+    rdfs:comment "Structural reference for operator field when it contains a non-terminal node" ;
+    elixir:fieldId 4 .
+
+elixir:field_quoted_end a owl:ObjectProperty ;
+    rdfs:label "quoted_end (structural)" ;
+    rdfs:comment "Structural reference for quoted_end field when it contains a non-terminal node" ;
+    elixir:fieldId 5 .
+
+elixir:field_quoted_start a owl:ObjectProperty ;
+    rdfs:label "quoted_start (structural)" ;
+    rdfs:comment "Structural reference for quoted_start field when it contains a non-terminal node" ;
+    elixir:fieldId 6 .
+
+elixir:field_right a owl:ObjectProperty ;
+    rdfs:label "right (structural)" ;
+    rdfs:comment "Structural reference for right field when it contains a non-terminal node" ;
+    elixir:fieldId 7 .
+
+elixir:field_target a owl:ObjectProperty ;
+    rdfs:label "target (structural)" ;
+    rdfs:comment "Structural reference for target field when it contains a non-terminal node" ;
+    elixir:fieldId 8 .
+
+elixir:field_value a owl:ObjectProperty ;
+    rdfs:label "value (structural)" ;
+    rdfs:comment "Structural reference for value field when it contains a non-terminal node" ;
+    elixir:fieldId 9 .
+
+elixir:float a owl:Class ;
+    rdfs:label "float" ;
+    rdfs:isDefinedBy elixir: ;
+    rdfs:subClassOf ast:Node ;
+    elixir:isSupertype true ;
+    elixir:nodeTypeId 9 .
+
+elixir:identifier a owl:Class ;
+    rdfs:label "identifier" ;
+    rdfs:isDefinedBy elixir: ;
+    rdfs:subClassOf ast:Node ;
+    elixir:isSupertype true ;
+    elixir:nodeTypeId 128 .
+
+elixir:integer a owl:Class ;
+    rdfs:label "integer" ;
+    rdfs:isDefinedBy elixir: ;
+    rdfs:subClassOf ast:Node ;
+    elixir:isSupertype true ;
+    elixir:nodeTypeId 8 .
+
+elixir:interpolation a owl:Class ;
+    rdfs:label "interpolation" ;
+    rdfs:isDefinedBy elixir: ;
+    rdfs:subClassOf ast:Node ;
+    elixir:isSupertype true ;
+    elixir:nodeTypeId 155 .
+
+elixir:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+elixir:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+elixir:key a owl:DatatypeProperty ;
+    rdfs:label "key (literal)" ;
+    rdfs:comment "Literal value for key field when it contains a terminal node" ;
+    elixir:fieldId 1 ;
+    elixir:isTerminalField true .
+
+elixir:keyword a owl:Class ;
+    rdfs:label "keyword" ;
+    rdfs:isDefinedBy elixir: ;
+    rdfs:subClassOf ast:Node ;
+    elixir:isSupertype true ;
+    elixir:nodeTypeId 34 .
+
+elixir:keywords a owl:Class ;
+    rdfs:label "keywords" ;
+    rdfs:isDefinedBy elixir: ;
+    rdfs:subClassOf ast:Node ;
+    elixir:isSupertype true ;
+    elixir:nodeTypeId 157,
+        158 .
+
+elixir:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+elixir:left a owl:DatatypeProperty ;
+    rdfs:label "left (literal)" ;
+    rdfs:comment "Literal value for left field when it contains a terminal node" ;
+    elixir:fieldId 2 ;
+    elixir:isTerminalField true .
+
+elixir:list a owl:Class ;
+    rdfs:label "list" ;
+    rdfs:isDefinedBy elixir: ;
+    rdfs:subClassOf ast:Node ;
+    elixir:isSupertype true ;
+    elixir:nodeTypeId 162 .
+
+elixir:map a owl:Class ;
+    rdfs:label "map" ;
+    rdfs:isDefinedBy elixir: ;
+    rdfs:subClassOf ast:Node ;
+    elixir:isSupertype true ;
+    elixir:nodeTypeId 165 .
+
+elixir:map_content a owl:Class ;
+    rdfs:label "map_content" ;
+    rdfs:isDefinedBy elixir: ;
+    rdfs:subClassOf ast:Node ;
+    elixir:isSupertype true ;
+    elixir:nodeTypeId 234 .
+
+elixir:nil a owl:Class ;
+    rdfs:label "nil" ;
+    rdfs:isDefinedBy elixir: ;
+    rdfs:subClassOf ast:Node ;
+    elixir:isSupertype true ;
+    elixir:nodeTypeId 130 .
+
+elixir:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+elixir:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+elixir:operand a owl:DatatypeProperty ;
+    rdfs:label "operand (literal)" ;
+    rdfs:comment "Literal value for operand field when it contains a terminal node" ;
+    elixir:fieldId 3 ;
+    elixir:isTerminalField true .
+
+elixir:operator_identifier a owl:Class ;
+    rdfs:label "operator_identifier" ;
+    rdfs:isDefinedBy elixir: ;
+    rdfs:subClassOf ast:Node ;
+    elixir:isSupertype true ;
+    elixir:nodeTypeId 172 .
+
+elixir:pair a owl:Class ;
+    rdfs:label "pair" ;
+    rdfs:isDefinedBy elixir: ;
+    rdfs:subClassOf ast:Node ;
+    elixir:isSupertype true ;
+    elixir:nodeTypeId 159 .
+
+elixir:quoted_atom a owl:Class ;
+    rdfs:label "quoted_atom" ;
+    rdfs:isDefinedBy elixir: ;
+    rdfs:subClassOf ast:Node ;
+    elixir:isSupertype true ;
+    elixir:nodeTypeId 132 .
+
+elixir:quoted_content a owl:Class ;
+    rdfs:label "quoted_content" ;
+    rdfs:isDefinedBy elixir: ;
+    rdfs:subClassOf ast:Node ;
+    elixir:isSupertype true ;
+    elixir:nodeTypeId 98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117 .
+
+elixir:quoted_keyword a owl:Class ;
+    rdfs:label "quoted_keyword" ;
+    rdfs:isDefinedBy elixir: ;
+    rdfs:subClassOf ast:Node ;
+    elixir:isSupertype true ;
+    elixir:nodeTypeId 161 .
+
+elixir:rescue_block a owl:Class ;
+    rdfs:label "rescue_block" ;
+    rdfs:isDefinedBy elixir: ;
+    rdfs:subClassOf ast:Node ;
+    elixir:isSupertype true ;
+    elixir:nodeTypeId 192 .
+
+elixir:right a owl:DatatypeProperty ;
+    rdfs:label "right (literal)" ;
+    rdfs:comment "Literal value for right field when it contains a terminal node" ;
+    elixir:fieldId 7 ;
+    elixir:isTerminalField true .
+
+elixir:sigil a owl:Class ;
+    rdfs:label "sigil" ;
+    rdfs:isDefinedBy elixir: ;
+    rdfs:subClassOf ast:Node ;
+    elixir:isSupertype true ;
+    elixir:nodeTypeId 156 .
+
+elixir:sigil_modifiers a owl:Class ;
+    rdfs:label "sigil_modifiers" ;
+    rdfs:isDefinedBy elixir: ;
+    rdfs:subClassOf ast:Node ;
+    elixir:isSupertype true ;
+    elixir:nodeTypeId 32 .
+
+elixir:sigil_name a owl:Class ;
+    rdfs:label "sigil_name" ;
+    rdfs:isDefinedBy elixir: ;
+    rdfs:subClassOf ast:Node ;
+    elixir:isSupertype true ;
+    elixir:nodeTypeId 30,
+        31 .
+
+elixir:source a owl:Class ;
+    rdfs:label "source" ;
+    rdfs:isDefinedBy elixir: ;
+    rdfs:subClassOf ast:Node ;
+    elixir:isSupertype true ;
+    elixir:nodeTypeId 124 .
+
+elixir:stab_clause a owl:Class ;
+    rdfs:label "stab_clause" ;
+    rdfs:isDefinedBy elixir: ;
+    rdfs:subClassOf ast:Node ;
+    elixir:isSupertype true ;
+    elixir:nodeTypeId 196 .
+
+elixir:string a owl:Class ;
+    rdfs:label "string" ;
+    rdfs:isDefinedBy elixir: ;
+    rdfs:subClassOf ast:Node ;
+    elixir:isSupertype true ;
+    elixir:nodeTypeId 153 .
+
+elixir:struct a owl:Class ;
+    rdfs:label "struct" ;
+    rdfs:isDefinedBy elixir: ;
+    rdfs:subClassOf ast:Node ;
+    elixir:isSupertype true ;
+    elixir:nodeTypeId 166 .
+
+elixir:target a owl:DatatypeProperty ;
+    rdfs:label "target (literal)" ;
+    rdfs:comment "Literal value for target field when it contains a terminal node" ;
+    elixir:fieldId 8 ;
+    elixir:isTerminalField true .
+
+elixir:tuple a owl:Class ;
+    rdfs:label "tuple" ;
+    rdfs:isDefinedBy elixir: ;
+    rdfs:subClassOf ast:Node ;
+    elixir:isSupertype true ;
+    elixir:nodeTypeId 163 .
+
+elixir:unary_operator a owl:Class ;
+    rdfs:label "unary_operator" ;
+    rdfs:isDefinedBy elixir: ;
+    rdfs:subClassOf ast:Node ;
+    elixir:isSupertype true ;
+    elixir:nodeTypeId 169 .
+
+elixir:value a owl:DatatypeProperty ;
+    rdfs:label "value (literal)" ;
+    rdfs:comment "Literal value for value field when it contains a terminal node" ;
+    elixir:fieldId 9 ;
+    elixir:isTerminalField true .
+
+elixir: a owl:Ontology ;
+    rdfs:label "Elixir Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for elixir" ;
+    owl:versionInfo "v0.25" ;
+    elixir:abiVersion 14 ;
+    elixir:fieldCount 9 ;
+    elixir:languageName "None" ;
+    elixir:nodeKindCount 235 .
+

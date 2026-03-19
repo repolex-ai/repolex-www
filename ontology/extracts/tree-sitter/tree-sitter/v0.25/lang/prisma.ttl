@@ -1,0 +1,277 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prisma: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/prisma/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+prisma:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+prisma:apply_function a owl:Class ;
+    rdfs:label "apply_function" ;
+    rdfs:isDefinedBy prisma: ;
+    rdfs:subClassOf ast:Node ;
+    prisma:isSupertype true ;
+    prisma:nodeTypeId 73 .
+
+prisma:argument a owl:DatatypeProperty ;
+    rdfs:label "argument (literal)" ;
+    rdfs:comment "Literal value for argument field when it contains a terminal node" ;
+    prisma:fieldId 1 ;
+    prisma:isTerminalField true .
+
+prisma:array_type a owl:Class ;
+    rdfs:label "array_type" ;
+    rdfs:isDefinedBy prisma: ;
+    rdfs:subClassOf ast:Node ;
+    prisma:isSupertype true ;
+    prisma:nodeTypeId 64 .
+
+prisma:attribute_specifier a owl:Class ;
+    rdfs:label "attribute_specifier" ;
+    rdfs:isDefinedBy prisma: ;
+    rdfs:subClassOf ast:Node ;
+    prisma:isSupertype true ;
+    prisma:nodeTypeId 56 .
+
+prisma:boolean a owl:Class ;
+    rdfs:label "boolean" ;
+    rdfs:isDefinedBy prisma: ;
+    rdfs:subClassOf ast:Node ;
+    prisma:isSupertype true ;
+    prisma:nodeTypeId 71 .
+
+prisma:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy prisma: ;
+    rdfs:subClassOf ast:Node ;
+    prisma:isSupertype true ;
+    prisma:nodeTypeId 29 .
+
+prisma:document_comment a owl:Class ;
+    rdfs:label "document_comment" ;
+    rdfs:isDefinedBy prisma: ;
+    rdfs:subClassOf ast:Node ;
+    prisma:isSupertype true ;
+    prisma:nodeTypeId 28 .
+
+prisma:enum_block a owl:Class ;
+    rdfs:label "enum_block" ;
+    rdfs:isDefinedBy prisma: ;
+    rdfs:subClassOf ast:Node ;
+    prisma:isSupertype true ;
+    prisma:nodeTypeId 51 .
+
+prisma:enum_value a owl:DatatypeProperty ;
+    rdfs:label "enum_value (literal)" ;
+    rdfs:comment "Literal value for enum_value field when it contains a terminal node" ;
+    prisma:fieldId 2 ;
+    prisma:isTerminalField true .
+
+prisma:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+prisma:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+prisma:field_argument a owl:ObjectProperty ;
+    rdfs:label "argument (structural)" ;
+    rdfs:comment "Structural reference for argument field when it contains a non-terminal node" ;
+    prisma:fieldId 1 .
+
+prisma:field_fields a owl:ObjectProperty ;
+    rdfs:label "fields (structural)" ;
+    rdfs:comment "Structural reference for fields field when it contains a non-terminal node" ;
+    prisma:fieldId 4 .
+
+prisma:field_name a owl:DatatypeProperty ;
+    rdfs:label "field_name (literal)" ;
+    rdfs:comment "Literal value for field_name field when it contains a terminal node" ;
+    prisma:fieldId 3 ;
+    prisma:isTerminalField true .
+
+prisma:field_type a owl:Class ;
+    rdfs:label "field_type" ;
+    rdfs:isDefinedBy prisma: ;
+    rdfs:subClassOf ast:Node ;
+    prisma:isSupertype true ;
+    prisma:nodeTypeId 62 .
+
+prisma:fields a owl:DatatypeProperty ;
+    rdfs:label "fields (literal)" ;
+    rdfs:comment "Literal value for fields field when it contains a terminal node" ;
+    prisma:fieldId 4 ;
+    prisma:isTerminalField true .
+
+prisma:identifier a owl:Class ;
+    rdfs:label "identifier" ;
+    rdfs:isDefinedBy prisma: ;
+    rdfs:subClassOf ast:Node ;
+    prisma:isSupertype true ;
+    prisma:nodeTypeId 1 .
+
+prisma:integer a owl:Class ;
+    rdfs:label "integer" ;
+    rdfs:isDefinedBy prisma: ;
+    rdfs:subClassOf ast:Node ;
+    prisma:isSupertype true ;
+    prisma:nodeTypeId 70 .
+
+prisma:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+prisma:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+prisma:key a owl:Class ;
+    rdfs:label "key" ;
+    rdfs:isDefinedBy prisma: ;
+    rdfs:subClassOf ast:Node ;
+    prisma:isSupertype true ;
+    prisma:nodeTypeId 46 .
+
+prisma:key_value a owl:Class ;
+    rdfs:label "key_value" ;
+    rdfs:isDefinedBy prisma: ;
+    rdfs:subClassOf ast:Node ;
+    prisma:isSupertype true ;
+    prisma:nodeTypeId 45 .
+
+prisma:key_value_block a owl:Class ;
+    rdfs:label "key_value_block" ;
+    rdfs:isDefinedBy prisma: ;
+    rdfs:subClassOf ast:Node ;
+    prisma:isSupertype true ;
+    prisma:nodeTypeId 43 .
+
+prisma:label a owl:DatatypeProperty ;
+    rdfs:label "label (literal)" ;
+    rdfs:comment "Literal value for label field when it contains a terminal node" ;
+    prisma:fieldId 5 ;
+    prisma:isTerminalField true .
+
+prisma:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+prisma:model_block a owl:Class ;
+    rdfs:label "model_block" ;
+    rdfs:isDefinedBy prisma: ;
+    rdfs:subClassOf ast:Node ;
+    prisma:isSupertype true ;
+    prisma:nodeTypeId 48 .
+
+prisma:model_field a owl:Class ;
+    rdfs:label "model_field" ;
+    rdfs:isDefinedBy prisma: ;
+    rdfs:subClassOf ast:Node ;
+    prisma:isSupertype true ;
+    prisma:nodeTypeId 50 .
+
+prisma:model_multi_attribute a owl:Class ;
+    rdfs:label "model_multi_attribute" ;
+    rdfs:isDefinedBy prisma: ;
+    rdfs:subClassOf ast:Node ;
+    prisma:isSupertype true ;
+    prisma:nodeTypeId 54 .
+
+prisma:model_single_attribute a owl:Class ;
+    rdfs:label "model_single_attribute" ;
+    rdfs:isDefinedBy prisma: ;
+    rdfs:subClassOf ast:Node ;
+    prisma:isSupertype true ;
+    prisma:nodeTypeId 53 .
+
+prisma:name a owl:DatatypeProperty ;
+    rdfs:label "name (literal)" ;
+    rdfs:comment "Literal value for name field when it contains a terminal node" ;
+    prisma:fieldId 6 ;
+    prisma:isTerminalField true .
+
+prisma:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+prisma:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+prisma:non_null_type a owl:Class ;
+    rdfs:label "non_null_type" ;
+    rdfs:isDefinedBy prisma: ;
+    rdfs:subClassOf ast:Node ;
+    prisma:isSupertype true ;
+    prisma:nodeTypeId 65 .
+
+prisma:nullable_type a owl:Class ;
+    rdfs:label "nullable_type" ;
+    rdfs:isDefinedBy prisma: ;
+    rdfs:subClassOf ast:Node ;
+    prisma:isSupertype true ;
+    prisma:nodeTypeId 63 .
+
+prisma:prisma_type a owl:Class ;
+    rdfs:label "prisma_type" ;
+    rdfs:isDefinedBy prisma: ;
+    rdfs:subClassOf ast:Node ;
+    prisma:isSupertype true ;
+    prisma:nodeTypeId 66 .
+
+prisma:source_file a owl:Class ;
+    rdfs:label "source_file" ;
+    rdfs:isDefinedBy prisma: ;
+    rdfs:subClassOf ast:Node ;
+    prisma:isSupertype true ;
+    prisma:nodeTypeId 41 .
+
+prisma:special_constant a owl:Class ;
+    rdfs:label "special_constant" ;
+    rdfs:isDefinedBy prisma: ;
+    rdfs:subClassOf ast:Node ;
+    prisma:isSupertype true ;
+    prisma:nodeTypeId 40 .
+
+prisma:string a owl:Class ;
+    rdfs:label "string" ;
+    rdfs:isDefinedBy prisma: ;
+    rdfs:subClassOf ast:Node ;
+    prisma:isSupertype true ;
+    prisma:nodeTypeId 69 .
+
+prisma:string_char_escape a owl:Class ;
+    rdfs:label "string_char_escape" ;
+    rdfs:isDefinedBy prisma: ;
+    rdfs:subClassOf ast:Node ;
+    prisma:isSupertype true ;
+    prisma:nodeTypeId 72 .
+
+prisma:value a owl:Class ;
+    rdfs:label "value" ;
+    rdfs:isDefinedBy prisma: ;
+    rdfs:subClassOf ast:Node ;
+    prisma:isSupertype true ;
+    prisma:nodeTypeId 47 .
+
+prisma: a owl:Ontology ;
+    rdfs:label "Prisma Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for prisma" ;
+    owl:versionInfo "v0.25" ;
+    prisma:abiVersion 13 ;
+    prisma:fieldCount 6 ;
+    prisma:languageName "None" ;
+    prisma:nodeKindCount 83 .
+

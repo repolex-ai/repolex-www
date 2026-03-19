@@ -1,0 +1,337 @@
+@prefix git: <https://repolex.ai/ontology/extracts/gitpython-developers/GitPython/v3.1.46/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+git: a owl:Ontology ;
+    rdfs:label "Git Core Ontology" ;
+    rdfs:comment "Core ontology for Git objects (commits, trees, blobs, tags). Extracted by introspection from GitPython bindings." ;
+    owl:versionInfo "v3.1.46" .
+
+git:abspath a owl:DatatypeProperty ;
+    rdfs:label "abspath" ;
+    rdfs:comment "Absolute path in the working directory" ;
+    rdfs:domain git:IndexObject ;
+    rdfs:range xsd:string .
+
+git:actorName a owl:DatatypeProperty ;
+    rdfs:label "actorName" ;
+    rdfs:comment "The person's name" ;
+    rdfs:domain git:Actor ;
+    rdfs:range xsd:string .
+
+git:author a owl:ObjectProperty ;
+    rdfs:label "author" ;
+    rdfs:comment "The person who originally wrote the code" ;
+    rdfs:domain git:Commit ;
+    rdfs:range git:Actor .
+
+git:authorTimezone a owl:DatatypeProperty ;
+    rdfs:label "authorTimezone" ;
+    rdfs:comment "Author's timezone offset in seconds" ;
+    rdfs:domain git:Commit ;
+    rdfs:range xsd:integer .
+
+git:authoredDate a owl:DatatypeProperty ;
+    rdfs:label "authoredDate" ;
+    rdfs:comment "When the commit was authored (original creation time)" ;
+    rdfs:domain git:Commit ;
+    rdfs:range xsd:dateTime .
+
+git:bare a owl:DatatypeProperty ;
+    rdfs:label "bare" ;
+    rdfs:comment "Whether this is a bare repository" ;
+    rdfs:domain git:Repository ;
+    rdfs:range xsd:boolean .
+
+git:binsha a owl:DatatypeProperty ;
+    rdfs:label "binsha" ;
+    rdfs:comment "The 20-byte binary SHA-1 hash identifying this object" ;
+    rdfs:domain git:Object ;
+    rdfs:range xsd:hexBinary .
+
+git:blob a owl:ObjectProperty ;
+    rdfs:label "blob" ;
+    rdfs:comment "Blobs (files) contained directly in this tree" ;
+    rdfs:domain git:Tree ;
+    rdfs:range git:Blob .
+
+git:branch a owl:ObjectProperty ;
+    rdfs:label "branch" ;
+    rdfs:comment "Local branches in this repository" ;
+    rdfs:domain git:Repository ;
+    rdfs:range git:Reference .
+
+git:commit a owl:ObjectProperty ;
+    rdfs:label "commit" ;
+    rdfs:comment "The commit this reference points to" ;
+    rdfs:domain git:Reference ;
+    rdfs:range git:Commit .
+
+git:committedDate a owl:DatatypeProperty ;
+    rdfs:label "committedDate" ;
+    rdfs:comment "When the commit was committed (may differ from authored if rebased)" ;
+    rdfs:domain git:Commit ;
+    rdfs:range xsd:dateTime .
+
+git:committer a owl:ObjectProperty ;
+    rdfs:label "committer" ;
+    rdfs:comment "The person who committed the code (may differ from author)" ;
+    rdfs:domain git:Commit ;
+    rdfs:range git:Actor .
+
+git:committerTimezone a owl:DatatypeProperty ;
+    rdfs:label "committerTimezone" ;
+    rdfs:comment "Committer's timezone offset in seconds" ;
+    rdfs:domain git:Commit ;
+    rdfs:range xsd:integer .
+
+git:description a owl:DatatypeProperty ;
+    rdfs:label "description" ;
+    rdfs:comment "Repository description from .git/description" ;
+    rdfs:domain git:Repository ;
+    rdfs:range xsd:string .
+
+git:email a owl:DatatypeProperty ;
+    rdfs:label "email" ;
+    rdfs:comment "The person's email address" ;
+    rdfs:domain git:Actor ;
+    rdfs:range xsd:string .
+
+git:encoding a owl:DatatypeProperty ;
+    rdfs:label "encoding" ;
+    rdfs:comment "Character encoding of the commit message" ;
+    rdfs:domain git:Commit ;
+    rdfs:range xsd:string .
+
+git:fetchUrl a owl:DatatypeProperty ;
+    rdfs:label "fetchUrl" ;
+    rdfs:comment "URL used for fetching" ;
+    rdfs:domain git:Remote ;
+    rdfs:range xsd:anyURI .
+
+git:gitDir a owl:DatatypeProperty ;
+    rdfs:label "gitDir" ;
+    rdfs:comment "Path to the .git directory" ;
+    rdfs:domain git:Repository ;
+    rdfs:range xsd:string .
+
+git:gpgsig a owl:DatatypeProperty ;
+    rdfs:label "gpgsig" ;
+    rdfs:comment "GPG signature if the commit is signed" ;
+    rdfs:domain git:Commit ;
+    rdfs:range xsd:string .
+
+git:head a owl:ObjectProperty ;
+    rdfs:label "head" ;
+    rdfs:comment "The HEAD reference" ;
+    rdfs:domain git:Repository ;
+    rdfs:range git:Reference .
+
+git:hexsha a owl:DatatypeProperty ;
+    rdfs:label "hexsha" ;
+    rdfs:comment "The 40-character hexadecimal SHA-1 hash identifying this object" ;
+    rdfs:domain git:Object ;
+    rdfs:range xsd:string .
+
+git:isDetached a owl:DatatypeProperty ;
+    rdfs:label "isDetached" ;
+    rdfs:comment "Whether HEAD is in detached state" ;
+    rdfs:domain git:Reference ;
+    rdfs:range xsd:boolean .
+
+git:isRemote a owl:DatatypeProperty ;
+    rdfs:label "isRemote" ;
+    rdfs:comment "Whether this is a remote-tracking reference" ;
+    rdfs:domain git:Reference ;
+    rdfs:range xsd:boolean .
+
+git:message a owl:DatatypeProperty ;
+    rdfs:label "message" ;
+    rdfs:comment "The commit message" ;
+    rdfs:domain git:Commit ;
+    rdfs:range xsd:string .
+
+git:mimeType a owl:DatatypeProperty ;
+    rdfs:label "mimeType" ;
+    rdfs:comment "MIME type of the file content" ;
+    rdfs:domain git:Blob ;
+    rdfs:range xsd:string .
+
+git:mode a owl:DatatypeProperty ;
+    rdfs:label "mode" ;
+    rdfs:comment "Unix file mode bits (e.g., 33188 for regular file, 16384 for directory)" ;
+    rdfs:domain git:IndexObject ;
+    rdfs:range xsd:integer .
+
+git:name a owl:DatatypeProperty ;
+    rdfs:label "name" ;
+    rdfs:comment "Name of the file or directory" ;
+    rdfs:domain git:IndexObject ;
+    rdfs:range xsd:string .
+
+git:parent a owl:ObjectProperty ;
+    rdfs:label "parent" ;
+    rdfs:comment "Parent commit(s). Merge commits have multiple parents." ;
+    rdfs:domain git:Commit ;
+    rdfs:range git:Commit .
+
+git:path a owl:DatatypeProperty ;
+    rdfs:label "path" ;
+    rdfs:comment "Path relative to repository root" ;
+    rdfs:domain git:IndexObject ;
+    rdfs:range xsd:string .
+
+git:pushUrl a owl:DatatypeProperty ;
+    rdfs:label "pushUrl" ;
+    rdfs:comment "URL used for pushing" ;
+    rdfs:domain git:Remote ;
+    rdfs:range xsd:anyURI .
+
+git:refName a owl:DatatypeProperty ;
+    rdfs:label "refName" ;
+    rdfs:comment "Full reference name (e.g., 'refs/heads/main')" ;
+    rdfs:domain git:Reference ;
+    rdfs:range xsd:string .
+
+git:remote a owl:ObjectProperty ;
+    rdfs:label "remote" ;
+    rdfs:comment "Remote repositories configured" ;
+    rdfs:domain git:Repository ;
+    rdfs:range git:Remote .
+
+git:remoteName a owl:DatatypeProperty ;
+    rdfs:label "remoteName" ;
+    rdfs:comment "Name of the remote (e.g., 'origin')" ;
+    rdfs:domain git:Remote ;
+    rdfs:range xsd:string .
+
+git:shortName a owl:DatatypeProperty ;
+    rdfs:label "shortName" ;
+    rdfs:comment "Short reference name (e.g., 'main')" ;
+    rdfs:domain git:Reference ;
+    rdfs:range xsd:string .
+
+git:size a owl:DatatypeProperty ;
+    rdfs:label "size" ;
+    rdfs:comment "Size of the object in bytes" ;
+    rdfs:domain git:Object ;
+    rdfs:range xsd:nonNegativeInteger .
+
+git:subtree a owl:ObjectProperty ;
+    rdfs:label "subtree" ;
+    rdfs:comment "Subtrees (subdirectories) contained in this tree" ;
+    rdfs:domain git:Tree ;
+    rdfs:range git:Tree .
+
+git:summary a owl:DatatypeProperty ;
+    rdfs:label "summary" ;
+    rdfs:comment "First line of the commit message" ;
+    rdfs:domain git:Commit ;
+    rdfs:range xsd:string .
+
+git:tagMessage a owl:DatatypeProperty ;
+    rdfs:label "tagMessage" ;
+    rdfs:comment "Tag annotation message" ;
+    rdfs:domain git:Tag ;
+    rdfs:range xsd:string .
+
+git:tagName a owl:DatatypeProperty ;
+    rdfs:label "tagName" ;
+    rdfs:comment "Name of the tag" ;
+    rdfs:domain git:Tag ;
+    rdfs:range xsd:string .
+
+git:taggedDate a owl:DatatypeProperty ;
+    rdfs:label "taggedDate" ;
+    rdfs:comment "When the tag was created" ;
+    rdfs:domain git:Tag ;
+    rdfs:range xsd:dateTime .
+
+git:taggedObject a owl:ObjectProperty ;
+    rdfs:label "taggedObject" ;
+    rdfs:comment "The object being tagged (usually a commit)" ;
+    rdfs:domain git:Tag ;
+    rdfs:range git:Object .
+
+git:tagger a owl:ObjectProperty ;
+    rdfs:label "tagger" ;
+    rdfs:comment "Person who created the tag" ;
+    rdfs:domain git:Tag ;
+    rdfs:range git:Actor .
+
+git:trackingBranch a owl:ObjectProperty ;
+    rdfs:label "trackingBranch" ;
+    rdfs:comment "The remote-tracking branch this local branch tracks" ;
+    rdfs:domain git:Reference ;
+    rdfs:range git:Reference .
+
+git:tree a owl:ObjectProperty ;
+    rdfs:label "tree" ;
+    rdfs:comment "The tree object representing the project snapshot at this commit" ;
+    rdfs:domain git:Commit ;
+    rdfs:range git:Tree .
+
+git:type a owl:DatatypeProperty ;
+    rdfs:label "type" ;
+    rdfs:comment "The git object type string ('commit', 'tree', 'blob', 'tag')" ;
+    rdfs:domain git:Object ;
+    rdfs:range xsd:string .
+
+git:url a owl:DatatypeProperty ;
+    rdfs:label "url" ;
+    rdfs:comment "URL of the remote repository" ;
+    rdfs:domain git:Remote ;
+    rdfs:range xsd:anyURI .
+
+git:workingDir a owl:DatatypeProperty ;
+    rdfs:label "workingDir" ;
+    rdfs:comment "Path to the working directory" ;
+    rdfs:domain git:Repository ;
+    rdfs:range xsd:string .
+
+git:Blob a owl:Class ;
+    rdfs:label "Blob" ;
+    rdfs:comment "A git blob object. Represents file contents. The same content always produces the same blob hash (content-addressed storage)." ;
+    rdfs:subClassOf git:IndexObject .
+
+git:Tree a owl:Class ;
+    rdfs:label "Tree" ;
+    rdfs:comment "A git tree object. Represents a directory - contains references to blobs (files) and other trees (subdirectories)." ;
+    rdfs:subClassOf git:IndexObject .
+
+git:Actor a owl:Class ;
+    rdfs:label "Actor" ;
+    rdfs:comment "A person who performed an action in git (author, committer, or tagger). Identified by name and email." .
+
+git:Remote a owl:Class ;
+    rdfs:label "Remote" ;
+    rdfs:comment "A remote repository configuration (e.g., 'origin')." .
+
+git:Tag a owl:Class ;
+    rdfs:label "Tag" ;
+    rdfs:comment "An annotated git tag. Contains tagger info, date, message, and points to a tagged object (usually a commit). Lightweight tags are just refs and don't have a Tag object." ;
+    rdfs:subClassOf git:Object .
+
+git:IndexObject a owl:Class ;
+    rdfs:label "IndexObject" ;
+    rdfs:comment "GitPython abstraction for objects that can appear in a tree index. Adds path, name, and mode information from the tree context. Parent class of Blob and Tree." ;
+    rdfs:subClassOf git:Object .
+
+git:Repository a owl:Class ;
+    rdfs:label "Repository" ;
+    rdfs:comment "A git repository. Contains objects, references, and configuration." .
+
+git:Object a owl:Class ;
+    rdfs:label "Object" ;
+    rdfs:comment "Base class for all Git objects. All git objects are identified by their SHA-1 hash." .
+
+git:Reference a owl:Class ;
+    rdfs:label "Reference" ;
+    rdfs:comment "A git reference (ref). Includes branches, tags, HEAD, and remote-tracking branches. References are mutable pointers to commits." .
+
+git:Commit a owl:Class ;
+    rdfs:label "Commit" ;
+    rdfs:comment "A git commit object. Contains a snapshot (tree), parent commits, author/committer info, and a message." ;
+    rdfs:subClassOf git:Object .
+

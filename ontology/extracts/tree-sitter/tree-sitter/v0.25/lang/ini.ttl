@@ -1,0 +1,113 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix ini: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/ini/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ini:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+ini:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy ini: ;
+    rdfs:subClassOf ast:Node ;
+    ini:isSupertype true ;
+    ini:nodeTypeId 14 .
+
+ini:document a owl:Class ;
+    rdfs:label "document" ;
+    rdfs:isDefinedBy ini: ;
+    rdfs:subClassOf ast:Node ;
+    ini:isSupertype true ;
+    ini:nodeTypeId 10 .
+
+ini:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+ini:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+ini:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+ini:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+ini:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+ini:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+ini:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+ini:section a owl:Class ;
+    rdfs:label "section" ;
+    rdfs:isDefinedBy ini: ;
+    rdfs:subClassOf ast:Node ;
+    ini:isSupertype true ;
+    ini:nodeTypeId 11 .
+
+ini:section_name a owl:Class ;
+    rdfs:label "section_name" ;
+    rdfs:isDefinedBy ini: ;
+    rdfs:subClassOf ast:Node ;
+    ini:isSupertype true ;
+    ini:nodeTypeId 12 .
+
+ini:setting a owl:Class ;
+    rdfs:label "setting" ;
+    rdfs:isDefinedBy ini: ;
+    rdfs:subClassOf ast:Node ;
+    ini:isSupertype true ;
+    ini:nodeTypeId 13 .
+
+ini:setting_name a owl:Class ;
+    rdfs:label "setting_name" ;
+    rdfs:isDefinedBy ini: ;
+    rdfs:subClassOf ast:Node ;
+    ini:isSupertype true ;
+    ini:nodeTypeId 5 .
+
+ini:setting_value a owl:Class ;
+    rdfs:label "setting_value" ;
+    rdfs:isDefinedBy ini: ;
+    rdfs:subClassOf ast:Node ;
+    ini:isSupertype true ;
+    ini:nodeTypeId 7 .
+
+ini:text a owl:Class ;
+    rdfs:label "text" ;
+    rdfs:isDefinedBy ini: ;
+    rdfs:subClassOf ast:Node ;
+    ini:isSupertype true ;
+    ini:nodeTypeId 2,
+        9 .
+
+ini: a owl:Ontology ;
+    rdfs:label "Ini Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for ini" ;
+    owl:versionInfo "v0.25" ;
+    ini:abiVersion 14 ;
+    ini:fieldCount 1 ;
+    ini:languageName "None" ;
+    ini:nodeKindCount 19 .
+

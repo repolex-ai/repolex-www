@@ -1,0 +1,236 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix gomod: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/gomod/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+gomod:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+gomod:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy gomod: ;
+    rdfs:subClassOf ast:Node ;
+    gomod:isSupertype true ;
+    gomod:nodeTypeId 49 .
+
+gomod:escape_sequence a owl:Class ;
+    rdfs:label "escape_sequence" ;
+    rdfs:isDefinedBy gomod: ;
+    rdfs:subClassOf ast:Node ;
+    gomod:isSupertype true ;
+    gomod:nodeTypeId 4 .
+
+gomod:exclude_directive a owl:Class ;
+    rdfs:label "exclude_directive" ;
+    rdfs:isDefinedBy gomod: ;
+    rdfs:subClassOf ast:Node ;
+    gomod:isSupertype true ;
+    gomod:nodeTypeId 39 .
+
+gomod:exclude_spec a owl:Class ;
+    rdfs:label "exclude_spec" ;
+    rdfs:isDefinedBy gomod: ;
+    rdfs:subClassOf ast:Node ;
+    gomod:isSupertype true ;
+    gomod:nodeTypeId 40 .
+
+gomod:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+gomod:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+gomod:field_name a owl:ObjectProperty ;
+    rdfs:label "name (structural)" ;
+    rdfs:comment "Structural reference for name field when it contains a non-terminal node" ;
+    gomod:fieldId 1 .
+
+gomod:file_path a owl:Class ;
+    rdfs:label "file_path" ;
+    rdfs:isDefinedBy gomod: ;
+    rdfs:subClassOf ast:Node ;
+    gomod:isSupertype true ;
+    gomod:nodeTypeId 44 .
+
+gomod:go_directive a owl:Class ;
+    rdfs:label "go_directive" ;
+    rdfs:isDefinedBy gomod: ;
+    rdfs:subClassOf ast:Node ;
+    gomod:isSupertype true ;
+    gomod:nodeTypeId 34 .
+
+gomod:go_version a owl:Class ;
+    rdfs:label "go_version" ;
+    rdfs:isDefinedBy gomod: ;
+    rdfs:subClassOf ast:Node ;
+    gomod:isSupertype true ;
+    gomod:nodeTypeId 30 .
+
+gomod:ignore_directive a owl:Class ;
+    rdfs:label "ignore_directive" ;
+    rdfs:isDefinedBy gomod: ;
+    rdfs:subClassOf ast:Node ;
+    gomod:isSupertype true ;
+    gomod:nodeTypeId 47 .
+
+gomod:ignore_spec a owl:Class ;
+    rdfs:label "ignore_spec" ;
+    rdfs:isDefinedBy gomod: ;
+    rdfs:subClassOf ast:Node ;
+    gomod:isSupertype true ;
+    gomod:nodeTypeId 48 .
+
+gomod:interpreted_string_literal a owl:Class ;
+    rdfs:label "interpreted_string_literal" ;
+    rdfs:isDefinedBy gomod: ;
+    rdfs:subClassOf ast:Node ;
+    gomod:isSupertype true ;
+    gomod:nodeTypeId 27 .
+
+gomod:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+gomod:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+gomod:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+gomod:module_directive a owl:Class ;
+    rdfs:label "module_directive" ;
+    rdfs:isDefinedBy gomod: ;
+    rdfs:subClassOf ast:Node ;
+    gomod:isSupertype true ;
+    gomod:nodeTypeId 33 .
+
+gomod:module_path a owl:Class ;
+    rdfs:label "module_path" ;
+    rdfs:isDefinedBy gomod: ;
+    rdfs:subClassOf ast:Node ;
+    gomod:isSupertype true ;
+    gomod:nodeTypeId 29 .
+
+gomod:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+gomod:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+gomod:raw_string_literal a owl:Class ;
+    rdfs:label "raw_string_literal" ;
+    rdfs:isDefinedBy gomod: ;
+    rdfs:subClassOf ast:Node ;
+    gomod:isSupertype true ;
+    gomod:nodeTypeId 1 .
+
+gomod:replace_directive a owl:Class ;
+    rdfs:label "replace_directive" ;
+    rdfs:isDefinedBy gomod: ;
+    rdfs:subClassOf ast:Node ;
+    gomod:isSupertype true ;
+    gomod:nodeTypeId 41 .
+
+gomod:replace_spec a owl:Class ;
+    rdfs:label "replace_spec" ;
+    rdfs:isDefinedBy gomod: ;
+    rdfs:subClassOf ast:Node ;
+    gomod:isSupertype true ;
+    gomod:nodeTypeId 42 .
+
+gomod:require_directive a owl:Class ;
+    rdfs:label "require_directive" ;
+    rdfs:isDefinedBy gomod: ;
+    rdfs:subClassOf ast:Node ;
+    gomod:isSupertype true ;
+    gomod:nodeTypeId 37 .
+
+gomod:require_spec a owl:Class ;
+    rdfs:label "require_spec" ;
+    rdfs:isDefinedBy gomod: ;
+    rdfs:subClassOf ast:Node ;
+    gomod:isSupertype true ;
+    gomod:nodeTypeId 38 .
+
+gomod:retract_directive a owl:Class ;
+    rdfs:label "retract_directive" ;
+    rdfs:isDefinedBy gomod: ;
+    rdfs:subClassOf ast:Node ;
+    gomod:isSupertype true ;
+    gomod:nodeTypeId 45 .
+
+gomod:retract_spec a owl:Class ;
+    rdfs:label "retract_spec" ;
+    rdfs:isDefinedBy gomod: ;
+    rdfs:subClassOf ast:Node ;
+    gomod:isSupertype true ;
+    gomod:nodeTypeId 46 .
+
+gomod:source_file a owl:Class ;
+    rdfs:label "source_file" ;
+    rdfs:isDefinedBy gomod: ;
+    rdfs:subClassOf ast:Node ;
+    gomod:isSupertype true ;
+    gomod:nodeTypeId 24 .
+
+gomod:tool a owl:Class ;
+    rdfs:label "tool" ;
+    rdfs:isDefinedBy gomod: ;
+    rdfs:subClassOf ast:Node ;
+    gomod:isSupertype true ;
+    gomod:nodeTypeId 32 .
+
+gomod:tool_directive a owl:Class ;
+    rdfs:label "tool_directive" ;
+    rdfs:isDefinedBy gomod: ;
+    rdfs:subClassOf ast:Node ;
+    gomod:isSupertype true ;
+    gomod:nodeTypeId 43 .
+
+gomod:toolchain_directive a owl:Class ;
+    rdfs:label "toolchain_directive" ;
+    rdfs:isDefinedBy gomod: ;
+    rdfs:subClassOf ast:Node ;
+    gomod:isSupertype true ;
+    gomod:nodeTypeId 35 .
+
+gomod:toolchain_name a owl:Class ;
+    rdfs:label "toolchain_name" ;
+    rdfs:isDefinedBy gomod: ;
+    rdfs:subClassOf ast:Node ;
+    gomod:isSupertype true ;
+    gomod:nodeTypeId 36 .
+
+gomod:version a owl:Class ;
+    rdfs:label "version" ;
+    rdfs:isDefinedBy gomod: ;
+    rdfs:subClassOf ast:Node ;
+    gomod:isSupertype true ;
+    gomod:nodeTypeId 31 .
+
+gomod: a owl:Ontology ;
+    rdfs:label "Gomod Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for gomod" ;
+    owl:versionInfo "v0.25" ;
+    gomod:abiVersion 15 ;
+    gomod:fieldCount 1 ;
+    gomod:languageName "gomod" ;
+    gomod:nodeKindCount 58 .
+

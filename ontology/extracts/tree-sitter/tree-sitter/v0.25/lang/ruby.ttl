@@ -1,0 +1,1195 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ruby: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/ruby/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ruby:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+ruby:alias a owl:Class ;
+    rdfs:label "alias" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 305 .
+
+ruby:alternative_pattern a owl:Class ;
+    rdfs:label "alternative_pattern" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 218 .
+
+ruby:argument_list a owl:Class ;
+    rdfs:label "argument_list" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 266,
+        267 .
+
+ruby:array a owl:Class ;
+    rdfs:label "array" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 322 .
+
+ruby:array_pattern a owl:Class ;
+    rdfs:label "array_pattern" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 220 .
+
+ruby:as_pattern a owl:Class ;
+    rdfs:label "as_pattern" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 216 .
+
+ruby:assignment a owl:Class ;
+    rdfs:label "assignment" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 276,
+        277 .
+
+ruby:bare_string a owl:Class ;
+    rdfs:label "bare_string" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 347 .
+
+ruby:bare_symbol a owl:Class ;
+    rdfs:label "bare_symbol" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 348 .
+
+ruby:begin a owl:Class ;
+    rdfs:label "begin" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 244 .
+
+ruby:begin_block a owl:Class ;
+    rdfs:label "begin_block" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 160 .
+
+ruby:binary a owl:Class ;
+    rdfs:label "binary" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 256,
+        282,
+        283 .
+
+ruby:block a owl:Class ;
+    rdfs:label "block" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 275 .
+
+ruby:block_argument a owl:Class ;
+    rdfs:label "block_argument" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 273 .
+
+ruby:block_body a owl:Class ;
+    rdfs:label "block_body" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 158 .
+
+ruby:block_parameter a owl:Class ;
+    rdfs:label "block_parameter" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 178 .
+
+ruby:block_parameters a owl:Class ;
+    rdfs:label "block_parameters" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 171 .
+
+ruby:body_statement a owl:Class ;
+    rdfs:label "body_statement" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 249 .
+
+ruby:break a owl:Class ;
+    rdfs:label "break" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 187,
+        191 .
+
+ruby:call a owl:Class ;
+    rdfs:label "call" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 262,
+        263,
+        265,
+        297 .
+
+ruby:case a owl:Class ;
+    rdfs:label "case" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 205 .
+
+ruby:case_match a owl:Class ;
+    rdfs:label "case_match" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 206 .
+
+ruby:chained_string a owl:Class ;
+    rdfs:label "chained_string" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 312 .
+
+ruby:character a owl:Class ;
+    rdfs:label "character" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 123 .
+
+ruby:class a owl:Class ;
+    rdfs:label "class" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 181 .
+
+ruby:class_variable a owl:Class ;
+    rdfs:label "class_variable" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 121 .
+
+ruby:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 107 .
+
+ruby:complex a owl:Class ;
+    rdfs:label "complex" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 307 .
+
+ruby:conditional a owl:Class ;
+    rdfs:label "conditional" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 280 .
+
+ruby:constant a owl:Class ;
+    rdfs:label "constant" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 117 .
+
+ruby:delimited_symbol a owl:Class ;
+    rdfs:label "delimited_symbol" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 318 .
+
+ruby:destructured_left_assignment a owl:Class ;
+    rdfs:label "destructured_left_assignment" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 294 .
+
+ruby:destructured_parameter a owl:Class ;
+    rdfs:label "destructured_parameter" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 349 .
+
+ruby:do a owl:Class ;
+    rdfs:label "do" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 204 .
+
+ruby:do_block a owl:Class ;
+    rdfs:label "do_block" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 274 .
+
+ruby:element_reference a owl:Class ;
+    rdfs:label "element_reference" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 259 .
+
+ruby:else a owl:Class ;
+    rdfs:label "else" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 242 .
+
+ruby:elsif a owl:Class ;
+    rdfs:label "elsif" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 241 .
+
+ruby:empty_statement a owl:Class ;
+    rdfs:label "empty_statement" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 326 .
+
+ruby:encoding a owl:Class ;
+    rdfs:label "encoding" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 51 .
+
+ruby:end_block a owl:Class ;
+    rdfs:label "end_block" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 161 .
+
+ruby:ensure a owl:Class ;
+    rdfs:label "ensure" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 245 .
+
+ruby:escape_sequence a owl:Class ;
+    rdfs:label "escape_sequence" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 126 .
+
+ruby:exception_variable a owl:Class ;
+    rdfs:label "exception_variable" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 248 .
+
+ruby:exceptions a owl:Class ;
+    rdfs:label "exceptions" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 247 .
+
+ruby:expression_reference_pattern a owl:Class ;
+    rdfs:label "expression_reference_pattern" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 236 .
+
+ruby:false a owl:Class ;
+    rdfs:label "false" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 116 .
+
+ruby:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+ruby:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+ruby:field_alias a owl:ObjectProperty ;
+    rdfs:label "alias (structural)" ;
+    rdfs:comment "Structural reference for alias field when it contains a non-terminal node" ;
+    ruby:fieldId 1 .
+
+ruby:field_alternative a owl:ObjectProperty ;
+    rdfs:label "alternative (structural)" ;
+    rdfs:comment "Structural reference for alternative field when it contains a non-terminal node" ;
+    ruby:fieldId 2 .
+
+ruby:field_alternatives a owl:ObjectProperty ;
+    rdfs:label "alternatives (structural)" ;
+    rdfs:comment "Structural reference for alternatives field when it contains a non-terminal node" ;
+    ruby:fieldId 3 .
+
+ruby:field_arguments a owl:ObjectProperty ;
+    rdfs:label "arguments (structural)" ;
+    rdfs:comment "Structural reference for arguments field when it contains a non-terminal node" ;
+    ruby:fieldId 4 .
+
+ruby:field_begin a owl:ObjectProperty ;
+    rdfs:label "begin (structural)" ;
+    rdfs:comment "Structural reference for begin field when it contains a non-terminal node" ;
+    ruby:fieldId 5 .
+
+ruby:field_block a owl:ObjectProperty ;
+    rdfs:label "block (structural)" ;
+    rdfs:comment "Structural reference for block field when it contains a non-terminal node" ;
+    ruby:fieldId 6 .
+
+ruby:field_body a owl:ObjectProperty ;
+    rdfs:label "body (structural)" ;
+    rdfs:comment "Structural reference for body field when it contains a non-terminal node" ;
+    ruby:fieldId 7 .
+
+ruby:field_class a owl:ObjectProperty ;
+    rdfs:label "class (structural)" ;
+    rdfs:comment "Structural reference for class field when it contains a non-terminal node" ;
+    ruby:fieldId 8 .
+
+ruby:field_clauses a owl:ObjectProperty ;
+    rdfs:label "clauses (structural)" ;
+    rdfs:comment "Structural reference for clauses field when it contains a non-terminal node" ;
+    ruby:fieldId 9 .
+
+ruby:field_condition a owl:ObjectProperty ;
+    rdfs:label "condition (structural)" ;
+    rdfs:comment "Structural reference for condition field when it contains a non-terminal node" ;
+    ruby:fieldId 10 .
+
+ruby:field_consequence a owl:ObjectProperty ;
+    rdfs:label "consequence (structural)" ;
+    rdfs:comment "Structural reference for consequence field when it contains a non-terminal node" ;
+    ruby:fieldId 11 .
+
+ruby:field_else a owl:ObjectProperty ;
+    rdfs:label "else (structural)" ;
+    rdfs:comment "Structural reference for else field when it contains a non-terminal node" ;
+    ruby:fieldId 12 .
+
+ruby:field_end a owl:ObjectProperty ;
+    rdfs:label "end (structural)" ;
+    rdfs:comment "Structural reference for end field when it contains a non-terminal node" ;
+    ruby:fieldId 13 .
+
+ruby:field_exceptions a owl:ObjectProperty ;
+    rdfs:label "exceptions (structural)" ;
+    rdfs:comment "Structural reference for exceptions field when it contains a non-terminal node" ;
+    ruby:fieldId 14 .
+
+ruby:field_guard a owl:ObjectProperty ;
+    rdfs:label "guard (structural)" ;
+    rdfs:comment "Structural reference for guard field when it contains a non-terminal node" ;
+    ruby:fieldId 15 .
+
+ruby:field_handler a owl:ObjectProperty ;
+    rdfs:label "handler (structural)" ;
+    rdfs:comment "Structural reference for handler field when it contains a non-terminal node" ;
+    ruby:fieldId 16 .
+
+ruby:field_key a owl:ObjectProperty ;
+    rdfs:label "key (structural)" ;
+    rdfs:comment "Structural reference for key field when it contains a non-terminal node" ;
+    ruby:fieldId 17 .
+
+ruby:field_left a owl:ObjectProperty ;
+    rdfs:label "left (structural)" ;
+    rdfs:comment "Structural reference for left field when it contains a non-terminal node" ;
+    ruby:fieldId 18 .
+
+ruby:field_method a owl:ObjectProperty ;
+    rdfs:label "method (structural)" ;
+    rdfs:comment "Structural reference for method field when it contains a non-terminal node" ;
+    ruby:fieldId 20 .
+
+ruby:field_name a owl:ObjectProperty ;
+    rdfs:label "name (structural)" ;
+    rdfs:comment "Structural reference for name field when it contains a non-terminal node" ;
+    ruby:fieldId 21 .
+
+ruby:field_object a owl:ObjectProperty ;
+    rdfs:label "object (structural)" ;
+    rdfs:comment "Structural reference for object field when it contains a non-terminal node" ;
+    ruby:fieldId 22 .
+
+ruby:field_operand a owl:ObjectProperty ;
+    rdfs:label "operand (structural)" ;
+    rdfs:comment "Structural reference for operand field when it contains a non-terminal node" ;
+    ruby:fieldId 23 .
+
+ruby:field_operator a owl:ObjectProperty ;
+    rdfs:label "operator (structural)" ;
+    rdfs:comment "Structural reference for operator field when it contains a non-terminal node" ;
+    ruby:fieldId 24 .
+
+ruby:field_parameters a owl:ObjectProperty ;
+    rdfs:label "parameters (structural)" ;
+    rdfs:comment "Structural reference for parameters field when it contains a non-terminal node" ;
+    ruby:fieldId 25 .
+
+ruby:field_pattern a owl:ObjectProperty ;
+    rdfs:label "pattern (structural)" ;
+    rdfs:comment "Structural reference for pattern field when it contains a non-terminal node" ;
+    ruby:fieldId 26 .
+
+ruby:field_receiver a owl:ObjectProperty ;
+    rdfs:label "receiver (structural)" ;
+    rdfs:comment "Structural reference for receiver field when it contains a non-terminal node" ;
+    ruby:fieldId 27 .
+
+ruby:field_right a owl:ObjectProperty ;
+    rdfs:label "right (structural)" ;
+    rdfs:comment "Structural reference for right field when it contains a non-terminal node" ;
+    ruby:fieldId 28 .
+
+ruby:field_scope a owl:ObjectProperty ;
+    rdfs:label "scope (structural)" ;
+    rdfs:comment "Structural reference for scope field when it contains a non-terminal node" ;
+    ruby:fieldId 29 .
+
+ruby:field_superclass a owl:ObjectProperty ;
+    rdfs:label "superclass (structural)" ;
+    rdfs:comment "Structural reference for superclass field when it contains a non-terminal node" ;
+    ruby:fieldId 30 .
+
+ruby:field_value a owl:ObjectProperty ;
+    rdfs:label "value (structural)" ;
+    rdfs:comment "Structural reference for value field when it contains a non-terminal node" ;
+    ruby:fieldId 31 .
+
+ruby:field_variable a owl:ObjectProperty ;
+    rdfs:label "variable (structural)" ;
+    rdfs:comment "Structural reference for variable field when it contains a non-terminal node" ;
+    ruby:fieldId 32 .
+
+ruby:file a owl:Class ;
+    rdfs:label "file" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 50 .
+
+ruby:find_pattern a owl:Class ;
+    rdfs:label "find_pattern" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 222 .
+
+ruby:float a owl:Class ;
+    rdfs:label "float" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 109 .
+
+ruby:for a owl:Class ;
+    rdfs:label "for" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 202 .
+
+ruby:forward_argument a owl:Class ;
+    rdfs:label "forward_argument" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 270 .
+
+ruby:forward_parameter a owl:Class ;
+    rdfs:label "forward_parameter" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 174 .
+
+ruby:global_variable a owl:Class ;
+    rdfs:label "global_variable" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 122 .
+
+ruby:hash a owl:Class ;
+    rdfs:label "hash" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 323 .
+
+ruby:hash_key_symbol a owl:Class ;
+    rdfs:label "hash_key_symbol" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 150,
+        310,
+        311 .
+
+ruby:hash_pattern a owl:Class ;
+    rdfs:label "hash_pattern" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 226 .
+
+ruby:hash_splat_argument a owl:Class ;
+    rdfs:label "hash_splat_argument" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 272 .
+
+ruby:hash_splat_nil a owl:Class ;
+    rdfs:label "hash_splat_nil" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 177 .
+
+ruby:hash_splat_parameter a owl:Class ;
+    rdfs:label "hash_splat_parameter" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 176 .
+
+ruby:heredoc_beginning a owl:Class ;
+    rdfs:label "heredoc_beginning" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 142 .
+
+ruby:heredoc_body a owl:Class ;
+    rdfs:label "heredoc_body" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 320 .
+
+ruby:heredoc_content a owl:Class ;
+    rdfs:label "heredoc_content" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 139 .
+
+ruby:heredoc_end a owl:Class ;
+    rdfs:label "heredoc_end" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 141 .
+
+ruby:identifier a owl:Class ;
+    rdfs:label "identifier" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 1 .
+
+ruby:if a owl:Class ;
+    rdfs:label "if" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 239 .
+
+ruby:if_guard a owl:Class ;
+    rdfs:label "if_guard" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 211 .
+
+ruby:if_modifier a owl:Class ;
+    rdfs:label "if_modifier" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 195 .
+
+ruby:in a owl:Class ;
+    rdfs:label "in" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 203 .
+
+ruby:in_clause a owl:Class ;
+    rdfs:label "in_clause" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 208 .
+
+ruby:instance_variable a owl:Class ;
+    rdfs:label "instance_variable" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 120 .
+
+ruby:integer a owl:Class ;
+    rdfs:label "integer" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 108 .
+
+ruby:interpolation a owl:Class ;
+    rdfs:label "interpolation" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 313 .
+
+ruby:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+ruby:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+ruby:key a owl:DatatypeProperty ;
+    rdfs:label "key (literal)" ;
+    rdfs:comment "Literal value for key field when it contains a terminal node" ;
+    ruby:fieldId 17 ;
+    ruby:isTerminalField true .
+
+ruby:keyword_parameter a owl:Class ;
+    rdfs:label "keyword_parameter" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 179 .
+
+ruby:keyword_pattern a owl:Class ;
+    rdfs:label "keyword_pattern" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 224 .
+
+ruby:lambda a owl:Class ;
+    rdfs:label "lambda" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 325 .
+
+ruby:lambda_parameters a owl:Class ;
+    rdfs:label "lambda_parameters" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 350 .
+
+ruby:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+ruby:left_assignment_list a owl:Class ;
+    rdfs:label "left_assignment_list" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 292 .
+
+ruby:line a owl:Class ;
+    rdfs:label "line" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 49 .
+
+ruby:locals a owl:DatatypeProperty ;
+    rdfs:label "locals (literal)" ;
+    rdfs:comment "Literal value for locals field when it contains a terminal node" ;
+    ruby:fieldId 19 ;
+    ruby:isTerminalField true .
+
+ruby:match_pattern a owl:Class ;
+    rdfs:label "match_pattern" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 252 .
+
+ruby:method a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "method",
+        "method (literal)" ;
+    rdfs:comment "Literal value for method field when it contains a terminal node" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:fieldId 20 ;
+    ruby:isSupertype true ;
+    ruby:isTerminalField true ;
+    ruby:nodeTypeId 163 .
+
+ruby:method_parameters a owl:Class ;
+    rdfs:label "method_parameters" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 169,
+        170 .
+
+ruby:module a owl:Class ;
+    rdfs:label "module" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 184 .
+
+ruby:name a owl:DatatypeProperty ;
+    rdfs:label "name (literal)" ;
+    rdfs:comment "Literal value for name field when it contains a terminal node" ;
+    ruby:fieldId 21 ;
+    ruby:isTerminalField true .
+
+ruby:next a owl:Class ;
+    rdfs:label "next" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 188,
+        192 .
+
+ruby:nil a owl:Class ;
+    rdfs:label "nil" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 309 .
+
+ruby:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+ruby:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+ruby:operator a owl:Class ;
+    rdfs:label "operator" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 300 .
+
+ruby:operator_assignment a owl:Class ;
+    rdfs:label "operator_assignment" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 278,
+        279 .
+
+ruby:optional_parameter a owl:Class ;
+    rdfs:label "optional_parameter" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 180 .
+
+ruby:pair a owl:Class ;
+    rdfs:label "pair" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 324 .
+
+ruby:parenthesized_pattern a owl:Class ;
+    rdfs:label "parenthesized_pattern" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 228 .
+
+ruby:parenthesized_statements a owl:Class ;
+    rdfs:label "parenthesized_statements" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 258 .
+
+ruby:pattern a owl:Class ;
+    rdfs:label "pattern" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 209 .
+
+ruby:program a owl:Class ;
+    rdfs:label "program" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 157 .
+
+ruby:range a owl:Class ;
+    rdfs:label "range" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 230,
+        281 .
+
+ruby:rational a owl:Class ;
+    rdfs:label "rational" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 308 .
+
+ruby:redo a owl:Class ;
+    rdfs:label "redo" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 193 .
+
+ruby:regex a owl:Class ;
+    rdfs:label "regex" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 319 .
+
+ruby:rescue a owl:Class ;
+    rdfs:label "rescue" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 246 .
+
+ruby:rescue_modifier a owl:Class ;
+    rdfs:label "rescue_modifier" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 166,
+        167,
+        199 .
+
+ruby:rest_assignment a owl:Class ;
+    rdfs:label "rest_assignment" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 295 .
+
+ruby:retry a owl:Class ;
+    rdfs:label "retry" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 194 .
+
+ruby:return a owl:Class ;
+    rdfs:label "return" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 185,
+        189 .
+
+ruby:right_assignment_list a owl:Class ;
+    rdfs:label "right_assignment_list" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 291 .
+
+ruby:scope_resolution a owl:Class ;
+    rdfs:label "scope_resolution" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 238,
+        260 .
+
+ruby:self a owl:Class ;
+    rdfs:label "self" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 114 .
+
+ruby:setter a owl:Class ;
+    rdfs:label "setter" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 303 .
+
+ruby:simple_symbol a owl:Class ;
+    rdfs:label "simple_symbol" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 130 .
+
+ruby:singleton_class a owl:Class ;
+    rdfs:label "singleton_class" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 183 .
+
+ruby:singleton_method a owl:Class ;
+    rdfs:label "singleton_method" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 164 .
+
+ruby:splat_argument a owl:Class ;
+    rdfs:label "splat_argument" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 271 .
+
+ruby:splat_parameter a owl:Class ;
+    rdfs:label "splat_parameter" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 175 .
+
+ruby:string a owl:Class ;
+    rdfs:label "string" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 314 .
+
+ruby:string_array a owl:Class ;
+    rdfs:label "string_array" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 316 .
+
+ruby:string_content a owl:Class ;
+    rdfs:label "string_content" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 138 .
+
+ruby:subshell a owl:Class ;
+    rdfs:label "subshell" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 315 .
+
+ruby:super a owl:Class ;
+    rdfs:label "super" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 113 .
+
+ruby:superclass a owl:Class ;
+    rdfs:label "superclass" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 182 .
+
+ruby:symbol_array a owl:Class ;
+    rdfs:label "symbol_array" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 317 .
+
+ruby:test_pattern a owl:Class ;
+    rdfs:label "test_pattern" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 253 .
+
+ruby:then a owl:Class ;
+    rdfs:label "then" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 243 .
+
+ruby:true a owl:Class ;
+    rdfs:label "true" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 115 .
+
+ruby:unary a owl:Class ;
+    rdfs:label "unary" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 255,
+        284,
+        285,
+        286,
+        287 .
+
+ruby:undef a owl:Class ;
+    rdfs:label "undef" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 304 .
+
+ruby:uninterpreted a owl:Class ;
+    rdfs:label "uninterpreted" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 3 .
+
+ruby:unless a owl:Class ;
+    rdfs:label "unless" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 240 .
+
+ruby:unless_guard a owl:Class ;
+    rdfs:label "unless_guard" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 212 .
+
+ruby:unless_modifier a owl:Class ;
+    rdfs:label "unless_modifier" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 196 .
+
+ruby:until a owl:Class ;
+    rdfs:label "until" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 201 .
+
+ruby:until_modifier a owl:Class ;
+    rdfs:label "until_modifier" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 198 .
+
+ruby:variable_reference_pattern a owl:Class ;
+    rdfs:label "variable_reference_pattern" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 235 .
+
+ruby:when a owl:Class ;
+    rdfs:label "when" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 207 .
+
+ruby:while a owl:Class ;
+    rdfs:label "while" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 200 .
+
+ruby:while_modifier a owl:Class ;
+    rdfs:label "while_modifier" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 197 .
+
+ruby:yield a owl:Class ;
+    rdfs:label "yield" ;
+    rdfs:isDefinedBy ruby: ;
+    rdfs:subClassOf ast:Node ;
+    ruby:isSupertype true ;
+    ruby:nodeTypeId 186,
+        190 .
+
+ruby: a owl:Ontology ;
+    rdfs:label "Ruby Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for ruby" ;
+    owl:versionInfo "v0.25" ;
+    ruby:abiVersion 14 ;
+    ruby:fieldCount 32 ;
+    ruby:languageName "None" ;
+    ruby:nodeKindCount 351 .
+

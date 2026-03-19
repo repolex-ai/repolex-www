@@ -1,0 +1,461 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix dockerfile: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/dockerfile/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+dockerfile:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+dockerfile:add_instruction a owl:Class ;
+    rdfs:label "add_instruction" ;
+    rdfs:isDefinedBy dockerfile: ;
+    rdfs:subClassOf ast:Node ;
+    dockerfile:isSupertype true ;
+    dockerfile:nodeTypeId 95 .
+
+dockerfile:arg_instruction a owl:Class ;
+    rdfs:label "arg_instruction" ;
+    rdfs:isDefinedBy dockerfile: ;
+    rdfs:subClassOf ast:Node ;
+    dockerfile:isSupertype true ;
+    dockerfile:nodeTypeId 104 .
+
+dockerfile:cmd_instruction a owl:Class ;
+    rdfs:label "cmd_instruction" ;
+    rdfs:isDefinedBy dockerfile: ;
+    rdfs:subClassOf ast:Node ;
+    dockerfile:isSupertype true ;
+    dockerfile:nodeTypeId 91 .
+
+dockerfile:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy dockerfile: ;
+    rdfs:subClassOf ast:Node ;
+    dockerfile:isSupertype true ;
+    dockerfile:nodeTypeId 81 .
+
+dockerfile:copy_instruction a owl:Class ;
+    rdfs:label "copy_instruction" ;
+    rdfs:isDefinedBy dockerfile: ;
+    rdfs:subClassOf ast:Node ;
+    dockerfile:isSupertype true ;
+    dockerfile:nodeTypeId 96 .
+
+dockerfile:cross_build_instruction a owl:Class ;
+    rdfs:label "cross_build_instruction" ;
+    rdfs:isDefinedBy dockerfile: ;
+    rdfs:subClassOf ast:Node ;
+    dockerfile:isSupertype true ;
+    dockerfile:nodeTypeId 111 .
+
+dockerfile:double_quoted_string a owl:Class ;
+    rdfs:label "double_quoted_string" ;
+    rdfs:isDefinedBy dockerfile: ;
+    rdfs:subClassOf ast:Node ;
+    dockerfile:isSupertype true ;
+    dockerfile:nodeTypeId 136 .
+
+dockerfile:entrypoint_instruction a owl:Class ;
+    rdfs:label "entrypoint_instruction" ;
+    rdfs:isDefinedBy dockerfile: ;
+    rdfs:subClassOf ast:Node ;
+    dockerfile:isSupertype true ;
+    dockerfile:nodeTypeId 97 .
+
+dockerfile:env_instruction a owl:Class ;
+    rdfs:label "env_instruction" ;
+    rdfs:isDefinedBy dockerfile: ;
+    rdfs:subClassOf ast:Node ;
+    dockerfile:isSupertype true ;
+    dockerfile:nodeTypeId 94 .
+
+dockerfile:env_pair a owl:Class ;
+    rdfs:label "env_pair" ;
+    rdfs:isDefinedBy dockerfile: ;
+    rdfs:subClassOf ast:Node ;
+    dockerfile:isSupertype true ;
+    dockerfile:nodeTypeId 119,
+        120 .
+
+dockerfile:error_sentinel a owl:Class ;
+    rdfs:label "error_sentinel" ;
+    rdfs:isDefinedBy dockerfile: ;
+    rdfs:subClassOf ast:Node ;
+    dockerfile:isSupertype true ;
+    dockerfile:nodeTypeId 86 .
+
+dockerfile:escape_sequence a owl:Class ;
+    rdfs:label "escape_sequence" ;
+    rdfs:isDefinedBy dockerfile: ;
+    rdfs:subClassOf ast:Node ;
+    dockerfile:isSupertype true ;
+    dockerfile:nodeTypeId 71,
+        78,
+        79 .
+
+dockerfile:expansion a owl:Class ;
+    rdfs:label "expansion" ;
+    rdfs:isDefinedBy dockerfile: ;
+    rdfs:subClassOf ast:Node ;
+    dockerfile:isSupertype true ;
+    dockerfile:nodeTypeId 115,
+        117 .
+
+dockerfile:expose_instruction a owl:Class ;
+    rdfs:label "expose_instruction" ;
+    rdfs:isDefinedBy dockerfile: ;
+    rdfs:subClassOf ast:Node ;
+    dockerfile:isSupertype true ;
+    dockerfile:nodeTypeId 93 .
+
+dockerfile:expose_port a owl:Class ;
+    rdfs:label "expose_port" ;
+    rdfs:isDefinedBy dockerfile: ;
+    rdfs:subClassOf ast:Node ;
+    dockerfile:isSupertype true ;
+    dockerfile:nodeTypeId 122 .
+
+dockerfile:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+dockerfile:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+dockerfile:field_as a owl:ObjectProperty ;
+    rdfs:label "as (structural)" ;
+    rdfs:comment "Structural reference for as field when it contains a non-terminal node" ;
+    dockerfile:fieldId 1 .
+
+dockerfile:field_default a owl:ObjectProperty ;
+    rdfs:label "default (structural)" ;
+    rdfs:comment "Structural reference for default field when it contains a non-terminal node" ;
+    dockerfile:fieldId 2 .
+
+dockerfile:field_digest a owl:ObjectProperty ;
+    rdfs:label "digest (structural)" ;
+    rdfs:comment "Structural reference for digest field when it contains a non-terminal node" ;
+    dockerfile:fieldId 3 .
+
+dockerfile:field_group a owl:ObjectProperty ;
+    rdfs:label "group (structural)" ;
+    rdfs:comment "Structural reference for group field when it contains a non-terminal node" ;
+    dockerfile:fieldId 4 .
+
+dockerfile:field_key a owl:ObjectProperty ;
+    rdfs:label "key (structural)" ;
+    rdfs:comment "Structural reference for key field when it contains a non-terminal node" ;
+    dockerfile:fieldId 5 .
+
+dockerfile:field_name a owl:ObjectProperty ;
+    rdfs:label "name (structural)" ;
+    rdfs:comment "Structural reference for name field when it contains a non-terminal node" ;
+    dockerfile:fieldId 6 .
+
+dockerfile:field_tag a owl:ObjectProperty ;
+    rdfs:label "tag (structural)" ;
+    rdfs:comment "Structural reference for tag field when it contains a non-terminal node" ;
+    dockerfile:fieldId 7 .
+
+dockerfile:field_user a owl:ObjectProperty ;
+    rdfs:label "user (structural)" ;
+    rdfs:comment "Structural reference for user field when it contains a non-terminal node" ;
+    dockerfile:fieldId 8 .
+
+dockerfile:field_value a owl:ObjectProperty ;
+    rdfs:label "value (structural)" ;
+    rdfs:comment "Structural reference for value field when it contains a non-terminal node" ;
+    dockerfile:fieldId 9 .
+
+dockerfile:from_instruction a owl:Class ;
+    rdfs:label "from_instruction" ;
+    rdfs:isDefinedBy dockerfile: ;
+    rdfs:subClassOf ast:Node ;
+    dockerfile:isSupertype true ;
+    dockerfile:nodeTypeId 89 .
+
+dockerfile:healthcheck_instruction a owl:Class ;
+    rdfs:label "healthcheck_instruction" ;
+    rdfs:isDefinedBy dockerfile: ;
+    rdfs:subClassOf ast:Node ;
+    dockerfile:isSupertype true ;
+    dockerfile:nodeTypeId 108 .
+
+dockerfile:heredoc_block a owl:Class ;
+    rdfs:label "heredoc_block" ;
+    rdfs:isDefinedBy dockerfile: ;
+    rdfs:subClassOf ast:Node ;
+    dockerfile:isSupertype true ;
+    dockerfile:nodeTypeId 112 .
+
+dockerfile:heredoc_end a owl:Class ;
+    rdfs:label "heredoc_end" ;
+    rdfs:isDefinedBy dockerfile: ;
+    rdfs:subClassOf ast:Node ;
+    dockerfile:isSupertype true ;
+    dockerfile:nodeTypeId 84 .
+
+dockerfile:heredoc_line a owl:Class ;
+    rdfs:label "heredoc_line" ;
+    rdfs:isDefinedBy dockerfile: ;
+    rdfs:subClassOf ast:Node ;
+    dockerfile:isSupertype true ;
+    dockerfile:nodeTypeId 83 .
+
+dockerfile:heredoc_marker a owl:Class ;
+    rdfs:label "heredoc_marker" ;
+    rdfs:isDefinedBy dockerfile: ;
+    rdfs:subClassOf ast:Node ;
+    dockerfile:isSupertype true ;
+    dockerfile:nodeTypeId 82 .
+
+dockerfile:image_alias a owl:Class ;
+    rdfs:label "image_alias" ;
+    rdfs:isDefinedBy dockerfile: ;
+    rdfs:subClassOf ast:Node ;
+    dockerfile:isSupertype true ;
+    dockerfile:nodeTypeId 131 .
+
+dockerfile:image_digest a owl:Class ;
+    rdfs:label "image_digest" ;
+    rdfs:isDefinedBy dockerfile: ;
+    rdfs:subClassOf ast:Node ;
+    dockerfile:isSupertype true ;
+    dockerfile:nodeTypeId 127 .
+
+dockerfile:image_name a owl:Class ;
+    rdfs:label "image_name" ;
+    rdfs:isDefinedBy dockerfile: ;
+    rdfs:subClassOf ast:Node ;
+    dockerfile:isSupertype true ;
+    dockerfile:nodeTypeId 125 .
+
+dockerfile:image_spec a owl:Class ;
+    rdfs:label "image_spec" ;
+    rdfs:isDefinedBy dockerfile: ;
+    rdfs:subClassOf ast:Node ;
+    dockerfile:isSupertype true ;
+    dockerfile:nodeTypeId 124 .
+
+dockerfile:image_tag a owl:Class ;
+    rdfs:label "image_tag" ;
+    rdfs:isDefinedBy dockerfile: ;
+    rdfs:subClassOf ast:Node ;
+    dockerfile:isSupertype true ;
+    dockerfile:nodeTypeId 126 .
+
+dockerfile:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+dockerfile:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+dockerfile:json_string a owl:Class ;
+    rdfs:label "json_string" ;
+    rdfs:isDefinedBy dockerfile: ;
+    rdfs:subClassOf ast:Node ;
+    dockerfile:isSupertype true ;
+    dockerfile:nodeTypeId 135 .
+
+dockerfile:json_string_array a owl:Class ;
+    rdfs:label "json_string_array" ;
+    rdfs:isDefinedBy dockerfile: ;
+    rdfs:subClassOf ast:Node ;
+    dockerfile:isSupertype true ;
+    dockerfile:nodeTypeId 134 .
+
+dockerfile:label_instruction a owl:Class ;
+    rdfs:label "label_instruction" ;
+    rdfs:isDefinedBy dockerfile: ;
+    rdfs:subClassOf ast:Node ;
+    dockerfile:isSupertype true ;
+    dockerfile:nodeTypeId 92 .
+
+dockerfile:label_pair a owl:Class ;
+    rdfs:label "label_pair" ;
+    rdfs:isDefinedBy dockerfile: ;
+    rdfs:subClassOf ast:Node ;
+    dockerfile:isSupertype true ;
+    dockerfile:nodeTypeId 123 .
+
+dockerfile:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+dockerfile:line_continuation a owl:Class ;
+    rdfs:label "line_continuation" ;
+    rdfs:isDefinedBy dockerfile: ;
+    rdfs:subClassOf ast:Node ;
+    dockerfile:isSupertype true ;
+    dockerfile:nodeTypeId 64,
+        65 .
+
+dockerfile:maintainer_instruction a owl:Class ;
+    rdfs:label "maintainer_instruction" ;
+    rdfs:isDefinedBy dockerfile: ;
+    rdfs:subClassOf ast:Node ;
+    dockerfile:isSupertype true ;
+    dockerfile:nodeTypeId 110 .
+
+dockerfile:mount_param a owl:Class ;
+    rdfs:label "mount_param" ;
+    rdfs:isDefinedBy dockerfile: ;
+    rdfs:subClassOf ast:Node ;
+    dockerfile:isSupertype true ;
+    dockerfile:nodeTypeId 129 .
+
+dockerfile:mount_param_param a owl:Class ;
+    rdfs:label "mount_param_param" ;
+    rdfs:isDefinedBy dockerfile: ;
+    rdfs:subClassOf ast:Node ;
+    dockerfile:isSupertype true ;
+    dockerfile:nodeTypeId 130 .
+
+dockerfile:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+dockerfile:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+dockerfile:onbuild_instruction a owl:Class ;
+    rdfs:label "onbuild_instruction" ;
+    rdfs:isDefinedBy dockerfile: ;
+    rdfs:subClassOf ast:Node ;
+    dockerfile:isSupertype true ;
+    dockerfile:nodeTypeId 105 .
+
+dockerfile:param a owl:Class ;
+    rdfs:label "param" ;
+    rdfs:isDefinedBy dockerfile: ;
+    rdfs:subClassOf ast:Node ;
+    dockerfile:isSupertype true ;
+    dockerfile:nodeTypeId 128 .
+
+dockerfile:path a owl:Class ;
+    rdfs:label "path" ;
+    rdfs:isDefinedBy dockerfile: ;
+    rdfs:subClassOf ast:Node ;
+    dockerfile:isSupertype true ;
+    dockerfile:nodeTypeId 113,
+        114 .
+
+dockerfile:run_instruction a owl:Class ;
+    rdfs:label "run_instruction" ;
+    rdfs:isDefinedBy dockerfile: ;
+    rdfs:subClassOf ast:Node ;
+    dockerfile:isSupertype true ;
+    dockerfile:nodeTypeId 90 .
+
+dockerfile:shell_command a owl:Class ;
+    rdfs:label "shell_command" ;
+    rdfs:isDefinedBy dockerfile: ;
+    rdfs:subClassOf ast:Node ;
+    dockerfile:isSupertype true ;
+    dockerfile:nodeTypeId 132 .
+
+dockerfile:shell_fragment a owl:Class ;
+    rdfs:label "shell_fragment" ;
+    rdfs:isDefinedBy dockerfile: ;
+    rdfs:subClassOf ast:Node ;
+    dockerfile:isSupertype true ;
+    dockerfile:nodeTypeId 133 .
+
+dockerfile:shell_instruction a owl:Class ;
+    rdfs:label "shell_instruction" ;
+    rdfs:isDefinedBy dockerfile: ;
+    rdfs:subClassOf ast:Node ;
+    dockerfile:isSupertype true ;
+    dockerfile:nodeTypeId 109 .
+
+dockerfile:single_quoted_string a owl:Class ;
+    rdfs:label "single_quoted_string" ;
+    rdfs:isDefinedBy dockerfile: ;
+    rdfs:subClassOf ast:Node ;
+    dockerfile:isSupertype true ;
+    dockerfile:nodeTypeId 137 .
+
+dockerfile:source_file a owl:Class ;
+    rdfs:label "source_file" ;
+    rdfs:isDefinedBy dockerfile: ;
+    rdfs:subClassOf ast:Node ;
+    dockerfile:isSupertype true ;
+    dockerfile:nodeTypeId 87 .
+
+dockerfile:stopsignal_instruction a owl:Class ;
+    rdfs:label "stopsignal_instruction" ;
+    rdfs:isDefinedBy dockerfile: ;
+    rdfs:subClassOf ast:Node ;
+    dockerfile:isSupertype true ;
+    dockerfile:nodeTypeId 106 .
+
+dockerfile:unquoted_string a owl:Class ;
+    rdfs:label "unquoted_string" ;
+    rdfs:isDefinedBy dockerfile: ;
+    rdfs:subClassOf ast:Node ;
+    dockerfile:isSupertype true ;
+    dockerfile:nodeTypeId 19,
+        42,
+        46,
+        100,
+        138 .
+
+dockerfile:user_instruction a owl:Class ;
+    rdfs:label "user_instruction" ;
+    rdfs:isDefinedBy dockerfile: ;
+    rdfs:subClassOf ast:Node ;
+    dockerfile:isSupertype true ;
+    dockerfile:nodeTypeId 99 .
+
+dockerfile:value a owl:DatatypeProperty ;
+    rdfs:label "value (literal)" ;
+    rdfs:comment "Literal value for value field when it contains a terminal node" ;
+    dockerfile:fieldId 9 ;
+    dockerfile:isTerminalField true .
+
+dockerfile:variable a owl:Class ;
+    rdfs:label "variable" ;
+    rdfs:isDefinedBy dockerfile: ;
+    rdfs:subClassOf ast:Node ;
+    dockerfile:isSupertype true ;
+    dockerfile:nodeTypeId 38,
+        40 .
+
+dockerfile:volume_instruction a owl:Class ;
+    rdfs:label "volume_instruction" ;
+    rdfs:isDefinedBy dockerfile: ;
+    rdfs:subClassOf ast:Node ;
+    dockerfile:isSupertype true ;
+    dockerfile:nodeTypeId 98 .
+
+dockerfile:workdir_instruction a owl:Class ;
+    rdfs:label "workdir_instruction" ;
+    rdfs:isDefinedBy dockerfile: ;
+    rdfs:subClassOf ast:Node ;
+    dockerfile:isSupertype true ;
+    dockerfile:nodeTypeId 103 .
+
+dockerfile: a owl:Ontology ;
+    rdfs:label "Dockerfile Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for dockerfile" ;
+    owl:versionInfo "v0.25" ;
+    dockerfile:abiVersion 14 ;
+    dockerfile:fieldCount 9 ;
+    dockerfile:languageName "None" ;
+    dockerfile:nodeKindCount 164 .
+

@@ -1,0 +1,462 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix cmake: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/cmake/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+cmake:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+cmake:argument a owl:Class ;
+    rdfs:label "argument" ;
+    rdfs:isDefinedBy cmake: ;
+    rdfs:subClassOf ast:Node ;
+    cmake:isSupertype true ;
+    cmake:nodeTypeId 54 .
+
+cmake:argument_list a owl:Class ;
+    rdfs:label "argument_list" ;
+    rdfs:isDefinedBy cmake: ;
+    rdfs:subClassOf ast:Node ;
+    cmake:isSupertype true ;
+    cmake:nodeTypeId 63 .
+
+cmake:block a owl:Class ;
+    rdfs:label "block" ;
+    rdfs:isDefinedBy cmake: ;
+    rdfs:subClassOf ast:Node ;
+    cmake:isSupertype true ;
+    cmake:nodeTypeId 33 .
+
+cmake:block_command a owl:Class ;
+    rdfs:label "block_command" ;
+    rdfs:isDefinedBy cmake: ;
+    rdfs:subClassOf ast:Node ;
+    cmake:isSupertype true ;
+    cmake:nodeTypeId 81 .
+
+cmake:block_def a owl:Class ;
+    rdfs:label "block_def" ;
+    rdfs:isDefinedBy cmake: ;
+    rdfs:subClassOf ast:Node ;
+    cmake:isSupertype true ;
+    cmake:nodeTypeId 83 .
+
+cmake:body a owl:Class ;
+    rdfs:label "body" ;
+    rdfs:isDefinedBy cmake: ;
+    rdfs:subClassOf ast:Node ;
+    cmake:isSupertype true ;
+    cmake:nodeTypeId 62 .
+
+cmake:bracket_argument a owl:Class ;
+    rdfs:label "bracket_argument" ;
+    rdfs:isDefinedBy cmake: ;
+    rdfs:subClassOf ast:Node ;
+    cmake:isSupertype true ;
+    cmake:nodeTypeId 52 .
+
+cmake:bracket_argument_close a owl:Class ;
+    rdfs:label "bracket_argument_close" ;
+    rdfs:isDefinedBy cmake: ;
+    rdfs:subClassOf ast:Node ;
+    cmake:isSupertype true ;
+    cmake:nodeTypeId 38 .
+
+cmake:bracket_argument_content a owl:Class ;
+    rdfs:label "bracket_argument_content" ;
+    rdfs:isDefinedBy cmake: ;
+    rdfs:subClassOf ast:Node ;
+    cmake:isSupertype true ;
+    cmake:nodeTypeId 37 .
+
+cmake:bracket_argument_open a owl:Class ;
+    rdfs:label "bracket_argument_open" ;
+    rdfs:isDefinedBy cmake: ;
+    rdfs:subClassOf ast:Node ;
+    cmake:isSupertype true ;
+    cmake:nodeTypeId 36 .
+
+cmake:bracket_comment a owl:Class ;
+    rdfs:label "bracket_comment" ;
+    rdfs:isDefinedBy cmake: ;
+    rdfs:subClassOf ast:Node ;
+    cmake:isSupertype true ;
+    cmake:nodeTypeId 53 .
+
+cmake:bracket_comment_close a owl:Class ;
+    rdfs:label "bracket_comment_close" ;
+    rdfs:isDefinedBy cmake: ;
+    rdfs:subClassOf ast:Node ;
+    cmake:isSupertype true ;
+    cmake:nodeTypeId 41 .
+
+cmake:bracket_comment_content a owl:Class ;
+    rdfs:label "bracket_comment_content" ;
+    rdfs:isDefinedBy cmake: ;
+    rdfs:subClassOf ast:Node ;
+    cmake:isSupertype true ;
+    cmake:nodeTypeId 40 .
+
+cmake:bracket_comment_open a owl:Class ;
+    rdfs:label "bracket_comment_open" ;
+    rdfs:isDefinedBy cmake: ;
+    rdfs:subClassOf ast:Node ;
+    cmake:isSupertype true ;
+    cmake:nodeTypeId 39 .
+
+cmake:cache_var a owl:Class ;
+    rdfs:label "cache_var" ;
+    rdfs:isDefinedBy cmake: ;
+    rdfs:subClassOf ast:Node ;
+    cmake:isSupertype true ;
+    cmake:nodeTypeId 51 .
+
+cmake:else a owl:Class ;
+    rdfs:label "else" ;
+    rdfs:isDefinedBy cmake: ;
+    rdfs:subClassOf ast:Node ;
+    cmake:isSupertype true ;
+    cmake:nodeTypeId 23 .
+
+cmake:else_command a owl:Class ;
+    rdfs:label "else_command" ;
+    rdfs:isDefinedBy cmake: ;
+    rdfs:subClassOf ast:Node ;
+    cmake:isSupertype true ;
+    cmake:nodeTypeId 66 .
+
+cmake:elseif a owl:Class ;
+    rdfs:label "elseif" ;
+    rdfs:isDefinedBy cmake: ;
+    rdfs:subClassOf ast:Node ;
+    cmake:isSupertype true ;
+    cmake:nodeTypeId 22 .
+
+cmake:elseif_command a owl:Class ;
+    rdfs:label "elseif_command" ;
+    rdfs:isDefinedBy cmake: ;
+    rdfs:subClassOf ast:Node ;
+    cmake:isSupertype true ;
+    cmake:nodeTypeId 65 .
+
+cmake:endblock a owl:Class ;
+    rdfs:label "endblock" ;
+    rdfs:isDefinedBy cmake: ;
+    rdfs:subClassOf ast:Node ;
+    cmake:isSupertype true ;
+    cmake:nodeTypeId 34 .
+
+cmake:endblock_command a owl:Class ;
+    rdfs:label "endblock_command" ;
+    rdfs:isDefinedBy cmake: ;
+    rdfs:subClassOf ast:Node ;
+    cmake:isSupertype true ;
+    cmake:nodeTypeId 82 .
+
+cmake:endforeach a owl:Class ;
+    rdfs:label "endforeach" ;
+    rdfs:isDefinedBy cmake: ;
+    rdfs:subClassOf ast:Node ;
+    cmake:isSupertype true ;
+    cmake:nodeTypeId 26 .
+
+cmake:endforeach_command a owl:Class ;
+    rdfs:label "endforeach_command" ;
+    rdfs:isDefinedBy cmake: ;
+    rdfs:subClassOf ast:Node ;
+    cmake:isSupertype true ;
+    cmake:nodeTypeId 70 .
+
+cmake:endfunction a owl:Class ;
+    rdfs:label "endfunction" ;
+    rdfs:isDefinedBy cmake: ;
+    rdfs:subClassOf ast:Node ;
+    cmake:isSupertype true ;
+    cmake:nodeTypeId 30 .
+
+cmake:endfunction_command a owl:Class ;
+    rdfs:label "endfunction_command" ;
+    rdfs:isDefinedBy cmake: ;
+    rdfs:subClassOf ast:Node ;
+    cmake:isSupertype true ;
+    cmake:nodeTypeId 76 .
+
+cmake:endif a owl:Class ;
+    rdfs:label "endif" ;
+    rdfs:isDefinedBy cmake: ;
+    rdfs:subClassOf ast:Node ;
+    cmake:isSupertype true ;
+    cmake:nodeTypeId 24 .
+
+cmake:endif_command a owl:Class ;
+    rdfs:label "endif_command" ;
+    rdfs:isDefinedBy cmake: ;
+    rdfs:subClassOf ast:Node ;
+    cmake:isSupertype true ;
+    cmake:nodeTypeId 67 .
+
+cmake:endmacro a owl:Class ;
+    rdfs:label "endmacro" ;
+    rdfs:isDefinedBy cmake: ;
+    rdfs:subClassOf ast:Node ;
+    cmake:isSupertype true ;
+    cmake:nodeTypeId 32 .
+
+cmake:endmacro_command a owl:Class ;
+    rdfs:label "endmacro_command" ;
+    rdfs:isDefinedBy cmake: ;
+    rdfs:subClassOf ast:Node ;
+    cmake:isSupertype true ;
+    cmake:nodeTypeId 79 .
+
+cmake:endwhile a owl:Class ;
+    rdfs:label "endwhile" ;
+    rdfs:isDefinedBy cmake: ;
+    rdfs:subClassOf ast:Node ;
+    cmake:isSupertype true ;
+    cmake:nodeTypeId 28 .
+
+cmake:endwhile_command a owl:Class ;
+    rdfs:label "endwhile_command" ;
+    rdfs:isDefinedBy cmake: ;
+    rdfs:subClassOf ast:Node ;
+    cmake:isSupertype true ;
+    cmake:nodeTypeId 73 .
+
+cmake:env_var a owl:Class ;
+    rdfs:label "env_var" ;
+    rdfs:isDefinedBy cmake: ;
+    rdfs:subClassOf ast:Node ;
+    cmake:isSupertype true ;
+    cmake:nodeTypeId 50 .
+
+cmake:escape_sequence a owl:Class ;
+    rdfs:label "escape_sequence" ;
+    rdfs:isDefinedBy cmake: ;
+    rdfs:subClassOf ast:Node ;
+    cmake:isSupertype true ;
+    cmake:nodeTypeId 44 .
+
+cmake:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+cmake:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+cmake:foreach a owl:Class ;
+    rdfs:label "foreach" ;
+    rdfs:isDefinedBy cmake: ;
+    rdfs:subClassOf ast:Node ;
+    cmake:isSupertype true ;
+    cmake:nodeTypeId 25 .
+
+cmake:foreach_command a owl:Class ;
+    rdfs:label "foreach_command" ;
+    rdfs:isDefinedBy cmake: ;
+    rdfs:subClassOf ast:Node ;
+    cmake:isSupertype true ;
+    cmake:nodeTypeId 69 .
+
+cmake:foreach_loop a owl:Class ;
+    rdfs:label "foreach_loop" ;
+    rdfs:isDefinedBy cmake: ;
+    rdfs:subClassOf ast:Node ;
+    cmake:isSupertype true ;
+    cmake:nodeTypeId 71 .
+
+cmake:function a owl:Class ;
+    rdfs:label "function" ;
+    rdfs:isDefinedBy cmake: ;
+    rdfs:subClassOf ast:Node ;
+    cmake:isSupertype true ;
+    cmake:nodeTypeId 29 .
+
+cmake:function_command a owl:Class ;
+    rdfs:label "function_command" ;
+    rdfs:isDefinedBy cmake: ;
+    rdfs:subClassOf ast:Node ;
+    cmake:isSupertype true ;
+    cmake:nodeTypeId 75 .
+
+cmake:function_def a owl:Class ;
+    rdfs:label "function_def" ;
+    rdfs:isDefinedBy cmake: ;
+    rdfs:subClassOf ast:Node ;
+    cmake:isSupertype true ;
+    cmake:nodeTypeId 77 .
+
+cmake:identifier a owl:Class ;
+    rdfs:label "identifier" ;
+    rdfs:isDefinedBy cmake: ;
+    rdfs:subClassOf ast:Node ;
+    cmake:isSupertype true ;
+    cmake:nodeTypeId 35 .
+
+cmake:if a owl:Class ;
+    rdfs:label "if" ;
+    rdfs:isDefinedBy cmake: ;
+    rdfs:subClassOf ast:Node ;
+    cmake:isSupertype true ;
+    cmake:nodeTypeId 21 .
+
+cmake:if_command a owl:Class ;
+    rdfs:label "if_command" ;
+    rdfs:isDefinedBy cmake: ;
+    rdfs:subClassOf ast:Node ;
+    cmake:isSupertype true ;
+    cmake:nodeTypeId 64 .
+
+cmake:if_condition a owl:Class ;
+    rdfs:label "if_condition" ;
+    rdfs:isDefinedBy cmake: ;
+    rdfs:subClassOf ast:Node ;
+    cmake:isSupertype true ;
+    cmake:nodeTypeId 68 .
+
+cmake:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+cmake:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+cmake:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+cmake:line_comment a owl:Class ;
+    rdfs:label "line_comment" ;
+    rdfs:isDefinedBy cmake: ;
+    rdfs:subClassOf ast:Node ;
+    cmake:isSupertype true ;
+    cmake:nodeTypeId 42 .
+
+cmake:macro a owl:Class ;
+    rdfs:label "macro" ;
+    rdfs:isDefinedBy cmake: ;
+    rdfs:subClassOf ast:Node ;
+    cmake:isSupertype true ;
+    cmake:nodeTypeId 31 .
+
+cmake:macro_command a owl:Class ;
+    rdfs:label "macro_command" ;
+    rdfs:isDefinedBy cmake: ;
+    rdfs:subClassOf ast:Node ;
+    cmake:isSupertype true ;
+    cmake:nodeTypeId 78 .
+
+cmake:macro_def a owl:Class ;
+    rdfs:label "macro_def" ;
+    rdfs:isDefinedBy cmake: ;
+    rdfs:subClassOf ast:Node ;
+    cmake:isSupertype true ;
+    cmake:nodeTypeId 80 .
+
+cmake:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+cmake:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+cmake:normal_command a owl:Class ;
+    rdfs:label "normal_command" ;
+    rdfs:isDefinedBy cmake: ;
+    rdfs:subClassOf ast:Node ;
+    cmake:isSupertype true ;
+    cmake:nodeTypeId 84 .
+
+cmake:normal_var a owl:Class ;
+    rdfs:label "normal_var" ;
+    rdfs:isDefinedBy cmake: ;
+    rdfs:subClassOf ast:Node ;
+    cmake:isSupertype true ;
+    cmake:nodeTypeId 49 .
+
+cmake:quoted_argument a owl:Class ;
+    rdfs:label "quoted_argument" ;
+    rdfs:isDefinedBy cmake: ;
+    rdfs:subClassOf ast:Node ;
+    cmake:isSupertype true ;
+    cmake:nodeTypeId 57 .
+
+cmake:quoted_element a owl:Class ;
+    rdfs:label "quoted_element" ;
+    rdfs:isDefinedBy cmake: ;
+    rdfs:subClassOf ast:Node ;
+    cmake:isSupertype true ;
+    cmake:nodeTypeId 58 .
+
+cmake:source_file a owl:Class ;
+    rdfs:label "source_file" ;
+    rdfs:isDefinedBy cmake: ;
+    rdfs:subClassOf ast:Node ;
+    cmake:isSupertype true ;
+    cmake:nodeTypeId 43 .
+
+cmake:unquoted_argument a owl:Class ;
+    rdfs:label "unquoted_argument" ;
+    rdfs:isDefinedBy cmake: ;
+    rdfs:subClassOf ast:Node ;
+    cmake:isSupertype true ;
+    cmake:nodeTypeId 60 .
+
+cmake:variable a owl:Class ;
+    rdfs:label "variable" ;
+    rdfs:isDefinedBy cmake: ;
+    rdfs:subClassOf ast:Node ;
+    cmake:isSupertype true ;
+    cmake:nodeTypeId 47 .
+
+cmake:variable_ref a owl:Class ;
+    rdfs:label "variable_ref" ;
+    rdfs:isDefinedBy cmake: ;
+    rdfs:subClassOf ast:Node ;
+    cmake:isSupertype true ;
+    cmake:nodeTypeId 48 .
+
+cmake:while a owl:Class ;
+    rdfs:label "while" ;
+    rdfs:isDefinedBy cmake: ;
+    rdfs:subClassOf ast:Node ;
+    cmake:isSupertype true ;
+    cmake:nodeTypeId 27 .
+
+cmake:while_command a owl:Class ;
+    rdfs:label "while_command" ;
+    rdfs:isDefinedBy cmake: ;
+    rdfs:subClassOf ast:Node ;
+    cmake:isSupertype true ;
+    cmake:nodeTypeId 72 .
+
+cmake:while_loop a owl:Class ;
+    rdfs:label "while_loop" ;
+    rdfs:isDefinedBy cmake: ;
+    rdfs:subClassOf ast:Node ;
+    cmake:isSupertype true ;
+    cmake:nodeTypeId 74 .
+
+cmake: a owl:Ontology ;
+    rdfs:label "Cmake Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for cmake" ;
+    owl:versionInfo "v0.25" ;
+    cmake:abiVersion 14 ;
+    cmake:fieldCount 0 ;
+    cmake:languageName "None" ;
+    cmake:nodeKindCount 96 .
+

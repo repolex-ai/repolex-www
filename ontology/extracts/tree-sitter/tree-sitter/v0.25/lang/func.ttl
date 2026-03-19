@@ -1,0 +1,624 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix func: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/func/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+func:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+func:alternative a owl:DatatypeProperty ;
+    rdfs:label "alternative (literal)" ;
+    rdfs:comment "Literal value for alternative field when it contains a terminal node" ;
+    func:fieldId 1 ;
+    func:isTerminalField true .
+
+func:arguments a owl:DatatypeProperty ;
+    rdfs:label "arguments (literal)" ;
+    rdfs:comment "Literal value for arguments field when it contains a terminal node" ;
+    func:fieldId 2 ;
+    func:isTerminalField true .
+
+func:asm_function_body a owl:Class ;
+    rdfs:label "asm_function_body" ;
+    rdfs:isDefinedBy func: ;
+    rdfs:subClassOf ast:Node ;
+    func:isSupertype true ;
+    func:nodeTypeId 153 .
+
+func:asm_instruction a owl:Class ;
+    rdfs:label "asm_instruction" ;
+    rdfs:isDefinedBy func: ;
+    rdfs:subClassOf ast:Node ;
+    func:isSupertype true ;
+    func:nodeTypeId 155 .
+
+func:asm_specifier a owl:Class ;
+    rdfs:label "asm_specifier" ;
+    rdfs:isDefinedBy func: ;
+    rdfs:subClassOf ast:Node ;
+    func:isSupertype true ;
+    func:nodeTypeId 154 .
+
+func:block_statement a owl:Class ;
+    rdfs:label "block_statement" ;
+    rdfs:isDefinedBy func: ;
+    rdfs:subClassOf ast:Node ;
+    func:isSupertype true ;
+    func:nodeTypeId 160 .
+
+func:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy func: ;
+    rdfs:subClassOf ast:Node ;
+    func:isSupertype true ;
+    func:nodeTypeId 105 .
+
+func:condition a owl:DatatypeProperty ;
+    rdfs:label "condition (literal)" ;
+    rdfs:comment "Literal value for condition field when it contains a terminal node" ;
+    func:fieldId 5 ;
+    func:isTerminalField true .
+
+func:const_var_declarations a owl:Class ;
+    rdfs:label "const_var_declarations" ;
+    rdfs:isDefinedBy func: ;
+    rdfs:subClassOf ast:Node ;
+    func:isSupertype true ;
+    func:nodeTypeId 111 .
+
+func:count a owl:DatatypeProperty ;
+    rdfs:label "count (literal)" ;
+    rdfs:comment "Literal value for count field when it contains a terminal node" ;
+    func:fieldId 7 ;
+    func:isTerminalField true .
+
+func:do_statement a owl:Class ;
+    rdfs:label "do_statement" ;
+    rdfs:isDefinedBy func: ;
+    rdfs:subClassOf ast:Node ;
+    func:isSupertype true ;
+    func:nodeTypeId 166 .
+
+func:empty_statement a owl:Class ;
+    rdfs:label "empty_statement" ;
+    rdfs:isDefinedBy func: ;
+    rdfs:subClassOf ast:Node ;
+    func:isSupertype true ;
+    func:nodeTypeId 162 .
+
+func:expression_statement a owl:Class ;
+    rdfs:label "expression_statement" ;
+    rdfs:isDefinedBy func: ;
+    rdfs:subClassOf ast:Node ;
+    func:isSupertype true ;
+    func:nodeTypeId 161 .
+
+func:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+func:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+func:field_alternative a owl:ObjectProperty ;
+    rdfs:label "alternative (structural)" ;
+    rdfs:comment "Structural reference for alternative field when it contains a non-terminal node" ;
+    func:fieldId 1 .
+
+func:field_arguments a owl:ObjectProperty ;
+    rdfs:label "arguments (structural)" ;
+    rdfs:comment "Structural reference for arguments field when it contains a non-terminal node" ;
+    func:fieldId 2 .
+
+func:field_asm_body a owl:ObjectProperty ;
+    rdfs:label "asm_body (structural)" ;
+    rdfs:comment "Structural reference for asm_body field when it contains a non-terminal node" ;
+    func:fieldId 3 .
+
+func:field_body a owl:ObjectProperty ;
+    rdfs:label "body (structural)" ;
+    rdfs:comment "Structural reference for body field when it contains a non-terminal node" ;
+    func:fieldId 4 .
+
+func:field_condition a owl:ObjectProperty ;
+    rdfs:label "condition (structural)" ;
+    rdfs:comment "Structural reference for condition field when it contains a non-terminal node" ;
+    func:fieldId 5 .
+
+func:field_consequent a owl:ObjectProperty ;
+    rdfs:label "consequent (structural)" ;
+    rdfs:comment "Structural reference for consequent field when it contains a non-terminal node" ;
+    func:fieldId 6 .
+
+func:field_count a owl:ObjectProperty ;
+    rdfs:label "count (structural)" ;
+    rdfs:comment "Structural reference for count field when it contains a non-terminal node" ;
+    func:fieldId 7 .
+
+func:field_function a owl:ObjectProperty ;
+    rdfs:label "function (structural)" ;
+    rdfs:comment "Structural reference for function field when it contains a non-terminal node" ;
+    func:fieldId 8 .
+
+func:field_postcondition a owl:ObjectProperty ;
+    rdfs:label "postcondition (structural)" ;
+    rdfs:comment "Structural reference for postcondition field when it contains a non-terminal node" ;
+    func:fieldId 11 .
+
+func:field_precondition a owl:ObjectProperty ;
+    rdfs:label "precondition (structural)" ;
+    rdfs:comment "Structural reference for precondition field when it contains a non-terminal node" ;
+    func:fieldId 12 .
+
+func:field_return_type a owl:ObjectProperty ;
+    rdfs:label "return_type (structural)" ;
+    rdfs:comment "Structural reference for return_type field when it contains a non-terminal node" ;
+    func:fieldId 13 .
+
+func:field_specifiers a owl:ObjectProperty ;
+    rdfs:label "specifiers (structural)" ;
+    rdfs:comment "Structural reference for specifiers field when it contains a non-terminal node" ;
+    func:fieldId 14 .
+
+func:field_type a owl:ObjectProperty ;
+    rdfs:label "type (structural)" ;
+    rdfs:comment "Structural reference for type field when it contains a non-terminal node" ;
+    func:fieldId 15 .
+
+func:field_type_variables a owl:ObjectProperty ;
+    rdfs:label "type_variables (structural)" ;
+    rdfs:comment "Structural reference for type_variables field when it contains a non-terminal node" ;
+    func:fieldId 16 .
+
+func:field_value a owl:ObjectProperty ;
+    rdfs:label "value (structural)" ;
+    rdfs:comment "Structural reference for value field when it contains a non-terminal node" ;
+    func:fieldId 17 .
+
+func:field_variable a owl:ObjectProperty ;
+    rdfs:label "variable (structural)" ;
+    rdfs:comment "Structural reference for variable field when it contains a non-terminal node" ;
+    func:fieldId 18 .
+
+func:function a owl:DatatypeProperty ;
+    rdfs:label "function (literal)" ;
+    rdfs:comment "Literal value for function field when it contains a terminal node" ;
+    func:fieldId 8 ;
+    func:isTerminalField true .
+
+func:function_application a owl:Class ;
+    rdfs:label "function_application" ;
+    rdfs:isDefinedBy func: ;
+    rdfs:subClassOf ast:Node ;
+    func:isSupertype true ;
+    func:nodeTypeId 135 .
+
+func:function_definition a owl:Class ;
+    rdfs:label "function_definition" ;
+    rdfs:isDefinedBy func: ;
+    rdfs:subClassOf ast:Node ;
+    func:isSupertype true ;
+    func:nodeTypeId 147 .
+
+func:function_name a owl:Class ;
+    rdfs:label "function_name" ;
+    rdfs:isDefinedBy func: ;
+    rdfs:subClassOf ast:Node ;
+    func:isSupertype true ;
+    func:nodeTypeId 74 .
+
+func:function_type a owl:Class ;
+    rdfs:label "function_type" ;
+    rdfs:isDefinedBy func: ;
+    rdfs:subClassOf ast:Node ;
+    func:isSupertype true ;
+    func:nodeTypeId 115 .
+
+func:global_var_declarations a owl:Class ;
+    rdfs:label "global_var_declarations" ;
+    rdfs:isDefinedBy func: ;
+    rdfs:subClassOf ast:Node ;
+    func:isSupertype true ;
+    func:nodeTypeId 110 .
+
+func:hole_type a owl:Class ;
+    rdfs:label "hole_type" ;
+    rdfs:isDefinedBy func: ;
+    rdfs:subClassOf ast:Node ;
+    func:isSupertype true ;
+    func:nodeTypeId 121 .
+
+func:identifier a owl:Class ;
+    rdfs:label "identifier" ;
+    rdfs:isDefinedBy func: ;
+    rdfs:subClassOf ast:Node ;
+    func:isSupertype true ;
+    func:nodeTypeId 1 .
+
+func:if_statement a owl:Class ;
+    rdfs:label "if_statement" ;
+    rdfs:isDefinedBy func: ;
+    rdfs:subClassOf ast:Node ;
+    func:isSupertype true ;
+    func:nodeTypeId 164 .
+
+func:include_directive a owl:Class ;
+    rdfs:label "include_directive" ;
+    rdfs:isDefinedBy func: ;
+    rdfs:subClassOf ast:Node ;
+    func:isSupertype true ;
+    func:nodeTypeId 108 .
+
+func:include_path a owl:Class ;
+    rdfs:label "include_path" ;
+    rdfs:isDefinedBy func: ;
+    rdfs:subClassOf ast:Node ;
+    func:isSupertype true ;
+    func:nodeTypeId 197 .
+
+func:inline a owl:Class ;
+    rdfs:label "inline" ;
+    rdfs:isDefinedBy func: ;
+    rdfs:subClassOf ast:Node ;
+    func:isSupertype true ;
+    func:nodeTypeId 148 .
+
+func:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+func:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+func:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+func:major_version a owl:Class ;
+    rdfs:label "major_version" ;
+    rdfs:isDefinedBy func: ;
+    rdfs:subClassOf ast:Node ;
+    func:isSupertype true ;
+    func:nodeTypeId 10 .
+
+func:method_call a owl:Class ;
+    rdfs:label "method_call" ;
+    rdfs:isDefinedBy func: ;
+    rdfs:subClassOf ast:Node ;
+    func:isSupertype true ;
+    func:nodeTypeId 133 .
+
+func:method_id a owl:Class ;
+    rdfs:label "method_id" ;
+    rdfs:isDefinedBy func: ;
+    rdfs:subClassOf ast:Node ;
+    func:isSupertype true ;
+    func:nodeTypeId 149 .
+
+func:method_name a owl:DatatypeProperty ;
+    rdfs:label "method_name (literal)" ;
+    rdfs:comment "Literal value for method_name field when it contains a terminal node" ;
+    func:fieldId 9 ;
+    func:isTerminalField true .
+
+func:minor_version a owl:Class ;
+    rdfs:label "minor_version" ;
+    rdfs:isDefinedBy func: ;
+    rdfs:subClassOf ast:Node ;
+    func:isSupertype true ;
+    func:nodeTypeId 198 .
+
+func:multiline_asm_instruction a owl:Class ;
+    rdfs:label "multiline_asm_instruction" ;
+    rdfs:isDefinedBy func: ;
+    rdfs:subClassOf ast:Node ;
+    func:isSupertype true ;
+    func:nodeTypeId 156 .
+
+func:multiline_string_fragment a owl:Class ;
+    rdfs:label "multiline_string_fragment" ;
+    rdfs:isDefinedBy func: ;
+    rdfs:subClassOf ast:Node ;
+    func:isSupertype true ;
+    func:nodeTypeId 157 .
+
+func:name a owl:DatatypeProperty ;
+    rdfs:label "name (literal)" ;
+    rdfs:comment "Literal value for name field when it contains a terminal node" ;
+    func:fieldId 10 ;
+    func:isTerminalField true .
+
+func:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+func:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+func:number a owl:Class ;
+    rdfs:label "number" ;
+    rdfs:isDefinedBy func: ;
+    rdfs:subClassOf ast:Node ;
+    func:isSupertype true ;
+    func:nodeTypeId 97 .
+
+func:parameter a owl:Class ;
+    rdfs:label "parameter" ;
+    rdfs:isDefinedBy func: ;
+    rdfs:subClassOf ast:Node ;
+    func:isSupertype true ;
+    func:nodeTypeId 199 .
+
+func:parameter_declaration a owl:Class ;
+    rdfs:label "parameter_declaration" ;
+    rdfs:isDefinedBy func: ;
+    rdfs:subClassOf ast:Node ;
+    func:isSupertype true ;
+    func:nodeTypeId 152 .
+
+func:parameter_list a owl:Class ;
+    rdfs:label "parameter_list" ;
+    rdfs:isDefinedBy func: ;
+    rdfs:subClassOf ast:Node ;
+    func:isSupertype true ;
+    func:nodeTypeId 151 .
+
+func:parenthesized_expression a owl:Class ;
+    rdfs:label "parenthesized_expression" ;
+    rdfs:isDefinedBy func: ;
+    rdfs:subClassOf ast:Node ;
+    func:isSupertype true ;
+    func:nodeTypeId 144 .
+
+func:parenthesized_type_expression a owl:Class ;
+    rdfs:label "parenthesized_type_expression" ;
+    rdfs:isDefinedBy func: ;
+    rdfs:subClassOf ast:Node ;
+    func:isSupertype true ;
+    func:nodeTypeId 138 .
+
+func:patch_version a owl:Class ;
+    rdfs:label "patch_version" ;
+    rdfs:isDefinedBy func: ;
+    rdfs:subClassOf ast:Node ;
+    func:isSupertype true ;
+    func:nodeTypeId 200 .
+
+func:postcondition a owl:DatatypeProperty ;
+    rdfs:label "postcondition (literal)" ;
+    rdfs:comment "Literal value for postcondition field when it contains a terminal node" ;
+    func:fieldId 11 ;
+    func:isTerminalField true .
+
+func:pragma_directive a owl:Class ;
+    rdfs:label "pragma_directive" ;
+    rdfs:isDefinedBy func: ;
+    rdfs:subClassOf ast:Node ;
+    func:isSupertype true ;
+    func:nodeTypeId 109 .
+
+func:precondition a owl:DatatypeProperty ;
+    rdfs:label "precondition (literal)" ;
+    rdfs:comment "Literal value for precondition field when it contains a terminal node" ;
+    func:fieldId 12 ;
+    func:isTerminalField true .
+
+func:primitive_type a owl:Class ;
+    rdfs:label "primitive_type" ;
+    rdfs:isDefinedBy func: ;
+    rdfs:subClassOf ast:Node ;
+    func:isSupertype true ;
+    func:nodeTypeId 118 .
+
+func:repeat_statement a owl:Class ;
+    rdfs:label "repeat_statement" ;
+    rdfs:isDefinedBy func: ;
+    rdfs:subClassOf ast:Node ;
+    func:isSupertype true ;
+    func:nodeTypeId 163 .
+
+func:return_statement a owl:Class ;
+    rdfs:label "return_statement" ;
+    rdfs:isDefinedBy func: ;
+    rdfs:subClassOf ast:Node ;
+    func:isSupertype true ;
+    func:nodeTypeId 159 .
+
+func:return_type a owl:DatatypeProperty ;
+    rdfs:label "return_type (literal)" ;
+    rdfs:comment "Literal value for return_type field when it contains a terminal node" ;
+    func:fieldId 13 ;
+    func:isTerminalField true .
+
+func:specifiers a owl:DatatypeProperty ;
+    rdfs:label "specifiers (literal)" ;
+    rdfs:comment "Literal value for specifiers field when it contains a terminal node" ;
+    func:fieldId 14 ;
+    func:isTerminalField true .
+
+func:string a owl:Class ;
+    rdfs:label "string" ;
+    rdfs:isDefinedBy func: ;
+    rdfs:subClassOf ast:Node ;
+    func:isSupertype true ;
+    func:nodeTypeId 169 .
+
+func:string_type a owl:Class ;
+    rdfs:label "string_type" ;
+    rdfs:isDefinedBy func: ;
+    rdfs:subClassOf ast:Node ;
+    func:isSupertype true ;
+    func:nodeTypeId 98,
+        99,
+        100,
+        101,
+        102,
+        103 .
+
+func:tensor_expression a owl:Class ;
+    rdfs:label "tensor_expression" ;
+    rdfs:isDefinedBy func: ;
+    rdfs:subClassOf ast:Node ;
+    func:isSupertype true ;
+    func:nodeTypeId 145 .
+
+func:tensor_type a owl:Class ;
+    rdfs:label "tensor_type" ;
+    rdfs:isDefinedBy func: ;
+    rdfs:subClassOf ast:Node ;
+    func:isSupertype true ;
+    func:nodeTypeId 119 .
+
+func:tensor_type_expression a owl:Class ;
+    rdfs:label "tensor_type_expression" ;
+    rdfs:isDefinedBy func: ;
+    rdfs:subClassOf ast:Node ;
+    func:isSupertype true ;
+    func:nodeTypeId 139 .
+
+func:translation_unit a owl:Class ;
+    rdfs:label "translation_unit" ;
+    rdfs:isDefinedBy func: ;
+    rdfs:subClassOf ast:Node ;
+    func:isSupertype true ;
+    func:nodeTypeId 106 .
+
+func:try_statement a owl:Class ;
+    rdfs:label "try_statement" ;
+    rdfs:isDefinedBy func: ;
+    rdfs:subClassOf ast:Node ;
+    func:isSupertype true ;
+    func:nodeTypeId 168 .
+
+func:tuple_expression a owl:Class ;
+    rdfs:label "tuple_expression" ;
+    rdfs:isDefinedBy func: ;
+    rdfs:subClassOf ast:Node ;
+    func:isSupertype true ;
+    func:nodeTypeId 146 .
+
+func:tuple_type a owl:Class ;
+    rdfs:label "tuple_type" ;
+    rdfs:isDefinedBy func: ;
+    rdfs:subClassOf ast:Node ;
+    func:isSupertype true ;
+    func:nodeTypeId 120 .
+
+func:tuple_type_expression a owl:Class ;
+    rdfs:label "tuple_type_expression" ;
+    rdfs:isDefinedBy func: ;
+    rdfs:subClassOf ast:Node ;
+    func:isSupertype true ;
+    func:nodeTypeId 140 .
+
+func:type a owl:DatatypeProperty ;
+    rdfs:label "type (literal)" ;
+    rdfs:comment "Literal value for type field when it contains a terminal node" ;
+    func:fieldId 15 ;
+    func:isTerminalField true .
+
+func:type_expression a owl:Class ;
+    rdfs:label "type_expression" ;
+    rdfs:isDefinedBy func: ;
+    rdfs:subClassOf ast:Node ;
+    func:isSupertype true ;
+    func:nodeTypeId 137 .
+
+func:type_identifier a owl:Class ;
+    rdfs:label "type_identifier" ;
+    rdfs:isDefinedBy func: ;
+    rdfs:subClassOf ast:Node ;
+    func:isSupertype true ;
+    func:nodeTypeId 123 .
+
+func:type_variables_list a owl:Class ;
+    rdfs:label "type_variables_list" ;
+    rdfs:isDefinedBy func: ;
+    rdfs:subClassOf ast:Node ;
+    func:isSupertype true ;
+    func:nodeTypeId 150 .
+
+func:underscore a owl:Class ;
+    rdfs:label "underscore" ;
+    rdfs:isDefinedBy func: ;
+    rdfs:subClassOf ast:Node ;
+    func:isSupertype true ;
+    func:nodeTypeId 104 .
+
+func:unit_literal a owl:Class ;
+    rdfs:label "unit_literal" ;
+    rdfs:isDefinedBy func: ;
+    rdfs:subClassOf ast:Node ;
+    func:isSupertype true ;
+    func:nodeTypeId 143 .
+
+func:unit_type a owl:Class ;
+    rdfs:label "unit_type" ;
+    rdfs:isDefinedBy func: ;
+    rdfs:subClassOf ast:Node ;
+    func:isSupertype true ;
+    func:nodeTypeId 122 .
+
+func:value a owl:DatatypeProperty ;
+    rdfs:label "value (literal)" ;
+    rdfs:comment "Literal value for value field when it contains a terminal node" ;
+    func:fieldId 17 ;
+    func:isTerminalField true .
+
+func:var a owl:Class ;
+    rdfs:label "var" ;
+    rdfs:isDefinedBy func: ;
+    rdfs:subClassOf ast:Node ;
+    func:isSupertype true ;
+    func:nodeTypeId 27 .
+
+func:variable a owl:DatatypeProperty ;
+    rdfs:label "variable (literal)" ;
+    rdfs:comment "Literal value for variable field when it contains a terminal node" ;
+    func:fieldId 18 ;
+    func:isTerminalField true .
+
+func:variable_declaration a owl:Class ;
+    rdfs:label "variable_declaration" ;
+    rdfs:isDefinedBy func: ;
+    rdfs:subClassOf ast:Node ;
+    func:isSupertype true ;
+    func:nodeTypeId 136 .
+
+func:version_operator a owl:Class ;
+    rdfs:label "version_operator" ;
+    rdfs:isDefinedBy func: ;
+    rdfs:subClassOf ast:Node ;
+    func:isSupertype true ;
+    func:nodeTypeId 8 .
+
+func:while_statement a owl:Class ;
+    rdfs:label "while_statement" ;
+    rdfs:isDefinedBy func: ;
+    rdfs:subClassOf ast:Node ;
+    func:isSupertype true ;
+    func:nodeTypeId 167 .
+
+func: a owl:Ontology ;
+    rdfs:label "Func Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for func" ;
+    owl:versionInfo "v0.25" ;
+    func:abiVersion 14 ;
+    func:fieldCount 18 ;
+    func:languageName "None" ;
+    func:nodeKindCount 201 .
+

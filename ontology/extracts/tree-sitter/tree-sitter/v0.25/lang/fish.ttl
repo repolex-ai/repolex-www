@@ -1,0 +1,413 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix fish: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/fish/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+fish:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+fish:argument a owl:DatatypeProperty ;
+    rdfs:label "argument (literal)" ;
+    rdfs:comment "Literal value for argument field when it contains a terminal node" ;
+    fish:fieldId 1 ;
+    fish:isTerminalField true .
+
+fish:begin_statement a owl:Class ;
+    rdfs:label "begin_statement" ;
+    rdfs:isDefinedBy fish: ;
+    rdfs:subClassOf ast:Node ;
+    fish:isSupertype true ;
+    fish:nodeTypeId 73 .
+
+fish:brace_expansion a owl:Class ;
+    rdfs:label "brace_expansion" ;
+    rdfs:isDefinedBy fish: ;
+    rdfs:subClassOf ast:Node ;
+    fish:isSupertype true ;
+    fish:nodeTypeId 78 .
+
+fish:break a owl:Class ;
+    rdfs:label "break" ;
+    rdfs:isDefinedBy fish: ;
+    rdfs:subClassOf ast:Node ;
+    fish:isSupertype true ;
+    fish:nodeTypeId 26 .
+
+fish:case_clause a owl:Class ;
+    rdfs:label "case_clause" ;
+    rdfs:isDefinedBy fish: ;
+    rdfs:subClassOf ast:Node ;
+    fish:isSupertype true ;
+    fish:nodeTypeId 67 .
+
+fish:command a owl:Class ;
+    rdfs:label "command" ;
+    rdfs:isDefinedBy fish: ;
+    rdfs:subClassOf ast:Node ;
+    fish:isSupertype true ;
+    fish:nodeTypeId 81 .
+
+fish:command_substitution a owl:Class ;
+    rdfs:label "command_substitution" ;
+    rdfs:isDefinedBy fish: ;
+    rdfs:subClassOf ast:Node ;
+    fish:isSupertype true ;
+    fish:nodeTypeId 63 .
+
+fish:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy fish: ;
+    rdfs:subClassOf ast:Node ;
+    fish:isSupertype true ;
+    fish:nodeTypeId 34 .
+
+fish:concatenation a owl:Class ;
+    rdfs:label "concatenation" ;
+    rdfs:isDefinedBy fish: ;
+    rdfs:subClassOf ast:Node ;
+    fish:isSupertype true ;
+    fish:nodeTypeId 84,
+        86 .
+
+fish:condition a owl:DatatypeProperty ;
+    rdfs:label "condition (literal)" ;
+    rdfs:comment "Literal value for condition field when it contains a terminal node" ;
+    fish:fieldId 2 ;
+    fish:isTerminalField true .
+
+fish:conditional_execution a owl:Class ;
+    rdfs:label "conditional_execution" ;
+    rdfs:isDefinedBy fish: ;
+    rdfs:subClassOf ast:Node ;
+    fish:isSupertype true ;
+    fish:nodeTypeId 57 .
+
+fish:continue a owl:Class ;
+    rdfs:label "continue" ;
+    rdfs:isDefinedBy fish: ;
+    rdfs:subClassOf ast:Node ;
+    fish:isSupertype true ;
+    fish:nodeTypeId 27 .
+
+fish:destination a owl:DatatypeProperty ;
+    rdfs:label "destination (literal)" ;
+    rdfs:comment "Literal value for destination field when it contains a terminal node" ;
+    fish:fieldId 3 ;
+    fish:isTerminalField true .
+
+fish:direction a owl:Class ;
+    rdfs:label "direction" ;
+    rdfs:isDefinedBy fish: ;
+    rdfs:subClassOf ast:Node ;
+    fish:isSupertype true ;
+    fish:nodeTypeId 48 .
+
+fish:double_quote_string a owl:Class ;
+    rdfs:label "double_quote_string" ;
+    rdfs:isDefinedBy fish: ;
+    rdfs:subClassOf ast:Node ;
+    fish:isSupertype true ;
+    fish:nodeTypeId 79 .
+
+fish:else_clause a owl:Class ;
+    rdfs:label "else_clause" ;
+    rdfs:isDefinedBy fish: ;
+    rdfs:subClassOf ast:Node ;
+    fish:isSupertype true ;
+    fish:nodeTypeId 72 .
+
+fish:else_if_clause a owl:Class ;
+    rdfs:label "else_if_clause" ;
+    rdfs:isDefinedBy fish: ;
+    rdfs:subClassOf ast:Node ;
+    fish:isSupertype true ;
+    fish:nodeTypeId 71 .
+
+fish:escape_sequence a owl:Class ;
+    rdfs:label "escape_sequence" ;
+    rdfs:isDefinedBy fish: ;
+    rdfs:subClassOf ast:Node ;
+    fish:isSupertype true ;
+    fish:nodeTypeId 46 .
+
+fish:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+fish:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+fish:field_argument a owl:ObjectProperty ;
+    rdfs:label "argument (structural)" ;
+    rdfs:comment "Structural reference for argument field when it contains a non-terminal node" ;
+    fish:fieldId 1 .
+
+fish:field_condition a owl:ObjectProperty ;
+    rdfs:label "condition (structural)" ;
+    rdfs:comment "Structural reference for condition field when it contains a non-terminal node" ;
+    fish:fieldId 2 .
+
+fish:field_destination a owl:ObjectProperty ;
+    rdfs:label "destination (structural)" ;
+    rdfs:comment "Structural reference for destination field when it contains a non-terminal node" ;
+    fish:fieldId 3 .
+
+fish:field_name a owl:ObjectProperty ;
+    rdfs:label "name (structural)" ;
+    rdfs:comment "Structural reference for name field when it contains a non-terminal node" ;
+    fish:fieldId 4 .
+
+fish:field_option a owl:ObjectProperty ;
+    rdfs:label "option (structural)" ;
+    rdfs:comment "Structural reference for option field when it contains a non-terminal node" ;
+    fish:fieldId 6 .
+
+fish:field_redirect a owl:ObjectProperty ;
+    rdfs:label "redirect (structural)" ;
+    rdfs:comment "Structural reference for redirect field when it contains a non-terminal node" ;
+    fish:fieldId 7 .
+
+fish:field_value a owl:ObjectProperty ;
+    rdfs:label "value (structural)" ;
+    rdfs:comment "Structural reference for value field when it contains a non-terminal node" ;
+    fish:fieldId 8 .
+
+fish:file_redirect a owl:Class ;
+    rdfs:label "file_redirect" ;
+    rdfs:isDefinedBy fish: ;
+    rdfs:subClassOf ast:Node ;
+    fish:isSupertype true ;
+    fish:nodeTypeId 82 .
+
+fish:float a owl:Class ;
+    rdfs:label "float" ;
+    rdfs:isDefinedBy fish: ;
+    rdfs:subClassOf ast:Node ;
+    fish:isSupertype true ;
+    fish:nodeTypeId 22 .
+
+fish:for_statement a owl:Class ;
+    rdfs:label "for_statement" ;
+    rdfs:isDefinedBy fish: ;
+    rdfs:subClassOf ast:Node ;
+    fish:isSupertype true ;
+    fish:nodeTypeId 68 .
+
+fish:function_definition a owl:Class ;
+    rdfs:label "function_definition" ;
+    rdfs:isDefinedBy fish: ;
+    rdfs:subClassOf ast:Node ;
+    fish:isSupertype true ;
+    fish:nodeTypeId 64 .
+
+fish:glob a owl:Class ;
+    rdfs:label "glob" ;
+    rdfs:isDefinedBy fish: ;
+    rdfs:subClassOf ast:Node ;
+    fish:isSupertype true ;
+    fish:nodeTypeId 51 .
+
+fish:home_dir_expansion a owl:Class ;
+    rdfs:label "home_dir_expansion" ;
+    rdfs:isDefinedBy fish: ;
+    rdfs:subClassOf ast:Node ;
+    fish:isSupertype true ;
+    fish:nodeTypeId 50 .
+
+fish:if_statement a owl:Class ;
+    rdfs:label "if_statement" ;
+    rdfs:isDefinedBy fish: ;
+    rdfs:subClassOf ast:Node ;
+    fish:isSupertype true ;
+    fish:nodeTypeId 70 .
+
+fish:index a owl:Class ;
+    rdfs:label "index" ;
+    rdfs:isDefinedBy fish: ;
+    rdfs:subClassOf ast:Node ;
+    fish:isSupertype true ;
+    fish:nodeTypeId 75 .
+
+fish:integer a owl:Class ;
+    rdfs:label "integer" ;
+    rdfs:isDefinedBy fish: ;
+    rdfs:subClassOf ast:Node ;
+    fish:isSupertype true ;
+    fish:nodeTypeId 21 .
+
+fish:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+fish:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+fish:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+fish:list_element_access a owl:Class ;
+    rdfs:label "list_element_access" ;
+    rdfs:isDefinedBy fish: ;
+    rdfs:subClassOf ast:Node ;
+    fish:isSupertype true ;
+    fish:nodeTypeId 77 .
+
+fish:name a owl:DatatypeProperty ;
+    rdfs:label "name (literal)" ;
+    rdfs:comment "Literal value for name field when it contains a terminal node" ;
+    fish:fieldId 4 ;
+    fish:isTerminalField true .
+
+fish:negated_statement a owl:Class ;
+    rdfs:label "negated_statement" ;
+    rdfs:isDefinedBy fish: ;
+    rdfs:subClassOf ast:Node ;
+    fish:isSupertype true ;
+    fish:nodeTypeId 62 .
+
+fish:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+fish:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+fish:operator a owl:DatatypeProperty ;
+    rdfs:label "operator (literal)" ;
+    rdfs:comment "Literal value for operator field when it contains a terminal node" ;
+    fish:fieldId 5 ;
+    fish:isTerminalField true .
+
+fish:option a owl:DatatypeProperty ;
+    rdfs:label "option (literal)" ;
+    rdfs:comment "Literal value for option field when it contains a terminal node" ;
+    fish:fieldId 6 ;
+    fish:isTerminalField true .
+
+fish:pipe a owl:Class ;
+    rdfs:label "pipe" ;
+    rdfs:isDefinedBy fish: ;
+    rdfs:subClassOf ast:Node ;
+    fish:isSupertype true ;
+    fish:nodeTypeId 58 .
+
+fish:program a owl:Class ;
+    rdfs:label "program" ;
+    rdfs:isDefinedBy fish: ;
+    rdfs:subClassOf ast:Node ;
+    fish:isSupertype true ;
+    fish:nodeTypeId 56 .
+
+fish:range a owl:Class ;
+    rdfs:label "range" ;
+    rdfs:isDefinedBy fish: ;
+    rdfs:subClassOf ast:Node ;
+    fish:isSupertype true ;
+    fish:nodeTypeId 76 .
+
+fish:redirect a owl:DatatypeProperty ;
+    rdfs:label "redirect (literal)" ;
+    rdfs:comment "Literal value for redirect field when it contains a terminal node" ;
+    fish:fieldId 7 ;
+    fish:isTerminalField true .
+
+fish:redirect_statement a owl:Class ;
+    rdfs:label "redirect_statement" ;
+    rdfs:isDefinedBy fish: ;
+    rdfs:subClassOf ast:Node ;
+    fish:isSupertype true ;
+    fish:nodeTypeId 59 .
+
+fish:return a owl:Class ;
+    rdfs:label "return" ;
+    rdfs:isDefinedBy fish: ;
+    rdfs:subClassOf ast:Node ;
+    fish:isSupertype true ;
+    fish:nodeTypeId 65 .
+
+fish:single_quote_string a owl:Class ;
+    rdfs:label "single_quote_string" ;
+    rdfs:isDefinedBy fish: ;
+    rdfs:subClassOf ast:Node ;
+    fish:isSupertype true ;
+    fish:nodeTypeId 80 .
+
+fish:stream_redirect a owl:Class ;
+    rdfs:label "stream_redirect" ;
+    rdfs:isDefinedBy fish: ;
+    rdfs:subClassOf ast:Node ;
+    fish:isSupertype true ;
+    fish:nodeTypeId 47 .
+
+fish:switch_statement a owl:Class ;
+    rdfs:label "switch_statement" ;
+    rdfs:isDefinedBy fish: ;
+    rdfs:subClassOf ast:Node ;
+    fish:isSupertype true ;
+    fish:nodeTypeId 66 .
+
+fish:value a owl:DatatypeProperty ;
+    rdfs:label "value (literal)" ;
+    rdfs:comment "Literal value for value field when it contains a terminal node" ;
+    fish:fieldId 8 ;
+    fish:isTerminalField true .
+
+fish:variable a owl:DatatypeProperty ;
+    rdfs:label "variable (literal)" ;
+    rdfs:comment "Literal value for variable field when it contains a terminal node" ;
+    fish:fieldId 9 ;
+    fish:isTerminalField true .
+
+fish:variable_expansion a owl:Class ;
+    rdfs:label "variable_expansion" ;
+    rdfs:isDefinedBy fish: ;
+    rdfs:subClassOf ast:Node ;
+    fish:isSupertype true ;
+    fish:nodeTypeId 74 .
+
+fish:variable_name a owl:Class ;
+    rdfs:label "variable_name" ;
+    rdfs:isDefinedBy fish: ;
+    rdfs:subClassOf ast:Node ;
+    fish:isSupertype true ;
+    fish:nodeTypeId 35 .
+
+fish:while_statement a owl:Class ;
+    rdfs:label "while_statement" ;
+    rdfs:isDefinedBy fish: ;
+    rdfs:subClassOf ast:Node ;
+    fish:isSupertype true ;
+    fish:nodeTypeId 69 .
+
+fish:word a owl:Class ;
+    rdfs:label "word" ;
+    rdfs:isDefinedBy fish: ;
+    rdfs:subClassOf ast:Node ;
+    fish:isSupertype true ;
+    fish:nodeTypeId 1,
+        52 .
+
+fish: a owl:Ontology ;
+    rdfs:label "Fish Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for fish" ;
+    owl:versionInfo "v0.25" ;
+    fish:abiVersion 14 ;
+    fish:fieldCount 9 ;
+    fish:languageName "None" ;
+    fish:nodeKindCount 105 .
+

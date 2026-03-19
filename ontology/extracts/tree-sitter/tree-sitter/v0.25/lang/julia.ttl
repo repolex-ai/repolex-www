@@ -1,0 +1,721 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix julia: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/julia/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+julia:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+julia:abstract_definition a owl:Class ;
+    rdfs:label "abstract_definition" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 129 .
+
+julia:adjoint_expression a owl:Class ;
+    rdfs:label "adjoint_expression" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 173 .
+
+julia:argument_list a owl:Class ;
+    rdfs:label "argument_list" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 243 .
+
+julia:arrow_function_expression a owl:Class ;
+    rdfs:label "arrow_function_expression" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 194 .
+
+julia:assignment a owl:Class ;
+    rdfs:label "assignment" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 124,
+        125 .
+
+julia:binary_expression a owl:Class ;
+    rdfs:label "binary_expression" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 187 .
+
+julia:block a owl:Class ;
+    rdfs:label "block" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 121 .
+
+julia:block_comment a owl:Class ;
+    rdfs:label "block_comment" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 218 .
+
+julia:boolean_literal a owl:Class ;
+    rdfs:label "boolean_literal" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 201 .
+
+julia:break_statement a owl:Class ;
+    rdfs:label "break_statement" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 25 .
+
+julia:broadcast_call_expression a owl:Class ;
+    rdfs:label "broadcast_call_expression" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 178 .
+
+julia:call_expression a owl:Class ;
+    rdfs:label "call_expression" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 177 .
+
+julia:catch_clause a owl:Class ;
+    rdfs:label "catch_clause" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 142 .
+
+julia:character_literal a owl:Class ;
+    rdfs:label "character_literal" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 73 .
+
+julia:command_literal a owl:Class ;
+    rdfs:label "command_literal" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 210 .
+
+julia:compound_assignment_expression a owl:Class ;
+    rdfs:label "compound_assignment_expression" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 196 .
+
+julia:compound_statement a owl:Class ;
+    rdfs:label "compound_statement" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 135 .
+
+julia:comprehension_expression a owl:Class ;
+    rdfs:label "comprehension_expression" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 162 .
+
+julia:const_statement a owl:Class ;
+    rdfs:label "const_statement" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 147 .
+
+julia:content a owl:Class ;
+    rdfs:label "content" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117 .
+
+julia:continue_statement a owl:Class ;
+    rdfs:label "continue_statement" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 26 .
+
+julia:curly_expression a owl:Class ;
+    rdfs:label "curly_expression" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 172 .
+
+julia:do_clause a owl:Class ;
+    rdfs:label "do_clause" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 184 .
+
+julia:else_clause a owl:Class ;
+    rdfs:label "else_clause" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 140 .
+
+julia:elseif_clause a owl:Class ;
+    rdfs:label "elseif_clause" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 139 .
+
+julia:escape_sequence a owl:Class ;
+    rdfs:label "escape_sequence" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 72 .
+
+julia:export_statement a owl:Class ;
+    rdfs:label "export_statement" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 156 .
+
+julia:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+julia:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+julia:field_alternative a owl:ObjectProperty ;
+    rdfs:label "alternative (structural)" ;
+    rdfs:comment "Structural reference for alternative field when it contains a non-terminal node" ;
+    julia:fieldId 1 .
+
+julia:field_condition a owl:ObjectProperty ;
+    rdfs:label "condition (structural)" ;
+    rdfs:comment "Structural reference for condition field when it contains a non-terminal node" ;
+    julia:fieldId 2 .
+
+julia:field_expression a owl:Class ;
+    rdfs:label "field_expression" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 174,
+        179 .
+
+julia:field_name a owl:ObjectProperty ;
+    rdfs:label "name (structural)" ;
+    rdfs:comment "Structural reference for name field when it contains a non-terminal node" ;
+    julia:fieldId 3 .
+
+julia:field_value a owl:ObjectProperty ;
+    rdfs:label "value (structural)" ;
+    rdfs:comment "Structural reference for value field when it contains a non-terminal node" ;
+    julia:fieldId 6 .
+
+julia:finally_clause a owl:Class ;
+    rdfs:label "finally_clause" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 143 .
+
+julia:float_literal a owl:Class ;
+    rdfs:label "float_literal" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 203 .
+
+julia:for_binding a owl:Class ;
+    rdfs:label "for_binding" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 166 .
+
+julia:for_clause a owl:Class ;
+    rdfs:label "for_clause" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 165 .
+
+julia:for_statement a owl:Class ;
+    rdfs:label "for_statement" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 144 .
+
+julia:function_definition a owl:Class ;
+    rdfs:label "function_definition" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 133 .
+
+julia:generator a owl:Class ;
+    rdfs:label "generator" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 163 .
+
+julia:global_statement a owl:Class ;
+    rdfs:label "global_statement" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 148 .
+
+julia:identifier a owl:Class ;
+    rdfs:label "identifier" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 55,
+        200 .
+
+julia:if_clause a owl:Class ;
+    rdfs:label "if_clause" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 164 .
+
+julia:if_statement a owl:Class ;
+    rdfs:label "if_statement" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 138 .
+
+julia:import_alias a owl:Class ;
+    rdfs:label "import_alias" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 150 .
+
+julia:import_path a owl:Class ;
+    rdfs:label "import_path" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 151 .
+
+julia:import_statement a owl:Class ;
+    rdfs:label "import_statement" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 158 .
+
+julia:index_expression a owl:Class ;
+    rdfs:label "index_expression" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 175 .
+
+julia:integer_literal a owl:Class ;
+    rdfs:label "integer_literal" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 202 .
+
+julia:interpolation_expression a owl:Class ;
+    rdfs:label "interpolation_expression" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 185 .
+
+julia:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+julia:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+julia:juxtaposition_expression a owl:Class ;
+    rdfs:label "juxtaposition_expression" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 195 .
+
+julia:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+julia:let_statement a owl:Class ;
+    rdfs:label "let_statement" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 137 .
+
+julia:line_comment a owl:Class ;
+    rdfs:label "line_comment" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 219 .
+
+julia:local_statement a owl:Class ;
+    rdfs:label "local_statement" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 149 .
+
+julia:macro_argument_list a owl:Class ;
+    rdfs:label "macro_argument_list" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 183 .
+
+julia:macro_definition a owl:Class ;
+    rdfs:label "macro_definition" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 134 .
+
+julia:macro_identifier a owl:Class ;
+    rdfs:label "macro_identifier" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 198 .
+
+julia:macrocall_expression a owl:Class ;
+    rdfs:label "macrocall_expression" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 181,
+        182 .
+
+julia:matrix_expression a owl:Class ;
+    rdfs:label "matrix_expression" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 167 .
+
+julia:matrix_row a owl:Class ;
+    rdfs:label "matrix_row" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 168 .
+
+julia:module_definition a owl:Class ;
+    rdfs:label "module_definition" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 127 .
+
+julia:name a owl:DatatypeProperty ;
+    rdfs:label "name (literal)" ;
+    rdfs:comment "Literal value for name field when it contains a terminal node" ;
+    julia:fieldId 3 ;
+    julia:isTerminalField true .
+
+julia:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+julia:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+julia:open_tuple a owl:Class ;
+    rdfs:label "open_tuple" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 123 .
+
+julia:operator a owl:Class ;
+    rdfs:label "operator" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 3,
+        43,
+        44,
+        56,
+        82,
+        83,
+        214,
+        215,
+        216 .
+
+julia:parametrized_type_expression a owl:Class ;
+    rdfs:label "parametrized_type_expression" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 176 .
+
+julia:parenthesized_expression a owl:Class ;
+    rdfs:label "parenthesized_expression" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 170 .
+
+julia:prefix a owl:DatatypeProperty ;
+    rdfs:label "prefix (literal)" ;
+    rdfs:comment "Literal value for prefix field when it contains a terminal node" ;
+    julia:fieldId 4 ;
+    julia:isTerminalField true .
+
+julia:prefixed_command_literal a owl:Class ;
+    rdfs:label "prefixed_command_literal" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 212 .
+
+julia:prefixed_string_literal a owl:Class ;
+    rdfs:label "prefixed_string_literal" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 211 .
+
+julia:primitive_definition a owl:Class ;
+    rdfs:label "primitive_definition" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 130 .
+
+julia:public_statement a owl:Class ;
+    rdfs:label "public_statement" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 157 .
+
+julia:quote_expression a owl:Class ;
+    rdfs:label "quote_expression" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 186 .
+
+julia:quote_statement a owl:Class ;
+    rdfs:label "quote_statement" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 136 .
+
+julia:range_expression a owl:Class ;
+    rdfs:label "range_expression" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 189 .
+
+julia:return_statement a owl:Class ;
+    rdfs:label "return_statement" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 146 .
+
+julia:selected_import a owl:Class ;
+    rdfs:label "selected_import" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 155 .
+
+julia:signature a owl:Class ;
+    rdfs:label "signature" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 132 .
+
+julia:source_file a owl:Class ;
+    rdfs:label "source_file" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 120 .
+
+julia:splat_expression a owl:Class ;
+    rdfs:label "splat_expression" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 190 .
+
+julia:string_interpolation a owl:Class ;
+    rdfs:label "string_interpolation" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 213 .
+
+julia:string_literal a owl:Class ;
+    rdfs:label "string_literal" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 209 .
+
+julia:struct_definition a owl:Class ;
+    rdfs:label "struct_definition" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 131 .
+
+julia:suffix a owl:DatatypeProperty ;
+    rdfs:label "suffix (literal)" ;
+    rdfs:comment "Literal value for suffix field when it contains a terminal node" ;
+    julia:fieldId 5 ;
+    julia:isTerminalField true .
+
+julia:ternary_expression a owl:Class ;
+    rdfs:label "ternary_expression" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 191 .
+
+julia:try_statement a owl:Class ;
+    rdfs:label "try_statement" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 141 .
+
+julia:tuple_expression a owl:Class ;
+    rdfs:label "tuple_expression" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 171 .
+
+julia:type_head a owl:Class ;
+    rdfs:label "type_head" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 128 .
+
+julia:typed_expression a owl:Class ;
+    rdfs:label "typed_expression" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 192 .
+
+julia:unary_expression a owl:Class ;
+    rdfs:label "unary_expression" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 188 .
+
+julia:unary_typed_expression a owl:Class ;
+    rdfs:label "unary_typed_expression" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 193 .
+
+julia:using_statement a owl:Class ;
+    rdfs:label "using_statement" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 159 .
+
+julia:value a owl:DatatypeProperty ;
+    rdfs:label "value (literal)" ;
+    rdfs:comment "Literal value for value field when it contains a terminal node" ;
+    julia:fieldId 6 ;
+    julia:isTerminalField true .
+
+julia:vector_expression a owl:Class ;
+    rdfs:label "vector_expression" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 169 .
+
+julia:where_expression a owl:Class ;
+    rdfs:label "where_expression" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 197 .
+
+julia:while_statement a owl:Class ;
+    rdfs:label "while_statement" ;
+    rdfs:isDefinedBy julia: ;
+    rdfs:subClassOf ast:Node ;
+    julia:isSupertype true ;
+    julia:nodeTypeId 145 .
+
+julia: a owl:Ontology ;
+    rdfs:label "Julia Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for julia" ;
+    owl:versionInfo "v0.25" ;
+    julia:abiVersion 15 ;
+    julia:fieldCount 6 ;
+    julia:languageName "julia" ;
+    julia:nodeKindCount 244 .
+

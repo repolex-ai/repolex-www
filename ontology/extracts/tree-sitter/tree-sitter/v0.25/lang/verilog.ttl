@@ -1,0 +1,4117 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix verilog: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/verilog/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/verilog/$fullskew_timing_check> a owl:Class ;
+    rdfs:label "$fullskew_timing_check" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 928 .
+
+<https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/verilog/$hold_timing_check> a owl:Class ;
+    rdfs:label "$hold_timing_check" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 921 .
+
+<https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/verilog/$nochange_timing_check> a owl:Class ;
+    rdfs:label "$nochange_timing_check" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 931 .
+
+<https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/verilog/$period_timing_check> a owl:Class ;
+    rdfs:label "$period_timing_check" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 929 .
+
+<https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/verilog/$recovery_timing_check> a owl:Class ;
+    rdfs:label "$recovery_timing_check" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 923 .
+
+<https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/verilog/$recrem_timing_check> a owl:Class ;
+    rdfs:label "$recrem_timing_check" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 925 .
+
+<https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/verilog/$removal_timing_check> a owl:Class ;
+    rdfs:label "$removal_timing_check" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 924 .
+
+<https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/verilog/$setup_timing_check> a owl:Class ;
+    rdfs:label "$setup_timing_check" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 920 .
+
+<https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/verilog/$setuphold_timing_check> a owl:Class ;
+    rdfs:label "$setuphold_timing_check" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 922 .
+
+<https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/verilog/$skew_timing_check> a owl:Class ;
+    rdfs:label "$skew_timing_check" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 926 .
+
+<https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/verilog/$timeskew_timing_check> a owl:Class ;
+    rdfs:label "$timeskew_timing_check" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 927 .
+
+<https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/verilog/$width_timing_check> a owl:Class ;
+    rdfs:label "$width_timing_check" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 930 .
+
+verilog:_ordered_parameter_assignment a owl:Class ;
+    rdfs:label "_ordered_parameter_assignment" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 1202 .
+
+verilog:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+verilog:action_block a owl:Class ;
+    rdfs:label "action_block" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 821 .
+
+verilog:always_construct a owl:Class ;
+    rdfs:label "always_construct" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 812 .
+
+verilog:always_keyword a owl:Class ;
+    rdfs:label "always_keyword" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 813 .
+
+verilog:anonymous_program a owl:Class ;
+    rdfs:label "anonymous_program" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 545 .
+
+verilog:anonymous_program_item a owl:Class ;
+    rdfs:label "anonymous_program_item" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 546 .
+
+verilog:ansi_port_declaration a owl:Class ;
+    rdfs:label "ansi_port_declaration" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 490 .
+
+verilog:array_manipulation_call a owl:Class ;
+    rdfs:label "array_manipulation_call" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 977 .
+
+verilog:array_method_name a owl:Class ;
+    rdfs:label "array_method_name" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 980 .
+
+verilog:array_range_expression a owl:Class ;
+    rdfs:label "array_range_expression" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 966 .
+
+verilog:assert_property_statement a owl:Class ;
+    rdfs:label "assert_property_statement" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 658 .
+
+verilog:assertion_variable_declaration a owl:Class ;
+    rdfs:label "assertion_variable_declaration" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 694 .
+
+verilog:assignment_operator a owl:Class ;
+    rdfs:label "assignment_operator" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 817 .
+
+verilog:assignment_pattern a owl:Class ;
+    rdfs:label "assignment_pattern" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 858 .
+
+verilog:assignment_pattern_expression a owl:Class ;
+    rdfs:label "assignment_pattern_expression" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 861 .
+
+verilog:assignment_pattern_key a owl:Class ;
+    rdfs:label "assignment_pattern_key" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 860 .
+
+verilog:assignment_pattern_net_lvalue a owl:Class ;
+    rdfs:label "assignment_pattern_net_lvalue" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 863 .
+
+verilog:assignment_pattern_variable_lvalue a owl:Class ;
+    rdfs:label "assignment_pattern_variable_lvalue" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 864 .
+
+verilog:associative_dimension a owl:Class ;
+    rdfs:label "associative_dimension" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 621 .
+
+verilog:assume_property_statement a owl:Class ;
+    rdfs:label "assume_property_statement" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 659 .
+
+verilog:attr_spec a owl:Class ;
+    rdfs:label "attr_spec" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 1028 .
+
+verilog:attribute_instance a owl:Class ;
+    rdfs:label "attribute_instance" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 1027 .
+
+verilog:begin_keywords a owl:Class ;
+    rdfs:label "begin_keywords" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 454 .
+
+verilog:binary_number a owl:Class ;
+    rdfs:label "binary_number" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 418 .
+
+verilog:bind_directive a owl:Class ;
+    rdfs:label "bind_directive" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 499 .
+
+verilog:bind_target_instance a owl:Class ;
+    rdfs:label "bind_target_instance" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 501 .
+
+verilog:bind_target_instance_list a owl:Class ;
+    rdfs:label "bind_target_instance_list" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 502 .
+
+verilog:bind_target_scope a owl:Class ;
+    rdfs:label "bind_target_scope" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 500 .
+
+verilog:bins_expression a owl:Class ;
+    rdfs:label "bins_expression" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 720 .
+
+verilog:bins_keyword a owl:Class ;
+    rdfs:label "bins_keyword" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 705 .
+
+verilog:bins_or_empty a owl:Class ;
+    rdfs:label "bins_or_empty" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 703 .
+
+verilog:bins_or_options a owl:Class ;
+    rdfs:label "bins_or_options" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 704 .
+
+verilog:bins_selection a owl:Class ;
+    rdfs:label "bins_selection" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 717 .
+
+verilog:bins_selection_or_option a owl:Class ;
+    rdfs:label "bins_selection_or_option" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 716 .
+
+verilog:bit_select1 a owl:Class ;
+    rdfs:label "bit_select1" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 1011 .
+
+verilog:block_event_expression a owl:Class ;
+    rdfs:label "block_event_expression" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 700 .
+
+verilog:block_item_declaration a owl:Class ;
+    rdfs:label "block_item_declaration" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 643 .
+
+verilog:blocking_assignment a owl:Class ;
+    rdfs:label "blocking_assignment" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 815 .
+
+verilog:c_identifier a owl:Class ;
+    rdfs:label "c_identifier" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 430 .
+
+verilog:case_expression a owl:Class ;
+    rdfs:label "case_expression" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 848 .
+
+verilog:case_generate_construct a owl:Class ;
+    rdfs:label "case_generate_construct" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 778 .
+
+verilog:case_generate_item a owl:Class ;
+    rdfs:label "case_generate_item" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 779 .
+
+verilog:case_inside_item a owl:Class ;
+    rdfs:label "case_inside_item" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 851 .
+
+verilog:case_item a owl:Class ;
+    rdfs:label "case_item" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 849 .
+
+verilog:case_item_expression a owl:Class ;
+    rdfs:label "case_item_expression" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 852 .
+
+verilog:case_keyword a owl:Class ;
+    rdfs:label "case_keyword" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 847 .
+
+verilog:case_pattern_item a owl:Class ;
+    rdfs:label "case_pattern_item" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 850 .
+
+verilog:case_statement a owl:Class ;
+    rdfs:label "case_statement" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 846 .
+
+verilog:cast a owl:Class ;
+    rdfs:label "cast" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 1016 .
+
+verilog:casting_type a owl:Class ;
+    rdfs:label "casting_type" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 565 .
+
+verilog:charge_strength a owl:Class ;
+    rdfs:label "charge_strength" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 590 .
+
+verilog:checker_declaration a owl:Class ;
+    rdfs:label "checker_declaration" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 470 .
+
+verilog:checker_identifier a owl:Class ;
+    rdfs:label "checker_identifier" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 1203 .
+
+verilog:checker_instantiation a owl:Class ;
+    rdfs:label "checker_instantiation" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 771 .
+
+verilog:checker_or_generate_item_declaration a owl:Class ;
+    rdfs:label "checker_or_generate_item_declaration" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 515 .
+
+verilog:checker_port_direction a owl:Class ;
+    rdfs:label "checker_port_direction" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 513 .
+
+verilog:checker_port_item a owl:Class ;
+    rdfs:label "checker_port_item" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 512 .
+
+verilog:checker_port_list a owl:Class ;
+    rdfs:label "checker_port_list" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 511 .
+
+verilog:class_constructor_declaration a owl:Class ;
+    rdfs:label "class_constructor_declaration" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 527 .
+
+verilog:class_constructor_prototype a owl:Class ;
+    rdfs:label "class_constructor_prototype" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 520 .
+
+verilog:class_declaration a owl:Class ;
+    rdfs:label "class_declaration" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 471 .
+
+verilog:class_identifier a owl:Class ;
+    rdfs:label "class_identifier" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 1204 .
+
+verilog:class_item a owl:Class ;
+    rdfs:label "class_item" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 517 .
+
+verilog:class_item_qualifier a owl:Class ;
+    rdfs:label "class_item_qualifier" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 522 .
+
+verilog:class_method a owl:Class ;
+    rdfs:label "class_method" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 519 .
+
+verilog:class_new a owl:Class ;
+    rdfs:label "class_new" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 617 .
+
+verilog:class_property a owl:Class ;
+    rdfs:label "class_property" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 518 .
+
+verilog:class_qualifier a owl:Class ;
+    rdfs:label "class_qualifier" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 1004 .
+
+verilog:class_scope a owl:Class ;
+    rdfs:label "class_scope" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 571 .
+
+verilog:class_type a owl:Class ;
+    rdfs:label "class_type" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 572 .
+
+verilog:clocking_decl_assign a owl:Class ;
+    rdfs:label "clocking_decl_assign" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 889 .
+
+verilog:clocking_declaration a owl:Class ;
+    rdfs:label "clocking_declaration" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 883 .
+
+verilog:clocking_direction a owl:Class ;
+    rdfs:label "clocking_direction" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 887 .
+
+verilog:clocking_drive a owl:Class ;
+    rdfs:label "clocking_drive" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 891 .
+
+verilog:clocking_event a owl:Class ;
+    rdfs:label "clocking_event" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 884 .
+
+verilog:clocking_identifier a owl:Class ;
+    rdfs:label "clocking_identifier" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 1031 .
+
+verilog:clocking_item a owl:Class ;
+    rdfs:label "clocking_item" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 885 .
+
+verilog:clocking_skew a owl:Class ;
+    rdfs:label "clocking_skew" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 890 .
+
+verilog:clockvar a owl:Class ;
+    rdfs:label "clockvar" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 893 .
+
+verilog:clockvar_expression a owl:Class ;
+    rdfs:label "clockvar_expression" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 894 .
+
+verilog:cmos_switch_instance a owl:Class ;
+    rdfs:label "cmos_switch_instance" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 736 .
+
+verilog:cmos_switchtype a owl:Class ;
+    rdfs:label "cmos_switchtype" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 752 .
+
+verilog:combinational_body a owl:Class ;
+    rdfs:label "combinational_body" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 792 .
+
+verilog:combinational_entry a owl:Class ;
+    rdfs:label "combinational_entry" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 793 .
+
+verilog:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 429 .
+
+verilog:concatenation a owl:Class ;
+    rdfs:label "concatenation" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 955 .
+
+verilog:concurrent_assertion_item a owl:Class ;
+    rdfs:label "concurrent_assertion_item" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 656 .
+
+verilog:cond_pattern a owl:Class ;
+    rdfs:label "cond_pattern" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 845 .
+
+verilog:cond_predicate a owl:Class ;
+    rdfs:label "cond_predicate" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 843 .
+
+verilog:conditional_expression a owl:Class ;
+    rdfs:label "conditional_expression" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 982 .
+
+verilog:conditional_statement a owl:Class ;
+    rdfs:label "conditional_statement" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 841 .
+
+verilog:consecutive_repetition a owl:Class ;
+    rdfs:label "consecutive_repetition" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 688 .
+
+verilog:const_identifier a owl:Class ;
+    rdfs:label "const_identifier" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 1032 .
+
+verilog:constant_bit_select1 a owl:Class ;
+    rdfs:label "constant_bit_select1" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 1014 .
+
+verilog:constant_concatenation a owl:Class ;
+    rdfs:label "constant_concatenation" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 956 .
+
+verilog:constant_expression a owl:Class ;
+    rdfs:label "constant_expression" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 983 .
+
+verilog:constant_indexed_range a owl:Class ;
+    rdfs:label "constant_indexed_range" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 990 .
+
+verilog:constant_mintypmax_expression a owl:Class ;
+    rdfs:label "constant_mintypmax_expression" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 984 .
+
+verilog:constant_multiple_concatenation a owl:Class ;
+    rdfs:label "constant_multiple_concatenation" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 957 .
+
+verilog:constant_param_expression a owl:Class ;
+    rdfs:label "constant_param_expression" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 985 .
+
+verilog:constant_primary a owl:Class ;
+    rdfs:label "constant_primary" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 1001 .
+
+verilog:constant_range a owl:Class ;
+    rdfs:label "constant_range" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 989 .
+
+verilog:constant_select1 a owl:Class ;
+    rdfs:label "constant_select1" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 1015 .
+
+verilog:constraint_block a owl:Class ;
+    rdfs:label "constraint_block" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 529 .
+
+verilog:constraint_block_item a owl:Class ;
+    rdfs:label "constraint_block_item" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 530 .
+
+verilog:constraint_declaration a owl:Class ;
+    rdfs:label "constraint_declaration" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 528 .
+
+verilog:constraint_expression a owl:Class ;
+    rdfs:label "constraint_expression" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 533 .
+
+verilog:constraint_identifier a owl:Class ;
+    rdfs:label "constraint_identifier" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 1033 .
+
+verilog:constraint_primary a owl:Class ;
+    rdfs:label "constraint_primary" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 532 .
+
+verilog:constraint_prototype a owl:Class ;
+    rdfs:label "constraint_prototype" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 539 .
+
+verilog:constraint_prototype_qualifier a owl:Class ;
+    rdfs:label "constraint_prototype_qualifier" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 540 .
+
+verilog:constraint_set a owl:Class ;
+    rdfs:label "constraint_set" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 535 .
+
+verilog:continuous_assign a owl:Class ;
+    rdfs:label "continuous_assign" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 806 .
+
+verilog:controlled_reference_event a owl:Class ;
+    rdfs:label "controlled_reference_event" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 933,
+        947 .
+
+verilog:cover_cross a owl:Class ;
+    rdfs:label "cover_cross" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 711 .
+
+verilog:cover_point a owl:Class ;
+    rdfs:label "cover_point" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 702 .
+
+verilog:cover_point_identifier a owl:Class ;
+    rdfs:label "cover_point_identifier" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 1205 .
+
+verilog:cover_property_statement a owl:Class ;
+    rdfs:label "cover_property_statement" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 660 .
+
+verilog:cover_sequence_statement a owl:Class ;
+    rdfs:label "cover_sequence_statement" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 662 .
+
+verilog:coverage_event a owl:Class ;
+    rdfs:label "coverage_event" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 699 .
+
+verilog:coverage_option a owl:Class ;
+    rdfs:label "coverage_option" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 697 .
+
+verilog:coverage_spec_or_option a owl:Class ;
+    rdfs:label "coverage_spec_or_option" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 696 .
+
+verilog:covergroup_declaration a owl:Class ;
+    rdfs:label "covergroup_declaration" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 695 .
+
+verilog:covergroup_identifier a owl:Class ;
+    rdfs:label "covergroup_identifier" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 1206 .
+
+verilog:covergroup_range_list a owl:Class ;
+    rdfs:label "covergroup_range_list" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 721 .
+
+verilog:covergroup_value_range a owl:Class ;
+    rdfs:label "covergroup_value_range" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 722 .
+
+verilog:cross_body a owl:Class ;
+    rdfs:label "cross_body" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 714 .
+
+verilog:cross_body_item a owl:Class ;
+    rdfs:label "cross_body_item" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 715 .
+
+verilog:cross_identifier a owl:Class ;
+    rdfs:label "cross_identifier" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 1207 .
+
+verilog:cycle_delay a owl:Class ;
+    rdfs:label "cycle_delay" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 892 .
+
+verilog:cycle_delay_const_range_expression a owl:Class ;
+    rdfs:label "cycle_delay_const_range_expression" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 692 .
+
+verilog:cycle_delay_range a owl:Class ;
+    rdfs:label "cycle_delay_range" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 680 .
+
+verilog:data_declaration a owl:Class ;
+    rdfs:label "data_declaration" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 556 .
+
+verilog:data_event a owl:Class ;
+    rdfs:label "data_event" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 934 .
+
+verilog:data_source_expression a owl:Class ;
+    rdfs:label "data_source_expression" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 915 .
+
+verilog:data_type a owl:Class ;
+    rdfs:label "data_type" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 566 .
+
+verilog:data_type_or_implicit1 a owl:Class ;
+    rdfs:label "data_type_or_implicit1" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 567 .
+
+verilog:data_type_or_void a owl:Class ;
+    rdfs:label "data_type_or_void" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 584 .
+
+verilog:decimal_number a owl:Class ;
+    rdfs:label "decimal_number" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 1024 .
+
+verilog:default_nettype_compiler_directive a owl:Class ;
+    rdfs:label "default_nettype_compiler_directive" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 450 .
+
+verilog:default_nettype_value a owl:Class ;
+    rdfs:label "default_nettype_value" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 451 .
+
+verilog:default_skew a owl:Class ;
+    rdfs:label "default_skew" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 886 .
+
+verilog:default_text a owl:Class ;
+    rdfs:label "default_text" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 8 .
+
+verilog:deferred_immediate_assert_statement a owl:Class ;
+    rdfs:label "deferred_immediate_assert_statement" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 880 .
+
+verilog:deferred_immediate_assertion_item a owl:Class ;
+    rdfs:label "deferred_immediate_assertion_item" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 872 .
+
+verilog:deferred_immediate_assume_statement a owl:Class ;
+    rdfs:label "deferred_immediate_assume_statement" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 881 .
+
+verilog:deferred_immediate_cover_statement a owl:Class ;
+    rdfs:label "deferred_immediate_cover_statement" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 882 .
+
+verilog:defparam_assignment a owl:Class ;
+    rdfs:label "defparam_assignment" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 607 .
+
+verilog:delay2 a owl:Class ;
+    rdfs:label "delay2" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 592 .
+
+verilog:delay3 a owl:Class ;
+    rdfs:label "delay3" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 591 .
+
+verilog:delay_control a owl:Class ;
+    rdfs:label "delay_control" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 833 .
+
+verilog:delay_or_event_control a owl:Class ;
+    rdfs:label "delay_or_event_control" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 832 .
+
+verilog:delay_value a owl:Class ;
+    rdfs:label "delay_value" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 593 .
+
+verilog:delayed_data a owl:Class ;
+    rdfs:label "delayed_data" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 935 .
+
+verilog:delayed_reference a owl:Class ;
+    rdfs:label "delayed_reference" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 936 .
+
+verilog:disable_statement a owl:Class ;
+    rdfs:label "disable_statement" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 840 .
+
+verilog:dist_item a owl:Class ;
+    rdfs:label "dist_item" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 537 .
+
+verilog:dist_list a owl:Class ;
+    rdfs:label "dist_list" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 536 .
+
+verilog:dist_weight a owl:Class ;
+    rdfs:label "dist_weight" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 538 .
+
+verilog:double_quoted_string a owl:Class ;
+    rdfs:label "double_quoted_string" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 437 .
+
+verilog:dpi_function_import_property a owl:Class ;
+    rdfs:label "dpi_function_import_property" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 631 .
+
+verilog:dpi_function_proto a owl:Class ;
+    rdfs:label "dpi_function_proto" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 633 .
+
+verilog:dpi_import_export a owl:Class ;
+    rdfs:label "dpi_import_export" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 629 .
+
+verilog:dpi_spec_string a owl:Class ;
+    rdfs:label "dpi_spec_string" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 630 .
+
+verilog:dpi_task_import_property a owl:Class ;
+    rdfs:label "dpi_task_import_property" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 632 .
+
+verilog:dpi_task_proto a owl:Class ;
+    rdfs:label "dpi_task_proto" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 634 .
+
+verilog:drive_strength a owl:Class ;
+    rdfs:label "drive_strength" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 587 .
+
+verilog:dynamic_array_new a owl:Class ;
+    rdfs:label "dynamic_array_new" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 618 .
+
+verilog:dynamic_array_variable_identifier a owl:Class ;
+    rdfs:label "dynamic_array_variable_identifier" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 1208 .
+
+verilog:edge_control_specifier a owl:Class ;
+    rdfs:label "edge_control_specifier" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 950 .
+
+verilog:edge_descriptor a owl:Class ;
+    rdfs:label "edge_descriptor" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 951 .
+
+verilog:edge_identifier a owl:Class ;
+    rdfs:label "edge_identifier" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 916 .
+
+verilog:edge_indicator a owl:Class ;
+    rdfs:label "edge_indicator" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 801 .
+
+verilog:edge_input_list a owl:Class ;
+    rdfs:label "edge_input_list" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 800 .
+
+verilog:edge_sensitive_path_declaration a owl:Class ;
+    rdfs:label "edge_sensitive_path_declaration" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 912 .
+
+verilog:edge_symbol a owl:Class ;
+    rdfs:label "edge_symbol" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 300 .
+
+verilog:elaboration_system_task a owl:Class ;
+    rdfs:label "elaboration_system_task" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 491 .
+
+verilog:empty_unpacked_array_concatenation a owl:Class ;
+    rdfs:label "empty_unpacked_array_concatenation" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 967 .
+
+verilog:enable_gate_instance a owl:Class ;
+    rdfs:label "enable_gate_instance" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 737 .
+
+verilog:enable_gatetype a owl:Class ;
+    rdfs:label "enable_gatetype" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 753 .
+
+verilog:enable_terminal a owl:Class ;
+    rdfs:label "enable_terminal" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 746 .
+
+verilog:end_edge_offset a owl:Class ;
+    rdfs:label "end_edge_offset" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 937 .
+
+verilog:enum_base_type a owl:Class ;
+    rdfs:label "enum_base_type" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 569 .
+
+verilog:enum_identifier a owl:Class ;
+    rdfs:label "enum_identifier" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 1209 .
+
+verilog:enum_name_declaration a owl:Class ;
+    rdfs:label "enum_name_declaration" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 570 .
+
+verilog:error_limit_value a owl:Class ;
+    rdfs:label "error_limit_value" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 613 .
+
+verilog:escaped_identifier a owl:Class ;
+    rdfs:label "escaped_identifier" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 1034 .
+
+verilog:event_based_flag a owl:Class ;
+    rdfs:label "event_based_flag" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 938 .
+
+verilog:event_control a owl:Class ;
+    rdfs:label "event_control" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 834 .
+
+verilog:event_expression a owl:Class ;
+    rdfs:label "event_expression" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 835 .
+
+verilog:event_trigger a owl:Class ;
+    rdfs:label "event_trigger" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 839 .
+
+verilog:expect_property_statement a owl:Class ;
+    rdfs:label "expect_property_statement" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 661 .
+
+verilog:expression a owl:Class ;
+    rdfs:label "expression" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 991 .
+
+verilog:expression_or_dist a owl:Class ;
+    rdfs:label "expression_or_dist" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 693 .
+
+verilog:extern_constraint_declaration a owl:Class ;
+    rdfs:label "extern_constraint_declaration" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 541 .
+
+verilog:extern_tf_declaration a owl:Class ;
+    rdfs:label "extern_tf_declaration" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 505 .
+
+verilog:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+verilog:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+verilog:final_construct a owl:Class ;
+    rdfs:label "final_construct" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 814 .
+
+verilog:finish_number a owl:Class ;
+    rdfs:label "finish_number" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 492 .
+
+verilog:fixed_point_number a owl:Class ;
+    rdfs:label "fixed_point_number" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 422 .
+
+verilog:for_initialization a owl:Class ;
+    rdfs:label "for_initialization" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 866 .
+
+verilog:for_step a owl:Class ;
+    rdfs:label "for_step" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 868 .
+
+verilog:for_variable_declaration a owl:Class ;
+    rdfs:label "for_variable_declaration" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 867 .
+
+verilog:formal_argument a owl:Class ;
+    rdfs:label "formal_argument" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 442 .
+
+verilog:formal_port_identifier a owl:Class ;
+    rdfs:label "formal_port_identifier" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 1210 .
+
+verilog:full_edge_sensitive_path_description a owl:Class ;
+    rdfs:label "full_edge_sensitive_path_description" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 914 .
+
+verilog:full_path_description a owl:Class ;
+    rdfs:label "full_path_description" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 902 .
+
+verilog:function_body_declaration a owl:Class ;
+    rdfs:label "function_body_declaration" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 627 .
+
+verilog:function_data_type_or_implicit1 a owl:Class ;
+    rdfs:label "function_data_type_or_implicit1" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 625 .
+
+verilog:function_declaration a owl:Class ;
+    rdfs:label "function_declaration" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 626 .
+
+verilog:function_identifier a owl:Class ;
+    rdfs:label "function_identifier" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 1035 .
+
+verilog:function_prototype a owl:Class ;
+    rdfs:label "function_prototype" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 628 .
+
+verilog:function_statement a owl:Class ;
+    rdfs:label "function_statement" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 828 .
+
+verilog:function_statement_or_null a owl:Class ;
+    rdfs:label "function_statement_or_null" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 829 .
+
+verilog:function_subroutine_call a owl:Class ;
+    rdfs:label "function_subroutine_call" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 971 .
+
+verilog:gate_instantiation a owl:Class ;
+    rdfs:label "gate_instantiation" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 735 .
+
+verilog:generate_block a owl:Class ;
+    rdfs:label "generate_block" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 780 .
+
+verilog:generate_block_identifier a owl:Class ;
+    rdfs:label "generate_block_identifier" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 1036 .
+
+verilog:generate_region a owl:Class ;
+    rdfs:label "generate_region" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 772 .
+
+verilog:genvar_declaration a owl:Class ;
+    rdfs:label "genvar_declaration" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 560 .
+
+verilog:genvar_identifier a owl:Class ;
+    rdfs:label "genvar_identifier" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 1211 .
+
+verilog:genvar_initialization a owl:Class ;
+    rdfs:label "genvar_initialization" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 774 .
+
+verilog:genvar_iteration a owl:Class ;
+    rdfs:label "genvar_iteration" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 775 .
+
+verilog:goto_repetition a owl:Class ;
+    rdfs:label "goto_repetition" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 690 .
+
+verilog:hex_number a owl:Class ;
+    rdfs:label "hex_number" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 420 .
+
+verilog:hierarchical_btf_identifier a owl:Class ;
+    rdfs:label "hierarchical_btf_identifier" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 701 .
+
+verilog:hierarchical_instance a owl:Class ;
+    rdfs:label "hierarchical_instance" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 764 .
+
+verilog:id_directive a owl:Class ;
+    rdfs:label "id_directive" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 447 .
+
+verilog:identifier_list a owl:Class ;
+    rdfs:label "identifier_list" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 542 .
+
+verilog:if_generate_construct a owl:Class ;
+    rdfs:label "if_generate_construct" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 777 .
+
+verilog:implicit_class_handle a owl:Class ;
+    rdfs:label "implicit_class_handle" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 1010 .
+
+verilog:implicit_data_type1 a owl:Class ;
+    rdfs:label "implicit_data_type1" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 568 .
+
+verilog:import_export a owl:Class ;
+    rdfs:label "import_export" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 655 .
+
+verilog:inc_or_dec_expression a owl:Class ;
+    rdfs:label "inc_or_dec_expression" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 981 .
+
+verilog:inc_or_dec_operator a owl:Class ;
+    rdfs:label "inc_or_dec_operator" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 1021 .
+
+verilog:include_compiler_directive a owl:Class ;
+    rdfs:label "include_compiler_directive" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 439 .
+
+verilog:include_compiler_directive_standard a owl:Class ;
+    rdfs:label "include_compiler_directive_standard" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 438 .
+
+verilog:index_variable_identifier a owl:Class ;
+    rdfs:label "index_variable_identifier" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 1041 .
+
+verilog:indexed_range a owl:Class ;
+    rdfs:label "indexed_range" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 999 .
+
+verilog:init_val a owl:Class ;
+    rdfs:label "init_val" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 796 .
+
+verilog:initial_construct a owl:Class ;
+    rdfs:label "initial_construct" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 811 .
+
+verilog:inout_declaration a owl:Class ;
+    rdfs:label "inout_declaration" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 551 .
+
+verilog:inout_port_identifier a owl:Class ;
+    rdfs:label "inout_port_identifier" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 1042 .
+
+verilog:inout_terminal a owl:Class ;
+    rdfs:label "inout_terminal" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 747 .
+
+verilog:input_declaration a owl:Class ;
+    rdfs:label "input_declaration" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 552 .
+
+verilog:input_identifier a owl:Class ;
+    rdfs:label "input_identifier" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 907 .
+
+verilog:input_port_identifier a owl:Class ;
+    rdfs:label "input_port_identifier" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 1043 .
+
+verilog:input_terminal a owl:Class ;
+    rdfs:label "input_terminal" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 748 .
+
+verilog:inside_expression a owl:Class ;
+    rdfs:label "inside_expression" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 993 .
+
+verilog:instance_identifier a owl:Class ;
+    rdfs:label "instance_identifier" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 1212 .
+
+verilog:integer_atom_type a owl:Class ;
+    rdfs:label "integer_atom_type" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 574 .
+
+verilog:integer_vector_type a owl:Class ;
+    rdfs:label "integer_vector_type" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 575 .
+
+verilog:integral_number a owl:Class ;
+    rdfs:label "integral_number" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 1023 .
+
+verilog:interface_ansi_header a owl:Class ;
+    rdfs:label "interface_ansi_header" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 466 .
+
+verilog:interface_class_declaration a owl:Class ;
+    rdfs:label "interface_class_declaration" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 473 .
+
+verilog:interface_class_item a owl:Class ;
+    rdfs:label "interface_class_item" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 474 .
+
+verilog:interface_class_method a owl:Class ;
+    rdfs:label "interface_class_method" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 475 .
+
+verilog:interface_class_type a owl:Class ;
+    rdfs:label "interface_class_type" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 472 .
+
+verilog:interface_declaration a owl:Class ;
+    rdfs:label "interface_declaration" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 464 .
+
+verilog:interface_identifier a owl:Class ;
+    rdfs:label "interface_identifier" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 1213 .
+
+verilog:interface_instance_identifier a owl:Class ;
+    rdfs:label "interface_instance_identifier" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 1214 .
+
+verilog:interface_instantiation a owl:Class ;
+    rdfs:label "interface_instantiation" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 769 .
+
+verilog:interface_item a owl:Class ;
+    rdfs:label "interface_item" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 506 .
+
+verilog:interface_nonansi_header a owl:Class ;
+    rdfs:label "interface_nonansi_header" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 465 .
+
+verilog:interface_or_generate_item a owl:Class ;
+    rdfs:label "interface_or_generate_item" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 504 .
+
+verilog:interface_port_declaration a owl:Class ;
+    rdfs:label "interface_port_declaration" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 554 .
+
+verilog:interface_port_header a owl:Class ;
+    rdfs:label "interface_port_header" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 489 .
+
+verilog:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+verilog:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+verilog:join_keyword a owl:Class ;
+    rdfs:label "join_keyword" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 824 .
+
+verilog:jump_statement a owl:Class ;
+    rdfs:label "jump_statement" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 837 .
+
+verilog:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+verilog:let_actual_arg a owl:Class ;
+    rdfs:label "let_actual_arg" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 734 .
+
+verilog:let_declaration a owl:Class ;
+    rdfs:label "let_declaration" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 728 .
+
+verilog:let_expression a owl:Class ;
+    rdfs:label "let_expression" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 732 .
+
+verilog:let_formal_type1 a owl:Class ;
+    rdfs:label "let_formal_type1" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 731 .
+
+verilog:let_list_of_arguments a owl:Class ;
+    rdfs:label "let_list_of_arguments" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 733 .
+
+verilog:let_port_item a owl:Class ;
+    rdfs:label "let_port_item" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 730 .
+
+verilog:let_port_list a owl:Class ;
+    rdfs:label "let_port_list" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 729 .
+
+verilog:level_input_list a owl:Class ;
+    rdfs:label "level_input_list" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 799 .
+
+verilog:level_symbol a owl:Class ;
+    rdfs:label "level_symbol" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 299 .
+
+verilog:lifetime a owl:Class ;
+    rdfs:label "lifetime" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 564 .
+
+verilog:limit_value a owl:Class ;
+    rdfs:label "limit_value" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 615 .
+
+verilog:line_compiler_directive a owl:Class ;
+    rdfs:label "line_compiler_directive" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 453 .
+
+verilog:list_of_actual_arguments a owl:Class ;
+    rdfs:label "list_of_actual_arguments" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 456 .
+
+verilog:list_of_arguments a owl:Class ;
+    rdfs:label "list_of_arguments" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 972 .
+
+verilog:list_of_arguments_parent a owl:Class ;
+    rdfs:label "list_of_arguments_parent" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 973 .
+
+verilog:list_of_clocking_decl_assign a owl:Class ;
+    rdfs:label "list_of_clocking_decl_assign" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 888 .
+
+verilog:list_of_cross_items a owl:Class ;
+    rdfs:label "list_of_cross_items" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 712 .
+
+verilog:list_of_defparam_assignments a owl:Class ;
+    rdfs:label "list_of_defparam_assignments" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 594 .
+
+verilog:list_of_formal_arguments a owl:Class ;
+    rdfs:label "list_of_formal_arguments" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 441 .
+
+verilog:list_of_genvar_identifiers a owl:Class ;
+    rdfs:label "list_of_genvar_identifiers" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 595 .
+
+verilog:list_of_interface_identifiers a owl:Class ;
+    rdfs:label "list_of_interface_identifiers" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 596 .
+
+verilog:list_of_net_assignments a owl:Class ;
+    rdfs:label "list_of_net_assignments" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 807 .
+
+verilog:list_of_net_decl_assignments a owl:Class ;
+    rdfs:label "list_of_net_decl_assignments" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 597 .
+
+verilog:list_of_param_assignments a owl:Class ;
+    rdfs:label "list_of_param_assignments" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 598 .
+
+verilog:list_of_parameter_assignments a owl:Class ;
+    rdfs:label "list_of_parameter_assignments" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 761 .
+
+verilog:list_of_path_delay_expressions a owl:Class ;
+    rdfs:label "list_of_path_delay_expressions" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 910 .
+
+verilog:list_of_path_inputs a owl:Class ;
+    rdfs:label "list_of_path_inputs" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 903 .
+
+verilog:list_of_path_outputs a owl:Class ;
+    rdfs:label "list_of_path_outputs" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 904 .
+
+verilog:list_of_port_connections a owl:Class ;
+    rdfs:label "list_of_port_connections" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 766 .
+
+verilog:list_of_port_declarations a owl:Class ;
+    rdfs:label "list_of_port_declarations" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 481 .
+
+verilog:list_of_port_identifiers a owl:Class ;
+    rdfs:label "list_of_port_identifiers" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 599 .
+
+verilog:list_of_ports a owl:Class ;
+    rdfs:label "list_of_ports" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 480 .
+
+verilog:list_of_specparam_assignments a owl:Class ;
+    rdfs:label "list_of_specparam_assignments" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 601 .
+
+verilog:list_of_tf_variable_identifiers a owl:Class ;
+    rdfs:label "list_of_tf_variable_identifiers" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 602 .
+
+verilog:list_of_type_assignments a owl:Class ;
+    rdfs:label "list_of_type_assignments" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 603 .
+
+verilog:list_of_udp_port_identifiers a owl:Class ;
+    rdfs:label "list_of_udp_port_identifiers" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 600 .
+
+verilog:list_of_variable_assignments a owl:Class ;
+    rdfs:label "list_of_variable_assignments" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 808 .
+
+verilog:list_of_variable_decl_assignments a owl:Class ;
+    rdfs:label "list_of_variable_decl_assignments" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 604 .
+
+verilog:list_of_variable_identifiers a owl:Class ;
+    rdfs:label "list_of_variable_identifiers" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 605 .
+
+verilog:list_of_variable_port_identifiers a owl:Class ;
+    rdfs:label "list_of_variable_port_identifiers" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 606 .
+
+verilog:local_parameter_declaration a owl:Class ;
+    rdfs:label "local_parameter_declaration" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 547 .
+
+verilog:loop_generate_construct a owl:Class ;
+    rdfs:label "loop_generate_construct" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 773 .
+
+verilog:loop_statement a owl:Class ;
+    rdfs:label "loop_statement" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 865 .
+
+verilog:loop_variables1 a owl:Class ;
+    rdfs:label "loop_variables1" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 870 .
+
+verilog:macro_text a owl:Class ;
+    rdfs:label "macro_text" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 9 .
+
+verilog:member_identifier a owl:Class ;
+    rdfs:label "member_identifier" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 1215 .
+
+verilog:method_call a owl:Class ;
+    rdfs:label "method_call" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 974 .
+
+verilog:method_call_body a owl:Class ;
+    rdfs:label "method_call_body" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 975 .
+
+verilog:method_identifier a owl:Class ;
+    rdfs:label "method_identifier" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 1044 .
+
+verilog:method_qualifier a owl:Class ;
+    rdfs:label "method_qualifier" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 525 .
+
+verilog:mintypmax_expression a owl:Class ;
+    rdfs:label "mintypmax_expression" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 995 .
+
+verilog:modport_clocking_declaration a owl:Class ;
+    rdfs:label "modport_clocking_declaration" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 650 .
+
+verilog:modport_declaration a owl:Class ;
+    rdfs:label "modport_declaration" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 647 .
+
+verilog:modport_identifier a owl:Class ;
+    rdfs:label "modport_identifier" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 1045 .
+
+verilog:modport_item a owl:Class ;
+    rdfs:label "modport_item" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 648 .
+
+verilog:modport_ports_declaration a owl:Class ;
+    rdfs:label "modport_ports_declaration" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 649 .
+
+verilog:modport_simple_port a owl:Class ;
+    rdfs:label "modport_simple_port" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 652 .
+
+verilog:modport_simple_ports_declaration a owl:Class ;
+    rdfs:label "modport_simple_ports_declaration" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 651 .
+
+verilog:modport_tf_ports_declaration a owl:Class ;
+    rdfs:label "modport_tf_ports_declaration" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 653 .
+
+verilog:module_ansi_header a owl:Class ;
+    rdfs:label "module_ansi_header" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 461 .
+
+verilog:module_declaration a owl:Class ;
+    rdfs:label "module_declaration" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 462 .
+
+verilog:module_header a owl:Class ;
+    rdfs:label "module_header" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 459 .
+
+verilog:module_instantiation a owl:Class ;
+    rdfs:label "module_instantiation" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 759 .
+
+verilog:module_keyword a owl:Class ;
+    rdfs:label "module_keyword" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 463 .
+
+verilog:module_nonansi_header a owl:Class ;
+    rdfs:label "module_nonansi_header" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 460 .
+
+verilog:module_or_generate_item a owl:Class ;
+    rdfs:label "module_or_generate_item" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 495 .
+
+verilog:module_path_concatenation a owl:Class ;
+    rdfs:label "module_path_concatenation" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 958 .
+
+verilog:module_path_expression a owl:Class ;
+    rdfs:label "module_path_expression" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 996 .
+
+verilog:module_path_mintypmax_expression a owl:Class ;
+    rdfs:label "module_path_mintypmax_expression" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 997 .
+
+verilog:module_path_multiple_concatenation a owl:Class ;
+    rdfs:label "module_path_multiple_concatenation" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 959 .
+
+verilog:module_path_primary a owl:Class ;
+    rdfs:label "module_path_primary" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 1002 .
+
+verilog:mos_switch_instance a owl:Class ;
+    rdfs:label "mos_switch_instance" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 738 .
+
+verilog:mos_switchtype a owl:Class ;
+    rdfs:label "mos_switchtype" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 754 .
+
+verilog:multiple_concatenation a owl:Class ;
+    rdfs:label "multiple_concatenation" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 960 .
+
+verilog:n_input_gate_instance a owl:Class ;
+    rdfs:label "n_input_gate_instance" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 739 .
+
+verilog:n_input_gatetype a owl:Class ;
+    rdfs:label "n_input_gatetype" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 755 .
+
+verilog:n_output_gate_instance a owl:Class ;
+    rdfs:label "n_output_gate_instance" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 740 .
+
+verilog:n_output_gatetype a owl:Class ;
+    rdfs:label "n_output_gatetype" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 756 .
+
+verilog:name_of_instance a owl:Class ;
+    rdfs:label "name_of_instance" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 765 .
+
+verilog:named_parameter_assignment a owl:Class ;
+    rdfs:label "named_parameter_assignment" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 763 .
+
+verilog:named_port_connection a owl:Class ;
+    rdfs:label "named_port_connection" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 768 .
+
+verilog:ncontrol_terminal a owl:Class ;
+    rdfs:label "ncontrol_terminal" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 749 .
+
+verilog:net_alias a owl:Class ;
+    rdfs:label "net_alias" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 809 .
+
+verilog:net_assignment a owl:Class ;
+    rdfs:label "net_assignment" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 810 .
+
+verilog:net_decl_assignment a owl:Class ;
+    rdfs:label "net_decl_assignment" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 608 .
+
+verilog:net_declaration a owl:Class ;
+    rdfs:label "net_declaration" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 561 .
+
+verilog:net_lvalue a owl:Class ;
+    rdfs:label "net_lvalue" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 1017 .
+
+verilog:net_port_header1 a owl:Class ;
+    rdfs:label "net_port_header1" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 487 .
+
+verilog:net_port_type1 a owl:Class ;
+    rdfs:label "net_port_type1" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 578 .
+
+verilog:net_type a owl:Class ;
+    rdfs:label "net_type" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 577 .
+
+verilog:net_type_declaration a owl:Class ;
+    rdfs:label "net_type_declaration" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 563 .
+
+verilog:next_state a owl:Class ;
+    rdfs:label "next_state" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 803 .
+
+verilog:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+verilog:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+verilog:non_consecutive_repetition a owl:Class ;
+    rdfs:label "non_consecutive_repetition" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 689 .
+
+verilog:non_integer_type a owl:Class ;
+    rdfs:label "non_integer_type" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 576 .
+
+verilog:non_port_program_item a owl:Class ;
+    rdfs:label "non_port_program_item" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 509 .
+
+verilog:nonblocking_assignment a owl:Class ;
+    rdfs:label "nonblocking_assignment" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 818 .
+
+verilog:nonrange_select1 a owl:Class ;
+    rdfs:label "nonrange_select1" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 1013 .
+
+verilog:nonrange_variable_lvalue a owl:Class ;
+    rdfs:label "nonrange_variable_lvalue" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 1019 .
+
+verilog:notifier a owl:Class ;
+    rdfs:label "notifier" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 939 .
+
+verilog:octal_number a owl:Class ;
+    rdfs:label "octal_number" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 419 .
+
+verilog:open_range_list a owl:Class ;
+    rdfs:label "open_range_list" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 855 .
+
+verilog:open_value_range a owl:Class ;
+    rdfs:label "open_value_range" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 856 .
+
+verilog:operator_assignment a owl:Class ;
+    rdfs:label "operator_assignment" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 816 .
+
+verilog:ordered_parameter_assignment a owl:Class ;
+    rdfs:label "ordered_parameter_assignment" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 762 .
+
+verilog:ordered_port_connection a owl:Class ;
+    rdfs:label "ordered_port_connection" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 767 .
+
+verilog:output_declaration a owl:Class ;
+    rdfs:label "output_declaration" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 553 .
+
+verilog:output_identifier a owl:Class ;
+    rdfs:label "output_identifier" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 908 .
+
+verilog:output_port_identifier a owl:Class ;
+    rdfs:label "output_port_identifier" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 1046 .
+
+verilog:output_symbol a owl:Class ;
+    rdfs:label "output_symbol" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 298 .
+
+verilog:output_terminal a owl:Class ;
+    rdfs:label "output_terminal" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 750 .
+
+verilog:overload_declaration a owl:Class ;
+    rdfs:label "overload_declaration" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 644 .
+
+verilog:overload_operator a owl:Class ;
+    rdfs:label "overload_operator" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 645 .
+
+verilog:overload_proto_formals a owl:Class ;
+    rdfs:label "overload_proto_formals" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 646 .
+
+verilog:package_declaration a owl:Class ;
+    rdfs:label "package_declaration" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 476 .
+
+verilog:package_export_declaration a owl:Class ;
+    rdfs:label "package_export_declaration" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 559 .
+
+verilog:package_identifier a owl:Class ;
+    rdfs:label "package_identifier" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 1216 .
+
+verilog:package_import_declaration a owl:Class ;
+    rdfs:label "package_import_declaration" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 557 .
+
+verilog:package_import_item a owl:Class ;
+    rdfs:label "package_import_item" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 558 .
+
+verilog:package_or_generate_item_declaration a owl:Class ;
+    rdfs:label "package_or_generate_item_declaration" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 544 .
+
+verilog:package_scope a owl:Class ;
+    rdfs:label "package_scope" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 1047 .
+
+verilog:packed_dimension a owl:Class ;
+    rdfs:label "packed_dimension" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 620 .
+
+verilog:par_block a owl:Class ;
+    rdfs:label "par_block" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 823 .
+
+verilog:parallel_edge_sensitive_path_description a owl:Class ;
+    rdfs:label "parallel_edge_sensitive_path_description" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 913 .
+
+verilog:parallel_path_description a owl:Class ;
+    rdfs:label "parallel_path_description" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 901 .
+
+verilog:param_assignment a owl:Class ;
+    rdfs:label "param_assignment" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 609 .
+
+verilog:param_expression a owl:Class ;
+    rdfs:label "param_expression" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 986 .
+
+verilog:parameter_declaration a owl:Class ;
+    rdfs:label "parameter_declaration" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 548 .
+
+verilog:parameter_identifier a owl:Class ;
+    rdfs:label "parameter_identifier" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 1217 .
+
+verilog:parameter_override a owl:Class ;
+    rdfs:label "parameter_override" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 498 .
+
+verilog:parameter_port_declaration a owl:Class ;
+    rdfs:label "parameter_port_declaration" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 479 .
+
+verilog:parameter_port_list a owl:Class ;
+    rdfs:label "parameter_port_list" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 478 .
+
+verilog:parameter_value_assignment a owl:Class ;
+    rdfs:label "parameter_value_assignment" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 760 .
+
+verilog:pass_en_switchtype a owl:Class ;
+    rdfs:label "pass_en_switchtype" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 757 .
+
+verilog:pass_enable_switch_instance a owl:Class ;
+    rdfs:label "pass_enable_switch_instance" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 742 .
+
+verilog:pass_switch_instance a owl:Class ;
+    rdfs:label "pass_switch_instance" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 741 .
+
+verilog:pass_switchtype a owl:Class ;
+    rdfs:label "pass_switchtype" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 758 .
+
+verilog:path_declaration a owl:Class ;
+    rdfs:label "path_declaration" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 899 .
+
+verilog:path_delay_expression a owl:Class ;
+    rdfs:label "path_delay_expression" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 911 .
+
+verilog:path_delay_value a owl:Class ;
+    rdfs:label "path_delay_value" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 909 .
+
+verilog:pattern a owl:Class ;
+    rdfs:label "pattern" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 857 .
+
+verilog:pcontrol_terminal a owl:Class ;
+    rdfs:label "pcontrol_terminal" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 751 .
+
+verilog:polarity_operator a owl:Class ;
+    rdfs:label "polarity_operator" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 918 .
+
+verilog:port a owl:Class ;
+    rdfs:label "port" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 483 .
+
+verilog:port_declaration a owl:Class ;
+    rdfs:label "port_declaration" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 482 .
+
+verilog:port_direction a owl:Class ;
+    rdfs:label "port_direction" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 486 .
+
+verilog:port_identifier a owl:Class ;
+    rdfs:label "port_identifier" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 1218 .
+
+verilog:port_reference a owl:Class ;
+    rdfs:label "port_reference" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 485 .
+
+verilog:primary a owl:Class ;
+    rdfs:label "primary" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 1003 .
+
+verilog:primary_literal a owl:Class ;
+    rdfs:label "primary_literal" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 1006 .
+
+verilog:procedural_continuous_assignment a owl:Class ;
+    rdfs:label "procedural_continuous_assignment" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 819 .
+
+verilog:procedural_timing_control_statement a owl:Class ;
+    rdfs:label "procedural_timing_control_statement" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 831 .
+
+verilog:program_ansi_header a owl:Class ;
+    rdfs:label "program_ansi_header" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 469 .
+
+verilog:program_declaration a owl:Class ;
+    rdfs:label "program_declaration" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 467 .
+
+verilog:program_identifier a owl:Class ;
+    rdfs:label "program_identifier" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 1219 .
+
+verilog:program_instantiation a owl:Class ;
+    rdfs:label "program_instantiation" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 770 .
+
+verilog:program_item a owl:Class ;
+    rdfs:label "program_item" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 508 .
+
+verilog:program_nonansi_header a owl:Class ;
+    rdfs:label "program_nonansi_header" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 468 .
+
+verilog:property_case_item a owl:Class ;
+    rdfs:label "property_case_item" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 673 .
+
+verilog:property_declaration a owl:Class ;
+    rdfs:label "property_declaration" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 666 .
+
+verilog:property_expr a owl:Class ;
+    rdfs:label "property_expr" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 672 .
+
+verilog:property_formal_type1 a owl:Class ;
+    rdfs:label "property_formal_type1" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 670 .
+
+verilog:property_identifier a owl:Class ;
+    rdfs:label "property_identifier" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 1220 .
+
+verilog:property_lvar_port_direction a owl:Class ;
+    rdfs:label "property_lvar_port_direction" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 669 .
+
+verilog:property_port_item a owl:Class ;
+    rdfs:label "property_port_item" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 668 .
+
+verilog:property_port_list a owl:Class ;
+    rdfs:label "property_port_list" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 667 .
+
+verilog:property_spec a owl:Class ;
+    rdfs:label "property_spec" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 671 .
+
+verilog:ps_identifier a owl:Class ;
+    rdfs:label "ps_identifier" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 1048 .
+
+verilog:ps_or_hierarchical_array_identifier a owl:Class ;
+    rdfs:label "ps_or_hierarchical_array_identifier" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 1049 .
+
+verilog:pull_gate_instance a owl:Class ;
+    rdfs:label "pull_gate_instance" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 743 .
+
+verilog:pulldown_strength a owl:Class ;
+    rdfs:label "pulldown_strength" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 744 .
+
+verilog:pullup_strength a owl:Class ;
+    rdfs:label "pullup_strength" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 745 .
+
+verilog:pulse_control_specparam a owl:Class ;
+    rdfs:label "pulse_control_specparam" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 612 .
+
+verilog:pulsestyle_declaration a owl:Class ;
+    rdfs:label "pulsestyle_declaration" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 897 .
+
+verilog:queue_dimension a owl:Class ;
+    rdfs:label "queue_dimension" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 623 .
+
+verilog:randcase_item a owl:Class ;
+    rdfs:label "randcase_item" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 854 .
+
+verilog:randcase_statement a owl:Class ;
+    rdfs:label "randcase_statement" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 853 .
+
+verilog:random_qualifier a owl:Class ;
+    rdfs:label "random_qualifier" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 524 .
+
+verilog:randomize_call a owl:Class ;
+    rdfs:label "randomize_call" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 978 .
+
+verilog:range_expression a owl:Class ;
+    rdfs:label "range_expression" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 1005 .
+
+verilog:real_number a owl:Class ;
+    rdfs:label "real_number" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 1025 .
+
+verilog:ref_declaration a owl:Class ;
+    rdfs:label "ref_declaration" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 555 .
+
+verilog:reference_event a owl:Class ;
+    rdfs:label "reference_event" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 940 .
+
+verilog:reject_limit_value a owl:Class ;
+    rdfs:label "reject_limit_value" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 614 .
+
+verilog:remain_active_flag a owl:Class ;
+    rdfs:label "remain_active_flag" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 941 .
+
+verilog:repeat_range a owl:Class ;
+    rdfs:label "repeat_range" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 710 .
+
+verilog:restrict_property_statement a owl:Class ;
+    rdfs:label "restrict_property_statement" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 663 .
+
+verilog:scalar_constant a owl:Class ;
+    rdfs:label "scalar_constant" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 954 .
+
+verilog:scalar_timing_check_condition a owl:Class ;
+    rdfs:label "scalar_timing_check_condition" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 953 .
+
+verilog:select1 a owl:Class ;
+    rdfs:label "select1" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 1012 .
+
+verilog:select_condition a owl:Class ;
+    rdfs:label "select_condition" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 719 .
+
+verilog:select_expression a owl:Class ;
+    rdfs:label "select_expression" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 718 .
+
+verilog:seq_block a owl:Class ;
+    rdfs:label "seq_block" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 822 .
+
+verilog:sequence_abbrev a owl:Class ;
+    rdfs:label "sequence_abbrev" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 687 .
+
+verilog:sequence_declaration a owl:Class ;
+    rdfs:label "sequence_declaration" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 674 .
+
+verilog:sequence_expr a owl:Class ;
+    rdfs:label "sequence_expr" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 679 .
+
+verilog:sequence_formal_type1 a owl:Class ;
+    rdfs:label "sequence_formal_type1" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 678 .
+
+verilog:sequence_instance a owl:Class ;
+    rdfs:label "sequence_instance" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 683 .
+
+verilog:sequence_list_of_arguments a owl:Class ;
+    rdfs:label "sequence_list_of_arguments" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 684 .
+
+verilog:sequence_lvar_port_direction a owl:Class ;
+    rdfs:label "sequence_lvar_port_direction" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 677 .
+
+verilog:sequence_method_call a owl:Class ;
+    rdfs:label "sequence_method_call" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 681 .
+
+verilog:sequence_port_item a owl:Class ;
+    rdfs:label "sequence_port_item" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 676 .
+
+verilog:sequence_port_list a owl:Class ;
+    rdfs:label "sequence_port_list" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 675 .
+
+verilog:sequential_body a owl:Class ;
+    rdfs:label "sequential_body" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 794 .
+
+verilog:sequential_entry a owl:Class ;
+    rdfs:label "sequential_entry" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 797 .
+
+verilog:showcancelled_declaration a owl:Class ;
+    rdfs:label "showcancelled_declaration" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 898 .
+
+verilog:simple_identifier a owl:Class ;
+    rdfs:label "simple_identifier" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 1 .
+
+verilog:simple_immediate_assert_statement a owl:Class ;
+    rdfs:label "simple_immediate_assert_statement" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 876 .
+
+verilog:simple_immediate_assume_statement a owl:Class ;
+    rdfs:label "simple_immediate_assume_statement" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 877 .
+
+verilog:simple_immediate_cover_statement a owl:Class ;
+    rdfs:label "simple_immediate_cover_statement" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 878 .
+
+verilog:simple_path_declaration a owl:Class ;
+    rdfs:label "simple_path_declaration" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 900 .
+
+verilog:simple_text_macro_usage a owl:Class ;
+    rdfs:label "simple_text_macro_usage" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 446 .
+
+verilog:slice_size a owl:Class ;
+    rdfs:label "slice_size" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 963 .
+
+verilog:solve_before_list a owl:Class ;
+    rdfs:label "solve_before_list" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 531 .
+
+verilog:source_file a owl:Class ;
+    rdfs:label "source_file" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 436 .
+
+verilog:specify_block a owl:Class ;
+    rdfs:label "specify_block" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 895 .
+
+verilog:specify_input_terminal_descriptor a owl:Class ;
+    rdfs:label "specify_input_terminal_descriptor" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 905 .
+
+verilog:specify_output_terminal_descriptor a owl:Class ;
+    rdfs:label "specify_output_terminal_descriptor" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 906 .
+
+verilog:specparam_assignment a owl:Class ;
+    rdfs:label "specparam_assignment" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 610 .
+
+verilog:specparam_declaration a owl:Class ;
+    rdfs:label "specparam_declaration" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 550 .
+
+verilog:specparam_identifier a owl:Class ;
+    rdfs:label "specparam_identifier" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 1221 .
+
+verilog:start_edge_offset a owl:Class ;
+    rdfs:label "start_edge_offset" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 943 .
+
+verilog:state_dependent_path_declaration a owl:Class ;
+    rdfs:label "state_dependent_path_declaration" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 917 .
+
+verilog:statement a owl:Class ;
+    rdfs:label "statement" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 826 .
+
+verilog:statement_item a owl:Class ;
+    rdfs:label "statement_item" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 827 .
+
+verilog:statement_or_null a owl:Class ;
+    rdfs:label "statement_or_null" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 825 .
+
+verilog:stream_concatenation a owl:Class ;
+    rdfs:label "stream_concatenation" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 964 .
+
+verilog:stream_expression a owl:Class ;
+    rdfs:label "stream_expression" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 965 .
+
+verilog:stream_operator a owl:Class ;
+    rdfs:label "stream_operator" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 962 .
+
+verilog:streaming_concatenation a owl:Class ;
+    rdfs:label "streaming_concatenation" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 961 .
+
+verilog:strength0 a owl:Class ;
+    rdfs:label "strength0" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 588 .
+
+verilog:strength1 a owl:Class ;
+    rdfs:label "strength1" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 589 .
+
+verilog:string_literal a owl:Class ;
+    rdfs:label "string_literal" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 1009 .
+
+verilog:struct_union a owl:Class ;
+    rdfs:label "struct_union" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 585 .
+
+verilog:struct_union_member a owl:Class ;
+    rdfs:label "struct_union_member" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 583 .
+
+verilog:subroutine_call a owl:Class ;
+    rdfs:label "subroutine_call" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 970 .
+
+verilog:system_tf_call a owl:Class ;
+    rdfs:label "system_tf_call" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 969 .
+
+verilog:system_tf_identifier a owl:Class ;
+    rdfs:label "system_tf_identifier" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 435 .
+
+verilog:tagged_union_expression a owl:Class ;
+    rdfs:label "tagged_union_expression" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 992 .
+
+verilog:task_body_declaration a owl:Class ;
+    rdfs:label "task_body_declaration" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 636 .
+
+verilog:task_declaration a owl:Class ;
+    rdfs:label "task_declaration" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 635 .
+
+verilog:task_identifier a owl:Class ;
+    rdfs:label "task_identifier" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 1052 .
+
+verilog:task_prototype a owl:Class ;
+    rdfs:label "task_prototype" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 642 .
+
+verilog:terminal_identifier a owl:Class ;
+    rdfs:label "terminal_identifier" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 1053 .
+
+verilog:text_macro_definition a owl:Class ;
+    rdfs:label "text_macro_definition" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 444 .
+
+verilog:text_macro_identifier a owl:Class ;
+    rdfs:label "text_macro_identifier" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 443 .
+
+verilog:text_macro_name a owl:Class ;
+    rdfs:label "text_macro_name" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 440 .
+
+verilog:text_macro_usage a owl:Class ;
+    rdfs:label "text_macro_usage" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 445 .
+
+verilog:tf_call a owl:Class ;
+    rdfs:label "tf_call" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 968 .
+
+verilog:tf_identifier a owl:Class ;
+    rdfs:label "tf_identifier" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 1222 .
+
+verilog:tf_item_declaration a owl:Class ;
+    rdfs:label "tf_item_declaration" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 637 .
+
+verilog:tf_port_declaration a owl:Class ;
+    rdfs:label "tf_port_declaration" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 641 .
+
+verilog:tf_port_direction a owl:Class ;
+    rdfs:label "tf_port_direction" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 640 .
+
+verilog:tf_port_item1 a owl:Class ;
+    rdfs:label "tf_port_item1" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 639 .
+
+verilog:tf_port_list a owl:Class ;
+    rdfs:label "tf_port_list" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 638 .
+
+verilog:threshold a owl:Class ;
+    rdfs:label "threshold" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 944 .
+
+verilog:time_literal a owl:Class ;
+    rdfs:label "time_literal" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 1007 .
+
+verilog:time_unit a owl:Class ;
+    rdfs:label "time_unit" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 1008 .
+
+verilog:timecheck_condition a owl:Class ;
+    rdfs:label "timecheck_condition" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 932 .
+
+verilog:timescale_compiler_directive a owl:Class ;
+    rdfs:label "timescale_compiler_directive" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 449 .
+
+verilog:timestamp_condition a owl:Class ;
+    rdfs:label "timestamp_condition" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 942 .
+
+verilog:timeunits_declaration a owl:Class ;
+    rdfs:label "timeunits_declaration" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 477 .
+
+verilog:timing_check_condition a owl:Class ;
+    rdfs:label "timing_check_condition" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 952 .
+
+verilog:timing_check_event a owl:Class ;
+    rdfs:label "timing_check_event" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 946 .
+
+verilog:timing_check_event_control a owl:Class ;
+    rdfs:label "timing_check_event_control" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 948 .
+
+verilog:timing_check_limit a owl:Class ;
+    rdfs:label "timing_check_limit" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 945 .
+
+verilog:trans_item a owl:Class ;
+    rdfs:label "trans_item" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 709 .
+
+verilog:trans_list a owl:Class ;
+    rdfs:label "trans_list" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 706 .
+
+verilog:trans_range_list a owl:Class ;
+    rdfs:label "trans_range_list" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 708 .
+
+verilog:trans_set a owl:Class ;
+    rdfs:label "trans_set" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 707 .
+
+verilog:type_assignment a owl:Class ;
+    rdfs:label "type_assignment" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 611 .
+
+verilog:type_declaration a owl:Class ;
+    rdfs:label "type_declaration" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 562 .
+
+verilog:type_reference a owl:Class ;
+    rdfs:label "type_reference" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 586 .
+
+verilog:udp_ansi_declaration a owl:Class ;
+    rdfs:label "udp_ansi_declaration" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 783 .
+
+verilog:udp_declaration a owl:Class ;
+    rdfs:label "udp_declaration" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 784 .
+
+verilog:udp_declaration_port_list a owl:Class ;
+    rdfs:label "udp_declaration_port_list" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 786 .
+
+verilog:udp_initial_statement a owl:Class ;
+    rdfs:label "udp_initial_statement" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 795 .
+
+verilog:udp_input_declaration a owl:Class ;
+    rdfs:label "udp_input_declaration" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 789 .
+
+verilog:udp_instance a owl:Class ;
+    rdfs:label "udp_instance" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 805 .
+
+verilog:udp_instantiation a owl:Class ;
+    rdfs:label "udp_instantiation" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 804 .
+
+verilog:udp_nonansi_declaration a owl:Class ;
+    rdfs:label "udp_nonansi_declaration" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 782 .
+
+verilog:udp_output_declaration a owl:Class ;
+    rdfs:label "udp_output_declaration" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 788 .
+
+verilog:udp_port_declaration a owl:Class ;
+    rdfs:label "udp_port_declaration" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 787 .
+
+verilog:udp_port_list a owl:Class ;
+    rdfs:label "udp_port_list" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 785 .
+
+verilog:udp_reg_declaration a owl:Class ;
+    rdfs:label "udp_reg_declaration" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 790 .
+
+verilog:unary_operator a owl:Class ;
+    rdfs:label "unary_operator" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 1020 .
+
+verilog:unbased_unsized_literal a owl:Class ;
+    rdfs:label "unbased_unsized_literal" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 1026 .
+
+verilog:unconnected_drive a owl:Class ;
+    rdfs:label "unconnected_drive" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 452 .
+
+verilog:unique_priority a owl:Class ;
+    rdfs:label "unique_priority" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 842 .
+
+verilog:uniqueness_constraint a owl:Class ;
+    rdfs:label "uniqueness_constraint" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 534 .
+
+verilog:unpacked_dimension a owl:Class ;
+    rdfs:label "unpacked_dimension" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 619 .
+
+verilog:unsigned_number a owl:Class ;
+    rdfs:label "unsigned_number" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 423 .
+
+verilog:unsized_dimension a owl:Class ;
+    rdfs:label "unsized_dimension" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 624 .
+
+verilog:value_range a owl:Class ;
+    rdfs:label "value_range" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 994 .
+
+verilog:variable_assignment a owl:Class ;
+    rdfs:label "variable_assignment" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 820 .
+
+verilog:variable_decl_assignment a owl:Class ;
+    rdfs:label "variable_decl_assignment" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 616 .
+
+verilog:variable_identifier_list a owl:Class ;
+    rdfs:label "variable_identifier_list" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 830 .
+
+verilog:variable_lvalue a owl:Class ;
+    rdfs:label "variable_lvalue" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 1018 .
+
+verilog:variable_port_header a owl:Class ;
+    rdfs:label "variable_port_header" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 488 .
+
+verilog:wait_statement a owl:Class ;
+    rdfs:label "wait_statement" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 838 .
+
+verilog:zero_directive a owl:Class ;
+    rdfs:label "zero_directive" ;
+    rdfs:isDefinedBy verilog: ;
+    rdfs:subClassOf ast:Node ;
+    verilog:isSupertype true ;
+    verilog:nodeTypeId 448 .
+
+verilog: a owl:Ontology ;
+    rdfs:label "Verilog Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for verilog" ;
+    owl:versionInfo "v0.25" ;
+    verilog:abiVersion 14 ;
+    verilog:fieldCount 0 ;
+    verilog:languageName "None" ;
+    verilog:nodeKindCount 1223 .
+

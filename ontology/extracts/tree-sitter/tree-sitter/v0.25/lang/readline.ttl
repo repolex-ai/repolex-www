@@ -1,0 +1,287 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix readline: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/readline/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+readline:ERROR a owl:Class ;
+    rdfs:label "ERROR" ;
+    rdfs:isDefinedBy readline: ;
+    rdfs:subClassOf ast:Node ;
+    readline:isSupertype true ;
+    readline:nodeTypeId 27 .
+
+readline:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+readline:alternative a owl:Class ;
+    rdfs:label "alternative" ;
+    rdfs:isDefinedBy readline: ;
+    rdfs:subClassOf ast:Node ;
+    readline:isSupertype true ;
+    readline:nodeTypeId 143 .
+
+readline:application_name a owl:Class ;
+    rdfs:label "application_name" ;
+    rdfs:isDefinedBy readline: ;
+    rdfs:subClassOf ast:Node ;
+    readline:isSupertype true ;
+    readline:nodeTypeId 20 .
+
+readline:bell_value a owl:Class ;
+    rdfs:label "bell_value" ;
+    rdfs:isDefinedBy readline: ;
+    rdfs:subClassOf ast:Node ;
+    readline:isSupertype true ;
+    readline:nodeTypeId 123 .
+
+readline:bell_variable a owl:Class ;
+    rdfs:label "bell_variable" ;
+    rdfs:isDefinedBy readline: ;
+    rdfs:subClassOf ast:Node ;
+    readline:isSupertype true ;
+    readline:nodeTypeId 67 .
+
+readline:bool_value a owl:Class ;
+    rdfs:label "bool_value" ;
+    rdfs:isDefinedBy readline: ;
+    rdfs:subClassOf ast:Node ;
+    readline:isSupertype true ;
+    readline:nodeTypeId 122 .
+
+readline:bool_variable a owl:Class ;
+    rdfs:label "bool_variable" ;
+    rdfs:isDefinedBy readline: ;
+    rdfs:subClassOf ast:Node ;
+    readline:isSupertype true ;
+    readline:nodeTypeId 128 .
+
+readline:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy readline: ;
+    rdfs:subClassOf ast:Node ;
+    readline:isSupertype true ;
+    readline:nodeTypeId 105 .
+
+readline:conditional_construct a owl:Class ;
+    rdfs:label "conditional_construct" ;
+    rdfs:isDefinedBy readline: ;
+    rdfs:subClassOf ast:Node ;
+    readline:isSupertype true ;
+    readline:nodeTypeId 106 .
+
+readline:consequence a owl:Class ;
+    rdfs:label "consequence" ;
+    rdfs:isDefinedBy readline: ;
+    rdfs:subClassOf ast:Node ;
+    readline:isSupertype true ;
+    readline:nodeTypeId 144 .
+
+readline:edit_mode_value a owl:Class ;
+    rdfs:label "edit_mode_value" ;
+    rdfs:isDefinedBy readline: ;
+    rdfs:subClassOf ast:Node ;
+    readline:isSupertype true ;
+    readline:nodeTypeId 126 .
+
+readline:edit_mode_variable a owl:Class ;
+    rdfs:label "edit_mode_variable" ;
+    rdfs:isDefinedBy readline: ;
+    rdfs:subClassOf ast:Node ;
+    readline:isSupertype true ;
+    readline:nodeTypeId 80 .
+
+readline:escape_sequence a owl:Class ;
+    rdfs:label "escape_sequence" ;
+    rdfs:isDefinedBy readline: ;
+    rdfs:subClassOf ast:Node ;
+    readline:isSupertype true ;
+    readline:nodeTypeId 88 .
+
+readline:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+readline:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+readline:file_path a owl:Class ;
+    rdfs:label "file_path" ;
+    rdfs:isDefinedBy readline: ;
+    rdfs:subClassOf ast:Node ;
+    readline:isSupertype true ;
+    readline:nodeTypeId 145 .
+
+readline:function_name a owl:Class ;
+    rdfs:label "function_name" ;
+    rdfs:isDefinedBy readline: ;
+    rdfs:subClassOf ast:Node ;
+    readline:isSupertype true ;
+    readline:nodeTypeId 83 .
+
+readline:include_directive a owl:Class ;
+    rdfs:label "include_directive" ;
+    rdfs:isDefinedBy readline: ;
+    rdfs:subClassOf ast:Node ;
+    readline:isSupertype true ;
+    readline:nodeTypeId 114 .
+
+readline:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+readline:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+readline:key_binding a owl:Class ;
+    rdfs:label "key_binding" ;
+    rdfs:isDefinedBy readline: ;
+    rdfs:subClassOf ast:Node ;
+    readline:isSupertype true ;
+    readline:nodeTypeId 131 .
+
+readline:key_literal a owl:Class ;
+    rdfs:label "key_literal" ;
+    rdfs:isDefinedBy readline: ;
+    rdfs:subClassOf ast:Node ;
+    readline:isSupertype true ;
+    readline:nodeTypeId 102 .
+
+readline:keymap_value a owl:Class ;
+    rdfs:label "keymap_value" ;
+    rdfs:isDefinedBy readline: ;
+    rdfs:subClassOf ast:Node ;
+    readline:isSupertype true ;
+    readline:nodeTypeId 127 .
+
+readline:keymap_variable a owl:Class ;
+    rdfs:label "keymap_variable" ;
+    rdfs:isDefinedBy readline: ;
+    rdfs:subClassOf ast:Node ;
+    readline:isSupertype true ;
+    readline:nodeTypeId 81 .
+
+readline:keyname a owl:Class ;
+    rdfs:label "keyname" ;
+    rdfs:isDefinedBy readline: ;
+    rdfs:subClassOf ast:Node ;
+    readline:isSupertype true ;
+    readline:nodeTypeId 136 .
+
+readline:keyseq a owl:Class ;
+    rdfs:label "keyseq" ;
+    rdfs:isDefinedBy readline: ;
+    rdfs:subClassOf ast:Node ;
+    readline:isSupertype true ;
+    readline:nodeTypeId 132 .
+
+readline:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+readline:macro a owl:Class ;
+    rdfs:label "macro" ;
+    rdfs:isDefinedBy readline: ;
+    rdfs:subClassOf ast:Node ;
+    readline:isSupertype true ;
+    readline:nodeTypeId 133 .
+
+readline:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+readline:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+readline:number_value a owl:Class ;
+    rdfs:label "number_value" ;
+    rdfs:isDefinedBy readline: ;
+    rdfs:subClassOf ast:Node ;
+    readline:isSupertype true ;
+    readline:nodeTypeId 125 .
+
+readline:number_variable a owl:Class ;
+    rdfs:label "number_variable" ;
+    rdfs:isDefinedBy readline: ;
+    rdfs:subClassOf ast:Node ;
+    readline:isSupertype true ;
+    readline:nodeTypeId 130 .
+
+readline:source a owl:Class ;
+    rdfs:label "source" ;
+    rdfs:isDefinedBy readline: ;
+    rdfs:subClassOf ast:Node ;
+    readline:isSupertype true ;
+    readline:nodeTypeId 103 .
+
+readline:string_value a owl:Class ;
+    rdfs:label "string_value" ;
+    rdfs:isDefinedBy readline: ;
+    rdfs:subClassOf ast:Node ;
+    readline:isSupertype true ;
+    readline:nodeTypeId 124 .
+
+readline:string_variable a owl:Class ;
+    rdfs:label "string_variable" ;
+    rdfs:isDefinedBy readline: ;
+    rdfs:subClassOf ast:Node ;
+    readline:isSupertype true ;
+    readline:nodeTypeId 129 .
+
+readline:symbolic_character_name a owl:Class ;
+    rdfs:label "symbolic_character_name" ;
+    rdfs:isDefinedBy readline: ;
+    rdfs:subClassOf ast:Node ;
+    readline:isSupertype true ;
+    readline:nodeTypeId 137 .
+
+readline:term_name a owl:Class ;
+    rdfs:label "term_name" ;
+    rdfs:isDefinedBy readline: ;
+    rdfs:subClassOf ast:Node ;
+    readline:isSupertype true ;
+    readline:nodeTypeId 11 .
+
+readline:test a owl:Class ;
+    rdfs:label "test" ;
+    rdfs:isDefinedBy readline: ;
+    rdfs:subClassOf ast:Node ;
+    readline:isSupertype true ;
+    readline:nodeTypeId 108 .
+
+readline:variable_setting a owl:Class ;
+    rdfs:label "variable_setting" ;
+    rdfs:isDefinedBy readline: ;
+    rdfs:subClassOf ast:Node ;
+    readline:isSupertype true ;
+    readline:nodeTypeId 115 .
+
+readline:version_number a owl:Class ;
+    rdfs:label "version_number" ;
+    rdfs:isDefinedBy readline: ;
+    rdfs:subClassOf ast:Node ;
+    readline:isSupertype true ;
+    readline:nodeTypeId 19 .
+
+readline: a owl:Ontology ;
+    rdfs:label "Readline Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for readline" ;
+    owl:versionInfo "v0.25" ;
+    readline:abiVersion 14 ;
+    readline:fieldCount 0 ;
+    readline:languageName "None" ;
+    readline:nodeKindCount 146 .
+

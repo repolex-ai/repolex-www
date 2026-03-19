@@ -1,0 +1,467 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pgn: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/pgn/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+pgn:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+pgn:annotation a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "annotation",
+        "annotation (literal)" ;
+    rdfs:comment "Literal value for annotation field when it contains a terminal node" ;
+    rdfs:isDefinedBy pgn: ;
+    rdfs:subClassOf ast:Node ;
+    pgn:fieldId 1 ;
+    pgn:isSupertype true ;
+    pgn:isTerminalField true ;
+    pgn:nodeTypeId 66 .
+
+pgn:check_or_mate_condition a owl:Class ;
+    rdfs:label "check_or_mate_condition" ;
+    rdfs:isDefinedBy pgn: ;
+    rdfs:subClassOf ast:Node ;
+    pgn:isSupertype true ;
+    pgn:nodeTypeId 65 .
+
+pgn:command a owl:Class ;
+    rdfs:label "command" ;
+    rdfs:isDefinedBy pgn: ;
+    rdfs:subClassOf ast:Node ;
+    pgn:isSupertype true ;
+    pgn:nodeTypeId 141 .
+
+pgn:command_delimiter a owl:DatatypeProperty ;
+    rdfs:label "command_delimiter (literal)" ;
+    rdfs:comment "Literal value for command_delimiter field when it contains a terminal node" ;
+    pgn:fieldId 2 ;
+    pgn:isTerminalField true .
+
+pgn:command_delimiter_close a owl:Class ;
+    rdfs:label "command_delimiter_close" ;
+    rdfs:isDefinedBy pgn: ;
+    rdfs:subClassOf ast:Node ;
+    pgn:isSupertype true ;
+    pgn:nodeTypeId 134 .
+
+pgn:command_delimiter_open a owl:Class ;
+    rdfs:label "command_delimiter_open" ;
+    rdfs:isDefinedBy pgn: ;
+    rdfs:subClassOf ast:Node ;
+    pgn:isSupertype true ;
+    pgn:nodeTypeId 47 .
+
+pgn:command_name a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "command_name",
+        "command_name (literal)" ;
+    rdfs:comment "Literal value for command_name field when it contains a terminal node" ;
+    rdfs:isDefinedBy pgn: ;
+    rdfs:subClassOf ast:Node ;
+    pgn:fieldId 3 ;
+    pgn:isSupertype true ;
+    pgn:isTerminalField true ;
+    pgn:nodeTypeId 49 .
+
+pgn:command_parameters a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "command_parameters",
+        "command_parameters (literal)" ;
+    rdfs:comment "Literal value for command_parameters field when it contains a terminal node" ;
+    rdfs:isDefinedBy pgn: ;
+    rdfs:subClassOf ast:Node ;
+    pgn:fieldId 4 ;
+    pgn:isSupertype true ;
+    pgn:isTerminalField true ;
+    pgn:nodeTypeId 50 .
+
+pgn:comment_content a owl:DatatypeProperty ;
+    rdfs:label "comment_content (literal)" ;
+    rdfs:comment "Literal value for comment_content field when it contains a terminal node" ;
+    pgn:fieldId 6 ;
+    pgn:isTerminalField true .
+
+pgn:comment_delimiter a owl:DatatypeProperty ;
+    rdfs:label "comment_delimiter (literal)" ;
+    rdfs:comment "Literal value for comment_delimiter field when it contains a terminal node" ;
+    pgn:fieldId 7 ;
+    pgn:isTerminalField true .
+
+pgn:double_quote a owl:Class ;
+    rdfs:label "double_quote" ;
+    rdfs:isDefinedBy pgn: ;
+    rdfs:subClassOf ast:Node ;
+    pgn:isSupertype true ;
+    pgn:nodeTypeId 123 .
+
+pgn:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+pgn:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+pgn:field_comment a owl:ObjectProperty ;
+    rdfs:label "comment (structural)" ;
+    rdfs:comment "Structural reference for comment field when it contains a non-terminal node" ;
+    pgn:fieldId 5 .
+
+pgn:field_comment_content a owl:ObjectProperty ;
+    rdfs:label "comment_content (structural)" ;
+    rdfs:comment "Structural reference for comment_content field when it contains a non-terminal node" ;
+    pgn:fieldId 6 .
+
+pgn:field_freestanding_comment a owl:ObjectProperty ;
+    rdfs:label "freestanding_comment (structural)" ;
+    rdfs:comment "Structural reference for freestanding_comment field when it contains a non-terminal node" ;
+    pgn:fieldId 8 .
+
+pgn:field_game a owl:ObjectProperty ;
+    rdfs:label "game (structural)" ;
+    rdfs:comment "Structural reference for game field when it contains a non-terminal node" ;
+    pgn:fieldId 9 .
+
+pgn:field_header a owl:ObjectProperty ;
+    rdfs:label "header (structural)" ;
+    rdfs:comment "Structural reference for header field when it contains a non-terminal node" ;
+    pgn:fieldId 10 .
+
+pgn:field_lan_move a owl:ObjectProperty ;
+    rdfs:label "lan_move (structural)" ;
+    rdfs:comment "Structural reference for lan_move field when it contains a non-terminal node" ;
+    pgn:fieldId 11 .
+
+pgn:field_movetext a owl:ObjectProperty ;
+    rdfs:label "movetext (structural)" ;
+    rdfs:comment "Structural reference for movetext field when it contains a non-terminal node" ;
+    pgn:fieldId 13 .
+
+pgn:field_recursive_variation_content a owl:ObjectProperty ;
+    rdfs:label "recursive_variation_content (structural)" ;
+    rdfs:comment "Structural reference for recursive_variation_content field when it contains a non-terminal node" ;
+    pgn:fieldId 14 .
+
+pgn:field_san_move a owl:ObjectProperty ;
+    rdfs:label "san_move (structural)" ;
+    rdfs:comment "Structural reference for san_move field when it contains a non-terminal node" ;
+    pgn:fieldId 17 .
+
+pgn:field_tagpair a owl:ObjectProperty ;
+    rdfs:label "tagpair (structural)" ;
+    rdfs:comment "Structural reference for tagpair field when it contains a non-terminal node" ;
+    pgn:fieldId 18 .
+
+pgn:field_variation_comment a owl:ObjectProperty ;
+    rdfs:label "variation_comment (structural)" ;
+    rdfs:comment "Structural reference for variation_comment field when it contains a non-terminal node" ;
+    pgn:fieldId 24 .
+
+pgn:field_variation_content a owl:ObjectProperty ;
+    rdfs:label "variation_content (structural)" ;
+    rdfs:comment "Structural reference for variation_content field when it contains a non-terminal node" ;
+    pgn:fieldId 25 .
+
+pgn:field_variation_lan_move a owl:ObjectProperty ;
+    rdfs:label "variation_lan_move (structural)" ;
+    rdfs:comment "Structural reference for variation_lan_move field when it contains a non-terminal node" ;
+    pgn:fieldId 27 .
+
+pgn:field_variation_san_move a owl:ObjectProperty ;
+    rdfs:label "variation_san_move (structural)" ;
+    rdfs:comment "Structural reference for variation_san_move field when it contains a non-terminal node" ;
+    pgn:fieldId 29 .
+
+pgn:freestanding_comment a owl:Class ;
+    rdfs:label "freestanding_comment" ;
+    rdfs:isDefinedBy pgn: ;
+    rdfs:subClassOf ast:Node ;
+    pgn:isSupertype true ;
+    pgn:nodeTypeId 117 .
+
+pgn:game a owl:Class ;
+    rdfs:label "game" ;
+    rdfs:isDefinedBy pgn: ;
+    rdfs:subClassOf ast:Node ;
+    pgn:isSupertype true ;
+    pgn:nodeTypeId 116 .
+
+pgn:header a owl:Class ;
+    rdfs:label "header" ;
+    rdfs:isDefinedBy pgn: ;
+    rdfs:subClassOf ast:Node ;
+    pgn:isSupertype true ;
+    pgn:nodeTypeId 120 .
+
+pgn:inline_comment a owl:Class ;
+    rdfs:label "inline_comment" ;
+    rdfs:isDefinedBy pgn: ;
+    rdfs:subClassOf ast:Node ;
+    pgn:isSupertype true ;
+    pgn:nodeTypeId 140 .
+
+pgn:inline_comment_delimiter_close a owl:Class ;
+    rdfs:label "inline_comment_delimiter_close" ;
+    rdfs:isDefinedBy pgn: ;
+    rdfs:subClassOf ast:Node ;
+    pgn:isSupertype true ;
+    pgn:nodeTypeId 131 .
+
+pgn:inline_comment_delimiter_open a owl:Class ;
+    rdfs:label "inline_comment_delimiter_open" ;
+    rdfs:isDefinedBy pgn: ;
+    rdfs:subClassOf ast:Node ;
+    pgn:isSupertype true ;
+    pgn:nodeTypeId 130 .
+
+pgn:inline_comment_text a owl:Class ;
+    rdfs:label "inline_comment_text" ;
+    rdfs:isDefinedBy pgn: ;
+    rdfs:subClassOf ast:Node ;
+    pgn:isSupertype true ;
+    pgn:nodeTypeId 143 .
+
+pgn:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+pgn:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+pgn:lan_move a owl:Class ;
+    rdfs:label "lan_move" ;
+    rdfs:isDefinedBy pgn: ;
+    rdfs:subClassOf ast:Node ;
+    pgn:isSupertype true ;
+    pgn:nodeTypeId 148 .
+
+pgn:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+pgn:move_number a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "move_number",
+        "move_number (literal)" ;
+    rdfs:comment "Literal value for move_number field when it contains a terminal node" ;
+    rdfs:isDefinedBy pgn: ;
+    rdfs:subClassOf ast:Node ;
+    pgn:fieldId 12 ;
+    pgn:isSupertype true ;
+    pgn:isTerminalField true ;
+    pgn:nodeTypeId 51 .
+
+pgn:movetext a owl:Class ;
+    rdfs:label "movetext" ;
+    rdfs:isDefinedBy pgn: ;
+    rdfs:subClassOf ast:Node ;
+    pgn:isSupertype true ;
+    pgn:nodeTypeId 127 .
+
+pgn:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+pgn:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+pgn:old_style_twic_section_comment a owl:Class ;
+    rdfs:label "old_style_twic_section_comment" ;
+    rdfs:isDefinedBy pgn: ;
+    rdfs:subClassOf ast:Node ;
+    pgn:isSupertype true ;
+    pgn:nodeTypeId 6 .
+
+pgn:recursive_variation a owl:Class ;
+    rdfs:label "recursive_variation" ;
+    rdfs:isDefinedBy pgn: ;
+    rdfs:subClassOf ast:Node ;
+    pgn:isSupertype true ;
+    pgn:nodeTypeId 139 .
+
+pgn:recursive_variation_delimiter a owl:DatatypeProperty ;
+    rdfs:label "recursive_variation_delimiter (literal)" ;
+    rdfs:comment "Literal value for recursive_variation_delimiter field when it contains a terminal node" ;
+    pgn:fieldId 15 ;
+    pgn:isTerminalField true .
+
+pgn:rest_of_line_comment a owl:Class ;
+    rdfs:label "rest_of_line_comment" ;
+    rdfs:isDefinedBy pgn: ;
+    rdfs:subClassOf ast:Node ;
+    pgn:isSupertype true ;
+    pgn:nodeTypeId 119 .
+
+pgn:rest_of_line_comment_delimiter_open a owl:Class ;
+    rdfs:label "rest_of_line_comment_delimiter_open" ;
+    rdfs:isDefinedBy pgn: ;
+    rdfs:subClassOf ast:Node ;
+    pgn:isSupertype true ;
+    pgn:nodeTypeId 118 .
+
+pgn:rest_of_line_comment_text a owl:Class ;
+    rdfs:label "rest_of_line_comment_text" ;
+    rdfs:isDefinedBy pgn: ;
+    rdfs:subClassOf ast:Node ;
+    pgn:isSupertype true ;
+    pgn:nodeTypeId 5 .
+
+pgn:result_code a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "result_code",
+        "result_code (literal)" ;
+    rdfs:comment "Literal value for result_code field when it contains a terminal node" ;
+    rdfs:isDefinedBy pgn: ;
+    rdfs:subClassOf ast:Node ;
+    pgn:fieldId 16 ;
+    pgn:isSupertype true ;
+    pgn:isTerminalField true ;
+    pgn:nodeTypeId 156 .
+
+pgn:san_move a owl:Class ;
+    rdfs:label "san_move" ;
+    rdfs:isDefinedBy pgn: ;
+    rdfs:subClassOf ast:Node ;
+    pgn:isSupertype true ;
+    pgn:nodeTypeId 146 .
+
+pgn:series_of_games a owl:Class ;
+    rdfs:label "series_of_games" ;
+    rdfs:isDefinedBy pgn: ;
+    rdfs:subClassOf ast:Node ;
+    pgn:isSupertype true ;
+    pgn:nodeTypeId 115 .
+
+pgn:tagpair a owl:Class ;
+    rdfs:label "tagpair" ;
+    rdfs:isDefinedBy pgn: ;
+    rdfs:subClassOf ast:Node ;
+    pgn:isSupertype true ;
+    pgn:nodeTypeId 124 .
+
+pgn:tagpair_delimiter a owl:DatatypeProperty ;
+    rdfs:label "tagpair_delimiter (literal)" ;
+    rdfs:comment "Literal value for tagpair_delimiter field when it contains a terminal node" ;
+    pgn:fieldId 19 ;
+    pgn:isTerminalField true .
+
+pgn:tagpair_delimiter_close a owl:Class ;
+    rdfs:label "tagpair_delimiter_close" ;
+    rdfs:isDefinedBy pgn: ;
+    rdfs:subClassOf ast:Node ;
+    pgn:isSupertype true ;
+    pgn:nodeTypeId 122 .
+
+pgn:tagpair_delimiter_open a owl:Class ;
+    rdfs:label "tagpair_delimiter_open" ;
+    rdfs:isDefinedBy pgn: ;
+    rdfs:subClassOf ast:Node ;
+    pgn:isSupertype true ;
+    pgn:nodeTypeId 121 .
+
+pgn:tagpair_key a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "tagpair_key",
+        "tagpair_key (literal)" ;
+    rdfs:comment "Literal value for tagpair_key field when it contains a terminal node" ;
+    rdfs:isDefinedBy pgn: ;
+    rdfs:subClassOf ast:Node ;
+    pgn:fieldId 20 ;
+    pgn:isSupertype true ;
+    pgn:isTerminalField true ;
+    pgn:nodeTypeId 41 .
+
+pgn:tagpair_value_contents a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "tagpair_value_contents",
+        "tagpair_value_contents (literal)" ;
+    rdfs:comment "Literal value for tagpair_value_contents field when it contains a terminal node" ;
+    rdfs:isDefinedBy pgn: ;
+    rdfs:subClassOf ast:Node ;
+    pgn:fieldId 21 ;
+    pgn:isSupertype true ;
+    pgn:isTerminalField true ;
+    pgn:nodeTypeId 126 .
+
+pgn:tagpair_value_delimiter a owl:DatatypeProperty ;
+    rdfs:label "tagpair_value_delimiter (literal)" ;
+    rdfs:comment "Literal value for tagpair_value_delimiter field when it contains a terminal node" ;
+    pgn:fieldId 22 ;
+    pgn:isTerminalField true .
+
+pgn:trailing_garbage a owl:Class ;
+    rdfs:label "trailing_garbage" ;
+    rdfs:isDefinedBy pgn: ;
+    rdfs:subClassOf ast:Node ;
+    pgn:isSupertype true ;
+    pgn:nodeTypeId 135 .
+
+pgn:variation a owl:Class ;
+    rdfs:label "variation" ;
+    rdfs:isDefinedBy pgn: ;
+    rdfs:subClassOf ast:Node ;
+    pgn:isSupertype true ;
+    pgn:nodeTypeId 138 .
+
+pgn:variation_annotation a owl:DatatypeProperty ;
+    rdfs:label "variation_annotation (literal)" ;
+    rdfs:comment "Literal value for variation_annotation field when it contains a terminal node" ;
+    pgn:fieldId 23 ;
+    pgn:isTerminalField true .
+
+pgn:variation_delimiter a owl:DatatypeProperty ;
+    rdfs:label "variation_delimiter (literal)" ;
+    rdfs:comment "Literal value for variation_delimiter field when it contains a terminal node" ;
+    pgn:fieldId 26 ;
+    pgn:isTerminalField true .
+
+pgn:variation_delimiter_close a owl:Class ;
+    rdfs:label "variation_delimiter_close" ;
+    rdfs:isDefinedBy pgn: ;
+    rdfs:subClassOf ast:Node ;
+    pgn:isSupertype true ;
+    pgn:nodeTypeId 129 .
+
+pgn:variation_delimiter_open a owl:Class ;
+    rdfs:label "variation_delimiter_open" ;
+    rdfs:isDefinedBy pgn: ;
+    rdfs:subClassOf ast:Node ;
+    pgn:isSupertype true ;
+    pgn:nodeTypeId 43 .
+
+pgn:variation_move_number a owl:DatatypeProperty ;
+    rdfs:label "variation_move_number (literal)" ;
+    rdfs:comment "Literal value for variation_move_number field when it contains a terminal node" ;
+    pgn:fieldId 28 ;
+    pgn:isTerminalField true .
+
+pgn:variation_movetext a owl:Class ;
+    rdfs:label "variation_movetext" ;
+    rdfs:isDefinedBy pgn: ;
+    rdfs:subClassOf ast:Node ;
+    pgn:isSupertype true ;
+    pgn:nodeTypeId 128 .
+
+pgn: a owl:Ontology ;
+    rdfs:label "Pgn Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for pgn" ;
+    owl:versionInfo "v0.25" ;
+    pgn:abiVersion 15 ;
+    pgn:fieldCount 29 ;
+    pgn:languageName "pgn" ;
+    pgn:nodeKindCount 167 .
+

@@ -1,0 +1,215 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix kdl: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/kdl/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+kdl:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+kdl:annotation_type a owl:Class ;
+    rdfs:label "annotation_type" ;
+    rdfs:isDefinedBy kdl: ;
+    rdfs:subClassOf ast:Node ;
+    kdl:isSupertype true ;
+    kdl:nodeTypeId 95 .
+
+kdl:boolean a owl:Class ;
+    rdfs:label "boolean" ;
+    rdfs:isDefinedBy kdl: ;
+    rdfs:subClassOf ast:Node ;
+    kdl:isSupertype true ;
+    kdl:nodeTypeId 109 .
+
+kdl:decimal a owl:Class ;
+    rdfs:label "decimal" ;
+    rdfs:isDefinedBy kdl: ;
+    rdfs:subClassOf ast:Node ;
+    kdl:isSupertype true ;
+    kdl:nodeTypeId 127 .
+
+kdl:document a owl:Class ;
+    rdfs:label "document" ;
+    rdfs:isDefinedBy kdl: ;
+    rdfs:subClassOf ast:Node ;
+    kdl:isSupertype true ;
+    kdl:nodeTypeId 84 .
+
+kdl:escape a owl:Class ;
+    rdfs:label "escape" ;
+    rdfs:isDefinedBy kdl: ;
+    rdfs:subClassOf ast:Node ;
+    kdl:isSupertype true ;
+    kdl:nodeTypeId 52 .
+
+kdl:exponent a owl:Class ;
+    rdfs:label "exponent" ;
+    rdfs:isDefinedBy kdl: ;
+    rdfs:subClassOf ast:Node ;
+    kdl:isSupertype true ;
+    kdl:nodeTypeId 103 .
+
+kdl:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+kdl:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+kdl:field_children a owl:ObjectProperty ;
+    rdfs:label "children (structural)" ;
+    rdfs:comment "Structural reference for children field when it contains a non-terminal node" ;
+    kdl:fieldId 1 .
+
+kdl:identifier a owl:Class ;
+    rdfs:label "identifier" ;
+    rdfs:isDefinedBy kdl: ;
+    rdfs:subClassOf ast:Node ;
+    kdl:isSupertype true ;
+    kdl:nodeTypeId 92 .
+
+kdl:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+kdl:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+kdl:keyword a owl:Class ;
+    rdfs:label "keyword" ;
+    rdfs:isDefinedBy kdl: ;
+    rdfs:subClassOf ast:Node ;
+    kdl:isSupertype true ;
+    kdl:nodeTypeId 94 .
+
+kdl:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+kdl:multi_line_comment a owl:Class ;
+    rdfs:label "multi_line_comment" ;
+    rdfs:isDefinedBy kdl: ;
+    rdfs:subClassOf ast:Node ;
+    kdl:isSupertype true ;
+    kdl:nodeTypeId 82 .
+
+kdl:node a owl:Class ;
+    rdfs:label "node" ;
+    rdfs:isDefinedBy kdl: ;
+    rdfs:subClassOf ast:Node ;
+    kdl:isSupertype true ;
+    kdl:nodeTypeId 85 .
+
+kdl:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+kdl:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+kdl:node_children a owl:Class ;
+    rdfs:label "node_children" ;
+    rdfs:isDefinedBy kdl: ;
+    rdfs:subClassOf ast:Node ;
+    kdl:isSupertype true ;
+    kdl:nodeTypeId 89 .
+
+kdl:node_children_comment a owl:Class ;
+    rdfs:label "node_children_comment" ;
+    rdfs:isDefinedBy kdl: ;
+    rdfs:subClassOf ast:Node ;
+    kdl:isSupertype true ;
+    kdl:nodeTypeId 128 .
+
+kdl:node_comment a owl:Class ;
+    rdfs:label "node_comment" ;
+    rdfs:isDefinedBy kdl: ;
+    rdfs:subClassOf ast:Node ;
+    kdl:isSupertype true ;
+    kdl:nodeTypeId 2 .
+
+kdl:node_field a owl:Class ;
+    rdfs:label "node_field" ;
+    rdfs:isDefinedBy kdl: ;
+    rdfs:subClassOf ast:Node ;
+    kdl:isSupertype true ;
+    kdl:nodeTypeId 86 .
+
+kdl:node_field_comment a owl:Class ;
+    rdfs:label "node_field_comment" ;
+    rdfs:isDefinedBy kdl: ;
+    rdfs:subClassOf ast:Node ;
+    kdl:isSupertype true ;
+    kdl:nodeTypeId 129 .
+
+kdl:number a owl:Class ;
+    rdfs:label "number" ;
+    rdfs:isDefinedBy kdl: ;
+    rdfs:subClassOf ast:Node ;
+    kdl:isSupertype true ;
+    kdl:nodeTypeId 101 .
+
+kdl:prop a owl:Class ;
+    rdfs:label "prop" ;
+    rdfs:isDefinedBy kdl: ;
+    rdfs:subClassOf ast:Node ;
+    kdl:isSupertype true ;
+    kdl:nodeTypeId 96 .
+
+kdl:single_line_comment a owl:Class ;
+    rdfs:label "single_line_comment" ;
+    rdfs:isDefinedBy kdl: ;
+    rdfs:subClassOf ast:Node ;
+    kdl:isSupertype true ;
+    kdl:nodeTypeId 114 .
+
+kdl:string a owl:Class ;
+    rdfs:label "string" ;
+    rdfs:isDefinedBy kdl: ;
+    rdfs:subClassOf ast:Node ;
+    kdl:isSupertype true ;
+    kdl:nodeTypeId 99 .
+
+kdl:string_fragment a owl:Class ;
+    rdfs:label "string_fragment" ;
+    rdfs:isDefinedBy kdl: ;
+    rdfs:subClassOf ast:Node ;
+    kdl:isSupertype true ;
+    kdl:nodeTypeId 130 .
+
+kdl:type a owl:Class ;
+    rdfs:label "type" ;
+    rdfs:isDefinedBy kdl: ;
+    rdfs:subClassOf ast:Node ;
+    kdl:isSupertype true ;
+    kdl:nodeTypeId 98 .
+
+kdl:value a owl:Class ;
+    rdfs:label "value" ;
+    rdfs:isDefinedBy kdl: ;
+    rdfs:subClassOf ast:Node ;
+    kdl:isSupertype true ;
+    kdl:nodeTypeId 97 .
+
+kdl: a owl:Ontology ;
+    rdfs:label "Kdl Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for kdl" ;
+    owl:versionInfo "v0.25" ;
+    kdl:abiVersion 14 ;
+    kdl:fieldCount 1 ;
+    kdl:languageName "None" ;
+    kdl:nodeKindCount 131 .
+

@@ -1,0 +1,1040 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix llvm: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/llvm/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+llvm:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+llvm:addrspace a owl:Class ;
+    rdfs:label "addrspace" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 389 .
+
+llvm:alias a owl:Class ;
+    rdfs:label "alias" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 483 .
+
+llvm:alignment a owl:Class ;
+    rdfs:label "alignment" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 468 .
+
+llvm:argument a owl:Class ;
+    rdfs:label "argument" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 391 .
+
+llvm:argument_list a owl:Class ;
+    rdfs:label "argument_list" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 390 .
+
+llvm:array_type a owl:Class ;
+    rdfs:label "array_type" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 385 .
+
+llvm:array_value a owl:Class ;
+    rdfs:label "array_value" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 443 .
+
+llvm:array_vector_body a owl:Class ;
+    rdfs:label "array_vector_body" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 388 .
+
+llvm:asm a owl:Class ;
+    rdfs:label "asm" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 479 .
+
+llvm:atomic_bin_op_keyword a owl:Class ;
+    rdfs:label "atomic_bin_op_keyword" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 463 .
+
+llvm:atomic_ordering a owl:Class ;
+    rdfs:label "atomic_ordering" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 467 .
+
+llvm:attr_ref a owl:Class ;
+    rdfs:label "attr_ref" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 2 .
+
+llvm:attribute a owl:Class ;
+    rdfs:label "attribute" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 393 .
+
+llvm:attribute_name a owl:Class ;
+    rdfs:label "attribute_name" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 394 .
+
+llvm:bin_op_keyword a owl:Class ;
+    rdfs:label "bin_op_keyword" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 462 .
+
+llvm:blockaddress a owl:Class ;
+    rdfs:label "blockaddress" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 448 .
+
+llvm:calling_conv a owl:Class ;
+    rdfs:label "calling_conv" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 379 .
+
+llvm:cast_inst a owl:Class ;
+    rdfs:label "cast_inst" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 466 .
+
+llvm:comdat a owl:Class ;
+    rdfs:label "comdat" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 486 .
+
+llvm:comdat_ref a owl:Class ;
+    rdfs:label "comdat_ref" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 3 .
+
+llvm:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 1 .
+
+llvm:constant_bin_op a owl:Class ;
+    rdfs:label "constant_bin_op" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 461 .
+
+llvm:constant_cast a owl:Class ;
+    rdfs:label "constant_cast" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 450 .
+
+llvm:constant_expr a owl:Class ;
+    rdfs:label "constant_expr" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 449 .
+
+llvm:constant_extractelement a owl:Class ;
+    rdfs:label "constant_extractelement" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 455 .
+
+llvm:constant_extractvalue a owl:Class ;
+    rdfs:label "constant_extractvalue" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 458 .
+
+llvm:constant_fcmp a owl:Class ;
+    rdfs:label "constant_fcmp" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 454 .
+
+llvm:constant_fneg a owl:Class ;
+    rdfs:label "constant_fneg" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 460 .
+
+llvm:constant_getelementptr a owl:Class ;
+    rdfs:label "constant_getelementptr" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 451 .
+
+llvm:constant_icmp a owl:Class ;
+    rdfs:label "constant_icmp" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 453 .
+
+llvm:constant_insertelement a owl:Class ;
+    rdfs:label "constant_insertelement" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 456 .
+
+llvm:constant_insertvalue a owl:Class ;
+    rdfs:label "constant_insertvalue" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 459 .
+
+llvm:constant_select a owl:Class ;
+    rdfs:label "constant_select" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 452 .
+
+llvm:constant_shufflevector a owl:Class ;
+    rdfs:label "constant_shufflevector" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 457 .
+
+llvm:cstring a owl:Class ;
+    rdfs:label "cstring" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 13 .
+
+llvm:data_layout a owl:Class ;
+    rdfs:label "data_layout" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 368 .
+
+llvm:declare a owl:Class ;
+    rdfs:label "declare" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 370 .
+
+llvm:dll_storage_class a owl:Class ;
+    rdfs:label "dll_storage_class" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 378 .
+
+llvm:dso_local a owl:Class ;
+    rdfs:label "dso_local" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 376 .
+
+llvm:fast_math a owl:Class ;
+    rdfs:label "fast_math" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 471 .
+
+llvm:fcmp_cond a owl:Class ;
+    rdfs:label "fcmp_cond" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 465 .
+
+llvm:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+llvm:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+llvm:field_arguments a owl:ObjectProperty ;
+    rdfs:label "arguments (structural)" ;
+    rdfs:comment "Structural reference for arguments field when it contains a non-terminal node" ;
+    llvm:fieldId 1 .
+
+llvm:field_body a owl:ObjectProperty ;
+    rdfs:label "body (structural)" ;
+    rdfs:comment "Structural reference for body field when it contains a non-terminal node" ;
+    llvm:fieldId 2 .
+
+llvm:field_callee a owl:ObjectProperty ;
+    rdfs:label "callee (structural)" ;
+    rdfs:comment "Structural reference for callee field when it contains a non-terminal node" ;
+    llvm:fieldId 3 .
+
+llvm:field_inst_name a owl:ObjectProperty ;
+    rdfs:label "inst_name (structural)" ;
+    rdfs:comment "Structural reference for inst_name field when it contains a non-terminal node" ;
+    llvm:fieldId 4 .
+
+llvm:float a owl:Class ;
+    rdfs:label "float" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 12 .
+
+llvm:fn_define a owl:Class ;
+    rdfs:label "fn_define" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 371 .
+
+llvm:function_body a owl:Class ;
+    rdfs:label "function_body" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 398 .
+
+llvm:function_header a owl:Class ;
+    rdfs:label "function_header" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 373 .
+
+llvm:global_global a owl:Class ;
+    rdfs:label "global_global" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 482 .
+
+llvm:global_metadata a owl:Class ;
+    rdfs:label "global_metadata" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 487 .
+
+llvm:global_type a owl:Class ;
+    rdfs:label "global_type" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 480 .
+
+llvm:global_var a owl:Class ;
+    rdfs:label "global_var" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 4 .
+
+llvm:icmp_cond a owl:Class ;
+    rdfs:label "icmp_cond" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 464 .
+
+llvm:ifunc a owl:Class ;
+    rdfs:label "ifunc" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 484 .
+
+llvm:inline_asm a owl:Class ;
+    rdfs:label "inline_asm" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 478 .
+
+llvm:inst_name a owl:DatatypeProperty ;
+    rdfs:label "inst_name (literal)" ;
+    rdfs:comment "Literal value for inst_name field when it contains a terminal node" ;
+    llvm:fieldId 4 ;
+    llvm:isTerminalField true .
+
+llvm:instruction a owl:Class ;
+    rdfs:label "instruction" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 399 .
+
+llvm:instruction_alloca a owl:Class ;
+    rdfs:label "instruction_alloca" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 428 .
+
+llvm:instruction_atomicrmw a owl:Class ;
+    rdfs:label "instruction_atomicrmw" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 432 .
+
+llvm:instruction_bin_op a owl:Class ;
+    rdfs:label "instruction_bin_op" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 412 .
+
+llvm:instruction_br a owl:Class ;
+    rdfs:label "instruction_br" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 403 .
+
+llvm:instruction_call a owl:Class ;
+    rdfs:label "instruction_call" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 427 .
+
+llvm:instruction_callbr a owl:Class ;
+    rdfs:label "instruction_callbr" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 420 .
+
+llvm:instruction_cast a owl:Class ;
+    rdfs:label "instruction_cast" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 423 .
+
+llvm:instruction_catchpad a owl:Class ;
+    rdfs:label "instruction_catchpad" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 418 .
+
+llvm:instruction_catchret a owl:Class ;
+    rdfs:label "instruction_catchret" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 416 .
+
+llvm:instruction_catchswitch a owl:Class ;
+    rdfs:label "instruction_catchswitch" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 417 .
+
+llvm:instruction_cleanuppad a owl:Class ;
+    rdfs:label "instruction_cleanuppad" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 419 .
+
+llvm:instruction_cleanupret a owl:Class ;
+    rdfs:label "instruction_cleanupret" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 415 .
+
+llvm:instruction_cmpxchg a owl:Class ;
+    rdfs:label "instruction_cmpxchg" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 431 .
+
+llvm:instruction_extractelement a owl:Class ;
+    rdfs:label "instruction_extractelement" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 407 .
+
+llvm:instruction_extractvalue a owl:Class ;
+    rdfs:label "instruction_extractvalue" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 435 .
+
+llvm:instruction_fcmp a owl:Class ;
+    rdfs:label "instruction_fcmp" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 422 .
+
+llvm:instruction_fence a owl:Class ;
+    rdfs:label "instruction_fence" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 433 .
+
+llvm:instruction_fneg a owl:Class ;
+    rdfs:label "instruction_fneg" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 411 .
+
+llvm:instruction_freeze a owl:Class ;
+    rdfs:label "instruction_freeze" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 405 .
+
+llvm:instruction_getelementptr a owl:Class ;
+    rdfs:label "instruction_getelementptr" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 434 .
+
+llvm:instruction_icmp a owl:Class ;
+    rdfs:label "instruction_icmp" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 421 .
+
+llvm:instruction_indirectbr a owl:Class ;
+    rdfs:label "instruction_indirectbr" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 406 .
+
+llvm:instruction_insertelement a owl:Class ;
+    rdfs:label "instruction_insertelement" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 408 .
+
+llvm:instruction_insertvalue a owl:Class ;
+    rdfs:label "instruction_insertvalue" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 436 .
+
+llvm:instruction_invoke a owl:Class ;
+    rdfs:label "instruction_invoke" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 414 .
+
+llvm:instruction_landingpad a owl:Class ;
+    rdfs:label "instruction_landingpad" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 426 .
+
+llvm:instruction_load a owl:Class ;
+    rdfs:label "instruction_load" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 429 .
+
+llvm:instruction_phi a owl:Class ;
+    rdfs:label "instruction_phi" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 425 .
+
+llvm:instruction_resume a owl:Class ;
+    rdfs:label "instruction_resume" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 404 .
+
+llvm:instruction_ret a owl:Class ;
+    rdfs:label "instruction_ret" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 402 .
+
+llvm:instruction_select a owl:Class ;
+    rdfs:label "instruction_select" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 409 .
+
+llvm:instruction_shufflevector a owl:Class ;
+    rdfs:label "instruction_shufflevector" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 410 .
+
+llvm:instruction_store a owl:Class ;
+    rdfs:label "instruction_store" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 430 .
+
+llvm:instruction_switch a owl:Class ;
+    rdfs:label "instruction_switch" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 413 .
+
+llvm:instruction_unreachable a owl:Class ;
+    rdfs:label "instruction_unreachable" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 401 .
+
+llvm:instruction_va_arg a owl:Class ;
+    rdfs:label "instruction_va_arg" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 424 .
+
+llvm:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+llvm:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+llvm:label a owl:Class ;
+    rdfs:label "label" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 6 .
+
+llvm:landingpad_clause a owl:Class ;
+    rdfs:label "landingpad_clause" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 447 .
+
+llvm:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+llvm:linkage a owl:Class ;
+    rdfs:label "linkage" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 374 .
+
+llvm:linkage_aux a owl:Class ;
+    rdfs:label "linkage_aux" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 375 .
+
+llvm:local_var a owl:Class ;
+    rdfs:label "local_var" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 5 .
+
+llvm:memory_attribute a owl:Class ;
+    rdfs:label "memory_attribute" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 396 .
+
+llvm:memory_attribute_val a owl:Class ;
+    rdfs:label "memory_attribute_val" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 397 .
+
+llvm:metadata a owl:Class ;
+    rdfs:label "metadata" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 488 .
+
+llvm:metadata_attachment a owl:Class ;
+    rdfs:label "metadata_attachment" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 372 .
+
+llvm:metadata_name a owl:Class ;
+    rdfs:label "metadata_name" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 363 .
+
+llvm:metadata_ref a owl:Class ;
+    rdfs:label "metadata_ref" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 362 .
+
+llvm:metadata_refs a owl:Class ;
+    rdfs:label "metadata_refs" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 445 .
+
+llvm:metadata_tuple a owl:Class ;
+    rdfs:label "metadata_tuple" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 489 .
+
+llvm:module a owl:Class ;
+    rdfs:label "module" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 361 .
+
+llvm:module_asm a owl:Class ;
+    rdfs:label "module_asm" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 477 .
+
+llvm:name a owl:DatatypeProperty ;
+    rdfs:label "name (literal)" ;
+    rdfs:comment "Literal value for name field when it contains a terminal node" ;
+    llvm:fieldId 5 ;
+    llvm:isTerminalField true .
+
+llvm:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+llvm:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+llvm:number a owl:Class ;
+    rdfs:label "number" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 364 .
+
+llvm:operand_bundles a owl:Class ;
+    rdfs:label "operand_bundles" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 446 .
+
+llvm:packed_struct_type a owl:Class ;
+    rdfs:label "packed_struct_type" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 384 .
+
+llvm:packed_struct_value a owl:Class ;
+    rdfs:label "packed_struct_value" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 442 .
+
+llvm:param_or_return_attrs a owl:Class ;
+    rdfs:label "param_or_return_attrs" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 392 .
+
+llvm:source_file_name a owl:Class ;
+    rdfs:label "source_file_name" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 369 .
+
+llvm:specialized_md a owl:Class ;
+    rdfs:label "specialized_md" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 490 .
+
+llvm:specialized_md_value a owl:Class ;
+    rdfs:label "specialized_md_value" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 491 .
+
+llvm:string a owl:Class ;
+    rdfs:label "string" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 9 .
+
+llvm:struct_body a owl:Class ;
+    rdfs:label "struct_body" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 387 .
+
+llvm:struct_type a owl:Class ;
+    rdfs:label "struct_type" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 383 .
+
+llvm:struct_value a owl:Class ;
+    rdfs:label "struct_value" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 441 .
+
+llvm:summary_entry a owl:Class ;
+    rdfs:label "summary_entry" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 492 .
+
+llvm:summary_ref a owl:Class ;
+    rdfs:label "summary_ref" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 8 .
+
+llvm:summary_value a owl:Class ;
+    rdfs:label "summary_value" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 493 .
+
+llvm:syncscope a owl:Class ;
+    rdfs:label "syncscope" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 470 .
+
+llvm:target_definition a owl:Class ;
+    rdfs:label "target_definition" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 366 .
+
+llvm:target_triple a owl:Class ;
+    rdfs:label "target_triple" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 367 .
+
+llvm:thread_local a owl:Class ;
+    rdfs:label "thread_local" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 485 .
+
+llvm:type a owl:Class ;
+    rdfs:label "type" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 381 .
+
+llvm:type_and_value a owl:Class ;
+    rdfs:label "type_and_value" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 438 .
+
+llvm:type_keyword a owl:Class ;
+    rdfs:label "type_keyword" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 382 .
+
+llvm:unnamed_addr a owl:Class ;
+    rdfs:label "unnamed_addr" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 380 .
+
+llvm:unnamed_attr_grp a owl:Class ;
+    rdfs:label "unnamed_attr_grp" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 494 .
+
+llvm:use_list_order a owl:Class ;
+    rdfs:label "use_list_order" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 475 .
+
+llvm:use_list_order_bb a owl:Class ;
+    rdfs:label "use_list_order_bb" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 476 .
+
+llvm:uwtable a owl:Class ;
+    rdfs:label "uwtable" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 395 .
+
+llvm:value a owl:Class ;
+    rdfs:label "value" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 439 .
+
+llvm:var a owl:Class ;
+    rdfs:label "var" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 365 .
+
+llvm:vector_type a owl:Class ;
+    rdfs:label "vector_type" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 386 .
+
+llvm:vector_value a owl:Class ;
+    rdfs:label "vector_value" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 444 .
+
+llvm:visibility a owl:Class ;
+    rdfs:label "visibility" ;
+    rdfs:isDefinedBy llvm: ;
+    rdfs:subClassOf ast:Node ;
+    llvm:isSupertype true ;
+    llvm:nodeTypeId 377 .
+
+llvm: a owl:Ontology ;
+    rdfs:label "Llvm Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for llvm" ;
+    owl:versionInfo "v0.25" ;
+    llvm:abiVersion 15 ;
+    llvm:fieldCount 5 ;
+    llvm:languageName "llvm" ;
+    llvm:nodeKindCount 524 .
+

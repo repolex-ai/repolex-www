@@ -1,0 +1,800 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix re2c: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/re2c/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+re2c:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+re2c:action a owl:Class ;
+    rdfs:label "action" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 173 .
+
+re2c:alternation a owl:Class ;
+    rdfs:label "alternation" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 181 .
+
+re2c:any a owl:Class ;
+    rdfs:label "any" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 67 .
+
+re2c:api_style a owl:Class ;
+    rdfs:label "api_style" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 167 .
+
+re2c:argument a owl:DatatypeProperty ;
+    rdfs:label "argument (literal)" ;
+    rdfs:comment "Literal value for argument field when it contains a terminal node" ;
+    re2c:fieldId 1 ;
+    re2c:isTerminalField true .
+
+re2c:block_list a owl:Class ;
+    rdfs:label "block_list" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 134 .
+
+re2c:block_name a owl:Class ;
+    rdfs:label "block_name" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 218 .
+
+re2c:body a owl:Class ;
+    rdfs:label "body" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 138 .
+
+re2c:character_class a owl:Class ;
+    rdfs:label "character_class" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 196 .
+
+re2c:close a owl:Class ;
+    rdfs:label "close" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 189 .
+
+re2c:code_unit a owl:Class ;
+    rdfs:label "code_unit" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 203 .
+
+re2c:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 207 .
+
+re2c:concat a owl:Class ;
+    rdfs:label "concat" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 186 .
+
+re2c:condition a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "condition",
+        "condition (literal)" ;
+    rdfs:comment "Literal value for condition field when it contains a terminal node" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:fieldId 3 ;
+    re2c:isSupertype true ;
+    re2c:isTerminalField true ;
+    re2c:nodeTypeId 171 .
+
+re2c:conditional_rule a owl:Class ;
+    rdfs:label "conditional_rule" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 169 .
+
+re2c:configuration a owl:Class ;
+    rdfs:label "configuration" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 140 .
+
+re2c:ctrl_code a owl:Class ;
+    rdfs:label "ctrl_code" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 98 .
+
+re2c:default a owl:Class ;
+    rdfs:label "default" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 219 .
+
+re2c:define a owl:Class ;
+    rdfs:label "define" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 143 .
+
+re2c:difference a owl:Class ;
+    rdfs:label "difference" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 184 .
+
+re2c:dstring a owl:Class ;
+    rdfs:label "dstring" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 200 .
+
+re2c:empty_class_conf a owl:Class ;
+    rdfs:label "empty_class_conf" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 166 .
+
+re2c:encoding_policy a owl:Class ;
+    rdfs:label "encoding_policy" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 164 .
+
+re2c:end_of_input a owl:Class ;
+    rdfs:label "end_of_input" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 68 .
+
+re2c:exactly a owl:DatatypeProperty ;
+    rdfs:label "exactly (literal)" ;
+    rdfs:comment "Literal value for exactly field when it contains a terminal node" ;
+    re2c:fieldId 4 ;
+    re2c:isTerminalField true .
+
+re2c:field a owl:DatatypeProperty ;
+    rdfs:label "field (literal)" ;
+    rdfs:comment "Literal value for field field when it contains a terminal node" ;
+    re2c:fieldId 6 ;
+    re2c:isTerminalField true .
+
+re2c:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+re2c:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+re2c:field_branch a owl:ObjectProperty ;
+    rdfs:label "branch (structural)" ;
+    rdfs:comment "Structural reference for branch field when it contains a non-terminal node" ;
+    re2c:fieldId 2 .
+
+re2c:field_expr a owl:ObjectProperty ;
+    rdfs:label "expr (structural)" ;
+    rdfs:comment "Structural reference for expr field when it contains a non-terminal node" ;
+    re2c:fieldId 5 .
+
+re2c:field_expression a owl:Class ;
+    rdfs:label "field_expression" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 163 .
+
+re2c:field_from a owl:ObjectProperty ;
+    rdfs:label "from (structural)" ;
+    rdfs:comment "Structural reference for from field when it contains a non-terminal node" ;
+    re2c:fieldId 9 .
+
+re2c:field_identifier a owl:Class ;
+    rdfs:label "field_identifier" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 220 .
+
+re2c:field_left a owl:ObjectProperty ;
+    rdfs:label "left (structural)" ;
+    rdfs:comment "Structural reference for left field when it contains a non-terminal node" ;
+    re2c:fieldId 10 .
+
+re2c:field_lookahead a owl:ObjectProperty ;
+    rdfs:label "lookahead (structural)" ;
+    rdfs:comment "Structural reference for lookahead field when it contains a non-terminal node" ;
+    re2c:fieldId 12 .
+
+re2c:field_operator a owl:ObjectProperty ;
+    rdfs:label "operator (structural)" ;
+    rdfs:comment "Structural reference for operator field when it contains a non-terminal node" ;
+    re2c:fieldId 16 .
+
+re2c:field_right a owl:ObjectProperty ;
+    rdfs:label "right (structural)" ;
+    rdfs:comment "Structural reference for right field when it contains a non-terminal node" ;
+    re2c:fieldId 18 .
+
+re2c:field_to a owl:ObjectProperty ;
+    rdfs:label "to (structural)" ;
+    rdfs:comment "Structural reference for to field when it contains a non-terminal node" ;
+    re2c:fieldId 20 .
+
+re2c:field_value a owl:ObjectProperty ;
+    rdfs:label "value (structural)" ;
+    rdfs:comment "Structural reference for value field when it contains a non-terminal node" ;
+    re2c:fieldId 21 .
+
+re2c:filename a owl:DatatypeProperty ;
+    rdfs:label "filename (literal)" ;
+    rdfs:comment "Literal value for filename field when it contains a terminal node" ;
+    re2c:fieldId 7 ;
+    re2c:isTerminalField true .
+
+re2c:format a owl:DatatypeProperty ;
+    rdfs:label "format (literal)" ;
+    rdfs:comment "Literal value for format field when it contains a terminal node" ;
+    re2c:fieldId 8 ;
+    re2c:isTerminalField true .
+
+re2c:format_directive a owl:Class ;
+    rdfs:label "format_directive" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 136 .
+
+re2c:from a owl:DatatypeProperty ;
+    rdfs:label "from (literal)" ;
+    rdfs:comment "Literal value for from field when it contains a terminal node" ;
+    re2c:fieldId 9 ;
+    re2c:isTerminalField true .
+
+re2c:getstate_block a owl:Class ;
+    rdfs:label "getstate_block" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 129 .
+
+re2c:global_block a owl:Class ;
+    rdfs:label "global_block" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 123 .
+
+re2c:header_off_block a owl:Class ;
+    rdfs:label "header_off_block" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 133 .
+
+re2c:header_on_block a owl:Class ;
+    rdfs:label "header_on_block" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 132 .
+
+re2c:hex_digit a owl:Class ;
+    rdfs:label "hex_digit" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 109 .
+
+re2c:host_lang a owl:Class ;
+    rdfs:label "host_lang" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 2,
+        174 .
+
+re2c:identifier a owl:Class ;
+    rdfs:label "identifier" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 1 .
+
+re2c:ignore_block a owl:Class ;
+    rdfs:label "ignore_block" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 21 .
+
+re2c:include a owl:Class ;
+    rdfs:label "include" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 177 .
+
+re2c:input_conf a owl:Class ;
+    rdfs:label "input_conf" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 165 .
+
+re2c:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+re2c:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+re2c:label a owl:Class ;
+    rdfs:label "label" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 221 .
+
+re2c:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+re2c:limits a owl:Class ;
+    rdfs:label "limits" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 190 .
+
+re2c:linedir a owl:Class ;
+    rdfs:label "linedir" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 208 .
+
+re2c:linenum a owl:DatatypeProperty ;
+    rdfs:label "linenum (literal)" ;
+    rdfs:comment "Literal value for linenum field when it contains a terminal node" ;
+    re2c:fieldId 11 ;
+    re2c:isTerminalField true .
+
+re2c:literal a owl:Class ;
+    rdfs:label "literal" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 199 .
+
+re2c:local_block a owl:Class ;
+    rdfs:label "local_block" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 124 .
+
+re2c:lookahead a owl:Class ;
+    rdfs:label "lookahead" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 179 .
+
+re2c:max_block a owl:Class ;
+    rdfs:label "max_block" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 127 .
+
+re2c:maximum a owl:DatatypeProperty ;
+    rdfs:label "maximum (literal)" ;
+    rdfs:comment "Literal value for maximum field when it contains a terminal node" ;
+    re2c:fieldId 13 ;
+    re2c:isTerminalField true .
+
+re2c:maxnmatch_block a owl:Class ;
+    rdfs:label "maxnmatch_block" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 128 .
+
+re2c:minimum a owl:DatatypeProperty ;
+    rdfs:label "minimum (literal)" ;
+    rdfs:comment "Literal value for minimum field when it contains a terminal node" ;
+    re2c:fieldId 14 ;
+    re2c:isTerminalField true .
+
+re2c:mtag a owl:Class ;
+    rdfs:label "mtag" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 205 .
+
+re2c:mtags_block a owl:Class ;
+    rdfs:label "mtags_block" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 131 .
+
+re2c:name a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "name",
+        "name (literal)" ;
+    rdfs:comment "Literal value for name field when it contains a terminal node" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:fieldId 15 ;
+    re2c:isSupertype true ;
+    re2c:isTerminalField true ;
+    re2c:nodeTypeId 222 .
+
+re2c:named_definition a owl:Class ;
+    rdfs:label "named_definition" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 139 .
+
+re2c:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+re2c:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+re2c:number a owl:Class ;
+    rdfs:label "number" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 87,
+        206 .
+
+re2c:oct_digit a owl:Class ;
+    rdfs:label "oct_digit" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 110 .
+
+re2c:option a owl:DatatypeProperty ;
+    rdfs:label "option (literal)" ;
+    rdfs:comment "Literal value for option field when it contains a terminal node" ;
+    re2c:fieldId 17 ;
+    re2c:isTerminalField true .
+
+re2c:option_name a owl:Class ;
+    rdfs:label "option_name" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 27 .
+
+re2c:ordinary_rule a owl:Class ;
+    rdfs:label "ordinary_rule" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 168 .
+
+re2c:parenthesized a owl:Class ;
+    rdfs:label "parenthesized" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 195 .
+
+re2c:pattern a owl:Class ;
+    rdfs:label "pattern" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 172 .
+
+re2c:quote a owl:Class ;
+    rdfs:label "quote" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 97 .
+
+re2c:range a owl:Class ;
+    rdfs:label "range" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 197 .
+
+re2c:re2c a owl:Class ;
+    rdfs:label "re2c" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 121 .
+
+re2c:regex a owl:Class ;
+    rdfs:label "regex" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 178 .
+
+re2c:repetition a owl:Class ;
+    rdfs:label "repetition" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 188 .
+
+re2c:rules_block a owl:Class ;
+    rdfs:label "rules_block" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 125 .
+
+re2c:separator a owl:DatatypeProperty ;
+    rdfs:label "separator (literal)" ;
+    rdfs:comment "Literal value for separator field when it contains a terminal node" ;
+    re2c:fieldId 19 ;
+    re2c:isTerminalField true .
+
+re2c:separator_directive a owl:Class ;
+    rdfs:label "separator_directive" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 137 .
+
+re2c:set_api a owl:Class ;
+    rdfs:label "set_api" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 151 .
+
+re2c:set_cgoto a owl:Class ;
+    rdfs:label "set_cgoto" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 150 .
+
+re2c:set_cond a owl:Class ;
+    rdfs:label "set_cond" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 144 .
+
+re2c:set_condenumprefix a owl:Class ;
+    rdfs:label "set_condenumprefix" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 158 .
+
+re2c:set_condprefix a owl:Class ;
+    rdfs:label "set_condprefix" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 157 .
+
+re2c:set_eof a owl:Class ;
+    rdfs:label "set_eof" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 155 .
+
+re2c:set_flags a owl:Class ;
+    rdfs:label "set_flags" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 142 .
+
+re2c:set_header a owl:Class ;
+    rdfs:label "set_header" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 161 .
+
+re2c:set_indent a owl:Class ;
+    rdfs:label "set_indent" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 153 .
+
+re2c:set_label a owl:Class ;
+    rdfs:label "set_label" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 145 .
+
+re2c:set_posixcaptures a owl:Class ;
+    rdfs:label "set_posixcaptures" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 160 .
+
+re2c:set_sentinel a owl:Class ;
+    rdfs:label "set_sentinel" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 156 .
+
+re2c:set_startlabel a owl:Class ;
+    rdfs:label "set_startlabel" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 159 .
+
+re2c:set_state a owl:Class ;
+    rdfs:label "set_state" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 148 .
+
+re2c:set_tags a owl:Class ;
+    rdfs:label "set_tags" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 152 .
+
+re2c:set_variable a owl:Class ;
+    rdfs:label "set_variable" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 146 .
+
+re2c:set_yybm a owl:Class ;
+    rdfs:label "set_yybm" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 149 .
+
+re2c:set_yych a owl:Class ;
+    rdfs:label "set_yych" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 147 .
+
+re2c:set_yyfill a owl:Class ;
+    rdfs:label "set_yyfill" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 154 .
+
+re2c:shortcut a owl:Class ;
+    rdfs:label "shortcut" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 170 .
+
+re2c:sstring a owl:Class ;
+    rdfs:label "sstring" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 201 .
+
+re2c:stag a owl:Class ;
+    rdfs:label "stag" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 204 .
+
+re2c:stags_block a owl:Class ;
+    rdfs:label "stags_block" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 130 .
+
+re2c:to a owl:DatatypeProperty ;
+    rdfs:label "to (literal)" ;
+    rdfs:comment "Literal value for to field when it contains a terminal node" ;
+    re2c:fieldId 20 ;
+    re2c:isTerminalField true .
+
+re2c:use a owl:Class ;
+    rdfs:label "use" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 176 .
+
+re2c:use_block a owl:Class ;
+    rdfs:label "use_block" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 126 .
+
+re2c:value a owl:DatatypeProperty ;
+    rdfs:label "value (literal)" ;
+    rdfs:comment "Literal value for value field when it contains a terminal node" ;
+    re2c:fieldId 21 ;
+    re2c:isTerminalField true .
+
+re2c:wildcard a owl:Class ;
+    rdfs:label "wildcard" ;
+    rdfs:isDefinedBy re2c: ;
+    rdfs:subClassOf ast:Node ;
+    re2c:isSupertype true ;
+    re2c:nodeTypeId 198 .
+
+re2c: a owl:Ontology ;
+    rdfs:label "Re2C Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for re2c" ;
+    owl:versionInfo "v0.25" ;
+    re2c:abiVersion 14 ;
+    re2c:fieldCount 21 ;
+    re2c:languageName "None" ;
+    re2c:nodeKindCount 223 .
+

@@ -1,0 +1,1347 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix perl: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/perl/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+perl:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+perl:alternative a owl:DatatypeProperty ;
+    rdfs:label "alternative (literal)" ;
+    rdfs:comment "Literal value for alternative field when it contains a terminal node" ;
+    perl:fieldId 1 ;
+    perl:isTerminalField true .
+
+perl:ambiguous_function_call_expression a owl:Class ;
+    rdfs:label "ambiguous_function_call_expression" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 396 .
+
+perl:amper_deref_expression a owl:Class ;
+    rdfs:label "amper_deref_expression" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 378 .
+
+perl:anonymous_array_expression a owl:Class ;
+    rdfs:label "anonymous_array_expression" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 360 .
+
+perl:anonymous_hash_expression a owl:Class ;
+    rdfs:label "anonymous_hash_expression" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 362,
+        395 .
+
+perl:anonymous_method_expression a owl:Class ;
+    rdfs:label "anonymous_method_expression" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 364 .
+
+perl:anonymous_slice_expression a owl:Class ;
+    rdfs:label "anonymous_slice_expression" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 342 .
+
+perl:anonymous_subroutine_expression a owl:Class ;
+    rdfs:label "anonymous_subroutine_expression" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 363 .
+
+perl:arguments a owl:DatatypeProperty ;
+    rdfs:label "arguments (literal)" ;
+    rdfs:comment "Literal value for arguments field when it contains a terminal node" ;
+    perl:fieldId 2 ;
+    perl:isTerminalField true .
+
+perl:array a owl:Class ;
+    rdfs:label "array" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 405,
+        406,
+        407,
+        437 .
+
+perl:array_deref_expression a owl:Class ;
+    rdfs:label "array_deref_expression" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 375,
+        443 .
+
+perl:array_element_expression a owl:Class ;
+    rdfs:label "array_element_expression" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 338,
+        439 .
+
+perl:arraylen a owl:Class ;
+    rdfs:label "arraylen" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 413 .
+
+perl:arraylen_deref_expression a owl:Class ;
+    rdfs:label "arraylen_deref_expression" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 376 .
+
+perl:arrayref a owl:DatatypeProperty ;
+    rdfs:label "arrayref (literal)" ;
+    rdfs:comment "Literal value for arrayref field when it contains a terminal node" ;
+    perl:fieldId 4 ;
+    perl:isTerminalField true .
+
+perl:assignment_expression a owl:Class ;
+    rdfs:label "assignment_expression" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 351 .
+
+perl:attribute a owl:Class ;
+    rdfs:label "attribute" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 421 .
+
+perl:attribute_name a owl:Class ;
+    rdfs:label "attribute_name" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 422 .
+
+perl:attribute_value a owl:Class ;
+    rdfs:label "attribute_value" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 275 .
+
+perl:attrlist a owl:Class ;
+    rdfs:label "attrlist" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 420 .
+
+perl:autoquoted_bareword a owl:Class ;
+    rdfs:label "autoquoted_bareword" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 464 .
+
+perl:await_expression a owl:Class ;
+    rdfs:label "await_expression" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 367 .
+
+perl:bareword a owl:Class ;
+    rdfs:label "bareword" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 468 .
+
+perl:binary_expression a owl:Class ;
+    rdfs:label "binary_expression" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 352 .
+
+perl:block a owl:Class ;
+    rdfs:label "block" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 293 .
+
+perl:block_statement a owl:Class ;
+    rdfs:label "block_statement" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 479 .
+
+perl:boolean a owl:Class ;
+    rdfs:label "boolean" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 470 .
+
+perl:callback a owl:DatatypeProperty ;
+    rdfs:label "callback (literal)" ;
+    rdfs:comment "Literal value for callback field when it contains a terminal node" ;
+    perl:fieldId 8 ;
+    perl:isTerminalField true .
+
+perl:catch_expr a owl:DatatypeProperty ;
+    rdfs:label "catch_expr (literal)" ;
+    rdfs:comment "Literal value for catch_expr field when it contains a terminal node" ;
+    perl:fieldId 10 ;
+    perl:isTerminalField true .
+
+perl:class_phaser_statement a owl:Class ;
+    rdfs:label "class_phaser_statement" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 301 .
+
+perl:class_statement a owl:Class ;
+    rdfs:label "class_statement" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 299 .
+
+perl:coderef_call_expression a owl:Class ;
+    rdfs:label "coderef_call_expression" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 341 .
+
+perl:command_heredoc_token a owl:Class ;
+    rdfs:label "command_heredoc_token" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 458 .
+
+perl:command_string a owl:Class ;
+    rdfs:label "command_string" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 450 .
+
+perl:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 216 .
+
+perl:condition a owl:DatatypeProperty ;
+    rdfs:label "condition (literal)" ;
+    rdfs:comment "Literal value for condition field when it contains a terminal node" ;
+    perl:fieldId 11 ;
+    perl:isTerminalField true .
+
+perl:conditional_expression a owl:Class ;
+    rdfs:label "conditional_expression" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 358 .
+
+perl:conditional_statement a owl:Class ;
+    rdfs:label "conditional_statement" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 313 .
+
+perl:consequent a owl:DatatypeProperty ;
+    rdfs:label "consequent (literal)" ;
+    rdfs:comment "Literal value for consequent field when it contains a terminal node" ;
+    perl:fieldId 12 ;
+    perl:isTerminalField true .
+
+perl:container_variable a owl:Class ;
+    rdfs:label "container_variable" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 336 .
+
+perl:cstyle_for_statement a owl:Class ;
+    rdfs:label "cstyle_for_statement" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 316 .
+
+perl:data_section a owl:Class ;
+    rdfs:label "data_section" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 480 .
+
+perl:default a owl:DatatypeProperty ;
+    rdfs:label "default (literal)" ;
+    rdfs:comment "Literal value for default field when it contains a terminal node" ;
+    perl:fieldId 15 ;
+    perl:isTerminalField true .
+
+perl:defer_statement a owl:Class ;
+    rdfs:label "defer_statement" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 320 .
+
+perl:do_expression a owl:Class ;
+    rdfs:label "do_expression" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 365 .
+
+perl:else a owl:Class ;
+    rdfs:label "else" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 328 .
+
+perl:elsif a owl:Class ;
+    rdfs:label "elsif" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 329 .
+
+perl:eof_marker a owl:Class ;
+    rdfs:label "eof_marker" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 217,
+        218,
+        220,
+        261 .
+
+perl:equality_expression a owl:Class ;
+    rdfs:label "equality_expression" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 353 .
+
+perl:escape_sequence a owl:Class ;
+    rdfs:label "escape_sequence" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 269 .
+
+perl:escaped_delimiter a owl:Class ;
+    rdfs:label "escaped_delimiter" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 270 .
+
+perl:eval_expression a owl:Class ;
+    rdfs:label "eval_expression" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 366 .
+
+perl:expression_statement a owl:Class ;
+    rdfs:label "expression_statement" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 321 .
+
+perl:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+perl:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+perl:field_alternative a owl:ObjectProperty ;
+    rdfs:label "alternative (structural)" ;
+    rdfs:comment "Structural reference for alternative field when it contains a non-terminal node" ;
+    perl:fieldId 1 .
+
+perl:field_arguments a owl:ObjectProperty ;
+    rdfs:label "arguments (structural)" ;
+    rdfs:comment "Structural reference for arguments field when it contains a non-terminal node" ;
+    perl:fieldId 2 .
+
+perl:field_array a owl:ObjectProperty ;
+    rdfs:label "array (structural)" ;
+    rdfs:comment "Structural reference for array field when it contains a non-terminal node" ;
+    perl:fieldId 3 .
+
+perl:field_arrayref a owl:ObjectProperty ;
+    rdfs:label "arrayref (structural)" ;
+    rdfs:comment "Structural reference for arrayref field when it contains a non-terminal node" ;
+    perl:fieldId 4 .
+
+perl:field_attributes a owl:ObjectProperty ;
+    rdfs:label "attributes (structural)" ;
+    rdfs:comment "Structural reference for attributes field when it contains a non-terminal node" ;
+    perl:fieldId 5 .
+
+perl:field_block a owl:ObjectProperty ;
+    rdfs:label "block (structural)" ;
+    rdfs:comment "Structural reference for block field when it contains a non-terminal node" ;
+    perl:fieldId 6 .
+
+perl:field_body a owl:ObjectProperty ;
+    rdfs:label "body (structural)" ;
+    rdfs:comment "Structural reference for body field when it contains a non-terminal node" ;
+    perl:fieldId 7 .
+
+perl:field_callback a owl:ObjectProperty ;
+    rdfs:label "callback (structural)" ;
+    rdfs:comment "Structural reference for callback field when it contains a non-terminal node" ;
+    perl:fieldId 8 .
+
+perl:field_catch_block a owl:ObjectProperty ;
+    rdfs:label "catch_block (structural)" ;
+    rdfs:comment "Structural reference for catch_block field when it contains a non-terminal node" ;
+    perl:fieldId 9 .
+
+perl:field_catch_expr a owl:ObjectProperty ;
+    rdfs:label "catch_expr (structural)" ;
+    rdfs:comment "Structural reference for catch_expr field when it contains a non-terminal node" ;
+    perl:fieldId 10 .
+
+perl:field_condition a owl:ObjectProperty ;
+    rdfs:label "condition (structural)" ;
+    rdfs:comment "Structural reference for condition field when it contains a non-terminal node" ;
+    perl:fieldId 11 .
+
+perl:field_consequent a owl:ObjectProperty ;
+    rdfs:label "consequent (structural)" ;
+    rdfs:comment "Structural reference for consequent field when it contains a non-terminal node" ;
+    perl:fieldId 12 .
+
+perl:field_content a owl:ObjectProperty ;
+    rdfs:label "content (structural)" ;
+    rdfs:comment "Structural reference for content field when it contains a non-terminal node" ;
+    perl:fieldId 13 .
+
+perl:field_continue a owl:ObjectProperty ;
+    rdfs:label "continue (structural)" ;
+    rdfs:comment "Structural reference for continue field when it contains a non-terminal node" ;
+    perl:fieldId 14 .
+
+perl:field_default a owl:ObjectProperty ;
+    rdfs:label "default (structural)" ;
+    rdfs:comment "Structural reference for default field when it contains a non-terminal node" ;
+    perl:fieldId 15 .
+
+perl:field_finally_block a owl:ObjectProperty ;
+    rdfs:label "finally_block (structural)" ;
+    rdfs:comment "Structural reference for finally_block field when it contains a non-terminal node" ;
+    perl:fieldId 16 .
+
+perl:field_function a owl:ObjectProperty ;
+    rdfs:label "function (structural)" ;
+    rdfs:comment "Structural reference for function field when it contains a non-terminal node" ;
+    perl:fieldId 17 .
+
+perl:field_hash a owl:ObjectProperty ;
+    rdfs:label "hash (structural)" ;
+    rdfs:comment "Structural reference for hash field when it contains a non-terminal node" ;
+    perl:fieldId 18 .
+
+perl:field_hashref a owl:ObjectProperty ;
+    rdfs:label "hashref (structural)" ;
+    rdfs:comment "Structural reference for hashref field when it contains a non-terminal node" ;
+    perl:fieldId 19 .
+
+perl:field_index a owl:ObjectProperty ;
+    rdfs:label "index (structural)" ;
+    rdfs:comment "Structural reference for index field when it contains a non-terminal node" ;
+    perl:fieldId 20 .
+
+perl:field_initialiser a owl:ObjectProperty ;
+    rdfs:label "initialiser (structural)" ;
+    rdfs:comment "Structural reference for initialiser field when it contains a non-terminal node" ;
+    perl:fieldId 21 .
+
+perl:field_invocant a owl:ObjectProperty ;
+    rdfs:label "invocant (structural)" ;
+    rdfs:comment "Structural reference for invocant field when it contains a non-terminal node" ;
+    perl:fieldId 22 .
+
+perl:field_iterator a owl:ObjectProperty ;
+    rdfs:label "iterator (structural)" ;
+    rdfs:comment "Structural reference for iterator field when it contains a non-terminal node" ;
+    perl:fieldId 23 .
+
+perl:field_key a owl:ObjectProperty ;
+    rdfs:label "key (structural)" ;
+    rdfs:comment "Structural reference for key field when it contains a non-terminal node" ;
+    perl:fieldId 24 .
+
+perl:field_left a owl:ObjectProperty ;
+    rdfs:label "left (structural)" ;
+    rdfs:comment "Structural reference for left field when it contains a non-terminal node" ;
+    perl:fieldId 26 .
+
+perl:field_lexical a owl:ObjectProperty ;
+    rdfs:label "lexical (structural)" ;
+    rdfs:comment "Structural reference for lexical field when it contains a non-terminal node" ;
+    perl:fieldId 27 .
+
+perl:field_list a owl:ObjectProperty ;
+    rdfs:label "list (structural)" ;
+    rdfs:comment "Structural reference for list field when it contains a non-terminal node" ;
+    perl:fieldId 28 .
+
+perl:field_loopex a owl:ObjectProperty ;
+    rdfs:label "loopex (structural)" ;
+    rdfs:comment "Structural reference for loopex field when it contains a non-terminal node" ;
+    perl:fieldId 29 .
+
+perl:field_method a owl:ObjectProperty ;
+    rdfs:label "method (structural)" ;
+    rdfs:comment "Structural reference for method field when it contains a non-terminal node" ;
+    perl:fieldId 30 .
+
+perl:field_operand a owl:ObjectProperty ;
+    rdfs:label "operand (structural)" ;
+    rdfs:comment "Structural reference for operand field when it contains a non-terminal node" ;
+    perl:fieldId 34 .
+
+perl:field_operator a owl:ObjectProperty ;
+    rdfs:label "operator (structural)" ;
+    rdfs:comment "Structural reference for operator field when it contains a non-terminal node" ;
+    perl:fieldId 35 .
+
+perl:field_phase a owl:ObjectProperty ;
+    rdfs:label "phase (structural)" ;
+    rdfs:comment "Structural reference for phase field when it contains a non-terminal node" ;
+    perl:fieldId 36 .
+
+perl:field_right a owl:ObjectProperty ;
+    rdfs:label "right (structural)" ;
+    rdfs:comment "Structural reference for right field when it contains a non-terminal node" ;
+    perl:fieldId 37 .
+
+perl:field_statement a owl:ObjectProperty ;
+    rdfs:label "statement (structural)" ;
+    rdfs:comment "Structural reference for statement field when it contains a non-terminal node" ;
+    perl:fieldId 38 .
+
+perl:field_try_block a owl:ObjectProperty ;
+    rdfs:label "try_block (structural)" ;
+    rdfs:comment "Structural reference for try_block field when it contains a non-terminal node" ;
+    perl:fieldId 39 .
+
+perl:field_variable a owl:ObjectProperty ;
+    rdfs:label "variable (structural)" ;
+    rdfs:comment "Structural reference for variable field when it contains a non-terminal node" ;
+    perl:fieldId 41 .
+
+perl:field_variables a owl:ObjectProperty ;
+    rdfs:label "variables (structural)" ;
+    rdfs:comment "Structural reference for variables field when it contains a non-terminal node" ;
+    perl:fieldId 42 .
+
+perl:fileglob_expression a owl:Class ;
+    rdfs:label "fileglob_expression" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 350 .
+
+perl:filehandle a owl:Class ;
+    rdfs:label "filehandle" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 481 .
+
+perl:filename a owl:Class ;
+    rdfs:label "filename" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 482 .
+
+perl:for_statement a owl:Class ;
+    rdfs:label "for_statement" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 318 .
+
+perl:func0op_call_expression a owl:Class ;
+    rdfs:label "func0op_call_expression" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 382 .
+
+perl:func1op_call_expression a owl:Class ;
+    rdfs:label "func1op_call_expression" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 383 .
+
+perl:function a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "function",
+        "function (literal)" ;
+    rdfs:comment "Literal value for function field when it contains a terminal node" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:fieldId 17 ;
+    perl:isSupertype true ;
+    perl:isTerminalField true ;
+    perl:nodeTypeId 397,
+        415 .
+
+perl:function_call_expression a owl:Class ;
+    rdfs:label "function_call_expression" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 394 .
+
+perl:glob a owl:Class ;
+    rdfs:label "glob" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 414 .
+
+perl:glob_deref_expression a owl:Class ;
+    rdfs:label "glob_deref_expression" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 379 .
+
+perl:glob_slot_expression a owl:Class ;
+    rdfs:label "glob_slot_expression" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 337 .
+
+perl:goto_expression a owl:Class ;
+    rdfs:label "goto_expression" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 389 .
+
+perl:hash a owl:Class ;
+    rdfs:label "hash" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 410,
+        411,
+        412 .
+
+perl:hash_deref_expression a owl:Class ;
+    rdfs:label "hash_deref_expression" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 377 .
+
+perl:hash_element_expression a owl:Class ;
+    rdfs:label "hash_element_expression" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 340,
+        440 .
+
+perl:hashref a owl:DatatypeProperty ;
+    rdfs:label "hashref (literal)" ;
+    rdfs:comment "Literal value for hashref field when it contains a terminal node" ;
+    perl:fieldId 19 ;
+    perl:isTerminalField true .
+
+perl:heredoc_content a owl:Class ;
+    rdfs:label "heredoc_content" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 459 .
+
+perl:heredoc_end a owl:Class ;
+    rdfs:label "heredoc_end" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 282 .
+
+perl:heredoc_token a owl:Class ;
+    rdfs:label "heredoc_token" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 457 .
+
+perl:identifier a owl:Class ;
+    rdfs:label "identifier" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 466 .
+
+perl:index a owl:DatatypeProperty ;
+    rdfs:label "index (literal)" ;
+    rdfs:comment "Literal value for index field when it contains a terminal node" ;
+    perl:fieldId 20 ;
+    perl:isTerminalField true .
+
+perl:indirect_object a owl:Class ;
+    rdfs:label "indirect_object" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 393 .
+
+perl:initialiser a owl:DatatypeProperty ;
+    rdfs:label "initialiser (literal)" ;
+    rdfs:comment "Literal value for initialiser field when it contains a terminal node" ;
+    perl:fieldId 21 ;
+    perl:isTerminalField true .
+
+perl:interpolated_string_literal a owl:Class ;
+    rdfs:label "interpolated_string_literal" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 434 .
+
+perl:invocant a owl:DatatypeProperty ;
+    rdfs:label "invocant (literal)" ;
+    rdfs:comment "Literal value for invocant field when it contains a terminal node" ;
+    perl:fieldId 22 ;
+    perl:isTerminalField true .
+
+perl:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+perl:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+perl:iterator a owl:DatatypeProperty ;
+    rdfs:label "iterator (literal)" ;
+    rdfs:comment "Literal value for iterator field when it contains a terminal node" ;
+    perl:fieldId 23 ;
+    perl:isTerminalField true .
+
+perl:key a owl:DatatypeProperty ;
+    rdfs:label "key (literal)" ;
+    rdfs:comment "Literal value for key field when it contains a terminal node" ;
+    perl:fieldId 24 ;
+    perl:isTerminalField true .
+
+perl:keyval_container_variable a owl:Class ;
+    rdfs:label "keyval_container_variable" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 346 .
+
+perl:keyval_expression a owl:Class ;
+    rdfs:label "keyval_expression" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 347 .
+
+perl:label a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "label",
+        "label (literal)" ;
+    rdfs:comment "Literal value for label field when it contains a terminal node" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:fieldId 25 ;
+    perl:isSupertype true ;
+    perl:isTerminalField true ;
+    perl:nodeTypeId 483 .
+
+perl:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+perl:left a owl:DatatypeProperty ;
+    rdfs:label "left (literal)" ;
+    rdfs:comment "Literal value for left field when it contains a terminal node" ;
+    perl:fieldId 26 ;
+    perl:isTerminalField true .
+
+perl:list a owl:DatatypeProperty ;
+    rdfs:label "list (literal)" ;
+    rdfs:comment "Literal value for list field when it contains a terminal node" ;
+    perl:fieldId 28 ;
+    perl:isTerminalField true .
+
+perl:list_expression a owl:Class ;
+    rdfs:label "list_expression" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 334,
+        361 .
+
+perl:localization_expression a owl:Class ;
+    rdfs:label "localization_expression" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 371 .
+
+perl:loop_statement a owl:Class ;
+    rdfs:label "loop_statement" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 315 .
+
+perl:loopex_expression a owl:Class ;
+    rdfs:label "loopex_expression" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 388 .
+
+perl:lowprec_logical_expression a owl:Class ;
+    rdfs:label "lowprec_logical_expression" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 331 .
+
+perl:mandatory_parameter a owl:Class ;
+    rdfs:label "mandatory_parameter" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 304 .
+
+perl:map_grep_expression a owl:Class ;
+    rdfs:label "map_grep_expression" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 384 .
+
+perl:match_regexp a owl:Class ;
+    rdfs:label "match_regexp" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 452 .
+
+perl:match_regexp_modifiers a owl:Class ;
+    rdfs:label "match_regexp_modifiers" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 236 .
+
+perl:method a owl:Class ;
+    rdfs:label "method" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 399 .
+
+perl:method_call_expression a owl:Class ;
+    rdfs:label "method_call_expression" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 398 .
+
+perl:method_declaration_statement a owl:Class ;
+    rdfs:label "method_declaration_statement" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 311 .
+
+perl:modifiers a owl:DatatypeProperty ;
+    rdfs:label "modifiers (literal)" ;
+    rdfs:comment "Literal value for modifiers field when it contains a terminal node" ;
+    perl:fieldId 31 ;
+    perl:isTerminalField true .
+
+perl:module a owl:DatatypeProperty ;
+    rdfs:label "module (literal)" ;
+    rdfs:comment "Literal value for module field when it contains a terminal node" ;
+    perl:fieldId 32 ;
+    perl:isTerminalField true .
+
+perl:name a owl:DatatypeProperty ;
+    rdfs:label "name (literal)" ;
+    rdfs:comment "Literal value for name field when it contains a terminal node" ;
+    perl:fieldId 33 ;
+    perl:isTerminalField true .
+
+perl:named_parameter a owl:Class ;
+    rdfs:label "named_parameter" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 306 .
+
+perl:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+perl:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+perl:number a owl:Class ;
+    rdfs:label "number" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 249 .
+
+perl:operand a owl:DatatypeProperty ;
+    rdfs:label "operand (literal)" ;
+    rdfs:comment "Literal value for operand field when it contains a terminal node" ;
+    perl:fieldId 34 ;
+    perl:isTerminalField true .
+
+perl:optional_parameter a owl:Class ;
+    rdfs:label "optional_parameter" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 305 .
+
+perl:package a owl:Class ;
+    rdfs:label "package" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 460 .
+
+perl:package_statement a owl:Class ;
+    rdfs:label "package_statement" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 298 .
+
+perl:phaser_statement a owl:Class ;
+    rdfs:label "phaser_statement" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 312 .
+
+perl:pod a owl:Class ;
+    rdfs:label "pod" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 272 .
+
+perl:postfix_conditional_expression a owl:Class ;
+    rdfs:label "postfix_conditional_expression" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 323 .
+
+perl:postfix_for_expression a owl:Class ;
+    rdfs:label "postfix_for_expression" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 325 .
+
+perl:postfix_loop_expression a owl:Class ;
+    rdfs:label "postfix_loop_expression" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 324 .
+
+perl:postinc_expression a owl:Class ;
+    rdfs:label "postinc_expression" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 357 .
+
+perl:preinc_expression a owl:Class ;
+    rdfs:label "preinc_expression" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 356 .
+
+perl:prototype a owl:Class ;
+    rdfs:label "prototype" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 276 .
+
+perl:quoted_regexp a owl:Class ;
+    rdfs:label "quoted_regexp" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 451 .
+
+perl:quoted_regexp_modifiers a owl:Class ;
+    rdfs:label "quoted_regexp_modifiers" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 235 .
+
+perl:quoted_word_list a owl:Class ;
+    rdfs:label "quoted_word_list" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 449 .
+
+perl:readline_expression a owl:Class ;
+    rdfs:label "readline_expression" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 349 .
+
+perl:refgen_expression a owl:Class ;
+    rdfs:label "refgen_expression" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 359 .
+
+perl:regexp_content a owl:Class ;
+    rdfs:label "regexp_content" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 485 .
+
+perl:relational_expression a owl:Class ;
+    rdfs:label "relational_expression" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 354 .
+
+perl:replacement a owl:Class ;
+    rdfs:label "replacement" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 486 .
+
+perl:require_expression a owl:Class ;
+    rdfs:label "require_expression" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 380 .
+
+perl:require_version_expression a owl:Class ;
+    rdfs:label "require_version_expression" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 381 .
+
+perl:return_expression a owl:Class ;
+    rdfs:label "return_expression" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 390 .
+
+perl:right a owl:DatatypeProperty ;
+    rdfs:label "right (literal)" ;
+    rdfs:comment "Literal value for right field when it contains a terminal node" ;
+    perl:fieldId 37 ;
+    perl:isTerminalField true .
+
+perl:role_statement a owl:Class ;
+    rdfs:label "role_statement" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 300 .
+
+perl:scalar a owl:Class ;
+    rdfs:label "scalar" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 402,
+        403,
+        404,
+        436 .
+
+perl:scalar_deref_expression a owl:Class ;
+    rdfs:label "scalar_deref_expression" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 374,
+        442 .
+
+perl:signature a owl:Class ;
+    rdfs:label "signature" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 309 .
+
+perl:slice_container_variable a owl:Class ;
+    rdfs:label "slice_container_variable" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 344 .
+
+perl:slice_expression a owl:Class ;
+    rdfs:label "slice_expression" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 345,
+        441 .
+
+perl:slurpy_parameter a owl:Class ;
+    rdfs:label "slurpy_parameter" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 307 .
+
+perl:sort_expression a owl:Class ;
+    rdfs:label "sort_expression" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 386 .
+
+perl:source_file a owl:Class ;
+    rdfs:label "source_file" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 291 .
+
+perl:statement a owl:DatatypeProperty ;
+    rdfs:label "statement (literal)" ;
+    rdfs:comment "Literal value for statement field when it contains a terminal node" ;
+    perl:fieldId 38 ;
+    perl:isTerminalField true .
+
+perl:statement_label a owl:Class ;
+    rdfs:label "statement_label" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 295 .
+
+perl:string_content a owl:Class ;
+    rdfs:label "string_content" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 487 .
+
+perl:string_literal a owl:Class ;
+    rdfs:label "string_literal" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 433 .
+
+perl:stub_expression a owl:Class ;
+    rdfs:label "stub_expression" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 372 .
+
+perl:subroutine_declaration_statement a owl:Class ;
+    rdfs:label "subroutine_declaration_statement" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 310 .
+
+perl:substitution_regexp a owl:Class ;
+    rdfs:label "substitution_regexp" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 453 .
+
+perl:substitution_regexp_modifiers a owl:Class ;
+    rdfs:label "substitution_regexp_modifiers" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 237 .
+
+perl:transliteration_content a owl:Class ;
+    rdfs:label "transliteration_content" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 488 .
+
+perl:transliteration_expression a owl:Class ;
+    rdfs:label "transliteration_expression" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 456 .
+
+perl:transliteration_modifiers a owl:Class ;
+    rdfs:label "transliteration_modifiers" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 238 .
+
+perl:try_statement a owl:Class ;
+    rdfs:label "try_statement" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 319 .
+
+perl:unary_expression a owl:Class ;
+    rdfs:label "unary_expression" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 355 .
+
+perl:undef_expression a owl:Class ;
+    rdfs:label "undef_expression" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 391 .
+
+perl:use_statement a owl:Class ;
+    rdfs:label "use_statement" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 303 .
+
+perl:use_version_statement a owl:Class ;
+    rdfs:label "use_version_statement" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 302 .
+
+perl:value a owl:DatatypeProperty ;
+    rdfs:label "value (literal)" ;
+    rdfs:comment "Literal value for value field when it contains a terminal node" ;
+    perl:fieldId 40 ;
+    perl:isTerminalField true .
+
+perl:variable_declaration a owl:Class ;
+    rdfs:label "variable_declaration" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 369 .
+
+perl:varname a owl:Class ;
+    rdfs:label "varname" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 117,
+        285,
+        416,
+        417 .
+
+perl:version a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "version",
+        "version (literal)" ;
+    rdfs:comment "Literal value for version field when it contains a terminal node" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:fieldId 43 ;
+    perl:isSupertype true ;
+    perl:isTerminalField true ;
+    perl:nodeTypeId 242 .
+
+perl:yadayada a owl:Class ;
+    rdfs:label "yadayada" ;
+    rdfs:isDefinedBy perl: ;
+    rdfs:subClassOf ast:Node ;
+    perl:isSupertype true ;
+    perl:nodeTypeId 326 .
+
+perl: a owl:Ontology ;
+    rdfs:label "Perl Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for perl" ;
+    owl:versionInfo "v0.25" ;
+    perl:abiVersion 14 ;
+    perl:fieldCount 43 ;
+    perl:languageName "None" ;
+    perl:nodeKindCount 489 .
+

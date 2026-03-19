@@ -1,0 +1,1297 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix hack: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/hack/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+hack:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+hack:abstract_enum_class_declaration a owl:Class ;
+    rdfs:label "abstract_enum_class_declaration" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 297 .
+
+hack:abstract_modifier a owl:Class ;
+    rdfs:label "abstract_modifier" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 304 .
+
+hack:alias a owl:DatatypeProperty ;
+    rdfs:label "alias (literal)" ;
+    rdfs:comment "Literal value for alias field when it contains a terminal node" ;
+    hack:fieldId 1 ;
+    hack:isTerminalField true .
+
+hack:alias_declaration a owl:Class ;
+    rdfs:label "alias_declaration" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 269 .
+
+hack:anonymous_function_expression a owl:Class ;
+    rdfs:label "anonymous_function_expression" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 321 .
+
+hack:argument a owl:Class ;
+    rdfs:label "argument" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 267 .
+
+hack:arguments a owl:Class ;
+    rdfs:label "arguments" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 266 .
+
+hack:array a owl:Class ;
+    rdfs:label "array" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 241 .
+
+hack:array_type a owl:Class ;
+    rdfs:label "array_type" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 368 .
+
+hack:as_expression a owl:Class ;
+    rdfs:label "as_expression" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 256 .
+
+hack:async_modifier a owl:Class ;
+    rdfs:label "async_modifier" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 309 .
+
+hack:attribute_modifier a owl:Class ;
+    rdfs:label "attribute_modifier" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 307 .
+
+hack:await_modifier a owl:Class ;
+    rdfs:label "await_modifier" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 310 .
+
+hack:awaitable_expression a owl:Class ;
+    rdfs:label "awaitable_expression" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 257 .
+
+hack:binary_expression a owl:Class ;
+    rdfs:label "binary_expression" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 252,
+        325 .
+
+hack:braced_expression a owl:Class ;
+    rdfs:label "braced_expression" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 195 .
+
+hack:break_statement a owl:Class ;
+    rdfs:label "break_statement" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 201 .
+
+hack:call_expression a owl:Class ;
+    rdfs:label "call_expression" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 264 .
+
+hack:capability a owl:Class ;
+    rdfs:label "capability" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 273 .
+
+hack:capability_list a owl:Class ;
+    rdfs:label "capability_list" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 272 .
+
+hack:cast_expression a owl:Class ;
+    rdfs:label "cast_expression" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 259 .
+
+hack:catch_clause a owl:Class ;
+    rdfs:label "catch_clause" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 220 .
+
+hack:class_declaration a owl:Class ;
+    rdfs:label "class_declaration" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 278 .
+
+hack:collection a owl:Class ;
+    rdfs:label "collection" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 246 .
+
+hack:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 179 .
+
+hack:compound_statement a owl:Class ;
+    rdfs:label "compound_statement" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 199 .
+
+hack:concurrent_statement a owl:Class ;
+    rdfs:label "concurrent_statement" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 206 .
+
+hack:const_declaration a owl:Class ;
+    rdfs:label "const_declaration" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 288,
+        292 .
+
+hack:const_declarator a owl:Class ;
+    rdfs:label "const_declarator" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 289,
+        293 .
+
+hack:context_const_declaration a owl:Class ;
+    rdfs:label "context_const_declaration" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 291 .
+
+hack:continue_statement a owl:Class ;
+    rdfs:label "continue_statement" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 202 .
+
+hack:contravariant_modifier a owl:Class ;
+    rdfs:label "contravariant_modifier" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 369 .
+
+hack:covariant_modifier a owl:Class ;
+    rdfs:label "covariant_modifier" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 370 .
+
+hack:do_statement a owl:Class ;
+    rdfs:label "do_statement" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 217 .
+
+hack:echo_statement a owl:Class ;
+    rdfs:label "echo_statement" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 204 .
+
+hack:element_initializer a owl:Class ;
+    rdfs:label "element_initializer" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 242 .
+
+hack:embedded_braced_expression a owl:Class ;
+    rdfs:label "embedded_braced_expression" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 194 .
+
+hack:empty_statement a owl:Class ;
+    rdfs:label "empty_statement" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 197 .
+
+hack:enum_class_declaration a owl:Class ;
+    rdfs:label "enum_class_declaration" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 298 .
+
+hack:enum_class_label a owl:Class ;
+    rdfs:label "enum_class_label" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 299 .
+
+hack:enum_declaration a owl:Class ;
+    rdfs:label "enum_declaration" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 296 .
+
+hack:enumerator a owl:Class ;
+    rdfs:label "enumerator" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 300 .
+
+hack:expression_statement a owl:Class ;
+    rdfs:label "expression_statement" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 198 .
+
+hack:expression_tree a owl:Class ;
+    rdfs:label "expression_tree" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 226 .
+
+hack:extends_clause a owl:Class ;
+    rdfs:label "extends_clause" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 283 .
+
+hack:false a owl:Class ;
+    rdfs:label "false" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 224 .
+
+hack:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+hack:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+hack:field_alias a owl:ObjectProperty ;
+    rdfs:label "alias (structural)" ;
+    rdfs:comment "Structural reference for alias field when it contains a non-terminal node" ;
+    hack:fieldId 1 .
+
+hack:field_alternative a owl:ObjectProperty ;
+    rdfs:label "alternative (structural)" ;
+    rdfs:comment "Structural reference for alternative field when it contains a non-terminal node" ;
+    hack:fieldId 2 .
+
+hack:field_as a owl:ObjectProperty ;
+    rdfs:label "as (structural)" ;
+    rdfs:comment "Structural reference for as field when it contains a non-terminal node" ;
+    hack:fieldId 3 .
+
+hack:field_body a owl:ObjectProperty ;
+    rdfs:label "body (structural)" ;
+    rdfs:comment "Structural reference for body field when it contains a non-terminal node" ;
+    hack:fieldId 4 .
+
+hack:field_collection a owl:ObjectProperty ;
+    rdfs:label "collection (structural)" ;
+    rdfs:comment "Structural reference for collection field when it contains a non-terminal node" ;
+    hack:fieldId 5 .
+
+hack:field_condition a owl:ObjectProperty ;
+    rdfs:label "condition (structural)" ;
+    rdfs:comment "Structural reference for condition field when it contains a non-terminal node" ;
+    hack:fieldId 6 .
+
+hack:field_consequence a owl:ObjectProperty ;
+    rdfs:label "consequence (structural)" ;
+    rdfs:comment "Structural reference for consequence field when it contains a non-terminal node" ;
+    hack:fieldId 7 .
+
+hack:field_constraint_left_type a owl:ObjectProperty ;
+    rdfs:label "constraint_left_type (structural)" ;
+    rdfs:comment "Structural reference for constraint_left_type field when it contains a non-terminal node" ;
+    hack:fieldId 8 .
+
+hack:field_constraint_operator a owl:ObjectProperty ;
+    rdfs:label "constraint_operator (structural)" ;
+    rdfs:comment "Structural reference for constraint_operator field when it contains a non-terminal node" ;
+    hack:fieldId 9 .
+
+hack:field_constraint_right_type a owl:ObjectProperty ;
+    rdfs:label "constraint_right_type (structural)" ;
+    rdfs:comment "Structural reference for constraint_right_type field when it contains a non-terminal node" ;
+    hack:fieldId 10 .
+
+hack:field_constraint_type a owl:ObjectProperty ;
+    rdfs:label "constraint_type (structural)" ;
+    rdfs:comment "Structural reference for constraint_type field when it contains a non-terminal node" ;
+    hack:fieldId 11 .
+
+hack:field_context a owl:ObjectProperty ;
+    rdfs:label "context (structural)" ;
+    rdfs:comment "Structural reference for context field when it contains a non-terminal node" ;
+    hack:fieldId 12 .
+
+hack:field_default a owl:ObjectProperty ;
+    rdfs:label "default (structural)" ;
+    rdfs:comment "Structural reference for default field when it contains a non-terminal node" ;
+    hack:fieldId 13 .
+
+hack:field_default_value a owl:ObjectProperty ;
+    rdfs:label "default_value (structural)" ;
+    rdfs:comment "Structural reference for default_value field when it contains a non-terminal node" ;
+    hack:fieldId 14 .
+
+hack:field_else a owl:ObjectProperty ;
+    rdfs:label "else (structural)" ;
+    rdfs:comment "Structural reference for else field when it contains a non-terminal node" ;
+    hack:fieldId 15 .
+
+hack:field_enum_class a owl:ObjectProperty ;
+    rdfs:label "enum_class (structural)" ;
+    rdfs:comment "Structural reference for enum_class field when it contains a non-terminal node" ;
+    hack:fieldId 16 .
+
+hack:field_function a owl:ObjectProperty ;
+    rdfs:label "function (structural)" ;
+    rdfs:comment "Structural reference for function field when it contains a non-terminal node" ;
+    hack:fieldId 17 .
+
+hack:field_initializer a owl:Class ;
+    rdfs:label "field_initializer" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 245 .
+
+hack:field_key a owl:ObjectProperty ;
+    rdfs:label "key (structural)" ;
+    rdfs:comment "Structural reference for key field when it contains a non-terminal node" ;
+    hack:fieldId 18 .
+
+hack:field_left a owl:ObjectProperty ;
+    rdfs:label "left (structural)" ;
+    rdfs:comment "Structural reference for left field when it contains a non-terminal node" ;
+    hack:fieldId 19 .
+
+hack:field_name a owl:ObjectProperty ;
+    rdfs:label "name (structural)" ;
+    rdfs:comment "Structural reference for name field when it contains a non-terminal node" ;
+    hack:fieldId 20 .
+
+hack:field_operand a owl:ObjectProperty ;
+    rdfs:label "operand (structural)" ;
+    rdfs:comment "Structural reference for operand field when it contains a non-terminal node" ;
+    hack:fieldId 21 .
+
+hack:field_operator a owl:ObjectProperty ;
+    rdfs:label "operator (structural)" ;
+    rdfs:comment "Structural reference for operator field when it contains a non-terminal node" ;
+    hack:fieldId 22 .
+
+hack:field_return_type a owl:ObjectProperty ;
+    rdfs:label "return_type (structural)" ;
+    rdfs:comment "Structural reference for return_type field when it contains a non-terminal node" ;
+    hack:fieldId 24 .
+
+hack:field_right a owl:ObjectProperty ;
+    rdfs:label "right (structural)" ;
+    rdfs:comment "Structural reference for right field when it contains a non-terminal node" ;
+    hack:fieldId 25 .
+
+hack:field_selection_operator a owl:ObjectProperty ;
+    rdfs:label "selection_operator (structural)" ;
+    rdfs:comment "Structural reference for selection_operator field when it contains a non-terminal node" ;
+    hack:fieldId 26 .
+
+hack:field_specifier a owl:Class ;
+    rdfs:label "field_specifier" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 233 .
+
+hack:field_super a owl:ObjectProperty ;
+    rdfs:label "super (structural)" ;
+    rdfs:comment "Structural reference for super field when it contains a non-terminal node" ;
+    hack:fieldId 27 .
+
+hack:field_type a owl:ObjectProperty ;
+    rdfs:label "type (structural)" ;
+    rdfs:comment "Structural reference for type field when it contains a non-terminal node" ;
+    hack:fieldId 28 .
+
+hack:field_value a owl:ObjectProperty ;
+    rdfs:label "value (structural)" ;
+    rdfs:comment "Structural reference for value field when it contains a non-terminal node" ;
+    hack:fieldId 29 .
+
+hack:final_modifier a owl:Class ;
+    rdfs:label "final_modifier" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 162 .
+
+hack:finally_clause a owl:Class ;
+    rdfs:label "finally_clause" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 221 .
+
+hack:float a owl:Class ;
+    rdfs:label "float" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 59 .
+
+hack:for_statement a owl:Class ;
+    rdfs:label "for_statement" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 218 .
+
+hack:foreach_statement a owl:Class ;
+    rdfs:label "foreach_statement" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 215 .
+
+hack:function_declaration a owl:Class ;
+    rdfs:label "function_declaration" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 270 .
+
+hack:function_pointer a owl:Class ;
+    rdfs:label "function_pointer" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 320 .
+
+hack:function_type_specifier a owl:Class ;
+    rdfs:label "function_type_specifier" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 231 .
+
+hack:heredoc a owl:Class ;
+    rdfs:label "heredoc" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 193 .
+
+hack:identifier a owl:Class ;
+    rdfs:label "identifier" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 1 .
+
+hack:if_statement a owl:Class ;
+    rdfs:label "if_statement" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 211 .
+
+hack:implements_clause a owl:Class ;
+    rdfs:label "implements_clause" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 284 .
+
+hack:include_expression a owl:Class ;
+    rdfs:label "include_expression" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 247 .
+
+hack:inout_modifier a owl:Class ;
+    rdfs:label "inout_modifier" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 168 .
+
+hack:integer a owl:Class ;
+    rdfs:label "integer" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 60 .
+
+hack:interface_declaration a owl:Class ;
+    rdfs:label "interface_declaration" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 277 .
+
+hack:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+hack:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+hack:is_expression a owl:Class ;
+    rdfs:label "is_expression" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 255 .
+
+hack:key a owl:DatatypeProperty ;
+    rdfs:label "key (literal)" ;
+    rdfs:comment "Literal value for key field when it contains a terminal node" ;
+    hack:fieldId 18 ;
+    hack:isTerminalField true .
+
+hack:lambda_expression a owl:Class ;
+    rdfs:label "lambda_expression" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 261 .
+
+hack:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+hack:like_modifier a owl:Class ;
+    rdfs:label "like_modifier" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 371 .
+
+hack:list_expression a owl:Class ;
+    rdfs:label "list_expression" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 251 .
+
+hack:member_declarations a owl:Class ;
+    rdfs:label "member_declarations" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 279 .
+
+hack:method_declaration a owl:Class ;
+    rdfs:label "method_declaration" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 287 .
+
+hack:module_attribute a owl:Class ;
+    rdfs:label "module_attribute" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 192 .
+
+hack:name a owl:DatatypeProperty ;
+    rdfs:label "name (literal)" ;
+    rdfs:comment "Literal value for name field when it contains a terminal node" ;
+    hack:fieldId 20 ;
+    hack:isTerminalField true .
+
+hack:namespace_declaration a owl:Class ;
+    rdfs:label "namespace_declaration" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 302 .
+
+hack:new_expression a owl:Class ;
+    rdfs:label "new_expression" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 265 .
+
+hack:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+hack:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+hack:null a owl:Class ;
+    rdfs:label "null" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 225 .
+
+hack:nullable_modifier a owl:Class ;
+    rdfs:label "nullable_modifier" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 372 .
+
+hack:open_modifier a owl:Class ;
+    rdfs:label "open_modifier" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 373 .
+
+hack:optional_modifier a owl:Class ;
+    rdfs:label "optional_modifier" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 374 .
+
+hack:parameter a owl:Class ;
+    rdfs:label "parameter" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 263,
+        275 .
+
+hack:parameters a owl:Class ;
+    rdfs:label "parameters" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 262,
+        274 .
+
+hack:parenthesized_expression a owl:Class ;
+    rdfs:label "parenthesized_expression" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 249,
+        327 .
+
+hack:pipe_variable a owl:Class ;
+    rdfs:label "pipe_variable" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 4 .
+
+hack:postfix_unary_expression a owl:Class ;
+    rdfs:label "postfix_unary_expression" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 254,
+        326 .
+
+hack:prefix a owl:DatatypeProperty ;
+    rdfs:label "prefix (literal)" ;
+    rdfs:comment "Literal value for prefix field when it contains a terminal node" ;
+    hack:fieldId 23 ;
+    hack:isTerminalField true .
+
+hack:prefix_unary_expression a owl:Class ;
+    rdfs:label "prefix_unary_expression" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 253 .
+
+hack:prefixed_string a owl:Class ;
+    rdfs:label "prefixed_string" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 227 .
+
+hack:property_declaration a owl:Class ;
+    rdfs:label "property_declaration" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 294 .
+
+hack:property_declarator a owl:Class ;
+    rdfs:label "property_declarator" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 295 .
+
+hack:qualified_identifier a owl:Class ;
+    rdfs:label "qualified_identifier" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 189 .
+
+hack:reify_modifier a owl:Class ;
+    rdfs:label "reify_modifier" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 100 .
+
+hack:require_expression a owl:Class ;
+    rdfs:label "require_expression" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 248 .
+
+hack:require_extends_clause a owl:Class ;
+    rdfs:label "require_extends_clause" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 285 .
+
+hack:require_implements_clause a owl:Class ;
+    rdfs:label "require_implements_clause" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 286 .
+
+hack:return_statement a owl:Class ;
+    rdfs:label "return_statement" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 200 .
+
+hack:scope_identifier a owl:Class ;
+    rdfs:label "scope_identifier" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 191 .
+
+hack:scoped_identifier a owl:Class ;
+    rdfs:label "scoped_identifier" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 190 .
+
+hack:script a owl:Class ;
+    rdfs:label "script" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 188 .
+
+hack:selection_expression a owl:Class ;
+    rdfs:label "selection_expression" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 268 .
+
+hack:shape a owl:Class ;
+    rdfs:label "shape" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 244 .
+
+hack:shape_type_specifier a owl:Class ;
+    rdfs:label "shape_type_specifier" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 232 .
+
+hack:soft_modifier a owl:Class ;
+    rdfs:label "soft_modifier" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 375 .
+
+hack:static_modifier a owl:Class ;
+    rdfs:label "static_modifier" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 305 .
+
+hack:string a owl:Class ;
+    rdfs:label "string" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 70 .
+
+hack:subscript_expression a owl:Class ;
+    rdfs:label "subscript_expression" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 250 .
+
+hack:switch_case a owl:Class ;
+    rdfs:label "switch_case" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 213 .
+
+hack:switch_default a owl:Class ;
+    rdfs:label "switch_default" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 214 .
+
+hack:switch_statement a owl:Class ;
+    rdfs:label "switch_statement" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 212 .
+
+hack:ternary_expression a owl:Class ;
+    rdfs:label "ternary_expression" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 260 .
+
+hack:throw_statement a owl:Class ;
+    rdfs:label "throw_statement" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 203 .
+
+hack:trait_alias_clause a owl:Class ;
+    rdfs:label "trait_alias_clause" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 282 .
+
+hack:trait_declaration a owl:Class ;
+    rdfs:label "trait_declaration" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 276 .
+
+hack:trait_select_clause a owl:Class ;
+    rdfs:label "trait_select_clause" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 281 .
+
+hack:trait_use_clause a owl:Class ;
+    rdfs:label "trait_use_clause" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 280 .
+
+hack:true a owl:Class ;
+    rdfs:label "true" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 223 .
+
+hack:try_statement a owl:Class ;
+    rdfs:label "try_statement" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 219 .
+
+hack:tuple a owl:Class ;
+    rdfs:label "tuple" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 243 .
+
+hack:tuple_type_specifier a owl:Class ;
+    rdfs:label "tuple_type_specifier" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 230 .
+
+hack:type a owl:DatatypeProperty ;
+    rdfs:label "type (literal)" ;
+    rdfs:comment "Literal value for type field when it contains a terminal node" ;
+    hack:fieldId 28 ;
+    hack:isTerminalField true .
+
+hack:type_arguments a owl:Class ;
+    rdfs:label "type_arguments" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 236 .
+
+hack:type_const_declaration a owl:Class ;
+    rdfs:label "type_const_declaration" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 290 .
+
+hack:type_constant a owl:Class ;
+    rdfs:label "type_constant" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 234,
+        235 .
+
+hack:type_parameter a owl:Class ;
+    rdfs:label "type_parameter" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 238 .
+
+hack:type_parameters a owl:Class ;
+    rdfs:label "type_parameters" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 237 .
+
+hack:type_specifier a owl:Class ;
+    rdfs:label "type_specifier" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 228 .
+
+hack:typed_enumerator a owl:Class ;
+    rdfs:label "typed_enumerator" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 301 .
+
+hack:unset_statement a owl:Class ;
+    rdfs:label "unset_statement" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 205 .
+
+hack:use_clause a owl:Class ;
+    rdfs:label "use_clause" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 209,
+        322 .
+
+hack:use_statement a owl:Class ;
+    rdfs:label "use_statement" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 207 .
+
+hack:use_type a owl:Class ;
+    rdfs:label "use_type" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 208 .
+
+hack:using_statement a owl:Class ;
+    rdfs:label "using_statement" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 222 .
+
+hack:value a owl:DatatypeProperty ;
+    rdfs:label "value (literal)" ;
+    rdfs:comment "Literal value for value field when it contains a terminal node" ;
+    hack:fieldId 29 ;
+    hack:isTerminalField true .
+
+hack:variable a owl:Class ;
+    rdfs:label "variable" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 3 .
+
+hack:variadic_modifier a owl:Class ;
+    rdfs:label "variadic_modifier" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 308 .
+
+hack:visibility_modifier a owl:Class ;
+    rdfs:label "visibility_modifier" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 306 .
+
+hack:visitor a owl:DatatypeProperty ;
+    rdfs:label "visitor (literal)" ;
+    rdfs:comment "Literal value for visitor field when it contains a terminal node" ;
+    hack:fieldId 30 ;
+    hack:isTerminalField true .
+
+hack:where_clause a owl:Class ;
+    rdfs:label "where_clause" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 239 .
+
+hack:where_constraint a owl:Class ;
+    rdfs:label "where_constraint" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 240 .
+
+hack:while_statement a owl:Class ;
+    rdfs:label "while_statement" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 216 .
+
+hack:xhp_attribute a owl:Class ;
+    rdfs:label "xhp_attribute" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 315 .
+
+hack:xhp_attribute_declaration a owl:Class ;
+    rdfs:label "xhp_attribute_declaration" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 317 .
+
+hack:xhp_category_declaration a owl:Class ;
+    rdfs:label "xhp_category_declaration" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 324 .
+
+hack:xhp_category_identifier a owl:Class ;
+    rdfs:label "xhp_category_identifier" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 171 .
+
+hack:xhp_children_declaration a owl:Class ;
+    rdfs:label "xhp_children_declaration" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 323 .
+
+hack:xhp_class_attribute a owl:Class ;
+    rdfs:label "xhp_class_attribute" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 318 .
+
+hack:xhp_class_identifier a owl:Class ;
+    rdfs:label "xhp_class_identifier" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 170 .
+
+hack:xhp_close a owl:Class ;
+    rdfs:label "xhp_close" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 314 .
+
+hack:xhp_comment a owl:Class ;
+    rdfs:label "xhp_comment" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 172 .
+
+hack:xhp_enum_type a owl:Class ;
+    rdfs:label "xhp_enum_type" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 319 .
+
+hack:xhp_expression a owl:Class ;
+    rdfs:label "xhp_expression" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 311 .
+
+hack:xhp_identifier a owl:Class ;
+    rdfs:label "xhp_identifier" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 169 .
+
+hack:xhp_modifier a owl:Class ;
+    rdfs:label "xhp_modifier" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 163 .
+
+hack:xhp_open a owl:Class ;
+    rdfs:label "xhp_open" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 312 .
+
+hack:xhp_open_close a owl:Class ;
+    rdfs:label "xhp_open_close" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 313 .
+
+hack:xhp_spread_expression a owl:Class ;
+    rdfs:label "xhp_spread_expression" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 316 .
+
+hack:xhp_string a owl:Class ;
+    rdfs:label "xhp_string" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 173 .
+
+hack:yield_expression a owl:Class ;
+    rdfs:label "yield_expression" ;
+    rdfs:isDefinedBy hack: ;
+    rdfs:subClassOf ast:Node ;
+    hack:isSupertype true ;
+    hack:nodeTypeId 258 .
+
+hack: a owl:Ontology ;
+    rdfs:label "Hack Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for hack" ;
+    owl:versionInfo "v0.25" ;
+    hack:abiVersion 13 ;
+    hack:fieldCount 30 ;
+    hack:languageName "None" ;
+    hack:nodeKindCount 376 .
+

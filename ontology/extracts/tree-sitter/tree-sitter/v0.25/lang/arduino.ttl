@@ -1,0 +1,1886 @@
+@prefix arduino: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/arduino/> .
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+arduino:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+arduino:abstract_array_declarator a owl:Class ;
+    rdfs:label "abstract_array_declarator" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 297 .
+
+arduino:abstract_function_declarator a owl:Class ;
+    rdfs:label "abstract_function_declarator" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 293 .
+
+arduino:abstract_parenthesized_declarator a owl:Class ;
+    rdfs:label "abstract_parenthesized_declarator" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 282 .
+
+arduino:abstract_pointer_declarator a owl:Class ;
+    rdfs:label "abstract_pointer_declarator" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 289 .
+
+arduino:abstract_reference_declarator a owl:Class ;
+    rdfs:label "abstract_reference_declarator" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 421 .
+
+arduino:access_specifier a owl:Class ;
+    rdfs:label "access_specifier" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 417 .
+
+arduino:alias_declaration a owl:Class ;
+    rdfs:label "alias_declaration" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 441 .
+
+arduino:alignas_qualifier a owl:Class ;
+    rdfs:label "alignas_qualifier" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 302 .
+
+arduino:alignof_expression a owl:Class ;
+    rdfs:label "alignof_expression" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 351 .
+
+arduino:argument a owl:DatatypeProperty ;
+    rdfs:label "argument (literal)" ;
+    rdfs:comment "Literal value for argument field when it contains a terminal node" ;
+    arduino:fieldId 2 ;
+    arduino:isTerminalField true .
+
+arduino:argument_list a owl:Class ;
+    rdfs:label "argument_list" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 256,
+        365 .
+
+arduino:array_declarator a owl:Class ;
+    rdfs:label "array_declarator" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 294,
+        295,
+        296 .
+
+arduino:assignment_expression a owl:Class ;
+    rdfs:label "assignment_expression" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 343,
+        494 .
+
+arduino:attribute a owl:Class ;
+    rdfs:label "attribute" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 267 .
+
+arduino:attribute_declaration a owl:Class ;
+    rdfs:label "attribute_declaration" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 268 .
+
+arduino:attribute_specifier a owl:Class ;
+    rdfs:label "attribute_specifier" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 266 .
+
+arduino:attributed_declarator a owl:Class ;
+    rdfs:label "attributed_declarator" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 283,
+        284,
+        285 .
+
+arduino:attributed_statement a owl:Class ;
+    rdfs:label "attributed_statement" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 317 .
+
+arduino:auto a owl:Class ;
+    rdfs:label "auto" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 182 .
+
+arduino:base a owl:DatatypeProperty ;
+    rdfs:label "base (literal)" ;
+    rdfs:comment "Literal value for base field when it contains a terminal node" ;
+    arduino:fieldId 5 ;
+    arduino:isTerminalField true .
+
+arduino:base_class_clause a owl:Class ;
+    rdfs:label "base_class_clause" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 389 .
+
+arduino:binary_expression a owl:Class ;
+    rdfs:label "binary_expression" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 257,
+        346 .
+
+arduino:bitfield_clause a owl:Class ;
+    rdfs:label "bitfield_clause" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 313 .
+
+arduino:break_statement a owl:Class ;
+    rdfs:label "break_statement" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 332 .
+
+arduino:call_expression a owl:Class ;
+    rdfs:label "call_expression" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 255,
+        355 .
+
+arduino:case_statement a owl:Class ;
+    rdfs:label "case_statement" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 326 .
+
+arduino:cast_expression a owl:Class ;
+    rdfs:label "cast_expression" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 348 .
+
+arduino:catch_clause a owl:Class ;
+    rdfs:label "catch_clause" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 453 .
+
+arduino:char_literal a owl:Class ;
+    rdfs:label "char_literal" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 375 .
+
+arduino:character a owl:Class ;
+    rdfs:label "character" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 168 .
+
+arduino:class_specifier a owl:Class ;
+    rdfs:label "class_specifier" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 385 .
+
+arduino:co_await_expression a owl:Class ;
+    rdfs:label "co_await_expression" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 456 .
+
+arduino:co_return_statement a owl:Class ;
+    rdfs:label "co_return_statement" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 449 .
+
+arduino:co_yield_statement a owl:Class ;
+    rdfs:label "co_yield_statement" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 450 .
+
+arduino:comma_expression a owl:Class ;
+    rdfs:label "comma_expression" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 341 .
+
+arduino:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 181 .
+
+arduino:compound_literal_expression a owl:Class ;
+    rdfs:label "compound_literal_expression" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 367 .
+
+arduino:compound_requirement a owl:Class ;
+    rdfs:label "compound_requirement" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 461 .
+
+arduino:compound_statement a owl:Class ;
+    rdfs:label "compound_statement" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 299 .
+
+arduino:concatenated_string a owl:Class ;
+    rdfs:label "concatenated_string" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 376 .
+
+arduino:concept_definition a owl:Class ;
+    rdfs:label "concept_definition" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 443 .
+
+arduino:condition a owl:DatatypeProperty ;
+    rdfs:label "condition (literal)" ;
+    rdfs:comment "Literal value for condition field when it contains a terminal node" ;
+    arduino:fieldId 9 ;
+    arduino:isTerminalField true .
+
+arduino:condition_clause a owl:Class ;
+    rdfs:label "condition_clause" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 447 .
+
+arduino:conditional_expression a owl:Class ;
+    rdfs:label "conditional_expression" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 342 .
+
+arduino:constraint a owl:DatatypeProperty ;
+    rdfs:label "constraint (literal)" ;
+    rdfs:comment "Literal value for constraint field when it contains a terminal node" ;
+    arduino:fieldId 11 ;
+    arduino:isTerminalField true .
+
+arduino:constraint_conjunction a owl:Class ;
+    rdfs:label "constraint_conjunction" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 464 .
+
+arduino:constraint_disjunction a owl:Class ;
+    rdfs:label "constraint_disjunction" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 465 .
+
+arduino:continue_statement a owl:Class ;
+    rdfs:label "continue_statement" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 333 .
+
+arduino:declaration a owl:Class ;
+    rdfs:label "declaration" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 259,
+        409,
+        412,
+        448 .
+
+arduino:declaration_list a owl:Class ;
+    rdfs:label "declaration_list" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 274 .
+
+arduino:decltype a owl:Class ;
+    rdfs:label "decltype" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 381,
+        382 .
+
+arduino:default_method_clause a owl:Class ;
+    rdfs:label "default_method_clause" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 413 .
+
+arduino:delete_expression a owl:Class ;
+    rdfs:label "delete_expression" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 459 .
+
+arduino:delete_method_clause a owl:Class ;
+    rdfs:label "delete_method_clause" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 414 .
+
+arduino:delimiter a owl:DatatypeProperty ;
+    rdfs:label "delimiter (literal)" ;
+    rdfs:comment "Literal value for delimiter field when it contains a terminal node" ;
+    arduino:fieldId 15 ;
+    arduino:isTerminalField true .
+
+arduino:dependent_name a owl:Class ;
+    rdfs:label "dependent_name" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 486,
+        487,
+        488 .
+
+arduino:dependent_type a owl:Class ;
+    rdfs:label "dependent_type" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 391 .
+
+arduino:designator a owl:DatatypeProperty ;
+    rdfs:label "designator (literal)" ;
+    rdfs:comment "Literal value for designator field when it contains a terminal node" ;
+    arduino:fieldId 16 ;
+    arduino:isTerminalField true .
+
+arduino:destructor_name a owl:Class ;
+    rdfs:label "destructor_name" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 485 .
+
+arduino:directive a owl:DatatypeProperty ;
+    rdfs:label "directive (literal)" ;
+    rdfs:comment "Literal value for directive field when it contains a terminal node" ;
+    arduino:fieldId 17 ;
+    arduino:isTerminalField true .
+
+arduino:do_statement a owl:Class ;
+    rdfs:label "do_statement" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 328 .
+
+arduino:else_clause a owl:Class ;
+    rdfs:label "else_clause" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 324 .
+
+arduino:enum_specifier a owl:Class ;
+    rdfs:label "enum_specifier" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 306 .
+
+arduino:enumerator a owl:Class ;
+    rdfs:label "enumerator" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 314 .
+
+arduino:enumerator_list a owl:Class ;
+    rdfs:label "enumerator_list" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 307 .
+
+arduino:escape_sequence a owl:Class ;
+    rdfs:label "escape_sequence" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 175 .
+
+arduino:explicit_function_specifier a owl:Class ;
+    rdfs:label "explicit_function_specifier" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 388 .
+
+arduino:expression_statement a owl:Class ;
+    rdfs:label "expression_statement" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 321,
+        322 .
+
+arduino:extension_expression a owl:Class ;
+    rdfs:label "extension_expression" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 364 .
+
+arduino:false a owl:Class ;
+    rdfs:label "false" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 178 .
+
+arduino:field a owl:DatatypeProperty ;
+    rdfs:label "field (literal)" ;
+    rdfs:comment "Literal value for field field when it contains a terminal node" ;
+    arduino:fieldId 19 ;
+    arduino:isTerminalField true .
+
+arduino:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+arduino:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+arduino:field_alternative a owl:ObjectProperty ;
+    rdfs:label "alternative (structural)" ;
+    rdfs:comment "Structural reference for alternative field when it contains a non-terminal node" ;
+    arduino:fieldId 1 .
+
+arduino:field_argument a owl:ObjectProperty ;
+    rdfs:label "argument (structural)" ;
+    rdfs:comment "Structural reference for argument field when it contains a non-terminal node" ;
+    arduino:fieldId 2 .
+
+arduino:field_arguments a owl:ObjectProperty ;
+    rdfs:label "arguments (structural)" ;
+    rdfs:comment "Structural reference for arguments field when it contains a non-terminal node" ;
+    arduino:fieldId 3 .
+
+arduino:field_assembly_code a owl:ObjectProperty ;
+    rdfs:label "assembly_code (structural)" ;
+    rdfs:comment "Structural reference for assembly_code field when it contains a non-terminal node" ;
+    arduino:fieldId 4 .
+
+arduino:field_base a owl:ObjectProperty ;
+    rdfs:label "base (structural)" ;
+    rdfs:comment "Structural reference for base field when it contains a non-terminal node" ;
+    arduino:fieldId 5 .
+
+arduino:field_body a owl:ObjectProperty ;
+    rdfs:label "body (structural)" ;
+    rdfs:comment "Structural reference for body field when it contains a non-terminal node" ;
+    arduino:fieldId 6 .
+
+arduino:field_captures a owl:ObjectProperty ;
+    rdfs:label "captures (structural)" ;
+    rdfs:comment "Structural reference for captures field when it contains a non-terminal node" ;
+    arduino:fieldId 7 .
+
+arduino:field_clobbers a owl:ObjectProperty ;
+    rdfs:label "clobbers (structural)" ;
+    rdfs:comment "Structural reference for clobbers field when it contains a non-terminal node" ;
+    arduino:fieldId 8 .
+
+arduino:field_condition a owl:ObjectProperty ;
+    rdfs:label "condition (structural)" ;
+    rdfs:comment "Structural reference for condition field when it contains a non-terminal node" ;
+    arduino:fieldId 9 .
+
+arduino:field_consequence a owl:ObjectProperty ;
+    rdfs:label "consequence (structural)" ;
+    rdfs:comment "Structural reference for consequence field when it contains a non-terminal node" ;
+    arduino:fieldId 10 .
+
+arduino:field_constraint a owl:ObjectProperty ;
+    rdfs:label "constraint (structural)" ;
+    rdfs:comment "Structural reference for constraint field when it contains a non-terminal node" ;
+    arduino:fieldId 11 .
+
+arduino:field_declaration a owl:Class ;
+    rdfs:label "field_declaration" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 312 .
+
+arduino:field_declaration_list a owl:Class ;
+    rdfs:label "field_declaration_list" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 310 .
+
+arduino:field_declarator a owl:ObjectProperty ;
+    rdfs:label "declarator (structural)" ;
+    rdfs:comment "Structural reference for declarator field when it contains a non-terminal node" ;
+    arduino:fieldId 12 .
+
+arduino:field_default_type a owl:ObjectProperty ;
+    rdfs:label "default_type (structural)" ;
+    rdfs:comment "Structural reference for default_type field when it contains a non-terminal node" ;
+    arduino:fieldId 13 .
+
+arduino:field_default_value a owl:ObjectProperty ;
+    rdfs:label "default_value (structural)" ;
+    rdfs:comment "Structural reference for default_value field when it contains a non-terminal node" ;
+    arduino:fieldId 14 .
+
+arduino:field_designator a owl:Class,
+        owl:ObjectProperty ;
+    rdfs:label "designator (structural)",
+        "field_designator" ;
+    rdfs:comment "Structural reference for designator field when it contains a non-terminal node" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:fieldId 16 ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 373 .
+
+arduino:field_end a owl:ObjectProperty ;
+    rdfs:label "end (structural)" ;
+    rdfs:comment "Structural reference for end field when it contains a non-terminal node" ;
+    arduino:fieldId 18 .
+
+arduino:field_expression a owl:Class ;
+    rdfs:label "field_expression" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 366 .
+
+arduino:field_field a owl:ObjectProperty ;
+    rdfs:label "field (structural)" ;
+    rdfs:comment "Structural reference for field field when it contains a non-terminal node" ;
+    arduino:fieldId 19 .
+
+arduino:field_filter a owl:ObjectProperty ;
+    rdfs:label "filter (structural)" ;
+    rdfs:comment "Structural reference for filter field when it contains a non-terminal node" ;
+    arduino:fieldId 20 .
+
+arduino:field_function a owl:ObjectProperty ;
+    rdfs:label "function (structural)" ;
+    rdfs:comment "Structural reference for function field when it contains a non-terminal node" ;
+    arduino:fieldId 21 .
+
+arduino:field_goto_labels a owl:ObjectProperty ;
+    rdfs:label "goto_labels (structural)" ;
+    rdfs:comment "Structural reference for goto_labels field when it contains a non-terminal node" ;
+    arduino:fieldId 22 .
+
+arduino:field_identifier a owl:Class ;
+    rdfs:label "field_identifier" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 544 .
+
+arduino:field_indices a owl:ObjectProperty ;
+    rdfs:label "indices (structural)" ;
+    rdfs:comment "Structural reference for indices field when it contains a non-terminal node" ;
+    arduino:fieldId 23 .
+
+arduino:field_initializer a owl:Class,
+        owl:ObjectProperty ;
+    rdfs:label "field_initializer",
+        "initializer (structural)" ;
+    rdfs:comment "Structural reference for initializer field when it contains a non-terminal node" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:fieldId 24 ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 405 .
+
+arduino:field_initializer_list a owl:Class ;
+    rdfs:label "field_initializer_list" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 404 .
+
+arduino:field_input_operands a owl:ObjectProperty ;
+    rdfs:label "input_operands (structural)" ;
+    rdfs:comment "Structural reference for input_operands field when it contains a non-terminal node" ;
+    arduino:fieldId 25 .
+
+arduino:field_left a owl:ObjectProperty ;
+    rdfs:label "left (structural)" ;
+    rdfs:comment "Structural reference for left field when it contains a non-terminal node" ;
+    arduino:fieldId 27 .
+
+arduino:field_length a owl:ObjectProperty ;
+    rdfs:label "length (structural)" ;
+    rdfs:comment "Structural reference for length field when it contains a non-terminal node" ;
+    arduino:fieldId 28 .
+
+arduino:field_message a owl:ObjectProperty ;
+    rdfs:label "message (structural)" ;
+    rdfs:comment "Structural reference for message field when it contains a non-terminal node" ;
+    arduino:fieldId 30 .
+
+arduino:field_name a owl:ObjectProperty ;
+    rdfs:label "name (structural)" ;
+    rdfs:comment "Structural reference for name field when it contains a non-terminal node" ;
+    arduino:fieldId 31 .
+
+arduino:field_operand a owl:ObjectProperty ;
+    rdfs:label "operand (structural)" ;
+    rdfs:comment "Structural reference for operand field when it contains a non-terminal node" ;
+    arduino:fieldId 32 .
+
+arduino:field_operator a owl:ObjectProperty ;
+    rdfs:label "operator (structural)" ;
+    rdfs:comment "Structural reference for operator field when it contains a non-terminal node" ;
+    arduino:fieldId 33 .
+
+arduino:field_output_operands a owl:ObjectProperty ;
+    rdfs:label "output_operands (structural)" ;
+    rdfs:comment "Structural reference for output_operands field when it contains a non-terminal node" ;
+    arduino:fieldId 34 .
+
+arduino:field_parameters a owl:ObjectProperty ;
+    rdfs:label "parameters (structural)" ;
+    rdfs:comment "Structural reference for parameters field when it contains a non-terminal node" ;
+    arduino:fieldId 35 .
+
+arduino:field_path a owl:ObjectProperty ;
+    rdfs:label "path (structural)" ;
+    rdfs:comment "Structural reference for path field when it contains a non-terminal node" ;
+    arduino:fieldId 36 .
+
+arduino:field_pattern a owl:ObjectProperty ;
+    rdfs:label "pattern (structural)" ;
+    rdfs:comment "Structural reference for pattern field when it contains a non-terminal node" ;
+    arduino:fieldId 37 .
+
+arduino:field_placement a owl:ObjectProperty ;
+    rdfs:label "placement (structural)" ;
+    rdfs:comment "Structural reference for placement field when it contains a non-terminal node" ;
+    arduino:fieldId 38 .
+
+arduino:field_register a owl:ObjectProperty ;
+    rdfs:label "register (structural)" ;
+    rdfs:comment "Structural reference for register field when it contains a non-terminal node" ;
+    arduino:fieldId 40 .
+
+arduino:field_requirements a owl:ObjectProperty ;
+    rdfs:label "requirements (structural)" ;
+    rdfs:comment "Structural reference for requirements field when it contains a non-terminal node" ;
+    arduino:fieldId 41 .
+
+arduino:field_right a owl:ObjectProperty ;
+    rdfs:label "right (structural)" ;
+    rdfs:comment "Structural reference for right field when it contains a non-terminal node" ;
+    arduino:fieldId 42 .
+
+arduino:field_scope a owl:ObjectProperty ;
+    rdfs:label "scope (structural)" ;
+    rdfs:comment "Structural reference for scope field when it contains a non-terminal node" ;
+    arduino:fieldId 43 .
+
+arduino:field_size a owl:ObjectProperty ;
+    rdfs:label "size (structural)" ;
+    rdfs:comment "Structural reference for size field when it contains a non-terminal node" ;
+    arduino:fieldId 44 .
+
+arduino:field_start a owl:ObjectProperty ;
+    rdfs:label "start (structural)" ;
+    rdfs:comment "Structural reference for start field when it contains a non-terminal node" ;
+    arduino:fieldId 45 .
+
+arduino:field_template_parameters a owl:ObjectProperty ;
+    rdfs:label "template_parameters (structural)" ;
+    rdfs:comment "Structural reference for template_parameters field when it contains a non-terminal node" ;
+    arduino:fieldId 47 .
+
+arduino:field_type a owl:ObjectProperty ;
+    rdfs:label "type (structural)" ;
+    rdfs:comment "Structural reference for type field when it contains a non-terminal node" ;
+    arduino:fieldId 48 .
+
+arduino:field_update a owl:ObjectProperty ;
+    rdfs:label "update (structural)" ;
+    rdfs:comment "Structural reference for update field when it contains a non-terminal node" ;
+    arduino:fieldId 49 .
+
+arduino:field_value a owl:ObjectProperty ;
+    rdfs:label "value (structural)" ;
+    rdfs:comment "Structural reference for value field when it contains a non-terminal node" ;
+    arduino:fieldId 50 .
+
+arduino:fold_expression a owl:Class ;
+    rdfs:label "fold_expression" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 481 .
+
+arduino:for_range_loop a owl:Class ;
+    rdfs:label "for_range_loop" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 444 .
+
+arduino:for_statement a owl:Class ;
+    rdfs:label "for_statement" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 329 .
+
+arduino:friend_declaration a owl:Class ;
+    rdfs:label "friend_declaration" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 416 .
+
+arduino:function a owl:DatatypeProperty ;
+    rdfs:label "function (literal)" ;
+    rdfs:comment "Literal value for function field when it contains a terminal node" ;
+    arduino:fieldId 21 ;
+    arduino:isTerminalField true .
+
+arduino:function_declarator a owl:Class ;
+    rdfs:label "function_declarator" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 290,
+        291,
+        292 .
+
+arduino:function_definition a owl:Class ;
+    rdfs:label "function_definition" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 258,
+        406,
+        408,
+        411 .
+
+arduino:generic_expression a owl:Class ;
+    rdfs:label "generic_expression" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 353 .
+
+arduino:gnu_asm_clobber_list a owl:Class ;
+    rdfs:label "gnu_asm_clobber_list" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 362 .
+
+arduino:gnu_asm_expression a owl:Class ;
+    rdfs:label "gnu_asm_expression" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 356 .
+
+arduino:gnu_asm_goto_list a owl:Class ;
+    rdfs:label "gnu_asm_goto_list" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 363 .
+
+arduino:gnu_asm_input_operand a owl:Class ;
+    rdfs:label "gnu_asm_input_operand" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 361 .
+
+arduino:gnu_asm_input_operand_list a owl:Class ;
+    rdfs:label "gnu_asm_input_operand_list" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 360 .
+
+arduino:gnu_asm_output_operand a owl:Class ;
+    rdfs:label "gnu_asm_output_operand" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 359 .
+
+arduino:gnu_asm_output_operand_list a owl:Class ;
+    rdfs:label "gnu_asm_output_operand_list" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 358 .
+
+arduino:gnu_asm_qualifier a owl:Class ;
+    rdfs:label "gnu_asm_qualifier" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 357 .
+
+arduino:goto_statement a owl:Class ;
+    rdfs:label "goto_statement" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 334 .
+
+arduino:identifier a owl:Class ;
+    rdfs:label "identifier" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 1 .
+
+arduino:if_statement a owl:Class ;
+    rdfs:label "if_statement" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 323 .
+
+arduino:init_declarator a owl:Class ;
+    rdfs:label "init_declarator" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 298 .
+
+arduino:init_statement a owl:Class ;
+    rdfs:label "init_statement" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 446 .
+
+arduino:initializer_list a owl:Class ;
+    rdfs:label "initializer_list" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 369 .
+
+arduino:initializer_pair a owl:Class ;
+    rdfs:label "initializer_pair" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 370 .
+
+arduino:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+arduino:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+arduino:label a owl:DatatypeProperty ;
+    rdfs:label "label (literal)" ;
+    rdfs:comment "Literal value for label field when it contains a terminal node" ;
+    arduino:fieldId 26 ;
+    arduino:isTerminalField true .
+
+arduino:labeled_statement a owl:Class ;
+    rdfs:label "labeled_statement" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 320 .
+
+arduino:lambda_capture_initializer a owl:Class ;
+    rdfs:label "lambda_capture_initializer" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 474 .
+
+arduino:lambda_capture_specifier a owl:Class ;
+    rdfs:label "lambda_capture_specifier" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 471 .
+
+arduino:lambda_default_capture a owl:Class ;
+    rdfs:label "lambda_default_capture" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 472 .
+
+arduino:lambda_expression a owl:Class ;
+    rdfs:label "lambda_expression" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 470 .
+
+arduino:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+arduino:left a owl:DatatypeProperty ;
+    rdfs:label "left (literal)" ;
+    rdfs:comment "Literal value for left field when it contains a terminal node" ;
+    arduino:fieldId 27 ;
+    arduino:isTerminalField true .
+
+arduino:linkage_specification a owl:Class ;
+    rdfs:label "linkage_specification" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 265 .
+
+arduino:literal_suffix a owl:Class ;
+    rdfs:label "literal_suffix" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 220 .
+
+arduino:member a owl:DatatypeProperty ;
+    rdfs:label "member (literal)" ;
+    rdfs:comment "Literal value for member field when it contains a terminal node" ;
+    arduino:fieldId 29 ;
+    arduino:isTerminalField true .
+
+arduino:ms_based_modifier a owl:Class ;
+    rdfs:label "ms_based_modifier" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 270 .
+
+arduino:ms_call_modifier a owl:Class ;
+    rdfs:label "ms_call_modifier" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 271 .
+
+arduino:ms_declspec_modifier a owl:Class ;
+    rdfs:label "ms_declspec_modifier" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 269 .
+
+arduino:ms_pointer_modifier a owl:Class ;
+    rdfs:label "ms_pointer_modifier" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 273 .
+
+arduino:ms_restrict_modifier a owl:Class ;
+    rdfs:label "ms_restrict_modifier" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 60 .
+
+arduino:ms_signed_ptr_modifier a owl:Class ;
+    rdfs:label "ms_signed_ptr_modifier" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 62 .
+
+arduino:ms_unaligned_ptr_modifier a owl:Class ;
+    rdfs:label "ms_unaligned_ptr_modifier" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 272 .
+
+arduino:ms_unsigned_ptr_modifier a owl:Class ;
+    rdfs:label "ms_unsigned_ptr_modifier" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 61 .
+
+arduino:name a owl:DatatypeProperty ;
+    rdfs:label "name (literal)" ;
+    rdfs:comment "Literal value for name field when it contains a terminal node" ;
+    arduino:fieldId 31 ;
+    arduino:isTerminalField true .
+
+arduino:namespace_alias_definition a owl:Class ;
+    rdfs:label "namespace_alias_definition" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 437 .
+
+arduino:namespace_definition a owl:Class ;
+    rdfs:label "namespace_definition" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 436 .
+
+arduino:namespace_identifier a owl:Class ;
+    rdfs:label "namespace_identifier" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 545 .
+
+arduino:nested_namespace_specifier a owl:Class ;
+    rdfs:label "nested_namespace_specifier" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 439 .
+
+arduino:new_declarator a owl:Class ;
+    rdfs:label "new_declarator" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 458 .
+
+arduino:new_expression a owl:Class ;
+    rdfs:label "new_expression" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 457 .
+
+arduino:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+arduino:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+arduino:noexcept a owl:Class ;
+    rdfs:label "noexcept" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 430 .
+
+arduino:null a owl:Class ;
+    rdfs:label "null" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 378 .
+
+arduino:number_literal a owl:Class ;
+    rdfs:label "number_literal" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 374 .
+
+arduino:offsetof_expression a owl:Class ;
+    rdfs:label "offsetof_expression" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 352 .
+
+arduino:operator_cast a owl:Class ;
+    rdfs:label "operator_cast" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 403 .
+
+arduino:operator_name a owl:Class ;
+    rdfs:label "operator_name" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 495 .
+
+arduino:optional_parameter_declaration a owl:Class ;
+    rdfs:label "optional_parameter_declaration" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 399 .
+
+arduino:optional_type_parameter_declaration a owl:Class ;
+    rdfs:label "optional_type_parameter_declaration" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 397 .
+
+arduino:parameter_declaration a owl:Class ;
+    rdfs:label "parameter_declaration" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 316 .
+
+arduino:parameter_list a owl:Class ;
+    rdfs:label "parameter_list" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 315,
+        468 .
+
+arduino:parameter_pack_expansion a owl:Class ;
+    rdfs:label "parameter_pack_expansion" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 482,
+        483,
+        484 .
+
+arduino:parenthesized_declarator a owl:Class ;
+    rdfs:label "parenthesized_declarator" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 279,
+        280,
+        281 .
+
+arduino:parenthesized_expression a owl:Class ;
+    rdfs:label "parenthesized_expression" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 252,
+        368 .
+
+arduino:path a owl:DatatypeProperty ;
+    rdfs:label "path (literal)" ;
+    rdfs:comment "Literal value for path field when it contains a terminal node" ;
+    arduino:fieldId 36 ;
+    arduino:isTerminalField true .
+
+arduino:placeholder_type_specifier a owl:Class ;
+    rdfs:label "placeholder_type_specifier" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 380 .
+
+arduino:pointer_declarator a owl:Class ;
+    rdfs:label "pointer_declarator" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 286,
+        287 .
+
+arduino:pointer_expression a owl:Class ;
+    rdfs:label "pointer_expression" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 344 .
+
+arduino:pointer_type_declarator a owl:Class ;
+    rdfs:label "pointer_type_declarator" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 288 .
+
+arduino:prefix a owl:DatatypeProperty ;
+    rdfs:label "prefix (literal)" ;
+    rdfs:comment "Literal value for prefix field when it contains a terminal node" ;
+    arduino:fieldId 39 ;
+    arduino:isTerminalField true .
+
+arduino:preproc_arg a owl:Class ;
+    rdfs:label "preproc_arg" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 18 .
+
+arduino:preproc_call a owl:Class ;
+    rdfs:label "preproc_call" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 230 .
+
+arduino:preproc_def a owl:Class ;
+    rdfs:label "preproc_def" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 227 .
+
+arduino:preproc_defined a owl:Class ;
+    rdfs:label "preproc_defined" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 253 .
+
+arduino:preproc_directive a owl:Class ;
+    rdfs:label "preproc_directive" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 19 .
+
+arduino:preproc_elif a owl:Class ;
+    rdfs:label "preproc_elif" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 234,
+        239,
+        244,
+        249 .
+
+arduino:preproc_elifdef a owl:Class ;
+    rdfs:label "preproc_elifdef" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 235,
+        240,
+        245,
+        250 .
+
+arduino:preproc_else a owl:Class ;
+    rdfs:label "preproc_else" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 233,
+        238,
+        243,
+        248 .
+
+arduino:preproc_function_def a owl:Class ;
+    rdfs:label "preproc_function_def" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 228 .
+
+arduino:preproc_if a owl:Class ;
+    rdfs:label "preproc_if" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 231,
+        236,
+        241,
+        246 .
+
+arduino:preproc_ifdef a owl:Class ;
+    rdfs:label "preproc_ifdef" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 232,
+        237,
+        242,
+        247 .
+
+arduino:preproc_include a owl:Class ;
+    rdfs:label "preproc_include" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 226 .
+
+arduino:preproc_params a owl:Class ;
+    rdfs:label "preproc_params" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 229 .
+
+arduino:primitive_type a owl:Class ;
+    rdfs:label "primitive_type" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 305 .
+
+arduino:pure_virtual_clause a owl:Class ;
+    rdfs:label "pure_virtual_clause" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 415 .
+
+arduino:qualified_identifier a owl:Class ;
+    rdfs:label "qualified_identifier" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 490,
+        491,
+        492,
+        493 .
+
+arduino:raw_string_content a owl:Class ;
+    rdfs:label "raw_string_content" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 222 .
+
+arduino:raw_string_delimiter a owl:Class ;
+    rdfs:label "raw_string_delimiter" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 221 .
+
+arduino:raw_string_literal a owl:Class ;
+    rdfs:label "raw_string_literal" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 454 .
+
+arduino:ref_qualifier a owl:Class ;
+    rdfs:label "ref_qualifier" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 423 .
+
+arduino:reference_declarator a owl:Class ;
+    rdfs:label "reference_declarator" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 402,
+        418,
+        419,
+        420 .
+
+arduino:requirement_seq a owl:Class ;
+    rdfs:label "requirement_seq" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 463 .
+
+arduino:requires_clause a owl:Class ;
+    rdfs:label "requires_clause" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 467 .
+
+arduino:requires_expression a owl:Class ;
+    rdfs:label "requires_expression" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 469 .
+
+arduino:return_statement a owl:Class ;
+    rdfs:label "return_statement" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 331 .
+
+arduino:right a owl:DatatypeProperty ;
+    rdfs:label "right (literal)" ;
+    rdfs:comment "Literal value for right field when it contains a terminal node" ;
+    arduino:fieldId 42 ;
+    arduino:isTerminalField true .
+
+arduino:scope a owl:DatatypeProperty ;
+    rdfs:label "scope (literal)" ;
+    rdfs:comment "Literal value for scope field when it contains a terminal node" ;
+    arduino:fieldId 43 ;
+    arduino:isTerminalField true .
+
+arduino:seh_except_clause a owl:Class ;
+    rdfs:label "seh_except_clause" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 336 .
+
+arduino:seh_finally_clause a owl:Class ;
+    rdfs:label "seh_finally_clause" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 337 .
+
+arduino:seh_leave_statement a owl:Class ;
+    rdfs:label "seh_leave_statement" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 338 .
+
+arduino:seh_try_statement a owl:Class ;
+    rdfs:label "seh_try_statement" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 335 .
+
+arduino:simple_requirement a owl:Class ;
+    rdfs:label "simple_requirement" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 546 .
+
+arduino:sized_type_specifier a owl:Class ;
+    rdfs:label "sized_type_specifier" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 304 .
+
+arduino:sizeof_expression a owl:Class ;
+    rdfs:label "sizeof_expression" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 350 .
+
+arduino:statement_identifier a owl:Class ;
+    rdfs:label "statement_identifier" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 547 .
+
+arduino:static_assert_declaration a owl:Class ;
+    rdfs:label "static_assert_declaration" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 442 .
+
+arduino:storage_class_specifier a owl:Class ;
+    rdfs:label "storage_class_specifier" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 300 .
+
+arduino:string_content a owl:Class ;
+    rdfs:label "string_content" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 174 .
+
+arduino:string_literal a owl:Class ;
+    rdfs:label "string_literal" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 377 .
+
+arduino:struct_specifier a owl:Class ;
+    rdfs:label "struct_specifier" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 308 .
+
+arduino:structured_binding_declarator a owl:Class ;
+    rdfs:label "structured_binding_declarator" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 422 .
+
+arduino:subscript_argument_list a owl:Class ;
+    rdfs:label "subscript_argument_list" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 455 .
+
+arduino:subscript_designator a owl:Class ;
+    rdfs:label "subscript_designator" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 371 .
+
+arduino:subscript_expression a owl:Class ;
+    rdfs:label "subscript_expression" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 354 .
+
+arduino:subscript_range_designator a owl:Class ;
+    rdfs:label "subscript_range_designator" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 372 .
+
+arduino:switch_statement a owl:Class ;
+    rdfs:label "switch_statement" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 325 .
+
+arduino:symbol a owl:DatatypeProperty ;
+    rdfs:label "symbol (literal)" ;
+    rdfs:comment "Literal value for symbol field when it contains a terminal node" ;
+    arduino:fieldId 46 ;
+    arduino:isTerminalField true .
+
+arduino:system_lib_string a owl:Class ;
+    rdfs:label "system_lib_string" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 176 .
+
+arduino:template_argument_list a owl:Class ;
+    rdfs:label "template_argument_list" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 435 .
+
+arduino:template_declaration a owl:Class ;
+    rdfs:label "template_declaration" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 392 .
+
+arduino:template_function a owl:Class ;
+    rdfs:label "template_function" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 434 .
+
+arduino:template_instantiation a owl:Class ;
+    rdfs:label "template_instantiation" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 393 .
+
+arduino:template_method a owl:Class ;
+    rdfs:label "template_method" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 433 .
+
+arduino:template_parameter_list a owl:Class ;
+    rdfs:label "template_parameter_list" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 394 .
+
+arduino:template_template_parameter_declaration a owl:Class ;
+    rdfs:label "template_template_parameter_declaration" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 398 .
+
+arduino:template_type a owl:Class ;
+    rdfs:label "template_type" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 432 .
+
+arduino:this a owl:Class ;
+    rdfs:label "this" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 219 .
+
+arduino:throw_specifier a owl:Class ;
+    rdfs:label "throw_specifier" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 431 .
+
+arduino:throw_statement a owl:Class ;
+    rdfs:label "throw_statement" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 451 .
+
+arduino:trailing_return_type a owl:Class ;
+    rdfs:label "trailing_return_type" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 429 .
+
+arduino:translation_unit a owl:Class ;
+    rdfs:label "translation_unit" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 223 .
+
+arduino:true a owl:Class ;
+    rdfs:label "true" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 177 .
+
+arduino:try_statement a owl:Class ;
+    rdfs:label "try_statement" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 410,
+        452 .
+
+arduino:type a owl:DatatypeProperty ;
+    rdfs:label "type (literal)" ;
+    rdfs:comment "Literal value for type field when it contains a terminal node" ;
+    arduino:fieldId 48 ;
+    arduino:isTerminalField true .
+
+arduino:type_definition a owl:Class ;
+    rdfs:label "type_definition" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 260 .
+
+arduino:type_descriptor a owl:Class ;
+    rdfs:label "type_descriptor" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 349 .
+
+arduino:type_identifier a owl:Class ;
+    rdfs:label "type_identifier" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 548 .
+
+arduino:type_parameter_declaration a owl:Class ;
+    rdfs:label "type_parameter_declaration" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 395 .
+
+arduino:type_qualifier a owl:Class ;
+    rdfs:label "type_qualifier" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 301 .
+
+arduino:type_requirement a owl:Class ;
+    rdfs:label "type_requirement" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 460 .
+
+arduino:unary_expression a owl:Class ;
+    rdfs:label "unary_expression" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 254,
+        345 .
+
+arduino:union_specifier a owl:Class ;
+    rdfs:label "union_specifier" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 309 .
+
+arduino:update_expression a owl:Class ;
+    rdfs:label "update_expression" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 347 .
+
+arduino:user_defined_literal a owl:Class ;
+    rdfs:label "user_defined_literal" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 496 .
+
+arduino:using_declaration a owl:Class ;
+    rdfs:label "using_declaration" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 440 .
+
+arduino:value a owl:DatatypeProperty ;
+    rdfs:label "value (literal)" ;
+    rdfs:comment "Literal value for value field when it contains a terminal node" ;
+    arduino:fieldId 50 ;
+    arduino:isTerminalField true .
+
+arduino:variadic_declarator a owl:Class ;
+    rdfs:label "variadic_declarator" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 401 .
+
+arduino:variadic_parameter_declaration a owl:Class ;
+    rdfs:label "variadic_parameter_declaration" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 400 .
+
+arduino:variadic_type_parameter_declaration a owl:Class ;
+    rdfs:label "variadic_type_parameter_declaration" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 396 .
+
+arduino:virtual_specifier a owl:Class ;
+    rdfs:label "virtual_specifier" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 387 .
+
+arduino:while_statement a owl:Class ;
+    rdfs:label "while_statement" ;
+    rdfs:isDefinedBy arduino: ;
+    rdfs:subClassOf ast:Node ;
+    arduino:isSupertype true ;
+    arduino:nodeTypeId 327 .
+
+arduino: a owl:Ontology ;
+    rdfs:label "Arduino Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for arduino" ;
+    owl:versionInfo "v0.25" ;
+    arduino:abiVersion 15 ;
+    arduino:fieldCount 50 ;
+    arduino:languageName "arduino" ;
+    arduino:nodeKindCount 549 .
+

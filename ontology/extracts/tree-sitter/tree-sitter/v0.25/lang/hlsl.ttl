@@ -1,0 +1,1999 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix hlsl: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/hlsl/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+hlsl:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+hlsl:abstract_array_declarator a owl:Class ;
+    rdfs:label "abstract_array_declarator" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 320 .
+
+hlsl:abstract_function_declarator a owl:Class ;
+    rdfs:label "abstract_function_declarator" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 316 .
+
+hlsl:abstract_parenthesized_declarator a owl:Class ;
+    rdfs:label "abstract_parenthesized_declarator" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 305 .
+
+hlsl:abstract_pointer_declarator a owl:Class ;
+    rdfs:label "abstract_pointer_declarator" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 312 .
+
+hlsl:abstract_reference_declarator a owl:Class ;
+    rdfs:label "abstract_reference_declarator" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 449 .
+
+hlsl:access_specifier a owl:Class ;
+    rdfs:label "access_specifier" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 445 .
+
+hlsl:alias_declaration a owl:Class ;
+    rdfs:label "alias_declaration" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 469 .
+
+hlsl:alignas_qualifier a owl:Class ;
+    rdfs:label "alignas_qualifier" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 325 .
+
+hlsl:alignof_expression a owl:Class ;
+    rdfs:label "alignof_expression" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 373 .
+
+hlsl:argument a owl:DatatypeProperty ;
+    rdfs:label "argument (literal)" ;
+    rdfs:comment "Literal value for argument field when it contains a terminal node" ;
+    hlsl:fieldId 2 ;
+    hlsl:isTerminalField true .
+
+hlsl:argument_list a owl:Class ;
+    rdfs:label "argument_list" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 279,
+        387 .
+
+hlsl:array_declarator a owl:Class ;
+    rdfs:label "array_declarator" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 317,
+        318,
+        319 .
+
+hlsl:assignment_expression a owl:Class ;
+    rdfs:label "assignment_expression" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 365,
+        523 .
+
+hlsl:attribute a owl:Class ;
+    rdfs:label "attribute" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 290 .
+
+hlsl:attribute_declaration a owl:Class ;
+    rdfs:label "attribute_declaration" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 291 .
+
+hlsl:attribute_specifier a owl:Class ;
+    rdfs:label "attribute_specifier" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 289 .
+
+hlsl:attributed_declarator a owl:Class ;
+    rdfs:label "attributed_declarator" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 306,
+        307,
+        308 .
+
+hlsl:attributed_statement a owl:Class ;
+    rdfs:label "attributed_statement" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 339 .
+
+hlsl:auto a owl:Class ;
+    rdfs:label "auto" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 182 .
+
+hlsl:base a owl:DatatypeProperty ;
+    rdfs:label "base (literal)" ;
+    rdfs:comment "Literal value for base field when it contains a terminal node" ;
+    hlsl:fieldId 5 ;
+    hlsl:isTerminalField true .
+
+hlsl:base_class_clause a owl:Class ;
+    rdfs:label "base_class_clause" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 410 .
+
+hlsl:binary_expression a owl:Class ;
+    rdfs:label "binary_expression" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 280,
+        368 .
+
+hlsl:bitfield_clause a owl:Class ;
+    rdfs:label "bitfield_clause" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 335 .
+
+hlsl:break_statement a owl:Class ;
+    rdfs:label "break_statement" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 354 .
+
+hlsl:call_expression a owl:Class ;
+    rdfs:label "call_expression" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 278,
+        377 .
+
+hlsl:case_statement a owl:Class ;
+    rdfs:label "case_statement" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 348 .
+
+hlsl:cast_expression a owl:Class ;
+    rdfs:label "cast_expression" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 370 .
+
+hlsl:catch_clause a owl:Class ;
+    rdfs:label "catch_clause" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 481 .
+
+hlsl:cbuffer_specifier a owl:Class ;
+    rdfs:label "cbuffer_specifier" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 529 .
+
+hlsl:char_literal a owl:Class ;
+    rdfs:label "char_literal" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 396 .
+
+hlsl:character a owl:Class ;
+    rdfs:label "character" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 168 .
+
+hlsl:class_specifier a owl:Class ;
+    rdfs:label "class_specifier" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 406 .
+
+hlsl:co_await_expression a owl:Class ;
+    rdfs:label "co_await_expression" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 484 .
+
+hlsl:co_return_statement a owl:Class ;
+    rdfs:label "co_return_statement" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 477 .
+
+hlsl:co_yield_statement a owl:Class ;
+    rdfs:label "co_yield_statement" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 478 .
+
+hlsl:comma_expression a owl:Class ;
+    rdfs:label "comma_expression" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 363 .
+
+hlsl:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 181 .
+
+hlsl:compound_literal_expression a owl:Class ;
+    rdfs:label "compound_literal_expression" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 389 .
+
+hlsl:compound_requirement a owl:Class ;
+    rdfs:label "compound_requirement" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 489 .
+
+hlsl:compound_statement a owl:Class ;
+    rdfs:label "compound_statement" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 322 .
+
+hlsl:concatenated_string a owl:Class ;
+    rdfs:label "concatenated_string" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 397 .
+
+hlsl:concept_definition a owl:Class ;
+    rdfs:label "concept_definition" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 471 .
+
+hlsl:condition a owl:DatatypeProperty ;
+    rdfs:label "condition (literal)" ;
+    rdfs:comment "Literal value for condition field when it contains a terminal node" ;
+    hlsl:fieldId 9 ;
+    hlsl:isTerminalField true .
+
+hlsl:condition_clause a owl:Class ;
+    rdfs:label "condition_clause" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 475 .
+
+hlsl:conditional_expression a owl:Class ;
+    rdfs:label "conditional_expression" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 364 .
+
+hlsl:constraint a owl:DatatypeProperty ;
+    rdfs:label "constraint (literal)" ;
+    rdfs:comment "Literal value for constraint field when it contains a terminal node" ;
+    hlsl:fieldId 11 ;
+    hlsl:isTerminalField true .
+
+hlsl:constraint_conjunction a owl:Class ;
+    rdfs:label "constraint_conjunction" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 492 .
+
+hlsl:constraint_disjunction a owl:Class ;
+    rdfs:label "constraint_disjunction" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 493 .
+
+hlsl:continue_statement a owl:Class ;
+    rdfs:label "continue_statement" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 355 .
+
+hlsl:declaration a owl:Class ;
+    rdfs:label "declaration" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 282,
+        437,
+        440,
+        476 .
+
+hlsl:declaration_list a owl:Class ;
+    rdfs:label "declaration_list" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 297 .
+
+hlsl:decltype a owl:Class ;
+    rdfs:label "decltype" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 402,
+        403 .
+
+hlsl:default_method_clause a owl:Class ;
+    rdfs:label "default_method_clause" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 441 .
+
+hlsl:delete_expression a owl:Class ;
+    rdfs:label "delete_expression" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 487 .
+
+hlsl:delete_method_clause a owl:Class ;
+    rdfs:label "delete_method_clause" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 442 .
+
+hlsl:delimiter a owl:DatatypeProperty ;
+    rdfs:label "delimiter (literal)" ;
+    rdfs:comment "Literal value for delimiter field when it contains a terminal node" ;
+    hlsl:fieldId 15 ;
+    hlsl:isTerminalField true .
+
+hlsl:dependent_name a owl:Class ;
+    rdfs:label "dependent_name" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 515,
+        516,
+        517 .
+
+hlsl:dependent_type a owl:Class ;
+    rdfs:label "dependent_type" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 412 .
+
+hlsl:designator a owl:DatatypeProperty ;
+    rdfs:label "designator (literal)" ;
+    rdfs:comment "Literal value for designator field when it contains a terminal node" ;
+    hlsl:fieldId 16 ;
+    hlsl:isTerminalField true .
+
+hlsl:destructor_name a owl:Class ;
+    rdfs:label "destructor_name" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 514 .
+
+hlsl:directive a owl:DatatypeProperty ;
+    rdfs:label "directive (literal)" ;
+    rdfs:comment "Literal value for directive field when it contains a terminal node" ;
+    hlsl:fieldId 17 ;
+    hlsl:isTerminalField true .
+
+hlsl:discard_statement a owl:Class ;
+    rdfs:label "discard_statement" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 527 .
+
+hlsl:do_statement a owl:Class ;
+    rdfs:label "do_statement" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 350 .
+
+hlsl:else_clause a owl:Class ;
+    rdfs:label "else_clause" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 346 .
+
+hlsl:enum_specifier a owl:Class ;
+    rdfs:label "enum_specifier" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 328 .
+
+hlsl:enumerator a owl:Class ;
+    rdfs:label "enumerator" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 336 .
+
+hlsl:enumerator_list a owl:Class ;
+    rdfs:label "enumerator_list" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 329 .
+
+hlsl:escape_sequence a owl:Class ;
+    rdfs:label "escape_sequence" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 175 .
+
+hlsl:explicit_function_specifier a owl:Class ;
+    rdfs:label "explicit_function_specifier" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 409 .
+
+hlsl:export_declaration a owl:Class ;
+    rdfs:label "export_declaration" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 416 .
+
+hlsl:expression_statement a owl:Class ;
+    rdfs:label "expression_statement" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 343,
+        344 .
+
+hlsl:extension_expression a owl:Class ;
+    rdfs:label "extension_expression" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 386 .
+
+hlsl:false a owl:Class ;
+    rdfs:label "false" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 178 .
+
+hlsl:field a owl:DatatypeProperty ;
+    rdfs:label "field (literal)" ;
+    rdfs:comment "Literal value for field field when it contains a terminal node" ;
+    hlsl:fieldId 19 ;
+    hlsl:isTerminalField true .
+
+hlsl:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+hlsl:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+hlsl:field_alternative a owl:ObjectProperty ;
+    rdfs:label "alternative (structural)" ;
+    rdfs:comment "Structural reference for alternative field when it contains a non-terminal node" ;
+    hlsl:fieldId 1 .
+
+hlsl:field_argument a owl:ObjectProperty ;
+    rdfs:label "argument (structural)" ;
+    rdfs:comment "Structural reference for argument field when it contains a non-terminal node" ;
+    hlsl:fieldId 2 .
+
+hlsl:field_arguments a owl:ObjectProperty ;
+    rdfs:label "arguments (structural)" ;
+    rdfs:comment "Structural reference for arguments field when it contains a non-terminal node" ;
+    hlsl:fieldId 3 .
+
+hlsl:field_assembly_code a owl:ObjectProperty ;
+    rdfs:label "assembly_code (structural)" ;
+    rdfs:comment "Structural reference for assembly_code field when it contains a non-terminal node" ;
+    hlsl:fieldId 4 .
+
+hlsl:field_base a owl:ObjectProperty ;
+    rdfs:label "base (structural)" ;
+    rdfs:comment "Structural reference for base field when it contains a non-terminal node" ;
+    hlsl:fieldId 5 .
+
+hlsl:field_body a owl:ObjectProperty ;
+    rdfs:label "body (structural)" ;
+    rdfs:comment "Structural reference for body field when it contains a non-terminal node" ;
+    hlsl:fieldId 6 .
+
+hlsl:field_captures a owl:ObjectProperty ;
+    rdfs:label "captures (structural)" ;
+    rdfs:comment "Structural reference for captures field when it contains a non-terminal node" ;
+    hlsl:fieldId 7 .
+
+hlsl:field_clobbers a owl:ObjectProperty ;
+    rdfs:label "clobbers (structural)" ;
+    rdfs:comment "Structural reference for clobbers field when it contains a non-terminal node" ;
+    hlsl:fieldId 8 .
+
+hlsl:field_condition a owl:ObjectProperty ;
+    rdfs:label "condition (structural)" ;
+    rdfs:comment "Structural reference for condition field when it contains a non-terminal node" ;
+    hlsl:fieldId 9 .
+
+hlsl:field_consequence a owl:ObjectProperty ;
+    rdfs:label "consequence (structural)" ;
+    rdfs:comment "Structural reference for consequence field when it contains a non-terminal node" ;
+    hlsl:fieldId 10 .
+
+hlsl:field_constraint a owl:ObjectProperty ;
+    rdfs:label "constraint (structural)" ;
+    rdfs:comment "Structural reference for constraint field when it contains a non-terminal node" ;
+    hlsl:fieldId 11 .
+
+hlsl:field_declaration a owl:Class ;
+    rdfs:label "field_declaration" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 334 .
+
+hlsl:field_declaration_list a owl:Class ;
+    rdfs:label "field_declaration_list" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 332 .
+
+hlsl:field_declarator a owl:ObjectProperty ;
+    rdfs:label "declarator (structural)" ;
+    rdfs:comment "Structural reference for declarator field when it contains a non-terminal node" ;
+    hlsl:fieldId 12 .
+
+hlsl:field_default_type a owl:ObjectProperty ;
+    rdfs:label "default_type (structural)" ;
+    rdfs:comment "Structural reference for default_type field when it contains a non-terminal node" ;
+    hlsl:fieldId 13 .
+
+hlsl:field_default_value a owl:ObjectProperty ;
+    rdfs:label "default_value (structural)" ;
+    rdfs:comment "Structural reference for default_value field when it contains a non-terminal node" ;
+    hlsl:fieldId 14 .
+
+hlsl:field_designator a owl:Class,
+        owl:ObjectProperty ;
+    rdfs:label "designator (structural)",
+        "field_designator" ;
+    rdfs:comment "Structural reference for designator field when it contains a non-terminal node" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:fieldId 16 ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 395 .
+
+hlsl:field_end a owl:ObjectProperty ;
+    rdfs:label "end (structural)" ;
+    rdfs:comment "Structural reference for end field when it contains a non-terminal node" ;
+    hlsl:fieldId 18 .
+
+hlsl:field_expression a owl:Class ;
+    rdfs:label "field_expression" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 388 .
+
+hlsl:field_field a owl:ObjectProperty ;
+    rdfs:label "field (structural)" ;
+    rdfs:comment "Structural reference for field field when it contains a non-terminal node" ;
+    hlsl:fieldId 19 .
+
+hlsl:field_filter a owl:ObjectProperty ;
+    rdfs:label "filter (structural)" ;
+    rdfs:comment "Structural reference for filter field when it contains a non-terminal node" ;
+    hlsl:fieldId 20 .
+
+hlsl:field_function a owl:ObjectProperty ;
+    rdfs:label "function (structural)" ;
+    rdfs:comment "Structural reference for function field when it contains a non-terminal node" ;
+    hlsl:fieldId 21 .
+
+hlsl:field_goto_labels a owl:ObjectProperty ;
+    rdfs:label "goto_labels (structural)" ;
+    rdfs:comment "Structural reference for goto_labels field when it contains a non-terminal node" ;
+    hlsl:fieldId 22 .
+
+hlsl:field_header a owl:ObjectProperty ;
+    rdfs:label "header (structural)" ;
+    rdfs:comment "Structural reference for header field when it contains a non-terminal node" ;
+    hlsl:fieldId 23 .
+
+hlsl:field_identifier a owl:Class ;
+    rdfs:label "field_identifier" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 579 .
+
+hlsl:field_indices a owl:ObjectProperty ;
+    rdfs:label "indices (structural)" ;
+    rdfs:comment "Structural reference for indices field when it contains a non-terminal node" ;
+    hlsl:fieldId 24 .
+
+hlsl:field_initializer a owl:Class,
+        owl:ObjectProperty ;
+    rdfs:label "field_initializer",
+        "initializer (structural)" ;
+    rdfs:comment "Structural reference for initializer field when it contains a non-terminal node" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:fieldId 25 ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 433 .
+
+hlsl:field_initializer_list a owl:Class ;
+    rdfs:label "field_initializer_list" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 432 .
+
+hlsl:field_input_operands a owl:ObjectProperty ;
+    rdfs:label "input_operands (structural)" ;
+    rdfs:comment "Structural reference for input_operands field when it contains a non-terminal node" ;
+    hlsl:fieldId 26 .
+
+hlsl:field_left a owl:ObjectProperty ;
+    rdfs:label "left (structural)" ;
+    rdfs:comment "Structural reference for left field when it contains a non-terminal node" ;
+    hlsl:fieldId 28 .
+
+hlsl:field_length a owl:ObjectProperty ;
+    rdfs:label "length (structural)" ;
+    rdfs:comment "Structural reference for length field when it contains a non-terminal node" ;
+    hlsl:fieldId 29 .
+
+hlsl:field_message a owl:ObjectProperty ;
+    rdfs:label "message (structural)" ;
+    rdfs:comment "Structural reference for message field when it contains a non-terminal node" ;
+    hlsl:fieldId 31 .
+
+hlsl:field_name a owl:ObjectProperty ;
+    rdfs:label "name (structural)" ;
+    rdfs:comment "Structural reference for name field when it contains a non-terminal node" ;
+    hlsl:fieldId 32 .
+
+hlsl:field_operand a owl:ObjectProperty ;
+    rdfs:label "operand (structural)" ;
+    rdfs:comment "Structural reference for operand field when it contains a non-terminal node" ;
+    hlsl:fieldId 34 .
+
+hlsl:field_operator a owl:ObjectProperty ;
+    rdfs:label "operator (structural)" ;
+    rdfs:comment "Structural reference for operator field when it contains a non-terminal node" ;
+    hlsl:fieldId 35 .
+
+hlsl:field_output_operands a owl:ObjectProperty ;
+    rdfs:label "output_operands (structural)" ;
+    rdfs:comment "Structural reference for output_operands field when it contains a non-terminal node" ;
+    hlsl:fieldId 36 .
+
+hlsl:field_parameters a owl:ObjectProperty ;
+    rdfs:label "parameters (structural)" ;
+    rdfs:comment "Structural reference for parameters field when it contains a non-terminal node" ;
+    hlsl:fieldId 37 .
+
+hlsl:field_partition a owl:ObjectProperty ;
+    rdfs:label "partition (structural)" ;
+    rdfs:comment "Structural reference for partition field when it contains a non-terminal node" ;
+    hlsl:fieldId 38 .
+
+hlsl:field_path a owl:ObjectProperty ;
+    rdfs:label "path (structural)" ;
+    rdfs:comment "Structural reference for path field when it contains a non-terminal node" ;
+    hlsl:fieldId 39 .
+
+hlsl:field_pattern a owl:ObjectProperty ;
+    rdfs:label "pattern (structural)" ;
+    rdfs:comment "Structural reference for pattern field when it contains a non-terminal node" ;
+    hlsl:fieldId 40 .
+
+hlsl:field_placement a owl:ObjectProperty ;
+    rdfs:label "placement (structural)" ;
+    rdfs:comment "Structural reference for placement field when it contains a non-terminal node" ;
+    hlsl:fieldId 41 .
+
+hlsl:field_register a owl:ObjectProperty ;
+    rdfs:label "register (structural)" ;
+    rdfs:comment "Structural reference for register field when it contains a non-terminal node" ;
+    hlsl:fieldId 43 .
+
+hlsl:field_requirements a owl:ObjectProperty ;
+    rdfs:label "requirements (structural)" ;
+    rdfs:comment "Structural reference for requirements field when it contains a non-terminal node" ;
+    hlsl:fieldId 44 .
+
+hlsl:field_right a owl:ObjectProperty ;
+    rdfs:label "right (structural)" ;
+    rdfs:comment "Structural reference for right field when it contains a non-terminal node" ;
+    hlsl:fieldId 45 .
+
+hlsl:field_scope a owl:ObjectProperty ;
+    rdfs:label "scope (structural)" ;
+    rdfs:comment "Structural reference for scope field when it contains a non-terminal node" ;
+    hlsl:fieldId 46 .
+
+hlsl:field_size a owl:ObjectProperty ;
+    rdfs:label "size (structural)" ;
+    rdfs:comment "Structural reference for size field when it contains a non-terminal node" ;
+    hlsl:fieldId 47 .
+
+hlsl:field_start a owl:ObjectProperty ;
+    rdfs:label "start (structural)" ;
+    rdfs:comment "Structural reference for start field when it contains a non-terminal node" ;
+    hlsl:fieldId 48 .
+
+hlsl:field_template_parameters a owl:ObjectProperty ;
+    rdfs:label "template_parameters (structural)" ;
+    rdfs:comment "Structural reference for template_parameters field when it contains a non-terminal node" ;
+    hlsl:fieldId 50 .
+
+hlsl:field_type a owl:ObjectProperty ;
+    rdfs:label "type (structural)" ;
+    rdfs:comment "Structural reference for type field when it contains a non-terminal node" ;
+    hlsl:fieldId 51 .
+
+hlsl:field_update a owl:ObjectProperty ;
+    rdfs:label "update (structural)" ;
+    rdfs:comment "Structural reference for update field when it contains a non-terminal node" ;
+    hlsl:fieldId 52 .
+
+hlsl:field_value a owl:ObjectProperty ;
+    rdfs:label "value (structural)" ;
+    rdfs:comment "Structural reference for value field when it contains a non-terminal node" ;
+    hlsl:fieldId 53 .
+
+hlsl:fold_expression a owl:Class ;
+    rdfs:label "fold_expression" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 510 .
+
+hlsl:for_range_loop a owl:Class ;
+    rdfs:label "for_range_loop" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 472 .
+
+hlsl:for_statement a owl:Class ;
+    rdfs:label "for_statement" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 351 .
+
+hlsl:friend_declaration a owl:Class ;
+    rdfs:label "friend_declaration" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 444 .
+
+hlsl:function a owl:DatatypeProperty ;
+    rdfs:label "function (literal)" ;
+    rdfs:comment "Literal value for function field when it contains a terminal node" ;
+    hlsl:fieldId 21 ;
+    hlsl:isTerminalField true .
+
+hlsl:function_declarator a owl:Class ;
+    rdfs:label "function_declarator" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 313,
+        314,
+        315 .
+
+hlsl:function_definition a owl:Class ;
+    rdfs:label "function_definition" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 281,
+        434,
+        436,
+        439 .
+
+hlsl:generic_expression a owl:Class ;
+    rdfs:label "generic_expression" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 375 .
+
+hlsl:global_module_fragment_declaration a owl:Class ;
+    rdfs:label "global_module_fragment_declaration" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 418 .
+
+hlsl:gnu_asm_clobber_list a owl:Class ;
+    rdfs:label "gnu_asm_clobber_list" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 384 .
+
+hlsl:gnu_asm_expression a owl:Class ;
+    rdfs:label "gnu_asm_expression" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 378 .
+
+hlsl:gnu_asm_goto_list a owl:Class ;
+    rdfs:label "gnu_asm_goto_list" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 385 .
+
+hlsl:gnu_asm_input_operand a owl:Class ;
+    rdfs:label "gnu_asm_input_operand" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 383 .
+
+hlsl:gnu_asm_input_operand_list a owl:Class ;
+    rdfs:label "gnu_asm_input_operand_list" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 382 .
+
+hlsl:gnu_asm_output_operand a owl:Class ;
+    rdfs:label "gnu_asm_output_operand" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 381 .
+
+hlsl:gnu_asm_output_operand_list a owl:Class ;
+    rdfs:label "gnu_asm_output_operand_list" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 380 .
+
+hlsl:gnu_asm_qualifier a owl:Class ;
+    rdfs:label "gnu_asm_qualifier" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 379 .
+
+hlsl:goto_statement a owl:Class ;
+    rdfs:label "goto_statement" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 356 .
+
+hlsl:header a owl:DatatypeProperty ;
+    rdfs:label "header (literal)" ;
+    rdfs:comment "Literal value for header field when it contains a terminal node" ;
+    hlsl:fieldId 23 ;
+    hlsl:isTerminalField true .
+
+hlsl:hlsl_attribute a owl:Class ;
+    rdfs:label "hlsl_attribute" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 530 .
+
+hlsl:identifier a owl:Class ;
+    rdfs:label "identifier" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 1 .
+
+hlsl:if_statement a owl:Class ;
+    rdfs:label "if_statement" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 345 .
+
+hlsl:import_declaration a owl:Class ;
+    rdfs:label "import_declaration" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 417 .
+
+hlsl:init_declarator a owl:Class ;
+    rdfs:label "init_declarator" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 321 .
+
+hlsl:init_statement a owl:Class ;
+    rdfs:label "init_statement" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 474 .
+
+hlsl:initializer_list a owl:Class ;
+    rdfs:label "initializer_list" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 391 .
+
+hlsl:initializer_pair a owl:Class ;
+    rdfs:label "initializer_pair" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 392 .
+
+hlsl:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+hlsl:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+hlsl:label a owl:DatatypeProperty ;
+    rdfs:label "label (literal)" ;
+    rdfs:comment "Literal value for label field when it contains a terminal node" ;
+    hlsl:fieldId 27 ;
+    hlsl:isTerminalField true .
+
+hlsl:labeled_statement a owl:Class ;
+    rdfs:label "labeled_statement" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 342 .
+
+hlsl:lambda_capture_initializer a owl:Class ;
+    rdfs:label "lambda_capture_initializer" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 503 .
+
+hlsl:lambda_capture_specifier a owl:Class ;
+    rdfs:label "lambda_capture_specifier" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 500 .
+
+hlsl:lambda_declarator a owl:Class ;
+    rdfs:label "lambda_declarator" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 498 .
+
+hlsl:lambda_default_capture a owl:Class ;
+    rdfs:label "lambda_default_capture" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 501 .
+
+hlsl:lambda_expression a owl:Class ;
+    rdfs:label "lambda_expression" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 499 .
+
+hlsl:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+hlsl:left a owl:DatatypeProperty ;
+    rdfs:label "left (literal)" ;
+    rdfs:comment "Literal value for left field when it contains a terminal node" ;
+    hlsl:fieldId 28 ;
+    hlsl:isTerminalField true .
+
+hlsl:linkage_specification a owl:Class ;
+    rdfs:label "linkage_specification" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 288 .
+
+hlsl:literal_suffix a owl:Class ;
+    rdfs:label "literal_suffix" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 222 .
+
+hlsl:member a owl:DatatypeProperty ;
+    rdfs:label "member (literal)" ;
+    rdfs:comment "Literal value for member field when it contains a terminal node" ;
+    hlsl:fieldId 30 ;
+    hlsl:isTerminalField true .
+
+hlsl:module_declaration a owl:Class ;
+    rdfs:label "module_declaration" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 415 .
+
+hlsl:module_name a owl:Class ;
+    rdfs:label "module_name" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 413 .
+
+hlsl:module_partition a owl:Class ;
+    rdfs:label "module_partition" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 414 .
+
+hlsl:ms_based_modifier a owl:Class ;
+    rdfs:label "ms_based_modifier" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 293 .
+
+hlsl:ms_call_modifier a owl:Class ;
+    rdfs:label "ms_call_modifier" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 294 .
+
+hlsl:ms_declspec_modifier a owl:Class ;
+    rdfs:label "ms_declspec_modifier" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 292 .
+
+hlsl:ms_pointer_modifier a owl:Class ;
+    rdfs:label "ms_pointer_modifier" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 296 .
+
+hlsl:ms_restrict_modifier a owl:Class ;
+    rdfs:label "ms_restrict_modifier" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 65 .
+
+hlsl:ms_signed_ptr_modifier a owl:Class ;
+    rdfs:label "ms_signed_ptr_modifier" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 67 .
+
+hlsl:ms_unaligned_ptr_modifier a owl:Class ;
+    rdfs:label "ms_unaligned_ptr_modifier" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 295 .
+
+hlsl:ms_unsigned_ptr_modifier a owl:Class ;
+    rdfs:label "ms_unsigned_ptr_modifier" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 66 .
+
+hlsl:name a owl:DatatypeProperty ;
+    rdfs:label "name (literal)" ;
+    rdfs:comment "Literal value for name field when it contains a terminal node" ;
+    hlsl:fieldId 32 ;
+    hlsl:isTerminalField true .
+
+hlsl:namespace a owl:DatatypeProperty ;
+    rdfs:label "namespace (literal)" ;
+    rdfs:comment "Literal value for namespace field when it contains a terminal node" ;
+    hlsl:fieldId 33 ;
+    hlsl:isTerminalField true .
+
+hlsl:namespace_alias_definition a owl:Class ;
+    rdfs:label "namespace_alias_definition" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 465 .
+
+hlsl:namespace_definition a owl:Class ;
+    rdfs:label "namespace_definition" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 464 .
+
+hlsl:namespace_identifier a owl:Class ;
+    rdfs:label "namespace_identifier" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 580 .
+
+hlsl:nested_namespace_specifier a owl:Class ;
+    rdfs:label "nested_namespace_specifier" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 467 .
+
+hlsl:new_declarator a owl:Class ;
+    rdfs:label "new_declarator" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 486 .
+
+hlsl:new_expression a owl:Class ;
+    rdfs:label "new_expression" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 485 .
+
+hlsl:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+hlsl:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+hlsl:noexcept a owl:Class ;
+    rdfs:label "noexcept" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 458 .
+
+hlsl:null a owl:Class ;
+    rdfs:label "null" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 399 .
+
+hlsl:number_literal a owl:Class ;
+    rdfs:label "number_literal" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 162 .
+
+hlsl:offsetof_expression a owl:Class ;
+    rdfs:label "offsetof_expression" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 374 .
+
+hlsl:operator_cast a owl:Class ;
+    rdfs:label "operator_cast" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 431 .
+
+hlsl:operator_name a owl:Class ;
+    rdfs:label "operator_name" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 524 .
+
+hlsl:optional_parameter_declaration a owl:Class ;
+    rdfs:label "optional_parameter_declaration" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 427 .
+
+hlsl:optional_type_parameter_declaration a owl:Class ;
+    rdfs:label "optional_type_parameter_declaration" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 425 .
+
+hlsl:parameter_declaration a owl:Class ;
+    rdfs:label "parameter_declaration" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 338 .
+
+hlsl:parameter_list a owl:Class ;
+    rdfs:label "parameter_list" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 337,
+        496 .
+
+hlsl:parameter_pack_expansion a owl:Class ;
+    rdfs:label "parameter_pack_expansion" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 511,
+        512,
+        513 .
+
+hlsl:parenthesized_declarator a owl:Class ;
+    rdfs:label "parenthesized_declarator" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 302,
+        303,
+        304 .
+
+hlsl:parenthesized_expression a owl:Class ;
+    rdfs:label "parenthesized_expression" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 275,
+        390 .
+
+hlsl:path a owl:DatatypeProperty ;
+    rdfs:label "path (literal)" ;
+    rdfs:comment "Literal value for path field when it contains a terminal node" ;
+    hlsl:fieldId 39 ;
+    hlsl:isTerminalField true .
+
+hlsl:placeholder_type_specifier a owl:Class ;
+    rdfs:label "placeholder_type_specifier" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 401 .
+
+hlsl:pointer_declarator a owl:Class ;
+    rdfs:label "pointer_declarator" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 309,
+        310 .
+
+hlsl:pointer_expression a owl:Class ;
+    rdfs:label "pointer_expression" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 366 .
+
+hlsl:pointer_type_declarator a owl:Class ;
+    rdfs:label "pointer_type_declarator" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 311 .
+
+hlsl:prefix a owl:DatatypeProperty ;
+    rdfs:label "prefix (literal)" ;
+    rdfs:comment "Literal value for prefix field when it contains a terminal node" ;
+    hlsl:fieldId 42 ;
+    hlsl:isTerminalField true .
+
+hlsl:preproc_arg a owl:Class ;
+    rdfs:label "preproc_arg" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 18 .
+
+hlsl:preproc_call a owl:Class ;
+    rdfs:label "preproc_call" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 253 .
+
+hlsl:preproc_def a owl:Class ;
+    rdfs:label "preproc_def" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 250 .
+
+hlsl:preproc_defined a owl:Class ;
+    rdfs:label "preproc_defined" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 276 .
+
+hlsl:preproc_directive a owl:Class ;
+    rdfs:label "preproc_directive" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 19 .
+
+hlsl:preproc_elif a owl:Class ;
+    rdfs:label "preproc_elif" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 257,
+        262,
+        267,
+        272 .
+
+hlsl:preproc_elifdef a owl:Class ;
+    rdfs:label "preproc_elifdef" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 258,
+        263,
+        268,
+        273 .
+
+hlsl:preproc_else a owl:Class ;
+    rdfs:label "preproc_else" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 256,
+        261,
+        266,
+        271 .
+
+hlsl:preproc_function_def a owl:Class ;
+    rdfs:label "preproc_function_def" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 251 .
+
+hlsl:preproc_if a owl:Class ;
+    rdfs:label "preproc_if" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 254,
+        259,
+        264,
+        269 .
+
+hlsl:preproc_ifdef a owl:Class ;
+    rdfs:label "preproc_ifdef" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 255,
+        260,
+        265,
+        270 .
+
+hlsl:preproc_include a owl:Class ;
+    rdfs:label "preproc_include" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 249 .
+
+hlsl:preproc_params a owl:Class ;
+    rdfs:label "preproc_params" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 252 .
+
+hlsl:primitive_type a owl:Class ;
+    rdfs:label "primitive_type" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 101 .
+
+hlsl:private_module_fragment_declaration a owl:Class ;
+    rdfs:label "private_module_fragment_declaration" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 419 .
+
+hlsl:pure_virtual_clause a owl:Class ;
+    rdfs:label "pure_virtual_clause" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 443 .
+
+hlsl:qualified_identifier a owl:Class ;
+    rdfs:label "qualified_identifier" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 519,
+        520,
+        521,
+        522 .
+
+hlsl:qualifiers a owl:Class ;
+    rdfs:label "qualifiers" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 528 .
+
+hlsl:raw_string_content a owl:Class ;
+    rdfs:label "raw_string_content" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 245 .
+
+hlsl:raw_string_delimiter a owl:Class ;
+    rdfs:label "raw_string_delimiter" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 244 .
+
+hlsl:raw_string_literal a owl:Class ;
+    rdfs:label "raw_string_literal" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 482 .
+
+hlsl:ref_qualifier a owl:Class ;
+    rdfs:label "ref_qualifier" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 451 .
+
+hlsl:reference_declarator a owl:Class ;
+    rdfs:label "reference_declarator" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 430,
+        446,
+        447,
+        448 .
+
+hlsl:requirement_seq a owl:Class ;
+    rdfs:label "requirement_seq" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 491 .
+
+hlsl:requires_clause a owl:Class ;
+    rdfs:label "requires_clause" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 495 .
+
+hlsl:requires_expression a owl:Class ;
+    rdfs:label "requires_expression" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 497 .
+
+hlsl:return_statement a owl:Class ;
+    rdfs:label "return_statement" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 353 .
+
+hlsl:right a owl:DatatypeProperty ;
+    rdfs:label "right (literal)" ;
+    rdfs:comment "Literal value for right field when it contains a terminal node" ;
+    hlsl:fieldId 45 ;
+    hlsl:isTerminalField true .
+
+hlsl:scope a owl:DatatypeProperty ;
+    rdfs:label "scope (literal)" ;
+    rdfs:comment "Literal value for scope field when it contains a terminal node" ;
+    hlsl:fieldId 46 ;
+    hlsl:isTerminalField true .
+
+hlsl:seh_except_clause a owl:Class ;
+    rdfs:label "seh_except_clause" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 358 .
+
+hlsl:seh_finally_clause a owl:Class ;
+    rdfs:label "seh_finally_clause" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 359 .
+
+hlsl:seh_leave_statement a owl:Class ;
+    rdfs:label "seh_leave_statement" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 360 .
+
+hlsl:seh_try_statement a owl:Class ;
+    rdfs:label "seh_try_statement" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 357 .
+
+hlsl:semantics a owl:Class ;
+    rdfs:label "semantics" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 526 .
+
+hlsl:simple_requirement a owl:Class ;
+    rdfs:label "simple_requirement" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 581 .
+
+hlsl:sized_type_specifier a owl:Class ;
+    rdfs:label "sized_type_specifier" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 327 .
+
+hlsl:sizeof_expression a owl:Class ;
+    rdfs:label "sizeof_expression" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 372 .
+
+hlsl:statement_identifier a owl:Class ;
+    rdfs:label "statement_identifier" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 582 .
+
+hlsl:static_assert_declaration a owl:Class ;
+    rdfs:label "static_assert_declaration" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 470 .
+
+hlsl:storage_class_specifier a owl:Class ;
+    rdfs:label "storage_class_specifier" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 323 .
+
+hlsl:string_content a owl:Class ;
+    rdfs:label "string_content" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 174 .
+
+hlsl:string_literal a owl:Class ;
+    rdfs:label "string_literal" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 398 .
+
+hlsl:struct_specifier a owl:Class ;
+    rdfs:label "struct_specifier" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 330 .
+
+hlsl:structured_binding_declarator a owl:Class ;
+    rdfs:label "structured_binding_declarator" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 450 .
+
+hlsl:subscript_argument_list a owl:Class ;
+    rdfs:label "subscript_argument_list" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 483 .
+
+hlsl:subscript_designator a owl:Class ;
+    rdfs:label "subscript_designator" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 393 .
+
+hlsl:subscript_expression a owl:Class ;
+    rdfs:label "subscript_expression" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 376 .
+
+hlsl:subscript_range_designator a owl:Class ;
+    rdfs:label "subscript_range_designator" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 394 .
+
+hlsl:switch_statement a owl:Class ;
+    rdfs:label "switch_statement" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 347 .
+
+hlsl:symbol a owl:DatatypeProperty ;
+    rdfs:label "symbol (literal)" ;
+    rdfs:comment "Literal value for symbol field when it contains a terminal node" ;
+    hlsl:fieldId 49 ;
+    hlsl:isTerminalField true .
+
+hlsl:system_lib_string a owl:Class ;
+    rdfs:label "system_lib_string" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 176 .
+
+hlsl:template_argument_list a owl:Class ;
+    rdfs:label "template_argument_list" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 463 .
+
+hlsl:template_declaration a owl:Class ;
+    rdfs:label "template_declaration" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 420 .
+
+hlsl:template_function a owl:Class ;
+    rdfs:label "template_function" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 462 .
+
+hlsl:template_instantiation a owl:Class ;
+    rdfs:label "template_instantiation" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 421 .
+
+hlsl:template_method a owl:Class ;
+    rdfs:label "template_method" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 461 .
+
+hlsl:template_parameter_list a owl:Class ;
+    rdfs:label "template_parameter_list" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 422 .
+
+hlsl:template_template_parameter_declaration a owl:Class ;
+    rdfs:label "template_template_parameter_declaration" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 426 .
+
+hlsl:template_type a owl:Class ;
+    rdfs:label "template_type" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 460 .
+
+hlsl:this a owl:Class ;
+    rdfs:label "this" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 221 .
+
+hlsl:throw_specifier a owl:Class ;
+    rdfs:label "throw_specifier" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 459 .
+
+hlsl:throw_statement a owl:Class ;
+    rdfs:label "throw_statement" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 479 .
+
+hlsl:trailing_return_type a owl:Class ;
+    rdfs:label "trailing_return_type" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 457 .
+
+hlsl:translation_unit a owl:Class ;
+    rdfs:label "translation_unit" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 246 .
+
+hlsl:true a owl:Class ;
+    rdfs:label "true" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 177 .
+
+hlsl:try_statement a owl:Class ;
+    rdfs:label "try_statement" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 438,
+        480 .
+
+hlsl:type a owl:DatatypeProperty ;
+    rdfs:label "type (literal)" ;
+    rdfs:comment "Literal value for type field when it contains a terminal node" ;
+    hlsl:fieldId 51 ;
+    hlsl:isTerminalField true .
+
+hlsl:type_definition a owl:Class ;
+    rdfs:label "type_definition" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 283 .
+
+hlsl:type_descriptor a owl:Class ;
+    rdfs:label "type_descriptor" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 371 .
+
+hlsl:type_identifier a owl:Class ;
+    rdfs:label "type_identifier" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 583 .
+
+hlsl:type_parameter_declaration a owl:Class ;
+    rdfs:label "type_parameter_declaration" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 423 .
+
+hlsl:type_qualifier a owl:Class ;
+    rdfs:label "type_qualifier" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 324 .
+
+hlsl:type_requirement a owl:Class ;
+    rdfs:label "type_requirement" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 488 .
+
+hlsl:unary_expression a owl:Class ;
+    rdfs:label "unary_expression" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 277,
+        367 .
+
+hlsl:union_specifier a owl:Class ;
+    rdfs:label "union_specifier" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 331 .
+
+hlsl:update_expression a owl:Class ;
+    rdfs:label "update_expression" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 369 .
+
+hlsl:user_defined_literal a owl:Class ;
+    rdfs:label "user_defined_literal" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 525 .
+
+hlsl:using_declaration a owl:Class ;
+    rdfs:label "using_declaration" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 468 .
+
+hlsl:value a owl:DatatypeProperty ;
+    rdfs:label "value (literal)" ;
+    rdfs:comment "Literal value for value field when it contains a terminal node" ;
+    hlsl:fieldId 53 ;
+    hlsl:isTerminalField true .
+
+hlsl:variadic_declarator a owl:Class ;
+    rdfs:label "variadic_declarator" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 429 .
+
+hlsl:variadic_parameter_declaration a owl:Class ;
+    rdfs:label "variadic_parameter_declaration" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 428 .
+
+hlsl:variadic_type_parameter_declaration a owl:Class ;
+    rdfs:label "variadic_type_parameter_declaration" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 424 .
+
+hlsl:virtual_specifier a owl:Class ;
+    rdfs:label "virtual_specifier" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 408 .
+
+hlsl:while_statement a owl:Class ;
+    rdfs:label "while_statement" ;
+    rdfs:isDefinedBy hlsl: ;
+    rdfs:subClassOf ast:Node ;
+    hlsl:isSupertype true ;
+    hlsl:nodeTypeId 349 .
+
+hlsl: a owl:Ontology ;
+    rdfs:label "Hlsl Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for hlsl" ;
+    owl:versionInfo "v0.25" ;
+    hlsl:abiVersion 14 ;
+    hlsl:fieldCount 53 ;
+    hlsl:languageName "None" ;
+    hlsl:nodeKindCount 584 .
+

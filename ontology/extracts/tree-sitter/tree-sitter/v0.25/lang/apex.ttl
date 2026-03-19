@@ -1,0 +1,1913 @@
+@prefix apex: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/apex/> .
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+apex:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+apex:abstract a owl:Class ;
+    rdfs:label "abstract" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 331 .
+
+apex:accessor_declaration a owl:Class ;
+    rdfs:label "accessor_declaration" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 379 .
+
+apex:accessor_list a owl:Class ;
+    rdfs:label "accessor_list" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 378 .
+
+apex:after_delete a owl:Class ;
+    rdfs:label "after_delete" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 318 .
+
+apex:after_insert a owl:Class ;
+    rdfs:label "after_insert" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 316 .
+
+apex:after_undelete a owl:Class ;
+    rdfs:label "after_undelete" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 319 .
+
+apex:after_update a owl:Class ;
+    rdfs:label "after_update" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 317 .
+
+apex:alias_expression a owl:Class ;
+    rdfs:label "alias_expression" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 449 .
+
+apex:all_rows_clause a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "all_rows_clause",
+        "all_rows_clause (literal)" ;
+    rdfs:comment "Literal value for all_rows_clause field when it contains a terminal node" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:fieldId 2 ;
+    apex:isSupertype true ;
+    apex:isTerminalField true ;
+    apex:nodeTypeId 460 .
+
+apex:and_expression a owl:Class ;
+    rdfs:label "and_expression" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 428 .
+
+apex:annotated_type a owl:Class ;
+    rdfs:label "annotated_type" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 365 .
+
+apex:annotation a owl:Class ;
+    rdfs:label "annotation" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 301 .
+
+apex:annotation_argument_list a owl:Class ;
+    rdfs:label "annotation_argument_list" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 302 .
+
+apex:annotation_key_value a owl:Class ;
+    rdfs:label "annotation_key_value" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 303 .
+
+apex:argument_list a owl:Class ;
+    rdfs:label "argument_list" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 275 .
+
+apex:array_access a owl:Class ;
+    rdfs:label "array_access" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 273 .
+
+apex:array_creation_expression a owl:Class ;
+    rdfs:label "array_creation_expression" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 264 .
+
+apex:array_initializer a owl:Class ;
+    rdfs:label "array_initializer" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 360 .
+
+apex:array_type a owl:Class ;
+    rdfs:label "array_type" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 368 .
+
+apex:assignment_expression a owl:Class ;
+    rdfs:label "assignment_expression" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 256 .
+
+apex:assignment_operator a owl:Class ;
+    rdfs:label "assignment_operator" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28 .
+
+apex:before_delete a owl:Class ;
+    rdfs:label "before_delete" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 315 .
+
+apex:before_insert a owl:Class ;
+    rdfs:label "before_insert" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 313 .
+
+apex:before_update a owl:Class ;
+    rdfs:label "before_update" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 314 .
+
+apex:binary_expression a owl:Class ;
+    rdfs:label "binary_expression" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 257 .
+
+apex:block a owl:Class ;
+    rdfs:label "block" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 286 .
+
+apex:block_comment a owl:Class ;
+    rdfs:label "block_comment" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 122 .
+
+apex:boolean a owl:Class ;
+    rdfs:label "boolean" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 461 .
+
+apex:boolean_type a owl:Class ;
+    rdfs:label "boolean_type" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 118 .
+
+apex:bound_apex_expression a owl:Class ;
+    rdfs:label "bound_apex_expression" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 467 .
+
+apex:bound_value a owl:DatatypeProperty ;
+    rdfs:label "bound_value (literal)" ;
+    rdfs:comment "Literal value for bound_value field when it contains a terminal node" ;
+    apex:fieldId 7 ;
+    apex:isTerminalField true .
+
+apex:break_statement a owl:Class ;
+    rdfs:label "break_statement" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 289 .
+
+apex:cast_expression a owl:Class ;
+    rdfs:label "cast_expression" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 255 .
+
+apex:catch_clause a owl:Class ;
+    rdfs:label "catch_clause" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 294 .
+
+apex:class_body a owl:Class ;
+    rdfs:label "class_body" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 344 .
+
+apex:class_declaration a owl:Class ;
+    rdfs:label "class_declaration" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 310 .
+
+apex:class_literal a owl:Class ;
+    rdfs:label "class_literal" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 268 .
+
+apex:comparable_list a owl:Class ;
+    rdfs:label "comparable_list" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 436 .
+
+apex:comparison_expression a owl:Class ;
+    rdfs:label "comparison_expression" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 432 .
+
+apex:constant_declaration a owl:Class ;
+    rdfs:label "constant_declaration" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 355 .
+
+apex:constructor a owl:DatatypeProperty ;
+    rdfs:label "constructor (literal)" ;
+    rdfs:comment "Literal value for constructor field when it contains a terminal node" ;
+    apex:fieldId 10 ;
+    apex:isTerminalField true .
+
+apex:constructor_body a owl:Class ;
+    rdfs:label "constructor_body" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 348 .
+
+apex:constructor_declaration a owl:Class ;
+    rdfs:label "constructor_declaration" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 346 .
+
+apex:continue_statement a owl:Class ;
+    rdfs:label "continue_statement" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 290 .
+
+apex:count_expression a owl:Class ;
+    rdfs:label "count_expression" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 404 .
+
+apex:currency_literal a owl:Class ;
+    rdfs:label "currency_literal" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 237 .
+
+apex:date a owl:Class ;
+    rdfs:label "date" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 235 .
+
+apex:date_literal a owl:Class ;
+    rdfs:label "date_literal" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 230,
+        464 .
+
+apex:date_literal_with_param a owl:Class ;
+    rdfs:label "date_literal_with_param" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 465 .
+
+apex:date_time a owl:Class ;
+    rdfs:label "date_time" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 236 .
+
+apex:decimal a owl:Class ;
+    rdfs:label "decimal" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 234 .
+
+apex:decimal_floating_point_literal a owl:Class ;
+    rdfs:label "decimal_floating_point_literal" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 238 .
+
+apex:delete a owl:Class ;
+    rdfs:label "delete" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 248 .
+
+apex:dimensions a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "dimensions",
+        "dimensions (literal)" ;
+    rdfs:comment "Literal value for dimensions field when it contains a terminal node" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:fieldId 12 ;
+    apex:isSupertype true ;
+    apex:isTerminalField true ;
+    apex:nodeTypeId 277 .
+
+apex:dimensions_expr a owl:Class ;
+    rdfs:label "dimensions_expr" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 266 .
+
+apex:dml_expression a owl:Class ;
+    rdfs:label "dml_expression" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 242 .
+
+apex:dml_security_mode a owl:Class ;
+    rdfs:label "dml_security_mode" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 252 .
+
+apex:dml_type a owl:Class ;
+    rdfs:label "dml_type" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 243,
+        244,
+        245 .
+
+apex:do_statement a owl:Class ;
+    rdfs:label "do_statement" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 288 .
+
+apex:dotted_identifier a owl:Class ;
+    rdfs:label "dotted_identifier" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 457 .
+
+apex:element_value_array_initializer a owl:Class ;
+    rdfs:label "element_value_array_initializer" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 305 .
+
+apex:else_expression a owl:Class ;
+    rdfs:label "else_expression" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 415 .
+
+apex:enhanced_for_statement a owl:Class ;
+    rdfs:label "enhanced_for_statement" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 299 .
+
+apex:enum_body a owl:Class ;
+    rdfs:label "enum_body" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 308 .
+
+apex:enum_constant a owl:Class ;
+    rdfs:label "enum_constant" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 309 .
+
+apex:enum_declaration a owl:Class ;
+    rdfs:label "enum_declaration" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 307 .
+
+apex:explicit_constructor_invocation a owl:Class ;
+    rdfs:label "explicit_constructor_invocation" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 349 .
+
+apex:expression_statement a owl:Class ;
+    rdfs:label "expression_statement" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 287 .
+
+apex:extends_interfaces a owl:Class ;
+    rdfs:label "extends_interfaces" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 353 .
+
+apex:field a owl:DatatypeProperty ;
+    rdfs:label "field (literal)" ;
+    rdfs:comment "Literal value for field field when it contains a terminal node" ;
+    apex:fieldId 15 ;
+    apex:isTerminalField true .
+
+apex:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+apex:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+apex:field_access a owl:Class ;
+    rdfs:label "field_access" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 270 .
+
+apex:field_accessor a owl:ObjectProperty ;
+    rdfs:label "accessor (structural)" ;
+    rdfs:comment "Structural reference for accessor field when it contains a non-terminal node" ;
+    apex:fieldId 1 .
+
+apex:field_alternative a owl:ObjectProperty ;
+    rdfs:label "alternative (structural)" ;
+    rdfs:comment "Structural reference for alternative field when it contains a non-terminal node" ;
+    apex:fieldId 3 .
+
+apex:field_arguments a owl:ObjectProperty ;
+    rdfs:label "arguments (structural)" ;
+    rdfs:comment "Structural reference for arguments field when it contains a non-terminal node" ;
+    apex:fieldId 4 .
+
+apex:field_array a owl:ObjectProperty ;
+    rdfs:label "array (structural)" ;
+    rdfs:comment "Structural reference for array field when it contains a non-terminal node" ;
+    apex:fieldId 5 .
+
+apex:field_body a owl:ObjectProperty ;
+    rdfs:label "body (structural)" ;
+    rdfs:comment "Structural reference for body field when it contains a non-terminal node" ;
+    apex:fieldId 6 .
+
+apex:field_bound_value a owl:ObjectProperty ;
+    rdfs:label "bound_value (structural)" ;
+    rdfs:comment "Structural reference for bound_value field when it contains a non-terminal node" ;
+    apex:fieldId 7 .
+
+apex:field_condition a owl:ObjectProperty ;
+    rdfs:label "condition (structural)" ;
+    rdfs:comment "Structural reference for condition field when it contains a non-terminal node" ;
+    apex:fieldId 8 .
+
+apex:field_consequence a owl:ObjectProperty ;
+    rdfs:label "consequence (structural)" ;
+    rdfs:comment "Structural reference for consequence field when it contains a non-terminal node" ;
+    apex:fieldId 9 .
+
+apex:field_declaration a owl:Class ;
+    rdfs:label "field_declaration" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 351 .
+
+apex:field_declarator a owl:ObjectProperty ;
+    rdfs:label "declarator (structural)" ;
+    rdfs:comment "Structural reference for declarator field when it contains a non-terminal node" ;
+    apex:fieldId 11 .
+
+apex:field_dimensions a owl:ObjectProperty ;
+    rdfs:label "dimensions (structural)" ;
+    rdfs:comment "Structural reference for dimensions field when it contains a non-terminal node" ;
+    apex:fieldId 12 .
+
+apex:field_element a owl:ObjectProperty ;
+    rdfs:label "element (structural)" ;
+    rdfs:comment "Structural reference for element field when it contains a non-terminal node" ;
+    apex:fieldId 13 .
+
+apex:field_events a owl:ObjectProperty ;
+    rdfs:label "events (structural)" ;
+    rdfs:comment "Structural reference for events field when it contains a non-terminal node" ;
+    apex:fieldId 14 .
+
+apex:field_for_clause a owl:ObjectProperty ;
+    rdfs:label "for_clause (structural)" ;
+    rdfs:comment "Structural reference for for_clause field when it contains a non-terminal node" ;
+    apex:fieldId 16 .
+
+apex:field_from_clause a owl:ObjectProperty ;
+    rdfs:label "from_clause (structural)" ;
+    rdfs:comment "Structural reference for from_clause field when it contains a non-terminal node" ;
+    apex:fieldId 17 .
+
+apex:field_group_by_clause a owl:ObjectProperty ;
+    rdfs:label "group_by_clause (structural)" ;
+    rdfs:comment "Structural reference for group_by_clause field when it contains a non-terminal node" ;
+    apex:fieldId 19 .
+
+apex:field_identifier a owl:Class ;
+    rdfs:label "field_identifier" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 458 .
+
+apex:field_index a owl:ObjectProperty ;
+    rdfs:label "index (structural)" ;
+    rdfs:comment "Structural reference for index field when it contains a non-terminal node" ;
+    apex:fieldId 20 .
+
+apex:field_init a owl:ObjectProperty ;
+    rdfs:label "init (structural)" ;
+    rdfs:comment "Structural reference for init field when it contains a non-terminal node" ;
+    apex:fieldId 21 .
+
+apex:field_interfaces a owl:ObjectProperty ;
+    rdfs:label "interfaces (structural)" ;
+    rdfs:comment "Structural reference for interfaces field when it contains a non-terminal node" ;
+    apex:fieldId 22 .
+
+apex:field_left a owl:ObjectProperty ;
+    rdfs:label "left (structural)" ;
+    rdfs:comment "Structural reference for left field when it contains a non-terminal node" ;
+    apex:fieldId 24 .
+
+apex:field_limit_clause a owl:ObjectProperty ;
+    rdfs:label "limit_clause (structural)" ;
+    rdfs:comment "Structural reference for limit_clause field when it contains a non-terminal node" ;
+    apex:fieldId 25 .
+
+apex:field_list a owl:Class ;
+    rdfs:label "field_list" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 459 .
+
+apex:field_lookup_field a owl:ObjectProperty ;
+    rdfs:label "lookup_field (structural)" ;
+    rdfs:comment "Structural reference for lookup_field field when it contains a non-terminal node" ;
+    apex:fieldId 26 .
+
+apex:field_merge_with a owl:ObjectProperty ;
+    rdfs:label "merge_with (structural)" ;
+    rdfs:comment "Structural reference for merge_with field when it contains a non-terminal node" ;
+    apex:fieldId 27 .
+
+apex:field_name a owl:ObjectProperty ;
+    rdfs:label "name (structural)" ;
+    rdfs:comment "Structural reference for name field when it contains a non-terminal node" ;
+    apex:fieldId 28 .
+
+apex:field_object a owl:ObjectProperty ;
+    rdfs:label "object (structural)" ;
+    rdfs:comment "Structural reference for object field when it contains a non-terminal node" ;
+    apex:fieldId 29 .
+
+apex:field_offset_clause a owl:ObjectProperty ;
+    rdfs:label "offset_clause (structural)" ;
+    rdfs:comment "Structural reference for offset_clause field when it contains a non-terminal node" ;
+    apex:fieldId 30 .
+
+apex:field_operand a owl:ObjectProperty ;
+    rdfs:label "operand (structural)" ;
+    rdfs:comment "Structural reference for operand field when it contains a non-terminal node" ;
+    apex:fieldId 31 .
+
+apex:field_operator a owl:ObjectProperty ;
+    rdfs:label "operator (structural)" ;
+    rdfs:comment "Structural reference for operator field when it contains a non-terminal node" ;
+    apex:fieldId 32 .
+
+apex:field_order_by_clause a owl:ObjectProperty ;
+    rdfs:label "order_by_clause (structural)" ;
+    rdfs:comment "Structural reference for order_by_clause field when it contains a non-terminal node" ;
+    apex:fieldId 33 .
+
+apex:field_parameters a owl:ObjectProperty ;
+    rdfs:label "parameters (structural)" ;
+    rdfs:comment "Structural reference for parameters field when it contains a non-terminal node" ;
+    apex:fieldId 34 .
+
+apex:field_right a owl:ObjectProperty ;
+    rdfs:label "right (structural)" ;
+    rdfs:comment "Structural reference for right field when it contains a non-terminal node" ;
+    apex:fieldId 35 .
+
+apex:field_scope a owl:ObjectProperty ;
+    rdfs:label "scope (structural)" ;
+    rdfs:comment "Structural reference for scope field when it contains a non-terminal node" ;
+    apex:fieldId 36 .
+
+apex:field_security_mode a owl:ObjectProperty ;
+    rdfs:label "security_mode (structural)" ;
+    rdfs:comment "Structural reference for security_mode field when it contains a non-terminal node" ;
+    apex:fieldId 37 .
+
+apex:field_select_clause a owl:ObjectProperty ;
+    rdfs:label "select_clause (structural)" ;
+    rdfs:comment "Structural reference for select_clause field when it contains a non-terminal node" ;
+    apex:fieldId 38 .
+
+apex:field_superclass a owl:ObjectProperty ;
+    rdfs:label "superclass (structural)" ;
+    rdfs:comment "Structural reference for superclass field when it contains a non-terminal node" ;
+    apex:fieldId 39 .
+
+apex:field_target a owl:ObjectProperty ;
+    rdfs:label "target (structural)" ;
+    rdfs:comment "Structural reference for target field when it contains a non-terminal node" ;
+    apex:fieldId 40 .
+
+apex:field_type a owl:ObjectProperty ;
+    rdfs:label "type (structural)" ;
+    rdfs:comment "Structural reference for type field when it contains a non-terminal node" ;
+    apex:fieldId 41 .
+
+apex:field_type_arguments a owl:ObjectProperty ;
+    rdfs:label "type_arguments (structural)" ;
+    rdfs:comment "Structural reference for type_arguments field when it contains a non-terminal node" ;
+    apex:fieldId 42 .
+
+apex:field_type_parameters a owl:ObjectProperty ;
+    rdfs:label "type_parameters (structural)" ;
+    rdfs:comment "Structural reference for type_parameters field when it contains a non-terminal node" ;
+    apex:fieldId 43 .
+
+apex:field_update a owl:ObjectProperty ;
+    rdfs:label "update (structural)" ;
+    rdfs:comment "Structural reference for update field when it contains a non-terminal node" ;
+    apex:fieldId 44 .
+
+apex:field_update_clause a owl:ObjectProperty ;
+    rdfs:label "update_clause (structural)" ;
+    rdfs:comment "Structural reference for update_clause field when it contains a non-terminal node" ;
+    apex:fieldId 45 .
+
+apex:field_upsert_key a owl:ObjectProperty ;
+    rdfs:label "upsert_key (structural)" ;
+    rdfs:comment "Structural reference for upsert_key field when it contains a non-terminal node" ;
+    apex:fieldId 46 .
+
+apex:field_user a owl:ObjectProperty ;
+    rdfs:label "user (structural)" ;
+    rdfs:comment "Structural reference for user field when it contains a non-terminal node" ;
+    apex:fieldId 47 .
+
+apex:field_using_clause a owl:ObjectProperty ;
+    rdfs:label "using_clause (structural)" ;
+    rdfs:comment "Structural reference for using_clause field when it contains a non-terminal node" ;
+    apex:fieldId 48 .
+
+apex:field_value a owl:ObjectProperty ;
+    rdfs:label "value (structural)" ;
+    rdfs:comment "Structural reference for value field when it contains a non-terminal node" ;
+    apex:fieldId 49 .
+
+apex:field_where_clause a owl:ObjectProperty ;
+    rdfs:label "where_clause (structural)" ;
+    rdfs:comment "Structural reference for where_clause field when it contains a non-terminal node" ;
+    apex:fieldId 51 .
+
+apex:field_with_clause a owl:ObjectProperty ;
+    rdfs:label "with_clause (structural)" ;
+    rdfs:comment "Structural reference for with_clause field when it contains a non-terminal node" ;
+    apex:fieldId 52 .
+
+apex:fields_expression a owl:Class ;
+    rdfs:label "fields_expression" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 424 .
+
+apex:fields_type a owl:Class ;
+    rdfs:label "fields_type" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 425 .
+
+apex:final a owl:Class ;
+    rdfs:label "final" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 333 .
+
+apex:finally_clause a owl:Class ;
+    rdfs:label "finally_clause" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 295 .
+
+apex:find_clause a owl:Class ;
+    rdfs:label "find_clause" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 381 .
+
+apex:for_clause a owl:Class ;
+    rdfs:label "for_clause" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 418 .
+
+apex:for_statement a owl:Class ;
+    rdfs:label "for_statement" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 298 .
+
+apex:for_type a owl:Class ;
+    rdfs:label "for_type" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 419 .
+
+apex:formal_parameter a owl:Class ;
+    rdfs:label "formal_parameter" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 373 .
+
+apex:formal_parameters a owl:Class ;
+    rdfs:label "formal_parameters" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 372 .
+
+apex:from_clause a owl:Class ;
+    rdfs:label "from_clause" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 421 .
+
+apex:function_expression a owl:Class ;
+    rdfs:label "function_expression" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 456 .
+
+apex:function_name a owl:DatatypeProperty ;
+    rdfs:label "function_name (literal)" ;
+    rdfs:comment "Literal value for function_name field when it contains a terminal node" ;
+    apex:fieldId 18 ;
+    apex:isTerminalField true .
+
+apex:generic_type a owl:Class ;
+    rdfs:label "generic_type" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 367 .
+
+apex:geo_location_type a owl:Class ;
+    rdfs:label "geo_location_type" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 454 .
+
+apex:global a owl:Class ;
+    rdfs:label "global" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 323 .
+
+apex:group_by_clause a owl:Class ;
+    rdfs:label "group_by_clause" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 416 .
+
+apex:having_clause a owl:Class ;
+    rdfs:label "having_clause" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 420 .
+
+apex:identifier a owl:Class ;
+    rdfs:label "identifier" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 1,
+        196,
+        197 .
+
+apex:if_statement a owl:Class ;
+    rdfs:label "if_statement" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 296 .
+
+apex:in_clause a owl:Class ;
+    rdfs:label "in_clause" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 382 .
+
+apex:in_type a owl:Class ;
+    rdfs:label "in_type" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 383 .
+
+apex:inherited_sharing a owl:Class ;
+    rdfs:label "inherited_sharing" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 337 .
+
+apex:insert a owl:Class ;
+    rdfs:label "insert" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 246 .
+
+apex:instanceof_expression a owl:Class ;
+    rdfs:label "instanceof_expression" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 258 .
+
+apex:int a owl:Class ;
+    rdfs:label "int" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 233 .
+
+apex:interface_body a owl:Class ;
+    rdfs:label "interface_body" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 354 .
+
+apex:interface_declaration a owl:Class ;
+    rdfs:label "interface_declaration" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 352 .
+
+apex:interfaces a owl:Class ;
+    rdfs:label "interfaces" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 342 .
+
+apex:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+apex:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+apex:java_field_access a owl:Class ;
+    rdfs:label "java_field_access" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 271 .
+
+apex:java_type a owl:Class ;
+    rdfs:label "java_type" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 369 .
+
+apex:key a owl:DatatypeProperty ;
+    rdfs:label "key (literal)" ;
+    rdfs:comment "Literal value for key field when it contains a terminal node" ;
+    apex:fieldId 23 ;
+    apex:isTerminalField true .
+
+apex:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+apex:left a owl:DatatypeProperty ;
+    rdfs:label "left (literal)" ;
+    rdfs:comment "Literal value for left field when it contains a terminal node" ;
+    apex:fieldId 24 ;
+    apex:isTerminalField true .
+
+apex:limit_clause a owl:Class ;
+    rdfs:label "limit_clause" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 445 .
+
+apex:line_comment a owl:Class ;
+    rdfs:label "line_comment" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 121 .
+
+apex:local_variable_declaration a owl:Class ;
+    rdfs:label "local_variable_declaration" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 374 .
+
+apex:map_creation_expression a owl:Class ;
+    rdfs:label "map_creation_expression" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 265 .
+
+apex:map_initializer a owl:Class ;
+    rdfs:label "map_initializer" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 361 .
+
+apex:map_key_initializer a owl:Class ;
+    rdfs:label "map_key_initializer" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 359 .
+
+apex:merge a owl:Class ;
+    rdfs:label "merge" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 249 .
+
+apex:method_declaration a owl:Class ;
+    rdfs:label "method_declaration" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 375 .
+
+apex:method_invocation a owl:Class ;
+    rdfs:label "method_invocation" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 274 .
+
+apex:modifier a owl:Class ;
+    rdfs:label "modifier" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 322 .
+
+apex:modifiers a owl:Class ;
+    rdfs:label "modifiers" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 321 .
+
+apex:name a owl:DatatypeProperty ;
+    rdfs:label "name (literal)" ;
+    rdfs:comment "Literal value for name field when it contains a terminal node" ;
+    apex:fieldId 28 ;
+    apex:isTerminalField true .
+
+apex:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+apex:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+apex:not_expression a owl:Class ;
+    rdfs:label "not_expression" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 430 .
+
+apex:null_literal a owl:Class ;
+    rdfs:label "null_literal" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 468 .
+
+apex:object a owl:DatatypeProperty ;
+    rdfs:label "object (literal)" ;
+    rdfs:comment "Literal value for object field when it contains a terminal node" ;
+    apex:fieldId 29 ;
+    apex:isTerminalField true .
+
+apex:object_creation_expression a owl:Class ;
+    rdfs:label "object_creation_expression" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 269 .
+
+apex:offset_clause a owl:Class ;
+    rdfs:label "offset_clause" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 446 .
+
+apex:operator a owl:DatatypeProperty ;
+    rdfs:label "operator (literal)" ;
+    rdfs:comment "Literal value for operator field when it contains a terminal node" ;
+    apex:fieldId 32 ;
+    apex:isTerminalField true .
+
+apex:or_expression a owl:Class ;
+    rdfs:label "or_expression" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 429 .
+
+apex:order_by_clause a owl:Class ;
+    rdfs:label "order_by_clause" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 450 .
+
+apex:order_direction a owl:Class ;
+    rdfs:label "order_direction" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 452 .
+
+apex:order_expression a owl:Class ;
+    rdfs:label "order_expression" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 451 .
+
+apex:order_null_direction a owl:Class ;
+    rdfs:label "order_null_direction" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 453 .
+
+apex:override a owl:Class ;
+    rdfs:label "override" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 328 .
+
+apex:parenthesized_expression a owl:Class ;
+    rdfs:label "parenthesized_expression" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 267 .
+
+apex:parser_output a owl:Class ;
+    rdfs:label "parser_output" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 239 .
+
+apex:private a owl:Class ;
+    rdfs:label "private" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 329 .
+
+apex:protected a owl:Class ;
+    rdfs:label "protected" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 327 .
+
+apex:public a owl:Class ;
+    rdfs:label "public" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 324 .
+
+apex:query_expression a owl:Class ;
+    rdfs:label "query_expression" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 241 .
+
+apex:return_statement a owl:Class ;
+    rdfs:label "return_statement" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 291 .
+
+apex:returning_clause a owl:Class ;
+    rdfs:label "returning_clause" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 386 .
+
+apex:run_as_statement a owl:Class ;
+    rdfs:label "run_as_statement" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 300 .
+
+apex:safe_navigation_operator a owl:Class ;
+    rdfs:label "safe_navigation_operator" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 63 .
+
+apex:scope a owl:DatatypeProperty ;
+    rdfs:label "scope (literal)" ;
+    rdfs:comment "Literal value for scope field when it contains a terminal node" ;
+    apex:fieldId 36 ;
+    apex:isTerminalField true .
+
+apex:scoped_identifier a owl:Class ;
+    rdfs:label "scoped_identifier" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 350 .
+
+apex:scoped_type_identifier a owl:Class ;
+    rdfs:label "scoped_type_identifier" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 366 .
+
+apex:select_clause a owl:Class ;
+    rdfs:label "select_clause" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 405 .
+
+apex:selected_fields a owl:Class ;
+    rdfs:label "selected_fields" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 388 .
+
+apex:set_comparison_operator a owl:Class ;
+    rdfs:label "set_comparison_operator" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 463 .
+
+apex:sobject_return a owl:Class ;
+    rdfs:label "sobject_return" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 387 .
+
+apex:soql_query_body a owl:Class ;
+    rdfs:label "soql_query_body" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 403 .
+
+apex:sosl_query_body a owl:Class ;
+    rdfs:label "sosl_query_body" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 380 .
+
+apex:sosl_using_clause a owl:Class ;
+    rdfs:label "sosl_using_clause" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 392 .
+
+apex:static a owl:Class ;
+    rdfs:label "static" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 332 .
+
+apex:static_initializer a owl:Class ;
+    rdfs:label "static_initializer" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 345 .
+
+apex:storage_alias a owl:Class ;
+    rdfs:label "storage_alias" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 423 .
+
+apex:storage_identifier a owl:Class ;
+    rdfs:label "storage_identifier" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 422 .
+
+apex:string_literal a owl:Class ;
+    rdfs:label "string_literal" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 232 .
+
+apex:subquery a owl:Class ;
+    rdfs:label "subquery" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 393 .
+
+apex:super a owl:Class ;
+    rdfs:label "super" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 377 .
+
+apex:superclass a owl:Class ;
+    rdfs:label "superclass" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 341 .
+
+apex:switch_block a owl:Class ;
+    rdfs:label "switch_block" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 281 .
+
+apex:switch_expression a owl:Class ;
+    rdfs:label "switch_expression" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 280 .
+
+apex:switch_label a owl:Class ;
+    rdfs:label "switch_label" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 283 .
+
+apex:switch_rule a owl:Class ;
+    rdfs:label "switch_rule" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 282 .
+
+apex:system a owl:Class ;
+    rdfs:label "system" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 254 .
+
+apex:term a owl:Class ;
+    rdfs:label "term" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 134 .
+
+apex:term_separator_end a owl:Class ;
+    rdfs:label "term_separator_end" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 385 .
+
+apex:term_separator_start a owl:Class ;
+    rdfs:label "term_separator_start" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 384 .
+
+apex:ternary_expression a owl:Class ;
+    rdfs:label "ternary_expression" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 259 .
+
+apex:testMethod a owl:Class ;
+    rdfs:label "testMethod" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 325 .
+
+apex:this a owl:Class ;
+    rdfs:label "this" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 376 .
+
+apex:throw_statement a owl:Class ;
+    rdfs:label "throw_statement" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 292 .
+
+apex:transient a owl:Class ;
+    rdfs:label "transient" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 334 .
+
+apex:trigger_body a owl:Class ;
+    rdfs:label "trigger_body" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 320 .
+
+apex:trigger_declaration a owl:Class ;
+    rdfs:label "trigger_declaration" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 311 .
+
+apex:trigger_event a owl:Class ;
+    rdfs:label "trigger_event" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 312 .
+
+apex:try_statement a owl:Class ;
+    rdfs:label "try_statement" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 293 .
+
+apex:type_arguments a owl:Class ;
+    rdfs:label "type_arguments" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 276 .
+
+apex:type_bound a owl:Class ;
+    rdfs:label "type_bound" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 340 .
+
+apex:type_identifier a owl:Class ;
+    rdfs:label "type_identifier" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 519 .
+
+apex:type_list a owl:Class ;
+    rdfs:label "type_list" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 343 .
+
+apex:type_of_clause a owl:Class ;
+    rdfs:label "type_of_clause" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 413 .
+
+apex:type_parameter a owl:Class ;
+    rdfs:label "type_parameter" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 339 .
+
+apex:type_parameters a owl:Class ;
+    rdfs:label "type_parameters" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 338 .
+
+apex:unary_expression a owl:Class ;
+    rdfs:label "unary_expression" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 260 .
+
+apex:undelete a owl:Class ;
+    rdfs:label "undelete" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 250 .
+
+apex:update a owl:Class ;
+    rdfs:label "update" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 247 .
+
+apex:update_clause a owl:Class ;
+    rdfs:label "update_clause" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 447 .
+
+apex:update_expression a owl:Class ;
+    rdfs:label "update_expression" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 261 .
+
+apex:update_operator a owl:Class ;
+    rdfs:label "update_operator" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 262 .
+
+apex:update_type a owl:Class ;
+    rdfs:label "update_type" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 448 .
+
+apex:upsert a owl:Class ;
+    rdfs:label "upsert" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 251 .
+
+apex:user a owl:Class ;
+    rdfs:label "user" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 253 .
+
+apex:using_advanced_search a owl:Class ;
+    rdfs:label "using_advanced_search" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 391 .
+
+apex:using_clause a owl:Class ;
+    rdfs:label "using_clause" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 406 .
+
+apex:using_listview_clause a owl:Class ;
+    rdfs:label "using_listview_clause" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 410 .
+
+apex:using_lookup_bind_clause a owl:Class ;
+    rdfs:label "using_lookup_bind_clause" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 411 .
+
+apex:using_lookup_bind_expression a owl:Class ;
+    rdfs:label "using_lookup_bind_expression" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 412 .
+
+apex:using_lookup_clause a owl:Class ;
+    rdfs:label "using_lookup_clause" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 409 .
+
+apex:using_phrase_search a owl:Class ;
+    rdfs:label "using_phrase_search" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 390 .
+
+apex:using_scope_clause a owl:Class ;
+    rdfs:label "using_scope_clause" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 407 .
+
+apex:using_scope_type a owl:Class ;
+    rdfs:label "using_scope_type" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 408 .
+
+apex:value_comparison_operator a owl:Class ;
+    rdfs:label "value_comparison_operator" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 462 .
+
+apex:variable_declarator a owl:Class ;
+    rdfs:label "variable_declarator" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 357 .
+
+apex:version_expression a owl:Class ;
+    rdfs:label "version_expression" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 278 .
+
+apex:version_num a owl:DatatypeProperty ;
+    rdfs:label "version_num (literal)" ;
+    rdfs:comment "Literal value for version_num field when it contains a terminal node" ;
+    apex:fieldId 50 ;
+    apex:isTerminalField true .
+
+apex:version_number a owl:Class ;
+    rdfs:label "version_number" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 279 .
+
+apex:virtual a owl:Class ;
+    rdfs:label "virtual" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 330 .
+
+apex:void_type a owl:Class ;
+    rdfs:label "void_type" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 364 .
+
+apex:webservice a owl:Class ;
+    rdfs:label "webservice" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 326 .
+
+apex:when_expression a owl:Class ;
+    rdfs:label "when_expression" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 414 .
+
+apex:when_sobject_type a owl:Class ;
+    rdfs:label "when_sobject_type" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 284 .
+
+apex:where_clause a owl:Class ;
+    rdfs:label "where_clause" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 426 .
+
+apex:while_statement a owl:Class ;
+    rdfs:label "while_statement" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 297 .
+
+apex:with_clause a owl:Class ;
+    rdfs:label "with_clause" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 402,
+        437 .
+
+apex:with_data_cat_expression a owl:Class ;
+    rdfs:label "with_data_cat_expression" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 442 .
+
+apex:with_data_cat_filter a owl:Class ;
+    rdfs:label "with_data_cat_filter" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 443 .
+
+apex:with_data_cat_filter_type a owl:Class ;
+    rdfs:label "with_data_cat_filter_type" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 444 .
+
+apex:with_division_expression a owl:Class ;
+    rdfs:label "with_division_expression" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 394 .
+
+apex:with_highlight a owl:Class ;
+    rdfs:label "with_highlight" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 395 .
+
+apex:with_metadata_expression a owl:Class ;
+    rdfs:label "with_metadata_expression" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 396 .
+
+apex:with_network_expression a owl:Class ;
+    rdfs:label "with_network_expression" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 397 .
+
+apex:with_pricebook_expression a owl:Class ;
+    rdfs:label "with_pricebook_expression" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 398 .
+
+apex:with_record_visibility_expression a owl:Class ;
+    rdfs:label "with_record_visibility_expression" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 440 .
+
+apex:with_record_visibility_param a owl:Class ;
+    rdfs:label "with_record_visibility_param" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 441 .
+
+apex:with_sharing a owl:Class ;
+    rdfs:label "with_sharing" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 335 .
+
+apex:with_snippet_expression a owl:Class ;
+    rdfs:label "with_snippet_expression" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 399 .
+
+apex:with_spell_correction_expression a owl:Class ;
+    rdfs:label "with_spell_correction_expression" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 400 .
+
+apex:with_type a owl:Class ;
+    rdfs:label "with_type" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 401,
+        438 .
+
+apex:with_user_id_type a owl:Class ;
+    rdfs:label "with_user_id_type" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 439 .
+
+apex:without_sharing a owl:Class ;
+    rdfs:label "without_sharing" ;
+    rdfs:isDefinedBy apex: ;
+    rdfs:subClassOf ast:Node ;
+    apex:isSupertype true ;
+    apex:nodeTypeId 336 .
+
+apex: a owl:Ontology ;
+    rdfs:label "Apex Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for apex" ;
+    owl:versionInfo "v0.25" ;
+    apex:abiVersion 14 ;
+    apex:fieldCount 52 ;
+    apex:languageName "None" ;
+    apex:nodeKindCount 521 .
+

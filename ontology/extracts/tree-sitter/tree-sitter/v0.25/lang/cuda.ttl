@@ -1,0 +1,1901 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix cuda: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/cuda/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+cuda:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+cuda:abstract_array_declarator a owl:Class ;
+    rdfs:label "abstract_array_declarator" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 306 .
+
+cuda:abstract_function_declarator a owl:Class ;
+    rdfs:label "abstract_function_declarator" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 302 .
+
+cuda:abstract_parenthesized_declarator a owl:Class ;
+    rdfs:label "abstract_parenthesized_declarator" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 291 .
+
+cuda:abstract_pointer_declarator a owl:Class ;
+    rdfs:label "abstract_pointer_declarator" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 298 .
+
+cuda:abstract_reference_declarator a owl:Class ;
+    rdfs:label "abstract_reference_declarator" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 428 .
+
+cuda:access_specifier a owl:Class ;
+    rdfs:label "access_specifier" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 424 .
+
+cuda:alias_declaration a owl:Class ;
+    rdfs:label "alias_declaration" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 448 .
+
+cuda:alignas_qualifier a owl:Class ;
+    rdfs:label "alignas_qualifier" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 311 .
+
+cuda:alignof_expression a owl:Class ;
+    rdfs:label "alignof_expression" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 359 .
+
+cuda:argument a owl:DatatypeProperty ;
+    rdfs:label "argument (literal)" ;
+    rdfs:comment "Literal value for argument field when it contains a terminal node" ;
+    cuda:fieldId 2 ;
+    cuda:isTerminalField true .
+
+cuda:argument_list a owl:Class ;
+    rdfs:label "argument_list" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 265,
+        373 .
+
+cuda:array_declarator a owl:Class ;
+    rdfs:label "array_declarator" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 303,
+        304,
+        305 .
+
+cuda:assignment_expression a owl:Class ;
+    rdfs:label "assignment_expression" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 351,
+        501 .
+
+cuda:attribute a owl:Class ;
+    rdfs:label "attribute" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 276 .
+
+cuda:attribute_declaration a owl:Class ;
+    rdfs:label "attribute_declaration" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 277 .
+
+cuda:attribute_specifier a owl:Class ;
+    rdfs:label "attribute_specifier" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 275 .
+
+cuda:attributed_declarator a owl:Class ;
+    rdfs:label "attributed_declarator" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 292,
+        293,
+        294 .
+
+cuda:attributed_statement a owl:Class ;
+    rdfs:label "attributed_statement" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 325 .
+
+cuda:auto a owl:Class ;
+    rdfs:label "auto" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 188 .
+
+cuda:base a owl:DatatypeProperty ;
+    rdfs:label "base (literal)" ;
+    rdfs:comment "Literal value for base field when it contains a terminal node" ;
+    cuda:fieldId 5 ;
+    cuda:isTerminalField true .
+
+cuda:base_class_clause a owl:Class ;
+    rdfs:label "base_class_clause" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 396 .
+
+cuda:binary_expression a owl:Class ;
+    rdfs:label "binary_expression" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 266,
+        354 .
+
+cuda:bitfield_clause a owl:Class ;
+    rdfs:label "bitfield_clause" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 321 .
+
+cuda:break_statement a owl:Class ;
+    rdfs:label "break_statement" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 340 .
+
+cuda:call_expression a owl:Class ;
+    rdfs:label "call_expression" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 264,
+        363,
+        504 .
+
+cuda:case_statement a owl:Class ;
+    rdfs:label "case_statement" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 334 .
+
+cuda:cast_expression a owl:Class ;
+    rdfs:label "cast_expression" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 356 .
+
+cuda:catch_clause a owl:Class ;
+    rdfs:label "catch_clause" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 460 .
+
+cuda:char_literal a owl:Class ;
+    rdfs:label "char_literal" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 382 .
+
+cuda:character a owl:Class ;
+    rdfs:label "character" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 174 .
+
+cuda:class_specifier a owl:Class ;
+    rdfs:label "class_specifier" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 392 .
+
+cuda:co_await_expression a owl:Class ;
+    rdfs:label "co_await_expression" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 463 .
+
+cuda:co_return_statement a owl:Class ;
+    rdfs:label "co_return_statement" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 456 .
+
+cuda:co_yield_statement a owl:Class ;
+    rdfs:label "co_yield_statement" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 457 .
+
+cuda:comma_expression a owl:Class ;
+    rdfs:label "comma_expression" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 349 .
+
+cuda:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 187 .
+
+cuda:compound_literal_expression a owl:Class ;
+    rdfs:label "compound_literal_expression" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 375 .
+
+cuda:compound_requirement a owl:Class ;
+    rdfs:label "compound_requirement" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 468 .
+
+cuda:compound_statement a owl:Class ;
+    rdfs:label "compound_statement" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 308 .
+
+cuda:concatenated_string a owl:Class ;
+    rdfs:label "concatenated_string" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 383 .
+
+cuda:concept_definition a owl:Class ;
+    rdfs:label "concept_definition" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 450 .
+
+cuda:condition a owl:DatatypeProperty ;
+    rdfs:label "condition (literal)" ;
+    rdfs:comment "Literal value for condition field when it contains a terminal node" ;
+    cuda:fieldId 9 ;
+    cuda:isTerminalField true .
+
+cuda:condition_clause a owl:Class ;
+    rdfs:label "condition_clause" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 454 .
+
+cuda:conditional_expression a owl:Class ;
+    rdfs:label "conditional_expression" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 350 .
+
+cuda:constraint a owl:DatatypeProperty ;
+    rdfs:label "constraint (literal)" ;
+    rdfs:comment "Literal value for constraint field when it contains a terminal node" ;
+    cuda:fieldId 11 ;
+    cuda:isTerminalField true .
+
+cuda:constraint_conjunction a owl:Class ;
+    rdfs:label "constraint_conjunction" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 471 .
+
+cuda:constraint_disjunction a owl:Class ;
+    rdfs:label "constraint_disjunction" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 472 .
+
+cuda:continue_statement a owl:Class ;
+    rdfs:label "continue_statement" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 341 .
+
+cuda:declaration a owl:Class ;
+    rdfs:label "declaration" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 268,
+        416,
+        419,
+        455 .
+
+cuda:declaration_list a owl:Class ;
+    rdfs:label "declaration_list" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 283 .
+
+cuda:decltype a owl:Class ;
+    rdfs:label "decltype" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 388,
+        389 .
+
+cuda:default_method_clause a owl:Class ;
+    rdfs:label "default_method_clause" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 420 .
+
+cuda:delete_expression a owl:Class ;
+    rdfs:label "delete_expression" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 466 .
+
+cuda:delete_method_clause a owl:Class ;
+    rdfs:label "delete_method_clause" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 421 .
+
+cuda:delimiter a owl:DatatypeProperty ;
+    rdfs:label "delimiter (literal)" ;
+    rdfs:comment "Literal value for delimiter field when it contains a terminal node" ;
+    cuda:fieldId 15 ;
+    cuda:isTerminalField true .
+
+cuda:dependent_name a owl:Class ;
+    rdfs:label "dependent_name" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 493,
+        494,
+        495 .
+
+cuda:dependent_type a owl:Class ;
+    rdfs:label "dependent_type" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 398 .
+
+cuda:designator a owl:DatatypeProperty ;
+    rdfs:label "designator (literal)" ;
+    rdfs:comment "Literal value for designator field when it contains a terminal node" ;
+    cuda:fieldId 16 ;
+    cuda:isTerminalField true .
+
+cuda:destructor_name a owl:Class ;
+    rdfs:label "destructor_name" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 492 .
+
+cuda:directive a owl:DatatypeProperty ;
+    rdfs:label "directive (literal)" ;
+    rdfs:comment "Literal value for directive field when it contains a terminal node" ;
+    cuda:fieldId 17 ;
+    cuda:isTerminalField true .
+
+cuda:do_statement a owl:Class ;
+    rdfs:label "do_statement" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 336 .
+
+cuda:else_clause a owl:Class ;
+    rdfs:label "else_clause" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 332 .
+
+cuda:enum_specifier a owl:Class ;
+    rdfs:label "enum_specifier" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 314 .
+
+cuda:enumerator a owl:Class ;
+    rdfs:label "enumerator" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 322 .
+
+cuda:enumerator_list a owl:Class ;
+    rdfs:label "enumerator_list" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 315 .
+
+cuda:escape_sequence a owl:Class ;
+    rdfs:label "escape_sequence" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 181 .
+
+cuda:explicit_function_specifier a owl:Class ;
+    rdfs:label "explicit_function_specifier" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 395 .
+
+cuda:expression_statement a owl:Class ;
+    rdfs:label "expression_statement" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 329,
+        330 .
+
+cuda:extension_expression a owl:Class ;
+    rdfs:label "extension_expression" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 372 .
+
+cuda:false a owl:Class ;
+    rdfs:label "false" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 184 .
+
+cuda:field a owl:DatatypeProperty ;
+    rdfs:label "field (literal)" ;
+    rdfs:comment "Literal value for field field when it contains a terminal node" ;
+    cuda:fieldId 19 ;
+    cuda:isTerminalField true .
+
+cuda:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+cuda:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+cuda:field_alternative a owl:ObjectProperty ;
+    rdfs:label "alternative (structural)" ;
+    rdfs:comment "Structural reference for alternative field when it contains a non-terminal node" ;
+    cuda:fieldId 1 .
+
+cuda:field_argument a owl:ObjectProperty ;
+    rdfs:label "argument (structural)" ;
+    rdfs:comment "Structural reference for argument field when it contains a non-terminal node" ;
+    cuda:fieldId 2 .
+
+cuda:field_arguments a owl:ObjectProperty ;
+    rdfs:label "arguments (structural)" ;
+    rdfs:comment "Structural reference for arguments field when it contains a non-terminal node" ;
+    cuda:fieldId 3 .
+
+cuda:field_assembly_code a owl:ObjectProperty ;
+    rdfs:label "assembly_code (structural)" ;
+    rdfs:comment "Structural reference for assembly_code field when it contains a non-terminal node" ;
+    cuda:fieldId 4 .
+
+cuda:field_base a owl:ObjectProperty ;
+    rdfs:label "base (structural)" ;
+    rdfs:comment "Structural reference for base field when it contains a non-terminal node" ;
+    cuda:fieldId 5 .
+
+cuda:field_body a owl:ObjectProperty ;
+    rdfs:label "body (structural)" ;
+    rdfs:comment "Structural reference for body field when it contains a non-terminal node" ;
+    cuda:fieldId 6 .
+
+cuda:field_captures a owl:ObjectProperty ;
+    rdfs:label "captures (structural)" ;
+    rdfs:comment "Structural reference for captures field when it contains a non-terminal node" ;
+    cuda:fieldId 7 .
+
+cuda:field_clobbers a owl:ObjectProperty ;
+    rdfs:label "clobbers (structural)" ;
+    rdfs:comment "Structural reference for clobbers field when it contains a non-terminal node" ;
+    cuda:fieldId 8 .
+
+cuda:field_condition a owl:ObjectProperty ;
+    rdfs:label "condition (structural)" ;
+    rdfs:comment "Structural reference for condition field when it contains a non-terminal node" ;
+    cuda:fieldId 9 .
+
+cuda:field_consequence a owl:ObjectProperty ;
+    rdfs:label "consequence (structural)" ;
+    rdfs:comment "Structural reference for consequence field when it contains a non-terminal node" ;
+    cuda:fieldId 10 .
+
+cuda:field_constraint a owl:ObjectProperty ;
+    rdfs:label "constraint (structural)" ;
+    rdfs:comment "Structural reference for constraint field when it contains a non-terminal node" ;
+    cuda:fieldId 11 .
+
+cuda:field_declaration a owl:Class ;
+    rdfs:label "field_declaration" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 320 .
+
+cuda:field_declaration_list a owl:Class ;
+    rdfs:label "field_declaration_list" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 318 .
+
+cuda:field_declarator a owl:ObjectProperty ;
+    rdfs:label "declarator (structural)" ;
+    rdfs:comment "Structural reference for declarator field when it contains a non-terminal node" ;
+    cuda:fieldId 12 .
+
+cuda:field_default_type a owl:ObjectProperty ;
+    rdfs:label "default_type (structural)" ;
+    rdfs:comment "Structural reference for default_type field when it contains a non-terminal node" ;
+    cuda:fieldId 13 .
+
+cuda:field_default_value a owl:ObjectProperty ;
+    rdfs:label "default_value (structural)" ;
+    rdfs:comment "Structural reference for default_value field when it contains a non-terminal node" ;
+    cuda:fieldId 14 .
+
+cuda:field_designator a owl:Class,
+        owl:ObjectProperty ;
+    rdfs:label "designator (structural)",
+        "field_designator" ;
+    rdfs:comment "Structural reference for designator field when it contains a non-terminal node" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:fieldId 16 ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 381 .
+
+cuda:field_end a owl:ObjectProperty ;
+    rdfs:label "end (structural)" ;
+    rdfs:comment "Structural reference for end field when it contains a non-terminal node" ;
+    cuda:fieldId 18 .
+
+cuda:field_expression a owl:Class ;
+    rdfs:label "field_expression" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 374 .
+
+cuda:field_field a owl:ObjectProperty ;
+    rdfs:label "field (structural)" ;
+    rdfs:comment "Structural reference for field field when it contains a non-terminal node" ;
+    cuda:fieldId 19 .
+
+cuda:field_filter a owl:ObjectProperty ;
+    rdfs:label "filter (structural)" ;
+    rdfs:comment "Structural reference for filter field when it contains a non-terminal node" ;
+    cuda:fieldId 20 .
+
+cuda:field_function a owl:ObjectProperty ;
+    rdfs:label "function (structural)" ;
+    rdfs:comment "Structural reference for function field when it contains a non-terminal node" ;
+    cuda:fieldId 21 .
+
+cuda:field_goto_labels a owl:ObjectProperty ;
+    rdfs:label "goto_labels (structural)" ;
+    rdfs:comment "Structural reference for goto_labels field when it contains a non-terminal node" ;
+    cuda:fieldId 22 .
+
+cuda:field_identifier a owl:Class ;
+    rdfs:label "field_identifier" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 555 .
+
+cuda:field_indices a owl:ObjectProperty ;
+    rdfs:label "indices (structural)" ;
+    rdfs:comment "Structural reference for indices field when it contains a non-terminal node" ;
+    cuda:fieldId 23 .
+
+cuda:field_initializer a owl:Class,
+        owl:ObjectProperty ;
+    rdfs:label "field_initializer",
+        "initializer (structural)" ;
+    rdfs:comment "Structural reference for initializer field when it contains a non-terminal node" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:fieldId 24 ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 412 .
+
+cuda:field_initializer_list a owl:Class ;
+    rdfs:label "field_initializer_list" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 411 .
+
+cuda:field_input_operands a owl:ObjectProperty ;
+    rdfs:label "input_operands (structural)" ;
+    rdfs:comment "Structural reference for input_operands field when it contains a non-terminal node" ;
+    cuda:fieldId 25 .
+
+cuda:field_left a owl:ObjectProperty ;
+    rdfs:label "left (structural)" ;
+    rdfs:comment "Structural reference for left field when it contains a non-terminal node" ;
+    cuda:fieldId 27 .
+
+cuda:field_length a owl:ObjectProperty ;
+    rdfs:label "length (structural)" ;
+    rdfs:comment "Structural reference for length field when it contains a non-terminal node" ;
+    cuda:fieldId 28 .
+
+cuda:field_message a owl:ObjectProperty ;
+    rdfs:label "message (structural)" ;
+    rdfs:comment "Structural reference for message field when it contains a non-terminal node" ;
+    cuda:fieldId 30 .
+
+cuda:field_name a owl:ObjectProperty ;
+    rdfs:label "name (structural)" ;
+    rdfs:comment "Structural reference for name field when it contains a non-terminal node" ;
+    cuda:fieldId 31 .
+
+cuda:field_operand a owl:ObjectProperty ;
+    rdfs:label "operand (structural)" ;
+    rdfs:comment "Structural reference for operand field when it contains a non-terminal node" ;
+    cuda:fieldId 32 .
+
+cuda:field_operator a owl:ObjectProperty ;
+    rdfs:label "operator (structural)" ;
+    rdfs:comment "Structural reference for operator field when it contains a non-terminal node" ;
+    cuda:fieldId 33 .
+
+cuda:field_output_operands a owl:ObjectProperty ;
+    rdfs:label "output_operands (structural)" ;
+    rdfs:comment "Structural reference for output_operands field when it contains a non-terminal node" ;
+    cuda:fieldId 34 .
+
+cuda:field_parameters a owl:ObjectProperty ;
+    rdfs:label "parameters (structural)" ;
+    rdfs:comment "Structural reference for parameters field when it contains a non-terminal node" ;
+    cuda:fieldId 35 .
+
+cuda:field_path a owl:ObjectProperty ;
+    rdfs:label "path (structural)" ;
+    rdfs:comment "Structural reference for path field when it contains a non-terminal node" ;
+    cuda:fieldId 36 .
+
+cuda:field_pattern a owl:ObjectProperty ;
+    rdfs:label "pattern (structural)" ;
+    rdfs:comment "Structural reference for pattern field when it contains a non-terminal node" ;
+    cuda:fieldId 37 .
+
+cuda:field_placement a owl:ObjectProperty ;
+    rdfs:label "placement (structural)" ;
+    rdfs:comment "Structural reference for placement field when it contains a non-terminal node" ;
+    cuda:fieldId 38 .
+
+cuda:field_register a owl:ObjectProperty ;
+    rdfs:label "register (structural)" ;
+    rdfs:comment "Structural reference for register field when it contains a non-terminal node" ;
+    cuda:fieldId 40 .
+
+cuda:field_requirements a owl:ObjectProperty ;
+    rdfs:label "requirements (structural)" ;
+    rdfs:comment "Structural reference for requirements field when it contains a non-terminal node" ;
+    cuda:fieldId 41 .
+
+cuda:field_right a owl:ObjectProperty ;
+    rdfs:label "right (structural)" ;
+    rdfs:comment "Structural reference for right field when it contains a non-terminal node" ;
+    cuda:fieldId 42 .
+
+cuda:field_scope a owl:ObjectProperty ;
+    rdfs:label "scope (structural)" ;
+    rdfs:comment "Structural reference for scope field when it contains a non-terminal node" ;
+    cuda:fieldId 43 .
+
+cuda:field_size a owl:ObjectProperty ;
+    rdfs:label "size (structural)" ;
+    rdfs:comment "Structural reference for size field when it contains a non-terminal node" ;
+    cuda:fieldId 44 .
+
+cuda:field_start a owl:ObjectProperty ;
+    rdfs:label "start (structural)" ;
+    rdfs:comment "Structural reference for start field when it contains a non-terminal node" ;
+    cuda:fieldId 45 .
+
+cuda:field_template_parameters a owl:ObjectProperty ;
+    rdfs:label "template_parameters (structural)" ;
+    rdfs:comment "Structural reference for template_parameters field when it contains a non-terminal node" ;
+    cuda:fieldId 47 .
+
+cuda:field_type a owl:ObjectProperty ;
+    rdfs:label "type (structural)" ;
+    rdfs:comment "Structural reference for type field when it contains a non-terminal node" ;
+    cuda:fieldId 48 .
+
+cuda:field_update a owl:ObjectProperty ;
+    rdfs:label "update (structural)" ;
+    rdfs:comment "Structural reference for update field when it contains a non-terminal node" ;
+    cuda:fieldId 49 .
+
+cuda:field_value a owl:ObjectProperty ;
+    rdfs:label "value (structural)" ;
+    rdfs:comment "Structural reference for value field when it contains a non-terminal node" ;
+    cuda:fieldId 50 .
+
+cuda:fold_expression a owl:Class ;
+    rdfs:label "fold_expression" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 488 .
+
+cuda:for_range_loop a owl:Class ;
+    rdfs:label "for_range_loop" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 451 .
+
+cuda:for_statement a owl:Class ;
+    rdfs:label "for_statement" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 337 .
+
+cuda:friend_declaration a owl:Class ;
+    rdfs:label "friend_declaration" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 423 .
+
+cuda:function a owl:DatatypeProperty ;
+    rdfs:label "function (literal)" ;
+    rdfs:comment "Literal value for function field when it contains a terminal node" ;
+    cuda:fieldId 21 ;
+    cuda:isTerminalField true .
+
+cuda:function_declarator a owl:Class ;
+    rdfs:label "function_declarator" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 299,
+        300,
+        301 .
+
+cuda:function_definition a owl:Class ;
+    rdfs:label "function_definition" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 267,
+        413,
+        415,
+        418 .
+
+cuda:generic_expression a owl:Class ;
+    rdfs:label "generic_expression" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 361 .
+
+cuda:gnu_asm_clobber_list a owl:Class ;
+    rdfs:label "gnu_asm_clobber_list" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 370 .
+
+cuda:gnu_asm_expression a owl:Class ;
+    rdfs:label "gnu_asm_expression" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 364 .
+
+cuda:gnu_asm_goto_list a owl:Class ;
+    rdfs:label "gnu_asm_goto_list" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 371 .
+
+cuda:gnu_asm_input_operand a owl:Class ;
+    rdfs:label "gnu_asm_input_operand" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 369 .
+
+cuda:gnu_asm_input_operand_list a owl:Class ;
+    rdfs:label "gnu_asm_input_operand_list" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 368 .
+
+cuda:gnu_asm_output_operand a owl:Class ;
+    rdfs:label "gnu_asm_output_operand" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 367 .
+
+cuda:gnu_asm_output_operand_list a owl:Class ;
+    rdfs:label "gnu_asm_output_operand_list" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 366 .
+
+cuda:gnu_asm_qualifier a owl:Class ;
+    rdfs:label "gnu_asm_qualifier" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 365 .
+
+cuda:goto_statement a owl:Class ;
+    rdfs:label "goto_statement" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 342 .
+
+cuda:identifier a owl:Class ;
+    rdfs:label "identifier" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 1 .
+
+cuda:if_statement a owl:Class ;
+    rdfs:label "if_statement" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 331 .
+
+cuda:init_declarator a owl:Class ;
+    rdfs:label "init_declarator" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 307 .
+
+cuda:init_statement a owl:Class ;
+    rdfs:label "init_statement" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 453 .
+
+cuda:initializer_list a owl:Class ;
+    rdfs:label "initializer_list" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 377 .
+
+cuda:initializer_pair a owl:Class ;
+    rdfs:label "initializer_pair" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 378 .
+
+cuda:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+cuda:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+cuda:kernel_call_syntax a owl:Class ;
+    rdfs:label "kernel_call_syntax" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 505 .
+
+cuda:label a owl:DatatypeProperty ;
+    rdfs:label "label (literal)" ;
+    rdfs:comment "Literal value for label field when it contains a terminal node" ;
+    cuda:fieldId 26 ;
+    cuda:isTerminalField true .
+
+cuda:labeled_statement a owl:Class ;
+    rdfs:label "labeled_statement" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 328 .
+
+cuda:lambda_capture_initializer a owl:Class ;
+    rdfs:label "lambda_capture_initializer" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 481 .
+
+cuda:lambda_capture_specifier a owl:Class ;
+    rdfs:label "lambda_capture_specifier" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 478 .
+
+cuda:lambda_default_capture a owl:Class ;
+    rdfs:label "lambda_default_capture" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 479 .
+
+cuda:lambda_expression a owl:Class ;
+    rdfs:label "lambda_expression" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 477 .
+
+cuda:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+cuda:launch_bounds a owl:Class ;
+    rdfs:label "launch_bounds" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 506 .
+
+cuda:left a owl:DatatypeProperty ;
+    rdfs:label "left (literal)" ;
+    rdfs:comment "Literal value for left field when it contains a terminal node" ;
+    cuda:fieldId 27 ;
+    cuda:isTerminalField true .
+
+cuda:linkage_specification a owl:Class ;
+    rdfs:label "linkage_specification" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 274 .
+
+cuda:literal_suffix a owl:Class ;
+    rdfs:label "literal_suffix" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 226 .
+
+cuda:member a owl:DatatypeProperty ;
+    rdfs:label "member (literal)" ;
+    rdfs:comment "Literal value for member field when it contains a terminal node" ;
+    cuda:fieldId 29 ;
+    cuda:isTerminalField true .
+
+cuda:ms_based_modifier a owl:Class ;
+    rdfs:label "ms_based_modifier" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 279 .
+
+cuda:ms_call_modifier a owl:Class ;
+    rdfs:label "ms_call_modifier" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 280 .
+
+cuda:ms_declspec_modifier a owl:Class ;
+    rdfs:label "ms_declspec_modifier" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 278 .
+
+cuda:ms_pointer_modifier a owl:Class ;
+    rdfs:label "ms_pointer_modifier" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 282 .
+
+cuda:ms_restrict_modifier a owl:Class ;
+    rdfs:label "ms_restrict_modifier" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 65 .
+
+cuda:ms_signed_ptr_modifier a owl:Class ;
+    rdfs:label "ms_signed_ptr_modifier" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 67 .
+
+cuda:ms_unaligned_ptr_modifier a owl:Class ;
+    rdfs:label "ms_unaligned_ptr_modifier" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 281 .
+
+cuda:ms_unsigned_ptr_modifier a owl:Class ;
+    rdfs:label "ms_unsigned_ptr_modifier" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 66 .
+
+cuda:name a owl:DatatypeProperty ;
+    rdfs:label "name (literal)" ;
+    rdfs:comment "Literal value for name field when it contains a terminal node" ;
+    cuda:fieldId 31 ;
+    cuda:isTerminalField true .
+
+cuda:namespace_alias_definition a owl:Class ;
+    rdfs:label "namespace_alias_definition" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 444 .
+
+cuda:namespace_definition a owl:Class ;
+    rdfs:label "namespace_definition" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 443 .
+
+cuda:namespace_identifier a owl:Class ;
+    rdfs:label "namespace_identifier" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 556 .
+
+cuda:nested_namespace_specifier a owl:Class ;
+    rdfs:label "nested_namespace_specifier" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 446 .
+
+cuda:new_declarator a owl:Class ;
+    rdfs:label "new_declarator" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 465 .
+
+cuda:new_expression a owl:Class ;
+    rdfs:label "new_expression" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 464 .
+
+cuda:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+cuda:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+cuda:noexcept a owl:Class ;
+    rdfs:label "noexcept" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 437 .
+
+cuda:null a owl:Class ;
+    rdfs:label "null" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 385 .
+
+cuda:number_literal a owl:Class ;
+    rdfs:label "number_literal" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 168 .
+
+cuda:offsetof_expression a owl:Class ;
+    rdfs:label "offsetof_expression" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 360 .
+
+cuda:operator_cast a owl:Class ;
+    rdfs:label "operator_cast" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 410 .
+
+cuda:operator_name a owl:Class ;
+    rdfs:label "operator_name" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 502 .
+
+cuda:optional_parameter_declaration a owl:Class ;
+    rdfs:label "optional_parameter_declaration" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 406 .
+
+cuda:optional_type_parameter_declaration a owl:Class ;
+    rdfs:label "optional_type_parameter_declaration" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 404 .
+
+cuda:parameter_declaration a owl:Class ;
+    rdfs:label "parameter_declaration" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 324 .
+
+cuda:parameter_list a owl:Class ;
+    rdfs:label "parameter_list" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 323,
+        475 .
+
+cuda:parameter_pack_expansion a owl:Class ;
+    rdfs:label "parameter_pack_expansion" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 489,
+        490,
+        491 .
+
+cuda:parenthesized_declarator a owl:Class ;
+    rdfs:label "parenthesized_declarator" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 288,
+        289,
+        290 .
+
+cuda:parenthesized_expression a owl:Class ;
+    rdfs:label "parenthesized_expression" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 261,
+        376 .
+
+cuda:path a owl:DatatypeProperty ;
+    rdfs:label "path (literal)" ;
+    rdfs:comment "Literal value for path field when it contains a terminal node" ;
+    cuda:fieldId 36 ;
+    cuda:isTerminalField true .
+
+cuda:placeholder_type_specifier a owl:Class ;
+    rdfs:label "placeholder_type_specifier" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 387 .
+
+cuda:pointer_declarator a owl:Class ;
+    rdfs:label "pointer_declarator" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 295,
+        296 .
+
+cuda:pointer_expression a owl:Class ;
+    rdfs:label "pointer_expression" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 352 .
+
+cuda:pointer_type_declarator a owl:Class ;
+    rdfs:label "pointer_type_declarator" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 297 .
+
+cuda:prefix a owl:DatatypeProperty ;
+    rdfs:label "prefix (literal)" ;
+    rdfs:comment "Literal value for prefix field when it contains a terminal node" ;
+    cuda:fieldId 39 ;
+    cuda:isTerminalField true .
+
+cuda:preproc_arg a owl:Class ;
+    rdfs:label "preproc_arg" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 18 .
+
+cuda:preproc_call a owl:Class ;
+    rdfs:label "preproc_call" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 239 .
+
+cuda:preproc_def a owl:Class ;
+    rdfs:label "preproc_def" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 236 .
+
+cuda:preproc_defined a owl:Class ;
+    rdfs:label "preproc_defined" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 262 .
+
+cuda:preproc_directive a owl:Class ;
+    rdfs:label "preproc_directive" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 19 .
+
+cuda:preproc_elif a owl:Class ;
+    rdfs:label "preproc_elif" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 243,
+        248,
+        253,
+        258 .
+
+cuda:preproc_elifdef a owl:Class ;
+    rdfs:label "preproc_elifdef" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 244,
+        249,
+        254,
+        259 .
+
+cuda:preproc_else a owl:Class ;
+    rdfs:label "preproc_else" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 242,
+        247,
+        252,
+        257 .
+
+cuda:preproc_function_def a owl:Class ;
+    rdfs:label "preproc_function_def" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 237 .
+
+cuda:preproc_if a owl:Class ;
+    rdfs:label "preproc_if" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 240,
+        245,
+        250,
+        255 .
+
+cuda:preproc_ifdef a owl:Class ;
+    rdfs:label "preproc_ifdef" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 241,
+        246,
+        251,
+        256 .
+
+cuda:preproc_include a owl:Class ;
+    rdfs:label "preproc_include" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 235 .
+
+cuda:preproc_params a owl:Class ;
+    rdfs:label "preproc_params" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 238 .
+
+cuda:primitive_type a owl:Class ;
+    rdfs:label "primitive_type" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 106 .
+
+cuda:pure_virtual_clause a owl:Class ;
+    rdfs:label "pure_virtual_clause" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 422 .
+
+cuda:qualified_identifier a owl:Class ;
+    rdfs:label "qualified_identifier" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 497,
+        498,
+        499,
+        500 .
+
+cuda:raw_string_content a owl:Class ;
+    rdfs:label "raw_string_content" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 231 .
+
+cuda:raw_string_delimiter a owl:Class ;
+    rdfs:label "raw_string_delimiter" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 230 .
+
+cuda:raw_string_literal a owl:Class ;
+    rdfs:label "raw_string_literal" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 461 .
+
+cuda:ref_qualifier a owl:Class ;
+    rdfs:label "ref_qualifier" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 430 .
+
+cuda:reference_declarator a owl:Class ;
+    rdfs:label "reference_declarator" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 409,
+        425,
+        426,
+        427 .
+
+cuda:requirement_seq a owl:Class ;
+    rdfs:label "requirement_seq" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 470 .
+
+cuda:requires_clause a owl:Class ;
+    rdfs:label "requires_clause" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 474 .
+
+cuda:requires_expression a owl:Class ;
+    rdfs:label "requires_expression" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 476 .
+
+cuda:return_statement a owl:Class ;
+    rdfs:label "return_statement" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 339 .
+
+cuda:right a owl:DatatypeProperty ;
+    rdfs:label "right (literal)" ;
+    rdfs:comment "Literal value for right field when it contains a terminal node" ;
+    cuda:fieldId 42 ;
+    cuda:isTerminalField true .
+
+cuda:scope a owl:DatatypeProperty ;
+    rdfs:label "scope (literal)" ;
+    rdfs:comment "Literal value for scope field when it contains a terminal node" ;
+    cuda:fieldId 43 ;
+    cuda:isTerminalField true .
+
+cuda:seh_except_clause a owl:Class ;
+    rdfs:label "seh_except_clause" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 344 .
+
+cuda:seh_finally_clause a owl:Class ;
+    rdfs:label "seh_finally_clause" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 345 .
+
+cuda:seh_leave_statement a owl:Class ;
+    rdfs:label "seh_leave_statement" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 346 .
+
+cuda:seh_try_statement a owl:Class ;
+    rdfs:label "seh_try_statement" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 343 .
+
+cuda:simple_requirement a owl:Class ;
+    rdfs:label "simple_requirement" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 557 .
+
+cuda:sized_type_specifier a owl:Class ;
+    rdfs:label "sized_type_specifier" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 313 .
+
+cuda:sizeof_expression a owl:Class ;
+    rdfs:label "sizeof_expression" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 358 .
+
+cuda:statement_identifier a owl:Class ;
+    rdfs:label "statement_identifier" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 558 .
+
+cuda:static_assert_declaration a owl:Class ;
+    rdfs:label "static_assert_declaration" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 449 .
+
+cuda:storage_class_specifier a owl:Class ;
+    rdfs:label "storage_class_specifier" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 309 .
+
+cuda:string_content a owl:Class ;
+    rdfs:label "string_content" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 180 .
+
+cuda:string_literal a owl:Class ;
+    rdfs:label "string_literal" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 384 .
+
+cuda:struct_specifier a owl:Class ;
+    rdfs:label "struct_specifier" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 316 .
+
+cuda:structured_binding_declarator a owl:Class ;
+    rdfs:label "structured_binding_declarator" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 429 .
+
+cuda:subscript_argument_list a owl:Class ;
+    rdfs:label "subscript_argument_list" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 462 .
+
+cuda:subscript_designator a owl:Class ;
+    rdfs:label "subscript_designator" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 379 .
+
+cuda:subscript_expression a owl:Class ;
+    rdfs:label "subscript_expression" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 362 .
+
+cuda:subscript_range_designator a owl:Class ;
+    rdfs:label "subscript_range_designator" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 380 .
+
+cuda:switch_statement a owl:Class ;
+    rdfs:label "switch_statement" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 333 .
+
+cuda:symbol a owl:DatatypeProperty ;
+    rdfs:label "symbol (literal)" ;
+    rdfs:comment "Literal value for symbol field when it contains a terminal node" ;
+    cuda:fieldId 46 ;
+    cuda:isTerminalField true .
+
+cuda:system_lib_string a owl:Class ;
+    rdfs:label "system_lib_string" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 182 .
+
+cuda:template_argument_list a owl:Class ;
+    rdfs:label "template_argument_list" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 442 .
+
+cuda:template_declaration a owl:Class ;
+    rdfs:label "template_declaration" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 399 .
+
+cuda:template_function a owl:Class ;
+    rdfs:label "template_function" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 441 .
+
+cuda:template_instantiation a owl:Class ;
+    rdfs:label "template_instantiation" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 400 .
+
+cuda:template_method a owl:Class ;
+    rdfs:label "template_method" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 440 .
+
+cuda:template_parameter_list a owl:Class ;
+    rdfs:label "template_parameter_list" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 401 .
+
+cuda:template_template_parameter_declaration a owl:Class ;
+    rdfs:label "template_template_parameter_declaration" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 405 .
+
+cuda:template_type a owl:Class ;
+    rdfs:label "template_type" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 439 .
+
+cuda:this a owl:Class ;
+    rdfs:label "this" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 225 .
+
+cuda:throw_specifier a owl:Class ;
+    rdfs:label "throw_specifier" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 438 .
+
+cuda:throw_statement a owl:Class ;
+    rdfs:label "throw_statement" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 458 .
+
+cuda:trailing_return_type a owl:Class ;
+    rdfs:label "trailing_return_type" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 436 .
+
+cuda:translation_unit a owl:Class ;
+    rdfs:label "translation_unit" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 232 .
+
+cuda:true a owl:Class ;
+    rdfs:label "true" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 183 .
+
+cuda:try_statement a owl:Class ;
+    rdfs:label "try_statement" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 417,
+        459 .
+
+cuda:type a owl:DatatypeProperty ;
+    rdfs:label "type (literal)" ;
+    rdfs:comment "Literal value for type field when it contains a terminal node" ;
+    cuda:fieldId 48 ;
+    cuda:isTerminalField true .
+
+cuda:type_definition a owl:Class ;
+    rdfs:label "type_definition" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 269 .
+
+cuda:type_descriptor a owl:Class ;
+    rdfs:label "type_descriptor" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 357 .
+
+cuda:type_identifier a owl:Class ;
+    rdfs:label "type_identifier" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 559 .
+
+cuda:type_parameter_declaration a owl:Class ;
+    rdfs:label "type_parameter_declaration" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 402 .
+
+cuda:type_qualifier a owl:Class ;
+    rdfs:label "type_qualifier" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 310 .
+
+cuda:type_requirement a owl:Class ;
+    rdfs:label "type_requirement" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 467 .
+
+cuda:unary_expression a owl:Class ;
+    rdfs:label "unary_expression" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 263,
+        353 .
+
+cuda:union_specifier a owl:Class ;
+    rdfs:label "union_specifier" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 317 .
+
+cuda:update_expression a owl:Class ;
+    rdfs:label "update_expression" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 355 .
+
+cuda:user_defined_literal a owl:Class ;
+    rdfs:label "user_defined_literal" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 503 .
+
+cuda:using_declaration a owl:Class ;
+    rdfs:label "using_declaration" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 447 .
+
+cuda:value a owl:DatatypeProperty ;
+    rdfs:label "value (literal)" ;
+    rdfs:comment "Literal value for value field when it contains a terminal node" ;
+    cuda:fieldId 50 ;
+    cuda:isTerminalField true .
+
+cuda:variadic_declarator a owl:Class ;
+    rdfs:label "variadic_declarator" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 408 .
+
+cuda:variadic_parameter_declaration a owl:Class ;
+    rdfs:label "variadic_parameter_declaration" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 407 .
+
+cuda:variadic_type_parameter_declaration a owl:Class ;
+    rdfs:label "variadic_type_parameter_declaration" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 403 .
+
+cuda:virtual_specifier a owl:Class ;
+    rdfs:label "virtual_specifier" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 394 .
+
+cuda:while_statement a owl:Class ;
+    rdfs:label "while_statement" ;
+    rdfs:isDefinedBy cuda: ;
+    rdfs:subClassOf ast:Node ;
+    cuda:isSupertype true ;
+    cuda:nodeTypeId 335 .
+
+cuda: a owl:Ontology ;
+    rdfs:label "Cuda Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for cuda" ;
+    owl:versionInfo "v0.25" ;
+    cuda:abiVersion 15 ;
+    cuda:fieldCount 50 ;
+    cuda:languageName "cuda" ;
+    cuda:nodeKindCount 560 .
+

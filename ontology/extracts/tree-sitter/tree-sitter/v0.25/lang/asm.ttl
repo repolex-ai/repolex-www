@@ -1,0 +1,232 @@
+@prefix asm: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/asm/> .
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+asm:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+asm:address a owl:Class ;
+    rdfs:label "address" ;
+    rdfs:isDefinedBy asm: ;
+    rdfs:subClassOf ast:Node ;
+    asm:isSupertype true ;
+    asm:nodeTypeId 35 .
+
+asm:block_comment a owl:Class ;
+    rdfs:label "block_comment" ;
+    rdfs:isDefinedBy asm: ;
+    rdfs:subClassOf ast:Node ;
+    asm:isSupertype true ;
+    asm:nodeTypeId 40 .
+
+asm:const a owl:Class ;
+    rdfs:label "const" ;
+    rdfs:isDefinedBy asm: ;
+    rdfs:subClassOf ast:Node ;
+    asm:isSupertype true ;
+    asm:nodeTypeId 45 .
+
+asm:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+asm:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+asm:field_lhs a owl:ObjectProperty ;
+    rdfs:label "lhs (structural)" ;
+    rdfs:comment "Structural reference for lhs field when it contains a non-terminal node" ;
+    asm:fieldId 2 .
+
+asm:field_op a owl:ObjectProperty ;
+    rdfs:label "op (structural)" ;
+    rdfs:comment "Structural reference for op field when it contains a non-terminal node" ;
+    asm:fieldId 4 .
+
+asm:field_rhs a owl:ObjectProperty ;
+    rdfs:label "rhs (structural)" ;
+    rdfs:comment "Structural reference for rhs field when it contains a non-terminal node" ;
+    asm:fieldId 5 .
+
+asm:field_value a owl:ObjectProperty ;
+    rdfs:label "value (structural)" ;
+    rdfs:comment "Structural reference for value field when it contains a non-terminal node" ;
+    asm:fieldId 6 .
+
+asm:float a owl:Class ;
+    rdfs:label "float" ;
+    rdfs:isDefinedBy asm: ;
+    rdfs:subClassOf ast:Node ;
+    asm:isSupertype true ;
+    asm:nodeTypeId 30 .
+
+asm:ident a owl:Class ;
+    rdfs:label "ident" ;
+    rdfs:isDefinedBy asm: ;
+    rdfs:subClassOf ast:Node ;
+    asm:isSupertype true ;
+    asm:nodeTypeId 55 .
+
+asm:instruction a owl:Class ;
+    rdfs:label "instruction" ;
+    rdfs:isDefinedBy asm: ;
+    rdfs:subClassOf ast:Node ;
+    asm:isSupertype true ;
+    asm:nodeTypeId 46 .
+
+asm:int a owl:Class ;
+    rdfs:label "int" ;
+    rdfs:isDefinedBy asm: ;
+    rdfs:subClassOf ast:Node ;
+    asm:isSupertype true ;
+    asm:nodeTypeId 52 .
+
+asm:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+asm:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+asm:kind a owl:DatatypeProperty ;
+    rdfs:label "kind (literal)" ;
+    rdfs:comment "Literal value for kind field when it contains a terminal node" ;
+    asm:fieldId 1 ;
+    asm:isTerminalField true .
+
+asm:label a owl:Class ;
+    rdfs:label "label" ;
+    rdfs:isDefinedBy asm: ;
+    rdfs:subClassOf ast:Node ;
+    asm:isSupertype true ;
+    asm:nodeTypeId 44 .
+
+asm:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+asm:lhs a owl:DatatypeProperty ;
+    rdfs:label "lhs (literal)" ;
+    rdfs:comment "Literal value for lhs field when it contains a terminal node" ;
+    asm:fieldId 2 ;
+    asm:isTerminalField true .
+
+asm:line_comment a owl:Class ;
+    rdfs:label "line_comment" ;
+    rdfs:isDefinedBy asm: ;
+    rdfs:subClassOf ast:Node ;
+    asm:isSupertype true ;
+    asm:nodeTypeId 56 .
+
+asm:list a owl:Class ;
+    rdfs:label "list" ;
+    rdfs:isDefinedBy asm: ;
+    rdfs:subClassOf ast:Node ;
+    asm:isSupertype true ;
+    asm:nodeTypeId 48 .
+
+asm:meta a owl:Class ;
+    rdfs:label "meta" ;
+    rdfs:isDefinedBy asm: ;
+    rdfs:subClassOf ast:Node ;
+    asm:isSupertype true ;
+    asm:nodeTypeId 43 .
+
+asm:meta_ident a owl:Class ;
+    rdfs:label "meta_ident" ;
+    rdfs:isDefinedBy asm: ;
+    rdfs:subClassOf ast:Node ;
+    asm:isSupertype true ;
+    asm:nodeTypeId 36 .
+
+asm:name a owl:DatatypeProperty ;
+    rdfs:label "name (literal)" ;
+    rdfs:comment "Literal value for name field when it contains a terminal node" ;
+    asm:fieldId 3 ;
+    asm:isTerminalField true .
+
+asm:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+asm:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+asm:program a owl:Class ;
+    rdfs:label "program" ;
+    rdfs:isDefinedBy asm: ;
+    rdfs:subClassOf ast:Node ;
+    asm:isSupertype true ;
+    asm:nodeTypeId 41 .
+
+asm:ptr a owl:Class ;
+    rdfs:label "ptr" ;
+    rdfs:isDefinedBy asm: ;
+    rdfs:subClassOf ast:Node ;
+    asm:isSupertype true ;
+    asm:nodeTypeId 49 .
+
+asm:reg a owl:Class ;
+    rdfs:label "reg" ;
+    rdfs:isDefinedBy asm: ;
+    rdfs:subClassOf ast:Node ;
+    asm:isSupertype true ;
+    asm:nodeTypeId 54 .
+
+asm:rhs a owl:DatatypeProperty ;
+    rdfs:label "rhs (literal)" ;
+    rdfs:comment "Literal value for rhs field when it contains a terminal node" ;
+    asm:fieldId 5 ;
+    asm:isTerminalField true .
+
+asm:string a owl:Class ;
+    rdfs:label "string" ;
+    rdfs:isDefinedBy asm: ;
+    rdfs:subClassOf ast:Node ;
+    asm:isSupertype true ;
+    asm:nodeTypeId 53 .
+
+asm:tc_infix a owl:Class ;
+    rdfs:label "tc_infix" ;
+    rdfs:isDefinedBy asm: ;
+    rdfs:subClassOf ast:Node ;
+    asm:isSupertype true ;
+    asm:nodeTypeId 51 .
+
+asm:value a owl:DatatypeProperty ;
+    rdfs:label "value (literal)" ;
+    rdfs:comment "Literal value for value field when it contains a terminal node" ;
+    asm:fieldId 6 ;
+    asm:isTerminalField true .
+
+asm:word a owl:Class ;
+    rdfs:label "word" ;
+    rdfs:isDefinedBy asm: ;
+    rdfs:subClassOf ast:Node ;
+    asm:isSupertype true ;
+    asm:nodeTypeId 33 .
+
+asm: a owl:Ontology ;
+    rdfs:label "Asm Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for asm" ;
+    owl:versionInfo "v0.25" ;
+    asm:abiVersion 14 ;
+    asm:fieldCount 6 ;
+    asm:languageName "None" ;
+    asm:nodeKindCount 65 .
+

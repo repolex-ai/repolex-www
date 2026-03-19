@@ -1,0 +1,105 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix csv: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/csv/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+csv:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+csv:boolean a owl:Class ;
+    rdfs:label "boolean" ;
+    rdfs:isDefinedBy csv: ;
+    rdfs:subClassOf ast:Node ;
+    csv:isSupertype true ;
+    csv:nodeTypeId 15 .
+
+csv:document a owl:Class ;
+    rdfs:label "document" ;
+    rdfs:isDefinedBy csv: ;
+    rdfs:subClassOf ast:Node ;
+    csv:isSupertype true ;
+    csv:nodeTypeId 10 .
+
+csv:field a owl:Class ;
+    rdfs:label "field" ;
+    rdfs:isDefinedBy csv: ;
+    rdfs:subClassOf ast:Node ;
+    csv:isSupertype true ;
+    csv:nodeTypeId 12 .
+
+csv:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+csv:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+csv:float a owl:Class ;
+    rdfs:label "float" ;
+    rdfs:isDefinedBy csv: ;
+    rdfs:subClassOf ast:Node ;
+    csv:isSupertype true ;
+    csv:nodeTypeId 14 .
+
+csv:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+csv:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+csv:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+csv:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+csv:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+csv:number a owl:Class ;
+    rdfs:label "number" ;
+    rdfs:isDefinedBy csv: ;
+    rdfs:subClassOf ast:Node ;
+    csv:isSupertype true ;
+    csv:nodeTypeId 13 .
+
+csv:row a owl:Class ;
+    rdfs:label "row" ;
+    rdfs:isDefinedBy csv: ;
+    rdfs:subClassOf ast:Node ;
+    csv:isSupertype true ;
+    csv:nodeTypeId 11 .
+
+csv:text a owl:Class ;
+    rdfs:label "text" ;
+    rdfs:isDefinedBy csv: ;
+    rdfs:subClassOf ast:Node ;
+    csv:isSupertype true ;
+    csv:nodeTypeId 3 .
+
+csv: a owl:Ontology ;
+    rdfs:label "Csv Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for csv" ;
+    owl:versionInfo "v0.25" ;
+    csv:abiVersion 14 ;
+    csv:fieldCount 0 ;
+    csv:languageName "None" ;
+    csv:nodeKindCount 19 .
+

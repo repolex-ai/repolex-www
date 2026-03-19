@@ -1,0 +1,565 @@
+@prefix agda: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/agda/> .
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+agda:PropN a owl:Class ;
+    rdfs:label "PropN" ;
+    rdfs:isDefinedBy agda: ;
+    rdfs:subClassOf ast:Node ;
+    agda:isSupertype true ;
+    agda:nodeTypeId 86 .
+
+agda:SetN a owl:Class ;
+    rdfs:label "SetN" ;
+    rdfs:isDefinedBy agda: ;
+    rdfs:subClassOf ast:Node ;
+    agda:isSupertype true ;
+    agda:nodeTypeId 204 .
+
+agda:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+agda:abstract a owl:Class ;
+    rdfs:label "abstract" ;
+    rdfs:isDefinedBy agda: ;
+    rdfs:subClassOf ast:Node ;
+    agda:isSupertype true ;
+    agda:nodeTypeId 123 .
+
+agda:atom a owl:Class ;
+    rdfs:label "atom" ;
+    rdfs:isDefinedBy agda: ;
+    rdfs:subClassOf ast:Node ;
+    agda:isSupertype true ;
+    agda:nodeTypeId 172 .
+
+agda:attribute a owl:Class ;
+    rdfs:label "attribute" ;
+    rdfs:isDefinedBy agda: ;
+    rdfs:subClassOf ast:Node ;
+    agda:isSupertype true ;
+    agda:nodeTypeId 160 .
+
+agda:attributes a owl:Class ;
+    rdfs:label "attributes" ;
+    rdfs:isDefinedBy agda: ;
+    rdfs:subClassOf ast:Node ;
+    agda:isSupertype true ;
+    agda:nodeTypeId 161 .
+
+agda:bid a owl:Class ;
+    rdfs:label "bid" ;
+    rdfs:isDefinedBy agda: ;
+    rdfs:subClassOf ast:Node ;
+    agda:isSupertype true ;
+    agda:nodeTypeId 151 .
+
+agda:catchall_pragma a owl:Class ;
+    rdfs:label "catchall_pragma" ;
+    rdfs:isDefinedBy agda: ;
+    rdfs:subClassOf ast:Node ;
+    agda:isSupertype true ;
+    agda:nodeTypeId 142 .
+
+agda:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy agda: ;
+    rdfs:subClassOf ast:Node ;
+    agda:isSupertype true ;
+    agda:nodeTypeId 84 .
+
+agda:data a owl:Class ;
+    rdfs:label "data" ;
+    rdfs:isDefinedBy agda: ;
+    rdfs:subClassOf ast:Node ;
+    agda:isSupertype true ;
+    agda:nodeTypeId 110 .
+
+agda:data_name a owl:Class ;
+    rdfs:label "data_name" ;
+    rdfs:isDefinedBy agda: ;
+    rdfs:subClassOf ast:Node ;
+    agda:isSupertype true ;
+    agda:nodeTypeId 109 .
+
+agda:data_signature a owl:Class ;
+    rdfs:label "data_signature" ;
+    rdfs:isDefinedBy agda: ;
+    rdfs:subClassOf ast:Node ;
+    agda:isSupertype true ;
+    agda:nodeTypeId 111 .
+
+agda:do a owl:Class ;
+    rdfs:label "do" ;
+    rdfs:isDefinedBy agda: ;
+    rdfs:subClassOf ast:Node ;
+    agda:isSupertype true ;
+    agda:nodeTypeId 187 .
+
+agda:do_where a owl:Class ;
+    rdfs:label "do_where" ;
+    rdfs:isDefinedBy agda: ;
+    rdfs:subClassOf ast:Node ;
+    agda:isSupertype true ;
+    agda:nodeTypeId 189 .
+
+agda:expr a owl:Class ;
+    rdfs:label "expr" ;
+    rdfs:isDefinedBy agda: ;
+    rdfs:subClassOf ast:Node ;
+    agda:isSupertype true ;
+    agda:nodeTypeId 162 .
+
+agda:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+agda:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+agda:field_assignment a owl:Class ;
+    rdfs:label "field_assignment" ;
+    rdfs:isDefinedBy agda: ;
+    rdfs:subClassOf ast:Node ;
+    agda:isSupertype true ;
+    agda:nodeTypeId 195 .
+
+agda:field_name a owl:Class ;
+    rdfs:label "field_name" ;
+    rdfs:isDefinedBy agda: ;
+    rdfs:subClassOf ast:Node ;
+    agda:isSupertype true ;
+    agda:nodeTypeId 225 .
+
+agda:fields a owl:Class ;
+    rdfs:label "fields" ;
+    rdfs:isDefinedBy agda: ;
+    rdfs:subClassOf ast:Node ;
+    agda:isSupertype true ;
+    agda:nodeTypeId 97 .
+
+agda:forall a owl:Class ;
+    rdfs:label "forall" ;
+    rdfs:isDefinedBy agda: ;
+    rdfs:subClassOf ast:Node ;
+    agda:isSupertype true ;
+    agda:nodeTypeId 176 .
+
+agda:function a owl:Class ;
+    rdfs:label "function" ;
+    rdfs:isDefinedBy agda: ;
+    rdfs:subClassOf ast:Node ;
+    agda:isSupertype true ;
+    agda:nodeTypeId 101 .
+
+agda:function_name a owl:Class ;
+    rdfs:label "function_name" ;
+    rdfs:isDefinedBy agda: ;
+    rdfs:subClassOf ast:Node ;
+    agda:isSupertype true ;
+    agda:nodeTypeId 226 .
+
+agda:generalize a owl:Class ;
+    rdfs:label "generalize" ;
+    rdfs:isDefinedBy agda: ;
+    rdfs:subClassOf ast:Node ;
+    agda:isSupertype true ;
+    agda:nodeTypeId 121 .
+
+agda:hole_name a owl:Class ;
+    rdfs:label "hole_name" ;
+    rdfs:isDefinedBy agda: ;
+    rdfs:subClassOf ast:Node ;
+    agda:isSupertype true ;
+    agda:nodeTypeId 145 .
+
+agda:hole_names a owl:Class ;
+    rdfs:label "hole_names" ;
+    rdfs:isDefinedBy agda: ;
+    rdfs:subClassOf ast:Node ;
+    agda:isSupertype true ;
+    agda:nodeTypeId 144 .
+
+agda:id a owl:Class ;
+    rdfs:label "id" ;
+    rdfs:isDefinedBy agda: ;
+    rdfs:subClassOf ast:Node ;
+    agda:isSupertype true ;
+    agda:nodeTypeId 1 .
+
+agda:import a owl:Class ;
+    rdfs:label "import" ;
+    rdfs:isDefinedBy agda: ;
+    rdfs:subClassOf ast:Node ;
+    agda:isSupertype true ;
+    agda:nodeTypeId 132 .
+
+agda:import_directive a owl:Class ;
+    rdfs:label "import_directive" ;
+    rdfs:isDefinedBy agda: ;
+    rdfs:subClassOf ast:Node ;
+    agda:isSupertype true ;
+    agda:nodeTypeId 135 .
+
+agda:infix a owl:Class ;
+    rdfs:label "infix" ;
+    rdfs:isDefinedBy agda: ;
+    rdfs:subClassOf ast:Node ;
+    agda:isSupertype true ;
+    agda:nodeTypeId 120 .
+
+agda:instance a owl:Class ;
+    rdfs:label "instance" ;
+    rdfs:isDefinedBy agda: ;
+    rdfs:subClassOf ast:Node ;
+    agda:isSupertype true ;
+    agda:nodeTypeId 125 .
+
+agda:integer a owl:Class ;
+    rdfs:label "integer" ;
+    rdfs:isDefinedBy agda: ;
+    rdfs:subClassOf ast:Node ;
+    agda:isSupertype true ;
+    agda:nodeTypeId 202 .
+
+agda:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+agda:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+agda:lambda a owl:Class ;
+    rdfs:label "lambda" ;
+    rdfs:isDefinedBy agda: ;
+    rdfs:subClassOf ast:Node ;
+    agda:isSupertype true ;
+    agda:nodeTypeId 180,
+        182 .
+
+agda:lambda_clause a owl:Class ;
+    rdfs:label "lambda_clause" ;
+    rdfs:isDefinedBy agda: ;
+    rdfs:subClassOf ast:Node ;
+    agda:isSupertype true ;
+    agda:nodeTypeId 186 .
+
+agda:lambda_clause_absurd a owl:Class ;
+    rdfs:label "lambda_clause_absurd" ;
+    rdfs:isDefinedBy agda: ;
+    rdfs:subClassOf ast:Node ;
+    agda:isSupertype true ;
+    agda:nodeTypeId 185 .
+
+agda:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+agda:let a owl:Class ;
+    rdfs:label "let" ;
+    rdfs:isDefinedBy agda: ;
+    rdfs:subClassOf ast:Node ;
+    agda:isSupertype true ;
+    agda:nodeTypeId 177,
+        178 .
+
+agda:lhs a owl:Class ;
+    rdfs:label "lhs" ;
+    rdfs:isDefinedBy agda: ;
+    rdfs:subClassOf ast:Node ;
+    agda:isSupertype true ;
+    agda:nodeTypeId 102,
+        103 .
+
+agda:literal a owl:Class ;
+    rdfs:label "literal" ;
+    rdfs:isDefinedBy agda: ;
+    rdfs:subClassOf ast:Node ;
+    agda:isSupertype true ;
+    agda:nodeTypeId 203 .
+
+agda:macro a owl:Class ;
+    rdfs:label "macro" ;
+    rdfs:isDefinedBy agda: ;
+    rdfs:subClassOf ast:Node ;
+    agda:isSupertype true ;
+    agda:nodeTypeId 126 .
+
+agda:module a owl:Class ;
+    rdfs:label "module" ;
+    rdfs:isDefinedBy agda: ;
+    rdfs:subClassOf ast:Node ;
+    agda:isSupertype true ;
+    agda:nodeTypeId 141 .
+
+agda:module_application a owl:Class ;
+    rdfs:label "module_application" ;
+    rdfs:isDefinedBy agda: ;
+    rdfs:subClassOf ast:Node ;
+    agda:isSupertype true ;
+    agda:nodeTypeId 140 .
+
+agda:module_assignment a owl:Class ;
+    rdfs:label "module_assignment" ;
+    rdfs:isDefinedBy agda: ;
+    rdfs:subClassOf ast:Node ;
+    agda:isSupertype true ;
+    agda:nodeTypeId 196 .
+
+agda:module_macro a owl:Class ;
+    rdfs:label "module_macro" ;
+    rdfs:isDefinedBy agda: ;
+    rdfs:subClassOf ast:Node ;
+    agda:isSupertype true ;
+    agda:nodeTypeId 139 .
+
+agda:module_name a owl:Class ;
+    rdfs:label "module_name" ;
+    rdfs:isDefinedBy agda: ;
+    rdfs:subClassOf ast:Node ;
+    agda:isSupertype true ;
+    agda:nodeTypeId 133 .
+
+agda:mutual a owl:Class ;
+    rdfs:label "mutual" ;
+    rdfs:isDefinedBy agda: ;
+    rdfs:subClassOf ast:Node ;
+    agda:isSupertype true ;
+    agda:nodeTypeId 122 .
+
+agda:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+agda:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+agda:open a owl:Class ;
+    rdfs:label "open" ;
+    rdfs:isDefinedBy agda: ;
+    rdfs:subClassOf ast:Node ;
+    agda:isSupertype true ;
+    agda:nodeTypeId 131 .
+
+agda:pattern a owl:Class ;
+    rdfs:label "pattern" ;
+    rdfs:isDefinedBy agda: ;
+    rdfs:subClassOf ast:Node ;
+    agda:isSupertype true ;
+    agda:nodeTypeId 148 .
+
+agda:postulate a owl:Class ;
+    rdfs:label "postulate" ;
+    rdfs:isDefinedBy agda: ;
+    rdfs:subClassOf ast:Node ;
+    agda:isSupertype true ;
+    agda:nodeTypeId 127 .
+
+agda:pragma a owl:Class ;
+    rdfs:label "pragma" ;
+    rdfs:isDefinedBy agda: ;
+    rdfs:subClassOf ast:Node ;
+    agda:isSupertype true ;
+    agda:nodeTypeId 52 .
+
+agda:primitive a owl:Class ;
+    rdfs:label "primitive" ;
+    rdfs:isDefinedBy agda: ;
+    rdfs:subClassOf ast:Node ;
+    agda:isSupertype true ;
+    agda:nodeTypeId 128 .
+
+agda:private a owl:Class ;
+    rdfs:label "private" ;
+    rdfs:isDefinedBy agda: ;
+    rdfs:subClassOf ast:Node ;
+    agda:isSupertype true ;
+    agda:nodeTypeId 124 .
+
+agda:qid a owl:Class ;
+    rdfs:label "qid" ;
+    rdfs:isDefinedBy agda: ;
+    rdfs:subClassOf ast:Node ;
+    agda:isSupertype true ;
+    agda:nodeTypeId 62 .
+
+agda:record a owl:Class ;
+    rdfs:label "record" ;
+    rdfs:isDefinedBy agda: ;
+    rdfs:subClassOf ast:Node ;
+    agda:isSupertype true ;
+    agda:nodeTypeId 112 .
+
+agda:record_assignments a owl:Class ;
+    rdfs:label "record_assignments" ;
+    rdfs:isDefinedBy agda: ;
+    rdfs:subClassOf ast:Node ;
+    agda:isSupertype true ;
+    agda:nodeTypeId 190,
+        191 .
+
+agda:record_constructor a owl:Class ;
+    rdfs:label "record_constructor" ;
+    rdfs:isDefinedBy agda: ;
+    rdfs:subClassOf ast:Node ;
+    agda:isSupertype true ;
+    agda:nodeTypeId 115 .
+
+agda:record_constructor_instance a owl:Class ;
+    rdfs:label "record_constructor_instance" ;
+    rdfs:isDefinedBy agda: ;
+    rdfs:subClassOf ast:Node ;
+    agda:isSupertype true ;
+    agda:nodeTypeId 116 .
+
+agda:record_declarations_block a owl:Class ;
+    rdfs:label "record_declarations_block" ;
+    rdfs:isDefinedBy agda: ;
+    rdfs:subClassOf ast:Node ;
+    agda:isSupertype true ;
+    agda:nodeTypeId 113 .
+
+agda:record_eta a owl:Class ;
+    rdfs:label "record_eta" ;
+    rdfs:isDefinedBy agda: ;
+    rdfs:subClassOf ast:Node ;
+    agda:isSupertype true ;
+    agda:nodeTypeId 118 .
+
+agda:record_induction a owl:Class ;
+    rdfs:label "record_induction" ;
+    rdfs:isDefinedBy agda: ;
+    rdfs:subClassOf ast:Node ;
+    agda:isSupertype true ;
+    agda:nodeTypeId 117 .
+
+agda:record_name a owl:Class ;
+    rdfs:label "record_name" ;
+    rdfs:isDefinedBy agda: ;
+    rdfs:subClassOf ast:Node ;
+    agda:isSupertype true ;
+    agda:nodeTypeId 227 .
+
+agda:record_signature a owl:Class ;
+    rdfs:label "record_signature" ;
+    rdfs:isDefinedBy agda: ;
+    rdfs:subClassOf ast:Node ;
+    agda:isSupertype true ;
+    agda:nodeTypeId 119 .
+
+agda:renaming a owl:Class ;
+    rdfs:label "renaming" ;
+    rdfs:isDefinedBy agda: ;
+    rdfs:subClassOf ast:Node ;
+    agda:isSupertype true ;
+    agda:nodeTypeId 137 .
+
+agda:rewrite_equations a owl:Class ;
+    rdfs:label "rewrite_equations" ;
+    rdfs:isDefinedBy agda: ;
+    rdfs:subClassOf ast:Node ;
+    agda:isSupertype true ;
+    agda:nodeTypeId 107 .
+
+agda:rhs a owl:Class ;
+    rdfs:label "rhs" ;
+    rdfs:isDefinedBy agda: ;
+    rdfs:subClassOf ast:Node ;
+    agda:isSupertype true ;
+    agda:nodeTypeId 104,
+        105 .
+
+agda:signature a owl:Class ;
+    rdfs:label "signature" ;
+    rdfs:isDefinedBy agda: ;
+    rdfs:subClassOf ast:Node ;
+    agda:isSupertype true ;
+    agda:nodeTypeId 99 .
+
+agda:source_file a owl:Class ;
+    rdfs:label "source_file" ;
+    rdfs:isDefinedBy agda: ;
+    rdfs:subClassOf ast:Node ;
+    agda:isSupertype true ;
+    agda:nodeTypeId 90 .
+
+agda:stmt a owl:Class ;
+    rdfs:label "stmt" ;
+    rdfs:isDefinedBy agda: ;
+    rdfs:subClassOf ast:Node ;
+    agda:isSupertype true ;
+    agda:nodeTypeId 163 .
+
+agda:syntax a owl:Class ;
+    rdfs:label "syntax" ;
+    rdfs:isDefinedBy agda: ;
+    rdfs:subClassOf ast:Node ;
+    agda:isSupertype true ;
+    agda:nodeTypeId 143 .
+
+agda:type_signature a owl:Class ;
+    rdfs:label "type_signature" ;
+    rdfs:isDefinedBy agda: ;
+    rdfs:subClassOf ast:Node ;
+    agda:isSupertype true ;
+    agda:nodeTypeId 130 .
+
+agda:typed_binding a owl:Class ;
+    rdfs:label "typed_binding" ;
+    rdfs:isDefinedBy agda: ;
+    rdfs:subClassOf ast:Node ;
+    agda:isSupertype true ;
+    agda:nodeTypeId 198 .
+
+agda:unquote_decl a owl:Class ;
+    rdfs:label "unquote_decl" ;
+    rdfs:isDefinedBy agda: ;
+    rdfs:subClassOf ast:Node ;
+    agda:isSupertype true ;
+    agda:nodeTypeId 149 .
+
+agda:untyped_binding a owl:Class ;
+    rdfs:label "untyped_binding" ;
+    rdfs:isDefinedBy agda: ;
+    rdfs:subClassOf ast:Node ;
+    agda:isSupertype true ;
+    agda:nodeTypeId 201 .
+
+agda:where a owl:Class ;
+    rdfs:label "where" ;
+    rdfs:isDefinedBy agda: ;
+    rdfs:subClassOf ast:Node ;
+    agda:isSupertype true ;
+    agda:nodeTypeId 108 .
+
+agda:with_expressions a owl:Class ;
+    rdfs:label "with_expressions" ;
+    rdfs:isDefinedBy agda: ;
+    rdfs:subClassOf ast:Node ;
+    agda:isSupertype true ;
+    agda:nodeTypeId 106 .
+
+agda: a owl:Ontology ;
+    rdfs:label "Agda Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for agda" ;
+    owl:versionInfo "v0.25" ;
+    agda:abiVersion 14 ;
+    agda:fieldCount 0 ;
+    agda:languageName "None" ;
+    agda:nodeKindCount 228 .
+

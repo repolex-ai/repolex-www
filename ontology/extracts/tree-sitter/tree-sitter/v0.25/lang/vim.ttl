@@ -1,0 +1,1597 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vim: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/vim/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+vim:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+vim:aboveleft_statement a owl:Class ;
+    rdfs:label "aboveleft_statement" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 710 .
+
+vim:argument a owl:Class ;
+    rdfs:label "argument" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 674 .
+
+vim:arguments a owl:Class ;
+    rdfs:label "arguments" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 914 .
+
+vim:au_event a owl:Class ;
+    rdfs:label "au_event" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 344 .
+
+vim:au_event_list a owl:Class ;
+    rdfs:label "au_event_list" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 797 .
+
+vim:au_nested a owl:Class ;
+    rdfs:label "au_nested" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 347 .
+
+vim:au_once a owl:Class ;
+    rdfs:label "au_once" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 346 .
+
+vim:augroup_name a owl:Class ;
+    rdfs:label "augroup_name" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 915 .
+
+vim:augroup_statement a owl:Class ;
+    rdfs:label "augroup_statement" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 805 .
+
+vim:autocmd_statement a owl:Class ;
+    rdfs:label "autocmd_statement" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 804 .
+
+vim:bang a owl:Class ;
+    rdfs:label "bang" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 718 .
+
+vim:bang_filter_statement a owl:Class ;
+    rdfs:label "bang_filter_statement" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 672 .
+
+vim:bangs a owl:Class ;
+    rdfs:label "bangs" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 669 .
+
+vim:behavior a owl:Class ;
+    rdfs:label "behavior" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 806,
+        807 .
+
+vim:belowright_statement a owl:Class ;
+    rdfs:label "belowright_statement" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 711 .
+
+vim:binary_operation a owl:Class ;
+    rdfs:label "binary_operation" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 762 .
+
+vim:body a owl:Class ;
+    rdfs:label "body" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 916 .
+
+vim:botright_statement a owl:Class ;
+    rdfs:label "botright_statement" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 709 .
+
+vim:break_statement a owl:Class ;
+    rdfs:label "break_statement" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 626 .
+
+vim:call_expression a owl:Class ;
+    rdfs:label "call_expression" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 769,
+        772 .
+
+vim:call_statement a owl:Class ;
+    rdfs:label "call_statement" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 699 .
+
+vim:catch_statement a owl:Class ;
+    rdfs:label "catch_statement" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 666 .
+
+vim:chunk a owl:Class ;
+    rdfs:label "chunk" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 139 .
+
+vim:cnext_statement a owl:Class ;
+    rdfs:label "cnext_statement" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 640 .
+
+vim:color a owl:Class ;
+    rdfs:label "color" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 825 .
+
+vim:colorscheme_statement a owl:Class ;
+    rdfs:label "colorscheme_statement" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 653 .
+
+vim:comclear_statement a owl:Class ;
+    rdfs:label "comclear_statement" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 812 .
+
+vim:command a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "command",
+        "command (literal)" ;
+    rdfs:comment "Literal value for command field when it contains a terminal node" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:fieldId 3 ;
+    vim:isSupertype true ;
+    vim:isTerminalField true ;
+    vim:nodeTypeId 407,
+        671 .
+
+vim:command_argument a owl:Class ;
+    rdfs:label "command_argument" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 670,
+        713 .
+
+vim:command_attribute a owl:Class ;
+    rdfs:label "command_attribute" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 810 .
+
+vim:command_name a owl:Class ;
+    rdfs:label "command_name" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 348 .
+
+vim:command_statement a owl:Class ;
+    rdfs:label "command_statement" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 811 .
+
+vim:commands a owl:Class ;
+    rdfs:label "commands" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 4 .
+
+vim:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 521 .
+
+vim:condition a owl:DatatypeProperty ;
+    rdfs:label "condition (literal)" ;
+    rdfs:comment "Literal value for condition field when it contains a terminal node" ;
+    vim:fieldId 4 ;
+    vim:isTerminalField true .
+
+vim:const_statement a owl:Class ;
+    rdfs:label "const_statement" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 685 .
+
+vim:continue_statement a owl:Class ;
+    rdfs:label "continue_statement" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 627 .
+
+vim:cprevious_statement a owl:Class ;
+    rdfs:label "cprevious_statement" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 641 .
+
+vim:curly_braces_name a owl:Class ;
+    rdfs:label "curly_braces_name" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 675,
+        676 .
+
+vim:current_line a owl:Class ;
+    rdfs:label "current_line" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 726 .
+
+vim:default_option a owl:Class ;
+    rdfs:label "default_option" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 691 .
+
+vim:default_parameter a owl:Class ;
+    rdfs:label "default_parameter" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 717 .
+
+vim:delcommand_statement a owl:Class ;
+    rdfs:label "delcommand_statement" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 813 .
+
+vim:dictionnary a owl:Class ;
+    rdfs:label "dictionnary" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 785 .
+
+vim:dictionnary_entry a owl:Class ;
+    rdfs:label "dictionnary_entry" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 784 .
+
+vim:echo_statement a owl:Class ;
+    rdfs:label "echo_statement" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 700 .
+
+vim:echoerr_statement a owl:Class ;
+    rdfs:label "echoerr_statement" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 704 .
+
+vim:echohl_statement a owl:Class ;
+    rdfs:label "echohl_statement" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 702 .
+
+vim:echomsg_statement a owl:Class ;
+    rdfs:label "echomsg_statement" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 703 .
+
+vim:echon_statement a owl:Class ;
+    rdfs:label "echon_statement" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 701 .
+
+vim:edit_statement a owl:Class ;
+    rdfs:label "edit_statement" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 860 .
+
+vim:else_statement a owl:Class ;
+    rdfs:label "else_statement" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 663 .
+
+vim:elseif_statement a owl:Class ;
+    rdfs:label "elseif_statement" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 662 .
+
+vim:encoding a owl:Class ;
+    rdfs:label "encoding" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        637 .
+
+vim:end a owl:DatatypeProperty ;
+    rdfs:label "end (literal)" ;
+    rdfs:comment "Literal value for end field when it contains a terminal node" ;
+    vim:fieldId 5 ;
+    vim:isTerminalField true .
+
+vim:endmarker a owl:Class ;
+    rdfs:label "endmarker" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 515 .
+
+vim:enew_statement a owl:Class ;
+    rdfs:label "enew_statement" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 861 .
+
+vim:env_variable a owl:Class ;
+    rdfs:label "env_variable" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 782 .
+
+vim:eval_statement a owl:Class ;
+    rdfs:label "eval_statement" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 770 .
+
+vim:ex_statement a owl:Class ;
+    rdfs:label "ex_statement" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 863 .
+
+vim:execute_statement a owl:Class ;
+    rdfs:label "execute_statement" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 705 .
+
+vim:fallback a owl:Class ;
+    rdfs:label "fallback" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 8 .
+
+vim:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+vim:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+vim:field_cmd a owl:ObjectProperty ;
+    rdfs:label "cmd (structural)" ;
+    rdfs:comment "Structural reference for cmd field when it contains a non-terminal node" ;
+    vim:fieldId 2 .
+
+vim:field_command a owl:ObjectProperty ;
+    rdfs:label "command (structural)" ;
+    rdfs:comment "Structural reference for command field when it contains a non-terminal node" ;
+    vim:fieldId 3 .
+
+vim:field_condition a owl:ObjectProperty ;
+    rdfs:label "condition (structural)" ;
+    rdfs:comment "Structural reference for condition field when it contains a non-terminal node" ;
+    vim:fieldId 4 .
+
+vim:field_end a owl:ObjectProperty ;
+    rdfs:label "end (structural)" ;
+    rdfs:comment "Structural reference for end field when it contains a non-terminal node" ;
+    vim:fieldId 5 .
+
+vim:field_expression a owl:Class ;
+    rdfs:label "field_expression" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 768 .
+
+vim:field_field a owl:ObjectProperty ;
+    rdfs:label "field (structural)" ;
+    rdfs:comment "Structural reference for field field when it contains a non-terminal node" ;
+    vim:fieldId 6 .
+
+vim:field_function a owl:ObjectProperty ;
+    rdfs:label "function (structural)" ;
+    rdfs:comment "Structural reference for function field when it contains a non-terminal node" ;
+    vim:fieldId 10 .
+
+vim:field_grouplist a owl:ObjectProperty ;
+    rdfs:label "grouplist (structural)" ;
+    rdfs:comment "Structural reference for grouplist field when it contains a non-terminal node" ;
+    vim:fieldId 11 .
+
+vim:field_index a owl:ObjectProperty ;
+    rdfs:label "index (structural)" ;
+    rdfs:comment "Structural reference for index field when it contains a non-terminal node" ;
+    vim:fieldId 13 .
+
+vim:field_iter a owl:ObjectProperty ;
+    rdfs:label "iter (structural)" ;
+    rdfs:comment "Structural reference for iter field when it contains a non-terminal node" ;
+    vim:fieldId 14 .
+
+vim:field_key a owl:ObjectProperty ;
+    rdfs:label "key (structural)" ;
+    rdfs:comment "Structural reference for key field when it contains a non-terminal node" ;
+    vim:fieldId 15 .
+
+vim:field_left a owl:ObjectProperty ;
+    rdfs:label "left (structural)" ;
+    rdfs:comment "Structural reference for left field when it contains a non-terminal node" ;
+    vim:fieldId 16 .
+
+vim:field_lhs a owl:ObjectProperty ;
+    rdfs:label "lhs (structural)" ;
+    rdfs:comment "Structural reference for lhs field when it contains a non-terminal node" ;
+    vim:fieldId 17 .
+
+vim:field_method a owl:ObjectProperty ;
+    rdfs:label "method (structural)" ;
+    rdfs:comment "Structural reference for method field when it contains a non-terminal node" ;
+    vim:fieldId 18 .
+
+vim:field_name a owl:ObjectProperty ;
+    rdfs:label "name (structural)" ;
+    rdfs:comment "Structural reference for name field when it contains a non-terminal node" ;
+    vim:fieldId 19 .
+
+vim:field_option a owl:ObjectProperty ;
+    rdfs:label "option (structural)" ;
+    rdfs:comment "Structural reference for option field when it contains a non-terminal node" ;
+    vim:fieldId 21 .
+
+vim:field_parameters a owl:ObjectProperty ;
+    rdfs:label "parameters (structural)" ;
+    rdfs:comment "Structural reference for parameters field when it contains a non-terminal node" ;
+    vim:fieldId 22 .
+
+vim:field_range a owl:ObjectProperty ;
+    rdfs:label "range (structural)" ;
+    rdfs:comment "Structural reference for range field when it contains a non-terminal node" ;
+    vim:fieldId 23 .
+
+vim:field_repl a owl:ObjectProperty ;
+    rdfs:label "repl (structural)" ;
+    rdfs:comment "Structural reference for repl field when it contains a non-terminal node" ;
+    vim:fieldId 24 .
+
+vim:field_rhs a owl:ObjectProperty ;
+    rdfs:label "rhs (structural)" ;
+    rdfs:comment "Structural reference for rhs field when it contains a non-terminal node" ;
+    vim:fieldId 25 .
+
+vim:field_right a owl:ObjectProperty ;
+    rdfs:label "right (structural)" ;
+    rdfs:comment "Structural reference for right field when it contains a non-terminal node" ;
+    vim:fieldId 26 .
+
+vim:field_start a owl:ObjectProperty ;
+    rdfs:label "start (structural)" ;
+    rdfs:comment "Structural reference for start field when it contains a non-terminal node" ;
+    vim:fieldId 27 .
+
+vim:field_stop a owl:ObjectProperty ;
+    rdfs:label "stop (structural)" ;
+    rdfs:comment "Structural reference for stop field when it contains a non-terminal node" ;
+    vim:fieldId 28 .
+
+vim:field_sub a owl:ObjectProperty ;
+    rdfs:label "sub (structural)" ;
+    rdfs:comment "Structural reference for sub field when it contains a non-terminal node" ;
+    vim:fieldId 29 .
+
+vim:field_val a owl:ObjectProperty ;
+    rdfs:label "val (structural)" ;
+    rdfs:comment "Structural reference for val field when it contains a non-terminal node" ;
+    vim:fieldId 31 .
+
+vim:field_value a owl:ObjectProperty ;
+    rdfs:label "value (structural)" ;
+    rdfs:comment "Structural reference for value field when it contains a non-terminal node" ;
+    vim:fieldId 32 .
+
+vim:field_variable a owl:ObjectProperty ;
+    rdfs:label "variable (structural)" ;
+    rdfs:comment "Structural reference for variable field when it contains a non-terminal node" ;
+    vim:fieldId 33 .
+
+vim:field_what a owl:ObjectProperty ;
+    rdfs:label "what (structural)" ;
+    rdfs:comment "Structural reference for what field when it contains a non-terminal node" ;
+    vim:fieldId 34 .
+
+vim:file a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "file",
+        "file (literal)" ;
+    rdfs:comment "Literal value for file field when it contains a terminal node" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:fieldId 7 ;
+    vim:isSupertype true ;
+    vim:isTerminalField true ;
+    vim:nodeTypeId 917 .
+
+vim:file_format a owl:Class ;
+    rdfs:label "file_format" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 9,
+        10,
+        11 .
+
+vim:filename a owl:Class ;
+    rdfs:label "filename" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 774 .
+
+vim:filenames a owl:Class ;
+    rdfs:label "filenames" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 918 .
+
+vim:filetype a owl:Class ;
+    rdfs:label "filetype" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 5,
+        6 .
+
+vim:filetype_statement a owl:Class ;
+    rdfs:label "filetype_statement" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 652 .
+
+vim:filetypes a owl:Class ;
+    rdfs:label "filetypes" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 631 .
+
+vim:filter a owl:DatatypeProperty ;
+    rdfs:label "filter (literal)" ;
+    rdfs:comment "Literal value for filter field when it contains a terminal node" ;
+    vim:fieldId 8 ;
+    vim:isTerminalField true .
+
+vim:filter_command a owl:Class ;
+    rdfs:label "filter_command" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 919 .
+
+vim:finally_statement a owl:Class ;
+    rdfs:label "finally_statement" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 667 .
+
+vim:find_statement a owl:Class ;
+    rdfs:label "find_statement" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 862 .
+
+vim:float_literal a owl:Class ;
+    rdfs:label "float_literal" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 304 .
+
+vim:font a owl:Class ;
+    rdfs:label "font" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 827 .
+
+vim:for_loop a owl:Class ;
+    rdfs:label "for_loop" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 659 .
+
+vim:from a owl:DatatypeProperty ;
+    rdfs:label "from (literal)" ;
+    rdfs:comment "Literal value for from field when it contains a terminal node" ;
+    vim:fieldId 9 ;
+    vim:isTerminalField true .
+
+vim:function a owl:DatatypeProperty ;
+    rdfs:label "function (literal)" ;
+    rdfs:comment "Literal value for function field when it contains a terminal node" ;
+    vim:fieldId 10 ;
+    vim:isTerminalField true .
+
+vim:function_declaration a owl:Class ;
+    rdfs:label "function_declaration" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 715 .
+
+vim:function_definition a owl:Class ;
+    rdfs:label "function_definition" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 714 .
+
+vim:global_statement a owl:Class ;
+    rdfs:label "global_statement" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 646 .
+
+vim:grouplist a owl:DatatypeProperty ;
+    rdfs:label "grouplist (literal)" ;
+    rdfs:comment "Literal value for grouplist field when it contains a terminal node" ;
+    vim:fieldId 11 ;
+    vim:isTerminalField true .
+
+vim:heredoc a owl:Class ;
+    rdfs:label "heredoc" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 686 .
+
+vim:highlight_statement a owl:Class ;
+    rdfs:label "highlight_statement" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 833 .
+
+vim:hl_attribute a owl:Class ;
+    rdfs:label "hl_attribute" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 830 .
+
+vim:hl_group a owl:Class ;
+    rdfs:label "hl_group" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 408,
+        411 .
+
+vim:hl_groups a owl:Class ;
+    rdfs:label "hl_groups" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 841 .
+
+vim:id a owl:DatatypeProperty ;
+    rdfs:label "id (literal)" ;
+    rdfs:comment "Literal value for id field when it contains a terminal node" ;
+    vim:fieldId 12 ;
+    vim:isTerminalField true .
+
+vim:identifier a owl:Class ;
+    rdfs:label "identifier" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 152,
+        677,
+        678 .
+
+vim:if_statement a owl:Class ;
+    rdfs:label "if_statement" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 661 .
+
+vim:index a owl:DatatypeProperty ;
+    rdfs:label "index (literal)" ;
+    rdfs:comment "Literal value for index field when it contains a terminal node" ;
+    vim:fieldId 13 ;
+    vim:isTerminalField true .
+
+vim:index_expression a owl:Class ;
+    rdfs:label "index_expression" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 766 .
+
+vim:integer_literal a owl:Class ;
+    rdfs:label "integer_literal" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 305,
+        394 .
+
+vim:inv_option a owl:Class ;
+    rdfs:label "inv_option" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 690 .
+
+vim:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+vim:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+vim:iter a owl:DatatypeProperty ;
+    rdfs:label "iter (literal)" ;
+    rdfs:comment "Literal value for iter field when it contains a terminal node" ;
+    vim:fieldId 14 ;
+    vim:isTerminalField true .
+
+vim:key a owl:DatatypeProperty ;
+    rdfs:label "key (literal)" ;
+    rdfs:comment "Literal value for key field when it contains a terminal node" ;
+    vim:fieldId 15 ;
+    vim:isTerminalField true .
+
+vim:keycode a owl:Class ;
+    rdfs:label "keycode" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 263,
+        265,
+        266,
+        735 .
+
+vim:keyword a owl:Class ;
+    rdfs:label "keyword" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 1,
+        491 .
+
+vim:lambda_expression a owl:Class ;
+    rdfs:label "lambda_expression" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 788,
+        789 .
+
+vim:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+vim:last_line a owl:Class ;
+    rdfs:label "last_line" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 728 .
+
+vim:left a owl:DatatypeProperty ;
+    rdfs:label "left (literal)" ;
+    rdfs:comment "Literal value for left field when it contains a terminal node" ;
+    vim:fieldId 16 ;
+    vim:isTerminalField true .
+
+vim:let_statement a owl:Class ;
+    rdfs:label "let_statement" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 683 .
+
+vim:line_continuation_comment a owl:Class ;
+    rdfs:label "line_continuation_comment" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 522 .
+
+vim:list a owl:Class ;
+    rdfs:label "list" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 764 .
+
+vim:list_assignment a owl:Class ;
+    rdfs:label "list_assignment" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 765 .
+
+vim:literal_dictionary a owl:Class ;
+    rdfs:label "literal_dictionary" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 787 .
+
+vim:literal_key a owl:Class ;
+    rdfs:label "literal_key" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 328 .
+
+vim:lua_statement a owl:Class ;
+    rdfs:label "lua_statement" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 654 .
+
+vim:map_side a owl:Class ;
+    rdfs:label "map_side" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 736,
+        738 .
+
+vim:map_statement a owl:Class ;
+    rdfs:label "map_statement" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 731 .
+
+vim:mark a owl:Class ;
+    rdfs:label "mark" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 196 .
+
+vim:marker_definition a owl:Class ;
+    rdfs:label "marker_definition" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 513,
+        514 .
+
+vim:match_case a owl:Class ;
+    rdfs:label "match_case" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 761 .
+
+vim:method_expression a owl:Class ;
+    rdfs:label "method_expression" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 773 .
+
+vim:name a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "name",
+        "name (literal)" ;
+    rdfs:comment "Literal value for name field when it contains a terminal node" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:fieldId 19 ;
+    vim:isSupertype true ;
+    vim:isTerminalField true ;
+    vim:nodeTypeId 920 .
+
+vim:next_line a owl:Class ;
+    rdfs:label "next_line" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 727 .
+
+vim:no_option a owl:Class ;
+    rdfs:label "no_option" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 689 .
+
+vim:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+vim:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+vim:normal_statement a owl:Class ;
+    rdfs:label "normal_statement" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 629 .
+
+vim:option a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "option",
+        "option (literal)" ;
+    rdfs:comment "Literal value for option field when it contains a terminal node" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:fieldId 21 ;
+    vim:isSupertype true ;
+    vim:isTerminalField true ;
+    vim:nodeTypeId 783 .
+
+vim:option_name a owl:Class ;
+    rdfs:label "option_name" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 688 .
+
+vim:options_statement a owl:Class ;
+    rdfs:label "options_statement" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 633 .
+
+vim:parameter a owl:Class ;
+    rdfs:label "parameter" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 687 .
+
+vim:parameters a owl:Class ;
+    rdfs:label "parameters" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 716 .
+
+vim:pattern a owl:Class ;
+    rdfs:label "pattern" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 345,
+        665,
+        781 .
+
+vim:pattern_multi a owl:Class ;
+    rdfs:label "pattern_multi" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 395,
+        396,
+        775 .
+
+vim:pattern_offset a owl:Class ;
+    rdfs:label "pattern_offset" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 846 .
+
+vim:perl_statement a owl:Class ;
+    rdfs:label "perl_statement" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 657 .
+
+vim:plus_cmd a owl:Class ;
+    rdfs:label "plus_cmd" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 796 .
+
+vim:plus_plus_opt a owl:Class ;
+    rdfs:label "plus_plus_opt" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 791 .
+
+vim:previous_pattern a owl:Class ;
+    rdfs:label "previous_pattern" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 729 .
+
+vim:python_statement a owl:Class ;
+    rdfs:label "python_statement" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 656 .
+
+vim:range a owl:Class ;
+    rdfs:label "range" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 723 .
+
+vim:range_statement a owl:Class ;
+    rdfs:label "range_statement" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 719 .
+
+vim:register a owl:Class ;
+    rdfs:label "register" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 327 .
+
+vim:register_statement a owl:Class ;
+    rdfs:label "register_statement" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 730 .
+
+vim:return_statement a owl:Class ;
+    rdfs:label "return_statement" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 625 .
+
+vim:rhs a owl:DatatypeProperty ;
+    rdfs:label "rhs (literal)" ;
+    rdfs:comment "Literal value for rhs field when it contains a terminal node" ;
+    vim:fieldId 25 ;
+    vim:isTerminalField true .
+
+vim:right a owl:DatatypeProperty ;
+    rdfs:label "right (literal)" ;
+    rdfs:comment "Literal value for right field when it contains a terminal node" ;
+    vim:fieldId 26 ;
+    vim:isTerminalField true .
+
+vim:ruby_statement a owl:Class ;
+    rdfs:label "ruby_statement" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 655 .
+
+vim:runtime_statement a owl:Class ;
+    rdfs:label "runtime_statement" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 643 .
+
+vim:scope a owl:Class ;
+    rdfs:label "scope" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 519 .
+
+vim:scope_dict a owl:Class ;
+    rdfs:label "scope_dict" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 628 .
+
+vim:scoped_identifier a owl:Class ;
+    rdfs:label "scoped_identifier" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 673 .
+
+vim:script a owl:Class ;
+    rdfs:label "script" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 658 .
+
+vim:script_file a owl:Class ;
+    rdfs:label "script_file" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 620 .
+
+vim:scriptencoding_statement a owl:Class ;
+    rdfs:label "scriptencoding_statement" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 639 .
+
+vim:set_item a owl:Class ;
+    rdfs:label "set_item" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 695 .
+
+vim:set_statement a owl:Class ;
+    rdfs:label "set_statement" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 696 .
+
+vim:set_value a owl:Class ;
+    rdfs:label "set_value" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 184 .
+
+vim:setfiletype_statement a owl:Class ;
+    rdfs:label "setfiletype_statement" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 632 .
+
+vim:setlocal_statement a owl:Class ;
+    rdfs:label "setlocal_statement" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 697 .
+
+vim:sign_argument a owl:Class ;
+    rdfs:label "sign_argument" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 741,
+        745,
+        747,
+        750,
+        752,
+        755 .
+
+vim:sign_statement a owl:Class ;
+    rdfs:label "sign_statement" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 757 .
+
+vim:silent_statement a owl:Class ;
+    rdfs:label "silent_statement" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 706 .
+
+vim:slice_expression a owl:Class ;
+    rdfs:label "slice_expression" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 767 .
+
+vim:source_statement a owl:Class ;
+    rdfs:label "source_statement" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 645 .
+
+vim:spread a owl:Class ;
+    rdfs:label "spread" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 194 .
+
+vim:start a owl:DatatypeProperty ;
+    rdfs:label "start (literal)" ;
+    rdfs:comment "Literal value for start field when it contains a terminal node" ;
+    vim:fieldId 27 ;
+    vim:isTerminalField true .
+
+vim:startinsert_statement a owl:Class ;
+    rdfs:label "startinsert_statement" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 634 .
+
+vim:stop a owl:DatatypeProperty ;
+    rdfs:label "stop (literal)" ;
+    rdfs:comment "Literal value for stop field when it contains a terminal node" ;
+    vim:fieldId 28 ;
+    vim:isTerminalField true .
+
+vim:stopinsert_statement a owl:Class ;
+    rdfs:label "stopinsert_statement" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 635 .
+
+vim:string_literal a owl:Class ;
+    rdfs:label "string_literal" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 520 .
+
+vim:sub a owl:DatatypeProperty ;
+    rdfs:label "sub (literal)" ;
+    rdfs:comment "Literal value for sub field when it contains a terminal node" ;
+    vim:fieldId 29 ;
+    vim:isTerminalField true .
+
+vim:substitute_statement a owl:Class ;
+    rdfs:label "substitute_statement" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 771 .
+
+vim:syntax_argument a owl:Class ;
+    rdfs:label "syntax_argument" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 844,
+        845,
+        849,
+        850,
+        851 .
+
+vim:syntax_statement a owl:Class ;
+    rdfs:label "syntax_statement" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 859 .
+
+vim:ternary_expression a owl:Class ;
+    rdfs:label "ternary_expression" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 760 .
+
+vim:text a owl:Class ;
+    rdfs:label "text" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 740 .
+
+vim:throw_statement a owl:Class ;
+    rdfs:label "throw_statement" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 668 .
+
+vim:to a owl:DatatypeProperty ;
+    rdfs:label "to (literal)" ;
+    rdfs:comment "Literal value for to field when it contains a terminal node" ;
+    vim:fieldId 30 ;
+    vim:isTerminalField true .
+
+vim:topleft_statement a owl:Class ;
+    rdfs:label "topleft_statement" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 708 .
+
+vim:try_statement a owl:Class ;
+    rdfs:label "try_statement" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 664 .
+
+vim:unary_operation a owl:Class ;
+    rdfs:label "unary_operation" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 763 .
+
+vim:unknown_builtin_statement a owl:Class ;
+    rdfs:label "unknown_builtin_statement" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 624 .
+
+vim:unknown_command_name a owl:Class ;
+    rdfs:label "unknown_command_name" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 619 .
+
+vim:unlet_statement a owl:Class ;
+    rdfs:label "unlet_statement" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 698 .
+
+vim:user_command a owl:Class ;
+    rdfs:label "user_command" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 712 .
+
+vim:val a owl:DatatypeProperty ;
+    rdfs:label "val (literal)" ;
+    rdfs:comment "Literal value for val field when it contains a terminal node" ;
+    vim:fieldId 31 ;
+    vim:isTerminalField true .
+
+vim:value a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "value",
+        "value (literal)" ;
+    rdfs:comment "Literal value for value field when it contains a terminal node" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:fieldId 32 ;
+    vim:isSupertype true ;
+    vim:isTerminalField true ;
+    vim:nodeTypeId 460 .
+
+vim:vertical_statement a owl:Class ;
+    rdfs:label "vertical_statement" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 707 .
+
+vim:view_statement a owl:Class ;
+    rdfs:label "view_statement" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 865 .
+
+vim:visual_statement a owl:Class ;
+    rdfs:label "visual_statement" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 864 .
+
+vim:where a owl:Class ;
+    rdfs:label "where" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 642 .
+
+vim:while_loop a owl:Class ;
+    rdfs:label "while_loop" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 660 .
+
+vim:wildcard a owl:Class ;
+    rdfs:label "wildcard" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 284 .
+
+vim:wincmd_statement a owl:Class ;
+    rdfs:label "wincmd_statement" ;
+    rdfs:isDefinedBy vim: ;
+    rdfs:subClassOf ast:Node ;
+    vim:isSupertype true ;
+    vim:nodeTypeId 644 .
+
+vim: a owl:Ontology ;
+    rdfs:label "Vim Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for vim" ;
+    owl:versionInfo "v0.25" ;
+    vim:abiVersion 15 ;
+    vim:fieldCount 34 ;
+    vim:languageName "vim" ;
+    vim:nodeKindCount 921 .
+

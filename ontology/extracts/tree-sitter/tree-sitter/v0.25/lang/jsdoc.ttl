@@ -1,0 +1,175 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix jsdoc: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/jsdoc/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+jsdoc:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+jsdoc:array_expression a owl:Class ;
+    rdfs:label "array_expression" ;
+    rdfs:isDefinedBy jsdoc: ;
+    rdfs:subClassOf ast:Node ;
+    jsdoc:isSupertype true ;
+    jsdoc:nodeTypeId 33 .
+
+jsdoc:code_block a owl:Class ;
+    rdfs:label "code_block" ;
+    rdfs:isDefinedBy jsdoc: ;
+    rdfs:subClassOf ast:Node ;
+    jsdoc:isSupertype true ;
+    jsdoc:nodeTypeId 34 .
+
+jsdoc:code_block_language a owl:Class ;
+    rdfs:label "code_block_language" ;
+    rdfs:isDefinedBy jsdoc: ;
+    rdfs:subClassOf ast:Node ;
+    jsdoc:isSupertype true ;
+    jsdoc:nodeTypeId 16 .
+
+jsdoc:code_block_line a owl:Class ;
+    rdfs:label "code_block_line" ;
+    rdfs:isDefinedBy jsdoc: ;
+    rdfs:subClassOf ast:Node ;
+    jsdoc:isSupertype true ;
+    jsdoc:nodeTypeId 17 .
+
+jsdoc:description a owl:Class ;
+    rdfs:label "description" ;
+    rdfs:isDefinedBy jsdoc: ;
+    rdfs:subClassOf ast:Node ;
+    jsdoc:isSupertype true ;
+    jsdoc:nodeTypeId 26 .
+
+jsdoc:document a owl:Class ;
+    rdfs:label "document" ;
+    rdfs:isDefinedBy jsdoc: ;
+    rdfs:subClassOf ast:Node ;
+    jsdoc:isSupertype true ;
+    jsdoc:nodeTypeId 25 .
+
+jsdoc:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+jsdoc:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+jsdoc:field_value a owl:ObjectProperty ;
+    rdfs:label "value (structural)" ;
+    rdfs:comment "Structural reference for value field when it contains a non-terminal node" ;
+    jsdoc:fieldId 1 .
+
+jsdoc:identifier a owl:Class ;
+    rdfs:label "identifier" ;
+    rdfs:isDefinedBy jsdoc: ;
+    rdfs:subClassOf ast:Node ;
+    jsdoc:isSupertype true ;
+    jsdoc:nodeTypeId 19 .
+
+jsdoc:inline_tag a owl:Class ;
+    rdfs:label "inline_tag" ;
+    rdfs:isDefinedBy jsdoc: ;
+    rdfs:subClassOf ast:Node ;
+    jsdoc:isSupertype true ;
+    jsdoc:nodeTypeId 28 .
+
+jsdoc:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+jsdoc:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+jsdoc:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+jsdoc:member_expression a owl:Class ;
+    rdfs:label "member_expression" ;
+    rdfs:isDefinedBy jsdoc: ;
+    rdfs:subClassOf ast:Node ;
+    jsdoc:isSupertype true ;
+    jsdoc:nodeTypeId 32 .
+
+jsdoc:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+jsdoc:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+jsdoc:number a owl:Class ;
+    rdfs:label "number" ;
+    rdfs:isDefinedBy jsdoc: ;
+    rdfs:subClassOf ast:Node ;
+    jsdoc:isSupertype true ;
+    jsdoc:nodeTypeId 20 .
+
+jsdoc:optional_identifier a owl:Class ;
+    rdfs:label "optional_identifier" ;
+    rdfs:isDefinedBy jsdoc: ;
+    rdfs:subClassOf ast:Node ;
+    jsdoc:isSupertype true ;
+    jsdoc:nodeTypeId 35 .
+
+jsdoc:path_expression a owl:Class ;
+    rdfs:label "path_expression" ;
+    rdfs:isDefinedBy jsdoc: ;
+    rdfs:subClassOf ast:Node ;
+    jsdoc:isSupertype true ;
+    jsdoc:nodeTypeId 31 .
+
+jsdoc:qualified_expression a owl:Class ;
+    rdfs:label "qualified_expression" ;
+    rdfs:isDefinedBy jsdoc: ;
+    rdfs:subClassOf ast:Node ;
+    jsdoc:isSupertype true ;
+    jsdoc:nodeTypeId 30 .
+
+jsdoc:tag a owl:Class ;
+    rdfs:label "tag" ;
+    rdfs:isDefinedBy jsdoc: ;
+    rdfs:subClassOf ast:Node ;
+    jsdoc:isSupertype true ;
+    jsdoc:nodeTypeId 27 .
+
+jsdoc:tag_name a owl:Class ;
+    rdfs:label "tag_name" ;
+    rdfs:isDefinedBy jsdoc: ;
+    rdfs:subClassOf ast:Node ;
+    jsdoc:isSupertype true ;
+    jsdoc:nodeTypeId 4,
+        5,
+        6 .
+
+jsdoc:type a owl:Class ;
+    rdfs:label "type" ;
+    rdfs:isDefinedBy jsdoc: ;
+    rdfs:subClassOf ast:Node ;
+    jsdoc:isSupertype true ;
+    jsdoc:nodeTypeId 24 .
+
+jsdoc: a owl:Ontology ;
+    rdfs:label "Jsdoc Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for jsdoc" ;
+    owl:versionInfo "v0.25" ;
+    jsdoc:abiVersion 15 ;
+    jsdoc:fieldCount 1 ;
+    jsdoc:languageName "jsdoc" ;
+    jsdoc:nodeKindCount 43 .
+

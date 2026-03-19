@@ -1,0 +1,522 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix css: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/css/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+css:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+css:adjacent_sibling_selector a owl:Class ;
+    rdfs:label "adjacent_sibling_selector" ;
+    rdfs:isDefinedBy css: ;
+    rdfs:subClassOf ast:Node ;
+    css:isSupertype true ;
+    css:nodeTypeId 102 .
+
+css:arguments a owl:Class ;
+    rdfs:label "arguments" ;
+    rdfs:isDefinedBy css: ;
+    rdfs:subClassOf ast:Node ;
+    css:isSupertype true ;
+    css:nodeTypeId 104,
+        105,
+        106,
+        107,
+        125 .
+
+css:at_keyword a owl:Class ;
+    rdfs:label "at_keyword" ;
+    rdfs:isDefinedBy css: ;
+    rdfs:subClassOf ast:Node ;
+    css:isSupertype true ;
+    css:nodeTypeId 8,
+        67 .
+
+css:at_rule a owl:Class ;
+    rdfs:label "at_rule" ;
+    rdfs:isDefinedBy css: ;
+    rdfs:subClassOf ast:Node ;
+    css:isSupertype true ;
+    css:nodeTypeId 87 .
+
+css:attribute_name a owl:Class ;
+    rdfs:label "attribute_name" ;
+    rdfs:isDefinedBy css: ;
+    rdfs:subClassOf ast:Node ;
+    css:isSupertype true ;
+    css:nodeTypeId 142 .
+
+css:attribute_selector a owl:Class ;
+    rdfs:label "attribute_selector" ;
+    rdfs:isDefinedBy css: ;
+    rdfs:subClassOf ast:Node ;
+    css:isSupertype true ;
+    css:nodeTypeId 98 .
+
+css:binary_expression a owl:Class ;
+    rdfs:label "binary_expression" ;
+    rdfs:isDefinedBy css: ;
+    rdfs:subClassOf ast:Node ;
+    css:isSupertype true ;
+    css:nodeTypeId 124 .
+
+css:binary_query a owl:Class ;
+    rdfs:label "binary_query" ;
+    rdfs:isDefinedBy css: ;
+    rdfs:subClassOf ast:Node ;
+    css:isSupertype true ;
+    css:nodeTypeId 113 .
+
+css:block a owl:Class ;
+    rdfs:label "block" ;
+    rdfs:isDefinedBy css: ;
+    rdfs:subClassOf ast:Node ;
+    css:isSupertype true ;
+    css:nodeTypeId 90 .
+
+css:call_expression a owl:Class ;
+    rdfs:label "call_expression" ;
+    rdfs:isDefinedBy css: ;
+    rdfs:subClassOf ast:Node ;
+    css:isSupertype true ;
+    css:nodeTypeId 123 .
+
+css:charset_statement a owl:Class ;
+    rdfs:label "charset_statement" ;
+    rdfs:isDefinedBy css: ;
+    rdfs:subClassOf ast:Node ;
+    css:isSupertype true ;
+    css:nodeTypeId 78 .
+
+css:child_selector a owl:Class ;
+    rdfs:label "child_selector" ;
+    rdfs:isDefinedBy css: ;
+    rdfs:subClassOf ast:Node ;
+    css:isSupertype true ;
+    css:nodeTypeId 99 .
+
+css:class_name a owl:Class ;
+    rdfs:label "class_name" ;
+    rdfs:isDefinedBy css: ;
+    rdfs:subClassOf ast:Node ;
+    css:isSupertype true ;
+    css:nodeTypeId 20,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        126 .
+
+css:class_selector a owl:Class ;
+    rdfs:label "class_selector" ;
+    rdfs:isDefinedBy css: ;
+    rdfs:subClassOf ast:Node ;
+    css:isSupertype true ;
+    css:nodeTypeId 93 .
+
+css:color_value a owl:Class ;
+    rdfs:label "color_value" ;
+    rdfs:isDefinedBy css: ;
+    rdfs:subClassOf ast:Node ;
+    css:isSupertype true ;
+    css:nodeTypeId 118 .
+
+css:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy css: ;
+    rdfs:subClassOf ast:Node ;
+    css:isSupertype true ;
+    css:nodeTypeId 69 .
+
+css:declaration a owl:Class ;
+    rdfs:label "declaration" ;
+    rdfs:isDefinedBy css: ;
+    rdfs:subClassOf ast:Node ;
+    css:isSupertype true ;
+    css:nodeTypeId 108,
+        109 .
+
+css:descendant_selector a owl:Class ;
+    rdfs:label "descendant_selector" ;
+    rdfs:isDefinedBy css: ;
+    rdfs:subClassOf ast:Node ;
+    css:isSupertype true ;
+    css:nodeTypeId 100 .
+
+css:escape_sequence a owl:Class ;
+    rdfs:label "escape_sequence" ;
+    rdfs:isDefinedBy css: ;
+    rdfs:subClassOf ast:Node ;
+    css:isSupertype true ;
+    css:nodeTypeId 58 .
+
+css:feature_name a owl:Class ;
+    rdfs:label "feature_name" ;
+    rdfs:isDefinedBy css: ;
+    rdfs:subClassOf ast:Node ;
+    css:isSupertype true ;
+    css:nodeTypeId 143 .
+
+css:feature_query a owl:Class ;
+    rdfs:label "feature_query" ;
+    rdfs:isDefinedBy css: ;
+    rdfs:subClassOf ast:Node ;
+    css:isSupertype true ;
+    css:nodeTypeId 111 .
+
+css:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+css:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+css:float_value a owl:Class ;
+    rdfs:label "float_value" ;
+    rdfs:isDefinedBy css: ;
+    rdfs:subClassOf ast:Node ;
+    css:isSupertype true ;
+    css:nodeTypeId 121 .
+
+css:from a owl:Class ;
+    rdfs:label "from" ;
+    rdfs:isDefinedBy css: ;
+    rdfs:subClassOf ast:Node ;
+    css:isSupertype true ;
+    css:nodeTypeId 11 .
+
+css:function_name a owl:Class ;
+    rdfs:label "function_name" ;
+    rdfs:isDefinedBy css: ;
+    rdfs:subClassOf ast:Node ;
+    css:isSupertype true ;
+    css:nodeTypeId 144 .
+
+css:grid_value a owl:Class ;
+    rdfs:label "grid_value" ;
+    rdfs:isDefinedBy css: ;
+    rdfs:subClassOf ast:Node ;
+    css:isSupertype true ;
+    css:nodeTypeId 122 .
+
+css:id_name a owl:Class ;
+    rdfs:label "id_name" ;
+    rdfs:isDefinedBy css: ;
+    rdfs:subClassOf ast:Node ;
+    css:isSupertype true ;
+    css:nodeTypeId 145 .
+
+css:id_selector a owl:Class ;
+    rdfs:label "id_selector" ;
+    rdfs:isDefinedBy css: ;
+    rdfs:subClassOf ast:Node ;
+    css:isSupertype true ;
+    css:nodeTypeId 97 .
+
+css:identifier a owl:Class ;
+    rdfs:label "identifier" ;
+    rdfs:isDefinedBy css: ;
+    rdfs:subClassOf ast:Node ;
+    css:isSupertype true ;
+    css:nodeTypeId 65,
+        66 .
+
+css:import_statement a owl:Class ;
+    rdfs:label "import_statement" ;
+    rdfs:isDefinedBy css: ;
+    rdfs:subClassOf ast:Node ;
+    css:isSupertype true ;
+    css:nodeTypeId 76 .
+
+css:important a owl:Class ;
+    rdfs:label "important" ;
+    rdfs:isDefinedBy css: ;
+    rdfs:subClassOf ast:Node ;
+    css:isSupertype true ;
+    css:nodeTypeId 48 .
+
+css:important_value a owl:Class ;
+    rdfs:label "important_value" ;
+    rdfs:isDefinedBy css: ;
+    rdfs:subClassOf ast:Node ;
+    css:isSupertype true ;
+    css:nodeTypeId 71 .
+
+css:integer_value a owl:Class ;
+    rdfs:label "integer_value" ;
+    rdfs:isDefinedBy css: ;
+    rdfs:subClassOf ast:Node ;
+    css:isSupertype true ;
+    css:nodeTypeId 120 .
+
+css:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+css:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+css:js_comment a owl:Class ;
+    rdfs:label "js_comment" ;
+    rdfs:isDefinedBy css: ;
+    rdfs:subClassOf ast:Node ;
+    css:isSupertype true ;
+    css:nodeTypeId 68 .
+
+css:keyframe_block a owl:Class ;
+    rdfs:label "keyframe_block" ;
+    rdfs:isDefinedBy css: ;
+    rdfs:subClassOf ast:Node ;
+    css:isSupertype true ;
+    css:nodeTypeId 82 .
+
+css:keyframe_block_list a owl:Class ;
+    rdfs:label "keyframe_block_list" ;
+    rdfs:isDefinedBy css: ;
+    rdfs:subClassOf ast:Node ;
+    css:isSupertype true ;
+    css:nodeTypeId 81 .
+
+css:keyframes_name a owl:Class ;
+    rdfs:label "keyframes_name" ;
+    rdfs:isDefinedBy css: ;
+    rdfs:subClassOf ast:Node ;
+    css:isSupertype true ;
+    css:nodeTypeId 146 .
+
+css:keyframes_statement a owl:Class ;
+    rdfs:label "keyframes_statement" ;
+    rdfs:isDefinedBy css: ;
+    rdfs:subClassOf ast:Node ;
+    css:isSupertype true ;
+    css:nodeTypeId 80 .
+
+css:keyword_query a owl:Class ;
+    rdfs:label "keyword_query" ;
+    rdfs:isDefinedBy css: ;
+    rdfs:subClassOf ast:Node ;
+    css:isSupertype true ;
+    css:nodeTypeId 147 .
+
+css:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+css:media_statement a owl:Class ;
+    rdfs:label "media_statement" ;
+    rdfs:isDefinedBy css: ;
+    rdfs:subClassOf ast:Node ;
+    css:isSupertype true ;
+    css:nodeTypeId 77 .
+
+css:namespace_name a owl:Class ;
+    rdfs:label "namespace_name" ;
+    rdfs:isDefinedBy css: ;
+    rdfs:subClassOf ast:Node ;
+    css:isSupertype true ;
+    css:nodeTypeId 148 .
+
+css:namespace_selector a owl:Class ;
+    rdfs:label "namespace_selector" ;
+    rdfs:isDefinedBy css: ;
+    rdfs:subClassOf ast:Node ;
+    css:isSupertype true ;
+    css:nodeTypeId 103 .
+
+css:namespace_statement a owl:Class ;
+    rdfs:label "namespace_statement" ;
+    rdfs:isDefinedBy css: ;
+    rdfs:subClassOf ast:Node ;
+    css:isSupertype true ;
+    css:nodeTypeId 79 .
+
+css:nesting_selector a owl:Class ;
+    rdfs:label "nesting_selector" ;
+    rdfs:isDefinedBy css: ;
+    rdfs:subClassOf ast:Node ;
+    css:isSupertype true ;
+    css:nodeTypeId 17 .
+
+css:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+css:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+css:parenthesized_query a owl:Class ;
+    rdfs:label "parenthesized_query" ;
+    rdfs:isDefinedBy css: ;
+    rdfs:subClassOf ast:Node ;
+    css:isSupertype true ;
+    css:nodeTypeId 112 .
+
+css:parenthesized_value a owl:Class ;
+    rdfs:label "parenthesized_value" ;
+    rdfs:isDefinedBy css: ;
+    rdfs:subClassOf ast:Node ;
+    css:isSupertype true ;
+    css:nodeTypeId 117 .
+
+css:plain_value a owl:Class ;
+    rdfs:label "plain_value" ;
+    rdfs:isDefinedBy css: ;
+    rdfs:subClassOf ast:Node ;
+    css:isSupertype true ;
+    css:nodeTypeId 43,
+        44,
+        46,
+        70 .
+
+css:postcss_statement a owl:Class ;
+    rdfs:label "postcss_statement" ;
+    rdfs:isDefinedBy css: ;
+    rdfs:subClassOf ast:Node ;
+    css:isSupertype true ;
+    css:nodeTypeId 86 .
+
+css:property_name a owl:Class ;
+    rdfs:label "property_name" ;
+    rdfs:isDefinedBy css: ;
+    rdfs:subClassOf ast:Node ;
+    css:isSupertype true ;
+    css:nodeTypeId 149 .
+
+css:pseudo_class_selector a owl:Class ;
+    rdfs:label "pseudo_class_selector" ;
+    rdfs:isDefinedBy css: ;
+    rdfs:subClassOf ast:Node ;
+    css:isSupertype true ;
+    css:nodeTypeId 94 .
+
+css:pseudo_element_selector a owl:Class ;
+    rdfs:label "pseudo_element_selector" ;
+    rdfs:isDefinedBy css: ;
+    rdfs:subClassOf ast:Node ;
+    css:isSupertype true ;
+    css:nodeTypeId 96 .
+
+css:rule_set a owl:Class ;
+    rdfs:label "rule_set" ;
+    rdfs:isDefinedBy css: ;
+    rdfs:subClassOf ast:Node ;
+    css:isSupertype true ;
+    css:nodeTypeId 88 .
+
+css:scope_statement a owl:Class ;
+    rdfs:label "scope_statement" ;
+    rdfs:isDefinedBy css: ;
+    rdfs:subClassOf ast:Node ;
+    css:isSupertype true ;
+    css:nodeTypeId 85 .
+
+css:selector_query a owl:Class ;
+    rdfs:label "selector_query" ;
+    rdfs:isDefinedBy css: ;
+    rdfs:subClassOf ast:Node ;
+    css:isSupertype true ;
+    css:nodeTypeId 115 .
+
+css:selectors a owl:Class ;
+    rdfs:label "selectors" ;
+    rdfs:isDefinedBy css: ;
+    rdfs:subClassOf ast:Node ;
+    css:isSupertype true ;
+    css:nodeTypeId 89 .
+
+css:sibling_selector a owl:Class ;
+    rdfs:label "sibling_selector" ;
+    rdfs:isDefinedBy css: ;
+    rdfs:subClassOf ast:Node ;
+    css:isSupertype true ;
+    css:nodeTypeId 101 .
+
+css:string_content a owl:Class ;
+    rdfs:label "string_content" ;
+    rdfs:isDefinedBy css: ;
+    rdfs:subClassOf ast:Node ;
+    css:isSupertype true ;
+    css:nodeTypeId 55,
+        57 .
+
+css:string_value a owl:Class ;
+    rdfs:label "string_value" ;
+    rdfs:isDefinedBy css: ;
+    rdfs:subClassOf ast:Node ;
+    css:isSupertype true ;
+    css:nodeTypeId 119 .
+
+css:stylesheet a owl:Class ;
+    rdfs:label "stylesheet" ;
+    rdfs:isDefinedBy css: ;
+    rdfs:subClassOf ast:Node ;
+    css:isSupertype true ;
+    css:nodeTypeId 75 .
+
+css:supports_statement a owl:Class ;
+    rdfs:label "supports_statement" ;
+    rdfs:isDefinedBy css: ;
+    rdfs:subClassOf ast:Node ;
+    css:isSupertype true ;
+    css:nodeTypeId 84 .
+
+css:tag_name a owl:Class ;
+    rdfs:label "tag_name" ;
+    rdfs:isDefinedBy css: ;
+    rdfs:subClassOf ast:Node ;
+    css:isSupertype true ;
+    css:nodeTypeId 150 .
+
+css:to a owl:Class ;
+    rdfs:label "to" ;
+    rdfs:isDefinedBy css: ;
+    rdfs:subClassOf ast:Node ;
+    css:isSupertype true ;
+    css:nodeTypeId 83 .
+
+css:unary_query a owl:Class ;
+    rdfs:label "unary_query" ;
+    rdfs:isDefinedBy css: ;
+    rdfs:subClassOf ast:Node ;
+    css:isSupertype true ;
+    css:nodeTypeId 114 .
+
+css:unit a owl:Class ;
+    rdfs:label "unit" ;
+    rdfs:isDefinedBy css: ;
+    rdfs:subClassOf ast:Node ;
+    css:isSupertype true ;
+    css:nodeTypeId 61 .
+
+css:universal_selector a owl:Class ;
+    rdfs:label "universal_selector" ;
+    rdfs:isDefinedBy css: ;
+    rdfs:subClassOf ast:Node ;
+    css:isSupertype true ;
+    css:nodeTypeId 92 .
+
+css: a owl:Ontology ;
+    rdfs:label "Css Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for css" ;
+    owl:versionInfo "v0.25" ;
+    css:abiVersion 15 ;
+    css:fieldCount 0 ;
+    css:languageName "css" ;
+    css:nodeKindCount 151 .
+

@@ -1,0 +1,334 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix kconfig: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/kconfig/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+kconfig:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+kconfig:binary_expression a owl:Class ;
+    rdfs:label "binary_expression" ;
+    rdfs:isDefinedBy kconfig: ;
+    rdfs:subClassOf ast:Node ;
+    kconfig:isSupertype true ;
+    kconfig:nodeTypeId 90 .
+
+kconfig:choice a owl:Class ;
+    rdfs:label "choice" ;
+    rdfs:isDefinedBy kconfig: ;
+    rdfs:subClassOf ast:Node ;
+    kconfig:isSupertype true ;
+    kconfig:nodeTypeId 70 .
+
+kconfig:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy kconfig: ;
+    rdfs:subClassOf ast:Node ;
+    kconfig:isSupertype true ;
+    kconfig:nodeTypeId 62 .
+
+kconfig:comment_entry a owl:Class ;
+    rdfs:label "comment_entry" ;
+    rdfs:isDefinedBy kconfig: ;
+    rdfs:subClassOf ast:Node ;
+    kconfig:isSupertype true ;
+    kconfig:nodeTypeId 71 .
+
+kconfig:conditional_clause a owl:Class ;
+    rdfs:label "conditional_clause" ;
+    rdfs:isDefinedBy kconfig: ;
+    rdfs:subClassOf ast:Node ;
+    kconfig:isSupertype true ;
+    kconfig:nodeTypeId 87 .
+
+kconfig:config a owl:Class ;
+    rdfs:label "config" ;
+    rdfs:isDefinedBy kconfig: ;
+    rdfs:subClassOf ast:Node ;
+    kconfig:isSupertype true ;
+    kconfig:nodeTypeId 67 .
+
+kconfig:configdefault a owl:Class ;
+    rdfs:label "configdefault" ;
+    rdfs:isDefinedBy kconfig: ;
+    rdfs:subClassOf ast:Node ;
+    kconfig:isSupertype true ;
+    kconfig:nodeTypeId 68 .
+
+kconfig:configuration a owl:Class ;
+    rdfs:label "configuration" ;
+    rdfs:isDefinedBy kconfig: ;
+    rdfs:subClassOf ast:Node ;
+    kconfig:isSupertype true ;
+    kconfig:nodeTypeId 64 .
+
+kconfig:default_value a owl:Class ;
+    rdfs:label "default_value" ;
+    rdfs:isDefinedBy kconfig: ;
+    rdfs:subClassOf ast:Node ;
+    kconfig:isSupertype true ;
+    kconfig:nodeTypeId 79 .
+
+kconfig:dependencies a owl:Class ;
+    rdfs:label "dependencies" ;
+    rdfs:isDefinedBy kconfig: ;
+    rdfs:subClassOf ast:Node ;
+    kconfig:isSupertype true ;
+    kconfig:nodeTypeId 81 .
+
+kconfig:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+kconfig:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+kconfig:field_condition a owl:ObjectProperty ;
+    rdfs:label "condition (structural)" ;
+    rdfs:comment "Structural reference for condition field when it contains a non-terminal node" ;
+    kconfig:fieldId 1 .
+
+kconfig:field_left a owl:ObjectProperty ;
+    rdfs:label "left (structural)" ;
+    rdfs:comment "Structural reference for left field when it contains a non-terminal node" ;
+    kconfig:fieldId 2 .
+
+kconfig:field_name a owl:ObjectProperty ;
+    rdfs:label "name (structural)" ;
+    rdfs:comment "Structural reference for name field when it contains a non-terminal node" ;
+    kconfig:fieldId 3 .
+
+kconfig:field_operator a owl:ObjectProperty ;
+    rdfs:label "operator (structural)" ;
+    rdfs:comment "Structural reference for operator field when it contains a non-terminal node" ;
+    kconfig:fieldId 4 .
+
+kconfig:field_right a owl:ObjectProperty ;
+    rdfs:label "right (structural)" ;
+    rdfs:comment "Structural reference for right field when it contains a non-terminal node" ;
+    kconfig:fieldId 5 .
+
+kconfig:help_text a owl:Class ;
+    rdfs:label "help_text" ;
+    rdfs:isDefinedBy kconfig: ;
+    rdfs:subClassOf ast:Node ;
+    kconfig:isSupertype true ;
+    kconfig:nodeTypeId 86 .
+
+kconfig:if a owl:Class ;
+    rdfs:label "if" ;
+    rdfs:isDefinedBy kconfig: ;
+    rdfs:subClassOf ast:Node ;
+    kconfig:isSupertype true ;
+    kconfig:nodeTypeId 73 .
+
+kconfig:input_prompt a owl:Class ;
+    rdfs:label "input_prompt" ;
+    rdfs:isDefinedBy kconfig: ;
+    rdfs:subClassOf ast:Node ;
+    kconfig:isSupertype true ;
+    kconfig:nodeTypeId 78 .
+
+kconfig:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+kconfig:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+kconfig:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+kconfig:left a owl:DatatypeProperty ;
+    rdfs:label "left (literal)" ;
+    rdfs:comment "Literal value for left field when it contains a terminal node" ;
+    kconfig:fieldId 2 ;
+    kconfig:isTerminalField true .
+
+kconfig:limiting_menu_display a owl:Class ;
+    rdfs:label "limiting_menu_display" ;
+    rdfs:isDefinedBy kconfig: ;
+    rdfs:subClassOf ast:Node ;
+    kconfig:isSupertype true ;
+    kconfig:nodeTypeId 84 .
+
+kconfig:macro_content a owl:Class ;
+    rdfs:label "macro_content" ;
+    rdfs:isDefinedBy kconfig: ;
+    rdfs:subClassOf ast:Node ;
+    kconfig:isSupertype true ;
+    kconfig:nodeTypeId 55 .
+
+kconfig:macro_variable a owl:Class ;
+    rdfs:label "macro_variable" ;
+    rdfs:isDefinedBy kconfig: ;
+    rdfs:subClassOf ast:Node ;
+    kconfig:isSupertype true ;
+    kconfig:nodeTypeId 92 .
+
+kconfig:mainmenu a owl:Class ;
+    rdfs:label "mainmenu" ;
+    rdfs:isDefinedBy kconfig: ;
+    rdfs:subClassOf ast:Node ;
+    kconfig:isSupertype true ;
+    kconfig:nodeTypeId 66 .
+
+kconfig:menu a owl:Class ;
+    rdfs:label "menu" ;
+    rdfs:isDefinedBy kconfig: ;
+    rdfs:subClassOf ast:Node ;
+    kconfig:isSupertype true ;
+    kconfig:nodeTypeId 72 .
+
+kconfig:menuconfig a owl:Class ;
+    rdfs:label "menuconfig" ;
+    rdfs:isDefinedBy kconfig: ;
+    rdfs:subClassOf ast:Node ;
+    kconfig:isSupertype true ;
+    kconfig:nodeTypeId 69 .
+
+kconfig:modules a owl:Class ;
+    rdfs:label "modules" ;
+    rdfs:isDefinedBy kconfig: ;
+    rdfs:subClassOf ast:Node ;
+    kconfig:isSupertype true ;
+    kconfig:nodeTypeId 43 .
+
+kconfig:name a owl:Class ;
+    rdfs:label "name" ;
+    rdfs:isDefinedBy kconfig: ;
+    rdfs:subClassOf ast:Node ;
+    kconfig:isSupertype true ;
+    kconfig:nodeTypeId 94 .
+
+kconfig:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+kconfig:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+kconfig:numerical_ranges a owl:Class ;
+    rdfs:label "numerical_ranges" ;
+    rdfs:isDefinedBy kconfig: ;
+    rdfs:subClassOf ast:Node ;
+    kconfig:isSupertype true ;
+    kconfig:nodeTypeId 85 .
+
+kconfig:optional a owl:Class ;
+    rdfs:label "optional" ;
+    rdfs:isDefinedBy kconfig: ;
+    rdfs:subClassOf ast:Node ;
+    kconfig:isSupertype true ;
+    kconfig:nodeTypeId 42 .
+
+kconfig:parenthesized_expression a owl:Class ;
+    rdfs:label "parenthesized_expression" ;
+    rdfs:isDefinedBy kconfig: ;
+    rdfs:subClassOf ast:Node ;
+    kconfig:isSupertype true ;
+    kconfig:nodeTypeId 91 .
+
+kconfig:reverse_dependencies a owl:Class ;
+    rdfs:label "reverse_dependencies" ;
+    rdfs:isDefinedBy kconfig: ;
+    rdfs:subClassOf ast:Node ;
+    kconfig:isSupertype true ;
+    kconfig:nodeTypeId 82 .
+
+kconfig:source a owl:Class ;
+    rdfs:label "source" ;
+    rdfs:isDefinedBy kconfig: ;
+    rdfs:subClassOf ast:Node ;
+    kconfig:isSupertype true ;
+    kconfig:nodeTypeId 74 .
+
+kconfig:string a owl:Class ;
+    rdfs:label "string" ;
+    rdfs:isDefinedBy kconfig: ;
+    rdfs:subClassOf ast:Node ;
+    kconfig:isSupertype true ;
+    kconfig:nodeTypeId 93 .
+
+kconfig:string_content a owl:Class ;
+    rdfs:label "string_content" ;
+    rdfs:isDefinedBy kconfig: ;
+    rdfs:subClassOf ast:Node ;
+    kconfig:isSupertype true ;
+    kconfig:nodeTypeId 57,
+        60 .
+
+kconfig:symbol a owl:Class ;
+    rdfs:label "symbol" ;
+    rdfs:isDefinedBy kconfig: ;
+    rdfs:subClassOf ast:Node ;
+    kconfig:isSupertype true ;
+    kconfig:nodeTypeId 1 .
+
+kconfig:text a owl:Class ;
+    rdfs:label "text" ;
+    rdfs:isDefinedBy kconfig: ;
+    rdfs:subClassOf ast:Node ;
+    kconfig:isSupertype true ;
+    kconfig:nodeTypeId 61,
+        63 .
+
+kconfig:type_definition a owl:Class ;
+    rdfs:label "type_definition" ;
+    rdfs:isDefinedBy kconfig: ;
+    rdfs:subClassOf ast:Node ;
+    kconfig:isSupertype true ;
+    kconfig:nodeTypeId 77 .
+
+kconfig:type_definition_default a owl:Class ;
+    rdfs:label "type_definition_default" ;
+    rdfs:isDefinedBy kconfig: ;
+    rdfs:subClassOf ast:Node ;
+    kconfig:isSupertype true ;
+    kconfig:nodeTypeId 80 .
+
+kconfig:unary_expression a owl:Class ;
+    rdfs:label "unary_expression" ;
+    rdfs:isDefinedBy kconfig: ;
+    rdfs:subClassOf ast:Node ;
+    kconfig:isSupertype true ;
+    kconfig:nodeTypeId 89 .
+
+kconfig:variable a owl:Class ;
+    rdfs:label "variable" ;
+    rdfs:isDefinedBy kconfig: ;
+    rdfs:subClassOf ast:Node ;
+    kconfig:isSupertype true ;
+    kconfig:nodeTypeId 75 .
+
+kconfig:weak_reverse_dependencies a owl:Class ;
+    rdfs:label "weak_reverse_dependencies" ;
+    rdfs:isDefinedBy kconfig: ;
+    rdfs:subClassOf ast:Node ;
+    kconfig:isSupertype true ;
+    kconfig:nodeTypeId 83 .
+
+kconfig: a owl:Ontology ;
+    rdfs:label "Kconfig Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for kconfig" ;
+    owl:versionInfo "v0.25" ;
+    kconfig:abiVersion 14 ;
+    kconfig:fieldCount 5 ;
+    kconfig:languageName "None" ;
+    kconfig:nodeKindCount 103 .
+

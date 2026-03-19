@@ -1,0 +1,558 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rego: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/rego/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+rego:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+rego:arith_operator a owl:Class ;
+    rdfs:label "arith_operator" ;
+    rdfs:isDefinedBy rego: ;
+    rdfs:subClassOf ast:Node ;
+    rego:isSupertype true ;
+    rego:nodeTypeId 82 .
+
+rego:array a owl:Class ;
+    rdfs:label "array" ;
+    rdfs:isDefinedBy rego: ;
+    rdfs:subClassOf ast:Node ;
+    rego:isSupertype true ;
+    rego:nodeTypeId 91 .
+
+rego:array_compr a owl:Class ;
+    rdfs:label "array_compr" ;
+    rdfs:isDefinedBy rego: ;
+    rdfs:subClassOf ast:Node ;
+    rego:isSupertype true ;
+    rego:nodeTypeId 76 .
+
+rego:as a owl:Class ;
+    rdfs:label "as" ;
+    rdfs:isDefinedBy rego: ;
+    rdfs:subClassOf ast:Node ;
+    rego:isSupertype true ;
+    rego:nodeTypeId 43 .
+
+rego:assignment a owl:Class ;
+    rdfs:label "assignment" ;
+    rdfs:isDefinedBy rego: ;
+    rdfs:subClassOf ast:Node ;
+    rego:isSupertype true ;
+    rego:nodeTypeId 9 .
+
+rego:assignment_operator a owl:Class ;
+    rdfs:label "assignment_operator" ;
+    rdfs:isDefinedBy rego: ;
+    rdfs:subClassOf ast:Node ;
+    rego:isSupertype true ;
+    rego:nodeTypeId 80 .
+
+rego:bin_operator a owl:Class ;
+    rdfs:label "bin_operator" ;
+    rdfs:isDefinedBy rego: ;
+    rdfs:subClassOf ast:Node ;
+    rego:isSupertype true ;
+    rego:nodeTypeId 83 .
+
+rego:bool_operator a owl:Class ;
+    rdfs:label "bool_operator" ;
+    rdfs:isDefinedBy rego: ;
+    rdfs:subClassOf ast:Node ;
+    rego:isSupertype true ;
+    rego:nodeTypeId 81 .
+
+rego:boolean a owl:Class ;
+    rdfs:label "boolean" ;
+    rdfs:isDefinedBy rego: ;
+    rdfs:subClassOf ast:Node ;
+    rego:isSupertype true ;
+    rego:nodeTypeId 97 .
+
+rego:close_bracket a owl:Class ;
+    rdfs:label "close_bracket" ;
+    rdfs:isDefinedBy rego: ;
+    rdfs:subClassOf ast:Node ;
+    rego:isSupertype true ;
+    rego:nodeTypeId 37 .
+
+rego:close_curly a owl:Class ;
+    rdfs:label "close_curly" ;
+    rdfs:isDefinedBy rego: ;
+    rdfs:subClassOf ast:Node ;
+    rego:isSupertype true ;
+    rego:nodeTypeId 39 .
+
+rego:close_paren a owl:Class ;
+    rdfs:label "close_paren" ;
+    rdfs:isDefinedBy rego: ;
+    rdfs:subClassOf ast:Node ;
+    rego:isSupertype true ;
+    rego:nodeTypeId 99 .
+
+rego:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy rego: ;
+    rdfs:subClassOf ast:Node ;
+    rego:isSupertype true ;
+    rego:nodeTypeId 32 .
+
+rego:contains a owl:Class ;
+    rdfs:label "contains" ;
+    rdfs:isDefinedBy rego: ;
+    rdfs:subClassOf ast:Node ;
+    rego:isSupertype true ;
+    rego:nodeTypeId 50 .
+
+rego:default a owl:Class ;
+    rdfs:label "default" ;
+    rdfs:isDefinedBy rego: ;
+    rdfs:subClassOf ast:Node ;
+    rego:isSupertype true ;
+    rego:nodeTypeId 52 .
+
+rego:else a owl:Class ;
+    rdfs:label "else" ;
+    rdfs:isDefinedBy rego: ;
+    rdfs:subClassOf ast:Node ;
+    rego:isSupertype true ;
+    rego:nodeTypeId 47 .
+
+rego:empty_set a owl:Class ;
+    rdfs:label "empty_set" ;
+    rdfs:isDefinedBy rego: ;
+    rdfs:subClassOf ast:Node ;
+    rego:isSupertype true ;
+    rego:nodeTypeId 96 .
+
+rego:every a owl:Class ;
+    rdfs:label "every" ;
+    rdfs:isDefinedBy rego: ;
+    rdfs:subClassOf ast:Node ;
+    rego:isSupertype true ;
+    rego:nodeTypeId 46 .
+
+rego:expr a owl:Class ;
+    rdfs:label "expr" ;
+    rdfs:isDefinedBy rego: ;
+    rdfs:subClassOf ast:Node ;
+    rego:isSupertype true ;
+    rego:nodeTypeId 67 .
+
+rego:expr_call a owl:Class ;
+    rdfs:label "expr_call" ;
+    rdfs:isDefinedBy rego: ;
+    rdfs:subClassOf ast:Node ;
+    rego:isSupertype true ;
+    rego:nodeTypeId 69 .
+
+rego:expr_every a owl:Class ;
+    rdfs:label "expr_every" ;
+    rdfs:isDefinedBy rego: ;
+    rdfs:subClassOf ast:Node ;
+    rego:isSupertype true ;
+    rego:nodeTypeId 73 .
+
+rego:expr_infix a owl:Class ;
+    rdfs:label "expr_infix" ;
+    rdfs:isDefinedBy rego: ;
+    rdfs:subClassOf ast:Node ;
+    rego:isSupertype true ;
+    rego:nodeTypeId 72 .
+
+rego:expr_parens a owl:Class ;
+    rdfs:label "expr_parens" ;
+    rdfs:isDefinedBy rego: ;
+    rdfs:subClassOf ast:Node ;
+    rego:isSupertype true ;
+    rego:nodeTypeId 68 .
+
+rego:expr_unary a owl:Class ;
+    rdfs:label "expr_unary" ;
+    rdfs:isDefinedBy rego: ;
+    rdfs:subClassOf ast:Node ;
+    rego:isSupertype true ;
+    rego:nodeTypeId 74 .
+
+rego:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+rego:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+rego:field_func_arguments a owl:ObjectProperty ;
+    rdfs:label "func_arguments (structural)" ;
+    rdfs:comment "Structural reference for func_arguments field when it contains a non-terminal node" ;
+    rego:fieldId 1 .
+
+rego:field_func_name a owl:ObjectProperty ;
+    rdfs:label "func_name (structural)" ;
+    rdfs:comment "Structural reference for func_name field when it contains a non-terminal node" ;
+    rego:fieldId 2 .
+
+rego:field_key a owl:ObjectProperty ;
+    rdfs:label "key (structural)" ;
+    rdfs:comment "Structural reference for key field when it contains a non-terminal node" ;
+    rego:fieldId 3 .
+
+rego:field_value a owl:ObjectProperty ;
+    rdfs:label "value (structural)" ;
+    rdfs:comment "Structural reference for value field when it contains a non-terminal node" ;
+    rego:fieldId 4 .
+
+rego:fn_args a owl:Class ;
+    rdfs:label "fn_args" ;
+    rdfs:isDefinedBy rego: ;
+    rdfs:subClassOf ast:Node ;
+    rego:isSupertype true ;
+    rego:nodeTypeId 71 .
+
+rego:fn_name a owl:Class ;
+    rdfs:label "fn_name" ;
+    rdfs:isDefinedBy rego: ;
+    rdfs:subClassOf ast:Node ;
+    rego:isSupertype true ;
+    rego:nodeTypeId 70 .
+
+rego:if a owl:Class ;
+    rdfs:label "if" ;
+    rdfs:isDefinedBy rego: ;
+    rdfs:subClassOf ast:Node ;
+    rego:isSupertype true ;
+    rego:nodeTypeId 45 .
+
+rego:import a owl:Class ;
+    rdfs:label "import" ;
+    rdfs:isDefinedBy rego: ;
+    rdfs:subClassOf ast:Node ;
+    rego:isSupertype true ;
+    rego:nodeTypeId 49 .
+
+rego:in a owl:Class ;
+    rdfs:label "in" ;
+    rdfs:isDefinedBy rego: ;
+    rdfs:subClassOf ast:Node ;
+    rego:isSupertype true ;
+    rego:nodeTypeId 44 .
+
+rego:infix_operator a owl:Class ;
+    rdfs:label "infix_operator" ;
+    rdfs:isDefinedBy rego: ;
+    rdfs:subClassOf ast:Node ;
+    rego:isSupertype true ;
+    rego:nodeTypeId 79 .
+
+rego:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+rego:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+rego:key a owl:DatatypeProperty ;
+    rdfs:label "key (literal)" ;
+    rdfs:comment "Literal value for key field when it contains a terminal node" ;
+    rego:fieldId 3 ;
+    rego:isTerminalField true .
+
+rego:keyword a owl:Class ;
+    rdfs:label "keyword" ;
+    rdfs:isDefinedBy rego: ;
+    rdfs:subClassOf ast:Node ;
+    rego:isSupertype true ;
+    rego:nodeTypeId 1 .
+
+rego:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+rego:literal a owl:Class ;
+    rdfs:label "literal" ;
+    rdfs:isDefinedBy rego: ;
+    rdfs:subClassOf ast:Node ;
+    rego:isSupertype true ;
+    rego:nodeTypeId 64 .
+
+rego:membership a owl:Class ;
+    rdfs:label "membership" ;
+    rdfs:isDefinedBy rego: ;
+    rdfs:subClassOf ast:Node ;
+    rego:isSupertype true ;
+    rego:nodeTypeId 98 .
+
+rego:module a owl:Class ;
+    rdfs:label "module" ;
+    rdfs:isDefinedBy rego: ;
+    rdfs:subClassOf ast:Node ;
+    rego:isSupertype true ;
+    rego:nodeTypeId 54 .
+
+rego:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+rego:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+rego:non_empty_set a owl:Class ;
+    rdfs:label "non_empty_set" ;
+    rdfs:isDefinedBy rego: ;
+    rdfs:subClassOf ast:Node ;
+    rego:isSupertype true ;
+    rego:nodeTypeId 95 .
+
+rego:not a owl:Class ;
+    rdfs:label "not" ;
+    rdfs:isDefinedBy rego: ;
+    rdfs:subClassOf ast:Node ;
+    rego:isSupertype true ;
+    rego:nodeTypeId 41 .
+
+rego:number a owl:Class ;
+    rdfs:label "number" ;
+    rdfs:isDefinedBy rego: ;
+    rdfs:subClassOf ast:Node ;
+    rego:isSupertype true ;
+    rego:nodeTypeId 40 .
+
+rego:object a owl:Class ;
+    rdfs:label "object" ;
+    rdfs:isDefinedBy rego: ;
+    rdfs:subClassOf ast:Node ;
+    rego:isSupertype true ;
+    rego:nodeTypeId 92 .
+
+rego:object_compr a owl:Class ;
+    rdfs:label "object_compr" ;
+    rdfs:isDefinedBy rego: ;
+    rdfs:subClassOf ast:Node ;
+    rego:isSupertype true ;
+    rego:nodeTypeId 78 .
+
+rego:object_item a owl:Class ;
+    rdfs:label "object_item" ;
+    rdfs:isDefinedBy rego: ;
+    rdfs:subClassOf ast:Node ;
+    rego:isSupertype true ;
+    rego:nodeTypeId 93 .
+
+rego:open_bracket a owl:Class ;
+    rdfs:label "open_bracket" ;
+    rdfs:isDefinedBy rego: ;
+    rdfs:subClassOf ast:Node ;
+    rego:isSupertype true ;
+    rego:nodeTypeId 36 .
+
+rego:open_curly a owl:Class ;
+    rdfs:label "open_curly" ;
+    rdfs:isDefinedBy rego: ;
+    rdfs:subClassOf ast:Node ;
+    rego:isSupertype true ;
+    rego:nodeTypeId 38 .
+
+rego:open_paren a owl:Class ;
+    rdfs:label "open_paren" ;
+    rdfs:isDefinedBy rego: ;
+    rdfs:subClassOf ast:Node ;
+    rego:isSupertype true ;
+    rego:nodeTypeId 35 .
+
+rego:package a owl:Class ;
+    rdfs:label "package" ;
+    rdfs:isDefinedBy rego: ;
+    rdfs:subClassOf ast:Node ;
+    rego:isSupertype true ;
+    rego:nodeTypeId 48 .
+
+rego:policy a owl:Class ;
+    rdfs:label "policy" ;
+    rdfs:isDefinedBy rego: ;
+    rdfs:subClassOf ast:Node ;
+    rego:isSupertype true ;
+    rego:nodeTypeId 57 .
+
+rego:query a owl:Class ;
+    rdfs:label "query" ;
+    rdfs:isDefinedBy rego: ;
+    rdfs:subClassOf ast:Node ;
+    rego:isSupertype true ;
+    rego:nodeTypeId 63 .
+
+rego:raw_string a owl:Class ;
+    rdfs:label "raw_string" ;
+    rdfs:isDefinedBy rego: ;
+    rdfs:subClassOf ast:Node ;
+    rego:isSupertype true ;
+    rego:nodeTypeId 90 .
+
+rego:ref a owl:Class ;
+    rdfs:label "ref" ;
+    rdfs:isDefinedBy rego: ;
+    rdfs:subClassOf ast:Node ;
+    rego:isSupertype true ;
+    rego:nodeTypeId 84 .
+
+rego:ref_arg a owl:Class ;
+    rdfs:label "ref_arg" ;
+    rdfs:isDefinedBy rego: ;
+    rdfs:subClassOf ast:Node ;
+    rego:isSupertype true ;
+    rego:nodeTypeId 85 .
+
+rego:ref_arg_brack a owl:Class ;
+    rdfs:label "ref_arg_brack" ;
+    rdfs:isDefinedBy rego: ;
+    rdfs:subClassOf ast:Node ;
+    rego:isSupertype true ;
+    rego:nodeTypeId 86 .
+
+rego:ref_arg_dot a owl:Class ;
+    rdfs:label "ref_arg_dot" ;
+    rdfs:isDefinedBy rego: ;
+    rdfs:subClassOf ast:Node ;
+    rego:isSupertype true ;
+    rego:nodeTypeId 87 .
+
+rego:rule a owl:Class ;
+    rdfs:label "rule" ;
+    rdfs:isDefinedBy rego: ;
+    rdfs:subClassOf ast:Node ;
+    rego:isSupertype true ;
+    rego:nodeTypeId 58 .
+
+rego:rule_args a owl:Class ;
+    rdfs:label "rule_args" ;
+    rdfs:isDefinedBy rego: ;
+    rdfs:subClassOf ast:Node ;
+    rego:isSupertype true ;
+    rego:nodeTypeId 61 .
+
+rego:rule_body a owl:Class ;
+    rdfs:label "rule_body" ;
+    rdfs:isDefinedBy rego: ;
+    rdfs:subClassOf ast:Node ;
+    rego:isSupertype true ;
+    rego:nodeTypeId 62 .
+
+rego:rule_head a owl:Class ;
+    rdfs:label "rule_head" ;
+    rdfs:isDefinedBy rego: ;
+    rdfs:subClassOf ast:Node ;
+    rego:isSupertype true ;
+    rego:nodeTypeId 59 .
+
+rego:rule_head_comp a owl:Class ;
+    rdfs:label "rule_head_comp" ;
+    rdfs:isDefinedBy rego: ;
+    rdfs:subClassOf ast:Node ;
+    rego:isSupertype true ;
+    rego:nodeTypeId 60 .
+
+rego:scalar a owl:Class ;
+    rdfs:label "scalar" ;
+    rdfs:isDefinedBy rego: ;
+    rdfs:subClassOf ast:Node ;
+    rego:isSupertype true ;
+    rego:nodeTypeId 88 .
+
+rego:set a owl:Class ;
+    rdfs:label "set" ;
+    rdfs:isDefinedBy rego: ;
+    rdfs:subClassOf ast:Node ;
+    rego:isSupertype true ;
+    rego:nodeTypeId 94 .
+
+rego:set_compr a owl:Class ;
+    rdfs:label "set_compr" ;
+    rdfs:isDefinedBy rego: ;
+    rdfs:subClassOf ast:Node ;
+    rego:isSupertype true ;
+    rego:nodeTypeId 77 .
+
+rego:some a owl:Class ;
+    rdfs:label "some" ;
+    rdfs:isDefinedBy rego: ;
+    rdfs:subClassOf ast:Node ;
+    rego:isSupertype true ;
+    rego:nodeTypeId 51 .
+
+rego:some_decl a owl:Class ;
+    rdfs:label "some_decl" ;
+    rdfs:isDefinedBy rego: ;
+    rdfs:subClassOf ast:Node ;
+    rego:isSupertype true ;
+    rego:nodeTypeId 66 .
+
+rego:source_file a owl:Class ;
+    rdfs:label "source_file" ;
+    rdfs:isDefinedBy rego: ;
+    rdfs:subClassOf ast:Node ;
+    rego:isSupertype true ;
+    rego:nodeTypeId 53 .
+
+rego:string a owl:Class ;
+    rdfs:label "string" ;
+    rdfs:isDefinedBy rego: ;
+    rdfs:subClassOf ast:Node ;
+    rego:isSupertype true ;
+    rego:nodeTypeId 89 .
+
+rego:term a owl:Class ;
+    rdfs:label "term" ;
+    rdfs:isDefinedBy rego: ;
+    rdfs:subClassOf ast:Node ;
+    rego:isSupertype true ;
+    rego:nodeTypeId 75 .
+
+rego:unification a owl:Class ;
+    rdfs:label "unification" ;
+    rdfs:isDefinedBy rego: ;
+    rdfs:subClassOf ast:Node ;
+    rego:isSupertype true ;
+    rego:nodeTypeId 10 .
+
+rego:var a owl:Class ;
+    rdfs:label "var" ;
+    rdfs:isDefinedBy rego: ;
+    rdfs:subClassOf ast:Node ;
+    rego:isSupertype true ;
+    rego:nodeTypeId 23 .
+
+rego:with a owl:Class ;
+    rdfs:label "with" ;
+    rdfs:isDefinedBy rego: ;
+    rdfs:subClassOf ast:Node ;
+    rego:isSupertype true ;
+    rego:nodeTypeId 42 .
+
+rego:with_modifier a owl:Class ;
+    rdfs:label "with_modifier" ;
+    rdfs:isDefinedBy rego: ;
+    rdfs:subClassOf ast:Node ;
+    rego:isSupertype true ;
+    rego:nodeTypeId 65 .
+
+rego: a owl:Ontology ;
+    rdfs:label "Rego Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for rego" ;
+    owl:versionInfo "v0.25" ;
+    rego:abiVersion 14 ;
+    rego:fieldCount 4 ;
+    rego:languageName "None" ;
+    rego:nodeKindCount 113 .
+

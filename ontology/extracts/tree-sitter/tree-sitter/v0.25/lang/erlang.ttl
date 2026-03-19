@@ -1,0 +1,1265 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix erlang: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/erlang/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+erlang:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+erlang:ann_type a owl:Class ;
+    rdfs:label "ann_type" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 195 .
+
+erlang:ann_var a owl:Class ;
+    rdfs:label "ann_var" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 196 .
+
+erlang:anonymous_fun a owl:Class ;
+    rdfs:label "anonymous_fun" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 265 .
+
+erlang:args a owl:DatatypeProperty ;
+    rdfs:label "args (literal)" ;
+    rdfs:comment "Literal value for args field when it contains a terminal node" ;
+    erlang:fieldId 2 ;
+    erlang:isTerminalField true .
+
+erlang:arity a owl:Class ;
+    rdfs:label "arity" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 268 .
+
+erlang:atom a owl:Class ;
+    rdfs:label "atom" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 1 .
+
+erlang:attr_name a owl:Class ;
+    rdfs:label "attr_name" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 190 .
+
+erlang:b_generator a owl:Class ;
+    rdfs:label "b_generator" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 233 .
+
+erlang:behaviour_attribute a owl:Class ;
+    rdfs:label "behaviour_attribute" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 159 .
+
+erlang:bin_element a owl:Class ;
+    rdfs:label "bin_element" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 218 .
+
+erlang:binary a owl:Class ;
+    rdfs:label "binary" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 217 .
+
+erlang:binary_comprehension a owl:Class ;
+    rdfs:label "binary_comprehension" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 227 .
+
+erlang:binary_op_expr a owl:Class ;
+    rdfs:label "binary_op_expr" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 209,
+        223,
+        278,
+        279 .
+
+erlang:bit_size_expr a owl:Class ;
+    rdfs:label "bit_size_expr" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 219 .
+
+erlang:bit_type_list a owl:Class ;
+    rdfs:label "bit_type_list" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 220 .
+
+erlang:bit_type_unit a owl:Class ;
+    rdfs:label "bit_type_unit" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 225 .
+
+erlang:block_expr a owl:Class ;
+    rdfs:label "block_expr" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 215 .
+
+erlang:call a owl:Class ;
+    rdfs:label "call" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 254 .
+
+erlang:callback a owl:Class ;
+    rdfs:label "callback" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 185 .
+
+erlang:case_expr a owl:Class ;
+    rdfs:label "case_expr" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 257 .
+
+erlang:catch_clause a owl:Class ;
+    rdfs:label "catch_clause" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 274 .
+
+erlang:catch_expr a owl:Class ;
+    rdfs:label "catch_expr" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 206 .
+
+erlang:char a owl:Class ;
+    rdfs:label "char" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 136 .
+
+erlang:class a owl:DatatypeProperty ;
+    rdfs:label "class (literal)" ;
+    rdfs:comment "Literal value for class field when it contains a terminal node" ;
+    erlang:fieldId 9 ;
+    erlang:isTerminalField true .
+
+erlang:clause_body a owl:Class ;
+    rdfs:label "clause_body" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 204 .
+
+erlang:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 137 .
+
+erlang:compile_options_attribute a owl:Class ;
+    rdfs:label "compile_options_attribute" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 165 .
+
+erlang:concatables a owl:Class ;
+    rdfs:label "concatables" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 300 .
+
+erlang:cond_match_expr a owl:Class ;
+    rdfs:label "cond_match_expr" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 208 .
+
+erlang:cr_clause a owl:Class ;
+    rdfs:label "cr_clause" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 260 .
+
+erlang:deprecated_attribute a owl:Class ;
+    rdfs:label "deprecated_attribute" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 167 .
+
+erlang:deprecated_fa a owl:Class ;
+    rdfs:label "deprecated_fa" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 172 .
+
+erlang:deprecated_fas a owl:Class ;
+    rdfs:label "deprecated_fas" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 171 .
+
+erlang:deprecated_module a owl:Class ;
+    rdfs:label "deprecated_module" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 170 .
+
+erlang:deprecated_wildcard a owl:Class ;
+    rdfs:label "deprecated_wildcard" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 57 .
+
+erlang:deprecation_desc a owl:Class ;
+    rdfs:label "deprecation_desc" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 173 .
+
+erlang:dotdotdot a owl:Class ;
+    rdfs:label "dotdotdot" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 76 .
+
+erlang:error_sentinel a owl:Class ;
+    rdfs:label "error_sentinel" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 140 .
+
+erlang:export_attribute a owl:Class ;
+    rdfs:label "export_attribute" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 160 .
+
+erlang:export_type_attribute a owl:Class ;
+    rdfs:label "export_type_attribute" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 164 .
+
+erlang:expr_args a owl:Class ;
+    rdfs:label "expr_args" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 296 .
+
+erlang:external_fun a owl:Class ;
+    rdfs:label "external_fun" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 264 .
+
+erlang:fa a owl:Class ;
+    rdfs:label "fa" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 163 .
+
+erlang:feature_attribute a owl:Class ;
+    rdfs:label "feature_attribute" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 168 .
+
+erlang:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+erlang:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+erlang:field_after a owl:ObjectProperty ;
+    rdfs:label "after (structural)" ;
+    rdfs:comment "Structural reference for after field when it contains a non-terminal node" ;
+    erlang:fieldId 1 .
+
+erlang:field_args a owl:ObjectProperty ;
+    rdfs:label "args (structural)" ;
+    rdfs:comment "Structural reference for args field when it contains a non-terminal node" ;
+    erlang:fieldId 2 .
+
+erlang:field_arity a owl:ObjectProperty ;
+    rdfs:label "arity (structural)" ;
+    rdfs:comment "Structural reference for arity field when it contains a non-terminal node" ;
+    erlang:fieldId 3 .
+
+erlang:field_attr a owl:ObjectProperty ;
+    rdfs:label "attr (structural)" ;
+    rdfs:comment "Structural reference for attr field when it contains a non-terminal node" ;
+    erlang:fieldId 5 .
+
+erlang:field_body a owl:ObjectProperty ;
+    rdfs:label "body (structural)" ;
+    rdfs:comment "Structural reference for body field when it contains a non-terminal node" ;
+    erlang:fieldId 6 .
+
+erlang:field_callbacks a owl:ObjectProperty ;
+    rdfs:label "callbacks (structural)" ;
+    rdfs:comment "Structural reference for callbacks field when it contains a non-terminal node" ;
+    erlang:fieldId 7 .
+
+erlang:field_catch a owl:ObjectProperty ;
+    rdfs:label "catch (structural)" ;
+    rdfs:comment "Structural reference for catch field when it contains a non-terminal node" ;
+    erlang:fieldId 8 .
+
+erlang:field_class a owl:ObjectProperty ;
+    rdfs:label "class (structural)" ;
+    rdfs:comment "Structural reference for class field when it contains a non-terminal node" ;
+    erlang:fieldId 9 .
+
+erlang:field_clause a owl:ObjectProperty ;
+    rdfs:label "clause (structural)" ;
+    rdfs:comment "Structural reference for clause field when it contains a non-terminal node" ;
+    erlang:fieldId 10 .
+
+erlang:field_clauses a owl:ObjectProperty ;
+    rdfs:label "clauses (structural)" ;
+    rdfs:comment "Structural reference for clauses field when it contains a non-terminal node" ;
+    erlang:fieldId 11 .
+
+erlang:field_cond a owl:ObjectProperty ;
+    rdfs:label "cond (structural)" ;
+    rdfs:comment "Structural reference for cond field when it contains a non-terminal node" ;
+    erlang:fieldId 13 .
+
+erlang:field_desc a owl:ObjectProperty ;
+    rdfs:label "desc (structural)" ;
+    rdfs:comment "Structural reference for desc field when it contains a non-terminal node" ;
+    erlang:fieldId 14 .
+
+erlang:field_element a owl:ObjectProperty ;
+    rdfs:label "element (structural)" ;
+    rdfs:comment "Structural reference for element field when it contains a non-terminal node" ;
+    erlang:fieldId 15 .
+
+erlang:field_elements a owl:ObjectProperty ;
+    rdfs:label "elements (structural)" ;
+    rdfs:comment "Structural reference for elements field when it contains a non-terminal node" ;
+    erlang:fieldId 16 .
+
+erlang:field_elems a owl:ObjectProperty ;
+    rdfs:label "elems (structural)" ;
+    rdfs:comment "Structural reference for elems field when it contains a non-terminal node" ;
+    erlang:fieldId 17 .
+
+erlang:field_expr a owl:Class,
+        owl:ObjectProperty ;
+    rdfs:label "expr (structural)",
+        "field_expr" ;
+    rdfs:comment "Structural reference for expr field when it contains a non-terminal node" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:fieldId 18 ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 252 .
+
+erlang:field_exprs a owl:ObjectProperty ;
+    rdfs:label "exprs (structural)" ;
+    rdfs:comment "Structural reference for exprs field when it contains a non-terminal node" ;
+    erlang:fieldId 19 .
+
+erlang:field_fa a owl:ObjectProperty ;
+    rdfs:label "fa (structural)" ;
+    rdfs:comment "Structural reference for fa field when it contains a non-terminal node" ;
+    erlang:fieldId 20 .
+
+erlang:field_feature a owl:ObjectProperty ;
+    rdfs:label "feature (structural)" ;
+    rdfs:comment "Structural reference for feature field when it contains a non-terminal node" ;
+    erlang:fieldId 21 .
+
+erlang:field_field a owl:ObjectProperty ;
+    rdfs:label "field (structural)" ;
+    rdfs:comment "Structural reference for field field when it contains a non-terminal node" ;
+    erlang:fieldId 22 .
+
+erlang:field_fields a owl:ObjectProperty ;
+    rdfs:label "fields (structural)" ;
+    rdfs:comment "Structural reference for fields field when it contains a non-terminal node" ;
+    erlang:fieldId 23 .
+
+erlang:field_file a owl:ObjectProperty ;
+    rdfs:label "file (structural)" ;
+    rdfs:comment "Structural reference for file field when it contains a non-terminal node" ;
+    erlang:fieldId 24 .
+
+erlang:field_flag a owl:ObjectProperty ;
+    rdfs:label "flag (structural)" ;
+    rdfs:comment "Structural reference for flag field when it contains a non-terminal node" ;
+    erlang:fieldId 25 .
+
+erlang:field_forms_only a owl:ObjectProperty ;
+    rdfs:label "forms_only (structural)" ;
+    rdfs:comment "Structural reference for forms_only field when it contains a non-terminal node" ;
+    erlang:fieldId 26 .
+
+erlang:field_fun a owl:ObjectProperty ;
+    rdfs:label "fun (structural)" ;
+    rdfs:comment "Structural reference for fun field when it contains a non-terminal node" ;
+    erlang:fieldId 27 .
+
+erlang:field_funs a owl:ObjectProperty ;
+    rdfs:label "funs (structural)" ;
+    rdfs:comment "Structural reference for funs field when it contains a non-terminal node" ;
+    erlang:fieldId 28 .
+
+erlang:field_guard a owl:ObjectProperty ;
+    rdfs:label "guard (structural)" ;
+    rdfs:comment "Structural reference for guard field when it contains a non-terminal node" ;
+    erlang:fieldId 29 .
+
+erlang:field_guards a owl:ObjectProperty ;
+    rdfs:label "guards (structural)" ;
+    rdfs:comment "Structural reference for guards field when it contains a non-terminal node" ;
+    erlang:fieldId 30 .
+
+erlang:field_key a owl:ObjectProperty ;
+    rdfs:label "key (structural)" ;
+    rdfs:comment "Structural reference for key field when it contains a non-terminal node" ;
+    erlang:fieldId 31 .
+
+erlang:field_lc_exprs a owl:ObjectProperty ;
+    rdfs:label "lc_exprs (structural)" ;
+    rdfs:comment "Structural reference for lc_exprs field when it contains a non-terminal node" ;
+    erlang:fieldId 32 .
+
+erlang:field_lhs a owl:ObjectProperty ;
+    rdfs:label "lhs (structural)" ;
+    rdfs:comment "Structural reference for lhs field when it contains a non-terminal node" ;
+    erlang:fieldId 33 .
+
+erlang:field_module a owl:ObjectProperty ;
+    rdfs:label "module (structural)" ;
+    rdfs:comment "Structural reference for module field when it contains a non-terminal node" ;
+    erlang:fieldId 34 .
+
+erlang:field_name a owl:ObjectProperty ;
+    rdfs:label "name (structural)" ;
+    rdfs:comment "Structural reference for name field when it contains a non-terminal node" ;
+    erlang:fieldId 35 .
+
+erlang:field_operand a owl:ObjectProperty ;
+    rdfs:label "operand (structural)" ;
+    rdfs:comment "Structural reference for operand field when it contains a non-terminal node" ;
+    erlang:fieldId 36 .
+
+erlang:field_options a owl:ObjectProperty ;
+    rdfs:label "options (structural)" ;
+    rdfs:comment "Structural reference for options field when it contains a non-terminal node" ;
+    erlang:fieldId 37 .
+
+erlang:field_pat a owl:ObjectProperty ;
+    rdfs:label "pat (structural)" ;
+    rdfs:comment "Structural reference for pat field when it contains a non-terminal node" ;
+    erlang:fieldId 40 .
+
+erlang:field_replacement a owl:ObjectProperty ;
+    rdfs:label "replacement (structural)" ;
+    rdfs:comment "Structural reference for replacement field when it contains a non-terminal node" ;
+    erlang:fieldId 41 .
+
+erlang:field_rhs a owl:ObjectProperty ;
+    rdfs:label "rhs (structural)" ;
+    rdfs:comment "Structural reference for rhs field when it contains a non-terminal node" ;
+    erlang:fieldId 42 .
+
+erlang:field_sig a owl:ObjectProperty ;
+    rdfs:label "sig (structural)" ;
+    rdfs:comment "Structural reference for sig field when it contains a non-terminal node" ;
+    erlang:fieldId 43 .
+
+erlang:field_sigs a owl:ObjectProperty ;
+    rdfs:label "sigs (structural)" ;
+    rdfs:comment "Structural reference for sigs field when it contains a non-terminal node" ;
+    erlang:fieldId 44 .
+
+erlang:field_size a owl:ObjectProperty ;
+    rdfs:label "size (structural)" ;
+    rdfs:comment "Structural reference for size field when it contains a non-terminal node" ;
+    erlang:fieldId 45 .
+
+erlang:field_stack a owl:ObjectProperty ;
+    rdfs:label "stack (structural)" ;
+    rdfs:comment "Structural reference for stack field when it contains a non-terminal node" ;
+    erlang:fieldId 46 .
+
+erlang:field_ty a owl:ObjectProperty ;
+    rdfs:label "ty (structural)" ;
+    rdfs:comment "Structural reference for ty field when it contains a non-terminal node" ;
+    erlang:fieldId 47 .
+
+erlang:field_type a owl:Class ;
+    rdfs:label "field_type" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 253 .
+
+erlang:field_types a owl:ObjectProperty ;
+    rdfs:label "types (structural)" ;
+    rdfs:comment "Structural reference for types field when it contains a non-terminal node" ;
+    erlang:fieldId 48 .
+
+erlang:field_value a owl:ObjectProperty ;
+    rdfs:label "value (structural)" ;
+    rdfs:comment "Structural reference for value field when it contains a non-terminal node" ;
+    erlang:fieldId 49 .
+
+erlang:field_var a owl:ObjectProperty ;
+    rdfs:label "var (structural)" ;
+    rdfs:comment "Structural reference for var field when it contains a non-terminal node" ;
+    erlang:fieldId 50 .
+
+erlang:field_when a owl:ObjectProperty ;
+    rdfs:label "when (structural)" ;
+    rdfs:comment "Structural reference for when field when it contains a non-terminal node" ;
+    erlang:fieldId 51 .
+
+erlang:file_attribute a owl:Class ;
+    rdfs:label "file_attribute" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 166 .
+
+erlang:float a owl:Class ;
+    rdfs:label "float" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 132 .
+
+erlang:fun a owl:DatatypeProperty ;
+    rdfs:label "fun (literal)" ;
+    rdfs:comment "Literal value for fun field when it contains a terminal node" ;
+    erlang:fieldId 27 ;
+    erlang:isTerminalField true .
+
+erlang:fun_clause a owl:Class ;
+    rdfs:label "fun_clause" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 270 .
+
+erlang:fun_decl a owl:Class ;
+    rdfs:label "fun_decl" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 191 .
+
+erlang:fun_type a owl:Class ;
+    rdfs:label "fun_type" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 198 .
+
+erlang:fun_type_sig a owl:Class ;
+    rdfs:label "fun_type_sig" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 199 .
+
+erlang:function_clause a owl:Class ;
+    rdfs:label "function_clause" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 202 .
+
+erlang:generator a owl:Class ;
+    rdfs:label "generator" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 232 .
+
+erlang:guard a owl:Class ;
+    rdfs:label "guard" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 298 .
+
+erlang:guard_clause a owl:Class ;
+    rdfs:label "guard_clause" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 299 .
+
+erlang:if_clause a owl:Class ;
+    rdfs:label "if_clause" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 256 .
+
+erlang:if_expr a owl:Class ;
+    rdfs:label "if_expr" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 255 .
+
+erlang:import_attribute a owl:Class ;
+    rdfs:label "import_attribute" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 161 .
+
+erlang:integer a owl:Class ;
+    rdfs:label "integer" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 131 .
+
+erlang:internal_fun a owl:Class ;
+    rdfs:label "internal_fun" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 263 .
+
+erlang:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+erlang:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+erlang:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+erlang:lc_exprs a owl:Class ;
+    rdfs:label "lc_exprs" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 229 .
+
+erlang:lc_or_zc_expr a owl:Class ;
+    rdfs:label "lc_or_zc_expr" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 230 .
+
+erlang:list a owl:Class ;
+    rdfs:label "list" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 216 .
+
+erlang:list_comprehension a owl:Class ;
+    rdfs:label "list_comprehension" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 226 .
+
+erlang:macro_call_args a owl:Class ;
+    rdfs:label "macro_call_args" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 292 .
+
+erlang:macro_call_expr a owl:Class ;
+    rdfs:label "macro_call_expr" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 291,
+        293 .
+
+erlang:macro_expr a owl:Class ;
+    rdfs:label "macro_expr" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 295 .
+
+erlang:macro_lhs a owl:Class ;
+    rdfs:label "macro_lhs" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 289 .
+
+erlang:macro_string a owl:Class ;
+    rdfs:label "macro_string" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 294 .
+
+erlang:map_comprehension a owl:Class ;
+    rdfs:label "map_comprehension" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 228 .
+
+erlang:map_expr a owl:Class ;
+    rdfs:label "map_expr" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 239 .
+
+erlang:map_expr_update a owl:Class ;
+    rdfs:label "map_expr_update" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 238 .
+
+erlang:map_field a owl:Class ;
+    rdfs:label "map_field" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 241 .
+
+erlang:map_generator a owl:Class ;
+    rdfs:label "map_generator" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 234 .
+
+erlang:match_expr a owl:Class ;
+    rdfs:label "match_expr" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 207 .
+
+erlang:maybe_expr a owl:Class ;
+    rdfs:label "maybe_expr" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 280 .
+
+erlang:module a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "module",
+        "module (literal)" ;
+    rdfs:comment "Literal value for module field when it contains a terminal node" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:fieldId 34 ;
+    erlang:isSupertype true ;
+    erlang:isTerminalField true ;
+    erlang:nodeTypeId 188 .
+
+erlang:module_attribute a owl:Class ;
+    rdfs:label "module_attribute" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 158 .
+
+erlang:multi_string a owl:Class ;
+    rdfs:label "multi_string" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 175 .
+
+erlang:name a owl:DatatypeProperty ;
+    rdfs:label "name (literal)" ;
+    rdfs:comment "Literal value for name field when it contains a terminal node" ;
+    erlang:fieldId 35 ;
+    erlang:isTerminalField true .
+
+erlang:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+erlang:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+erlang:nominal a owl:Class ;
+    rdfs:label "nominal" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 179 .
+
+erlang:opaque a owl:Class ;
+    rdfs:label "opaque" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 180 .
+
+erlang:optional_callbacks_attribute a owl:Class ;
+    rdfs:label "optional_callbacks_attribute" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 162 .
+
+erlang:original_file a owl:DatatypeProperty ;
+    rdfs:label "original_file (literal)" ;
+    rdfs:comment "Literal value for original_file field when it contains a terminal node" ;
+    erlang:fieldId 38 ;
+    erlang:isTerminalField true .
+
+erlang:original_line a owl:DatatypeProperty ;
+    rdfs:label "original_line (literal)" ;
+    rdfs:comment "Literal value for original_line field when it contains a terminal node" ;
+    erlang:fieldId 39 ;
+    erlang:isTerminalField true .
+
+erlang:paren_expr a owl:Class ;
+    rdfs:label "paren_expr" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 214 .
+
+erlang:pipe a owl:Class ;
+    rdfs:label "pipe" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 197 .
+
+erlang:pp_define a owl:Class ;
+    rdfs:label "pp_define" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 156 .
+
+erlang:pp_elif a owl:Class ;
+    rdfs:label "pp_elif" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 155 .
+
+erlang:pp_else a owl:Class ;
+    rdfs:label "pp_else" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 152 .
+
+erlang:pp_endif a owl:Class ;
+    rdfs:label "pp_endif" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 153 .
+
+erlang:pp_if a owl:Class ;
+    rdfs:label "pp_if" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 154 .
+
+erlang:pp_ifdef a owl:Class ;
+    rdfs:label "pp_ifdef" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 150 .
+
+erlang:pp_ifndef a owl:Class ;
+    rdfs:label "pp_ifndef" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 151 .
+
+erlang:pp_include a owl:Class ;
+    rdfs:label "pp_include" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 147 .
+
+erlang:pp_include_lib a owl:Class ;
+    rdfs:label "pp_include_lib" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 148 .
+
+erlang:pp_undef a owl:Class ;
+    rdfs:label "pp_undef" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 149 .
+
+erlang:range_type a owl:Class ;
+    rdfs:label "range_type" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 200 .
+
+erlang:receive_after a owl:Class ;
+    rdfs:label "receive_after" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 262 .
+
+erlang:receive_expr a owl:Class ;
+    rdfs:label "receive_expr" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 261 .
+
+erlang:record_decl a owl:Class ;
+    rdfs:label "record_decl" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 183 .
+
+erlang:record_expr a owl:Class ;
+    rdfs:label "record_expr" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 246 .
+
+erlang:record_field a owl:Class ;
+    rdfs:label "record_field" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 251 .
+
+erlang:record_field_expr a owl:Class ;
+    rdfs:label "record_field_expr" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 244 .
+
+erlang:record_field_name a owl:Class ;
+    rdfs:label "record_field_name" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 248 .
+
+erlang:record_index_expr a owl:Class ;
+    rdfs:label "record_index_expr" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 243 .
+
+erlang:record_name a owl:Class ;
+    rdfs:label "record_name" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 247 .
+
+erlang:record_update_expr a owl:Class ;
+    rdfs:label "record_update_expr" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 245 .
+
+erlang:remote a owl:Class ;
+    rdfs:label "remote" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 212 .
+
+erlang:remote_module a owl:Class ;
+    rdfs:label "remote_module" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 213 .
+
+erlang:replacement_cr_clauses a owl:Class ;
+    rdfs:label "replacement_cr_clauses" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 284 .
+
+erlang:replacement_expr_guard a owl:Class ;
+    rdfs:label "replacement_expr_guard" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 287 .
+
+erlang:replacement_function_clauses a owl:Class ;
+    rdfs:label "replacement_function_clauses" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 283 .
+
+erlang:replacement_guard_and a owl:Class ;
+    rdfs:label "replacement_guard_and" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 286 .
+
+erlang:replacement_guard_or a owl:Class ;
+    rdfs:label "replacement_guard_or" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 285 .
+
+erlang:replacement_parens a owl:Class ;
+    rdfs:label "replacement_parens" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 288 .
+
+erlang:shebang a owl:Class ;
+    rdfs:label "shebang" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 129 .
+
+erlang:source_file a owl:Class ;
+    rdfs:label "source_file" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 141 .
+
+erlang:spec a owl:Class ;
+    rdfs:label "spec" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 184 .
+
+erlang:ssr_definition a owl:Class ;
+    rdfs:label "ssr_definition" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 143 .
+
+erlang:ssr_replacement a owl:Class ;
+    rdfs:label "ssr_replacement" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 144 .
+
+erlang:ssr_when a owl:Class ;
+    rdfs:label "ssr_when" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 145 .
+
+erlang:string a owl:Class ;
+    rdfs:label "string" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 307 .
+
+erlang:try_after a owl:Class ;
+    rdfs:label "try_after" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 273 .
+
+erlang:try_class a owl:Class ;
+    rdfs:label "try_class" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 275 .
+
+erlang:try_expr a owl:Class ;
+    rdfs:label "try_expr" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 271 .
+
+erlang:try_stack a owl:Class ;
+    rdfs:label "try_stack" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 276 .
+
+erlang:tuple a owl:Class ;
+    rdfs:label "tuple" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 237 .
+
+erlang:type_alias a owl:Class ;
+    rdfs:label "type_alias" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 178 .
+
+erlang:type_guards a owl:Class ;
+    rdfs:label "type_guards" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 194 .
+
+erlang:type_name a owl:Class ;
+    rdfs:label "type_name" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 182 .
+
+erlang:type_sig a owl:Class ;
+    rdfs:label "type_sig" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 193 .
+
+erlang:unary_op_expr a owl:Class ;
+    rdfs:label "unary_op_expr" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 210,
+        222 .
+
+erlang:var a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "var",
+        "var (literal)" ;
+    rdfs:comment "Literal value for var field when it contains a terminal node" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:fieldId 50 ;
+    erlang:isSupertype true ;
+    erlang:isTerminalField true ;
+    erlang:nodeTypeId 130 .
+
+erlang:var_args a owl:Class ;
+    rdfs:label "var_args" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 297 .
+
+erlang:wild_attribute a owl:Class ;
+    rdfs:label "wild_attribute" ;
+    rdfs:isDefinedBy erlang: ;
+    rdfs:subClassOf ast:Node ;
+    erlang:isSupertype true ;
+    erlang:nodeTypeId 189 .
+
+erlang: a owl:Ontology ;
+    rdfs:label "Erlang Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for erlang" ;
+    owl:versionInfo "v0.25" ;
+    erlang:abiVersion 14 ;
+    erlang:fieldCount 51 ;
+    erlang:languageName "None" ;
+    erlang:nodeKindCount 338 .
+

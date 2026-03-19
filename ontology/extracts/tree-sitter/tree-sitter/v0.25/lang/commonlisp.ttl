@@ -1,0 +1,574 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix commonlisp: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/commonlisp/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+commonlisp:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+commonlisp:accumulation_clause a owl:Class ;
+    rdfs:label "accumulation_clause" ;
+    rdfs:isDefinedBy commonlisp: ;
+    rdfs:subClassOf ast:Node ;
+    commonlisp:isSupertype true ;
+    commonlisp:nodeTypeId 157 .
+
+commonlisp:accumulation_verb a owl:Class ;
+    rdfs:label "accumulation_verb" ;
+    rdfs:isDefinedBy commonlisp: ;
+    rdfs:subClassOf ast:Node ;
+    commonlisp:isSupertype true ;
+    commonlisp:nodeTypeId 150 .
+
+commonlisp:array_dimension a owl:Class ;
+    rdfs:label "array_dimension" ;
+    rdfs:isDefinedBy commonlisp: ;
+    rdfs:subClassOf ast:Node ;
+    commonlisp:isSupertype true ;
+    commonlisp:nodeTypeId 163 .
+
+commonlisp:block_comment a owl:Class ;
+    rdfs:label "block_comment" ;
+    rdfs:isDefinedBy commonlisp: ;
+    rdfs:subClassOf ast:Node ;
+    commonlisp:isSupertype true ;
+    commonlisp:nodeTypeId 33 .
+
+commonlisp:char_lit a owl:Class ;
+    rdfs:label "char_lit" ;
+    rdfs:isDefinedBy commonlisp: ;
+    rdfs:subClassOf ast:Node ;
+    commonlisp:isSupertype true ;
+    commonlisp:nodeTypeId 35,
+        123 .
+
+commonlisp:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy commonlisp: ;
+    rdfs:subClassOf ast:Node ;
+    commonlisp:isSupertype true ;
+    commonlisp:nodeTypeId 2 .
+
+commonlisp:complex_num_lit a owl:Class ;
+    rdfs:label "complex_num_lit" ;
+    rdfs:isDefinedBy commonlisp: ;
+    rdfs:subClassOf ast:Node ;
+    commonlisp:isSupertype true ;
+    commonlisp:nodeTypeId 170 .
+
+commonlisp:condition a owl:DatatypeProperty ;
+    rdfs:label "condition (literal)" ;
+    rdfs:comment "Literal value for condition field when it contains a terminal node" ;
+    commonlisp:fieldId 2 ;
+    commonlisp:isTerminalField true .
+
+commonlisp:condition_clause a owl:Class ;
+    rdfs:label "condition_clause" ;
+    rdfs:isDefinedBy commonlisp: ;
+    rdfs:subClassOf ast:Node ;
+    commonlisp:isSupertype true ;
+    commonlisp:nodeTypeId 156 .
+
+commonlisp:defun a owl:Class ;
+    rdfs:label "defun" ;
+    rdfs:isDefinedBy commonlisp: ;
+    rdfs:subClassOf ast:Node ;
+    commonlisp:isSupertype true ;
+    commonlisp:nodeTypeId 142 .
+
+commonlisp:defun_header a owl:Class ;
+    rdfs:label "defun_header" ;
+    rdfs:isDefinedBy commonlisp: ;
+    rdfs:subClassOf ast:Node ;
+    commonlisp:isSupertype true ;
+    commonlisp:nodeTypeId 162 .
+
+commonlisp:defun_keyword a owl:Class ;
+    rdfs:label "defun_keyword" ;
+    rdfs:isDefinedBy commonlisp: ;
+    rdfs:subClassOf ast:Node ;
+    commonlisp:isSupertype true ;
+    commonlisp:nodeTypeId 106,
+        161 .
+
+commonlisp:dis_expr a owl:Class ;
+    rdfs:label "dis_expr" ;
+    rdfs:isDefinedBy commonlisp: ;
+    rdfs:subClassOf ast:Node ;
+    commonlisp:isSupertype true ;
+    commonlisp:nodeTypeId 118 .
+
+commonlisp:do_clause a owl:Class ;
+    rdfs:label "do_clause" ;
+    rdfs:isDefinedBy commonlisp: ;
+    rdfs:subClassOf ast:Node ;
+    commonlisp:isSupertype true ;
+    commonlisp:nodeTypeId 153 .
+
+commonlisp:fancy_literal a owl:Class ;
+    rdfs:label "fancy_literal" ;
+    rdfs:isDefinedBy commonlisp: ;
+    rdfs:subClassOf ast:Node ;
+    commonlisp:isSupertype true ;
+    commonlisp:nodeTypeId 34 .
+
+commonlisp:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+commonlisp:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+commonlisp:field_close a owl:ObjectProperty ;
+    rdfs:label "close (structural)" ;
+    rdfs:comment "Structural reference for close field when it contains a non-terminal node" ;
+    commonlisp:fieldId 1 .
+
+commonlisp:field_condition a owl:ObjectProperty ;
+    rdfs:label "condition (structural)" ;
+    rdfs:comment "Structural reference for condition field when it contains a non-terminal node" ;
+    commonlisp:fieldId 2 .
+
+commonlisp:field_function_name a owl:ObjectProperty ;
+    rdfs:label "function_name (structural)" ;
+    rdfs:comment "Structural reference for function_name field when it contains a non-terminal node" ;
+    commonlisp:fieldId 3 .
+
+commonlisp:field_lambda_list a owl:ObjectProperty ;
+    rdfs:label "lambda_list (structural)" ;
+    rdfs:comment "Structural reference for lambda_list field when it contains a non-terminal node" ;
+    commonlisp:fieldId 6 .
+
+commonlisp:field_marker a owl:ObjectProperty ;
+    rdfs:label "marker (structural)" ;
+    rdfs:comment "Structural reference for marker field when it contains a non-terminal node" ;
+    commonlisp:fieldId 7 .
+
+commonlisp:field_meta a owl:ObjectProperty ;
+    rdfs:label "meta (structural)" ;
+    rdfs:comment "Structural reference for meta field when it contains a non-terminal node" ;
+    commonlisp:fieldId 8 .
+
+commonlisp:field_numberOfArgs a owl:ObjectProperty ;
+    rdfs:label "numberOfArgs (structural)" ;
+    rdfs:comment "Structural reference for numberOfArgs field when it contains a non-terminal node" ;
+    commonlisp:fieldId 9 .
+
+commonlisp:field_old_meta a owl:ObjectProperty ;
+    rdfs:label "old_meta (structural)" ;
+    rdfs:comment "Structural reference for old_meta field when it contains a non-terminal node" ;
+    commonlisp:fieldId 10 .
+
+commonlisp:field_open a owl:ObjectProperty ;
+    rdfs:label "open (structural)" ;
+    rdfs:comment "Structural reference for open field when it contains a non-terminal node" ;
+    commonlisp:fieldId 11 .
+
+commonlisp:field_package a owl:ObjectProperty ;
+    rdfs:label "package (structural)" ;
+    rdfs:comment "Structural reference for package field when it contains a non-terminal node" ;
+    commonlisp:fieldId 12 .
+
+commonlisp:field_repetitions a owl:ObjectProperty ;
+    rdfs:label "repetitions (structural)" ;
+    rdfs:comment "Structural reference for repetitions field when it contains a non-terminal node" ;
+    commonlisp:fieldId 14 .
+
+commonlisp:field_specifier a owl:ObjectProperty ;
+    rdfs:label "specifier (structural)" ;
+    rdfs:comment "Structural reference for specifier field when it contains a non-terminal node" ;
+    commonlisp:fieldId 15 .
+
+commonlisp:field_target a owl:ObjectProperty ;
+    rdfs:label "target (structural)" ;
+    rdfs:comment "Structural reference for target field when it contains a non-terminal node" ;
+    commonlisp:fieldId 17 .
+
+commonlisp:field_type a owl:ObjectProperty ;
+    rdfs:label "type (structural)" ;
+    rdfs:comment "Structural reference for type field when it contains a non-terminal node" ;
+    commonlisp:fieldId 18 .
+
+commonlisp:field_value a owl:ObjectProperty ;
+    rdfs:label "value (structural)" ;
+    rdfs:comment "Structural reference for value field when it contains a non-terminal node" ;
+    commonlisp:fieldId 19 .
+
+commonlisp:field_variable a owl:ObjectProperty ;
+    rdfs:label "variable (structural)" ;
+    rdfs:comment "Structural reference for variable field when it contains a non-terminal node" ;
+    commonlisp:fieldId 20 .
+
+commonlisp:for_clause a owl:Class ;
+    rdfs:label "for_clause" ;
+    rdfs:isDefinedBy commonlisp: ;
+    rdfs:subClassOf ast:Node ;
+    commonlisp:isSupertype true ;
+    commonlisp:nodeTypeId 151 .
+
+commonlisp:for_clause_word a owl:Class ;
+    rdfs:label "for_clause_word" ;
+    rdfs:isDefinedBy commonlisp: ;
+    rdfs:subClassOf ast:Node ;
+    commonlisp:isSupertype true ;
+    commonlisp:nodeTypeId 148 .
+
+commonlisp:format_directive_type a owl:Class ;
+    rdfs:label "format_directive_type" ;
+    rdfs:isDefinedBy commonlisp: ;
+    rdfs:subClassOf ast:Node ;
+    commonlisp:isSupertype true ;
+    commonlisp:nodeTypeId 146 .
+
+commonlisp:format_modifiers a owl:Class ;
+    rdfs:label "format_modifiers" ;
+    rdfs:isDefinedBy commonlisp: ;
+    rdfs:subClassOf ast:Node ;
+    commonlisp:isSupertype true ;
+    commonlisp:nodeTypeId 145 .
+
+commonlisp:format_prefix_parameters a owl:Class ;
+    rdfs:label "format_prefix_parameters" ;
+    rdfs:isDefinedBy commonlisp: ;
+    rdfs:subClassOf ast:Node ;
+    commonlisp:isSupertype true ;
+    commonlisp:nodeTypeId 144 .
+
+commonlisp:format_specifier a owl:Class ;
+    rdfs:label "format_specifier" ;
+    rdfs:isDefinedBy commonlisp: ;
+    rdfs:subClassOf ast:Node ;
+    commonlisp:isSupertype true ;
+    commonlisp:nodeTypeId 147 .
+
+commonlisp:function_name a owl:DatatypeProperty ;
+    rdfs:label "function_name (literal)" ;
+    rdfs:comment "Literal value for function_name field when it contains a terminal node" ;
+    commonlisp:fieldId 3 ;
+    commonlisp:isTerminalField true .
+
+commonlisp:imaginary a owl:DatatypeProperty ;
+    rdfs:label "imaginary (literal)" ;
+    rdfs:comment "Literal value for imaginary field when it contains a terminal node" ;
+    commonlisp:fieldId 4 ;
+    commonlisp:isTerminalField true .
+
+commonlisp:include_reader_macro a owl:Class ;
+    rdfs:label "include_reader_macro" ;
+    rdfs:isDefinedBy commonlisp: ;
+    rdfs:subClassOf ast:Node ;
+    commonlisp:isSupertype true ;
+    commonlisp:nodeTypeId 169 .
+
+commonlisp:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+commonlisp:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+commonlisp:keyword a owl:DatatypeProperty ;
+    rdfs:label "keyword (literal)" ;
+    rdfs:comment "Literal value for keyword field when it contains a terminal node" ;
+    commonlisp:fieldId 5 ;
+    commonlisp:isTerminalField true .
+
+commonlisp:kwd_lit a owl:Class ;
+    rdfs:label "kwd_lit" ;
+    rdfs:isDefinedBy commonlisp: ;
+    rdfs:subClassOf ast:Node ;
+    commonlisp:isSupertype true ;
+    commonlisp:nodeTypeId 121 .
+
+commonlisp:kwd_symbol a owl:Class ;
+    rdfs:label "kwd_symbol" ;
+    rdfs:isDefinedBy commonlisp: ;
+    rdfs:subClassOf ast:Node ;
+    commonlisp:isSupertype true ;
+    commonlisp:nodeTypeId 168 .
+
+commonlisp:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+commonlisp:list_lit a owl:Class ;
+    rdfs:label "list_lit" ;
+    rdfs:isDefinedBy commonlisp: ;
+    rdfs:subClassOf ast:Node ;
+    commonlisp:isSupertype true ;
+    commonlisp:nodeTypeId 128 .
+
+commonlisp:loop_clause a owl:Class ;
+    rdfs:label "loop_clause" ;
+    rdfs:isDefinedBy commonlisp: ;
+    rdfs:subClassOf ast:Node ;
+    commonlisp:isSupertype true ;
+    commonlisp:nodeTypeId 159 .
+
+commonlisp:loop_macro a owl:Class ;
+    rdfs:label "loop_macro" ;
+    rdfs:isDefinedBy commonlisp: ;
+    rdfs:subClassOf ast:Node ;
+    commonlisp:isSupertype true ;
+    commonlisp:nodeTypeId 160 .
+
+commonlisp:map_lit a owl:Class ;
+    rdfs:label "map_lit" ;
+    rdfs:isDefinedBy commonlisp: ;
+    rdfs:subClassOf ast:Node ;
+    commonlisp:isSupertype true ;
+    commonlisp:nodeTypeId 130 .
+
+commonlisp:meta_lit a owl:Class ;
+    rdfs:label "meta_lit" ;
+    rdfs:isDefinedBy commonlisp: ;
+    rdfs:subClassOf ast:Node ;
+    commonlisp:isSupertype true ;
+    commonlisp:nodeTypeId 126 .
+
+commonlisp:nil_lit a owl:Class ;
+    rdfs:label "nil_lit" ;
+    rdfs:isDefinedBy commonlisp: ;
+    rdfs:subClassOf ast:Node ;
+    commonlisp:isSupertype true ;
+    commonlisp:nodeTypeId 16 .
+
+commonlisp:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+commonlisp:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+commonlisp:num_lit a owl:Class ;
+    rdfs:label "num_lit" ;
+    rdfs:isDefinedBy commonlisp: ;
+    rdfs:subClassOf ast:Node ;
+    commonlisp:isSupertype true ;
+    commonlisp:nodeTypeId 120 .
+
+commonlisp:numberOfArgs a owl:DatatypeProperty ;
+    rdfs:label "numberOfArgs (literal)" ;
+    rdfs:comment "Literal value for numberOfArgs field when it contains a terminal node" ;
+    commonlisp:fieldId 9 ;
+    commonlisp:isTerminalField true .
+
+commonlisp:old_meta_lit a owl:Class ;
+    rdfs:label "old_meta_lit" ;
+    rdfs:isDefinedBy commonlisp: ;
+    rdfs:subClassOf ast:Node ;
+    commonlisp:isSupertype true ;
+    commonlisp:nodeTypeId 127 .
+
+commonlisp:package a owl:DatatypeProperty ;
+    rdfs:label "package (literal)" ;
+    rdfs:comment "Literal value for package field when it contains a terminal node" ;
+    commonlisp:fieldId 12 ;
+    commonlisp:isTerminalField true .
+
+commonlisp:package_lit a owl:Class ;
+    rdfs:label "package_lit" ;
+    rdfs:isDefinedBy commonlisp: ;
+    rdfs:subClassOf ast:Node ;
+    commonlisp:isSupertype true ;
+    commonlisp:nodeTypeId 165,
+        166 .
+
+commonlisp:path_lit a owl:Class ;
+    rdfs:label "path_lit" ;
+    rdfs:isDefinedBy commonlisp: ;
+    rdfs:subClassOf ast:Node ;
+    commonlisp:isSupertype true ;
+    commonlisp:nodeTypeId 164 .
+
+commonlisp:quoting_lit a owl:Class ;
+    rdfs:label "quoting_lit" ;
+    rdfs:isDefinedBy commonlisp: ;
+    rdfs:subClassOf ast:Node ;
+    commonlisp:isSupertype true ;
+    commonlisp:nodeTypeId 138 .
+
+commonlisp:read_cond_lit a owl:Class ;
+    rdfs:label "read_cond_lit" ;
+    rdfs:isDefinedBy commonlisp: ;
+    rdfs:subClassOf ast:Node ;
+    commonlisp:isSupertype true ;
+    commonlisp:nodeTypeId 135 .
+
+commonlisp:real a owl:DatatypeProperty ;
+    rdfs:label "real (literal)" ;
+    rdfs:comment "Literal value for real field when it contains a terminal node" ;
+    commonlisp:fieldId 13 ;
+    commonlisp:isTerminalField true .
+
+commonlisp:repeat_clause a owl:Class ;
+    rdfs:label "repeat_clause" ;
+    rdfs:isDefinedBy commonlisp: ;
+    rdfs:subClassOf ast:Node ;
+    commonlisp:isSupertype true ;
+    commonlisp:nodeTypeId 155 .
+
+commonlisp:repetitions a owl:DatatypeProperty ;
+    rdfs:label "repetitions (literal)" ;
+    rdfs:comment "Literal value for repetitions field when it contains a terminal node" ;
+    commonlisp:fieldId 14 ;
+    commonlisp:isTerminalField true .
+
+commonlisp:self_referential_reader_macro a owl:Class ;
+    rdfs:label "self_referential_reader_macro" ;
+    rdfs:isDefinedBy commonlisp: ;
+    rdfs:subClassOf ast:Node ;
+    commonlisp:isSupertype true ;
+    commonlisp:nodeTypeId 111 .
+
+commonlisp:set_lit a owl:Class ;
+    rdfs:label "set_lit" ;
+    rdfs:isDefinedBy commonlisp: ;
+    rdfs:subClassOf ast:Node ;
+    commonlisp:isSupertype true ;
+    commonlisp:nodeTypeId 133 .
+
+commonlisp:source a owl:Class ;
+    rdfs:label "source" ;
+    rdfs:isDefinedBy commonlisp: ;
+    rdfs:subClassOf ast:Node ;
+    commonlisp:isSupertype true ;
+    commonlisp:nodeTypeId 116 .
+
+commonlisp:specifier a owl:DatatypeProperty ;
+    rdfs:label "specifier (literal)" ;
+    rdfs:comment "Literal value for specifier field when it contains a terminal node" ;
+    commonlisp:fieldId 15 ;
+    commonlisp:isTerminalField true .
+
+commonlisp:splicing_read_cond_lit a owl:Class ;
+    rdfs:label "splicing_read_cond_lit" ;
+    rdfs:isDefinedBy commonlisp: ;
+    rdfs:subClassOf ast:Node ;
+    commonlisp:isSupertype true ;
+    commonlisp:nodeTypeId 136 .
+
+commonlisp:str_lit a owl:Class ;
+    rdfs:label "str_lit" ;
+    rdfs:isDefinedBy commonlisp: ;
+    rdfs:subClassOf ast:Node ;
+    commonlisp:isSupertype true ;
+    commonlisp:nodeTypeId 109,
+        122 .
+
+commonlisp:sym_lit a owl:Class ;
+    rdfs:label "sym_lit" ;
+    rdfs:isDefinedBy commonlisp: ;
+    rdfs:subClassOf ast:Node ;
+    commonlisp:isSupertype true ;
+    commonlisp:nodeTypeId 124 .
+
+commonlisp:symbol a owl:DatatypeProperty ;
+    rdfs:label "symbol (literal)" ;
+    rdfs:comment "Literal value for symbol field when it contains a terminal node" ;
+    commonlisp:fieldId 16 ;
+    commonlisp:isTerminalField true .
+
+commonlisp:syn_quoting_lit a owl:Class ;
+    rdfs:label "syn_quoting_lit" ;
+    rdfs:isDefinedBy commonlisp: ;
+    rdfs:subClassOf ast:Node ;
+    commonlisp:isSupertype true ;
+    commonlisp:nodeTypeId 139 .
+
+commonlisp:target a owl:DatatypeProperty ;
+    rdfs:label "target (literal)" ;
+    rdfs:comment "Literal value for target field when it contains a terminal node" ;
+    commonlisp:fieldId 17 ;
+    commonlisp:isTerminalField true .
+
+commonlisp:termination_clause a owl:Class ;
+    rdfs:label "termination_clause" ;
+    rdfs:isDefinedBy commonlisp: ;
+    rdfs:subClassOf ast:Node ;
+    commonlisp:isSupertype true ;
+    commonlisp:nodeTypeId 158 .
+
+commonlisp:type a owl:DatatypeProperty ;
+    rdfs:label "type (literal)" ;
+    rdfs:comment "Literal value for type field when it contains a terminal node" ;
+    commonlisp:fieldId 18 ;
+    commonlisp:isTerminalField true .
+
+commonlisp:unquote_splicing_lit a owl:Class ;
+    rdfs:label "unquote_splicing_lit" ;
+    rdfs:isDefinedBy commonlisp: ;
+    rdfs:subClassOf ast:Node ;
+    commonlisp:isSupertype true ;
+    commonlisp:nodeTypeId 140 .
+
+commonlisp:unquoting_lit a owl:Class ;
+    rdfs:label "unquoting_lit" ;
+    rdfs:isDefinedBy commonlisp: ;
+    rdfs:subClassOf ast:Node ;
+    commonlisp:isSupertype true ;
+    commonlisp:nodeTypeId 141 .
+
+commonlisp:value a owl:DatatypeProperty ;
+    rdfs:label "value (literal)" ;
+    rdfs:comment "Literal value for value field when it contains a terminal node" ;
+    commonlisp:fieldId 19 ;
+    commonlisp:isTerminalField true .
+
+commonlisp:var_quoting_lit a owl:Class ;
+    rdfs:label "var_quoting_lit" ;
+    rdfs:isDefinedBy commonlisp: ;
+    rdfs:subClassOf ast:Node ;
+    commonlisp:isSupertype true ;
+    commonlisp:nodeTypeId 137 .
+
+commonlisp:variable a owl:DatatypeProperty ;
+    rdfs:label "variable (literal)" ;
+    rdfs:comment "Literal value for variable field when it contains a terminal node" ;
+    commonlisp:fieldId 20 ;
+    commonlisp:isTerminalField true .
+
+commonlisp:vec_lit a owl:Class ;
+    rdfs:label "vec_lit" ;
+    rdfs:isDefinedBy commonlisp: ;
+    rdfs:subClassOf ast:Node ;
+    commonlisp:isSupertype true ;
+    commonlisp:nodeTypeId 132 .
+
+commonlisp:while_clause a owl:Class ;
+    rdfs:label "while_clause" ;
+    rdfs:isDefinedBy commonlisp: ;
+    rdfs:subClassOf ast:Node ;
+    commonlisp:isSupertype true ;
+    commonlisp:nodeTypeId 154 .
+
+commonlisp:with_clause a owl:Class ;
+    rdfs:label "with_clause" ;
+    rdfs:isDefinedBy commonlisp: ;
+    rdfs:subClassOf ast:Node ;
+    commonlisp:isSupertype true ;
+    commonlisp:nodeTypeId 152 .
+
+commonlisp: a owl:Ontology ;
+    rdfs:label "Commonlisp Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for commonlisp" ;
+    owl:versionInfo "v0.25" ;
+    commonlisp:abiVersion 14 ;
+    commonlisp:fieldCount 20 ;
+    commonlisp:languageName "None" ;
+    commonlisp:nodeKindCount 182 .
+

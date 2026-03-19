@@ -1,0 +1,1662 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix tsx: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/tsx/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+tsx:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+tsx:abstract_class_declaration a owl:Class ;
+    rdfs:label "abstract_class_declaration" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 295 .
+
+tsx:abstract_method_signature a owl:Class ;
+    rdfs:label "abstract_method_signature" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 284 .
+
+tsx:accessibility_modifier a owl:Class ;
+    rdfs:label "accessibility_modifier" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 307 .
+
+tsx:adding_type_annotation a owl:Class ;
+    rdfs:label "adding_type_annotation" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 313 .
+
+tsx:alias a owl:DatatypeProperty ;
+    rdfs:label "alias (literal)" ;
+    rdfs:comment "Literal value for alias field when it contains a terminal node" ;
+    tsx:fieldId 1 ;
+    tsx:isTerminalField true .
+
+tsx:ambient_declaration a owl:Class ;
+    rdfs:label "ambient_declaration" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 294 .
+
+tsx:argument a owl:DatatypeProperty ;
+    rdfs:label "argument (literal)" ;
+    rdfs:comment "Literal value for argument field when it contains a terminal node" ;
+    tsx:fieldId 3 ;
+    tsx:isTerminalField true .
+
+tsx:arguments a owl:Class ;
+    rdfs:label "arguments" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 266 .
+
+tsx:array a owl:Class ;
+    rdfs:label "array" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 223 .
+
+tsx:array_pattern a owl:Class ;
+    rdfs:label "array_pattern" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 224 .
+
+tsx:array_type a owl:Class ;
+    rdfs:label "array_type" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 359 .
+
+tsx:arrow_function a owl:Class ;
+    rdfs:label "arrow_function" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 241 .
+
+tsx:as_expression a owl:Class ;
+    rdfs:label "as_expression" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 287 .
+
+tsx:asserts a owl:Class ;
+    rdfs:label "asserts" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 318 .
+
+tsx:asserts_annotation a owl:Class ;
+    rdfs:label "asserts_annotation" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 319 .
+
+tsx:assignment_expression a owl:Class ;
+    rdfs:label "assignment_expression" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 250 .
+
+tsx:assignment_pattern a owl:Class ;
+    rdfs:label "assignment_pattern" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 221 .
+
+tsx:augmented_assignment_expression a owl:Class ;
+    rdfs:label "augmented_assignment_expression" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 252 .
+
+tsx:await_expression a owl:Class ;
+    rdfs:label "await_expression" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 247 .
+
+tsx:binary_expression a owl:Class ;
+    rdfs:label "binary_expression" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 257 .
+
+tsx:break_statement a owl:Class ;
+    rdfs:label "break_statement" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 203 .
+
+tsx:call_expression a owl:Class ;
+    rdfs:label "call_expression" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 245,
+        269,
+        317,
+        337 .
+
+tsx:call_signature a owl:Class ;
+    rdfs:label "call_signature" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 351 .
+
+tsx:catch_clause a owl:Class ;
+    rdfs:label "catch_clause" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 213 .
+
+tsx:class a owl:Class ;
+    rdfs:label "class" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 234 .
+
+tsx:class_body a owl:Class ;
+    rdfs:label "class_body" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 270 .
+
+tsx:class_declaration a owl:Class ;
+    rdfs:label "class_declaration" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 235 .
+
+tsx:class_heritage a owl:Class ;
+    rdfs:label "class_heritage" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 236 .
+
+tsx:class_static_block a owl:Class ;
+    rdfs:label "class_static_block" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 272 .
+
+tsx:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 110 .
+
+tsx:computed_property_name a owl:Class ;
+    rdfs:label "computed_property_name" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 279 .
+
+tsx:condition a owl:DatatypeProperty ;
+    rdfs:label "condition (literal)" ;
+    rdfs:comment "Literal value for condition field when it contains a terminal node" ;
+    tsx:fieldId 8 ;
+    tsx:isTerminalField true .
+
+tsx:conditional_type a owl:Class ;
+    rdfs:label "conditional_type" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 331 .
+
+tsx:constraint a owl:Class ;
+    rdfs:label "constraint" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 356 .
+
+tsx:construct_signature a owl:Class ;
+    rdfs:label "construct_signature" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 357 .
+
+tsx:constructor_type a owl:Class ;
+    rdfs:label "constructor_type" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 326 .
+
+tsx:continue_statement a owl:Class ;
+    rdfs:label "continue_statement" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 204 .
+
+tsx:debugger_statement a owl:Class ;
+    rdfs:label "debugger_statement" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 205 .
+
+tsx:decorator a owl:Class ;
+    rdfs:label "decorator" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 267 .
+
+tsx:default_type a owl:Class ;
+    rdfs:label "default_type" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 355 .
+
+tsx:do_statement a owl:Class ;
+    rdfs:label "do_statement" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 200 .
+
+tsx:else_clause a owl:Class ;
+    rdfs:label "else_clause" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 193 .
+
+tsx:empty_statement a owl:Class ;
+    rdfs:label "empty_statement" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 208 .
+
+tsx:enum_assignment a owl:Class ;
+    rdfs:label "enum_assignment" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 305 .
+
+tsx:enum_body a owl:Class ;
+    rdfs:label "enum_body" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 304 .
+
+tsx:enum_declaration a owl:Class ;
+    rdfs:label "enum_declaration" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 303 .
+
+tsx:escape_sequence a owl:Class ;
+    rdfs:label "escape_sequence" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 109 .
+
+tsx:existential_type a owl:Class ;
+    rdfs:label "existential_type" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 345 .
+
+tsx:export_clause a owl:Class ;
+    rdfs:label "export_clause" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 175 .
+
+tsx:export_specifier a owl:Class ;
+    rdfs:label "export_specifier" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 176 .
+
+tsx:export_statement a owl:Class ;
+    rdfs:label "export_statement" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 173 .
+
+tsx:expression_statement a owl:Class ;
+    rdfs:label "expression_statement" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 188 .
+
+tsx:extends_clause a owl:Class ;
+    rdfs:label "extends_clause" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 291 .
+
+tsx:extends_type_clause a owl:Class ;
+    rdfs:label "extends_type_clause" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 302 .
+
+tsx:false a owl:Class ;
+    rdfs:label "false" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 123 .
+
+tsx:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+tsx:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+tsx:field_alias a owl:ObjectProperty ;
+    rdfs:label "alias (structural)" ;
+    rdfs:comment "Structural reference for alias field when it contains a non-terminal node" ;
+    tsx:fieldId 1 .
+
+tsx:field_alternative a owl:ObjectProperty ;
+    rdfs:label "alternative (structural)" ;
+    rdfs:comment "Structural reference for alternative field when it contains a non-terminal node" ;
+    tsx:fieldId 2 .
+
+tsx:field_argument a owl:ObjectProperty ;
+    rdfs:label "argument (structural)" ;
+    rdfs:comment "Structural reference for argument field when it contains a non-terminal node" ;
+    tsx:fieldId 3 .
+
+tsx:field_arguments a owl:ObjectProperty ;
+    rdfs:label "arguments (structural)" ;
+    rdfs:comment "Structural reference for arguments field when it contains a non-terminal node" ;
+    tsx:fieldId 4 .
+
+tsx:field_attribute a owl:ObjectProperty ;
+    rdfs:label "attribute (structural)" ;
+    rdfs:comment "Structural reference for attribute field when it contains a non-terminal node" ;
+    tsx:fieldId 5 .
+
+tsx:field_body a owl:ObjectProperty ;
+    rdfs:label "body (structural)" ;
+    rdfs:comment "Structural reference for body field when it contains a non-terminal node" ;
+    tsx:fieldId 6 .
+
+tsx:field_close_tag a owl:ObjectProperty ;
+    rdfs:label "close_tag (structural)" ;
+    rdfs:comment "Structural reference for close_tag field when it contains a non-terminal node" ;
+    tsx:fieldId 7 .
+
+tsx:field_condition a owl:ObjectProperty ;
+    rdfs:label "condition (structural)" ;
+    rdfs:comment "Structural reference for condition field when it contains a non-terminal node" ;
+    tsx:fieldId 8 .
+
+tsx:field_consequence a owl:ObjectProperty ;
+    rdfs:label "consequence (structural)" ;
+    rdfs:comment "Structural reference for consequence field when it contains a non-terminal node" ;
+    tsx:fieldId 9 .
+
+tsx:field_constraint a owl:ObjectProperty ;
+    rdfs:label "constraint (structural)" ;
+    rdfs:comment "Structural reference for constraint field when it contains a non-terminal node" ;
+    tsx:fieldId 10 .
+
+tsx:field_constructor a owl:ObjectProperty ;
+    rdfs:label "constructor (structural)" ;
+    rdfs:comment "Structural reference for constructor field when it contains a non-terminal node" ;
+    tsx:fieldId 11 .
+
+tsx:field_declaration a owl:ObjectProperty ;
+    rdfs:label "declaration (structural)" ;
+    rdfs:comment "Structural reference for declaration field when it contains a non-terminal node" ;
+    tsx:fieldId 12 .
+
+tsx:field_decorator a owl:ObjectProperty ;
+    rdfs:label "decorator (structural)" ;
+    rdfs:comment "Structural reference for decorator field when it contains a non-terminal node" ;
+    tsx:fieldId 13 .
+
+tsx:field_finalizer a owl:ObjectProperty ;
+    rdfs:label "finalizer (structural)" ;
+    rdfs:comment "Structural reference for finalizer field when it contains a non-terminal node" ;
+    tsx:fieldId 14 .
+
+tsx:field_function a owl:ObjectProperty ;
+    rdfs:label "function (structural)" ;
+    rdfs:comment "Structural reference for function field when it contains a non-terminal node" ;
+    tsx:fieldId 16 .
+
+tsx:field_handler a owl:ObjectProperty ;
+    rdfs:label "handler (structural)" ;
+    rdfs:comment "Structural reference for handler field when it contains a non-terminal node" ;
+    tsx:fieldId 17 .
+
+tsx:field_increment a owl:ObjectProperty ;
+    rdfs:label "increment (structural)" ;
+    rdfs:comment "Structural reference for increment field when it contains a non-terminal node" ;
+    tsx:fieldId 18 .
+
+tsx:field_index a owl:ObjectProperty ;
+    rdfs:label "index (structural)" ;
+    rdfs:comment "Structural reference for index field when it contains a non-terminal node" ;
+    tsx:fieldId 19 .
+
+tsx:field_index_type a owl:ObjectProperty ;
+    rdfs:label "index_type (structural)" ;
+    rdfs:comment "Structural reference for index_type field when it contains a non-terminal node" ;
+    tsx:fieldId 20 .
+
+tsx:field_initializer a owl:ObjectProperty ;
+    rdfs:label "initializer (structural)" ;
+    rdfs:comment "Structural reference for initializer field when it contains a non-terminal node" ;
+    tsx:fieldId 21 .
+
+tsx:field_key a owl:ObjectProperty ;
+    rdfs:label "key (structural)" ;
+    rdfs:comment "Structural reference for key field when it contains a non-terminal node" ;
+    tsx:fieldId 22 .
+
+tsx:field_kind a owl:ObjectProperty ;
+    rdfs:label "kind (structural)" ;
+    rdfs:comment "Structural reference for kind field when it contains a non-terminal node" ;
+    tsx:fieldId 23 .
+
+tsx:field_left a owl:ObjectProperty ;
+    rdfs:label "left (structural)" ;
+    rdfs:comment "Structural reference for left field when it contains a non-terminal node" ;
+    tsx:fieldId 25 .
+
+tsx:field_module a owl:ObjectProperty ;
+    rdfs:label "module (structural)" ;
+    rdfs:comment "Structural reference for module field when it contains a non-terminal node" ;
+    tsx:fieldId 26 .
+
+tsx:field_name a owl:ObjectProperty ;
+    rdfs:label "name (structural)" ;
+    rdfs:comment "Structural reference for name field when it contains a non-terminal node" ;
+    tsx:fieldId 27 .
+
+tsx:field_object a owl:ObjectProperty ;
+    rdfs:label "object (structural)" ;
+    rdfs:comment "Structural reference for object field when it contains a non-terminal node" ;
+    tsx:fieldId 28 .
+
+tsx:field_open_tag a owl:ObjectProperty ;
+    rdfs:label "open_tag (structural)" ;
+    rdfs:comment "Structural reference for open_tag field when it contains a non-terminal node" ;
+    tsx:fieldId 29 .
+
+tsx:field_operator a owl:ObjectProperty ;
+    rdfs:label "operator (structural)" ;
+    rdfs:comment "Structural reference for operator field when it contains a non-terminal node" ;
+    tsx:fieldId 30 .
+
+tsx:field_parameter a owl:ObjectProperty ;
+    rdfs:label "parameter (structural)" ;
+    rdfs:comment "Structural reference for parameter field when it contains a non-terminal node" ;
+    tsx:fieldId 32 .
+
+tsx:field_parameters a owl:ObjectProperty ;
+    rdfs:label "parameters (structural)" ;
+    rdfs:comment "Structural reference for parameters field when it contains a non-terminal node" ;
+    tsx:fieldId 33 .
+
+tsx:field_pattern a owl:ObjectProperty ;
+    rdfs:label "pattern (structural)" ;
+    rdfs:comment "Structural reference for pattern field when it contains a non-terminal node" ;
+    tsx:fieldId 34 .
+
+tsx:field_return_type a owl:ObjectProperty ;
+    rdfs:label "return_type (structural)" ;
+    rdfs:comment "Structural reference for return_type field when it contains a non-terminal node" ;
+    tsx:fieldId 36 .
+
+tsx:field_right a owl:ObjectProperty ;
+    rdfs:label "right (structural)" ;
+    rdfs:comment "Structural reference for right field when it contains a non-terminal node" ;
+    tsx:fieldId 37 .
+
+tsx:field_sign a owl:ObjectProperty ;
+    rdfs:label "sign (structural)" ;
+    rdfs:comment "Structural reference for sign field when it contains a non-terminal node" ;
+    tsx:fieldId 38 .
+
+tsx:field_source a owl:ObjectProperty ;
+    rdfs:label "source (structural)" ;
+    rdfs:comment "Structural reference for source field when it contains a non-terminal node" ;
+    tsx:fieldId 39 .
+
+tsx:field_type a owl:ObjectProperty ;
+    rdfs:label "type (structural)" ;
+    rdfs:comment "Structural reference for type field when it contains a non-terminal node" ;
+    tsx:fieldId 40 .
+
+tsx:field_type_arguments a owl:ObjectProperty ;
+    rdfs:label "type_arguments (structural)" ;
+    rdfs:comment "Structural reference for type_arguments field when it contains a non-terminal node" ;
+    tsx:fieldId 41 .
+
+tsx:field_type_parameters a owl:ObjectProperty ;
+    rdfs:label "type_parameters (structural)" ;
+    rdfs:comment "Structural reference for type_parameters field when it contains a non-terminal node" ;
+    tsx:fieldId 42 .
+
+tsx:field_value a owl:ObjectProperty ;
+    rdfs:label "value (structural)" ;
+    rdfs:comment "Structural reference for value field when it contains a non-terminal node" ;
+    tsx:fieldId 43 .
+
+tsx:finally_clause a owl:Class ;
+    rdfs:label "finally_clause" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 214 .
+
+tsx:flags a owl:DatatypeProperty ;
+    rdfs:label "flags (literal)" ;
+    rdfs:comment "Literal value for flags field when it contains a terminal node" ;
+    tsx:fieldId 15 ;
+    tsx:isTerminalField true .
+
+tsx:flow_maybe_type a owl:Class ;
+    rdfs:label "flow_maybe_type" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 346 .
+
+tsx:for_in_statement a owl:Class ;
+    rdfs:label "for_in_statement" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 197 .
+
+tsx:for_statement a owl:Class ;
+    rdfs:label "for_statement" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 196 .
+
+tsx:formal_parameters a owl:Class ;
+    rdfs:label "formal_parameters" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 271 .
+
+tsx:function a owl:DatatypeProperty ;
+    rdfs:label "function (literal)" ;
+    rdfs:comment "Literal value for function field when it contains a terminal node" ;
+    tsx:fieldId 16 ;
+    tsx:isTerminalField true .
+
+tsx:function_declaration a owl:Class ;
+    rdfs:label "function_declaration" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 238 .
+
+tsx:function_expression a owl:Class ;
+    rdfs:label "function_expression" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 237 .
+
+tsx:function_signature a owl:Class ;
+    rdfs:label "function_signature" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 285 .
+
+tsx:function_type a owl:Class ;
+    rdfs:label "function_type" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 364 .
+
+tsx:generator_function a owl:Class ;
+    rdfs:label "generator_function" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 239 .
+
+tsx:generator_function_declaration a owl:Class ;
+    rdfs:label "generator_function_declaration" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 240 .
+
+tsx:generic_type a owl:Class ;
+    rdfs:label "generic_type" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 332 .
+
+tsx:hash_bang_line a owl:Class ;
+    rdfs:label "hash_bang_line" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 2 .
+
+tsx:html_character_reference a owl:Class ;
+    rdfs:label "html_character_reference" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 47 .
+
+tsx:html_comment a owl:Class ;
+    rdfs:label "html_comment" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 168 .
+
+tsx:identifier a owl:Class ;
+    rdfs:label "identifier" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 1,
+        49 .
+
+tsx:if_statement a owl:Class ;
+    rdfs:label "if_statement" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 194 .
+
+tsx:implements_clause a owl:Class ;
+    rdfs:label "implements_clause" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 293 .
+
+tsx:import a owl:Class ;
+    rdfs:label "import" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 179 .
+
+tsx:import_alias a owl:Class ;
+    rdfs:label "import_alias" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 299 .
+
+tsx:import_attribute a owl:Class ;
+    rdfs:label "import_attribute" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 186 .
+
+tsx:import_clause a owl:Class ;
+    rdfs:label "import_clause" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 181 .
+
+tsx:import_require_clause a owl:Class ;
+    rdfs:label "import_require_clause" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 290 .
+
+tsx:import_specifier a owl:Class ;
+    rdfs:label "import_specifier" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 185 .
+
+tsx:import_statement a owl:Class ;
+    rdfs:label "import_statement" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 180 .
+
+tsx:index a owl:DatatypeProperty ;
+    rdfs:label "index (literal)" ;
+    rdfs:comment "Literal value for index field when it contains a terminal node" ;
+    tsx:fieldId 19 ;
+    tsx:isTerminalField true .
+
+tsx:index_signature a owl:Class ;
+    rdfs:label "index_signature" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 358 .
+
+tsx:index_type_query a owl:Class ;
+    rdfs:label "index_type_query" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 340 .
+
+tsx:infer_type a owl:Class ;
+    rdfs:label "infer_type" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 330 .
+
+tsx:initializer a owl:DatatypeProperty ;
+    rdfs:label "initializer (literal)" ;
+    rdfs:comment "Literal value for initializer field when it contains a terminal node" ;
+    tsx:fieldId 21 ;
+    tsx:isTerminalField true .
+
+tsx:instantiation_expression a owl:Class ;
+    rdfs:label "instantiation_expression" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 289,
+        338 .
+
+tsx:interface_body a owl:Class ;
+    rdfs:label "interface_body" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 393 .
+
+tsx:interface_declaration a owl:Class ;
+    rdfs:label "interface_declaration" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 301 .
+
+tsx:internal_module a owl:Class ;
+    rdfs:label "internal_module" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 297 .
+
+tsx:intersection_type a owl:Class ;
+    rdfs:label "intersection_type" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 363 .
+
+tsx:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+tsx:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+tsx:jsx_attribute a owl:Class ;
+    rdfs:label "jsx_attribute" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 232 .
+
+tsx:jsx_closing_element a owl:Class ;
+    rdfs:label "jsx_closing_element" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 230 .
+
+tsx:jsx_element a owl:Class ;
+    rdfs:label "jsx_element" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 225 .
+
+tsx:jsx_expression a owl:Class ;
+    rdfs:label "jsx_expression" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 226 .
+
+tsx:jsx_namespace_name a owl:Class ;
+    rdfs:label "jsx_namespace_name" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 229 .
+
+tsx:jsx_opening_element a owl:Class ;
+    rdfs:label "jsx_opening_element" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 227 .
+
+tsx:jsx_self_closing_element a owl:Class ;
+    rdfs:label "jsx_self_closing_element" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 231 .
+
+tsx:jsx_text a owl:Class ;
+    rdfs:label "jsx_text" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 169 .
+
+tsx:key a owl:DatatypeProperty ;
+    rdfs:label "key (literal)" ;
+    rdfs:comment "Literal value for key field when it contains a terminal node" ;
+    tsx:fieldId 22 ;
+    tsx:isTerminalField true .
+
+tsx:label a owl:DatatypeProperty ;
+    rdfs:label "label (literal)" ;
+    rdfs:comment "Literal value for label field when it contains a terminal node" ;
+    tsx:fieldId 24 ;
+    tsx:isTerminalField true .
+
+tsx:labeled_statement a owl:Class ;
+    rdfs:label "labeled_statement" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 209 .
+
+tsx:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+tsx:left a owl:DatatypeProperty ;
+    rdfs:label "left (literal)" ;
+    rdfs:comment "Literal value for left field when it contains a terminal node" ;
+    tsx:fieldId 25 ;
+    tsx:isTerminalField true .
+
+tsx:lexical_declaration a owl:Class ;
+    rdfs:label "lexical_declaration" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 190 .
+
+tsx:literal_type a owl:Class ;
+    rdfs:label "literal_type" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 343 .
+
+tsx:lookup_type a owl:Class ;
+    rdfs:label "lookup_type" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 341 .
+
+tsx:mapped_type_clause a owl:Class ;
+    rdfs:label "mapped_type_clause" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 342 .
+
+tsx:member_expression a owl:Class ;
+    rdfs:label "member_expression" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 248,
+        268,
+        316,
+        335 .
+
+tsx:meta_property a owl:Class ;
+    rdfs:label "meta_property" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 265 .
+
+tsx:method_definition a owl:Class ;
+    rdfs:label "method_definition" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 275 .
+
+tsx:method_signature a owl:Class ;
+    rdfs:label "method_signature" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 283 .
+
+tsx:module a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "module",
+        "module (literal)" ;
+    rdfs:comment "Literal value for module field when it contains a terminal node" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:fieldId 26 ;
+    tsx:isSupertype true ;
+    tsx:isTerminalField true ;
+    tsx:nodeTypeId 296 .
+
+tsx:name a owl:DatatypeProperty ;
+    rdfs:label "name (literal)" ;
+    rdfs:comment "Literal value for name field when it contains a terminal node" ;
+    tsx:fieldId 27 ;
+    tsx:isTerminalField true .
+
+tsx:named_imports a owl:Class ;
+    rdfs:label "named_imports" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 184 .
+
+tsx:namespace_export a owl:Class ;
+    rdfs:label "namespace_export" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 174 .
+
+tsx:namespace_import a owl:Class ;
+    rdfs:label "namespace_import" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 183 .
+
+tsx:nested_identifier a owl:Class ;
+    rdfs:label "nested_identifier" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 228 .
+
+tsx:nested_type_identifier a owl:Class ;
+    rdfs:label "nested_type_identifier" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 300 .
+
+tsx:new_expression a owl:Class ;
+    rdfs:label "new_expression" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 246 .
+
+tsx:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+tsx:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+tsx:non_null_expression a owl:Class ;
+    rdfs:label "non_null_expression" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 282 .
+
+tsx:null a owl:Class ;
+    rdfs:label "null" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 124 .
+
+tsx:number a owl:Class ;
+    rdfs:label "number" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 116 .
+
+tsx:object a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "object",
+        "object (literal)" ;
+    rdfs:comment "Literal value for object field when it contains a terminal node" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:fieldId 28 ;
+    tsx:isSupertype true ;
+    tsx:isTerminalField true ;
+    tsx:nodeTypeId 219 .
+
+tsx:object_assignment_pattern a owl:Class ;
+    rdfs:label "object_assignment_pattern" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 222 .
+
+tsx:object_pattern a owl:Class ;
+    rdfs:label "object_pattern" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 220 .
+
+tsx:object_type a owl:Class ;
+    rdfs:label "object_type" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 350 .
+
+tsx:omitting_type_annotation a owl:Class ;
+    rdfs:label "omitting_type_annotation" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 312 .
+
+tsx:opting_type_annotation a owl:Class ;
+    rdfs:label "opting_type_annotation" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 314 .
+
+tsx:optional_chain a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "optional_chain",
+        "optional_chain (literal)" ;
+    rdfs:comment "Literal value for optional_chain field when it contains a terminal node" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:fieldId 31 ;
+    tsx:isSupertype true ;
+    tsx:isTerminalField true ;
+    tsx:nodeTypeId 244 .
+
+tsx:optional_parameter a owl:Class ;
+    rdfs:label "optional_parameter" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 310,
+        322 .
+
+tsx:optional_type a owl:Class ;
+    rdfs:label "optional_type" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 323 .
+
+tsx:override_modifier a owl:Class ;
+    rdfs:label "override_modifier" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 308 .
+
+tsx:pair a owl:Class ;
+    rdfs:label "pair" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 276 .
+
+tsx:pair_pattern a owl:Class ;
+    rdfs:label "pair_pattern" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 277 .
+
+tsx:parameter a owl:DatatypeProperty ;
+    rdfs:label "parameter (literal)" ;
+    rdfs:comment "Literal value for parameter field when it contains a terminal node" ;
+    tsx:fieldId 32 ;
+    tsx:isTerminalField true .
+
+tsx:parenthesized_expression a owl:Class ;
+    rdfs:label "parenthesized_expression" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 215,
+        286 .
+
+tsx:parenthesized_type a owl:Class ;
+    rdfs:label "parenthesized_type" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 347 .
+
+tsx:pattern a owl:DatatypeProperty ;
+    rdfs:label "pattern (literal)" ;
+    rdfs:comment "Literal value for pattern field when it contains a terminal node" ;
+    tsx:fieldId 34 ;
+    tsx:isTerminalField true .
+
+tsx:predefined_type a owl:Class ;
+    rdfs:label "predefined_type" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 348 .
+
+tsx:private_property_identifier a owl:Class ;
+    rdfs:label "private_property_identifier" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 117 .
+
+tsx:program a owl:Class ;
+    rdfs:label "program" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 172 .
+
+tsx:property a owl:DatatypeProperty ;
+    rdfs:label "property (literal)" ;
+    rdfs:comment "Literal value for property field when it contains a terminal node" ;
+    tsx:fieldId 35 ;
+    tsx:isTerminalField true .
+
+tsx:property_identifier a owl:Class ;
+    rdfs:label "property_identifier" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 394 .
+
+tsx:property_signature a owl:Class ;
+    rdfs:label "property_signature" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 352 .
+
+tsx:public_field_definition a owl:Class ;
+    rdfs:label "public_field_definition" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 280 .
+
+tsx:readonly_type a owl:Class ;
+    rdfs:label "readonly_type" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 361 .
+
+tsx:regex a owl:Class ;
+    rdfs:label "regex" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 264 .
+
+tsx:regex_flags a owl:Class ;
+    rdfs:label "regex_flags" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 115 .
+
+tsx:regex_pattern a owl:Class ;
+    rdfs:label "regex_pattern" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 114 .
+
+tsx:required_parameter a owl:Class ;
+    rdfs:label "required_parameter" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 309,
+        321 .
+
+tsx:rest_pattern a owl:Class ;
+    rdfs:label "rest_pattern" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 274 .
+
+tsx:rest_type a owl:Class ;
+    rdfs:label "rest_type" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 324 .
+
+tsx:return_statement a owl:Class ;
+    rdfs:label "return_statement" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 206 .
+
+tsx:satisfies_expression a owl:Class ;
+    rdfs:label "satisfies_expression" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 288 .
+
+tsx:sequence_expression a owl:Class ;
+    rdfs:label "sequence_expression" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 260 .
+
+tsx:shorthand_property_identifier a owl:Class ;
+    rdfs:label "shorthand_property_identifier" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 395 .
+
+tsx:shorthand_property_identifier_pattern a owl:Class ;
+    rdfs:label "shorthand_property_identifier_pattern" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 396 .
+
+tsx:spread_element a owl:Class ;
+    rdfs:label "spread_element" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 255 .
+
+tsx:statement_block a owl:Class ;
+    rdfs:label "statement_block" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 192 .
+
+tsx:statement_identifier a owl:Class ;
+    rdfs:label "statement_identifier" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 397 .
+
+tsx:string a owl:Class ;
+    rdfs:label "string" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 233,
+        261 .
+
+tsx:string_fragment a owl:Class ;
+    rdfs:label "string_fragment" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 55,
+        56,
+        107,
+        108,
+        166 .
+
+tsx:subscript_expression a owl:Class ;
+    rdfs:label "subscript_expression" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 249,
+        336 .
+
+tsx:super a owl:Class ;
+    rdfs:label "super" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 121 .
+
+tsx:switch_body a owl:Class ;
+    rdfs:label "switch_body" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 210 .
+
+tsx:switch_case a owl:Class ;
+    rdfs:label "switch_case" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 211 .
+
+tsx:switch_default a owl:Class ;
+    rdfs:label "switch_default" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 212 .
+
+tsx:switch_statement a owl:Class ;
+    rdfs:label "switch_statement" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 195 .
+
+tsx:template_literal_type a owl:Class ;
+    rdfs:label "template_literal_type" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 329 .
+
+tsx:template_string a owl:Class ;
+    rdfs:label "template_string" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 262 .
+
+tsx:template_substitution a owl:Class ;
+    rdfs:label "template_substitution" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 263 .
+
+tsx:template_type a owl:Class ;
+    rdfs:label "template_type" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 328 .
+
+tsx:ternary_expression a owl:Class ;
+    rdfs:label "ternary_expression" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 256 .
+
+tsx:this a owl:Class ;
+    rdfs:label "this" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 120 .
+
+tsx:this_type a owl:Class ;
+    rdfs:label "this_type" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 398 .
+
+tsx:throw_statement a owl:Class ;
+    rdfs:label "throw_statement" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 207 .
+
+tsx:true a owl:Class ;
+    rdfs:label "true" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 122 .
+
+tsx:try_statement a owl:Class ;
+    rdfs:label "try_statement" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 201 .
+
+tsx:tuple_type a owl:Class ;
+    rdfs:label "tuple_type" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 360 .
+
+tsx:type a owl:DatatypeProperty ;
+    rdfs:label "type (literal)" ;
+    rdfs:comment "Literal value for type field when it contains a terminal node" ;
+    tsx:fieldId 40 ;
+    tsx:isTerminalField true .
+
+tsx:type_alias_declaration a owl:Class ;
+    rdfs:label "type_alias_declaration" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 306 .
+
+tsx:type_annotation a owl:Class ;
+    rdfs:label "type_annotation" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 315 .
+
+tsx:type_arguments a owl:Class ;
+    rdfs:label "type_arguments" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 349 .
+
+tsx:type_identifier a owl:Class ;
+    rdfs:label "type_identifier" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 399 .
+
+tsx:type_parameter a owl:Class ;
+    rdfs:label "type_parameter" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 354 .
+
+tsx:type_parameters a owl:Class ;
+    rdfs:label "type_parameters" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 353 .
+
+tsx:type_predicate a owl:Class ;
+    rdfs:label "type_predicate" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 333 .
+
+tsx:type_predicate_annotation a owl:Class ;
+    rdfs:label "type_predicate_annotation" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 334 .
+
+tsx:type_query a owl:Class ;
+    rdfs:label "type_query" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 339 .
+
+tsx:unary_expression a owl:Class ;
+    rdfs:label "unary_expression" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 258,
+        344 .
+
+tsx:undefined a owl:Class ;
+    rdfs:label "undefined" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 125 .
+
+tsx:union_type a owl:Class ;
+    rdfs:label "union_type" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 362 .
+
+tsx:update_expression a owl:Class ;
+    rdfs:label "update_expression" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 259 .
+
+tsx:variable_declaration a owl:Class ;
+    rdfs:label "variable_declaration" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 189 .
+
+tsx:variable_declarator a owl:Class ;
+    rdfs:label "variable_declarator" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 191 .
+
+tsx:while_statement a owl:Class ;
+    rdfs:label "while_statement" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 199 .
+
+tsx:with_statement a owl:Class ;
+    rdfs:label "with_statement" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 202 .
+
+tsx:yield_expression a owl:Class ;
+    rdfs:label "yield_expression" ;
+    rdfs:isDefinedBy tsx: ;
+    rdfs:subClassOf ast:Node ;
+    tsx:isSupertype true ;
+    tsx:nodeTypeId 218 .
+
+tsx: a owl:Ontology ;
+    rdfs:label "Tsx Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for tsx" ;
+    owl:versionInfo "v0.25" ;
+    tsx:abiVersion 14 ;
+    tsx:fieldCount 43 ;
+    tsx:languageName "None" ;
+    tsx:nodeKindCount 400 .
+

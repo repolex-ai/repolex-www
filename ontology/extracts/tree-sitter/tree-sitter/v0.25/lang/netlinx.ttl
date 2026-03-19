@@ -1,0 +1,4908 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix netlinx: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/netlinx/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+netlinx:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+netlinx:abs_value a owl:Class ;
+    rdfs:label "abs_value" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 449 .
+
+netlinx:abstract_array_declarator a owl:Class ;
+    rdfs:label "abstract_array_declarator" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 710 .
+
+netlinx:active_keyword a owl:Class ;
+    rdfs:label "active_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 52 .
+
+netlinx:active_statement a owl:Class ;
+    rdfs:label "active_statement" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 754 .
+
+netlinx:add_url_entry a owl:Class ;
+    rdfs:label "add_url_entry" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 447 .
+
+netlinx:amx_debug a owl:Class ;
+    rdfs:label "amx_debug" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 230 .
+
+netlinx:amx_error a owl:Class ;
+    rdfs:label "amx_error" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 227 .
+
+netlinx:amx_info a owl:Class ;
+    rdfs:label "amx_info" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 229 .
+
+netlinx:amx_log a owl:Class ;
+    rdfs:label "amx_log" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 486 .
+
+netlinx:amx_warning a owl:Class ;
+    rdfs:label "amx_warning" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 228 .
+
+netlinx:and a owl:Class ;
+    rdfs:label "and" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 92 .
+
+netlinx:argument_list a owl:Class ;
+    rdfs:label "argument_list" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 787 .
+
+netlinx:array_declarator a owl:Class ;
+    rdfs:label "array_declarator" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 708,
+        709 .
+
+netlinx:array_return_type a owl:Class ;
+    rdfs:label "array_return_type" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 724 .
+
+netlinx:assignment_expression a owl:Class ;
+    rdfs:label "assignment_expression" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 780 .
+
+netlinx:astro_clock a owl:Class ;
+    rdfs:label "astro_clock" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 507 .
+
+netlinx:atof a owl:Class ;
+    rdfs:label "atof" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 343 .
+
+netlinx:atoi a owl:Class ;
+    rdfs:label "atoi" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 341 .
+
+netlinx:atol a owl:Class ;
+    rdfs:label "atol" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 342 .
+
+netlinx:audit_netlinx_generic_event a owl:Class ;
+    rdfs:label "audit_netlinx_generic_event" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 494 .
+
+netlinx:audit_netlinx_session_event a owl:Class ;
+    rdfs:label "audit_netlinx_session_event" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 493 .
+
+netlinx:auditlog_priv a owl:Class ;
+    rdfs:label "auditlog_priv" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 271 .
+
+netlinx:authenticate_certificate a owl:Class ;
+    rdfs:label "authenticate_certificate" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 492 .
+
+netlinx:awake_keyword a owl:Class ;
+    rdfs:label "awake_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 73 .
+
+netlinx:band a owl:Class ;
+    rdfs:label "band" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 96 .
+
+netlinx:binary_expression a owl:Class ;
+    rdfs:label "binary_expression" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 782 .
+
+netlinx:bnot a owl:Class ;
+    rdfs:label "bnot" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 99 .
+
+netlinx:bor a owl:Class ;
+    rdfs:label "bor" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 97 .
+
+netlinx:break_keyword a owl:Class ;
+    rdfs:label "break_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 48 .
+
+netlinx:break_statement a owl:Class ;
+    rdfs:label "break_statement" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 756 .
+
+netlinx:button a owl:Class ;
+    rdfs:label "button" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 334 .
+
+netlinx:button_event_block a owl:Class ;
+    rdfs:label "button_event_block" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 679 .
+
+netlinx:button_event_declarator a owl:Class ;
+    rdfs:label "button_event_declarator" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 677 .
+
+netlinx:button_event_definition a owl:Class ;
+    rdfs:label "button_event_definition" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 675 .
+
+netlinx:button_event_devchan_reference a owl:Class ;
+    rdfs:label "button_event_devchan_reference" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 678 .
+
+netlinx:button_event_handler a owl:Class ;
+    rdfs:label "button_event_handler" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 681 .
+
+netlinx:button_event_hold_repeat a owl:Class ;
+    rdfs:label "button_event_hold_repeat" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 683 .
+
+netlinx:button_event_keyword a owl:Class ;
+    rdfs:label "button_event_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 55 .
+
+netlinx:button_event_type a owl:Class ;
+    rdfs:label "button_event_type" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 682 .
+
+netlinx:bxor a owl:Class ;
+    rdfs:label "bxor" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 98 .
+
+netlinx:call_definition a owl:Class ;
+    rdfs:label "call_definition" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 727 .
+
+netlinx:call_expression a owl:Class ;
+    rdfs:label "call_expression" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 785 .
+
+netlinx:call_keyword a owl:Class ;
+    rdfs:label "call_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 80 .
+
+netlinx:call_statement a owl:Class ;
+    rdfs:label "call_statement" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 772 .
+
+netlinx:cancel_all_wait_keyword a owl:Class ;
+    rdfs:label "cancel_all_wait_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 90 .
+
+netlinx:cancel_all_wait_statement a owl:Class ;
+    rdfs:label "cancel_all_wait_statement" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 768 .
+
+netlinx:cancel_all_wait_until_keyword a owl:Class ;
+    rdfs:label "cancel_all_wait_until_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 91 .
+
+netlinx:cancel_all_wait_until_statement a owl:Class ;
+    rdfs:label "cancel_all_wait_until_statement" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 769 .
+
+netlinx:cancel_wait_keyword a owl:Class ;
+    rdfs:label "cancel_wait_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 87 .
+
+netlinx:cancel_wait_statement a owl:Class ;
+    rdfs:label "cancel_wait_statement" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 770 .
+
+netlinx:cancel_wait_until_keyword a owl:Class ;
+    rdfs:label "cancel_wait_until_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 89 .
+
+netlinx:cancel_wait_until_statement a owl:Class ;
+    rdfs:label "cancel_wait_until_statement" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 771 .
+
+netlinx:case_keyword a owl:Class ;
+    rdfs:label "case_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 43 .
+
+netlinx:case_statement a owl:Class ;
+    rdfs:label "case_statement" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 749 .
+
+netlinx:channel a owl:Class ;
+    rdfs:label "channel" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 339 .
+
+netlinx:channel_event_block a owl:Class ;
+    rdfs:label "channel_event_block" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 692 .
+
+netlinx:channel_event_declarator a owl:Class ;
+    rdfs:label "channel_event_declarator" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 690 .
+
+netlinx:channel_event_definition a owl:Class ;
+    rdfs:label "channel_event_definition" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 688 .
+
+netlinx:channel_event_devchan_reference a owl:Class ;
+    rdfs:label "channel_event_devchan_reference" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 691 .
+
+netlinx:channel_event_handler a owl:Class ;
+    rdfs:label "channel_event_handler" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 694 .
+
+netlinx:channel_event_keyword a owl:Class ;
+    rdfs:label "channel_event_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 56 .
+
+netlinx:channel_event_type a owl:Class ;
+    rdfs:label "channel_event_type" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 695 .
+
+netlinx:char_keyword a owl:Class ;
+    rdfs:label "char_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 21 .
+
+netlinx:clear_buffer_keyword a owl:Class ;
+    rdfs:label "clear_buffer_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 77 .
+
+netlinx:clear_buffer_statement a owl:Class ;
+    rdfs:label "clear_buffer_statement" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 765 .
+
+netlinx:clkmgr_add_userdefined_timeserver a owl:Class ;
+    rdfs:label "clkmgr_add_userdefined_timeserver" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 478 .
+
+netlinx:clkmgr_delete_userdefined_timeserver a owl:Class ;
+    rdfs:label "clkmgr_delete_userdefined_timeserver" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 479 .
+
+netlinx:clkmgr_get_active_timeserver a owl:Class ;
+    rdfs:label "clkmgr_get_active_timeserver" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 475 .
+
+netlinx:clkmgr_get_daylightsavings_offset a owl:Class ;
+    rdfs:label "clkmgr_get_daylightsavings_offset" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 473 .
+
+netlinx:clkmgr_get_end_daylightsavings_rule a owl:Class ;
+    rdfs:label "clkmgr_get_end_daylightsavings_rule" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 482 .
+
+netlinx:clkmgr_get_resync_period a owl:Class ;
+    rdfs:label "clkmgr_get_resync_period" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 471 .
+
+netlinx:clkmgr_get_start_daylightsavings_rule a owl:Class ;
+    rdfs:label "clkmgr_get_start_daylightsavings_rule" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 480 .
+
+netlinx:clkmgr_get_timeservers a owl:Class ;
+    rdfs:label "clkmgr_get_timeservers" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 477 .
+
+netlinx:clkmgr_get_timezone a owl:Class ;
+    rdfs:label "clkmgr_get_timezone" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 469 .
+
+netlinx:clkmgr_is_daylightsavings_on a owl:Class ;
+    rdfs:label "clkmgr_is_daylightsavings_on" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 467 .
+
+netlinx:clkmgr_is_network_sourced a owl:Class ;
+    rdfs:label "clkmgr_is_network_sourced" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 465 .
+
+netlinx:clkmgr_mode_network a owl:Class ;
+    rdfs:label "clkmgr_mode_network" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 215 .
+
+netlinx:clkmgr_mode_standalone a owl:Class ;
+    rdfs:label "clkmgr_mode_standalone" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 216 .
+
+netlinx:clkmgr_set_active_timeserver a owl:Class ;
+    rdfs:label "clkmgr_set_active_timeserver" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 476 .
+
+netlinx:clkmgr_set_clk_source a owl:Class ;
+    rdfs:label "clkmgr_set_clk_source" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 466 .
+
+netlinx:clkmgr_set_daylightsavings_mode a owl:Class ;
+    rdfs:label "clkmgr_set_daylightsavings_mode" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 468 .
+
+netlinx:clkmgr_set_daylightsavings_offset a owl:Class ;
+    rdfs:label "clkmgr_set_daylightsavings_offset" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 474 .
+
+netlinx:clkmgr_set_end_daylightsavings_rule a owl:Class ;
+    rdfs:label "clkmgr_set_end_daylightsavings_rule" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 483 .
+
+netlinx:clkmgr_set_resync_period a owl:Class ;
+    rdfs:label "clkmgr_set_resync_period" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 472 .
+
+netlinx:clkmgr_set_start_daylightsavings_rule a owl:Class ;
+    rdfs:label "clkmgr_set_start_daylightsavings_rule" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 481 .
+
+netlinx:clkmgr_set_timezone a owl:Class ;
+    rdfs:label "clkmgr_set_timezone" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 470 .
+
+netlinx:clkmgr_timeserver_struct a owl:Class ;
+    rdfs:label "clkmgr_timeserver_struct" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 310 .
+
+netlinx:code a owl:DatatypeProperty ;
+    rdfs:label "code (literal)" ;
+    rdfs:comment "Literal value for code field when it contains a terminal node" ;
+    netlinx:fieldId 7 ;
+    netlinx:isTerminalField true .
+
+netlinx:comma_expression a owl:Class ;
+    rdfs:label "comma_expression" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 786 .
+
+netlinx:command_keyword a owl:Class ;
+    rdfs:label "command_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 71 .
+
+netlinx:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 584 .
+
+netlinx:compare_string a owl:Class ;
+    rdfs:label "compare_string" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 359 .
+
+netlinx:compiler_variable a owl:Class ;
+    rdfs:label "compiler_variable" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 775 .
+
+netlinx:compound_statement a owl:Class ;
+    rdfs:label "compound_statement" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 712 .
+
+netlinx:configuration_priv a owl:Class ;
+    rdfs:label "configuration_priv" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 272 .
+
+netlinx:constant_keyword a owl:Class ;
+    rdfs:label "constant_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 33 .
+
+netlinx:continue_keyword a owl:Class ;
+    rdfs:label "continue_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 49 .
+
+netlinx:continue_statement a owl:Class ;
+    rdfs:label "continue_statement" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 757 .
+
+netlinx:create_buffer_keyword a owl:Class ;
+    rdfs:label "create_buffer_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 78 .
+
+netlinx:create_buffer_statement a owl:Class ;
+    rdfs:label "create_buffer_statement" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 763 .
+
+netlinx:create_multi_buffer_keyword a owl:Class ;
+    rdfs:label "create_multi_buffer_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 79 .
+
+netlinx:create_multi_buffer_statement a owl:Class ;
+    rdfs:label "create_multi_buffer_statement" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 764 .
+
+netlinx:custom a owl:Class ;
+    rdfs:label "custom" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 340 .
+
+netlinx:custom_event_declarator a owl:Class ;
+    rdfs:label "custom_event_declarator" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 698 .
+
+netlinx:custom_event_definition a owl:Class ;
+    rdfs:label "custom_event_definition" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 696 .
+
+netlinx:custom_event_keyword a owl:Class ;
+    rdfs:label "custom_event_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 60 .
+
+netlinx:custom_event_reference a owl:Class ;
+    rdfs:label "custom_event_reference" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 699 .
+
+netlinx:data a owl:Class ;
+    rdfs:label "data" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 336 .
+
+netlinx:data_add_record a owl:Class ;
+    rdfs:label "data_add_record" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 501 .
+
+netlinx:data_create_feed a owl:Class ;
+    rdfs:label "data_create_feed" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 497 .
+
+netlinx:data_delete_feed a owl:Class ;
+    rdfs:label "data_delete_feed" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 498 .
+
+netlinx:data_event_block a owl:Class ;
+    rdfs:label "data_event_block" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 667 .
+
+netlinx:data_event_declarator a owl:Class ;
+    rdfs:label "data_event_declarator" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 665 .
+
+netlinx:data_event_definition a owl:Class ;
+    rdfs:label "data_event_definition" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 663 .
+
+netlinx:data_event_device_reference a owl:Class ;
+    rdfs:label "data_event_device_reference" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 666 .
+
+netlinx:data_event_handler a owl:Class ;
+    rdfs:label "data_event_handler" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 669 .
+
+netlinx:data_event_keyword a owl:Class ;
+    rdfs:label "data_event_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 58 .
+
+netlinx:data_event_type a owl:Class ;
+    rdfs:label "data_event_type" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 670 .
+
+netlinx:data_feed a owl:Class ;
+    rdfs:label "data_feed" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 311 .
+
+netlinx:data_field a owl:Class ;
+    rdfs:label "data_field" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 312 .
+
+netlinx:data_format_email a owl:Class ;
+    rdfs:label "data_format_email" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 269 .
+
+netlinx:data_format_iso8601 a owl:Class ;
+    rdfs:label "data_format_iso8601" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 270 .
+
+netlinx:data_format_phone a owl:Class ;
+    rdfs:label "data_format_phone" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 268 .
+
+netlinx:data_format_url a owl:Class ;
+    rdfs:label "data_format_url" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 267 .
+
+netlinx:data_get_event_record a owl:Class ;
+    rdfs:label "data_get_event_record" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 502 .
+
+netlinx:data_get_published_feed a owl:Class ;
+    rdfs:label "data_get_published_feed" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 500 .
+
+netlinx:data_max_content_field_count a owl:Class ;
+    rdfs:label "data_max_content_field_count" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 249 .
+
+netlinx:data_max_description_length a owl:Class ;
+    rdfs:label "data_max_description_length" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 253 .
+
+netlinx:data_max_format_length a owl:Class ;
+    rdfs:label "data_max_format_length" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 255 .
+
+netlinx:data_max_id_length a owl:Class ;
+    rdfs:label "data_max_id_length" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 251 .
+
+netlinx:data_max_label_length a owl:Class ;
+    rdfs:label "data_max_label_length" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 258 .
+
+netlinx:data_max_metadata_field_count a owl:Class ;
+    rdfs:label "data_max_metadata_field_count" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 250 .
+
+netlinx:data_max_name_length a owl:Class ;
+    rdfs:label "data_max_name_length" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 252 .
+
+netlinx:data_max_source_length a owl:Class ;
+    rdfs:label "data_max_source_length" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 256 .
+
+netlinx:data_max_type_length a owl:Class ;
+    rdfs:label "data_max_type_length" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 254 .
+
+netlinx:data_max_url_length a owl:Class ;
+    rdfs:label "data_max_url_length" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 259 .
+
+netlinx:data_max_value_length a owl:Class ;
+    rdfs:label "data_max_value_length" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 257 .
+
+netlinx:data_publish_feed a owl:Class ;
+    rdfs:label "data_publish_feed" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 499 .
+
+netlinx:data_record a owl:Class ;
+    rdfs:label "data_record" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 313 .
+
+netlinx:data_structure_datafeed a owl:Class ;
+    rdfs:label "data_structure_datafeed" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 245 .
+
+netlinx:data_structure_datafield a owl:Class ;
+    rdfs:label "data_structure_datafield" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 248 .
+
+netlinx:data_structure_datarecord a owl:Class ;
+    rdfs:label "data_structure_datarecord" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 247 .
+
+netlinx:data_structure_datarecordset a owl:Class ;
+    rdfs:label "data_structure_datarecordset" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 246 .
+
+netlinx:data_structure_unknown a owl:Class ;
+    rdfs:label "data_structure_unknown" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 244 .
+
+netlinx:data_type_date a owl:Class ;
+    rdfs:label "data_type_date" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 264 .
+
+netlinx:data_type_datetime a owl:Class ;
+    rdfs:label "data_type_datetime" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 263 .
+
+netlinx:data_type_image a owl:Class ;
+    rdfs:label "data_type_image" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 266 .
+
+netlinx:data_type_string a owl:Class ;
+    rdfs:label "data_type_string" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 262 .
+
+netlinx:data_type_time a owl:Class ;
+    rdfs:label "data_type_time" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 265 .
+
+netlinx:data_type_unknown a owl:Class ;
+    rdfs:label "data_type_unknown" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 261 .
+
+netlinx:date a owl:Class ;
+    rdfs:label "date" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 319 .
+
+netlinx:date_to_day a owl:Class ;
+    rdfs:label "date_to_day" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 363 .
+
+netlinx:date_to_month a owl:Class ;
+    rdfs:label "date_to_month" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 364 .
+
+netlinx:date_to_year a owl:Class ;
+    rdfs:label "date_to_year" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 365 .
+
+netlinx:day a owl:Class ;
+    rdfs:label "day" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 320 .
+
+netlinx:day_of_week a owl:Class ;
+    rdfs:label "day_of_week" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 369 .
+
+netlinx:declaration a owl:Class ;
+    rdfs:label "declaration" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 728 .
+
+netlinx:default_keyword a owl:Class ;
+    rdfs:label "default_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 44 .
+
+netlinx:define_call a owl:Class ;
+    rdfs:label "define_call" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 659 .
+
+netlinx:define_call_keyword a owl:Class ;
+    rdfs:label "define_call_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 14 .
+
+netlinx:define_combine_keyword a owl:Class ;
+    rdfs:label "define_combine_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 5 .
+
+netlinx:define_combine_section a owl:Class ;
+    rdfs:label "define_combine_section" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 646 .
+
+netlinx:define_connect_level_keyword a owl:Class ;
+    rdfs:label "define_connect_level_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 10 .
+
+netlinx:define_connect_level_section a owl:Class ;
+    rdfs:label "define_connect_level_section" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 647 .
+
+netlinx:define_constant_keyword a owl:Class ;
+    rdfs:label "define_constant_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 6 .
+
+netlinx:define_constant_section a owl:Class ;
+    rdfs:label "define_constant_section" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 648 .
+
+netlinx:define_device_keyword a owl:Class ;
+    rdfs:label "define_device_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 4 .
+
+netlinx:define_device_section a owl:Class ;
+    rdfs:label "define_device_section" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 645 .
+
+netlinx:define_event_keyword a owl:Class ;
+    rdfs:label "define_event_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 18 .
+
+netlinx:define_event_section a owl:Class ;
+    rdfs:label "define_event_section" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 655 .
+
+netlinx:define_function a owl:Class ;
+    rdfs:label "define_function" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 658 .
+
+netlinx:define_function_keyword a owl:Class ;
+    rdfs:label "define_function_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 15 .
+
+netlinx:define_latching_keyword a owl:Class ;
+    rdfs:label "define_latching_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 11 .
+
+netlinx:define_latching_section a owl:Class ;
+    rdfs:label "define_latching_section" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 651 .
+
+netlinx:define_library_function_keyword a owl:Class ;
+    rdfs:label "define_library_function_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 16 .
+
+netlinx:define_module a owl:Class ;
+    rdfs:label "define_module" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 660 .
+
+netlinx:define_module_keyword a owl:Class ;
+    rdfs:label "define_module_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 20 .
+
+netlinx:define_mutually_exclusive_keyword a owl:Class ;
+    rdfs:label "define_mutually_exclusive_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 12 .
+
+netlinx:define_mutually_exclusive_section a owl:Class ;
+    rdfs:label "define_mutually_exclusive_section" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 650 .
+
+netlinx:define_program_keyword a owl:Class ;
+    rdfs:label "define_program_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 19 .
+
+netlinx:define_program_section a owl:Class ;
+    rdfs:label "define_program_section" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 657 .
+
+netlinx:define_start_keyword a owl:Class ;
+    rdfs:label "define_start_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 17 .
+
+netlinx:define_start_section a owl:Class ;
+    rdfs:label "define_start_section" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 656 .
+
+netlinx:define_system_variable_keyword a owl:Class ;
+    rdfs:label "define_system_variable_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 9 .
+
+netlinx:define_system_variable_section a owl:Class ;
+    rdfs:label "define_system_variable_section" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 654 .
+
+netlinx:define_toggling_keyword a owl:Class ;
+    rdfs:label "define_toggling_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 13 .
+
+netlinx:define_toggling_section a owl:Class ;
+    rdfs:label "define_toggling_section" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 652 .
+
+netlinx:define_type_keyword a owl:Class ;
+    rdfs:label "define_type_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 7 .
+
+netlinx:define_type_section a owl:Class ;
+    rdfs:label "define_type_section" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 649 .
+
+netlinx:define_variable_keyword a owl:Class ;
+    rdfs:label "define_variable_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 8 .
+
+netlinx:define_variable_section a owl:Class ;
+    rdfs:label "define_variable_section" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 653 .
+
+netlinx:delete_url_entry a owl:Class ;
+    rdfs:label "delete_url_entry" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 448 .
+
+netlinx:dev_info_struct a owl:Class ;
+    rdfs:label "dev_info_struct" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 309 .
+
+netlinx:dev_keyword a owl:Class ;
+    rdfs:label "dev_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 37 .
+
+netlinx:devchan_expression a owl:Class ;
+    rdfs:label "devchan_expression" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 791 .
+
+netlinx:devchan_keyword a owl:Class ;
+    rdfs:label "devchan_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 39 .
+
+netlinx:devchan_min_to_keyword a owl:Class ;
+    rdfs:label "devchan_min_to_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 83 .
+
+netlinx:devchan_off_keyword a owl:Class ;
+    rdfs:label "devchan_off_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 592 .
+
+netlinx:devchan_on_keyword a owl:Class ;
+    rdfs:label "devchan_on_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 591 .
+
+netlinx:devchan_operation a owl:Class ;
+    rdfs:label "devchan_operation" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 759 .
+
+netlinx:devchan_operation_statement a owl:Class ;
+    rdfs:label "devchan_operation_statement" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 758 .
+
+netlinx:devchan_pulse_keyword a owl:Class ;
+    rdfs:label "devchan_pulse_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 85 .
+
+netlinx:devchan_range_expression a owl:Class ;
+    rdfs:label "devchan_range_expression" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 792 .
+
+netlinx:devchan_to_keyword a owl:Class ;
+    rdfs:label "devchan_to_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 82 .
+
+netlinx:devchan_total_off_keyword a owl:Class ;
+    rdfs:label "devchan_total_off_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 84 .
+
+netlinx:device_id a owl:Class ;
+    rdfs:label "device_id" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 404 .
+
+netlinx:device_id_string a owl:Class ;
+    rdfs:label "device_id_string" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 406 .
+
+netlinx:device_info a owl:Class ;
+    rdfs:label "device_info" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 405 .
+
+netlinx:device_literal a owl:Class ;
+    rdfs:label "device_literal" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 795 .
+
+netlinx:device_standby a owl:Class ;
+    rdfs:label "device_standby" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 407 .
+
+netlinx:device_wake a owl:Class ;
+    rdfs:label "device_wake" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 408 .
+
+netlinx:deviceconfig_priv a owl:Class ;
+    rdfs:label "deviceconfig_priv" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 273 .
+
+netlinx:devlev_expression a owl:Class ;
+    rdfs:label "devlev_expression" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 790 .
+
+netlinx:devlev_keyword a owl:Class ;
+    rdfs:label "devlev_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 38 .
+
+netlinx:dns_struct a owl:Class ;
+    rdfs:label "dns_struct" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 307 .
+
+netlinx:do_custom_event a owl:Class ;
+    rdfs:label "do_custom_event" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 464 .
+
+netlinx:do_push a owl:Class ;
+    rdfs:label "do_push" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 401 .
+
+netlinx:do_push_timed a owl:Class ;
+    rdfs:label "do_push_timed" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 402 .
+
+netlinx:do_push_timed_infinite a owl:Class ;
+    rdfs:label "do_push_timed_infinite" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 127 .
+
+netlinx:do_release a owl:Class ;
+    rdfs:label "do_release" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 403 .
+
+netlinx:double_keyword a owl:Class ;
+    rdfs:label "double_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 28 .
+
+netlinx:duet_dev_not_polled a owl:Class ;
+    rdfs:label "duet_dev_not_polled" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 213 .
+
+netlinx:duet_dev_polled a owl:Class ;
+    rdfs:label "duet_dev_polled" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 214 .
+
+netlinx:duet_dev_type_amplifier a owl:Class ;
+    rdfs:label "duet_dev_type_amplifier" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 175 .
+
+netlinx:duet_dev_type_audio_conferencer a owl:Class ;
+    rdfs:label "duet_dev_type_audio_conferencer" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 176 .
+
+netlinx:duet_dev_type_audio_mixer a owl:Class ;
+    rdfs:label "duet_dev_type_audio_mixer" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 177 .
+
+netlinx:duet_dev_type_audio_processor a owl:Class ;
+    rdfs:label "duet_dev_type_audio_processor" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 178 .
+
+netlinx:duet_dev_type_audio_tape a owl:Class ;
+    rdfs:label "duet_dev_type_audio_tape" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 188 .
+
+netlinx:duet_dev_type_audio_tuner_device a owl:Class ;
+    rdfs:label "duet_dev_type_audio_tuner_device" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 179 .
+
+netlinx:duet_dev_type_camera a owl:Class ;
+    rdfs:label "duet_dev_type_camera" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 180 .
+
+netlinx:duet_dev_type_digital_media_decoder a owl:Class ;
+    rdfs:label "duet_dev_type_digital_media_decoder" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 182 .
+
+netlinx:duet_dev_type_digital_media_encoder a owl:Class ;
+    rdfs:label "duet_dev_type_digital_media_encoder" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 181 .
+
+netlinx:duet_dev_type_digital_media_server a owl:Class ;
+    rdfs:label "duet_dev_type_digital_media_server" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 183 .
+
+netlinx:duet_dev_type_disc_device a owl:Class ;
+    rdfs:label "duet_dev_type_disc_device" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 186 .
+
+netlinx:duet_dev_type_display_device a owl:Class ;
+    rdfs:label "duet_dev_type_display_device" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 169 .
+
+netlinx:duet_dev_type_document_camera a owl:Class ;
+    rdfs:label "duet_dev_type_document_camera" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 187 .
+
+netlinx:duet_dev_type_dss a owl:Class ;
+    rdfs:label "duet_dev_type_dss" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 184 .
+
+netlinx:duet_dev_type_dvr a owl:Class ;
+    rdfs:label "duet_dev_type_dvr" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 185 .
+
+netlinx:duet_dev_type_hvac a owl:Class ;
+    rdfs:label "duet_dev_type_hvac" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 189 .
+
+netlinx:duet_dev_type_io_device a owl:Class ;
+    rdfs:label "duet_dev_type_io_device" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 172 .
+
+netlinx:duet_dev_type_keypad a owl:Class ;
+    rdfs:label "duet_dev_type_keypad" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 190 .
+
+netlinx:duet_dev_type_light a owl:Class ;
+    rdfs:label "duet_dev_type_light" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 191 .
+
+netlinx:duet_dev_type_lightsystem_device a owl:Class ;
+    rdfs:label "duet_dev_type_lightsystem_device" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 171 .
+
+netlinx:duet_dev_type_monitor a owl:Class ;
+    rdfs:label "duet_dev_type_monitor" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 192 .
+
+netlinx:duet_dev_type_motor a owl:Class ;
+    rdfs:label "duet_dev_type_motor" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 193 .
+
+netlinx:duet_dev_type_multi_window a owl:Class ;
+    rdfs:label "duet_dev_type_multi_window" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 194 .
+
+netlinx:duet_dev_type_pool_spa a owl:Class ;
+    rdfs:label "duet_dev_type_pool_spa" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 195 .
+
+netlinx:duet_dev_type_preamp_surround_sound_processor a owl:Class ;
+    rdfs:label "duet_dev_type_preamp_surround_sound_processor" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 196 .
+
+netlinx:duet_dev_type_receiver a owl:Class ;
+    rdfs:label "duet_dev_type_receiver" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 197 .
+
+netlinx:duet_dev_type_relay_device a owl:Class ;
+    rdfs:label "duet_dev_type_relay_device" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 173 .
+
+netlinx:duet_dev_type_rfidsystem_device a owl:Class ;
+    rdfs:label "duet_dev_type_rfidsystem_device" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 170 .
+
+netlinx:duet_dev_type_security_system a owl:Class ;
+    rdfs:label "duet_dev_type_security_system" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 198 .
+
+netlinx:duet_dev_type_sensor_device a owl:Class ;
+    rdfs:label "duet_dev_type_sensor_device" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 199 .
+
+netlinx:duet_dev_type_settop_box a owl:Class ;
+    rdfs:label "duet_dev_type_settop_box" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 200 .
+
+netlinx:duet_dev_type_slide_projector a owl:Class ;
+    rdfs:label "duet_dev_type_slide_projector" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 201 .
+
+netlinx:duet_dev_type_switcher a owl:Class ;
+    rdfs:label "duet_dev_type_switcher" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 202 .
+
+netlinx:duet_dev_type_text_keypad a owl:Class ;
+    rdfs:label "duet_dev_type_text_keypad" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 203 .
+
+netlinx:duet_dev_type_tv a owl:Class ;
+    rdfs:label "duet_dev_type_tv" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 204 .
+
+netlinx:duet_dev_type_ups a owl:Class ;
+    rdfs:label "duet_dev_type_ups" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 174 .
+
+netlinx:duet_dev_type_utility a owl:Class ;
+    rdfs:label "duet_dev_type_utility" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 205 .
+
+netlinx:duet_dev_type_vcr a owl:Class ;
+    rdfs:label "duet_dev_type_vcr" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 206 .
+
+netlinx:duet_dev_type_video_conferencer a owl:Class ;
+    rdfs:label "duet_dev_type_video_conferencer" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 207 .
+
+netlinx:duet_dev_type_video_processor a owl:Class ;
+    rdfs:label "duet_dev_type_video_processor" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 208 .
+
+netlinx:duet_dev_type_video_projector a owl:Class ;
+    rdfs:label "duet_dev_type_video_projector" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 209 .
+
+netlinx:duet_dev_type_video_wall a owl:Class ;
+    rdfs:label "duet_dev_type_video_wall" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 210 .
+
+netlinx:duet_dev_type_volume_controller a owl:Class ;
+    rdfs:label "duet_dev_type_volume_controller" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 211 .
+
+netlinx:duet_dev_type_weather a owl:Class ;
+    rdfs:label "duet_dev_type_weather" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 212 .
+
+netlinx:duet_mem_size_get a owl:Class ;
+    rdfs:label "duet_mem_size_get" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 437 .
+
+netlinx:duet_mem_size_set a owl:Class ;
+    rdfs:label "duet_mem_size_set" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 436 .
+
+netlinx:dv_channel a owl:Class ;
+    rdfs:label "dv_channel" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 335 .
+
+netlinx:dynamic_application_device a owl:Class ;
+    rdfs:label "dynamic_application_device" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 438 .
+
+netlinx:dynamic_polled_port a owl:Class ;
+    rdfs:label "dynamic_polled_port" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 439 .
+
+netlinx:dynamic_virtual_device a owl:Class ;
+    rdfs:label "dynamic_virtual_device" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 122 .
+
+netlinx:else_clause a owl:Class ;
+    rdfs:label "else_clause" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 747 .
+
+netlinx:else_keyword a owl:Class ;
+    rdfs:label "else_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 41 .
+
+netlinx:err_authentication_error a owl:Class ;
+    rdfs:label "err_authentication_error" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 297 .
+
+netlinx:err_general_error a owl:Class ;
+    rdfs:label "err_general_error" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 296 .
+
+netlinx:err_invalid_account a owl:Class ;
+    rdfs:label "err_invalid_account" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 291 .
+
+netlinx:err_invalid_parameter a owl:Class ;
+    rdfs:label "err_invalid_parameter" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 293 .
+
+netlinx:err_name_invalid a owl:Class ;
+    rdfs:label "err_name_invalid" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 289 .
+
+netlinx:err_no_authorization a owl:Class ;
+    rdfs:label "err_no_authorization" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 292 .
+
+netlinx:err_password_invalid a owl:Class ;
+    rdfs:label "err_password_invalid" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 290 .
+
+netlinx:err_user_account_expired a owl:Class ;
+    rdfs:label "err_user_account_expired" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 295 .
+
+netlinx:err_user_locked_out a owl:Class ;
+    rdfs:label "err_user_locked_out" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 294 .
+
+netlinx:escape_sequence a owl:Class ;
+    rdfs:label "escape_sequence" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 582 .
+
+netlinx:event_definition a owl:Class ;
+    rdfs:label "event_definition" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 662 .
+
+netlinx:exp_value a owl:Class ;
+    rdfs:label "exp_value" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 452 .
+
+netlinx:expression_statement a owl:Class ;
+    rdfs:label "expression_statement" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 745 .
+
+netlinx:false a owl:Class ;
+    rdfs:label "false" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 157 .
+
+netlinx:field a owl:DatatypeProperty ;
+    rdfs:label "field (literal)" ;
+    rdfs:comment "Literal value for field field when it contains a terminal node" ;
+    netlinx:fieldId 16 ;
+    netlinx:isTerminalField true .
+
+netlinx:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+netlinx:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+netlinx:field_alternative a owl:ObjectProperty ;
+    rdfs:label "alternative (structural)" ;
+    rdfs:comment "Structural reference for alternative field when it contains a non-terminal node" ;
+    netlinx:fieldId 1 .
+
+netlinx:field_argument a owl:ObjectProperty ;
+    rdfs:label "argument (structural)" ;
+    rdfs:comment "Structural reference for argument field when it contains a non-terminal node" ;
+    netlinx:fieldId 2 .
+
+netlinx:field_arguments a owl:ObjectProperty ;
+    rdfs:label "arguments (structural)" ;
+    rdfs:comment "Structural reference for arguments field when it contains a non-terminal node" ;
+    netlinx:fieldId 3 .
+
+netlinx:field_body a owl:ObjectProperty ;
+    rdfs:label "body (structural)" ;
+    rdfs:comment "Structural reference for body field when it contains a non-terminal node" ;
+    netlinx:fieldId 4 .
+
+netlinx:field_call a owl:ObjectProperty ;
+    rdfs:label "call (structural)" ;
+    rdfs:comment "Structural reference for call field when it contains a non-terminal node" ;
+    netlinx:fieldId 5 .
+
+netlinx:field_channel a owl:ObjectProperty ;
+    rdfs:label "channel (structural)" ;
+    rdfs:comment "Structural reference for channel field when it contains a non-terminal node" ;
+    netlinx:fieldId 6 .
+
+netlinx:field_condition a owl:ObjectProperty ;
+    rdfs:label "condition (structural)" ;
+    rdfs:comment "Structural reference for condition field when it contains a non-terminal node" ;
+    netlinx:fieldId 8 .
+
+netlinx:field_consequence a owl:ObjectProperty ;
+    rdfs:label "consequence (structural)" ;
+    rdfs:comment "Structural reference for consequence field when it contains a non-terminal node" ;
+    netlinx:fieldId 9 .
+
+netlinx:field_declaration a owl:Class ;
+    rdfs:label "field_declaration" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 719 .
+
+netlinx:field_declaration_list a owl:Class ;
+    rdfs:label "field_declaration_list" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 717 .
+
+netlinx:field_declarator a owl:ObjectProperty ;
+    rdfs:label "declarator (structural)" ;
+    rdfs:comment "Structural reference for declarator field when it contains a non-terminal node" ;
+    netlinx:fieldId 10 .
+
+netlinx:field_devchan a owl:ObjectProperty ;
+    rdfs:label "devchan (structural)" ;
+    rdfs:comment "Structural reference for devchan field when it contains a non-terminal node" ;
+    netlinx:fieldId 11 .
+
+netlinx:field_device a owl:ObjectProperty ;
+    rdfs:label "device (structural)" ;
+    rdfs:comment "Structural reference for device field when it contains a non-terminal node" ;
+    netlinx:fieldId 12 .
+
+netlinx:field_devlev a owl:ObjectProperty ;
+    rdfs:label "devlev (structural)" ;
+    rdfs:comment "Structural reference for devlev field when it contains a non-terminal node" ;
+    netlinx:fieldId 13 .
+
+netlinx:field_end a owl:ObjectProperty ;
+    rdfs:label "end (structural)" ;
+    rdfs:comment "Structural reference for end field when it contains a non-terminal node" ;
+    netlinx:fieldId 14 .
+
+netlinx:field_eventid a owl:ObjectProperty ;
+    rdfs:label "eventid (structural)" ;
+    rdfs:comment "Structural reference for eventid field when it contains a non-terminal node" ;
+    netlinx:fieldId 15 .
+
+netlinx:field_expression a owl:Class ;
+    rdfs:label "field_expression" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 788 .
+
+netlinx:field_function a owl:ObjectProperty ;
+    rdfs:label "function (structural)" ;
+    rdfs:comment "Structural reference for function field when it contains a non-terminal node" ;
+    netlinx:fieldId 17 .
+
+netlinx:field_id a owl:ObjectProperty ;
+    rdfs:label "id (structural)" ;
+    rdfs:comment "Structural reference for id field when it contains a non-terminal node" ;
+    netlinx:fieldId 18 .
+
+netlinx:field_identifier a owl:Class ;
+    rdfs:label "field_identifier" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 843 .
+
+netlinx:field_index a owl:ObjectProperty ;
+    rdfs:label "index (structural)" ;
+    rdfs:comment "Structural reference for index field when it contains a non-terminal node" ;
+    netlinx:fieldId 19 .
+
+netlinx:field_initializer a owl:ObjectProperty ;
+    rdfs:label "initializer (structural)" ;
+    rdfs:comment "Structural reference for initializer field when it contains a non-terminal node" ;
+    netlinx:fieldId 20 .
+
+netlinx:field_instance_name a owl:ObjectProperty ;
+    rdfs:label "instance_name (structural)" ;
+    rdfs:comment "Structural reference for instance_name field when it contains a non-terminal node" ;
+    netlinx:fieldId 21 .
+
+netlinx:field_left a owl:ObjectProperty ;
+    rdfs:label "left (structural)" ;
+    rdfs:comment "Structural reference for left field when it contains a non-terminal node" ;
+    netlinx:fieldId 22 .
+
+netlinx:field_level a owl:ObjectProperty ;
+    rdfs:label "level (structural)" ;
+    rdfs:comment "Structural reference for level field when it contains a non-terminal node" ;
+    netlinx:fieldId 23 .
+
+netlinx:field_local_declarations a owl:ObjectProperty ;
+    rdfs:label "local_declarations (structural)" ;
+    rdfs:comment "Structural reference for local_declarations field when it contains a non-terminal node" ;
+    netlinx:fieldId 24 .
+
+netlinx:field_message a owl:ObjectProperty ;
+    rdfs:label "message (structural)" ;
+    rdfs:comment "Structural reference for message field when it contains a non-terminal node" ;
+    netlinx:fieldId 25 .
+
+netlinx:field_module_name a owl:ObjectProperty ;
+    rdfs:label "module_name (structural)" ;
+    rdfs:comment "Structural reference for module_name field when it contains a non-terminal node" ;
+    netlinx:fieldId 26 .
+
+netlinx:field_name a owl:ObjectProperty ;
+    rdfs:label "name (structural)" ;
+    rdfs:comment "Structural reference for name field when it contains a non-terminal node" ;
+    netlinx:fieldId 27 .
+
+netlinx:field_operation a owl:ObjectProperty ;
+    rdfs:label "operation (structural)" ;
+    rdfs:comment "Structural reference for operation field when it contains a non-terminal node" ;
+    netlinx:fieldId 28 .
+
+netlinx:field_operator a owl:ObjectProperty ;
+    rdfs:label "operator (structural)" ;
+    rdfs:comment "Structural reference for operator field when it contains a non-terminal node" ;
+    netlinx:fieldId 29 .
+
+netlinx:field_parameters a owl:ObjectProperty ;
+    rdfs:label "parameters (structural)" ;
+    rdfs:comment "Structural reference for parameters field when it contains a non-terminal node" ;
+    netlinx:fieldId 30 .
+
+netlinx:field_path a owl:ObjectProperty ;
+    rdfs:label "path (structural)" ;
+    rdfs:comment "Structural reference for path field when it contains a non-terminal node" ;
+    netlinx:fieldId 31 .
+
+netlinx:field_port a owl:ObjectProperty ;
+    rdfs:label "port (structural)" ;
+    rdfs:comment "Structural reference for port field when it contains a non-terminal node" ;
+    netlinx:fieldId 32 .
+
+netlinx:field_reference a owl:ObjectProperty ;
+    rdfs:label "reference (structural)" ;
+    rdfs:comment "Structural reference for reference field when it contains a non-terminal node" ;
+    netlinx:fieldId 33 .
+
+netlinx:field_return_type a owl:ObjectProperty ;
+    rdfs:label "return_type (structural)" ;
+    rdfs:comment "Structural reference for return_type field when it contains a non-terminal node" ;
+    netlinx:fieldId 34 .
+
+netlinx:field_right a owl:ObjectProperty ;
+    rdfs:label "right (structural)" ;
+    rdfs:comment "Structural reference for right field when it contains a non-terminal node" ;
+    netlinx:fieldId 35 .
+
+netlinx:field_size a owl:ObjectProperty ;
+    rdfs:label "size (structural)" ;
+    rdfs:comment "Structural reference for size field when it contains a non-terminal node" ;
+    netlinx:fieldId 36 .
+
+netlinx:field_start a owl:ObjectProperty ;
+    rdfs:label "start (structural)" ;
+    rdfs:comment "Structural reference for start field when it contains a non-terminal node" ;
+    netlinx:fieldId 37 .
+
+netlinx:field_system a owl:ObjectProperty ;
+    rdfs:label "system (structural)" ;
+    rdfs:comment "Structural reference for system field when it contains a non-terminal node" ;
+    netlinx:fieldId 38 .
+
+netlinx:field_target a owl:ObjectProperty ;
+    rdfs:label "target (structural)" ;
+    rdfs:comment "Structural reference for target field when it contains a non-terminal node" ;
+    netlinx:fieldId 39 .
+
+netlinx:field_time a owl:ObjectProperty ;
+    rdfs:label "time (structural)" ;
+    rdfs:comment "Structural reference for time field when it contains a non-terminal node" ;
+    netlinx:fieldId 40 .
+
+netlinx:field_type a owl:ObjectProperty ;
+    rdfs:label "type (structural)" ;
+    rdfs:comment "Structural reference for type field when it contains a non-terminal node" ;
+    netlinx:fieldId 41 .
+
+netlinx:field_update a owl:ObjectProperty ;
+    rdfs:label "update (structural)" ;
+    rdfs:comment "Structural reference for update field when it contains a non-terminal node" ;
+    netlinx:fieldId 42 .
+
+netlinx:field_value a owl:ObjectProperty ;
+    rdfs:label "value (structural)" ;
+    rdfs:comment "Structural reference for value field when it contains a non-terminal node" ;
+    netlinx:fieldId 43 .
+
+netlinx:file_close a owl:Class ;
+    rdfs:label "file_close" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 373 .
+
+netlinx:file_copy a owl:Class ;
+    rdfs:label "file_copy" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 378 .
+
+netlinx:file_create_dir a owl:Class ;
+    rdfs:label "file_create_dir" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 384 .
+
+netlinx:file_delete a owl:Class ;
+    rdfs:label "file_delete" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 379 .
+
+netlinx:file_dir a owl:Class ;
+    rdfs:label "file_dir" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 381 .
+
+netlinx:file_getdir a owl:Class ;
+    rdfs:label "file_getdir" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 382 .
+
+netlinx:file_open a owl:Class ;
+    rdfs:label "file_open" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 372 .
+
+netlinx:file_read a owl:Class ;
+    rdfs:label "file_read" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 374 .
+
+netlinx:file_read_line a owl:Class ;
+    rdfs:label "file_read_line" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 375 .
+
+netlinx:file_read_only a owl:Class ;
+    rdfs:label "file_read_only" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 158 .
+
+netlinx:file_remove_dir a owl:Class ;
+    rdfs:label "file_remove_dir" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 385 .
+
+netlinx:file_rename a owl:Class ;
+    rdfs:label "file_rename" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 380 .
+
+netlinx:file_rw_append a owl:Class ;
+    rdfs:label "file_rw_append" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 160 .
+
+netlinx:file_rw_new a owl:Class ;
+    rdfs:label "file_rw_new" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 159 .
+
+netlinx:file_seek a owl:Class ;
+    rdfs:label "file_seek" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 386 .
+
+netlinx:file_setdir a owl:Class ;
+    rdfs:label "file_setdir" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 383 .
+
+netlinx:file_write a owl:Class ;
+    rdfs:label "file_write" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 376 .
+
+netlinx:file_write_line a owl:Class ;
+    rdfs:label "file_write_line" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 377 .
+
+netlinx:find_string a owl:Class ;
+    rdfs:label "find_string" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 348 .
+
+netlinx:first_local_port a owl:Class ;
+    rdfs:label "first_local_port" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 121 .
+
+netlinx:first_virtual_device a owl:Class ;
+    rdfs:label "first_virtual_device" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 120 .
+
+netlinx:float_keyword a owl:Class ;
+    rdfs:label "float_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 27 .
+
+netlinx:for_keyword a owl:Class ;
+    rdfs:label "for_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 47 .
+
+netlinx:for_statement a owl:Class ;
+    rdfs:label "for_statement" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 751 .
+
+netlinx:format a owl:Class ;
+    rdfs:label "format" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 506 .
+
+netlinx:ftoa a owl:Class ;
+    rdfs:label "ftoa" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 347 .
+
+netlinx:ftp_priv a owl:Class ;
+    rdfs:label "ftp_priv" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 274 .
+
+netlinx:function_declaration a owl:Class ;
+    rdfs:label "function_declaration" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 726 .
+
+netlinx:function_declarator a owl:Class ;
+    rdfs:label "function_declarator" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 736,
+        737,
+        740 .
+
+netlinx:function_definition a owl:Class ;
+    rdfs:label "function_definition" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 725 .
+
+netlinx:get_available_flash_disk_space a owl:Class ;
+    rdfs:label "get_available_flash_disk_space" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 495 .
+
+netlinx:get_buffer_char a owl:Class ;
+    rdfs:label "get_buffer_char" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 354 .
+
+netlinx:get_buffer_string a owl:Class ;
+    rdfs:label "get_buffer_string" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 353 .
+
+netlinx:get_dns_list a owl:Class ;
+    rdfs:label "get_dns_list" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 442 .
+
+netlinx:get_ip_address a owl:Class ;
+    rdfs:label "get_ip_address" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 444 .
+
+netlinx:get_last a owl:Class ;
+    rdfs:label "get_last" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 362 .
+
+netlinx:get_log_level a owl:Class ;
+    rdfs:label "get_log_level" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 485 .
+
+netlinx:get_master_build a owl:Class ;
+    rdfs:label "get_master_build" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 431 .
+
+netlinx:get_max_flash_disk_space a owl:Class ;
+    rdfs:label "get_max_flash_disk_space" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 496 .
+
+netlinx:get_multi_buffer_string a owl:Class ;
+    rdfs:label "get_multi_buffer_string" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 355 .
+
+netlinx:get_pulse_time a owl:Class ;
+    rdfs:label "get_pulse_time" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 330 .
+
+netlinx:get_serial_number a owl:Class ;
+    rdfs:label "get_serial_number" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 430 .
+
+netlinx:get_system_number a owl:Class ;
+    rdfs:label "get_system_number" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 428 .
+
+netlinx:get_timer a owl:Class ;
+    rdfs:label "get_timer" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 331 .
+
+netlinx:get_unique_id a owl:Class ;
+    rdfs:label "get_unique_id" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 427 .
+
+netlinx:get_url_list a owl:Class ;
+    rdfs:label "get_url_list" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 446 .
+
+netlinx:hextoi a owl:Class ;
+    rdfs:label "hextoi" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 346 .
+
+netlinx:hold_keyword a owl:Class ;
+    rdfs:label "hold_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 63 .
+
+netlinx:http_priv a owl:Class ;
+    rdfs:label "http_priv" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 275 .
+
+netlinx:identifier a owl:Class ;
+    rdfs:label "identifier" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 1 .
+
+netlinx:if_keyword a owl:Class ;
+    rdfs:label "if_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 40 .
+
+netlinx:if_statement a owl:Class ;
+    rdfs:label "if_statement" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 746 .
+
+netlinx:init_declarator a owl:Class ;
+    rdfs:label "init_declarator" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 711 .
+
+netlinx:initializer_list a owl:Class ;
+    rdfs:label "initializer_list" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 794 .
+
+netlinx:integer_keyword a owl:Class ;
+    rdfs:label "integer_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 23 .
+
+netlinx:internal_queue_size_get a owl:Class ;
+    rdfs:label "internal_queue_size_get" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 460 .
+
+netlinx:internal_queue_size_index_axlink_tx a owl:Class ;
+    rdfs:label "internal_queue_size_index_axlink_tx" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 150 .
+
+netlinx:internal_queue_size_index_connection_mgr a owl:Class ;
+    rdfs:label "internal_queue_size_index_connection_mgr" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 143 .
+
+netlinx:internal_queue_size_index_device_mgr a owl:Class ;
+    rdfs:label "internal_queue_size_index_device_mgr" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 145 .
+
+netlinx:internal_queue_size_index_diagnostic_mgr a owl:Class ;
+    rdfs:label "internal_queue_size_index_diagnostic_mgr" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 146 .
+
+netlinx:internal_queue_size_index_icsp232_tx a owl:Class ;
+    rdfs:label "internal_queue_size_index_icsp232_tx" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 153 .
+
+netlinx:internal_queue_size_index_icspip_tx a owl:Class ;
+    rdfs:label "internal_queue_size_index_icspip_tx" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 154 .
+
+netlinx:internal_queue_size_index_icsplontalk_tx a owl:Class ;
+    rdfs:label "internal_queue_size_index_icsplontalk_tx" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 152 .
+
+netlinx:internal_queue_size_index_interpreter a owl:Class ;
+    rdfs:label "internal_queue_size_index_interpreter" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 141 .
+
+netlinx:internal_queue_size_index_ipconnection_mgr a owl:Class ;
+    rdfs:label "internal_queue_size_index_ipconnection_mgr" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 148 .
+
+netlinx:internal_queue_size_index_message_dispatcher a owl:Class ;
+    rdfs:label "internal_queue_size_index_message_dispatcher" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 149 .
+
+netlinx:internal_queue_size_index_ni_device a owl:Class ;
+    rdfs:label "internal_queue_size_index_ni_device" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 155 .
+
+netlinx:internal_queue_size_index_notification_mgr a owl:Class ;
+    rdfs:label "internal_queue_size_index_notification_mgr" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 142 .
+
+netlinx:internal_queue_size_index_phastlink_tx a owl:Class ;
+    rdfs:label "internal_queue_size_index_phastlink_tx" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 151 .
+
+netlinx:internal_queue_size_index_route_mgr a owl:Class ;
+    rdfs:label "internal_queue_size_index_route_mgr" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 144 .
+
+netlinx:internal_queue_size_index_tcp_tx a owl:Class ;
+    rdfs:label "internal_queue_size_index_tcp_tx" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 147 .
+
+netlinx:internal_queue_size_set a owl:Class ;
+    rdfs:label "internal_queue_size_set" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 459 .
+
+netlinx:internal_threshold_get a owl:Class ;
+    rdfs:label "internal_threshold_get" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 462 .
+
+netlinx:internal_threshold_set a owl:Class ;
+    rdfs:label "internal_threshold_set" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 461 .
+
+netlinx:intrinsic_type a owl:Class ;
+    rdfs:label "intrinsic_type" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 721 .
+
+netlinx:ip_addr_flg_dhcp a owl:Class ;
+    rdfs:label "ip_addr_flg_dhcp" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 119 .
+
+netlinx:ip_address_struct a owl:Class ;
+    rdfs:label "ip_address_struct" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 308 .
+
+netlinx:ip_bound_client_open a owl:Class ;
+    rdfs:label "ip_bound_client_open" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 394 .
+
+netlinx:ip_client_close a owl:Class ;
+    rdfs:label "ip_client_close" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 391 .
+
+netlinx:ip_client_open a owl:Class ;
+    rdfs:label "ip_client_open" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 390 .
+
+netlinx:ip_mc_server_open a owl:Class ;
+    rdfs:label "ip_mc_server_open" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 395 .
+
+netlinx:ip_multicast_ttl_option a owl:Class ;
+    rdfs:label "ip_multicast_ttl_option" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 219 .
+
+netlinx:ip_nodelay_off a owl:Class ;
+    rdfs:label "ip_nodelay_off" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 226 .
+
+netlinx:ip_nodelay_on a owl:Class ;
+    rdfs:label "ip_nodelay_on" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 225 .
+
+netlinx:ip_server_close a owl:Class ;
+    rdfs:label "ip_server_close" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 393 .
+
+netlinx:ip_server_open a owl:Class ;
+    rdfs:label "ip_server_open" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 392 .
+
+netlinx:ip_set_option a owl:Class ;
+    rdfs:label "ip_set_option" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 396 .
+
+netlinx:ip_tcp a owl:Class ;
+    rdfs:label "ip_tcp" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 161 .
+
+netlinx:ip_tcp_nodelay_option a owl:Class ;
+    rdfs:label "ip_tcp_nodelay_option" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 224 .
+
+netlinx:ip_ttl_continent a owl:Class ;
+    rdfs:label "ip_ttl_continent" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 223 .
+
+netlinx:ip_ttl_region a owl:Class ;
+    rdfs:label "ip_ttl_region" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 222 .
+
+netlinx:ip_ttl_site a owl:Class ;
+    rdfs:label "ip_ttl_site" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 221 .
+
+netlinx:ip_ttl_subnet a owl:Class ;
+    rdfs:label "ip_ttl_subnet" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 220 .
+
+netlinx:ip_udp a owl:Class ;
+    rdfs:label "ip_udp" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 162 .
+
+netlinx:ip_udp_2way a owl:Class ;
+    rdfs:label "ip_udp_2way" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 163 .
+
+netlinx:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+netlinx:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+netlinx:itoa a owl:Class ;
+    rdfs:label "itoa" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 344 .
+
+netlinx:itohex a owl:Class ;
+    rdfs:label "itohex" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 345 .
+
+netlinx:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+netlinx:last_login_info a owl:Class ;
+    rdfs:label "last_login_info" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 317 .
+
+netlinx:ldate a owl:Class ;
+    rdfs:label "ldate" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 322 .
+
+netlinx:left_string a owl:Class ;
+    rdfs:label "left_string" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 349 .
+
+netlinx:length_array a owl:Class ;
+    rdfs:label "length_array" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 387 .
+
+netlinx:length_string a owl:Class ;
+    rdfs:label "length_string" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 356 .
+
+netlinx:length_variable_to_string a owl:Class ;
+    rdfs:label "length_variable_to_string" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 420 .
+
+netlinx:length_variable_to_xml a owl:Class ;
+    rdfs:label "length_variable_to_xml" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 424 .
+
+netlinx:level a owl:Class ;
+    rdfs:label "level" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 337 .
+
+netlinx:level_event_declarator a owl:Class ;
+    rdfs:label "level_event_declarator" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 686 .
+
+netlinx:level_event_definition a owl:Class ;
+    rdfs:label "level_event_definition" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 684 .
+
+netlinx:level_event_devlev_reference a owl:Class ;
+    rdfs:label "level_event_devlev_reference" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 687 .
+
+netlinx:level_event_keyword a owl:Class ;
+    rdfs:label "level_event_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 57 .
+
+netlinx:listview_on_row_select_event a owl:Class ;
+    rdfs:label "listview_on_row_select_event" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 243 .
+
+netlinx:load_duet_module a owl:Class ;
+    rdfs:label "load_duet_module" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 434 .
+
+netlinx:local_var_keyword a owl:Class ;
+    rdfs:label "local_var_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 31 .
+
+netlinx:log10_value a owl:Class ;
+    rdfs:label "log10_value" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 454 .
+
+netlinx:log_value a owl:Class ;
+    rdfs:label "log_value" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 453 .
+
+netlinx:long_keyword a owl:Class ;
+    rdfs:label "long_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 25 .
+
+netlinx:long_while_keyword a owl:Class ;
+    rdfs:label "long_while_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 46 .
+
+netlinx:lower_string a owl:Class ;
+    rdfs:label "lower_string" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 361 .
+
+netlinx:lshift a owl:Class ;
+    rdfs:label "lshift" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 100 .
+
+netlinx:master_slot a owl:Class ;
+    rdfs:label "master_slot" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 329 .
+
+netlinx:master_sn a owl:Class ;
+    rdfs:label "master_sn" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 332 .
+
+netlinx:max_last_login_info_length a owl:Class ;
+    rdfs:label "max_last_login_info_length" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 260 .
+
+netlinx:max_length_array a owl:Class ;
+    rdfs:label "max_length_array" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 388 .
+
+netlinx:max_length_string a owl:Class ;
+    rdfs:label "max_length_string" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 357 .
+
+netlinx:max_value a owl:Class ;
+    rdfs:label "max_value" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 450 .
+
+netlinx:mid_string a owl:Class ;
+    rdfs:label "mid_string" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 351 .
+
+netlinx:min_value a owl:Class ;
+    rdfs:label "min_value" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 451 .
+
+netlinx:module_definition a owl:Class ;
+    rdfs:label "module_definition" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 661 .
+
+netlinx:module_name a owl:Class ;
+    rdfs:label "module_name" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 594 .
+
+netlinx:module_name_keyword a owl:Class ;
+    rdfs:label "module_name_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 3 .
+
+netlinx:name a owl:DatatypeProperty ;
+    rdfs:label "name (literal)" ;
+    rdfs:comment "Literal value for name field when it contains a terminal node" ;
+    netlinx:fieldId 27 ;
+    netlinx:isTerminalField true .
+
+netlinx:netlinx_axi_version a owl:Class ;
+    rdfs:label "netlinx_axi_version" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 109 .
+
+netlinx:netlinx_login_fail a owl:Class ;
+    rdfs:label "netlinx_login_fail" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 232 .
+
+netlinx:netlinx_login_success a owl:Class ;
+    rdfs:label "netlinx_login_success" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 231 .
+
+netlinx:netlinx_logout a owl:Class ;
+    rdfs:label "netlinx_logout" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 233 .
+
+netlinx:networkconfig_priv a owl:Class ;
+    rdfs:label "networkconfig_priv" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 276 .
+
+netlinx:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+netlinx:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+netlinx:non_volatile_keyword a owl:Class ;
+    rdfs:label "non_volatile_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 35 .
+
+netlinx:normal_standby a owl:Class ;
+    rdfs:label "normal_standby" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 217 .
+
+netlinx:normal_wake a owl:Class ;
+    rdfs:label "normal_wake" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 218 .
+
+netlinx:not a owl:Class ;
+    rdfs:label "not" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 94 .
+
+netlinx:null_str a owl:Class ;
+    rdfs:label "null_str" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 234 .
+
+netlinx:number_literal a owl:Class ;
+    rdfs:label "number_literal" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 583 .
+
+netlinx:off_keyword a owl:Class ;
+    rdfs:label "off_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 590 .
+
+netlinx:offline_keyword a owl:Class ;
+    rdfs:label "offline_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 68 .
+
+netlinx:on_keyword a owl:Class ;
+    rdfs:label "on_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 589 .
+
+netlinx:onerror_keyword a owl:Class ;
+    rdfs:label "onerror_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 69 .
+
+netlinx:online_keyword a owl:Class ;
+    rdfs:label "online_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 67 .
+
+netlinx:operator a owl:DatatypeProperty ;
+    rdfs:label "operator (literal)" ;
+    rdfs:comment "Literal value for operator field when it contains a terminal node" ;
+    netlinx:fieldId 29 ;
+    netlinx:isTerminalField true .
+
+netlinx:or a owl:Class ;
+    rdfs:label "or" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 93 .
+
+netlinx:parameter_declaration a owl:Class ;
+    rdfs:label "parameter_declaration" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 742 .
+
+netlinx:parameter_list a owl:Class ;
+    rdfs:label "parameter_list" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 741 .
+
+netlinx:parenthesized_declarator a owl:Class ;
+    rdfs:label "parenthesized_declarator" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 738,
+        739 .
+
+netlinx:parenthesized_expression a owl:Class ;
+    rdfs:label "parenthesized_expression" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 789 .
+
+netlinx:persistent_keyword a owl:Class ;
+    rdfs:label "persistent_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 36 .
+
+netlinx:power_value a owl:Class ;
+    rdfs:label "power_value" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 455 .
+
+netlinx:preproc_arg a owl:Class ;
+    rdfs:label "preproc_arg" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 545 .
+
+netlinx:preproc_define a owl:Class ;
+    rdfs:label "preproc_define" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 596 .
+
+netlinx:preproc_define_keyword a owl:Class ;
+    rdfs:label "preproc_define_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 536 .
+
+netlinx:preproc_disable_warning a owl:Class ;
+    rdfs:label "preproc_disable_warning" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 598 .
+
+netlinx:preproc_disable_warning_keyword a owl:Class ;
+    rdfs:label "preproc_disable_warning_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 538 .
+
+netlinx:preproc_else a owl:Class ;
+    rdfs:label "preproc_else" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 601,
+        604,
+        607,
+        610,
+        613,
+        616,
+        619,
+        622,
+        625,
+        628,
+        631,
+        634,
+        637,
+        640,
+        643 .
+
+netlinx:preproc_else_keyword a owl:Class ;
+    rdfs:label "preproc_else_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 543 .
+
+netlinx:preproc_end_if_keyword a owl:Class ;
+    rdfs:label "preproc_end_if_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 541 .
+
+netlinx:preproc_if_defined a owl:Class ;
+    rdfs:label "preproc_if_defined" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 599,
+        602,
+        605,
+        608,
+        611,
+        614,
+        617,
+        620,
+        623,
+        626,
+        629,
+        632,
+        635,
+        638,
+        641 .
+
+netlinx:preproc_if_defined_keyword a owl:Class ;
+    rdfs:label "preproc_if_defined_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 539 .
+
+netlinx:preproc_if_not_defined a owl:Class ;
+    rdfs:label "preproc_if_not_defined" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 600,
+        603,
+        606,
+        609,
+        612,
+        615,
+        618,
+        621,
+        624,
+        627,
+        630,
+        633,
+        636,
+        639,
+        642 .
+
+netlinx:preproc_if_not_defined_keyword a owl:Class ;
+    rdfs:label "preproc_if_not_defined_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 542 .
+
+netlinx:preproc_include a owl:Class ;
+    rdfs:label "preproc_include" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 595 .
+
+netlinx:preproc_include_keyword a owl:Class ;
+    rdfs:label "preproc_include_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 535 .
+
+netlinx:preproc_warn a owl:Class ;
+    rdfs:label "preproc_warn" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 597 .
+
+netlinx:preproc_warn_keyword a owl:Class ;
+    rdfs:label "preproc_warn_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 537 .
+
+netlinx:primitive_type a owl:Class ;
+    rdfs:label "primitive_type" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 722 .
+
+netlinx:program_name a owl:Class ;
+    rdfs:label "program_name" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 593 .
+
+netlinx:program_name_keyword a owl:Class ;
+    rdfs:label "program_name_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 2 .
+
+netlinx:programport_priv a owl:Class ;
+    rdfs:label "programport_priv" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 277 .
+
+netlinx:push_channel a owl:Class ;
+    rdfs:label "push_channel" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 324 .
+
+netlinx:push_devchan a owl:Class ;
+    rdfs:label "push_devchan" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 325 .
+
+netlinx:push_device a owl:Class ;
+    rdfs:label "push_device" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 323 .
+
+netlinx:push_event_declarator a owl:Class ;
+    rdfs:label "push_event_declarator" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 702 .
+
+netlinx:push_event_definition a owl:Class ;
+    rdfs:label "push_event_definition" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 700 .
+
+netlinx:push_event_devchan_reference a owl:Class ;
+    rdfs:label "push_event_devchan_reference" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 703 .
+
+netlinx:push_keyword a owl:Class ;
+    rdfs:label "push_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 61 .
+
+netlinx:random_number a owl:Class ;
+    rdfs:label "random_number" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 426 .
+
+netlinx:range_operator a owl:Class ;
+    rdfs:label "range_operator" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 578 .
+
+netlinx:raw_be a owl:Class ;
+    rdfs:label "raw_be" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 457 .
+
+netlinx:raw_le a owl:Class ;
+    rdfs:label "raw_le" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 458 .
+
+netlinx:reboot a owl:Class ;
+    rdfs:label "reboot" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 433 .
+
+netlinx:rebuilt_event a owl:Class ;
+    rdfs:label "rebuilt_event" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 463 .
+
+netlinx:redirect_string a owl:Class ;
+    rdfs:label "redirect_string" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 425 .
+
+netlinx:release_channel a owl:Class ;
+    rdfs:label "release_channel" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 327 .
+
+netlinx:release_devchan a owl:Class ;
+    rdfs:label "release_devchan" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 328 .
+
+netlinx:release_device a owl:Class ;
+    rdfs:label "release_device" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 326 .
+
+netlinx:release_event_declarator a owl:Class ;
+    rdfs:label "release_event_declarator" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 706 .
+
+netlinx:release_event_definition a owl:Class ;
+    rdfs:label "release_event_definition" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 704 .
+
+netlinx:release_event_devchan_reference a owl:Class ;
+    rdfs:label "release_event_devchan_reference" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 707 .
+
+netlinx:release_keyword a owl:Class ;
+    rdfs:label "release_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 62 .
+
+netlinx:remoteui_priv a owl:Class ;
+    rdfs:label "remoteui_priv" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 278 .
+
+netlinx:remove_string a owl:Class ;
+    rdfs:label "remove_string" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 352 .
+
+netlinx:repeat_keyword a owl:Class ;
+    rdfs:label "repeat_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 64 .
+
+netlinx:return_keyword a owl:Class ;
+    rdfs:label "return_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 50 .
+
+netlinx:return_statement a owl:Class ;
+    rdfs:label "return_statement" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 755 .
+
+netlinx:right_string a owl:Class ;
+    rdfs:label "right_string" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 350 .
+
+netlinx:rshift a owl:Class ;
+    rdfs:label "rshift" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 101 .
+
+netlinx:section a owl:Class ;
+    rdfs:label "section" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 644 .
+
+netlinx:securitycontrol_priv a owl:Class ;
+    rdfs:label "securitycontrol_priv" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 279 .
+
+netlinx:select_keyword a owl:Class ;
+    rdfs:label "select_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 51 .
+
+netlinx:select_statement a owl:Class ;
+    rdfs:label "select_statement" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 753 .
+
+netlinx:send_command_keyword a owl:Class ;
+    rdfs:label "send_command_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 76 .
+
+netlinx:send_command_statement a owl:Class ;
+    rdfs:label "send_command_statement" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 761 .
+
+netlinx:send_level_keyword a owl:Class ;
+    rdfs:label "send_level_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 74 .
+
+netlinx:send_level_statement a owl:Class ;
+    rdfs:label "send_level_statement" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 762 .
+
+netlinx:send_string_keyword a owl:Class ;
+    rdfs:label "send_string_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 75 .
+
+netlinx:send_string_statement a owl:Class ;
+    rdfs:label "send_string_statement" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 760 .
+
+netlinx:set_dns_list a owl:Class ;
+    rdfs:label "set_dns_list" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 443 .
+
+netlinx:set_ip_address a owl:Class ;
+    rdfs:label "set_ip_address" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 445 .
+
+netlinx:set_length_array a owl:Class ;
+    rdfs:label "set_length_array" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 389 .
+
+netlinx:set_length_string a owl:Class ;
+    rdfs:label "set_length_string" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 358 .
+
+netlinx:set_log_level a owl:Class ;
+    rdfs:label "set_log_level" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 484 .
+
+netlinx:set_outdoor_temperature a owl:Class ;
+    rdfs:label "set_outdoor_temperature" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 508 .
+
+netlinx:set_pulse_time a owl:Class ;
+    rdfs:label "set_pulse_time" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 370 .
+
+netlinx:set_system_number a owl:Class ;
+    rdfs:label "set_system_number" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 429 .
+
+netlinx:set_timer a owl:Class ;
+    rdfs:label "set_timer" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 371 .
+
+netlinx:set_validation_code a owl:Class ;
+    rdfs:label "set_validation_code" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 432 .
+
+netlinx:set_virtual_channel_count a owl:Class ;
+    rdfs:label "set_virtual_channel_count" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 510 .
+
+netlinx:set_virtual_level_count a owl:Class ;
+    rdfs:label "set_virtual_level_count" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 509 .
+
+netlinx:set_virtual_port_count a owl:Class ;
+    rdfs:label "set_virtual_port_count" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 511 .
+
+netlinx:sinteger_keyword a owl:Class ;
+    rdfs:label "sinteger_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 24 .
+
+netlinx:slong_keyword a owl:Class ;
+    rdfs:label "slong_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 26 .
+
+netlinx:smtp_address a owl:Class ;
+    rdfs:label "smtp_address" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 235 .
+
+netlinx:smtp_from a owl:Class ;
+    rdfs:label "smtp_from" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 240 .
+
+netlinx:smtp_password a owl:Class ;
+    rdfs:label "smtp_password" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 238 .
+
+netlinx:smtp_port_number a owl:Class ;
+    rdfs:label "smtp_port_number" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 236 .
+
+netlinx:smtp_require_tls a owl:Class ;
+    rdfs:label "smtp_require_tls" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 239 .
+
+netlinx:smtp_send a owl:Class ;
+    rdfs:label "smtp_send" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 489 .
+
+netlinx:smtp_server_config_get a owl:Class ;
+    rdfs:label "smtp_server_config_get" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 488 .
+
+netlinx:smtp_server_config_set a owl:Class ;
+    rdfs:label "smtp_server_config_set" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 487 .
+
+netlinx:smtp_tls_false a owl:Class ;
+    rdfs:label "smtp_tls_false" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 242 .
+
+netlinx:smtp_tls_true a owl:Class ;
+    rdfs:label "smtp_tls_true" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 241 .
+
+netlinx:smtp_username a owl:Class ;
+    rdfs:label "smtp_username" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 237 .
+
+netlinx:softwaremanagement_priv a owl:Class ;
+    rdfs:label "softwaremanagement_priv" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 280 .
+
+netlinx:source_file a owl:Class ;
+    rdfs:label "source_file" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 586 .
+
+netlinx:source_type_axlink a owl:Class ;
+    rdfs:label "source_type_axlink" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 131 .
+
+netlinx:source_type_internal a owl:Class ;
+    rdfs:label "source_type_internal" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 136 .
+
+netlinx:source_type_ip_address a owl:Class ;
+    rdfs:label "source_type_ip_address" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 130 .
+
+netlinx:source_type_ip_socket_address a owl:Class ;
+    rdfs:label "source_type_ip_socket_address" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 134 .
+
+netlinx:source_type_ipv4_port a owl:Class ;
+    rdfs:label "source_type_ipv4_port" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 138 .
+
+netlinx:source_type_ipv4_port_mac_address a owl:Class ;
+    rdfs:label "source_type_ipv4_port_mac_address" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 139 .
+
+netlinx:source_type_ipv4_port_mac_ipv6 a owl:Class ;
+    rdfs:label "source_type_ipv4_port_mac_ipv6" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 140 .
+
+netlinx:source_type_mac_address a owl:Class ;
+    rdfs:label "source_type_mac_address" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 137 .
+
+netlinx:source_type_neuron_id a owl:Class ;
+    rdfs:label "source_type_neuron_id" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 129 .
+
+netlinx:source_type_neuron_subnode_icsp a owl:Class ;
+    rdfs:label "source_type_neuron_subnode_icsp" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 132 .
+
+netlinx:source_type_neuron_subnode_pl a owl:Class ;
+    rdfs:label "source_type_neuron_subnode_pl" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 133 .
+
+netlinx:source_type_no_address a owl:Class ;
+    rdfs:label "source_type_no_address" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 128 .
+
+netlinx:source_type_rs232 a owl:Class ;
+    rdfs:label "source_type_rs232" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 135 .
+
+netlinx:sqrt_value a owl:Class ;
+    rdfs:label "sqrt_value" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 456 .
+
+netlinx:ssh_client_close a owl:Class ;
+    rdfs:label "ssh_client_close" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 398 .
+
+netlinx:ssh_client_open a owl:Class ;
+    rdfs:label "ssh_client_open" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 397 .
+
+netlinx:stack_var_keyword a owl:Class ;
+    rdfs:label "stack_var_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 32 .
+
+netlinx:standby_keyword a owl:Class ;
+    rdfs:label "standby_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 72 .
+
+netlinx:static_ip_binding a owl:Class ;
+    rdfs:label "static_ip_binding" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 441 .
+
+netlinx:static_port_binding a owl:Class ;
+    rdfs:label "static_port_binding" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 440 .
+
+netlinx:storage_class_specifier a owl:Class ;
+    rdfs:label "storage_class_specifier" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 713 .
+
+netlinx:string_content a owl:Class ;
+    rdfs:label "string_content" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 581 .
+
+netlinx:string_expression a owl:Class ;
+    rdfs:label "string_expression" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 793 .
+
+netlinx:string_keyword a owl:Class ;
+    rdfs:label "string_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 70 .
+
+netlinx:string_literal a owl:Class ;
+    rdfs:label "string_literal" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 796 .
+
+netlinx:string_to_variable a owl:Class ;
+    rdfs:label "string_to_variable" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 419 .
+
+netlinx:struct_keyword a owl:Class ;
+    rdfs:label "struct_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 53 .
+
+netlinx:struct_specifier a owl:Class ;
+    rdfs:label "struct_specifier" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 716 .
+
+netlinx:structure_keyword a owl:Class ;
+    rdfs:label "structure_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 54 .
+
+netlinx:structured_type a owl:Class ;
+    rdfs:label "structured_type" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 723 .
+
+netlinx:subscript_expression a owl:Class ;
+    rdfs:label "subscript_expression" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 784 .
+
+netlinx:switch_keyword a owl:Class ;
+    rdfs:label "switch_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 42 .
+
+netlinx:switch_statement a owl:Class ;
+    rdfs:label "switch_statement" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 748 .
+
+netlinx:system_call_keyword a owl:Class ;
+    rdfs:label "system_call_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 81 .
+
+netlinx:system_call_statement a owl:Class ;
+    rdfs:label "system_call_statement" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 773 .
+
+netlinx:system_constant a owl:Class ;
+    rdfs:label "system_constant" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 777 .
+
+netlinx:system_function a owl:Class ;
+    rdfs:label "system_function" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 778 .
+
+netlinx:system_number a owl:Class ;
+    rdfs:label "system_number" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 333 .
+
+netlinx:system_type a owl:Class ;
+    rdfs:label "system_type" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 779 .
+
+netlinx:system_variable a owl:Class ;
+    rdfs:label "system_variable" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 776 .
+
+netlinx:tbutton a owl:Class ;
+    rdfs:label "tbutton" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 303 .
+
+netlinx:tchannel a owl:Class ;
+    rdfs:label "tchannel" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 301 .
+
+netlinx:tcustom a owl:Class ;
+    rdfs:label "tcustom" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 305 .
+
+netlinx:tdata a owl:Class ;
+    rdfs:label "tdata" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 300 .
+
+netlinx:terminal_priv a owl:Class ;
+    rdfs:label "terminal_priv" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 281 .
+
+netlinx:time a owl:Class ;
+    rdfs:label "time" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 321 .
+
+netlinx:time_to_hour a owl:Class ;
+    rdfs:label "time_to_hour" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 366 .
+
+netlinx:time_to_minute a owl:Class ;
+    rdfs:label "time_to_minute" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 367 .
+
+netlinx:time_to_second a owl:Class ;
+    rdfs:label "time_to_second" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 368 .
+
+netlinx:timeline a owl:Class ;
+    rdfs:label "timeline" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 338 .
+
+netlinx:timeline_absolute a owl:Class ;
+    rdfs:label "timeline_absolute" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 125 .
+
+netlinx:timeline_active a owl:Class ;
+    rdfs:label "timeline_active" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 416 .
+
+netlinx:timeline_create a owl:Class ;
+    rdfs:label "timeline_create" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 409 .
+
+netlinx:timeline_dynamic_id a owl:Class ;
+    rdfs:label "timeline_dynamic_id" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 417 .
+
+netlinx:timeline_event_declarator a owl:Class ;
+    rdfs:label "timeline_event_declarator" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 673 .
+
+netlinx:timeline_event_definition a owl:Class ;
+    rdfs:label "timeline_event_definition" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 671 .
+
+netlinx:timeline_event_id_reference a owl:Class ;
+    rdfs:label "timeline_event_id_reference" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 674 .
+
+netlinx:timeline_event_keyword a owl:Class ;
+    rdfs:label "timeline_event_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 59 .
+
+netlinx:timeline_get a owl:Class ;
+    rdfs:label "timeline_get" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 415 .
+
+netlinx:timeline_kill a owl:Class ;
+    rdfs:label "timeline_kill" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 410 .
+
+netlinx:timeline_once a owl:Class ;
+    rdfs:label "timeline_once" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 123 .
+
+netlinx:timeline_pause a owl:Class ;
+    rdfs:label "timeline_pause" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 412 .
+
+netlinx:timeline_relative a owl:Class ;
+    rdfs:label "timeline_relative" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 126 .
+
+netlinx:timeline_reload a owl:Class ;
+    rdfs:label "timeline_reload" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 411 .
+
+netlinx:timeline_repeat a owl:Class ;
+    rdfs:label "timeline_repeat" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 124 .
+
+netlinx:timeline_restart a owl:Class ;
+    rdfs:label "timeline_restart" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 413 .
+
+netlinx:timeline_set a owl:Class ;
+    rdfs:label "timeline_set" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 414 .
+
+netlinx:tlevel a owl:Class ;
+    rdfs:label "tlevel" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 302 .
+
+netlinx:tls_client_close a owl:Class ;
+    rdfs:label "tls_client_close" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 400 .
+
+netlinx:tls_client_open a owl:Class ;
+    rdfs:label "tls_client_open" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 399 .
+
+netlinx:tls_ignore_certificate_errors a owl:Class ;
+    rdfs:label "tls_ignore_certificate_errors" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 298 .
+
+netlinx:tls_validate_certificate a owl:Class ;
+    rdfs:label "tls_validate_certificate" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 299 .
+
+netlinx:tpadmin_priv a owl:Class ;
+    rdfs:label "tpadmin_priv" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 282 .
+
+netlinx:true a owl:Class ;
+    rdfs:label "true" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 156 .
+
+netlinx:ttimeline a owl:Class ;
+    rdfs:label "ttimeline" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 304 .
+
+netlinx:type_cast a owl:Class ;
+    rdfs:label "type_cast" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 421 .
+
+netlinx:type_definition a owl:Class ;
+    rdfs:label "type_definition" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 729 .
+
+netlinx:type_identifier a owl:Class ;
+    rdfs:label "type_identifier" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 844 .
+
+netlinx:type_qualifier a owl:Class ;
+    rdfs:label "type_qualifier" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 714 .
+
+netlinx:unary_expression a owl:Class ;
+    rdfs:label "unary_expression" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 781 .
+
+netlinx:unload_duet_module a owl:Class ;
+    rdfs:label "unload_duet_module" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 435 .
+
+netlinx:update_expression a owl:Class ;
+    rdfs:label "update_expression" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 783 .
+
+netlinx:upper_string a owl:Class ;
+    rdfs:label "upper_string" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 360 .
+
+netlinx:url_flg_accinfopresent a owl:Class ;
+    rdfs:label "url_flg_accinfopresent" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 111 .
+
+netlinx:url_flg_stat_connected a owl:Class ;
+    rdfs:label "url_flg_stat_connected" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 118 .
+
+netlinx:url_flg_stat_connecting a owl:Class ;
+    rdfs:label "url_flg_stat_connecting" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 116 .
+
+netlinx:url_flg_stat_lookup a owl:Class ;
+    rdfs:label "url_flg_stat_lookup" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 115 .
+
+netlinx:url_flg_stat_mask a owl:Class ;
+    rdfs:label "url_flg_stat_mask" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 114 .
+
+netlinx:url_flg_stat_prgnetlinx a owl:Class ;
+    rdfs:label "url_flg_stat_prgnetlinx" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 113 .
+
+netlinx:url_flg_stat_waiting a owl:Class ;
+    rdfs:label "url_flg_stat_waiting" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 117 .
+
+netlinx:url_flg_tcp a owl:Class ;
+    rdfs:label "url_flg_tcp" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 110 .
+
+netlinx:url_flg_temp a owl:Class ;
+    rdfs:label "url_flg_temp" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 112 .
+
+netlinx:url_struct a owl:Class ;
+    rdfs:label "url_struct" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 306 .
+
+netlinx:user1_priv a owl:Class ;
+    rdfs:label "user1_priv" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 283 .
+
+netlinx:user2_priv a owl:Class ;
+    rdfs:label "user2_priv" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 284 .
+
+netlinx:user3_priv a owl:Class ;
+    rdfs:label "user3_priv" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 285 .
+
+netlinx:user4_priv a owl:Class ;
+    rdfs:label "user4_priv" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 286 .
+
+netlinx:usermanagement_priv a owl:Class ;
+    rdfs:label "usermanagement_priv" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 287 .
+
+netlinx:valid_account a owl:Class ;
+    rdfs:label "valid_account" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 288 .
+
+netlinx:validate_netlinx_account a owl:Class ;
+    rdfs:label "validate_netlinx_account" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 490 .
+
+netlinx:validate_netlinx_account_with_permission a owl:Class ;
+    rdfs:label "validate_netlinx_account_with_permission" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 491 .
+
+netlinx:value a owl:DatatypeProperty ;
+    rdfs:label "value (literal)" ;
+    rdfs:comment "Literal value for value field when it contains a terminal node" ;
+    netlinx:fieldId 43 ;
+    netlinx:isTerminalField true .
+
+netlinx:variable_to_string a owl:Class ;
+    rdfs:label "variable_to_string" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 418 .
+
+netlinx:variable_to_xml a owl:Class ;
+    rdfs:label "variable_to_xml" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 422 .
+
+netlinx:variant_keyword a owl:Class ;
+    rdfs:label "variant_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 29 .
+
+netlinx:variantarray_keyword a owl:Class ;
+    rdfs:label "variantarray_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 30 .
+
+netlinx:volatile_keyword a owl:Class ;
+    rdfs:label "volatile_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 34 .
+
+netlinx:wait_keyword a owl:Class ;
+    rdfs:label "wait_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 86 .
+
+netlinx:wait_statement a owl:Class ;
+    rdfs:label "wait_statement" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 766 .
+
+netlinx:wait_until_keyword a owl:Class ;
+    rdfs:label "wait_until_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 88 .
+
+netlinx:wait_until_statement a owl:Class ;
+    rdfs:label "wait_until_statement" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 767 .
+
+netlinx:wc_data_feed a owl:Class ;
+    rdfs:label "wc_data_feed" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 314 .
+
+netlinx:wc_data_field a owl:Class ;
+    rdfs:label "wc_data_field" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 315 .
+
+netlinx:wc_data_record a owl:Class ;
+    rdfs:label "wc_data_record" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 316 .
+
+netlinx:while_keyword a owl:Class ;
+    rdfs:label "while_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 45 .
+
+netlinx:while_statement a owl:Class ;
+    rdfs:label "while_statement" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 750 .
+
+netlinx:widechar_keyword a owl:Class ;
+    rdfs:label "widechar_keyword" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 22 .
+
+netlinx:xml_decode_no_preserve a owl:Class ;
+    rdfs:label "xml_decode_no_preserve" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 168 .
+
+netlinx:xml_decode_types a owl:Class ;
+    rdfs:label "xml_decode_types" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 167 .
+
+netlinx:xml_encode_char_as_list a owl:Class ;
+    rdfs:label "xml_encode_char_as_list" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 165 .
+
+netlinx:xml_encode_le a owl:Class ;
+    rdfs:label "xml_encode_le" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 166 .
+
+netlinx:xml_encode_types a owl:Class ;
+    rdfs:label "xml_encode_types" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 164 .
+
+netlinx:xml_to_variable a owl:Class ;
+    rdfs:label "xml_to_variable" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 423 .
+
+netlinx:xor a owl:Class ;
+    rdfs:label "xor" ;
+    rdfs:isDefinedBy netlinx: ;
+    rdfs:subClassOf ast:Node ;
+    netlinx:isSupertype true ;
+    netlinx:nodeTypeId 95 .
+
+netlinx: a owl:Ontology ;
+    rdfs:label "Netlinx Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for netlinx" ;
+    owl:versionInfo "v0.25" ;
+    netlinx:abiVersion 14 ;
+    netlinx:fieldCount 43 ;
+    netlinx:languageName "None" ;
+    netlinx:nodeKindCount 845 .
+

@@ -1,0 +1,1594 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix typescript: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/typescript/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+typescript:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+typescript:abstract_class_declaration a owl:Class ;
+    rdfs:label "abstract_class_declaration" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 282 .
+
+typescript:abstract_method_signature a owl:Class ;
+    rdfs:label "abstract_method_signature" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 270 .
+
+typescript:accessibility_modifier a owl:Class ;
+    rdfs:label "accessibility_modifier" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 294 .
+
+typescript:adding_type_annotation a owl:Class ;
+    rdfs:label "adding_type_annotation" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 300 .
+
+typescript:alias a owl:DatatypeProperty ;
+    rdfs:label "alias (literal)" ;
+    rdfs:comment "Literal value for alias field when it contains a terminal node" ;
+    typescript:fieldId 1 ;
+    typescript:isTerminalField true .
+
+typescript:ambient_declaration a owl:Class ;
+    rdfs:label "ambient_declaration" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 281 .
+
+typescript:argument a owl:DatatypeProperty ;
+    rdfs:label "argument (literal)" ;
+    rdfs:comment "Literal value for argument field when it contains a terminal node" ;
+    typescript:fieldId 3 ;
+    typescript:isTerminalField true .
+
+typescript:arguments a owl:Class ;
+    rdfs:label "arguments" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 252 .
+
+typescript:array a owl:Class ;
+    rdfs:label "array" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 217 .
+
+typescript:array_pattern a owl:Class ;
+    rdfs:label "array_pattern" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 218 .
+
+typescript:array_type a owl:Class ;
+    rdfs:label "array_type" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 346 .
+
+typescript:arrow_function a owl:Class ;
+    rdfs:label "arrow_function" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 227 .
+
+typescript:as_expression a owl:Class ;
+    rdfs:label "as_expression" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 274 .
+
+typescript:asserts a owl:Class ;
+    rdfs:label "asserts" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 305 .
+
+typescript:asserts_annotation a owl:Class ;
+    rdfs:label "asserts_annotation" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 306 .
+
+typescript:assignment_expression a owl:Class ;
+    rdfs:label "assignment_expression" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 236 .
+
+typescript:assignment_pattern a owl:Class ;
+    rdfs:label "assignment_pattern" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 215 .
+
+typescript:augmented_assignment_expression a owl:Class ;
+    rdfs:label "augmented_assignment_expression" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 238 .
+
+typescript:await_expression a owl:Class ;
+    rdfs:label "await_expression" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 233 .
+
+typescript:binary_expression a owl:Class ;
+    rdfs:label "binary_expression" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 243 .
+
+typescript:break_statement a owl:Class ;
+    rdfs:label "break_statement" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 197 .
+
+typescript:call_expression a owl:Class ;
+    rdfs:label "call_expression" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 231,
+        255,
+        304,
+        324 .
+
+typescript:call_signature a owl:Class ;
+    rdfs:label "call_signature" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 338 .
+
+typescript:catch_clause a owl:Class ;
+    rdfs:label "catch_clause" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 207 .
+
+typescript:class a owl:Class ;
+    rdfs:label "class" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 220 .
+
+typescript:class_body a owl:Class ;
+    rdfs:label "class_body" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 256 .
+
+typescript:class_declaration a owl:Class ;
+    rdfs:label "class_declaration" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 221 .
+
+typescript:class_heritage a owl:Class ;
+    rdfs:label "class_heritage" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 222 .
+
+typescript:class_static_block a owl:Class ;
+    rdfs:label "class_static_block" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 258 .
+
+typescript:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 104 .
+
+typescript:computed_property_name a owl:Class ;
+    rdfs:label "computed_property_name" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 265 .
+
+typescript:condition a owl:DatatypeProperty ;
+    rdfs:label "condition (literal)" ;
+    rdfs:comment "Literal value for condition field when it contains a terminal node" ;
+    typescript:fieldId 6 ;
+    typescript:isTerminalField true .
+
+typescript:conditional_type a owl:Class ;
+    rdfs:label "conditional_type" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 318 .
+
+typescript:constraint a owl:Class ;
+    rdfs:label "constraint" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 343 .
+
+typescript:construct_signature a owl:Class ;
+    rdfs:label "construct_signature" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 344 .
+
+typescript:constructor_type a owl:Class ;
+    rdfs:label "constructor_type" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 313 .
+
+typescript:continue_statement a owl:Class ;
+    rdfs:label "continue_statement" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 198 .
+
+typescript:debugger_statement a owl:Class ;
+    rdfs:label "debugger_statement" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 199 .
+
+typescript:decorator a owl:Class ;
+    rdfs:label "decorator" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 253 .
+
+typescript:default_type a owl:Class ;
+    rdfs:label "default_type" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 342 .
+
+typescript:do_statement a owl:Class ;
+    rdfs:label "do_statement" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 194 .
+
+typescript:else_clause a owl:Class ;
+    rdfs:label "else_clause" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 187 .
+
+typescript:empty_statement a owl:Class ;
+    rdfs:label "empty_statement" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 202 .
+
+typescript:enum_assignment a owl:Class ;
+    rdfs:label "enum_assignment" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 292 .
+
+typescript:enum_body a owl:Class ;
+    rdfs:label "enum_body" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 291 .
+
+typescript:enum_declaration a owl:Class ;
+    rdfs:label "enum_declaration" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 290 .
+
+typescript:escape_sequence a owl:Class ;
+    rdfs:label "escape_sequence" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 103 .
+
+typescript:existential_type a owl:Class ;
+    rdfs:label "existential_type" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 332 .
+
+typescript:export_clause a owl:Class ;
+    rdfs:label "export_clause" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 169 .
+
+typescript:export_specifier a owl:Class ;
+    rdfs:label "export_specifier" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 170 .
+
+typescript:export_statement a owl:Class ;
+    rdfs:label "export_statement" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 167 .
+
+typescript:expression_statement a owl:Class ;
+    rdfs:label "expression_statement" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 182 .
+
+typescript:extends_clause a owl:Class ;
+    rdfs:label "extends_clause" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 278 .
+
+typescript:extends_type_clause a owl:Class ;
+    rdfs:label "extends_type_clause" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 289 .
+
+typescript:false a owl:Class ;
+    rdfs:label "false" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 117 .
+
+typescript:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+typescript:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+typescript:field_alias a owl:ObjectProperty ;
+    rdfs:label "alias (structural)" ;
+    rdfs:comment "Structural reference for alias field when it contains a non-terminal node" ;
+    typescript:fieldId 1 .
+
+typescript:field_alternative a owl:ObjectProperty ;
+    rdfs:label "alternative (structural)" ;
+    rdfs:comment "Structural reference for alternative field when it contains a non-terminal node" ;
+    typescript:fieldId 2 .
+
+typescript:field_argument a owl:ObjectProperty ;
+    rdfs:label "argument (structural)" ;
+    rdfs:comment "Structural reference for argument field when it contains a non-terminal node" ;
+    typescript:fieldId 3 .
+
+typescript:field_arguments a owl:ObjectProperty ;
+    rdfs:label "arguments (structural)" ;
+    rdfs:comment "Structural reference for arguments field when it contains a non-terminal node" ;
+    typescript:fieldId 4 .
+
+typescript:field_body a owl:ObjectProperty ;
+    rdfs:label "body (structural)" ;
+    rdfs:comment "Structural reference for body field when it contains a non-terminal node" ;
+    typescript:fieldId 5 .
+
+typescript:field_condition a owl:ObjectProperty ;
+    rdfs:label "condition (structural)" ;
+    rdfs:comment "Structural reference for condition field when it contains a non-terminal node" ;
+    typescript:fieldId 6 .
+
+typescript:field_consequence a owl:ObjectProperty ;
+    rdfs:label "consequence (structural)" ;
+    rdfs:comment "Structural reference for consequence field when it contains a non-terminal node" ;
+    typescript:fieldId 7 .
+
+typescript:field_constraint a owl:ObjectProperty ;
+    rdfs:label "constraint (structural)" ;
+    rdfs:comment "Structural reference for constraint field when it contains a non-terminal node" ;
+    typescript:fieldId 8 .
+
+typescript:field_constructor a owl:ObjectProperty ;
+    rdfs:label "constructor (structural)" ;
+    rdfs:comment "Structural reference for constructor field when it contains a non-terminal node" ;
+    typescript:fieldId 9 .
+
+typescript:field_declaration a owl:ObjectProperty ;
+    rdfs:label "declaration (structural)" ;
+    rdfs:comment "Structural reference for declaration field when it contains a non-terminal node" ;
+    typescript:fieldId 10 .
+
+typescript:field_decorator a owl:ObjectProperty ;
+    rdfs:label "decorator (structural)" ;
+    rdfs:comment "Structural reference for decorator field when it contains a non-terminal node" ;
+    typescript:fieldId 11 .
+
+typescript:field_finalizer a owl:ObjectProperty ;
+    rdfs:label "finalizer (structural)" ;
+    rdfs:comment "Structural reference for finalizer field when it contains a non-terminal node" ;
+    typescript:fieldId 12 .
+
+typescript:field_function a owl:ObjectProperty ;
+    rdfs:label "function (structural)" ;
+    rdfs:comment "Structural reference for function field when it contains a non-terminal node" ;
+    typescript:fieldId 14 .
+
+typescript:field_handler a owl:ObjectProperty ;
+    rdfs:label "handler (structural)" ;
+    rdfs:comment "Structural reference for handler field when it contains a non-terminal node" ;
+    typescript:fieldId 15 .
+
+typescript:field_increment a owl:ObjectProperty ;
+    rdfs:label "increment (structural)" ;
+    rdfs:comment "Structural reference for increment field when it contains a non-terminal node" ;
+    typescript:fieldId 16 .
+
+typescript:field_index a owl:ObjectProperty ;
+    rdfs:label "index (structural)" ;
+    rdfs:comment "Structural reference for index field when it contains a non-terminal node" ;
+    typescript:fieldId 17 .
+
+typescript:field_index_type a owl:ObjectProperty ;
+    rdfs:label "index_type (structural)" ;
+    rdfs:comment "Structural reference for index_type field when it contains a non-terminal node" ;
+    typescript:fieldId 18 .
+
+typescript:field_initializer a owl:ObjectProperty ;
+    rdfs:label "initializer (structural)" ;
+    rdfs:comment "Structural reference for initializer field when it contains a non-terminal node" ;
+    typescript:fieldId 19 .
+
+typescript:field_key a owl:ObjectProperty ;
+    rdfs:label "key (structural)" ;
+    rdfs:comment "Structural reference for key field when it contains a non-terminal node" ;
+    typescript:fieldId 20 .
+
+typescript:field_kind a owl:ObjectProperty ;
+    rdfs:label "kind (structural)" ;
+    rdfs:comment "Structural reference for kind field when it contains a non-terminal node" ;
+    typescript:fieldId 21 .
+
+typescript:field_left a owl:ObjectProperty ;
+    rdfs:label "left (structural)" ;
+    rdfs:comment "Structural reference for left field when it contains a non-terminal node" ;
+    typescript:fieldId 23 .
+
+typescript:field_module a owl:ObjectProperty ;
+    rdfs:label "module (structural)" ;
+    rdfs:comment "Structural reference for module field when it contains a non-terminal node" ;
+    typescript:fieldId 24 .
+
+typescript:field_name a owl:ObjectProperty ;
+    rdfs:label "name (structural)" ;
+    rdfs:comment "Structural reference for name field when it contains a non-terminal node" ;
+    typescript:fieldId 25 .
+
+typescript:field_object a owl:ObjectProperty ;
+    rdfs:label "object (structural)" ;
+    rdfs:comment "Structural reference for object field when it contains a non-terminal node" ;
+    typescript:fieldId 26 .
+
+typescript:field_operator a owl:ObjectProperty ;
+    rdfs:label "operator (structural)" ;
+    rdfs:comment "Structural reference for operator field when it contains a non-terminal node" ;
+    typescript:fieldId 27 .
+
+typescript:field_parameter a owl:ObjectProperty ;
+    rdfs:label "parameter (structural)" ;
+    rdfs:comment "Structural reference for parameter field when it contains a non-terminal node" ;
+    typescript:fieldId 29 .
+
+typescript:field_parameters a owl:ObjectProperty ;
+    rdfs:label "parameters (structural)" ;
+    rdfs:comment "Structural reference for parameters field when it contains a non-terminal node" ;
+    typescript:fieldId 30 .
+
+typescript:field_pattern a owl:ObjectProperty ;
+    rdfs:label "pattern (structural)" ;
+    rdfs:comment "Structural reference for pattern field when it contains a non-terminal node" ;
+    typescript:fieldId 31 .
+
+typescript:field_return_type a owl:ObjectProperty ;
+    rdfs:label "return_type (structural)" ;
+    rdfs:comment "Structural reference for return_type field when it contains a non-terminal node" ;
+    typescript:fieldId 33 .
+
+typescript:field_right a owl:ObjectProperty ;
+    rdfs:label "right (structural)" ;
+    rdfs:comment "Structural reference for right field when it contains a non-terminal node" ;
+    typescript:fieldId 34 .
+
+typescript:field_sign a owl:ObjectProperty ;
+    rdfs:label "sign (structural)" ;
+    rdfs:comment "Structural reference for sign field when it contains a non-terminal node" ;
+    typescript:fieldId 35 .
+
+typescript:field_source a owl:ObjectProperty ;
+    rdfs:label "source (structural)" ;
+    rdfs:comment "Structural reference for source field when it contains a non-terminal node" ;
+    typescript:fieldId 36 .
+
+typescript:field_type a owl:ObjectProperty ;
+    rdfs:label "type (structural)" ;
+    rdfs:comment "Structural reference for type field when it contains a non-terminal node" ;
+    typescript:fieldId 37 .
+
+typescript:field_type_arguments a owl:ObjectProperty ;
+    rdfs:label "type_arguments (structural)" ;
+    rdfs:comment "Structural reference for type_arguments field when it contains a non-terminal node" ;
+    typescript:fieldId 38 .
+
+typescript:field_type_parameters a owl:ObjectProperty ;
+    rdfs:label "type_parameters (structural)" ;
+    rdfs:comment "Structural reference for type_parameters field when it contains a non-terminal node" ;
+    typescript:fieldId 39 .
+
+typescript:field_value a owl:ObjectProperty ;
+    rdfs:label "value (structural)" ;
+    rdfs:comment "Structural reference for value field when it contains a non-terminal node" ;
+    typescript:fieldId 40 .
+
+typescript:finally_clause a owl:Class ;
+    rdfs:label "finally_clause" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 208 .
+
+typescript:flags a owl:DatatypeProperty ;
+    rdfs:label "flags (literal)" ;
+    rdfs:comment "Literal value for flags field when it contains a terminal node" ;
+    typescript:fieldId 13 ;
+    typescript:isTerminalField true .
+
+typescript:flow_maybe_type a owl:Class ;
+    rdfs:label "flow_maybe_type" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 333 .
+
+typescript:for_in_statement a owl:Class ;
+    rdfs:label "for_in_statement" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 191 .
+
+typescript:for_statement a owl:Class ;
+    rdfs:label "for_statement" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 190 .
+
+typescript:formal_parameters a owl:Class ;
+    rdfs:label "formal_parameters" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 257 .
+
+typescript:function a owl:DatatypeProperty ;
+    rdfs:label "function (literal)" ;
+    rdfs:comment "Literal value for function field when it contains a terminal node" ;
+    typescript:fieldId 14 ;
+    typescript:isTerminalField true .
+
+typescript:function_declaration a owl:Class ;
+    rdfs:label "function_declaration" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 224 .
+
+typescript:function_expression a owl:Class ;
+    rdfs:label "function_expression" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 223 .
+
+typescript:function_signature a owl:Class ;
+    rdfs:label "function_signature" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 271 .
+
+typescript:function_type a owl:Class ;
+    rdfs:label "function_type" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 351 .
+
+typescript:generator_function a owl:Class ;
+    rdfs:label "generator_function" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 225 .
+
+typescript:generator_function_declaration a owl:Class ;
+    rdfs:label "generator_function_declaration" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 226 .
+
+typescript:generic_type a owl:Class ;
+    rdfs:label "generic_type" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 319 .
+
+typescript:hash_bang_line a owl:Class ;
+    rdfs:label "hash_bang_line" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 2 .
+
+typescript:html_comment a owl:Class ;
+    rdfs:label "html_comment" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 162 .
+
+typescript:identifier a owl:Class ;
+    rdfs:label "identifier" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 1 .
+
+typescript:if_statement a owl:Class ;
+    rdfs:label "if_statement" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 188 .
+
+typescript:implements_clause a owl:Class ;
+    rdfs:label "implements_clause" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 280 .
+
+typescript:import a owl:Class ;
+    rdfs:label "import" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 173 .
+
+typescript:import_alias a owl:Class ;
+    rdfs:label "import_alias" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 286 .
+
+typescript:import_attribute a owl:Class ;
+    rdfs:label "import_attribute" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 180 .
+
+typescript:import_clause a owl:Class ;
+    rdfs:label "import_clause" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 175 .
+
+typescript:import_require_clause a owl:Class ;
+    rdfs:label "import_require_clause" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 277 .
+
+typescript:import_specifier a owl:Class ;
+    rdfs:label "import_specifier" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 179 .
+
+typescript:import_statement a owl:Class ;
+    rdfs:label "import_statement" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 174 .
+
+typescript:index a owl:DatatypeProperty ;
+    rdfs:label "index (literal)" ;
+    rdfs:comment "Literal value for index field when it contains a terminal node" ;
+    typescript:fieldId 17 ;
+    typescript:isTerminalField true .
+
+typescript:index_signature a owl:Class ;
+    rdfs:label "index_signature" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 345 .
+
+typescript:index_type_query a owl:Class ;
+    rdfs:label "index_type_query" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 327 .
+
+typescript:infer_type a owl:Class ;
+    rdfs:label "infer_type" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 317 .
+
+typescript:initializer a owl:DatatypeProperty ;
+    rdfs:label "initializer (literal)" ;
+    rdfs:comment "Literal value for initializer field when it contains a terminal node" ;
+    typescript:fieldId 19 ;
+    typescript:isTerminalField true .
+
+typescript:instantiation_expression a owl:Class ;
+    rdfs:label "instantiation_expression" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 276,
+        325 .
+
+typescript:interface_body a owl:Class ;
+    rdfs:label "interface_body" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 376 .
+
+typescript:interface_declaration a owl:Class ;
+    rdfs:label "interface_declaration" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 288 .
+
+typescript:internal_module a owl:Class ;
+    rdfs:label "internal_module" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 284 .
+
+typescript:intersection_type a owl:Class ;
+    rdfs:label "intersection_type" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 350 .
+
+typescript:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+typescript:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+typescript:jsx_text a owl:Class ;
+    rdfs:label "jsx_text" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 163 .
+
+typescript:key a owl:DatatypeProperty ;
+    rdfs:label "key (literal)" ;
+    rdfs:comment "Literal value for key field when it contains a terminal node" ;
+    typescript:fieldId 20 ;
+    typescript:isTerminalField true .
+
+typescript:label a owl:DatatypeProperty ;
+    rdfs:label "label (literal)" ;
+    rdfs:comment "Literal value for label field when it contains a terminal node" ;
+    typescript:fieldId 22 ;
+    typescript:isTerminalField true .
+
+typescript:labeled_statement a owl:Class ;
+    rdfs:label "labeled_statement" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 203 .
+
+typescript:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+typescript:left a owl:DatatypeProperty ;
+    rdfs:label "left (literal)" ;
+    rdfs:comment "Literal value for left field when it contains a terminal node" ;
+    typescript:fieldId 23 ;
+    typescript:isTerminalField true .
+
+typescript:lexical_declaration a owl:Class ;
+    rdfs:label "lexical_declaration" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 184 .
+
+typescript:literal_type a owl:Class ;
+    rdfs:label "literal_type" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 330 .
+
+typescript:lookup_type a owl:Class ;
+    rdfs:label "lookup_type" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 328 .
+
+typescript:mapped_type_clause a owl:Class ;
+    rdfs:label "mapped_type_clause" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 329 .
+
+typescript:member_expression a owl:Class ;
+    rdfs:label "member_expression" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 234,
+        254,
+        303,
+        322 .
+
+typescript:meta_property a owl:Class ;
+    rdfs:label "meta_property" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 251 .
+
+typescript:method_definition a owl:Class ;
+    rdfs:label "method_definition" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 261 .
+
+typescript:method_signature a owl:Class ;
+    rdfs:label "method_signature" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 269 .
+
+typescript:module a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "module",
+        "module (literal)" ;
+    rdfs:comment "Literal value for module field when it contains a terminal node" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:fieldId 24 ;
+    typescript:isSupertype true ;
+    typescript:isTerminalField true ;
+    typescript:nodeTypeId 283 .
+
+typescript:name a owl:DatatypeProperty ;
+    rdfs:label "name (literal)" ;
+    rdfs:comment "Literal value for name field when it contains a terminal node" ;
+    typescript:fieldId 25 ;
+    typescript:isTerminalField true .
+
+typescript:named_imports a owl:Class ;
+    rdfs:label "named_imports" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 178 .
+
+typescript:namespace_export a owl:Class ;
+    rdfs:label "namespace_export" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 168 .
+
+typescript:namespace_import a owl:Class ;
+    rdfs:label "namespace_import" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 177 .
+
+typescript:nested_identifier a owl:Class ;
+    rdfs:label "nested_identifier" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 219 .
+
+typescript:nested_type_identifier a owl:Class ;
+    rdfs:label "nested_type_identifier" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 287 .
+
+typescript:new_expression a owl:Class ;
+    rdfs:label "new_expression" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 232 .
+
+typescript:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+typescript:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+typescript:non_null_expression a owl:Class ;
+    rdfs:label "non_null_expression" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 268 .
+
+typescript:null a owl:Class ;
+    rdfs:label "null" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 118 .
+
+typescript:number a owl:Class ;
+    rdfs:label "number" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 110 .
+
+typescript:object a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "object",
+        "object (literal)" ;
+    rdfs:comment "Literal value for object field when it contains a terminal node" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:fieldId 26 ;
+    typescript:isSupertype true ;
+    typescript:isTerminalField true ;
+    typescript:nodeTypeId 213 .
+
+typescript:object_assignment_pattern a owl:Class ;
+    rdfs:label "object_assignment_pattern" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 216 .
+
+typescript:object_pattern a owl:Class ;
+    rdfs:label "object_pattern" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 214 .
+
+typescript:object_type a owl:Class ;
+    rdfs:label "object_type" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 337 .
+
+typescript:omitting_type_annotation a owl:Class ;
+    rdfs:label "omitting_type_annotation" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 299 .
+
+typescript:opting_type_annotation a owl:Class ;
+    rdfs:label "opting_type_annotation" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 301 .
+
+typescript:optional_chain a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "optional_chain",
+        "optional_chain (literal)" ;
+    rdfs:comment "Literal value for optional_chain field when it contains a terminal node" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:fieldId 28 ;
+    typescript:isSupertype true ;
+    typescript:isTerminalField true ;
+    typescript:nodeTypeId 230 .
+
+typescript:optional_parameter a owl:Class ;
+    rdfs:label "optional_parameter" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 297,
+        309 .
+
+typescript:optional_type a owl:Class ;
+    rdfs:label "optional_type" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 310 .
+
+typescript:override_modifier a owl:Class ;
+    rdfs:label "override_modifier" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 295 .
+
+typescript:pair a owl:Class ;
+    rdfs:label "pair" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 262 .
+
+typescript:pair_pattern a owl:Class ;
+    rdfs:label "pair_pattern" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 263 .
+
+typescript:parameter a owl:DatatypeProperty ;
+    rdfs:label "parameter (literal)" ;
+    rdfs:comment "Literal value for parameter field when it contains a terminal node" ;
+    typescript:fieldId 29 ;
+    typescript:isTerminalField true .
+
+typescript:parenthesized_expression a owl:Class ;
+    rdfs:label "parenthesized_expression" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 209,
+        272 .
+
+typescript:parenthesized_type a owl:Class ;
+    rdfs:label "parenthesized_type" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 334 .
+
+typescript:pattern a owl:DatatypeProperty ;
+    rdfs:label "pattern (literal)" ;
+    rdfs:comment "Literal value for pattern field when it contains a terminal node" ;
+    typescript:fieldId 31 ;
+    typescript:isTerminalField true .
+
+typescript:predefined_type a owl:Class ;
+    rdfs:label "predefined_type" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 335 .
+
+typescript:private_property_identifier a owl:Class ;
+    rdfs:label "private_property_identifier" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 111 .
+
+typescript:program a owl:Class ;
+    rdfs:label "program" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 166 .
+
+typescript:property a owl:DatatypeProperty ;
+    rdfs:label "property (literal)" ;
+    rdfs:comment "Literal value for property field when it contains a terminal node" ;
+    typescript:fieldId 32 ;
+    typescript:isTerminalField true .
+
+typescript:property_identifier a owl:Class ;
+    rdfs:label "property_identifier" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 377 .
+
+typescript:property_signature a owl:Class ;
+    rdfs:label "property_signature" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 339 .
+
+typescript:public_field_definition a owl:Class ;
+    rdfs:label "public_field_definition" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 266 .
+
+typescript:readonly_type a owl:Class ;
+    rdfs:label "readonly_type" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 348 .
+
+typescript:regex a owl:Class ;
+    rdfs:label "regex" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 250 .
+
+typescript:regex_flags a owl:Class ;
+    rdfs:label "regex_flags" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 109 .
+
+typescript:regex_pattern a owl:Class ;
+    rdfs:label "regex_pattern" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 108 .
+
+typescript:required_parameter a owl:Class ;
+    rdfs:label "required_parameter" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 296,
+        308 .
+
+typescript:rest_pattern a owl:Class ;
+    rdfs:label "rest_pattern" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 260 .
+
+typescript:rest_type a owl:Class ;
+    rdfs:label "rest_type" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 311 .
+
+typescript:return_statement a owl:Class ;
+    rdfs:label "return_statement" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 200 .
+
+typescript:satisfies_expression a owl:Class ;
+    rdfs:label "satisfies_expression" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 275 .
+
+typescript:sequence_expression a owl:Class ;
+    rdfs:label "sequence_expression" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 246 .
+
+typescript:shorthand_property_identifier a owl:Class ;
+    rdfs:label "shorthand_property_identifier" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 378 .
+
+typescript:shorthand_property_identifier_pattern a owl:Class ;
+    rdfs:label "shorthand_property_identifier_pattern" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 379 .
+
+typescript:spread_element a owl:Class ;
+    rdfs:label "spread_element" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 241 .
+
+typescript:statement_block a owl:Class ;
+    rdfs:label "statement_block" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 186 .
+
+typescript:statement_identifier a owl:Class ;
+    rdfs:label "statement_identifier" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 380 .
+
+typescript:string a owl:Class ;
+    rdfs:label "string" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 247 .
+
+typescript:string_fragment a owl:Class ;
+    rdfs:label "string_fragment" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 101,
+        102,
+        160 .
+
+typescript:subscript_expression a owl:Class ;
+    rdfs:label "subscript_expression" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 235,
+        323 .
+
+typescript:super a owl:Class ;
+    rdfs:label "super" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 115 .
+
+typescript:switch_body a owl:Class ;
+    rdfs:label "switch_body" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 204 .
+
+typescript:switch_case a owl:Class ;
+    rdfs:label "switch_case" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 205 .
+
+typescript:switch_default a owl:Class ;
+    rdfs:label "switch_default" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 206 .
+
+typescript:switch_statement a owl:Class ;
+    rdfs:label "switch_statement" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 189 .
+
+typescript:template_literal_type a owl:Class ;
+    rdfs:label "template_literal_type" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 316 .
+
+typescript:template_string a owl:Class ;
+    rdfs:label "template_string" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 248 .
+
+typescript:template_substitution a owl:Class ;
+    rdfs:label "template_substitution" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 249 .
+
+typescript:template_type a owl:Class ;
+    rdfs:label "template_type" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 315 .
+
+typescript:ternary_expression a owl:Class ;
+    rdfs:label "ternary_expression" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 242 .
+
+typescript:this a owl:Class ;
+    rdfs:label "this" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 114 .
+
+typescript:this_type a owl:Class ;
+    rdfs:label "this_type" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 381 .
+
+typescript:throw_statement a owl:Class ;
+    rdfs:label "throw_statement" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 201 .
+
+typescript:true a owl:Class ;
+    rdfs:label "true" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 116 .
+
+typescript:try_statement a owl:Class ;
+    rdfs:label "try_statement" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 195 .
+
+typescript:tuple_type a owl:Class ;
+    rdfs:label "tuple_type" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 347 .
+
+typescript:type a owl:DatatypeProperty ;
+    rdfs:label "type (literal)" ;
+    rdfs:comment "Literal value for type field when it contains a terminal node" ;
+    typescript:fieldId 37 ;
+    typescript:isTerminalField true .
+
+typescript:type_alias_declaration a owl:Class ;
+    rdfs:label "type_alias_declaration" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 293 .
+
+typescript:type_annotation a owl:Class ;
+    rdfs:label "type_annotation" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 302 .
+
+typescript:type_arguments a owl:Class ;
+    rdfs:label "type_arguments" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 336 .
+
+typescript:type_assertion a owl:Class ;
+    rdfs:label "type_assertion" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 273 .
+
+typescript:type_identifier a owl:Class ;
+    rdfs:label "type_identifier" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 382 .
+
+typescript:type_parameter a owl:Class ;
+    rdfs:label "type_parameter" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 341 .
+
+typescript:type_parameters a owl:Class ;
+    rdfs:label "type_parameters" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 340 .
+
+typescript:type_predicate a owl:Class ;
+    rdfs:label "type_predicate" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 320 .
+
+typescript:type_predicate_annotation a owl:Class ;
+    rdfs:label "type_predicate_annotation" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 321 .
+
+typescript:type_query a owl:Class ;
+    rdfs:label "type_query" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 326 .
+
+typescript:unary_expression a owl:Class ;
+    rdfs:label "unary_expression" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 244,
+        331 .
+
+typescript:undefined a owl:Class ;
+    rdfs:label "undefined" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 119 .
+
+typescript:union_type a owl:Class ;
+    rdfs:label "union_type" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 349 .
+
+typescript:update_expression a owl:Class ;
+    rdfs:label "update_expression" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 245 .
+
+typescript:variable_declaration a owl:Class ;
+    rdfs:label "variable_declaration" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 183 .
+
+typescript:variable_declarator a owl:Class ;
+    rdfs:label "variable_declarator" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 185 .
+
+typescript:while_statement a owl:Class ;
+    rdfs:label "while_statement" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 193 .
+
+typescript:with_statement a owl:Class ;
+    rdfs:label "with_statement" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 196 .
+
+typescript:yield_expression a owl:Class ;
+    rdfs:label "yield_expression" ;
+    rdfs:isDefinedBy typescript: ;
+    rdfs:subClassOf ast:Node ;
+    typescript:isSupertype true ;
+    typescript:nodeTypeId 212 .
+
+typescript: a owl:Ontology ;
+    rdfs:label "Typescript Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for typescript" ;
+    owl:versionInfo "v0.25" ;
+    typescript:abiVersion 14 ;
+    typescript:fieldCount 40 ;
+    typescript:languageName "None" ;
+    typescript:nodeKindCount 383 .
+

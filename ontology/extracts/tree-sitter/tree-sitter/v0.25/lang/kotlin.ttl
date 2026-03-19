@@ -1,0 +1,1034 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix kotlin: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/kotlin/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+kotlin:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+kotlin:additive_expression a owl:Class ;
+    rdfs:label "additive_expression" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 232 .
+
+kotlin:annotated_lambda a owl:Class ;
+    rdfs:label "annotated_lambda" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 244 .
+
+kotlin:annotation a owl:Class ;
+    rdfs:label "annotation" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 304 .
+
+kotlin:anonymous_function a owl:Class ;
+    rdfs:label "anonymous_function" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 258 .
+
+kotlin:anonymous_initializer a owl:Class ;
+    rdfs:label "anonymous_initializer" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 178 .
+
+kotlin:as_expression a owl:Class ;
+    rdfs:label "as_expression" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 228 .
+
+kotlin:assignment a owl:Class ;
+    rdfs:label "assignment" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 220 .
+
+kotlin:bin_literal a owl:Class ;
+    rdfs:label "bin_literal" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 134 .
+
+kotlin:binding_pattern_kind a owl:Class ;
+    rdfs:label "binding_pattern_kind" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 166 .
+
+kotlin:boolean_literal a owl:Class ;
+    rdfs:label "boolean_literal" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 319 .
+
+kotlin:call_expression a owl:Class ;
+    rdfs:label "call_expression" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 224 .
+
+kotlin:call_suffix a owl:Class ;
+    rdfs:label "call_suffix" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 243 .
+
+kotlin:callable_reference a owl:Class ;
+    rdfs:label "callable_reference" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 274 .
+
+kotlin:catch_block a owl:Class ;
+    rdfs:label "catch_block" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 271 .
+
+kotlin:character_escape_seq a owl:Class ;
+    rdfs:label "character_escape_seq" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 321 .
+
+kotlin:character_literal a owl:Class ;
+    rdfs:label "character_literal" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 320 .
+
+kotlin:check_expression a owl:Class ;
+    rdfs:label "check_expression" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 236 .
+
+kotlin:class_body a owl:Class ;
+    rdfs:label "class_body" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 164 .
+
+kotlin:class_declaration a owl:Class ;
+    rdfs:label "class_declaration" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 162 .
+
+kotlin:class_modifier a owl:Class ;
+    rdfs:label "class_modifier" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 294 .
+
+kotlin:class_parameter a owl:Class ;
+    rdfs:label "class_parameter" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 167 .
+
+kotlin:collection_literal a owl:Class ;
+    rdfs:label "collection_literal" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 250 .
+
+kotlin:companion_object a owl:Class ;
+    rdfs:label "companion_object" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 179 .
+
+kotlin:comparison_expression a owl:Class ;
+    rdfs:label "comparison_expression" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 237 .
+
+kotlin:condition a owl:DatatypeProperty ;
+    rdfs:label "condition (literal)" ;
+    rdfs:comment "Literal value for condition field when it contains a terminal node" ;
+    kotlin:fieldId 2 ;
+    kotlin:isTerminalField true .
+
+kotlin:conjunction_expression a owl:Class ;
+    rdfs:label "conjunction_expression" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 239 .
+
+kotlin:constructor_delegation_call a owl:Class ;
+    rdfs:label "constructor_delegation_call" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 194 .
+
+kotlin:constructor_invocation a owl:Class ;
+    rdfs:label "constructor_invocation" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 170 .
+
+kotlin:control_structure_body a owl:Class ;
+    rdfs:label "control_structure_body" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 213 .
+
+kotlin:delegation_specifier a owl:Class ;
+    rdfs:label "delegation_specifier" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 169 .
+
+kotlin:directly_assignable_expression a owl:Class ;
+    rdfs:label "directly_assignable_expression" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 288 .
+
+kotlin:disjunction_expression a owl:Class ;
+    rdfs:label "disjunction_expression" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 240 .
+
+kotlin:do_while_statement a owl:Class ;
+    rdfs:label "do_while_statement" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 218 .
+
+kotlin:elvis_expression a owl:Class ;
+    rdfs:label "elvis_expression" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 235 .
+
+kotlin:enum_class_body a owl:Class ;
+    rdfs:label "enum_class_body" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 195 .
+
+kotlin:enum_entry a owl:Class ;
+    rdfs:label "enum_entry" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 197 .
+
+kotlin:equality_expression a owl:Class ;
+    rdfs:label "equality_expression" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 238 .
+
+kotlin:explicit_delegation a owl:Class ;
+    rdfs:label "explicit_delegation" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 171 .
+
+kotlin:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+kotlin:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+kotlin:field_alternative a owl:ObjectProperty ;
+    rdfs:label "alternative (structural)" ;
+    rdfs:comment "Structural reference for alternative field when it contains a non-terminal node" ;
+    kotlin:fieldId 1 .
+
+kotlin:field_condition a owl:ObjectProperty ;
+    rdfs:label "condition (structural)" ;
+    rdfs:comment "Structural reference for condition field when it contains a non-terminal node" ;
+    kotlin:fieldId 2 .
+
+kotlin:field_consequence a owl:ObjectProperty ;
+    rdfs:label "consequence (structural)" ;
+    rdfs:comment "Structural reference for consequence field when it contains a non-terminal node" ;
+    kotlin:fieldId 3 .
+
+kotlin:field_receiver a owl:ObjectProperty ;
+    rdfs:label "receiver (structural)" ;
+    rdfs:comment "Structural reference for receiver field when it contains a non-terminal node" ;
+    kotlin:fieldId 4 .
+
+kotlin:file_annotation a owl:Class ;
+    rdfs:label "file_annotation" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 155 .
+
+kotlin:finally_block a owl:Class ;
+    rdfs:label "finally_block" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 272 .
+
+kotlin:for_statement a owl:Class ;
+    rdfs:label "for_statement" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 216 .
+
+kotlin:function_body a owl:Class ;
+    rdfs:label "function_body" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 184 .
+
+kotlin:function_declaration a owl:Class ;
+    rdfs:label "function_declaration" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 183 .
+
+kotlin:function_modifier a owl:Class ;
+    rdfs:label "function_modifier" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 300 .
+
+kotlin:function_type a owl:Class ;
+    rdfs:label "function_type" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 207 .
+
+kotlin:function_type_parameters a owl:Class ;
+    rdfs:label "function_type_parameters" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 208 .
+
+kotlin:function_value_parameters a owl:Class ;
+    rdfs:label "function_value_parameters" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 180 .
+
+kotlin:getter a owl:Class ;
+    rdfs:label "getter" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 188 .
+
+kotlin:hex_literal a owl:Class ;
+    rdfs:label "hex_literal" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 133 .
+
+kotlin:identifier a owl:Class ;
+    rdfs:label "identifier" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 310 .
+
+kotlin:if_expression a owl:Class ;
+    rdfs:label "if_expression" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 263 .
+
+kotlin:import_alias a owl:Class ;
+    rdfs:label "import_alias" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 159 .
+
+kotlin:import_header a owl:Class ;
+    rdfs:label "import_header" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 158 .
+
+kotlin:import_list a owl:Class ;
+    rdfs:label "import_list" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 157 .
+
+kotlin:indexing_expression a owl:Class ;
+    rdfs:label "indexing_expression" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 225 .
+
+kotlin:indexing_suffix a owl:Class ;
+    rdfs:label "indexing_suffix" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 241 .
+
+kotlin:infix_expression a owl:Class ;
+    rdfs:label "infix_expression" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 234 .
+
+kotlin:inheritance_modifier a owl:Class ;
+    rdfs:label "inheritance_modifier" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 301 .
+
+kotlin:integer_literal a owl:Class ;
+    rdfs:label "integer_literal" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 132 .
+
+kotlin:interpolated_expression a owl:Class ;
+    rdfs:label "interpolated_expression" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 357 .
+
+kotlin:interpolated_identifier a owl:Class ;
+    rdfs:label "interpolated_identifier" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 358 .
+
+kotlin:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+kotlin:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+kotlin:jump_expression a owl:Class ;
+    rdfs:label "jump_expression" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 273 .
+
+kotlin:label a owl:Class ;
+    rdfs:label "label" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 45 .
+
+kotlin:lambda_literal a owl:Class ;
+    rdfs:label "lambda_literal" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 254 .
+
+kotlin:lambda_parameters a owl:Class ;
+    rdfs:label "lambda_parameters" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 256 .
+
+kotlin:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+kotlin:line_comment a owl:Class ;
+    rdfs:label "line_comment" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 124 .
+
+kotlin:long_literal a owl:Class ;
+    rdfs:label "long_literal" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 318 .
+
+kotlin:member_modifier a owl:Class ;
+    rdfs:label "member_modifier" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 295 .
+
+kotlin:modifiers a owl:Class ;
+    rdfs:label "modifiers" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 289 .
+
+kotlin:multi_variable_declaration a owl:Class ;
+    rdfs:label "multi_variable_declaration" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 255 .
+
+kotlin:multiline_comment a owl:Class ;
+    rdfs:label "multiline_comment" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 149 .
+
+kotlin:multiplicative_expression a owl:Class ;
+    rdfs:label "multiplicative_expression" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 231 .
+
+kotlin:navigation_expression a owl:Class ;
+    rdfs:label "navigation_expression" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 226 .
+
+kotlin:navigation_suffix a owl:Class ;
+    rdfs:label "navigation_suffix" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 242 .
+
+kotlin:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+kotlin:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+kotlin:not_nullable_type a owl:Class ;
+    rdfs:label "not_nullable_type" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 200 .
+
+kotlin:null_literal a owl:Class ;
+    rdfs:label "null_literal" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 141 .
+
+kotlin:nullable_type a owl:Class ;
+    rdfs:label "nullable_type" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 201 .
+
+kotlin:object_declaration a owl:Class ;
+    rdfs:label "object_declaration" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 192 .
+
+kotlin:object_literal a owl:Class ;
+    rdfs:label "object_literal" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 260 .
+
+kotlin:package_header a owl:Class ;
+    rdfs:label "package_header" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 156 .
+
+kotlin:parameter a owl:Class ;
+    rdfs:label "parameter" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 191 .
+
+kotlin:parameter_modifier a owl:Class ;
+    rdfs:label "parameter_modifier" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 302 .
+
+kotlin:parameter_modifiers a owl:Class ;
+    rdfs:label "parameter_modifiers" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 290 .
+
+kotlin:parameter_with_optional_type a owl:Class ;
+    rdfs:label "parameter_with_optional_type" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 190 .
+
+kotlin:parenthesized_expression a owl:Class ;
+    rdfs:label "parenthesized_expression" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 249 .
+
+kotlin:parenthesized_type a owl:Class ;
+    rdfs:label "parenthesized_type" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 209 .
+
+kotlin:parenthesized_user_type a owl:Class ;
+    rdfs:label "parenthesized_user_type" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 210 .
+
+kotlin:platform_modifier a owl:Class ;
+    rdfs:label "platform_modifier" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 303 .
+
+kotlin:postfix_expression a owl:Class ;
+    rdfs:label "postfix_expression" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 223 .
+
+kotlin:prefix_expression a owl:Class ;
+    rdfs:label "prefix_expression" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 227 .
+
+kotlin:primary_constructor a owl:Class ;
+    rdfs:label "primary_constructor" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 163 .
+
+kotlin:property_declaration a owl:Class ;
+    rdfs:label "property_declaration" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 186 .
+
+kotlin:property_delegate a owl:Class ;
+    rdfs:label "property_delegate" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 187 .
+
+kotlin:property_modifier a owl:Class ;
+    rdfs:label "property_modifier" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 108 .
+
+kotlin:range_expression a owl:Class ;
+    rdfs:label "range_expression" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 233 .
+
+kotlin:range_test a owl:Class ;
+    rdfs:label "range_test" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 268 .
+
+kotlin:real_literal a owl:Class ;
+    rdfs:label "real_literal" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 131 .
+
+kotlin:receiver_type a owl:Class ;
+    rdfs:label "receiver_type" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 182 .
+
+kotlin:reification_modifier a owl:Class ;
+    rdfs:label "reification_modifier" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 115 .
+
+kotlin:secondary_constructor a owl:Class ;
+    rdfs:label "secondary_constructor" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 193 .
+
+kotlin:setter a owl:Class ;
+    rdfs:label "setter" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 189 .
+
+kotlin:shebang_line a owl:Class ;
+    rdfs:label "shebang_line" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 154 .
+
+kotlin:simple_identifier a owl:Class ;
+    rdfs:label "simple_identifier" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 309 .
+
+kotlin:source_file a owl:Class ;
+    rdfs:label "source_file" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 153 .
+
+kotlin:spread_expression a owl:Class ;
+    rdfs:label "spread_expression" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 229 .
+
+kotlin:statements a owl:Class ;
+    rdfs:label "statements" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 211 .
+
+kotlin:string_content a owl:Class ;
+    rdfs:label "string_content" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 152 .
+
+kotlin:string_literal a owl:Class ;
+    rdfs:label "string_literal" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 252 .
+
+kotlin:super_expression a owl:Class ;
+    rdfs:label "super_expression" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 262 .
+
+kotlin:this_expression a owl:Class ;
+    rdfs:label "this_expression" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 261 .
+
+kotlin:try_expression a owl:Class ;
+    rdfs:label "try_expression" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 270 .
+
+kotlin:type_alias a owl:Class ;
+    rdfs:label "type_alias" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 160 .
+
+kotlin:type_arguments a owl:Class ;
+    rdfs:label "type_arguments" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 245 .
+
+kotlin:type_constraint a owl:Class ;
+    rdfs:label "type_constraint" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 175 .
+
+kotlin:type_constraints a owl:Class ;
+    rdfs:label "type_constraints" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 174 .
+
+kotlin:type_identifier a owl:Class ;
+    rdfs:label "type_identifier" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 359 .
+
+kotlin:type_modifiers a owl:Class ;
+    rdfs:label "type_modifiers" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 292 .
+
+kotlin:type_parameter a owl:Class ;
+    rdfs:label "type_parameter" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 173 .
+
+kotlin:type_parameter_modifiers a owl:Class ;
+    rdfs:label "type_parameter_modifiers" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 298 .
+
+kotlin:type_parameters a owl:Class ;
+    rdfs:label "type_parameters" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 172 .
+
+kotlin:type_projection a owl:Class ;
+    rdfs:label "type_projection" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 204 .
+
+kotlin:type_projection_modifiers a owl:Class ;
+    rdfs:label "type_projection_modifiers" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 205 .
+
+kotlin:type_test a owl:Class ;
+    rdfs:label "type_test" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 269 .
+
+kotlin:unsigned_literal a owl:Class ;
+    rdfs:label "unsigned_literal" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 317 .
+
+kotlin:use_site_target a owl:Class ;
+    rdfs:label "use_site_target" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 307 .
+
+kotlin:user_type a owl:Class ;
+    rdfs:label "user_type" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 202 .
+
+kotlin:value_argument a owl:Class ;
+    rdfs:label "value_argument" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 247 .
+
+kotlin:value_arguments a owl:Class ;
+    rdfs:label "value_arguments" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 246 .
+
+kotlin:variable_declaration a owl:Class ;
+    rdfs:label "variable_declaration" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 185 .
+
+kotlin:variance_modifier a owl:Class ;
+    rdfs:label "variance_modifier" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 297 .
+
+kotlin:visibility_modifier a owl:Class ;
+    rdfs:label "visibility_modifier" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 296 .
+
+kotlin:when_condition a owl:Class ;
+    rdfs:label "when_condition" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 267 .
+
+kotlin:when_entry a owl:Class ;
+    rdfs:label "when_entry" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 266 .
+
+kotlin:when_expression a owl:Class ;
+    rdfs:label "when_expression" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 265 .
+
+kotlin:when_subject a owl:Class ;
+    rdfs:label "when_subject" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 264 .
+
+kotlin:while_statement a owl:Class ;
+    rdfs:label "while_statement" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 217 .
+
+kotlin:wildcard_import a owl:Class ;
+    rdfs:label "wildcard_import" ;
+    rdfs:isDefinedBy kotlin: ;
+    rdfs:subClassOf ast:Node ;
+    kotlin:isSupertype true ;
+    kotlin:nodeTypeId 12 .
+
+kotlin: a owl:Ontology ;
+    rdfs:label "Kotlin Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for kotlin" ;
+    owl:versionInfo "v0.25" ;
+    kotlin:abiVersion 14 ;
+    kotlin:fieldCount 4 ;
+    kotlin:languageName "None" ;
+    kotlin:nodeKindCount 360 .
+

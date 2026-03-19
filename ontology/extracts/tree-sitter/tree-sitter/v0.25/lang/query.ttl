@@ -1,0 +1,216 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix query: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/query/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+query:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+query:anonymous_node a owl:Class ;
+    rdfs:label "anonymous_node" ;
+    rdfs:isDefinedBy query: ;
+    rdfs:subClassOf ast:Node ;
+    query:isSupertype true ;
+    query:nodeTypeId 38 .
+
+query:capture a owl:Class ;
+    rdfs:label "capture" ;
+    rdfs:isDefinedBy query: ;
+    rdfs:subClassOf ast:Node ;
+    query:isSupertype true ;
+    query:nodeTypeId 31 .
+
+query:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy query: ;
+    rdfs:subClassOf ast:Node ;
+    query:isSupertype true ;
+    query:nodeTypeId 13 .
+
+query:escape_sequence a owl:Class ;
+    rdfs:label "escape_sequence" ;
+    rdfs:isDefinedBy query: ;
+    rdfs:subClassOf ast:Node ;
+    query:isSupertype true ;
+    query:nodeTypeId 2 .
+
+query:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+query:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+query:field_definition a owl:Class ;
+    rdfs:label "field_definition" ;
+    rdfs:isDefinedBy query: ;
+    rdfs:subClassOf ast:Node ;
+    query:isSupertype true ;
+    query:nodeTypeId 41 .
+
+query:field_name a owl:ObjectProperty ;
+    rdfs:label "name (structural)" ;
+    rdfs:comment "Structural reference for name field when it contains a non-terminal node" ;
+    query:fieldId 1 .
+
+query:field_parameters a owl:ObjectProperty ;
+    rdfs:label "parameters (structural)" ;
+    rdfs:comment "Structural reference for parameters field when it contains a non-terminal node" ;
+    query:fieldId 2 .
+
+query:grouping a owl:Class ;
+    rdfs:label "grouping" ;
+    rdfs:isDefinedBy query: ;
+    rdfs:subClassOf ast:Node ;
+    query:isSupertype true ;
+    query:nodeTypeId 36 .
+
+query:identifier a owl:Class ;
+    rdfs:label "identifier" ;
+    rdfs:isDefinedBy query: ;
+    rdfs:subClassOf ast:Node ;
+    query:isSupertype true ;
+    query:nodeTypeId 6,
+        7 .
+
+query:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+query:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+query:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+query:list a owl:Class ;
+    rdfs:label "list" ;
+    rdfs:isDefinedBy query: ;
+    rdfs:subClassOf ast:Node ;
+    query:isSupertype true ;
+    query:nodeTypeId 35 .
+
+query:missing_node a owl:Class ;
+    rdfs:label "missing_node" ;
+    rdfs:isDefinedBy query: ;
+    rdfs:subClassOf ast:Node ;
+    query:isSupertype true ;
+    query:nodeTypeId 37 .
+
+query:name a owl:DatatypeProperty ;
+    rdfs:label "name (literal)" ;
+    rdfs:comment "Literal value for name field when it contains a terminal node" ;
+    query:fieldId 1 ;
+    query:isTerminalField true .
+
+query:named_node a owl:Class ;
+    rdfs:label "named_node" ;
+    rdfs:isDefinedBy query: ;
+    rdfs:subClassOf ast:Node ;
+    query:isSupertype true ;
+    query:nodeTypeId 39 .
+
+query:negated_field a owl:Class ;
+    rdfs:label "negated_field" ;
+    rdfs:isDefinedBy query: ;
+    rdfs:subClassOf ast:Node ;
+    query:isSupertype true ;
+    query:nodeTypeId 42 .
+
+query:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+query:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+query:parameters a owl:Class ;
+    rdfs:label "parameters" ;
+    rdfs:isDefinedBy query: ;
+    rdfs:subClassOf ast:Node ;
+    query:isSupertype true ;
+    query:nodeTypeId 34 .
+
+query:predicate a owl:Class ;
+    rdfs:label "predicate" ;
+    rdfs:isDefinedBy query: ;
+    rdfs:subClassOf ast:Node ;
+    query:isSupertype true ;
+    query:nodeTypeId 43 .
+
+query:predicate_type a owl:Class ;
+    rdfs:label "predicate_type" ;
+    rdfs:isDefinedBy query: ;
+    rdfs:subClassOf ast:Node ;
+    query:isSupertype true ;
+    query:nodeTypeId 23 .
+
+query:program a owl:Class ;
+    rdfs:label "program" ;
+    rdfs:isDefinedBy query: ;
+    rdfs:subClassOf ast:Node ;
+    query:isSupertype true ;
+    query:nodeTypeId 24 .
+
+query:quantifier a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "quantifier",
+        "quantifier (literal)" ;
+    rdfs:comment "Literal value for quantifier field when it contains a terminal node" ;
+    rdfs:isDefinedBy query: ;
+    rdfs:subClassOf ast:Node ;
+    query:fieldId 3 ;
+    query:isSupertype true ;
+    query:isTerminalField true ;
+    query:nodeTypeId 28 .
+
+query:string a owl:Class ;
+    rdfs:label "string" ;
+    rdfs:isDefinedBy query: ;
+    rdfs:subClassOf ast:Node ;
+    query:isSupertype true ;
+    query:nodeTypeId 32 .
+
+query:string_content a owl:Class ;
+    rdfs:label "string_content" ;
+    rdfs:isDefinedBy query: ;
+    rdfs:subClassOf ast:Node ;
+    query:isSupertype true ;
+    query:nodeTypeId 33 .
+
+query:supertype a owl:DatatypeProperty ;
+    rdfs:label "supertype (literal)" ;
+    rdfs:comment "Literal value for supertype field when it contains a terminal node" ;
+    query:fieldId 4 ;
+    query:isTerminalField true .
+
+query:type a owl:DatatypeProperty ;
+    rdfs:label "type (literal)" ;
+    rdfs:comment "Literal value for type field when it contains a terminal node" ;
+    query:fieldId 5 ;
+    query:isTerminalField true .
+
+query: a owl:Ontology ;
+    rdfs:label "Query Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for query" ;
+    owl:versionInfo "v0.25" ;
+    query:abiVersion 15 ;
+    query:fieldCount 5 ;
+    query:languageName "query" ;
+    query:nodeKindCount 50 .
+

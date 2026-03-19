@@ -1,0 +1,246 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix markdown_inline: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/markdown_inline/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+markdown_inline:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+markdown_inline:backslash_escape a owl:Class ;
+    rdfs:label "backslash_escape" ;
+    rdfs:isDefinedBy markdown_inline: ;
+    rdfs:subClassOf ast:Node ;
+    markdown_inline:isSupertype true ;
+    markdown_inline:nodeTypeId 68 .
+
+markdown_inline:code_span a owl:Class ;
+    rdfs:label "code_span" ;
+    rdfs:isDefinedBy markdown_inline: ;
+    rdfs:subClassOf ast:Node ;
+    markdown_inline:isSupertype true ;
+    markdown_inline:nodeTypeId 74 .
+
+markdown_inline:code_span_delimiter a owl:Class ;
+    rdfs:label "code_span_delimiter" ;
+    rdfs:isDefinedBy markdown_inline: ;
+    rdfs:subClassOf ast:Node ;
+    markdown_inline:isSupertype true ;
+    markdown_inline:nodeTypeId 54,
+        55 .
+
+markdown_inline:collapsed_reference_link a owl:Class ;
+    rdfs:label "collapsed_reference_link" ;
+    rdfs:isDefinedBy markdown_inline: ;
+    rdfs:subClassOf ast:Node ;
+    markdown_inline:isSupertype true ;
+    markdown_inline:nodeTypeId 80 .
+
+markdown_inline:email_autolink a owl:Class ;
+    rdfs:label "email_autolink" ;
+    rdfs:isDefinedBy markdown_inline: ;
+    rdfs:subClassOf ast:Node ;
+    markdown_inline:isSupertype true ;
+    markdown_inline:nodeTypeId 38 .
+
+markdown_inline:emphasis a owl:Class ;
+    rdfs:label "emphasis" ;
+    rdfs:isDefinedBy markdown_inline: ;
+    rdfs:subClassOf ast:Node ;
+    markdown_inline:isSupertype true ;
+    markdown_inline:nodeTypeId 149 .
+
+markdown_inline:emphasis_delimiter a owl:Class ;
+    rdfs:label "emphasis_delimiter" ;
+    rdfs:isDefinedBy markdown_inline: ;
+    rdfs:subClassOf ast:Node ;
+    markdown_inline:isSupertype true ;
+    markdown_inline:nodeTypeId 58,
+        59,
+        63 .
+
+markdown_inline:entity_reference a owl:Class ;
+    rdfs:label "entity_reference" ;
+    rdfs:isDefinedBy markdown_inline: ;
+    rdfs:subClassOf ast:Node ;
+    markdown_inline:isSupertype true ;
+    markdown_inline:nodeTypeId 2 .
+
+markdown_inline:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+markdown_inline:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+markdown_inline:full_reference_link a owl:Class ;
+    rdfs:label "full_reference_link" ;
+    rdfs:isDefinedBy markdown_inline: ;
+    rdfs:subClassOf ast:Node ;
+    markdown_inline:isSupertype true ;
+    markdown_inline:nodeTypeId 79 .
+
+markdown_inline:hard_line_break a owl:Class ;
+    rdfs:label "hard_line_break" ;
+    rdfs:isDefinedBy markdown_inline: ;
+    rdfs:subClassOf ast:Node ;
+    markdown_inline:isSupertype true ;
+    markdown_inline:nodeTypeId 99 .
+
+markdown_inline:html_tag a owl:Class ;
+    rdfs:label "html_tag" ;
+    rdfs:isDefinedBy markdown_inline: ;
+    rdfs:subClassOf ast:Node ;
+    markdown_inline:isSupertype true ;
+    markdown_inline:nodeTypeId 150 .
+
+markdown_inline:image a owl:Class ;
+    rdfs:label "image" ;
+    rdfs:isDefinedBy markdown_inline: ;
+    rdfs:subClassOf ast:Node ;
+    markdown_inline:isSupertype true ;
+    markdown_inline:nodeTypeId 82 .
+
+markdown_inline:image_description a owl:Class ;
+    rdfs:label "image_description" ;
+    rdfs:isDefinedBy markdown_inline: ;
+    rdfs:subClassOf ast:Node ;
+    markdown_inline:isSupertype true ;
+    markdown_inline:nodeTypeId 151 .
+
+markdown_inline:inline a owl:Class ;
+    rdfs:label "inline" ;
+    rdfs:isDefinedBy markdown_inline: ;
+    rdfs:subClassOf ast:Node ;
+    markdown_inline:isSupertype true ;
+    markdown_inline:nodeTypeId 67 .
+
+markdown_inline:inline_link a owl:Class ;
+    rdfs:label "inline_link" ;
+    rdfs:isDefinedBy markdown_inline: ;
+    rdfs:subClassOf ast:Node ;
+    markdown_inline:isSupertype true ;
+    markdown_inline:nodeTypeId 81 .
+
+markdown_inline:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+markdown_inline:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+markdown_inline:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+markdown_inline:latex_block a owl:Class ;
+    rdfs:label "latex_block" ;
+    rdfs:isDefinedBy markdown_inline: ;
+    rdfs:subClassOf ast:Node ;
+    markdown_inline:isSupertype true ;
+    markdown_inline:nodeTypeId 75 .
+
+markdown_inline:latex_span_delimiter a owl:Class ;
+    rdfs:label "latex_span_delimiter" ;
+    rdfs:isDefinedBy markdown_inline: ;
+    rdfs:subClassOf ast:Node ;
+    markdown_inline:isSupertype true ;
+    markdown_inline:nodeTypeId 64,
+        65 .
+
+markdown_inline:link_destination a owl:Class ;
+    rdfs:label "link_destination" ;
+    rdfs:isDefinedBy markdown_inline: ;
+    rdfs:subClassOf ast:Node ;
+    markdown_inline:isSupertype true ;
+    markdown_inline:nodeTypeId 70 .
+
+markdown_inline:link_label a owl:Class ;
+    rdfs:label "link_label" ;
+    rdfs:isDefinedBy markdown_inline: ;
+    rdfs:subClassOf ast:Node ;
+    markdown_inline:isSupertype true ;
+    markdown_inline:nodeTypeId 69 .
+
+markdown_inline:link_text a owl:Class ;
+    rdfs:label "link_text" ;
+    rdfs:isDefinedBy markdown_inline: ;
+    rdfs:subClassOf ast:Node ;
+    markdown_inline:isSupertype true ;
+    markdown_inline:nodeTypeId 152 .
+
+markdown_inline:link_title a owl:Class ;
+    rdfs:label "link_title" ;
+    rdfs:isDefinedBy markdown_inline: ;
+    rdfs:subClassOf ast:Node ;
+    markdown_inline:isSupertype true ;
+    markdown_inline:nodeTypeId 73 .
+
+markdown_inline:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+markdown_inline:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+markdown_inline:numeric_character_reference a owl:Class ;
+    rdfs:label "numeric_character_reference" ;
+    rdfs:isDefinedBy markdown_inline: ;
+    rdfs:subClassOf ast:Node ;
+    markdown_inline:isSupertype true ;
+    markdown_inline:nodeTypeId 3 .
+
+markdown_inline:shortcut_link a owl:Class ;
+    rdfs:label "shortcut_link" ;
+    rdfs:isDefinedBy markdown_inline: ;
+    rdfs:subClassOf ast:Node ;
+    markdown_inline:isSupertype true ;
+    markdown_inline:nodeTypeId 78 .
+
+markdown_inline:strikethrough a owl:Class ;
+    rdfs:label "strikethrough" ;
+    rdfs:isDefinedBy markdown_inline: ;
+    rdfs:subClassOf ast:Node ;
+    markdown_inline:isSupertype true ;
+    markdown_inline:nodeTypeId 114,
+        127 .
+
+markdown_inline:strong_emphasis a owl:Class ;
+    rdfs:label "strong_emphasis" ;
+    rdfs:isDefinedBy markdown_inline: ;
+    rdfs:subClassOf ast:Node ;
+    markdown_inline:isSupertype true ;
+    markdown_inline:nodeTypeId 116,
+        118,
+        129,
+        131 .
+
+markdown_inline:uri_autolink a owl:Class ;
+    rdfs:label "uri_autolink" ;
+    rdfs:isDefinedBy markdown_inline: ;
+    rdfs:subClassOf ast:Node ;
+    markdown_inline:isSupertype true ;
+    markdown_inline:nodeTypeId 37 .
+
+markdown_inline: a owl:Ontology ;
+    rdfs:label "Markdown_Inline Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for markdown_inline" ;
+    owl:versionInfo "v0.25" ;
+    markdown_inline:abiVersion 15 ;
+    markdown_inline:fieldCount 0 ;
+    markdown_inline:languageName "markdown_inline" ;
+    markdown_inline:nodeKindCount 153 .
+

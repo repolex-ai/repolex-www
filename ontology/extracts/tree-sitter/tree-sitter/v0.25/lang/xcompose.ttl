@@ -1,0 +1,140 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xcompose: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/xcompose/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+xcompose:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+xcompose:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy xcompose: ;
+    rdfs:subClassOf ast:Node ;
+    xcompose:isSupertype true ;
+    xcompose:nodeTypeId 18 .
+
+xcompose:compose a owl:Class ;
+    rdfs:label "compose" ;
+    rdfs:isDefinedBy xcompose: ;
+    rdfs:subClassOf ast:Node ;
+    xcompose:isSupertype true ;
+    xcompose:nodeTypeId 20 .
+
+xcompose:event a owl:Class ;
+    rdfs:label "event" ;
+    rdfs:isDefinedBy xcompose: ;
+    rdfs:subClassOf ast:Node ;
+    xcompose:isSupertype true ;
+    xcompose:nodeTypeId 23 .
+
+xcompose:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+xcompose:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+xcompose:hex a owl:Class ;
+    rdfs:label "hex" ;
+    rdfs:isDefinedBy xcompose: ;
+    rdfs:subClassOf ast:Node ;
+    xcompose:isSupertype true ;
+    xcompose:nodeTypeId 17 .
+
+xcompose:include a owl:Class ;
+    rdfs:label "include" ;
+    rdfs:isDefinedBy xcompose: ;
+    rdfs:subClassOf ast:Node ;
+    xcompose:isSupertype true ;
+    xcompose:nodeTypeId 21 .
+
+xcompose:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+xcompose:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+xcompose:keysym a owl:Class ;
+    rdfs:label "keysym" ;
+    rdfs:isDefinedBy xcompose: ;
+    rdfs:subClassOf ast:Node ;
+    xcompose:isSupertype true ;
+    xcompose:nodeTypeId 14 .
+
+xcompose:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+xcompose:modifier a owl:Class ;
+    rdfs:label "modifier" ;
+    rdfs:isDefinedBy xcompose: ;
+    rdfs:subClassOf ast:Node ;
+    xcompose:isSupertype true ;
+    xcompose:nodeTypeId 13 .
+
+xcompose:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+xcompose:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+xcompose:octal a owl:Class ;
+    rdfs:label "octal" ;
+    rdfs:isDefinedBy xcompose: ;
+    rdfs:subClassOf ast:Node ;
+    xcompose:isSupertype true ;
+    xcompose:nodeTypeId 16 .
+
+xcompose:result a owl:Class ;
+    rdfs:label "result" ;
+    rdfs:isDefinedBy xcompose: ;
+    rdfs:subClassOf ast:Node ;
+    xcompose:isSupertype true ;
+    xcompose:nodeTypeId 24 .
+
+xcompose:sequence a owl:Class ;
+    rdfs:label "sequence" ;
+    rdfs:isDefinedBy xcompose: ;
+    rdfs:subClassOf ast:Node ;
+    xcompose:isSupertype true ;
+    xcompose:nodeTypeId 22 .
+
+xcompose:string a owl:Class ;
+    rdfs:label "string" ;
+    rdfs:isDefinedBy xcompose: ;
+    rdfs:subClassOf ast:Node ;
+    xcompose:isSupertype true ;
+    xcompose:nodeTypeId 25 .
+
+xcompose:text a owl:Class ;
+    rdfs:label "text" ;
+    rdfs:isDefinedBy xcompose: ;
+    rdfs:subClassOf ast:Node ;
+    xcompose:isSupertype true ;
+    xcompose:nodeTypeId 26 .
+
+xcompose: a owl:Ontology ;
+    rdfs:label "Xcompose Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for xcompose" ;
+    owl:versionInfo "v0.25" ;
+    xcompose:abiVersion 15 ;
+    xcompose:fieldCount 0 ;
+    xcompose:languageName "xcompose" ;
+    xcompose:nodeKindCount 31 .
+

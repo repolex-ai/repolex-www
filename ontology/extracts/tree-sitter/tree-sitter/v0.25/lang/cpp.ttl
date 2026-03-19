@@ -1,0 +1,2033 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix cpp: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/cpp/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+cpp:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+cpp:abstract_array_declarator a owl:Class ;
+    rdfs:label "abstract_array_declarator" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 299 .
+
+cpp:abstract_function_declarator a owl:Class ;
+    rdfs:label "abstract_function_declarator" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 295 .
+
+cpp:abstract_parenthesized_declarator a owl:Class ;
+    rdfs:label "abstract_parenthesized_declarator" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 284 .
+
+cpp:abstract_pointer_declarator a owl:Class ;
+    rdfs:label "abstract_pointer_declarator" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 291 .
+
+cpp:abstract_reference_declarator a owl:Class ;
+    rdfs:label "abstract_reference_declarator" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 430 .
+
+cpp:access_specifier a owl:Class ;
+    rdfs:label "access_specifier" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 426 .
+
+cpp:alias_declaration a owl:Class ;
+    rdfs:label "alias_declaration" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 450 .
+
+cpp:alignas_qualifier a owl:Class ;
+    rdfs:label "alignas_qualifier" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 304 .
+
+cpp:alignof_expression a owl:Class ;
+    rdfs:label "alignof_expression" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 352 .
+
+cpp:annotation a owl:Class ;
+    rdfs:label "annotation" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 383 .
+
+cpp:argument a owl:DatatypeProperty ;
+    rdfs:label "argument (literal)" ;
+    rdfs:comment "Literal value for argument field when it contains a terminal node" ;
+    cpp:fieldId 2 ;
+    cpp:isTerminalField true .
+
+cpp:argument_list a owl:Class ;
+    rdfs:label "argument_list" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 258,
+        366 .
+
+cpp:array_declarator a owl:Class ;
+    rdfs:label "array_declarator" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 296,
+        297,
+        298 .
+
+cpp:assignment_expression a owl:Class ;
+    rdfs:label "assignment_expression" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 344,
+        506 .
+
+cpp:attribute a owl:Class ;
+    rdfs:label "attribute" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 269 .
+
+cpp:attribute_declaration a owl:Class ;
+    rdfs:label "attribute_declaration" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 270 .
+
+cpp:attribute_specifier a owl:Class ;
+    rdfs:label "attribute_specifier" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 268 .
+
+cpp:attributed_declarator a owl:Class ;
+    rdfs:label "attributed_declarator" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 285,
+        286,
+        287 .
+
+cpp:attributed_statement a owl:Class ;
+    rdfs:label "attributed_statement" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 318 .
+
+cpp:auto a owl:Class ;
+    rdfs:label "auto" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 180 .
+
+cpp:base a owl:DatatypeProperty ;
+    rdfs:label "base (literal)" ;
+    rdfs:comment "Literal value for base field when it contains a terminal node" ;
+    cpp:fieldId 5 ;
+    cpp:isTerminalField true .
+
+cpp:base_class_clause a owl:Class ;
+    rdfs:label "base_class_clause" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 390 .
+
+cpp:binary_expression a owl:Class ;
+    rdfs:label "binary_expression" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 259,
+        347 .
+
+cpp:bitfield_clause a owl:Class ;
+    rdfs:label "bitfield_clause" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 314 .
+
+cpp:break_statement a owl:Class ;
+    rdfs:label "break_statement" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 333 .
+
+cpp:call_expression a owl:Class ;
+    rdfs:label "call_expression" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 257,
+        356 .
+
+cpp:case_statement a owl:Class ;
+    rdfs:label "case_statement" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 327 .
+
+cpp:cast_expression a owl:Class ;
+    rdfs:label "cast_expression" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 349 .
+
+cpp:catch_clause a owl:Class ;
+    rdfs:label "catch_clause" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 463 .
+
+cpp:char_literal a owl:Class ;
+    rdfs:label "char_literal" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 375 .
+
+cpp:character a owl:Class ;
+    rdfs:label "character" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 166 .
+
+cpp:class_specifier a owl:Class ;
+    rdfs:label "class_specifier" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 386 .
+
+cpp:co_await_expression a owl:Class ;
+    rdfs:label "co_await_expression" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 466 .
+
+cpp:co_return_statement a owl:Class ;
+    rdfs:label "co_return_statement" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 459 .
+
+cpp:co_yield_statement a owl:Class ;
+    rdfs:label "co_yield_statement" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 460 .
+
+cpp:comma_expression a owl:Class ;
+    rdfs:label "comma_expression" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 342 .
+
+cpp:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 179 .
+
+cpp:compound_literal_expression a owl:Class ;
+    rdfs:label "compound_literal_expression" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 368 .
+
+cpp:compound_requirement a owl:Class ;
+    rdfs:label "compound_requirement" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 471 .
+
+cpp:compound_statement a owl:Class ;
+    rdfs:label "compound_statement" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 301 .
+
+cpp:concatenated_string a owl:Class ;
+    rdfs:label "concatenated_string" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 376 .
+
+cpp:concept_definition a owl:Class ;
+    rdfs:label "concept_definition" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 453 .
+
+cpp:condition a owl:DatatypeProperty ;
+    rdfs:label "condition (literal)" ;
+    rdfs:comment "Literal value for condition field when it contains a terminal node" ;
+    cpp:fieldId 9 ;
+    cpp:isTerminalField true .
+
+cpp:condition_clause a owl:Class ;
+    rdfs:label "condition_clause" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 457 .
+
+cpp:conditional_expression a owl:Class ;
+    rdfs:label "conditional_expression" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 343 .
+
+cpp:consteval_block_declaration a owl:Class ;
+    rdfs:label "consteval_block_declaration" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 452 .
+
+cpp:constraint a owl:DatatypeProperty ;
+    rdfs:label "constraint (literal)" ;
+    rdfs:comment "Literal value for constraint field when it contains a terminal node" ;
+    cpp:fieldId 11 ;
+    cpp:isTerminalField true .
+
+cpp:constraint_conjunction a owl:Class ;
+    rdfs:label "constraint_conjunction" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 474 .
+
+cpp:constraint_disjunction a owl:Class ;
+    rdfs:label "constraint_disjunction" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 475 .
+
+cpp:continue_statement a owl:Class ;
+    rdfs:label "continue_statement" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 334 .
+
+cpp:declaration a owl:Class ;
+    rdfs:label "declaration" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 261,
+        418,
+        421,
+        458 .
+
+cpp:declaration_list a owl:Class ;
+    rdfs:label "declaration_list" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 276 .
+
+cpp:declarator a owl:DatatypeProperty ;
+    rdfs:label "declarator (literal)" ;
+    rdfs:comment "Literal value for declarator field when it contains a terminal node" ;
+    cpp:fieldId 12 ;
+    cpp:isTerminalField true .
+
+cpp:decltype a owl:Class ;
+    rdfs:label "decltype" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 381,
+        382 .
+
+cpp:default_method_clause a owl:Class ;
+    rdfs:label "default_method_clause" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 422 .
+
+cpp:delete_expression a owl:Class ;
+    rdfs:label "delete_expression" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 469 .
+
+cpp:delete_method_clause a owl:Class ;
+    rdfs:label "delete_method_clause" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 423 .
+
+cpp:delimiter a owl:DatatypeProperty ;
+    rdfs:label "delimiter (literal)" ;
+    rdfs:comment "Literal value for delimiter field when it contains a terminal node" ;
+    cpp:fieldId 15 ;
+    cpp:isTerminalField true .
+
+cpp:dependent_name a owl:Class ;
+    rdfs:label "dependent_name" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 498,
+        499,
+        500 .
+
+cpp:dependent_type a owl:Class ;
+    rdfs:label "dependent_type" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 392 .
+
+cpp:designator a owl:DatatypeProperty ;
+    rdfs:label "designator (literal)" ;
+    rdfs:comment "Literal value for designator field when it contains a terminal node" ;
+    cpp:fieldId 16 ;
+    cpp:isTerminalField true .
+
+cpp:destructor_name a owl:Class ;
+    rdfs:label "destructor_name" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 497 .
+
+cpp:directive a owl:DatatypeProperty ;
+    rdfs:label "directive (literal)" ;
+    rdfs:comment "Literal value for directive field when it contains a terminal node" ;
+    cpp:fieldId 17 ;
+    cpp:isTerminalField true .
+
+cpp:do_statement a owl:Class ;
+    rdfs:label "do_statement" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 329 .
+
+cpp:else_clause a owl:Class ;
+    rdfs:label "else_clause" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 325 .
+
+cpp:enum_specifier a owl:Class ;
+    rdfs:label "enum_specifier" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 307 .
+
+cpp:enumerator a owl:Class ;
+    rdfs:label "enumerator" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 315 .
+
+cpp:enumerator_list a owl:Class ;
+    rdfs:label "enumerator_list" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 308 .
+
+cpp:escape_sequence a owl:Class ;
+    rdfs:label "escape_sequence" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 173 .
+
+cpp:expansion_statement a owl:Class ;
+    rdfs:label "expansion_statement" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 512 .
+
+cpp:explicit_function_specifier a owl:Class ;
+    rdfs:label "explicit_function_specifier" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 389 .
+
+cpp:explicit_object_parameter_declaration a owl:Class ;
+    rdfs:label "explicit_object_parameter_declaration" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 407 .
+
+cpp:export_declaration a owl:Class ;
+    rdfs:label "export_declaration" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 396 .
+
+cpp:expression_statement a owl:Class ;
+    rdfs:label "expression_statement" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 322,
+        323 .
+
+cpp:extension_expression a owl:Class ;
+    rdfs:label "extension_expression" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 365 .
+
+cpp:false a owl:Class ;
+    rdfs:label "false" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 176 .
+
+cpp:field a owl:DatatypeProperty ;
+    rdfs:label "field (literal)" ;
+    rdfs:comment "Literal value for field field when it contains a terminal node" ;
+    cpp:fieldId 19 ;
+    cpp:isTerminalField true .
+
+cpp:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+cpp:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+cpp:field_alternative a owl:ObjectProperty ;
+    rdfs:label "alternative (structural)" ;
+    rdfs:comment "Structural reference for alternative field when it contains a non-terminal node" ;
+    cpp:fieldId 1 .
+
+cpp:field_argument a owl:ObjectProperty ;
+    rdfs:label "argument (structural)" ;
+    rdfs:comment "Structural reference for argument field when it contains a non-terminal node" ;
+    cpp:fieldId 2 .
+
+cpp:field_arguments a owl:ObjectProperty ;
+    rdfs:label "arguments (structural)" ;
+    rdfs:comment "Structural reference for arguments field when it contains a non-terminal node" ;
+    cpp:fieldId 3 .
+
+cpp:field_assembly_code a owl:ObjectProperty ;
+    rdfs:label "assembly_code (structural)" ;
+    rdfs:comment "Structural reference for assembly_code field when it contains a non-terminal node" ;
+    cpp:fieldId 4 .
+
+cpp:field_base a owl:ObjectProperty ;
+    rdfs:label "base (structural)" ;
+    rdfs:comment "Structural reference for base field when it contains a non-terminal node" ;
+    cpp:fieldId 5 .
+
+cpp:field_body a owl:ObjectProperty ;
+    rdfs:label "body (structural)" ;
+    rdfs:comment "Structural reference for body field when it contains a non-terminal node" ;
+    cpp:fieldId 6 .
+
+cpp:field_captures a owl:ObjectProperty ;
+    rdfs:label "captures (structural)" ;
+    rdfs:comment "Structural reference for captures field when it contains a non-terminal node" ;
+    cpp:fieldId 7 .
+
+cpp:field_clobbers a owl:ObjectProperty ;
+    rdfs:label "clobbers (structural)" ;
+    rdfs:comment "Structural reference for clobbers field when it contains a non-terminal node" ;
+    cpp:fieldId 8 .
+
+cpp:field_condition a owl:ObjectProperty ;
+    rdfs:label "condition (structural)" ;
+    rdfs:comment "Structural reference for condition field when it contains a non-terminal node" ;
+    cpp:fieldId 9 .
+
+cpp:field_consequence a owl:ObjectProperty ;
+    rdfs:label "consequence (structural)" ;
+    rdfs:comment "Structural reference for consequence field when it contains a non-terminal node" ;
+    cpp:fieldId 10 .
+
+cpp:field_constraint a owl:ObjectProperty ;
+    rdfs:label "constraint (structural)" ;
+    rdfs:comment "Structural reference for constraint field when it contains a non-terminal node" ;
+    cpp:fieldId 11 .
+
+cpp:field_declaration a owl:Class ;
+    rdfs:label "field_declaration" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 313 .
+
+cpp:field_declaration_list a owl:Class ;
+    rdfs:label "field_declaration_list" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 311 .
+
+cpp:field_declarator a owl:ObjectProperty ;
+    rdfs:label "declarator (structural)" ;
+    rdfs:comment "Structural reference for declarator field when it contains a non-terminal node" ;
+    cpp:fieldId 12 .
+
+cpp:field_default_type a owl:ObjectProperty ;
+    rdfs:label "default_type (structural)" ;
+    rdfs:comment "Structural reference for default_type field when it contains a non-terminal node" ;
+    cpp:fieldId 13 .
+
+cpp:field_default_value a owl:ObjectProperty ;
+    rdfs:label "default_value (structural)" ;
+    rdfs:comment "Structural reference for default_value field when it contains a non-terminal node" ;
+    cpp:fieldId 14 .
+
+cpp:field_designator a owl:Class,
+        owl:ObjectProperty ;
+    rdfs:label "designator (structural)",
+        "field_designator" ;
+    rdfs:comment "Structural reference for designator field when it contains a non-terminal node" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:fieldId 16 ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 374 .
+
+cpp:field_end a owl:ObjectProperty ;
+    rdfs:label "end (structural)" ;
+    rdfs:comment "Structural reference for end field when it contains a non-terminal node" ;
+    cpp:fieldId 18 .
+
+cpp:field_expression a owl:Class ;
+    rdfs:label "field_expression" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 367 .
+
+cpp:field_field a owl:ObjectProperty ;
+    rdfs:label "field (structural)" ;
+    rdfs:comment "Structural reference for field field when it contains a non-terminal node" ;
+    cpp:fieldId 19 .
+
+cpp:field_filter a owl:ObjectProperty ;
+    rdfs:label "filter (structural)" ;
+    rdfs:comment "Structural reference for filter field when it contains a non-terminal node" ;
+    cpp:fieldId 20 .
+
+cpp:field_function a owl:ObjectProperty ;
+    rdfs:label "function (structural)" ;
+    rdfs:comment "Structural reference for function field when it contains a non-terminal node" ;
+    cpp:fieldId 21 .
+
+cpp:field_goto_labels a owl:ObjectProperty ;
+    rdfs:label "goto_labels (structural)" ;
+    rdfs:comment "Structural reference for goto_labels field when it contains a non-terminal node" ;
+    cpp:fieldId 22 .
+
+cpp:field_header a owl:ObjectProperty ;
+    rdfs:label "header (structural)" ;
+    rdfs:comment "Structural reference for header field when it contains a non-terminal node" ;
+    cpp:fieldId 23 .
+
+cpp:field_identifier a owl:Class ;
+    rdfs:label "field_identifier" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 565 .
+
+cpp:field_indices a owl:ObjectProperty ;
+    rdfs:label "indices (structural)" ;
+    rdfs:comment "Structural reference for indices field when it contains a non-terminal node" ;
+    cpp:fieldId 24 .
+
+cpp:field_initializer a owl:Class,
+        owl:ObjectProperty ;
+    rdfs:label "field_initializer",
+        "initializer (structural)" ;
+    rdfs:comment "Structural reference for initializer field when it contains a non-terminal node" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:fieldId 25 ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 414 .
+
+cpp:field_initializer_list a owl:Class ;
+    rdfs:label "field_initializer_list" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 413 .
+
+cpp:field_input_operands a owl:ObjectProperty ;
+    rdfs:label "input_operands (structural)" ;
+    rdfs:comment "Structural reference for input_operands field when it contains a non-terminal node" ;
+    cpp:fieldId 26 .
+
+cpp:field_left a owl:ObjectProperty ;
+    rdfs:label "left (structural)" ;
+    rdfs:comment "Structural reference for left field when it contains a non-terminal node" ;
+    cpp:fieldId 28 .
+
+cpp:field_length a owl:ObjectProperty ;
+    rdfs:label "length (structural)" ;
+    rdfs:comment "Structural reference for length field when it contains a non-terminal node" ;
+    cpp:fieldId 29 .
+
+cpp:field_message a owl:ObjectProperty ;
+    rdfs:label "message (structural)" ;
+    rdfs:comment "Structural reference for message field when it contains a non-terminal node" ;
+    cpp:fieldId 31 .
+
+cpp:field_name a owl:ObjectProperty ;
+    rdfs:label "name (structural)" ;
+    rdfs:comment "Structural reference for name field when it contains a non-terminal node" ;
+    cpp:fieldId 32 .
+
+cpp:field_operand a owl:ObjectProperty ;
+    rdfs:label "operand (structural)" ;
+    rdfs:comment "Structural reference for operand field when it contains a non-terminal node" ;
+    cpp:fieldId 34 .
+
+cpp:field_operator a owl:ObjectProperty ;
+    rdfs:label "operator (structural)" ;
+    rdfs:comment "Structural reference for operator field when it contains a non-terminal node" ;
+    cpp:fieldId 35 .
+
+cpp:field_output_operands a owl:ObjectProperty ;
+    rdfs:label "output_operands (structural)" ;
+    rdfs:comment "Structural reference for output_operands field when it contains a non-terminal node" ;
+    cpp:fieldId 36 .
+
+cpp:field_parameters a owl:ObjectProperty ;
+    rdfs:label "parameters (structural)" ;
+    rdfs:comment "Structural reference for parameters field when it contains a non-terminal node" ;
+    cpp:fieldId 37 .
+
+cpp:field_partition a owl:ObjectProperty ;
+    rdfs:label "partition (structural)" ;
+    rdfs:comment "Structural reference for partition field when it contains a non-terminal node" ;
+    cpp:fieldId 38 .
+
+cpp:field_path a owl:ObjectProperty ;
+    rdfs:label "path (structural)" ;
+    rdfs:comment "Structural reference for path field when it contains a non-terminal node" ;
+    cpp:fieldId 39 .
+
+cpp:field_pattern a owl:ObjectProperty ;
+    rdfs:label "pattern (structural)" ;
+    rdfs:comment "Structural reference for pattern field when it contains a non-terminal node" ;
+    cpp:fieldId 40 .
+
+cpp:field_placement a owl:ObjectProperty ;
+    rdfs:label "placement (structural)" ;
+    rdfs:comment "Structural reference for placement field when it contains a non-terminal node" ;
+    cpp:fieldId 41 .
+
+cpp:field_register a owl:ObjectProperty ;
+    rdfs:label "register (structural)" ;
+    rdfs:comment "Structural reference for register field when it contains a non-terminal node" ;
+    cpp:fieldId 43 .
+
+cpp:field_requirements a owl:ObjectProperty ;
+    rdfs:label "requirements (structural)" ;
+    rdfs:comment "Structural reference for requirements field when it contains a non-terminal node" ;
+    cpp:fieldId 44 .
+
+cpp:field_right a owl:ObjectProperty ;
+    rdfs:label "right (structural)" ;
+    rdfs:comment "Structural reference for right field when it contains a non-terminal node" ;
+    cpp:fieldId 45 .
+
+cpp:field_scope a owl:ObjectProperty ;
+    rdfs:label "scope (structural)" ;
+    rdfs:comment "Structural reference for scope field when it contains a non-terminal node" ;
+    cpp:fieldId 46 .
+
+cpp:field_size a owl:ObjectProperty ;
+    rdfs:label "size (structural)" ;
+    rdfs:comment "Structural reference for size field when it contains a non-terminal node" ;
+    cpp:fieldId 47 .
+
+cpp:field_start a owl:ObjectProperty ;
+    rdfs:label "start (structural)" ;
+    rdfs:comment "Structural reference for start field when it contains a non-terminal node" ;
+    cpp:fieldId 48 .
+
+cpp:field_template_parameters a owl:ObjectProperty ;
+    rdfs:label "template_parameters (structural)" ;
+    rdfs:comment "Structural reference for template_parameters field when it contains a non-terminal node" ;
+    cpp:fieldId 50 .
+
+cpp:field_type a owl:ObjectProperty ;
+    rdfs:label "type (structural)" ;
+    rdfs:comment "Structural reference for type field when it contains a non-terminal node" ;
+    cpp:fieldId 51 .
+
+cpp:field_update a owl:ObjectProperty ;
+    rdfs:label "update (structural)" ;
+    rdfs:comment "Structural reference for update field when it contains a non-terminal node" ;
+    cpp:fieldId 52 .
+
+cpp:field_value a owl:ObjectProperty ;
+    rdfs:label "value (structural)" ;
+    rdfs:comment "Structural reference for value field when it contains a non-terminal node" ;
+    cpp:fieldId 53 .
+
+cpp:fold_expression a owl:Class ;
+    rdfs:label "fold_expression" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 493 .
+
+cpp:for_range_loop a owl:Class ;
+    rdfs:label "for_range_loop" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 454 .
+
+cpp:for_statement a owl:Class ;
+    rdfs:label "for_statement" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 330 .
+
+cpp:friend_declaration a owl:Class ;
+    rdfs:label "friend_declaration" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 425 .
+
+cpp:function a owl:DatatypeProperty ;
+    rdfs:label "function (literal)" ;
+    rdfs:comment "Literal value for function field when it contains a terminal node" ;
+    cpp:fieldId 21 ;
+    cpp:isTerminalField true .
+
+cpp:function_declarator a owl:Class ;
+    rdfs:label "function_declarator" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 292,
+        293,
+        294 .
+
+cpp:function_definition a owl:Class ;
+    rdfs:label "function_definition" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 260,
+        415,
+        417,
+        420 .
+
+cpp:generic_expression a owl:Class ;
+    rdfs:label "generic_expression" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 354 .
+
+cpp:global_module_fragment_declaration a owl:Class ;
+    rdfs:label "global_module_fragment_declaration" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 398 .
+
+cpp:gnu_asm_clobber_list a owl:Class ;
+    rdfs:label "gnu_asm_clobber_list" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 363 .
+
+cpp:gnu_asm_expression a owl:Class ;
+    rdfs:label "gnu_asm_expression" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 357 .
+
+cpp:gnu_asm_goto_list a owl:Class ;
+    rdfs:label "gnu_asm_goto_list" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 364 .
+
+cpp:gnu_asm_input_operand a owl:Class ;
+    rdfs:label "gnu_asm_input_operand" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 362 .
+
+cpp:gnu_asm_input_operand_list a owl:Class ;
+    rdfs:label "gnu_asm_input_operand_list" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 361 .
+
+cpp:gnu_asm_output_operand a owl:Class ;
+    rdfs:label "gnu_asm_output_operand" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 360 .
+
+cpp:gnu_asm_output_operand_list a owl:Class ;
+    rdfs:label "gnu_asm_output_operand_list" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 359 .
+
+cpp:gnu_asm_qualifier a owl:Class ;
+    rdfs:label "gnu_asm_qualifier" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 358 .
+
+cpp:goto_statement a owl:Class ;
+    rdfs:label "goto_statement" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 335 .
+
+cpp:header a owl:DatatypeProperty ;
+    rdfs:label "header (literal)" ;
+    rdfs:comment "Literal value for header field when it contains a terminal node" ;
+    cpp:fieldId 23 ;
+    cpp:isTerminalField true .
+
+cpp:identifier a owl:Class ;
+    rdfs:label "identifier" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 1 .
+
+cpp:if_statement a owl:Class ;
+    rdfs:label "if_statement" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 324 .
+
+cpp:import_declaration a owl:Class ;
+    rdfs:label "import_declaration" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 397 .
+
+cpp:init_declarator a owl:Class ;
+    rdfs:label "init_declarator" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 300 .
+
+cpp:init_statement a owl:Class ;
+    rdfs:label "init_statement" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 456 .
+
+cpp:initializer_list a owl:Class ;
+    rdfs:label "initializer_list" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 370 .
+
+cpp:initializer_pair a owl:Class ;
+    rdfs:label "initializer_pair" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 371 .
+
+cpp:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+cpp:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+cpp:label a owl:DatatypeProperty ;
+    rdfs:label "label (literal)" ;
+    rdfs:comment "Literal value for label field when it contains a terminal node" ;
+    cpp:fieldId 27 ;
+    cpp:isTerminalField true .
+
+cpp:labeled_statement a owl:Class ;
+    rdfs:label "labeled_statement" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 321 .
+
+cpp:lambda_capture_initializer a owl:Class ;
+    rdfs:label "lambda_capture_initializer" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 486 .
+
+cpp:lambda_capture_specifier a owl:Class ;
+    rdfs:label "lambda_capture_specifier" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 483 .
+
+cpp:lambda_declarator a owl:Class ;
+    rdfs:label "lambda_declarator" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 481 .
+
+cpp:lambda_default_capture a owl:Class ;
+    rdfs:label "lambda_default_capture" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 484 .
+
+cpp:lambda_expression a owl:Class ;
+    rdfs:label "lambda_expression" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 482 .
+
+cpp:lambda_specifier a owl:Class ;
+    rdfs:label "lambda_specifier" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 480 .
+
+cpp:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+cpp:left a owl:DatatypeProperty ;
+    rdfs:label "left (literal)" ;
+    rdfs:comment "Literal value for left field when it contains a terminal node" ;
+    cpp:fieldId 28 ;
+    cpp:isTerminalField true .
+
+cpp:linkage_specification a owl:Class ;
+    rdfs:label "linkage_specification" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 267 .
+
+cpp:literal_suffix a owl:Class ;
+    rdfs:label "literal_suffix" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 222 .
+
+cpp:member a owl:DatatypeProperty ;
+    rdfs:label "member (literal)" ;
+    rdfs:comment "Literal value for member field when it contains a terminal node" ;
+    cpp:fieldId 30 ;
+    cpp:isTerminalField true .
+
+cpp:module_declaration a owl:Class ;
+    rdfs:label "module_declaration" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 395 .
+
+cpp:module_name a owl:Class ;
+    rdfs:label "module_name" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 393 .
+
+cpp:module_partition a owl:Class ;
+    rdfs:label "module_partition" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 394 .
+
+cpp:ms_based_modifier a owl:Class ;
+    rdfs:label "ms_based_modifier" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 272 .
+
+cpp:ms_call_modifier a owl:Class ;
+    rdfs:label "ms_call_modifier" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 273 .
+
+cpp:ms_declspec_modifier a owl:Class ;
+    rdfs:label "ms_declspec_modifier" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 271 .
+
+cpp:ms_pointer_modifier a owl:Class ;
+    rdfs:label "ms_pointer_modifier" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 275 .
+
+cpp:ms_restrict_modifier a owl:Class ;
+    rdfs:label "ms_restrict_modifier" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 62 .
+
+cpp:ms_signed_ptr_modifier a owl:Class ;
+    rdfs:label "ms_signed_ptr_modifier" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 64 .
+
+cpp:ms_unaligned_ptr_modifier a owl:Class ;
+    rdfs:label "ms_unaligned_ptr_modifier" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 274 .
+
+cpp:ms_unsigned_ptr_modifier a owl:Class ;
+    rdfs:label "ms_unsigned_ptr_modifier" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 63 .
+
+cpp:name a owl:DatatypeProperty ;
+    rdfs:label "name (literal)" ;
+    rdfs:comment "Literal value for name field when it contains a terminal node" ;
+    cpp:fieldId 32 ;
+    cpp:isTerminalField true .
+
+cpp:namespace a owl:DatatypeProperty ;
+    rdfs:label "namespace (literal)" ;
+    rdfs:comment "Literal value for namespace field when it contains a terminal node" ;
+    cpp:fieldId 33 ;
+    cpp:isTerminalField true .
+
+cpp:namespace_alias_definition a owl:Class ;
+    rdfs:label "namespace_alias_definition" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 446 .
+
+cpp:namespace_definition a owl:Class ;
+    rdfs:label "namespace_definition" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 445 .
+
+cpp:namespace_identifier a owl:Class ;
+    rdfs:label "namespace_identifier" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 566 .
+
+cpp:nested_namespace_specifier a owl:Class ;
+    rdfs:label "nested_namespace_specifier" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 448 .
+
+cpp:new_declarator a owl:Class ;
+    rdfs:label "new_declarator" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 468 .
+
+cpp:new_expression a owl:Class ;
+    rdfs:label "new_expression" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 467 .
+
+cpp:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+cpp:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+cpp:noexcept a owl:Class ;
+    rdfs:label "noexcept" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 439 .
+
+cpp:null a owl:Class ;
+    rdfs:label "null" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 378 .
+
+cpp:number_literal a owl:Class ;
+    rdfs:label "number_literal" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 160 .
+
+cpp:offsetof_expression a owl:Class ;
+    rdfs:label "offsetof_expression" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 353 .
+
+cpp:operator_cast a owl:Class ;
+    rdfs:label "operator_cast" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 412 .
+
+cpp:operator_name a owl:Class ;
+    rdfs:label "operator_name" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 513 .
+
+cpp:optional_parameter_declaration a owl:Class ;
+    rdfs:label "optional_parameter_declaration" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 408 .
+
+cpp:optional_type_parameter_declaration a owl:Class ;
+    rdfs:label "optional_type_parameter_declaration" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 405 .
+
+cpp:parameter_declaration a owl:Class ;
+    rdfs:label "parameter_declaration" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 317 .
+
+cpp:parameter_list a owl:Class ;
+    rdfs:label "parameter_list" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 316,
+        478 .
+
+cpp:parameter_pack_expansion a owl:Class ;
+    rdfs:label "parameter_pack_expansion" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 494,
+        495,
+        496 .
+
+cpp:parenthesized_declarator a owl:Class ;
+    rdfs:label "parenthesized_declarator" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 281,
+        282,
+        283 .
+
+cpp:parenthesized_expression a owl:Class ;
+    rdfs:label "parenthesized_expression" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 254,
+        369 .
+
+cpp:path a owl:DatatypeProperty ;
+    rdfs:label "path (literal)" ;
+    rdfs:comment "Literal value for path field when it contains a terminal node" ;
+    cpp:fieldId 39 ;
+    cpp:isTerminalField true .
+
+cpp:placeholder_type_specifier a owl:Class ;
+    rdfs:label "placeholder_type_specifier" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 380 .
+
+cpp:pointer_declarator a owl:Class ;
+    rdfs:label "pointer_declarator" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 288,
+        289 .
+
+cpp:pointer_expression a owl:Class ;
+    rdfs:label "pointer_expression" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 345 .
+
+cpp:pointer_type_declarator a owl:Class ;
+    rdfs:label "pointer_type_declarator" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 290 .
+
+cpp:prefix a owl:DatatypeProperty ;
+    rdfs:label "prefix (literal)" ;
+    rdfs:comment "Literal value for prefix field when it contains a terminal node" ;
+    cpp:fieldId 42 ;
+    cpp:isTerminalField true .
+
+cpp:preproc_arg a owl:Class ;
+    rdfs:label "preproc_arg" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 18 .
+
+cpp:preproc_call a owl:Class ;
+    rdfs:label "preproc_call" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 232 .
+
+cpp:preproc_def a owl:Class ;
+    rdfs:label "preproc_def" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 229 .
+
+cpp:preproc_defined a owl:Class ;
+    rdfs:label "preproc_defined" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 255 .
+
+cpp:preproc_directive a owl:Class ;
+    rdfs:label "preproc_directive" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 19 .
+
+cpp:preproc_elif a owl:Class ;
+    rdfs:label "preproc_elif" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 236,
+        241,
+        246,
+        251 .
+
+cpp:preproc_elifdef a owl:Class ;
+    rdfs:label "preproc_elifdef" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 237,
+        242,
+        247,
+        252 .
+
+cpp:preproc_else a owl:Class ;
+    rdfs:label "preproc_else" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 235,
+        240,
+        245,
+        250 .
+
+cpp:preproc_function_def a owl:Class ;
+    rdfs:label "preproc_function_def" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 230 .
+
+cpp:preproc_if a owl:Class ;
+    rdfs:label "preproc_if" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 233,
+        238,
+        243,
+        248 .
+
+cpp:preproc_ifdef a owl:Class ;
+    rdfs:label "preproc_ifdef" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 234,
+        239,
+        244,
+        249 .
+
+cpp:preproc_include a owl:Class ;
+    rdfs:label "preproc_include" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 228 .
+
+cpp:preproc_params a owl:Class ;
+    rdfs:label "preproc_params" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 231 .
+
+cpp:primitive_type a owl:Class ;
+    rdfs:label "primitive_type" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 98 .
+
+cpp:private_module_fragment_declaration a owl:Class ;
+    rdfs:label "private_module_fragment_declaration" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 399 .
+
+cpp:pure_virtual_clause a owl:Class ;
+    rdfs:label "pure_virtual_clause" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 424 .
+
+cpp:qualified_identifier a owl:Class ;
+    rdfs:label "qualified_identifier" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 502,
+        503,
+        504,
+        505 .
+
+cpp:raw_string_content a owl:Class ;
+    rdfs:label "raw_string_content" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 224 .
+
+cpp:raw_string_delimiter a owl:Class ;
+    rdfs:label "raw_string_delimiter" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 223 .
+
+cpp:raw_string_literal a owl:Class ;
+    rdfs:label "raw_string_literal" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 464 .
+
+cpp:ref_qualifier a owl:Class ;
+    rdfs:label "ref_qualifier" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 432 .
+
+cpp:reference_declarator a owl:Class ;
+    rdfs:label "reference_declarator" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 411,
+        427,
+        428,
+        429 .
+
+cpp:reflect_expression a owl:Class ;
+    rdfs:label "reflect_expression" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 507 .
+
+cpp:requirement_seq a owl:Class ;
+    rdfs:label "requirement_seq" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 473 .
+
+cpp:requires_clause a owl:Class ;
+    rdfs:label "requires_clause" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 477 .
+
+cpp:requires_expression a owl:Class ;
+    rdfs:label "requires_expression" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 479 .
+
+cpp:return_statement a owl:Class ;
+    rdfs:label "return_statement" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 332 .
+
+cpp:right a owl:DatatypeProperty ;
+    rdfs:label "right (literal)" ;
+    rdfs:comment "Literal value for right field when it contains a terminal node" ;
+    cpp:fieldId 45 ;
+    cpp:isTerminalField true .
+
+cpp:scope a owl:DatatypeProperty ;
+    rdfs:label "scope (literal)" ;
+    rdfs:comment "Literal value for scope field when it contains a terminal node" ;
+    cpp:fieldId 46 ;
+    cpp:isTerminalField true .
+
+cpp:seh_except_clause a owl:Class ;
+    rdfs:label "seh_except_clause" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 337 .
+
+cpp:seh_finally_clause a owl:Class ;
+    rdfs:label "seh_finally_clause" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 338 .
+
+cpp:seh_leave_statement a owl:Class ;
+    rdfs:label "seh_leave_statement" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 339 .
+
+cpp:seh_try_statement a owl:Class ;
+    rdfs:label "seh_try_statement" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 336 .
+
+cpp:simple_requirement a owl:Class ;
+    rdfs:label "simple_requirement" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 567 .
+
+cpp:sized_type_specifier a owl:Class ;
+    rdfs:label "sized_type_specifier" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 306 .
+
+cpp:sizeof_expression a owl:Class ;
+    rdfs:label "sizeof_expression" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 351 .
+
+cpp:splice_expression a owl:Class ;
+    rdfs:label "splice_expression" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 511 .
+
+cpp:splice_specifier a owl:Class ;
+    rdfs:label "splice_specifier" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 508 .
+
+cpp:splice_type_specifier a owl:Class ;
+    rdfs:label "splice_type_specifier" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 510 .
+
+cpp:statement_identifier a owl:Class ;
+    rdfs:label "statement_identifier" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 568 .
+
+cpp:static_assert_declaration a owl:Class ;
+    rdfs:label "static_assert_declaration" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 451 .
+
+cpp:storage_class_specifier a owl:Class ;
+    rdfs:label "storage_class_specifier" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 302 .
+
+cpp:string_content a owl:Class ;
+    rdfs:label "string_content" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 172 .
+
+cpp:string_literal a owl:Class ;
+    rdfs:label "string_literal" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 377 .
+
+cpp:struct_specifier a owl:Class ;
+    rdfs:label "struct_specifier" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 309 .
+
+cpp:structured_binding_declarator a owl:Class ;
+    rdfs:label "structured_binding_declarator" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 431 .
+
+cpp:subscript_argument_list a owl:Class ;
+    rdfs:label "subscript_argument_list" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 465 .
+
+cpp:subscript_designator a owl:Class ;
+    rdfs:label "subscript_designator" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 372 .
+
+cpp:subscript_expression a owl:Class ;
+    rdfs:label "subscript_expression" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 355 .
+
+cpp:subscript_range_designator a owl:Class ;
+    rdfs:label "subscript_range_designator" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 373 .
+
+cpp:switch_statement a owl:Class ;
+    rdfs:label "switch_statement" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 326 .
+
+cpp:symbol a owl:DatatypeProperty ;
+    rdfs:label "symbol (literal)" ;
+    rdfs:comment "Literal value for symbol field when it contains a terminal node" ;
+    cpp:fieldId 49 ;
+    cpp:isTerminalField true .
+
+cpp:system_lib_string a owl:Class ;
+    rdfs:label "system_lib_string" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 174 .
+
+cpp:template_argument_list a owl:Class ;
+    rdfs:label "template_argument_list" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 444 .
+
+cpp:template_declaration a owl:Class ;
+    rdfs:label "template_declaration" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 400 .
+
+cpp:template_function a owl:Class ;
+    rdfs:label "template_function" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 443 .
+
+cpp:template_instantiation a owl:Class ;
+    rdfs:label "template_instantiation" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 401 .
+
+cpp:template_method a owl:Class ;
+    rdfs:label "template_method" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 442 .
+
+cpp:template_parameter_list a owl:Class ;
+    rdfs:label "template_parameter_list" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 402 .
+
+cpp:template_template_parameter_declaration a owl:Class ;
+    rdfs:label "template_template_parameter_declaration" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 406 .
+
+cpp:template_type a owl:Class ;
+    rdfs:label "template_type" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 441 .
+
+cpp:this a owl:Class ;
+    rdfs:label "this" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 221 .
+
+cpp:throw_specifier a owl:Class ;
+    rdfs:label "throw_specifier" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 440 .
+
+cpp:throw_statement a owl:Class ;
+    rdfs:label "throw_statement" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 461 .
+
+cpp:trailing_return_type a owl:Class ;
+    rdfs:label "trailing_return_type" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 438 .
+
+cpp:translation_unit a owl:Class ;
+    rdfs:label "translation_unit" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 225 .
+
+cpp:true a owl:Class ;
+    rdfs:label "true" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 175 .
+
+cpp:try_statement a owl:Class ;
+    rdfs:label "try_statement" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 419,
+        462 .
+
+cpp:type a owl:DatatypeProperty ;
+    rdfs:label "type (literal)" ;
+    rdfs:comment "Literal value for type field when it contains a terminal node" ;
+    cpp:fieldId 51 ;
+    cpp:isTerminalField true .
+
+cpp:type_definition a owl:Class ;
+    rdfs:label "type_definition" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 262 .
+
+cpp:type_descriptor a owl:Class ;
+    rdfs:label "type_descriptor" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 350 .
+
+cpp:type_identifier a owl:Class ;
+    rdfs:label "type_identifier" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 569 .
+
+cpp:type_parameter_declaration a owl:Class ;
+    rdfs:label "type_parameter_declaration" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 403 .
+
+cpp:type_qualifier a owl:Class ;
+    rdfs:label "type_qualifier" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 303 .
+
+cpp:type_requirement a owl:Class ;
+    rdfs:label "type_requirement" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 470 .
+
+cpp:unary_expression a owl:Class ;
+    rdfs:label "unary_expression" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 256,
+        346 .
+
+cpp:union_specifier a owl:Class ;
+    rdfs:label "union_specifier" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 310 .
+
+cpp:update_expression a owl:Class ;
+    rdfs:label "update_expression" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 348 .
+
+cpp:user_defined_literal a owl:Class ;
+    rdfs:label "user_defined_literal" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 514 .
+
+cpp:using_declaration a owl:Class ;
+    rdfs:label "using_declaration" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 449 .
+
+cpp:value a owl:DatatypeProperty ;
+    rdfs:label "value (literal)" ;
+    rdfs:comment "Literal value for value field when it contains a terminal node" ;
+    cpp:fieldId 53 ;
+    cpp:isTerminalField true .
+
+cpp:variadic_declarator a owl:Class ;
+    rdfs:label "variadic_declarator" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 410 .
+
+cpp:variadic_parameter_declaration a owl:Class ;
+    rdfs:label "variadic_parameter_declaration" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 409 .
+
+cpp:variadic_type_parameter_declaration a owl:Class ;
+    rdfs:label "variadic_type_parameter_declaration" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 404 .
+
+cpp:virtual_specifier a owl:Class ;
+    rdfs:label "virtual_specifier" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 388 .
+
+cpp:while_statement a owl:Class ;
+    rdfs:label "while_statement" ;
+    rdfs:isDefinedBy cpp: ;
+    rdfs:subClassOf ast:Node ;
+    cpp:isSupertype true ;
+    cpp:nodeTypeId 328 .
+
+cpp: a owl:Ontology ;
+    rdfs:label "Cpp Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for cpp" ;
+    owl:versionInfo "v0.25" ;
+    cpp:abiVersion 14 ;
+    cpp:fieldCount 53 ;
+    cpp:languageName "None" ;
+    cpp:nodeKindCount 570 .
+

@@ -1,0 +1,536 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix puppet: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/puppet/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+puppet:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+puppet:array a owl:Class ;
+    rdfs:label "array" ;
+    rdfs:isDefinedBy puppet: ;
+    rdfs:subClassOf ast:Node ;
+    puppet:isSupertype true ;
+    puppet:nodeTypeId 133 .
+
+puppet:array_type a owl:Class ;
+    rdfs:label "array_type" ;
+    rdfs:isDefinedBy puppet: ;
+    rdfs:subClassOf ast:Node ;
+    puppet:isSupertype true ;
+    puppet:nodeTypeId 124 .
+
+puppet:assignment a owl:Class ;
+    rdfs:label "assignment" ;
+    rdfs:isDefinedBy puppet: ;
+    rdfs:subClassOf ast:Node ;
+    puppet:isSupertype true ;
+    puppet:nodeTypeId 98 .
+
+puppet:attribute a owl:Class ;
+    rdfs:label "attribute" ;
+    rdfs:isDefinedBy puppet: ;
+    rdfs:subClassOf ast:Node ;
+    puppet:isSupertype true ;
+    puppet:nodeTypeId 104 .
+
+puppet:attribute_type a owl:Class ;
+    rdfs:label "attribute_type" ;
+    rdfs:isDefinedBy puppet: ;
+    rdfs:subClassOf ast:Node ;
+    puppet:isSupertype true ;
+    puppet:nodeTypeId 122 .
+
+puppet:attribute_type_entry a owl:Class ;
+    rdfs:label "attribute_type_entry" ;
+    rdfs:isDefinedBy puppet: ;
+    rdfs:subClassOf ast:Node ;
+    puppet:isSupertype true ;
+    puppet:nodeTypeId 123 .
+
+puppet:binary_expression a owl:Class ;
+    rdfs:label "binary_expression" ;
+    rdfs:isDefinedBy puppet: ;
+    rdfs:subClassOf ast:Node ;
+    puppet:isSupertype true ;
+    puppet:nodeTypeId 128 .
+
+puppet:block a owl:Class ;
+    rdfs:label "block" ;
+    rdfs:isDefinedBy puppet: ;
+    rdfs:subClassOf ast:Node ;
+    puppet:isSupertype true ;
+    puppet:nodeTypeId 89 .
+
+puppet:boolean a owl:Class ;
+    rdfs:label "boolean" ;
+    rdfs:isDefinedBy puppet: ;
+    rdfs:subClassOf ast:Node ;
+    puppet:isSupertype true ;
+    puppet:nodeTypeId 140 .
+
+puppet:builtin_type a owl:Class ;
+    rdfs:label "builtin_type" ;
+    rdfs:isDefinedBy puppet: ;
+    rdfs:subClassOf ast:Node ;
+    puppet:isSupertype true ;
+    puppet:nodeTypeId 120 .
+
+puppet:case_item a owl:Class ;
+    rdfs:label "case_item" ;
+    rdfs:isDefinedBy puppet: ;
+    rdfs:subClassOf ast:Node ;
+    puppet:isSupertype true ;
+    puppet:nodeTypeId 113 .
+
+puppet:case_statement a owl:Class ;
+    rdfs:label "case_statement" ;
+    rdfs:isDefinedBy puppet: ;
+    rdfs:subClassOf ast:Node ;
+    puppet:isSupertype true ;
+    puppet:nodeTypeId 112 .
+
+puppet:class_definition a owl:Class ;
+    rdfs:label "class_definition" ;
+    rdfs:isDefinedBy puppet: ;
+    rdfs:subClassOf ast:Node ;
+    puppet:isSupertype true ;
+    puppet:nodeTypeId 90 .
+
+puppet:class_identifier a owl:Class ;
+    rdfs:label "class_identifier" ;
+    rdfs:isDefinedBy puppet: ;
+    rdfs:subClassOf ast:Node ;
+    puppet:isSupertype true ;
+    puppet:nodeTypeId 143 .
+
+puppet:class_inherits a owl:Class ;
+    rdfs:label "class_inherits" ;
+    rdfs:isDefinedBy puppet: ;
+    rdfs:subClassOf ast:Node ;
+    puppet:isSupertype true ;
+    puppet:nodeTypeId 93 .
+
+puppet:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy puppet: ;
+    rdfs:subClassOf ast:Node ;
+    puppet:isSupertype true ;
+    puppet:nodeTypeId 86 .
+
+puppet:composite_type a owl:Class ;
+    rdfs:label "composite_type" ;
+    rdfs:isDefinedBy puppet: ;
+    rdfs:subClassOf ast:Node ;
+    puppet:isSupertype true ;
+    puppet:nodeTypeId 121 .
+
+puppet:default a owl:Class ;
+    rdfs:label "default" ;
+    rdfs:isDefinedBy puppet: ;
+    rdfs:subClassOf ast:Node ;
+    puppet:isSupertype true ;
+    puppet:nodeTypeId 141 .
+
+puppet:default_case a owl:Class ;
+    rdfs:label "default_case" ;
+    rdfs:isDefinedBy puppet: ;
+    rdfs:subClassOf ast:Node ;
+    puppet:isSupertype true ;
+    puppet:nodeTypeId 114 .
+
+puppet:defined_resource_type a owl:Class ;
+    rdfs:label "defined_resource_type" ;
+    rdfs:isDefinedBy puppet: ;
+    rdfs:subClassOf ast:Node ;
+    puppet:isSupertype true ;
+    puppet:nodeTypeId 96 .
+
+puppet:else_statement a owl:Class ;
+    rdfs:label "else_statement" ;
+    rdfs:isDefinedBy puppet: ;
+    rdfs:subClassOf ast:Node ;
+    puppet:isSupertype true ;
+    puppet:nodeTypeId 110 .
+
+puppet:elsif_statement a owl:Class ;
+    rdfs:label "elsif_statement" ;
+    rdfs:isDefinedBy puppet: ;
+    rdfs:subClassOf ast:Node ;
+    puppet:isSupertype true ;
+    puppet:nodeTypeId 109 .
+
+puppet:escape_sequence a owl:Class ;
+    rdfs:label "escape_sequence" ;
+    rdfs:isDefinedBy puppet: ;
+    rdfs:subClassOf ast:Node ;
+    puppet:isSupertype true ;
+    puppet:nodeTypeId 78 .
+
+puppet:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+puppet:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+puppet:field_argument a owl:ObjectProperty ;
+    rdfs:label "argument (structural)" ;
+    rdfs:comment "Structural reference for argument field when it contains a non-terminal node" ;
+    puppet:fieldId 1 .
+
+puppet:field_exported a owl:ObjectProperty ;
+    rdfs:label "exported (structural)" ;
+    rdfs:comment "Structural reference for exported field when it contains a non-terminal node" ;
+    puppet:fieldId 2 .
+
+puppet:field_expression a owl:Class ;
+    rdfs:label "field_expression" ;
+    rdfs:isDefinedBy puppet: ;
+    rdfs:subClassOf ast:Node ;
+    puppet:isSupertype true ;
+    puppet:nodeTypeId 131 .
+
+puppet:field_iterator a owl:ObjectProperty ;
+    rdfs:label "iterator (structural)" ;
+    rdfs:comment "Structural reference for iterator field when it contains a non-terminal node" ;
+    puppet:fieldId 3 .
+
+puppet:field_left a owl:ObjectProperty ;
+    rdfs:label "left (structural)" ;
+    rdfs:comment "Structural reference for left field when it contains a non-terminal node" ;
+    puppet:fieldId 4 .
+
+puppet:field_name a owl:ObjectProperty ;
+    rdfs:label "name (structural)" ;
+    rdfs:comment "Structural reference for name field when it contains a non-terminal node" ;
+    puppet:fieldId 5 .
+
+puppet:field_operator a owl:ObjectProperty ;
+    rdfs:label "operator (structural)" ;
+    rdfs:comment "Structural reference for operator field when it contains a non-terminal node" ;
+    puppet:fieldId 6 .
+
+puppet:field_right a owl:ObjectProperty ;
+    rdfs:label "right (structural)" ;
+    rdfs:comment "Structural reference for right field when it contains a non-terminal node" ;
+    puppet:fieldId 7 .
+
+puppet:field_title a owl:ObjectProperty ;
+    rdfs:label "title (structural)" ;
+    rdfs:comment "Structural reference for title field when it contains a non-terminal node" ;
+    puppet:fieldId 8 .
+
+puppet:field_type a owl:ObjectProperty ;
+    rdfs:label "type (structural)" ;
+    rdfs:comment "Structural reference for type field when it contains a non-terminal node" ;
+    puppet:fieldId 9 .
+
+puppet:field_value a owl:ObjectProperty ;
+    rdfs:label "value (structural)" ;
+    rdfs:comment "Structural reference for value field when it contains a non-terminal node" ;
+    puppet:fieldId 10 .
+
+puppet:field_virtual a owl:ObjectProperty ;
+    rdfs:label "virtual (structural)" ;
+    rdfs:comment "Structural reference for virtual field when it contains a non-terminal node" ;
+    puppet:fieldId 11 .
+
+puppet:float a owl:Class ;
+    rdfs:label "float" ;
+    rdfs:isDefinedBy puppet: ;
+    rdfs:subClassOf ast:Node ;
+    puppet:isSupertype true ;
+    puppet:nodeTypeId 72 .
+
+puppet:function_call a owl:Class ;
+    rdfs:label "function_call" ;
+    rdfs:isDefinedBy puppet: ;
+    rdfs:subClassOf ast:Node ;
+    puppet:isSupertype true ;
+    puppet:nodeTypeId 130 .
+
+puppet:function_declaration a owl:Class ;
+    rdfs:label "function_declaration" ;
+    rdfs:isDefinedBy puppet: ;
+    rdfs:subClassOf ast:Node ;
+    puppet:isSupertype true ;
+    puppet:nodeTypeId 101 .
+
+puppet:hash a owl:Class ;
+    rdfs:label "hash" ;
+    rdfs:isDefinedBy puppet: ;
+    rdfs:subClassOf ast:Node ;
+    puppet:isSupertype true ;
+    puppet:nodeTypeId 134 .
+
+puppet:identifier a owl:Class ;
+    rdfs:label "identifier" ;
+    rdfs:isDefinedBy puppet: ;
+    rdfs:subClassOf ast:Node ;
+    puppet:isSupertype true ;
+    puppet:nodeTypeId 85 .
+
+puppet:if_statement a owl:Class ;
+    rdfs:label "if_statement" ;
+    rdfs:isDefinedBy puppet: ;
+    rdfs:subClassOf ast:Node ;
+    puppet:isSupertype true ;
+    puppet:nodeTypeId 108 .
+
+puppet:include_statement a owl:Class ;
+    rdfs:label "include_statement" ;
+    rdfs:isDefinedBy puppet: ;
+    rdfs:subClassOf ast:Node ;
+    puppet:isSupertype true ;
+    puppet:nodeTypeId 106 .
+
+puppet:interpolation a owl:Class ;
+    rdfs:label "interpolation" ;
+    rdfs:isDefinedBy puppet: ;
+    rdfs:subClassOf ast:Node ;
+    puppet:isSupertype true ;
+    puppet:nodeTypeId 139 .
+
+puppet:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+puppet:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+puppet:iterator_statement a owl:Class ;
+    rdfs:label "iterator_statement" ;
+    rdfs:isDefinedBy puppet: ;
+    rdfs:subClassOf ast:Node ;
+    puppet:isSupertype true ;
+    puppet:nodeTypeId 115 .
+
+puppet:lambda a owl:Class ;
+    rdfs:label "lambda" ;
+    rdfs:isDefinedBy puppet: ;
+    rdfs:subClassOf ast:Node ;
+    puppet:isSupertype true ;
+    puppet:nodeTypeId 100 .
+
+puppet:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+puppet:name a owl:DatatypeProperty ;
+    rdfs:label "name (literal)" ;
+    rdfs:comment "Literal value for name field when it contains a terminal node" ;
+    puppet:fieldId 5 ;
+    puppet:isTerminalField true .
+
+puppet:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+puppet:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+puppet:node_definition a owl:Class ;
+    rdfs:label "node_definition" ;
+    rdfs:isDefinedBy puppet: ;
+    rdfs:subClassOf ast:Node ;
+    puppet:isSupertype true ;
+    puppet:nodeTypeId 94 .
+
+puppet:node_name a owl:Class ;
+    rdfs:label "node_name" ;
+    rdfs:isDefinedBy puppet: ;
+    rdfs:subClassOf ast:Node ;
+    puppet:isSupertype true ;
+    puppet:nodeTypeId 95 .
+
+puppet:number a owl:Class ;
+    rdfs:label "number" ;
+    rdfs:isDefinedBy puppet: ;
+    rdfs:subClassOf ast:Node ;
+    puppet:isSupertype true ;
+    puppet:nodeTypeId 71 .
+
+puppet:parameter a owl:Class ;
+    rdfs:label "parameter" ;
+    rdfs:isDefinedBy puppet: ;
+    rdfs:subClassOf ast:Node ;
+    puppet:isSupertype true ;
+    puppet:nodeTypeId 92 .
+
+puppet:parameter_list a owl:Class ;
+    rdfs:label "parameter_list" ;
+    rdfs:isDefinedBy puppet: ;
+    rdfs:subClassOf ast:Node ;
+    puppet:isSupertype true ;
+    puppet:nodeTypeId 91 .
+
+puppet:parenthesized_expression a owl:Class ;
+    rdfs:label "parenthesized_expression" ;
+    rdfs:isDefinedBy puppet: ;
+    rdfs:subClassOf ast:Node ;
+    puppet:isSupertype true ;
+    puppet:nodeTypeId 129 .
+
+puppet:regex a owl:Class ;
+    rdfs:label "regex" ;
+    rdfs:isDefinedBy puppet: ;
+    rdfs:subClassOf ast:Node ;
+    puppet:isSupertype true ;
+    puppet:nodeTypeId 80 .
+
+puppet:relation a owl:Class ;
+    rdfs:label "relation" ;
+    rdfs:isDefinedBy puppet: ;
+    rdfs:subClassOf ast:Node ;
+    puppet:isSupertype true ;
+    puppet:nodeTypeId 99 .
+
+puppet:require_statement a owl:Class ;
+    rdfs:label "require_statement" ;
+    rdfs:isDefinedBy puppet: ;
+    rdfs:subClassOf ast:Node ;
+    puppet:isSupertype true ;
+    puppet:nodeTypeId 105 .
+
+puppet:resource_collector a owl:Class ;
+    rdfs:label "resource_collector" ;
+    rdfs:isDefinedBy puppet: ;
+    rdfs:subClassOf ast:Node ;
+    puppet:isSupertype true ;
+    puppet:nodeTypeId 116 .
+
+puppet:resource_declaration a owl:Class ;
+    rdfs:label "resource_declaration" ;
+    rdfs:isDefinedBy puppet: ;
+    rdfs:subClassOf ast:Node ;
+    puppet:isSupertype true ;
+    puppet:nodeTypeId 102 .
+
+puppet:resource_default a owl:Class ;
+    rdfs:label "resource_default" ;
+    rdfs:isDefinedBy puppet: ;
+    rdfs:subClassOf ast:Node ;
+    puppet:isSupertype true ;
+    puppet:nodeTypeId 117 .
+
+puppet:resource_reference a owl:Class ;
+    rdfs:label "resource_reference" ;
+    rdfs:isDefinedBy puppet: ;
+    rdfs:subClassOf ast:Node ;
+    puppet:isSupertype true ;
+    puppet:nodeTypeId 136 .
+
+puppet:search_expression a owl:Class ;
+    rdfs:label "search_expression" ;
+    rdfs:isDefinedBy puppet: ;
+    rdfs:subClassOf ast:Node ;
+    puppet:isSupertype true ;
+    puppet:nodeTypeId 125 .
+
+puppet:selector a owl:Class ;
+    rdfs:label "selector" ;
+    rdfs:isDefinedBy puppet: ;
+    rdfs:subClassOf ast:Node ;
+    puppet:isSupertype true ;
+    puppet:nodeTypeId 118 .
+
+puppet:source_file a owl:Class ;
+    rdfs:label "source_file" ;
+    rdfs:isDefinedBy puppet: ;
+    rdfs:subClassOf ast:Node ;
+    puppet:isSupertype true ;
+    puppet:nodeTypeId 87 .
+
+puppet:string a owl:Class ;
+    rdfs:label "string" ;
+    rdfs:isDefinedBy puppet: ;
+    rdfs:subClassOf ast:Node ;
+    puppet:isSupertype true ;
+    puppet:nodeTypeId 137 .
+
+puppet:string_content a owl:Class ;
+    rdfs:label "string_content" ;
+    rdfs:isDefinedBy puppet: ;
+    rdfs:subClassOf ast:Node ;
+    puppet:isSupertype true ;
+    puppet:nodeTypeId 75,
+        76 .
+
+puppet:tag_statement a owl:Class ;
+    rdfs:label "tag_statement" ;
+    rdfs:isDefinedBy puppet: ;
+    rdfs:subClassOf ast:Node ;
+    puppet:isSupertype true ;
+    puppet:nodeTypeId 107 .
+
+puppet:type a owl:DatatypeProperty ;
+    rdfs:label "type (literal)" ;
+    rdfs:comment "Literal value for type field when it contains a terminal node" ;
+    puppet:fieldId 9 ;
+    puppet:isTerminalField true .
+
+puppet:type_declaration a owl:Class ;
+    rdfs:label "type_declaration" ;
+    rdfs:isDefinedBy puppet: ;
+    rdfs:subClassOf ast:Node ;
+    puppet:isSupertype true ;
+    puppet:nodeTypeId 97 .
+
+puppet:unary_expression a owl:Class ;
+    rdfs:label "unary_expression" ;
+    rdfs:isDefinedBy puppet: ;
+    rdfs:subClassOf ast:Node ;
+    puppet:isSupertype true ;
+    puppet:nodeTypeId 127 .
+
+puppet:undef a owl:Class ;
+    rdfs:label "undef" ;
+    rdfs:isDefinedBy puppet: ;
+    rdfs:subClassOf ast:Node ;
+    puppet:isSupertype true ;
+    puppet:nodeTypeId 83 .
+
+puppet:unless_statement a owl:Class ;
+    rdfs:label "unless_statement" ;
+    rdfs:isDefinedBy puppet: ;
+    rdfs:subClassOf ast:Node ;
+    puppet:isSupertype true ;
+    puppet:nodeTypeId 111 .
+
+puppet:value a owl:DatatypeProperty ;
+    rdfs:label "value (literal)" ;
+    rdfs:comment "Literal value for value field when it contains a terminal node" ;
+    puppet:fieldId 10 ;
+    puppet:isTerminalField true .
+
+puppet:variable a owl:Class ;
+    rdfs:label "variable" ;
+    rdfs:isDefinedBy puppet: ;
+    rdfs:subClassOf ast:Node ;
+    puppet:isSupertype true ;
+    puppet:nodeTypeId 132 .
+
+puppet: a owl:Ontology ;
+    rdfs:label "Puppet Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for puppet" ;
+    owl:versionInfo "v0.25" ;
+    puppet:abiVersion 14 ;
+    puppet:fieldCount 11 ;
+    puppet:languageName "None" ;
+    puppet:nodeKindCount 162 .
+

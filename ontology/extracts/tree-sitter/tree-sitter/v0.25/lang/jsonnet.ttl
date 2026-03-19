@@ -1,0 +1,607 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix jsonnet: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/jsonnet/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+jsonnet:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+jsonnet:additive a owl:Class ;
+    rdfs:label "additive" ;
+    rdfs:isDefinedBy jsonnet: ;
+    rdfs:subClassOf ast:Node ;
+    jsonnet:isSupertype true ;
+    jsonnet:nodeTypeId 80 .
+
+jsonnet:alternative a owl:DatatypeProperty ;
+    rdfs:label "alternative (literal)" ;
+    rdfs:comment "Literal value for alternative field when it contains a terminal node" ;
+    jsonnet:fieldId 1 ;
+    jsonnet:isTerminalField true .
+
+jsonnet:and a owl:Class ;
+    rdfs:label "and" ;
+    rdfs:isDefinedBy jsonnet: ;
+    rdfs:subClassOf ast:Node ;
+    jsonnet:isSupertype true ;
+    jsonnet:nodeTypeId 41 .
+
+jsonnet:anonymous_function a owl:Class ;
+    rdfs:label "anonymous_function" ;
+    rdfs:isDefinedBy jsonnet: ;
+    rdfs:subClassOf ast:Node ;
+    jsonnet:isSupertype true ;
+    jsonnet:nodeTypeId 88 .
+
+jsonnet:args a owl:Class ;
+    rdfs:label "args" ;
+    rdfs:isDefinedBy jsonnet: ;
+    rdfs:subClassOf ast:Node ;
+    jsonnet:isSupertype true ;
+    jsonnet:nodeTypeId 105 .
+
+jsonnet:argument a owl:DatatypeProperty ;
+    rdfs:label "argument (literal)" ;
+    rdfs:comment "Literal value for argument field when it contains a terminal node" ;
+    jsonnet:fieldId 2 ;
+    jsonnet:isTerminalField true .
+
+jsonnet:array a owl:Class ;
+    rdfs:label "array" ;
+    rdfs:isDefinedBy jsonnet: ;
+    rdfs:subClassOf ast:Node ;
+    jsonnet:isSupertype true ;
+    jsonnet:nodeTypeId 69 .
+
+jsonnet:assert a owl:Class ;
+    rdfs:label "assert" ;
+    rdfs:isDefinedBy jsonnet: ;
+    rdfs:subClassOf ast:Node ;
+    jsonnet:isSupertype true ;
+    jsonnet:nodeTypeId 103 .
+
+jsonnet:binary a owl:Class ;
+    rdfs:label "binary" ;
+    rdfs:isDefinedBy jsonnet: ;
+    rdfs:subClassOf ast:Node ;
+    jsonnet:isSupertype true ;
+    jsonnet:nodeTypeId 84 .
+
+jsonnet:bind a owl:Class ;
+    rdfs:label "bind" ;
+    rdfs:isDefinedBy jsonnet: ;
+    rdfs:subClassOf ast:Node ;
+    jsonnet:isSupertype true ;
+    jsonnet:nodeTypeId 104 .
+
+jsonnet:bitand a owl:Class ;
+    rdfs:label "bitand" ;
+    rdfs:isDefinedBy jsonnet: ;
+    rdfs:subClassOf ast:Node ;
+    jsonnet:isSupertype true ;
+    jsonnet:nodeTypeId 38 .
+
+jsonnet:bitor a owl:Class ;
+    rdfs:label "bitor" ;
+    rdfs:isDefinedBy jsonnet: ;
+    rdfs:subClassOf ast:Node ;
+    jsonnet:isSupertype true ;
+    jsonnet:nodeTypeId 40 .
+
+jsonnet:bitshift a owl:Class ;
+    rdfs:label "bitshift" ;
+    rdfs:isDefinedBy jsonnet: ;
+    rdfs:subClassOf ast:Node ;
+    jsonnet:isSupertype true ;
+    jsonnet:nodeTypeId 81 .
+
+jsonnet:bitxor a owl:Class ;
+    rdfs:label "bitxor" ;
+    rdfs:isDefinedBy jsonnet: ;
+    rdfs:subClassOf ast:Node ;
+    jsonnet:isSupertype true ;
+    jsonnet:nodeTypeId 39 .
+
+jsonnet:body a owl:DatatypeProperty ;
+    rdfs:label "body (literal)" ;
+    rdfs:comment "Literal value for body field when it contains a terminal node" ;
+    jsonnet:fieldId 3 ;
+    jsonnet:isTerminalField true .
+
+jsonnet:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy jsonnet: ;
+    rdfs:subClassOf ast:Node ;
+    jsonnet:isSupertype true ;
+    jsonnet:nodeTypeId 2 .
+
+jsonnet:comparison a owl:Class ;
+    rdfs:label "comparison" ;
+    rdfs:isDefinedBy jsonnet: ;
+    rdfs:subClassOf ast:Node ;
+    jsonnet:isSupertype true ;
+    jsonnet:nodeTypeId 82 .
+
+jsonnet:compspec a owl:Class ;
+    rdfs:label "compspec" ;
+    rdfs:isDefinedBy jsonnet: ;
+    rdfs:subClassOf ast:Node ;
+    jsonnet:isSupertype true ;
+    jsonnet:nodeTypeId 99 .
+
+jsonnet:condition a owl:DatatypeProperty ;
+    rdfs:label "condition (literal)" ;
+    rdfs:comment "Literal value for condition field when it contains a terminal node" ;
+    jsonnet:fieldId 4 ;
+    jsonnet:isTerminalField true .
+
+jsonnet:conditional a owl:Class ;
+    rdfs:label "conditional" ;
+    rdfs:isDefinedBy jsonnet: ;
+    rdfs:subClassOf ast:Node ;
+    jsonnet:isSupertype true ;
+    jsonnet:nodeTypeId 78 .
+
+jsonnet:consequence a owl:DatatypeProperty ;
+    rdfs:label "consequence (literal)" ;
+    rdfs:comment "Literal value for consequence field when it contains a terminal node" ;
+    jsonnet:fieldId 5 ;
+    jsonnet:isTerminalField true .
+
+jsonnet:document a owl:Class ;
+    rdfs:label "document" ;
+    rdfs:isDefinedBy jsonnet: ;
+    rdfs:subClassOf ast:Node ;
+    jsonnet:isSupertype true ;
+    jsonnet:nodeTypeId 64 .
+
+jsonnet:dollar a owl:Class ;
+    rdfs:label "dollar" ;
+    rdfs:isDefinedBy jsonnet: ;
+    rdfs:subClassOf ast:Node ;
+    jsonnet:isSupertype true ;
+    jsonnet:nodeTypeId 7 .
+
+jsonnet:equality a owl:Class ;
+    rdfs:label "equality" ;
+    rdfs:isDefinedBy jsonnet: ;
+    rdfs:subClassOf ast:Node ;
+    jsonnet:isSupertype true ;
+    jsonnet:nodeTypeId 83 .
+
+jsonnet:error a owl:Class ;
+    rdfs:label "error" ;
+    rdfs:isDefinedBy jsonnet: ;
+    rdfs:subClassOf ast:Node ;
+    jsonnet:isSupertype true ;
+    jsonnet:nodeTypeId 92 .
+
+jsonnet:escape_sequence a owl:Class ;
+    rdfs:label "escape_sequence" ;
+    rdfs:isDefinedBy jsonnet: ;
+    rdfs:subClassOf ast:Node ;
+    jsonnet:isSupertype true ;
+    jsonnet:nodeTypeId 60 .
+
+jsonnet:false a owl:Class ;
+    rdfs:label "false" ;
+    rdfs:isDefinedBy jsonnet: ;
+    rdfs:subClassOf ast:Node ;
+    jsonnet:isSupertype true ;
+    jsonnet:nodeTypeId 5 .
+
+jsonnet:field a owl:Class ;
+    rdfs:label "field" ;
+    rdfs:isDefinedBy jsonnet: ;
+    rdfs:subClassOf ast:Node ;
+    jsonnet:isSupertype true ;
+    jsonnet:nodeTypeId 97 .
+
+jsonnet:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+jsonnet:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+jsonnet:field_alternative a owl:ObjectProperty ;
+    rdfs:label "alternative (structural)" ;
+    rdfs:comment "Structural reference for alternative field when it contains a non-terminal node" ;
+    jsonnet:fieldId 1 .
+
+jsonnet:field_argument a owl:ObjectProperty ;
+    rdfs:label "argument (structural)" ;
+    rdfs:comment "Structural reference for argument field when it contains a non-terminal node" ;
+    jsonnet:fieldId 2 .
+
+jsonnet:field_body a owl:ObjectProperty ;
+    rdfs:label "body (structural)" ;
+    rdfs:comment "Structural reference for body field when it contains a non-terminal node" ;
+    jsonnet:fieldId 3 .
+
+jsonnet:field_condition a owl:ObjectProperty ;
+    rdfs:label "condition (structural)" ;
+    rdfs:comment "Structural reference for condition field when it contains a non-terminal node" ;
+    jsonnet:fieldId 4 .
+
+jsonnet:field_consequence a owl:ObjectProperty ;
+    rdfs:label "consequence (structural)" ;
+    rdfs:comment "Structural reference for consequence field when it contains a non-terminal node" ;
+    jsonnet:fieldId 5 .
+
+jsonnet:field_function a owl:ObjectProperty ;
+    rdfs:label "function (structural)" ;
+    rdfs:comment "Structural reference for function field when it contains a non-terminal node" ;
+    jsonnet:fieldId 6 .
+
+jsonnet:field_left a owl:ObjectProperty ;
+    rdfs:label "left (structural)" ;
+    rdfs:comment "Structural reference for left field when it contains a non-terminal node" ;
+    jsonnet:fieldId 9 .
+
+jsonnet:field_params a owl:ObjectProperty ;
+    rdfs:label "params (structural)" ;
+    rdfs:comment "Structural reference for params field when it contains a non-terminal node" ;
+    jsonnet:fieldId 11 .
+
+jsonnet:field_right a owl:ObjectProperty ;
+    rdfs:label "right (structural)" ;
+    rdfs:comment "Structural reference for right field when it contains a non-terminal node" ;
+    jsonnet:fieldId 12 .
+
+jsonnet:field_value a owl:ObjectProperty ;
+    rdfs:label "value (structural)" ;
+    rdfs:comment "Structural reference for value field when it contains a non-terminal node" ;
+    jsonnet:fieldId 13 .
+
+jsonnet:fieldaccess a owl:Class ;
+    rdfs:label "fieldaccess" ;
+    rdfs:isDefinedBy jsonnet: ;
+    rdfs:subClassOf ast:Node ;
+    jsonnet:isSupertype true ;
+    jsonnet:nodeTypeId 71 .
+
+jsonnet:fieldaccess_super a owl:Class ;
+    rdfs:label "fieldaccess_super" ;
+    rdfs:isDefinedBy jsonnet: ;
+    rdfs:subClassOf ast:Node ;
+    jsonnet:isSupertype true ;
+    jsonnet:nodeTypeId 73 .
+
+jsonnet:fieldname a owl:Class ;
+    rdfs:label "fieldname" ;
+    rdfs:isDefinedBy jsonnet: ;
+    rdfs:subClassOf ast:Node ;
+    jsonnet:isSupertype true ;
+    jsonnet:nodeTypeId 102 .
+
+jsonnet:forloop a owl:Class ;
+    rdfs:label "forloop" ;
+    rdfs:isDefinedBy jsonnet: ;
+    rdfs:subClassOf ast:Node ;
+    jsonnet:isSupertype true ;
+    jsonnet:nodeTypeId 70 .
+
+jsonnet:forspec a owl:Class ;
+    rdfs:label "forspec" ;
+    rdfs:isDefinedBy jsonnet: ;
+    rdfs:subClassOf ast:Node ;
+    jsonnet:isSupertype true ;
+    jsonnet:nodeTypeId 100 .
+
+jsonnet:function a owl:DatatypeProperty ;
+    rdfs:label "function (literal)" ;
+    rdfs:comment "Literal value for function field when it contains a terminal node" ;
+    jsonnet:fieldId 6 ;
+    jsonnet:isTerminalField true .
+
+jsonnet:functioncall a owl:Class ;
+    rdfs:label "functioncall" ;
+    rdfs:isDefinedBy jsonnet: ;
+    rdfs:subClassOf ast:Node ;
+    jsonnet:isSupertype true ;
+    jsonnet:nodeTypeId 75 .
+
+jsonnet:id a owl:Class ;
+    rdfs:label "id" ;
+    rdfs:isDefinedBy jsonnet: ;
+    rdfs:subClassOf ast:Node ;
+    jsonnet:isSupertype true ;
+    jsonnet:nodeTypeId 76 .
+
+jsonnet:identifier a owl:DatatypeProperty ;
+    rdfs:label "identifier (literal)" ;
+    rdfs:comment "Literal value for identifier field when it contains a terminal node" ;
+    jsonnet:fieldId 7 ;
+    jsonnet:isTerminalField true .
+
+jsonnet:ifspec a owl:Class ;
+    rdfs:label "ifspec" ;
+    rdfs:isDefinedBy jsonnet: ;
+    rdfs:subClassOf ast:Node ;
+    jsonnet:isSupertype true ;
+    jsonnet:nodeTypeId 101 .
+
+jsonnet:implicit_plus a owl:Class ;
+    rdfs:label "implicit_plus" ;
+    rdfs:isDefinedBy jsonnet: ;
+    rdfs:subClassOf ast:Node ;
+    jsonnet:isSupertype true ;
+    jsonnet:nodeTypeId 87 .
+
+jsonnet:import a owl:Class ;
+    rdfs:label "import" ;
+    rdfs:isDefinedBy jsonnet: ;
+    rdfs:subClassOf ast:Node ;
+    jsonnet:isSupertype true ;
+    jsonnet:nodeTypeId 90 .
+
+jsonnet:importstr a owl:Class ;
+    rdfs:label "importstr" ;
+    rdfs:isDefinedBy jsonnet: ;
+    rdfs:subClassOf ast:Node ;
+    jsonnet:isSupertype true ;
+    jsonnet:nodeTypeId 91 .
+
+jsonnet:in_super a owl:Class ;
+    rdfs:label "in_super" ;
+    rdfs:isDefinedBy jsonnet: ;
+    rdfs:subClassOf ast:Node ;
+    jsonnet:isSupertype true ;
+    jsonnet:nodeTypeId 93 .
+
+jsonnet:indexing a owl:Class ;
+    rdfs:label "indexing" ;
+    rdfs:isDefinedBy jsonnet: ;
+    rdfs:subClassOf ast:Node ;
+    jsonnet:isSupertype true ;
+    jsonnet:nodeTypeId 72 .
+
+jsonnet:indexing_super a owl:Class ;
+    rdfs:label "indexing_super" ;
+    rdfs:isDefinedBy jsonnet: ;
+    rdfs:subClassOf ast:Node ;
+    jsonnet:isSupertype true ;
+    jsonnet:nodeTypeId 74 .
+
+jsonnet:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+jsonnet:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+jsonnet:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+jsonnet:last a owl:DatatypeProperty ;
+    rdfs:label "last (literal)" ;
+    rdfs:comment "Literal value for last field when it contains a terminal node" ;
+    jsonnet:fieldId 8 ;
+    jsonnet:isTerminalField true .
+
+jsonnet:left a owl:DatatypeProperty ;
+    rdfs:label "left (literal)" ;
+    rdfs:comment "Literal value for left field when it contains a terminal node" ;
+    jsonnet:fieldId 9 ;
+    jsonnet:isTerminalField true .
+
+jsonnet:local a owl:Class ;
+    rdfs:label "local" ;
+    rdfs:isDefinedBy jsonnet: ;
+    rdfs:subClassOf ast:Node ;
+    jsonnet:isSupertype true ;
+    jsonnet:nodeTypeId 9 .
+
+jsonnet:local_bind a owl:Class ;
+    rdfs:label "local_bind" ;
+    rdfs:isDefinedBy jsonnet: ;
+    rdfs:subClassOf ast:Node ;
+    jsonnet:isSupertype true ;
+    jsonnet:nodeTypeId 77 .
+
+jsonnet:member a owl:Class ;
+    rdfs:label "member" ;
+    rdfs:isDefinedBy jsonnet: ;
+    rdfs:subClassOf ast:Node ;
+    jsonnet:isSupertype true ;
+    jsonnet:nodeTypeId 96 .
+
+jsonnet:multiplicative a owl:Class ;
+    rdfs:label "multiplicative" ;
+    rdfs:isDefinedBy jsonnet: ;
+    rdfs:subClassOf ast:Node ;
+    jsonnet:isSupertype true ;
+    jsonnet:nodeTypeId 79 .
+
+jsonnet:named_argument a owl:Class ;
+    rdfs:label "named_argument" ;
+    rdfs:isDefinedBy jsonnet: ;
+    rdfs:subClassOf ast:Node ;
+    jsonnet:isSupertype true ;
+    jsonnet:nodeTypeId 106 .
+
+jsonnet:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+jsonnet:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+jsonnet:null a owl:Class ;
+    rdfs:label "null" ;
+    rdfs:isDefinedBy jsonnet: ;
+    rdfs:subClassOf ast:Node ;
+    jsonnet:isSupertype true ;
+    jsonnet:nodeTypeId 3 .
+
+jsonnet:number a owl:Class ;
+    rdfs:label "number" ;
+    rdfs:isDefinedBy jsonnet: ;
+    rdfs:subClassOf ast:Node ;
+    jsonnet:isSupertype true ;
+    jsonnet:nodeTypeId 66 .
+
+jsonnet:object a owl:Class ;
+    rdfs:label "object" ;
+    rdfs:isDefinedBy jsonnet: ;
+    rdfs:subClassOf ast:Node ;
+    jsonnet:isSupertype true ;
+    jsonnet:nodeTypeId 68 .
+
+jsonnet:objforloop a owl:Class ;
+    rdfs:label "objforloop" ;
+    rdfs:isDefinedBy jsonnet: ;
+    rdfs:subClassOf ast:Node ;
+    jsonnet:isSupertype true ;
+    jsonnet:nodeTypeId 95 .
+
+jsonnet:objlocal a owl:Class ;
+    rdfs:label "objlocal" ;
+    rdfs:isDefinedBy jsonnet: ;
+    rdfs:subClassOf ast:Node ;
+    jsonnet:isSupertype true ;
+    jsonnet:nodeTypeId 98 .
+
+jsonnet:operator a owl:DatatypeProperty ;
+    rdfs:label "operator (literal)" ;
+    rdfs:comment "Literal value for operator field when it contains a terminal node" ;
+    jsonnet:fieldId 10 ;
+    jsonnet:isTerminalField true .
+
+jsonnet:or a owl:Class ;
+    rdfs:label "or" ;
+    rdfs:isDefinedBy jsonnet: ;
+    rdfs:subClassOf ast:Node ;
+    jsonnet:isSupertype true ;
+    jsonnet:nodeTypeId 42 .
+
+jsonnet:param a owl:Class ;
+    rdfs:label "param" ;
+    rdfs:isDefinedBy jsonnet: ;
+    rdfs:subClassOf ast:Node ;
+    jsonnet:isSupertype true ;
+    jsonnet:nodeTypeId 108 .
+
+jsonnet:params a owl:Class ;
+    rdfs:label "params" ;
+    rdfs:isDefinedBy jsonnet: ;
+    rdfs:subClassOf ast:Node ;
+    jsonnet:isSupertype true ;
+    jsonnet:nodeTypeId 107 .
+
+jsonnet:parenthesis a owl:Class ;
+    rdfs:label "parenthesis" ;
+    rdfs:isDefinedBy jsonnet: ;
+    rdfs:subClassOf ast:Node ;
+    jsonnet:isSupertype true ;
+    jsonnet:nodeTypeId 94 .
+
+jsonnet:right a owl:DatatypeProperty ;
+    rdfs:label "right (literal)" ;
+    rdfs:comment "Literal value for right field when it contains a terminal node" ;
+    jsonnet:fieldId 12 ;
+    jsonnet:isTerminalField true .
+
+jsonnet:self a owl:Class ;
+    rdfs:label "self" ;
+    rdfs:isDefinedBy jsonnet: ;
+    rdfs:subClassOf ast:Node ;
+    jsonnet:isSupertype true ;
+    jsonnet:nodeTypeId 6 .
+
+jsonnet:string a owl:Class ;
+    rdfs:label "string" ;
+    rdfs:isDefinedBy jsonnet: ;
+    rdfs:subClassOf ast:Node ;
+    jsonnet:isSupertype true ;
+    jsonnet:nodeTypeId 67 .
+
+jsonnet:string_content a owl:Class ;
+    rdfs:label "string_content" ;
+    rdfs:isDefinedBy jsonnet: ;
+    rdfs:subClassOf ast:Node ;
+    jsonnet:isSupertype true ;
+    jsonnet:nodeTypeId 62 .
+
+jsonnet:string_end a owl:Class ;
+    rdfs:label "string_end" ;
+    rdfs:isDefinedBy jsonnet: ;
+    rdfs:subClassOf ast:Node ;
+    jsonnet:isSupertype true ;
+    jsonnet:nodeTypeId 63 .
+
+jsonnet:string_start a owl:Class ;
+    rdfs:label "string_start" ;
+    rdfs:isDefinedBy jsonnet: ;
+    rdfs:subClassOf ast:Node ;
+    jsonnet:isSupertype true ;
+    jsonnet:nodeTypeId 56,
+        57,
+        61 .
+
+jsonnet:super a owl:Class ;
+    rdfs:label "super" ;
+    rdfs:isDefinedBy jsonnet: ;
+    rdfs:subClassOf ast:Node ;
+    jsonnet:isSupertype true ;
+    jsonnet:nodeTypeId 8 .
+
+jsonnet:tailstrict a owl:Class ;
+    rdfs:label "tailstrict" ;
+    rdfs:isDefinedBy jsonnet: ;
+    rdfs:subClassOf ast:Node ;
+    jsonnet:isSupertype true ;
+    jsonnet:nodeTypeId 10 .
+
+jsonnet:true a owl:Class ;
+    rdfs:label "true" ;
+    rdfs:isDefinedBy jsonnet: ;
+    rdfs:subClassOf ast:Node ;
+    jsonnet:isSupertype true ;
+    jsonnet:nodeTypeId 4 .
+
+jsonnet:unary a owl:Class ;
+    rdfs:label "unary" ;
+    rdfs:isDefinedBy jsonnet: ;
+    rdfs:subClassOf ast:Node ;
+    jsonnet:isSupertype true ;
+    jsonnet:nodeTypeId 85 .
+
+jsonnet:unaryop a owl:Class ;
+    rdfs:label "unaryop" ;
+    rdfs:isDefinedBy jsonnet: ;
+    rdfs:subClassOf ast:Node ;
+    jsonnet:isSupertype true ;
+    jsonnet:nodeTypeId 86 .
+
+jsonnet:value a owl:DatatypeProperty ;
+    rdfs:label "value (literal)" ;
+    rdfs:comment "Literal value for value field when it contains a terminal node" ;
+    jsonnet:fieldId 13 ;
+    jsonnet:isTerminalField true .
+
+jsonnet: a owl:Ontology ;
+    rdfs:label "Jsonnet Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for jsonnet" ;
+    owl:versionInfo "v0.25" ;
+    jsonnet:abiVersion 14 ;
+    jsonnet:fieldCount 13 ;
+    jsonnet:languageName "None" ;
+    jsonnet:nodeKindCount 120 .
+

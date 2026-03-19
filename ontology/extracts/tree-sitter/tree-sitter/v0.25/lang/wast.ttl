@@ -1,0 +1,1195 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix wast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/wast/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+wast:ROOT a owl:Class ;
+    rdfs:label "ROOT" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 108 .
+
+wast:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+wast:action a owl:Class ;
+    rdfs:label "action" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 213 .
+
+wast:action_get a owl:Class ;
+    rdfs:label "action_get" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 214 .
+
+wast:action_invoke a owl:Class ;
+    rdfs:label "action_invoke" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 215 .
+
+wast:align_offset_value a owl:Class ;
+    rdfs:label "align_offset_value" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 3 .
+
+wast:align_value a owl:Class ;
+    rdfs:label "align_value" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 109 .
+
+wast:annotation a owl:Class ;
+    rdfs:label "annotation" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 110 .
+
+wast:annotation_parens a owl:Class ;
+    rdfs:label "annotation_parens" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 111 .
+
+wast:annotation_part a owl:Class ;
+    rdfs:label "annotation_part" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 112 .
+
+wast:assert_exhaustion a owl:Class ;
+    rdfs:label "assert_exhaustion" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 216 .
+
+wast:assert_invalid a owl:Class ;
+    rdfs:label "assert_invalid" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 217 .
+
+wast:assert_malformed a owl:Class ;
+    rdfs:label "assert_malformed" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 218 .
+
+wast:assert_return a owl:Class ;
+    rdfs:label "assert_return" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 219 .
+
+wast:assert_return_arithmetic_nan a owl:Class ;
+    rdfs:label "assert_return_arithmetic_nan" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 220 .
+
+wast:assert_return_canonical_nan a owl:Class ;
+    rdfs:label "assert_return_canonical_nan" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 221 .
+
+wast:assert_trap_action a owl:Class ;
+    rdfs:label "assert_trap_action" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 222 .
+
+wast:assert_trap_module a owl:Class ;
+    rdfs:label "assert_trap_module" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 223 .
+
+wast:assert_unlinkable a owl:Class ;
+    rdfs:label "assert_unlinkable" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 224 .
+
+wast:assertion a owl:Class ;
+    rdfs:label "assertion" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 225 .
+
+wast:block_block a owl:Class ;
+    rdfs:label "block_block" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 113 .
+
+wast:block_if a owl:Class ;
+    rdfs:label "block_if" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 114 .
+
+wast:block_loop a owl:Class ;
+    rdfs:label "block_loop" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 115 .
+
+wast:command a owl:Class ;
+    rdfs:label "command" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 226 .
+
+wast:comment_block a owl:Class ;
+    rdfs:label "comment_block" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 116 .
+
+wast:comment_block_annot a owl:Class ;
+    rdfs:label "comment_block_annot" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 117 .
+
+wast:comment_block_inner a owl:Class ;
+    rdfs:label "comment_block_inner" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 14 .
+
+wast:comment_line a owl:Class ;
+    rdfs:label "comment_line" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 118 .
+
+wast:comment_line_annot a owl:Class ;
+    rdfs:label "comment_line_annot" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 119 .
+
+wast:dec_float a owl:Class ;
+    rdfs:label "dec_float" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 16 .
+
+wast:dec_nat a owl:Class ;
+    rdfs:label "dec_nat" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 17 .
+
+wast:elem_expr a owl:Class ;
+    rdfs:label "elem_expr" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 120 .
+
+wast:elem_expr_expr a owl:Class ;
+    rdfs:label "elem_expr_expr" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 121 .
+
+wast:elem_expr_item a owl:Class ;
+    rdfs:label "elem_expr_item" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 122 .
+
+wast:elem_kind a owl:Class ;
+    rdfs:label "elem_kind" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 123 .
+
+wast:elem_list a owl:Class ;
+    rdfs:label "elem_list" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 124 .
+
+wast:escape_sequence a owl:Class ;
+    rdfs:label "escape_sequence" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 20 .
+
+wast:export a owl:Class ;
+    rdfs:label "export" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 125 .
+
+wast:export_desc a owl:Class ;
+    rdfs:label "export_desc" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 126 .
+
+wast:export_desc_func a owl:Class ;
+    rdfs:label "export_desc_func" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 127 .
+
+wast:export_desc_global a owl:Class ;
+    rdfs:label "export_desc_global" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 128 .
+
+wast:export_desc_memory a owl:Class ;
+    rdfs:label "export_desc_memory" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 129 .
+
+wast:export_desc_table a owl:Class ;
+    rdfs:label "export_desc_table" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 130 .
+
+wast:expr a owl:Class ;
+    rdfs:label "expr" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 131 .
+
+wast:expr1 a owl:Class ;
+    rdfs:label "expr1" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 132 .
+
+wast:expr1_block a owl:Class ;
+    rdfs:label "expr1_block" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 133 .
+
+wast:expr1_call a owl:Class ;
+    rdfs:label "expr1_call" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 134 .
+
+wast:expr1_if a owl:Class ;
+    rdfs:label "expr1_if" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 135 .
+
+wast:expr1_loop a owl:Class ;
+    rdfs:label "expr1_loop" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 136 .
+
+wast:expr1_plain a owl:Class ;
+    rdfs:label "expr1_plain" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 137 .
+
+wast:expr_plain_const a owl:Class ;
+    rdfs:label "expr_plain_const" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 227 .
+
+wast:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+wast:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+wast:float a owl:Class ;
+    rdfs:label "float" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 138 .
+
+wast:func_locals a owl:Class ;
+    rdfs:label "func_locals" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 139 .
+
+wast:func_locals_many a owl:Class ;
+    rdfs:label "func_locals_many" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 140 .
+
+wast:func_locals_one a owl:Class ;
+    rdfs:label "func_locals_one" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 141 .
+
+wast:func_type a owl:Class ;
+    rdfs:label "func_type" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 142 .
+
+wast:func_type_params a owl:Class ;
+    rdfs:label "func_type_params" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 143 .
+
+wast:func_type_params_many a owl:Class ;
+    rdfs:label "func_type_params_many" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 144 .
+
+wast:func_type_params_one a owl:Class ;
+    rdfs:label "func_type_params_one" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 145 .
+
+wast:func_type_results a owl:Class ;
+    rdfs:label "func_type_results" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 146 .
+
+wast:global_type a owl:Class ;
+    rdfs:label "global_type" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 147 .
+
+wast:global_type_imm a owl:Class ;
+    rdfs:label "global_type_imm" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 148 .
+
+wast:global_type_mut a owl:Class ;
+    rdfs:label "global_type_mut" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 149 .
+
+wast:hex_float a owl:Class ;
+    rdfs:label "hex_float" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 31 .
+
+wast:hex_nat a owl:Class ;
+    rdfs:label "hex_nat" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 32 .
+
+wast:identifier a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "identifier",
+        "identifier (literal)" ;
+    rdfs:comment "Literal value for identifier field when it contains a terminal node" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:fieldId 1 ;
+    wast:isSupertype true ;
+    wast:isTerminalField true ;
+    wast:nodeTypeId 33 .
+
+wast:identifier_pattern a owl:Class ;
+    rdfs:label "identifier_pattern" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 34 .
+
+wast:if_block a owl:Class ;
+    rdfs:label "if_block" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 150 .
+
+wast:import a owl:Class ;
+    rdfs:label "import" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 151 .
+
+wast:import_desc a owl:Class ;
+    rdfs:label "import_desc" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 152 .
+
+wast:import_desc_func_type a owl:Class ;
+    rdfs:label "import_desc_func_type" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 153 .
+
+wast:import_desc_global_type a owl:Class ;
+    rdfs:label "import_desc_global_type" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 154 .
+
+wast:import_desc_memory_type a owl:Class ;
+    rdfs:label "import_desc_memory_type" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 155 .
+
+wast:import_desc_table_type a owl:Class ;
+    rdfs:label "import_desc_table_type" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 156 .
+
+wast:import_desc_type_use a owl:Class ;
+    rdfs:label "import_desc_type_use" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 157 .
+
+wast:index a owl:Class ;
+    rdfs:label "index" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 158 .
+
+wast:instr a owl:Class ;
+    rdfs:label "instr" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 159 .
+
+wast:instr_block a owl:Class ;
+    rdfs:label "instr_block" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 160 .
+
+wast:instr_call a owl:Class ;
+    rdfs:label "instr_call" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 161 .
+
+wast:instr_list a owl:Class ;
+    rdfs:label "instr_list" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 162 .
+
+wast:instr_list_call a owl:Class ;
+    rdfs:label "instr_list_call" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 163 .
+
+wast:instr_plain a owl:Class ;
+    rdfs:label "instr_plain" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 164 .
+
+wast:int a owl:Class ;
+    rdfs:label "int" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 173 .
+
+wast:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+wast:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+wast:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+wast:limits a owl:Class ;
+    rdfs:label "limits" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 174 .
+
+wast:literal_nan a owl:Class ;
+    rdfs:label "literal_nan" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 228 .
+
+wast:literal_nan_arithmetic a owl:Class ;
+    rdfs:label "literal_nan_arithmetic" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 98 .
+
+wast:literal_nan_canonical a owl:Class ;
+    rdfs:label "literal_nan_canonical" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 99 .
+
+wast:memory_fields_data a owl:Class ;
+    rdfs:label "memory_fields_data" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 175 .
+
+wast:memory_fields_type a owl:Class ;
+    rdfs:label "memory_fields_type" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 176 .
+
+wast:memory_type a owl:Class ;
+    rdfs:label "memory_type" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 177 .
+
+wast:memory_use a owl:Class ;
+    rdfs:label "memory_use" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 178 .
+
+wast:meta a owl:Class ;
+    rdfs:label "meta" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 229 .
+
+wast:meta_input a owl:Class ;
+    rdfs:label "meta_input" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 230 .
+
+wast:meta_output a owl:Class ;
+    rdfs:label "meta_output" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 231 .
+
+wast:meta_script a owl:Class ;
+    rdfs:label "meta_script" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 232 .
+
+wast:module a owl:Class ;
+    rdfs:label "module" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 179 .
+
+wast:module_field a owl:Class ;
+    rdfs:label "module_field" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 180 .
+
+wast:module_field_data a owl:Class ;
+    rdfs:label "module_field_data" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 181 .
+
+wast:module_field_elem a owl:Class ;
+    rdfs:label "module_field_elem" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 182 .
+
+wast:module_field_export a owl:Class ;
+    rdfs:label "module_field_export" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 183 .
+
+wast:module_field_func a owl:Class ;
+    rdfs:label "module_field_func" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 184 .
+
+wast:module_field_global a owl:Class ;
+    rdfs:label "module_field_global" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 185 .
+
+wast:module_field_import a owl:Class ;
+    rdfs:label "module_field_import" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 186 .
+
+wast:module_field_memory a owl:Class ;
+    rdfs:label "module_field_memory" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 187 .
+
+wast:module_field_start a owl:Class ;
+    rdfs:label "module_field_start" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 188 .
+
+wast:module_field_table a owl:Class ;
+    rdfs:label "module_field_table" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 189 .
+
+wast:module_field_type a owl:Class ;
+    rdfs:label "module_field_type" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 190 .
+
+wast:name a owl:Class ;
+    rdfs:label "name" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 191 .
+
+wast:nan a owl:Class ;
+    rdfs:label "nan" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 71 .
+
+wast:nat a owl:Class ;
+    rdfs:label "nat" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 192 .
+
+wast:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+wast:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+wast:num_type_f32 a owl:Class ;
+    rdfs:label "num_type_f32" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 193 .
+
+wast:num_type_f64 a owl:Class ;
+    rdfs:label "num_type_f64" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 194 .
+
+wast:num_type_i32 a owl:Class ;
+    rdfs:label "num_type_i32" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 195 .
+
+wast:num_type_i64 a owl:Class ;
+    rdfs:label "num_type_i64" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 196 .
+
+wast:num_type_v128 a owl:Class ;
+    rdfs:label "num_type_v128" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 76 .
+
+wast:offset a owl:Class ;
+    rdfs:label "offset" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 197 .
+
+wast:offset_const_expr a owl:Class ;
+    rdfs:label "offset_const_expr" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 198 .
+
+wast:offset_expr a owl:Class ;
+    rdfs:label "offset_expr" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 199 .
+
+wast:offset_value a owl:Class ;
+    rdfs:label "offset_value" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 200 .
+
+wast:op_const a owl:Class ;
+    rdfs:label "op_const" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 165 .
+
+wast:op_const_ref a owl:Class ;
+    rdfs:label "op_const_ref" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 233 .
+
+wast:op_func_bind a owl:Class ;
+    rdfs:label "op_func_bind" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 166 .
+
+wast:op_index a owl:Class ;
+    rdfs:label "op_index" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 41 .
+
+wast:op_index_opt a owl:Class ;
+    rdfs:label "op_index_opt" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 42 .
+
+wast:op_index_opt_offset_opt_align_opt a owl:Class ;
+    rdfs:label "op_index_opt_offset_opt_align_opt" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 43 .
+
+wast:op_let a owl:Class ;
+    rdfs:label "op_let" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 167 .
+
+wast:op_nullary a owl:Class ;
+    rdfs:label "op_nullary" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 40 .
+
+wast:op_select a owl:Class ;
+    rdfs:label "op_select" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 168 .
+
+wast:op_simd_const a owl:Class ;
+    rdfs:label "op_simd_const" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 169 .
+
+wast:op_simd_lane a owl:Class ;
+    rdfs:label "op_simd_lane" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 170 .
+
+wast:op_simd_offset_opt_align_opt a owl:Class ;
+    rdfs:label "op_simd_offset_opt_align_opt" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 44 .
+
+wast:op_table_copy a owl:Class ;
+    rdfs:label "op_table_copy" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 171 .
+
+wast:op_table_init a owl:Class ;
+    rdfs:label "op_table_init" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 172 .
+
+wast:pat00 a owl:Class ;
+    rdfs:label "pat00" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 45 .
+
+wast:pat01 a owl:Class ;
+    rdfs:label "pat01" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 46 .
+
+wast:ref_kind a owl:Class ;
+    rdfs:label "ref_kind" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 78 .
+
+wast:ref_type a owl:Class ;
+    rdfs:label "ref_type" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 201 .
+
+wast:ref_type_externref a owl:Class ;
+    rdfs:label "ref_type_externref" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 79 .
+
+wast:ref_type_funcref a owl:Class ;
+    rdfs:label "ref_type_funcref" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 80 .
+
+wast:ref_type_ref a owl:Class ;
+    rdfs:label "ref_type_ref" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 202 .
+
+wast:register a owl:Class ;
+    rdfs:label "register" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 234 .
+
+wast:reserved a owl:Class ;
+    rdfs:label "reserved" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 83 .
+
+wast:result a owl:Class ;
+    rdfs:label "result" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 235 .
+
+wast:result_const a owl:Class ;
+    rdfs:label "result_const" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 236 .
+
+wast:result_const_nan a owl:Class ;
+    rdfs:label "result_const_nan" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 237 .
+
+wast:result_ref_extern a owl:Class ;
+    rdfs:label "result_ref_extern" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 238 .
+
+wast:result_ref_func a owl:Class ;
+    rdfs:label "result_ref_func" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 105 .
+
+wast:result_ref_null a owl:Class ;
+    rdfs:label "result_ref_null" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 239 .
+
+wast:script_module a owl:Class ;
+    rdfs:label "script_module" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 240 .
+
+wast:script_module_binary a owl:Class ;
+    rdfs:label "script_module_binary" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 241 .
+
+wast:script_module_quote a owl:Class ;
+    rdfs:label "script_module_quote" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 242 .
+
+wast:share a owl:Class ;
+    rdfs:label "share" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 84 .
+
+wast:sign a owl:Class ;
+    rdfs:label "sign" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 85 .
+
+wast:string a owl:Class ;
+    rdfs:label "string" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 203 .
+
+wast:table_fields_elem a owl:Class ;
+    rdfs:label "table_fields_elem" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 204 .
+
+wast:table_fields_type a owl:Class ;
+    rdfs:label "table_fields_type" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 205 .
+
+wast:table_type a owl:Class ;
+    rdfs:label "table_type" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 206 .
+
+wast:table_use a owl:Class ;
+    rdfs:label "table_use" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 207 .
+
+wast:type_field a owl:Class ;
+    rdfs:label "type_field" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 208 .
+
+wast:type_use a owl:Class ;
+    rdfs:label "type_use" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 209 .
+
+wast:value_type a owl:Class ;
+    rdfs:label "value_type" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 210 .
+
+wast:value_type_num_type a owl:Class ;
+    rdfs:label "value_type_num_type" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 211 .
+
+wast:value_type_ref_type a owl:Class ;
+    rdfs:label "value_type_ref_type" ;
+    rdfs:isDefinedBy wast: ;
+    rdfs:subClassOf ast:Node ;
+    wast:isSupertype true ;
+    wast:nodeTypeId 212 .
+
+wast: a owl:Ontology ;
+    rdfs:label "Wast Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for wast" ;
+    owl:versionInfo "v0.25" ;
+    wast:abiVersion 14 ;
+    wast:fieldCount 1 ;
+    wast:languageName "None" ;
+    wast:nodeKindCount 264 .
+

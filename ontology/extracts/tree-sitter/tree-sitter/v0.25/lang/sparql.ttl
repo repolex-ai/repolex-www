@@ -1,0 +1,851 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sparql: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/sparql/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+sparql:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+sparql:add a owl:Class ;
+    rdfs:label "add" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 197 .
+
+sparql:aggregate a owl:Class ;
+    rdfs:label "aggregate" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 279 .
+
+sparql:anon a owl:Class ;
+    rdfs:label "anon" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 165 .
+
+sparql:arg_list a owl:Class ;
+    rdfs:label "arg_list" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 230 .
+
+sparql:arguments a owl:DatatypeProperty ;
+    rdfs:label "arguments (literal)" ;
+    rdfs:comment "Literal value for arguments field when it contains a terminal node" ;
+    sparql:fieldId 1 ;
+    sparql:isTerminalField true .
+
+sparql:ask_query a owl:Class ;
+    rdfs:label "ask_query" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 177 .
+
+sparql:base_declaration a owl:Class ;
+    rdfs:label "base_declaration" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 170 .
+
+sparql:binary_expression a owl:Class ;
+    rdfs:label "binary_expression" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 264 .
+
+sparql:binary_path a owl:Class ;
+    rdfs:label "binary_path" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 246 .
+
+sparql:bind a owl:Class ;
+    rdfs:label "bind" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 219 .
+
+sparql:blank_node_label a owl:Class ;
+    rdfs:label "blank_node_label" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 290 .
+
+sparql:blank_node_property_list a owl:Class ;
+    rdfs:label "blank_node_property_list" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 253,
+        255 .
+
+sparql:boolean_literal a owl:Class ;
+    rdfs:label "boolean_literal" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 283 .
+
+sparql:bound_variable a owl:DatatypeProperty ;
+    rdfs:label "bound_variable (literal)" ;
+    rdfs:comment "Literal value for bound_variable field when it contains a terminal node" ;
+    sparql:fieldId 2 ;
+    sparql:isTerminalField true .
+
+sparql:bracketted_expression a owl:Class ;
+    rdfs:label "bracketted_expression" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 267 .
+
+sparql:build_in_function a owl:Class ;
+    rdfs:label "build_in_function" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 269 .
+
+sparql:clear a owl:Class ;
+    rdfs:label "clear" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 194 .
+
+sparql:collection a owl:Class ;
+    rdfs:label "collection" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 256,
+        257 .
+
+sparql:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 2 .
+
+sparql:construct_query a owl:Class ;
+    rdfs:label "construct_query" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 175 .
+
+sparql:construct_template a owl:Class ;
+    rdfs:label "construct_template" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 232 .
+
+sparql:construct_triples a owl:Class ;
+    rdfs:label "construct_triples" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 233 .
+
+sparql:copy a owl:Class ;
+    rdfs:label "copy" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 199 .
+
+sparql:create a owl:Class ;
+    rdfs:label "create" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 196 .
+
+sparql:data_block a owl:Class ;
+    rdfs:label "data_block" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 221 .
+
+sparql:dataset_clause a owl:Class ;
+    rdfs:label "dataset_clause" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 178 .
+
+sparql:datatype a owl:DatatypeProperty ;
+    rdfs:label "datatype (literal)" ;
+    rdfs:comment "Literal value for datatype field when it contains a terminal node" ;
+    sparql:fieldId 3 ;
+    sparql:isTerminalField true .
+
+sparql:decimal a owl:Class ;
+    rdfs:label "decimal" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 151 .
+
+sparql:default_graph_clause a owl:Class ;
+    rdfs:label "default_graph_clause" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 179 .
+
+sparql:delete_clause a owl:Class ;
+    rdfs:label "delete_clause" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 204 .
+
+sparql:delete_data a owl:Class ;
+    rdfs:label "delete_data" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 201 .
+
+sparql:delete_where a owl:Class ;
+    rdfs:label "delete_where" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 202 .
+
+sparql:describe_query a owl:Class ;
+    rdfs:label "describe_query" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 176 .
+
+sparql:double a owl:Class ;
+    rdfs:label "double" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 152 .
+
+sparql:drop a owl:Class ;
+    rdfs:label "drop" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 195 .
+
+sparql:echar a owl:Class ;
+    rdfs:label "echar" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 163 .
+
+sparql:exists_func a owl:Class ;
+    rdfs:label "exists_func" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 277 .
+
+sparql:expression_list a owl:Class ;
+    rdfs:label "expression_list" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 231 .
+
+sparql:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+sparql:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+sparql:field_arguments a owl:ObjectProperty ;
+    rdfs:label "arguments (structural)" ;
+    rdfs:comment "Structural reference for arguments field when it contains a non-terminal node" ;
+    sparql:fieldId 1 .
+
+sparql:field_datatype a owl:ObjectProperty ;
+    rdfs:label "datatype (structural)" ;
+    rdfs:comment "Structural reference for datatype field when it contains a non-terminal node" ;
+    sparql:fieldId 3 .
+
+sparql:field_flag a owl:ObjectProperty ;
+    rdfs:label "flag (structural)" ;
+    rdfs:comment "Structural reference for flag field when it contains a non-terminal node" ;
+    sparql:fieldId 4 .
+
+sparql:field_identifier a owl:ObjectProperty ;
+    rdfs:label "identifier (structural)" ;
+    rdfs:comment "Structural reference for identifier field when it contains a non-terminal node" ;
+    sparql:fieldId 5 .
+
+sparql:field_pattern a owl:ObjectProperty ;
+    rdfs:label "pattern (structural)" ;
+    rdfs:comment "Structural reference for pattern field when it contains a non-terminal node" ;
+    sparql:fieldId 6 .
+
+sparql:field_source_selector a owl:ObjectProperty ;
+    rdfs:label "source_selector (structural)" ;
+    rdfs:comment "Structural reference for source_selector field when it contains a non-terminal node" ;
+    sparql:fieldId 7 .
+
+sparql:field_subject a owl:ObjectProperty ;
+    rdfs:label "subject (structural)" ;
+    rdfs:comment "Structural reference for subject field when it contains a non-terminal node" ;
+    sparql:fieldId 8 .
+
+sparql:field_text a owl:ObjectProperty ;
+    rdfs:label "text (structural)" ;
+    rdfs:comment "Structural reference for text field when it contains a non-terminal node" ;
+    sparql:fieldId 9 .
+
+sparql:field_value a owl:ObjectProperty ;
+    rdfs:label "value (structural)" ;
+    rdfs:comment "Structural reference for value field when it contains a non-terminal node" ;
+    sparql:fieldId 10 .
+
+sparql:filter a owl:Class ;
+    rdfs:label "filter" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 227 .
+
+sparql:function_call a owl:Class ;
+    rdfs:label "function_call" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 229 .
+
+sparql:graph_graph_pattern a owl:Class ;
+    rdfs:label "graph_graph_pattern" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 217 .
+
+sparql:graph_or_default a owl:Class ;
+    rdfs:label "graph_or_default" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 207 .
+
+sparql:graph_ref a owl:Class ;
+    rdfs:label "graph_ref" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 208 .
+
+sparql:graph_ref_all a owl:Class ;
+    rdfs:label "graph_ref_all" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 209 .
+
+sparql:group_clause a owl:Class ;
+    rdfs:label "group_clause" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 183 .
+
+sparql:group_condition a owl:Class ;
+    rdfs:label "group_condition" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 184 .
+
+sparql:group_graph_pattern a owl:Class ;
+    rdfs:label "group_graph_pattern" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 213 .
+
+sparql:group_or_union_graph_pattern a owl:Class ;
+    rdfs:label "group_or_union_graph_pattern" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 226 .
+
+sparql:having_clause a owl:Class ;
+    rdfs:label "having_clause" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 185 .
+
+sparql:having_condition a owl:Class ;
+    rdfs:label "having_condition" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 186 .
+
+sparql:identifier a owl:DatatypeProperty ;
+    rdfs:label "identifier (literal)" ;
+    rdfs:comment "Literal value for identifier field when it contains a terminal node" ;
+    sparql:fieldId 5 ;
+    sparql:isTerminalField true .
+
+sparql:inline_data a owl:Class ;
+    rdfs:label "inline_data" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 220 .
+
+sparql:insert_clause a owl:Class ;
+    rdfs:label "insert_clause" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 205 .
+
+sparql:insert_data a owl:Class ;
+    rdfs:label "insert_data" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 200 .
+
+sparql:integer a owl:Class ;
+    rdfs:label "integer" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 150 .
+
+sparql:iri_reference a owl:Class ;
+    rdfs:label "iri_reference" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 288 .
+
+sparql:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+sparql:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+sparql:lang_tag a owl:Class ;
+    rdfs:label "lang_tag" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 149 .
+
+sparql:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+sparql:limit_clause a owl:Class ;
+    rdfs:label "limit_clause" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 190 .
+
+sparql:limit_offset_clauses a owl:Class ;
+    rdfs:label "limit_offset_clauses" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 189 .
+
+sparql:load a owl:Class ;
+    rdfs:label "load" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 193 .
+
+sparql:minus_graph_pattern a owl:Class ;
+    rdfs:label "minus_graph_pattern" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 225 .
+
+sparql:modify a owl:Class ;
+    rdfs:label "modify" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 203 .
+
+sparql:move a owl:Class ;
+    rdfs:label "move" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 198 .
+
+sparql:named_graph_clause a owl:Class ;
+    rdfs:label "named_graph_clause" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 180 .
+
+sparql:namespace a owl:Class ;
+    rdfs:label "namespace" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 289 .
+
+sparql:nil a owl:Class ;
+    rdfs:label "nil" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 164 .
+
+sparql:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+sparql:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+sparql:not_exists_func a owl:Class ;
+    rdfs:label "not_exists_func" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 278 .
+
+sparql:object_list a owl:Class ;
+    rdfs:label "object_list" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 238,
+        244 .
+
+sparql:offset_clause a owl:Class ;
+    rdfs:label "offset_clause" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 191 .
+
+sparql:optional_graph_pattern a owl:Class ;
+    rdfs:label "optional_graph_pattern" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 216 .
+
+sparql:order_clause a owl:Class ;
+    rdfs:label "order_clause" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 187 .
+
+sparql:order_condition a owl:Class ;
+    rdfs:label "order_condition" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 188 .
+
+sparql:path_element a owl:Class ;
+    rdfs:label "path_element" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 247 .
+
+sparql:path_inverse a owl:Class ;
+    rdfs:label "path_inverse" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 248 .
+
+sparql:path_mod a owl:Class ;
+    rdfs:label "path_mod" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 63 .
+
+sparql:path_negated_property_set a owl:Class ;
+    rdfs:label "path_negated_property_set" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 250 .
+
+sparql:path_one_in_property_set a owl:Class ;
+    rdfs:label "path_one_in_property_set" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 251 .
+
+sparql:pn_local a owl:Class ;
+    rdfs:label "pn_local" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 166 .
+
+sparql:pn_prefix a owl:Class ;
+    rdfs:label "pn_prefix" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 1 .
+
+sparql:prefix_declaration a owl:Class ;
+    rdfs:label "prefix_declaration" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 171 .
+
+sparql:prefixed_name a owl:Class ;
+    rdfs:label "prefixed_name" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 286 .
+
+sparql:prologue a owl:Class ;
+    rdfs:label "prologue" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 169 .
+
+sparql:property a owl:Class ;
+    rdfs:label "property" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 236,
+        241,
+        242 .
+
+sparql:property_list a owl:Class ;
+    rdfs:label "property_list" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 235,
+        240 .
+
+sparql:quads a owl:Class ;
+    rdfs:label "quads" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 210 .
+
+sparql:quads_not_triples a owl:Class ;
+    rdfs:label "quads_not_triples" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 211 .
+
+sparql:rdf_literal a owl:Class ;
+    rdfs:label "rdf_literal" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 281 .
+
+sparql:regex_expression a owl:Class ;
+    rdfs:label "regex_expression" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 274 .
+
+sparql:select_clause a owl:Class ;
+    rdfs:label "select_clause" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 174 .
+
+sparql:select_query a owl:Class ;
+    rdfs:label "select_query" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 172 .
+
+sparql:service_graph_pattern a owl:Class ;
+    rdfs:label "service_graph_pattern" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 218 .
+
+sparql:solution_modifier a owl:Class ;
+    rdfs:label "solution_modifier" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 182 .
+
+sparql:source_selector a owl:DatatypeProperty ;
+    rdfs:label "source_selector (literal)" ;
+    rdfs:comment "Literal value for source_selector field when it contains a terminal node" ;
+    sparql:fieldId 7 ;
+    sparql:isTerminalField true .
+
+sparql:string a owl:Class ;
+    rdfs:label "string" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 284 .
+
+sparql:string_replace_expression a owl:Class ;
+    rdfs:label "string_replace_expression" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 276 .
+
+sparql:sub_select a owl:Class ;
+    rdfs:label "sub_select" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 173 .
+
+sparql:subject a owl:DatatypeProperty ;
+    rdfs:label "subject (literal)" ;
+    rdfs:comment "Literal value for subject field when it contains a terminal node" ;
+    sparql:fieldId 8 ;
+    sparql:isTerminalField true .
+
+sparql:substring_expression a owl:Class ;
+    rdfs:label "substring_expression" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 275 .
+
+sparql:triples_block a owl:Class ;
+    rdfs:label "triples_block" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 214 .
+
+sparql:triples_same_subject a owl:Class ;
+    rdfs:label "triples_same_subject" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 234,
+        239 .
+
+sparql:triples_template a owl:Class ;
+    rdfs:label "triples_template" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 212 .
+
+sparql:unary_expression a owl:Class ;
+    rdfs:label "unary_expression" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 265 .
+
+sparql:unit a owl:Class ;
+    rdfs:label "unit" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 167 .
+
+sparql:using_clause a owl:Class ;
+    rdfs:label "using_clause" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 206 .
+
+sparql:values_clause a owl:Class ;
+    rdfs:label "values_clause" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 192 .
+
+sparql:var a owl:Class ;
+    rdfs:label "var" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 67 .
+
+sparql:where_clause a owl:Class ;
+    rdfs:label "where_clause" ;
+    rdfs:isDefinedBy sparql: ;
+    rdfs:subClassOf ast:Node ;
+    sparql:isSupertype true ;
+    sparql:nodeTypeId 181 .
+
+sparql: a owl:Ontology ;
+    rdfs:label "Sparql Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for sparql" ;
+    owl:versionInfo "v0.25" ;
+    sparql:abiVersion 15 ;
+    sparql:fieldCount 10 ;
+    sparql:languageName "sparql" ;
+    sparql:nodeKindCount 324 .
+

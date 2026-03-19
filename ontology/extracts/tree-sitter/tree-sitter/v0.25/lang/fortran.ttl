@@ -1,0 +1,1984 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix fortran: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/fortran/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+fortran:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+fortran:abstract_specifier a owl:Class ;
+    rdfs:label "abstract_specifier" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 413 .
+
+fortran:access a owl:DatatypeProperty ;
+    rdfs:label "access (literal)" ;
+    rdfs:comment "Literal value for access field when it contains a terminal node" ;
+    fortran:fieldId 1 ;
+    fortran:isTerminalField true .
+
+fortran:access_specifier a owl:Class ;
+    rdfs:label "access_specifier" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 414 .
+
+fortran:allocate_statement a owl:Class ;
+    rdfs:label "allocate_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 537 .
+
+fortran:allocation a owl:DatatypeProperty ;
+    rdfs:label "allocation (literal)" ;
+    rdfs:comment "Literal value for allocation field when it contains a terminal node" ;
+    fortran:fieldId 2 ;
+    fortran:isTerminalField true .
+
+fortran:alternative a owl:DatatypeProperty ;
+    rdfs:label "alternative (literal)" ;
+    rdfs:comment "Literal value for alternative field when it contains a terminal node" ;
+    fortran:fieldId 3 ;
+    fortran:isTerminalField true .
+
+fortran:argument a owl:DatatypeProperty ;
+    rdfs:label "argument (literal)" ;
+    rdfs:comment "Literal value for argument field when it contains a terminal node" ;
+    fortran:fieldId 5 ;
+    fortran:isTerminalField true .
+
+fortran:argument_list a owl:Class ;
+    rdfs:label "argument_list" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 353,
+        557 .
+
+fortran:arithmetic_if_statement a owl:Class ;
+    rdfs:label "arithmetic_if_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 479 .
+
+fortran:array_literal a owl:Class ;
+    rdfs:label "array_literal" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 568 .
+
+fortran:assign_statement a owl:Class ;
+    rdfs:label "assign_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 543 .
+
+fortran:assignment a owl:Class ;
+    rdfs:label "assignment" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 372 .
+
+fortran:assignment_statement a owl:Class ;
+    rdfs:label "assignment_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 457 .
+
+fortran:associate_statement a owl:Class ;
+    rdfs:label "associate_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 507 .
+
+fortran:association a owl:Class ;
+    rdfs:label "association" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 508 .
+
+fortran:assumed_rank a owl:Class ;
+    rdfs:label "assumed_rank" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 243 .
+
+fortran:assumed_shape a owl:Class ;
+    rdfs:label "assumed_shape" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 564 .
+
+fortran:assumed_size a owl:Class ;
+    rdfs:label "assumed_size" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 563 .
+
+fortran:base_type_specifier a owl:Class ;
+    rdfs:label "base_type_specifier" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 415 .
+
+fortran:binary_expression a owl:Class ;
+    rdfs:label "binary_expression" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 354 .
+
+fortran:binary_op a owl:Class ;
+    rdfs:label "binary_op" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 476 .
+
+fortran:bind_statement a owl:Class ;
+    rdfs:label "bind_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 402 .
+
+fortran:binding a owl:Class ;
+    rdfs:label "binding" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 422 .
+
+fortran:binding_name a owl:Class ;
+    rdfs:label "binding_name" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 423 .
+
+fortran:block_construct a owl:Class ;
+    rdfs:label "block_construct" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 505 .
+
+fortran:block_data a owl:Class ;
+    rdfs:label "block_data" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 369 .
+
+fortran:block_data_statement a owl:Class ;
+    rdfs:label "block_data_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 370 .
+
+fortran:block_label a owl:Class ;
+    rdfs:label "block_label" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 656 .
+
+fortran:block_label_start_expression a owl:Class ;
+    rdfs:label "block_label_start_expression" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 565 .
+
+fortran:boolean_literal a owl:Class ;
+    rdfs:label "boolean_literal" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 575 .
+
+fortran:call_expression a owl:Class ;
+    rdfs:label "call_expression" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 352,
+        553 .
+
+fortran:case_statement a owl:Class ;
+    rdfs:label "case_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 500 .
+
+fortran:case_value_range_list a owl:Class ;
+    rdfs:label "case_value_range_list" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 503 .
+
+fortran:character_length a owl:Class ;
+    rdfs:label "character_length" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 443 .
+
+fortran:close_statement a owl:Class ;
+    rdfs:label "close_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 520 .
+
+fortran:coarray_allocation a owl:Class ;
+    rdfs:label "coarray_allocation" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 539 .
+
+fortran:coarray_critical_statement a owl:Class ;
+    rdfs:label "coarray_critical_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 586 .
+
+fortran:coarray_declarator a owl:Class ;
+    rdfs:label "coarray_declarator" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 581 .
+
+fortran:coarray_expression a owl:Class ;
+    rdfs:label "coarray_expression" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 582 .
+
+fortran:coarray_index a owl:Class ;
+    rdfs:label "coarray_index" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 579 .
+
+fortran:coarray_size a owl:Class ;
+    rdfs:label "coarray_size" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 658 .
+
+fortran:coarray_statement a owl:Class ;
+    rdfs:label "coarray_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 583 .
+
+fortran:coarray_team_statement a owl:Class ;
+    rdfs:label "coarray_team_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 584 .
+
+fortran:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 273 .
+
+fortran:common_block a owl:Class ;
+    rdfs:label "common_block" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 659 .
+
+fortran:common_statement a owl:Class ;
+    rdfs:label "common_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 407 .
+
+fortran:complex_literal a owl:Class ;
+    rdfs:label "complex_literal" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 573 .
+
+fortran:concatenation_expression a owl:Class ;
+    rdfs:label "concatenation_expression" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 549 .
+
+fortran:concurrent_control a owl:Class ;
+    rdfs:label "concurrent_control" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 474 .
+
+fortran:concurrent_header a owl:Class ;
+    rdfs:label "concurrent_header" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 473 .
+
+fortran:concurrent_locality a owl:Class ;
+    rdfs:label "concurrent_locality" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 475 .
+
+fortran:concurrent_mask a owl:Class ;
+    rdfs:label "concurrent_mask" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 660 .
+
+fortran:concurrent_statement a owl:Class ;
+    rdfs:label "concurrent_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 472 .
+
+fortran:condition a owl:DatatypeProperty ;
+    rdfs:label "condition (literal)" ;
+    rdfs:comment "Literal value for condition field when it contains a terminal node" ;
+    fortran:fieldId 9 ;
+    fortran:isTerminalField true .
+
+fortran:conditional_expression a owl:Class ;
+    rdfs:label "conditional_expression" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 588 .
+
+fortran:consequence a owl:DatatypeProperty ;
+    rdfs:label "consequence (literal)" ;
+    rdfs:comment "Literal value for consequence field when it contains a terminal node" ;
+    fortran:fieldId 10 ;
+    fortran:isTerminalField true .
+
+fortran:contains_statement a owl:Class ;
+    rdfs:label "contains_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 393 .
+
+fortran:cray_pointer_declaration a owl:Class ;
+    rdfs:label "cray_pointer_declaration" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 451 .
+
+fortran:cray_pointer_pair a owl:Class ;
+    rdfs:label "cray_pointer_pair" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 452 .
+
+fortran:cuda_kernel_argument_list a owl:Class ;
+    rdfs:label "cuda_kernel_argument_list" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 460 .
+
+fortran:data_declarator a owl:Class ;
+    rdfs:label "data_declarator" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 435 .
+
+fortran:data_set a owl:Class ;
+    rdfs:label "data_set" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 464 .
+
+fortran:data_statement a owl:Class ;
+    rdfs:label "data_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 463 .
+
+fortran:data_value a owl:Class ;
+    rdfs:label "data_value" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 465 .
+
+fortran:deallocate_statement a owl:Class ;
+    rdfs:label "deallocate_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 540 .
+
+fortran:declarator a owl:DatatypeProperty ;
+    rdfs:label "declarator (literal)" ;
+    rdfs:comment "Literal value for declarator field when it contains a terminal node" ;
+    fortran:fieldId 11 ;
+    fortran:isTerminalField true .
+
+fortran:declared_type a owl:Class ;
+    rdfs:label "declared_type" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 440 .
+
+fortran:default a owl:Class ;
+    rdfs:label "default" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 502 .
+
+fortran:defined_io_procedure a owl:Class ;
+    rdfs:label "defined_io_procedure" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 374 .
+
+fortran:derived_type a owl:Class ;
+    rdfs:label "derived_type" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 439 .
+
+fortran:derived_type_definition a owl:Class ;
+    rdfs:label "derived_type_definition" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 412 .
+
+fortran:derived_type_member_expression a owl:Class ;
+    rdfs:label "derived_type_member_expression" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 546 .
+
+fortran:derived_type_parameter_list a owl:Class ;
+    rdfs:label "derived_type_parameter_list" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 662 .
+
+fortran:derived_type_procedures a owl:Class ;
+    rdfs:label "derived_type_procedures" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 420 .
+
+fortran:derived_type_statement a owl:Class ;
+    rdfs:label "derived_type_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 417 .
+
+fortran:directive a owl:DatatypeProperty ;
+    rdfs:label "directive (literal)" ;
+    rdfs:comment "Literal value for directive field when it contains a terminal node" ;
+    fortran:fieldId 12 ;
+    fortran:isTerminalField true .
+
+fortran:do_label_statement a owl:Class ;
+    rdfs:label "do_label_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 469 .
+
+fortran:do_loop_statement a owl:Class ;
+    rdfs:label "do_loop_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 467 .
+
+fortran:edit_descriptor a owl:Class ;
+    rdfs:label "edit_descriptor" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 513 .
+
+fortran:else_clause a owl:Class ;
+    rdfs:label "else_clause" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 483 .
+
+fortran:elseif_clause a owl:Class ;
+    rdfs:label "elseif_clause" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 482 .
+
+fortran:elsewhere_clause a owl:Class ;
+    rdfs:label "elsewhere_clause" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 488 .
+
+fortran:end_associate_statement a owl:Class ;
+    rdfs:label "end_associate_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 509 .
+
+fortran:end_block_construct_statement a owl:Class ;
+    rdfs:label "end_block_construct_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 506 .
+
+fortran:end_block_data_statement a owl:Class ;
+    rdfs:label "end_block_data_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 371 .
+
+fortran:end_coarray_critical_statement a owl:Class ;
+    rdfs:label "end_coarray_critical_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 587 .
+
+fortran:end_coarray_team_statement a owl:Class ;
+    rdfs:label "end_coarray_team_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 585 .
+
+fortran:end_do_label_statement a owl:Class ;
+    rdfs:label "end_do_label_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 470 .
+
+fortran:end_do_loop_statement a owl:Class ;
+    rdfs:label "end_do_loop_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 468 .
+
+fortran:end_enum_statement a owl:Class ;
+    rdfs:label "end_enum_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 528 .
+
+fortran:end_enumeration_type_statement a owl:Class ;
+    rdfs:label "end_enumeration_type_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 529 .
+
+fortran:end_forall_statement a owl:Class ;
+    rdfs:label "end_forall_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 494 .
+
+fortran:end_function_statement a owl:Class ;
+    rdfs:label "end_function_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 387 .
+
+fortran:end_if_statement a owl:Class ;
+    rdfs:label "end_if_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 481 .
+
+fortran:end_interface_statement a owl:Class ;
+    rdfs:label "end_interface_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 368 .
+
+fortran:end_module_procedure_statement a owl:Class ;
+    rdfs:label "end_module_procedure_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 381 .
+
+fortran:end_module_statement a owl:Class ;
+    rdfs:label "end_module_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 360 .
+
+fortran:end_program_statement a owl:Class ;
+    rdfs:label "end_program_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 357 .
+
+fortran:end_select_statement a owl:Class ;
+    rdfs:label "end_select_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 498 .
+
+fortran:end_submodule_statement a owl:Class ;
+    rdfs:label "end_submodule_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 363 .
+
+fortran:end_subroutine_statement a owl:Class ;
+    rdfs:label "end_subroutine_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 378 .
+
+fortran:end_type_statement a owl:Class ;
+    rdfs:label "end_type_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 418 .
+
+fortran:end_where_statement a owl:Class ;
+    rdfs:label "end_where_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 487 .
+
+fortran:entry_statement a owl:Class ;
+    rdfs:label "entry_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 542 .
+
+fortran:enum a owl:Class ;
+    rdfs:label "enum" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 523 .
+
+fortran:enum_statement a owl:Class ;
+    rdfs:label "enum_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 524 .
+
+fortran:enumeration_type a owl:Class ;
+    rdfs:label "enumeration_type" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 525 .
+
+fortran:enumeration_type_statement a owl:Class ;
+    rdfs:label "enumeration_type_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 526 .
+
+fortran:enumerator_statement a owl:Class ;
+    rdfs:label "enumerator_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 527 .
+
+fortran:equivalence_set a owl:Class ;
+    rdfs:label "equivalence_set" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 450 .
+
+fortran:equivalence_statement a owl:Class ;
+    rdfs:label "equivalence_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 449 .
+
+fortran:extent_specifier a owl:Class ;
+    rdfs:label "extent_specifier" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 560,
+        580 .
+
+fortran:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+fortran:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+fortran:field_allocation a owl:ObjectProperty ;
+    rdfs:label "allocation (structural)" ;
+    rdfs:comment "Structural reference for allocation field when it contains a non-terminal node" ;
+    fortran:fieldId 2 .
+
+fortran:field_alternative a owl:ObjectProperty ;
+    rdfs:label "alternative (structural)" ;
+    rdfs:comment "Structural reference for alternative field when it contains a non-terminal node" ;
+    fortran:fieldId 3 .
+
+fortran:field_ancestor a owl:ObjectProperty ;
+    rdfs:label "ancestor (structural)" ;
+    rdfs:comment "Structural reference for ancestor field when it contains a non-terminal node" ;
+    fortran:fieldId 4 .
+
+fortran:field_argument a owl:ObjectProperty ;
+    rdfs:label "argument (structural)" ;
+    rdfs:comment "Structural reference for argument field when it contains a non-terminal node" ;
+    fortran:fieldId 5 .
+
+fortran:field_arguments a owl:ObjectProperty ;
+    rdfs:label "arguments (structural)" ;
+    rdfs:comment "Structural reference for arguments field when it contains a non-terminal node" ;
+    fortran:fieldId 6 .
+
+fortran:field_attribute a owl:ObjectProperty ;
+    rdfs:label "attribute (structural)" ;
+    rdfs:comment "Structural reference for attribute field when it contains a non-terminal node" ;
+    fortran:fieldId 7 .
+
+fortran:field_base a owl:ObjectProperty ;
+    rdfs:label "base (structural)" ;
+    rdfs:comment "Structural reference for base field when it contains a non-terminal node" ;
+    fortran:fieldId 8 .
+
+fortran:field_condition a owl:ObjectProperty ;
+    rdfs:label "condition (structural)" ;
+    rdfs:comment "Structural reference for condition field when it contains a non-terminal node" ;
+    fortran:fieldId 9 .
+
+fortran:field_consequence a owl:ObjectProperty ;
+    rdfs:label "consequence (structural)" ;
+    rdfs:comment "Structural reference for consequence field when it contains a non-terminal node" ;
+    fortran:fieldId 10 .
+
+fortran:field_declarator a owl:ObjectProperty ;
+    rdfs:label "declarator (structural)" ;
+    rdfs:comment "Structural reference for declarator field when it contains a non-terminal node" ;
+    fortran:fieldId 11 .
+
+fortran:field_final a owl:ObjectProperty ;
+    rdfs:label "final (structural)" ;
+    rdfs:comment "Structural reference for final field when it contains a non-terminal node" ;
+    fortran:fieldId 13 .
+
+fortran:field_initial a owl:ObjectProperty ;
+    rdfs:label "initial (structural)" ;
+    rdfs:comment "Structural reference for initial field when it contains a non-terminal node" ;
+    fortran:fieldId 15 .
+
+fortran:field_kind a owl:ObjectProperty ;
+    rdfs:label "kind (structural)" ;
+    rdfs:comment "Structural reference for kind field when it contains a non-terminal node" ;
+    fortran:fieldId 16 .
+
+fortran:field_left a owl:ObjectProperty ;
+    rdfs:label "left (structural)" ;
+    rdfs:comment "Structural reference for left field when it contains a non-terminal node" ;
+    fortran:fieldId 17 .
+
+fortran:field_mold a owl:ObjectProperty ;
+    rdfs:label "mold (structural)" ;
+    rdfs:comment "Structural reference for mold field when it contains a non-terminal node" ;
+    fortran:fieldId 18 .
+
+fortran:field_name a owl:ObjectProperty ;
+    rdfs:label "name (structural)" ;
+    rdfs:comment "Structural reference for name field when it contains a non-terminal node" ;
+    fortran:fieldId 19 .
+
+fortran:field_operator a owl:ObjectProperty ;
+    rdfs:label "operator (structural)" ;
+    rdfs:comment "Structural reference for operator field when it contains a non-terminal node" ;
+    fortran:fieldId 20 .
+
+fortran:field_parameters a owl:ObjectProperty ;
+    rdfs:label "parameters (structural)" ;
+    rdfs:comment "Structural reference for parameters field when it contains a non-terminal node" ;
+    fortran:fieldId 21 .
+
+fortran:field_parent a owl:ObjectProperty ;
+    rdfs:label "parent (structural)" ;
+    rdfs:comment "Structural reference for parent field when it contains a non-terminal node" ;
+    fortran:fieldId 22 .
+
+fortran:field_path a owl:ObjectProperty ;
+    rdfs:label "path (structural)" ;
+    rdfs:comment "Structural reference for path field when it contains a non-terminal node" ;
+    fortran:fieldId 23 .
+
+fortran:field_repeat a owl:ObjectProperty ;
+    rdfs:label "repeat (structural)" ;
+    rdfs:comment "Structural reference for repeat field when it contains a non-terminal node" ;
+    fortran:fieldId 25 .
+
+fortran:field_right a owl:ObjectProperty ;
+    rdfs:label "right (structural)" ;
+    rdfs:comment "Structural reference for right field when it contains a non-terminal node" ;
+    fortran:fieldId 26 .
+
+fortran:field_selector a owl:ObjectProperty ;
+    rdfs:label "selector (structural)" ;
+    rdfs:comment "Structural reference for selector field when it contains a non-terminal node" ;
+    fortran:fieldId 27 .
+
+fortran:field_step a owl:ObjectProperty ;
+    rdfs:label "step (structural)" ;
+    rdfs:comment "Structural reference for step field when it contains a non-terminal node" ;
+    fortran:fieldId 28 .
+
+fortran:field_subroutine a owl:ObjectProperty ;
+    rdfs:label "subroutine (structural)" ;
+    rdfs:comment "Structural reference for subroutine field when it contains a non-terminal node" ;
+    fortran:fieldId 29 .
+
+fortran:field_target a owl:ObjectProperty ;
+    rdfs:label "target (structural)" ;
+    rdfs:comment "Structural reference for target field when it contains a non-terminal node" ;
+    fortran:fieldId 30 .
+
+fortran:field_type a owl:ObjectProperty ;
+    rdfs:label "type (structural)" ;
+    rdfs:comment "Structural reference for type field when it contains a non-terminal node" ;
+    fortran:fieldId 31 .
+
+fortran:field_type_param a owl:ObjectProperty ;
+    rdfs:label "type_param (structural)" ;
+    rdfs:comment "Structural reference for type_param field when it contains a non-terminal node" ;
+    fortran:fieldId 32 .
+
+fortran:field_value a owl:ObjectProperty ;
+    rdfs:label "value (structural)" ;
+    rdfs:comment "Structural reference for value field when it contains a non-terminal node" ;
+    fortran:fieldId 33 .
+
+fortran:file_position_statement a owl:Class ;
+    rdfs:label "file_position_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 533 .
+
+fortran:filename a owl:Class ;
+    rdfs:label "filename" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 663 .
+
+fortran:forall_statement a owl:Class ;
+    rdfs:label "forall_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 489 .
+
+fortran:format_identifier a owl:Class ;
+    rdfs:label "format_identifier" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 531 .
+
+fortran:format_statement a owl:Class ;
+    rdfs:label "format_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 510 .
+
+fortran:function a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "function",
+        "function (literal)" ;
+    rdfs:comment "Literal value for function field when it contains a terminal node" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:fieldId 14 ;
+    fortran:isSupertype true ;
+    fortran:isTerminalField true ;
+    fortran:nodeTypeId 382 .
+
+fortran:function_result a owl:Class ;
+    rdfs:label "function_result" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 388 .
+
+fortran:function_statement a owl:Class ;
+    rdfs:label "function_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 383 .
+
+fortran:hollerith_constant a owl:Class ;
+    rdfs:label "hollerith_constant" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 281 .
+
+fortran:identifier a owl:Class ;
+    rdfs:label "identifier" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 251,
+        278,
+        590 .
+
+fortran:if_statement a owl:Class ;
+    rdfs:label "if_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 477 .
+
+fortran:implicit_range a owl:Class ;
+    rdfs:label "implicit_range" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 409 .
+
+fortran:implicit_statement a owl:Class ;
+    rdfs:label "implicit_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 400 .
+
+fortran:implied_do_loop_expression a owl:Class ;
+    rdfs:label "implied_do_loop_expression" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 554 .
+
+fortran:import_statement a owl:Class ;
+    rdfs:label "import_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 410 .
+
+fortran:include_statement a owl:Class ;
+    rdfs:label "include_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 462 .
+
+fortran:included_items a owl:Class ;
+    rdfs:label "included_items" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 398 .
+
+fortran:init_declarator a owl:Class ;
+    rdfs:label "init_declarator" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 433 .
+
+fortran:input_item_list a owl:Class ;
+    rdfs:label "input_item_list" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 535 .
+
+fortran:inquire_statement a owl:Class ;
+    rdfs:label "inquire_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 522 .
+
+fortran:interface a owl:Class ;
+    rdfs:label "interface" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 365 .
+
+fortran:interface_statement a owl:Class ;
+    rdfs:label "interface_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 367 .
+
+fortran:internal_procedures a owl:Class ;
+    rdfs:label "internal_procedures" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 392 .
+
+fortran:intrinsic_type a owl:Class ;
+    rdfs:label "intrinsic_type" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 438 .
+
+fortran:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+fortran:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+fortran:keyword_argument a owl:Class ;
+    rdfs:label "keyword_argument" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 558 .
+
+fortran:keyword_statement a owl:Class ;
+    rdfs:label "keyword_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 461 .
+
+fortran:kind a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "kind",
+        "kind (literal)" ;
+    rdfs:comment "Literal value for kind field when it contains a terminal node" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:fieldId 16 ;
+    fortran:isSupertype true ;
+    fortran:isTerminalField true ;
+    fortran:nodeTypeId 442 .
+
+fortran:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+fortran:language_binding a owl:Class ;
+    rdfs:label "language_binding" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 384 .
+
+fortran:left a owl:DatatypeProperty ;
+    rdfs:label "left (literal)" ;
+    rdfs:comment "Literal value for left field when it contains a terminal node" ;
+    fortran:fieldId 17 ;
+    fortran:isTerminalField true .
+
+fortran:local_name a owl:Class ;
+    rdfs:label "local_name" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 665 .
+
+fortran:logical_expression a owl:Class ;
+    rdfs:label "logical_expression" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 547 .
+
+fortran:loop_control_expression a owl:Class ;
+    rdfs:label "loop_control_expression" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 567 .
+
+fortran:math_expression a owl:Class ;
+    rdfs:label "math_expression" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 550 .
+
+fortran:method_name a owl:Class ;
+    rdfs:label "method_name" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 424 .
+
+fortran:module a owl:Class ;
+    rdfs:label "module" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 358 .
+
+fortran:module_name a owl:Class ;
+    rdfs:label "module_name" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 364 .
+
+fortran:module_procedure a owl:Class ;
+    rdfs:label "module_procedure" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 379 .
+
+fortran:module_procedure_statement a owl:Class ;
+    rdfs:label "module_procedure_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 380 .
+
+fortran:module_statement a owl:Class ;
+    rdfs:label "module_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 359 .
+
+fortran:mold a owl:DatatypeProperty ;
+    rdfs:label "mold (literal)" ;
+    rdfs:comment "Literal value for mold field when it contains a terminal node" ;
+    fortran:fieldId 18 ;
+    fortran:isTerminalField true .
+
+fortran:multiple_subscript a owl:Class ;
+    rdfs:label "multiple_subscript" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 561 .
+
+fortran:multiple_subscript_triplet a owl:Class ;
+    rdfs:label "multiple_subscript_triplet" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 562 .
+
+fortran:name a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "name",
+        "name (literal)" ;
+    rdfs:comment "Literal value for name field when it contains a terminal node" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:fieldId 19 ;
+    fortran:isSupertype true ;
+    fortran:isTerminalField true ;
+    fortran:nodeTypeId 667 .
+
+fortran:namelist_statement a owl:Class ;
+    rdfs:label "namelist_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 406 .
+
+fortran:nil_literal a owl:Class ;
+    rdfs:label "nil_literal" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 589 .
+
+fortran:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+fortran:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+fortran:none a owl:Class ;
+    rdfs:label "none" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 87 .
+
+fortran:null_literal a owl:Class ;
+    rdfs:label "null_literal" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 577 .
+
+fortran:nullify_statement a owl:Class ;
+    rdfs:label "nullify_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 541 .
+
+fortran:number_literal a owl:Class ;
+    rdfs:label "number_literal" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 252,
+        574 .
+
+fortran:open_statement a owl:Class ;
+    rdfs:label "open_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 519 .
+
+fortran:operator a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "operator",
+        "operator (literal)" ;
+    rdfs:comment "Literal value for operator field when it contains a terminal node" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:fieldId 20 ;
+    fortran:isSupertype true ;
+    fortran:isTerminalField true ;
+    fortran:nodeTypeId 373 .
+
+fortran:operator_name a owl:Class ;
+    rdfs:label "operator_name" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 61 .
+
+fortran:output_item_list a owl:Class ;
+    rdfs:label "output_item_list" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 536 .
+
+fortran:parameter_assignment a owl:Class ;
+    rdfs:label "parameter_assignment" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 448 .
+
+fortran:parameter_statement a owl:Class ;
+    rdfs:label "parameter_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 447 .
+
+fortran:parameters a owl:Class ;
+    rdfs:label "parameters" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 391 .
+
+fortran:parenthesized_expression a owl:Class ;
+    rdfs:label "parenthesized_expression" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 349,
+        545 .
+
+fortran:path a owl:DatatypeProperty ;
+    rdfs:label "path (literal)" ;
+    rdfs:comment "Literal value for path field when it contains a terminal node" ;
+    fortran:fieldId 23 ;
+    fortran:isTerminalField true .
+
+fortran:pointer a owl:DatatypeProperty ;
+    rdfs:label "pointer (literal)" ;
+    rdfs:comment "Literal value for pointer field when it contains a terminal node" ;
+    fortran:fieldId 24 ;
+    fortran:isTerminalField true .
+
+fortran:pointer_association_statement a owl:Class ;
+    rdfs:label "pointer_association_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 458 .
+
+fortran:pointer_init_declarator a owl:Class ;
+    rdfs:label "pointer_init_declarator" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 434 .
+
+fortran:preproc_arg a owl:Class ;
+    rdfs:label "preproc_arg" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 19 .
+
+fortran:preproc_call a owl:Class ;
+    rdfs:label "preproc_call" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 287 .
+
+fortran:preproc_comment a owl:Class ;
+    rdfs:label "preproc_comment" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 23 .
+
+fortran:preproc_def a owl:Class ;
+    rdfs:label "preproc_def" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 284 .
+
+fortran:preproc_defined a owl:Class ;
+    rdfs:label "preproc_defined" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 350 .
+
+fortran:preproc_directive a owl:Class ;
+    rdfs:label "preproc_directive" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 20 .
+
+fortran:preproc_elif a owl:Class ;
+    rdfs:label "preproc_elif" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 291,
+        296,
+        301,
+        306,
+        311,
+        316,
+        321,
+        326,
+        331,
+        336,
+        341,
+        346 .
+
+fortran:preproc_elifdef a owl:Class ;
+    rdfs:label "preproc_elifdef" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 292,
+        297,
+        302,
+        307,
+        312,
+        317,
+        322,
+        327,
+        332,
+        337,
+        342,
+        347 .
+
+fortran:preproc_else a owl:Class ;
+    rdfs:label "preproc_else" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 290,
+        295,
+        300,
+        305,
+        310,
+        315,
+        320,
+        325,
+        330,
+        335,
+        340,
+        345 .
+
+fortran:preproc_function_def a owl:Class ;
+    rdfs:label "preproc_function_def" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 285 .
+
+fortran:preproc_if a owl:Class ;
+    rdfs:label "preproc_if" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 288,
+        293,
+        298,
+        303,
+        308,
+        313,
+        318,
+        323,
+        328,
+        333,
+        338,
+        343 .
+
+fortran:preproc_ifdef a owl:Class ;
+    rdfs:label "preproc_ifdef" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 289,
+        294,
+        299,
+        304,
+        309,
+        314,
+        319,
+        324,
+        329,
+        334,
+        339,
+        344 .
+
+fortran:preproc_include a owl:Class ;
+    rdfs:label "preproc_include" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 283 .
+
+fortran:preproc_params a owl:Class ;
+    rdfs:label "preproc_params" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 286 .
+
+fortran:print_statement a owl:Class ;
+    rdfs:label "print_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 518 .
+
+fortran:private_statement a owl:Class ;
+    rdfs:label "private_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 404 .
+
+fortran:procedure a owl:Class ;
+    rdfs:label "procedure" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 428 .
+
+fortran:procedure_attribute a owl:Class ;
+    rdfs:label "procedure_attribute" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 426 .
+
+fortran:procedure_attributes a owl:Class ;
+    rdfs:label "procedure_attributes" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 386 .
+
+fortran:procedure_interface a owl:Class ;
+    rdfs:label "procedure_interface" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 669 .
+
+fortran:procedure_kind a owl:Class ;
+    rdfs:label "procedure_kind" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 425 .
+
+fortran:procedure_qualifier a owl:Class ;
+    rdfs:label "procedure_qualifier" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 446 .
+
+fortran:procedure_statement a owl:Class ;
+    rdfs:label "procedure_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 421 .
+
+fortran:program a owl:Class ;
+    rdfs:label "program" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 355 .
+
+fortran:program_statement a owl:Class ;
+    rdfs:label "program_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 356 .
+
+fortran:public_statement a owl:Class ;
+    rdfs:label "public_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 405 .
+
+fortran:rank_statement a owl:Class ;
+    rdfs:label "rank_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 504 .
+
+fortran:read_statement a owl:Class ;
+    rdfs:label "read_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 515 .
+
+fortran:relational_expression a owl:Class ;
+    rdfs:label "relational_expression" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 548 .
+
+fortran:right a owl:DatatypeProperty ;
+    rdfs:label "right (literal)" ;
+    rdfs:comment "Literal value for right field when it contains a terminal node" ;
+    fortran:fieldId 26 ;
+    fortran:isTerminalField true .
+
+fortran:save_statement a owl:Class ;
+    rdfs:label "save_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 401 .
+
+fortran:select_case_statement a owl:Class ;
+    rdfs:label "select_case_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 495 .
+
+fortran:select_rank_statement a owl:Class ;
+    rdfs:label "select_rank_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 497 .
+
+fortran:select_type_statement a owl:Class ;
+    rdfs:label "select_type_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 496 .
+
+fortran:selector a owl:Class ;
+    rdfs:label "selector" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 499 .
+
+fortran:sequence_statement a owl:Class ;
+    rdfs:label "sequence_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 670 .
+
+fortran:size a owl:Class ;
+    rdfs:label "size" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 671 .
+
+fortran:sized_allocation a owl:Class ;
+    rdfs:label "sized_allocation" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 538 .
+
+fortran:sized_declarator a owl:Class ;
+    rdfs:label "sized_declarator" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 432 .
+
+fortran:statement_label a owl:Class ;
+    rdfs:label "statement_label" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 454 .
+
+fortran:statement_label_reference a owl:Class ;
+    rdfs:label "statement_label_reference" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 455 .
+
+fortran:stop_statement a owl:Class ;
+    rdfs:label "stop_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 456 .
+
+fortran:string_literal a owl:Class ;
+    rdfs:label "string_literal" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 578 .
+
+fortran:submodule a owl:Class ;
+    rdfs:label "submodule" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 361 .
+
+fortran:submodule_statement a owl:Class ;
+    rdfs:label "submodule_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 362 .
+
+fortran:subroutine a owl:Class ;
+    rdfs:label "subroutine" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 376 .
+
+fortran:subroutine_call a owl:Class ;
+    rdfs:label "subroutine_call" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 459 .
+
+fortran:subroutine_statement a owl:Class ;
+    rdfs:label "subroutine_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 377 .
+
+fortran:system_lib_string a owl:Class ;
+    rdfs:label "system_lib_string" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 42 .
+
+fortran:target a owl:DatatypeProperty ;
+    rdfs:label "target (literal)" ;
+    rdfs:comment "Literal value for target field when it contains a terminal node" ;
+    fortran:fieldId 30 ;
+    fortran:isTerminalField true .
+
+fortran:transfer_items a owl:Class ;
+    rdfs:label "transfer_items" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 674 .
+
+fortran:translation_unit a owl:Class ;
+    rdfs:label "translation_unit" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 282 .
+
+fortran:triplet_spec a owl:Class ;
+    rdfs:label "triplet_spec" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 490 .
+
+fortran:type a owl:DatatypeProperty ;
+    rdfs:label "type (literal)" ;
+    rdfs:comment "Literal value for type field when it contains a terminal node" ;
+    fortran:fieldId 31 ;
+    fortran:isTerminalField true .
+
+fortran:type_member a owl:Class ;
+    rdfs:label "type_member" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 675 .
+
+fortran:type_name a owl:Class ;
+    rdfs:label "type_name" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 676 .
+
+fortran:type_qualifier a owl:Class ;
+    rdfs:label "type_qualifier" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 445 .
+
+fortran:type_statement a owl:Class ;
+    rdfs:label "type_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 501 .
+
+fortran:unary_expression a owl:Class ;
+    rdfs:label "unary_expression" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 351,
+        466,
+        551 .
+
+fortran:unit_identifier a owl:Class ;
+    rdfs:label "unit_identifier" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 530 .
+
+fortran:unlimited_polymorphic a owl:Class ;
+    rdfs:label "unlimited_polymorphic" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 441 .
+
+fortran:use_alias a owl:Class ;
+    rdfs:label "use_alias" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 399 .
+
+fortran:use_statement a owl:Class ;
+    rdfs:label "use_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 397 .
+
+fortran:user_defined_operator a owl:Class ;
+    rdfs:label "user_defined_operator" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 552 .
+
+fortran:value a owl:DatatypeProperty ;
+    rdfs:label "value (literal)" ;
+    rdfs:comment "Literal value for value field when it contains a terminal node" ;
+    fortran:fieldId 33 ;
+    fortran:isTerminalField true .
+
+fortran:variable_attributes a owl:Class ;
+    rdfs:label "variable_attributes" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 430 .
+
+fortran:variable_declaration a owl:Class ;
+    rdfs:label "variable_declaration" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 427 .
+
+fortran:variable_group a owl:Class ;
+    rdfs:label "variable_group" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 408 .
+
+fortran:variable_modification a owl:Class ;
+    rdfs:label "variable_modification" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 429 .
+
+fortran:where_statement a owl:Class ;
+    rdfs:label "where_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 484 .
+
+fortran:while_statement a owl:Class ;
+    rdfs:label "while_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 471 .
+
+fortran:write_statement a owl:Class ;
+    rdfs:label "write_statement" ;
+    rdfs:isDefinedBy fortran: ;
+    rdfs:subClassOf ast:Node ;
+    fortran:isSupertype true ;
+    fortran:nodeTypeId 521 .
+
+fortran: a owl:Ontology ;
+    rdfs:label "Fortran Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for fortran" ;
+    owl:versionInfo "v0.25" ;
+    fortran:abiVersion 15 ;
+    fortran:fieldCount 33 ;
+    fortran:languageName "fortran" ;
+    fortran:nodeKindCount 677 .
+

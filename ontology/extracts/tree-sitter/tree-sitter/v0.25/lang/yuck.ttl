@@ -1,0 +1,307 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix yuck: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/yuck/> .
+
+yuck:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+yuck:array a owl:Class ;
+    rdfs:label "array" ;
+    rdfs:isDefinedBy yuck: ;
+    rdfs:subClassOf ast:Node ;
+    yuck:isSupertype true ;
+    yuck:nodeTypeId 51 .
+
+yuck:binary_expression a owl:Class ;
+    rdfs:label "binary_expression" ;
+    rdfs:isDefinedBy yuck: ;
+    rdfs:subClassOf ast:Node ;
+    yuck:isSupertype true ;
+    yuck:nodeTypeId 67 .
+
+yuck:boolean a owl:Class ;
+    rdfs:label "boolean" ;
+    rdfs:isDefinedBy yuck: ;
+    rdfs:subClassOf ast:Node ;
+    yuck:isSupertype true ;
+    yuck:nodeTypeId 54 .
+
+yuck:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy yuck: ;
+    rdfs:subClassOf ast:Node ;
+    yuck:isSupertype true ;
+    yuck:nodeTypeId 43 .
+
+yuck:escape_sequence a owl:Class ;
+    rdfs:label "escape_sequence" ;
+    rdfs:isDefinedBy yuck: ;
+    rdfs:subClassOf ast:Node ;
+    yuck:isSupertype true ;
+    yuck:nodeTypeId 19 .
+
+yuck:expr a owl:Class ;
+    rdfs:label "expr" ;
+    rdfs:isDefinedBy yuck: ;
+    rdfs:subClassOf ast:Node ;
+    yuck:isSupertype true ;
+    yuck:nodeTypeId 58 .
+
+yuck:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+yuck:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+yuck:field_alternative a owl:ObjectProperty ;
+    rdfs:label "alternative (structural)" ;
+    rdfs:comment "Structural reference for alternative field when it contains a non-terminal node" ;
+    yuck:fieldId 1 .
+
+yuck:field_argument a owl:ObjectProperty ;
+    rdfs:label "argument (structural)" ;
+    rdfs:comment "Structural reference for argument field when it contains a non-terminal node" ;
+    yuck:fieldId 2 .
+
+yuck:field_condition a owl:ObjectProperty ;
+    rdfs:label "condition (structural)" ;
+    rdfs:comment "Structural reference for condition field when it contains a non-terminal node" ;
+    yuck:fieldId 3 .
+
+yuck:field_consequence a owl:ObjectProperty ;
+    rdfs:label "consequence (structural)" ;
+    rdfs:comment "Structural reference for consequence field when it contains a non-terminal node" ;
+    yuck:fieldId 4 .
+
+yuck:field_left a owl:ObjectProperty ;
+    rdfs:label "left (structural)" ;
+    rdfs:comment "Structural reference for left field when it contains a non-terminal node" ;
+    yuck:fieldId 5 .
+
+yuck:field_operator a owl:ObjectProperty ;
+    rdfs:label "operator (structural)" ;
+    rdfs:comment "Structural reference for operator field when it contains a non-terminal node" ;
+    yuck:fieldId 7 .
+
+yuck:field_right a owl:ObjectProperty ;
+    rdfs:label "right (structural)" ;
+    rdfs:comment "Structural reference for right field when it contains a non-terminal node" ;
+    yuck:fieldId 8 .
+
+yuck:float a owl:Class ;
+    rdfs:label "float" ;
+    rdfs:isDefinedBy yuck: ;
+    rdfs:subClassOf ast:Node ;
+    yuck:isSupertype true ;
+    yuck:nodeTypeId 10 .
+
+yuck:function_call a owl:Class ;
+    rdfs:label "function_call" ;
+    rdfs:isDefinedBy yuck: ;
+    rdfs:subClassOf ast:Node ;
+    yuck:isSupertype true ;
+    yuck:nodeTypeId 66 .
+
+yuck:ident a owl:Class ;
+    rdfs:label "ident" ;
+    rdfs:isDefinedBy yuck: ;
+    rdfs:subClassOf ast:Node ;
+    yuck:isSupertype true ;
+    yuck:nodeTypeId 42 .
+
+yuck:index a owl:Class ;
+    rdfs:label "index" ;
+    rdfs:isDefinedBy yuck: ;
+    rdfs:subClassOf ast:Node ;
+    yuck:isSupertype true ;
+    yuck:nodeTypeId 80 .
+
+yuck:integer a owl:Class ;
+    rdfs:label "integer" ;
+    rdfs:isDefinedBy yuck: ;
+    rdfs:subClassOf ast:Node ;
+    yuck:isSupertype true ;
+    yuck:nodeTypeId 9 .
+
+yuck:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+yuck:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+yuck:json_access a owl:Class ;
+    rdfs:label "json_access" ;
+    rdfs:isDefinedBy yuck: ;
+    rdfs:subClassOf ast:Node ;
+    yuck:isSupertype true ;
+    yuck:nodeTypeId 62 .
+
+yuck:json_array a owl:Class ;
+    rdfs:label "json_array" ;
+    rdfs:isDefinedBy yuck: ;
+    rdfs:subClassOf ast:Node ;
+    yuck:isSupertype true ;
+    yuck:nodeTypeId 60 .
+
+yuck:json_dot_access a owl:Class ;
+    rdfs:label "json_dot_access" ;
+    rdfs:isDefinedBy yuck: ;
+    rdfs:subClassOf ast:Node ;
+    yuck:isSupertype true ;
+    yuck:nodeTypeId 64 .
+
+yuck:json_object a owl:Class ;
+    rdfs:label "json_object" ;
+    rdfs:isDefinedBy yuck: ;
+    rdfs:subClassOf ast:Node ;
+    yuck:isSupertype true ;
+    yuck:nodeTypeId 61 .
+
+yuck:json_safe_access a owl:Class ;
+    rdfs:label "json_safe_access" ;
+    rdfs:isDefinedBy yuck: ;
+    rdfs:subClassOf ast:Node ;
+    yuck:isSupertype true ;
+    yuck:nodeTypeId 63 .
+
+yuck:json_safe_dot_access a owl:Class ;
+    rdfs:label "json_safe_dot_access" ;
+    rdfs:isDefinedBy yuck: ;
+    rdfs:subClassOf ast:Node ;
+    yuck:isSupertype true ;
+    yuck:nodeTypeId 65 .
+
+yuck:keyword a owl:Class ;
+    rdfs:label "keyword" ;
+    rdfs:isDefinedBy yuck: ;
+    rdfs:subClassOf ast:Node ;
+    yuck:isSupertype true ;
+    yuck:nodeTypeId 8 .
+
+yuck:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+yuck:list a owl:Class ;
+    rdfs:label "list" ;
+    rdfs:isDefinedBy yuck: ;
+    rdfs:subClassOf ast:Node ;
+    yuck:isSupertype true ;
+    yuck:nodeTypeId 50 .
+
+yuck:loop_widget a owl:Class ;
+    rdfs:label "loop_widget" ;
+    rdfs:isDefinedBy yuck: ;
+    rdfs:subClassOf ast:Node ;
+    yuck:isSupertype true ;
+    yuck:nodeTypeId 49 .
+
+yuck:name a owl:DatatypeProperty ;
+    rdfs:label "name (literal)" ;
+    rdfs:comment "Literal value for name field when it contains a terminal node" ;
+    yuck:fieldId 6 ;
+    yuck:isTerminalField true .
+
+yuck:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+yuck:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+yuck:number a owl:Class ;
+    rdfs:label "number" ;
+    rdfs:isDefinedBy yuck: ;
+    rdfs:subClassOf ast:Node ;
+    yuck:isSupertype true ;
+    yuck:nodeTypeId 53 .
+
+yuck:parenthesized_expression a owl:Class ;
+    rdfs:label "parenthesized_expression" ;
+    rdfs:isDefinedBy yuck: ;
+    rdfs:subClassOf ast:Node ;
+    yuck:isSupertype true ;
+    yuck:nodeTypeId 70 .
+
+yuck:simplexpr a owl:Class ;
+    rdfs:label "simplexpr" ;
+    rdfs:isDefinedBy yuck: ;
+    rdfs:subClassOf ast:Node ;
+    yuck:isSupertype true ;
+    yuck:nodeTypeId 59 .
+
+yuck:source_file a owl:Class ;
+    rdfs:label "source_file" ;
+    rdfs:isDefinedBy yuck: ;
+    rdfs:subClassOf ast:Node ;
+    yuck:isSupertype true ;
+    yuck:nodeTypeId 47 .
+
+yuck:string a owl:Class ;
+    rdfs:label "string" ;
+    rdfs:isDefinedBy yuck: ;
+    rdfs:subClassOf ast:Node ;
+    yuck:isSupertype true ;
+    yuck:nodeTypeId 55 .
+
+yuck:string_fragment a owl:Class ;
+    rdfs:label "string_fragment" ;
+    rdfs:isDefinedBy yuck: ;
+    rdfs:subClassOf ast:Node ;
+    yuck:isSupertype true ;
+    yuck:nodeTypeId 81 .
+
+yuck:string_interpolation a owl:Class ;
+    rdfs:label "string_interpolation" ;
+    rdfs:isDefinedBy yuck: ;
+    rdfs:subClassOf ast:Node ;
+    yuck:isSupertype true ;
+    yuck:nodeTypeId 56 .
+
+yuck:symbol a owl:Class ;
+    rdfs:label "symbol" ;
+    rdfs:isDefinedBy yuck: ;
+    rdfs:subClassOf ast:Node ;
+    yuck:isSupertype true ;
+    yuck:nodeTypeId 1 .
+
+yuck:ternary_expression a owl:Class ;
+    rdfs:label "ternary_expression" ;
+    rdfs:isDefinedBy yuck: ;
+    rdfs:subClassOf ast:Node ;
+    yuck:isSupertype true ;
+    yuck:nodeTypeId 69 .
+
+yuck:unary_expression a owl:Class ;
+    rdfs:label "unary_expression" ;
+    rdfs:isDefinedBy yuck: ;
+    rdfs:subClassOf ast:Node ;
+    yuck:isSupertype true ;
+    yuck:nodeTypeId 68 .
+
+yuck: a owl:Ontology ;
+    rdfs:label "Yuck Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for yuck" ;
+    owl:versionInfo "v0.25" ;
+    yuck:abiVersion 14 ;
+    yuck:fieldCount 8 ;
+    yuck:languageName "None" ;
+    yuck:nodeKindCount 82 .
+

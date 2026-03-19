@@ -1,0 +1,1267 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix glsl: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/glsl/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+glsl:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+glsl:abstract_array_declarator a owl:Class ;
+    rdfs:label "abstract_array_declarator" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 279 .
+
+glsl:abstract_function_declarator a owl:Class ;
+    rdfs:label "abstract_function_declarator" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 275 .
+
+glsl:abstract_parenthesized_declarator a owl:Class ;
+    rdfs:label "abstract_parenthesized_declarator" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 263 .
+
+glsl:abstract_pointer_declarator a owl:Class ;
+    rdfs:label "abstract_pointer_declarator" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 270 .
+
+glsl:alignas_qualifier a owl:Class ;
+    rdfs:label "alignas_qualifier" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 284 .
+
+glsl:alignof_expression a owl:Class ;
+    rdfs:label "alignof_expression" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 334 .
+
+glsl:argument a owl:DatatypeProperty ;
+    rdfs:label "argument (literal)" ;
+    rdfs:comment "Literal value for argument field when it contains a terminal node" ;
+    glsl:fieldId 2 ;
+    glsl:isTerminalField true .
+
+glsl:argument_list a owl:Class ;
+    rdfs:label "argument_list" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 236,
+        348 .
+
+glsl:array_declarator a owl:Class ;
+    rdfs:label "array_declarator" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 276,
+        277,
+        278 .
+
+glsl:assignment_expression a owl:Class ;
+    rdfs:label "assignment_expression" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 326 .
+
+glsl:attribute a owl:Class ;
+    rdfs:label "attribute" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 247 .
+
+glsl:attribute_declaration a owl:Class ;
+    rdfs:label "attribute_declaration" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 248 .
+
+glsl:attribute_specifier a owl:Class ;
+    rdfs:label "attribute_specifier" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 246 .
+
+glsl:attributed_declarator a owl:Class ;
+    rdfs:label "attributed_declarator" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 264,
+        265,
+        266 .
+
+glsl:attributed_statement a owl:Class ;
+    rdfs:label "attributed_statement" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 300 .
+
+glsl:behavior a owl:DatatypeProperty ;
+    rdfs:label "behavior (literal)" ;
+    rdfs:comment "Literal value for behavior field when it contains a terminal node" ;
+    glsl:fieldId 5 ;
+    glsl:isTerminalField true .
+
+glsl:binary_expression a owl:Class ;
+    rdfs:label "binary_expression" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 237,
+        329 .
+
+glsl:bitfield_clause a owl:Class ;
+    rdfs:label "bitfield_clause" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 295 .
+
+glsl:break_statement a owl:Class ;
+    rdfs:label "break_statement" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 315 .
+
+glsl:call_expression a owl:Class ;
+    rdfs:label "call_expression" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 235,
+        338 .
+
+glsl:case_statement a owl:Class ;
+    rdfs:label "case_statement" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 309 .
+
+glsl:cast_expression a owl:Class ;
+    rdfs:label "cast_expression" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 331 .
+
+glsl:char_literal a owl:Class ;
+    rdfs:label "char_literal" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 357 .
+
+glsl:character a owl:Class ;
+    rdfs:label "character" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 171 .
+
+glsl:comma_expression a owl:Class ;
+    rdfs:label "comma_expression" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 324 .
+
+glsl:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 184 .
+
+glsl:compound_literal_expression a owl:Class ;
+    rdfs:label "compound_literal_expression" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 350 .
+
+glsl:compound_statement a owl:Class ;
+    rdfs:label "compound_statement" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 281 .
+
+glsl:concatenated_string a owl:Class ;
+    rdfs:label "concatenated_string" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 358 .
+
+glsl:condition a owl:DatatypeProperty ;
+    rdfs:label "condition (literal)" ;
+    rdfs:comment "Literal value for condition field when it contains a terminal node" ;
+    glsl:fieldId 8 ;
+    glsl:isTerminalField true .
+
+glsl:conditional_expression a owl:Class ;
+    rdfs:label "conditional_expression" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 325 .
+
+glsl:continue_statement a owl:Class ;
+    rdfs:label "continue_statement" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 316 .
+
+glsl:declaration a owl:Class ;
+    rdfs:label "declaration" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 239 .
+
+glsl:declaration_list a owl:Class ;
+    rdfs:label "declaration_list" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 254 .
+
+glsl:declarator a owl:DatatypeProperty ;
+    rdfs:label "declarator (literal)" ;
+    rdfs:comment "Literal value for declarator field when it contains a terminal node" ;
+    glsl:fieldId 11 ;
+    glsl:isTerminalField true .
+
+glsl:designator a owl:DatatypeProperty ;
+    rdfs:label "designator (literal)" ;
+    rdfs:comment "Literal value for designator field when it contains a terminal node" ;
+    glsl:fieldId 12 ;
+    glsl:isTerminalField true .
+
+glsl:directive a owl:DatatypeProperty ;
+    rdfs:label "directive (literal)" ;
+    rdfs:comment "Literal value for directive field when it contains a terminal node" ;
+    glsl:fieldId 13 ;
+    glsl:isTerminalField true .
+
+glsl:do_statement a owl:Class ;
+    rdfs:label "do_statement" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 311 .
+
+glsl:else_clause a owl:Class ;
+    rdfs:label "else_clause" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 307 .
+
+glsl:enum_specifier a owl:Class ;
+    rdfs:label "enum_specifier" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 287 .
+
+glsl:enumerator a owl:Class ;
+    rdfs:label "enumerator" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 296 .
+
+glsl:enumerator_list a owl:Class ;
+    rdfs:label "enumerator_list" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 288 .
+
+glsl:escape_sequence a owl:Class ;
+    rdfs:label "escape_sequence" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 178 .
+
+glsl:expression_statement a owl:Class ;
+    rdfs:label "expression_statement" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 304,
+        305 .
+
+glsl:extension a owl:DatatypeProperty ;
+    rdfs:label "extension (literal)" ;
+    rdfs:comment "Literal value for extension field when it contains a terminal node" ;
+    glsl:fieldId 15 ;
+    glsl:isTerminalField true .
+
+glsl:extension_behavior a owl:Class ;
+    rdfs:label "extension_behavior" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 364 .
+
+glsl:extension_expression a owl:Class ;
+    rdfs:label "extension_expression" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 347 .
+
+glsl:extension_storage_class a owl:Class ;
+    rdfs:label "extension_storage_class" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 365 .
+
+glsl:false a owl:Class ;
+    rdfs:label "false" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 181 .
+
+glsl:field a owl:DatatypeProperty ;
+    rdfs:label "field (literal)" ;
+    rdfs:comment "Literal value for field field when it contains a terminal node" ;
+    glsl:fieldId 16 ;
+    glsl:isTerminalField true .
+
+glsl:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+glsl:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+glsl:field_alternative a owl:ObjectProperty ;
+    rdfs:label "alternative (structural)" ;
+    rdfs:comment "Structural reference for alternative field when it contains a non-terminal node" ;
+    glsl:fieldId 1 .
+
+glsl:field_argument a owl:ObjectProperty ;
+    rdfs:label "argument (structural)" ;
+    rdfs:comment "Structural reference for argument field when it contains a non-terminal node" ;
+    glsl:fieldId 2 .
+
+glsl:field_arguments a owl:ObjectProperty ;
+    rdfs:label "arguments (structural)" ;
+    rdfs:comment "Structural reference for arguments field when it contains a non-terminal node" ;
+    glsl:fieldId 3 .
+
+glsl:field_assembly_code a owl:ObjectProperty ;
+    rdfs:label "assembly_code (structural)" ;
+    rdfs:comment "Structural reference for assembly_code field when it contains a non-terminal node" ;
+    glsl:fieldId 4 .
+
+glsl:field_body a owl:ObjectProperty ;
+    rdfs:label "body (structural)" ;
+    rdfs:comment "Structural reference for body field when it contains a non-terminal node" ;
+    glsl:fieldId 6 .
+
+glsl:field_clobbers a owl:ObjectProperty ;
+    rdfs:label "clobbers (structural)" ;
+    rdfs:comment "Structural reference for clobbers field when it contains a non-terminal node" ;
+    glsl:fieldId 7 .
+
+glsl:field_condition a owl:ObjectProperty ;
+    rdfs:label "condition (structural)" ;
+    rdfs:comment "Structural reference for condition field when it contains a non-terminal node" ;
+    glsl:fieldId 8 .
+
+glsl:field_consequence a owl:ObjectProperty ;
+    rdfs:label "consequence (structural)" ;
+    rdfs:comment "Structural reference for consequence field when it contains a non-terminal node" ;
+    glsl:fieldId 9 .
+
+glsl:field_constraint a owl:ObjectProperty ;
+    rdfs:label "constraint (structural)" ;
+    rdfs:comment "Structural reference for constraint field when it contains a non-terminal node" ;
+    glsl:fieldId 10 .
+
+glsl:field_declaration a owl:Class ;
+    rdfs:label "field_declaration" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 293 .
+
+glsl:field_declaration_list a owl:Class ;
+    rdfs:label "field_declaration_list" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 291 .
+
+glsl:field_declarator a owl:ObjectProperty ;
+    rdfs:label "declarator (structural)" ;
+    rdfs:comment "Structural reference for declarator field when it contains a non-terminal node" ;
+    glsl:fieldId 11 .
+
+glsl:field_designator a owl:Class,
+        owl:ObjectProperty ;
+    rdfs:label "designator (structural)",
+        "field_designator" ;
+    rdfs:comment "Structural reference for designator field when it contains a non-terminal node" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:fieldId 12 ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 356 .
+
+glsl:field_end a owl:ObjectProperty ;
+    rdfs:label "end (structural)" ;
+    rdfs:comment "Structural reference for end field when it contains a non-terminal node" ;
+    glsl:fieldId 14 .
+
+glsl:field_expression a owl:Class ;
+    rdfs:label "field_expression" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 349 .
+
+glsl:field_filter a owl:ObjectProperty ;
+    rdfs:label "filter (structural)" ;
+    rdfs:comment "Structural reference for filter field when it contains a non-terminal node" ;
+    glsl:fieldId 17 .
+
+glsl:field_function a owl:ObjectProperty ;
+    rdfs:label "function (structural)" ;
+    rdfs:comment "Structural reference for function field when it contains a non-terminal node" ;
+    glsl:fieldId 18 .
+
+glsl:field_goto_labels a owl:ObjectProperty ;
+    rdfs:label "goto_labels (structural)" ;
+    rdfs:comment "Structural reference for goto_labels field when it contains a non-terminal node" ;
+    glsl:fieldId 19 .
+
+glsl:field_identifier a owl:Class ;
+    rdfs:label "field_identifier" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 407 .
+
+glsl:field_index a owl:ObjectProperty ;
+    rdfs:label "index (structural)" ;
+    rdfs:comment "Structural reference for index field when it contains a non-terminal node" ;
+    glsl:fieldId 20 .
+
+glsl:field_initializer a owl:ObjectProperty ;
+    rdfs:label "initializer (structural)" ;
+    rdfs:comment "Structural reference for initializer field when it contains a non-terminal node" ;
+    glsl:fieldId 21 .
+
+glsl:field_input_operands a owl:ObjectProperty ;
+    rdfs:label "input_operands (structural)" ;
+    rdfs:comment "Structural reference for input_operands field when it contains a non-terminal node" ;
+    glsl:fieldId 22 .
+
+glsl:field_left a owl:ObjectProperty ;
+    rdfs:label "left (structural)" ;
+    rdfs:comment "Structural reference for left field when it contains a non-terminal node" ;
+    glsl:fieldId 24 .
+
+glsl:field_operand a owl:ObjectProperty ;
+    rdfs:label "operand (structural)" ;
+    rdfs:comment "Structural reference for operand field when it contains a non-terminal node" ;
+    glsl:fieldId 27 .
+
+glsl:field_operator a owl:ObjectProperty ;
+    rdfs:label "operator (structural)" ;
+    rdfs:comment "Structural reference for operator field when it contains a non-terminal node" ;
+    glsl:fieldId 28 .
+
+glsl:field_output_operands a owl:ObjectProperty ;
+    rdfs:label "output_operands (structural)" ;
+    rdfs:comment "Structural reference for output_operands field when it contains a non-terminal node" ;
+    glsl:fieldId 29 .
+
+glsl:field_parameters a owl:ObjectProperty ;
+    rdfs:label "parameters (structural)" ;
+    rdfs:comment "Structural reference for parameters field when it contains a non-terminal node" ;
+    glsl:fieldId 30 .
+
+glsl:field_path a owl:ObjectProperty ;
+    rdfs:label "path (structural)" ;
+    rdfs:comment "Structural reference for path field when it contains a non-terminal node" ;
+    glsl:fieldId 31 .
+
+glsl:field_register a owl:ObjectProperty ;
+    rdfs:label "register (structural)" ;
+    rdfs:comment "Structural reference for register field when it contains a non-terminal node" ;
+    glsl:fieldId 33 .
+
+glsl:field_right a owl:ObjectProperty ;
+    rdfs:label "right (structural)" ;
+    rdfs:comment "Structural reference for right field when it contains a non-terminal node" ;
+    glsl:fieldId 34 .
+
+glsl:field_size a owl:ObjectProperty ;
+    rdfs:label "size (structural)" ;
+    rdfs:comment "Structural reference for size field when it contains a non-terminal node" ;
+    glsl:fieldId 35 .
+
+glsl:field_start a owl:ObjectProperty ;
+    rdfs:label "start (structural)" ;
+    rdfs:comment "Structural reference for start field when it contains a non-terminal node" ;
+    glsl:fieldId 36 .
+
+glsl:field_type a owl:ObjectProperty ;
+    rdfs:label "type (structural)" ;
+    rdfs:comment "Structural reference for type field when it contains a non-terminal node" ;
+    glsl:fieldId 38 .
+
+glsl:field_update a owl:ObjectProperty ;
+    rdfs:label "update (structural)" ;
+    rdfs:comment "Structural reference for update field when it contains a non-terminal node" ;
+    glsl:fieldId 40 .
+
+glsl:field_value a owl:ObjectProperty ;
+    rdfs:label "value (structural)" ;
+    rdfs:comment "Structural reference for value field when it contains a non-terminal node" ;
+    glsl:fieldId 41 .
+
+glsl:for_statement a owl:Class ;
+    rdfs:label "for_statement" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 312 .
+
+glsl:function_declarator a owl:Class ;
+    rdfs:label "function_declarator" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 271,
+        272,
+        273,
+        274 .
+
+glsl:function_definition a owl:Class ;
+    rdfs:label "function_definition" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 238 .
+
+glsl:generic_expression a owl:Class ;
+    rdfs:label "generic_expression" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 336 .
+
+glsl:gnu_asm_clobber_list a owl:Class ;
+    rdfs:label "gnu_asm_clobber_list" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 345 .
+
+glsl:gnu_asm_expression a owl:Class ;
+    rdfs:label "gnu_asm_expression" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 339 .
+
+glsl:gnu_asm_goto_list a owl:Class ;
+    rdfs:label "gnu_asm_goto_list" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 346 .
+
+glsl:gnu_asm_input_operand a owl:Class ;
+    rdfs:label "gnu_asm_input_operand" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 344 .
+
+glsl:gnu_asm_input_operand_list a owl:Class ;
+    rdfs:label "gnu_asm_input_operand_list" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 343 .
+
+glsl:gnu_asm_output_operand a owl:Class ;
+    rdfs:label "gnu_asm_output_operand" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 342 .
+
+glsl:gnu_asm_output_operand_list a owl:Class ;
+    rdfs:label "gnu_asm_output_operand_list" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 341 .
+
+glsl:gnu_asm_qualifier a owl:Class ;
+    rdfs:label "gnu_asm_qualifier" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 340 .
+
+glsl:goto_statement a owl:Class ;
+    rdfs:label "goto_statement" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 317 .
+
+glsl:identifier a owl:Class ;
+    rdfs:label "identifier" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 1 .
+
+glsl:if_statement a owl:Class ;
+    rdfs:label "if_statement" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 306 .
+
+glsl:init_declarator a owl:Class ;
+    rdfs:label "init_declarator" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 280 .
+
+glsl:initializer_list a owl:Class ;
+    rdfs:label "initializer_list" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 352 .
+
+glsl:initializer_pair a owl:Class ;
+    rdfs:label "initializer_pair" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 353 .
+
+glsl:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+glsl:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+glsl:label a owl:DatatypeProperty ;
+    rdfs:label "label (literal)" ;
+    rdfs:comment "Literal value for label field when it contains a terminal node" ;
+    glsl:fieldId 23 ;
+    glsl:isTerminalField true .
+
+glsl:labeled_statement a owl:Class ;
+    rdfs:label "labeled_statement" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 303 .
+
+glsl:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+glsl:layout_qualifiers a owl:Class ;
+    rdfs:label "layout_qualifiers" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 367 .
+
+glsl:layout_specification a owl:Class ;
+    rdfs:label "layout_specification" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 366 .
+
+glsl:left a owl:DatatypeProperty ;
+    rdfs:label "left (literal)" ;
+    rdfs:comment "Literal value for left field when it contains a terminal node" ;
+    glsl:fieldId 24 ;
+    glsl:isTerminalField true .
+
+glsl:linkage_specification a owl:Class ;
+    rdfs:label "linkage_specification" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 245 .
+
+glsl:macro_type_specifier a owl:Class ;
+    rdfs:label "macro_type_specifier" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 362 .
+
+glsl:member a owl:DatatypeProperty ;
+    rdfs:label "member (literal)" ;
+    rdfs:comment "Literal value for member field when it contains a terminal node" ;
+    glsl:fieldId 25 ;
+    glsl:isTerminalField true .
+
+glsl:ms_based_modifier a owl:Class ;
+    rdfs:label "ms_based_modifier" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 250 .
+
+glsl:ms_call_modifier a owl:Class ;
+    rdfs:label "ms_call_modifier" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 251 .
+
+glsl:ms_declspec_modifier a owl:Class ;
+    rdfs:label "ms_declspec_modifier" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 249 .
+
+glsl:ms_pointer_modifier a owl:Class ;
+    rdfs:label "ms_pointer_modifier" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 253 .
+
+glsl:ms_restrict_modifier a owl:Class ;
+    rdfs:label "ms_restrict_modifier" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 83 .
+
+glsl:ms_signed_ptr_modifier a owl:Class ;
+    rdfs:label "ms_signed_ptr_modifier" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 85 .
+
+glsl:ms_unaligned_ptr_modifier a owl:Class ;
+    rdfs:label "ms_unaligned_ptr_modifier" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 252 .
+
+glsl:ms_unsigned_ptr_modifier a owl:Class ;
+    rdfs:label "ms_unsigned_ptr_modifier" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 84 .
+
+glsl:name a owl:DatatypeProperty ;
+    rdfs:label "name (literal)" ;
+    rdfs:comment "Literal value for name field when it contains a terminal node" ;
+    glsl:fieldId 26 ;
+    glsl:isTerminalField true .
+
+glsl:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+glsl:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+glsl:null a owl:Class ;
+    rdfs:label "null" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 360 .
+
+glsl:number_literal a owl:Class ;
+    rdfs:label "number_literal" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 165 .
+
+glsl:offsetof_expression a owl:Class ;
+    rdfs:label "offsetof_expression" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 335 .
+
+glsl:parameter_declaration a owl:Class ;
+    rdfs:label "parameter_declaration" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 299 .
+
+glsl:parameter_list a owl:Class ;
+    rdfs:label "parameter_list" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 298 .
+
+glsl:parenthesized_declarator a owl:Class ;
+    rdfs:label "parenthesized_declarator" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 260,
+        261,
+        262 .
+
+glsl:parenthesized_expression a owl:Class ;
+    rdfs:label "parenthesized_expression" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 232,
+        351 .
+
+glsl:path a owl:DatatypeProperty ;
+    rdfs:label "path (literal)" ;
+    rdfs:comment "Literal value for path field when it contains a terminal node" ;
+    glsl:fieldId 31 ;
+    glsl:isTerminalField true .
+
+glsl:pointer_declarator a owl:Class ;
+    rdfs:label "pointer_declarator" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 267,
+        268,
+        269 .
+
+glsl:pointer_expression a owl:Class ;
+    rdfs:label "pointer_expression" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 327 .
+
+glsl:prefix a owl:DatatypeProperty ;
+    rdfs:label "prefix (literal)" ;
+    rdfs:comment "Literal value for prefix field when it contains a terminal node" ;
+    glsl:fieldId 32 ;
+    glsl:isTerminalField true .
+
+glsl:preproc_arg a owl:Class ;
+    rdfs:label "preproc_arg" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 18 .
+
+glsl:preproc_call a owl:Class ;
+    rdfs:label "preproc_call" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 210 .
+
+glsl:preproc_def a owl:Class ;
+    rdfs:label "preproc_def" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 207 .
+
+glsl:preproc_defined a owl:Class ;
+    rdfs:label "preproc_defined" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 233 .
+
+glsl:preproc_directive a owl:Class ;
+    rdfs:label "preproc_directive" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 19 .
+
+glsl:preproc_elif a owl:Class ;
+    rdfs:label "preproc_elif" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 214,
+        219,
+        224,
+        229 .
+
+glsl:preproc_elifdef a owl:Class ;
+    rdfs:label "preproc_elifdef" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 215,
+        220,
+        225,
+        230 .
+
+glsl:preproc_else a owl:Class ;
+    rdfs:label "preproc_else" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 213,
+        218,
+        223,
+        228 .
+
+glsl:preproc_extension a owl:Class ;
+    rdfs:label "preproc_extension" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 363 .
+
+glsl:preproc_function_def a owl:Class ;
+    rdfs:label "preproc_function_def" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 208 .
+
+glsl:preproc_if a owl:Class ;
+    rdfs:label "preproc_if" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 211,
+        216,
+        221,
+        226 .
+
+glsl:preproc_ifdef a owl:Class ;
+    rdfs:label "preproc_ifdef" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 212,
+        217,
+        222,
+        227 .
+
+glsl:preproc_include a owl:Class ;
+    rdfs:label "preproc_include" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 206 .
+
+glsl:preproc_params a owl:Class ;
+    rdfs:label "preproc_params" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 209 .
+
+glsl:primitive_type a owl:Class ;
+    rdfs:label "primitive_type" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 117 .
+
+glsl:qualifier a owl:Class ;
+    rdfs:label "qualifier" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 368 .
+
+glsl:return_statement a owl:Class ;
+    rdfs:label "return_statement" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 314 .
+
+glsl:seh_except_clause a owl:Class ;
+    rdfs:label "seh_except_clause" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 319 .
+
+glsl:seh_finally_clause a owl:Class ;
+    rdfs:label "seh_finally_clause" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 320 .
+
+glsl:seh_leave_statement a owl:Class ;
+    rdfs:label "seh_leave_statement" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 321 .
+
+glsl:seh_try_statement a owl:Class ;
+    rdfs:label "seh_try_statement" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 318 .
+
+glsl:sized_type_specifier a owl:Class ;
+    rdfs:label "sized_type_specifier" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 286 .
+
+glsl:sizeof_expression a owl:Class ;
+    rdfs:label "sizeof_expression" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 333 .
+
+glsl:statement_identifier a owl:Class ;
+    rdfs:label "statement_identifier" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 408 .
+
+glsl:storage_class_specifier a owl:Class ;
+    rdfs:label "storage_class_specifier" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 282 .
+
+glsl:string_content a owl:Class ;
+    rdfs:label "string_content" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 177 .
+
+glsl:string_literal a owl:Class ;
+    rdfs:label "string_literal" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 359 .
+
+glsl:struct_specifier a owl:Class ;
+    rdfs:label "struct_specifier" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 289 .
+
+glsl:subscript_designator a owl:Class ;
+    rdfs:label "subscript_designator" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 354 .
+
+glsl:subscript_expression a owl:Class ;
+    rdfs:label "subscript_expression" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 337 .
+
+glsl:subscript_range_designator a owl:Class ;
+    rdfs:label "subscript_range_designator" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 355 .
+
+glsl:switch_statement a owl:Class ;
+    rdfs:label "switch_statement" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 308 .
+
+glsl:symbol a owl:DatatypeProperty ;
+    rdfs:label "symbol (literal)" ;
+    rdfs:comment "Literal value for symbol field when it contains a terminal node" ;
+    glsl:fieldId 37 ;
+    glsl:isTerminalField true .
+
+glsl:system_lib_string a owl:Class ;
+    rdfs:label "system_lib_string" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 179 .
+
+glsl:translation_unit a owl:Class ;
+    rdfs:label "translation_unit" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 203 .
+
+glsl:true a owl:Class ;
+    rdfs:label "true" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 180 .
+
+glsl:type a owl:DatatypeProperty ;
+    rdfs:label "type (literal)" ;
+    rdfs:comment "Literal value for type field when it contains a terminal node" ;
+    glsl:fieldId 38 ;
+    glsl:isTerminalField true .
+
+glsl:type_definition a owl:Class ;
+    rdfs:label "type_definition" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 240 .
+
+glsl:type_descriptor a owl:Class ;
+    rdfs:label "type_descriptor" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 332 .
+
+glsl:type_identifier a owl:Class ;
+    rdfs:label "type_identifier" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 409 .
+
+glsl:type_qualifier a owl:Class ;
+    rdfs:label "type_qualifier" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 283 .
+
+glsl:unary_expression a owl:Class ;
+    rdfs:label "unary_expression" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 234,
+        328 .
+
+glsl:underlying_type a owl:DatatypeProperty ;
+    rdfs:label "underlying_type (literal)" ;
+    rdfs:comment "Literal value for underlying_type field when it contains a terminal node" ;
+    glsl:fieldId 39 ;
+    glsl:isTerminalField true .
+
+glsl:union_specifier a owl:Class ;
+    rdfs:label "union_specifier" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 290 .
+
+glsl:update_expression a owl:Class ;
+    rdfs:label "update_expression" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 330 .
+
+glsl:value a owl:DatatypeProperty ;
+    rdfs:label "value (literal)" ;
+    rdfs:comment "Literal value for value field when it contains a terminal node" ;
+    glsl:fieldId 41 ;
+    glsl:isTerminalField true .
+
+glsl:variadic_parameter a owl:Class ;
+    rdfs:label "variadic_parameter" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 297 .
+
+glsl:while_statement a owl:Class ;
+    rdfs:label "while_statement" ;
+    rdfs:isDefinedBy glsl: ;
+    rdfs:subClassOf ast:Node ;
+    glsl:isSupertype true ;
+    glsl:nodeTypeId 310 .
+
+glsl: a owl:Ontology ;
+    rdfs:label "Glsl Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for glsl" ;
+    owl:versionInfo "v0.25" ;
+    glsl:abiVersion 14 ;
+    glsl:fieldCount 41 ;
+    glsl:languageName "None" ;
+    glsl:nodeKindCount 410 .
+

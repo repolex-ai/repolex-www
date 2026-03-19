@@ -1,0 +1,419 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml1: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/xml/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+xml1:AttDef a owl:Class ;
+    rdfs:label "AttDef" ;
+    rdfs:isDefinedBy xml1: ;
+    rdfs:subClassOf ast:Node ;
+    xml1:isSupertype true ;
+    xml1:nodeTypeId 102 .
+
+xml1:AttValue a owl:Class ;
+    rdfs:label "AttValue" ;
+    rdfs:isDefinedBy xml1: ;
+    rdfs:subClassOf ast:Node ;
+    xml1:isSupertype true ;
+    xml1:nodeTypeId 119 .
+
+xml1:AttlistDecl a owl:Class ;
+    rdfs:label "AttlistDecl" ;
+    rdfs:isDefinedBy xml1: ;
+    rdfs:subClassOf ast:Node ;
+    xml1:isSupertype true ;
+    xml1:nodeTypeId 101 .
+
+xml1:Attribute a owl:Class ;
+    rdfs:label "Attribute" ;
+    rdfs:isDefinedBy xml1: ;
+    rdfs:subClassOf ast:Node ;
+    xml1:isSupertype true ;
+    xml1:nodeTypeId 83 .
+
+xml1:CDSect a owl:Class ;
+    rdfs:label "CDSect" ;
+    rdfs:isDefinedBy xml1: ;
+    rdfs:subClassOf ast:Node ;
+    xml1:isSupertype true ;
+    xml1:nodeTypeId 87 .
+
+xml1:CDStart a owl:Class ;
+    rdfs:label "CDStart" ;
+    rdfs:isDefinedBy xml1: ;
+    rdfs:subClassOf ast:Node ;
+    xml1:isSupertype true ;
+    xml1:nodeTypeId 88 .
+
+xml1:CData a owl:Class ;
+    rdfs:label "CData" ;
+    rdfs:isDefinedBy xml1: ;
+    rdfs:subClassOf ast:Node ;
+    xml1:isSupertype true ;
+    xml1:nodeTypeId 70 .
+
+xml1:CharData a owl:Class ;
+    rdfs:label "CharData" ;
+    rdfs:isDefinedBy xml1: ;
+    rdfs:subClassOf ast:Node ;
+    xml1:isSupertype true ;
+    xml1:nodeTypeId 69 .
+
+xml1:CharRef a owl:Class ;
+    rdfs:label "CharRef" ;
+    rdfs:isDefinedBy xml1: ;
+    rdfs:subClassOf ast:Node ;
+    xml1:isSupertype true ;
+    xml1:nodeTypeId 118 .
+
+xml1:Comment a owl:Class ;
+    rdfs:label "Comment" ;
+    rdfs:isDefinedBy xml1: ;
+    rdfs:subClassOf ast:Node ;
+    xml1:isSupertype true ;
+    xml1:nodeTypeId 68 .
+
+xml1:DefaultDecl a owl:Class ;
+    rdfs:label "DefaultDecl" ;
+    rdfs:isDefinedBy xml1: ;
+    rdfs:subClassOf ast:Node ;
+    xml1:isSupertype true ;
+    xml1:nodeTypeId 108 .
+
+xml1:ETag a owl:Class ;
+    rdfs:label "ETag" ;
+    rdfs:isDefinedBy xml1: ;
+    rdfs:subClassOf ast:Node ;
+    xml1:isSupertype true ;
+    xml1:nodeTypeId 85 .
+
+xml1:EmptyElemTag a owl:Class ;
+    rdfs:label "EmptyElemTag" ;
+    rdfs:isDefinedBy xml1: ;
+    rdfs:subClassOf ast:Node ;
+    xml1:isSupertype true ;
+    xml1:nodeTypeId 82 .
+
+xml1:EncName a owl:Class ;
+    rdfs:label "EncName" ;
+    rdfs:isDefinedBy xml1: ;
+    rdfs:subClassOf ast:Node ;
+    xml1:isSupertype true ;
+    xml1:nodeTypeId 64 .
+
+xml1:EntityRef a owl:Class ;
+    rdfs:label "EntityRef" ;
+    rdfs:isDefinedBy xml1: ;
+    rdfs:subClassOf ast:Node ;
+    xml1:isSupertype true ;
+    xml1:nodeTypeId 117 .
+
+xml1:EntityValue a owl:Class ;
+    rdfs:label "EntityValue" ;
+    rdfs:isDefinedBy xml1: ;
+    rdfs:subClassOf ast:Node ;
+    xml1:isSupertype true ;
+    xml1:nodeTypeId 112 .
+
+xml1:Enumeration a owl:Class ;
+    rdfs:label "Enumeration" ;
+    rdfs:isDefinedBy xml1: ;
+    rdfs:subClassOf ast:Node ;
+    xml1:isSupertype true ;
+    xml1:nodeTypeId 107 .
+
+xml1:ExternalID a owl:Class ;
+    rdfs:label "ExternalID" ;
+    rdfs:isDefinedBy xml1: ;
+    rdfs:subClassOf ast:Node ;
+    xml1:isSupertype true ;
+    xml1:nodeTypeId 120 .
+
+xml1:GEDecl a owl:Class ;
+    rdfs:label "GEDecl" ;
+    rdfs:isDefinedBy xml1: ;
+    rdfs:subClassOf ast:Node ;
+    xml1:isSupertype true ;
+    xml1:nodeTypeId 110 .
+
+xml1:Mixed a owl:Class ;
+    rdfs:label "Mixed" ;
+    rdfs:isDefinedBy xml1: ;
+    rdfs:subClassOf ast:Node ;
+    xml1:isSupertype true ;
+    xml1:nodeTypeId 97 .
+
+xml1:NDataDecl a owl:Class ;
+    rdfs:label "NDataDecl" ;
+    rdfs:isDefinedBy xml1: ;
+    rdfs:subClassOf ast:Node ;
+    xml1:isSupertype true ;
+    xml1:nodeTypeId 113 .
+
+xml1:Name a owl:Class ;
+    rdfs:label "Name" ;
+    rdfs:isDefinedBy xml1: ;
+    rdfs:subClassOf ast:Node ;
+    xml1:isSupertype true ;
+    xml1:nodeTypeId 1,
+        71,
+        72 .
+
+xml1:Nmtoken a owl:Class ;
+    rdfs:label "Nmtoken" ;
+    rdfs:isDefinedBy xml1: ;
+    rdfs:subClassOf ast:Node ;
+    xml1:isSupertype true ;
+    xml1:nodeTypeId 49 .
+
+xml1:NotationDecl a owl:Class ;
+    rdfs:label "NotationDecl" ;
+    rdfs:isDefinedBy xml1: ;
+    rdfs:subClassOf ast:Node ;
+    xml1:isSupertype true ;
+    xml1:nodeTypeId 114 .
+
+xml1:NotationType a owl:Class ;
+    rdfs:label "NotationType" ;
+    rdfs:isDefinedBy xml1: ;
+    rdfs:subClassOf ast:Node ;
+    xml1:isSupertype true ;
+    xml1:nodeTypeId 106 .
+
+xml1:PEDecl a owl:Class ;
+    rdfs:label "PEDecl" ;
+    rdfs:isDefinedBy xml1: ;
+    rdfs:subClassOf ast:Node ;
+    xml1:isSupertype true ;
+    xml1:nodeTypeId 111 .
+
+xml1:PEReference a owl:Class ;
+    rdfs:label "PEReference" ;
+    rdfs:isDefinedBy xml1: ;
+    rdfs:subClassOf ast:Node ;
+    xml1:isSupertype true ;
+    xml1:nodeTypeId 115 .
+
+xml1:PI a owl:Class ;
+    rdfs:label "PI" ;
+    rdfs:isDefinedBy xml1: ;
+    rdfs:subClassOf ast:Node ;
+    xml1:isSupertype true ;
+    xml1:nodeTypeId 126 .
+
+xml1:PITarget a owl:Class ;
+    rdfs:label "PITarget" ;
+    rdfs:isDefinedBy xml1: ;
+    rdfs:subClassOf ast:Node ;
+    xml1:isSupertype true ;
+    xml1:nodeTypeId 66 .
+
+xml1:PseudoAtt a owl:Class ;
+    rdfs:label "PseudoAtt" ;
+    rdfs:isDefinedBy xml1: ;
+    rdfs:subClassOf ast:Node ;
+    xml1:isSupertype true ;
+    xml1:nodeTypeId 91 .
+
+xml1:PseudoAttValue a owl:Class ;
+    rdfs:label "PseudoAttValue" ;
+    rdfs:isDefinedBy xml1: ;
+    rdfs:subClassOf ast:Node ;
+    xml1:isSupertype true ;
+    xml1:nodeTypeId 92 .
+
+xml1:PubidLiteral a owl:Class ;
+    rdfs:label "PubidLiteral" ;
+    rdfs:isDefinedBy xml1: ;
+    rdfs:subClassOf ast:Node ;
+    xml1:isSupertype true ;
+    xml1:nodeTypeId 123 .
+
+xml1:PublicID a owl:Class ;
+    rdfs:label "PublicID" ;
+    rdfs:isDefinedBy xml1: ;
+    rdfs:subClassOf ast:Node ;
+    xml1:isSupertype true ;
+    xml1:nodeTypeId 121 .
+
+xml1:STag a owl:Class ;
+    rdfs:label "STag" ;
+    rdfs:isDefinedBy xml1: ;
+    rdfs:subClassOf ast:Node ;
+    xml1:isSupertype true ;
+    xml1:nodeTypeId 84 .
+
+xml1:StringType a owl:Class ;
+    rdfs:label "StringType" ;
+    rdfs:isDefinedBy xml1: ;
+    rdfs:subClassOf ast:Node ;
+    xml1:isSupertype true ;
+    xml1:nodeTypeId 104 .
+
+xml1:StyleSheetPI a owl:Class ;
+    rdfs:label "StyleSheetPI" ;
+    rdfs:isDefinedBy xml1: ;
+    rdfs:subClassOf ast:Node ;
+    xml1:isSupertype true ;
+    xml1:nodeTypeId 89 .
+
+xml1:SystemLiteral a owl:Class ;
+    rdfs:label "SystemLiteral" ;
+    rdfs:isDefinedBy xml1: ;
+    rdfs:subClassOf ast:Node ;
+    xml1:isSupertype true ;
+    xml1:nodeTypeId 122 .
+
+xml1:TokenizedType a owl:Class ;
+    rdfs:label "TokenizedType" ;
+    rdfs:isDefinedBy xml1: ;
+    rdfs:subClassOf ast:Node ;
+    xml1:isSupertype true ;
+    xml1:nodeTypeId 37 .
+
+xml1:URI a owl:Class ;
+    rdfs:label "URI" ;
+    rdfs:isDefinedBy xml1: ;
+    rdfs:subClassOf ast:Node ;
+    xml1:isSupertype true ;
+    xml1:nodeTypeId 57,
+        58 .
+
+xml1:VersionNum a owl:Class ;
+    rdfs:label "VersionNum" ;
+    rdfs:isDefinedBy xml1: ;
+    rdfs:subClassOf ast:Node ;
+    xml1:isSupertype true ;
+    xml1:nodeTypeId 62 .
+
+xml1:XMLDecl a owl:Class ;
+    rdfs:label "XMLDecl" ;
+    rdfs:isDefinedBy xml1: ;
+    rdfs:subClassOf ast:Node ;
+    xml1:isSupertype true ;
+    xml1:nodeTypeId 77 .
+
+xml1:XmlModelPI a owl:Class ;
+    rdfs:label "XmlModelPI" ;
+    rdfs:isDefinedBy xml1: ;
+    rdfs:subClassOf ast:Node ;
+    xml1:isSupertype true ;
+    xml1:nodeTypeId 90 .
+
+xml1:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+xml1:children a owl:Class ;
+    rdfs:label "children" ;
+    rdfs:isDefinedBy xml1: ;
+    rdfs:subClassOf ast:Node ;
+    xml1:isSupertype true ;
+    xml1:nodeTypeId 98 .
+
+xml1:content a owl:Class ;
+    rdfs:label "content" ;
+    rdfs:isDefinedBy xml1: ;
+    rdfs:subClassOf ast:Node ;
+    xml1:isSupertype true ;
+    xml1:nodeTypeId 86 .
+
+xml1:contentspec a owl:Class ;
+    rdfs:label "contentspec" ;
+    rdfs:isDefinedBy xml1: ;
+    rdfs:subClassOf ast:Node ;
+    xml1:isSupertype true ;
+    xml1:nodeTypeId 96 .
+
+xml1:doctypedecl a owl:Class ;
+    rdfs:label "doctypedecl" ;
+    rdfs:isDefinedBy xml1: ;
+    rdfs:subClassOf ast:Node ;
+    xml1:isSupertype true ;
+    xml1:nodeTypeId 79 .
+
+xml1:document a owl:Class ;
+    rdfs:label "document" ;
+    rdfs:isDefinedBy xml1: ;
+    rdfs:subClassOf ast:Node ;
+    xml1:isSupertype true ;
+    xml1:nodeTypeId 74 .
+
+xml1:element a owl:Class ;
+    rdfs:label "element" ;
+    rdfs:isDefinedBy xml1: ;
+    rdfs:subClassOf ast:Node ;
+    xml1:isSupertype true ;
+    xml1:nodeTypeId 81 .
+
+xml1:elementdecl a owl:Class ;
+    rdfs:label "elementdecl" ;
+    rdfs:isDefinedBy xml1: ;
+    rdfs:subClassOf ast:Node ;
+    xml1:isSupertype true ;
+    xml1:nodeTypeId 95 .
+
+xml1:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+xml1:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+xml1:field_content a owl:ObjectProperty ;
+    rdfs:label "content (structural)" ;
+    rdfs:comment "Structural reference for content field when it contains a non-terminal node" ;
+    xml1:fieldId 1 .
+
+xml1:field_root a owl:ObjectProperty ;
+    rdfs:label "root (structural)" ;
+    rdfs:comment "Structural reference for root field when it contains a non-terminal node" ;
+    xml1:fieldId 2 .
+
+xml1:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+xml1:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+xml1:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+xml1:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+xml1:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+xml1:prolog a owl:Class ;
+    rdfs:label "prolog" ;
+    rdfs:isDefinedBy xml1: ;
+    rdfs:subClassOf ast:Node ;
+    xml1:isSupertype true ;
+    xml1:nodeTypeId 75 .
+
+xml1: a owl:Ontology ;
+    rdfs:label "Xml Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for xml" ;
+    owl:versionInfo "v0.25" ;
+    xml1:abiVersion 14 ;
+    xml1:fieldCount 2 ;
+    xml1:languageName "None" ;
+    xml1:nodeKindCount 143 .
+

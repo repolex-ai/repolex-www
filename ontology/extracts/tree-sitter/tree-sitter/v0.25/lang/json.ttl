@@ -1,0 +1,150 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix json: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/json/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+json:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+json:array a owl:Class ;
+    rdfs:label "array" ;
+    rdfs:isDefinedBy json: ;
+    rdfs:subClassOf ast:Node ;
+    json:isSupertype true ;
+    json:nodeTypeId 19 .
+
+json:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy json: ;
+    rdfs:subClassOf ast:Node ;
+    json:isSupertype true ;
+    json:nodeTypeId 14 .
+
+json:document a owl:Class ;
+    rdfs:label "document" ;
+    rdfs:isDefinedBy json: ;
+    rdfs:subClassOf ast:Node ;
+    json:isSupertype true ;
+    json:nodeTypeId 15 .
+
+json:escape_sequence a owl:Class ;
+    rdfs:label "escape_sequence" ;
+    rdfs:isDefinedBy json: ;
+    rdfs:subClassOf ast:Node ;
+    json:isSupertype true ;
+    json:nodeTypeId 9 .
+
+json:false a owl:Class ;
+    rdfs:label "false" ;
+    rdfs:isDefinedBy json: ;
+    rdfs:subClassOf ast:Node ;
+    json:isSupertype true ;
+    json:nodeTypeId 12 .
+
+json:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+json:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+json:field_key a owl:ObjectProperty ;
+    rdfs:label "key (structural)" ;
+    rdfs:comment "Structural reference for key field when it contains a non-terminal node" ;
+    json:fieldId 1 .
+
+json:field_value a owl:ObjectProperty ;
+    rdfs:label "value (structural)" ;
+    rdfs:comment "Structural reference for value field when it contains a non-terminal node" ;
+    json:fieldId 2 .
+
+json:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+json:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+json:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+json:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+json:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+json:null a owl:Class ;
+    rdfs:label "null" ;
+    rdfs:isDefinedBy json: ;
+    rdfs:subClassOf ast:Node ;
+    json:isSupertype true ;
+    json:nodeTypeId 13 .
+
+json:number a owl:Class ;
+    rdfs:label "number" ;
+    rdfs:isDefinedBy json: ;
+    rdfs:subClassOf ast:Node ;
+    json:isSupertype true ;
+    json:nodeTypeId 10 .
+
+json:object a owl:Class ;
+    rdfs:label "object" ;
+    rdfs:isDefinedBy json: ;
+    rdfs:subClassOf ast:Node ;
+    json:isSupertype true ;
+    json:nodeTypeId 17 .
+
+json:pair a owl:Class ;
+    rdfs:label "pair" ;
+    rdfs:isDefinedBy json: ;
+    rdfs:subClassOf ast:Node ;
+    json:isSupertype true ;
+    json:nodeTypeId 18 .
+
+json:string a owl:Class ;
+    rdfs:label "string" ;
+    rdfs:isDefinedBy json: ;
+    rdfs:subClassOf ast:Node ;
+    json:isSupertype true ;
+    json:nodeTypeId 20 .
+
+json:string_content a owl:Class ;
+    rdfs:label "string_content" ;
+    rdfs:isDefinedBy json: ;
+    rdfs:subClassOf ast:Node ;
+    json:isSupertype true ;
+    json:nodeTypeId 8 .
+
+json:true a owl:Class ;
+    rdfs:label "true" ;
+    rdfs:isDefinedBy json: ;
+    rdfs:subClassOf ast:Node ;
+    json:isSupertype true ;
+    json:nodeTypeId 11 .
+
+json: a owl:Ontology ;
+    rdfs:label "Json Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for json" ;
+    owl:versionInfo "v0.25" ;
+    json:abiVersion 14 ;
+    json:fieldCount 2 ;
+    json:languageName "None" ;
+    json:nodeKindCount 25 .
+

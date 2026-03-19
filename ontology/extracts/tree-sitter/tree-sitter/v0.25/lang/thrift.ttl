@@ -1,0 +1,420 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix thrift: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/thrift/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+thrift:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+thrift:annotation_definition a owl:Class ;
+    rdfs:label "annotation_definition" ;
+    rdfs:isDefinedBy thrift: ;
+    rdfs:subClassOf ast:Node ;
+    thrift:isSupertype true ;
+    thrift:nodeTypeId 179 .
+
+thrift:annotation_identifier a owl:Class ;
+    rdfs:label "annotation_identifier" ;
+    rdfs:isDefinedBy thrift: ;
+    rdfs:subClassOf ast:Node ;
+    thrift:isSupertype true ;
+    thrift:nodeTypeId 189 .
+
+thrift:boolean a owl:Class ;
+    rdfs:label "boolean" ;
+    rdfs:isDefinedBy thrift: ;
+    rdfs:subClassOf ast:Node ;
+    thrift:isSupertype true ;
+    thrift:nodeTypeId 182 .
+
+thrift:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy thrift: ;
+    rdfs:subClassOf ast:Node ;
+    thrift:isSupertype true ;
+    thrift:nodeTypeId 142 .
+
+thrift:const_definition a owl:Class ;
+    rdfs:label "const_definition" ;
+    rdfs:isDefinedBy thrift: ;
+    rdfs:subClassOf ast:Node ;
+    thrift:isSupertype true ;
+    thrift:nodeTypeId 151 .
+
+thrift:container_type a owl:Class ;
+    rdfs:label "container_type" ;
+    rdfs:isDefinedBy thrift: ;
+    rdfs:subClassOf ast:Node ;
+    thrift:isSupertype true ;
+    thrift:nodeTypeId 173 .
+
+thrift:definition_type a owl:Class ;
+    rdfs:label "definition_type" ;
+    rdfs:isDefinedBy thrift: ;
+    rdfs:subClassOf ast:Node ;
+    thrift:isSupertype true ;
+    thrift:nodeTypeId 171 .
+
+thrift:document a owl:Class ;
+    rdfs:label "document" ;
+    rdfs:isDefinedBy thrift: ;
+    rdfs:subClassOf ast:Node ;
+    thrift:isSupertype true ;
+    thrift:nodeTypeId 143 .
+
+thrift:double a owl:Class ;
+    rdfs:label "double" ;
+    rdfs:isDefinedBy thrift: ;
+    rdfs:subClassOf ast:Node ;
+    thrift:isSupertype true ;
+    thrift:nodeTypeId 129 .
+
+thrift:enum_definition a owl:Class ;
+    rdfs:label "enum_definition" ;
+    rdfs:isDefinedBy thrift: ;
+    rdfs:subClassOf ast:Node ;
+    thrift:isSupertype true ;
+    thrift:nodeTypeId 153 .
+
+thrift:escape_sequence a owl:Class ;
+    rdfs:label "escape_sequence" ;
+    rdfs:isDefinedBy thrift: ;
+    rdfs:subClassOf ast:Node ;
+    thrift:isSupertype true ;
+    thrift:nodeTypeId 139 .
+
+thrift:exception_definition a owl:Class ;
+    rdfs:label "exception_definition" ;
+    rdfs:isDefinedBy thrift: ;
+    rdfs:subClassOf ast:Node ;
+    thrift:isSupertype true ;
+    thrift:nodeTypeId 157 .
+
+thrift:exception_modifier a owl:Class ;
+    rdfs:label "exception_modifier" ;
+    rdfs:isDefinedBy thrift: ;
+    rdfs:subClassOf ast:Node ;
+    thrift:isSupertype true ;
+    thrift:nodeTypeId 158 .
+
+thrift:fb_annotation_definition a owl:Class ;
+    rdfs:label "fb_annotation_definition" ;
+    rdfs:isDefinedBy thrift: ;
+    rdfs:subClassOf ast:Node ;
+    thrift:isSupertype true ;
+    thrift:nodeTypeId 180 .
+
+thrift:field a owl:Class ;
+    rdfs:label "field" ;
+    rdfs:isDefinedBy thrift: ;
+    rdfs:subClassOf ast:Node ;
+    thrift:isSupertype true ;
+    thrift:nodeTypeId 161 .
+
+thrift:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+thrift:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+thrift:field_id a owl:Class ;
+    rdfs:label "field_id" ;
+    rdfs:isDefinedBy thrift: ;
+    rdfs:subClassOf ast:Node ;
+    thrift:isSupertype true ;
+    thrift:nodeTypeId 162 .
+
+thrift:field_modifier a owl:Class ;
+    rdfs:label "field_modifier" ;
+    rdfs:isDefinedBy thrift: ;
+    rdfs:subClassOf ast:Node ;
+    thrift:isSupertype true ;
+    thrift:nodeTypeId 163 .
+
+thrift:function_definition a owl:Class ;
+    rdfs:label "function_definition" ;
+    rdfs:isDefinedBy thrift: ;
+    rdfs:subClassOf ast:Node ;
+    thrift:isSupertype true ;
+    thrift:nodeTypeId 165 .
+
+thrift:function_modifier a owl:Class ;
+    rdfs:label "function_modifier" ;
+    rdfs:isDefinedBy thrift: ;
+    rdfs:subClassOf ast:Node ;
+    thrift:isSupertype true ;
+    thrift:nodeTypeId 166 .
+
+thrift:identifier a owl:Class ;
+    rdfs:label "identifier" ;
+    rdfs:isDefinedBy thrift: ;
+    rdfs:subClassOf ast:Node ;
+    thrift:isSupertype true ;
+    thrift:nodeTypeId 1,
+        140 .
+
+thrift:include_statement a owl:Class ;
+    rdfs:label "include_statement" ;
+    rdfs:isDefinedBy thrift: ;
+    rdfs:subClassOf ast:Node ;
+    thrift:isSupertype true ;
+    thrift:nodeTypeId 145 .
+
+thrift:interaction_definition a owl:Class ;
+    rdfs:label "interaction_definition" ;
+    rdfs:isDefinedBy thrift: ;
+    rdfs:subClassOf ast:Node ;
+    thrift:isSupertype true ;
+    thrift:nodeTypeId 160 .
+
+thrift:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+thrift:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+thrift:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+thrift:list a owl:Class ;
+    rdfs:label "list" ;
+    rdfs:isDefinedBy thrift: ;
+    rdfs:subClassOf ast:Node ;
+    thrift:isSupertype true ;
+    thrift:nodeTypeId 174 .
+
+thrift:list_literal a owl:Class ;
+    rdfs:label "list_literal" ;
+    rdfs:isDefinedBy thrift: ;
+    rdfs:subClassOf ast:Node ;
+    thrift:isSupertype true ;
+    thrift:nodeTypeId 183 .
+
+thrift:literal a owl:Class ;
+    rdfs:label "literal" ;
+    rdfs:isDefinedBy thrift: ;
+    rdfs:subClassOf ast:Node ;
+    thrift:isSupertype true ;
+    thrift:nodeTypeId 181 .
+
+thrift:map a owl:Class ;
+    rdfs:label "map" ;
+    rdfs:isDefinedBy thrift: ;
+    rdfs:subClassOf ast:Node ;
+    thrift:isSupertype true ;
+    thrift:nodeTypeId 175 .
+
+thrift:map_literal a owl:Class ;
+    rdfs:label "map_literal" ;
+    rdfs:isDefinedBy thrift: ;
+    rdfs:subClassOf ast:Node ;
+    thrift:isSupertype true ;
+    thrift:nodeTypeId 184 .
+
+thrift:namespace a owl:Class ;
+    rdfs:label "namespace" ;
+    rdfs:isDefinedBy thrift: ;
+    rdfs:subClassOf ast:Node ;
+    thrift:isSupertype true ;
+    thrift:nodeTypeId 208 .
+
+thrift:namespace_declaration a owl:Class ;
+    rdfs:label "namespace_declaration" ;
+    rdfs:isDefinedBy thrift: ;
+    rdfs:subClassOf ast:Node ;
+    thrift:isSupertype true ;
+    thrift:nodeTypeId 146 .
+
+thrift:namespace_scope a owl:Class ;
+    rdfs:label "namespace_scope" ;
+    rdfs:isDefinedBy thrift: ;
+    rdfs:subClassOf ast:Node ;
+    thrift:isSupertype true ;
+    thrift:nodeTypeId 148 .
+
+thrift:namespace_uri a owl:Class ;
+    rdfs:label "namespace_uri" ;
+    rdfs:isDefinedBy thrift: ;
+    rdfs:subClassOf ast:Node ;
+    thrift:isSupertype true ;
+    thrift:nodeTypeId 149 .
+
+thrift:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+thrift:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+thrift:number a owl:Class ;
+    rdfs:label "number" ;
+    rdfs:isDefinedBy thrift: ;
+    rdfs:subClassOf ast:Node ;
+    thrift:isSupertype true ;
+    thrift:nodeTypeId 128 .
+
+thrift:package_declaration a owl:Class ;
+    rdfs:label "package_declaration" ;
+    rdfs:isDefinedBy thrift: ;
+    rdfs:subClassOf ast:Node ;
+    thrift:isSupertype true ;
+    thrift:nodeTypeId 147 .
+
+thrift:parameter a owl:Class ;
+    rdfs:label "parameter" ;
+    rdfs:isDefinedBy thrift: ;
+    rdfs:subClassOf ast:Node ;
+    thrift:isSupertype true ;
+    thrift:nodeTypeId 168 .
+
+thrift:parameters a owl:Class ;
+    rdfs:label "parameters" ;
+    rdfs:isDefinedBy thrift: ;
+    rdfs:subClassOf ast:Node ;
+    thrift:isSupertype true ;
+    thrift:nodeTypeId 167 .
+
+thrift:primitive a owl:Class ;
+    rdfs:label "primitive" ;
+    rdfs:isDefinedBy thrift: ;
+    rdfs:subClassOf ast:Node ;
+    thrift:isSupertype true ;
+    thrift:nodeTypeId 172 .
+
+thrift:senum_definition a owl:Class ;
+    rdfs:label "senum_definition" ;
+    rdfs:isDefinedBy thrift: ;
+    rdfs:subClassOf ast:Node ;
+    thrift:isSupertype true ;
+    thrift:nodeTypeId 154 .
+
+thrift:service_definition a owl:Class ;
+    rdfs:label "service_definition" ;
+    rdfs:isDefinedBy thrift: ;
+    rdfs:subClassOf ast:Node ;
+    thrift:isSupertype true ;
+    thrift:nodeTypeId 159 .
+
+thrift:set a owl:Class ;
+    rdfs:label "set" ;
+    rdfs:isDefinedBy thrift: ;
+    rdfs:subClassOf ast:Node ;
+    thrift:isSupertype true ;
+    thrift:nodeTypeId 176 .
+
+thrift:sink a owl:Class ;
+    rdfs:label "sink" ;
+    rdfs:isDefinedBy thrift: ;
+    rdfs:subClassOf ast:Node ;
+    thrift:isSupertype true ;
+    thrift:nodeTypeId 177 .
+
+thrift:stream a owl:Class ;
+    rdfs:label "stream" ;
+    rdfs:isDefinedBy thrift: ;
+    rdfs:subClassOf ast:Node ;
+    thrift:isSupertype true ;
+    thrift:nodeTypeId 178 .
+
+thrift:string a owl:Class ;
+    rdfs:label "string" ;
+    rdfs:isDefinedBy thrift: ;
+    rdfs:subClassOf ast:Node ;
+    thrift:isSupertype true ;
+    thrift:nodeTypeId 186 .
+
+thrift:string_fragment a owl:Class ;
+    rdfs:label "string_fragment" ;
+    rdfs:isDefinedBy thrift: ;
+    rdfs:subClassOf ast:Node ;
+    thrift:isSupertype true ;
+    thrift:nodeTypeId 136,
+        137 .
+
+thrift:struct_definition a owl:Class ;
+    rdfs:label "struct_definition" ;
+    rdfs:isDefinedBy thrift: ;
+    rdfs:subClassOf ast:Node ;
+    thrift:isSupertype true ;
+    thrift:nodeTypeId 155 .
+
+thrift:struct_literal a owl:Class ;
+    rdfs:label "struct_literal" ;
+    rdfs:isDefinedBy thrift: ;
+    rdfs:subClassOf ast:Node ;
+    thrift:isSupertype true ;
+    thrift:nodeTypeId 185 .
+
+thrift:throws a owl:Class ;
+    rdfs:label "throws" ;
+    rdfs:isDefinedBy thrift: ;
+    rdfs:subClassOf ast:Node ;
+    thrift:isSupertype true ;
+    thrift:nodeTypeId 169 .
+
+thrift:type a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "type",
+        "type (literal)" ;
+    rdfs:comment "Literal value for type field when it contains a terminal node" ;
+    rdfs:isDefinedBy thrift: ;
+    rdfs:subClassOf ast:Node ;
+    thrift:fieldId 1 ;
+    thrift:isSupertype true ;
+    thrift:isTerminalField true ;
+    thrift:nodeTypeId 170 .
+
+thrift:typedef_definition a owl:Class ;
+    rdfs:label "typedef_definition" ;
+    rdfs:isDefinedBy thrift: ;
+    rdfs:subClassOf ast:Node ;
+    thrift:isSupertype true ;
+    thrift:nodeTypeId 152 .
+
+thrift:typedef_identifier a owl:Class ;
+    rdfs:label "typedef_identifier" ;
+    rdfs:isDefinedBy thrift: ;
+    rdfs:subClassOf ast:Node ;
+    thrift:isSupertype true ;
+    thrift:nodeTypeId 209 .
+
+thrift:union_definition a owl:Class ;
+    rdfs:label "union_definition" ;
+    rdfs:isDefinedBy thrift: ;
+    rdfs:subClassOf ast:Node ;
+    thrift:isSupertype true ;
+    thrift:nodeTypeId 156 .
+
+thrift:xsd_attrs a owl:Class ;
+    rdfs:label "xsd_attrs" ;
+    rdfs:isDefinedBy thrift: ;
+    rdfs:subClassOf ast:Node ;
+    thrift:isSupertype true ;
+    thrift:nodeTypeId 164 .
+
+thrift: a owl:Ontology ;
+    rdfs:label "Thrift Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for thrift" ;
+    owl:versionInfo "v0.25" ;
+    thrift:abiVersion 14 ;
+    thrift:fieldCount 1 ;
+    thrift:languageName "None" ;
+    thrift:nodeKindCount 210 .
+

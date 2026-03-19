@@ -1,0 +1,414 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rst: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/rst/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+rst:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+rst:arguments a owl:Class ;
+    rdfs:label "arguments" ;
+    rdfs:isDefinedBy rst: ;
+    rdfs:subClassOf ast:Node ;
+    rst:isSupertype true ;
+    rst:nodeTypeId 111 .
+
+rst:attribution a owl:Class ;
+    rdfs:label "attribution" ;
+    rdfs:isDefinedBy rst: ;
+    rdfs:subClassOf ast:Node ;
+    rst:isSupertype true ;
+    rst:nodeTypeId 78 .
+
+rst:block_quote a owl:Class ;
+    rdfs:label "block_quote" ;
+    rdfs:isDefinedBy rst: ;
+    rdfs:subClassOf ast:Node ;
+    rst:isSupertype true ;
+    rst:nodeTypeId 77 .
+
+rst:body a owl:Class ;
+    rdfs:label "body" ;
+    rdfs:isDefinedBy rst: ;
+    rdfs:subClassOf ast:Node ;
+    rst:isSupertype true ;
+    rst:nodeTypeId 58,
+        87 .
+
+rst:bullet_list a owl:Class ;
+    rdfs:label "bullet_list" ;
+    rdfs:isDefinedBy rst: ;
+    rdfs:subClassOf ast:Node ;
+    rst:isSupertype true ;
+    rst:nodeTypeId 63 .
+
+rst:citation a owl:Class ;
+    rdfs:label "citation" ;
+    rdfs:isDefinedBy rst: ;
+    rdfs:subClassOf ast:Node ;
+    rst:isSupertype true ;
+    rst:nodeTypeId 83 .
+
+rst:citation_reference a owl:Class ;
+    rdfs:label "citation_reference" ;
+    rdfs:isDefinedBy rst: ;
+    rdfs:subClassOf ast:Node ;
+    rst:isSupertype true ;
+    rst:nodeTypeId 40 .
+
+rst:classifier a owl:Class ;
+    rdfs:label "classifier" ;
+    rdfs:isDefinedBy rst: ;
+    rdfs:subClassOf ast:Node ;
+    rst:isSupertype true ;
+    rst:nodeTypeId 112 .
+
+rst:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy rst: ;
+    rdfs:subClassOf ast:Node ;
+    rst:isSupertype true ;
+    rst:nodeTypeId 50,
+        90 .
+
+rst:content a owl:Class ;
+    rdfs:label "content" ;
+    rdfs:isDefinedBy rst: ;
+    rdfs:subClassOf ast:Node ;
+    rst:isSupertype true ;
+    rst:nodeTypeId 113 .
+
+rst:definition a owl:Class ;
+    rdfs:label "definition" ;
+    rdfs:isDefinedBy rst: ;
+    rdfs:subClassOf ast:Node ;
+    rst:isSupertype true ;
+    rst:nodeTypeId 114 .
+
+rst:definition_list a owl:Class ;
+    rdfs:label "definition_list" ;
+    rdfs:isDefinedBy rst: ;
+    rdfs:subClassOf ast:Node ;
+    rst:isSupertype true ;
+    rst:nodeTypeId 67 .
+
+rst:directive a owl:Class ;
+    rdfs:label "directive" ;
+    rdfs:isDefinedBy rst: ;
+    rdfs:subClassOf ast:Node ;
+    rst:isSupertype true ;
+    rst:nodeTypeId 86,
+        89 .
+
+rst:doctest_block a owl:Class ;
+    rdfs:label "doctest_block" ;
+    rdfs:isDefinedBy rst: ;
+    rdfs:subClassOf ast:Node ;
+    rst:isSupertype true ;
+    rst:nodeTypeId 79 .
+
+rst:document a owl:Class ;
+    rdfs:label "document" ;
+    rdfs:isDefinedBy rst: ;
+    rdfs:subClassOf ast:Node ;
+    rst:isSupertype true ;
+    rst:nodeTypeId 52 .
+
+rst:emphasis a owl:Class ;
+    rdfs:label "emphasis" ;
+    rdfs:isDefinedBy rst: ;
+    rdfs:subClassOf ast:Node ;
+    rst:isSupertype true ;
+    rst:nodeTypeId 30 .
+
+rst:enumerated_list a owl:Class ;
+    rdfs:label "enumerated_list" ;
+    rdfs:isDefinedBy rst: ;
+    rdfs:subClassOf ast:Node ;
+    rst:isSupertype true ;
+    rst:nodeTypeId 65 .
+
+rst:field a owl:Class ;
+    rdfs:label "field" ;
+    rdfs:isDefinedBy rst: ;
+    rdfs:subClassOf ast:Node ;
+    rst:isSupertype true ;
+    rst:nodeTypeId 71 .
+
+rst:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+rst:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+rst:field_body a owl:Class,
+        owl:ObjectProperty ;
+    rdfs:label "body (structural)",
+        "field_body" ;
+    rdfs:comment "Structural reference for body field when it contains a non-terminal node" ;
+    rdfs:isDefinedBy rst: ;
+    rdfs:subClassOf ast:Node ;
+    rst:fieldId 1 ;
+    rst:isSupertype true ;
+    rst:nodeTypeId 115 .
+
+rst:field_list a owl:Class ;
+    rdfs:label "field_list" ;
+    rdfs:isDefinedBy rst: ;
+    rdfs:subClassOf ast:Node ;
+    rst:isSupertype true ;
+    rst:nodeTypeId 70 .
+
+rst:field_name a owl:Class ;
+    rdfs:label "field_name" ;
+    rdfs:isDefinedBy rst: ;
+    rdfs:subClassOf ast:Node ;
+    rst:isSupertype true ;
+    rst:nodeTypeId 116 .
+
+rst:footnote a owl:Class ;
+    rdfs:label "footnote" ;
+    rdfs:isDefinedBy rst: ;
+    rdfs:subClassOf ast:Node ;
+    rst:isSupertype true ;
+    rst:nodeTypeId 82 .
+
+rst:footnote_reference a owl:Class ;
+    rdfs:label "footnote_reference" ;
+    rdfs:isDefinedBy rst: ;
+    rdfs:subClassOf ast:Node ;
+    rst:isSupertype true ;
+    rst:nodeTypeId 39 .
+
+rst:inline_target a owl:Class ;
+    rdfs:label "inline_target" ;
+    rdfs:isDefinedBy rst: ;
+    rdfs:subClassOf ast:Node ;
+    rst:isSupertype true ;
+    rst:nodeTypeId 38 .
+
+rst:interpreted_text a owl:Class ;
+    rdfs:label "interpreted_text" ;
+    rdfs:isDefinedBy rst: ;
+    rdfs:subClassOf ast:Node ;
+    rst:isSupertype true ;
+    rst:nodeTypeId 95 .
+
+rst:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+rst:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+rst:label a owl:Class ;
+    rdfs:label "label" ;
+    rdfs:isDefinedBy rst: ;
+    rdfs:subClassOf ast:Node ;
+    rst:isSupertype true ;
+    rst:nodeTypeId 44,
+        45 .
+
+rst:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+rst:line a owl:Class ;
+    rdfs:label "line" ;
+    rdfs:isDefinedBy rst: ;
+    rdfs:subClassOf ast:Node ;
+    rst:isSupertype true ;
+    rst:nodeTypeId 75 .
+
+rst:line_block a owl:Class ;
+    rdfs:label "line_block" ;
+    rdfs:isDefinedBy rst: ;
+    rdfs:subClassOf ast:Node ;
+    rst:isSupertype true ;
+    rst:nodeTypeId 74 .
+
+rst:link a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "link",
+        "link (literal)" ;
+    rdfs:comment "Literal value for link field when it contains a terminal node" ;
+    rdfs:isDefinedBy rst: ;
+    rdfs:subClassOf ast:Node ;
+    rst:fieldId 2 ;
+    rst:isSupertype true ;
+    rst:isTerminalField true ;
+    rst:nodeTypeId 2 .
+
+rst:list_item a owl:Class ;
+    rdfs:label "list_item" ;
+    rdfs:isDefinedBy rst: ;
+    rdfs:subClassOf ast:Node ;
+    rst:isSupertype true ;
+    rst:nodeTypeId 64,
+        66,
+        68 .
+
+rst:literal a owl:Class ;
+    rdfs:label "literal" ;
+    rdfs:isDefinedBy rst: ;
+    rdfs:subClassOf ast:Node ;
+    rst:isSupertype true ;
+    rst:nodeTypeId 36 .
+
+rst:literal_block a owl:Class ;
+    rdfs:label "literal_block" ;
+    rdfs:isDefinedBy rst: ;
+    rdfs:subClassOf ast:Node ;
+    rst:isSupertype true ;
+    rst:nodeTypeId 25 .
+
+rst:name a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "name",
+        "name (literal)" ;
+    rdfs:comment "Literal value for name field when it contains a terminal node" ;
+    rdfs:isDefinedBy rst: ;
+    rdfs:subClassOf ast:Node ;
+    rst:fieldId 3 ;
+    rst:isSupertype true ;
+    rst:isTerminalField true ;
+    rst:nodeTypeId 46 .
+
+rst:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+rst:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+rst:options a owl:Class ;
+    rdfs:label "options" ;
+    rdfs:isDefinedBy rst: ;
+    rdfs:subClassOf ast:Node ;
+    rst:isSupertype true ;
+    rst:nodeTypeId 117 .
+
+rst:paragraph a owl:Class ;
+    rdfs:label "paragraph" ;
+    rdfs:isDefinedBy rst: ;
+    rdfs:subClassOf ast:Node ;
+    rst:isSupertype true ;
+    rst:nodeTypeId 60 .
+
+rst:reference a owl:Class ;
+    rdfs:label "reference" ;
+    rdfs:isDefinedBy rst: ;
+    rdfs:subClassOf ast:Node ;
+    rst:isSupertype true ;
+    rst:nodeTypeId 41 .
+
+rst:role a owl:Class ;
+    rdfs:label "role" ;
+    rdfs:isDefinedBy rst: ;
+    rdfs:subClassOf ast:Node ;
+    rst:isSupertype true ;
+    rst:nodeTypeId 34,
+        35 .
+
+rst:section a owl:Class ;
+    rdfs:label "section" ;
+    rdfs:isDefinedBy rst: ;
+    rdfs:subClassOf ast:Node ;
+    rst:isSupertype true ;
+    rst:nodeTypeId 53 .
+
+rst:standalone_hyperlink a owl:Class ;
+    rdfs:label "standalone_hyperlink" ;
+    rdfs:isDefinedBy rst: ;
+    rdfs:subClassOf ast:Node ;
+    rst:isSupertype true ;
+    rst:nodeTypeId 42 .
+
+rst:strong a owl:Class ;
+    rdfs:label "strong" ;
+    rdfs:isDefinedBy rst: ;
+    rdfs:subClassOf ast:Node ;
+    rst:isSupertype true ;
+    rst:nodeTypeId 31 .
+
+rst:substitution a owl:Class ;
+    rdfs:label "substitution" ;
+    rdfs:isDefinedBy rst: ;
+    rdfs:subClassOf ast:Node ;
+    rst:isSupertype true ;
+    rst:nodeTypeId 49 .
+
+rst:substitution_definition a owl:Class ;
+    rdfs:label "substitution_definition" ;
+    rdfs:isDefinedBy rst: ;
+    rdfs:subClassOf ast:Node ;
+    rst:isSupertype true ;
+    rst:nodeTypeId 88 .
+
+rst:substitution_reference a owl:Class ;
+    rdfs:label "substitution_reference" ;
+    rdfs:isDefinedBy rst: ;
+    rdfs:subClassOf ast:Node ;
+    rst:isSupertype true ;
+    rst:nodeTypeId 37 .
+
+rst:target a owl:Class ;
+    rdfs:label "target" ;
+    rdfs:isDefinedBy rst: ;
+    rdfs:subClassOf ast:Node ;
+    rst:isSupertype true ;
+    rst:nodeTypeId 84,
+        85 .
+
+rst:term a owl:Class ;
+    rdfs:label "term" ;
+    rdfs:isDefinedBy rst: ;
+    rdfs:subClassOf ast:Node ;
+    rst:isSupertype true ;
+    rst:nodeTypeId 118 .
+
+rst:title a owl:Class ;
+    rdfs:label "title" ;
+    rdfs:isDefinedBy rst: ;
+    rdfs:subClassOf ast:Node ;
+    rst:isSupertype true ;
+    rst:nodeTypeId 119 .
+
+rst:transition a owl:Class ;
+    rdfs:label "transition" ;
+    rdfs:isDefinedBy rst: ;
+    rdfs:subClassOf ast:Node ;
+    rst:isSupertype true ;
+    rst:nodeTypeId 18 .
+
+rst:type a owl:Class ;
+    rdfs:label "type" ;
+    rdfs:isDefinedBy rst: ;
+    rdfs:subClassOf ast:Node ;
+    rst:isSupertype true ;
+    rst:nodeTypeId 48 .
+
+rst: a owl:Ontology ;
+    rdfs:label "Rst Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for rst" ;
+    owl:versionInfo "v0.25" ;
+    rst:abiVersion 14 ;
+    rst:fieldCount 3 ;
+    rst:languageName "None" ;
+    rst:nodeKindCount 120 .
+

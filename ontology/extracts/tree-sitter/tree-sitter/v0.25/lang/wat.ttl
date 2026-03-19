@@ -1,0 +1,964 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix wat: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/wat/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+wat:ROOT a owl:Class ;
+    rdfs:label "ROOT" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 88 .
+
+wat:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+wat:align_offset_value a owl:Class ;
+    rdfs:label "align_offset_value" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 3 .
+
+wat:align_value a owl:Class ;
+    rdfs:label "align_value" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 89 .
+
+wat:annotation a owl:Class ;
+    rdfs:label "annotation" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 90 .
+
+wat:annotation_parens a owl:Class ;
+    rdfs:label "annotation_parens" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 91 .
+
+wat:annotation_part a owl:Class ;
+    rdfs:label "annotation_part" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 92 .
+
+wat:block_block a owl:Class ;
+    rdfs:label "block_block" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 93 .
+
+wat:block_if a owl:Class ;
+    rdfs:label "block_if" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 94 .
+
+wat:block_loop a owl:Class ;
+    rdfs:label "block_loop" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 95 .
+
+wat:comment_block a owl:Class ;
+    rdfs:label "comment_block" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 96 .
+
+wat:comment_block_annot a owl:Class ;
+    rdfs:label "comment_block_annot" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 97 .
+
+wat:comment_block_inner a owl:Class ;
+    rdfs:label "comment_block_inner" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 14 .
+
+wat:comment_line a owl:Class ;
+    rdfs:label "comment_line" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 98 .
+
+wat:comment_line_annot a owl:Class ;
+    rdfs:label "comment_line_annot" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 99 .
+
+wat:dec_float a owl:Class ;
+    rdfs:label "dec_float" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 16 .
+
+wat:dec_nat a owl:Class ;
+    rdfs:label "dec_nat" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 17 .
+
+wat:elem_expr a owl:Class ;
+    rdfs:label "elem_expr" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 100 .
+
+wat:elem_expr_expr a owl:Class ;
+    rdfs:label "elem_expr_expr" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 101 .
+
+wat:elem_expr_item a owl:Class ;
+    rdfs:label "elem_expr_item" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 102 .
+
+wat:elem_kind a owl:Class ;
+    rdfs:label "elem_kind" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 103 .
+
+wat:elem_list a owl:Class ;
+    rdfs:label "elem_list" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 104 .
+
+wat:escape_sequence a owl:Class ;
+    rdfs:label "escape_sequence" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 20 .
+
+wat:export a owl:Class ;
+    rdfs:label "export" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 105 .
+
+wat:export_desc a owl:Class ;
+    rdfs:label "export_desc" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 106 .
+
+wat:export_desc_func a owl:Class ;
+    rdfs:label "export_desc_func" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 107 .
+
+wat:export_desc_global a owl:Class ;
+    rdfs:label "export_desc_global" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 108 .
+
+wat:export_desc_memory a owl:Class ;
+    rdfs:label "export_desc_memory" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 109 .
+
+wat:export_desc_table a owl:Class ;
+    rdfs:label "export_desc_table" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 110 .
+
+wat:expr a owl:Class ;
+    rdfs:label "expr" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 111 .
+
+wat:expr1 a owl:Class ;
+    rdfs:label "expr1" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 112 .
+
+wat:expr1_block a owl:Class ;
+    rdfs:label "expr1_block" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 113 .
+
+wat:expr1_call a owl:Class ;
+    rdfs:label "expr1_call" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 114 .
+
+wat:expr1_if a owl:Class ;
+    rdfs:label "expr1_if" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 115 .
+
+wat:expr1_loop a owl:Class ;
+    rdfs:label "expr1_loop" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 116 .
+
+wat:expr1_plain a owl:Class ;
+    rdfs:label "expr1_plain" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 117 .
+
+wat:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+wat:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+wat:float a owl:Class ;
+    rdfs:label "float" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 118 .
+
+wat:func_locals a owl:Class ;
+    rdfs:label "func_locals" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 119 .
+
+wat:func_locals_many a owl:Class ;
+    rdfs:label "func_locals_many" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 120 .
+
+wat:func_locals_one a owl:Class ;
+    rdfs:label "func_locals_one" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 121 .
+
+wat:func_type a owl:Class ;
+    rdfs:label "func_type" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 122 .
+
+wat:func_type_params a owl:Class ;
+    rdfs:label "func_type_params" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 123 .
+
+wat:func_type_params_many a owl:Class ;
+    rdfs:label "func_type_params_many" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 124 .
+
+wat:func_type_params_one a owl:Class ;
+    rdfs:label "func_type_params_one" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 125 .
+
+wat:func_type_results a owl:Class ;
+    rdfs:label "func_type_results" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 126 .
+
+wat:global_type a owl:Class ;
+    rdfs:label "global_type" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 127 .
+
+wat:global_type_imm a owl:Class ;
+    rdfs:label "global_type_imm" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 128 .
+
+wat:global_type_mut a owl:Class ;
+    rdfs:label "global_type_mut" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 129 .
+
+wat:hex_float a owl:Class ;
+    rdfs:label "hex_float" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 31 .
+
+wat:hex_nat a owl:Class ;
+    rdfs:label "hex_nat" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 32 .
+
+wat:identifier a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "identifier",
+        "identifier (literal)" ;
+    rdfs:comment "Literal value for identifier field when it contains a terminal node" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:fieldId 1 ;
+    wat:isSupertype true ;
+    wat:isTerminalField true ;
+    wat:nodeTypeId 33 .
+
+wat:identifier_pattern a owl:Class ;
+    rdfs:label "identifier_pattern" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 34 .
+
+wat:if_block a owl:Class ;
+    rdfs:label "if_block" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 130 .
+
+wat:import a owl:Class ;
+    rdfs:label "import" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 131 .
+
+wat:import_desc a owl:Class ;
+    rdfs:label "import_desc" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 132 .
+
+wat:import_desc_func_type a owl:Class ;
+    rdfs:label "import_desc_func_type" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 133 .
+
+wat:import_desc_global_type a owl:Class ;
+    rdfs:label "import_desc_global_type" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 134 .
+
+wat:import_desc_memory_type a owl:Class ;
+    rdfs:label "import_desc_memory_type" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 135 .
+
+wat:import_desc_table_type a owl:Class ;
+    rdfs:label "import_desc_table_type" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 136 .
+
+wat:import_desc_type_use a owl:Class ;
+    rdfs:label "import_desc_type_use" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 137 .
+
+wat:index a owl:Class ;
+    rdfs:label "index" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 138 .
+
+wat:instr a owl:Class ;
+    rdfs:label "instr" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 139 .
+
+wat:instr_block a owl:Class ;
+    rdfs:label "instr_block" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 140 .
+
+wat:instr_call a owl:Class ;
+    rdfs:label "instr_call" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 141 .
+
+wat:instr_list a owl:Class ;
+    rdfs:label "instr_list" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 142 .
+
+wat:instr_list_call a owl:Class ;
+    rdfs:label "instr_list_call" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 143 .
+
+wat:instr_plain a owl:Class ;
+    rdfs:label "instr_plain" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 144 .
+
+wat:int a owl:Class ;
+    rdfs:label "int" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 153 .
+
+wat:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+wat:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+wat:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+wat:limits a owl:Class ;
+    rdfs:label "limits" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 154 .
+
+wat:memory_fields_data a owl:Class ;
+    rdfs:label "memory_fields_data" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 155 .
+
+wat:memory_fields_type a owl:Class ;
+    rdfs:label "memory_fields_type" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 156 .
+
+wat:memory_type a owl:Class ;
+    rdfs:label "memory_type" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 157 .
+
+wat:memory_use a owl:Class ;
+    rdfs:label "memory_use" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 158 .
+
+wat:module a owl:Class ;
+    rdfs:label "module" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 159 .
+
+wat:module_field a owl:Class ;
+    rdfs:label "module_field" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 160 .
+
+wat:module_field_data a owl:Class ;
+    rdfs:label "module_field_data" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 161 .
+
+wat:module_field_elem a owl:Class ;
+    rdfs:label "module_field_elem" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 162 .
+
+wat:module_field_export a owl:Class ;
+    rdfs:label "module_field_export" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 163 .
+
+wat:module_field_func a owl:Class ;
+    rdfs:label "module_field_func" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 164 .
+
+wat:module_field_global a owl:Class ;
+    rdfs:label "module_field_global" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 165 .
+
+wat:module_field_import a owl:Class ;
+    rdfs:label "module_field_import" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 166 .
+
+wat:module_field_memory a owl:Class ;
+    rdfs:label "module_field_memory" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 167 .
+
+wat:module_field_start a owl:Class ;
+    rdfs:label "module_field_start" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 168 .
+
+wat:module_field_table a owl:Class ;
+    rdfs:label "module_field_table" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 169 .
+
+wat:module_field_type a owl:Class ;
+    rdfs:label "module_field_type" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 170 .
+
+wat:name a owl:Class ;
+    rdfs:label "name" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 171 .
+
+wat:nan a owl:Class ;
+    rdfs:label "nan" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 71 .
+
+wat:nat a owl:Class ;
+    rdfs:label "nat" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 172 .
+
+wat:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+wat:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+wat:num_type_f32 a owl:Class ;
+    rdfs:label "num_type_f32" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 72 .
+
+wat:num_type_f64 a owl:Class ;
+    rdfs:label "num_type_f64" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 73 .
+
+wat:num_type_i32 a owl:Class ;
+    rdfs:label "num_type_i32" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 74 .
+
+wat:num_type_i64 a owl:Class ;
+    rdfs:label "num_type_i64" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 75 .
+
+wat:num_type_v128 a owl:Class ;
+    rdfs:label "num_type_v128" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 76 .
+
+wat:offset a owl:Class ;
+    rdfs:label "offset" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 173 .
+
+wat:offset_const_expr a owl:Class ;
+    rdfs:label "offset_const_expr" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 174 .
+
+wat:offset_expr a owl:Class ;
+    rdfs:label "offset_expr" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 175 .
+
+wat:offset_value a owl:Class ;
+    rdfs:label "offset_value" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 176 .
+
+wat:op_const a owl:Class ;
+    rdfs:label "op_const" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 145 .
+
+wat:op_func_bind a owl:Class ;
+    rdfs:label "op_func_bind" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 146 .
+
+wat:op_index a owl:Class ;
+    rdfs:label "op_index" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 41 .
+
+wat:op_index_opt a owl:Class ;
+    rdfs:label "op_index_opt" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 42 .
+
+wat:op_index_opt_offset_opt_align_opt a owl:Class ;
+    rdfs:label "op_index_opt_offset_opt_align_opt" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 43 .
+
+wat:op_let a owl:Class ;
+    rdfs:label "op_let" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 147 .
+
+wat:op_nullary a owl:Class ;
+    rdfs:label "op_nullary" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 40 .
+
+wat:op_select a owl:Class ;
+    rdfs:label "op_select" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 148 .
+
+wat:op_simd_const a owl:Class ;
+    rdfs:label "op_simd_const" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 149 .
+
+wat:op_simd_lane a owl:Class ;
+    rdfs:label "op_simd_lane" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 150 .
+
+wat:op_simd_offset_opt_align_opt a owl:Class ;
+    rdfs:label "op_simd_offset_opt_align_opt" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 44 .
+
+wat:op_table_copy a owl:Class ;
+    rdfs:label "op_table_copy" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 151 .
+
+wat:op_table_init a owl:Class ;
+    rdfs:label "op_table_init" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 152 .
+
+wat:pat00 a owl:Class ;
+    rdfs:label "pat00" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 45 .
+
+wat:pat01 a owl:Class ;
+    rdfs:label "pat01" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 46 .
+
+wat:ref_kind a owl:Class ;
+    rdfs:label "ref_kind" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 78 .
+
+wat:ref_type a owl:Class ;
+    rdfs:label "ref_type" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 177 .
+
+wat:ref_type_externref a owl:Class ;
+    rdfs:label "ref_type_externref" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 79 .
+
+wat:ref_type_funcref a owl:Class ;
+    rdfs:label "ref_type_funcref" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 80 .
+
+wat:ref_type_ref a owl:Class ;
+    rdfs:label "ref_type_ref" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 178 .
+
+wat:reserved a owl:Class ;
+    rdfs:label "reserved" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 83 .
+
+wat:share a owl:Class ;
+    rdfs:label "share" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 84 .
+
+wat:sign a owl:Class ;
+    rdfs:label "sign" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 85 .
+
+wat:string a owl:Class ;
+    rdfs:label "string" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 179 .
+
+wat:table_fields_elem a owl:Class ;
+    rdfs:label "table_fields_elem" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 180 .
+
+wat:table_fields_type a owl:Class ;
+    rdfs:label "table_fields_type" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 181 .
+
+wat:table_type a owl:Class ;
+    rdfs:label "table_type" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 182 .
+
+wat:table_use a owl:Class ;
+    rdfs:label "table_use" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 183 .
+
+wat:type_field a owl:Class ;
+    rdfs:label "type_field" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 184 .
+
+wat:type_use a owl:Class ;
+    rdfs:label "type_use" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 185 .
+
+wat:value_type a owl:Class ;
+    rdfs:label "value_type" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 186 .
+
+wat:value_type_num_type a owl:Class ;
+    rdfs:label "value_type_num_type" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 187 .
+
+wat:value_type_ref_type a owl:Class ;
+    rdfs:label "value_type_ref_type" ;
+    rdfs:isDefinedBy wat: ;
+    rdfs:subClassOf ast:Node ;
+    wat:isSupertype true ;
+    wat:nodeTypeId 188 .
+
+wat: a owl:Ontology ;
+    rdfs:label "Wat Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for wat" ;
+    owl:versionInfo "v0.25" ;
+    wat:abiVersion 14 ;
+    wat:fieldCount 1 ;
+    wat:languageName "None" ;
+    wat:nodeKindCount 207 .
+

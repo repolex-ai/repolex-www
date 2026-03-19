@@ -1,0 +1,211 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix cpon: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/cpon/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+cpon:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+cpon:array a owl:Class ;
+    rdfs:label "array" ;
+    rdfs:isDefinedBy cpon: ;
+    rdfs:subClassOf ast:Node ;
+    cpon:isSupertype true ;
+    cpon:nodeTypeId 33 .
+
+cpon:boolean a owl:Class ;
+    rdfs:label "boolean" ;
+    rdfs:isDefinedBy cpon: ;
+    rdfs:subClassOf ast:Node ;
+    cpon:isSupertype true ;
+    cpon:nodeTypeId 37 .
+
+cpon:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy cpon: ;
+    rdfs:subClassOf ast:Node ;
+    cpon:isSupertype true ;
+    cpon:nodeTypeId 24 .
+
+cpon:datetime a owl:Class ;
+    rdfs:label "datetime" ;
+    rdfs:isDefinedBy cpon: ;
+    rdfs:subClassOf ast:Node ;
+    cpon:isSupertype true ;
+    cpon:nodeTypeId 36 .
+
+cpon:document a owl:Class ;
+    rdfs:label "document" ;
+    rdfs:isDefinedBy cpon: ;
+    rdfs:subClassOf ast:Node ;
+    cpon:isSupertype true ;
+    cpon:nodeTypeId 25 .
+
+cpon:esc_blob a owl:Class ;
+    rdfs:label "esc_blob" ;
+    rdfs:isDefinedBy cpon: ;
+    rdfs:subClassOf ast:Node ;
+    cpon:isSupertype true ;
+    cpon:nodeTypeId 39 .
+
+cpon:escape_sequence a owl:Class ;
+    rdfs:label "escape_sequence" ;
+    rdfs:isDefinedBy cpon: ;
+    rdfs:subClassOf ast:Node ;
+    cpon:isSupertype true ;
+    cpon:nodeTypeId 13 .
+
+cpon:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+cpon:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+cpon:field_key a owl:ObjectProperty ;
+    rdfs:label "key (structural)" ;
+    rdfs:comment "Structural reference for key field when it contains a non-terminal node" ;
+    cpon:fieldId 1 .
+
+cpon:field_value a owl:ObjectProperty ;
+    rdfs:label "value (structural)" ;
+    rdfs:comment "Structural reference for value field when it contains a non-terminal node" ;
+    cpon:fieldId 2 .
+
+cpon:float a owl:Class ;
+    rdfs:label "float" ;
+    rdfs:isDefinedBy cpon: ;
+    rdfs:subClassOf ast:Node ;
+    cpon:isSupertype true ;
+    cpon:nodeTypeId 15 .
+
+cpon:hex_blob a owl:Class ;
+    rdfs:label "hex_blob" ;
+    rdfs:isDefinedBy cpon: ;
+    rdfs:subClassOf ast:Node ;
+    cpon:isSupertype true ;
+    cpon:nodeTypeId 38 .
+
+cpon:imap a owl:Class ;
+    rdfs:label "imap" ;
+    rdfs:isDefinedBy cpon: ;
+    rdfs:subClassOf ast:Node ;
+    cpon:isSupertype true ;
+    cpon:nodeTypeId 31 .
+
+cpon:ipair a owl:Class ;
+    rdfs:label "ipair" ;
+    rdfs:isDefinedBy cpon: ;
+    rdfs:subClassOf ast:Node ;
+    cpon:isSupertype true ;
+    cpon:nodeTypeId 32 .
+
+cpon:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+cpon:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+cpon:key a owl:DatatypeProperty ;
+    rdfs:label "key (literal)" ;
+    rdfs:comment "Literal value for key field when it contains a terminal node" ;
+    cpon:fieldId 1 ;
+    cpon:isTerminalField true .
+
+cpon:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+cpon:map a owl:Class ;
+    rdfs:label "map" ;
+    rdfs:isDefinedBy cpon: ;
+    rdfs:subClassOf ast:Node ;
+    cpon:isSupertype true ;
+    cpon:nodeTypeId 29 .
+
+cpon:meta_map a owl:Class ;
+    rdfs:label "meta_map" ;
+    rdfs:isDefinedBy cpon: ;
+    rdfs:subClassOf ast:Node ;
+    cpon:isSupertype true ;
+    cpon:nodeTypeId 27 .
+
+cpon:meta_pair a owl:Class ;
+    rdfs:label "meta_pair" ;
+    rdfs:isDefinedBy cpon: ;
+    rdfs:subClassOf ast:Node ;
+    cpon:isSupertype true ;
+    cpon:nodeTypeId 28 .
+
+cpon:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+cpon:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+cpon:null a owl:Class ;
+    rdfs:label "null" ;
+    rdfs:isDefinedBy cpon: ;
+    rdfs:subClassOf ast:Node ;
+    cpon:isSupertype true ;
+    cpon:nodeTypeId 20 .
+
+cpon:number a owl:Class ;
+    rdfs:label "number" ;
+    rdfs:isDefinedBy cpon: ;
+    rdfs:subClassOf ast:Node ;
+    cpon:isSupertype true ;
+    cpon:nodeTypeId 14 .
+
+cpon:pair a owl:Class ;
+    rdfs:label "pair" ;
+    rdfs:isDefinedBy cpon: ;
+    rdfs:subClassOf ast:Node ;
+    cpon:isSupertype true ;
+    cpon:nodeTypeId 30 .
+
+cpon:string a owl:Class ;
+    rdfs:label "string" ;
+    rdfs:isDefinedBy cpon: ;
+    rdfs:subClassOf ast:Node ;
+    cpon:isSupertype true ;
+    cpon:nodeTypeId 34 .
+
+cpon:string_content a owl:Class ;
+    rdfs:label "string_content" ;
+    rdfs:isDefinedBy cpon: ;
+    rdfs:subClassOf ast:Node ;
+    cpon:isSupertype true ;
+    cpon:nodeTypeId 11 .
+
+cpon:value a owl:DatatypeProperty ;
+    rdfs:label "value (literal)" ;
+    rdfs:comment "Literal value for value field when it contains a terminal node" ;
+    cpon:fieldId 2 ;
+    cpon:isTerminalField true .
+
+cpon: a owl:Ontology ;
+    rdfs:label "Cpon Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for cpon" ;
+    owl:versionInfo "v0.25" ;
+    cpon:abiVersion 14 ;
+    cpon:fieldCount 2 ;
+    cpon:languageName "None" ;
+    cpon:nodeKindCount 46 .
+

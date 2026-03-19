@@ -1,0 +1,221 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix uxntal: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/uxntal/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+uxntal:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+uxntal:absolute_pad_operation a owl:Class ;
+    rdfs:label "absolute_pad_operation" ;
+    rdfs:isDefinedBy uxntal: ;
+    rdfs:subClassOf ast:Node ;
+    uxntal:isSupertype true ;
+    uxntal:nodeTypeId 293 .
+
+uxntal:brackets a owl:Class ;
+    rdfs:label "brackets" ;
+    rdfs:isDefinedBy uxntal: ;
+    rdfs:subClassOf ast:Node ;
+    uxntal:isSupertype true ;
+    uxntal:nodeTypeId 300 .
+
+uxntal:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy uxntal: ;
+    rdfs:subClassOf ast:Node ;
+    uxntal:isSupertype true ;
+    uxntal:nodeTypeId 285 .
+
+uxntal:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+uxntal:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+uxntal:field_absolute a owl:ObjectProperty ;
+    rdfs:label "absolute (structural)" ;
+    rdfs:comment "Structural reference for absolute field when it contains a non-terminal node" ;
+    uxntal:fieldId 1 .
+
+uxntal:field_immediate a owl:ObjectProperty ;
+    rdfs:label "immediate (structural)" ;
+    rdfs:comment "Structural reference for immediate field when it contains a non-terminal node" ;
+    uxntal:fieldId 2 .
+
+uxntal:field_relative a owl:ObjectProperty ;
+    rdfs:label "relative (structural)" ;
+    rdfs:comment "Structural reference for relative field when it contains a non-terminal node" ;
+    uxntal:fieldId 3 .
+
+uxntal:field_rune_start a owl:ObjectProperty ;
+    rdfs:label "rune_start (structural)" ;
+    rdfs:comment "Structural reference for rune_start field when it contains a non-terminal node" ;
+    uxntal:fieldId 4 .
+
+uxntal:field_sublabel a owl:ObjectProperty ;
+    rdfs:label "sublabel (structural)" ;
+    rdfs:comment "Structural reference for sublabel field when it contains a non-terminal node" ;
+    uxntal:fieldId 5 .
+
+uxntal:field_zero_page a owl:ObjectProperty ;
+    rdfs:label "zero_page (structural)" ;
+    rdfs:comment "Structural reference for zero_page field when it contains a non-terminal node" ;
+    uxntal:fieldId 6 .
+
+uxntal:hex_lit_value a owl:Class ;
+    rdfs:label "hex_lit_value" ;
+    rdfs:isDefinedBy uxntal: ;
+    rdfs:subClassOf ast:Node ;
+    uxntal:isSupertype true ;
+    uxntal:nodeTypeId 267 .
+
+uxntal:hex_literal a owl:Class ;
+    rdfs:label "hex_literal" ;
+    rdfs:isDefinedBy uxntal: ;
+    rdfs:subClassOf ast:Node ;
+    uxntal:isSupertype true ;
+    uxntal:nodeTypeId 295 .
+
+uxntal:identifier a owl:Class ;
+    rdfs:label "identifier" ;
+    rdfs:isDefinedBy uxntal: ;
+    rdfs:subClassOf ast:Node ;
+    uxntal:isSupertype true ;
+    uxntal:nodeTypeId 1,
+        3,
+        270 .
+
+uxntal:include a owl:Class ;
+    rdfs:label "include" ;
+    rdfs:isDefinedBy uxntal: ;
+    rdfs:subClassOf ast:Node ;
+    uxntal:isSupertype true ;
+    uxntal:nodeTypeId 291 .
+
+uxntal:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+uxntal:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+uxntal:label a owl:Class ;
+    rdfs:label "label" ;
+    rdfs:isDefinedBy uxntal: ;
+    rdfs:subClassOf ast:Node ;
+    uxntal:isSupertype true ;
+    uxntal:nodeTypeId 296 .
+
+uxntal:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+uxntal:macro a owl:Class ;
+    rdfs:label "macro" ;
+    rdfs:isDefinedBy uxntal: ;
+    rdfs:subClassOf ast:Node ;
+    uxntal:isSupertype true ;
+    uxntal:nodeTypeId 290 .
+
+uxntal:memory_execution a owl:Class ;
+    rdfs:label "memory_execution" ;
+    rdfs:isDefinedBy uxntal: ;
+    rdfs:subClassOf ast:Node ;
+    uxntal:isSupertype true ;
+    uxntal:nodeTypeId 287 .
+
+uxntal:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+uxntal:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+uxntal:number a owl:Class ;
+    rdfs:label "number" ;
+    rdfs:isDefinedBy uxntal: ;
+    rdfs:subClassOf ast:Node ;
+    uxntal:isSupertype true ;
+    uxntal:nodeTypeId 284 .
+
+uxntal:opcode a owl:Class ;
+    rdfs:label "opcode" ;
+    rdfs:isDefinedBy uxntal: ;
+    rdfs:subClassOf ast:Node ;
+    uxntal:isSupertype true ;
+    uxntal:nodeTypeId 292 .
+
+uxntal:program a owl:Class ;
+    rdfs:label "program" ;
+    rdfs:isDefinedBy uxntal: ;
+    rdfs:subClassOf ast:Node ;
+    uxntal:isSupertype true ;
+    uxntal:nodeTypeId 286 .
+
+uxntal:raw_ascii a owl:Class ;
+    rdfs:label "raw_ascii" ;
+    rdfs:isDefinedBy uxntal: ;
+    rdfs:subClassOf ast:Node ;
+    uxntal:isSupertype true ;
+    uxntal:nodeTypeId 301 .
+
+uxntal:relative_pad_operation a owl:Class ;
+    rdfs:label "relative_pad_operation" ;
+    rdfs:isDefinedBy uxntal: ;
+    rdfs:subClassOf ast:Node ;
+    uxntal:isSupertype true ;
+    uxntal:nodeTypeId 294 .
+
+uxntal:rune a owl:Class ;
+    rdfs:label "rune" ;
+    rdfs:isDefinedBy uxntal: ;
+    rdfs:subClassOf ast:Node ;
+    uxntal:isSupertype true ;
+    uxntal:nodeTypeId 298 .
+
+uxntal:rune_char a owl:Class ;
+    rdfs:label "rune_char" ;
+    rdfs:isDefinedBy uxntal: ;
+    rdfs:subClassOf ast:Node ;
+    uxntal:isSupertype true ;
+    uxntal:nodeTypeId 299 .
+
+uxntal:sublabel_reference a owl:Class ;
+    rdfs:label "sublabel_reference" ;
+    rdfs:isDefinedBy uxntal: ;
+    rdfs:subClassOf ast:Node ;
+    uxntal:isSupertype true ;
+    uxntal:nodeTypeId 297 .
+
+uxntal:subroutine a owl:Class ;
+    rdfs:label "subroutine" ;
+    rdfs:isDefinedBy uxntal: ;
+    rdfs:subClassOf ast:Node ;
+    uxntal:isSupertype true ;
+    uxntal:nodeTypeId 288 .
+
+uxntal: a owl:Ontology ;
+    rdfs:label "Uxntal Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for uxntal" ;
+    owl:versionInfo "v0.25" ;
+    uxntal:abiVersion 14 ;
+    uxntal:fieldCount 6 ;
+    uxntal:languageName "None" ;
+    uxntal:nodeKindCount 305 .
+

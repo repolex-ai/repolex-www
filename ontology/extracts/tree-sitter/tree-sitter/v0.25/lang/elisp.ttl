@@ -1,0 +1,219 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix elisp: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/elisp/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+elisp:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+elisp:byte_compiled_file_name a owl:Class ;
+    rdfs:label "byte_compiled_file_name" ;
+    rdfs:isDefinedBy elisp: ;
+    rdfs:subClassOf ast:Node ;
+    elisp:isSupertype true ;
+    elisp:nodeTypeId 46 .
+
+elisp:bytecode a owl:Class ;
+    rdfs:label "bytecode" ;
+    rdfs:isDefinedBy elisp: ;
+    rdfs:subClassOf ast:Node ;
+    elisp:isSupertype true ;
+    elisp:nodeTypeId 79 .
+
+elisp:char a owl:Class ;
+    rdfs:label "char" ;
+    rdfs:isDefinedBy elisp: ;
+    rdfs:subClassOf ast:Node ;
+    elisp:isSupertype true ;
+    elisp:nodeTypeId 72 .
+
+elisp:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy elisp: ;
+    rdfs:subClassOf ast:Node ;
+    elisp:isSupertype true ;
+    elisp:nodeTypeId 63 .
+
+elisp:docstring a owl:DatatypeProperty ;
+    rdfs:label "docstring (literal)" ;
+    rdfs:comment "Literal value for docstring field when it contains a terminal node" ;
+    elisp:fieldId 1 ;
+    elisp:isTerminalField true .
+
+elisp:dot a owl:Class ;
+    rdfs:label "dot" ;
+    rdfs:isDefinedBy elisp: ;
+    rdfs:subClassOf ast:Node ;
+    elisp:isSupertype true ;
+    elisp:nodeTypeId 57 .
+
+elisp:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+elisp:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+elisp:field_parameters a owl:ObjectProperty ;
+    rdfs:label "parameters (structural)" ;
+    rdfs:comment "Structural reference for parameters field when it contains a non-terminal node" ;
+    elisp:fieldId 3 .
+
+elisp:float a owl:Class ;
+    rdfs:label "float" ;
+    rdfs:isDefinedBy elisp: ;
+    rdfs:subClassOf ast:Node ;
+    elisp:isSupertype true ;
+    elisp:nodeTypeId 70 .
+
+elisp:function_definition a owl:Class ;
+    rdfs:label "function_definition" ;
+    rdfs:isDefinedBy elisp: ;
+    rdfs:subClassOf ast:Node ;
+    elisp:isSupertype true ;
+    elisp:nodeTypeId 67 .
+
+elisp:hash_table a owl:Class ;
+    rdfs:label "hash_table" ;
+    rdfs:isDefinedBy elisp: ;
+    rdfs:subClassOf ast:Node ;
+    elisp:isSupertype true ;
+    elisp:nodeTypeId 81 .
+
+elisp:integer a owl:Class ;
+    rdfs:label "integer" ;
+    rdfs:isDefinedBy elisp: ;
+    rdfs:subClassOf ast:Node ;
+    elisp:isSupertype true ;
+    elisp:nodeTypeId 71 .
+
+elisp:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+elisp:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+elisp:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+elisp:list a owl:Class ;
+    rdfs:label "list" ;
+    rdfs:isDefinedBy elisp: ;
+    rdfs:subClassOf ast:Node ;
+    elisp:isSupertype true ;
+    elisp:nodeTypeId 77 .
+
+elisp:macro_definition a owl:Class ;
+    rdfs:label "macro_definition" ;
+    rdfs:isDefinedBy elisp: ;
+    rdfs:subClassOf ast:Node ;
+    elisp:isSupertype true ;
+    elisp:nodeTypeId 68 .
+
+elisp:name a owl:DatatypeProperty ;
+    rdfs:label "name (literal)" ;
+    rdfs:comment "Literal value for name field when it contains a terminal node" ;
+    elisp:fieldId 2 ;
+    elisp:isTerminalField true .
+
+elisp:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+elisp:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+elisp:parameters a owl:DatatypeProperty ;
+    rdfs:label "parameters (literal)" ;
+    rdfs:comment "Literal value for parameters field when it contains a terminal node" ;
+    elisp:fieldId 3 ;
+    elisp:isTerminalField true .
+
+elisp:quote a owl:Class ;
+    rdfs:label "quote" ;
+    rdfs:isDefinedBy elisp: ;
+    rdfs:subClassOf ast:Node ;
+    elisp:isSupertype true ;
+    elisp:nodeTypeId 74 .
+
+elisp:source_file a owl:Class ;
+    rdfs:label "source_file" ;
+    rdfs:isDefinedBy elisp: ;
+    rdfs:subClassOf ast:Node ;
+    elisp:isSupertype true ;
+    elisp:nodeTypeId 64 .
+
+elisp:special_form a owl:Class ;
+    rdfs:label "special_form" ;
+    rdfs:isDefinedBy elisp: ;
+    rdfs:subClassOf ast:Node ;
+    elisp:isSupertype true ;
+    elisp:nodeTypeId 66 .
+
+elisp:string a owl:Class ;
+    rdfs:label "string" ;
+    rdfs:isDefinedBy elisp: ;
+    rdfs:subClassOf ast:Node ;
+    elisp:isSupertype true ;
+    elisp:nodeTypeId 45 .
+
+elisp:string_text_properties a owl:Class ;
+    rdfs:label "string_text_properties" ;
+    rdfs:isDefinedBy elisp: ;
+    rdfs:subClassOf ast:Node ;
+    elisp:isSupertype true ;
+    elisp:nodeTypeId 80 .
+
+elisp:symbol a owl:Class ;
+    rdfs:label "symbol" ;
+    rdfs:isDefinedBy elisp: ;
+    rdfs:subClassOf ast:Node ;
+    elisp:isSupertype true ;
+    elisp:nodeTypeId 73 .
+
+elisp:unquote a owl:Class ;
+    rdfs:label "unquote" ;
+    rdfs:isDefinedBy elisp: ;
+    rdfs:subClassOf ast:Node ;
+    elisp:isSupertype true ;
+    elisp:nodeTypeId 76 .
+
+elisp:unquote_splice a owl:Class ;
+    rdfs:label "unquote_splice" ;
+    rdfs:isDefinedBy elisp: ;
+    rdfs:subClassOf ast:Node ;
+    elisp:isSupertype true ;
+    elisp:nodeTypeId 75 .
+
+elisp:vector a owl:Class ;
+    rdfs:label "vector" ;
+    rdfs:isDefinedBy elisp: ;
+    rdfs:subClassOf ast:Node ;
+    elisp:isSupertype true ;
+    elisp:nodeTypeId 78 .
+
+elisp: a owl:Ontology ;
+    rdfs:label "Elisp Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for elisp" ;
+    owl:versionInfo "v0.25" ;
+    elisp:abiVersion 14 ;
+    elisp:fieldCount 3 ;
+    elisp:languageName "None" ;
+    elisp:nodeKindCount 83 .
+

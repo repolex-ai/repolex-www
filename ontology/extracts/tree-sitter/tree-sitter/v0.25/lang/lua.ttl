@@ -1,0 +1,504 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix lua: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/lua/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+lua:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+lua:arguments a owl:Class ;
+    rdfs:label "arguments" ;
+    rdfs:isDefinedBy lua: ;
+    rdfs:subClassOf ast:Node ;
+    lua:isSupertype true ;
+    lua:nodeTypeId 120 .
+
+lua:assignment_statement a owl:Class ;
+    rdfs:label "assignment_statement" ;
+    rdfs:isDefinedBy lua: ;
+    rdfs:subClassOf ast:Node ;
+    lua:isSupertype true ;
+    lua:nodeTypeId 77,
+        99 .
+
+lua:attribute a owl:Class ;
+    rdfs:label "attribute" ;
+    rdfs:isDefinedBy lua: ;
+    rdfs:subClassOf ast:Node ;
+    lua:isSupertype true ;
+    lua:nodeTypeId 102 .
+
+lua:binary_expression a owl:Class ;
+    rdfs:label "binary_expression" ;
+    rdfs:isDefinedBy lua: ;
+    rdfs:subClassOf ast:Node ;
+    lua:isSupertype true ;
+    lua:nodeTypeId 126 .
+
+lua:block a owl:Class ;
+    rdfs:label "block" ;
+    rdfs:isDefinedBy lua: ;
+    rdfs:subClassOf ast:Node ;
+    lua:isSupertype true ;
+    lua:nodeTypeId 73 .
+
+lua:bracket_index_expression a owl:Class ;
+    rdfs:label "bracket_index_expression" ;
+    rdfs:isDefinedBy lua: ;
+    rdfs:subClassOf ast:Node ;
+    lua:isSupertype true ;
+    lua:nodeTypeId 116 .
+
+lua:break_statement a owl:Class ;
+    rdfs:label "break_statement" ;
+    rdfs:isDefinedBy lua: ;
+    rdfs:subClassOf ast:Node ;
+    lua:isSupertype true ;
+    lua:nodeTypeId 8 .
+
+lua:chunk a owl:Class ;
+    rdfs:label "chunk" ;
+    rdfs:isDefinedBy lua: ;
+    rdfs:subClassOf ast:Node ;
+    lua:isSupertype true ;
+    lua:nodeTypeId 72 .
+
+lua:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy lua: ;
+    rdfs:subClassOf ast:Node ;
+    lua:isSupertype true ;
+    lua:nodeTypeId 128 .
+
+lua:comment_content a owl:Class ;
+    rdfs:label "comment_content" ;
+    rdfs:isDefinedBy lua: ;
+    rdfs:subClassOf ast:Node ;
+    lua:isSupertype true ;
+    lua:nodeTypeId 65,
+        67 .
+
+lua:content a owl:DatatypeProperty ;
+    rdfs:label "content (literal)" ;
+    rdfs:comment "Literal value for content field when it contains a terminal node" ;
+    lua:fieldId 8 ;
+    lua:isTerminalField true .
+
+lua:do_statement a owl:Class ;
+    rdfs:label "do_statement" ;
+    rdfs:isDefinedBy lua: ;
+    rdfs:subClassOf ast:Node ;
+    lua:isSupertype true ;
+    lua:nodeTypeId 82 .
+
+lua:dot_index_expression a owl:Class ;
+    rdfs:label "dot_index_expression" ;
+    rdfs:isDefinedBy lua: ;
+    rdfs:subClassOf ast:Node ;
+    lua:isSupertype true ;
+    lua:nodeTypeId 96,
+        117 .
+
+lua:else_statement a owl:Class ;
+    rdfs:label "else_statement" ;
+    rdfs:isDefinedBy lua: ;
+    rdfs:subClassOf ast:Node ;
+    lua:isSupertype true ;
+    lua:nodeTypeId 87 .
+
+lua:elseif_statement a owl:Class ;
+    rdfs:label "elseif_statement" ;
+    rdfs:isDefinedBy lua: ;
+    rdfs:subClassOf ast:Node ;
+    lua:isSupertype true ;
+    lua:nodeTypeId 86 .
+
+lua:empty_statement a owl:Class ;
+    rdfs:label "empty_statement" ;
+    rdfs:isDefinedBy lua: ;
+    rdfs:subClassOf ast:Node ;
+    lua:isSupertype true ;
+    lua:nodeTypeId 76 .
+
+lua:escape_sequence a owl:Class ;
+    rdfs:label "escape_sequence" ;
+    rdfs:isDefinedBy lua: ;
+    rdfs:subClassOf ast:Node ;
+    lua:isSupertype true ;
+    lua:nodeTypeId 35 .
+
+lua:expression_list a owl:Class ;
+    rdfs:label "expression_list" ;
+    rdfs:isDefinedBy lua: ;
+    rdfs:subClassOf ast:Node ;
+    lua:isSupertype true ;
+    lua:nodeTypeId 79,
+        103 .
+
+lua:false a owl:Class ;
+    rdfs:label "false" ;
+    rdfs:isDefinedBy lua: ;
+    rdfs:subClassOf ast:Node ;
+    lua:isSupertype true ;
+    lua:nodeTypeId 28 .
+
+lua:field a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "field",
+        "field (literal)" ;
+    rdfs:comment "Literal value for field field when it contains a terminal node" ;
+    rdfs:isDefinedBy lua: ;
+    rdfs:subClassOf ast:Node ;
+    lua:fieldId 10 ;
+    lua:isSupertype true ;
+    lua:isTerminalField true ;
+    lua:nodeTypeId 125 .
+
+lua:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+lua:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+lua:field_alternative a owl:ObjectProperty ;
+    rdfs:label "alternative (structural)" ;
+    rdfs:comment "Structural reference for alternative field when it contains a non-terminal node" ;
+    lua:fieldId 1 .
+
+lua:field_arguments a owl:ObjectProperty ;
+    rdfs:label "arguments (structural)" ;
+    rdfs:comment "Structural reference for arguments field when it contains a non-terminal node" ;
+    lua:fieldId 2 .
+
+lua:field_attribute a owl:ObjectProperty ;
+    rdfs:label "attribute (structural)" ;
+    rdfs:comment "Structural reference for attribute field when it contains a non-terminal node" ;
+    lua:fieldId 3 .
+
+lua:field_body a owl:ObjectProperty ;
+    rdfs:label "body (structural)" ;
+    rdfs:comment "Structural reference for body field when it contains a non-terminal node" ;
+    lua:fieldId 4 .
+
+lua:field_clause a owl:ObjectProperty ;
+    rdfs:label "clause (structural)" ;
+    rdfs:comment "Structural reference for clause field when it contains a non-terminal node" ;
+    lua:fieldId 5 .
+
+lua:field_condition a owl:ObjectProperty ;
+    rdfs:label "condition (structural)" ;
+    rdfs:comment "Structural reference for condition field when it contains a non-terminal node" ;
+    lua:fieldId 6 .
+
+lua:field_consequence a owl:ObjectProperty ;
+    rdfs:label "consequence (structural)" ;
+    rdfs:comment "Structural reference for consequence field when it contains a non-terminal node" ;
+    lua:fieldId 7 .
+
+lua:field_content a owl:ObjectProperty ;
+    rdfs:label "content (structural)" ;
+    rdfs:comment "Structural reference for content field when it contains a non-terminal node" ;
+    lua:fieldId 8 .
+
+lua:field_end a owl:ObjectProperty ;
+    rdfs:label "end (structural)" ;
+    rdfs:comment "Structural reference for end field when it contains a non-terminal node" ;
+    lua:fieldId 9 .
+
+lua:field_field a owl:ObjectProperty ;
+    rdfs:label "field (structural)" ;
+    rdfs:comment "Structural reference for field field when it contains a non-terminal node" ;
+    lua:fieldId 10 .
+
+lua:field_left a owl:ObjectProperty ;
+    rdfs:label "left (structural)" ;
+    rdfs:comment "Structural reference for left field when it contains a non-terminal node" ;
+    lua:fieldId 11 .
+
+lua:field_name a owl:ObjectProperty ;
+    rdfs:label "name (structural)" ;
+    rdfs:comment "Structural reference for name field when it contains a non-terminal node" ;
+    lua:fieldId 14 .
+
+lua:field_operand a owl:ObjectProperty ;
+    rdfs:label "operand (structural)" ;
+    rdfs:comment "Structural reference for operand field when it contains a non-terminal node" ;
+    lua:fieldId 15 .
+
+lua:field_parameters a owl:ObjectProperty ;
+    rdfs:label "parameters (structural)" ;
+    rdfs:comment "Structural reference for parameters field when it contains a non-terminal node" ;
+    lua:fieldId 16 .
+
+lua:field_right a owl:ObjectProperty ;
+    rdfs:label "right (structural)" ;
+    rdfs:comment "Structural reference for right field when it contains a non-terminal node" ;
+    lua:fieldId 17 .
+
+lua:field_start a owl:ObjectProperty ;
+    rdfs:label "start (structural)" ;
+    rdfs:comment "Structural reference for start field when it contains a non-terminal node" ;
+    lua:fieldId 18 .
+
+lua:field_step a owl:ObjectProperty ;
+    rdfs:label "step (structural)" ;
+    rdfs:comment "Structural reference for step field when it contains a non-terminal node" ;
+    lua:fieldId 19 .
+
+lua:field_table a owl:ObjectProperty ;
+    rdfs:label "table (structural)" ;
+    rdfs:comment "Structural reference for table field when it contains a non-terminal node" ;
+    lua:fieldId 20 .
+
+lua:field_value a owl:ObjectProperty ;
+    rdfs:label "value (structural)" ;
+    rdfs:comment "Structural reference for value field when it contains a non-terminal node" ;
+    lua:fieldId 21 .
+
+lua:for_generic_clause a owl:Class ;
+    rdfs:label "for_generic_clause" ;
+    rdfs:isDefinedBy lua: ;
+    rdfs:subClassOf ast:Node ;
+    lua:isSupertype true ;
+    lua:nodeTypeId 89 .
+
+lua:for_numeric_clause a owl:Class ;
+    rdfs:label "for_numeric_clause" ;
+    rdfs:isDefinedBy lua: ;
+    rdfs:subClassOf ast:Node ;
+    lua:isSupertype true ;
+    lua:nodeTypeId 90 .
+
+lua:for_statement a owl:Class ;
+    rdfs:label "for_statement" ;
+    rdfs:isDefinedBy lua: ;
+    rdfs:subClassOf ast:Node ;
+    lua:isSupertype true ;
+    lua:nodeTypeId 88 .
+
+lua:function_call a owl:Class ;
+    rdfs:label "function_call" ;
+    rdfs:isDefinedBy lua: ;
+    rdfs:subClassOf ast:Node ;
+    lua:isSupertype true ;
+    lua:nodeTypeId 118 .
+
+lua:function_declaration a owl:Class ;
+    rdfs:label "function_declaration" ;
+    rdfs:isDefinedBy lua: ;
+    rdfs:subClassOf ast:Node ;
+    lua:isSupertype true ;
+    lua:nodeTypeId 92,
+        93 .
+
+lua:function_definition a owl:Class ;
+    rdfs:label "function_definition" ;
+    rdfs:isDefinedBy lua: ;
+    rdfs:subClassOf ast:Node ;
+    lua:isSupertype true ;
+    lua:nodeTypeId 110 .
+
+lua:goto_statement a owl:Class ;
+    rdfs:label "goto_statement" ;
+    rdfs:isDefinedBy lua: ;
+    rdfs:subClassOf ast:Node ;
+    lua:isSupertype true ;
+    lua:nodeTypeId 81 .
+
+lua:hash_bang_line a owl:Class ;
+    rdfs:label "hash_bang_line" ;
+    rdfs:isDefinedBy lua: ;
+    rdfs:subClassOf ast:Node ;
+    lua:isSupertype true ;
+    lua:nodeTypeId 2 .
+
+lua:identifier a owl:Class ;
+    rdfs:label "identifier" ;
+    rdfs:isDefinedBy lua: ;
+    rdfs:subClassOf ast:Node ;
+    lua:isSupertype true ;
+    lua:nodeTypeId 1 .
+
+lua:if_statement a owl:Class ;
+    rdfs:label "if_statement" ;
+    rdfs:isDefinedBy lua: ;
+    rdfs:subClassOf ast:Node ;
+    lua:isSupertype true ;
+    lua:nodeTypeId 85 .
+
+lua:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+lua:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+lua:label_statement a owl:Class ;
+    rdfs:label "label_statement" ;
+    rdfs:isDefinedBy lua: ;
+    rdfs:subClassOf ast:Node ;
+    lua:isSupertype true ;
+    lua:nodeTypeId 80 .
+
+lua:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+lua:method a owl:DatatypeProperty ;
+    rdfs:label "method (literal)" ;
+    rdfs:comment "Literal value for method field when it contains a terminal node" ;
+    lua:fieldId 13 ;
+    lua:isTerminalField true .
+
+lua:method_index_expression a owl:Class ;
+    rdfs:label "method_index_expression" ;
+    rdfs:isDefinedBy lua: ;
+    rdfs:subClassOf ast:Node ;
+    lua:isSupertype true ;
+    lua:nodeTypeId 97,
+        119 .
+
+lua:name a owl:DatatypeProperty ;
+    rdfs:label "name (literal)" ;
+    rdfs:comment "Literal value for name field when it contains a terminal node" ;
+    lua:fieldId 14 ;
+    lua:isTerminalField true .
+
+lua:nil a owl:Class ;
+    rdfs:label "nil" ;
+    rdfs:isDefinedBy lua: ;
+    rdfs:subClassOf ast:Node ;
+    lua:isSupertype true ;
+    lua:nodeTypeId 27 .
+
+lua:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+lua:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+lua:number a owl:Class ;
+    rdfs:label "number" ;
+    rdfs:isDefinedBy lua: ;
+    rdfs:subClassOf ast:Node ;
+    lua:isSupertype true ;
+    lua:nodeTypeId 30 .
+
+lua:parameters a owl:Class ;
+    rdfs:label "parameters" ;
+    rdfs:isDefinedBy lua: ;
+    rdfs:subClassOf ast:Node ;
+    lua:isSupertype true ;
+    lua:nodeTypeId 112 .
+
+lua:parenthesized_expression a owl:Class ;
+    rdfs:label "parenthesized_expression" ;
+    rdfs:isDefinedBy lua: ;
+    rdfs:subClassOf ast:Node ;
+    lua:isSupertype true ;
+    lua:nodeTypeId 121 .
+
+lua:repeat_statement a owl:Class ;
+    rdfs:label "repeat_statement" ;
+    rdfs:isDefinedBy lua: ;
+    rdfs:subClassOf ast:Node ;
+    lua:isSupertype true ;
+    lua:nodeTypeId 84 .
+
+lua:return_statement a owl:Class ;
+    rdfs:label "return_statement" ;
+    rdfs:isDefinedBy lua: ;
+    rdfs:subClassOf ast:Node ;
+    lua:isSupertype true ;
+    lua:nodeTypeId 75 .
+
+lua:string a owl:Class ;
+    rdfs:label "string" ;
+    rdfs:isDefinedBy lua: ;
+    rdfs:subClassOf ast:Node ;
+    lua:isSupertype true ;
+    lua:nodeTypeId 105 .
+
+lua:string_content a owl:Class ;
+    rdfs:label "string_content" ;
+    rdfs:isDefinedBy lua: ;
+    rdfs:subClassOf ast:Node ;
+    lua:isSupertype true ;
+    lua:nodeTypeId 70 .
+
+lua:table_constructor a owl:Class ;
+    rdfs:label "table_constructor" ;
+    rdfs:isDefinedBy lua: ;
+    rdfs:subClassOf ast:Node ;
+    lua:isSupertype true ;
+    lua:nodeTypeId 122 .
+
+lua:true a owl:Class ;
+    rdfs:label "true" ;
+    rdfs:isDefinedBy lua: ;
+    rdfs:subClassOf ast:Node ;
+    lua:isSupertype true ;
+    lua:nodeTypeId 29 .
+
+lua:unary_expression a owl:Class ;
+    rdfs:label "unary_expression" ;
+    rdfs:isDefinedBy lua: ;
+    rdfs:subClassOf ast:Node ;
+    lua:isSupertype true ;
+    lua:nodeTypeId 127 .
+
+lua:vararg_expression a owl:Class ;
+    rdfs:label "vararg_expression" ;
+    rdfs:isDefinedBy lua: ;
+    rdfs:subClassOf ast:Node ;
+    lua:isSupertype true ;
+    lua:nodeTypeId 36 .
+
+lua:variable_declaration a owl:Class ;
+    rdfs:label "variable_declaration" ;
+    rdfs:isDefinedBy lua: ;
+    rdfs:subClassOf ast:Node ;
+    lua:isSupertype true ;
+    lua:nodeTypeId 98 .
+
+lua:variable_list a owl:Class ;
+    rdfs:label "variable_list" ;
+    rdfs:isDefinedBy lua: ;
+    rdfs:subClassOf ast:Node ;
+    lua:isSupertype true ;
+    lua:nodeTypeId 78,
+        100,
+        101 .
+
+lua:while_statement a owl:Class ;
+    rdfs:label "while_statement" ;
+    rdfs:isDefinedBy lua: ;
+    rdfs:subClassOf ast:Node ;
+    lua:isSupertype true ;
+    lua:nodeTypeId 83 .
+
+lua: a owl:Ontology ;
+    rdfs:label "Lua Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for lua" ;
+    owl:versionInfo "v0.25" ;
+    lua:abiVersion 14 ;
+    lua:fieldCount 21 ;
+    lua:languageName "None" ;
+    lua:nodeKindCount 137 .
+

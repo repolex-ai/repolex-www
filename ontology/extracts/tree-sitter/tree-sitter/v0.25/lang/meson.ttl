@@ -1,0 +1,325 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix meson: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/meson/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+meson:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+meson:array a owl:DatatypeProperty ;
+    rdfs:label "array (literal)" ;
+    rdfs:comment "Literal value for array field when it contains a terminal node" ;
+    meson:fieldId 1 ;
+    meson:isTerminalField true .
+
+meson:bool a owl:Class ;
+    rdfs:label "bool" ;
+    rdfs:isDefinedBy meson: ;
+    rdfs:subClassOf ast:Node ;
+    meson:isSupertype true ;
+    meson:nodeTypeId 48 .
+
+meson:command a owl:DatatypeProperty ;
+    rdfs:label "command (literal)" ;
+    rdfs:comment "Literal value for command field when it contains a terminal node" ;
+    meson:fieldId 2 ;
+    meson:isTerminalField true .
+
+meson:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy meson: ;
+    rdfs:subClassOf ast:Node ;
+    meson:isSupertype true ;
+    meson:nodeTypeId 44 .
+
+meson:dictionaries a owl:Class ;
+    rdfs:label "dictionaries" ;
+    rdfs:isDefinedBy meson: ;
+    rdfs:subClassOf ast:Node ;
+    meson:isSupertype true ;
+    meson:nodeTypeId 51 .
+
+meson:else_command a owl:Class ;
+    rdfs:label "else_command" ;
+    rdfs:isDefinedBy meson: ;
+    rdfs:subClassOf ast:Node ;
+    meson:isSupertype true ;
+    meson:nodeTypeId 64 .
+
+meson:elseif_command a owl:Class ;
+    rdfs:label "elseif_command" ;
+    rdfs:isDefinedBy meson: ;
+    rdfs:subClassOf ast:Node ;
+    meson:isSupertype true ;
+    meson:nodeTypeId 63 .
+
+meson:escape_sequence a owl:Class ;
+    rdfs:label "escape_sequence" ;
+    rdfs:isDefinedBy meson: ;
+    rdfs:subClassOf ast:Node ;
+    meson:isSupertype true ;
+    meson:nodeTypeId 10 .
+
+meson:expression_statement a owl:Class ;
+    rdfs:label "expression_statement" ;
+    rdfs:isDefinedBy meson: ;
+    rdfs:subClassOf ast:Node ;
+    meson:isSupertype true ;
+    meson:nodeTypeId 60 .
+
+meson:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+meson:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+meson:field_array a owl:ObjectProperty ;
+    rdfs:label "array (structural)" ;
+    rdfs:comment "Structural reference for array field when it contains a non-terminal node" ;
+    meson:fieldId 1 .
+
+meson:field_dictionaries a owl:ObjectProperty ;
+    rdfs:label "dictionaries (structural)" ;
+    rdfs:comment "Structural reference for dictionaries field when it contains a non-terminal node" ;
+    meson:fieldId 3 .
+
+meson:field_function a owl:ObjectProperty ;
+    rdfs:label "function (structural)" ;
+    rdfs:comment "Structural reference for function field when it contains a non-terminal node" ;
+    meson:fieldId 4 .
+
+meson:field_index a owl:ObjectProperty ;
+    rdfs:label "index (structural)" ;
+    rdfs:comment "Structural reference for index field when it contains a non-terminal node" ;
+    meson:fieldId 5 .
+
+meson:field_key a owl:ObjectProperty ;
+    rdfs:label "key (structural)" ;
+    rdfs:comment "Structural reference for key field when it contains a non-terminal node" ;
+    meson:fieldId 7 .
+
+meson:field_object a owl:ObjectProperty ;
+    rdfs:label "object (structural)" ;
+    rdfs:comment "Structural reference for object field when it contains a non-terminal node" ;
+    meson:fieldId 8 .
+
+meson:field_value a owl:ObjectProperty ;
+    rdfs:label "value (structural)" ;
+    rdfs:comment "Structural reference for value field when it contains a non-terminal node" ;
+    meson:fieldId 10 .
+
+meson:field_variable a owl:ObjectProperty ;
+    rdfs:label "variable (structural)" ;
+    rdfs:comment "Structural reference for variable field when it contains a non-terminal node" ;
+    meson:fieldId 11 .
+
+meson:foreach_command a owl:Class ;
+    rdfs:label "foreach_command" ;
+    rdfs:isDefinedBy meson: ;
+    rdfs:subClassOf ast:Node ;
+    meson:isSupertype true ;
+    meson:nodeTypeId 65 .
+
+meson:formatunit a owl:Class ;
+    rdfs:label "formatunit" ;
+    rdfs:isDefinedBy meson: ;
+    rdfs:subClassOf ast:Node ;
+    meson:isSupertype true ;
+    meson:nodeTypeId 50 .
+
+meson:identifier a owl:Class ;
+    rdfs:label "identifier" ;
+    rdfs:isDefinedBy meson: ;
+    rdfs:subClassOf ast:Node ;
+    meson:isSupertype true ;
+    meson:nodeTypeId 17 .
+
+meson:if_command a owl:Class ;
+    rdfs:label "if_command" ;
+    rdfs:isDefinedBy meson: ;
+    rdfs:subClassOf ast:Node ;
+    meson:isSupertype true ;
+    meson:nodeTypeId 62 .
+
+meson:if_condition a owl:Class ;
+    rdfs:label "if_condition" ;
+    rdfs:isDefinedBy meson: ;
+    rdfs:subClassOf ast:Node ;
+    meson:isSupertype true ;
+    meson:nodeTypeId 61 .
+
+meson:index a owl:DatatypeProperty ;
+    rdfs:label "index (literal)" ;
+    rdfs:comment "Literal value for index field when it contains a terminal node" ;
+    meson:fieldId 5 ;
+    meson:isTerminalField true .
+
+meson:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+meson:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+meson:item a owl:DatatypeProperty ;
+    rdfs:label "item (literal)" ;
+    rdfs:comment "Literal value for item field when it contains a terminal node" ;
+    meson:fieldId 6 ;
+    meson:isTerminalField true .
+
+meson:key a owl:DatatypeProperty ;
+    rdfs:label "key (literal)" ;
+    rdfs:comment "Literal value for key field when it contains a terminal node" ;
+    meson:fieldId 7 ;
+    meson:isTerminalField true .
+
+meson:keyword_break a owl:Class ;
+    rdfs:label "keyword_break" ;
+    rdfs:isDefinedBy meson: ;
+    rdfs:subClassOf ast:Node ;
+    meson:isSupertype true ;
+    meson:nodeTypeId 42 .
+
+meson:keyword_continue a owl:Class ;
+    rdfs:label "keyword_continue" ;
+    rdfs:isDefinedBy meson: ;
+    rdfs:subClassOf ast:Node ;
+    meson:isSupertype true ;
+    meson:nodeTypeId 43 .
+
+meson:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+meson:list a owl:Class ;
+    rdfs:label "list" ;
+    rdfs:isDefinedBy meson: ;
+    rdfs:subClassOf ast:Node ;
+    meson:isSupertype true ;
+    meson:nodeTypeId 53 .
+
+meson:listitem a owl:Class ;
+    rdfs:label "listitem" ;
+    rdfs:isDefinedBy meson: ;
+    rdfs:subClassOf ast:Node ;
+    meson:isSupertype true ;
+    meson:nodeTypeId 52 .
+
+meson:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+meson:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+meson:normal_command a owl:Class ;
+    rdfs:label "normal_command" ;
+    rdfs:isDefinedBy meson: ;
+    rdfs:subClassOf ast:Node ;
+    meson:isSupertype true ;
+    meson:nodeTypeId 47 .
+
+meson:number a owl:Class ;
+    rdfs:label "number" ;
+    rdfs:isDefinedBy meson: ;
+    rdfs:subClassOf ast:Node ;
+    meson:isSupertype true ;
+    meson:nodeTypeId 18 .
+
+meson:object a owl:DatatypeProperty ;
+    rdfs:label "object (literal)" ;
+    rdfs:comment "Literal value for object field when it contains a terminal node" ;
+    meson:fieldId 8 ;
+    meson:isTerminalField true .
+
+meson:operatorunit a owl:Class ;
+    rdfs:label "operatorunit" ;
+    rdfs:isDefinedBy meson: ;
+    rdfs:subClassOf ast:Node ;
+    meson:isSupertype true ;
+    meson:nodeTypeId 55 .
+
+meson:pair a owl:Class ;
+    rdfs:label "pair" ;
+    rdfs:isDefinedBy meson: ;
+    rdfs:subClassOf ast:Node ;
+    meson:isSupertype true ;
+    meson:nodeTypeId 54 .
+
+meson:property a owl:DatatypeProperty ;
+    rdfs:label "property (literal)" ;
+    rdfs:comment "Literal value for property field when it contains a terminal node" ;
+    meson:fieldId 9 ;
+    meson:isTerminalField true .
+
+meson:source_file a owl:Class ;
+    rdfs:label "source_file" ;
+    rdfs:isDefinedBy meson: ;
+    rdfs:subClassOf ast:Node ;
+    meson:isSupertype true ;
+    meson:nodeTypeId 45 .
+
+meson:string a owl:Class ;
+    rdfs:label "string" ;
+    rdfs:isDefinedBy meson: ;
+    rdfs:subClassOf ast:Node ;
+    meson:isSupertype true ;
+    meson:nodeTypeId 49 .
+
+meson:ternaryoperator a owl:Class ;
+    rdfs:label "ternaryoperator" ;
+    rdfs:isDefinedBy meson: ;
+    rdfs:subClassOf ast:Node ;
+    meson:isSupertype true ;
+    meson:nodeTypeId 57 .
+
+meson:value a owl:DatatypeProperty ;
+    rdfs:label "value (literal)" ;
+    rdfs:comment "Literal value for value field when it contains a terminal node" ;
+    meson:fieldId 10 ;
+    meson:isTerminalField true .
+
+meson:var_unit a owl:Class ;
+    rdfs:label "var_unit" ;
+    rdfs:isDefinedBy meson: ;
+    rdfs:subClassOf ast:Node ;
+    meson:isSupertype true ;
+    meson:nodeTypeId 59 .
+
+meson:variable a owl:DatatypeProperty ;
+    rdfs:label "variable (literal)" ;
+    rdfs:comment "Literal value for variable field when it contains a terminal node" ;
+    meson:fieldId 11 ;
+    meson:isTerminalField true .
+
+meson:variableunit a owl:Class ;
+    rdfs:label "variableunit" ;
+    rdfs:isDefinedBy meson: ;
+    rdfs:subClassOf ast:Node ;
+    meson:isSupertype true ;
+    meson:nodeTypeId 56 .
+
+meson: a owl:Ontology ;
+    rdfs:label "Meson Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for meson" ;
+    owl:versionInfo "v0.25" ;
+    meson:abiVersion 14 ;
+    meson:fieldCount 11 ;
+    meson:languageName "None" ;
+    meson:nodeKindCount 77 .
+

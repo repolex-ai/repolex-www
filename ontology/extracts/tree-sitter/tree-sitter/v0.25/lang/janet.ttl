@@ -1,0 +1,434 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix janet: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/janet/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+janet:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+janet:array a owl:Class ;
+    rdfs:label "array" ;
+    rdfs:isDefinedBy janet: ;
+    rdfs:subClassOf ast:Node ;
+    janet:isSupertype true ;
+    janet:nodeTypeId 54 .
+
+janet:body a owl:Class ;
+    rdfs:label "body" ;
+    rdfs:isDefinedBy janet: ;
+    rdfs:subClassOf ast:Node ;
+    janet:isSupertype true ;
+    janet:nodeTypeId 92 .
+
+janet:bool_literal a owl:Class ;
+    rdfs:label "bool_literal" ;
+    rdfs:isDefinedBy janet: ;
+    rdfs:subClassOf ast:Node ;
+    janet:isSupertype true ;
+    janet:nodeTypeId 89 .
+
+janet:break a owl:Class ;
+    rdfs:label "break" ;
+    rdfs:isDefinedBy janet: ;
+    rdfs:subClassOf ast:Node ;
+    janet:isSupertype true ;
+    janet:nodeTypeId 67 .
+
+janet:buffer_literal a owl:Class ;
+    rdfs:label "buffer_literal" ;
+    rdfs:isDefinedBy janet: ;
+    rdfs:subClassOf ast:Node ;
+    janet:isSupertype true ;
+    janet:nodeTypeId 40 .
+
+janet:def a owl:Class ;
+    rdfs:label "def" ;
+    rdfs:isDefinedBy janet: ;
+    rdfs:subClassOf ast:Node ;
+    janet:isSupertype true ;
+    janet:nodeTypeId 61 .
+
+janet:do a owl:Class ;
+    rdfs:label "do" ;
+    rdfs:isDefinedBy janet: ;
+    rdfs:subClassOf ast:Node ;
+    janet:isSupertype true ;
+    janet:nodeTypeId 70 .
+
+janet:extra_defs a owl:Class ;
+    rdfs:label "extra_defs" ;
+    rdfs:isDefinedBy janet: ;
+    rdfs:subClassOf ast:Node ;
+    janet:isSupertype true ;
+    janet:nodeTypeId 84 .
+
+janet:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+janet:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+janet:field_body a owl:ObjectProperty ;
+    rdfs:label "body (structural)" ;
+    rdfs:comment "Structural reference for body field when it contains a non-terminal node" ;
+    janet:fieldId 1 .
+
+janet:field_condition a owl:ObjectProperty ;
+    rdfs:label "condition (structural)" ;
+    rdfs:comment "Structural reference for condition field when it contains a non-terminal node" ;
+    janet:fieldId 2 .
+
+janet:field_else a owl:ObjectProperty ;
+    rdfs:label "else (structural)" ;
+    rdfs:comment "Structural reference for else field when it contains a non-terminal node" ;
+    janet:fieldId 3 .
+
+janet:field_form a owl:ObjectProperty ;
+    rdfs:label "form (structural)" ;
+    rdfs:comment "Structural reference for form field when it contains a non-terminal node" ;
+    janet:fieldId 4 .
+
+janet:field_item a owl:ObjectProperty ;
+    rdfs:label "item (structural)" ;
+    rdfs:comment "Structural reference for item field when it contains a non-terminal node" ;
+    janet:fieldId 5 .
+
+janet:field_key a owl:ObjectProperty ;
+    rdfs:label "key (structural)" ;
+    rdfs:comment "Structural reference for key field when it contains a non-terminal node" ;
+    janet:fieldId 6 .
+
+janet:field_l_value a owl:ObjectProperty ;
+    rdfs:label "l_value (structural)" ;
+    rdfs:comment "Structural reference for l_value field when it contains a non-terminal node" ;
+    janet:fieldId 7 .
+
+janet:field_metadata a owl:ObjectProperty ;
+    rdfs:label "metadata (structural)" ;
+    rdfs:comment "Structural reference for metadata field when it contains a non-terminal node" ;
+    janet:fieldId 8 .
+
+janet:field_name a owl:ObjectProperty ;
+    rdfs:label "name (structural)" ;
+    rdfs:comment "Structural reference for name field when it contains a non-terminal node" ;
+    janet:fieldId 9 .
+
+janet:field_parameter a owl:ObjectProperty ;
+    rdfs:label "parameter (structural)" ;
+    rdfs:comment "Structural reference for parameter field when it contains a non-terminal node" ;
+    janet:fieldId 10 .
+
+janet:field_parameters a owl:ObjectProperty ;
+    rdfs:label "parameters (structural)" ;
+    rdfs:comment "Structural reference for parameters field when it contains a non-terminal node" ;
+    janet:fieldId 11 .
+
+janet:field_r_value a owl:ObjectProperty ;
+    rdfs:label "r_value (structural)" ;
+    rdfs:comment "Structural reference for r_value field when it contains a non-terminal node" ;
+    janet:fieldId 12 .
+
+janet:field_then a owl:ObjectProperty ;
+    rdfs:label "then (structural)" ;
+    rdfs:comment "Structural reference for then field when it contains a non-terminal node" ;
+    janet:fieldId 13 .
+
+janet:field_value a owl:ObjectProperty ;
+    rdfs:label "value (structural)" ;
+    rdfs:comment "Structural reference for value field when it contains a non-terminal node" ;
+    janet:fieldId 14 .
+
+janet:fn a owl:Class ;
+    rdfs:label "fn" ;
+    rdfs:isDefinedBy janet: ;
+    rdfs:subClassOf ast:Node ;
+    janet:isSupertype true ;
+    janet:nodeTypeId 72 .
+
+janet:if a owl:Class ;
+    rdfs:label "if" ;
+    rdfs:isDefinedBy janet: ;
+    rdfs:subClassOf ast:Node ;
+    janet:isSupertype true ;
+    janet:nodeTypeId 69 .
+
+janet:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+janet:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+janet:keys_marker a owl:Class ;
+    rdfs:label "keys_marker" ;
+    rdfs:isDefinedBy janet: ;
+    rdfs:subClassOf ast:Node ;
+    janet:isSupertype true ;
+    janet:nodeTypeId 27 .
+
+janet:keyword a owl:Class ;
+    rdfs:label "keyword" ;
+    rdfs:isDefinedBy janet: ;
+    rdfs:subClassOf ast:Node ;
+    janet:isSupertype true ;
+    janet:nodeTypeId 47 .
+
+janet:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+janet:line_comment a owl:Class ;
+    rdfs:label "line_comment" ;
+    rdfs:isDefinedBy janet: ;
+    rdfs:subClassOf ast:Node ;
+    janet:isSupertype true ;
+    janet:nodeTypeId 2 .
+
+janet:long_buffer_literal a owl:Class ;
+    rdfs:label "long_buffer_literal" ;
+    rdfs:isDefinedBy janet: ;
+    rdfs:subClassOf ast:Node ;
+    janet:isSupertype true ;
+    janet:nodeTypeId 87 .
+
+janet:long_str_literal a owl:Class ;
+    rdfs:label "long_str_literal" ;
+    rdfs:isDefinedBy janet: ;
+    rdfs:subClassOf ast:Node ;
+    janet:isSupertype true ;
+    janet:nodeTypeId 86 .
+
+janet:metadata a owl:Class ;
+    rdfs:label "metadata" ;
+    rdfs:isDefinedBy janet: ;
+    rdfs:subClassOf ast:Node ;
+    janet:isSupertype true ;
+    janet:nodeTypeId 90 .
+
+janet:nil_literal a owl:Class ;
+    rdfs:label "nil_literal" ;
+    rdfs:isDefinedBy janet: ;
+    rdfs:subClassOf ast:Node ;
+    janet:isSupertype true ;
+    janet:nodeTypeId 46 .
+
+janet:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+janet:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+janet:number_literal a owl:Class ;
+    rdfs:label "number_literal" ;
+    rdfs:isDefinedBy janet: ;
+    rdfs:subClassOf ast:Node ;
+    janet:isSupertype true ;
+    janet:nodeTypeId 88 .
+
+janet:optional_marker a owl:Class ;
+    rdfs:label "optional_marker" ;
+    rdfs:isDefinedBy janet: ;
+    rdfs:subClassOf ast:Node ;
+    janet:isSupertype true ;
+    janet:nodeTypeId 26 .
+
+janet:parameters a owl:Class ;
+    rdfs:label "parameters" ;
+    rdfs:isDefinedBy janet: ;
+    rdfs:subClassOf ast:Node ;
+    janet:isSupertype true ;
+    janet:nodeTypeId 75 .
+
+janet:peg_set a owl:Class ;
+    rdfs:label "peg_set" ;
+    rdfs:isDefinedBy janet: ;
+    rdfs:subClassOf ast:Node ;
+    janet:isSupertype true ;
+    janet:nodeTypeId 59 .
+
+janet:quasiquote a owl:Class ;
+    rdfs:label "quasiquote" ;
+    rdfs:isDefinedBy janet: ;
+    rdfs:subClassOf ast:Node ;
+    janet:isSupertype true ;
+    janet:nodeTypeId 65 .
+
+janet:quote a owl:Class ;
+    rdfs:label "quote" ;
+    rdfs:isDefinedBy janet: ;
+    rdfs:subClassOf ast:Node ;
+    janet:isSupertype true ;
+    janet:nodeTypeId 63 .
+
+janet:set a owl:Class ;
+    rdfs:label "set" ;
+    rdfs:isDefinedBy janet: ;
+    rdfs:subClassOf ast:Node ;
+    janet:isSupertype true ;
+    janet:nodeTypeId 68 .
+
+janet:short_fn a owl:Class ;
+    rdfs:label "short_fn" ;
+    rdfs:isDefinedBy janet: ;
+    rdfs:subClassOf ast:Node ;
+    janet:isSupertype true ;
+    janet:nodeTypeId 82 .
+
+janet:short_quasiquote a owl:Class ;
+    rdfs:label "short_quasiquote" ;
+    rdfs:isDefinedBy janet: ;
+    rdfs:subClassOf ast:Node ;
+    janet:isSupertype true ;
+    janet:nodeTypeId 80 .
+
+janet:short_quote a owl:Class ;
+    rdfs:label "short_quote" ;
+    rdfs:isDefinedBy janet: ;
+    rdfs:subClassOf ast:Node ;
+    janet:isSupertype true ;
+    janet:nodeTypeId 78 .
+
+janet:short_splice a owl:Class ;
+    rdfs:label "short_splice" ;
+    rdfs:isDefinedBy janet: ;
+    rdfs:subClassOf ast:Node ;
+    janet:isSupertype true ;
+    janet:nodeTypeId 79 .
+
+janet:short_unquote a owl:Class ;
+    rdfs:label "short_unquote" ;
+    rdfs:isDefinedBy janet: ;
+    rdfs:subClassOf ast:Node ;
+    janet:isSupertype true ;
+    janet:nodeTypeId 81 .
+
+janet:source_file a owl:Class ;
+    rdfs:label "source_file" ;
+    rdfs:isDefinedBy janet: ;
+    rdfs:subClassOf ast:Node ;
+    janet:isSupertype true ;
+    janet:nodeTypeId 50 .
+
+janet:splice a owl:Class ;
+    rdfs:label "splice" ;
+    rdfs:isDefinedBy janet: ;
+    rdfs:subClassOf ast:Node ;
+    janet:isSupertype true ;
+    janet:nodeTypeId 64 .
+
+janet:sqr_array a owl:Class ;
+    rdfs:label "sqr_array" ;
+    rdfs:isDefinedBy janet: ;
+    rdfs:subClassOf ast:Node ;
+    janet:isSupertype true ;
+    janet:nodeTypeId 55 .
+
+janet:sqr_tuple a owl:Class ;
+    rdfs:label "sqr_tuple" ;
+    rdfs:isDefinedBy janet: ;
+    rdfs:subClassOf ast:Node ;
+    janet:isSupertype true ;
+    janet:nodeTypeId 53 .
+
+janet:str_literal a owl:Class ;
+    rdfs:label "str_literal" ;
+    rdfs:isDefinedBy janet: ;
+    rdfs:subClassOf ast:Node ;
+    janet:isSupertype true ;
+    janet:nodeTypeId 39 .
+
+janet:struct a owl:Class ;
+    rdfs:label "struct" ;
+    rdfs:isDefinedBy janet: ;
+    rdfs:subClassOf ast:Node ;
+    janet:isSupertype true ;
+    janet:nodeTypeId 56 .
+
+janet:symbol a owl:Class ;
+    rdfs:label "symbol" ;
+    rdfs:isDefinedBy janet: ;
+    rdfs:subClassOf ast:Node ;
+    janet:isSupertype true ;
+    janet:nodeTypeId 1 .
+
+janet:table a owl:Class ;
+    rdfs:label "table" ;
+    rdfs:isDefinedBy janet: ;
+    rdfs:subClassOf ast:Node ;
+    janet:isSupertype true ;
+    janet:nodeTypeId 57 .
+
+janet:tuple a owl:Class ;
+    rdfs:label "tuple" ;
+    rdfs:isDefinedBy janet: ;
+    rdfs:subClassOf ast:Node ;
+    janet:isSupertype true ;
+    janet:nodeTypeId 52 .
+
+janet:tuple_parameters a owl:Class ;
+    rdfs:label "tuple_parameters" ;
+    rdfs:isDefinedBy janet: ;
+    rdfs:subClassOf ast:Node ;
+    janet:isSupertype true ;
+    janet:nodeTypeId 76 .
+
+janet:unquote a owl:Class ;
+    rdfs:label "unquote" ;
+    rdfs:isDefinedBy janet: ;
+    rdfs:subClassOf ast:Node ;
+    janet:isSupertype true ;
+    janet:nodeTypeId 66 .
+
+janet:upscope a owl:Class ;
+    rdfs:label "upscope" ;
+    rdfs:isDefinedBy janet: ;
+    rdfs:subClassOf ast:Node ;
+    janet:isSupertype true ;
+    janet:nodeTypeId 73 .
+
+janet:var a owl:Class ;
+    rdfs:label "var" ;
+    rdfs:isDefinedBy janet: ;
+    rdfs:subClassOf ast:Node ;
+    janet:isSupertype true ;
+    janet:nodeTypeId 62 .
+
+janet:variadic_marker a owl:Class ;
+    rdfs:label "variadic_marker" ;
+    rdfs:isDefinedBy janet: ;
+    rdfs:subClassOf ast:Node ;
+    janet:isSupertype true ;
+    janet:nodeTypeId 25 .
+
+janet:while a owl:Class ;
+    rdfs:label "while" ;
+    rdfs:isDefinedBy janet: ;
+    rdfs:subClassOf ast:Node ;
+    janet:isSupertype true ;
+    janet:nodeTypeId 71 .
+
+janet: a owl:Ontology ;
+    rdfs:label "Janet Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for janet" ;
+    owl:versionInfo "v0.25" ;
+    janet:abiVersion 15 ;
+    janet:fieldCount 14 ;
+    janet:languageName "janet" ;
+    janet:nodeKindCount 100 .
+

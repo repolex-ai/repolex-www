@@ -1,0 +1,711 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix hare: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/hare/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+hare:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+hare:array_literal a owl:Class ;
+    rdfs:label "array_literal" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 187 .
+
+hare:array_type a owl:Class ;
+    rdfs:label "array_type" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 141 .
+
+hare:assignment_expression a owl:Class ;
+    rdfs:label "assignment_expression" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 168 .
+
+hare:binary_expression a owl:Class ;
+    rdfs:label "binary_expression" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 171 .
+
+hare:block a owl:Class ;
+    rdfs:label "block" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 155 .
+
+hare:boolean a owl:Class ;
+    rdfs:label "boolean" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 199 .
+
+hare:break_statement a owl:Class ;
+    rdfs:label "break_statement" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 160 .
+
+hare:builtin_type a owl:Class ;
+    rdfs:label "builtin_type" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 137 .
+
+hare:call_expression a owl:Class ;
+    rdfs:label "call_expression" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 175 .
+
+hare:case a owl:Class ;
+    rdfs:label "case" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 185 .
+
+hare:cast_expression a owl:Class ;
+    rdfs:label "cast_expression" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 173 .
+
+hare:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 122 .
+
+hare:concatenated_string a owl:Class ;
+    rdfs:label "concatenated_string" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 196 .
+
+hare:const_declaration a owl:Class ;
+    rdfs:label "const_declaration" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 166 .
+
+hare:const_type a owl:Class ;
+    rdfs:label "const_type" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 139 .
+
+hare:constant_declaration a owl:Class ;
+    rdfs:label "constant_declaration" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 131 .
+
+hare:declaration_attribute a owl:Class ;
+    rdfs:label "declaration_attribute" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 130 .
+
+hare:declarations a owl:Class ;
+    rdfs:label "declarations" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 126 .
+
+hare:defer_statement a owl:Class ;
+    rdfs:label "defer_statement" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 161 .
+
+hare:else_statement a owl:Class ;
+    rdfs:label "else_statement" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 157 .
+
+hare:enum_field a owl:Class ;
+    rdfs:label "enum_field" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 150 .
+
+hare:enum_type a owl:Class ;
+    rdfs:label "enum_type" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 142 .
+
+hare:error_assertion_expression a owl:Class ;
+    rdfs:label "error_assertion_expression" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 172 .
+
+hare:error_type a owl:Class ;
+    rdfs:label "error_type" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 140 .
+
+hare:escape_sequence a owl:Class ;
+    rdfs:label "escape_sequence" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 118 .
+
+hare:expression_statement a owl:Class ;
+    rdfs:label "expression_statement" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 154 .
+
+hare:field a owl:Class ;
+    rdfs:label "field" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 151 .
+
+hare:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+hare:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+hare:field_address a owl:ObjectProperty ;
+    rdfs:label "address (structural)" ;
+    rdfs:comment "Structural reference for address field when it contains a non-terminal node" ;
+    hare:fieldId 1 .
+
+hare:field_afterthought a owl:ObjectProperty ;
+    rdfs:label "afterthought (structural)" ;
+    rdfs:comment "Structural reference for afterthought field when it contains a non-terminal node" ;
+    hare:fieldId 2 .
+
+hare:field_alternative a owl:ObjectProperty ;
+    rdfs:label "alternative (structural)" ;
+    rdfs:comment "Structural reference for alternative field when it contains a non-terminal node" ;
+    hare:fieldId 3 .
+
+hare:field_argument a owl:ObjectProperty ;
+    rdfs:label "argument (structural)" ;
+    rdfs:comment "Structural reference for argument field when it contains a non-terminal node" ;
+    hare:fieldId 4 .
+
+hare:field_as_cast a owl:ObjectProperty ;
+    rdfs:label "as_cast (structural)" ;
+    rdfs:comment "Structural reference for as_cast field when it contains a non-terminal node" ;
+    hare:fieldId 5 .
+
+hare:field_assignment a owl:Class ;
+    rdfs:label "field_assignment" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 189 .
+
+hare:field_body a owl:ObjectProperty ;
+    rdfs:label "body (structural)" ;
+    rdfs:comment "Structural reference for body field when it contains a non-terminal node" ;
+    hare:fieldId 6 .
+
+hare:field_callee a owl:ObjectProperty ;
+    rdfs:label "callee (structural)" ;
+    rdfs:comment "Structural reference for callee field when it contains a non-terminal node" ;
+    hare:fieldId 7 .
+
+hare:field_condition a owl:ObjectProperty ;
+    rdfs:label "condition (structural)" ;
+    rdfs:comment "Structural reference for condition field when it contains a non-terminal node" ;
+    hare:fieldId 8 .
+
+hare:field_consequence a owl:ObjectProperty ;
+    rdfs:label "consequence (structural)" ;
+    rdfs:comment "Structural reference for consequence field when it contains a non-terminal node" ;
+    hare:fieldId 9 .
+
+hare:field_is_cast a owl:ObjectProperty ;
+    rdfs:label "is_cast (structural)" ;
+    rdfs:comment "Structural reference for is_cast field when it contains a non-terminal node" ;
+    hare:fieldId 10 .
+
+hare:field_left a owl:ObjectProperty ;
+    rdfs:label "left (structural)" ;
+    rdfs:comment "Structural reference for left field when it contains a non-terminal node" ;
+    hare:fieldId 12 .
+
+hare:field_operator a owl:ObjectProperty ;
+    rdfs:label "operator (structural)" ;
+    rdfs:comment "Structural reference for operator field when it contains a non-terminal node" ;
+    hare:fieldId 14 .
+
+hare:field_path a owl:ObjectProperty ;
+    rdfs:label "path (structural)" ;
+    rdfs:comment "Structural reference for path field when it contains a non-terminal node" ;
+    hare:fieldId 15 .
+
+hare:field_returns a owl:ObjectProperty ;
+    rdfs:label "returns (structural)" ;
+    rdfs:comment "Structural reference for returns field when it contains a non-terminal node" ;
+    hare:fieldId 16 .
+
+hare:field_right a owl:ObjectProperty ;
+    rdfs:label "right (structural)" ;
+    rdfs:comment "Structural reference for right field when it contains a non-terminal node" ;
+    hare:fieldId 17 .
+
+hare:field_size a owl:ObjectProperty ;
+    rdfs:label "size (structural)" ;
+    rdfs:comment "Structural reference for size field when it contains a non-terminal node" ;
+    hare:fieldId 18 .
+
+hare:field_type_cast a owl:ObjectProperty ;
+    rdfs:label "type_cast (structural)" ;
+    rdfs:comment "Structural reference for type_cast field when it contains a non-terminal node" ;
+    hare:fieldId 19 .
+
+hare:float a owl:Class ;
+    rdfs:label "float" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 192 .
+
+hare:for_statement a owl:Class ;
+    rdfs:label "for_statement" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 158 .
+
+hare:function_attribute a owl:Class ;
+    rdfs:label "function_attribute" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 134 .
+
+hare:function_declaration a owl:Class ;
+    rdfs:label "function_declaration" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 133 .
+
+hare:function_type a owl:Class ;
+    rdfs:label "function_type" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 148 .
+
+hare:global_binding a owl:Class ;
+    rdfs:label "global_binding" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 129 .
+
+hare:global_declaration a owl:Class ;
+    rdfs:label "global_declaration" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 128 .
+
+hare:identifier a owl:Class ;
+    rdfs:label "identifier" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 1 .
+
+hare:if_statement a owl:Class ;
+    rdfs:label "if_statement" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 156 .
+
+hare:imports a owl:Class ;
+    rdfs:label "imports" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 124 .
+
+hare:index_expression a owl:Class ;
+    rdfs:label "index_expression" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 177 .
+
+hare:integer_suffix a owl:Class ;
+    rdfs:label "integer_suffix" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 193 .
+
+hare:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+hare:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+hare:label a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "label",
+        "label (literal)" ;
+    rdfs:comment "Literal value for label field when it contains a terminal node" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:fieldId 11 ;
+    hare:isSupertype true ;
+    hare:isTerminalField true ;
+    hare:nodeTypeId 159 .
+
+hare:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+hare:let_declaration a owl:Class ;
+    rdfs:label "let_declaration" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 165 .
+
+hare:let_expression a owl:Class ;
+    rdfs:label "let_expression" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 182 .
+
+hare:match_expression a owl:Class ;
+    rdfs:label "match_expression" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 184 .
+
+hare:member_expression a owl:Class ;
+    rdfs:label "member_expression" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 179 .
+
+hare:module a owl:Class ;
+    rdfs:label "module" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 123 .
+
+hare:name a owl:DatatypeProperty ;
+    rdfs:label "name (literal)" ;
+    rdfs:comment "Literal value for name field when it contains a terminal node" ;
+    hare:fieldId 13 ;
+    hare:isTerminalField true .
+
+hare:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+hare:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+hare:null a owl:Class ;
+    rdfs:label "null" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 121 .
+
+hare:number a owl:Class ;
+    rdfs:label "number" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 191 .
+
+hare:offset_specifier a owl:Class ;
+    rdfs:label "offset_specifier" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 152 .
+
+hare:parameter a owl:Class ;
+    rdfs:label "parameter" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 135 .
+
+hare:parenthesis_expression a owl:Class ;
+    rdfs:label "parenthesis_expression" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 181 .
+
+hare:path a owl:DatatypeProperty ;
+    rdfs:label "path (literal)" ;
+    rdfs:comment "Literal value for path field when it contains a terminal node" ;
+    hare:fieldId 15 ;
+    hare:isTerminalField true .
+
+hare:pointer_type a owl:Class ;
+    rdfs:label "pointer_type" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 138 .
+
+hare:range_expression a owl:Class ;
+    rdfs:label "range_expression" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 178 .
+
+hare:raw_string a owl:Class ;
+    rdfs:label "raw_string" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 195 .
+
+hare:raw_string_content a owl:Class ;
+    rdfs:label "raw_string_content" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 114 .
+
+hare:return_statement a owl:Class ;
+    rdfs:label "return_statement" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 162 .
+
+hare:rune a owl:Class ;
+    rdfs:label "rune" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 197 .
+
+hare:scoped_type_identifier a owl:Class ;
+    rdfs:label "scoped_type_identifier" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 201 .
+
+hare:size_expression a owl:Class ;
+    rdfs:label "size_expression" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 174 .
+
+hare:slice_type a owl:Class ;
+    rdfs:label "slice_type" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 143 .
+
+hare:static_operation a owl:Class ;
+    rdfs:label "static_operation" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 164 .
+
+hare:string a owl:Class ;
+    rdfs:label "string" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 194 .
+
+hare:string_content a owl:Class ;
+    rdfs:label "string_content" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 113 .
+
+hare:struct_literal a owl:Class ;
+    rdfs:label "struct_literal" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 188 .
+
+hare:struct_type a owl:Class ;
+    rdfs:label "struct_type" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 144 .
+
+hare:switch_expression a owl:Class ;
+    rdfs:label "switch_expression" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 183 .
+
+hare:tagged_union_type a owl:Class ;
+    rdfs:label "tagged_union_type" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 147 .
+
+hare:try_expression a owl:Class ;
+    rdfs:label "try_expression" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 180 .
+
+hare:tuple_literal a owl:Class ;
+    rdfs:label "tuple_literal" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 190 .
+
+hare:tuple_type a owl:Class ;
+    rdfs:label "tuple_type" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 145 .
+
+hare:type_declaration a owl:Class ;
+    rdfs:label "type_declaration" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 132 .
+
+hare:unary_expression a owl:Class ;
+    rdfs:label "unary_expression" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 170 .
+
+hare:union_type a owl:Class ;
+    rdfs:label "union_type" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 146 .
+
+hare:unwrapped_type a owl:Class ;
+    rdfs:label "unwrapped_type" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 149 .
+
+hare:update_expression a owl:Class ;
+    rdfs:label "update_expression" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 169 .
+
+hare:use_statement a owl:Class ;
+    rdfs:label "use_statement" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 125 .
+
+hare:variadic_argument a owl:Class ;
+    rdfs:label "variadic_argument" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 176 .
+
+hare:void a owl:Class ;
+    rdfs:label "void" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 200 .
+
+hare:yield_statement a owl:Class ;
+    rdfs:label "yield_statement" ;
+    rdfs:isDefinedBy hare: ;
+    rdfs:subClassOf ast:Node ;
+    hare:isSupertype true ;
+    hare:nodeTypeId 163 .
+
+hare: a owl:Ontology ;
+    rdfs:label "Hare Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for hare" ;
+    owl:versionInfo "v0.25" ;
+    hare:abiVersion 15 ;
+    hare:fieldCount 19 ;
+    hare:languageName "hare" ;
+    hare:nodeKindCount 225 .
+

@@ -1,0 +1,1216 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix c: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/c/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+c:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+c:abstract_array_declarator a owl:Class ;
+    rdfs:label "abstract_array_declarator" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 239 .
+
+c:abstract_function_declarator a owl:Class ;
+    rdfs:label "abstract_function_declarator" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 234 .
+
+c:abstract_parenthesized_declarator a owl:Class ;
+    rdfs:label "abstract_parenthesized_declarator" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 222 .
+
+c:abstract_pointer_declarator a owl:Class ;
+    rdfs:label "abstract_pointer_declarator" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 229 .
+
+c:alignas_qualifier a owl:Class ;
+    rdfs:label "alignas_qualifier" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 244 .
+
+c:alignof_expression a owl:Class ;
+    rdfs:label "alignof_expression" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 295 .
+
+c:argument a owl:DatatypeProperty ;
+    rdfs:label "argument (literal)" ;
+    rdfs:comment "Literal value for argument field when it contains a terminal node" ;
+    c:fieldId 2 ;
+    c:isTerminalField true .
+
+c:argument_list a owl:Class ;
+    rdfs:label "argument_list" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 194,
+        309 .
+
+c:array_declarator a owl:Class ;
+    rdfs:label "array_declarator" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 236,
+        237,
+        238 .
+
+c:assignment_expression a owl:Class ;
+    rdfs:label "assignment_expression" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 287 .
+
+c:attribute a owl:Class ;
+    rdfs:label "attribute" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 206 .
+
+c:attribute_declaration a owl:Class ;
+    rdfs:label "attribute_declaration" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 207 .
+
+c:attribute_specifier a owl:Class ;
+    rdfs:label "attribute_specifier" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 205 .
+
+c:attributed_declarator a owl:Class ;
+    rdfs:label "attributed_declarator" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 223,
+        224,
+        225 .
+
+c:attributed_statement a owl:Class ;
+    rdfs:label "attributed_statement" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 261 .
+
+c:binary_expression a owl:Class ;
+    rdfs:label "binary_expression" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 195,
+        290 .
+
+c:bitfield_clause a owl:Class ;
+    rdfs:label "bitfield_clause" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 255 .
+
+c:break_statement a owl:Class ;
+    rdfs:label "break_statement" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 276 .
+
+c:call_expression a owl:Class ;
+    rdfs:label "call_expression" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 193,
+        299 .
+
+c:case_statement a owl:Class ;
+    rdfs:label "case_statement" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 270 .
+
+c:cast_expression a owl:Class ;
+    rdfs:label "cast_expression" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 292 .
+
+c:char_literal a owl:Class ;
+    rdfs:label "char_literal" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 318 .
+
+c:character a owl:Class ;
+    rdfs:label "character" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 147 .
+
+c:comma_expression a owl:Class ;
+    rdfs:label "comma_expression" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 285 .
+
+c:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 160 .
+
+c:compound_literal_expression a owl:Class ;
+    rdfs:label "compound_literal_expression" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 311 .
+
+c:compound_statement a owl:Class ;
+    rdfs:label "compound_statement" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 241 .
+
+c:concatenated_string a owl:Class ;
+    rdfs:label "concatenated_string" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 319 .
+
+c:condition a owl:DatatypeProperty ;
+    rdfs:label "condition (literal)" ;
+    rdfs:comment "Literal value for condition field when it contains a terminal node" ;
+    c:fieldId 7 ;
+    c:isTerminalField true .
+
+c:conditional_expression a owl:Class ;
+    rdfs:label "conditional_expression" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 286 .
+
+c:continue_statement a owl:Class ;
+    rdfs:label "continue_statement" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 277 .
+
+c:declaration a owl:Class ;
+    rdfs:label "declaration" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 198 .
+
+c:declaration_list a owl:Class ;
+    rdfs:label "declaration_list" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 213 .
+
+c:declarator a owl:DatatypeProperty ;
+    rdfs:label "declarator (literal)" ;
+    rdfs:comment "Literal value for declarator field when it contains a terminal node" ;
+    c:fieldId 10 ;
+    c:isTerminalField true .
+
+c:designator a owl:DatatypeProperty ;
+    rdfs:label "designator (literal)" ;
+    rdfs:comment "Literal value for designator field when it contains a terminal node" ;
+    c:fieldId 11 ;
+    c:isTerminalField true .
+
+c:directive a owl:DatatypeProperty ;
+    rdfs:label "directive (literal)" ;
+    rdfs:comment "Literal value for directive field when it contains a terminal node" ;
+    c:fieldId 12 ;
+    c:isTerminalField true .
+
+c:do_statement a owl:Class ;
+    rdfs:label "do_statement" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 272 .
+
+c:else_clause a owl:Class ;
+    rdfs:label "else_clause" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 268 .
+
+c:enum_specifier a owl:Class ;
+    rdfs:label "enum_specifier" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 247 .
+
+c:enumerator a owl:Class ;
+    rdfs:label "enumerator" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 256 .
+
+c:enumerator_list a owl:Class ;
+    rdfs:label "enumerator_list" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 248 .
+
+c:escape_sequence a owl:Class ;
+    rdfs:label "escape_sequence" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 154 .
+
+c:expression_statement a owl:Class ;
+    rdfs:label "expression_statement" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 265,
+        266 .
+
+c:extension_expression a owl:Class ;
+    rdfs:label "extension_expression" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 308 .
+
+c:false a owl:Class ;
+    rdfs:label "false" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 157 .
+
+c:field a owl:DatatypeProperty ;
+    rdfs:label "field (literal)" ;
+    rdfs:comment "Literal value for field field when it contains a terminal node" ;
+    c:fieldId 14 ;
+    c:isTerminalField true .
+
+c:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+c:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+c:field_alternative a owl:ObjectProperty ;
+    rdfs:label "alternative (structural)" ;
+    rdfs:comment "Structural reference for alternative field when it contains a non-terminal node" ;
+    c:fieldId 1 .
+
+c:field_argument a owl:ObjectProperty ;
+    rdfs:label "argument (structural)" ;
+    rdfs:comment "Structural reference for argument field when it contains a non-terminal node" ;
+    c:fieldId 2 .
+
+c:field_arguments a owl:ObjectProperty ;
+    rdfs:label "arguments (structural)" ;
+    rdfs:comment "Structural reference for arguments field when it contains a non-terminal node" ;
+    c:fieldId 3 .
+
+c:field_assembly_code a owl:ObjectProperty ;
+    rdfs:label "assembly_code (structural)" ;
+    rdfs:comment "Structural reference for assembly_code field when it contains a non-terminal node" ;
+    c:fieldId 4 .
+
+c:field_body a owl:ObjectProperty ;
+    rdfs:label "body (structural)" ;
+    rdfs:comment "Structural reference for body field when it contains a non-terminal node" ;
+    c:fieldId 5 .
+
+c:field_clobbers a owl:ObjectProperty ;
+    rdfs:label "clobbers (structural)" ;
+    rdfs:comment "Structural reference for clobbers field when it contains a non-terminal node" ;
+    c:fieldId 6 .
+
+c:field_condition a owl:ObjectProperty ;
+    rdfs:label "condition (structural)" ;
+    rdfs:comment "Structural reference for condition field when it contains a non-terminal node" ;
+    c:fieldId 7 .
+
+c:field_consequence a owl:ObjectProperty ;
+    rdfs:label "consequence (structural)" ;
+    rdfs:comment "Structural reference for consequence field when it contains a non-terminal node" ;
+    c:fieldId 8 .
+
+c:field_constraint a owl:ObjectProperty ;
+    rdfs:label "constraint (structural)" ;
+    rdfs:comment "Structural reference for constraint field when it contains a non-terminal node" ;
+    c:fieldId 9 .
+
+c:field_declaration a owl:Class ;
+    rdfs:label "field_declaration" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 253 .
+
+c:field_declaration_list a owl:Class ;
+    rdfs:label "field_declaration_list" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 251 .
+
+c:field_declarator a owl:ObjectProperty ;
+    rdfs:label "declarator (structural)" ;
+    rdfs:comment "Structural reference for declarator field when it contains a non-terminal node" ;
+    c:fieldId 10 .
+
+c:field_designator a owl:Class,
+        owl:ObjectProperty ;
+    rdfs:label "designator (structural)",
+        "field_designator" ;
+    rdfs:comment "Structural reference for designator field when it contains a non-terminal node" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:fieldId 11 ;
+    c:isSupertype true ;
+    c:nodeTypeId 317 .
+
+c:field_end a owl:ObjectProperty ;
+    rdfs:label "end (structural)" ;
+    rdfs:comment "Structural reference for end field when it contains a non-terminal node" ;
+    c:fieldId 13 .
+
+c:field_expression a owl:Class ;
+    rdfs:label "field_expression" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 310 .
+
+c:field_filter a owl:ObjectProperty ;
+    rdfs:label "filter (structural)" ;
+    rdfs:comment "Structural reference for filter field when it contains a non-terminal node" ;
+    c:fieldId 15 .
+
+c:field_function a owl:ObjectProperty ;
+    rdfs:label "function (structural)" ;
+    rdfs:comment "Structural reference for function field when it contains a non-terminal node" ;
+    c:fieldId 16 .
+
+c:field_goto_labels a owl:ObjectProperty ;
+    rdfs:label "goto_labels (structural)" ;
+    rdfs:comment "Structural reference for goto_labels field when it contains a non-terminal node" ;
+    c:fieldId 17 .
+
+c:field_identifier a owl:Class ;
+    rdfs:label "field_identifier" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 360 .
+
+c:field_index a owl:ObjectProperty ;
+    rdfs:label "index (structural)" ;
+    rdfs:comment "Structural reference for index field when it contains a non-terminal node" ;
+    c:fieldId 18 .
+
+c:field_initializer a owl:ObjectProperty ;
+    rdfs:label "initializer (structural)" ;
+    rdfs:comment "Structural reference for initializer field when it contains a non-terminal node" ;
+    c:fieldId 19 .
+
+c:field_input_operands a owl:ObjectProperty ;
+    rdfs:label "input_operands (structural)" ;
+    rdfs:comment "Structural reference for input_operands field when it contains a non-terminal node" ;
+    c:fieldId 20 .
+
+c:field_left a owl:ObjectProperty ;
+    rdfs:label "left (structural)" ;
+    rdfs:comment "Structural reference for left field when it contains a non-terminal node" ;
+    c:fieldId 22 .
+
+c:field_operand a owl:ObjectProperty ;
+    rdfs:label "operand (structural)" ;
+    rdfs:comment "Structural reference for operand field when it contains a non-terminal node" ;
+    c:fieldId 25 .
+
+c:field_operator a owl:ObjectProperty ;
+    rdfs:label "operator (structural)" ;
+    rdfs:comment "Structural reference for operator field when it contains a non-terminal node" ;
+    c:fieldId 26 .
+
+c:field_output_operands a owl:ObjectProperty ;
+    rdfs:label "output_operands (structural)" ;
+    rdfs:comment "Structural reference for output_operands field when it contains a non-terminal node" ;
+    c:fieldId 27 .
+
+c:field_parameters a owl:ObjectProperty ;
+    rdfs:label "parameters (structural)" ;
+    rdfs:comment "Structural reference for parameters field when it contains a non-terminal node" ;
+    c:fieldId 28 .
+
+c:field_path a owl:ObjectProperty ;
+    rdfs:label "path (structural)" ;
+    rdfs:comment "Structural reference for path field when it contains a non-terminal node" ;
+    c:fieldId 29 .
+
+c:field_register a owl:ObjectProperty ;
+    rdfs:label "register (structural)" ;
+    rdfs:comment "Structural reference for register field when it contains a non-terminal node" ;
+    c:fieldId 31 .
+
+c:field_right a owl:ObjectProperty ;
+    rdfs:label "right (structural)" ;
+    rdfs:comment "Structural reference for right field when it contains a non-terminal node" ;
+    c:fieldId 32 .
+
+c:field_size a owl:ObjectProperty ;
+    rdfs:label "size (structural)" ;
+    rdfs:comment "Structural reference for size field when it contains a non-terminal node" ;
+    c:fieldId 33 .
+
+c:field_start a owl:ObjectProperty ;
+    rdfs:label "start (structural)" ;
+    rdfs:comment "Structural reference for start field when it contains a non-terminal node" ;
+    c:fieldId 34 .
+
+c:field_type a owl:ObjectProperty ;
+    rdfs:label "type (structural)" ;
+    rdfs:comment "Structural reference for type field when it contains a non-terminal node" ;
+    c:fieldId 36 .
+
+c:field_update a owl:ObjectProperty ;
+    rdfs:label "update (structural)" ;
+    rdfs:comment "Structural reference for update field when it contains a non-terminal node" ;
+    c:fieldId 38 .
+
+c:field_value a owl:ObjectProperty ;
+    rdfs:label "value (structural)" ;
+    rdfs:comment "Structural reference for value field when it contains a non-terminal node" ;
+    c:fieldId 39 .
+
+c:for_statement a owl:Class ;
+    rdfs:label "for_statement" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 273 .
+
+c:function_declarator a owl:Class ;
+    rdfs:label "function_declarator" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 230,
+        231,
+        232,
+        233,
+        235 .
+
+c:function_definition a owl:Class ;
+    rdfs:label "function_definition" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 196,
+        197 .
+
+c:generic_expression a owl:Class ;
+    rdfs:label "generic_expression" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 297 .
+
+c:gnu_asm_clobber_list a owl:Class ;
+    rdfs:label "gnu_asm_clobber_list" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 306 .
+
+c:gnu_asm_expression a owl:Class ;
+    rdfs:label "gnu_asm_expression" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 300 .
+
+c:gnu_asm_goto_list a owl:Class ;
+    rdfs:label "gnu_asm_goto_list" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 307 .
+
+c:gnu_asm_input_operand a owl:Class ;
+    rdfs:label "gnu_asm_input_operand" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 305 .
+
+c:gnu_asm_input_operand_list a owl:Class ;
+    rdfs:label "gnu_asm_input_operand_list" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 304 .
+
+c:gnu_asm_output_operand a owl:Class ;
+    rdfs:label "gnu_asm_output_operand" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 303 .
+
+c:gnu_asm_output_operand_list a owl:Class ;
+    rdfs:label "gnu_asm_output_operand_list" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 302 .
+
+c:gnu_asm_qualifier a owl:Class ;
+    rdfs:label "gnu_asm_qualifier" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 301 .
+
+c:goto_statement a owl:Class ;
+    rdfs:label "goto_statement" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 278 .
+
+c:identifier a owl:Class ;
+    rdfs:label "identifier" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 1 .
+
+c:if_statement a owl:Class ;
+    rdfs:label "if_statement" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 267 .
+
+c:init_declarator a owl:Class ;
+    rdfs:label "init_declarator" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 240 .
+
+c:initializer_list a owl:Class ;
+    rdfs:label "initializer_list" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 313 .
+
+c:initializer_pair a owl:Class ;
+    rdfs:label "initializer_pair" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 314 .
+
+c:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+c:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+c:label a owl:DatatypeProperty ;
+    rdfs:label "label (literal)" ;
+    rdfs:comment "Literal value for label field when it contains a terminal node" ;
+    c:fieldId 21 ;
+    c:isTerminalField true .
+
+c:labeled_statement a owl:Class ;
+    rdfs:label "labeled_statement" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 264 .
+
+c:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+c:left a owl:DatatypeProperty ;
+    rdfs:label "left (literal)" ;
+    rdfs:comment "Literal value for left field when it contains a terminal node" ;
+    c:fieldId 22 ;
+    c:isTerminalField true .
+
+c:linkage_specification a owl:Class ;
+    rdfs:label "linkage_specification" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 204 .
+
+c:macro_type_specifier a owl:Class ;
+    rdfs:label "macro_type_specifier" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 323 .
+
+c:member a owl:DatatypeProperty ;
+    rdfs:label "member (literal)" ;
+    rdfs:comment "Literal value for member field when it contains a terminal node" ;
+    c:fieldId 23 ;
+    c:isTerminalField true .
+
+c:ms_based_modifier a owl:Class ;
+    rdfs:label "ms_based_modifier" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 209 .
+
+c:ms_call_modifier a owl:Class ;
+    rdfs:label "ms_call_modifier" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 210 .
+
+c:ms_declspec_modifier a owl:Class ;
+    rdfs:label "ms_declspec_modifier" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 208 .
+
+c:ms_pointer_modifier a owl:Class ;
+    rdfs:label "ms_pointer_modifier" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 212 .
+
+c:ms_restrict_modifier a owl:Class ;
+    rdfs:label "ms_restrict_modifier" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 59 .
+
+c:ms_signed_ptr_modifier a owl:Class ;
+    rdfs:label "ms_signed_ptr_modifier" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 61 .
+
+c:ms_unaligned_ptr_modifier a owl:Class ;
+    rdfs:label "ms_unaligned_ptr_modifier" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 211 .
+
+c:ms_unsigned_ptr_modifier a owl:Class ;
+    rdfs:label "ms_unsigned_ptr_modifier" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 60 .
+
+c:name a owl:DatatypeProperty ;
+    rdfs:label "name (literal)" ;
+    rdfs:comment "Literal value for name field when it contains a terminal node" ;
+    c:fieldId 24 ;
+    c:isTerminalField true .
+
+c:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+c:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+c:null a owl:Class ;
+    rdfs:label "null" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 321 .
+
+c:number_literal a owl:Class ;
+    rdfs:label "number_literal" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 141 .
+
+c:offsetof_expression a owl:Class ;
+    rdfs:label "offsetof_expression" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 296 .
+
+c:parameter_declaration a owl:Class ;
+    rdfs:label "parameter_declaration" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 260 .
+
+c:parameter_list a owl:Class ;
+    rdfs:label "parameter_list" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 258,
+        259 .
+
+c:parenthesized_declarator a owl:Class ;
+    rdfs:label "parenthesized_declarator" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 219,
+        220,
+        221 .
+
+c:parenthesized_expression a owl:Class ;
+    rdfs:label "parenthesized_expression" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 190,
+        312 .
+
+c:path a owl:DatatypeProperty ;
+    rdfs:label "path (literal)" ;
+    rdfs:comment "Literal value for path field when it contains a terminal node" ;
+    c:fieldId 29 ;
+    c:isTerminalField true .
+
+c:pointer_declarator a owl:Class ;
+    rdfs:label "pointer_declarator" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 226,
+        227,
+        228 .
+
+c:pointer_expression a owl:Class ;
+    rdfs:label "pointer_expression" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 288 .
+
+c:prefix a owl:DatatypeProperty ;
+    rdfs:label "prefix (literal)" ;
+    rdfs:comment "Literal value for prefix field when it contains a terminal node" ;
+    c:fieldId 30 ;
+    c:isTerminalField true .
+
+c:preproc_arg a owl:Class ;
+    rdfs:label "preproc_arg" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 18 .
+
+c:preproc_call a owl:Class ;
+    rdfs:label "preproc_call" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 168 .
+
+c:preproc_def a owl:Class ;
+    rdfs:label "preproc_def" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 165 .
+
+c:preproc_defined a owl:Class ;
+    rdfs:label "preproc_defined" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 191 .
+
+c:preproc_directive a owl:Class ;
+    rdfs:label "preproc_directive" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 19 .
+
+c:preproc_elif a owl:Class ;
+    rdfs:label "preproc_elif" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 172,
+        177,
+        182,
+        187 .
+
+c:preproc_elifdef a owl:Class ;
+    rdfs:label "preproc_elifdef" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 173,
+        178,
+        183,
+        188 .
+
+c:preproc_else a owl:Class ;
+    rdfs:label "preproc_else" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 171,
+        176,
+        181,
+        186 .
+
+c:preproc_function_def a owl:Class ;
+    rdfs:label "preproc_function_def" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 166 .
+
+c:preproc_if a owl:Class ;
+    rdfs:label "preproc_if" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 169,
+        174,
+        179,
+        184 .
+
+c:preproc_ifdef a owl:Class ;
+    rdfs:label "preproc_ifdef" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 170,
+        175,
+        180,
+        185 .
+
+c:preproc_include a owl:Class ;
+    rdfs:label "preproc_include" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 164 .
+
+c:preproc_params a owl:Class ;
+    rdfs:label "preproc_params" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 167 .
+
+c:primitive_type a owl:Class ;
+    rdfs:label "primitive_type" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 93 .
+
+c:return_statement a owl:Class ;
+    rdfs:label "return_statement" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 275 .
+
+c:seh_except_clause a owl:Class ;
+    rdfs:label "seh_except_clause" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 280 .
+
+c:seh_finally_clause a owl:Class ;
+    rdfs:label "seh_finally_clause" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 281 .
+
+c:seh_leave_statement a owl:Class ;
+    rdfs:label "seh_leave_statement" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 282 .
+
+c:seh_try_statement a owl:Class ;
+    rdfs:label "seh_try_statement" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 279 .
+
+c:sized_type_specifier a owl:Class ;
+    rdfs:label "sized_type_specifier" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 246 .
+
+c:sizeof_expression a owl:Class ;
+    rdfs:label "sizeof_expression" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 294 .
+
+c:statement_identifier a owl:Class ;
+    rdfs:label "statement_identifier" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 361 .
+
+c:storage_class_specifier a owl:Class ;
+    rdfs:label "storage_class_specifier" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 242 .
+
+c:string_content a owl:Class ;
+    rdfs:label "string_content" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 153 .
+
+c:string_literal a owl:Class ;
+    rdfs:label "string_literal" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 320 .
+
+c:struct_specifier a owl:Class ;
+    rdfs:label "struct_specifier" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 249 .
+
+c:subscript_designator a owl:Class ;
+    rdfs:label "subscript_designator" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 315 .
+
+c:subscript_expression a owl:Class ;
+    rdfs:label "subscript_expression" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 298 .
+
+c:subscript_range_designator a owl:Class ;
+    rdfs:label "subscript_range_designator" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 316 .
+
+c:switch_statement a owl:Class ;
+    rdfs:label "switch_statement" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 269 .
+
+c:symbol a owl:DatatypeProperty ;
+    rdfs:label "symbol (literal)" ;
+    rdfs:comment "Literal value for symbol field when it contains a terminal node" ;
+    c:fieldId 35 ;
+    c:isTerminalField true .
+
+c:system_lib_string a owl:Class ;
+    rdfs:label "system_lib_string" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 155 .
+
+c:translation_unit a owl:Class ;
+    rdfs:label "translation_unit" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 161 .
+
+c:true a owl:Class ;
+    rdfs:label "true" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 156 .
+
+c:type a owl:DatatypeProperty ;
+    rdfs:label "type (literal)" ;
+    rdfs:comment "Literal value for type field when it contains a terminal node" ;
+    c:fieldId 36 ;
+    c:isTerminalField true .
+
+c:type_definition a owl:Class ;
+    rdfs:label "type_definition" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 199 .
+
+c:type_descriptor a owl:Class ;
+    rdfs:label "type_descriptor" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 293 .
+
+c:type_identifier a owl:Class ;
+    rdfs:label "type_identifier" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 362 .
+
+c:type_qualifier a owl:Class ;
+    rdfs:label "type_qualifier" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 243 .
+
+c:unary_expression a owl:Class ;
+    rdfs:label "unary_expression" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 192,
+        289 .
+
+c:underlying_type a owl:DatatypeProperty ;
+    rdfs:label "underlying_type (literal)" ;
+    rdfs:comment "Literal value for underlying_type field when it contains a terminal node" ;
+    c:fieldId 37 ;
+    c:isTerminalField true .
+
+c:union_specifier a owl:Class ;
+    rdfs:label "union_specifier" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 250 .
+
+c:update_expression a owl:Class ;
+    rdfs:label "update_expression" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 291 .
+
+c:value a owl:DatatypeProperty ;
+    rdfs:label "value (literal)" ;
+    rdfs:comment "Literal value for value field when it contains a terminal node" ;
+    c:fieldId 39 ;
+    c:isTerminalField true .
+
+c:variadic_parameter a owl:Class ;
+    rdfs:label "variadic_parameter" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 257 .
+
+c:while_statement a owl:Class ;
+    rdfs:label "while_statement" ;
+    rdfs:isDefinedBy c: ;
+    rdfs:subClassOf ast:Node ;
+    c:isSupertype true ;
+    c:nodeTypeId 271 .
+
+c: a owl:Ontology ;
+    rdfs:label "C Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for c" ;
+    owl:versionInfo "v0.25" ;
+    c:abiVersion 15 ;
+    c:fieldCount 39 ;
+    c:languageName "c" ;
+    c:nodeKindCount 363 .
+

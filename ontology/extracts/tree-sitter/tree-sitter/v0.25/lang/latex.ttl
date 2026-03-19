@@ -1,0 +1,1335 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix latex: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/latex/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+latex:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+latex:acronym_definition a owl:Class ;
+    rdfs:label "acronym_definition" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 577 .
+
+latex:acronym_reference a owl:Class ;
+    rdfs:label "acronym_reference" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 578 .
+
+latex:argc a owl:Class ;
+    rdfs:label "argc" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 44 .
+
+latex:asy_environment a owl:Class ;
+    rdfs:label "asy_environment" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 493 .
+
+latex:asydef_environment a owl:Class ;
+    rdfs:label "asydef_environment" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 498 .
+
+latex:author a owl:Class ;
+    rdfs:label "author" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 609 .
+
+latex:author_declaration a owl:Class ;
+    rdfs:label "author_declaration" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 546 .
+
+latex:begin a owl:Class ;
+    rdfs:label "begin" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 470,
+        474,
+        479,
+        484,
+        489,
+        494,
+        499,
+        504,
+        510,
+        515,
+        520,
+        525,
+        530 .
+
+latex:biblatex_include a owl:Class ;
+    rdfs:label "biblatex_include" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 550 .
+
+latex:bibstyle_include a owl:Class ;
+    rdfs:label "bibstyle_include" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 551 .
+
+latex:bibtex_include a owl:Class ;
+    rdfs:label "bibtex_include" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 552 .
+
+latex:block_comment a owl:Class ;
+    rdfs:label "block_comment" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 411 .
+
+latex:brack_group a owl:Class ;
+    rdfs:label "brack_group" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 451 .
+
+latex:brack_group_argc a owl:Class ;
+    rdfs:label "brack_group_argc" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 454 .
+
+latex:brack_group_key_value a owl:Class ;
+    rdfs:label "brack_group_key_value" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 455 .
+
+latex:brack_group_text a owl:Class ;
+    rdfs:label "brack_group_text" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 452 .
+
+latex:brack_group_word a owl:Class ;
+    rdfs:label "brack_group_word" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 453 .
+
+latex:caption a owl:Class ;
+    rdfs:label "caption" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 558 .
+
+latex:changes_replaced a owl:Class ;
+    rdfs:label "changes_replaced" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 585 .
+
+latex:chapter a owl:Class ;
+    rdfs:label "chapter" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 422 .
+
+latex:citation a owl:Class ;
+    rdfs:label "citation" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 559 .
+
+latex:class_include a owl:Class ;
+    rdfs:label "class_include" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 548 .
+
+latex:code a owl:DatatypeProperty ;
+    rdfs:label "code (literal)" ;
+    rdfs:comment "Literal value for code field when it contains a terminal node" ;
+    latex:fieldId 6 ;
+    latex:isTerminalField true .
+
+latex:color_definition a owl:Class ;
+    rdfs:label "color_definition" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 580 .
+
+latex:color_reference a owl:Class ;
+    rdfs:label "color_reference" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 582 .
+
+latex:color_set_definition a owl:Class ;
+    rdfs:label "color_set_definition" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 581 .
+
+latex:command a owl:DatatypeProperty ;
+    rdfs:label "command (literal)" ;
+    rdfs:comment "Literal value for command field when it contains a terminal node" ;
+    latex:fieldId 7 ;
+    latex:isTerminalField true .
+
+latex:command_name a owl:Class ;
+    rdfs:label "command_name" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 1,
+        36 .
+
+latex:comment a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "comment",
+        "comment (literal)" ;
+    rdfs:comment "Literal value for comment field when it contains a terminal node" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:fieldId 8 ;
+    latex:isSupertype true ;
+    latex:isTerminalField true ;
+    latex:nodeTypeId 398,
+        399,
+        400 .
+
+latex:comment_environment a owl:Class ;
+    rdfs:label "comment_environment" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 473 .
+
+latex:counter_addition a owl:Class ;
+    rdfs:label "counter_addition" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 542 .
+
+latex:counter_declaration a owl:Class ;
+    rdfs:label "counter_declaration" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 537 .
+
+latex:counter_definition a owl:Class ;
+    rdfs:label "counter_definition" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 541 .
+
+latex:counter_increment a owl:Class ;
+    rdfs:label "counter_increment" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 543 .
+
+latex:counter_typesetting a owl:Class ;
+    rdfs:label "counter_typesetting" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 544 .
+
+latex:counter_value a owl:Class ;
+    rdfs:label "counter_value" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 540 .
+
+latex:counter_within_declaration a owl:Class ;
+    rdfs:label "counter_within_declaration" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 538 .
+
+latex:counter_without_declaration a owl:Class ;
+    rdfs:label "counter_without_declaration" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 539 .
+
+latex:curly_group a owl:Class ;
+    rdfs:label "curly_group" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 435 .
+
+latex:curly_group_author_list a owl:Class ;
+    rdfs:label "curly_group_author_list" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 450 .
+
+latex:curly_group_command_name a owl:Class ;
+    rdfs:label "curly_group_command_name" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 446 .
+
+latex:curly_group_glob_pattern a owl:Class ;
+    rdfs:label "curly_group_glob_pattern" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 448 .
+
+latex:curly_group_impl a owl:Class ;
+    rdfs:label "curly_group_impl" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 449 .
+
+latex:curly_group_key_value a owl:Class ;
+    rdfs:label "curly_group_key_value" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 447 .
+
+latex:curly_group_label a owl:Class ;
+    rdfs:label "curly_group_label" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 441 .
+
+latex:curly_group_label_list a owl:Class ;
+    rdfs:label "curly_group_label_list" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 442 .
+
+latex:curly_group_path a owl:Class ;
+    rdfs:label "curly_group_path" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 443 .
+
+latex:curly_group_path_list a owl:Class ;
+    rdfs:label "curly_group_path_list" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 444 .
+
+latex:curly_group_spec a owl:Class ;
+    rdfs:label "curly_group_spec" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 439 .
+
+latex:curly_group_text a owl:Class ;
+    rdfs:label "curly_group_text" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 436,
+        476,
+        481,
+        486,
+        491,
+        496,
+        501,
+        506,
+        512,
+        517,
+        522,
+        527,
+        532 .
+
+latex:curly_group_text_list a owl:Class ;
+    rdfs:label "curly_group_text_list" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 440 .
+
+latex:curly_group_uri a owl:Class ;
+    rdfs:label "curly_group_uri" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 445 .
+
+latex:curly_group_value a owl:Class ;
+    rdfs:label "curly_group_value" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 438 .
+
+latex:curly_group_word a owl:Class ;
+    rdfs:label "curly_group_word" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 437 .
+
+latex:declaration a owl:DatatypeProperty ;
+    rdfs:label "declaration (literal)" ;
+    rdfs:comment "Literal value for declaration field when it contains a terminal node" ;
+    latex:fieldId 11 ;
+    latex:isTerminalField true .
+
+latex:delimiter a owl:Class ;
+    rdfs:label "delimiter" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 40 .
+
+latex:displayed_equation a owl:Class ;
+    rdfs:label "displayed_equation" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 465 .
+
+latex:end a owl:Class ;
+    rdfs:label "end" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 471,
+        475,
+        480,
+        485,
+        490,
+        495,
+        500,
+        505,
+        511,
+        516,
+        521,
+        526,
+        531 .
+
+latex:enum_item a owl:Class ;
+    rdfs:label "enum_item" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 434 .
+
+latex:environment_definition a owl:Class ;
+    rdfs:label "environment_definition" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 571 .
+
+latex:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+latex:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+latex:field_arg a owl:ObjectProperty ;
+    rdfs:label "arg (structural)" ;
+    rdfs:comment "Structural reference for arg field when it contains a non-terminal node" ;
+    latex:fieldId 1 .
+
+latex:field_argc a owl:ObjectProperty ;
+    rdfs:label "argc (structural)" ;
+    rdfs:comment "Structural reference for argc field when it contains a non-terminal node" ;
+    latex:fieldId 2 .
+
+latex:field_authors a owl:ObjectProperty ;
+    rdfs:label "authors (structural)" ;
+    rdfs:comment "Structural reference for authors field when it contains a non-terminal node" ;
+    latex:fieldId 3 .
+
+latex:field_begin a owl:ObjectProperty ;
+    rdfs:label "begin (structural)" ;
+    rdfs:comment "Structural reference for begin field when it contains a non-terminal node" ;
+    latex:fieldId 4 .
+
+latex:field_body a owl:ObjectProperty ;
+    rdfs:label "body (structural)" ;
+    rdfs:comment "Structural reference for body field when it contains a non-terminal node" ;
+    latex:fieldId 5 .
+
+latex:field_command a owl:ObjectProperty ;
+    rdfs:label "command (structural)" ;
+    rdfs:comment "Structural reference for command field when it contains a non-terminal node" ;
+    latex:fieldId 7 .
+
+latex:field_content a owl:ObjectProperty ;
+    rdfs:label "content (structural)" ;
+    rdfs:comment "Structural reference for content field when it contains a non-terminal node" ;
+    latex:fieldId 9 .
+
+latex:field_counter a owl:ObjectProperty ;
+    rdfs:label "counter (structural)" ;
+    rdfs:comment "Structural reference for counter field when it contains a non-terminal node" ;
+    latex:fieldId 10 .
+
+latex:field_declaration a owl:ObjectProperty ;
+    rdfs:label "declaration (structural)" ;
+    rdfs:comment "Structural reference for declaration field when it contains a non-terminal node" ;
+    latex:fieldId 11 .
+
+latex:field_default a owl:ObjectProperty ;
+    rdfs:label "default (structural)" ;
+    rdfs:comment "Structural reference for default field when it contains a non-terminal node" ;
+    latex:fieldId 12 .
+
+latex:field_directory a owl:ObjectProperty ;
+    rdfs:label "directory (structural)" ;
+    rdfs:comment "Structural reference for directory field when it contains a non-terminal node" ;
+    latex:fieldId 13 .
+
+latex:field_end a owl:ObjectProperty ;
+    rdfs:label "end (structural)" ;
+    rdfs:comment "Structural reference for end field when it contains a non-terminal node" ;
+    latex:fieldId 14 .
+
+latex:field_file a owl:ObjectProperty ;
+    rdfs:label "file (structural)" ;
+    rdfs:comment "Structural reference for file field when it contains a non-terminal node" ;
+    latex:fieldId 15 .
+
+latex:field_from a owl:ObjectProperty ;
+    rdfs:label "from (structural)" ;
+    rdfs:comment "Structural reference for from field when it contains a non-terminal node" ;
+    latex:fieldId 16 .
+
+latex:field_glob a owl:ObjectProperty ;
+    rdfs:label "glob (structural)" ;
+    rdfs:comment "Structural reference for glob field when it contains a non-terminal node" ;
+    latex:fieldId 17 .
+
+latex:field_head a owl:ObjectProperty ;
+    rdfs:label "head (structural)" ;
+    rdfs:comment "Structural reference for head field when it contains a non-terminal node" ;
+    latex:fieldId 18 .
+
+latex:field_implementation a owl:ObjectProperty ;
+    rdfs:label "implementation (structural)" ;
+    rdfs:comment "Structural reference for implementation field when it contains a non-terminal node" ;
+    latex:fieldId 19 .
+
+latex:field_key a owl:ObjectProperty ;
+    rdfs:label "key (structural)" ;
+    rdfs:comment "Structural reference for key field when it contains a non-terminal node" ;
+    latex:fieldId 20 .
+
+latex:field_keys a owl:ObjectProperty ;
+    rdfs:label "keys (structural)" ;
+    rdfs:comment "Structural reference for keys field when it contains a non-terminal node" ;
+    latex:fieldId 21 .
+
+latex:field_label a owl:ObjectProperty ;
+    rdfs:label "label (structural)" ;
+    rdfs:comment "Structural reference for label field when it contains a non-terminal node" ;
+    latex:fieldId 22 .
+
+latex:field_language a owl:ObjectProperty ;
+    rdfs:label "language (structural)" ;
+    rdfs:comment "Structural reference for language field when it contains a non-terminal node" ;
+    latex:fieldId 23 .
+
+latex:field_left a owl:ObjectProperty ;
+    rdfs:label "left (structural)" ;
+    rdfs:comment "Structural reference for left field when it contains a non-terminal node" ;
+    latex:fieldId 24 .
+
+latex:field_left_command a owl:ObjectProperty ;
+    rdfs:label "left_command (structural)" ;
+    rdfs:comment "Structural reference for left_command field when it contains a non-terminal node" ;
+    latex:fieldId 25 .
+
+latex:field_left_delimiter a owl:ObjectProperty ;
+    rdfs:label "left_delimiter (structural)" ;
+    rdfs:comment "Structural reference for left_delimiter field when it contains a non-terminal node" ;
+    latex:fieldId 26 .
+
+latex:field_long a owl:ObjectProperty ;
+    rdfs:label "long (structural)" ;
+    rdfs:comment "Structural reference for long field when it contains a non-terminal node" ;
+    latex:fieldId 27 .
+
+latex:field_model a owl:ObjectProperty ;
+    rdfs:label "model (structural)" ;
+    rdfs:comment "Structural reference for model field when it contains a non-terminal node" ;
+    latex:fieldId 28 .
+
+latex:field_name a owl:ObjectProperty ;
+    rdfs:label "name (structural)" ;
+    rdfs:comment "Structural reference for name field when it contains a non-terminal node" ;
+    latex:fieldId 29 .
+
+latex:field_names a owl:ObjectProperty ;
+    rdfs:label "names (structural)" ;
+    rdfs:comment "Structural reference for names field when it contains a non-terminal node" ;
+    latex:fieldId 30 .
+
+latex:field_number a owl:ObjectProperty ;
+    rdfs:label "number (structural)" ;
+    rdfs:comment "Structural reference for number field when it contains a non-terminal node" ;
+    latex:fieldId 31 .
+
+latex:field_options a owl:ObjectProperty ;
+    rdfs:label "options (structural)" ;
+    rdfs:comment "Structural reference for options field when it contains a non-terminal node" ;
+    latex:fieldId 32 .
+
+latex:field_pair a owl:ObjectProperty ;
+    rdfs:label "pair (structural)" ;
+    rdfs:comment "Structural reference for pair field when it contains a non-terminal node" ;
+    latex:fieldId 33 .
+
+latex:field_path a owl:ObjectProperty ;
+    rdfs:label "path (structural)" ;
+    rdfs:comment "Structural reference for path field when it contains a non-terminal node" ;
+    latex:fieldId 34 .
+
+latex:field_paths a owl:ObjectProperty ;
+    rdfs:label "paths (structural)" ;
+    rdfs:comment "Structural reference for paths field when it contains a non-terminal node" ;
+    latex:fieldId 35 .
+
+latex:field_postnote a owl:ObjectProperty ;
+    rdfs:label "postnote (structural)" ;
+    rdfs:comment "Structural reference for postnote field when it contains a non-terminal node" ;
+    latex:fieldId 37 .
+
+latex:field_prenote a owl:ObjectProperty ;
+    rdfs:label "prenote (structural)" ;
+    rdfs:comment "Structural reference for prenote field when it contains a non-terminal node" ;
+    latex:fieldId 38 .
+
+latex:field_right a owl:ObjectProperty ;
+    rdfs:label "right (structural)" ;
+    rdfs:comment "Structural reference for right field when it contains a non-terminal node" ;
+    latex:fieldId 39 .
+
+latex:field_right_command a owl:ObjectProperty ;
+    rdfs:label "right_command (structural)" ;
+    rdfs:comment "Structural reference for right_command field when it contains a non-terminal node" ;
+    latex:fieldId 40 .
+
+latex:field_right_delimiter a owl:ObjectProperty ;
+    rdfs:label "right_delimiter (structural)" ;
+    rdfs:comment "Structural reference for right_delimiter field when it contains a non-terminal node" ;
+    latex:fieldId 41 .
+
+latex:field_short a owl:ObjectProperty ;
+    rdfs:label "short (structural)" ;
+    rdfs:comment "Structural reference for short field when it contains a non-terminal node" ;
+    latex:fieldId 42 .
+
+latex:field_spec a owl:ObjectProperty ;
+    rdfs:label "spec (structural)" ;
+    rdfs:comment "Structural reference for spec field when it contains a non-terminal node" ;
+    latex:fieldId 43 .
+
+latex:field_subscript a owl:ObjectProperty ;
+    rdfs:label "subscript (structural)" ;
+    rdfs:comment "Structural reference for subscript field when it contains a non-terminal node" ;
+    latex:fieldId 44 .
+
+latex:field_supercounter a owl:ObjectProperty ;
+    rdfs:label "supercounter (structural)" ;
+    rdfs:comment "Structural reference for supercounter field when it contains a non-terminal node" ;
+    latex:fieldId 45 .
+
+latex:field_superscript a owl:ObjectProperty ;
+    rdfs:label "superscript (structural)" ;
+    rdfs:comment "Structural reference for superscript field when it contains a non-terminal node" ;
+    latex:fieldId 46 .
+
+latex:field_tail a owl:ObjectProperty ;
+    rdfs:label "tail (structural)" ;
+    rdfs:comment "Structural reference for tail field when it contains a non-terminal node" ;
+    latex:fieldId 47 .
+
+latex:field_text a owl:ObjectProperty ;
+    rdfs:label "text (structural)" ;
+    rdfs:comment "Structural reference for text field when it contains a non-terminal node" ;
+    latex:fieldId 48 .
+
+latex:field_text_added a owl:ObjectProperty ;
+    rdfs:label "text_added (structural)" ;
+    rdfs:comment "Structural reference for text_added field when it contains a non-terminal node" ;
+    latex:fieldId 49 .
+
+latex:field_text_deleted a owl:ObjectProperty ;
+    rdfs:label "text_deleted (structural)" ;
+    rdfs:comment "Structural reference for text_deleted field when it contains a non-terminal node" ;
+    latex:fieldId 50 .
+
+latex:field_title a owl:ObjectProperty ;
+    rdfs:label "title (structural)" ;
+    rdfs:comment "Structural reference for title field when it contains a non-terminal node" ;
+    latex:fieldId 51 .
+
+latex:field_to a owl:ObjectProperty ;
+    rdfs:label "to (structural)" ;
+    rdfs:comment "Structural reference for to field when it contains a non-terminal node" ;
+    latex:fieldId 52 .
+
+latex:field_toc a owl:ObjectProperty ;
+    rdfs:label "toc (structural)" ;
+    rdfs:comment "Structural reference for toc field when it contains a non-terminal node" ;
+    latex:fieldId 53 .
+
+latex:field_ty a owl:ObjectProperty ;
+    rdfs:label "ty (structural)" ;
+    rdfs:comment "Structural reference for ty field when it contains a non-terminal node" ;
+    latex:fieldId 54 .
+
+latex:field_uri a owl:ObjectProperty ;
+    rdfs:label "uri (structural)" ;
+    rdfs:comment "Structural reference for uri field when it contains a non-terminal node" ;
+    latex:fieldId 55 .
+
+latex:field_value a owl:ObjectProperty ;
+    rdfs:label "value (structural)" ;
+    rdfs:comment "Structural reference for value field when it contains a non-terminal node" ;
+    latex:fieldId 56 .
+
+latex:field_word a owl:ObjectProperty ;
+    rdfs:label "word (structural)" ;
+    rdfs:comment "Structural reference for word field when it contains a non-terminal node" ;
+    latex:fieldId 58 .
+
+latex:generic_command a owl:Class ;
+    rdfs:label "generic_command" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 536 .
+
+latex:generic_environment a owl:Class ;
+    rdfs:label "generic_environment" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 472 .
+
+latex:glob_pattern a owl:Class ;
+    rdfs:label "glob_pattern" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 457 .
+
+latex:glossary_entry_definition a owl:Class ;
+    rdfs:label "glossary_entry_definition" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 575 .
+
+latex:glossary_entry_reference a owl:Class ;
+    rdfs:label "glossary_entry_reference" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 576 .
+
+latex:graphics_include a owl:Class ;
+    rdfs:label "graphics_include" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 553 .
+
+latex:hyperlink a owl:Class ;
+    rdfs:label "hyperlink" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 584 .
+
+latex:implementation a owl:DatatypeProperty ;
+    rdfs:label "implementation (literal)" ;
+    rdfs:comment "Literal value for implementation field when it contains a terminal node" ;
+    latex:fieldId 19 ;
+    latex:isTerminalField true .
+
+latex:import_include a owl:Class ;
+    rdfs:label "import_include" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 557 .
+
+latex:inkscape_include a owl:Class ;
+    rdfs:label "inkscape_include" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 555 .
+
+latex:inline_formula a owl:Class ;
+    rdfs:label "inline_formula" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 466 .
+
+latex:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+latex:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+latex:key_value_pair a owl:Class ;
+    rdfs:label "key_value_pair" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 462 .
+
+latex:label a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "label",
+        "label (literal)" ;
+    rdfs:comment "Literal value for label field when it contains a terminal node" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:fieldId 22 ;
+    latex:isSupertype true ;
+    latex:isTerminalField true ;
+    latex:nodeTypeId 43 .
+
+latex:label_definition a owl:Class ;
+    rdfs:label "label_definition" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 560 .
+
+latex:label_number a owl:Class ;
+    rdfs:label "label_number" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 563 .
+
+latex:label_reference a owl:Class ;
+    rdfs:label "label_reference" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 561 .
+
+latex:label_reference_range a owl:Class ;
+    rdfs:label "label_reference_range" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 562 .
+
+latex:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+latex:latex_include a owl:Class ;
+    rdfs:label "latex_include" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 549 .
+
+latex:left a owl:DatatypeProperty ;
+    rdfs:label "left (literal)" ;
+    rdfs:comment "Literal value for left field when it contains a terminal node" ;
+    latex:fieldId 24 ;
+    latex:isTerminalField true .
+
+latex:left_delimiter a owl:DatatypeProperty ;
+    rdfs:label "left_delimiter (literal)" ;
+    rdfs:comment "Literal value for left_delimiter field when it contains a terminal node" ;
+    latex:fieldId 26 ;
+    latex:isTerminalField true .
+
+latex:let_command_definition a owl:Class ;
+    rdfs:label "let_command_definition" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 569 .
+
+latex:letter a owl:Class ;
+    rdfs:label "letter" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 56 .
+
+latex:line_comment a owl:Class ;
+    rdfs:label "line_comment" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 3 .
+
+latex:listing_environment a owl:Class ;
+    rdfs:label "listing_environment" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 483 .
+
+latex:luacode_environment a owl:Class ;
+    rdfs:label "luacode_environment" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 508 .
+
+latex:math_delimiter a owl:Class ;
+    rdfs:label "math_delimiter" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 468 .
+
+latex:math_environment a owl:Class ;
+    rdfs:label "math_environment" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 529 .
+
+latex:minted_environment a owl:Class ;
+    rdfs:label "minted_environment" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 488 .
+
+latex:new_command_definition a owl:Class ;
+    rdfs:label "new_command_definition" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 564 .
+
+latex:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+latex:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+latex:old_command_definition a owl:Class ;
+    rdfs:label "old_command_definition" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 568 .
+
+latex:operator a owl:Class ;
+    rdfs:label "operator" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 459 .
+
+latex:package_include a owl:Class ;
+    rdfs:label "package_include" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 547 .
+
+latex:paired_delimiter_definition a owl:Class ;
+    rdfs:label "paired_delimiter_definition" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 570 .
+
+latex:paragraph a owl:Class ;
+    rdfs:label "paragraph" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 430 .
+
+latex:part a owl:Class ;
+    rdfs:label "part" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 420 .
+
+latex:path a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "path",
+        "path (literal)" ;
+    rdfs:comment "Literal value for path field when it contains a terminal node" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:fieldId 34 ;
+    latex:isSupertype true ;
+    latex:isTerminalField true ;
+    latex:nodeTypeId 41 .
+
+latex:pattern a owl:DatatypeProperty ;
+    rdfs:label "pattern (literal)" ;
+    rdfs:comment "Literal value for pattern field when it contains a terminal node" ;
+    latex:fieldId 36 ;
+    latex:isTerminalField true .
+
+latex:placeholder a owl:Class ;
+    rdfs:label "placeholder" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 38 .
+
+latex:pycode_environment a owl:Class ;
+    rdfs:label "pycode_environment" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 503 .
+
+latex:right a owl:DatatypeProperty ;
+    rdfs:label "right (literal)" ;
+    rdfs:comment "Literal value for right field when it contains a terminal node" ;
+    latex:fieldId 39 ;
+    latex:isTerminalField true .
+
+latex:right_delimiter a owl:DatatypeProperty ;
+    rdfs:label "right_delimiter (literal)" ;
+    rdfs:comment "Literal value for right_delimiter field when it contains a terminal node" ;
+    latex:fieldId 41 ;
+    latex:isTerminalField true .
+
+latex:sageblock_environment a owl:Class ;
+    rdfs:label "sageblock_environment" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 524 .
+
+latex:sagesilent_environment a owl:Class ;
+    rdfs:label "sagesilent_environment" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 519 .
+
+latex:section a owl:Class ;
+    rdfs:label "section" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 424 .
+
+latex:source_code a owl:Class ;
+    rdfs:label "source_code" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 401,
+        402,
+        403,
+        404,
+        405,
+        406,
+        407,
+        408,
+        409 .
+
+latex:source_file a owl:Class ;
+    rdfs:label "source_file" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 410 .
+
+latex:subparagraph a owl:Class ;
+    rdfs:label "subparagraph" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 432 .
+
+latex:subscript a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "subscript",
+        "subscript (literal)" ;
+    rdfs:comment "Literal value for subscript field when it contains a terminal node" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:fieldId 44 ;
+    latex:isSupertype true ;
+    latex:isTerminalField true ;
+    latex:nodeTypeId 460 .
+
+latex:subsection a owl:Class ;
+    rdfs:label "subsection" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 426 .
+
+latex:subsubsection a owl:Class ;
+    rdfs:label "subsubsection" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 428 .
+
+latex:superscript a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "superscript",
+        "superscript (literal)" ;
+    rdfs:comment "Literal value for superscript field when it contains a terminal node" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:fieldId 46 ;
+    latex:isSupertype true ;
+    latex:isTerminalField true ;
+    latex:nodeTypeId 461 .
+
+latex:svg_include a owl:Class ;
+    rdfs:label "svg_include" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 554 .
+
+latex:text a owl:Class ;
+    rdfs:label "text" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 456,
+        477,
+        482,
+        487,
+        492,
+        497,
+        502,
+        507,
+        513,
+        518,
+        523,
+        528,
+        533 .
+
+latex:text_mode a owl:Class ;
+    rdfs:label "text_mode" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 469 .
+
+latex:theorem_definition a owl:Class ;
+    rdfs:label "theorem_definition" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 579 .
+
+latex:tikz_library_import a owl:Class ;
+    rdfs:label "tikz_library_import" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 583 .
+
+latex:title_declaration a owl:Class ;
+    rdfs:label "title_declaration" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 545 .
+
+latex:todo a owl:Class ;
+    rdfs:label "todo" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 535 .
+
+latex:todo_command_name a owl:Class ;
+    rdfs:label "todo_command_name" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 118 .
+
+latex:uri a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "uri",
+        "uri (literal)" ;
+    rdfs:comment "Literal value for uri field when it contains a terminal node" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:fieldId 55 ;
+    latex:isSupertype true ;
+    latex:isTerminalField true ;
+    latex:nodeTypeId 42 .
+
+latex:value a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "value",
+        "value (literal)" ;
+    rdfs:comment "Literal value for value field when it contains a terminal node" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:fieldId 56 ;
+    latex:isSupertype true ;
+    latex:isTerminalField true ;
+    latex:nodeTypeId 463 .
+
+latex:value_literal a owl:Class ;
+    rdfs:label "value_literal" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 39 .
+
+latex:verbatim a owl:DatatypeProperty ;
+    rdfs:label "verbatim (literal)" ;
+    rdfs:comment "Literal value for verbatim field when it contains a terminal node" ;
+    latex:fieldId 57 ;
+    latex:isTerminalField true .
+
+latex:verbatim_environment a owl:Class ;
+    rdfs:label "verbatim_environment" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 478 .
+
+latex:verbatim_include a owl:Class ;
+    rdfs:label "verbatim_include" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:isSupertype true ;
+    latex:nodeTypeId 556 .
+
+latex:word a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "word",
+        "word (literal)" ;
+    rdfs:comment "Literal value for word field when it contains a terminal node" ;
+    rdfs:isDefinedBy latex: ;
+    rdfs:subClassOf ast:Node ;
+    latex:fieldId 58 ;
+    latex:isSupertype true ;
+    latex:isTerminalField true ;
+    latex:nodeTypeId 37,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117 .
+
+latex: a owl:Ontology ;
+    rdfs:label "Latex Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for latex" ;
+    owl:versionInfo "v0.25" ;
+    latex:abiVersion 14 ;
+    latex:fieldCount 58 ;
+    latex:languageName "None" ;
+    latex:nodeKindCount 610 .
+

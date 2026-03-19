@@ -1,0 +1,447 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix svelte: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/svelte/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+svelte:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+svelte:as a owl:Class ;
+    rdfs:label "as" ;
+    rdfs:isDefinedBy svelte: ;
+    rdfs:subClassOf ast:Node ;
+    svelte:isSupertype true ;
+    svelte:nodeTypeId 30 .
+
+svelte:attribute a owl:Class ;
+    rdfs:label "attribute" ;
+    rdfs:isDefinedBy svelte: ;
+    rdfs:subClassOf ast:Node ;
+    svelte:isSupertype true ;
+    svelte:nodeTypeId 58 .
+
+svelte:attribute_name a owl:Class ;
+    rdfs:label "attribute_name" ;
+    rdfs:isDefinedBy svelte: ;
+    rdfs:subClassOf ast:Node ;
+    svelte:isSupertype true ;
+    svelte:nodeTypeId 59 .
+
+svelte:attribute_value a owl:Class ;
+    rdfs:label "attribute_value" ;
+    rdfs:isDefinedBy svelte: ;
+    rdfs:subClassOf ast:Node ;
+    svelte:isSupertype true ;
+    svelte:nodeTypeId 8,
+        10,
+        60 .
+
+svelte:await_end_expr a owl:Class ;
+    rdfs:label "await_end_expr" ;
+    rdfs:isDefinedBy svelte: ;
+    rdfs:subClassOf ast:Node ;
+    svelte:isSupertype true ;
+    svelte:nodeTypeId 87 .
+
+svelte:await_start_expr a owl:Class ;
+    rdfs:label "await_start_expr" ;
+    rdfs:isDefinedBy svelte: ;
+    rdfs:subClassOf ast:Node ;
+    svelte:isSupertype true ;
+    svelte:nodeTypeId 84 .
+
+svelte:await_statement a owl:Class ;
+    rdfs:label "await_statement" ;
+    rdfs:isDefinedBy svelte: ;
+    rdfs:subClassOf ast:Node ;
+    svelte:isSupertype true ;
+    svelte:nodeTypeId 81 .
+
+svelte:catch_expr a owl:Class ;
+    rdfs:label "catch_expr" ;
+    rdfs:isDefinedBy svelte: ;
+    rdfs:subClassOf ast:Node ;
+    svelte:isSupertype true ;
+    svelte:nodeTypeId 86 .
+
+svelte:catch_statement a owl:Class ;
+    rdfs:label "catch_statement" ;
+    rdfs:isDefinedBy svelte: ;
+    rdfs:subClassOf ast:Node ;
+    svelte:isSupertype true ;
+    svelte:nodeTypeId 83 .
+
+svelte:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy svelte: ;
+    rdfs:subClassOf ast:Node ;
+    svelte:isSupertype true ;
+    svelte:nodeTypeId 46 .
+
+svelte:const_expr a owl:Class ;
+    rdfs:label "const_expr" ;
+    rdfs:isDefinedBy svelte: ;
+    rdfs:subClassOf ast:Node ;
+    svelte:isSupertype true ;
+    svelte:nodeTypeId 67 .
+
+svelte:debug_expr a owl:Class ;
+    rdfs:label "debug_expr" ;
+    rdfs:isDefinedBy svelte: ;
+    rdfs:subClassOf ast:Node ;
+    svelte:isSupertype true ;
+    svelte:nodeTypeId 69 .
+
+svelte:document a owl:Class ;
+    rdfs:label "document" ;
+    rdfs:isDefinedBy svelte: ;
+    rdfs:subClassOf ast:Node ;
+    svelte:isSupertype true ;
+    svelte:nodeTypeId 47 .
+
+svelte:each_end_expr a owl:Class ;
+    rdfs:label "each_end_expr" ;
+    rdfs:isDefinedBy svelte: ;
+    rdfs:subClassOf ast:Node ;
+    svelte:isSupertype true ;
+    svelte:nodeTypeId 80 .
+
+svelte:each_start_expr a owl:Class ;
+    rdfs:label "each_start_expr" ;
+    rdfs:isDefinedBy svelte: ;
+    rdfs:subClassOf ast:Node ;
+    svelte:isSupertype true ;
+    svelte:nodeTypeId 78 .
+
+svelte:each_statement a owl:Class ;
+    rdfs:label "each_statement" ;
+    rdfs:isDefinedBy svelte: ;
+    rdfs:subClassOf ast:Node ;
+    svelte:isSupertype true ;
+    svelte:nodeTypeId 77 .
+
+svelte:element a owl:Class ;
+    rdfs:label "element" ;
+    rdfs:isDefinedBy svelte: ;
+    rdfs:subClassOf ast:Node ;
+    svelte:isSupertype true ;
+    svelte:nodeTypeId 50 .
+
+svelte:else_each_statement a owl:Class ;
+    rdfs:label "else_each_statement" ;
+    rdfs:isDefinedBy svelte: ;
+    rdfs:subClassOf ast:Node ;
+    svelte:isSupertype true ;
+    svelte:nodeTypeId 79 .
+
+svelte:else_expr a owl:Class ;
+    rdfs:label "else_expr" ;
+    rdfs:isDefinedBy svelte: ;
+    rdfs:subClassOf ast:Node ;
+    svelte:isSupertype true ;
+    svelte:nodeTypeId 74 .
+
+svelte:else_if_expr a owl:Class ;
+    rdfs:label "else_if_expr" ;
+    rdfs:isDefinedBy svelte: ;
+    rdfs:subClassOf ast:Node ;
+    svelte:isSupertype true ;
+    svelte:nodeTypeId 75 .
+
+svelte:else_if_statement a owl:Class ;
+    rdfs:label "else_if_statement" ;
+    rdfs:isDefinedBy svelte: ;
+    rdfs:subClassOf ast:Node ;
+    svelte:isSupertype true ;
+    svelte:nodeTypeId 71 .
+
+svelte:else_statement a owl:Class ;
+    rdfs:label "else_statement" ;
+    rdfs:isDefinedBy svelte: ;
+    rdfs:subClassOf ast:Node ;
+    svelte:isSupertype true ;
+    svelte:nodeTypeId 72 .
+
+svelte:end_tag a owl:Class ;
+    rdfs:label "end_tag" ;
+    rdfs:isDefinedBy svelte: ;
+    rdfs:subClassOf ast:Node ;
+    svelte:isSupertype true ;
+    svelte:nodeTypeId 53 .
+
+svelte:erroneous_end_tag_name a owl:Class ;
+    rdfs:label "erroneous_end_tag_name" ;
+    rdfs:isDefinedBy svelte: ;
+    rdfs:subClassOf ast:Node ;
+    svelte:isSupertype true ;
+    svelte:nodeTypeId 40 .
+
+svelte:expr_attribute_value a owl:Class ;
+    rdfs:label "expr_attribute_value" ;
+    rdfs:isDefinedBy svelte: ;
+    rdfs:subClassOf ast:Node ;
+    svelte:isSupertype true ;
+    svelte:nodeTypeId 61 .
+
+svelte:expression a owl:Class ;
+    rdfs:label "expression" ;
+    rdfs:isDefinedBy svelte: ;
+    rdfs:subClassOf ast:Node ;
+    svelte:isSupertype true ;
+    svelte:nodeTypeId 12,
+        65 .
+
+svelte:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+svelte:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+svelte:html_expr a owl:Class ;
+    rdfs:label "html_expr" ;
+    rdfs:isDefinedBy svelte: ;
+    rdfs:subClassOf ast:Node ;
+    svelte:isSupertype true ;
+    svelte:nodeTypeId 66 .
+
+svelte:if_end_expr a owl:Class ;
+    rdfs:label "if_end_expr" ;
+    rdfs:isDefinedBy svelte: ;
+    rdfs:subClassOf ast:Node ;
+    svelte:isSupertype true ;
+    svelte:nodeTypeId 76 .
+
+svelte:if_start_expr a owl:Class ;
+    rdfs:label "if_start_expr" ;
+    rdfs:isDefinedBy svelte: ;
+    rdfs:subClassOf ast:Node ;
+    svelte:isSupertype true ;
+    svelte:nodeTypeId 73 .
+
+svelte:if_statement a owl:Class ;
+    rdfs:label "if_statement" ;
+    rdfs:isDefinedBy svelte: ;
+    rdfs:subClassOf ast:Node ;
+    svelte:isSupertype true ;
+    svelte:nodeTypeId 70 .
+
+svelte:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+svelte:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+svelte:key_end_expr a owl:Class ;
+    rdfs:label "key_end_expr" ;
+    rdfs:isDefinedBy svelte: ;
+    rdfs:subClassOf ast:Node ;
+    svelte:isSupertype true ;
+    svelte:nodeTypeId 93 .
+
+svelte:key_start_expr a owl:Class ;
+    rdfs:label "key_start_expr" ;
+    rdfs:isDefinedBy svelte: ;
+    rdfs:subClassOf ast:Node ;
+    svelte:isSupertype true ;
+    svelte:nodeTypeId 92 .
+
+svelte:key_statement a owl:Class ;
+    rdfs:label "key_statement" ;
+    rdfs:isDefinedBy svelte: ;
+    rdfs:subClassOf ast:Node ;
+    svelte:isSupertype true ;
+    svelte:nodeTypeId 91 .
+
+svelte:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+svelte:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+svelte:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+svelte:quoted_attribute_value a owl:Class ;
+    rdfs:label "quoted_attribute_value" ;
+    rdfs:isDefinedBy svelte: ;
+    rdfs:subClassOf ast:Node ;
+    svelte:isSupertype true ;
+    svelte:nodeTypeId 62 .
+
+svelte:raw_text a owl:Class ;
+    rdfs:label "raw_text" ;
+    rdfs:isDefinedBy svelte: ;
+    rdfs:subClassOf ast:Node ;
+    svelte:isSupertype true ;
+    svelte:nodeTypeId 42 .
+
+svelte:raw_text_await a owl:Class ;
+    rdfs:label "raw_text_await" ;
+    rdfs:isDefinedBy svelte: ;
+    rdfs:subClassOf ast:Node ;
+    svelte:isSupertype true ;
+    svelte:nodeTypeId 44 .
+
+svelte:raw_text_each a owl:Class ;
+    rdfs:label "raw_text_each" ;
+    rdfs:isDefinedBy svelte: ;
+    rdfs:subClassOf ast:Node ;
+    svelte:isSupertype true ;
+    svelte:nodeTypeId 45 .
+
+svelte:raw_text_expr a owl:Class ;
+    rdfs:label "raw_text_expr" ;
+    rdfs:isDefinedBy svelte: ;
+    rdfs:subClassOf ast:Node ;
+    svelte:isSupertype true ;
+    svelte:nodeTypeId 21,
+        43 .
+
+svelte:render_expr a owl:Class ;
+    rdfs:label "render_expr" ;
+    rdfs:isDefinedBy svelte: ;
+    rdfs:subClassOf ast:Node ;
+    svelte:isSupertype true ;
+    svelte:nodeTypeId 68 .
+
+svelte:script_element a owl:Class ;
+    rdfs:label "script_element" ;
+    rdfs:isDefinedBy svelte: ;
+    rdfs:subClassOf ast:Node ;
+    svelte:isSupertype true ;
+    svelte:nodeTypeId 54 .
+
+svelte:self_closing_tag a owl:Class ;
+    rdfs:label "self_closing_tag" ;
+    rdfs:isDefinedBy svelte: ;
+    rdfs:subClassOf ast:Node ;
+    svelte:isSupertype true ;
+    svelte:nodeTypeId 52 .
+
+svelte:snippet_end_expr a owl:Class ;
+    rdfs:label "snippet_end_expr" ;
+    rdfs:isDefinedBy svelte: ;
+    rdfs:subClassOf ast:Node ;
+    svelte:isSupertype true ;
+    svelte:nodeTypeId 90 .
+
+svelte:snippet_name a owl:Class ;
+    rdfs:label "snippet_name" ;
+    rdfs:isDefinedBy svelte: ;
+    rdfs:subClassOf ast:Node ;
+    svelte:isSupertype true ;
+    svelte:nodeTypeId 19 .
+
+svelte:snippet_start_expr a owl:Class ;
+    rdfs:label "snippet_start_expr" ;
+    rdfs:isDefinedBy svelte: ;
+    rdfs:subClassOf ast:Node ;
+    svelte:isSupertype true ;
+    svelte:nodeTypeId 89 .
+
+svelte:snippet_statement a owl:Class ;
+    rdfs:label "snippet_statement" ;
+    rdfs:isDefinedBy svelte: ;
+    rdfs:subClassOf ast:Node ;
+    svelte:isSupertype true ;
+    svelte:nodeTypeId 88 .
+
+svelte:special_block_keyword a owl:Class ;
+    rdfs:label "special_block_keyword" ;
+    rdfs:isDefinedBy svelte: ;
+    rdfs:subClassOf ast:Node ;
+    svelte:isSupertype true ;
+    svelte:nodeTypeId 16,
+        17,
+        18,
+        23,
+        25,
+        27,
+        29,
+        31,
+        32,
+        33,
+        34,
+        35 .
+
+svelte:start_tag a owl:Class ;
+    rdfs:label "start_tag" ;
+    rdfs:isDefinedBy svelte: ;
+    rdfs:subClassOf ast:Node ;
+    svelte:isSupertype true ;
+    svelte:nodeTypeId 51,
+        55,
+        57 .
+
+svelte:style_element a owl:Class ;
+    rdfs:label "style_element" ;
+    rdfs:isDefinedBy svelte: ;
+    rdfs:subClassOf ast:Node ;
+    svelte:isSupertype true ;
+    svelte:nodeTypeId 56 .
+
+svelte:tag_name a owl:Class ;
+    rdfs:label "tag_name" ;
+    rdfs:isDefinedBy svelte: ;
+    rdfs:subClassOf ast:Node ;
+    svelte:isSupertype true ;
+    svelte:nodeTypeId 36,
+        37,
+        38,
+        39 .
+
+svelte:text a owl:Class ;
+    rdfs:label "text" ;
+    rdfs:isDefinedBy svelte: ;
+    rdfs:subClassOf ast:Node ;
+    svelte:isSupertype true ;
+    svelte:nodeTypeId 11 .
+
+svelte:then a owl:Class ;
+    rdfs:label "then" ;
+    rdfs:isDefinedBy svelte: ;
+    rdfs:subClassOf ast:Node ;
+    svelte:isSupertype true ;
+    svelte:nodeTypeId 96 .
+
+svelte:then_expr a owl:Class ;
+    rdfs:label "then_expr" ;
+    rdfs:isDefinedBy svelte: ;
+    rdfs:subClassOf ast:Node ;
+    svelte:isSupertype true ;
+    svelte:nodeTypeId 85 .
+
+svelte:then_statement a owl:Class ;
+    rdfs:label "then_statement" ;
+    rdfs:isDefinedBy svelte: ;
+    rdfs:subClassOf ast:Node ;
+    svelte:isSupertype true ;
+    svelte:nodeTypeId 82 .
+
+svelte: a owl:Ontology ;
+    rdfs:label "Svelte Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for svelte" ;
+    owl:versionInfo "v0.25" ;
+    svelte:abiVersion 14 ;
+    svelte:fieldCount 0 ;
+    svelte:languageName "None" ;
+    svelte:nodeKindCount 97 .
+

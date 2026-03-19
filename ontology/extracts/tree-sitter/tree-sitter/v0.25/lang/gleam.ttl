@@ -1,0 +1,1007 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix gleam: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/gleam/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+gleam:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+gleam:alias a owl:DatatypeProperty ;
+    rdfs:label "alias (literal)" ;
+    rdfs:comment "Literal value for alias field when it contains a terminal node" ;
+    gleam:fieldId 1 ;
+    gleam:isTerminalField true .
+
+gleam:anonymous_function a owl:Class ;
+    rdfs:label "anonymous_function" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 166 .
+
+gleam:argument a owl:Class ;
+    rdfs:label "argument" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 125,
+        199 .
+
+gleam:arguments a owl:Class ;
+    rdfs:label "arguments" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 107,
+        124,
+        198 .
+
+gleam:assert a owl:Class ;
+    rdfs:label "assert" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 182 .
+
+gleam:assign a owl:DatatypeProperty ;
+    rdfs:label "assign (literal)" ;
+    rdfs:comment "Literal value for assign field when it contains a terminal node" ;
+    gleam:fieldId 3 ;
+    gleam:isTerminalField true .
+
+gleam:attribute a owl:Class ;
+    rdfs:label "attribute" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 106 .
+
+gleam:attribute_value a owl:Class ;
+    rdfs:label "attribute_value" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 108 .
+
+gleam:binary_expression a owl:Class ;
+    rdfs:label "binary_expression" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 126,
+        151,
+        178,
+        203 .
+
+gleam:bit_string a owl:Class ;
+    rdfs:label "bit_string" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 117,
+        160 .
+
+gleam:bit_string_pattern a owl:Class ;
+    rdfs:label "bit_string_pattern" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 210 .
+
+gleam:bit_string_segment a owl:Class ;
+    rdfs:label "bit_string_segment" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 118,
+        161,
+        211 .
+
+gleam:bit_string_segment_option a owl:Class ;
+    rdfs:label "bit_string_segment_option" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 122,
+        165,
+        215,
+        228 .
+
+gleam:bit_string_segment_options a owl:Class ;
+    rdfs:label "bit_string_segment_options" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 119,
+        162,
+        212 .
+
+gleam:block a owl:Class ;
+    rdfs:label "block" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 169 .
+
+gleam:boolean_negation a owl:Class ;
+    rdfs:label "boolean_negation" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 187 .
+
+gleam:case a owl:Class ;
+    rdfs:label "case" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 170 .
+
+gleam:case_clause a owl:Class ;
+    rdfs:label "case_clause" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 173 .
+
+gleam:case_clause_guard a owl:Class ;
+    rdfs:label "case_clause_guard" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 176 .
+
+gleam:case_clause_pattern a owl:Class ;
+    rdfs:label "case_clause_pattern" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 175 .
+
+gleam:case_clause_patterns a owl:Class ;
+    rdfs:label "case_clause_patterns" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 174 .
+
+gleam:case_clauses a owl:Class ;
+    rdfs:label "case_clauses" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 172 .
+
+gleam:case_subjects a owl:Class ;
+    rdfs:label "case_subjects" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 171 .
+
+gleam:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 103 .
+
+gleam:constant a owl:Class ;
+    rdfs:label "constant" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 113 .
+
+gleam:constructor a owl:DatatypeProperty ;
+    rdfs:label "constructor (literal)" ;
+    rdfs:comment "Literal value for constructor field when it contains a terminal node" ;
+    gleam:fieldId 7 ;
+    gleam:isTerminalField true .
+
+gleam:constructor_name a owl:Class ;
+    rdfs:label "constructor_name" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 247 .
+
+gleam:data_constructor a owl:Class ;
+    rdfs:label "data_constructor" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 221 .
+
+gleam:data_constructor_argument a owl:Class ;
+    rdfs:label "data_constructor_argument" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 223 .
+
+gleam:data_constructor_arguments a owl:Class ;
+    rdfs:label "data_constructor_arguments" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 222 .
+
+gleam:data_constructors a owl:Class ;
+    rdfs:label "data_constructors" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 220 .
+
+gleam:discard a owl:Class ;
+    rdfs:label "discard" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 244 .
+
+gleam:doc_comment_content a owl:Class ;
+    rdfs:label "doc_comment_content" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 98 .
+
+gleam:echo a owl:Class ;
+    rdfs:label "echo" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 157 .
+
+gleam:escape_sequence a owl:Class ;
+    rdfs:label "escape_sequence" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 226 .
+
+gleam:external_function a owl:Class ;
+    rdfs:label "external_function" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 137 .
+
+gleam:external_function_body a owl:Class ;
+    rdfs:label "external_function_body" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 140 .
+
+gleam:external_type a owl:Class ;
+    rdfs:label "external_type" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 136 .
+
+gleam:field a owl:DatatypeProperty ;
+    rdfs:label "field (literal)" ;
+    rdfs:comment "Literal value for field field when it contains a terminal node" ;
+    gleam:fieldId 8 ;
+    gleam:isTerminalField true .
+
+gleam:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+gleam:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+gleam:field_access a owl:Class ;
+    rdfs:label "field_access" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 127,
+        196 .
+
+gleam:field_arguments a owl:ObjectProperty ;
+    rdfs:label "arguments (structural)" ;
+    rdfs:comment "Structural reference for arguments field when it contains a non-terminal node" ;
+    gleam:fieldId 2 .
+
+gleam:field_assign a owl:ObjectProperty ;
+    rdfs:label "assign (structural)" ;
+    rdfs:comment "Structural reference for assign field when it contains a non-terminal node" ;
+    gleam:fieldId 3 .
+
+gleam:field_assignments a owl:ObjectProperty ;
+    rdfs:label "assignments (structural)" ;
+    rdfs:comment "Structural reference for assignments field when it contains a non-terminal node" ;
+    gleam:fieldId 4 .
+
+gleam:field_body a owl:ObjectProperty ;
+    rdfs:label "body (structural)" ;
+    rdfs:comment "Structural reference for body field when it contains a non-terminal node" ;
+    gleam:fieldId 5 .
+
+gleam:field_clauses a owl:ObjectProperty ;
+    rdfs:label "clauses (structural)" ;
+    rdfs:comment "Structural reference for clauses field when it contains a non-terminal node" ;
+    gleam:fieldId 6 .
+
+gleam:field_constructor a owl:ObjectProperty ;
+    rdfs:label "constructor (structural)" ;
+    rdfs:comment "Structural reference for constructor field when it contains a non-terminal node" ;
+    gleam:fieldId 7 .
+
+gleam:field_function a owl:ObjectProperty ;
+    rdfs:label "function (structural)" ;
+    rdfs:comment "Structural reference for function field when it contains a non-terminal node" ;
+    gleam:fieldId 9 .
+
+gleam:field_guard a owl:ObjectProperty ;
+    rdfs:label "guard (structural)" ;
+    rdfs:comment "Structural reference for guard field when it contains a non-terminal node" ;
+    gleam:fieldId 10 .
+
+gleam:field_imports a owl:ObjectProperty ;
+    rdfs:label "imports (structural)" ;
+    rdfs:comment "Structural reference for imports field when it contains a non-terminal node" ;
+    gleam:fieldId 11 .
+
+gleam:field_left a owl:ObjectProperty ;
+    rdfs:label "left (structural)" ;
+    rdfs:comment "Structural reference for left field when it contains a non-terminal node" ;
+    gleam:fieldId 14 .
+
+gleam:field_message a owl:ObjectProperty ;
+    rdfs:label "message (structural)" ;
+    rdfs:comment "Structural reference for message field when it contains a non-terminal node" ;
+    gleam:fieldId 15 .
+
+gleam:field_name a owl:ObjectProperty ;
+    rdfs:label "name (structural)" ;
+    rdfs:comment "Structural reference for name field when it contains a non-terminal node" ;
+    gleam:fieldId 17 .
+
+gleam:field_operator a owl:ObjectProperty ;
+    rdfs:label "operator (structural)" ;
+    rdfs:comment "Structural reference for operator field when it contains a non-terminal node" ;
+    gleam:fieldId 18 .
+
+gleam:field_options a owl:ObjectProperty ;
+    rdfs:label "options (structural)" ;
+    rdfs:comment "Structural reference for options field when it contains a non-terminal node" ;
+    gleam:fieldId 19 .
+
+gleam:field_parameter_types a owl:ObjectProperty ;
+    rdfs:label "parameter_types (structural)" ;
+    rdfs:comment "Structural reference for parameter_types field when it contains a non-terminal node" ;
+    gleam:fieldId 20 .
+
+gleam:field_parameters a owl:ObjectProperty ;
+    rdfs:label "parameters (structural)" ;
+    rdfs:comment "Structural reference for parameters field when it contains a non-terminal node" ;
+    gleam:fieldId 21 .
+
+gleam:field_pattern a owl:ObjectProperty ;
+    rdfs:label "pattern (structural)" ;
+    rdfs:comment "Structural reference for pattern field when it contains a non-terminal node" ;
+    gleam:fieldId 22 .
+
+gleam:field_patterns a owl:ObjectProperty ;
+    rdfs:label "patterns (structural)" ;
+    rdfs:comment "Structural reference for patterns field when it contains a non-terminal node" ;
+    gleam:fieldId 23 .
+
+gleam:field_record a owl:ObjectProperty ;
+    rdfs:label "record (structural)" ;
+    rdfs:comment "Structural reference for record field when it contains a non-terminal node" ;
+    gleam:fieldId 24 .
+
+gleam:field_return_type a owl:ObjectProperty ;
+    rdfs:label "return_type (structural)" ;
+    rdfs:comment "Structural reference for return_type field when it contains a non-terminal node" ;
+    gleam:fieldId 25 .
+
+gleam:field_right a owl:ObjectProperty ;
+    rdfs:label "right (structural)" ;
+    rdfs:comment "Structural reference for right field when it contains a non-terminal node" ;
+    gleam:fieldId 26 .
+
+gleam:field_spread a owl:ObjectProperty ;
+    rdfs:label "spread (structural)" ;
+    rdfs:comment "Structural reference for spread field when it contains a non-terminal node" ;
+    gleam:fieldId 27 .
+
+gleam:field_subjects a owl:ObjectProperty ;
+    rdfs:label "subjects (structural)" ;
+    rdfs:comment "Structural reference for subjects field when it contains a non-terminal node" ;
+    gleam:fieldId 28 .
+
+gleam:field_tuple a owl:ObjectProperty ;
+    rdfs:label "tuple (structural)" ;
+    rdfs:comment "Structural reference for tuple field when it contains a non-terminal node" ;
+    gleam:fieldId 30 .
+
+gleam:field_type a owl:ObjectProperty ;
+    rdfs:label "type (structural)" ;
+    rdfs:comment "Structural reference for type field when it contains a non-terminal node" ;
+    gleam:fieldId 31 .
+
+gleam:field_value a owl:ObjectProperty ;
+    rdfs:label "value (structural)" ;
+    rdfs:comment "Structural reference for value field when it contains a non-terminal node" ;
+    gleam:fieldId 32 .
+
+gleam:float a owl:Class ;
+    rdfs:label "float" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 71 .
+
+gleam:function a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "function",
+        "function (literal)" ;
+    rdfs:comment "Literal value for function field when it contains a terminal node" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:fieldId 9 ;
+    gleam:isSupertype true ;
+    gleam:isTerminalField true ;
+    gleam:nodeTypeId 141 .
+
+gleam:function_call a owl:Class ;
+    rdfs:label "function_call" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 201 .
+
+gleam:function_parameter a owl:Class ;
+    rdfs:label "function_parameter" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 139,
+        143,
+        168 .
+
+gleam:function_parameter_types a owl:Class ;
+    rdfs:label "function_parameter_types" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 132,
+        234 .
+
+gleam:function_parameters a owl:Class ;
+    rdfs:label "function_parameters" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 138,
+        142,
+        167 .
+
+gleam:function_type a owl:Class ;
+    rdfs:label "function_type" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 131,
+        233 .
+
+gleam:hole a owl:Class ;
+    rdfs:label "hole" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 200 .
+
+gleam:identifier a owl:Class ;
+    rdfs:label "identifier" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 242 .
+
+gleam:import a owl:Class ;
+    rdfs:label "import" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 109 .
+
+gleam:index a owl:DatatypeProperty ;
+    rdfs:label "index (literal)" ;
+    rdfs:comment "Literal value for index field when it contains a terminal node" ;
+    gleam:fieldId 12 ;
+    gleam:isTerminalField true .
+
+gleam:integer a owl:Class ;
+    rdfs:label "integer" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 227 .
+
+gleam:integer_negation a owl:Class ;
+    rdfs:label "integer_negation" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 188 .
+
+gleam:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+gleam:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+gleam:label a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "label",
+        "label (literal)" ;
+    rdfs:comment "Literal value for label field when it contains a terminal node" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:fieldId 13 ;
+    gleam:isSupertype true ;
+    gleam:isTerminalField true ;
+    gleam:nodeTypeId 243 .
+
+gleam:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+gleam:left a owl:DatatypeProperty ;
+    rdfs:label "left (literal)" ;
+    rdfs:comment "Literal value for left field when it contains a terminal node" ;
+    gleam:fieldId 14 ;
+    gleam:isTerminalField true .
+
+gleam:let a owl:Class ;
+    rdfs:label "let" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 183 .
+
+gleam:let_assert a owl:Class ;
+    rdfs:label "let_assert" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 181 .
+
+gleam:list a owl:Class ;
+    rdfs:label "list" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 116,
+        159 .
+
+gleam:list_pattern a owl:Class ;
+    rdfs:label "list_pattern" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 217 .
+
+gleam:list_pattern_tail a owl:Class ;
+    rdfs:label "list_pattern_tail" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 218 .
+
+gleam:message a owl:DatatypeProperty ;
+    rdfs:label "message (literal)" ;
+    rdfs:comment "Literal value for message field when it contains a terminal node" ;
+    gleam:fieldId 15 ;
+    gleam:isTerminalField true .
+
+gleam:module a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "module",
+        "module (literal)" ;
+    rdfs:comment "Literal value for module field when it contains a terminal node" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:fieldId 16 ;
+    gleam:isSupertype true ;
+    gleam:isTerminalField true ;
+    gleam:nodeTypeId 110 .
+
+gleam:module_comment a owl:Class ;
+    rdfs:label "module_comment" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 101 .
+
+gleam:name a owl:DatatypeProperty ;
+    rdfs:label "name (literal)" ;
+    rdfs:comment "Literal value for name field when it contains a terminal node" ;
+    gleam:fieldId 17 ;
+    gleam:isTerminalField true .
+
+gleam:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+gleam:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+gleam:opacity_modifier a owl:Class ;
+    rdfs:label "opacity_modifier" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 66 .
+
+gleam:panic a owl:Class ;
+    rdfs:label "panic" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 155 .
+
+gleam:pattern a owl:DatatypeProperty ;
+    rdfs:label "pattern (literal)" ;
+    rdfs:comment "Literal value for pattern field when it contains a terminal node" ;
+    gleam:fieldId 22 ;
+    gleam:isTerminalField true .
+
+gleam:pattern_spread a owl:Class ;
+    rdfs:label "pattern_spread" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 208 .
+
+gleam:pipeline_echo a owl:Class ;
+    rdfs:label "pipeline_echo" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 156 .
+
+gleam:quoted_content a owl:Class ;
+    rdfs:label "quoted_content" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 97 .
+
+gleam:record a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "record",
+        "record (literal)" ;
+    rdfs:comment "Literal value for record field when it contains a terminal node" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:fieldId 24 ;
+    gleam:isSupertype true ;
+    gleam:isTerminalField true ;
+    gleam:nodeTypeId 123,
+        153 .
+
+gleam:record_pattern a owl:Class ;
+    rdfs:label "record_pattern" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 205 .
+
+gleam:record_pattern_argument a owl:Class ;
+    rdfs:label "record_pattern_argument" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 207 .
+
+gleam:record_pattern_arguments a owl:Class ;
+    rdfs:label "record_pattern_arguments" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 206 .
+
+gleam:record_update a owl:Class ;
+    rdfs:label "record_update" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 190 .
+
+gleam:record_update_argument a owl:Class ;
+    rdfs:label "record_update_argument" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 192 .
+
+gleam:record_update_arguments a owl:Class ;
+    rdfs:label "record_update_arguments" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 191 .
+
+gleam:remote_constructor_name a owl:Class ;
+    rdfs:label "remote_constructor_name" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 248 .
+
+gleam:remote_type_identifier a owl:Class ;
+    rdfs:label "remote_type_identifier" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 246 .
+
+gleam:return_type a owl:DatatypeProperty ;
+    rdfs:label "return_type (literal)" ;
+    rdfs:comment "Literal value for return_type field when it contains a terminal node" ;
+    gleam:fieldId 25 ;
+    gleam:isTerminalField true .
+
+gleam:right a owl:DatatypeProperty ;
+    rdfs:label "right (literal)" ;
+    rdfs:comment "Literal value for right field when it contains a terminal node" ;
+    gleam:fieldId 26 ;
+    gleam:isTerminalField true .
+
+gleam:source_file a owl:Class ;
+    rdfs:label "source_file" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 99 .
+
+gleam:spread a owl:DatatypeProperty ;
+    rdfs:label "spread (literal)" ;
+    rdfs:comment "Literal value for spread field when it contains a terminal node" ;
+    gleam:fieldId 27 ;
+    gleam:isTerminalField true .
+
+gleam:statement_comment a owl:Class ;
+    rdfs:label "statement_comment" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 102 .
+
+gleam:string a owl:Class ;
+    rdfs:label "string" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 225 .
+
+gleam:target a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "target",
+        "target (literal)" ;
+    rdfs:comment "Literal value for target field when it contains a terminal node" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:fieldId 29 ;
+    gleam:isSupertype true ;
+    gleam:isTerminalField true ;
+    gleam:nodeTypeId 105 .
+
+gleam:target_group a owl:Class ;
+    rdfs:label "target_group" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 104 .
+
+gleam:todo a owl:Class ;
+    rdfs:label "todo" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 154 .
+
+gleam:tuple a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "tuple",
+        "tuple (literal)" ;
+    rdfs:comment "Literal value for tuple field when it contains a terminal node" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:fieldId 30 ;
+    gleam:isSupertype true ;
+    gleam:isTerminalField true ;
+    gleam:nodeTypeId 115,
+        158 .
+
+gleam:tuple_access a owl:Class ;
+    rdfs:label "tuple_access" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 180,
+        194 .
+
+gleam:tuple_pattern a owl:Class ;
+    rdfs:label "tuple_pattern" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 209 .
+
+gleam:tuple_type a owl:Class ;
+    rdfs:label "tuple_type" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 130,
+        232 .
+
+gleam:type a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "type",
+        "type (literal)" ;
+    rdfs:comment "Literal value for type field when it contains a terminal node" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:fieldId 31 ;
+    gleam:isSupertype true ;
+    gleam:isTerminalField true ;
+    gleam:nodeTypeId 133,
+        235 .
+
+gleam:type_alias a owl:Class ;
+    rdfs:label "type_alias" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 224 .
+
+gleam:type_argument a owl:Class ;
+    rdfs:label "type_argument" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 135,
+        237 .
+
+gleam:type_arguments a owl:Class ;
+    rdfs:label "type_arguments" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 134,
+        236 .
+
+gleam:type_definition a owl:Class ;
+    rdfs:label "type_definition" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 219 .
+
+gleam:type_hole a owl:Class ;
+    rdfs:label "type_hole" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 231 .
+
+gleam:type_identifier a owl:Class ;
+    rdfs:label "type_identifier" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 245 .
+
+gleam:type_name a owl:Class ;
+    rdfs:label "type_name" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 239 .
+
+gleam:type_parameter a owl:Class ;
+    rdfs:label "type_parameter" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 241 .
+
+gleam:type_parameters a owl:Class ;
+    rdfs:label "type_parameters" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 240 .
+
+gleam:type_var a owl:Class ;
+    rdfs:label "type_var" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 238 .
+
+gleam:unqualified_import a owl:Class ;
+    rdfs:label "unqualified_import" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 112 .
+
+gleam:unqualified_imports a owl:Class ;
+    rdfs:label "unqualified_imports" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 111 .
+
+gleam:use a owl:Class ;
+    rdfs:label "use" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 184 .
+
+gleam:use_assignment a owl:Class ;
+    rdfs:label "use_assignment" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 186 .
+
+gleam:use_assignments a owl:Class ;
+    rdfs:label "use_assignments" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 185 .
+
+gleam:value a owl:DatatypeProperty ;
+    rdfs:label "value (literal)" ;
+    rdfs:comment "Literal value for value field when it contains a terminal node" ;
+    gleam:fieldId 32 ;
+    gleam:isTerminalField true .
+
+gleam:visibility_modifier a owl:Class ;
+    rdfs:label "visibility_modifier" ;
+    rdfs:isDefinedBy gleam: ;
+    rdfs:subClassOf ast:Node ;
+    gleam:isSupertype true ;
+    gleam:nodeTypeId 65 .
+
+gleam: a owl:Ontology ;
+    rdfs:label "Gleam Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for gleam" ;
+    owl:versionInfo "v0.25" ;
+    gleam:abiVersion 15 ;
+    gleam:fieldCount 32 ;
+    gleam:languageName "gleam" ;
+    gleam:nodeKindCount 281 .
+

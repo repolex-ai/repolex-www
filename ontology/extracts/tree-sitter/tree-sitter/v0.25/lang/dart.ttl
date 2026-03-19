@@ -1,0 +1,1768 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix dart: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/dart/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+dart:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+dart:abstract a owl:Class ;
+    rdfs:label "abstract" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 443 .
+
+dart:additive_expression a owl:Class ;
+    rdfs:label "additive_expression" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 216 .
+
+dart:additive_operator a owl:Class ;
+    rdfs:label "additive_operator" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 222 .
+
+dart:alternative a owl:DatatypeProperty ;
+    rdfs:label "alternative (literal)" ;
+    rdfs:comment "Literal value for alternative field when it contains a terminal node" ;
+    dart:fieldId 1 ;
+    dart:isTerminalField true .
+
+dart:annotation a owl:Class ;
+    rdfs:label "annotation" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 319 .
+
+dart:argument a owl:Class ;
+    rdfs:label "argument" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 251 .
+
+dart:argument_part a owl:Class ;
+    rdfs:label "argument_part" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 258 .
+
+dart:arguments a owl:Class ;
+    rdfs:label "arguments" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 248 .
+
+dart:as_operator a owl:Class ;
+    rdfs:label "as_operator" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 240 .
+
+dart:assert_builtin a owl:Class ;
+    rdfs:label "assert_builtin" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 117 .
+
+dart:assert_statement a owl:Class ;
+    rdfs:label "assert_statement" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 267 .
+
+dart:assertion a owl:Class ;
+    rdfs:label "assertion" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 268 .
+
+dart:assertion_arguments a owl:Class ;
+    rdfs:label "assertion_arguments" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 269 .
+
+dart:assignable_expression a owl:Class ;
+    rdfs:label "assignable_expression" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 197 .
+
+dart:assignment_expression a owl:Class ;
+    rdfs:label "assignment_expression" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 195 .
+
+dart:assignment_expression_without_cascade a owl:Class ;
+    rdfs:label "assignment_expression_without_cascade" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 196 .
+
+dart:await_expression a owl:Class ;
+    rdfs:label "await_expression" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 236 .
+
+dart:base a owl:Class ;
+    rdfs:label "base" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 442 .
+
+dart:binary_operator a owl:Class ;
+    rdfs:label "binary_operator" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 363 .
+
+dart:bitwise_and_expression a owl:Class ;
+    rdfs:label "bitwise_and_expression" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 214 .
+
+dart:bitwise_operator a owl:Class ;
+    rdfs:label "bitwise_operator" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 218 .
+
+dart:bitwise_or_expression a owl:Class ;
+    rdfs:label "bitwise_or_expression" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 212 .
+
+dart:bitwise_xor_expression a owl:Class ;
+    rdfs:label "bitwise_xor_expression" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 213 .
+
+dart:block a owl:Class ;
+    rdfs:label "block" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 265 .
+
+dart:body a owl:DatatypeProperty ;
+    rdfs:label "body (literal)" ;
+    rdfs:comment "Literal value for body field when it contains a terminal node" ;
+    dart:fieldId 2 ;
+    dart:isTerminalField true .
+
+dart:break_builtin a owl:Class ;
+    rdfs:label "break_builtin" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 116 .
+
+dart:break_statement a owl:Class ;
+    rdfs:label "break_statement" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 301 .
+
+dart:cascade_section a owl:Class ;
+    rdfs:label "cascade_section" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 253 .
+
+dart:cascade_selector a owl:Class ;
+    rdfs:label "cascade_selector" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 257 .
+
+dart:case_builtin a owl:Class ;
+    rdfs:label "case_builtin" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 430 .
+
+dart:cast_pattern a owl:Class ;
+    rdfs:label "cast_pattern" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 280 .
+
+dart:catch_clause a owl:Class ;
+    rdfs:label "catch_clause" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 309 .
+
+dart:catch_parameters a owl:Class ;
+    rdfs:label "catch_parameters" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 310 .
+
+dart:class a owl:DatatypeProperty ;
+    rdfs:label "class (literal)" ;
+    rdfs:comment "Literal value for class field when it contains a terminal node" ;
+    dart:fieldId 3 ;
+    dart:isTerminalField true .
+
+dart:class_body a owl:Class ;
+    rdfs:label "class_body" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 353 .
+
+dart:class_definition a owl:Class ;
+    rdfs:label "class_definition" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 339 .
+
+dart:combinator a owl:Class ;
+    rdfs:label "combinator" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 331 .
+
+dart:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 461 .
+
+dart:condition a owl:DatatypeProperty ;
+    rdfs:label "condition (literal)" ;
+    rdfs:comment "Literal value for condition field when it contains a terminal node" ;
+    dart:fieldId 4 ;
+    dart:isTerminalField true .
+
+dart:conditional_assignable_selector a owl:Class ;
+    rdfs:label "conditional_assignable_selector" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 260 .
+
+dart:conditional_expression a owl:Class ;
+    rdfs:label "conditional_expression" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 204 .
+
+dart:configurable_uri a owl:Class ;
+    rdfs:label "configurable_uri" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 327 .
+
+dart:configuration_uri a owl:Class ;
+    rdfs:label "configuration_uri" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 328 .
+
+dart:configuration_uri_condition a owl:Class ;
+    rdfs:label "configuration_uri_condition" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 329 .
+
+dart:consequence a owl:DatatypeProperty ;
+    rdfs:label "consequence (literal)" ;
+    rdfs:comment "Literal value for consequence field when it contains a terminal node" ;
+    dart:fieldId 5 ;
+    dart:isTerminalField true .
+
+dart:const_builtin a owl:Class ;
+    rdfs:label "const_builtin" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 142 .
+
+dart:const_object_expression a owl:Class ;
+    rdfs:label "const_object_expression" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 243 .
+
+dart:constant_constructor_signature a owl:Class ;
+    rdfs:label "constant_constructor_signature" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 375 .
+
+dart:constant_pattern a owl:Class ;
+    rdfs:label "constant_pattern" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 283 .
+
+dart:constructor_invocation a owl:Class ;
+    rdfs:label "constructor_invocation" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 246 .
+
+dart:constructor_param a owl:Class ;
+    rdfs:label "constructor_param" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 422 .
+
+dart:constructor_signature a owl:Class ;
+    rdfs:label "constructor_signature" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 374 .
+
+dart:constructor_tearoff a owl:Class ;
+    rdfs:label "constructor_tearoff" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 247 .
+
+dart:continue_statement a owl:Class ;
+    rdfs:label "continue_statement" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 302 .
+
+dart:decimal_floating_point_literal a owl:Class ;
+    rdfs:label "decimal_floating_point_literal" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 5 .
+
+dart:decimal_integer_literal a owl:Class ;
+    rdfs:label "decimal_integer_literal" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 3 .
+
+dart:declaration a owl:Class ;
+    rdfs:label "declaration" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 358 .
+
+dart:do_statement a owl:Class ;
+    rdfs:label "do_statement" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 300 .
+
+dart:documentation_comment a owl:Class ;
+    rdfs:label "documentation_comment" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 462 .
+
+dart:dotted_identifier_list a owl:Class ;
+    rdfs:label "dotted_identifier_list" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 426 .
+
+dart:enum_body a owl:Class ;
+    rdfs:label "enum_body" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 334 .
+
+dart:enum_constant a owl:Class ;
+    rdfs:label "enum_constant" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 335 .
+
+dart:enum_declaration a owl:Class ;
+    rdfs:label "enum_declaration" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 333 .
+
+dart:equality_expression a owl:Class ;
+    rdfs:label "equality_expression" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 207 .
+
+dart:equality_operator a owl:Class ;
+    rdfs:label "equality_operator" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 45 .
+
+dart:escape_sequence a owl:Class ;
+    rdfs:label "escape_sequence" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 180 .
+
+dart:expression_statement a owl:Class ;
+    rdfs:label "expression_statement" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 266 .
+
+dart:extension_body a owl:Class ;
+    rdfs:label "extension_body" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 354 .
+
+dart:extension_declaration a owl:Class ;
+    rdfs:label "extension_declaration" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 340 .
+
+dart:extension_type_declaration a owl:Class ;
+    rdfs:label "extension_type_declaration" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 341 .
+
+dart:factory_constructor_signature a owl:Class ;
+    rdfs:label "factory_constructor_signature" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 371 .
+
+dart:false a owl:Class ;
+    rdfs:label "false" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 168 .
+
+dart:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+dart:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+dart:field_alternative a owl:ObjectProperty ;
+    rdfs:label "alternative (structural)" ;
+    rdfs:comment "Structural reference for alternative field when it contains a non-terminal node" ;
+    dart:fieldId 1 .
+
+dart:field_body a owl:ObjectProperty ;
+    rdfs:label "body (structural)" ;
+    rdfs:comment "Structural reference for body field when it contains a non-terminal node" ;
+    dart:fieldId 2 .
+
+dart:field_class a owl:ObjectProperty ;
+    rdfs:label "class (structural)" ;
+    rdfs:comment "Structural reference for class field when it contains a non-terminal node" ;
+    dart:fieldId 3 .
+
+dart:field_condition a owl:ObjectProperty ;
+    rdfs:label "condition (structural)" ;
+    rdfs:comment "Structural reference for condition field when it contains a non-terminal node" ;
+    dart:fieldId 4 .
+
+dart:field_consequence a owl:ObjectProperty ;
+    rdfs:label "consequence (structural)" ;
+    rdfs:comment "Structural reference for consequence field when it contains a non-terminal node" ;
+    dart:fieldId 5 .
+
+dart:field_first a owl:ObjectProperty ;
+    rdfs:label "first (structural)" ;
+    rdfs:comment "Structural reference for first field when it contains a non-terminal node" ;
+    dart:fieldId 6 .
+
+dart:field_init a owl:ObjectProperty ;
+    rdfs:label "init (structural)" ;
+    rdfs:comment "Structural reference for init field when it contains a non-terminal node" ;
+    dart:fieldId 7 .
+
+dart:field_initializer a owl:Class ;
+    rdfs:label "field_initializer" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 370 .
+
+dart:field_interfaces a owl:ObjectProperty ;
+    rdfs:label "interfaces (structural)" ;
+    rdfs:comment "Structural reference for interfaces field when it contains a non-terminal node" ;
+    dart:fieldId 8 .
+
+dart:field_key a owl:ObjectProperty ;
+    rdfs:label "key (structural)" ;
+    rdfs:comment "Structural reference for key field when it contains a non-terminal node" ;
+    dart:fieldId 9 .
+
+dart:field_left a owl:ObjectProperty ;
+    rdfs:label "left (structural)" ;
+    rdfs:comment "Structural reference for left field when it contains a non-terminal node" ;
+    dart:fieldId 10 .
+
+dart:field_name a owl:ObjectProperty ;
+    rdfs:label "name (structural)" ;
+    rdfs:comment "Structural reference for name field when it contains a non-terminal node" ;
+    dart:fieldId 11 .
+
+dart:field_operator a owl:ObjectProperty ;
+    rdfs:label "operator (structural)" ;
+    rdfs:comment "Structural reference for operator field when it contains a non-terminal node" ;
+    dart:fieldId 12 .
+
+dart:field_parameters a owl:ObjectProperty ;
+    rdfs:label "parameters (structural)" ;
+    rdfs:comment "Structural reference for parameters field when it contains a non-terminal node" ;
+    dart:fieldId 13 .
+
+dart:field_representation a owl:ObjectProperty ;
+    rdfs:label "representation (structural)" ;
+    rdfs:comment "Structural reference for representation field when it contains a non-terminal node" ;
+    dart:fieldId 14 .
+
+dart:field_right a owl:ObjectProperty ;
+    rdfs:label "right (structural)" ;
+    rdfs:comment "Structural reference for right field when it contains a non-terminal node" ;
+    dart:fieldId 15 .
+
+dart:field_scope a owl:ObjectProperty ;
+    rdfs:label "scope (structural)" ;
+    rdfs:comment "Structural reference for scope field when it contains a non-terminal node" ;
+    dart:fieldId 16 .
+
+dart:field_second a owl:ObjectProperty ;
+    rdfs:label "second (structural)" ;
+    rdfs:comment "Structural reference for second field when it contains a non-terminal node" ;
+    dart:fieldId 17 .
+
+dart:field_superclass a owl:ObjectProperty ;
+    rdfs:label "superclass (structural)" ;
+    rdfs:comment "Structural reference for superclass field when it contains a non-terminal node" ;
+    dart:fieldId 18 .
+
+dart:field_type a owl:ObjectProperty ;
+    rdfs:label "type (structural)" ;
+    rdfs:comment "Structural reference for type field when it contains a non-terminal node" ;
+    dart:fieldId 19 .
+
+dart:field_type_parameters a owl:ObjectProperty ;
+    rdfs:label "type_parameters (structural)" ;
+    rdfs:comment "Structural reference for type_parameters field when it contains a non-terminal node" ;
+    dart:fieldId 20 .
+
+dart:field_update a owl:ObjectProperty ;
+    rdfs:label "update (structural)" ;
+    rdfs:comment "Structural reference for update field when it contains a non-terminal node" ;
+    dart:fieldId 21 .
+
+dart:field_value a owl:ObjectProperty ;
+    rdfs:label "value (structural)" ;
+    rdfs:comment "Structural reference for value field when it contains a non-terminal node" ;
+    dart:fieldId 22 .
+
+dart:final_builtin a owl:Class ;
+    rdfs:label "final_builtin" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 454 .
+
+dart:finally_clause a owl:Class ;
+    rdfs:label "finally_clause" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 311 .
+
+dart:first a owl:DatatypeProperty ;
+    rdfs:label "first (literal)" ;
+    rdfs:comment "Literal value for first field when it contains a terminal node" ;
+    dart:fieldId 6 ;
+    dart:isTerminalField true .
+
+dart:for_element a owl:Class ;
+    rdfs:label "for_element" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 318 .
+
+dart:for_loop_parts a owl:Class ;
+    rdfs:label "for_loop_parts" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 316 .
+
+dart:for_statement a owl:Class ;
+    rdfs:label "for_statement" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 315 .
+
+dart:formal_parameter a owl:Class ;
+    rdfs:label "formal_parameter" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 415 .
+
+dart:formal_parameter_list a owl:Class ;
+    rdfs:label "formal_parameter_list" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 409 .
+
+dart:function_body a owl:Class ;
+    rdfs:label "function_body" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 405 .
+
+dart:function_expression a owl:Class ;
+    rdfs:label "function_expression" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 201 .
+
+dart:function_expression_body a owl:Class ;
+    rdfs:label "function_expression_body" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 406 .
+
+dart:function_signature a owl:Class ;
+    rdfs:label "function_signature" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 407 .
+
+dart:function_type a owl:Class ;
+    rdfs:label "function_type" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 383 .
+
+dart:getter_signature a owl:Class ;
+    rdfs:label "getter_signature" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 355 .
+
+dart:hex_integer_literal a owl:Class ;
+    rdfs:label "hex_integer_literal" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 4 .
+
+dart:identifier a owl:Class ;
+    rdfs:label "identifier" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 1 .
+
+dart:identifier_dollar_escaped a owl:Class ;
+    rdfs:label "identifier_dollar_escaped" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 147 .
+
+dart:identifier_list a owl:Class ;
+    rdfs:label "identifier_list" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 359 .
+
+dart:if_element a owl:Class ;
+    rdfs:label "if_element" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 312 .
+
+dart:if_null_expression a owl:Class ;
+    rdfs:label "if_null_expression" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 202 .
+
+dart:if_statement a owl:Class ;
+    rdfs:label "if_statement" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 313 .
+
+dart:import_or_export a owl:Class ;
+    rdfs:label "import_or_export" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 320 .
+
+dart:import_specification a owl:Class ;
+    rdfs:label "import_specification" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 323 .
+
+dart:increment_operator a owl:Class ;
+    rdfs:label "increment_operator" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 61 .
+
+dart:index_selector a owl:Class ;
+    rdfs:label "index_selector" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 256 .
+
+dart:inferred_type a owl:Class ;
+    rdfs:label "inferred_type" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 404 .
+
+dart:init a owl:DatatypeProperty ;
+    rdfs:label "init (literal)" ;
+    rdfs:comment "Literal value for init field when it contains a terminal node" ;
+    dart:fieldId 7 ;
+    dart:isTerminalField true .
+
+dart:initialized_identifier a owl:Class ;
+    rdfs:label "initialized_identifier" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 361 .
+
+dart:initialized_identifier_list a owl:Class ;
+    rdfs:label "initialized_identifier_list" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 360 .
+
+dart:initialized_variable_definition a owl:Class ;
+    rdfs:label "initialized_variable_definition" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 377 .
+
+dart:initializer_list_entry a owl:Class ;
+    rdfs:label "initializer_list_entry" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 369 .
+
+dart:initializers a owl:Class ;
+    rdfs:label "initializers" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 368 .
+
+dart:interface a owl:Class ;
+    rdfs:label "interface" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 441 .
+
+dart:interfaces a owl:Class ;
+    rdfs:label "interfaces" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 352 .
+
+dart:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+dart:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+dart:is_operator a owl:Class ;
+    rdfs:label "is_operator" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 238 .
+
+dart:key a owl:DatatypeProperty ;
+    rdfs:label "key (literal)" ;
+    rdfs:comment "Literal value for key field when it contains a terminal node" ;
+    dart:fieldId 9 ;
+    dart:isTerminalField true .
+
+dart:label a owl:Class ;
+    rdfs:label "label" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 459 .
+
+dart:lambda_expression a owl:Class ;
+    rdfs:label "lambda_expression" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 200 .
+
+dart:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+dart:library_export a owl:Class ;
+    rdfs:label "library_export" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 322 .
+
+dart:library_import a owl:Class ;
+    rdfs:label "library_import" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 321 .
+
+dart:library_name a owl:Class ;
+    rdfs:label "library_name" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 425 .
+
+dart:list_literal a owl:Class ;
+    rdfs:label "list_literal" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 181 .
+
+dart:list_pattern a owl:Class ;
+    rdfs:label "list_pattern" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 286 .
+
+dart:local_function_declaration a owl:Class ;
+    rdfs:label "local_function_declaration" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 264 .
+
+dart:local_variable_declaration a owl:Class ;
+    rdfs:label "local_variable_declaration" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 423 .
+
+dart:logical_and_expression a owl:Class ;
+    rdfs:label "logical_and_expression" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 206 .
+
+dart:logical_and_operator a owl:Class ;
+    rdfs:label "logical_and_operator" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 452 .
+
+dart:logical_or_expression a owl:Class ;
+    rdfs:label "logical_or_expression" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 205 .
+
+dart:logical_or_operator a owl:Class ;
+    rdfs:label "logical_or_operator" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 453 .
+
+dart:map_pattern a owl:Class ;
+    rdfs:label "map_pattern" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 289 .
+
+dart:method_signature a owl:Class ;
+    rdfs:label "method_signature" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 357 .
+
+dart:minus_operator a owl:Class ;
+    rdfs:label "minus_operator" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 63 .
+
+dart:mixin a owl:Class ;
+    rdfs:label "mixin" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 446 .
+
+dart:mixin_application a owl:Class ;
+    rdfs:label "mixin_application" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 350 .
+
+dart:mixin_application_class a owl:Class ;
+    rdfs:label "mixin_application_class" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 349 .
+
+dart:mixin_declaration a owl:Class ;
+    rdfs:label "mixin_declaration" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 351 .
+
+dart:mixins a owl:Class ;
+    rdfs:label "mixins" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 348 .
+
+dart:multiplicative_expression a owl:Class ;
+    rdfs:label "multiplicative_expression" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 217 .
+
+dart:multiplicative_operator a owl:Class ;
+    rdfs:label "multiplicative_operator" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 223 .
+
+dart:name a owl:DatatypeProperty ;
+    rdfs:label "name (literal)" ;
+    rdfs:comment "Literal value for name field when it contains a terminal node" ;
+    dart:fieldId 11 ;
+    dart:isTerminalField true .
+
+dart:named_argument a owl:Class ;
+    rdfs:label "named_argument" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 252 .
+
+dart:named_parameter_types a owl:Class ;
+    rdfs:label "named_parameter_types" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 390 .
+
+dart:negation_operator a owl:Class ;
+    rdfs:label "negation_operator" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 233 .
+
+dart:new_expression a owl:Class ;
+    rdfs:label "new_expression" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 241 .
+
+dart:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+dart:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+dart:normal_parameter_type a owl:Class ;
+    rdfs:label "normal_parameter_type" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 387 .
+
+dart:null_assert_pattern a owl:Class ;
+    rdfs:label "null_assert_pattern" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 282 .
+
+dart:null_check_pattern a owl:Class ;
+    rdfs:label "null_check_pattern" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 281 .
+
+dart:null_literal a owl:Class ;
+    rdfs:label "null_literal" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 185 .
+
+dart:nullable_selector a owl:Class ;
+    rdfs:label "nullable_selector" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 401 .
+
+dart:nullable_type a owl:Class ;
+    rdfs:label "nullable_type" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 400 .
+
+dart:object_pattern a owl:Class ;
+    rdfs:label "object_pattern" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 293 .
+
+dart:operator_signature a owl:Class ;
+    rdfs:label "operator_signature" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 364 .
+
+dart:optional_formal_parameters a owl:Class ;
+    rdfs:label "optional_formal_parameters" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 412 .
+
+dart:optional_parameter_types a owl:Class ;
+    rdfs:label "optional_parameter_types" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 388 .
+
+dart:optional_positional_parameter_types a owl:Class ;
+    rdfs:label "optional_positional_parameter_types" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 389 .
+
+dart:pair a owl:Class ;
+    rdfs:label "pair" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 183 .
+
+dart:parameter_type_list a owl:Class ;
+    rdfs:label "parameter_type_list" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 386 .
+
+dart:parenthesized_expression a owl:Class ;
+    rdfs:label "parenthesized_expression" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 245 .
+
+dart:part_directive a owl:Class ;
+    rdfs:label "part_directive" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 324 .
+
+dart:part_of_builtin a owl:Class ;
+    rdfs:label "part_of_builtin" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 119 .
+
+dart:part_of_directive a owl:Class ;
+    rdfs:label "part_of_directive" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 325 .
+
+dart:pattern_assignment a owl:Class ;
+    rdfs:label "pattern_assignment" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 296 .
+
+dart:pattern_variable_declaration a owl:Class ;
+    rdfs:label "pattern_variable_declaration" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 294 .
+
+dart:postfix_expression a owl:Class ;
+    rdfs:label "postfix_expression" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 228 .
+
+dart:postfix_operator a owl:Class ;
+    rdfs:label "postfix_operator" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 229 .
+
+dart:prefix_operator a owl:Class ;
+    rdfs:label "prefix_operator" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 232 .
+
+dart:program a owl:Class ;
+    rdfs:label "program" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 161 .
+
+dart:qualified a owl:Class ;
+    rdfs:label "qualified" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 428 .
+
+dart:record_field a owl:Class ;
+    rdfs:label "record_field" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 188 .
+
+dart:record_literal a owl:Class ;
+    rdfs:label "record_literal" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 186 .
+
+dart:record_pattern a owl:Class ;
+    rdfs:label "record_pattern" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 291 .
+
+dart:record_type a owl:Class ;
+    rdfs:label "record_type" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 393 .
+
+dart:record_type_field a owl:Class ;
+    rdfs:label "record_type_field" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 394 .
+
+dart:record_type_named_field a owl:Class ;
+    rdfs:label "record_type_named_field" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 395 .
+
+dart:redirecting_factory_constructor_signature a owl:Class ;
+    rdfs:label "redirecting_factory_constructor_signature" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 372 .
+
+dart:redirection a owl:Class ;
+    rdfs:label "redirection" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 373 .
+
+dart:relational_expression a owl:Class ;
+    rdfs:label "relational_expression" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 210 .
+
+dart:relational_operator a owl:Class ;
+    rdfs:label "relational_operator" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 211 .
+
+dart:representation_declaration a owl:Class ;
+    rdfs:label "representation_declaration" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 342 .
+
+dart:rest_pattern a owl:Class ;
+    rdfs:label "rest_pattern" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 288 .
+
+dart:rethrow_builtin a owl:Class ;
+    rdfs:label "rethrow_builtin" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 118 .
+
+dart:rethrow_expression a owl:Class ;
+    rdfs:label "rethrow_expression" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 194 .
+
+dart:return_statement a owl:Class ;
+    rdfs:label "return_statement" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 305 .
+
+dart:right a owl:DatatypeProperty ;
+    rdfs:label "right (literal)" ;
+    rdfs:comment "Literal value for right field when it contains a terminal node" ;
+    dart:fieldId 15 ;
+    dart:isTerminalField true .
+
+dart:scope a owl:DatatypeProperty ;
+    rdfs:label "scope (literal)" ;
+    rdfs:comment "Literal value for scope field when it contains a terminal node" ;
+    dart:fieldId 16 ;
+    dart:isTerminalField true .
+
+dart:scoped_identifier a owl:Class ;
+    rdfs:label "scoped_identifier" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 376 .
+
+dart:script_tag a owl:Class ;
+    rdfs:label "script_tag" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 424 .
+
+dart:sealed a owl:Class ;
+    rdfs:label "sealed" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 444 .
+
+dart:second a owl:DatatypeProperty ;
+    rdfs:label "second (literal)" ;
+    rdfs:comment "Literal value for second field when it contains a terminal node" ;
+    dart:fieldId 17 ;
+    dart:isTerminalField true .
+
+dart:selector a owl:Class ;
+    rdfs:label "selector" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 231 .
+
+dart:set_or_map_literal a owl:Class ;
+    rdfs:label "set_or_map_literal" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 182 .
+
+dart:setter_signature a owl:Class ;
+    rdfs:label "setter_signature" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 356 .
+
+dart:shift_expression a owl:Class ;
+    rdfs:label "shift_expression" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 215 .
+
+dart:shift_operator a owl:Class ;
+    rdfs:label "shift_operator" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 220 .
+
+dart:spread_element a owl:Class ;
+    rdfs:label "spread_element" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 230 .
+
+dart:static_final_declaration a owl:Class ;
+    rdfs:label "static_final_declaration" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 365 .
+
+dart:static_final_declaration_list a owl:Class ;
+    rdfs:label "static_final_declaration_list" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 362 .
+
+dart:string_literal a owl:Class ;
+    rdfs:label "string_literal" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 169 .
+
+dart:super a owl:Class ;
+    rdfs:label "super" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 458 .
+
+dart:super_formal_parameter a owl:Class ;
+    rdfs:label "super_formal_parameter" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 421 .
+
+dart:superclass a owl:Class ;
+    rdfs:label "superclass" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 347 .
+
+dart:switch_block a owl:Class ;
+    rdfs:label "switch_block" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 297 .
+
+dart:switch_expression a owl:Class ;
+    rdfs:label "switch_expression" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 271 .
+
+dart:switch_expression_case a owl:Class ;
+    rdfs:label "switch_expression_case" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 272 .
+
+dart:switch_statement a owl:Class ;
+    rdfs:label "switch_statement" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 270 .
+
+dart:switch_statement_case a owl:Class ;
+    rdfs:label "switch_statement_case" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 298 .
+
+dart:switch_statement_default a owl:Class ;
+    rdfs:label "switch_statement_default" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 299 .
+
+dart:symbol_literal a owl:Class ;
+    rdfs:label "symbol_literal" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 166 .
+
+dart:template_substitution a owl:Class ;
+    rdfs:label "template_substitution" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 178 .
+
+dart:this a owl:Class ;
+    rdfs:label "this" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 457 .
+
+dart:throw_expression a owl:Class ;
+    rdfs:label "throw_expression" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 192 .
+
+dart:throw_expression_without_cascade a owl:Class ;
+    rdfs:label "throw_expression_without_cascade" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 193 .
+
+dart:tilde_operator a owl:Class ;
+    rdfs:label "tilde_operator" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 235 .
+
+dart:true a owl:Class ;
+    rdfs:label "true" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 167 .
+
+dart:try_statement a owl:Class ;
+    rdfs:label "try_statement" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 306 .
+
+dart:type a owl:DatatypeProperty ;
+    rdfs:label "type (literal)" ;
+    rdfs:comment "Literal value for type field when it contains a terminal node" ;
+    dart:fieldId 19 ;
+    dart:isTerminalField true .
+
+dart:type_alias a owl:Class ;
+    rdfs:label "type_alias" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 336 .
+
+dart:type_arguments a owl:Class ;
+    rdfs:label "type_arguments" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 262 .
+
+dart:type_bound a owl:Class ;
+    rdfs:label "type_bound" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 346 .
+
+dart:type_cast a owl:Class ;
+    rdfs:label "type_cast" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 239 .
+
+dart:type_cast_expression a owl:Class ;
+    rdfs:label "type_cast_expression" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 208 .
+
+dart:type_identifier a owl:Class ;
+    rdfs:label "type_identifier" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 524 .
+
+dart:type_parameter a owl:Class ;
+    rdfs:label "type_parameter" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 345 .
+
+dart:type_parameters a owl:Class ;
+    rdfs:label "type_parameters" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 344 .
+
+dart:type_test a owl:Class ;
+    rdfs:label "type_test" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 237 .
+
+dart:type_test_expression a owl:Class ;
+    rdfs:label "type_test_expression" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 209 .
+
+dart:typed_identifier a owl:Class ;
+    rdfs:label "typed_identifier" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 399 .
+
+dart:unary_expression a owl:Class ;
+    rdfs:label "unary_expression" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 226 .
+
+dart:unconditional_assignable_selector a owl:Class ;
+    rdfs:label "unconditional_assignable_selector" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 259 .
+
+dart:update a owl:DatatypeProperty ;
+    rdfs:label "update (literal)" ;
+    rdfs:comment "Literal value for update field when it contains a terminal node" ;
+    dart:fieldId 21 ;
+    dart:isTerminalField true .
+
+dart:uri a owl:Class ;
+    rdfs:label "uri" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 326 .
+
+dart:uri_test a owl:Class ;
+    rdfs:label "uri_test" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 330 .
+
+dart:value a owl:DatatypeProperty ;
+    rdfs:label "value (literal)" ;
+    rdfs:comment "Literal value for value field when it contains a terminal node" ;
+    dart:fieldId 22 ;
+    dart:isTerminalField true .
+
+dart:variable_pattern a owl:Class ;
+    rdfs:label "variable_pattern" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 284 .
+
+dart:void_type a owl:Class ;
+    rdfs:label "void_type" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 107 .
+
+dart:while_statement a owl:Class ;
+    rdfs:label "while_statement" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 314 .
+
+dart:yield_each_statement a owl:Class ;
+    rdfs:label "yield_each_statement" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 304 .
+
+dart:yield_statement a owl:Class ;
+    rdfs:label "yield_statement" ;
+    rdfs:isDefinedBy dart: ;
+    rdfs:subClassOf ast:Node ;
+    dart:isSupertype true ;
+    dart:nodeTypeId 303 .
+
+dart: a owl:Ontology ;
+    rdfs:label "Dart Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for dart" ;
+    owl:versionInfo "v0.25" ;
+    dart:abiVersion 15 ;
+    dart:fieldCount 22 ;
+    dart:languageName "dart" ;
+    dart:nodeKindCount 525 .
+

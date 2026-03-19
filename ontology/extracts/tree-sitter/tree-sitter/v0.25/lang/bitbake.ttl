@@ -1,0 +1,1168 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix bitbake: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/bitbake/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+bitbake:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+bitbake:addhandler_statement a owl:Class ;
+    rdfs:label "addhandler_statement" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 162 .
+
+bitbake:addtask_statement a owl:Class ;
+    rdfs:label "addtask_statement" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 160 .
+
+bitbake:alias a owl:DatatypeProperty ;
+    rdfs:label "alias (literal)" ;
+    rdfs:comment "Literal value for alias field when it contains a terminal node" ;
+    bitbake:fieldId 1 ;
+    bitbake:isTerminalField true .
+
+bitbake:aliased_import a owl:Class ;
+    rdfs:label "aliased_import" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 178 .
+
+bitbake:anonymous_python_function a owl:Class ;
+    rdfs:label "anonymous_python_function" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 163 .
+
+bitbake:argument_list a owl:Class ;
+    rdfs:label "argument_list" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 197 .
+
+bitbake:as_pattern a owl:Class ;
+    rdfs:label "as_pattern" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 249 .
+
+bitbake:as_pattern_target a owl:Class ;
+    rdfs:label "as_pattern_target" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 316 .
+
+bitbake:assert_statement a owl:Class ;
+    rdfs:label "assert_statement" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 182 .
+
+bitbake:assignment a owl:Class ;
+    rdfs:label "assignment" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 218 .
+
+bitbake:attribute a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "attribute",
+        "attribute (literal)" ;
+    rdfs:comment "Literal value for attribute field when it contains a terminal node" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:fieldId 5 ;
+    bitbake:isSupertype true ;
+    bitbake:isTerminalField true ;
+    bitbake:nodeTypeId 223 .
+
+bitbake:augmented_assignment a owl:Class ;
+    rdfs:label "augmented_assignment" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 219 .
+
+bitbake:await a owl:Class ;
+    rdfs:label "await" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 276 .
+
+bitbake:binary_operator a owl:Class ;
+    rdfs:label "binary_operator" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 213 .
+
+bitbake:block a owl:Class ;
+    rdfs:label "block" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 233 .
+
+bitbake:boolean_operator a owl:Class ;
+    rdfs:label "boolean_operator" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 212 .
+
+bitbake:break_statement a owl:Class ;
+    rdfs:label "break_statement" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 190 .
+
+bitbake:call a owl:Class ;
+    rdfs:label "call" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 226 .
+
+bitbake:chevron a owl:Class ;
+    rdfs:label "chevron" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 181 .
+
+bitbake:code a owl:DatatypeProperty ;
+    rdfs:label "code (literal)" ;
+    rdfs:comment "Literal value for code field when it contains a terminal node" ;
+    bitbake:fieldId 8 ;
+    bitbake:isTerminalField true .
+
+bitbake:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 139 .
+
+bitbake:comparison_operator a owl:Class ;
+    rdfs:label "comparison_operator" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 215 .
+
+bitbake:concatenated_string a owl:Class ;
+    rdfs:label "concatenated_string" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 270 .
+
+bitbake:concatenation a owl:Class ;
+    rdfs:label "concatenation" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 279 .
+
+bitbake:conditional_expression a owl:Class ;
+    rdfs:label "conditional_expression" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 269 .
+
+bitbake:constrained_type a owl:Class ;
+    rdfs:label "constrained_type" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 258 .
+
+bitbake:continue_statement a owl:Class ;
+    rdfs:label "continue_statement" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 191 .
+
+bitbake:default_parameter a owl:Class ;
+    rdfs:label "default_parameter" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 245 .
+
+bitbake:delete_statement a owl:Class ;
+    rdfs:label "delete_statement" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 187 .
+
+bitbake:deltask_statement a owl:Class ;
+    rdfs:label "deltask_statement" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 161 .
+
+bitbake:dictionary a owl:Class ;
+    rdfs:label "dictionary" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 264 .
+
+bitbake:dictionary_comprehension a owl:Class ;
+    rdfs:label "dictionary_comprehension" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 267 .
+
+bitbake:dictionary_splat a owl:Class ;
+    rdfs:label "dictionary_splat" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 238 .
+
+bitbake:dictionary_splat_pattern a owl:Class ;
+    rdfs:label "dictionary_splat_pattern" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 248 .
+
+bitbake:dotted_name a owl:Class ;
+    rdfs:label "dotted_name" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 210 .
+
+bitbake:elif_clause a owl:Class ;
+    rdfs:label "elif_clause" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 199 .
+
+bitbake:ellipsis a owl:Class ;
+    rdfs:label "ellipsis" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 122 .
+
+bitbake:else_clause a owl:Class ;
+    rdfs:label "else_clause" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 200 .
+
+bitbake:escape_interpolation a owl:Class ;
+    rdfs:label "escape_interpolation" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 146 .
+
+bitbake:escape_sequence a owl:Class ;
+    rdfs:label "escape_sequence" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 123 .
+
+bitbake:except_clause a owl:Class ;
+    rdfs:label "except_clause" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 204 .
+
+bitbake:except_group_clause a owl:Class ;
+    rdfs:label "except_group_clause" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 205 .
+
+bitbake:exec_statement a owl:Class ;
+    rdfs:label "exec_statement" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 194 .
+
+bitbake:export_functions_statement a owl:Class ;
+    rdfs:label "export_functions_statement" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 159 .
+
+bitbake:export_statement a owl:Class ;
+    rdfs:label "export_statement" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 157 .
+
+bitbake:expression_list a owl:Class ;
+    rdfs:label "expression_list" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 234 .
+
+bitbake:expression_statement a owl:Class ;
+    rdfs:label "expression_statement" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 183 .
+
+bitbake:false a owl:Class ;
+    rdfs:label "false" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 133 .
+
+bitbake:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+bitbake:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+bitbake:field_alias a owl:ObjectProperty ;
+    rdfs:label "alias (structural)" ;
+    rdfs:comment "Structural reference for alias field when it contains a non-terminal node" ;
+    bitbake:fieldId 1 .
+
+bitbake:field_alternative a owl:ObjectProperty ;
+    rdfs:label "alternative (structural)" ;
+    rdfs:comment "Structural reference for alternative field when it contains a non-terminal node" ;
+    bitbake:fieldId 2 .
+
+bitbake:field_argument a owl:ObjectProperty ;
+    rdfs:label "argument (structural)" ;
+    rdfs:comment "Structural reference for argument field when it contains a non-terminal node" ;
+    bitbake:fieldId 3 .
+
+bitbake:field_arguments a owl:ObjectProperty ;
+    rdfs:label "arguments (structural)" ;
+    rdfs:comment "Structural reference for arguments field when it contains a non-terminal node" ;
+    bitbake:fieldId 4 .
+
+bitbake:field_body a owl:ObjectProperty ;
+    rdfs:label "body (structural)" ;
+    rdfs:comment "Structural reference for body field when it contains a non-terminal node" ;
+    bitbake:fieldId 6 .
+
+bitbake:field_cause a owl:ObjectProperty ;
+    rdfs:label "cause (structural)" ;
+    rdfs:comment "Structural reference for cause field when it contains a non-terminal node" ;
+    bitbake:fieldId 7 .
+
+bitbake:field_code a owl:ObjectProperty ;
+    rdfs:label "code (structural)" ;
+    rdfs:comment "Structural reference for code field when it contains a non-terminal node" ;
+    bitbake:fieldId 8 .
+
+bitbake:field_condition a owl:ObjectProperty ;
+    rdfs:label "condition (structural)" ;
+    rdfs:comment "Structural reference for condition field when it contains a non-terminal node" ;
+    bitbake:fieldId 9 .
+
+bitbake:field_consequence a owl:ObjectProperty ;
+    rdfs:label "consequence (structural)" ;
+    rdfs:comment "Structural reference for consequence field when it contains a non-terminal node" ;
+    bitbake:fieldId 10 .
+
+bitbake:field_expression a owl:ObjectProperty ;
+    rdfs:label "expression (structural)" ;
+    rdfs:comment "Structural reference for expression field when it contains a non-terminal node" ;
+    bitbake:fieldId 11 .
+
+bitbake:field_format_specifier a owl:ObjectProperty ;
+    rdfs:label "format_specifier (structural)" ;
+    rdfs:comment "Structural reference for format_specifier field when it contains a non-terminal node" ;
+    bitbake:fieldId 12 .
+
+bitbake:field_function a owl:ObjectProperty ;
+    rdfs:label "function (structural)" ;
+    rdfs:comment "Structural reference for function field when it contains a non-terminal node" ;
+    bitbake:fieldId 13 .
+
+bitbake:field_key a owl:ObjectProperty ;
+    rdfs:label "key (structural)" ;
+    rdfs:comment "Structural reference for key field when it contains a non-terminal node" ;
+    bitbake:fieldId 14 .
+
+bitbake:field_left a owl:ObjectProperty ;
+    rdfs:label "left (structural)" ;
+    rdfs:comment "Structural reference for left field when it contains a non-terminal node" ;
+    bitbake:fieldId 15 .
+
+bitbake:field_module_name a owl:ObjectProperty ;
+    rdfs:label "module_name (structural)" ;
+    rdfs:comment "Structural reference for module_name field when it contains a non-terminal node" ;
+    bitbake:fieldId 16 .
+
+bitbake:field_name a owl:ObjectProperty ;
+    rdfs:label "name (structural)" ;
+    rdfs:comment "Structural reference for name field when it contains a non-terminal node" ;
+    bitbake:fieldId 17 .
+
+bitbake:field_object a owl:ObjectProperty ;
+    rdfs:label "object (structural)" ;
+    rdfs:comment "Structural reference for object field when it contains a non-terminal node" ;
+    bitbake:fieldId 18 .
+
+bitbake:field_operator a owl:ObjectProperty ;
+    rdfs:label "operator (structural)" ;
+    rdfs:comment "Structural reference for operator field when it contains a non-terminal node" ;
+    bitbake:fieldId 19 .
+
+bitbake:field_operators a owl:ObjectProperty ;
+    rdfs:label "operators (structural)" ;
+    rdfs:comment "Structural reference for operators field when it contains a non-terminal node" ;
+    bitbake:fieldId 20 .
+
+bitbake:field_parameters a owl:ObjectProperty ;
+    rdfs:label "parameters (structural)" ;
+    rdfs:comment "Structural reference for parameters field when it contains a non-terminal node" ;
+    bitbake:fieldId 21 .
+
+bitbake:field_return_type a owl:ObjectProperty ;
+    rdfs:label "return_type (structural)" ;
+    rdfs:comment "Structural reference for return_type field when it contains a non-terminal node" ;
+    bitbake:fieldId 22 .
+
+bitbake:field_right a owl:ObjectProperty ;
+    rdfs:label "right (structural)" ;
+    rdfs:comment "Structural reference for right field when it contains a non-terminal node" ;
+    bitbake:fieldId 23 .
+
+bitbake:field_subscript a owl:ObjectProperty ;
+    rdfs:label "subscript (structural)" ;
+    rdfs:comment "Structural reference for subscript field when it contains a non-terminal node" ;
+    bitbake:fieldId 24 .
+
+bitbake:field_type a owl:ObjectProperty ;
+    rdfs:label "type (structural)" ;
+    rdfs:comment "Structural reference for type field when it contains a non-terminal node" ;
+    bitbake:fieldId 25 .
+
+bitbake:field_value a owl:ObjectProperty ;
+    rdfs:label "value (structural)" ;
+    rdfs:comment "Structural reference for value field when it contains a non-terminal node" ;
+    bitbake:fieldId 27 .
+
+bitbake:finally_clause a owl:Class ;
+    rdfs:label "finally_clause" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 206 .
+
+bitbake:flag a owl:Class ;
+    rdfs:label "flag" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 13 .
+
+bitbake:float a owl:Class ;
+    rdfs:label "float" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 131 .
+
+bitbake:for_in_clause a owl:Class ;
+    rdfs:label "for_in_clause" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 231 .
+
+bitbake:for_statement a owl:Class ;
+    rdfs:label "for_statement" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 201 .
+
+bitbake:format_expression a owl:Class ;
+    rdfs:label "format_expression" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 317 .
+
+bitbake:format_specifier a owl:Class ;
+    rdfs:label "format_specifier" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 275 .
+
+bitbake:function_definition a owl:Class ;
+    rdfs:label "function_definition" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 164 .
+
+bitbake:future_import_statement a owl:Class ;
+    rdfs:label "future_import_statement" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 175 .
+
+bitbake:generator_expression a owl:Class ;
+    rdfs:label "generator_expression" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 227 .
+
+bitbake:generic_type a owl:Class ;
+    rdfs:label "generic_type" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 256 .
+
+bitbake:global_statement a owl:Class ;
+    rdfs:label "global_statement" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 192 .
+
+bitbake:identifier a owl:Class ;
+    rdfs:label "identifier" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 137,
+        138 .
+
+bitbake:if_clause a owl:Class ;
+    rdfs:label "if_clause" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 232 .
+
+bitbake:if_statement a owl:Class ;
+    rdfs:label "if_statement" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 198 .
+
+bitbake:import_from_statement a owl:Class ;
+    rdfs:label "import_from_statement" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 176 .
+
+bitbake:import_prefix a owl:Class ;
+    rdfs:label "import_prefix" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 173 .
+
+bitbake:import_statement a owl:Class ;
+    rdfs:label "import_statement" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 172 .
+
+bitbake:include_directive a owl:Class ;
+    rdfs:label "include_directive" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 155 .
+
+bitbake:include_path a owl:Class ;
+    rdfs:label "include_path" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 318 .
+
+bitbake:inherit_directive a owl:Class ;
+    rdfs:label "inherit_directive" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 154 .
+
+bitbake:inherit_path a owl:Class ;
+    rdfs:label "inherit_path" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 21 .
+
+bitbake:inline_python a owl:Class ;
+    rdfs:label "inline_python" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 167 .
+
+bitbake:integer a owl:Class ;
+    rdfs:label "integer" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 130 .
+
+bitbake:interpolation a owl:Class ;
+    rdfs:label "interpolation" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 273 .
+
+bitbake:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+bitbake:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+bitbake:keyword_argument a owl:Class ;
+    rdfs:label "keyword_argument" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 260 .
+
+bitbake:keyword_separator a owl:Class ;
+    rdfs:label "keyword_separator" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 278 .
+
+bitbake:lambda a owl:Class ;
+    rdfs:label "lambda" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 216,
+        217 .
+
+bitbake:lambda_parameters a owl:Class ;
+    rdfs:label "lambda_parameters" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 236 .
+
+bitbake:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+bitbake:line_continuation a owl:Class ;
+    rdfs:label "line_continuation" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 136 .
+
+bitbake:list a owl:Class ;
+    rdfs:label "list" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 261 .
+
+bitbake:list_comprehension a owl:Class ;
+    rdfs:label "list_comprehension" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 266 .
+
+bitbake:list_pattern a owl:Class ;
+    rdfs:label "list_pattern" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 244 .
+
+bitbake:list_splat a owl:Class ;
+    rdfs:label "list_splat" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 237 .
+
+bitbake:list_splat_pattern a owl:Class ;
+    rdfs:label "list_splat_pattern" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 247 .
+
+bitbake:literal a owl:Class ;
+    rdfs:label "literal" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 165 .
+
+bitbake:member_type a owl:Class ;
+    rdfs:label "member_type" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 259 .
+
+bitbake:name a owl:DatatypeProperty ;
+    rdfs:label "name (literal)" ;
+    rdfs:comment "Literal value for name field when it contains a terminal node" ;
+    bitbake:fieldId 17 ;
+    bitbake:isTerminalField true .
+
+bitbake:named_expression a owl:Class ;
+    rdfs:label "named_expression" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 184 .
+
+bitbake:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+bitbake:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+bitbake:none a owl:Class ;
+    rdfs:label "none" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 134 .
+
+bitbake:nonlocal_statement a owl:Class ;
+    rdfs:label "nonlocal_statement" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 193 .
+
+bitbake:not_operator a owl:Class ;
+    rdfs:label "not_operator" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 211 .
+
+bitbake:override a owl:Class ;
+    rdfs:label "override" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 152 .
+
+bitbake:overrides_statement a owl:Class ;
+    rdfs:label "overrides_statement" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 158 .
+
+bitbake:pair a owl:Class ;
+    rdfs:label "pair" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 265 .
+
+bitbake:parameters a owl:Class ;
+    rdfs:label "parameters" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 235 .
+
+bitbake:parenthesized_expression a owl:Class ;
+    rdfs:label "parenthesized_expression" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 229 .
+
+bitbake:parenthesized_list_splat a owl:Class ;
+    rdfs:label "parenthesized_list_splat" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 196 .
+
+bitbake:pass_statement a owl:Class ;
+    rdfs:label "pass_statement" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 189 .
+
+bitbake:pattern_list a owl:Class ;
+    rdfs:label "pattern_list" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 220 .
+
+bitbake:positional_separator a owl:Class ;
+    rdfs:label "positional_separator" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 277 .
+
+bitbake:print_statement a owl:Class ;
+    rdfs:label "print_statement" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 180 .
+
+bitbake:python_function_definition a owl:Class ;
+    rdfs:label "python_function_definition" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 169 .
+
+bitbake:python_identifier a owl:Class ;
+    rdfs:label "python_identifier" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 128,
+        129,
+        135 .
+
+bitbake:python_string a owl:Class ;
+    rdfs:label "python_string" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 271 .
+
+bitbake:raise_statement a owl:Class ;
+    rdfs:label "raise_statement" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 188 .
+
+bitbake:recipe a owl:Class ;
+    rdfs:label "recipe" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 149 .
+
+bitbake:relative_import a owl:Class ;
+    rdfs:label "relative_import" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 174 .
+
+bitbake:require_directive a owl:Class ;
+    rdfs:label "require_directive" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 156 .
+
+bitbake:return_statement a owl:Class ;
+    rdfs:label "return_statement" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 186 .
+
+bitbake:set a owl:Class ;
+    rdfs:label "set" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 262 .
+
+bitbake:set_comprehension a owl:Class ;
+    rdfs:label "set_comprehension" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 268 .
+
+bitbake:shell_content a owl:Class ;
+    rdfs:label "shell_content" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 148 .
+
+bitbake:slice a owl:Class ;
+    rdfs:label "slice" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 225 .
+
+bitbake:splat_type a owl:Class ;
+    rdfs:label "splat_type" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 255 .
+
+bitbake:string a owl:Class ;
+    rdfs:label "string" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 166 .
+
+bitbake:string_content a owl:Class ;
+    rdfs:label "string_content" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 41,
+        45,
+        47,
+        272 .
+
+bitbake:string_end a owl:Class ;
+    rdfs:label "string_end" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 147 .
+
+bitbake:string_start a owl:Class ;
+    rdfs:label "string_start" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 144 .
+
+bitbake:subscript a owl:Class ;
+    rdfs:label "subscript" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 224 .
+
+bitbake:true a owl:Class ;
+    rdfs:label "true" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 132 .
+
+bitbake:try_statement a owl:Class ;
+    rdfs:label "try_statement" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 203 .
+
+bitbake:tuple a owl:Class ;
+    rdfs:label "tuple" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 263 .
+
+bitbake:tuple_pattern a owl:Class ;
+    rdfs:label "tuple_pattern" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 243 .
+
+bitbake:type a owl:Class ;
+    rdfs:label "type" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 254 .
+
+bitbake:type_conversion a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "type_conversion",
+        "type_conversion (literal)" ;
+    rdfs:comment "Literal value for type_conversion field when it contains a terminal node" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:fieldId 26 ;
+    bitbake:isSupertype true ;
+    bitbake:isTerminalField true ;
+    bitbake:nodeTypeId 126 .
+
+bitbake:type_parameter a owl:Class ;
+    rdfs:label "type_parameter" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 195 .
+
+bitbake:typed_default_parameter a owl:Class ;
+    rdfs:label "typed_default_parameter" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 246 .
+
+bitbake:typed_parameter a owl:Class ;
+    rdfs:label "typed_parameter" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 253 .
+
+bitbake:unary_operator a owl:Class ;
+    rdfs:label "unary_operator" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 214 .
+
+bitbake:union_type a owl:Class ;
+    rdfs:label "union_type" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 257 .
+
+bitbake:unset_statement a owl:Class ;
+    rdfs:label "unset_statement" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 153 .
+
+bitbake:variable_assignment a owl:Class ;
+    rdfs:label "variable_assignment" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 150 .
+
+bitbake:variable_expansion a owl:Class ;
+    rdfs:label "variable_expansion" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 168 .
+
+bitbake:variable_flag a owl:Class ;
+    rdfs:label "variable_flag" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 151 .
+
+bitbake:while_statement a owl:Class ;
+    rdfs:label "while_statement" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 202 .
+
+bitbake:wildcard_import a owl:Class ;
+    rdfs:label "wildcard_import" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 179 .
+
+bitbake:with_clause a owl:Class ;
+    rdfs:label "with_clause" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 208 .
+
+bitbake:with_item a owl:Class ;
+    rdfs:label "with_item" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 209 .
+
+bitbake:with_statement a owl:Class ;
+    rdfs:label "with_statement" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 207 .
+
+bitbake:yield a owl:Class ;
+    rdfs:label "yield" ;
+    rdfs:isDefinedBy bitbake: ;
+    rdfs:subClassOf ast:Node ;
+    bitbake:isSupertype true ;
+    bitbake:nodeTypeId 222 .
+
+bitbake: a owl:Ontology ;
+    rdfs:label "Bitbake Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for bitbake" ;
+    owl:versionInfo "v0.25" ;
+    bitbake:abiVersion 14 ;
+    bitbake:fieldCount 27 ;
+    bitbake:languageName "None" ;
+    bitbake:nodeKindCount 321 .
+

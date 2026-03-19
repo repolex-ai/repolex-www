@@ -1,0 +1,98 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix comment: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/comment/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+comment:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+comment:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+comment:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+comment:invalid_token a owl:Class ;
+    rdfs:label "invalid_token" ;
+    rdfs:isDefinedBy comment: ;
+    rdfs:subClassOf ast:Node ;
+    comment:isSupertype true ;
+    comment:nodeTypeId 26 .
+
+comment:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+comment:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+comment:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+comment:name a owl:Class ;
+    rdfs:label "name" ;
+    rdfs:isDefinedBy comment: ;
+    rdfs:subClassOf ast:Node ;
+    comment:isSupertype true ;
+    comment:nodeTypeId 25 .
+
+comment:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+comment:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+comment:source a owl:Class ;
+    rdfs:label "source" ;
+    rdfs:isDefinedBy comment: ;
+    rdfs:subClassOf ast:Node ;
+    comment:isSupertype true ;
+    comment:nodeTypeId 27 .
+
+comment:tag a owl:Class ;
+    rdfs:label "tag" ;
+    rdfs:isDefinedBy comment: ;
+    rdfs:subClassOf ast:Node ;
+    comment:isSupertype true ;
+    comment:nodeTypeId 28 .
+
+comment:uri a owl:Class ;
+    rdfs:label "uri" ;
+    rdfs:isDefinedBy comment: ;
+    rdfs:subClassOf ast:Node ;
+    comment:isSupertype true ;
+    comment:nodeTypeId 6 .
+
+comment:user a owl:Class ;
+    rdfs:label "user" ;
+    rdfs:isDefinedBy comment: ;
+    rdfs:subClassOf ast:Node ;
+    comment:isSupertype true ;
+    comment:nodeTypeId 3 .
+
+comment: a owl:Ontology ;
+    rdfs:label "Comment Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for comment" ;
+    owl:versionInfo "v0.25" ;
+    comment:abiVersion 15 ;
+    comment:fieldCount 0 ;
+    comment:languageName "comment" ;
+    comment:nodeKindCount 35 .
+

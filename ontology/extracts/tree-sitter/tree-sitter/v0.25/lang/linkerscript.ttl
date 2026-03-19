@@ -1,0 +1,361 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix linkerscript: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/linkerscript/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+linkerscript:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+linkerscript:argument_list a owl:Class ;
+    rdfs:label "argument_list" ;
+    rdfs:isDefinedBy linkerscript: ;
+    rdfs:subClassOf ast:Node ;
+    linkerscript:isSupertype true ;
+    linkerscript:nodeTypeId 100 .
+
+linkerscript:assert_command a owl:Class ;
+    rdfs:label "assert_command" ;
+    rdfs:isDefinedBy linkerscript: ;
+    rdfs:subClassOf ast:Node ;
+    linkerscript:isSupertype true ;
+    linkerscript:nodeTypeId 86 .
+
+linkerscript:assignment a owl:Class ;
+    rdfs:label "assignment" ;
+    rdfs:isDefinedBy linkerscript: ;
+    rdfs:subClassOf ast:Node ;
+    linkerscript:isSupertype true ;
+    linkerscript:nodeTypeId 85 .
+
+linkerscript:attributes a owl:Class ;
+    rdfs:label "attributes" ;
+    rdfs:isDefinedBy linkerscript: ;
+    rdfs:subClassOf ast:Node ;
+    linkerscript:isSupertype true ;
+    linkerscript:nodeTypeId 91 .
+
+linkerscript:binary_expression a owl:Class ;
+    rdfs:label "binary_expression" ;
+    rdfs:isDefinedBy linkerscript: ;
+    rdfs:subClassOf ast:Node ;
+    linkerscript:isSupertype true ;
+    linkerscript:nodeTypeId 97 .
+
+linkerscript:call_expression a owl:Class ;
+    rdfs:label "call_expression" ;
+    rdfs:isDefinedBy linkerscript: ;
+    rdfs:subClassOf ast:Node ;
+    linkerscript:isSupertype true ;
+    linkerscript:nodeTypeId 99 .
+
+linkerscript:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy linkerscript: ;
+    rdfs:subClassOf ast:Node ;
+    linkerscript:isSupertype true ;
+    linkerscript:nodeTypeId 69 .
+
+linkerscript:conditional_expression a owl:Class ;
+    rdfs:label "conditional_expression" ;
+    rdfs:isDefinedBy linkerscript: ;
+    rdfs:subClassOf ast:Node ;
+    linkerscript:isSupertype true ;
+    linkerscript:nodeTypeId 95 .
+
+linkerscript:entry_command a owl:Class ;
+    rdfs:label "entry_command" ;
+    rdfs:isDefinedBy linkerscript: ;
+    rdfs:subClassOf ast:Node ;
+    linkerscript:isSupertype true ;
+    linkerscript:nodeTypeId 71 .
+
+linkerscript:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+linkerscript:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+linkerscript:field_address a owl:ObjectProperty ;
+    rdfs:label "address (structural)" ;
+    rdfs:comment "Structural reference for address field when it contains a non-terminal node" ;
+    linkerscript:fieldId 1 .
+
+linkerscript:field_alternative a owl:ObjectProperty ;
+    rdfs:label "alternative (structural)" ;
+    rdfs:comment "Structural reference for alternative field when it contains a non-terminal node" ;
+    linkerscript:fieldId 2 .
+
+linkerscript:field_argument a owl:ObjectProperty ;
+    rdfs:label "argument (structural)" ;
+    rdfs:comment "Structural reference for argument field when it contains a non-terminal node" ;
+    linkerscript:fieldId 3 .
+
+linkerscript:field_arguments a owl:ObjectProperty ;
+    rdfs:label "arguments (structural)" ;
+    rdfs:comment "Structural reference for arguments field when it contains a non-terminal node" ;
+    linkerscript:fieldId 4 .
+
+linkerscript:field_condition a owl:ObjectProperty ;
+    rdfs:label "condition (structural)" ;
+    rdfs:comment "Structural reference for condition field when it contains a non-terminal node" ;
+    linkerscript:fieldId 5 .
+
+linkerscript:field_consequence a owl:ObjectProperty ;
+    rdfs:label "consequence (structural)" ;
+    rdfs:comment "Structural reference for consequence field when it contains a non-terminal node" ;
+    linkerscript:fieldId 6 .
+
+linkerscript:field_function a owl:ObjectProperty ;
+    rdfs:label "function (structural)" ;
+    rdfs:comment "Structural reference for function field when it contains a non-terminal node" ;
+    linkerscript:fieldId 7 .
+
+linkerscript:field_left a owl:ObjectProperty ;
+    rdfs:label "left (structural)" ;
+    rdfs:comment "Structural reference for left field when it contains a non-terminal node" ;
+    linkerscript:fieldId 8 .
+
+linkerscript:field_length a owl:ObjectProperty ;
+    rdfs:label "length (structural)" ;
+    rdfs:comment "Structural reference for length field when it contains a non-terminal node" ;
+    linkerscript:fieldId 9 .
+
+linkerscript:field_operator a owl:ObjectProperty ;
+    rdfs:label "operator (structural)" ;
+    rdfs:comment "Structural reference for operator field when it contains a non-terminal node" ;
+    linkerscript:fieldId 11 .
+
+linkerscript:field_origin a owl:ObjectProperty ;
+    rdfs:label "origin (structural)" ;
+    rdfs:comment "Structural reference for origin field when it contains a non-terminal node" ;
+    linkerscript:fieldId 12 .
+
+linkerscript:field_right a owl:ObjectProperty ;
+    rdfs:label "right (structural)" ;
+    rdfs:comment "Structural reference for right field when it contains a non-terminal node" ;
+    linkerscript:fieldId 13 .
+
+linkerscript:field_section a owl:ObjectProperty ;
+    rdfs:label "section (structural)" ;
+    rdfs:comment "Structural reference for section field when it contains a non-terminal node" ;
+    linkerscript:fieldId 14 .
+
+linkerscript:field_start a owl:ObjectProperty ;
+    rdfs:label "start (structural)" ;
+    rdfs:comment "Structural reference for start field when it contains a non-terminal node" ;
+    linkerscript:fieldId 15 .
+
+linkerscript:filename a owl:Class ;
+    rdfs:label "filename" ;
+    rdfs:isDefinedBy linkerscript: ;
+    rdfs:subClassOf ast:Node ;
+    linkerscript:isSupertype true ;
+    linkerscript:nodeTypeId 68 .
+
+linkerscript:fillexp a owl:Class ;
+    rdfs:label "fillexp" ;
+    rdfs:isDefinedBy linkerscript: ;
+    rdfs:subClassOf ast:Node ;
+    linkerscript:isSupertype true ;
+    linkerscript:nodeTypeId 80 .
+
+linkerscript:input_section a owl:Class ;
+    rdfs:label "input_section" ;
+    rdfs:isDefinedBy linkerscript: ;
+    rdfs:subClassOf ast:Node ;
+    linkerscript:isSupertype true ;
+    linkerscript:nodeTypeId 82 .
+
+linkerscript:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+linkerscript:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+linkerscript:keep_command a owl:Class ;
+    rdfs:label "keep_command" ;
+    rdfs:isDefinedBy linkerscript: ;
+    rdfs:subClassOf ast:Node ;
+    linkerscript:isSupertype true ;
+    linkerscript:nodeTypeId 87 .
+
+linkerscript:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+linkerscript:linkerscript a owl:Class ;
+    rdfs:label "linkerscript" ;
+    rdfs:isDefinedBy linkerscript: ;
+    rdfs:subClassOf ast:Node ;
+    linkerscript:isSupertype true ;
+    linkerscript:nodeTypeId 70 .
+
+linkerscript:lma_region a owl:Class ;
+    rdfs:label "lma_region" ;
+    rdfs:isDefinedBy linkerscript: ;
+    rdfs:subClassOf ast:Node ;
+    linkerscript:isSupertype true ;
+    linkerscript:nodeTypeId 78 .
+
+linkerscript:load_memory_address a owl:Class ;
+    rdfs:label "load_memory_address" ;
+    rdfs:isDefinedBy linkerscript: ;
+    rdfs:subClassOf ast:Node ;
+    linkerscript:isSupertype true ;
+    linkerscript:nodeTypeId 111 .
+
+linkerscript:memory_command a owl:Class ;
+    rdfs:label "memory_command" ;
+    rdfs:isDefinedBy linkerscript: ;
+    rdfs:subClassOf ast:Node ;
+    linkerscript:isSupertype true ;
+    linkerscript:nodeTypeId 89 .
+
+linkerscript:name a owl:DatatypeProperty ;
+    rdfs:label "name (literal)" ;
+    rdfs:comment "Literal value for name field when it contains a terminal node" ;
+    linkerscript:fieldId 10 ;
+    linkerscript:isTerminalField true .
+
+linkerscript:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+linkerscript:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+linkerscript:number a owl:Class ;
+    rdfs:label "number" ;
+    rdfs:isDefinedBy linkerscript: ;
+    rdfs:subClassOf ast:Node ;
+    linkerscript:isSupertype true ;
+    linkerscript:nodeTypeId 65 .
+
+linkerscript:output_section a owl:Class ;
+    rdfs:label "output_section" ;
+    rdfs:isDefinedBy linkerscript: ;
+    rdfs:subClassOf ast:Node ;
+    linkerscript:isSupertype true ;
+    linkerscript:nodeTypeId 75 .
+
+linkerscript:overlay_command a owl:Class ;
+    rdfs:label "overlay_command" ;
+    rdfs:isDefinedBy linkerscript: ;
+    rdfs:subClassOf ast:Node ;
+    linkerscript:isSupertype true ;
+    linkerscript:nodeTypeId 84 .
+
+linkerscript:parenthesized_expression a owl:Class ;
+    rdfs:label "parenthesized_expression" ;
+    rdfs:isDefinedBy linkerscript: ;
+    rdfs:subClassOf ast:Node ;
+    linkerscript:isSupertype true ;
+    linkerscript:nodeTypeId 98 .
+
+linkerscript:phdr a owl:Class ;
+    rdfs:label "phdr" ;
+    rdfs:isDefinedBy linkerscript: ;
+    rdfs:subClassOf ast:Node ;
+    linkerscript:isSupertype true ;
+    linkerscript:nodeTypeId 79 .
+
+linkerscript:phdrs_command a owl:Class ;
+    rdfs:label "phdrs_command" ;
+    rdfs:isDefinedBy linkerscript: ;
+    rdfs:subClassOf ast:Node ;
+    linkerscript:isSupertype true ;
+    linkerscript:nodeTypeId 92 .
+
+linkerscript:provide_command a owl:Class ;
+    rdfs:label "provide_command" ;
+    rdfs:isDefinedBy linkerscript: ;
+    rdfs:subClassOf ast:Node ;
+    linkerscript:isSupertype true ;
+    linkerscript:nodeTypeId 88 .
+
+linkerscript:quoted_symbol a owl:Class ;
+    rdfs:label "quoted_symbol" ;
+    rdfs:isDefinedBy linkerscript: ;
+    rdfs:subClassOf ast:Node ;
+    linkerscript:isSupertype true ;
+    linkerscript:nodeTypeId 101 .
+
+linkerscript:region a owl:Class ;
+    rdfs:label "region" ;
+    rdfs:isDefinedBy linkerscript: ;
+    rdfs:subClassOf ast:Node ;
+    linkerscript:isSupertype true ;
+    linkerscript:nodeTypeId 77 .
+
+linkerscript:section a owl:DatatypeProperty ;
+    rdfs:label "section (literal)" ;
+    rdfs:comment "Literal value for section field when it contains a terminal node" ;
+    linkerscript:fieldId 14 ;
+    linkerscript:isTerminalField true .
+
+linkerscript:section_type a owl:Class ;
+    rdfs:label "section_type" ;
+    rdfs:isDefinedBy linkerscript: ;
+    rdfs:subClassOf ast:Node ;
+    linkerscript:isSupertype true ;
+    linkerscript:nodeTypeId 81 .
+
+linkerscript:sections_command a owl:Class ;
+    rdfs:label "sections_command" ;
+    rdfs:isDefinedBy linkerscript: ;
+    rdfs:subClassOf ast:Node ;
+    linkerscript:isSupertype true ;
+    linkerscript:nodeTypeId 73 .
+
+linkerscript:symbol a owl:Class ;
+    rdfs:label "symbol" ;
+    rdfs:isDefinedBy linkerscript: ;
+    rdfs:subClassOf ast:Node ;
+    linkerscript:isSupertype true ;
+    linkerscript:nodeTypeId 1 .
+
+linkerscript:type a owl:DatatypeProperty ;
+    rdfs:label "type (literal)" ;
+    rdfs:comment "Literal value for type field when it contains a terminal node" ;
+    linkerscript:fieldId 16 ;
+    linkerscript:isTerminalField true .
+
+linkerscript:unary_expression a owl:Class ;
+    rdfs:label "unary_expression" ;
+    rdfs:isDefinedBy linkerscript: ;
+    rdfs:subClassOf ast:Node ;
+    linkerscript:isSupertype true ;
+    linkerscript:nodeTypeId 96 .
+
+linkerscript:wildcard_pattern a owl:Class ;
+    rdfs:label "wildcard_pattern" ;
+    rdfs:isDefinedBy linkerscript: ;
+    rdfs:subClassOf ast:Node ;
+    linkerscript:isSupertype true ;
+    linkerscript:nodeTypeId 83 .
+
+linkerscript: a owl:Ontology ;
+    rdfs:label "Linkerscript Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for linkerscript" ;
+    owl:versionInfo "v0.25" ;
+    linkerscript:abiVersion 14 ;
+    linkerscript:fieldCount 16 ;
+    linkerscript:languageName "None" ;
+    linkerscript:nodeKindCount 112 .
+

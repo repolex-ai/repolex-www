@@ -1,0 +1,766 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix zig: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/zig/> .
+
+zig:AdditionOp a owl:Class ;
+    rdfs:label "AdditionOp" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 228 .
+
+zig:AddrSpace a owl:Class ;
+    rdfs:label "AddrSpace" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 208 .
+
+zig:ArrayTypeStart a owl:Class ;
+    rdfs:label "ArrayTypeStart" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 237 .
+
+zig:AsmClobbers a owl:Class ;
+    rdfs:label "AsmClobbers" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 202 .
+
+zig:AsmExpr a owl:Class ;
+    rdfs:label "AsmExpr" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 197 .
+
+zig:AsmInput a owl:Class ;
+    rdfs:label "AsmInput" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 200 .
+
+zig:AsmInputItem a owl:Class ;
+    rdfs:label "AsmInputItem" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 201 .
+
+zig:AsmOutput a owl:Class ;
+    rdfs:label "AsmOutput" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 198 .
+
+zig:AsmOutputItem a owl:Class ;
+    rdfs:label "AsmOutputItem" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 199 .
+
+zig:AssignExpr a owl:Class ;
+    rdfs:label "AssignExpr" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 169 .
+
+zig:AssignOp a owl:Class ;
+    rdfs:label "AssignOp" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 224 .
+
+zig:BUILTINIDENTIFIER a owl:Class ;
+    rdfs:label "BUILTINIDENTIFIER" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 251 .
+
+zig:BinaryExpr a owl:Class ;
+    rdfs:label "BinaryExpr" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 171 .
+
+zig:BitShiftOp a owl:Class ;
+    rdfs:label "BitShiftOp" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 227 .
+
+zig:BitwiseOp a owl:Class ;
+    rdfs:label "BitwiseOp" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 226 .
+
+zig:Block a owl:Class ;
+    rdfs:label "Block" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 176 .
+
+zig:BlockExpr a owl:Class ;
+    rdfs:label "BlockExpr" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 168 .
+
+zig:BlockExprStatement a owl:Class ;
+    rdfs:label "BlockExprStatement" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 167 .
+
+zig:BlockLabel a owl:Class ;
+    rdfs:label "BlockLabel" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 204 .
+
+zig:BreakLabel a owl:Class ;
+    rdfs:label "BreakLabel" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 203 .
+
+zig:BuildinTypeExpr a owl:Class ;
+    rdfs:label "BuildinTypeExpr" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 40 .
+
+zig:ByteAlign a owl:Class ;
+    rdfs:label "ByteAlign" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 240 .
+
+zig:CHAR_LITERAL a owl:Class ;
+    rdfs:label "CHAR_LITERAL" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 242 .
+
+zig:CallConv a owl:Class ;
+    rdfs:label "CallConv" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 209 .
+
+zig:CompareOp a owl:Class ;
+    rdfs:label "CompareOp" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 225 .
+
+zig:ComptimeDecl a owl:Class ;
+    rdfs:label "ComptimeDecl" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 155 .
+
+zig:ContainerDecl a owl:Class ;
+    rdfs:label "ContainerDecl" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 187 .
+
+zig:ContainerDeclType a owl:Class ;
+    rdfs:label "ContainerDeclType" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 239 .
+
+zig:ContainerField a owl:Class ;
+    rdfs:label "ContainerField" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 159 .
+
+zig:Decl a owl:Class ;
+    rdfs:label "Decl" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 156 .
+
+zig:ErrorSetDecl a owl:Class ;
+    rdfs:label "ErrorSetDecl" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 188 .
+
+zig:ErrorUnionExpr a owl:Class ;
+    rdfs:label "ErrorUnionExpr" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 183 .
+
+zig:EscapeSequence a owl:Class ;
+    rdfs:label "EscapeSequence" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 245 .
+
+zig:FLOAT a owl:Class ;
+    rdfs:label "FLOAT" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 243 .
+
+zig:FieldInit a owl:Class ;
+    rdfs:label "FieldInit" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 205 .
+
+zig:FieldOrFnCall a owl:Class ;
+    rdfs:label "FieldOrFnCall" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 185 .
+
+zig:FnCallArguments a owl:Class ;
+    rdfs:label "FnCallArguments" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 234 .
+
+zig:FnProto a owl:Class ;
+    rdfs:label "FnProto" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 157 .
+
+zig:ForArgumentsList a owl:Class ;
+    rdfs:label "ForArgumentsList" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 222 .
+
+zig:ForExpr a owl:Class ;
+    rdfs:label "ForExpr" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 178 .
+
+zig:ForItem a owl:Class ;
+    rdfs:label "ForItem" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 223 .
+
+zig:ForPrefix a owl:Class ;
+    rdfs:label "ForPrefix" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 214 .
+
+zig:ForStatement a owl:Class ;
+    rdfs:label "ForStatement" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 165 .
+
+zig:ForTypeExpr a owl:Class ;
+    rdfs:label "ForTypeExpr" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 194 .
+
+zig:FormatSequence a owl:Class ;
+    rdfs:label "FormatSequence" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 246 .
+
+zig:GroupedExpr a owl:Class ;
+    rdfs:label "GroupedExpr" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 189 .
+
+zig:IDENTIFIER a owl:Class ;
+    rdfs:label "IDENTIFIER" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 250 .
+
+zig:INTEGER a owl:Class ;
+    rdfs:label "INTEGER" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 244 .
+
+zig:IfExpr a owl:Class ;
+    rdfs:label "IfExpr" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 174 .
+
+zig:IfPrefix a owl:Class ;
+    rdfs:label "IfPrefix" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 212 .
+
+zig:IfStatement a owl:Class ;
+    rdfs:label "IfStatement" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 161 .
+
+zig:IfTypeExpr a owl:Class ;
+    rdfs:label "IfTypeExpr" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 190 .
+
+zig:InitList a owl:Class ;
+    rdfs:label "InitList" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 181 .
+
+zig:LINESTRING a owl:Class ;
+    rdfs:label "LINESTRING" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 248 .
+
+zig:LabeledStatement a owl:Class ;
+    rdfs:label "LabeledStatement" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 163 .
+
+zig:LabeledTypeExpr a owl:Class ;
+    rdfs:label "LabeledTypeExpr" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 192 .
+
+zig:LinkSection a owl:Class ;
+    rdfs:label "LinkSection" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 207 .
+
+zig:LoopExpr a owl:Class ;
+    rdfs:label "LoopExpr" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 177 .
+
+zig:LoopStatement a owl:Class ;
+    rdfs:label "LoopStatement" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 164 .
+
+zig:LoopTypeExpr a owl:Class ;
+    rdfs:label "LoopTypeExpr" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 193 .
+
+zig:MultiplyOp a owl:Class ;
+    rdfs:label "MultiplyOp" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 229 .
+
+zig:ParamDecl a owl:Class ;
+    rdfs:label "ParamDecl" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 210 .
+
+zig:ParamDeclList a owl:Class ;
+    rdfs:label "ParamDeclList" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 241 .
+
+zig:ParamType a owl:Class ;
+    rdfs:label "ParamType" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 211 .
+
+zig:Payload a owl:Class ;
+    rdfs:label "Payload" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 215 .
+
+zig:PrefixOp a owl:Class ;
+    rdfs:label "PrefixOp" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 230 .
+
+zig:PrefixTypeOp a owl:Class ;
+    rdfs:label "PrefixTypeOp" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 231 .
+
+zig:PtrIndexPayload a owl:Class ;
+    rdfs:label "PtrIndexPayload" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 217 .
+
+zig:PtrListPayload a owl:Class ;
+    rdfs:label "PtrListPayload" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 218 .
+
+zig:PtrPayload a owl:Class ;
+    rdfs:label "PtrPayload" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 216 .
+
+zig:PtrTypeStart a owl:Class ;
+    rdfs:label "PtrTypeStart" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 236 .
+
+zig:STRINGLITERALSINGLE a owl:Class ;
+    rdfs:label "STRINGLITERALSINGLE" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 247 .
+
+zig:SliceTypeStart a owl:Class ;
+    rdfs:label "SliceTypeStart" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 235 .
+
+zig:Statement a owl:Class ;
+    rdfs:label "Statement" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 160 .
+
+zig:SuffixExpr a owl:Class ;
+    rdfs:label "SuffixExpr" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 184 .
+
+zig:SuffixOp a owl:Class ;
+    rdfs:label "SuffixOp" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 233 .
+
+zig:SwitchCase a owl:Class ;
+    rdfs:label "SwitchCase" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 220 .
+
+zig:SwitchExpr a owl:Class ;
+    rdfs:label "SwitchExpr" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 196 .
+
+zig:SwitchItem a owl:Class ;
+    rdfs:label "SwitchItem" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 221 .
+
+zig:SwitchProng a owl:Class ;
+    rdfs:label "SwitchProng" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 219 .
+
+zig:TestDecl a owl:Class ;
+    rdfs:label "TestDecl" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 154 .
+
+zig:UnaryExpr a owl:Class ;
+    rdfs:label "UnaryExpr" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 172 .
+
+zig:VarDecl a owl:Class ;
+    rdfs:label "VarDecl" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 158 .
+
+zig:WhileContinueExpr a owl:Class ;
+    rdfs:label "WhileContinueExpr" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 206 .
+
+zig:WhileExpr a owl:Class ;
+    rdfs:label "WhileExpr" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 179 .
+
+zig:WhilePrefix a owl:Class ;
+    rdfs:label "WhilePrefix" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 213 .
+
+zig:WhileStatement a owl:Class ;
+    rdfs:label "WhileStatement" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 166 .
+
+zig:WhileTypeExpr a owl:Class ;
+    rdfs:label "WhileTypeExpr" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 195 .
+
+zig:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+zig:container_doc_comment a owl:Class ;
+    rdfs:label "container_doc_comment" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 119 .
+
+zig:doc_comment a owl:Class ;
+    rdfs:label "doc_comment" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 120 .
+
+zig:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+zig:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+zig:field_exception a owl:ObjectProperty ;
+    rdfs:label "exception (structural)" ;
+    rdfs:comment "Structural reference for exception field when it contains a non-terminal node" ;
+    zig:fieldId 1 .
+
+zig:field_field_access a owl:ObjectProperty ;
+    rdfs:label "field_access (structural)" ;
+    rdfs:comment "Structural reference for field_access field when it contains a non-terminal node" ;
+    zig:fieldId 2 .
+
+zig:field_field_constant a owl:ObjectProperty ;
+    rdfs:label "field_constant (structural)" ;
+    rdfs:comment "Structural reference for field_constant field when it contains a non-terminal node" ;
+    zig:fieldId 3 .
+
+zig:field_field_member a owl:ObjectProperty ;
+    rdfs:label "field_member (structural)" ;
+    rdfs:comment "Structural reference for field_member field when it contains a non-terminal node" ;
+    zig:fieldId 4 .
+
+zig:field_function a owl:ObjectProperty ;
+    rdfs:label "function (structural)" ;
+    rdfs:comment "Structural reference for function field when it contains a non-terminal node" ;
+    zig:fieldId 5 .
+
+zig:field_function_call a owl:ObjectProperty ;
+    rdfs:label "function_call (structural)" ;
+    rdfs:comment "Structural reference for function_call field when it contains a non-terminal node" ;
+    zig:fieldId 6 .
+
+zig:field_left a owl:ObjectProperty ;
+    rdfs:label "left (structural)" ;
+    rdfs:comment "Structural reference for left field when it contains a non-terminal node" ;
+    zig:fieldId 7 .
+
+zig:field_operator a owl:ObjectProperty ;
+    rdfs:label "operator (structural)" ;
+    rdfs:comment "Structural reference for operator field when it contains a non-terminal node" ;
+    zig:fieldId 8 .
+
+zig:field_parameter a owl:ObjectProperty ;
+    rdfs:label "parameter (structural)" ;
+    rdfs:comment "Structural reference for parameter field when it contains a non-terminal node" ;
+    zig:fieldId 9 .
+
+zig:field_right a owl:ObjectProperty ;
+    rdfs:label "right (structural)" ;
+    rdfs:comment "Structural reference for right field when it contains a non-terminal node" ;
+    zig:fieldId 10 .
+
+zig:field_variable a owl:ObjectProperty ;
+    rdfs:label "variable (structural)" ;
+    rdfs:comment "Structural reference for variable field when it contains a non-terminal node" ;
+    zig:fieldId 11 .
+
+zig:field_variable_type_function a owl:ObjectProperty ;
+    rdfs:label "variable_type_function (structural)" ;
+    rdfs:comment "Structural reference for variable_type_function field when it contains a non-terminal node" ;
+    zig:fieldId 12 .
+
+zig:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+zig:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+zig:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+zig:line_comment a owl:Class ;
+    rdfs:label "line_comment" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 121 .
+
+zig:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+zig:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+zig:operator a owl:DatatypeProperty ;
+    rdfs:label "operator (literal)" ;
+    rdfs:comment "Literal value for operator field when it contains a terminal node" ;
+    zig:fieldId 8 ;
+    zig:isTerminalField true .
+
+zig:source_file a owl:Class ;
+    rdfs:label "source_file" ;
+    rdfs:isDefinedBy zig: ;
+    rdfs:subClassOf ast:Node ;
+    zig:isSupertype true ;
+    zig:nodeTypeId 151 .
+
+zig: a owl:Ontology ;
+    rdfs:label "Zig Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for zig" ;
+    owl:versionInfo "v0.25" ;
+    zig:abiVersion 14 ;
+    zig:fieldCount 12 ;
+    zig:languageName "None" ;
+    zig:nodeKindCount 270 .
+

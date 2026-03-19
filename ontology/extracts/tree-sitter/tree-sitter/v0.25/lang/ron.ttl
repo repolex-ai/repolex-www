@@ -1,0 +1,208 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ron: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/ron/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ron:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+ron:array a owl:Class ;
+    rdfs:label "array" ;
+    rdfs:isDefinedBy ron: ;
+    rdfs:subClassOf ast:Node ;
+    ron:isSupertype true ;
+    ron:nodeTypeId 30 .
+
+ron:block_comment a owl:Class ;
+    rdfs:label "block_comment" ;
+    rdfs:isDefinedBy ron: ;
+    rdfs:subClassOf ast:Node ;
+    ron:isSupertype true ;
+    ron:nodeTypeId 26 .
+
+ron:boolean a owl:Class ;
+    rdfs:label "boolean" ;
+    rdfs:isDefinedBy ron: ;
+    rdfs:subClassOf ast:Node ;
+    ron:isSupertype true ;
+    ron:nodeTypeId 46 .
+
+ron:char a owl:Class ;
+    rdfs:label "char" ;
+    rdfs:isDefinedBy ron: ;
+    rdfs:subClassOf ast:Node ;
+    ron:isSupertype true ;
+    ron:nodeTypeId 44 .
+
+ron:enum_variant a owl:Class ;
+    rdfs:label "enum_variant" ;
+    rdfs:isDefinedBy ron: ;
+    rdfs:subClassOf ast:Node ;
+    ron:isSupertype true ;
+    ron:nodeTypeId 29 .
+
+ron:escape_sequence a owl:Class ;
+    rdfs:label "escape_sequence" ;
+    rdfs:isDefinedBy ron: ;
+    rdfs:subClassOf ast:Node ;
+    ron:isSupertype true ;
+    ron:nodeTypeId 18 .
+
+ron:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+ron:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+ron:field_body a owl:ObjectProperty ;
+    rdfs:label "body (structural)" ;
+    rdfs:comment "Structural reference for body field when it contains a non-terminal node" ;
+    ron:fieldId 1 .
+
+ron:float a owl:Class ;
+    rdfs:label "float" ;
+    rdfs:isDefinedBy ron: ;
+    rdfs:subClassOf ast:Node ;
+    ron:isSupertype true ;
+    ron:nodeTypeId 25 .
+
+ron:identifier a owl:Class ;
+    rdfs:label "identifier" ;
+    rdfs:isDefinedBy ron: ;
+    rdfs:subClassOf ast:Node ;
+    ron:isSupertype true ;
+    ron:nodeTypeId 21 .
+
+ron:integer a owl:Class ;
+    rdfs:label "integer" ;
+    rdfs:isDefinedBy ron: ;
+    rdfs:subClassOf ast:Node ;
+    ron:isSupertype true ;
+    ron:nodeTypeId 10 .
+
+ron:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+ron:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+ron:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+ron:line_comment a owl:Class ;
+    rdfs:label "line_comment" ;
+    rdfs:isDefinedBy ron: ;
+    rdfs:subClassOf ast:Node ;
+    ron:isSupertype true ;
+    ron:nodeTypeId 22 .
+
+ron:map a owl:Class ;
+    rdfs:label "map" ;
+    rdfs:isDefinedBy ron: ;
+    rdfs:subClassOf ast:Node ;
+    ron:isSupertype true ;
+    ron:nodeTypeId 31 .
+
+ron:map_entry a owl:Class ;
+    rdfs:label "map_entry" ;
+    rdfs:isDefinedBy ron: ;
+    rdfs:subClassOf ast:Node ;
+    ron:isSupertype true ;
+    ron:nodeTypeId 39 .
+
+ron:negative a owl:Class ;
+    rdfs:label "negative" ;
+    rdfs:isDefinedBy ron: ;
+    rdfs:subClassOf ast:Node ;
+    ron:isSupertype true ;
+    ron:nodeTypeId 42 .
+
+ron:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+ron:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+ron:raw_string a owl:Class ;
+    rdfs:label "raw_string" ;
+    rdfs:isDefinedBy ron: ;
+    rdfs:subClassOf ast:Node ;
+    ron:isSupertype true ;
+    ron:nodeTypeId 24 .
+
+ron:source_file a owl:Class ;
+    rdfs:label "source_file" ;
+    rdfs:isDefinedBy ron: ;
+    rdfs:subClassOf ast:Node ;
+    ron:isSupertype true ;
+    ron:nodeTypeId 27 .
+
+ron:string a owl:Class ;
+    rdfs:label "string" ;
+    rdfs:isDefinedBy ron: ;
+    rdfs:subClassOf ast:Node ;
+    ron:isSupertype true ;
+    ron:nodeTypeId 43 .
+
+ron:struct a owl:Class ;
+    rdfs:label "struct" ;
+    rdfs:isDefinedBy ron: ;
+    rdfs:subClassOf ast:Node ;
+    ron:isSupertype true ;
+    ron:nodeTypeId 32 .
+
+ron:struct_entry a owl:Class ;
+    rdfs:label "struct_entry" ;
+    rdfs:isDefinedBy ron: ;
+    rdfs:subClassOf ast:Node ;
+    ron:isSupertype true ;
+    ron:nodeTypeId 40 .
+
+ron:struct_name a owl:Class ;
+    rdfs:label "struct_name" ;
+    rdfs:isDefinedBy ron: ;
+    rdfs:subClassOf ast:Node ;
+    ron:isSupertype true ;
+    ron:nodeTypeId 34 .
+
+ron:tuple a owl:Class ;
+    rdfs:label "tuple" ;
+    rdfs:isDefinedBy ron: ;
+    rdfs:subClassOf ast:Node ;
+    ron:isSupertype true ;
+    ron:nodeTypeId 38 .
+
+ron:unit_struct a owl:Class ;
+    rdfs:label "unit_struct" ;
+    rdfs:isDefinedBy ron: ;
+    rdfs:subClassOf ast:Node ;
+    ron:isSupertype true ;
+    ron:nodeTypeId 33 .
+
+ron: a owl:Ontology ;
+    rdfs:label "Ron Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for ron" ;
+    owl:versionInfo "v0.25" ;
+    ron:abiVersion 14 ;
+    ron:fieldCount 1 ;
+    ron:languageName "None" ;
+    ron:nodeKindCount 51 .
+

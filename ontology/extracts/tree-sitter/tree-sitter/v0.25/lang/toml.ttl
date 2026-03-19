@@ -1,0 +1,190 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix toml: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/toml/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+toml:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+toml:array a owl:Class ;
+    rdfs:label "array" ;
+    rdfs:isDefinedBy toml: ;
+    rdfs:subClassOf ast:Node ;
+    toml:isSupertype true ;
+    toml:nodeTypeId 56 .
+
+toml:bare_key a owl:Class ;
+    rdfs:label "bare_key" ;
+    rdfs:isDefinedBy toml: ;
+    rdfs:subClassOf ast:Node ;
+    toml:isSupertype true ;
+    toml:nodeTypeId 9 .
+
+toml:boolean a owl:Class ;
+    rdfs:label "boolean" ;
+    rdfs:isDefinedBy toml: ;
+    rdfs:subClassOf ast:Node ;
+    toml:isSupertype true ;
+    toml:nodeTypeId 27 .
+
+toml:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy toml: ;
+    rdfs:subClassOf ast:Node ;
+    toml:isSupertype true ;
+    toml:nodeTypeId 2 .
+
+toml:document a owl:Class ;
+    rdfs:label "document" ;
+    rdfs:isDefinedBy toml: ;
+    rdfs:subClassOf ast:Node ;
+    toml:isSupertype true ;
+    toml:nodeTypeId 40 .
+
+toml:dotted_key a owl:Class ;
+    rdfs:label "dotted_key" ;
+    rdfs:isDefinedBy toml: ;
+    rdfs:subClassOf ast:Node ;
+    toml:isSupertype true ;
+    toml:nodeTypeId 46 .
+
+toml:escape_sequence a owl:Class ;
+    rdfs:label "escape_sequence" ;
+    rdfs:isDefinedBy toml: ;
+    rdfs:subClassOf ast:Node ;
+    toml:isSupertype true ;
+    toml:nodeTypeId 15,
+        16 .
+
+toml:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+toml:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+toml:float a owl:Class ;
+    rdfs:label "float" ;
+    rdfs:isDefinedBy toml: ;
+    rdfs:subClassOf ast:Node ;
+    toml:isSupertype true ;
+    toml:nodeTypeId 55 .
+
+toml:inline_table a owl:Class ;
+    rdfs:label "inline_table" ;
+    rdfs:isDefinedBy toml: ;
+    rdfs:subClassOf ast:Node ;
+    toml:isSupertype true ;
+    toml:nodeTypeId 57 .
+
+toml:integer a owl:Class ;
+    rdfs:label "integer" ;
+    rdfs:isDefinedBy toml: ;
+    rdfs:subClassOf ast:Node ;
+    toml:isSupertype true ;
+    toml:nodeTypeId 54 .
+
+toml:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+toml:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+toml:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+toml:local_date a owl:Class ;
+    rdfs:label "local_date" ;
+    rdfs:isDefinedBy toml: ;
+    rdfs:subClassOf ast:Node ;
+    toml:isSupertype true ;
+    toml:nodeTypeId 30 .
+
+toml:local_date_time a owl:Class ;
+    rdfs:label "local_date_time" ;
+    rdfs:isDefinedBy toml: ;
+    rdfs:subClassOf ast:Node ;
+    toml:isSupertype true ;
+    toml:nodeTypeId 29 .
+
+toml:local_time a owl:Class ;
+    rdfs:label "local_time" ;
+    rdfs:isDefinedBy toml: ;
+    rdfs:subClassOf ast:Node ;
+    toml:isSupertype true ;
+    toml:nodeTypeId 31 .
+
+toml:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+toml:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+toml:offset_date_time a owl:Class ;
+    rdfs:label "offset_date_time" ;
+    rdfs:isDefinedBy toml: ;
+    rdfs:subClassOf ast:Node ;
+    toml:isSupertype true ;
+    toml:nodeTypeId 28 .
+
+toml:pair a owl:Class ;
+    rdfs:label "pair" ;
+    rdfs:isDefinedBy toml: ;
+    rdfs:subClassOf ast:Node ;
+    toml:isSupertype true ;
+    toml:nodeTypeId 43 .
+
+toml:quoted_key a owl:Class ;
+    rdfs:label "quoted_key" ;
+    rdfs:isDefinedBy toml: ;
+    rdfs:subClassOf ast:Node ;
+    toml:isSupertype true ;
+    toml:nodeTypeId 47 .
+
+toml:string a owl:Class ;
+    rdfs:label "string" ;
+    rdfs:isDefinedBy toml: ;
+    rdfs:subClassOf ast:Node ;
+    toml:isSupertype true ;
+    toml:nodeTypeId 49 .
+
+toml:table a owl:Class ;
+    rdfs:label "table" ;
+    rdfs:isDefinedBy toml: ;
+    rdfs:subClassOf ast:Node ;
+    toml:isSupertype true ;
+    toml:nodeTypeId 41 .
+
+toml:table_array_element a owl:Class ;
+    rdfs:label "table_array_element" ;
+    rdfs:isDefinedBy toml: ;
+    rdfs:subClassOf ast:Node ;
+    toml:isSupertype true ;
+    toml:nodeTypeId 42 .
+
+toml: a owl:Ontology ;
+    rdfs:label "Toml Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for toml" ;
+    owl:versionInfo "v0.25" ;
+    toml:abiVersion 14 ;
+    toml:fieldCount 0 ;
+    toml:languageName "None" ;
+    toml:nodeKindCount 66 .
+

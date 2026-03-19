@@ -1,0 +1,224 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix bibtex: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/bibtex/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+bibtex:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+bibtex:brace_word a owl:Class ;
+    rdfs:label "brace_word" ;
+    rdfs:isDefinedBy bibtex: ;
+    rdfs:subClassOf ast:Node ;
+    bibtex:isSupertype true ;
+    bibtex:nodeTypeId 18 .
+
+bibtex:command a owl:Class ;
+    rdfs:label "command" ;
+    rdfs:isDefinedBy bibtex: ;
+    rdfs:subClassOf ast:Node ;
+    bibtex:isSupertype true ;
+    bibtex:nodeTypeId 31 .
+
+bibtex:command_name a owl:Class ;
+    rdfs:label "command_name" ;
+    rdfs:isDefinedBy bibtex: ;
+    rdfs:subClassOf ast:Node ;
+    bibtex:isSupertype true ;
+    bibtex:nodeTypeId 20 .
+
+bibtex:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy bibtex: ;
+    rdfs:subClassOf ast:Node ;
+    bibtex:isSupertype true ;
+    bibtex:nodeTypeId 2 .
+
+bibtex:document a owl:Class ;
+    rdfs:label "document" ;
+    rdfs:isDefinedBy bibtex: ;
+    rdfs:subClassOf ast:Node ;
+    bibtex:isSupertype true ;
+    bibtex:nodeTypeId 21 .
+
+bibtex:entry a owl:Class ;
+    rdfs:label "entry" ;
+    rdfs:isDefinedBy bibtex: ;
+    rdfs:subClassOf ast:Node ;
+    bibtex:isSupertype true ;
+    bibtex:nodeTypeId 25 .
+
+bibtex:entry_type a owl:Class ;
+    rdfs:label "entry_type" ;
+    rdfs:isDefinedBy bibtex: ;
+    rdfs:subClassOf ast:Node ;
+    bibtex:isSupertype true ;
+    bibtex:nodeTypeId 10 .
+
+bibtex:field a owl:Class ;
+    rdfs:label "field" ;
+    rdfs:isDefinedBy bibtex: ;
+    rdfs:subClassOf ast:Node ;
+    bibtex:isSupertype true ;
+    bibtex:nodeTypeId 26 .
+
+bibtex:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+bibtex:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+bibtex:field_field a owl:ObjectProperty ;
+    rdfs:label "field (structural)" ;
+    rdfs:comment "Structural reference for field field when it contains a non-terminal node" ;
+    bibtex:fieldId 1 .
+
+bibtex:field_value a owl:ObjectProperty ;
+    rdfs:label "value (structural)" ;
+    rdfs:comment "Structural reference for value field when it contains a non-terminal node" ;
+    bibtex:fieldId 5 .
+
+bibtex:identifier a owl:Class ;
+    rdfs:label "identifier" ;
+    rdfs:isDefinedBy bibtex: ;
+    rdfs:subClassOf ast:Node ;
+    bibtex:isSupertype true ;
+    bibtex:nodeTypeId 14 .
+
+bibtex:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+bibtex:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+bibtex:junk a owl:Class ;
+    rdfs:label "junk" ;
+    rdfs:isDefinedBy bibtex: ;
+    rdfs:subClassOf ast:Node ;
+    bibtex:isSupertype true ;
+    bibtex:nodeTypeId 1 .
+
+bibtex:key a owl:DatatypeProperty ;
+    rdfs:label "key (literal)" ;
+    rdfs:comment "Literal value for key field when it contains a terminal node" ;
+    bibtex:fieldId 2 ;
+    bibtex:isTerminalField true .
+
+bibtex:key_brace a owl:Class ;
+    rdfs:label "key_brace" ;
+    rdfs:isDefinedBy bibtex: ;
+    rdfs:subClassOf ast:Node ;
+    bibtex:isSupertype true ;
+    bibtex:nodeTypeId 12 .
+
+bibtex:key_paren a owl:Class ;
+    rdfs:label "key_paren" ;
+    rdfs:isDefinedBy bibtex: ;
+    rdfs:subClassOf ast:Node ;
+    bibtex:isSupertype true ;
+    bibtex:nodeTypeId 13 .
+
+bibtex:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+bibtex:name a owl:DatatypeProperty ;
+    rdfs:label "name (literal)" ;
+    rdfs:comment "Literal value for name field when it contains a terminal node" ;
+    bibtex:fieldId 3 ;
+    bibtex:isTerminalField true .
+
+bibtex:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+bibtex:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+bibtex:number a owl:Class ;
+    rdfs:label "number" ;
+    rdfs:isDefinedBy bibtex: ;
+    rdfs:subClassOf ast:Node ;
+    bibtex:isSupertype true ;
+    bibtex:nodeTypeId 17 .
+
+bibtex:preamble a owl:Class ;
+    rdfs:label "preamble" ;
+    rdfs:isDefinedBy bibtex: ;
+    rdfs:subClassOf ast:Node ;
+    bibtex:isSupertype true ;
+    bibtex:nodeTypeId 24 .
+
+bibtex:preamble_type a owl:Class ;
+    rdfs:label "preamble_type" ;
+    rdfs:isDefinedBy bibtex: ;
+    rdfs:subClassOf ast:Node ;
+    bibtex:isSupertype true ;
+    bibtex:nodeTypeId 9 .
+
+bibtex:quote_word a owl:Class ;
+    rdfs:label "quote_word" ;
+    rdfs:isDefinedBy bibtex: ;
+    rdfs:subClassOf ast:Node ;
+    bibtex:isSupertype true ;
+    bibtex:nodeTypeId 19 .
+
+bibtex:string a owl:Class ;
+    rdfs:label "string" ;
+    rdfs:isDefinedBy bibtex: ;
+    rdfs:subClassOf ast:Node ;
+    bibtex:isSupertype true ;
+    bibtex:nodeTypeId 23 .
+
+bibtex:string_type a owl:Class ;
+    rdfs:label "string_type" ;
+    rdfs:isDefinedBy bibtex: ;
+    rdfs:subClassOf ast:Node ;
+    bibtex:isSupertype true ;
+    bibtex:nodeTypeId 3 .
+
+bibtex:token a owl:Class ;
+    rdfs:label "token" ;
+    rdfs:isDefinedBy bibtex: ;
+    rdfs:subClassOf ast:Node ;
+    bibtex:isSupertype true ;
+    bibtex:nodeTypeId 28 .
+
+bibtex:ty a owl:DatatypeProperty ;
+    rdfs:label "ty (literal)" ;
+    rdfs:comment "Literal value for ty field when it contains a terminal node" ;
+    bibtex:fieldId 4 ;
+    bibtex:isTerminalField true .
+
+bibtex:value a owl:Class ;
+    rdfs:label "value" ;
+    rdfs:isDefinedBy bibtex: ;
+    rdfs:subClassOf ast:Node ;
+    bibtex:isSupertype true ;
+    bibtex:nodeTypeId 27 .
+
+bibtex: a owl:Ontology ;
+    rdfs:label "Bibtex Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for bibtex" ;
+    owl:versionInfo "v0.25" ;
+    bibtex:abiVersion 15 ;
+    bibtex:fieldCount 5 ;
+    bibtex:languageName "bibtex" ;
+    bibtex:nodeKindCount 39 .
+

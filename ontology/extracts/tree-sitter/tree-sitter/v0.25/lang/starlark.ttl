@@ -1,0 +1,984 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix starlark: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/starlark/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+starlark:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+starlark:argument_list a owl:Class ;
+    rdfs:label "argument_list" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 139 .
+
+starlark:as_pattern a owl:Class ;
+    rdfs:label "as_pattern" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 147,
+        167 .
+
+starlark:as_pattern_target a owl:Class ;
+    rdfs:label "as_pattern_target" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 244 .
+
+starlark:assert_builtin a owl:Class ;
+    rdfs:label "assert_builtin" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 8,
+        9,
+        10,
+        11 .
+
+starlark:assert_keyword a owl:Class ;
+    rdfs:label "assert_keyword" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 6,
+        12,
+        13,
+        14,
+        15,
+        16 .
+
+starlark:assert_statement a owl:Class ;
+    rdfs:label "assert_statement" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 111 .
+
+starlark:assignment a owl:Class ;
+    rdfs:label "assignment" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 178 .
+
+starlark:attribute a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "attribute",
+        "attribute (literal)" ;
+    rdfs:comment "Literal value for attribute field when it contains a terminal node" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:fieldId 5 ;
+    starlark:isSupertype true ;
+    starlark:isTerminalField true ;
+    starlark:nodeTypeId 182 .
+
+starlark:augmented_assignment a owl:Class ;
+    rdfs:label "augmented_assignment" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 179 .
+
+starlark:binary_operator a owl:Class ;
+    rdfs:label "binary_operator" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 173 .
+
+starlark:block a owl:Class ;
+    rdfs:label "block" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 124,
+        142 .
+
+starlark:boolean_operator a owl:Class ;
+    rdfs:label "boolean_operator" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 172 .
+
+starlark:break_statement a owl:Class ;
+    rdfs:label "break_statement" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 118 .
+
+starlark:call a owl:Class ;
+    rdfs:label "call" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 185 .
+
+starlark:case_clause a owl:Class ;
+    rdfs:label "case_clause" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 125 .
+
+starlark:case_pattern a owl:Class ;
+    rdfs:label "case_pattern" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 145 .
+
+starlark:chevron a owl:Class ;
+    rdfs:label "chevron" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 110 .
+
+starlark:class_pattern a owl:Class ;
+    rdfs:label "class_pattern" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 155 .
+
+starlark:code a owl:DatatypeProperty ;
+    rdfs:label "code (literal)" ;
+    rdfs:comment "Literal value for code field when it contains a terminal node" ;
+    starlark:fieldId 7 ;
+    starlark:isTerminalField true .
+
+starlark:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 96 .
+
+starlark:comparison_operator a owl:Class ;
+    rdfs:label "comparison_operator" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 175 .
+
+starlark:complex_pattern a owl:Class ;
+    rdfs:label "complex_pattern" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 156 .
+
+starlark:concatenated_string a owl:Class ;
+    rdfs:label "concatenated_string" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 208 .
+
+starlark:conditional_expression a owl:Class ;
+    rdfs:label "conditional_expression" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 207 .
+
+starlark:constrained_type a owl:Class ;
+    rdfs:label "constrained_type" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 191 .
+
+starlark:continue_statement a owl:Class ;
+    rdfs:label "continue_statement" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 119 .
+
+starlark:decorated_definition a owl:Class ;
+    rdfs:label "decorated_definition" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 140 .
+
+starlark:decorator a owl:Class ;
+    rdfs:label "decorator" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 141 .
+
+starlark:default_parameter a owl:Class ;
+    rdfs:label "default_parameter" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 163 .
+
+starlark:delete_statement a owl:Class ;
+    rdfs:label "delete_statement" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 116 .
+
+starlark:dict_pattern a owl:Class ;
+    rdfs:label "dict_pattern" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 151 .
+
+starlark:dictionary a owl:Class ;
+    rdfs:label "dictionary" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 197 .
+
+starlark:dictionary_comprehension a owl:Class ;
+    rdfs:label "dictionary_comprehension" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 200 .
+
+starlark:dictionary_splat a owl:Class ;
+    rdfs:label "dictionary_splat" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 135 .
+
+starlark:dictionary_splat_pattern a owl:Class ;
+    rdfs:label "dictionary_splat_pattern" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 166 .
+
+starlark:dotted_name a owl:Class ;
+    rdfs:label "dotted_name" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 144 .
+
+starlark:elif_clause a owl:Class ;
+    rdfs:label "elif_clause" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 121 .
+
+starlark:ellipsis a owl:Class ;
+    rdfs:label "ellipsis" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 83 .
+
+starlark:else_clause a owl:Class ;
+    rdfs:label "else_clause" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 122 .
+
+starlark:escape_interpolation a owl:Class ;
+    rdfs:label "escape_interpolation" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 104 .
+
+starlark:escape_sequence a owl:Class ;
+    rdfs:label "escape_sequence" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 84 .
+
+starlark:exec_statement a owl:Class ;
+    rdfs:label "exec_statement" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 136 .
+
+starlark:expression_list a owl:Class ;
+    rdfs:label "expression_list" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 143 .
+
+starlark:expression_statement a owl:Class ;
+    rdfs:label "expression_statement" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 112 .
+
+starlark:false a owl:Class ;
+    rdfs:label "false" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 94 .
+
+starlark:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+starlark:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+starlark:field_alias a owl:ObjectProperty ;
+    rdfs:label "alias (structural)" ;
+    rdfs:comment "Structural reference for alias field when it contains a non-terminal node" ;
+    starlark:fieldId 1 .
+
+starlark:field_alternative a owl:ObjectProperty ;
+    rdfs:label "alternative (structural)" ;
+    rdfs:comment "Structural reference for alternative field when it contains a non-terminal node" ;
+    starlark:fieldId 2 .
+
+starlark:field_argument a owl:ObjectProperty ;
+    rdfs:label "argument (structural)" ;
+    rdfs:comment "Structural reference for argument field when it contains a non-terminal node" ;
+    starlark:fieldId 3 .
+
+starlark:field_arguments a owl:ObjectProperty ;
+    rdfs:label "arguments (structural)" ;
+    rdfs:comment "Structural reference for arguments field when it contains a non-terminal node" ;
+    starlark:fieldId 4 .
+
+starlark:field_body a owl:ObjectProperty ;
+    rdfs:label "body (structural)" ;
+    rdfs:comment "Structural reference for body field when it contains a non-terminal node" ;
+    starlark:fieldId 6 .
+
+starlark:field_code a owl:ObjectProperty ;
+    rdfs:label "code (structural)" ;
+    rdfs:comment "Structural reference for code field when it contains a non-terminal node" ;
+    starlark:fieldId 7 .
+
+starlark:field_condition a owl:ObjectProperty ;
+    rdfs:label "condition (structural)" ;
+    rdfs:comment "Structural reference for condition field when it contains a non-terminal node" ;
+    starlark:fieldId 8 .
+
+starlark:field_consequence a owl:ObjectProperty ;
+    rdfs:label "consequence (structural)" ;
+    rdfs:comment "Structural reference for consequence field when it contains a non-terminal node" ;
+    starlark:fieldId 9 .
+
+starlark:field_definition a owl:ObjectProperty ;
+    rdfs:label "definition (structural)" ;
+    rdfs:comment "Structural reference for definition field when it contains a non-terminal node" ;
+    starlark:fieldId 10 .
+
+starlark:field_expression a owl:ObjectProperty ;
+    rdfs:label "expression (structural)" ;
+    rdfs:comment "Structural reference for expression field when it contains a non-terminal node" ;
+    starlark:fieldId 11 .
+
+starlark:field_format_specifier a owl:ObjectProperty ;
+    rdfs:label "format_specifier (structural)" ;
+    rdfs:comment "Structural reference for format_specifier field when it contains a non-terminal node" ;
+    starlark:fieldId 12 .
+
+starlark:field_function a owl:ObjectProperty ;
+    rdfs:label "function (structural)" ;
+    rdfs:comment "Structural reference for function field when it contains a non-terminal node" ;
+    starlark:fieldId 13 .
+
+starlark:field_guard a owl:ObjectProperty ;
+    rdfs:label "guard (structural)" ;
+    rdfs:comment "Structural reference for guard field when it contains a non-terminal node" ;
+    starlark:fieldId 14 .
+
+starlark:field_key a owl:ObjectProperty ;
+    rdfs:label "key (structural)" ;
+    rdfs:comment "Structural reference for key field when it contains a non-terminal node" ;
+    starlark:fieldId 15 .
+
+starlark:field_left a owl:ObjectProperty ;
+    rdfs:label "left (structural)" ;
+    rdfs:comment "Structural reference for left field when it contains a non-terminal node" ;
+    starlark:fieldId 16 .
+
+starlark:field_name a owl:ObjectProperty ;
+    rdfs:label "name (structural)" ;
+    rdfs:comment "Structural reference for name field when it contains a non-terminal node" ;
+    starlark:fieldId 17 .
+
+starlark:field_object a owl:ObjectProperty ;
+    rdfs:label "object (structural)" ;
+    rdfs:comment "Structural reference for object field when it contains a non-terminal node" ;
+    starlark:fieldId 18 .
+
+starlark:field_operator a owl:ObjectProperty ;
+    rdfs:label "operator (structural)" ;
+    rdfs:comment "Structural reference for operator field when it contains a non-terminal node" ;
+    starlark:fieldId 19 .
+
+starlark:field_operators a owl:ObjectProperty ;
+    rdfs:label "operators (structural)" ;
+    rdfs:comment "Structural reference for operators field when it contains a non-terminal node" ;
+    starlark:fieldId 20 .
+
+starlark:field_parameters a owl:ObjectProperty ;
+    rdfs:label "parameters (structural)" ;
+    rdfs:comment "Structural reference for parameters field when it contains a non-terminal node" ;
+    starlark:fieldId 21 .
+
+starlark:field_return_type a owl:ObjectProperty ;
+    rdfs:label "return_type (structural)" ;
+    rdfs:comment "Structural reference for return_type field when it contains a non-terminal node" ;
+    starlark:fieldId 22 .
+
+starlark:field_right a owl:ObjectProperty ;
+    rdfs:label "right (structural)" ;
+    rdfs:comment "Structural reference for right field when it contains a non-terminal node" ;
+    starlark:fieldId 23 .
+
+starlark:field_subject a owl:ObjectProperty ;
+    rdfs:label "subject (structural)" ;
+    rdfs:comment "Structural reference for subject field when it contains a non-terminal node" ;
+    starlark:fieldId 24 .
+
+starlark:field_subscript a owl:ObjectProperty ;
+    rdfs:label "subscript (structural)" ;
+    rdfs:comment "Structural reference for subscript field when it contains a non-terminal node" ;
+    starlark:fieldId 25 .
+
+starlark:field_type a owl:ObjectProperty ;
+    rdfs:label "type (structural)" ;
+    rdfs:comment "Structural reference for type field when it contains a non-terminal node" ;
+    starlark:fieldId 26 .
+
+starlark:field_type_parameters a owl:ObjectProperty ;
+    rdfs:label "type_parameters (structural)" ;
+    rdfs:comment "Structural reference for type_parameters field when it contains a non-terminal node" ;
+    starlark:fieldId 28 .
+
+starlark:field_value a owl:ObjectProperty ;
+    rdfs:label "value (structural)" ;
+    rdfs:comment "Structural reference for value field when it contains a non-terminal node" ;
+    starlark:fieldId 29 .
+
+starlark:float a owl:Class ;
+    rdfs:label "float" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 89 .
+
+starlark:for_in_clause a owl:Class ;
+    rdfs:label "for_in_clause" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 205 .
+
+starlark:for_statement a owl:Class ;
+    rdfs:label "for_statement" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 126 .
+
+starlark:format_expression a owl:Class ;
+    rdfs:label "format_expression" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 245 .
+
+starlark:format_specifier a owl:Class ;
+    rdfs:label "format_specifier" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 214 .
+
+starlark:function_definition a owl:Class ;
+    rdfs:label "function_definition" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 131 .
+
+starlark:generic_type a owl:Class ;
+    rdfs:label "generic_type" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 189 .
+
+starlark:identifier a owl:Class ;
+    rdfs:label "identifier" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 1,
+        90,
+        91,
+        92 .
+
+starlark:if_clause a owl:Class ;
+    rdfs:label "if_clause" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 206 .
+
+starlark:if_statement a owl:Class ;
+    rdfs:label "if_statement" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 120 .
+
+starlark:integer a owl:Class ;
+    rdfs:label "integer" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 88 .
+
+starlark:interpolation a owl:Class ;
+    rdfs:label "interpolation" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 211 .
+
+starlark:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+starlark:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+starlark:key a owl:DatatypeProperty ;
+    rdfs:label "key (literal)" ;
+    rdfs:comment "Literal value for key field when it contains a terminal node" ;
+    starlark:fieldId 15 ;
+    starlark:isTerminalField true .
+
+starlark:keyword_argument a owl:Class ;
+    rdfs:label "keyword_argument" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 193 .
+
+starlark:keyword_pattern a owl:Class ;
+    rdfs:label "keyword_pattern" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 153 .
+
+starlark:keyword_separator a owl:Class ;
+    rdfs:label "keyword_separator" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 216 .
+
+starlark:lambda a owl:Class ;
+    rdfs:label "lambda" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 176,
+        177 .
+
+starlark:lambda_parameters a owl:Class ;
+    rdfs:label "lambda_parameters" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 133 .
+
+starlark:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+starlark:line_continuation a owl:Class ;
+    rdfs:label "line_continuation" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 97 .
+
+starlark:list a owl:Class ;
+    rdfs:label "list" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 194 .
+
+starlark:list_comprehension a owl:Class ;
+    rdfs:label "list_comprehension" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 199 .
+
+starlark:list_pattern a owl:Class ;
+    rdfs:label "list_pattern" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 149,
+        162 .
+
+starlark:list_splat a owl:Class ;
+    rdfs:label "list_splat" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 134 .
+
+starlark:list_splat_pattern a owl:Class ;
+    rdfs:label "list_splat_pattern" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 165 .
+
+starlark:match_statement a owl:Class ;
+    rdfs:label "match_statement" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 123 .
+
+starlark:member_type a owl:Class ;
+    rdfs:label "member_type" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 192 .
+
+starlark:module a owl:Class ;
+    rdfs:label "module" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 106 .
+
+starlark:name a owl:DatatypeProperty ;
+    rdfs:label "name (literal)" ;
+    rdfs:comment "Literal value for name field when it contains a terminal node" ;
+    starlark:fieldId 17 ;
+    starlark:isTerminalField true .
+
+starlark:named_expression a owl:Class ;
+    rdfs:label "named_expression" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 113 .
+
+starlark:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+starlark:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+starlark:none a owl:Class ;
+    rdfs:label "none" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 95 .
+
+starlark:not_operator a owl:Class ;
+    rdfs:label "not_operator" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 171 .
+
+starlark:pair a owl:Class ;
+    rdfs:label "pair" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 198 .
+
+starlark:parameters a owl:Class ;
+    rdfs:label "parameters" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 132 .
+
+starlark:parenthesized_expression a owl:Class ;
+    rdfs:label "parenthesized_expression" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 203 .
+
+starlark:parenthesized_list_splat a owl:Class ;
+    rdfs:label "parenthesized_list_splat" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 138 .
+
+starlark:pass_statement a owl:Class ;
+    rdfs:label "pass_statement" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 117 .
+
+starlark:pattern_list a owl:Class ;
+    rdfs:label "pattern_list" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 180 .
+
+starlark:positional_separator a owl:Class ;
+    rdfs:label "positional_separator" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 215 .
+
+starlark:print_statement a owl:Class ;
+    rdfs:label "print_statement" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 109 .
+
+starlark:return_statement a owl:Class ;
+    rdfs:label "return_statement" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 115 .
+
+starlark:set a owl:Class ;
+    rdfs:label "set" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 195 .
+
+starlark:set_comprehension a owl:Class ;
+    rdfs:label "set_comprehension" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 201 .
+
+starlark:slice a owl:Class ;
+    rdfs:label "slice" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 184 .
+
+starlark:splat_pattern a owl:Class ;
+    rdfs:label "splat_pattern" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 154 .
+
+starlark:splat_type a owl:Class ;
+    rdfs:label "splat_type" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 188 .
+
+starlark:string a owl:Class ;
+    rdfs:label "string" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 209 .
+
+starlark:string_content a owl:Class ;
+    rdfs:label "string_content" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 210 .
+
+starlark:string_end a owl:Class ;
+    rdfs:label "string_end" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 105 .
+
+starlark:string_start a owl:Class ;
+    rdfs:label "string_start" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 102 .
+
+starlark:subscript a owl:Class ;
+    rdfs:label "subscript" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 183 .
+
+starlark:true a owl:Class ;
+    rdfs:label "true" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 93 .
+
+starlark:tuple a owl:Class ;
+    rdfs:label "tuple" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 196 .
+
+starlark:tuple_pattern a owl:Class ;
+    rdfs:label "tuple_pattern" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 150,
+        161 .
+
+starlark:type a owl:Class ;
+    rdfs:label "type" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 187 .
+
+starlark:type_conversion a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "type_conversion",
+        "type_conversion (literal)" ;
+    rdfs:comment "Literal value for type_conversion field when it contains a terminal node" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:fieldId 27 ;
+    starlark:isSupertype true ;
+    starlark:isTerminalField true ;
+    starlark:nodeTypeId 87 .
+
+starlark:type_parameter a owl:Class ;
+    rdfs:label "type_parameter" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 137 .
+
+starlark:typed_default_parameter a owl:Class ;
+    rdfs:label "typed_default_parameter" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 164 .
+
+starlark:typed_parameter a owl:Class ;
+    rdfs:label "typed_parameter" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 186 .
+
+starlark:unary_operator a owl:Class ;
+    rdfs:label "unary_operator" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 174 .
+
+starlark:union_pattern a owl:Class ;
+    rdfs:label "union_pattern" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 148 .
+
+starlark:union_type a owl:Class ;
+    rdfs:label "union_type" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 190 .
+
+starlark:while_statement a owl:Class ;
+    rdfs:label "while_statement" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 127 .
+
+starlark:with_clause a owl:Class ;
+    rdfs:label "with_clause" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 129 .
+
+starlark:with_item a owl:Class ;
+    rdfs:label "with_item" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 130 .
+
+starlark:with_statement a owl:Class ;
+    rdfs:label "with_statement" ;
+    rdfs:isDefinedBy starlark: ;
+    rdfs:subClassOf ast:Node ;
+    starlark:isSupertype true ;
+    starlark:nodeTypeId 128 .
+
+starlark: a owl:Ontology ;
+    rdfs:label "Starlark Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for starlark" ;
+    owl:versionInfo "v0.25" ;
+    starlark:abiVersion 14 ;
+    starlark:fieldCount 29 ;
+    starlark:languageName "None" ;
+    starlark:nodeKindCount 247 .
+

@@ -1,0 +1,2191 @@
+@prefix gh: <https://repolex.ai/ontology/extracts/github/rest-api/v2026-03-10/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+gh: a owl:Ontology ;
+    rdfs:label "GitHub REST API Ontology" ;
+    rdfs:comment "Ontology for GitHub REST API entities (issues, pull requests, reviews, etc.). Auto-extracted from GitHub's official OpenAPI spec (api version 2026-03-10)." ;
+    owl:versionInfo "v2026-03-10" .
+
+<https://repolex.ai/ontology/extracts/github/rest-api/v2026-03-10/+1> a owl:DatatypeProperty ;
+    rdfs:label "+1" ;
+    rdfs:domain gh:ReactionRollup ;
+    rdfs:range xsd:integer ;
+    gh:openApiPropertyName "+1" ;
+    gh:required true .
+
+<https://repolex.ai/ontology/extracts/github/rest-api/v2026-03-10/-1> a owl:DatatypeProperty ;
+    rdfs:label "-1" ;
+    rdfs:domain gh:ReactionRollup ;
+    rdfs:range xsd:integer ;
+    gh:openApiPropertyName "-1" ;
+    gh:required true .
+
+gh:AuthorAssociation_COLLABORATOR a gh:AuthorAssociation ;
+    rdfs:label "COLLABORATOR" .
+
+gh:AuthorAssociation_CONTRIBUTOR a gh:AuthorAssociation ;
+    rdfs:label "CONTRIBUTOR" .
+
+gh:AuthorAssociation_FIRST_TIMER a gh:AuthorAssociation ;
+    rdfs:label "FIRST_TIMER" .
+
+gh:AuthorAssociation_FIRST_TIME_CONTRIBUTOR a gh:AuthorAssociation ;
+    rdfs:label "FIRST_TIME_CONTRIBUTOR" .
+
+gh:AuthorAssociation_MANNEQUIN a gh:AuthorAssociation ;
+    rdfs:label "MANNEQUIN" .
+
+gh:AuthorAssociation_MEMBER a gh:AuthorAssociation ;
+    rdfs:label "MEMBER" .
+
+gh:AuthorAssociation_NONE a gh:AuthorAssociation ;
+    rdfs:label "NONE" .
+
+gh:AuthorAssociation_OWNER a gh:AuthorAssociation ;
+    rdfs:label "OWNER" .
+
+gh:SecurityAdvisoryEcosystem_actions a gh:SecurityAdvisoryEcosystem ;
+    rdfs:label "actions" .
+
+gh:SecurityAdvisoryEcosystem_composer a gh:SecurityAdvisoryEcosystem ;
+    rdfs:label "composer" .
+
+gh:SecurityAdvisoryEcosystem_erlang a gh:SecurityAdvisoryEcosystem ;
+    rdfs:label "erlang" .
+
+gh:SecurityAdvisoryEcosystem_go a gh:SecurityAdvisoryEcosystem ;
+    rdfs:label "go" .
+
+gh:SecurityAdvisoryEcosystem_maven a gh:SecurityAdvisoryEcosystem ;
+    rdfs:label "maven" .
+
+gh:SecurityAdvisoryEcosystem_npm a gh:SecurityAdvisoryEcosystem ;
+    rdfs:label "npm" .
+
+gh:SecurityAdvisoryEcosystem_nuget a gh:SecurityAdvisoryEcosystem ;
+    rdfs:label "nuget" .
+
+gh:SecurityAdvisoryEcosystem_other a gh:SecurityAdvisoryEcosystem ;
+    rdfs:label "other" .
+
+gh:SecurityAdvisoryEcosystem_pip a gh:SecurityAdvisoryEcosystem ;
+    rdfs:label "pip" .
+
+gh:SecurityAdvisoryEcosystem_pub a gh:SecurityAdvisoryEcosystem ;
+    rdfs:label "pub" .
+
+gh:SecurityAdvisoryEcosystem_rubygems a gh:SecurityAdvisoryEcosystem ;
+    rdfs:label "rubygems" .
+
+gh:SecurityAdvisoryEcosystem_rust a gh:SecurityAdvisoryEcosystem ;
+    rdfs:label "rust" .
+
+gh:SecurityAdvisoryEcosystem_swift a gh:SecurityAdvisoryEcosystem ;
+    rdfs:label "swift" .
+
+gh:activeLockReason a owl:DatatypeProperty ;
+    rdfs:label "activeLockReason" ;
+    rdfs:domain gh:Discussion,
+        gh:Issue,
+        gh:PullRequest ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "active_lock_reason" ;
+    gh:required true .
+
+gh:additions a owl:DatatypeProperty ;
+    rdfs:label "additions" ;
+    rdfs:domain gh:PullRequest ;
+    rdfs:range xsd:integer ;
+    gh:openApiPropertyName "additions" ;
+    gh:required true .
+
+gh:advancedSecurityEnabledForNewRepositories a owl:DatatypeProperty ;
+    rdfs:label "advancedSecurityEnabledForNewRepositories" ;
+    rdfs:comment """**Endpoint closing down notice.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.
+
+Whether GitHub Advanced Security is enabled for new repositories and repositories transferred to this organization.
+
+This field is only visible to organization owners or members of a team with the security manager role.""" ;
+    rdfs:domain gh:Organization ;
+    rdfs:range xsd:boolean ;
+    gh:openApiPropertyName "advanced_security_enabled_for_new_repositories" .
+
+gh:allowAutoMerge a owl:DatatypeProperty ;
+    rdfs:label "allowAutoMerge" ;
+    rdfs:comment "Whether to allow Auto-merge to be used on pull requests." ;
+    rdfs:domain gh:Repository ;
+    rdfs:range xsd:boolean ;
+    gh:openApiPropertyName "allow_auto_merge" .
+
+gh:allowForking a owl:DatatypeProperty ;
+    rdfs:label "allowForking" ;
+    rdfs:comment "Whether to allow forking this repo" ;
+    rdfs:domain gh:Repository ;
+    rdfs:range xsd:boolean ;
+    gh:openApiPropertyName "allow_forking" .
+
+gh:allowMergeCommit a owl:DatatypeProperty ;
+    rdfs:label "allowMergeCommit" ;
+    rdfs:comment "Whether to allow merge commits for pull requests." ;
+    rdfs:domain gh:Repository ;
+    rdfs:range xsd:boolean ;
+    gh:openApiPropertyName "allow_merge_commit" .
+
+gh:allowRebaseMerge a owl:DatatypeProperty ;
+    rdfs:label "allowRebaseMerge" ;
+    rdfs:comment "Whether to allow rebase merges for pull requests." ;
+    rdfs:domain gh:Repository ;
+    rdfs:range xsd:boolean ;
+    gh:openApiPropertyName "allow_rebase_merge" .
+
+gh:allowSquashMerge a owl:DatatypeProperty ;
+    rdfs:label "allowSquashMerge" ;
+    rdfs:comment "Whether to allow squash merges for pull requests." ;
+    rdfs:domain gh:Repository ;
+    rdfs:range xsd:boolean ;
+    gh:openApiPropertyName "allow_squash_merge" .
+
+gh:allowUpdateBranch a owl:DatatypeProperty ;
+    rdfs:label "allowUpdateBranch" ;
+    rdfs:comment "Whether or not a pull request head branch that is behind its base branch can always be updated even if it is not required to be up to date before merging." ;
+    rdfs:domain gh:Repository ;
+    rdfs:range xsd:boolean ;
+    gh:openApiPropertyName "allow_update_branch" .
+
+gh:anonymousAccessEnabled a owl:DatatypeProperty ;
+    rdfs:label "anonymousAccessEnabled" ;
+    rdfs:comment "Whether anonymous git access is enabled for this repository" ;
+    rdfs:domain gh:Repository ;
+    rdfs:range xsd:boolean ;
+    gh:openApiPropertyName "anonymous_access_enabled" .
+
+gh:answerChosenAt a owl:DatatypeProperty ;
+    rdfs:label "answerChosenAt" ;
+    rdfs:domain gh:Discussion ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "answer_chosen_at" ;
+    gh:required true .
+
+gh:answerHtmlUrl a owl:DatatypeProperty ;
+    rdfs:label "answerHtmlUrl" ;
+    rdfs:domain gh:Discussion ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "answer_html_url" ;
+    gh:required true .
+
+gh:archived a owl:DatatypeProperty ;
+    rdfs:label "archived" ;
+    rdfs:comment "Whether the repository is archived." ;
+    rdfs:domain gh:Repository ;
+    rdfs:range xsd:boolean ;
+    gh:openApiPropertyName "archived" ;
+    gh:required true .
+
+gh:archivedAt a owl:DatatypeProperty ;
+    rdfs:label "archivedAt" ;
+    rdfs:domain gh:Organization ;
+    rdfs:range xsd:dateTime ;
+    gh:openApiPropertyName "archived_at" ;
+    gh:required true .
+
+gh:assets a owl:ObjectProperty ;
+    rdfs:label "assets" ;
+    rdfs:domain gh:Release ;
+    rdfs:range gh:ReleaseAsset ;
+    gh:openApiPropertyName "assets" .
+
+gh:assetsUrl a owl:DatatypeProperty ;
+    rdfs:label "assetsUrl" ;
+    rdfs:domain gh:Release ;
+    rdfs:range xsd:anyURI ;
+    gh:openApiPropertyName "assets_url" ;
+    gh:required true .
+
+gh:assignedTo a owl:ObjectProperty ;
+    rdfs:label "assignedTo" ;
+    rdfs:domain gh:SecretScanningAlert ;
+    rdfs:range gh:User ;
+    gh:openApiPropertyName "assigned_to" .
+
+gh:assignees a owl:ObjectProperty ;
+    rdfs:label "assignees" ;
+    rdfs:comment "The users assigned to this alert." ;
+    rdfs:domain gh:CodeScanningAlert,
+        gh:DependabotAlert,
+        gh:DependabotAlertWithRepository,
+        gh:Issue,
+        gh:PullRequest ;
+    rdfs:range gh:User ;
+    gh:openApiPropertyName "assignees" .
+
+gh:author a owl:ObjectProperty ;
+    rdfs:label "author" ;
+    rdfs:comment "The author of the advisory." ;
+    rdfs:domain gh:Release,
+        gh:RepositoryAdvisory ;
+    rdfs:range gh:User ;
+    gh:openApiPropertyName "author" .
+
+gh:authorAssociation a owl:DatatypeProperty ;
+    rdfs:label "authorAssociation" ;
+    rdfs:comment "How the author is associated with the repository." ;
+    rdfs:domain gh:Discussion ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "author_association" .
+
+gh:billingEmail a owl:DatatypeProperty ;
+    rdfs:label "billingEmail" ;
+    rdfs:domain gh:Organization ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "billing_email" .
+
+gh:blog a owl:DatatypeProperty ;
+    rdfs:label "blog" ;
+    rdfs:domain gh:Organization ;
+    rdfs:range xsd:anyURI ;
+    gh:openApiPropertyName "blog" .
+
+gh:body a owl:DatatypeProperty ;
+    rdfs:label "body" ;
+    rdfs:comment "Contents of the issue",
+        "Contents of the issue comment",
+        "The text of the comment.",
+        "The text of the review." ;
+    rdfs:domain gh:Discussion,
+        gh:Issue,
+        gh:IssueComment,
+        gh:PullRequest,
+        gh:PullRequestReview,
+        gh:PullRequestReviewComment,
+        gh:Release ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "body" ;
+    gh:required true .
+
+gh:bodyHtml a owl:DatatypeProperty ;
+    rdfs:label "bodyHtml" ;
+    rdfs:domain gh:Issue,
+        gh:IssueComment,
+        gh:PullRequestReview,
+        gh:PullRequestReviewComment,
+        gh:Release ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "body_html" .
+
+gh:bodyText a owl:DatatypeProperty ;
+    rdfs:label "bodyText" ;
+    rdfs:domain gh:Issue,
+        gh:IssueComment,
+        gh:PullRequestReview,
+        gh:PullRequestReviewComment,
+        gh:Release ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "body_text" .
+
+gh:browserDownloadUrl a owl:DatatypeProperty ;
+    rdfs:label "browserDownloadUrl" ;
+    rdfs:domain gh:ReleaseAsset ;
+    rdfs:range xsd:anyURI ;
+    gh:openApiPropertyName "browser_download_url" ;
+    gh:required true .
+
+gh:changedFiles a owl:DatatypeProperty ;
+    rdfs:label "changedFiles" ;
+    rdfs:domain gh:PullRequest ;
+    rdfs:range xsd:integer ;
+    gh:openApiPropertyName "changed_files" ;
+    gh:required true .
+
+gh:cloneUrl a owl:DatatypeProperty ;
+    rdfs:label "cloneUrl" ;
+    rdfs:domain gh:Repository ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "clone_url" ;
+    gh:required true .
+
+gh:closedAt a owl:DatatypeProperty ;
+    rdfs:label "closedAt" ;
+    rdfs:comment "The date and time of when the advisory was closed, in ISO 8601 format." ;
+    rdfs:domain gh:Issue,
+        gh:Milestone,
+        gh:PullRequest,
+        gh:RepositoryAdvisory ;
+    rdfs:range xsd:dateTime ;
+    gh:openApiPropertyName "closed_at" ;
+    gh:required true .
+
+gh:closedBy a owl:ObjectProperty ;
+    rdfs:label "closedBy" ;
+    rdfs:domain gh:Issue ;
+    rdfs:range gh:User ;
+    gh:openApiPropertyName "closed_by" .
+
+gh:closedIssues a owl:DatatypeProperty ;
+    rdfs:label "closedIssues" ;
+    rdfs:domain gh:Milestone ;
+    rdfs:range xsd:integer ;
+    gh:openApiPropertyName "closed_issues" ;
+    gh:required true .
+
+gh:collaboratingTeams a owl:ObjectProperty ;
+    rdfs:label "collaboratingTeams" ;
+    rdfs:comment "A list of teams that collaborate on the advisory." ;
+    rdfs:domain gh:RepositoryAdvisory ;
+    rdfs:range gh:Team ;
+    gh:openApiPropertyName "collaborating_teams" .
+
+gh:collaboratingUsers a owl:ObjectProperty ;
+    rdfs:label "collaboratingUsers" ;
+    rdfs:comment "A list of users that collaborate on the advisory." ;
+    rdfs:domain gh:RepositoryAdvisory ;
+    rdfs:range gh:User ;
+    gh:openApiPropertyName "collaborating_users" .
+
+gh:collaborators a owl:DatatypeProperty ;
+    rdfs:label "collaborators" ;
+    rdfs:comment """The number of collaborators on private repositories.
+
+This field may be null if the number of private repositories is over 50,000.""" ;
+    rdfs:domain gh:Organization ;
+    rdfs:range xsd:integer ;
+    gh:openApiPropertyName "collaborators" .
+
+gh:color a owl:DatatypeProperty ;
+    rdfs:label "color" ;
+    rdfs:comment "6-character hex code, without the leading #, identifying the color" ;
+    rdfs:domain gh:Label ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "color" ;
+    gh:required true .
+
+gh:comments a owl:DatatypeProperty ;
+    rdfs:label "comments" ;
+    rdfs:domain gh:Discussion,
+        gh:Issue,
+        gh:PullRequest ;
+    rdfs:range xsd:integer ;
+    gh:openApiPropertyName "comments" ;
+    gh:required true .
+
+gh:commitId a owl:DatatypeProperty ;
+    rdfs:label "commitId" ;
+    rdfs:comment "A commit SHA for the review. If the commit object was garbage collected or forcibly deleted, then it no longer exists in Git and this value will be `null`.",
+        "The SHA of the commit to which the comment applies." ;
+    rdfs:domain gh:PullRequestReview,
+        gh:PullRequestReviewComment ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "commit_id" ;
+    gh:required true .
+
+gh:commits a owl:DatatypeProperty ;
+    rdfs:label "commits" ;
+    rdfs:domain gh:PullRequest ;
+    rdfs:range xsd:integer ;
+    gh:openApiPropertyName "commits" ;
+    gh:required true .
+
+gh:company a owl:DatatypeProperty ;
+    rdfs:label "company" ;
+    rdfs:domain gh:Organization ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "company" .
+
+gh:confused a owl:DatatypeProperty ;
+    rdfs:label "confused" ;
+    rdfs:domain gh:ReactionRollup ;
+    rdfs:range xsd:integer ;
+    gh:openApiPropertyName "confused" ;
+    gh:required true .
+
+gh:contentType a owl:DatatypeProperty ;
+    rdfs:label "contentType" ;
+    rdfs:domain gh:ReleaseAsset ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "content_type" ;
+    gh:required true .
+
+gh:createdAt a owl:DatatypeProperty ;
+    rdfs:label "createdAt" ;
+    rdfs:comment "The date and time of when the advisory was created, in ISO 8601 format." ;
+    rdfs:domain gh:Discussion,
+        gh:Issue,
+        gh:IssueComment,
+        gh:Milestone,
+        gh:Organization,
+        gh:PullRequest,
+        gh:PullRequestReviewComment,
+        gh:Release,
+        gh:ReleaseAsset,
+        gh:Repository,
+        gh:RepositoryAdvisory,
+        gh:TeamFull ;
+    rdfs:range xsd:dateTime ;
+    gh:openApiPropertyName "created_at" ;
+    gh:required true .
+
+gh:creator a owl:ObjectProperty ;
+    rdfs:label "creator" ;
+    rdfs:domain gh:Milestone ;
+    rdfs:range gh:User ;
+    gh:openApiPropertyName "creator" .
+
+gh:credits a owl:DatatypeProperty ;
+    rdfs:label "credits" ;
+    rdfs:comment "The users who contributed to the advisory." ;
+    rdfs:domain gh:GlobalAdvisory,
+        gh:RepositoryAdvisory ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "credits" .
+
+gh:cveId a owl:DatatypeProperty ;
+    rdfs:label "cveId" ;
+    rdfs:comment "The Common Vulnerabilities and Exposures (CVE) ID." ;
+    rdfs:domain gh:GlobalAdvisory,
+        gh:RepositoryAdvisory ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "cve_id" ;
+    gh:required true .
+
+gh:cweIds a owl:DatatypeProperty ;
+    rdfs:label "cweIds" ;
+    rdfs:comment "A list of only the CWE IDs." ;
+    rdfs:domain gh:RepositoryAdvisory ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "cwe_ids" .
+
+gh:cwes a owl:DatatypeProperty ;
+    rdfs:label "cwes" ;
+    rdfs:domain gh:GlobalAdvisory,
+        gh:RepositoryAdvisory ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "cwes" .
+
+gh:default a owl:DatatypeProperty ;
+    rdfs:label "default" ;
+    rdfs:comment "Whether this label comes by default in a new repository." ;
+    rdfs:domain gh:Label ;
+    rdfs:range xsd:boolean ;
+    gh:openApiPropertyName "default" ;
+    gh:required true .
+
+gh:defaultBranch a owl:DatatypeProperty ;
+    rdfs:label "defaultBranch" ;
+    rdfs:comment "The default branch of the repository." ;
+    rdfs:domain gh:Repository ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "default_branch" ;
+    gh:required true .
+
+gh:defaultRepositoryBranch a owl:DatatypeProperty ;
+    rdfs:label "defaultRepositoryBranch" ;
+    rdfs:comment "The default branch for repositories created in this organization." ;
+    rdfs:domain gh:Organization ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "default_repository_branch" .
+
+gh:defaultRepositoryPermission a owl:DatatypeProperty ;
+    rdfs:label "defaultRepositoryPermission" ;
+    rdfs:domain gh:Organization ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "default_repository_permission" .
+
+gh:deleteBranchOnMerge a owl:DatatypeProperty ;
+    rdfs:label "deleteBranchOnMerge" ;
+    rdfs:comment "Whether to delete head branches when pull requests are merged" ;
+    rdfs:domain gh:Repository ;
+    rdfs:range xsd:boolean ;
+    gh:openApiPropertyName "delete_branch_on_merge" .
+
+gh:deletions a owl:DatatypeProperty ;
+    rdfs:label "deletions" ;
+    rdfs:domain gh:PullRequest ;
+    rdfs:range xsd:integer ;
+    gh:openApiPropertyName "deletions" ;
+    gh:required true .
+
+gh:dependabotAlertsEnabledForNewRepositories a owl:DatatypeProperty ;
+    rdfs:label "dependabotAlertsEnabledForNewRepositories" ;
+    rdfs:comment """**Endpoint closing down notice.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.
+
+Whether Dependabot alerts are automatically enabled for new repositories and repositories transferred to this organization.
+
+This field is only visible to organization owners or members of a team with the security manager role.""" ;
+    rdfs:domain gh:Organization ;
+    rdfs:range xsd:boolean ;
+    gh:openApiPropertyName "dependabot_alerts_enabled_for_new_repositories" .
+
+gh:dependabotSecurityUpdatesEnabledForNewRepositories a owl:DatatypeProperty ;
+    rdfs:label "dependabotSecurityUpdatesEnabledForNewRepositories" ;
+    rdfs:comment """**Endpoint closing down notice.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.
+
+Whether Dependabot security updates are automatically enabled for new repositories and repositories transferred to this organization.
+
+This field is only visible to organization owners or members of a team with the security manager role.""" ;
+    rdfs:domain gh:Organization ;
+    rdfs:range xsd:boolean ;
+    gh:openApiPropertyName "dependabot_security_updates_enabled_for_new_repositories" .
+
+gh:dependencyGraphEnabledForNewRepositories a owl:DatatypeProperty ;
+    rdfs:label "dependencyGraphEnabledForNewRepositories" ;
+    rdfs:comment """**Endpoint closing down notice.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.
+
+Whether dependency graph is automatically enabled for new repositories and repositories transferred to this organization.
+
+This field is only visible to organization owners or members of a team with the security manager role.""" ;
+    rdfs:domain gh:Organization ;
+    rdfs:range xsd:boolean ;
+    gh:openApiPropertyName "dependency_graph_enabled_for_new_repositories" .
+
+gh:deployKeysEnabledForRepositories a owl:DatatypeProperty ;
+    rdfs:label "deployKeysEnabledForRepositories" ;
+    rdfs:comment "Controls whether or not deploy keys may be added and used for repositories in the organization." ;
+    rdfs:domain gh:Organization ;
+    rdfs:range xsd:boolean ;
+    gh:openApiPropertyName "deploy_keys_enabled_for_repositories" .
+
+gh:description a owl:DatatypeProperty ;
+    rdfs:label "description" ;
+    rdfs:comment "A detailed description of what the advisory entails.",
+        "Optional description of the label, such as its purpose." ;
+    rdfs:domain gh:GlobalAdvisory,
+        gh:Label,
+        gh:Milestone,
+        gh:Organization,
+        gh:Repository,
+        gh:RepositoryAdvisory,
+        gh:Team,
+        gh:TeamFull ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "description" ;
+    gh:required true .
+
+gh:diffHunk a owl:DatatypeProperty ;
+    rdfs:label "diffHunk" ;
+    rdfs:comment "The diff of the line that the comment refers to." ;
+    rdfs:domain gh:PullRequestReviewComment ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "diff_hunk" ;
+    gh:required true .
+
+gh:diffUrl a owl:DatatypeProperty ;
+    rdfs:label "diffUrl" ;
+    rdfs:domain gh:PullRequest ;
+    rdfs:range xsd:anyURI ;
+    gh:openApiPropertyName "diff_url" ;
+    gh:required true .
+
+gh:digest a owl:DatatypeProperty ;
+    rdfs:label "digest" ;
+    rdfs:domain gh:ReleaseAsset ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "digest" ;
+    gh:required true .
+
+gh:directMembership a owl:DatatypeProperty ;
+    rdfs:label "directMembership" ;
+    rdfs:comment "Whether the user has direct membership in the organization." ;
+    rdfs:domain gh:OrgMembership ;
+    rdfs:range xsd:boolean ;
+    gh:openApiPropertyName "direct_membership" .
+
+gh:disabled a owl:DatatypeProperty ;
+    rdfs:label "disabled" ;
+    rdfs:comment "Returns whether or not this repository disabled." ;
+    rdfs:domain gh:Repository ;
+    rdfs:range xsd:boolean ;
+    gh:openApiPropertyName "disabled" ;
+    gh:required true .
+
+gh:discussionUrl a owl:DatatypeProperty ;
+    rdfs:label "discussionUrl" ;
+    rdfs:comment "The URL of the release discussion." ;
+    rdfs:domain gh:Release ;
+    rdfs:range xsd:anyURI ;
+    gh:openApiPropertyName "discussion_url" .
+
+gh:diskUsage a owl:DatatypeProperty ;
+    rdfs:label "diskUsage" ;
+    rdfs:domain gh:Organization ;
+    rdfs:range xsd:integer ;
+    gh:openApiPropertyName "disk_usage" .
+
+gh:dismissalApprovedBy a owl:ObjectProperty ;
+    rdfs:label "dismissalApprovedBy" ;
+    rdfs:domain gh:CodeScanningAlert ;
+    rdfs:range gh:User ;
+    gh:openApiPropertyName "dismissal_approved_by" .
+
+gh:dismissedBy a owl:ObjectProperty ;
+    rdfs:label "dismissedBy" ;
+    rdfs:domain gh:CodeScanningAlert,
+        gh:DependabotAlert,
+        gh:DependabotAlertWithRepository ;
+    rdfs:range gh:User ;
+    gh:openApiPropertyName "dismissed_by" .
+
+gh:dismissedComment a owl:DatatypeProperty ;
+    rdfs:label "dismissedComment" ;
+    rdfs:comment "An optional comment associated with the alert's dismissal." ;
+    rdfs:domain gh:DependabotAlert,
+        gh:DependabotAlertWithRepository ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "dismissed_comment" ;
+    gh:required true .
+
+gh:dismissedReason a owl:DatatypeProperty ;
+    rdfs:label "dismissedReason" ;
+    rdfs:comment "The reason that the alert was dismissed." ;
+    rdfs:domain gh:DependabotAlert,
+        gh:DependabotAlertWithRepository ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "dismissed_reason" ;
+    gh:required true .
+
+gh:displayCommenterFullNameSettingEnabled a owl:DatatypeProperty ;
+    rdfs:label "displayCommenterFullNameSettingEnabled" ;
+    rdfs:domain gh:Organization ;
+    rdfs:range xsd:boolean ;
+    gh:openApiPropertyName "display_commenter_full_name_setting_enabled" .
+
+gh:downloadCount a owl:DatatypeProperty ;
+    rdfs:label "downloadCount" ;
+    rdfs:domain gh:ReleaseAsset ;
+    rdfs:range xsd:integer ;
+    gh:openApiPropertyName "download_count" ;
+    gh:required true .
+
+gh:draft a owl:DatatypeProperty ;
+    rdfs:label "draft" ;
+    rdfs:comment "Indicates whether or not the pull request is a draft.",
+        "true to create a draft (unpublished) release, false to create a published one." ;
+    rdfs:domain gh:Issue,
+        gh:PullRequest,
+        gh:Release ;
+    rdfs:range xsd:boolean ;
+    gh:openApiPropertyName "draft" ;
+    gh:required true .
+
+gh:dueOn a owl:DatatypeProperty ;
+    rdfs:label "dueOn" ;
+    rdfs:domain gh:Milestone ;
+    rdfs:range xsd:dateTime ;
+    gh:openApiPropertyName "due_on" ;
+    gh:required true .
+
+gh:email a owl:DatatypeProperty ;
+    rdfs:label "email" ;
+    rdfs:domain gh:Organization,
+        gh:User ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "email" .
+
+gh:enterpriseId a owl:DatatypeProperty ;
+    rdfs:label "enterpriseId" ;
+    rdfs:comment "Unique identifier of the enterprise to which this team belongs" ;
+    rdfs:domain gh:Team,
+        gh:TeamFull ;
+    rdfs:range xsd:integer ;
+    gh:openApiPropertyName "enterprise_id" .
+
+gh:enterpriseTeamsProvidingIndirectMembership a owl:DatatypeProperty ;
+    rdfs:label "enterpriseTeamsProvidingIndirectMembership" ;
+    rdfs:comment """The slugs of the enterprise teams providing the user with indirect membership in the organization.
+A limit of 100 enterprise team slugs is returned.""" ;
+    rdfs:domain gh:OrgMembership ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "enterprise_teams_providing_indirect_membership" .
+
+gh:eyes a owl:DatatypeProperty ;
+    rdfs:label "eyes" ;
+    rdfs:domain gh:ReactionRollup ;
+    rdfs:range xsd:integer ;
+    gh:openApiPropertyName "eyes" ;
+    gh:required true .
+
+gh:firstPatchedVersion a owl:DatatypeProperty ;
+    rdfs:label "firstPatchedVersion" ;
+    rdfs:comment "The package version that resolves the vulnerability." ;
+    rdfs:domain gh:Vulnerability ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "first_patched_version" ;
+    gh:required true .
+
+gh:followers a owl:DatatypeProperty ;
+    rdfs:label "followers" ;
+    rdfs:domain gh:Organization ;
+    rdfs:range xsd:integer ;
+    gh:openApiPropertyName "followers" ;
+    gh:required true .
+
+gh:following a owl:DatatypeProperty ;
+    rdfs:label "following" ;
+    rdfs:domain gh:Organization ;
+    rdfs:range xsd:integer ;
+    gh:openApiPropertyName "following" ;
+    gh:required true .
+
+gh:fork a owl:DatatypeProperty ;
+    rdfs:label "fork" ;
+    rdfs:domain gh:Repository ;
+    rdfs:range xsd:boolean ;
+    gh:openApiPropertyName "fork" ;
+    gh:required true .
+
+gh:forks a owl:DatatypeProperty ;
+    rdfs:label "forks" ;
+    rdfs:domain gh:Repository ;
+    rdfs:range xsd:integer ;
+    gh:openApiPropertyName "forks" ;
+    gh:required true .
+
+gh:forksCount a owl:DatatypeProperty ;
+    rdfs:label "forksCount" ;
+    rdfs:domain gh:Repository ;
+    rdfs:range xsd:integer ;
+    gh:openApiPropertyName "forks_count" ;
+    gh:required true .
+
+gh:fullName a owl:DatatypeProperty ;
+    rdfs:label "fullName" ;
+    rdfs:domain gh:Repository ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "full_name" ;
+    gh:required true .
+
+gh:ghsaId a owl:DatatypeProperty ;
+    rdfs:label "ghsaId" ;
+    rdfs:comment "The GitHub Security Advisory ID." ;
+    rdfs:domain gh:GlobalAdvisory,
+        gh:RepositoryAdvisory ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "ghsa_id" ;
+    gh:required true .
+
+gh:githubReviewedAt a owl:DatatypeProperty ;
+    rdfs:label "githubReviewedAt" ;
+    rdfs:comment "The date and time of when the advisory was reviewed by GitHub, in ISO 8601 format." ;
+    rdfs:domain gh:GlobalAdvisory ;
+    rdfs:range xsd:dateTime ;
+    gh:openApiPropertyName "github_reviewed_at" ;
+    gh:required true .
+
+gh:gravatarId a owl:DatatypeProperty ;
+    rdfs:label "gravatarId" ;
+    rdfs:domain gh:User ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "gravatar_id" ;
+    gh:required true .
+
+gh:hasCommitComments a owl:DatatypeProperty ;
+    rdfs:label "hasCommitComments" ;
+    rdfs:comment "Whether commit comments are enabled." ;
+    rdfs:domain gh:Repository ;
+    rdfs:range xsd:boolean ;
+    gh:openApiPropertyName "has_commit_comments" .
+
+gh:hasDiscussions a owl:DatatypeProperty ;
+    rdfs:label "hasDiscussions" ;
+    rdfs:comment "Whether discussions are enabled." ;
+    rdfs:domain gh:Repository ;
+    rdfs:range xsd:boolean ;
+    gh:openApiPropertyName "has_discussions" .
+
+gh:hasIssues a owl:DatatypeProperty ;
+    rdfs:label "hasIssues" ;
+    rdfs:comment "Whether issues are enabled." ;
+    rdfs:domain gh:Repository ;
+    rdfs:range xsd:boolean ;
+    gh:openApiPropertyName "has_issues" ;
+    gh:required true .
+
+gh:hasMoreLocations a owl:DatatypeProperty ;
+    rdfs:label "hasMoreLocations" ;
+    rdfs:comment "A boolean value representing whether or not the token in the alert was detected in more than one location." ;
+    rdfs:domain gh:SecretScanningAlert ;
+    rdfs:range xsd:boolean ;
+    gh:openApiPropertyName "has_more_locations" .
+
+gh:hasOrganizationProjects a owl:DatatypeProperty ;
+    rdfs:label "hasOrganizationProjects" ;
+    rdfs:domain gh:Organization ;
+    rdfs:range xsd:boolean ;
+    gh:openApiPropertyName "has_organization_projects" ;
+    gh:required true .
+
+gh:hasPages a owl:DatatypeProperty ;
+    rdfs:label "hasPages" ;
+    rdfs:domain gh:Repository ;
+    rdfs:range xsd:boolean ;
+    gh:openApiPropertyName "has_pages" ;
+    gh:required true .
+
+gh:hasProjects a owl:DatatypeProperty ;
+    rdfs:label "hasProjects" ;
+    rdfs:comment "Whether projects are enabled." ;
+    rdfs:domain gh:Repository ;
+    rdfs:range xsd:boolean ;
+    gh:openApiPropertyName "has_projects" ;
+    gh:required true .
+
+gh:hasPullRequests a owl:DatatypeProperty ;
+    rdfs:label "hasPullRequests" ;
+    rdfs:comment "Whether pull requests are enabled." ;
+    rdfs:domain gh:Repository ;
+    rdfs:range xsd:boolean ;
+    gh:openApiPropertyName "has_pull_requests" .
+
+gh:hasRepositoryProjects a owl:DatatypeProperty ;
+    rdfs:label "hasRepositoryProjects" ;
+    rdfs:domain gh:Organization ;
+    rdfs:range xsd:boolean ;
+    gh:openApiPropertyName "has_repository_projects" ;
+    gh:required true .
+
+gh:hasWiki a owl:DatatypeProperty ;
+    rdfs:label "hasWiki" ;
+    rdfs:comment "Whether the wiki is enabled." ;
+    rdfs:domain gh:Repository ;
+    rdfs:range xsd:boolean ;
+    gh:openApiPropertyName "has_wiki" ;
+    gh:required true .
+
+gh:heart a owl:DatatypeProperty ;
+    rdfs:label "heart" ;
+    rdfs:domain gh:ReactionRollup ;
+    rdfs:range xsd:integer ;
+    gh:openApiPropertyName "heart" ;
+    gh:required true .
+
+gh:homepage a owl:DatatypeProperty ;
+    rdfs:label "homepage" ;
+    rdfs:domain gh:Repository ;
+    rdfs:range xsd:anyURI ;
+    gh:openApiPropertyName "homepage" ;
+    gh:required true .
+
+gh:hooray a owl:DatatypeProperty ;
+    rdfs:label "hooray" ;
+    rdfs:domain gh:ReactionRollup ;
+    rdfs:range xsd:integer ;
+    gh:openApiPropertyName "hooray" ;
+    gh:required true .
+
+gh:htmlUrl a owl:DatatypeProperty ;
+    rdfs:label "htmlUrl" ;
+    rdfs:comment "HTML URL for the pull request review comment.",
+        "The URL for the advisory." ;
+    rdfs:domain gh:Discussion,
+        gh:GlobalAdvisory,
+        gh:Issue,
+        gh:IssueComment,
+        gh:License,
+        gh:Milestone,
+        gh:Organization,
+        gh:PullRequest,
+        gh:PullRequestReview,
+        gh:PullRequestReviewComment,
+        gh:Release,
+        gh:Repository,
+        gh:RepositoryAdvisory,
+        gh:Team,
+        gh:TeamFull,
+        gh:User ;
+    rdfs:range xsd:anyURI,
+        xsd:string ;
+    gh:openApiPropertyName "html_url" ;
+    gh:required true .
+
+gh:id a owl:DatatypeProperty ;
+    rdfs:label "id" ;
+    rdfs:comment "The ID of the pull request review comment.",
+        "Unique identifier for the label.",
+        "Unique identifier of the issue comment",
+        "Unique identifier of the repository",
+        "Unique identifier of the review",
+        "Unique identifier of the team" ;
+    rdfs:domain gh:Discussion,
+        gh:Issue,
+        gh:IssueComment,
+        gh:Label,
+        gh:Milestone,
+        gh:Organization,
+        gh:PullRequest,
+        gh:PullRequestReview,
+        gh:PullRequestReviewComment,
+        gh:Release,
+        gh:ReleaseAsset,
+        gh:Repository,
+        gh:Team,
+        gh:TeamFull,
+        gh:User ;
+    rdfs:range xsd:integer ;
+    gh:openApiPropertyName "id" ;
+    gh:required true .
+
+gh:identifiers a owl:DatatypeProperty ;
+    rdfs:label "identifiers" ;
+    rdfs:domain gh:GlobalAdvisory,
+        gh:RepositoryAdvisory ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "identifiers" .
+
+gh:immutable a owl:DatatypeProperty ;
+    rdfs:label "immutable" ;
+    rdfs:comment "Whether or not the release is immutable." ;
+    rdfs:domain gh:Release ;
+    rdfs:range xsd:boolean ;
+    gh:openApiPropertyName "immutable" .
+
+gh:inReplyToId a owl:DatatypeProperty ;
+    rdfs:label "inReplyToId" ;
+    rdfs:comment "The comment ID to reply to." ;
+    rdfs:domain gh:PullRequestReviewComment ;
+    rdfs:range xsd:integer ;
+    gh:openApiPropertyName "in_reply_to_id" .
+
+gh:isBase64Encoded a owl:DatatypeProperty ;
+    rdfs:label "isBase64Encoded" ;
+    rdfs:comment "A boolean value representing whether or not alert is base64 encoded" ;
+    rdfs:domain gh:SecretScanningAlert ;
+    rdfs:range xsd:boolean ;
+    gh:openApiPropertyName "is_base64_encoded" .
+
+gh:isTemplate a owl:DatatypeProperty ;
+    rdfs:label "isTemplate" ;
+    rdfs:comment "Whether this repository acts as a template that can be used to generate new repositories." ;
+    rdfs:domain gh:Repository ;
+    rdfs:range xsd:boolean ;
+    gh:openApiPropertyName "is_template" .
+
+gh:isVerified a owl:DatatypeProperty ;
+    rdfs:label "isVerified" ;
+    rdfs:domain gh:Organization ;
+    rdfs:range xsd:boolean ;
+    gh:openApiPropertyName "is_verified" .
+
+gh:key a owl:DatatypeProperty ;
+    rdfs:label "key" ;
+    rdfs:domain gh:License ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "key" ;
+    gh:required true .
+
+gh:label a owl:DatatypeProperty ;
+    rdfs:label "label" ;
+    rdfs:domain gh:ReleaseAsset ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "label" ;
+    gh:required true .
+
+gh:labels a owl:DatatypeProperty,
+        owl:ObjectProperty ;
+    rdfs:label "labels" ;
+    rdfs:comment "Labels to associate with this issue; pass one or more label names to replace the set of labels on this issue; send an empty array to clear all labels from the issue; note that the labels are silently dropped for users without push access to the repository" ;
+    rdfs:domain gh:Discussion,
+        gh:Issue,
+        gh:PullRequest ;
+    rdfs:range xsd:string,
+        gh:Label ;
+    gh:openApiPropertyName "labels" .
+
+gh:language a owl:DatatypeProperty ;
+    rdfs:label "language" ;
+    rdfs:domain gh:Repository ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "language" ;
+    gh:required true .
+
+gh:laugh a owl:DatatypeProperty ;
+    rdfs:label "laugh" ;
+    rdfs:domain gh:ReactionRollup ;
+    rdfs:range xsd:integer ;
+    gh:openApiPropertyName "laugh" ;
+    gh:required true .
+
+gh:license a owl:ObjectProperty ;
+    rdfs:label "license" ;
+    rdfs:domain gh:Repository ;
+    rdfs:range gh:License ;
+    gh:openApiPropertyName "license" .
+
+gh:line a owl:DatatypeProperty ;
+    rdfs:label "line" ;
+    rdfs:comment "The line of the blob to which the comment applies. The last line of the range for a multi-line comment" ;
+    rdfs:domain gh:PullRequestReviewComment ;
+    rdfs:range xsd:integer ;
+    gh:openApiPropertyName "line" .
+
+gh:location a owl:DatatypeProperty ;
+    rdfs:label "location" ;
+    rdfs:domain gh:Organization ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "location" .
+
+gh:locationsUrl a owl:DatatypeProperty ;
+    rdfs:label "locationsUrl" ;
+    rdfs:comment "The REST API URL of the code locations for this alert." ;
+    rdfs:domain gh:SecretScanningAlert ;
+    rdfs:range xsd:anyURI ;
+    gh:openApiPropertyName "locations_url" .
+
+gh:locked a owl:DatatypeProperty ;
+    rdfs:label "locked" ;
+    rdfs:domain gh:Discussion,
+        gh:Issue,
+        gh:PullRequest ;
+    rdfs:range xsd:boolean ;
+    gh:openApiPropertyName "locked" ;
+    gh:required true .
+
+gh:login a owl:DatatypeProperty ;
+    rdfs:label "login" ;
+    rdfs:domain gh:Organization,
+        gh:User ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "login" ;
+    gh:required true .
+
+gh:maintainerCanModify a owl:DatatypeProperty ;
+    rdfs:label "maintainerCanModify" ;
+    rdfs:comment "Indicates whether maintainers can modify the pull request." ;
+    rdfs:domain gh:PullRequest ;
+    rdfs:range xsd:boolean ;
+    gh:openApiPropertyName "maintainer_can_modify" ;
+    gh:required true .
+
+gh:membersAllowedRepositoryCreationType a owl:DatatypeProperty ;
+    rdfs:label "membersAllowedRepositoryCreationType" ;
+    rdfs:domain gh:Organization ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "members_allowed_repository_creation_type" .
+
+gh:membersCanChangeRepoVisibility a owl:DatatypeProperty ;
+    rdfs:label "membersCanChangeRepoVisibility" ;
+    rdfs:domain gh:Organization ;
+    rdfs:range xsd:boolean ;
+    gh:openApiPropertyName "members_can_change_repo_visibility" .
+
+gh:membersCanCreateInternalRepositories a owl:DatatypeProperty ;
+    rdfs:label "membersCanCreateInternalRepositories" ;
+    rdfs:domain gh:Organization ;
+    rdfs:range xsd:boolean ;
+    gh:openApiPropertyName "members_can_create_internal_repositories" .
+
+gh:membersCanCreatePages a owl:DatatypeProperty ;
+    rdfs:label "membersCanCreatePages" ;
+    rdfs:domain gh:Organization ;
+    rdfs:range xsd:boolean ;
+    gh:openApiPropertyName "members_can_create_pages" .
+
+gh:membersCanCreatePrivatePages a owl:DatatypeProperty ;
+    rdfs:label "membersCanCreatePrivatePages" ;
+    rdfs:domain gh:Organization ;
+    rdfs:range xsd:boolean ;
+    gh:openApiPropertyName "members_can_create_private_pages" .
+
+gh:membersCanCreatePrivateRepositories a owl:DatatypeProperty ;
+    rdfs:label "membersCanCreatePrivateRepositories" ;
+    rdfs:domain gh:Organization ;
+    rdfs:range xsd:boolean ;
+    gh:openApiPropertyName "members_can_create_private_repositories" .
+
+gh:membersCanCreatePublicPages a owl:DatatypeProperty ;
+    rdfs:label "membersCanCreatePublicPages" ;
+    rdfs:domain gh:Organization ;
+    rdfs:range xsd:boolean ;
+    gh:openApiPropertyName "members_can_create_public_pages" .
+
+gh:membersCanCreatePublicRepositories a owl:DatatypeProperty ;
+    rdfs:label "membersCanCreatePublicRepositories" ;
+    rdfs:domain gh:Organization ;
+    rdfs:range xsd:boolean ;
+    gh:openApiPropertyName "members_can_create_public_repositories" .
+
+gh:membersCanCreateRepositories a owl:DatatypeProperty ;
+    rdfs:label "membersCanCreateRepositories" ;
+    rdfs:domain gh:Organization ;
+    rdfs:range xsd:boolean ;
+    gh:openApiPropertyName "members_can_create_repositories" .
+
+gh:membersCanCreateTeams a owl:DatatypeProperty ;
+    rdfs:label "membersCanCreateTeams" ;
+    rdfs:domain gh:Organization ;
+    rdfs:range xsd:boolean ;
+    gh:openApiPropertyName "members_can_create_teams" .
+
+gh:membersCanDeleteIssues a owl:DatatypeProperty ;
+    rdfs:label "membersCanDeleteIssues" ;
+    rdfs:domain gh:Organization ;
+    rdfs:range xsd:boolean ;
+    gh:openApiPropertyName "members_can_delete_issues" .
+
+gh:membersCanDeleteRepositories a owl:DatatypeProperty ;
+    rdfs:label "membersCanDeleteRepositories" ;
+    rdfs:domain gh:Organization ;
+    rdfs:range xsd:boolean ;
+    gh:openApiPropertyName "members_can_delete_repositories" .
+
+gh:membersCanForkPrivateRepositories a owl:DatatypeProperty ;
+    rdfs:label "membersCanForkPrivateRepositories" ;
+    rdfs:domain gh:Organization ;
+    rdfs:range xsd:boolean ;
+    gh:openApiPropertyName "members_can_fork_private_repositories" .
+
+gh:membersCanInviteOutsideCollaborators a owl:DatatypeProperty ;
+    rdfs:label "membersCanInviteOutsideCollaborators" ;
+    rdfs:domain gh:Organization ;
+    rdfs:range xsd:boolean ;
+    gh:openApiPropertyName "members_can_invite_outside_collaborators" .
+
+gh:membersCanViewDependencyInsights a owl:DatatypeProperty ;
+    rdfs:label "membersCanViewDependencyInsights" ;
+    rdfs:domain gh:Organization ;
+    rdfs:range xsd:boolean ;
+    gh:openApiPropertyName "members_can_view_dependency_insights" .
+
+gh:membersCount a owl:DatatypeProperty ;
+    rdfs:label "membersCount" ;
+    rdfs:domain gh:TeamFull ;
+    rdfs:range xsd:integer ;
+    gh:openApiPropertyName "members_count" ;
+    gh:required true .
+
+gh:mentionsCount a owl:DatatypeProperty ;
+    rdfs:label "mentionsCount" ;
+    rdfs:domain gh:Release ;
+    rdfs:range xsd:integer ;
+    gh:openApiPropertyName "mentions_count" .
+
+gh:mergeCommitMessage a owl:DatatypeProperty ;
+    rdfs:label "mergeCommitMessage" ;
+    rdfs:comment """The default value for a merge commit message.
+
+- `PR_TITLE` - default to the pull request's title.
+- `PR_BODY` - default to the pull request's body.
+- `BLANK` - default to a blank commit message.""" ;
+    rdfs:domain gh:Repository ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "merge_commit_message" .
+
+gh:mergeCommitTitle a owl:DatatypeProperty ;
+    rdfs:label "mergeCommitTitle" ;
+    rdfs:comment """The default value for a merge commit title.
+
+- `PR_TITLE` - default to the pull request's title.
+- `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).""" ;
+    rdfs:domain gh:Repository ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "merge_commit_title" .
+
+gh:mergeable a owl:DatatypeProperty ;
+    rdfs:label "mergeable" ;
+    rdfs:domain gh:PullRequest ;
+    rdfs:range xsd:boolean ;
+    gh:openApiPropertyName "mergeable" ;
+    gh:required true .
+
+gh:mergeableState a owl:DatatypeProperty ;
+    rdfs:label "mergeableState" ;
+    rdfs:domain gh:PullRequest ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "mergeable_state" ;
+    gh:required true .
+
+gh:merged a owl:DatatypeProperty ;
+    rdfs:label "merged" ;
+    rdfs:domain gh:PullRequest ;
+    rdfs:range xsd:boolean ;
+    gh:openApiPropertyName "merged" ;
+    gh:required true .
+
+gh:mergedAt a owl:DatatypeProperty ;
+    rdfs:label "mergedAt" ;
+    rdfs:domain gh:PullRequest ;
+    rdfs:range xsd:dateTime ;
+    gh:openApiPropertyName "merged_at" ;
+    gh:required true .
+
+gh:mergedBy a owl:ObjectProperty ;
+    rdfs:label "mergedBy" ;
+    rdfs:domain gh:PullRequest ;
+    rdfs:range gh:User ;
+    gh:openApiPropertyName "merged_by" .
+
+gh:milestone a owl:ObjectProperty ;
+    rdfs:label "milestone" ;
+    rdfs:domain gh:Issue,
+        gh:PullRequest ;
+    rdfs:range gh:Milestone ;
+    gh:openApiPropertyName "milestone" .
+
+gh:multiRepo a owl:DatatypeProperty ;
+    rdfs:label "multiRepo" ;
+    rdfs:comment "Whether the detected secret was found in multiple repositories under the same organization or enterprise." ;
+    rdfs:domain gh:SecretScanningAlert ;
+    rdfs:range xsd:boolean ;
+    gh:openApiPropertyName "multi_repo" .
+
+gh:name a owl:DatatypeProperty ;
+    rdfs:label "name" ;
+    rdfs:comment "Name of the team",
+        "The file name of the asset.",
+        "The name of the label.",
+        "The name of the repository." ;
+    rdfs:domain gh:Label,
+        gh:License,
+        gh:Organization,
+        gh:Release,
+        gh:ReleaseAsset,
+        gh:Repository,
+        gh:Team,
+        gh:TeamFull,
+        gh:User ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "name" ;
+    gh:required true .
+
+gh:notificationSetting a owl:DatatypeProperty ;
+    rdfs:label "notificationSetting" ;
+    rdfs:comment "The notification setting the team has set" ;
+    rdfs:domain gh:Team,
+        gh:TeamFull ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "notification_setting" .
+
+gh:number a owl:DatatypeProperty ;
+    rdfs:label "number" ;
+    rdfs:comment "Number uniquely identifying the issue within its repository",
+        "Number uniquely identifying the pull request within its repository.",
+        "The number of the milestone." ;
+    rdfs:domain gh:Discussion,
+        gh:Issue,
+        gh:Milestone,
+        gh:PullRequest ;
+    rdfs:range xsd:integer ;
+    gh:openApiPropertyName "number" ;
+    gh:required true .
+
+gh:nvdPublishedAt a owl:DatatypeProperty ;
+    rdfs:label "nvdPublishedAt" ;
+    rdfs:comment """The date and time when the advisory was published in the National Vulnerability Database, in ISO 8601 format.
+This field is only populated when the advisory is imported from the National Vulnerability Database.""" ;
+    rdfs:domain gh:GlobalAdvisory ;
+    rdfs:range xsd:dateTime ;
+    gh:openApiPropertyName "nvd_published_at" ;
+    gh:required true .
+
+gh:openApiPropertyName a owl:AnnotationProperty ;
+    rdfs:label "OpenAPI property name" ;
+    rdfs:comment "The original property name from GitHub's OpenAPI spec (snake_case)" .
+
+gh:openApiSchemaName a owl:AnnotationProperty ;
+    rdfs:label "OpenAPI schema name" ;
+    rdfs:comment "The original schema name from GitHub's OpenAPI spec" .
+
+gh:openIssues a owl:DatatypeProperty ;
+    rdfs:label "openIssues" ;
+    rdfs:domain gh:Milestone,
+        gh:Repository ;
+    rdfs:range xsd:integer ;
+    gh:openApiPropertyName "open_issues" ;
+    gh:required true .
+
+gh:openIssuesCount a owl:DatatypeProperty ;
+    rdfs:label "openIssuesCount" ;
+    rdfs:domain gh:Repository ;
+    rdfs:range xsd:integer ;
+    gh:openApiPropertyName "open_issues_count" ;
+    gh:required true .
+
+gh:organizationId a owl:DatatypeProperty ;
+    rdfs:label "organizationId" ;
+    rdfs:comment "Unique identifier of the organization to which this team belongs" ;
+    rdfs:domain gh:Team,
+        gh:TeamFull ;
+    rdfs:range xsd:integer ;
+    gh:openApiPropertyName "organization_id" .
+
+gh:organizationUrl a owl:DatatypeProperty ;
+    rdfs:label "organizationUrl" ;
+    rdfs:domain gh:OrgMembership ;
+    rdfs:range xsd:anyURI ;
+    gh:openApiPropertyName "organization_url" ;
+    gh:required true .
+
+gh:originalCommitId a owl:DatatypeProperty ;
+    rdfs:label "originalCommitId" ;
+    rdfs:comment "The SHA of the original commit to which the comment applies." ;
+    rdfs:domain gh:PullRequestReviewComment ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "original_commit_id" ;
+    gh:required true .
+
+gh:originalLine a owl:DatatypeProperty ;
+    rdfs:label "originalLine" ;
+    rdfs:comment "The line of the blob to which the comment applies. The last line of the range for a multi-line comment" ;
+    rdfs:domain gh:PullRequestReviewComment ;
+    rdfs:range xsd:integer ;
+    gh:openApiPropertyName "original_line" .
+
+gh:originalPosition a owl:DatatypeProperty ;
+    rdfs:label "originalPosition" ;
+    rdfs:comment "The index of the original line in the diff to which the comment applies. This field is closing down; use `original_line` instead." ;
+    rdfs:domain gh:PullRequestReviewComment ;
+    rdfs:range xsd:integer ;
+    gh:openApiPropertyName "original_position" .
+
+gh:originalStartLine a owl:DatatypeProperty ;
+    rdfs:label "originalStartLine" ;
+    rdfs:comment "The first line of the range for a multi-line comment." ;
+    rdfs:domain gh:PullRequestReviewComment ;
+    rdfs:range xsd:integer ;
+    gh:openApiPropertyName "original_start_line" .
+
+gh:ownedPrivateRepos a owl:DatatypeProperty ;
+    rdfs:label "ownedPrivateRepos" ;
+    rdfs:domain gh:Organization ;
+    rdfs:range xsd:integer ;
+    gh:openApiPropertyName "owned_private_repos" .
+
+gh:owner a owl:ObjectProperty ;
+    rdfs:label "owner" ;
+    rdfs:domain gh:Repository ;
+    rdfs:range gh:User ;
+    gh:openApiPropertyName "owner" .
+
+gh:parentIssueUrl a owl:DatatypeProperty ;
+    rdfs:label "parentIssueUrl" ;
+    rdfs:comment "URL to get the parent issue of this issue, if it is a sub-issue" ;
+    rdfs:domain gh:Issue ;
+    rdfs:range xsd:anyURI ;
+    gh:openApiPropertyName "parent_issue_url" .
+
+gh:patchUrl a owl:DatatypeProperty ;
+    rdfs:label "patchUrl" ;
+    rdfs:domain gh:PullRequest ;
+    rdfs:range xsd:anyURI ;
+    gh:openApiPropertyName "patch_url" ;
+    gh:required true .
+
+gh:path a owl:DatatypeProperty ;
+    rdfs:label "path" ;
+    rdfs:comment "The relative path of the file to which the comment applies." ;
+    rdfs:domain gh:PullRequestReviewComment ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "path" ;
+    gh:required true .
+
+gh:permission a owl:DatatypeProperty ;
+    rdfs:label "permission" ;
+    rdfs:comment "Permission that the team will have for its repositories" ;
+    rdfs:domain gh:Team,
+        gh:TeamFull ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "permission" ;
+    gh:required true .
+
+gh:pinnedComment a owl:ObjectProperty ;
+    rdfs:label "pinnedComment" ;
+    rdfs:domain gh:Issue ;
+    rdfs:range gh:IssueComment ;
+    gh:openApiPropertyName "pinned_comment" .
+
+gh:position a owl:DatatypeProperty ;
+    rdfs:label "position" ;
+    rdfs:comment "The line index in the diff to which the comment applies. This field is closing down; use `line` instead." ;
+    rdfs:domain gh:PullRequestReviewComment ;
+    rdfs:range xsd:integer ;
+    gh:openApiPropertyName "position" .
+
+gh:prerelease a owl:DatatypeProperty ;
+    rdfs:label "prerelease" ;
+    rdfs:comment "Whether to identify the release as a prerelease or a full release." ;
+    rdfs:domain gh:Release ;
+    rdfs:range xsd:boolean ;
+    gh:openApiPropertyName "prerelease" ;
+    gh:required true .
+
+gh:privacy a owl:DatatypeProperty ;
+    rdfs:label "privacy" ;
+    rdfs:comment "The level of privacy this team should have" ;
+    rdfs:domain gh:Team,
+        gh:TeamFull ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "privacy" .
+
+gh:private a owl:DatatypeProperty ;
+    rdfs:label "private" ;
+    rdfs:comment "Whether the repository is private or public." ;
+    rdfs:domain gh:Repository ;
+    rdfs:range xsd:boolean ;
+    gh:openApiPropertyName "private" ;
+    gh:required true .
+
+gh:privateGists a owl:DatatypeProperty ;
+    rdfs:label "privateGists" ;
+    rdfs:domain gh:Organization ;
+    rdfs:range xsd:integer ;
+    gh:openApiPropertyName "private_gists" .
+
+gh:publicGists a owl:DatatypeProperty ;
+    rdfs:label "publicGists" ;
+    rdfs:domain gh:Organization ;
+    rdfs:range xsd:integer ;
+    gh:openApiPropertyName "public_gists" ;
+    gh:required true .
+
+gh:publicRepos a owl:DatatypeProperty ;
+    rdfs:label "publicRepos" ;
+    rdfs:domain gh:Organization ;
+    rdfs:range xsd:integer ;
+    gh:openApiPropertyName "public_repos" ;
+    gh:required true .
+
+gh:publiclyLeaked a owl:DatatypeProperty ;
+    rdfs:label "publiclyLeaked" ;
+    rdfs:comment "Whether the detected secret was publicly leaked." ;
+    rdfs:domain gh:SecretScanningAlert ;
+    rdfs:range xsd:boolean ;
+    gh:openApiPropertyName "publicly_leaked" .
+
+gh:publishedAt a owl:DatatypeProperty ;
+    rdfs:label "publishedAt" ;
+    rdfs:comment "The date and time of when the advisory was published, in ISO 8601 format." ;
+    rdfs:domain gh:GlobalAdvisory,
+        gh:Release,
+        gh:RepositoryAdvisory ;
+    rdfs:range xsd:dateTime ;
+    gh:openApiPropertyName "published_at" ;
+    gh:required true .
+
+gh:publisher a owl:ObjectProperty ;
+    rdfs:label "publisher" ;
+    rdfs:comment "The publisher of the advisory." ;
+    rdfs:domain gh:RepositoryAdvisory ;
+    rdfs:range gh:User ;
+    gh:openApiPropertyName "publisher" .
+
+gh:pullRequestCreationPolicy a owl:DatatypeProperty ;
+    rdfs:label "pullRequestCreationPolicy" ;
+    rdfs:comment "The policy controlling who can create pull requests: all or collaborators_only." ;
+    rdfs:domain gh:Repository ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "pull_request_creation_policy" .
+
+gh:pullRequestReviewId a owl:DatatypeProperty ;
+    rdfs:label "pullRequestReviewId" ;
+    rdfs:comment "The ID of the pull request review to which the comment belongs." ;
+    rdfs:domain gh:PullRequestReviewComment ;
+    rdfs:range xsd:integer ;
+    gh:openApiPropertyName "pull_request_review_id" ;
+    gh:required true .
+
+gh:pushProtectionBypassRequestComment a owl:DatatypeProperty ;
+    rdfs:label "pushProtectionBypassRequestComment" ;
+    rdfs:comment "An optional comment when requesting a push protection bypass." ;
+    rdfs:domain gh:SecretScanningAlert ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "push_protection_bypass_request_comment" .
+
+gh:pushProtectionBypassRequestHtmlUrl a owl:DatatypeProperty ;
+    rdfs:label "pushProtectionBypassRequestHtmlUrl" ;
+    rdfs:comment "The URL to a push protection bypass request." ;
+    rdfs:domain gh:SecretScanningAlert ;
+    rdfs:range xsd:anyURI ;
+    gh:openApiPropertyName "push_protection_bypass_request_html_url" .
+
+gh:pushProtectionBypassRequestReviewer a owl:ObjectProperty ;
+    rdfs:label "pushProtectionBypassRequestReviewer" ;
+    rdfs:domain gh:SecretScanningAlert ;
+    rdfs:range gh:User ;
+    gh:openApiPropertyName "push_protection_bypass_request_reviewer" .
+
+gh:pushProtectionBypassRequestReviewerComment a owl:DatatypeProperty ;
+    rdfs:label "pushProtectionBypassRequestReviewerComment" ;
+    rdfs:comment "An optional comment when reviewing a push protection bypass." ;
+    rdfs:domain gh:SecretScanningAlert ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "push_protection_bypass_request_reviewer_comment" .
+
+gh:pushProtectionBypassed a owl:DatatypeProperty ;
+    rdfs:label "pushProtectionBypassed" ;
+    rdfs:comment "Whether push protection was bypassed for the detected secret." ;
+    rdfs:domain gh:SecretScanningAlert ;
+    rdfs:range xsd:boolean ;
+    gh:openApiPropertyName "push_protection_bypassed" .
+
+gh:pushProtectionBypassedAt a owl:DatatypeProperty ;
+    rdfs:label "pushProtectionBypassedAt" ;
+    rdfs:comment "The time that push protection was bypassed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`." ;
+    rdfs:domain gh:SecretScanningAlert ;
+    rdfs:range xsd:dateTime ;
+    gh:openApiPropertyName "push_protection_bypassed_at" .
+
+gh:pushProtectionBypassedBy a owl:ObjectProperty ;
+    rdfs:label "pushProtectionBypassedBy" ;
+    rdfs:domain gh:SecretScanningAlert ;
+    rdfs:range gh:User ;
+    gh:openApiPropertyName "push_protection_bypassed_by" .
+
+gh:pushedAt a owl:DatatypeProperty ;
+    rdfs:label "pushedAt" ;
+    rdfs:domain gh:Repository ;
+    rdfs:range xsd:dateTime ;
+    gh:openApiPropertyName "pushed_at" ;
+    gh:required true .
+
+gh:reactions a owl:ObjectProperty ;
+    rdfs:label "reactions" ;
+    rdfs:domain gh:Issue,
+        gh:IssueComment,
+        gh:PullRequestReviewComment,
+        gh:Release ;
+    rdfs:range gh:ReactionRollup ;
+    gh:openApiPropertyName "reactions" .
+
+gh:readersCanCreateDiscussions a owl:DatatypeProperty ;
+    rdfs:label "readersCanCreateDiscussions" ;
+    rdfs:domain gh:Organization ;
+    rdfs:range xsd:boolean ;
+    gh:openApiPropertyName "readers_can_create_discussions" .
+
+gh:rebaseable a owl:DatatypeProperty ;
+    rdfs:label "rebaseable" ;
+    rdfs:domain gh:PullRequest ;
+    rdfs:range xsd:boolean ;
+    gh:openApiPropertyName "rebaseable" .
+
+gh:references a owl:DatatypeProperty ;
+    rdfs:label "references" ;
+    rdfs:domain gh:GlobalAdvisory ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "references" .
+
+gh:reposCount a owl:DatatypeProperty ;
+    rdfs:label "reposCount" ;
+    rdfs:domain gh:TeamFull ;
+    rdfs:range xsd:integer ;
+    gh:openApiPropertyName "repos_count" ;
+    gh:required true .
+
+gh:repository a owl:ObjectProperty ;
+    rdfs:label "repository" ;
+    rdfs:domain gh:Issue ;
+    rdfs:range gh:Repository ;
+    gh:openApiPropertyName "repository" .
+
+gh:repositoryAdvisoryUrl a owl:DatatypeProperty ;
+    rdfs:label "repositoryAdvisoryUrl" ;
+    rdfs:comment "The API URL for the repository advisory." ;
+    rdfs:domain gh:GlobalAdvisory ;
+    rdfs:range xsd:anyURI ;
+    gh:openApiPropertyName "repository_advisory_url" ;
+    gh:required true .
+
+gh:requestedReviewers a owl:ObjectProperty ;
+    rdfs:label "requestedReviewers" ;
+    rdfs:domain gh:PullRequest ;
+    rdfs:range gh:User ;
+    gh:openApiPropertyName "requested_reviewers" .
+
+gh:required a owl:AnnotationProperty ;
+    rdfs:label "required" ;
+    rdfs:comment "Whether this property is required per the OpenAPI spec" .
+
+gh:resolutionComment a owl:DatatypeProperty ;
+    rdfs:label "resolutionComment" ;
+    rdfs:comment "An optional comment to resolve an alert." ;
+    rdfs:domain gh:SecretScanningAlert ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "resolution_comment" .
+
+gh:resolvedAt a owl:DatatypeProperty ;
+    rdfs:label "resolvedAt" ;
+    rdfs:comment "The time that the alert was resolved in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`." ;
+    rdfs:domain gh:SecretScanningAlert ;
+    rdfs:range xsd:dateTime ;
+    gh:openApiPropertyName "resolved_at" .
+
+gh:resolvedBy a owl:ObjectProperty ;
+    rdfs:label "resolvedBy" ;
+    rdfs:domain gh:SecretScanningAlert ;
+    rdfs:range gh:User ;
+    gh:openApiPropertyName "resolved_by" .
+
+gh:reviewComments a owl:DatatypeProperty ;
+    rdfs:label "reviewComments" ;
+    rdfs:domain gh:PullRequest ;
+    rdfs:range xsd:integer ;
+    gh:openApiPropertyName "review_comments" ;
+    gh:required true .
+
+gh:rocket a owl:DatatypeProperty ;
+    rdfs:label "rocket" ;
+    rdfs:domain gh:ReactionRollup ;
+    rdfs:range xsd:integer ;
+    gh:openApiPropertyName "rocket" ;
+    gh:required true .
+
+gh:role a owl:DatatypeProperty ;
+    rdfs:label "role" ;
+    rdfs:comment "The user's membership type in the organization." ;
+    rdfs:domain gh:OrgMembership ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "role" ;
+    gh:required true .
+
+gh:secret a owl:DatatypeProperty ;
+    rdfs:label "secret" ;
+    rdfs:comment "The secret that was detected." ;
+    rdfs:domain gh:SecretScanningAlert ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "secret" .
+
+gh:secretScanningEnabledForNewRepositories a owl:DatatypeProperty ;
+    rdfs:label "secretScanningEnabledForNewRepositories" ;
+    rdfs:comment """**Endpoint closing down notice.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.
+
+Whether secret scanning is automatically enabled for new repositories and repositories transferred to this organization.
+
+This field is only visible to organization owners or members of a team with the security manager role.""" ;
+    rdfs:domain gh:Organization ;
+    rdfs:range xsd:boolean ;
+    gh:openApiPropertyName "secret_scanning_enabled_for_new_repositories" .
+
+gh:secretScanningPushProtectionCustomLink a owl:DatatypeProperty ;
+    rdfs:label "secretScanningPushProtectionCustomLink" ;
+    rdfs:comment "An optional URL string to display to contributors who are blocked from pushing a secret." ;
+    rdfs:domain gh:Organization ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "secret_scanning_push_protection_custom_link" .
+
+gh:secretScanningPushProtectionEnabledForNewRepositories a owl:DatatypeProperty ;
+    rdfs:label "secretScanningPushProtectionEnabledForNewRepositories" ;
+    rdfs:comment """**Endpoint closing down notice.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.
+
+Whether secret scanning push protection is automatically enabled for new repositories and repositories transferred to this organization.
+
+This field is only visible to organization owners or members of a team with the security manager role.""" ;
+    rdfs:domain gh:Organization ;
+    rdfs:range xsd:boolean ;
+    gh:openApiPropertyName "secret_scanning_push_protection_enabled_for_new_repositories" .
+
+gh:secretType a owl:DatatypeProperty ;
+    rdfs:label "secretType" ;
+    rdfs:comment "The type of secret that secret scanning detected." ;
+    rdfs:domain gh:SecretScanningAlert ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "secret_type" .
+
+gh:secretTypeDisplayName a owl:DatatypeProperty ;
+    rdfs:label "secretTypeDisplayName" ;
+    rdfs:comment """User-friendly name for the detected secret, matching the `secret_type`.
+For a list of built-in patterns, see "[Supported secret scanning patterns](https://docs.github.com/code-security/secret-scanning/introduction/supported-secret-scanning-patterns#supported-secrets).\"""" ;
+    rdfs:domain gh:SecretScanningAlert ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "secret_type_display_name" .
+
+gh:severity a owl:DatatypeProperty ;
+    rdfs:label "severity" ;
+    rdfs:comment "The severity of the advisory." ;
+    rdfs:domain gh:GlobalAdvisory,
+        gh:RepositoryAdvisory ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "severity" ;
+    gh:required true .
+
+gh:side a owl:DatatypeProperty ;
+    rdfs:label "side" ;
+    rdfs:comment "The side of the diff to which the comment applies. The side of the last line of the range for a multi-line comment" ;
+    rdfs:domain gh:PullRequestReviewComment ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "side" .
+
+gh:siteAdmin a owl:DatatypeProperty ;
+    rdfs:label "siteAdmin" ;
+    rdfs:domain gh:User ;
+    rdfs:range xsd:boolean ;
+    gh:openApiPropertyName "site_admin" ;
+    gh:required true .
+
+gh:size a owl:DatatypeProperty ;
+    rdfs:label "size" ;
+    rdfs:comment "The size of the repository, in kilobytes. Size is calculated hourly. When a repository is initially created, the size is 0." ;
+    rdfs:domain gh:ReleaseAsset,
+        gh:Repository ;
+    rdfs:range xsd:integer ;
+    gh:openApiPropertyName "size" ;
+    gh:required true .
+
+gh:slug a owl:DatatypeProperty ;
+    rdfs:label "slug" ;
+    rdfs:domain gh:Team,
+        gh:TeamFull ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "slug" ;
+    gh:required true .
+
+gh:sourceCodeLocation a owl:DatatypeProperty ;
+    rdfs:label "sourceCodeLocation" ;
+    rdfs:comment "The URL of the advisory's source code." ;
+    rdfs:domain gh:GlobalAdvisory ;
+    rdfs:range xsd:anyURI ;
+    gh:openApiPropertyName "source_code_location" ;
+    gh:required true .
+
+gh:spdxId a owl:DatatypeProperty ;
+    rdfs:label "spdxId" ;
+    rdfs:domain gh:License ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "spdx_id" ;
+    gh:required true .
+
+gh:squashMergeCommitMessage a owl:DatatypeProperty ;
+    rdfs:label "squashMergeCommitMessage" ;
+    rdfs:comment """The default value for a squash merge commit message:
+
+- `PR_BODY` - default to the pull request's body.
+- `COMMIT_MESSAGES` - default to the branch's commit messages.
+- `BLANK` - default to a blank commit message.""" ;
+    rdfs:domain gh:Repository ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "squash_merge_commit_message" .
+
+gh:squashMergeCommitTitle a owl:DatatypeProperty ;
+    rdfs:label "squashMergeCommitTitle" ;
+    rdfs:comment """The default value for a squash merge commit title:
+
+- `PR_TITLE` - default to the pull request's title.
+- `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).""" ;
+    rdfs:domain gh:Repository ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "squash_merge_commit_title" .
+
+gh:stargazersCount a owl:DatatypeProperty ;
+    rdfs:label "stargazersCount" ;
+    rdfs:domain gh:Repository ;
+    rdfs:range xsd:integer ;
+    gh:openApiPropertyName "stargazers_count" ;
+    gh:required true .
+
+gh:starredAt a owl:DatatypeProperty ;
+    rdfs:label "starredAt" ;
+    rdfs:domain gh:Repository,
+        gh:User ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "starred_at" .
+
+gh:startLine a owl:DatatypeProperty ;
+    rdfs:label "startLine" ;
+    rdfs:comment "The first line of the range for a multi-line comment." ;
+    rdfs:domain gh:PullRequestReviewComment ;
+    rdfs:range xsd:integer ;
+    gh:openApiPropertyName "start_line" .
+
+gh:startSide a owl:DatatypeProperty ;
+    rdfs:label "startSide" ;
+    rdfs:comment "The side of the first line of the range for a multi-line comment." ;
+    rdfs:domain gh:PullRequestReviewComment ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "start_side" .
+
+gh:state a owl:DatatypeProperty ;
+    rdfs:label "state" ;
+    rdfs:comment "State of the issue; either 'open' or 'closed'",
+        "State of the release asset.",
+        "State of this Pull Request. Either `open` or `closed`.",
+        """The current state of the discussion.
+`converting` means that the discussion is being converted from an issue.
+`transferring` means that the discussion is being transferred from another repository.""",
+        "The state of the Dependabot alert.",
+        "The state of the advisory.",
+        "The state of the member in the organization. The `pending` state indicates the user has not yet accepted an invitation.",
+        "The state of the milestone." ;
+    rdfs:domain gh:DependabotAlert,
+        gh:DependabotAlertWithRepository,
+        gh:Discussion,
+        gh:Issue,
+        gh:Milestone,
+        gh:OrgMembership,
+        gh:PullRequest,
+        gh:PullRequestReview,
+        gh:ReleaseAsset,
+        gh:RepositoryAdvisory ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "state" ;
+    gh:required true .
+
+gh:stateReason a owl:DatatypeProperty ;
+    rdfs:label "stateReason" ;
+    rdfs:comment "The reason for the current state" ;
+    rdfs:domain gh:Discussion,
+        gh:Issue ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "state_reason" ;
+    gh:required true .
+
+gh:subjectType a owl:DatatypeProperty ;
+    rdfs:label "subjectType" ;
+    rdfs:comment "The level at which the comment is targeted, can be a diff line or a file." ;
+    rdfs:domain gh:PullRequestReviewComment ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "subject_type" .
+
+gh:submittedAt a owl:DatatypeProperty ;
+    rdfs:label "submittedAt" ;
+    rdfs:domain gh:PullRequestReview ;
+    rdfs:range xsd:dateTime ;
+    gh:openApiPropertyName "submitted_at" .
+
+gh:subscribersUrl a owl:DatatypeProperty ;
+    rdfs:label "subscribersUrl" ;
+    rdfs:domain gh:Repository ;
+    rdfs:range xsd:anyURI ;
+    gh:openApiPropertyName "subscribers_url" ;
+    gh:required true .
+
+gh:subscriptionUrl a owl:DatatypeProperty ;
+    rdfs:label "subscriptionUrl" ;
+    rdfs:domain gh:Repository ;
+    rdfs:range xsd:anyURI ;
+    gh:openApiPropertyName "subscription_url" ;
+    gh:required true .
+
+gh:summary a owl:DatatypeProperty ;
+    rdfs:label "summary" ;
+    rdfs:comment "A short summary of the advisory." ;
+    rdfs:domain gh:GlobalAdvisory,
+        gh:RepositoryAdvisory ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "summary" ;
+    gh:required true .
+
+gh:tagName a owl:DatatypeProperty ;
+    rdfs:label "tagName" ;
+    rdfs:comment "The name of the tag." ;
+    rdfs:domain gh:Release ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "tag_name" ;
+    gh:required true .
+
+gh:targetCommitish a owl:DatatypeProperty ;
+    rdfs:label "targetCommitish" ;
+    rdfs:comment "Specifies the commitish value that determines where the Git tag is created from." ;
+    rdfs:domain gh:Release ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "target_commitish" ;
+    gh:required true .
+
+gh:tempCloneToken a owl:DatatypeProperty ;
+    rdfs:label "tempCloneToken" ;
+    rdfs:domain gh:Repository ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "temp_clone_token" .
+
+gh:timelineUrl a owl:DatatypeProperty ;
+    rdfs:label "timelineUrl" ;
+    rdfs:domain gh:Discussion,
+        gh:Issue ;
+    rdfs:range xsd:anyURI,
+        xsd:string ;
+    gh:openApiPropertyName "timeline_url" .
+
+gh:title a owl:DatatypeProperty ;
+    rdfs:label "title" ;
+    rdfs:comment "The title of the milestone.",
+        "The title of the pull request.",
+        "Title of the issue" ;
+    rdfs:domain gh:Discussion,
+        gh:Issue,
+        gh:Milestone,
+        gh:PullRequest ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "title" ;
+    gh:required true .
+
+gh:topics a owl:DatatypeProperty ;
+    rdfs:label "topics" ;
+    rdfs:domain gh:Repository ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "topics" .
+
+gh:totalCount a owl:DatatypeProperty ;
+    rdfs:label "totalCount" ;
+    rdfs:domain gh:ReactionRollup ;
+    rdfs:range xsd:integer ;
+    gh:openApiPropertyName "total_count" ;
+    gh:required true .
+
+gh:totalPrivateRepos a owl:DatatypeProperty ;
+    rdfs:label "totalPrivateRepos" ;
+    rdfs:domain gh:Organization ;
+    rdfs:range xsd:integer ;
+    gh:openApiPropertyName "total_private_repos" .
+
+gh:twitterUsername a owl:DatatypeProperty ;
+    rdfs:label "twitterUsername" ;
+    rdfs:domain gh:Organization ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "twitter_username" .
+
+gh:twoFactorRequirementEnabled a owl:DatatypeProperty ;
+    rdfs:label "twoFactorRequirementEnabled" ;
+    rdfs:domain gh:Organization ;
+    rdfs:range xsd:boolean ;
+    gh:openApiPropertyName "two_factor_requirement_enabled" .
+
+gh:type a owl:DatatypeProperty ;
+    rdfs:label "type" ;
+    rdfs:comment "The ownership type of the team",
+        "The type of advisory." ;
+    rdfs:domain gh:GlobalAdvisory,
+        gh:Organization,
+        gh:Team,
+        gh:TeamFull,
+        gh:User ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "type" ;
+    gh:required true .
+
+gh:updatedAt a owl:DatatypeProperty ;
+    rdfs:label "updatedAt" ;
+    rdfs:comment "The date and time of when the advisory was last updated, in ISO 8601 format." ;
+    rdfs:domain gh:Discussion,
+        gh:GlobalAdvisory,
+        gh:Issue,
+        gh:IssueComment,
+        gh:Milestone,
+        gh:Organization,
+        gh:PullRequest,
+        gh:PullRequestReviewComment,
+        gh:Release,
+        gh:ReleaseAsset,
+        gh:Repository,
+        gh:RepositoryAdvisory,
+        gh:TeamFull ;
+    rdfs:range xsd:dateTime ;
+    gh:openApiPropertyName "updated_at" ;
+    gh:required true .
+
+gh:uploader a owl:ObjectProperty ;
+    rdfs:label "uploader" ;
+    rdfs:domain gh:ReleaseAsset ;
+    rdfs:range gh:User ;
+    gh:openApiPropertyName "uploader" .
+
+gh:user a owl:ObjectProperty ;
+    rdfs:label "user" ;
+    rdfs:domain gh:Issue,
+        gh:IssueComment,
+        gh:OrgMembership,
+        gh:PullRequest,
+        gh:PullRequestReview,
+        gh:PullRequestReviewComment ;
+    rdfs:range gh:User ;
+    gh:openApiPropertyName "user" .
+
+gh:userViewType a owl:DatatypeProperty ;
+    rdfs:label "userViewType" ;
+    rdfs:domain gh:User ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "user_view_type" .
+
+gh:validity a owl:DatatypeProperty ;
+    rdfs:label "validity" ;
+    rdfs:comment "The token status as of the latest validity check." ;
+    rdfs:domain gh:SecretScanningAlert ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "validity" .
+
+gh:visibility a owl:DatatypeProperty ;
+    rdfs:label "visibility" ;
+    rdfs:comment "The repository visibility: public, private, or internal." ;
+    rdfs:domain gh:Repository ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "visibility" .
+
+gh:vulnerabilities a owl:ObjectProperty ;
+    rdfs:label "vulnerabilities" ;
+    rdfs:comment "The products and respective version ranges affected by the advisory." ;
+    rdfs:domain gh:GlobalAdvisory ;
+    rdfs:range gh:Vulnerability ;
+    gh:openApiPropertyName "vulnerabilities" .
+
+gh:vulnerableFunctions a owl:DatatypeProperty ;
+    rdfs:label "vulnerableFunctions" ;
+    rdfs:comment "The functions in the package that are affected by the vulnerability." ;
+    rdfs:domain gh:Vulnerability ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "vulnerable_functions" .
+
+gh:vulnerableVersionRange a owl:DatatypeProperty ;
+    rdfs:label "vulnerableVersionRange" ;
+    rdfs:comment "The range of the package versions affected by the vulnerability." ;
+    rdfs:domain gh:Vulnerability ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "vulnerable_version_range" ;
+    gh:required true .
+
+gh:watchers a owl:DatatypeProperty ;
+    rdfs:label "watchers" ;
+    rdfs:domain gh:Repository ;
+    rdfs:range xsd:integer ;
+    gh:openApiPropertyName "watchers" ;
+    gh:required true .
+
+gh:watchersCount a owl:DatatypeProperty ;
+    rdfs:label "watchersCount" ;
+    rdfs:domain gh:Repository ;
+    rdfs:range xsd:integer ;
+    gh:openApiPropertyName "watchers_count" ;
+    gh:required true .
+
+gh:webCommitSignoffRequired a owl:DatatypeProperty ;
+    rdfs:label "webCommitSignoffRequired" ;
+    rdfs:comment "Whether to require contributors to sign off on web-based commits" ;
+    rdfs:domain gh:Organization,
+        gh:Repository ;
+    rdfs:range xsd:boolean ;
+    gh:openApiPropertyName "web_commit_signoff_required" .
+
+gh:withdrawnAt a owl:DatatypeProperty ;
+    rdfs:label "withdrawnAt" ;
+    rdfs:comment "The date and time of when the advisory was withdrawn, in ISO 8601 format." ;
+    rdfs:domain gh:GlobalAdvisory,
+        gh:RepositoryAdvisory ;
+    rdfs:range xsd:dateTime ;
+    gh:openApiPropertyName "withdrawn_at" ;
+    gh:required true .
+
+gh:CodeScanningAlert a owl:Class ;
+    rdfs:label "CodeScanningAlert" ;
+    gh:openApiSchemaName "code-scanning-alert" .
+
+gh:Vulnerability a owl:Class ;
+    rdfs:label "Vulnerability" ;
+    rdfs:comment "A vulnerability describing the product and its affected versions within a GitHub Security Advisory." ;
+    gh:openApiSchemaName "vulnerability" .
+
+gh:DependabotAlert a owl:Class ;
+    rdfs:label "DependabotAlert" ;
+    rdfs:comment "A Dependabot alert." ;
+    gh:openApiSchemaName "dependabot-alert" .
+
+gh:DependabotAlertWithRepository a owl:Class ;
+    rdfs:label "DependabotAlertWithRepository" ;
+    rdfs:comment "A Dependabot alert." ;
+    gh:openApiSchemaName "dependabot-alert-with-repository" .
+
+gh:License a owl:Class ;
+    rdfs:label "License" ;
+    rdfs:comment "License Simple" ;
+    gh:openApiSchemaName "license-simple" .
+
+gh:Label a owl:Class ;
+    rdfs:label "Label" ;
+    rdfs:comment "Color-coded labels help you categorize and filter your issues (just like labels in Gmail)." ;
+    gh:openApiSchemaName "label" .
+
+gh:OrgMembership a owl:Class ;
+    rdfs:label "OrgMembership" ;
+    rdfs:comment "Org Membership" ;
+    gh:openApiSchemaName "org-membership" .
+
+gh:AuthorAssociation a owl:Class ;
+    rdfs:label "AuthorAssociation" ;
+    rdfs:comment "How the author is associated with the repository." .
+
+gh:PullRequestReview a owl:Class ;
+    rdfs:label "PullRequestReview" ;
+    rdfs:comment "Pull Request Reviews are reviews on pull requests." ;
+    gh:openApiSchemaName "pull-request-review" .
+
+gh:IssueComment a owl:Class ;
+    rdfs:label "IssueComment" ;
+    rdfs:comment "Comments provide a way for people to collaborate on an issue." ;
+    gh:openApiSchemaName "issue-comment" .
+
+gh:ReactionRollup a owl:Class ;
+    rdfs:label "ReactionRollup" ;
+    gh:openApiSchemaName "reaction-rollup" .
+
+gh:Team a owl:Class ;
+    rdfs:label "Team" ;
+    rdfs:comment "Groups of organization members that gives permissions on specified repositories." ;
+    gh:openApiSchemaName "team" .
+
+gh:ReleaseAsset a owl:Class ;
+    rdfs:label "ReleaseAsset" ;
+    rdfs:comment "Data related to a release." ;
+    gh:openApiSchemaName "release-asset" .
+
+gh:SecurityAdvisoryEcosystem a owl:Class ;
+    rdfs:label "SecurityAdvisoryEcosystem" ;
+    rdfs:comment "The package's language or package management ecosystem." .
+
+gh:Milestone a owl:Class ;
+    rdfs:label "Milestone" ;
+    rdfs:comment "A collection of related issues and pull requests." ;
+    gh:openApiSchemaName "milestone" .
+
+gh:TeamFull a owl:Class ;
+    rdfs:label "TeamFull" ;
+    rdfs:comment "Groups of organization members that gives permissions on specified repositories." ;
+    gh:openApiSchemaName "team-full" .
+
+gh:Discussion a owl:Class ;
+    rdfs:label "Discussion" ;
+    rdfs:comment "A Discussion in a repository." ;
+    gh:openApiSchemaName "discussion" .
+
+gh:GlobalAdvisory a owl:Class ;
+    rdfs:label "GlobalAdvisory" ;
+    rdfs:comment "A GitHub Security Advisory." ;
+    gh:openApiSchemaName "global-advisory" .
+
+gh:Release a owl:Class ;
+    rdfs:label "Release" ;
+    rdfs:comment "A release." ;
+    gh:openApiSchemaName "release" .
+
+gh:RepositoryAdvisory a owl:Class ;
+    rdfs:label "RepositoryAdvisory" ;
+    rdfs:comment "A repository security advisory." ;
+    gh:openApiSchemaName "repository-advisory" .
+
+gh:SecretScanningAlert a owl:Class ;
+    rdfs:label "SecretScanningAlert" ;
+    gh:openApiSchemaName "secret-scanning-alert" .
+
+gh:PullRequestReviewComment a owl:Class ;
+    rdfs:label "PullRequestReviewComment" ;
+    rdfs:comment "Pull Request Review Comments are comments on a portion of the Pull Request's diff." ;
+    gh:openApiSchemaName "pull-request-review-comment" .
+
+gh:Issue a owl:Class ;
+    rdfs:label "Issue" ;
+    rdfs:comment "Issues are a great way to keep track of tasks, enhancements, and bugs for your projects." ;
+    gh:openApiSchemaName "issue" .
+
+gh:User a owl:Class ;
+    rdfs:label "User" ;
+    rdfs:comment "A GitHub user." ;
+    gh:openApiSchemaName "simple-user" .
+
+gh:PullRequest a owl:Class ;
+    rdfs:label "PullRequest" ;
+    rdfs:comment "Pull requests let you tell others about changes you've pushed to a repository on GitHub. Once a pull request is sent, interested parties can review the set of changes, discuss potential modifications, and even push follow-up commits if necessary." ;
+    gh:openApiSchemaName "pull-request" .
+
+gh:Repository a owl:Class ;
+    rdfs:label "Repository" ;
+    rdfs:comment "A repository on GitHub." ;
+    gh:openApiSchemaName "repository" .
+
+gh:Organization a owl:Class ;
+    rdfs:label "Organization" ;
+    rdfs:comment "Organization Full" ;
+    gh:openApiSchemaName "organization-full" .
+

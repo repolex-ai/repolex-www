@@ -1,0 +1,210 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix scheme: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/scheme/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+scheme:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+scheme:block_comment a owl:Class ;
+    rdfs:label "block_comment" ;
+    rdfs:isDefinedBy scheme: ;
+    rdfs:subClassOf ast:Node ;
+    scheme:isSupertype true ;
+    scheme:nodeTypeId 38 .
+
+scheme:boolean a owl:Class ;
+    rdfs:label "boolean" ;
+    rdfs:isDefinedBy scheme: ;
+    rdfs:subClassOf ast:Node ;
+    scheme:isSupertype true ;
+    scheme:nodeTypeId 9 .
+
+scheme:byte_vector a owl:Class ;
+    rdfs:label "byte_vector" ;
+    rdfs:isDefinedBy scheme: ;
+    rdfs:subClassOf ast:Node ;
+    scheme:isSupertype true ;
+    scheme:nodeTypeId 51 .
+
+scheme:character a owl:Class ;
+    rdfs:label "character" ;
+    rdfs:isDefinedBy scheme: ;
+    rdfs:subClassOf ast:Node ;
+    scheme:isSupertype true ;
+    scheme:nodeTypeId 11 .
+
+scheme:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy scheme: ;
+    rdfs:subClassOf ast:Node ;
+    scheme:isSupertype true ;
+    scheme:nodeTypeId 36 .
+
+scheme:directive a owl:Class ;
+    rdfs:label "directive" ;
+    rdfs:isDefinedBy scheme: ;
+    rdfs:subClassOf ast:Node ;
+    scheme:isSupertype true ;
+    scheme:nodeTypeId 37 .
+
+scheme:escape_sequence a owl:Class ;
+    rdfs:label "escape_sequence" ;
+    rdfs:isDefinedBy scheme: ;
+    rdfs:subClassOf ast:Node ;
+    scheme:isSupertype true ;
+    scheme:nodeTypeId 14 .
+
+scheme:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+scheme:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+scheme:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+scheme:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+scheme:keyword a owl:Class ;
+    rdfs:label "keyword" ;
+    rdfs:isDefinedBy scheme: ;
+    rdfs:subClassOf ast:Node ;
+    scheme:isSupertype true ;
+    scheme:nodeTypeId 16 .
+
+scheme:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+scheme:list a owl:Class ;
+    rdfs:label "list" ;
+    rdfs:isDefinedBy scheme: ;
+    rdfs:subClassOf ast:Node ;
+    scheme:isSupertype true ;
+    scheme:nodeTypeId 41 .
+
+scheme:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+scheme:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+scheme:number a owl:Class ;
+    rdfs:label "number" ;
+    rdfs:isDefinedBy scheme: ;
+    rdfs:subClassOf ast:Node ;
+    scheme:isSupertype true ;
+    scheme:nodeTypeId 10 .
+
+scheme:program a owl:Class ;
+    rdfs:label "program" ;
+    rdfs:isDefinedBy scheme: ;
+    rdfs:subClassOf ast:Node ;
+    scheme:isSupertype true ;
+    scheme:nodeTypeId 33 .
+
+scheme:quasiquote a owl:Class ;
+    rdfs:label "quasiquote" ;
+    rdfs:isDefinedBy scheme: ;
+    rdfs:subClassOf ast:Node ;
+    scheme:isSupertype true ;
+    scheme:nodeTypeId 43 .
+
+scheme:quasisyntax a owl:Class ;
+    rdfs:label "quasisyntax" ;
+    rdfs:isDefinedBy scheme: ;
+    rdfs:subClassOf ast:Node ;
+    scheme:isSupertype true ;
+    scheme:nodeTypeId 45 .
+
+scheme:quote a owl:Class ;
+    rdfs:label "quote" ;
+    rdfs:isDefinedBy scheme: ;
+    rdfs:subClassOf ast:Node ;
+    scheme:isSupertype true ;
+    scheme:nodeTypeId 42 .
+
+scheme:string a owl:Class ;
+    rdfs:label "string" ;
+    rdfs:isDefinedBy scheme: ;
+    rdfs:subClassOf ast:Node ;
+    scheme:isSupertype true ;
+    scheme:nodeTypeId 40 .
+
+scheme:symbol a owl:Class ;
+    rdfs:label "symbol" ;
+    rdfs:isDefinedBy scheme: ;
+    rdfs:subClassOf ast:Node ;
+    scheme:isSupertype true ;
+    scheme:nodeTypeId 15 .
+
+scheme:syntax a owl:Class ;
+    rdfs:label "syntax" ;
+    rdfs:isDefinedBy scheme: ;
+    rdfs:subClassOf ast:Node ;
+    scheme:isSupertype true ;
+    scheme:nodeTypeId 44 .
+
+scheme:unquote a owl:Class ;
+    rdfs:label "unquote" ;
+    rdfs:isDefinedBy scheme: ;
+    rdfs:subClassOf ast:Node ;
+    scheme:isSupertype true ;
+    scheme:nodeTypeId 46 .
+
+scheme:unquote_splicing a owl:Class ;
+    rdfs:label "unquote_splicing" ;
+    rdfs:isDefinedBy scheme: ;
+    rdfs:subClassOf ast:Node ;
+    scheme:isSupertype true ;
+    scheme:nodeTypeId 47 .
+
+scheme:unsyntax a owl:Class ;
+    rdfs:label "unsyntax" ;
+    rdfs:isDefinedBy scheme: ;
+    rdfs:subClassOf ast:Node ;
+    scheme:isSupertype true ;
+    scheme:nodeTypeId 48 .
+
+scheme:unsyntax_splicing a owl:Class ;
+    rdfs:label "unsyntax_splicing" ;
+    rdfs:isDefinedBy scheme: ;
+    rdfs:subClassOf ast:Node ;
+    scheme:isSupertype true ;
+    scheme:nodeTypeId 49 .
+
+scheme:vector a owl:Class ;
+    rdfs:label "vector" ;
+    rdfs:isDefinedBy scheme: ;
+    rdfs:subClassOf ast:Node ;
+    scheme:isSupertype true ;
+    scheme:nodeTypeId 50 .
+
+scheme: a owl:Ontology ;
+    rdfs:label "Scheme Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for scheme" ;
+    owl:versionInfo "v0.25" ;
+    scheme:abiVersion 14 ;
+    scheme:fieldCount 0 ;
+    scheme:languageName "None" ;
+    scheme:nodeKindCount 56 .
+

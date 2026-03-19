@@ -1,0 +1,671 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix typst: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/typst/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+typst:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+typst:add a owl:Class ;
+    rdfs:label "add" ;
+    rdfs:isDefinedBy typst: ;
+    rdfs:subClassOf ast:Node ;
+    typst:isSupertype true ;
+    typst:nodeTypeId 182 .
+
+typst:align a owl:Class ;
+    rdfs:label "align" ;
+    rdfs:isDefinedBy typst: ;
+    rdfs:subClassOf ast:Node ;
+    typst:isSupertype true ;
+    typst:nodeTypeId 144 .
+
+typst:and a owl:Class ;
+    rdfs:label "and" ;
+    rdfs:isDefinedBy typst: ;
+    rdfs:subClassOf ast:Node ;
+    typst:isSupertype true ;
+    typst:nodeTypeId 179 .
+
+typst:apply a owl:Class ;
+    rdfs:label "apply" ;
+    rdfs:isDefinedBy typst: ;
+    rdfs:subClassOf ast:Node ;
+    typst:isSupertype true ;
+    typst:nodeTypeId 160 .
+
+typst:as a owl:Class ;
+    rdfs:label "as" ;
+    rdfs:isDefinedBy typst: ;
+    rdfs:subClassOf ast:Node ;
+    typst:isSupertype true ;
+    typst:nodeTypeId 197 .
+
+typst:assign a owl:Class ;
+    rdfs:label "assign" ;
+    rdfs:isDefinedBy typst: ;
+    rdfs:subClassOf ast:Node ;
+    typst:isSupertype true ;
+    typst:nodeTypeId 175 .
+
+typst:attach a owl:Class ;
+    rdfs:label "attach" ;
+    rdfs:isDefinedBy typst: ;
+    rdfs:subClassOf ast:Node ;
+    typst:isSupertype true ;
+    typst:nodeTypeId 154,
+        155 .
+
+typst:auto a owl:Class ;
+    rdfs:label "auto" ;
+    rdfs:isDefinedBy typst: ;
+    rdfs:subClassOf ast:Node ;
+    typst:isSupertype true ;
+    typst:nodeTypeId 72 .
+
+typst:binding a owl:Class ;
+    rdfs:label "binding" ;
+    rdfs:isDefinedBy typst: ;
+    rdfs:subClassOf ast:Node ;
+    typst:isSupertype true ;
+    typst:nodeTypeId 200 .
+
+typst:blob a owl:Class ;
+    rdfs:label "blob" ;
+    rdfs:isDefinedBy typst: ;
+    rdfs:subClassOf ast:Node ;
+    typst:isSupertype true ;
+    typst:nodeTypeId 104,
+        107 .
+
+typst:block a owl:Class ;
+    rdfs:label "block" ;
+    rdfs:isDefinedBy typst: ;
+    rdfs:subClassOf ast:Node ;
+    typst:isSupertype true ;
+    typst:nodeTypeId 193 .
+
+typst:bool a owl:Class ;
+    rdfs:label "bool" ;
+    rdfs:isDefinedBy typst: ;
+    rdfs:subClassOf ast:Node ;
+    typst:isSupertype true ;
+    typst:nodeTypeId 169 .
+
+typst:branch a owl:Class ;
+    rdfs:label "branch" ;
+    rdfs:isDefinedBy typst: ;
+    rdfs:subClassOf ast:Node ;
+    typst:isSupertype true ;
+    typst:nodeTypeId 194 .
+
+typst:call a owl:Class ;
+    rdfs:label "call" ;
+    rdfs:isDefinedBy typst: ;
+    rdfs:subClassOf ast:Node ;
+    typst:isSupertype true ;
+    typst:nodeTypeId 157,
+        187 .
+
+typst:cmp a owl:Class ;
+    rdfs:label "cmp" ;
+    rdfs:isDefinedBy typst: ;
+    rdfs:subClassOf ast:Node ;
+    typst:isSupertype true ;
+    typst:nodeTypeId 180 .
+
+typst:code a owl:Class ;
+    rdfs:label "code" ;
+    rdfs:isDefinedBy typst: ;
+    rdfs:subClassOf ast:Node ;
+    typst:isSupertype true ;
+    typst:nodeTypeId 163 .
+
+typst:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy typst: ;
+    rdfs:subClassOf ast:Node ;
+    typst:isSupertype true ;
+    typst:nodeTypeId 112 .
+
+typst:condition a owl:DatatypeProperty ;
+    rdfs:label "condition (literal)" ;
+    rdfs:comment "Literal value for condition field when it contains a terminal node" ;
+    typst:fieldId 1 ;
+    typst:isTerminalField true .
+
+typst:content a owl:Class ;
+    rdfs:label "content" ;
+    rdfs:isDefinedBy typst: ;
+    rdfs:subClassOf ast:Node ;
+    typst:isSupertype true ;
+    typst:nodeTypeId 134,
+        191 .
+
+typst:context a owl:Class ;
+    rdfs:label "context" ;
+    rdfs:isDefinedBy typst: ;
+    rdfs:subClassOf ast:Node ;
+    typst:isSupertype true ;
+    typst:nodeTypeId 173 .
+
+typst:div a owl:Class ;
+    rdfs:label "div" ;
+    rdfs:isDefinedBy typst: ;
+    rdfs:subClassOf ast:Node ;
+    typst:isSupertype true ;
+    typst:nodeTypeId 185 .
+
+typst:elude a owl:Class ;
+    rdfs:label "elude" ;
+    rdfs:isDefinedBy typst: ;
+    rdfs:subClassOf ast:Node ;
+    typst:isSupertype true ;
+    typst:nodeTypeId 174 .
+
+typst:emph a owl:Class ;
+    rdfs:label "emph" ;
+    rdfs:isDefinedBy typst: ;
+    rdfs:subClassOf ast:Node ;
+    typst:isSupertype true ;
+    typst:nodeTypeId 138 .
+
+typst:escape a owl:Class ;
+    rdfs:label "escape" ;
+    rdfs:isDefinedBy typst: ;
+    rdfs:subClassOf ast:Node ;
+    typst:isSupertype true ;
+    typst:nodeTypeId 125 .
+
+typst:fac a owl:Class ;
+    rdfs:label "fac" ;
+    rdfs:isDefinedBy typst: ;
+    rdfs:subClassOf ast:Node ;
+    typst:isSupertype true ;
+    typst:nodeTypeId 152 .
+
+typst:field a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "field",
+        "field (literal)" ;
+    rdfs:comment "Literal value for field field when it contains a terminal node" ;
+    rdfs:isDefinedBy typst: ;
+    rdfs:subClassOf ast:Node ;
+    typst:fieldId 2 ;
+    typst:isSupertype true ;
+    typst:isTerminalField true ;
+    typst:nodeTypeId 156,
+        188 .
+
+typst:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+typst:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+typst:field_condition a owl:ObjectProperty ;
+    rdfs:label "condition (structural)" ;
+    rdfs:comment "Structural reference for condition field when it contains a non-terminal node" ;
+    typst:fieldId 1 .
+
+typst:field_field a owl:ObjectProperty ;
+    rdfs:label "field (structural)" ;
+    rdfs:comment "Structural reference for field field when it contains a non-terminal node" ;
+    typst:fieldId 2 .
+
+typst:field_import a owl:ObjectProperty ;
+    rdfs:label "import (structural)" ;
+    rdfs:comment "Structural reference for import field when it contains a non-terminal node" ;
+    typst:fieldId 3 .
+
+typst:field_item a owl:ObjectProperty ;
+    rdfs:label "item (structural)" ;
+    rdfs:comment "Structural reference for item field when it contains a non-terminal node" ;
+    typst:fieldId 4 .
+
+typst:field_pattern a owl:ObjectProperty ;
+    rdfs:label "pattern (structural)" ;
+    rdfs:comment "Structural reference for pattern field when it contains a non-terminal node" ;
+    typst:fieldId 6 .
+
+typst:field_sub a owl:ObjectProperty ;
+    rdfs:label "sub (structural)" ;
+    rdfs:comment "Structural reference for sub field when it contains a non-terminal node" ;
+    typst:fieldId 7 .
+
+typst:field_sup a owl:ObjectProperty ;
+    rdfs:label "sup (structural)" ;
+    rdfs:comment "Structural reference for sup field when it contains a non-terminal node" ;
+    typst:fieldId 8 .
+
+typst:field_term a owl:ObjectProperty ;
+    rdfs:label "term (structural)" ;
+    rdfs:comment "Structural reference for term field when it contains a non-terminal node" ;
+    typst:fieldId 9 .
+
+typst:field_value a owl:ObjectProperty ;
+    rdfs:label "value (structural)" ;
+    rdfs:comment "Structural reference for value field when it contains a non-terminal node" ;
+    typst:fieldId 10 .
+
+typst:flow a owl:Class ;
+    rdfs:label "flow" ;
+    rdfs:isDefinedBy typst: ;
+    rdfs:subClassOf ast:Node ;
+    typst:isSupertype true ;
+    typst:nodeTypeId 206 .
+
+typst:for a owl:Class ;
+    rdfs:label "for" ;
+    rdfs:isDefinedBy typst: ;
+    rdfs:subClassOf ast:Node ;
+    typst:isSupertype true ;
+    typst:nodeTypeId 202 .
+
+typst:formula a owl:Class ;
+    rdfs:label "formula" ;
+    rdfs:isDefinedBy typst: ;
+    rdfs:subClassOf ast:Node ;
+    typst:isSupertype true ;
+    typst:nodeTypeId 142 .
+
+typst:fraction a owl:Class ;
+    rdfs:label "fraction" ;
+    rdfs:isDefinedBy typst: ;
+    rdfs:subClassOf ast:Node ;
+    typst:isSupertype true ;
+    typst:nodeTypeId 150 .
+
+typst:group a owl:Class ;
+    rdfs:label "group" ;
+    rdfs:isDefinedBy typst: ;
+    rdfs:subClassOf ast:Node ;
+    typst:isSupertype true ;
+    typst:nodeTypeId 192 .
+
+typst:heading a owl:Class ;
+    rdfs:label "heading" ;
+    rdfs:isDefinedBy typst: ;
+    rdfs:subClassOf ast:Node ;
+    typst:isSupertype true ;
+    typst:nodeTypeId 136 .
+
+typst:ident a owl:Class ;
+    rdfs:label "ident" ;
+    rdfs:isDefinedBy typst: ;
+    rdfs:subClassOf ast:Node ;
+    typst:isSupertype true ;
+    typst:nodeTypeId 89,
+        108,
+        167 .
+
+typst:import a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "import",
+        "import (literal)" ;
+    rdfs:comment "Literal value for import field when it contains a terminal node" ;
+    rdfs:isDefinedBy typst: ;
+    rdfs:subClassOf ast:Node ;
+    typst:fieldId 3 ;
+    typst:isSupertype true ;
+    typst:isTerminalField true ;
+    typst:nodeTypeId 198 .
+
+typst:in a owl:Class ;
+    rdfs:label "in" ;
+    rdfs:isDefinedBy typst: ;
+    rdfs:subClassOf ast:Node ;
+    typst:isSupertype true ;
+    typst:nodeTypeId 181 .
+
+typst:include a owl:Class ;
+    rdfs:label "include" ;
+    rdfs:isDefinedBy typst: ;
+    rdfs:subClassOf ast:Node ;
+    typst:isSupertype true ;
+    typst:nodeTypeId 201 .
+
+typst:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+typst:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+typst:item a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "item",
+        "item (literal)" ;
+    rdfs:comment "Literal value for item field when it contains a terminal node" ;
+    rdfs:isDefinedBy typst: ;
+    rdfs:subClassOf ast:Node ;
+    typst:fieldId 4 ;
+    typst:isSupertype true ;
+    typst:isTerminalField true ;
+    typst:nodeTypeId 132 .
+
+typst:label a owl:Class ;
+    rdfs:label "label" ;
+    rdfs:isDefinedBy typst: ;
+    rdfs:subClassOf ast:Node ;
+    typst:isSupertype true ;
+    typst:nodeTypeId 189 .
+
+typst:lambda a owl:Class ;
+    rdfs:label "lambda" ;
+    rdfs:isDefinedBy typst: ;
+    rdfs:subClassOf ast:Node ;
+    typst:isSupertype true ;
+    typst:nodeTypeId 176 .
+
+typst:lang a owl:DatatypeProperty ;
+    rdfs:label "lang (literal)" ;
+    rdfs:comment "Literal value for lang field when it contains a terminal node" ;
+    typst:fieldId 5 ;
+    typst:isTerminalField true .
+
+typst:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+typst:let a owl:Class ;
+    rdfs:label "let" ;
+    rdfs:isDefinedBy typst: ;
+    rdfs:subClassOf ast:Node ;
+    typst:isSupertype true ;
+    typst:nodeTypeId 195 .
+
+typst:letter a owl:Class ;
+    rdfs:label "letter" ;
+    rdfs:isDefinedBy typst: ;
+    rdfs:subClassOf ast:Node ;
+    typst:isSupertype true ;
+    typst:nodeTypeId 88 .
+
+typst:linebreak a owl:Class ;
+    rdfs:label "linebreak" ;
+    rdfs:isDefinedBy typst: ;
+    rdfs:subClassOf ast:Node ;
+    typst:isSupertype true ;
+    typst:nodeTypeId 6 .
+
+typst:math a owl:Class ;
+    rdfs:label "math" ;
+    rdfs:isDefinedBy typst: ;
+    rdfs:subClassOf ast:Node ;
+    typst:isSupertype true ;
+    typst:nodeTypeId 141 .
+
+typst:mul a owl:Class ;
+    rdfs:label "mul" ;
+    rdfs:isDefinedBy typst: ;
+    rdfs:subClassOf ast:Node ;
+    typst:isSupertype true ;
+    typst:nodeTypeId 184 .
+
+typst:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+typst:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+typst:none a owl:Class ;
+    rdfs:label "none" ;
+    rdfs:isDefinedBy typst: ;
+    rdfs:subClassOf ast:Node ;
+    typst:isSupertype true ;
+    typst:nodeTypeId 73 .
+
+typst:not a owl:Class ;
+    rdfs:label "not" ;
+    rdfs:isDefinedBy typst: ;
+    rdfs:subClassOf ast:Node ;
+    typst:isSupertype true ;
+    typst:nodeTypeId 178 .
+
+typst:number a owl:Class ;
+    rdfs:label "number" ;
+    rdfs:isDefinedBy typst: ;
+    rdfs:subClassOf ast:Node ;
+    typst:isSupertype true ;
+    typst:nodeTypeId 18,
+        170 .
+
+typst:or a owl:Class ;
+    rdfs:label "or" ;
+    rdfs:isDefinedBy typst: ;
+    rdfs:subClassOf ast:Node ;
+    typst:isSupertype true ;
+    typst:nodeTypeId 177 .
+
+typst:parbreak a owl:Class ;
+    rdfs:label "parbreak" ;
+    rdfs:isDefinedBy typst: ;
+    rdfs:subClassOf ast:Node ;
+    typst:isSupertype true ;
+    typst:nodeTypeId 2 .
+
+typst:pattern a owl:DatatypeProperty ;
+    rdfs:label "pattern (literal)" ;
+    rdfs:comment "Literal value for pattern field when it contains a terminal node" ;
+    typst:fieldId 6 ;
+    typst:isTerminalField true .
+
+typst:prime a owl:Class ;
+    rdfs:label "prime" ;
+    rdfs:isDefinedBy typst: ;
+    rdfs:subClassOf ast:Node ;
+    typst:isSupertype true ;
+    typst:nodeTypeId 153 .
+
+typst:quote a owl:Class ;
+    rdfs:label "quote" ;
+    rdfs:isDefinedBy typst: ;
+    rdfs:subClassOf ast:Node ;
+    typst:isSupertype true ;
+    typst:nodeTypeId 7 .
+
+typst:raw_blck a owl:Class ;
+    rdfs:label "raw_blck" ;
+    rdfs:isDefinedBy typst: ;
+    rdfs:subClassOf ast:Node ;
+    typst:isSupertype true ;
+    typst:nodeTypeId 139 .
+
+typst:raw_span a owl:Class ;
+    rdfs:label "raw_span" ;
+    rdfs:isDefinedBy typst: ;
+    rdfs:subClassOf ast:Node ;
+    typst:isSupertype true ;
+    typst:nodeTypeId 140 .
+
+typst:ref a owl:Class ;
+    rdfs:label "ref" ;
+    rdfs:isDefinedBy typst: ;
+    rdfs:subClassOf ast:Node ;
+    typst:isSupertype true ;
+    typst:nodeTypeId 190 .
+
+typst:return a owl:Class ;
+    rdfs:label "return" ;
+    rdfs:isDefinedBy typst: ;
+    rdfs:subClassOf ast:Node ;
+    typst:isSupertype true ;
+    typst:nodeTypeId 205 .
+
+typst:root a owl:Class ;
+    rdfs:label "root" ;
+    rdfs:isDefinedBy typst: ;
+    rdfs:subClassOf ast:Node ;
+    typst:isSupertype true ;
+    typst:nodeTypeId 151 .
+
+typst:section a owl:Class ;
+    rdfs:label "section" ;
+    rdfs:isDefinedBy typst: ;
+    rdfs:subClassOf ast:Node ;
+    typst:isSupertype true ;
+    typst:nodeTypeId 135 .
+
+typst:set a owl:Class ;
+    rdfs:label "set" ;
+    rdfs:isDefinedBy typst: ;
+    rdfs:subClassOf ast:Node ;
+    typst:isSupertype true ;
+    typst:nodeTypeId 196 .
+
+typst:shorthand a owl:Class ;
+    rdfs:label "shorthand" ;
+    rdfs:isDefinedBy typst: ;
+    rdfs:subClassOf ast:Node ;
+    typst:isSupertype true ;
+    typst:nodeTypeId 11,
+        161 .
+
+typst:show a owl:Class ;
+    rdfs:label "show" ;
+    rdfs:isDefinedBy typst: ;
+    rdfs:subClassOf ast:Node ;
+    typst:isSupertype true ;
+    typst:nodeTypeId 204 .
+
+typst:sign a owl:Class ;
+    rdfs:label "sign" ;
+    rdfs:isDefinedBy typst: ;
+    rdfs:subClassOf ast:Node ;
+    typst:isSupertype true ;
+    typst:nodeTypeId 186 .
+
+typst:source_file a owl:Class ;
+    rdfs:label "source_file" ;
+    rdfs:isDefinedBy typst: ;
+    rdfs:subClassOf ast:Node ;
+    typst:isSupertype true ;
+    typst:nodeTypeId 123 .
+
+typst:string a owl:Class ;
+    rdfs:label "string" ;
+    rdfs:isDefinedBy typst: ;
+    rdfs:subClassOf ast:Node ;
+    typst:isSupertype true ;
+    typst:nodeTypeId 171 .
+
+typst:strong a owl:Class ;
+    rdfs:label "strong" ;
+    rdfs:isDefinedBy typst: ;
+    rdfs:subClassOf ast:Node ;
+    typst:isSupertype true ;
+    typst:nodeTypeId 137 .
+
+typst:sub a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "sub",
+        "sub (literal)" ;
+    rdfs:comment "Literal value for sub field when it contains a terminal node" ;
+    rdfs:isDefinedBy typst: ;
+    rdfs:subClassOf ast:Node ;
+    typst:fieldId 7 ;
+    typst:isSupertype true ;
+    typst:isTerminalField true ;
+    typst:nodeTypeId 183 .
+
+typst:sup a owl:DatatypeProperty ;
+    rdfs:label "sup (literal)" ;
+    rdfs:comment "Literal value for sup field when it contains a terminal node" ;
+    typst:fieldId 8 ;
+    typst:isTerminalField true .
+
+typst:symbol a owl:Class ;
+    rdfs:label "symbol" ;
+    rdfs:isDefinedBy typst: ;
+    rdfs:subClassOf ast:Node ;
+    typst:isSupertype true ;
+    typst:nodeTypeId 162 .
+
+typst:tagged a owl:Class ;
+    rdfs:label "tagged" ;
+    rdfs:isDefinedBy typst: ;
+    rdfs:subClassOf ast:Node ;
+    typst:isSupertype true ;
+    typst:nodeTypeId 159,
+        172 .
+
+typst:term a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "term",
+        "term (literal)" ;
+    rdfs:comment "Literal value for term field when it contains a terminal node" ;
+    rdfs:isDefinedBy typst: ;
+    rdfs:subClassOf ast:Node ;
+    typst:fieldId 9 ;
+    typst:isSupertype true ;
+    typst:isTerminalField true ;
+    typst:nodeTypeId 133 .
+
+typst:text a owl:Class ;
+    rdfs:label "text" ;
+    rdfs:isDefinedBy typst: ;
+    rdfs:subClassOf ast:Node ;
+    typst:isSupertype true ;
+    typst:nodeTypeId 82,
+        130 .
+
+typst:unit a owl:Class ;
+    rdfs:label "unit" ;
+    rdfs:isDefinedBy typst: ;
+    rdfs:subClassOf ast:Node ;
+    typst:isSupertype true ;
+    typst:nodeTypeId 168 .
+
+typst:url a owl:Class ;
+    rdfs:label "url" ;
+    rdfs:isDefinedBy typst: ;
+    rdfs:subClassOf ast:Node ;
+    typst:isSupertype true ;
+    typst:nodeTypeId 126 .
+
+typst:value a owl:DatatypeProperty ;
+    rdfs:label "value (literal)" ;
+    rdfs:comment "Literal value for value field when it contains a terminal node" ;
+    typst:fieldId 10 ;
+    typst:isTerminalField true .
+
+typst:while a owl:Class ;
+    rdfs:label "while" ;
+    rdfs:isDefinedBy typst: ;
+    rdfs:subClassOf ast:Node ;
+    typst:isSupertype true ;
+    typst:nodeTypeId 203 .
+
+typst:wildcard a owl:Class ;
+    rdfs:label "wildcard" ;
+    rdfs:isDefinedBy typst: ;
+    rdfs:subClassOf ast:Node ;
+    typst:isSupertype true ;
+    typst:nodeTypeId 219 .
+
+typst: a owl:Ontology ;
+    rdfs:label "Typst Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for typst" ;
+    owl:versionInfo "v0.25" ;
+    typst:abiVersion 14 ;
+    typst:fieldCount 10 ;
+    typst:languageName "None" ;
+    typst:nodeKindCount 220 .
+

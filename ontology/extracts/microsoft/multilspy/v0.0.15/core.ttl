@@ -1,0 +1,517 @@
+@prefix lsp: <https://repolex.ai/ontology/extracts/microsoft/multilspy/v0.0.15/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+lsp: a owl:Ontology ;
+    rdfs:label "multilspy Core Ontology" ;
+    rdfs:comment "Ontology for the types produced by multilspy - a language-agnostic LSP client. Covers all 11 supported language servers (Python, Java, Rust, TypeScript, JavaScript, Go, Ruby, C#, Kotlin, Dart, C++). Types are derived from multilspy's multilspy_types.py by introspection. Upstream spec: LSP v3.17.0 (microsoft.github.io/language-server-protocol)." ;
+    rdfs:seeAlso "https://microsoft.github.io/language-server-protocol/specifications/lsp/3.17/specification/" ;
+    owl:versionInfo "v0.0.15" .
+
+lsp:CompletionItemKind-Class a lsp:CompletionItemKind ;
+    rdfs:label "Class" ;
+    lsp:completionItemKindValue 7 .
+
+lsp:CompletionItemKind-Color a lsp:CompletionItemKind ;
+    rdfs:label "Color" ;
+    lsp:completionItemKindValue 16 .
+
+lsp:CompletionItemKind-Constant a lsp:CompletionItemKind ;
+    rdfs:label "Constant" ;
+    lsp:completionItemKindValue 21 .
+
+lsp:CompletionItemKind-Constructor a lsp:CompletionItemKind ;
+    rdfs:label "Constructor" ;
+    lsp:completionItemKindValue 4 .
+
+lsp:CompletionItemKind-Enum a lsp:CompletionItemKind ;
+    rdfs:label "Enum" ;
+    lsp:completionItemKindValue 13 .
+
+lsp:CompletionItemKind-EnumMember a lsp:CompletionItemKind ;
+    rdfs:label "EnumMember" ;
+    lsp:completionItemKindValue 20 .
+
+lsp:CompletionItemKind-Event a lsp:CompletionItemKind ;
+    rdfs:label "Event" ;
+    lsp:completionItemKindValue 23 .
+
+lsp:CompletionItemKind-Field a lsp:CompletionItemKind ;
+    rdfs:label "Field" ;
+    lsp:completionItemKindValue 5 .
+
+lsp:CompletionItemKind-File a lsp:CompletionItemKind ;
+    rdfs:label "File" ;
+    lsp:completionItemKindValue 17 .
+
+lsp:CompletionItemKind-Folder a lsp:CompletionItemKind ;
+    rdfs:label "Folder" ;
+    lsp:completionItemKindValue 19 .
+
+lsp:CompletionItemKind-Function a lsp:CompletionItemKind ;
+    rdfs:label "Function" ;
+    lsp:completionItemKindValue 3 .
+
+lsp:CompletionItemKind-Interface a lsp:CompletionItemKind ;
+    rdfs:label "Interface" ;
+    lsp:completionItemKindValue 8 .
+
+lsp:CompletionItemKind-Keyword a lsp:CompletionItemKind ;
+    rdfs:label "Keyword" ;
+    lsp:completionItemKindValue 14 .
+
+lsp:CompletionItemKind-Method a lsp:CompletionItemKind ;
+    rdfs:label "Method" ;
+    lsp:completionItemKindValue 2 .
+
+lsp:CompletionItemKind-Module a lsp:CompletionItemKind ;
+    rdfs:label "Module" ;
+    lsp:completionItemKindValue 9 .
+
+lsp:CompletionItemKind-Operator a lsp:CompletionItemKind ;
+    rdfs:label "Operator" ;
+    lsp:completionItemKindValue 24 .
+
+lsp:CompletionItemKind-Property a lsp:CompletionItemKind ;
+    rdfs:label "Property" ;
+    lsp:completionItemKindValue 10 .
+
+lsp:CompletionItemKind-Reference a lsp:CompletionItemKind ;
+    rdfs:label "Reference" ;
+    lsp:completionItemKindValue 18 .
+
+lsp:CompletionItemKind-Snippet a lsp:CompletionItemKind ;
+    rdfs:label "Snippet" ;
+    lsp:completionItemKindValue 15 .
+
+lsp:CompletionItemKind-Struct a lsp:CompletionItemKind ;
+    rdfs:label "Struct" ;
+    lsp:completionItemKindValue 22 .
+
+lsp:CompletionItemKind-Text a lsp:CompletionItemKind ;
+    rdfs:label "Text" ;
+    lsp:completionItemKindValue 1 .
+
+lsp:CompletionItemKind-TypeParameter a lsp:CompletionItemKind ;
+    rdfs:label "TypeParameter" ;
+    lsp:completionItemKindValue 25 .
+
+lsp:CompletionItemKind-Unit a lsp:CompletionItemKind ;
+    rdfs:label "Unit" ;
+    lsp:completionItemKindValue 11 .
+
+lsp:CompletionItemKind-Value a lsp:CompletionItemKind ;
+    rdfs:label "Value" ;
+    lsp:completionItemKindValue 12 .
+
+lsp:CompletionItemKind-Variable a lsp:CompletionItemKind ;
+    rdfs:label "Variable" ;
+    lsp:completionItemKindValue 6 .
+
+lsp:CompletionsRequest a owl:Class ;
+    rdfs:label "CompletionsRequest" ;
+    rdfs:comment "A textDocument/completion request. Returns completion suggestions at the given position. Corresponds to SyncLanguageServer.request_completions()." ;
+    rdfs:subClassOf lsp:LspRequest .
+
+lsp:DefinitionRequest a owl:Class ;
+    rdfs:label "DefinitionRequest" ;
+    rdfs:comment "A textDocument/definition request. Returns the location(s) where the symbol at the given position is defined. Resolves imports and cross-file references. Corresponds to SyncLanguageServer.request_definition()." ;
+    rdfs:subClassOf lsp:LspRequest .
+
+lsp:DocumentSymbolsRequest a owl:Class ;
+    rdfs:label "DocumentSymbolsRequest" ;
+    rdfs:comment "A textDocument/documentSymbol request. Returns all symbols (classes, functions, variables, imports) defined in a file. Corresponds to SyncLanguageServer.request_document_symbols()." ;
+    rdfs:subClassOf lsp:LspRequest .
+
+lsp:HoverRequest a owl:Class ;
+    rdfs:label "HoverRequest" ;
+    rdfs:comment "A textDocument/hover request. Returns type signature and documentation for the symbol at the given position. Corresponds to SyncLanguageServer.request_hover()." ;
+    rdfs:subClassOf lsp:LspRequest .
+
+lsp:MarkupKind-Markdown a lsp:MarkupKind ;
+    rdfs:label "Markdown" ;
+    lsp:markupKindValue "markdown" .
+
+lsp:MarkupKind-PlainText a lsp:MarkupKind ;
+    rdfs:label "PlainText" ;
+    lsp:markupKindValue "plaintext" .
+
+lsp:ReferencesRequest a owl:Class ;
+    rdfs:label "ReferencesRequest" ;
+    rdfs:comment "A textDocument/references request. Returns all locations in the workspace that reference the symbol at the given position. Corresponds to SyncLanguageServer.request_references()." ;
+    rdfs:subClassOf lsp:LspRequest .
+
+lsp:SymbolKind-Array a lsp:SymbolKind ;
+    rdfs:label "Array" ;
+    lsp:symbolKindValue 18 .
+
+lsp:SymbolKind-Boolean a lsp:SymbolKind ;
+    rdfs:label "Boolean" ;
+    lsp:symbolKindValue 17 .
+
+lsp:SymbolKind-Class a lsp:SymbolKind ;
+    rdfs:label "Class" ;
+    lsp:symbolKindValue 5 .
+
+lsp:SymbolKind-Constant a lsp:SymbolKind ;
+    rdfs:label "Constant" ;
+    lsp:symbolKindValue 14 .
+
+lsp:SymbolKind-Constructor a lsp:SymbolKind ;
+    rdfs:label "Constructor" ;
+    lsp:symbolKindValue 9 .
+
+lsp:SymbolKind-Enum a lsp:SymbolKind ;
+    rdfs:label "Enum" ;
+    lsp:symbolKindValue 10 .
+
+lsp:SymbolKind-EnumMember a lsp:SymbolKind ;
+    rdfs:label "EnumMember" ;
+    lsp:symbolKindValue 22 .
+
+lsp:SymbolKind-Event a lsp:SymbolKind ;
+    rdfs:label "Event" ;
+    lsp:symbolKindValue 24 .
+
+lsp:SymbolKind-Field a lsp:SymbolKind ;
+    rdfs:label "Field" ;
+    lsp:symbolKindValue 8 .
+
+lsp:SymbolKind-File a lsp:SymbolKind ;
+    rdfs:label "File" ;
+    lsp:symbolKindValue 1 .
+
+lsp:SymbolKind-Function a lsp:SymbolKind ;
+    rdfs:label "Function" ;
+    lsp:symbolKindValue 12 .
+
+lsp:SymbolKind-Interface a lsp:SymbolKind ;
+    rdfs:label "Interface" ;
+    lsp:symbolKindValue 11 .
+
+lsp:SymbolKind-Key a lsp:SymbolKind ;
+    rdfs:label "Key" ;
+    lsp:symbolKindValue 20 .
+
+lsp:SymbolKind-Method a lsp:SymbolKind ;
+    rdfs:label "Method" ;
+    lsp:symbolKindValue 6 .
+
+lsp:SymbolKind-Module a lsp:SymbolKind ;
+    rdfs:label "Module" ;
+    lsp:symbolKindValue 2 .
+
+lsp:SymbolKind-Namespace a lsp:SymbolKind ;
+    rdfs:label "Namespace" ;
+    lsp:symbolKindValue 3 .
+
+lsp:SymbolKind-Null a lsp:SymbolKind ;
+    rdfs:label "Null" ;
+    lsp:symbolKindValue 21 .
+
+lsp:SymbolKind-Number a lsp:SymbolKind ;
+    rdfs:label "Number" ;
+    lsp:symbolKindValue 16 .
+
+lsp:SymbolKind-Object a lsp:SymbolKind ;
+    rdfs:label "Object" ;
+    lsp:symbolKindValue 19 .
+
+lsp:SymbolKind-Operator a lsp:SymbolKind ;
+    rdfs:label "Operator" ;
+    lsp:symbolKindValue 25 .
+
+lsp:SymbolKind-Package a lsp:SymbolKind ;
+    rdfs:label "Package" ;
+    lsp:symbolKindValue 4 .
+
+lsp:SymbolKind-Property a lsp:SymbolKind ;
+    rdfs:label "Property" ;
+    lsp:symbolKindValue 7 .
+
+lsp:SymbolKind-String a lsp:SymbolKind ;
+    rdfs:label "String" ;
+    lsp:symbolKindValue 15 .
+
+lsp:SymbolKind-Struct a lsp:SymbolKind ;
+    rdfs:label "Struct" ;
+    lsp:symbolKindValue 23 .
+
+lsp:SymbolKind-TypeParameter a lsp:SymbolKind ;
+    rdfs:label "TypeParameter" ;
+    lsp:symbolKindValue 26 .
+
+lsp:SymbolKind-Variable a lsp:SymbolKind ;
+    rdfs:label "Variable" ;
+    lsp:symbolKindValue 13 .
+
+lsp:SymbolTag-Deprecated a lsp:SymbolTag ;
+    rdfs:label "Deprecated" ;
+    lsp:symbolTagValue 1 .
+
+lsp:WorkspaceSymbolRequest a owl:Class ;
+    rdfs:label "WorkspaceSymbolRequest" ;
+    rdfs:comment "A workspace/symbol request. Searches for symbols matching a query string across the entire repository. Corresponds to SyncLanguageServer.request_workspace_symbol()." ;
+    rdfs:subClassOf lsp:LspRequest .
+
+lsp:absolutePath a owl:DatatypeProperty ;
+    rdfs:label "absolutePath" ;
+    rdfs:comment "Absolute filesystem path to the file. (multilspy addition, not in LSP spec.)" ;
+    rdfs:domain lsp:Location ;
+    rdfs:range xsd:string .
+
+lsp:character a owl:DatatypeProperty ;
+    rdfs:label "character" ;
+    rdfs:comment "Zero-based character offset on the line." ;
+    rdfs:domain lsp:Position ;
+    rdfs:range xsd:nonNegativeInteger .
+
+lsp:completionDetail a owl:DatatypeProperty ;
+    rdfs:label "completionDetail" ;
+    rdfs:comment "A human-readable string with additional information about this item, such as type or symbol information. Optional. Note: serialised as 'detail' in the TypedDict." ;
+    rdfs:domain lsp:CompletionItem ;
+    rdfs:range xsd:string .
+
+lsp:completionItemKindValue a owl:DatatypeProperty ;
+    rdfs:label "completionItemKindValue" ;
+    rdfs:comment "The integer value of the CompletionItemKind as defined in the LSP spec." ;
+    rdfs:domain lsp:CompletionItemKind ;
+    rdfs:range xsd:integer .
+
+lsp:completionKind a owl:ObjectProperty ;
+    rdfs:label "completionKind" ;
+    rdfs:comment "The kind of completion item (method, function, class, variable, etc.). Note: serialised as 'kind' in the TypedDict." ;
+    rdfs:domain lsp:CompletionItem ;
+    rdfs:range lsp:CompletionItemKind .
+
+lsp:completionText a owl:DatatypeProperty ;
+    rdfs:label "completionText" ;
+    rdfs:comment "The text to insert when this completion is selected. (multilspy field name; LSP spec uses 'label'.)" ;
+    rdfs:domain lsp:CompletionItem ;
+    rdfs:range xsd:string .
+
+lsp:containerName a owl:DatatypeProperty ;
+    rdfs:label "containerName" ;
+    rdfs:comment "The name of the symbol containing this symbol, for display purposes. Optional." ;
+    rdfs:domain lsp:UnifiedSymbolInformation ;
+    rdfs:range xsd:string .
+
+lsp:contents a owl:ObjectProperty ;
+    rdfs:label "contents" ;
+    rdfs:comment "The hover contents. May be MarkupContent, a MarkedString, or a list of MarkedStrings (the latter two are deprecated LSP formats)." ;
+    rdfs:domain lsp:Hover ;
+    rdfs:range lsp:MarkupContent .
+
+lsp:deprecated a owl:DatatypeProperty ;
+    rdfs:label "deprecated" ;
+    rdfs:comment "Whether this symbol is deprecated. Optional. @deprecated in LSP: use tags instead." ;
+    rdfs:domain lsp:UnifiedSymbolInformation ;
+    rdfs:range xsd:boolean .
+
+lsp:detail a owl:DatatypeProperty ;
+    rdfs:label "detail" ;
+    rdfs:comment "Additional detail for the symbol, e.g. the signature of a function. Optional." ;
+    rdfs:domain lsp:UnifiedSymbolInformation ;
+    rdfs:range xsd:string .
+
+lsp:end a owl:ObjectProperty ;
+    rdfs:label "end" ;
+    rdfs:comment "The end position of the range (exclusive)." ;
+    rdfs:domain lsp:Range ;
+    rdfs:range lsp:Position .
+
+lsp:hoverRange a owl:ObjectProperty ;
+    rdfs:label "hoverRange" ;
+    rdfs:comment "An optional range in the document that is used to visualise the hover. Note: serialised as 'range' in the TypedDict." ;
+    rdfs:domain lsp:Hover ;
+    rdfs:range lsp:Range .
+
+lsp:kind a owl:ObjectProperty ;
+    rdfs:label "kind" ;
+    rdfs:comment "The kind of this symbol (class, method, function, variable, etc.)." ;
+    rdfs:domain lsp:UnifiedSymbolInformation ;
+    rdfs:range lsp:SymbolKind .
+
+lsp:line a owl:DatatypeProperty ;
+    rdfs:label "line" ;
+    rdfs:comment "Zero-based line number in the document." ;
+    rdfs:domain lsp:Position ;
+    rdfs:range xsd:nonNegativeInteger .
+
+lsp:location a owl:ObjectProperty ;
+    rdfs:label "location" ;
+    rdfs:comment "The location of this symbol. Optional (present for flat symbol info, absent for hierarchical document symbols)." ;
+    rdfs:domain lsp:UnifiedSymbolInformation ;
+    rdfs:range lsp:Location .
+
+lsp:markedStringLanguage a owl:DatatypeProperty ;
+    rdfs:label "markedStringLanguage" ;
+    rdfs:comment "The language identifier for the code block (e.g. 'python', 'typescript'). Only present when MarkedString is in code-block form, not plain string form. Note: serialised as 'language' in the TypedDict." ;
+    rdfs:domain lsp:MarkedString ;
+    rdfs:range xsd:string .
+
+lsp:markedStringValue a owl:DatatypeProperty ;
+    rdfs:label "markedStringValue" ;
+    rdfs:comment "The content of the MarkedString - either the full plain string, or the code snippet when in code-block form. Note: serialised as 'value' in the TypedDict." ;
+    rdfs:domain lsp:MarkedString ;
+    rdfs:range xsd:string .
+
+lsp:markupKind a owl:ObjectProperty ;
+    rdfs:label "markupKind" ;
+    rdfs:comment "The type of markup (plaintext or markdown). Note: serialised as 'kind' in the TypedDict." ;
+    rdfs:domain lsp:MarkupContent ;
+    rdfs:range lsp:MarkupKind .
+
+lsp:markupKindValue a owl:DatatypeProperty ;
+    rdfs:label "markupKindValue" ;
+    rdfs:comment "The string value of the MarkupKind ('plaintext' or 'markdown')." ;
+    rdfs:domain lsp:MarkupKind ;
+    rdfs:range xsd:string .
+
+lsp:name a owl:DatatypeProperty ;
+    rdfs:label "name" ;
+    rdfs:comment "The name of the symbol." ;
+    rdfs:domain lsp:UnifiedSymbolInformation ;
+    rdfs:range xsd:string .
+
+lsp:range a owl:ObjectProperty ;
+    rdfs:label "range" ;
+    rdfs:comment "The range within the document. (LSP spec field.)" ;
+    rdfs:domain lsp:Location ;
+    rdfs:range lsp:Range .
+
+lsp:relativePath a owl:DatatypeProperty ;
+    rdfs:label "relativePath" ;
+    rdfs:comment "Path relative to the repository root. Null if the location is outside the repository (e.g. stdlib or third-party). (multilspy addition, not in LSP spec.)" ;
+    rdfs:domain lsp:Location ;
+    rdfs:range xsd:string .
+
+lsp:requestCharacter a owl:DatatypeProperty ;
+    rdfs:label "requestCharacter" ;
+    rdfs:comment "Zero-based character offset of the query position." ;
+    rdfs:domain lsp:LspRequest ;
+    rdfs:range xsd:nonNegativeInteger .
+
+lsp:requestFile a owl:DatatypeProperty ;
+    rdfs:label "requestFile" ;
+    rdfs:comment "Relative path to the file being queried (from repository root)." ;
+    rdfs:domain lsp:LspRequest ;
+    rdfs:range xsd:string .
+
+lsp:requestLine a owl:DatatypeProperty ;
+    rdfs:label "requestLine" ;
+    rdfs:comment "Zero-based line number of the query position." ;
+    rdfs:domain lsp:LspRequest ;
+    rdfs:range xsd:nonNegativeInteger .
+
+lsp:selectionRange a owl:ObjectProperty ;
+    rdfs:label "selectionRange" ;
+    rdfs:comment "The range that should be selected when this symbol is picked, e.g. the name span of a function definition. Present for hierarchical document symbols." ;
+    rdfs:domain lsp:UnifiedSymbolInformation ;
+    rdfs:range lsp:Range .
+
+lsp:start a owl:ObjectProperty ;
+    rdfs:label "start" ;
+    rdfs:comment "The start position of the range (inclusive)." ;
+    rdfs:domain lsp:Range ;
+    rdfs:range lsp:Position .
+
+lsp:symbolKindValue a owl:DatatypeProperty ;
+    rdfs:label "symbolKindValue" ;
+    rdfs:comment "The integer value of the SymbolKind as defined in the LSP spec." ;
+    rdfs:domain lsp:SymbolKind ;
+    rdfs:range xsd:integer .
+
+lsp:symbolRange a owl:ObjectProperty ;
+    rdfs:label "symbolRange" ;
+    rdfs:comment "The range enclosing this symbol including comments. Present for hierarchical document symbols. Note: serialised as 'range' in the TypedDict." ;
+    rdfs:domain lsp:UnifiedSymbolInformation ;
+    rdfs:range lsp:Range .
+
+lsp:symbolTagValue a owl:DatatypeProperty ;
+    rdfs:label "symbolTagValue" ;
+    rdfs:comment "The integer value of the SymbolTag as defined in the LSP spec." ;
+    rdfs:domain lsp:SymbolTag ;
+    rdfs:range xsd:integer .
+
+lsp:treeChildren a owl:ObjectProperty ;
+    rdfs:label "treeChildren" ;
+    rdfs:comment "Child TreeRepr nodes nested under this node, representing symbols defined within the scope of the parent symbol." ;
+    rdfs:domain lsp:TreeRepr ;
+    rdfs:range lsp:TreeRepr .
+
+lsp:treeNodeId a owl:DatatypeProperty ;
+    rdfs:label "treeNodeId" ;
+    rdfs:comment "The integer node ID key in the TreeRepr mapping. Corresponds to the index position of the symbol in the document symbols list." ;
+    rdfs:domain lsp:TreeRepr ;
+    rdfs:range xsd:integer .
+
+lsp:uri a owl:DatatypeProperty ;
+    rdfs:label "uri" ;
+    rdfs:comment "The document URI as a file:// URI string. (LSP spec field.)" ;
+    rdfs:domain lsp:Location ;
+    rdfs:range xsd:anyURI .
+
+lsp:value a owl:DatatypeProperty ;
+    rdfs:label "value" ;
+    rdfs:comment "The content itself." ;
+    rdfs:domain lsp:MarkupContent ;
+    rdfs:range xsd:string .
+
+lsp:Hover a owl:Class ;
+    rdfs:label "Hover" ;
+    rdfs:comment "The result of a textDocument/hover request. Contains a human-readable string with type/documentation information for the symbol at the requested position. (LSP v3.17.0: Hover)" .
+
+lsp:MarkedString a owl:Class ;
+    rdfs:label "MarkedString" ;
+    rdfs:comment "A deprecated hover content format. Either a plain string or a code block with a language identifier and value. Superseded by MarkupContent but still returned by some LSP servers. Corresponds to the Union type: str | {language: str, value: str}. (LSP v3.17.0: MarkedString, deprecated)" .
+
+lsp:SymbolTag a owl:Class ;
+    rdfs:label "SymbolTag" ;
+    rdfs:comment "Extra annotations that tweak the rendering of a symbol. @since LSP v3.16.0. (LSP v3.17.0: SymbolTag)" .
+
+lsp:CompletionItem a owl:Class ;
+    rdfs:label "CompletionItem" ;
+    rdfs:comment "A completion item returned by textDocument/completion. Represents a text snippet proposed to complete text being typed. (LSP v3.17.0: CompletionItem, simplified by multilspy)" .
+
+lsp:MarkupContent a owl:Class ;
+    rdfs:label "MarkupContent" ;
+    rdfs:comment "A string value whose content is interpreted according to its kind (plaintext or markdown). Used in Hover responses. (LSP v3.17.0: MarkupContent)" .
+
+lsp:TreeRepr a owl:Class ;
+    rdfs:label "TreeRepr" ;
+    rdfs:comment "A recursive tree structure returned alongside document symbols by request_document_symbols(). Maps integer node IDs to lists of child TreeRepr nodes, representing the hierarchical nesting of symbols in a file. Type alias: Dict[int, List[TreeRepr]]. (multilspy-specific type, not in LSP spec.)" .
+
+lsp:MarkupKind a owl:Class ;
+    rdfs:label "MarkupKind" ;
+    rdfs:comment "Describes the content type supported in hover and completion results. Values: plaintext, markdown. (LSP v3.17.0: MarkupKind)" .
+
+lsp:Position a owl:Class ;
+    rdfs:label "Position" ;
+    rdfs:comment "A position in a text document expressed as zero-based line and character offset. Both fields are zero-based integers. (LSP v3.17.0: Position)" .
+
+lsp:Location a owl:Class ;
+    rdfs:label "Location" ;
+    rdfs:comment "Represents a location inside a resource such as a line inside a text file. (LSP v3.17.0: Location, extended by multilspy with absolutePath and relativePath.)" .
+
+lsp:Range a owl:Class ;
+    rdfs:label "Range" ;
+    rdfs:comment "A range in a text document expressed as start and end positions. (LSP v3.17.0: Range)" .
+
+lsp:UnifiedSymbolInformation a owl:Class ;
+    rdfs:label "UnifiedSymbolInformation" ;
+    rdfs:comment "Information about a programming construct such as a variable, class, or function. Unifies LSP DocumentSymbol and SymbolInformation into a single type. Returned by request_document_symbols and request_workspace_symbol. (multilspy type: UnifiedSymbolInformation)" .
+
+lsp:LspRequest a owl:Class ;
+    rdfs:label "LspRequest" ;
+    rdfs:comment "Abstract base class representing a multilspy query. Subclasses correspond to the six query methods on SyncLanguageServer." .
+
+lsp:CompletionItemKind a owl:Class ;
+    rdfs:label "CompletionItemKind" ;
+    rdfs:comment "Enumeration of completion item kinds. Integer values 1-25. (LSP v3.17.0: CompletionItemKind)" .
+
+lsp:SymbolKind a owl:Class ;
+    rdfs:label "SymbolKind" ;
+    rdfs:comment "Enumeration of symbol kinds used in document and workspace symbol responses. Integer values 1-26. (LSP v3.17.0: SymbolKind)" .
+

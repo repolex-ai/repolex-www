@@ -1,0 +1,1794 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix qmljs: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/qmljs/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+qmljs:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+qmljs:abstract_class_declaration a owl:Class ;
+    rdfs:label "abstract_class_declaration" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 291 .
+
+qmljs:abstract_method_signature a owl:Class ;
+    rdfs:label "abstract_method_signature" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 279 .
+
+qmljs:accessibility_modifier a owl:Class ;
+    rdfs:label "accessibility_modifier" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 303 .
+
+qmljs:adding_type_annotation a owl:Class ;
+    rdfs:label "adding_type_annotation" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 309 .
+
+qmljs:alias a owl:DatatypeProperty ;
+    rdfs:label "alias (literal)" ;
+    rdfs:comment "Literal value for alias field when it contains a terminal node" ;
+    qmljs:fieldId 1 ;
+    qmljs:isTerminalField true .
+
+qmljs:ambient_declaration a owl:Class ;
+    rdfs:label "ambient_declaration" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 290 .
+
+qmljs:argument a owl:DatatypeProperty ;
+    rdfs:label "argument (literal)" ;
+    rdfs:comment "Literal value for argument field when it contains a terminal node" ;
+    qmljs:fieldId 4 ;
+    qmljs:isTerminalField true .
+
+qmljs:arguments a owl:Class ;
+    rdfs:label "arguments" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 261 .
+
+qmljs:array a owl:Class ;
+    rdfs:label "array" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 226 .
+
+qmljs:array_pattern a owl:Class ;
+    rdfs:label "array_pattern" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 227 .
+
+qmljs:array_type a owl:Class ;
+    rdfs:label "array_type" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 355 .
+
+qmljs:arrow_function a owl:Class ;
+    rdfs:label "arrow_function" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 236 .
+
+qmljs:as_expression a owl:Class ;
+    rdfs:label "as_expression" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 283 .
+
+qmljs:asserts a owl:Class ;
+    rdfs:label "asserts" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 314 .
+
+qmljs:asserts_annotation a owl:Class ;
+    rdfs:label "asserts_annotation" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 315 .
+
+qmljs:assignment_expression a owl:Class ;
+    rdfs:label "assignment_expression" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 245 .
+
+qmljs:assignment_pattern a owl:Class ;
+    rdfs:label "assignment_pattern" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 224 .
+
+qmljs:augmented_assignment_expression a owl:Class ;
+    rdfs:label "augmented_assignment_expression" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 247 .
+
+qmljs:await_expression a owl:Class ;
+    rdfs:label "await_expression" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 242 .
+
+qmljs:binary_expression a owl:Class ;
+    rdfs:label "binary_expression" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 252 .
+
+qmljs:break_statement a owl:Class ;
+    rdfs:label "break_statement" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 206 .
+
+qmljs:call_expression a owl:Class ;
+    rdfs:label "call_expression" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 240,
+        264,
+        313,
+        333 .
+
+qmljs:call_signature a owl:Class ;
+    rdfs:label "call_signature" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 347 .
+
+qmljs:catch_clause a owl:Class ;
+    rdfs:label "catch_clause" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 216 .
+
+qmljs:class a owl:Class ;
+    rdfs:label "class" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 229 .
+
+qmljs:class_body a owl:Class ;
+    rdfs:label "class_body" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 265 .
+
+qmljs:class_declaration a owl:Class ;
+    rdfs:label "class_declaration" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 230 .
+
+qmljs:class_heritage a owl:Class ;
+    rdfs:label "class_heritage" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 231 .
+
+qmljs:class_static_block a owl:Class ;
+    rdfs:label "class_static_block" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 267 .
+
+qmljs:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 104 .
+
+qmljs:computed_property_name a owl:Class ;
+    rdfs:label "computed_property_name" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 274 .
+
+qmljs:condition a owl:DatatypeProperty ;
+    rdfs:label "condition (literal)" ;
+    rdfs:comment "Literal value for condition field when it contains a terminal node" ;
+    qmljs:fieldId 8 ;
+    qmljs:isTerminalField true .
+
+qmljs:conditional_type a owl:Class ;
+    rdfs:label "conditional_type" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 327 .
+
+qmljs:constraint a owl:Class ;
+    rdfs:label "constraint" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 352 .
+
+qmljs:construct_signature a owl:Class ;
+    rdfs:label "construct_signature" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 353 .
+
+qmljs:constructor_type a owl:Class ;
+    rdfs:label "constructor_type" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 322 .
+
+qmljs:continue_statement a owl:Class ;
+    rdfs:label "continue_statement" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 207 .
+
+qmljs:debugger_statement a owl:Class ;
+    rdfs:label "debugger_statement" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 208 .
+
+qmljs:decorator a owl:Class ;
+    rdfs:label "decorator" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 262 .
+
+qmljs:default_type a owl:Class ;
+    rdfs:label "default_type" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 351 .
+
+qmljs:do_statement a owl:Class ;
+    rdfs:label "do_statement" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 203 .
+
+qmljs:else_clause a owl:Class ;
+    rdfs:label "else_clause" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 196 .
+
+qmljs:empty_statement a owl:Class ;
+    rdfs:label "empty_statement" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 211 .
+
+qmljs:enum_assignment a owl:Class ;
+    rdfs:label "enum_assignment" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 301,
+        382 .
+
+qmljs:enum_body a owl:Class ;
+    rdfs:label "enum_body" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 300,
+        381 .
+
+qmljs:enum_declaration a owl:Class ;
+    rdfs:label "enum_declaration" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 299,
+        380 .
+
+qmljs:escape_sequence a owl:Class ;
+    rdfs:label "escape_sequence" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 103 .
+
+qmljs:existential_type a owl:Class ;
+    rdfs:label "existential_type" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 341 .
+
+qmljs:export_clause a owl:Class ;
+    rdfs:label "export_clause" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 178 .
+
+qmljs:export_specifier a owl:Class ;
+    rdfs:label "export_specifier" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 179 .
+
+qmljs:export_statement a owl:Class ;
+    rdfs:label "export_statement" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 176 .
+
+qmljs:expression_statement a owl:Class ;
+    rdfs:label "expression_statement" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 191 .
+
+qmljs:extends_clause a owl:Class ;
+    rdfs:label "extends_clause" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 287 .
+
+qmljs:extends_type_clause a owl:Class ;
+    rdfs:label "extends_type_clause" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 298 .
+
+qmljs:false a owl:Class ;
+    rdfs:label "false" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 117 .
+
+qmljs:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+qmljs:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+qmljs:field_alias a owl:ObjectProperty ;
+    rdfs:label "alias (structural)" ;
+    rdfs:comment "Structural reference for alias field when it contains a non-terminal node" ;
+    qmljs:fieldId 1 .
+
+qmljs:field_alternative a owl:ObjectProperty ;
+    rdfs:label "alternative (structural)" ;
+    rdfs:comment "Structural reference for alternative field when it contains a non-terminal node" ;
+    qmljs:fieldId 2 .
+
+qmljs:field_annotation a owl:ObjectProperty ;
+    rdfs:label "annotation (structural)" ;
+    rdfs:comment "Structural reference for annotation field when it contains a non-terminal node" ;
+    qmljs:fieldId 3 .
+
+qmljs:field_argument a owl:ObjectProperty ;
+    rdfs:label "argument (structural)" ;
+    rdfs:comment "Structural reference for argument field when it contains a non-terminal node" ;
+    qmljs:fieldId 4 .
+
+qmljs:field_arguments a owl:ObjectProperty ;
+    rdfs:label "arguments (structural)" ;
+    rdfs:comment "Structural reference for arguments field when it contains a non-terminal node" ;
+    qmljs:fieldId 5 .
+
+qmljs:field_body a owl:ObjectProperty ;
+    rdfs:label "body (structural)" ;
+    rdfs:comment "Structural reference for body field when it contains a non-terminal node" ;
+    qmljs:fieldId 6 .
+
+qmljs:field_component a owl:ObjectProperty ;
+    rdfs:label "component (structural)" ;
+    rdfs:comment "Structural reference for component field when it contains a non-terminal node" ;
+    qmljs:fieldId 7 .
+
+qmljs:field_condition a owl:ObjectProperty ;
+    rdfs:label "condition (structural)" ;
+    rdfs:comment "Structural reference for condition field when it contains a non-terminal node" ;
+    qmljs:fieldId 8 .
+
+qmljs:field_consequence a owl:ObjectProperty ;
+    rdfs:label "consequence (structural)" ;
+    rdfs:comment "Structural reference for consequence field when it contains a non-terminal node" ;
+    qmljs:fieldId 9 .
+
+qmljs:field_constraint a owl:ObjectProperty ;
+    rdfs:label "constraint (structural)" ;
+    rdfs:comment "Structural reference for constraint field when it contains a non-terminal node" ;
+    qmljs:fieldId 10 .
+
+qmljs:field_constructor a owl:ObjectProperty ;
+    rdfs:label "constructor (structural)" ;
+    rdfs:comment "Structural reference for constructor field when it contains a non-terminal node" ;
+    qmljs:fieldId 11 .
+
+qmljs:field_declaration a owl:ObjectProperty ;
+    rdfs:label "declaration (structural)" ;
+    rdfs:comment "Structural reference for declaration field when it contains a non-terminal node" ;
+    qmljs:fieldId 12 .
+
+qmljs:field_decorator a owl:ObjectProperty ;
+    rdfs:label "decorator (structural)" ;
+    rdfs:comment "Structural reference for decorator field when it contains a non-terminal node" ;
+    qmljs:fieldId 13 .
+
+qmljs:field_definition a owl:ObjectProperty ;
+    rdfs:label "definition (structural)" ;
+    rdfs:comment "Structural reference for definition field when it contains a non-terminal node" ;
+    qmljs:fieldId 14 .
+
+qmljs:field_finalizer a owl:ObjectProperty ;
+    rdfs:label "finalizer (structural)" ;
+    rdfs:comment "Structural reference for finalizer field when it contains a non-terminal node" ;
+    qmljs:fieldId 15 .
+
+qmljs:field_function a owl:ObjectProperty ;
+    rdfs:label "function (structural)" ;
+    rdfs:comment "Structural reference for function field when it contains a non-terminal node" ;
+    qmljs:fieldId 17 .
+
+qmljs:field_handler a owl:ObjectProperty ;
+    rdfs:label "handler (structural)" ;
+    rdfs:comment "Structural reference for handler field when it contains a non-terminal node" ;
+    qmljs:fieldId 18 .
+
+qmljs:field_increment a owl:ObjectProperty ;
+    rdfs:label "increment (structural)" ;
+    rdfs:comment "Structural reference for increment field when it contains a non-terminal node" ;
+    qmljs:fieldId 19 .
+
+qmljs:field_index a owl:ObjectProperty ;
+    rdfs:label "index (structural)" ;
+    rdfs:comment "Structural reference for index field when it contains a non-terminal node" ;
+    qmljs:fieldId 20 .
+
+qmljs:field_index_type a owl:ObjectProperty ;
+    rdfs:label "index_type (structural)" ;
+    rdfs:comment "Structural reference for index_type field when it contains a non-terminal node" ;
+    qmljs:fieldId 21 .
+
+qmljs:field_initializer a owl:ObjectProperty ;
+    rdfs:label "initializer (structural)" ;
+    rdfs:comment "Structural reference for initializer field when it contains a non-terminal node" ;
+    qmljs:fieldId 22 .
+
+qmljs:field_key a owl:ObjectProperty ;
+    rdfs:label "key (structural)" ;
+    rdfs:comment "Structural reference for key field when it contains a non-terminal node" ;
+    qmljs:fieldId 23 .
+
+qmljs:field_kind a owl:ObjectProperty ;
+    rdfs:label "kind (structural)" ;
+    rdfs:comment "Structural reference for kind field when it contains a non-terminal node" ;
+    qmljs:fieldId 24 .
+
+qmljs:field_left a owl:ObjectProperty ;
+    rdfs:label "left (structural)" ;
+    rdfs:comment "Structural reference for left field when it contains a non-terminal node" ;
+    qmljs:fieldId 26 .
+
+qmljs:field_module a owl:ObjectProperty ;
+    rdfs:label "module (structural)" ;
+    rdfs:comment "Structural reference for module field when it contains a non-terminal node" ;
+    qmljs:fieldId 29 .
+
+qmljs:field_name a owl:ObjectProperty ;
+    rdfs:label "name (structural)" ;
+    rdfs:comment "Structural reference for name field when it contains a non-terminal node" ;
+    qmljs:fieldId 30 .
+
+qmljs:field_object a owl:ObjectProperty ;
+    rdfs:label "object (structural)" ;
+    rdfs:comment "Structural reference for object field when it contains a non-terminal node" ;
+    qmljs:fieldId 31 .
+
+qmljs:field_operator a owl:ObjectProperty ;
+    rdfs:label "operator (structural)" ;
+    rdfs:comment "Structural reference for operator field when it contains a non-terminal node" ;
+    qmljs:fieldId 32 .
+
+qmljs:field_parameter a owl:ObjectProperty ;
+    rdfs:label "parameter (structural)" ;
+    rdfs:comment "Structural reference for parameter field when it contains a non-terminal node" ;
+    qmljs:fieldId 34 .
+
+qmljs:field_parameters a owl:ObjectProperty ;
+    rdfs:label "parameters (structural)" ;
+    rdfs:comment "Structural reference for parameters field when it contains a non-terminal node" ;
+    qmljs:fieldId 35 .
+
+qmljs:field_pattern a owl:ObjectProperty ;
+    rdfs:label "pattern (structural)" ;
+    rdfs:comment "Structural reference for pattern field when it contains a non-terminal node" ;
+    qmljs:fieldId 36 .
+
+qmljs:field_return_type a owl:ObjectProperty ;
+    rdfs:label "return_type (structural)" ;
+    rdfs:comment "Structural reference for return_type field when it contains a non-terminal node" ;
+    qmljs:fieldId 38 .
+
+qmljs:field_right a owl:ObjectProperty ;
+    rdfs:label "right (structural)" ;
+    rdfs:comment "Structural reference for right field when it contains a non-terminal node" ;
+    qmljs:fieldId 39 .
+
+qmljs:field_root a owl:ObjectProperty ;
+    rdfs:label "root (structural)" ;
+    rdfs:comment "Structural reference for root field when it contains a non-terminal node" ;
+    qmljs:fieldId 40 .
+
+qmljs:field_sign a owl:ObjectProperty ;
+    rdfs:label "sign (structural)" ;
+    rdfs:comment "Structural reference for sign field when it contains a non-terminal node" ;
+    qmljs:fieldId 41 .
+
+qmljs:field_source a owl:ObjectProperty ;
+    rdfs:label "source (structural)" ;
+    rdfs:comment "Structural reference for source field when it contains a non-terminal node" ;
+    qmljs:fieldId 42 .
+
+qmljs:field_type a owl:ObjectProperty ;
+    rdfs:label "type (structural)" ;
+    rdfs:comment "Structural reference for type field when it contains a non-terminal node" ;
+    qmljs:fieldId 43 .
+
+qmljs:field_type_arguments a owl:ObjectProperty ;
+    rdfs:label "type_arguments (structural)" ;
+    rdfs:comment "Structural reference for type_arguments field when it contains a non-terminal node" ;
+    qmljs:fieldId 44 .
+
+qmljs:field_type_name a owl:ObjectProperty ;
+    rdfs:label "type_name (structural)" ;
+    rdfs:comment "Structural reference for type_name field when it contains a non-terminal node" ;
+    qmljs:fieldId 45 .
+
+qmljs:field_type_parameters a owl:ObjectProperty ;
+    rdfs:label "type_parameters (structural)" ;
+    rdfs:comment "Structural reference for type_parameters field when it contains a non-terminal node" ;
+    qmljs:fieldId 46 .
+
+qmljs:field_value a owl:ObjectProperty ;
+    rdfs:label "value (structural)" ;
+    rdfs:comment "Structural reference for value field when it contains a non-terminal node" ;
+    qmljs:fieldId 47 .
+
+qmljs:field_version a owl:ObjectProperty ;
+    rdfs:label "version (structural)" ;
+    rdfs:comment "Structural reference for version field when it contains a non-terminal node" ;
+    qmljs:fieldId 48 .
+
+qmljs:finally_clause a owl:Class ;
+    rdfs:label "finally_clause" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 217 .
+
+qmljs:flags a owl:DatatypeProperty ;
+    rdfs:label "flags (literal)" ;
+    rdfs:comment "Literal value for flags field when it contains a terminal node" ;
+    qmljs:fieldId 16 ;
+    qmljs:isTerminalField true .
+
+qmljs:flow_maybe_type a owl:Class ;
+    rdfs:label "flow_maybe_type" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 342 .
+
+qmljs:for_in_statement a owl:Class ;
+    rdfs:label "for_in_statement" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 200 .
+
+qmljs:for_statement a owl:Class ;
+    rdfs:label "for_statement" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 199 .
+
+qmljs:formal_parameters a owl:Class ;
+    rdfs:label "formal_parameters" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 266 .
+
+qmljs:function a owl:DatatypeProperty ;
+    rdfs:label "function (literal)" ;
+    rdfs:comment "Literal value for function field when it contains a terminal node" ;
+    qmljs:fieldId 17 ;
+    qmljs:isTerminalField true .
+
+qmljs:function_declaration a owl:Class ;
+    rdfs:label "function_declaration" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 233 .
+
+qmljs:function_expression a owl:Class ;
+    rdfs:label "function_expression" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 232 .
+
+qmljs:function_signature a owl:Class ;
+    rdfs:label "function_signature" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 280 .
+
+qmljs:function_type a owl:Class ;
+    rdfs:label "function_type" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 360 .
+
+qmljs:generator_function a owl:Class ;
+    rdfs:label "generator_function" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 234 .
+
+qmljs:generator_function_declaration a owl:Class ;
+    rdfs:label "generator_function_declaration" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 235 .
+
+qmljs:generic_type a owl:Class ;
+    rdfs:label "generic_type" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 328 .
+
+qmljs:hash_bang_line a owl:Class ;
+    rdfs:label "hash_bang_line" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 2 .
+
+qmljs:html_comment a owl:Class ;
+    rdfs:label "html_comment" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 171 .
+
+qmljs:identifier a owl:Class ;
+    rdfs:label "identifier" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 1 .
+
+qmljs:if_statement a owl:Class ;
+    rdfs:label "if_statement" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 197 .
+
+qmljs:implements_clause a owl:Class ;
+    rdfs:label "implements_clause" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 289 .
+
+qmljs:import a owl:Class ;
+    rdfs:label "import" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 182 .
+
+qmljs:import_alias a owl:Class ;
+    rdfs:label "import_alias" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 295 .
+
+qmljs:import_attribute a owl:Class ;
+    rdfs:label "import_attribute" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 189 .
+
+qmljs:import_clause a owl:Class ;
+    rdfs:label "import_clause" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 184 .
+
+qmljs:import_require_clause a owl:Class ;
+    rdfs:label "import_require_clause" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 286 .
+
+qmljs:import_specifier a owl:Class ;
+    rdfs:label "import_specifier" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 188 .
+
+qmljs:import_statement a owl:Class ;
+    rdfs:label "import_statement" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 183 .
+
+qmljs:index a owl:DatatypeProperty ;
+    rdfs:label "index (literal)" ;
+    rdfs:comment "Literal value for index field when it contains a terminal node" ;
+    qmljs:fieldId 20 ;
+    qmljs:isTerminalField true .
+
+qmljs:index_signature a owl:Class ;
+    rdfs:label "index_signature" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 354 .
+
+qmljs:index_type_query a owl:Class ;
+    rdfs:label "index_type_query" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 336 .
+
+qmljs:infer_type a owl:Class ;
+    rdfs:label "infer_type" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 326 .
+
+qmljs:initializer a owl:DatatypeProperty ;
+    rdfs:label "initializer (literal)" ;
+    rdfs:comment "Literal value for initializer field when it contains a terminal node" ;
+    qmljs:fieldId 22 ;
+    qmljs:isTerminalField true .
+
+qmljs:instantiation_expression a owl:Class ;
+    rdfs:label "instantiation_expression" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 285,
+        334 .
+
+qmljs:interface_body a owl:Class ;
+    rdfs:label "interface_body" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 418 .
+
+qmljs:interface_declaration a owl:Class ;
+    rdfs:label "interface_declaration" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 297 .
+
+qmljs:internal_module a owl:Class ;
+    rdfs:label "internal_module" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 293 .
+
+qmljs:intersection_type a owl:Class ;
+    rdfs:label "intersection_type" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 359 .
+
+qmljs:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+qmljs:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+qmljs:jsx_text a owl:Class ;
+    rdfs:label "jsx_text" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 172 .
+
+qmljs:key a owl:DatatypeProperty ;
+    rdfs:label "key (literal)" ;
+    rdfs:comment "Literal value for key field when it contains a terminal node" ;
+    qmljs:fieldId 23 ;
+    qmljs:isTerminalField true .
+
+qmljs:label a owl:DatatypeProperty ;
+    rdfs:label "label (literal)" ;
+    rdfs:comment "Literal value for label field when it contains a terminal node" ;
+    qmljs:fieldId 25 ;
+    qmljs:isTerminalField true .
+
+qmljs:labeled_statement a owl:Class ;
+    rdfs:label "labeled_statement" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 212 .
+
+qmljs:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+qmljs:left a owl:DatatypeProperty ;
+    rdfs:label "left (literal)" ;
+    rdfs:comment "Literal value for left field when it contains a terminal node" ;
+    qmljs:fieldId 26 ;
+    qmljs:isTerminalField true .
+
+qmljs:lexical_declaration a owl:Class ;
+    rdfs:label "lexical_declaration" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 193 .
+
+qmljs:literal_type a owl:Class ;
+    rdfs:label "literal_type" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 339 .
+
+qmljs:lookup_type a owl:Class ;
+    rdfs:label "lookup_type" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 337 .
+
+qmljs:major a owl:DatatypeProperty ;
+    rdfs:label "major (literal)" ;
+    rdfs:comment "Literal value for major field when it contains a terminal node" ;
+    qmljs:fieldId 27 ;
+    qmljs:isTerminalField true .
+
+qmljs:mapped_type_clause a owl:Class ;
+    rdfs:label "mapped_type_clause" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 338 .
+
+qmljs:member_expression a owl:Class ;
+    rdfs:label "member_expression" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 243,
+        263,
+        312,
+        331 .
+
+qmljs:meta_property a owl:Class ;
+    rdfs:label "meta_property" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 260 .
+
+qmljs:method_definition a owl:Class ;
+    rdfs:label "method_definition" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 270 .
+
+qmljs:method_signature a owl:Class ;
+    rdfs:label "method_signature" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 278 .
+
+qmljs:minor a owl:DatatypeProperty ;
+    rdfs:label "minor (literal)" ;
+    rdfs:comment "Literal value for minor field when it contains a terminal node" ;
+    qmljs:fieldId 28 ;
+    qmljs:isTerminalField true .
+
+qmljs:module a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "module",
+        "module (literal)" ;
+    rdfs:comment "Literal value for module field when it contains a terminal node" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:fieldId 29 ;
+    qmljs:isSupertype true ;
+    qmljs:isTerminalField true ;
+    qmljs:nodeTypeId 292 .
+
+qmljs:name a owl:DatatypeProperty ;
+    rdfs:label "name (literal)" ;
+    rdfs:comment "Literal value for name field when it contains a terminal node" ;
+    qmljs:fieldId 30 ;
+    qmljs:isTerminalField true .
+
+qmljs:named_imports a owl:Class ;
+    rdfs:label "named_imports" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 187 .
+
+qmljs:namespace_export a owl:Class ;
+    rdfs:label "namespace_export" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 177 .
+
+qmljs:namespace_import a owl:Class ;
+    rdfs:label "namespace_import" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 186 .
+
+qmljs:nested_identifier a owl:Class ;
+    rdfs:label "nested_identifier" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 228,
+        384,
+        385 .
+
+qmljs:nested_type_identifier a owl:Class ;
+    rdfs:label "nested_type_identifier" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 296 .
+
+qmljs:new_expression a owl:Class ;
+    rdfs:label "new_expression" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 241 .
+
+qmljs:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+qmljs:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+qmljs:non_null_expression a owl:Class ;
+    rdfs:label "non_null_expression" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 277 .
+
+qmljs:null a owl:Class ;
+    rdfs:label "null" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 118 .
+
+qmljs:number a owl:Class ;
+    rdfs:label "number" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 110,
+        165 .
+
+qmljs:object a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "object",
+        "object (literal)" ;
+    rdfs:comment "Literal value for object field when it contains a terminal node" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:fieldId 31 ;
+    qmljs:isSupertype true ;
+    qmljs:isTerminalField true ;
+    qmljs:nodeTypeId 222 .
+
+qmljs:object_assignment_pattern a owl:Class ;
+    rdfs:label "object_assignment_pattern" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 225 .
+
+qmljs:object_pattern a owl:Class ;
+    rdfs:label "object_pattern" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 223 .
+
+qmljs:object_type a owl:Class ;
+    rdfs:label "object_type" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 346 .
+
+qmljs:omitting_type_annotation a owl:Class ;
+    rdfs:label "omitting_type_annotation" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 308 .
+
+qmljs:opting_type_annotation a owl:Class ;
+    rdfs:label "opting_type_annotation" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 310 .
+
+qmljs:optional_chain a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "optional_chain",
+        "optional_chain (literal)" ;
+    rdfs:comment "Literal value for optional_chain field when it contains a terminal node" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:fieldId 33 ;
+    qmljs:isSupertype true ;
+    qmljs:isTerminalField true ;
+    qmljs:nodeTypeId 239 .
+
+qmljs:optional_parameter a owl:Class ;
+    rdfs:label "optional_parameter" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 306,
+        318 .
+
+qmljs:optional_type a owl:Class ;
+    rdfs:label "optional_type" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 319 .
+
+qmljs:override_modifier a owl:Class ;
+    rdfs:label "override_modifier" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 304 .
+
+qmljs:pair a owl:Class ;
+    rdfs:label "pair" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 271 .
+
+qmljs:pair_pattern a owl:Class ;
+    rdfs:label "pair_pattern" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 272 .
+
+qmljs:parameter a owl:DatatypeProperty ;
+    rdfs:label "parameter (literal)" ;
+    rdfs:comment "Literal value for parameter field when it contains a terminal node" ;
+    qmljs:fieldId 34 ;
+    qmljs:isTerminalField true .
+
+qmljs:parenthesized_expression a owl:Class ;
+    rdfs:label "parenthesized_expression" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 218,
+        281 .
+
+qmljs:parenthesized_type a owl:Class ;
+    rdfs:label "parenthesized_type" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 343 .
+
+qmljs:pattern a owl:DatatypeProperty ;
+    rdfs:label "pattern (literal)" ;
+    rdfs:comment "Literal value for pattern field when it contains a terminal node" ;
+    qmljs:fieldId 36 ;
+    qmljs:isTerminalField true .
+
+qmljs:predefined_type a owl:Class ;
+    rdfs:label "predefined_type" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 344 .
+
+qmljs:private_property_identifier a owl:Class ;
+    rdfs:label "private_property_identifier" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 111 .
+
+qmljs:program a owl:Class ;
+    rdfs:label "program" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 175 .
+
+qmljs:property a owl:DatatypeProperty ;
+    rdfs:label "property (literal)" ;
+    rdfs:comment "Literal value for property field when it contains a terminal node" ;
+    qmljs:fieldId 37 ;
+    qmljs:isTerminalField true .
+
+qmljs:property_identifier a owl:Class ;
+    rdfs:label "property_identifier" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 419 .
+
+qmljs:property_signature a owl:Class ;
+    rdfs:label "property_signature" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 348 .
+
+qmljs:public_field_definition a owl:Class ;
+    rdfs:label "public_field_definition" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 275 .
+
+qmljs:readonly_type a owl:Class ;
+    rdfs:label "readonly_type" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 357 .
+
+qmljs:regex a owl:Class ;
+    rdfs:label "regex" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 259 .
+
+qmljs:regex_flags a owl:Class ;
+    rdfs:label "regex_flags" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 109 .
+
+qmljs:regex_pattern a owl:Class ;
+    rdfs:label "regex_pattern" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 108 .
+
+qmljs:required_parameter a owl:Class ;
+    rdfs:label "required_parameter" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 305,
+        317 .
+
+qmljs:rest_pattern a owl:Class ;
+    rdfs:label "rest_pattern" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 269 .
+
+qmljs:rest_type a owl:Class ;
+    rdfs:label "rest_type" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 320 .
+
+qmljs:return_statement a owl:Class ;
+    rdfs:label "return_statement" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 209 .
+
+qmljs:satisfies_expression a owl:Class ;
+    rdfs:label "satisfies_expression" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 284 .
+
+qmljs:sequence_expression a owl:Class ;
+    rdfs:label "sequence_expression" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 255 .
+
+qmljs:shorthand_property_identifier a owl:Class ;
+    rdfs:label "shorthand_property_identifier" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 420 .
+
+qmljs:shorthand_property_identifier_pattern a owl:Class ;
+    rdfs:label "shorthand_property_identifier_pattern" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 421 .
+
+qmljs:source a owl:DatatypeProperty ;
+    rdfs:label "source (literal)" ;
+    rdfs:comment "Literal value for source field when it contains a terminal node" ;
+    qmljs:fieldId 42 ;
+    qmljs:isTerminalField true .
+
+qmljs:spread_element a owl:Class ;
+    rdfs:label "spread_element" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 250 .
+
+qmljs:statement_block a owl:Class ;
+    rdfs:label "statement_block" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 195 .
+
+qmljs:statement_identifier a owl:Class ;
+    rdfs:label "statement_identifier" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 422 .
+
+qmljs:string a owl:Class ;
+    rdfs:label "string" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 256 .
+
+qmljs:string_fragment a owl:Class ;
+    rdfs:label "string_fragment" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 101,
+        102,
+        169 .
+
+qmljs:subscript_expression a owl:Class ;
+    rdfs:label "subscript_expression" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 244,
+        332 .
+
+qmljs:super a owl:Class ;
+    rdfs:label "super" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 115 .
+
+qmljs:switch_body a owl:Class ;
+    rdfs:label "switch_body" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 213 .
+
+qmljs:switch_case a owl:Class ;
+    rdfs:label "switch_case" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 214 .
+
+qmljs:switch_default a owl:Class ;
+    rdfs:label "switch_default" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 215 .
+
+qmljs:switch_statement a owl:Class ;
+    rdfs:label "switch_statement" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 198 .
+
+qmljs:template_literal_type a owl:Class ;
+    rdfs:label "template_literal_type" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 325 .
+
+qmljs:template_string a owl:Class ;
+    rdfs:label "template_string" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 257 .
+
+qmljs:template_substitution a owl:Class ;
+    rdfs:label "template_substitution" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 258 .
+
+qmljs:template_type a owl:Class ;
+    rdfs:label "template_type" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 324 .
+
+qmljs:ternary_expression a owl:Class ;
+    rdfs:label "ternary_expression" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 251 .
+
+qmljs:this a owl:Class ;
+    rdfs:label "this" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 114 .
+
+qmljs:this_type a owl:Class ;
+    rdfs:label "this_type" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 423 .
+
+qmljs:throw_statement a owl:Class ;
+    rdfs:label "throw_statement" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 210 .
+
+qmljs:true a owl:Class ;
+    rdfs:label "true" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 116 .
+
+qmljs:try_statement a owl:Class ;
+    rdfs:label "try_statement" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 204 .
+
+qmljs:tuple_type a owl:Class ;
+    rdfs:label "tuple_type" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 356 .
+
+qmljs:type a owl:DatatypeProperty ;
+    rdfs:label "type (literal)" ;
+    rdfs:comment "Literal value for type field when it contains a terminal node" ;
+    qmljs:fieldId 43 ;
+    qmljs:isTerminalField true .
+
+qmljs:type_alias_declaration a owl:Class ;
+    rdfs:label "type_alias_declaration" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 302 .
+
+qmljs:type_annotation a owl:Class ;
+    rdfs:label "type_annotation" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 311 .
+
+qmljs:type_arguments a owl:Class ;
+    rdfs:label "type_arguments" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 345 .
+
+qmljs:type_assertion a owl:Class ;
+    rdfs:label "type_assertion" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 282 .
+
+qmljs:type_identifier a owl:Class ;
+    rdfs:label "type_identifier" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 166 .
+
+qmljs:type_name a owl:DatatypeProperty ;
+    rdfs:label "type_name (literal)" ;
+    rdfs:comment "Literal value for type_name field when it contains a terminal node" ;
+    qmljs:fieldId 45 ;
+    qmljs:isTerminalField true .
+
+qmljs:type_parameter a owl:Class ;
+    rdfs:label "type_parameter" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 350 .
+
+qmljs:type_parameters a owl:Class ;
+    rdfs:label "type_parameters" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 349 .
+
+qmljs:type_predicate a owl:Class ;
+    rdfs:label "type_predicate" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 329 .
+
+qmljs:type_predicate_annotation a owl:Class ;
+    rdfs:label "type_predicate_annotation" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 330 .
+
+qmljs:type_query a owl:Class ;
+    rdfs:label "type_query" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 335 .
+
+qmljs:ui_annotated_object a owl:Class ;
+    rdfs:label "ui_annotated_object" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 365 .
+
+qmljs:ui_annotated_object_member a owl:Class ;
+    rdfs:label "ui_annotated_object_member" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 368 .
+
+qmljs:ui_annotation a owl:Class ;
+    rdfs:label "ui_annotation" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 366 .
+
+qmljs:ui_binding a owl:Class ;
+    rdfs:label "ui_binding" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 370 .
+
+qmljs:ui_import a owl:Class ;
+    rdfs:label "ui_import" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 362 .
+
+qmljs:ui_inline_component a owl:Class ;
+    rdfs:label "ui_inline_component" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 379 .
+
+qmljs:ui_list_property_type a owl:Class ;
+    rdfs:label "ui_list_property_type" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 372 .
+
+qmljs:ui_object_array a owl:Class ;
+    rdfs:label "ui_object_array" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 374 .
+
+qmljs:ui_object_definition a owl:Class ;
+    rdfs:label "ui_object_definition" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 364 .
+
+qmljs:ui_object_definition_binding a owl:Class ;
+    rdfs:label "ui_object_definition_binding" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 369 .
+
+qmljs:ui_object_initializer a owl:Class ;
+    rdfs:label "ui_object_initializer" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 367 .
+
+qmljs:ui_pragma a owl:Class ;
+    rdfs:label "ui_pragma" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 361 .
+
+qmljs:ui_property a owl:Class ;
+    rdfs:label "ui_property" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 371 .
+
+qmljs:ui_property_modifier a owl:Class ;
+    rdfs:label "ui_property_modifier" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 373 .
+
+qmljs:ui_required a owl:Class ;
+    rdfs:label "ui_required" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 375 .
+
+qmljs:ui_signal a owl:Class ;
+    rdfs:label "ui_signal" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 376 .
+
+qmljs:ui_signal_parameter a owl:Class ;
+    rdfs:label "ui_signal_parameter" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 378 .
+
+qmljs:ui_signal_parameters a owl:Class ;
+    rdfs:label "ui_signal_parameters" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 377 .
+
+qmljs:ui_version_specifier a owl:Class ;
+    rdfs:label "ui_version_specifier" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 363 .
+
+qmljs:unary_expression a owl:Class ;
+    rdfs:label "unary_expression" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 253,
+        340,
+        383 .
+
+qmljs:undefined a owl:Class ;
+    rdfs:label "undefined" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 119 .
+
+qmljs:union_type a owl:Class ;
+    rdfs:label "union_type" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 358 .
+
+qmljs:update_expression a owl:Class ;
+    rdfs:label "update_expression" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 254 .
+
+qmljs:value a owl:DatatypeProperty ;
+    rdfs:label "value (literal)" ;
+    rdfs:comment "Literal value for value field when it contains a terminal node" ;
+    qmljs:fieldId 47 ;
+    qmljs:isTerminalField true .
+
+qmljs:variable_declaration a owl:Class ;
+    rdfs:label "variable_declaration" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 192 .
+
+qmljs:variable_declarator a owl:Class ;
+    rdfs:label "variable_declarator" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 194 .
+
+qmljs:while_statement a owl:Class ;
+    rdfs:label "while_statement" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 202 .
+
+qmljs:with_statement a owl:Class ;
+    rdfs:label "with_statement" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 205 .
+
+qmljs:yield_expression a owl:Class ;
+    rdfs:label "yield_expression" ;
+    rdfs:isDefinedBy qmljs: ;
+    rdfs:subClassOf ast:Node ;
+    qmljs:isSupertype true ;
+    qmljs:nodeTypeId 221 .
+
+qmljs: a owl:Ontology ;
+    rdfs:label "Qmljs Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for qmljs" ;
+    owl:versionInfo "v0.25" ;
+    qmljs:abiVersion 14 ;
+    qmljs:fieldCount 48 ;
+    qmljs:languageName "None" ;
+    qmljs:nodeKindCount 424 .
+

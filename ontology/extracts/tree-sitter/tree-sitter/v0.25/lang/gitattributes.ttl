@@ -1,0 +1,256 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix gitattributes: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/gitattributes/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+gitattributes:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+gitattributes:absolute a owl:DatatypeProperty ;
+    rdfs:label "absolute (literal)" ;
+    rdfs:comment "Literal value for absolute field when it contains a terminal node" ;
+    gitattributes:fieldId 1 ;
+    gitattributes:isTerminalField true .
+
+gitattributes:ansi_c_escape a owl:Class ;
+    rdfs:label "ansi_c_escape" ;
+    rdfs:isDefinedBy gitattributes: ;
+    rdfs:subClassOf ast:Node ;
+    gitattributes:isSupertype true ;
+    gitattributes:nodeTypeId 52 .
+
+gitattributes:attr_name a owl:Class ;
+    rdfs:label "attr_name" ;
+    rdfs:isDefinedBy gitattributes: ;
+    rdfs:subClassOf ast:Node ;
+    gitattributes:isSupertype true ;
+    gitattributes:nodeTypeId 1 .
+
+gitattributes:attr_reset a owl:Class ;
+    rdfs:label "attr_reset" ;
+    rdfs:isDefinedBy gitattributes: ;
+    rdfs:subClassOf ast:Node ;
+    gitattributes:isSupertype true ;
+    gitattributes:nodeTypeId 70 .
+
+gitattributes:attr_set a owl:Class ;
+    rdfs:label "attr_set" ;
+    rdfs:isDefinedBy gitattributes: ;
+    rdfs:subClassOf ast:Node ;
+    gitattributes:isSupertype true ;
+    gitattributes:nodeTypeId 22 .
+
+gitattributes:attr_unset a owl:Class ;
+    rdfs:label "attr_unset" ;
+    rdfs:isDefinedBy gitattributes: ;
+    rdfs:subClassOf ast:Node ;
+    gitattributes:isSupertype true ;
+    gitattributes:nodeTypeId 71 .
+
+gitattributes:attribute a owl:Class ;
+    rdfs:label "attribute" ;
+    rdfs:isDefinedBy gitattributes: ;
+    rdfs:subClassOf ast:Node ;
+    gitattributes:isSupertype true ;
+    gitattributes:nodeTypeId 57 .
+
+gitattributes:boolean_value a owl:Class ;
+    rdfs:label "boolean_value" ;
+    rdfs:isDefinedBy gitattributes: ;
+    rdfs:subClassOf ast:Node ;
+    gitattributes:isSupertype true ;
+    gitattributes:nodeTypeId 23 .
+
+gitattributes:builtin_attr a owl:Class ;
+    rdfs:label "builtin_attr" ;
+    rdfs:isDefinedBy gitattributes: ;
+    rdfs:subClassOf ast:Node ;
+    gitattributes:isSupertype true ;
+    gitattributes:nodeTypeId 60 .
+
+gitattributes:character_class a owl:Class ;
+    rdfs:label "character_class" ;
+    rdfs:isDefinedBy gitattributes: ;
+    rdfs:subClassOf ast:Node ;
+    gitattributes:isSupertype true ;
+    gitattributes:nodeTypeId 19 .
+
+gitattributes:class_range a owl:Class ;
+    rdfs:label "class_range" ;
+    rdfs:isDefinedBy gitattributes: ;
+    rdfs:subClassOf ast:Node ;
+    gitattributes:isSupertype true ;
+    gitattributes:nodeTypeId 56 .
+
+gitattributes:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy gitattributes: ;
+    rdfs:subClassOf ast:Node ;
+    gitattributes:isSupertype true ;
+    gitattributes:nodeTypeId 62 .
+
+gitattributes:dir_sep a owl:Class ;
+    rdfs:label "dir_sep" ;
+    rdfs:isDefinedBy gitattributes: ;
+    rdfs:subClassOf ast:Node ;
+    gitattributes:isSupertype true ;
+    gitattributes:nodeTypeId 21 .
+
+gitattributes:escaped_char a owl:Class ;
+    rdfs:label "escaped_char" ;
+    rdfs:isDefinedBy gitattributes: ;
+    rdfs:subClassOf ast:Node ;
+    gitattributes:isSupertype true ;
+    gitattributes:nodeTypeId 7 .
+
+gitattributes:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+gitattributes:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+gitattributes:file a owl:Class ;
+    rdfs:label "file" ;
+    rdfs:isDefinedBy gitattributes: ;
+    rdfs:subClassOf ast:Node ;
+    gitattributes:isSupertype true ;
+    gitattributes:nodeTypeId 45 .
+
+gitattributes:ignored_value a owl:Class ;
+    rdfs:label "ignored_value" ;
+    rdfs:isDefinedBy gitattributes: ;
+    rdfs:subClassOf ast:Node ;
+    gitattributes:isSupertype true ;
+    gitattributes:nodeTypeId 72 .
+
+gitattributes:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+gitattributes:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+gitattributes:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+gitattributes:macro_def a owl:Class ;
+    rdfs:label "macro_def" ;
+    rdfs:isDefinedBy gitattributes: ;
+    rdfs:subClassOf ast:Node ;
+    gitattributes:isSupertype true ;
+    gitattributes:nodeTypeId 61 .
+
+gitattributes:macro_name a owl:DatatypeProperty ;
+    rdfs:label "macro_name (literal)" ;
+    rdfs:comment "Literal value for macro_name field when it contains a terminal node" ;
+    gitattributes:fieldId 2 ;
+    gitattributes:isTerminalField true .
+
+gitattributes:macro_tag a owl:Class ;
+    rdfs:label "macro_tag" ;
+    rdfs:isDefinedBy gitattributes: ;
+    rdfs:subClassOf ast:Node ;
+    gitattributes:isSupertype true ;
+    gitattributes:nodeTypeId 39 .
+
+gitattributes:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+gitattributes:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+gitattributes:pattern a owl:Class ;
+    rdfs:label "pattern" ;
+    rdfs:isDefinedBy gitattributes: ;
+    rdfs:subClassOf ast:Node ;
+    gitattributes:isSupertype true ;
+    gitattributes:nodeTypeId 48 .
+
+gitattributes:pattern_negation a owl:Class ;
+    rdfs:label "pattern_negation" ;
+    rdfs:isDefinedBy gitattributes: ;
+    rdfs:subClassOf ast:Node ;
+    gitattributes:isSupertype true ;
+    gitattributes:nodeTypeId 2 .
+
+gitattributes:quoted_pattern a owl:Class ;
+    rdfs:label "quoted_pattern" ;
+    rdfs:isDefinedBy gitattributes: ;
+    rdfs:subClassOf ast:Node ;
+    gitattributes:isSupertype true ;
+    gitattributes:nodeTypeId 50 .
+
+gitattributes:range_negation a owl:Class ;
+    rdfs:label "range_negation" ;
+    rdfs:isDefinedBy gitattributes: ;
+    rdfs:subClassOf ast:Node ;
+    gitattributes:isSupertype true ;
+    gitattributes:nodeTypeId 15 .
+
+gitattributes:range_notation a owl:Class ;
+    rdfs:label "range_notation" ;
+    rdfs:isDefinedBy gitattributes: ;
+    rdfs:subClassOf ast:Node ;
+    gitattributes:isSupertype true ;
+    gitattributes:nodeTypeId 55 .
+
+gitattributes:redundant_escape a owl:Class ;
+    rdfs:label "redundant_escape" ;
+    rdfs:isDefinedBy gitattributes: ;
+    rdfs:subClassOf ast:Node ;
+    gitattributes:isSupertype true ;
+    gitattributes:nodeTypeId 3 .
+
+gitattributes:relative a owl:DatatypeProperty ;
+    rdfs:label "relative (literal)" ;
+    rdfs:comment "Literal value for relative field when it contains a terminal node" ;
+    gitattributes:fieldId 3 ;
+    gitattributes:isTerminalField true .
+
+gitattributes:string_value a owl:Class ;
+    rdfs:label "string_value" ;
+    rdfs:isDefinedBy gitattributes: ;
+    rdfs:subClassOf ast:Node ;
+    gitattributes:isSupertype true ;
+    gitattributes:nodeTypeId 24 .
+
+gitattributes:trailing_slash a owl:Class ;
+    rdfs:label "trailing_slash" ;
+    rdfs:isDefinedBy gitattributes: ;
+    rdfs:subClassOf ast:Node ;
+    gitattributes:isSupertype true ;
+    gitattributes:nodeTypeId 73 .
+
+gitattributes:wildcard a owl:Class ;
+    rdfs:label "wildcard" ;
+    rdfs:isDefinedBy gitattributes: ;
+    rdfs:subClassOf ast:Node ;
+    gitattributes:isSupertype true ;
+    gitattributes:nodeTypeId 20 .
+
+gitattributes: a owl:Ontology ;
+    rdfs:label "Gitattributes Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for gitattributes" ;
+    owl:versionInfo "v0.25" ;
+    gitattributes:abiVersion 14 ;
+    gitattributes:fieldCount 3 ;
+    gitattributes:languageName "None" ;
+    gitattributes:nodeKindCount 74 .
+

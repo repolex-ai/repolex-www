@@ -1,0 +1,771 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix gdscript: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/gdscript/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+gdscript:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+gdscript:annotation a owl:Class ;
+    rdfs:label "annotation" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 125 .
+
+gdscript:annotations a owl:Class ;
+    rdfs:label "annotations" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 127 .
+
+gdscript:arguments a owl:Class ;
+    rdfs:label "arguments" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 204 .
+
+gdscript:array a owl:Class ;
+    rdfs:label "array" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 193 .
+
+gdscript:assignment a owl:Class ;
+    rdfs:label "assignment" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 189 .
+
+gdscript:attribute a owl:Class ;
+    rdfs:label "attribute" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 185 .
+
+gdscript:attribute_call a owl:Class ;
+    rdfs:label "attribute_call" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 183 .
+
+gdscript:attribute_subscript a owl:Class ;
+    rdfs:label "attribute_subscript" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 184 .
+
+gdscript:augmented_assignment a owl:Class ;
+    rdfs:label "augmented_assignment" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 190 .
+
+gdscript:await_expression a owl:Class ;
+    rdfs:label "await_expression" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 188 .
+
+gdscript:base_call a owl:Class ;
+    rdfs:label "base_call" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 205 .
+
+gdscript:binary_operator a owl:Class ;
+    rdfs:label "binary_operator" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 179 .
+
+gdscript:body a owl:Class ;
+    rdfs:label "body" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 122 .
+
+gdscript:break_statement a owl:Class ;
+    rdfs:label "break_statement" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 149 .
+
+gdscript:breakpoint_statement a owl:Class ;
+    rdfs:label "breakpoint_statement" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 38 .
+
+gdscript:call a owl:Class ;
+    rdfs:label "call" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 206 .
+
+gdscript:class_body a owl:Class ;
+    rdfs:label "class_body" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 160 .
+
+gdscript:class_definition a owl:Class ;
+    rdfs:label "class_definition" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 159 .
+
+gdscript:class_name_statement a owl:Class ;
+    rdfs:label "class_name_statement" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 152 .
+
+gdscript:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 5 .
+
+gdscript:conditional_expression a owl:Class ;
+    rdfs:label "conditional_expression" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 186 .
+
+gdscript:const_statement a owl:Class ;
+    rdfs:label "const_statement" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 146 .
+
+gdscript:constructor_definition a owl:Class ;
+    rdfs:label "constructor_definition" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 203 .
+
+gdscript:continue_statement a owl:Class ;
+    rdfs:label "continue_statement" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 150 .
+
+gdscript:default_parameter a owl:Class ;
+    rdfs:label "default_parameter" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 195 .
+
+gdscript:dictionary a owl:Class ;
+    rdfs:label "dictionary" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 192 .
+
+gdscript:elif_clause a owl:Class ;
+    rdfs:label "elif_clause" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 155 .
+
+gdscript:else_clause a owl:Class ;
+    rdfs:label "else_clause" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 156 .
+
+gdscript:enum_definition a owl:Class ;
+    rdfs:label "enum_definition" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 165 .
+
+gdscript:enumerator a owl:Class ;
+    rdfs:label "enumerator" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 168 .
+
+gdscript:enumerator_list a owl:Class ;
+    rdfs:label "enumerator_list" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 166 .
+
+gdscript:escape_sequence a owl:Class ;
+    rdfs:label "escape_sequence" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 16 .
+
+gdscript:export_variable_statement a owl:Class ;
+    rdfs:label "export_variable_statement" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 144 .
+
+gdscript:expression_statement a owl:Class ;
+    rdfs:label "expression_statement" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 124 .
+
+gdscript:extends_statement a owl:Class ;
+    rdfs:label "extends_statement" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 153 .
+
+gdscript:false a owl:Class ;
+    rdfs:label "false" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 7 .
+
+gdscript:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+gdscript:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+gdscript:field_alternative a owl:ObjectProperty ;
+    rdfs:label "alternative (structural)" ;
+    rdfs:comment "Structural reference for alternative field when it contains a non-terminal node" ;
+    gdscript:fieldId 1 .
+
+gdscript:field_arguments a owl:ObjectProperty ;
+    rdfs:label "arguments (structural)" ;
+    rdfs:comment "Structural reference for arguments field when it contains a non-terminal node" ;
+    gdscript:fieldId 2 .
+
+gdscript:field_body a owl:ObjectProperty ;
+    rdfs:label "body (structural)" ;
+    rdfs:comment "Structural reference for body field when it contains a non-terminal node" ;
+    gdscript:fieldId 3 .
+
+gdscript:field_condition a owl:ObjectProperty ;
+    rdfs:label "condition (structural)" ;
+    rdfs:comment "Structural reference for condition field when it contains a non-terminal node" ;
+    gdscript:fieldId 4 .
+
+gdscript:field_extends a owl:ObjectProperty ;
+    rdfs:label "extends (structural)" ;
+    rdfs:comment "Structural reference for extends field when it contains a non-terminal node" ;
+    gdscript:fieldId 5 .
+
+gdscript:field_get a owl:ObjectProperty ;
+    rdfs:label "get (structural)" ;
+    rdfs:comment "Structural reference for get field when it contains a non-terminal node" ;
+    gdscript:fieldId 6 .
+
+gdscript:field_icon_path a owl:ObjectProperty ;
+    rdfs:label "icon_path (structural)" ;
+    rdfs:comment "Structural reference for icon_path field when it contains a non-terminal node" ;
+    gdscript:fieldId 7 .
+
+gdscript:field_left a owl:ObjectProperty ;
+    rdfs:label "left (structural)" ;
+    rdfs:comment "Structural reference for left field when it contains a non-terminal node" ;
+    gdscript:fieldId 8 .
+
+gdscript:field_op a owl:ObjectProperty ;
+    rdfs:label "op (structural)" ;
+    rdfs:comment "Structural reference for op field when it contains a non-terminal node" ;
+    gdscript:fieldId 10 .
+
+gdscript:field_parameters a owl:ObjectProperty ;
+    rdfs:label "parameters (structural)" ;
+    rdfs:comment "Structural reference for parameters field when it contains a non-terminal node" ;
+    gdscript:fieldId 11 .
+
+gdscript:field_return_type a owl:ObjectProperty ;
+    rdfs:label "return_type (structural)" ;
+    rdfs:comment "Structural reference for return_type field when it contains a non-terminal node" ;
+    gdscript:fieldId 12 .
+
+gdscript:field_right a owl:ObjectProperty ;
+    rdfs:label "right (structural)" ;
+    rdfs:comment "Structural reference for right field when it contains a non-terminal node" ;
+    gdscript:fieldId 13 .
+
+gdscript:field_set a owl:ObjectProperty ;
+    rdfs:label "set (structural)" ;
+    rdfs:comment "Structural reference for set field when it contains a non-terminal node" ;
+    gdscript:fieldId 14 .
+
+gdscript:field_setget a owl:ObjectProperty ;
+    rdfs:label "setget (structural)" ;
+    rdfs:comment "Structural reference for setget field when it contains a non-terminal node" ;
+    gdscript:fieldId 15 .
+
+gdscript:field_type a owl:ObjectProperty ;
+    rdfs:label "type (structural)" ;
+    rdfs:comment "Structural reference for type field when it contains a non-terminal node" ;
+    gdscript:fieldId 17 .
+
+gdscript:field_value a owl:ObjectProperty ;
+    rdfs:label "value (structural)" ;
+    rdfs:comment "Structural reference for value field when it contains a non-terminal node" ;
+    gdscript:fieldId 18 .
+
+gdscript:float a owl:Class ;
+    rdfs:label "float" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 17 .
+
+gdscript:for_statement a owl:Class ;
+    rdfs:label "for_statement" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 157 .
+
+gdscript:function_definition a owl:Class ;
+    rdfs:label "function_definition" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 201 .
+
+gdscript:get a owl:DatatypeProperty ;
+    rdfs:label "get (literal)" ;
+    rdfs:comment "Literal value for get field when it contains a terminal node" ;
+    gdscript:fieldId 6 ;
+    gdscript:isTerminalField true .
+
+gdscript:get_body a owl:Class ;
+    rdfs:label "get_body" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 134 .
+
+gdscript:get_node a owl:Class ;
+    rdfs:label "get_node" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 119 .
+
+gdscript:getter a owl:Class ;
+    rdfs:label "getter" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 140 .
+
+gdscript:identifier a owl:Class ;
+    rdfs:label "identifier" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 112 .
+
+gdscript:if_statement a owl:Class ;
+    rdfs:label "if_statement" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 154 .
+
+gdscript:inferred_type a owl:Class ;
+    rdfs:label "inferred_type" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 128 .
+
+gdscript:integer a owl:Class ;
+    rdfs:label "integer" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 18 .
+
+gdscript:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+gdscript:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+gdscript:lambda a owl:Class ;
+    rdfs:label "lambda" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 202 .
+
+gdscript:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+gdscript:left a owl:DatatypeProperty ;
+    rdfs:label "left (literal)" ;
+    rdfs:comment "Literal value for left field when it contains a terminal node" ;
+    gdscript:fieldId 8 ;
+    gdscript:isTerminalField true .
+
+gdscript:line_continuation a owl:Class ;
+    rdfs:label "line_continuation" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 101 .
+
+gdscript:match_body a owl:Class ;
+    rdfs:label "match_body" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 170 .
+
+gdscript:match_statement a owl:Class ;
+    rdfs:label "match_statement" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 169 .
+
+gdscript:name a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "name",
+        "name (literal)" ;
+    rdfs:comment "Literal value for name field when it contains a terminal node" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:fieldId 9 ;
+    gdscript:isSupertype true ;
+    gdscript:isTerminalField true ;
+    gdscript:nodeTypeId 113 .
+
+gdscript:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+gdscript:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+gdscript:node_path a owl:Class ;
+    rdfs:label "node_path" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 118 .
+
+gdscript:null a owl:Class ;
+    rdfs:label "null" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 8 .
+
+gdscript:onready_variable_statement a owl:Class ;
+    rdfs:label "onready_variable_statement" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 145 .
+
+gdscript:pair a owl:Class ;
+    rdfs:label "pair" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 191 .
+
+gdscript:parameters a owl:Class ;
+    rdfs:label "parameters" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 199 .
+
+gdscript:parenthesized_expression a owl:Class ;
+    rdfs:label "parenthesized_expression" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 187 .
+
+gdscript:pass_statement a owl:Class ;
+    rdfs:label "pass_statement" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 148 .
+
+gdscript:pattern_binding a owl:Class ;
+    rdfs:label "pattern_binding" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 174 .
+
+gdscript:pattern_guard a owl:Class ;
+    rdfs:label "pattern_guard" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 171 .
+
+gdscript:pattern_open_ending a owl:Class ;
+    rdfs:label "pattern_open_ending" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 55 .
+
+gdscript:pattern_section a owl:Class ;
+    rdfs:label "pattern_section" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 172 .
+
+gdscript:region_end a owl:Class ;
+    rdfs:label "region_end" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 3 .
+
+gdscript:region_label a owl:Class ;
+    rdfs:label "region_label" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 4 .
+
+gdscript:region_start a owl:Class ;
+    rdfs:label "region_start" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 114 .
+
+gdscript:remote_keyword a owl:Class ;
+    rdfs:label "remote_keyword" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 115 .
+
+gdscript:return_statement a owl:Class ;
+    rdfs:label "return_statement" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 147 .
+
+gdscript:right a owl:DatatypeProperty ;
+    rdfs:label "right (literal)" ;
+    rdfs:comment "Literal value for right field when it contains a terminal node" ;
+    gdscript:fieldId 13 ;
+    gdscript:isTerminalField true .
+
+gdscript:set a owl:DatatypeProperty ;
+    rdfs:label "set (literal)" ;
+    rdfs:comment "Literal value for set field when it contains a terminal node" ;
+    gdscript:fieldId 14 ;
+    gdscript:isTerminalField true .
+
+gdscript:set_body a owl:Class ;
+    rdfs:label "set_body" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 133 .
+
+gdscript:setget a owl:Class ;
+    rdfs:label "setget" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 141 .
+
+gdscript:setter a owl:Class ;
+    rdfs:label "setter" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 139 .
+
+gdscript:signal_statement a owl:Class ;
+    rdfs:label "signal_statement" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 151 .
+
+gdscript:source a owl:Class ;
+    rdfs:label "source" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 111 .
+
+gdscript:static a owl:DatatypeProperty ;
+    rdfs:label "static (literal)" ;
+    rdfs:comment "Literal value for static field when it contains a terminal node" ;
+    gdscript:fieldId 16 ;
+    gdscript:isTerminalField true .
+
+gdscript:static_keyword a owl:Class ;
+    rdfs:label "static_keyword" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 9 .
+
+gdscript:string a owl:Class ;
+    rdfs:label "string" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 116 .
+
+gdscript:string_name a owl:Class ;
+    rdfs:label "string_name" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 117 .
+
+gdscript:subscript a owl:Class ;
+    rdfs:label "subscript" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 182 .
+
+gdscript:subscript_arguments a owl:Class ;
+    rdfs:label "subscript_arguments" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 181 .
+
+gdscript:true a owl:Class ;
+    rdfs:label "true" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 6 .
+
+gdscript:type a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "type",
+        "type (literal)" ;
+    rdfs:comment "Literal value for type field when it contains a terminal node" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:fieldId 17 ;
+    gdscript:isSupertype true ;
+    gdscript:isTerminalField true ;
+    gdscript:nodeTypeId 120 .
+
+gdscript:typed_default_parameter a owl:Class ;
+    rdfs:label "typed_default_parameter" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 196 .
+
+gdscript:typed_parameter a owl:Class ;
+    rdfs:label "typed_parameter" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 194 .
+
+gdscript:unary_operator a owl:Class ;
+    rdfs:label "unary_operator" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 180 .
+
+gdscript:variable_statement a owl:Class ;
+    rdfs:label "variable_statement" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 143 .
+
+gdscript:variadic_parameter a owl:Class ;
+    rdfs:label "variadic_parameter" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 197 .
+
+gdscript:while_statement a owl:Class ;
+    rdfs:label "while_statement" ;
+    rdfs:isDefinedBy gdscript: ;
+    rdfs:subClassOf ast:Node ;
+    gdscript:isSupertype true ;
+    gdscript:nodeTypeId 158 .
+
+gdscript: a owl:Ontology ;
+    rdfs:label "Gdscript Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for gdscript" ;
+    owl:versionInfo "v0.25" ;
+    gdscript:abiVersion 14 ;
+    gdscript:fieldCount 18 ;
+    gdscript:languageName "None" ;
+    gdscript:nodeKindCount 226 .
+

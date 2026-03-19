@@ -1,0 +1,618 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix capnp: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/capnp/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+capnp:_type_identifier a owl:Class ;
+    rdfs:label "_type_identifier" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 13 .
+
+capnp:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+capnp:annotation a owl:Class ;
+    rdfs:label "annotation" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 80 .
+
+capnp:annotation_array a owl:Class ;
+    rdfs:label "annotation_array" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 84 .
+
+capnp:annotation_definition_identifier a owl:Class ;
+    rdfs:label "annotation_definition_identifier" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 1 .
+
+capnp:annotation_identifier a owl:Class ;
+    rdfs:label "annotation_identifier" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 157 .
+
+capnp:annotation_literal a owl:Class ;
+    rdfs:label "annotation_literal" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 83 .
+
+capnp:annotation_target a owl:Class ;
+    rdfs:label "annotation_target" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 82 .
+
+capnp:annotation_targets a owl:Class ;
+    rdfs:label "annotation_targets" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 81 .
+
+capnp:attribute a owl:Class ;
+    rdfs:label "attribute" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 158 .
+
+capnp:block_text a owl:Class ;
+    rdfs:label "block_text" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 128 .
+
+capnp:boolean a owl:Class ;
+    rdfs:label "boolean" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 117 .
+
+capnp:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 70 .
+
+capnp:concatenated_string a owl:Class ;
+    rdfs:label "concatenated_string" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 127 .
+
+capnp:const a owl:Class ;
+    rdfs:label "const" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 112 .
+
+capnp:const_identifier a owl:Class ;
+    rdfs:label "const_identifier" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 69 .
+
+capnp:const_list a owl:Class ;
+    rdfs:label "const_list" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 119 .
+
+capnp:const_value a owl:Class ;
+    rdfs:label "const_value" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 113 .
+
+capnp:custom_type a owl:Class ;
+    rdfs:label "custom_type" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 111 .
+
+capnp:data a owl:Class ;
+    rdfs:label "data" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 118 .
+
+capnp:data_hex a owl:Class ;
+    rdfs:label "data_hex" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 57 .
+
+capnp:data_string a owl:Class ;
+    rdfs:label "data_string" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 58 .
+
+capnp:embedded_file a owl:Class ;
+    rdfs:label "embedded_file" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 122 .
+
+capnp:enum a owl:Class ;
+    rdfs:label "enum" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 89 .
+
+capnp:enum_field a owl:Class ;
+    rdfs:label "enum_field" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 91 .
+
+capnp:enum_identifier a owl:Class ;
+    rdfs:label "enum_identifier" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 159 .
+
+capnp:enum_member a owl:Class ;
+    rdfs:label "enum_member" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 160 .
+
+capnp:escape_sequence a owl:Class ;
+    rdfs:label "escape_sequence" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 68 .
+
+capnp:extend_type a owl:Class ;
+    rdfs:label "extend_type" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 161 .
+
+capnp:field a owl:Class ;
+    rdfs:label "field" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 93 .
+
+capnp:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+capnp:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+capnp:field_identifier a owl:Class ;
+    rdfs:label "field_identifier" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 162 .
+
+capnp:field_type a owl:Class ;
+    rdfs:label "field_type" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 108 .
+
+capnp:field_version a owl:Class ;
+    rdfs:label "field_version" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 115 .
+
+capnp:float a owl:Class ;
+    rdfs:label "float" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 54 .
+
+capnp:generic_identifier a owl:Class ;
+    rdfs:label "generic_identifier" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 163 .
+
+capnp:generic_parameters a owl:Class ;
+    rdfs:label "generic_parameters" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 125 .
+
+capnp:generics a owl:Class ;
+    rdfs:label "generics" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 123 .
+
+capnp:group a owl:Class ;
+    rdfs:label "group" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 92 .
+
+capnp:implicit_generic_parameters a owl:Class ;
+    rdfs:label "implicit_generic_parameters" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 164 .
+
+capnp:implicit_generics a owl:Class ;
+    rdfs:label "implicit_generics" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 124 .
+
+capnp:import a owl:Class ;
+    rdfs:label "import" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 77 .
+
+capnp:import_path a owl:Class ;
+    rdfs:label "import_path" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 165 .
+
+capnp:import_using a owl:Class ;
+    rdfs:label "import_using" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 76 .
+
+capnp:inline_field a owl:Class ;
+    rdfs:label "inline_field" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 53 .
+
+capnp:interface a owl:Class ;
+    rdfs:label "interface" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 99 .
+
+capnp:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+capnp:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+capnp:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+capnp:list_type a owl:Class ;
+    rdfs:label "list_type" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 110 .
+
+capnp:local_const a owl:Class ;
+    rdfs:label "local_const" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 166 .
+
+capnp:message a owl:Class ;
+    rdfs:label "message" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 71 .
+
+capnp:method a owl:Class ;
+    rdfs:label "method" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 100 .
+
+capnp:method_identifier a owl:Class ;
+    rdfs:label "method_identifier" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 167 .
+
+capnp:method_parameters a owl:Class ;
+    rdfs:label "method_parameters" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 101 .
+
+capnp:named_return_type a owl:Class ;
+    rdfs:label "named_return_type" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 107 .
+
+capnp:named_return_types a owl:Class ;
+    rdfs:label "named_return_types" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 105 .
+
+capnp:namespace a owl:Class ;
+    rdfs:label "namespace" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 168 .
+
+capnp:nested_enum a owl:Class ;
+    rdfs:label "nested_enum" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 90 .
+
+capnp:nested_struct a owl:Class ;
+    rdfs:label "nested_struct" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 88 .
+
+capnp:nested_union a owl:Class ;
+    rdfs:label "nested_union" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 95 .
+
+capnp:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+capnp:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+capnp:number a owl:Class ;
+    rdfs:label "number" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 51 .
+
+capnp:param_identifier a owl:Class ;
+    rdfs:label "param_identifier" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 169 .
+
+capnp:parameter a owl:Class ;
+    rdfs:label "parameter" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 103 .
+
+capnp:parameters a owl:Class ;
+    rdfs:label "parameters" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 102 .
+
+capnp:primitive_type a owl:Class ;
+    rdfs:label "primitive_type" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 109 .
+
+capnp:property a owl:Class ;
+    rdfs:label "property" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 170 .
+
+capnp:replace_using a owl:Class ;
+    rdfs:label "replace_using" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 75 .
+
+capnp:return_identifier a owl:Class ;
+    rdfs:label "return_identifier" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 171 .
+
+capnp:return_type a owl:Class ;
+    rdfs:label "return_type" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 104 .
+
+capnp:string a owl:Class ;
+    rdfs:label "string" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 126 .
+
+capnp:string_fragment a owl:Class ;
+    rdfs:label "string_fragment" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 64,
+        65,
+        66 .
+
+capnp:struct a owl:Class ;
+    rdfs:label "struct" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 87 .
+
+capnp:struct_shorthand a owl:Class ;
+    rdfs:label "struct_shorthand" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 120 .
+
+capnp:top_level_annotation a owl:Class ;
+    rdfs:label "top_level_annotation" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 78 .
+
+capnp:top_level_annotation_body a owl:Class ;
+    rdfs:label "top_level_annotation_body" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 79 .
+
+capnp:type_definition a owl:Class ;
+    rdfs:label "type_definition" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 172 .
+
+capnp:type_identifier a owl:Class ;
+    rdfs:label "type_identifier" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 173 .
+
+capnp:union a owl:Class ;
+    rdfs:label "union" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 94 .
+
+capnp:union_field a owl:Class ;
+    rdfs:label "union_field" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 98 .
+
+capnp:unique_id a owl:Class ;
+    rdfs:label "unique_id" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 2 .
+
+capnp:unique_id_statement a owl:Class ;
+    rdfs:label "unique_id_statement" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 73 .
+
+capnp:unnamed_return_type a owl:Class ;
+    rdfs:label "unnamed_return_type" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 106 .
+
+capnp:using_directive a owl:Class ;
+    rdfs:label "using_directive" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 74 .
+
+capnp:void a owl:Class ;
+    rdfs:label "void" ;
+    rdfs:isDefinedBy capnp: ;
+    rdfs:subClassOf ast:Node ;
+    capnp:isSupertype true ;
+    capnp:nodeTypeId 59 .
+
+capnp: a owl:Ontology ;
+    rdfs:label "Capnp Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for capnp" ;
+    owl:versionInfo "v0.25" ;
+    capnp:abiVersion 14 ;
+    capnp:fieldCount 0 ;
+    capnp:languageName "None" ;
+    capnp:nodeKindCount 174 .
+

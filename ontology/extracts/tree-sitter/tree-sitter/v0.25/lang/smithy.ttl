@@ -1,0 +1,560 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix smithy: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/smithy/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+smithy:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+smithy:absolute_root_shape_id a owl:Class ;
+    rdfs:label "absolute_root_shape_id" ;
+    rdfs:isDefinedBy smithy: ;
+    rdfs:subClassOf ast:Node ;
+    smithy:isSupertype true ;
+    smithy:nodeTypeId 74 .
+
+smithy:apply_statement a owl:Class ;
+    rdfs:label "apply_statement" ;
+    rdfs:isDefinedBy smithy: ;
+    rdfs:subClassOf ast:Node ;
+    smithy:isSupertype true ;
+    smithy:nodeTypeId 102 .
+
+smithy:apply_statement_block a owl:Class ;
+    rdfs:label "apply_statement_block" ;
+    rdfs:isDefinedBy smithy: ;
+    rdfs:subClassOf ast:Node ;
+    smithy:isSupertype true ;
+    smithy:nodeTypeId 104 .
+
+smithy:apply_statement_singular a owl:Class ;
+    rdfs:label "apply_statement_singular" ;
+    rdfs:isDefinedBy smithy: ;
+    rdfs:subClassOf ast:Node ;
+    smithy:isSupertype true ;
+    smithy:nodeTypeId 103 .
+
+smithy:boolean a owl:Class ;
+    rdfs:label "boolean" ;
+    rdfs:isDefinedBy smithy: ;
+    rdfs:subClassOf ast:Node ;
+    smithy:isSupertype true ;
+    smithy:nodeTypeId 115 .
+
+smithy:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy smithy: ;
+    rdfs:subClassOf ast:Node ;
+    smithy:isSupertype true ;
+    smithy:nodeTypeId 58 .
+
+smithy:control_key a owl:Class ;
+    rdfs:label "control_key" ;
+    rdfs:isDefinedBy smithy: ;
+    rdfs:subClassOf ast:Node ;
+    smithy:isSupertype true ;
+    smithy:nodeTypeId 124 .
+
+smithy:control_section a owl:Class ;
+    rdfs:label "control_section" ;
+    rdfs:isDefinedBy smithy: ;
+    rdfs:subClassOf ast:Node ;
+    smithy:isSupertype true ;
+    smithy:nodeTypeId 62 .
+
+smithy:control_statement a owl:Class ;
+    rdfs:label "control_statement" ;
+    rdfs:isDefinedBy smithy: ;
+    rdfs:subClassOf ast:Node ;
+    smithy:isSupertype true ;
+    smithy:nodeTypeId 63 .
+
+smithy:control_var_name a owl:Class ;
+    rdfs:label "control_var_name" ;
+    rdfs:isDefinedBy smithy: ;
+    rdfs:subClassOf ast:Node ;
+    smithy:isSupertype true ;
+    smithy:nodeTypeId 64 .
+
+smithy:documentation_comment a owl:Class ;
+    rdfs:label "documentation_comment" ;
+    rdfs:isDefinedBy smithy: ;
+    rdfs:subClassOf ast:Node ;
+    smithy:isSupertype true ;
+    smithy:nodeTypeId 126 .
+
+smithy:enum_field a owl:Class ;
+    rdfs:label "enum_field" ;
+    rdfs:isDefinedBy smithy: ;
+    rdfs:subClassOf ast:Node ;
+    smithy:isSupertype true ;
+    smithy:nodeTypeId 145 .
+
+smithy:enum_member a owl:Class ;
+    rdfs:label "enum_member" ;
+    rdfs:isDefinedBy smithy: ;
+    rdfs:subClassOf ast:Node ;
+    smithy:isSupertype true ;
+    smithy:nodeTypeId 81 .
+
+smithy:enum_members a owl:Class ;
+    rdfs:label "enum_members" ;
+    rdfs:isDefinedBy smithy: ;
+    rdfs:subClassOf ast:Node ;
+    smithy:isSupertype true ;
+    smithy:nodeTypeId 80 .
+
+smithy:enum_statement a owl:Class ;
+    rdfs:label "enum_statement" ;
+    rdfs:isDefinedBy smithy: ;
+    rdfs:subClassOf ast:Node ;
+    smithy:isSupertype true ;
+    smithy:nodeTypeId 79 .
+
+smithy:escape_sequence a owl:Class ;
+    rdfs:label "escape_sequence" ;
+    rdfs:isDefinedBy smithy: ;
+    rdfs:subClassOf ast:Node ;
+    smithy:isSupertype true ;
+    smithy:nodeTypeId 56 .
+
+smithy:field a owl:Class ;
+    rdfs:label "field" ;
+    rdfs:isDefinedBy smithy: ;
+    rdfs:subClassOf ast:Node ;
+    smithy:isSupertype true ;
+    smithy:nodeTypeId 146 .
+
+smithy:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+smithy:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+smithy:float a owl:Class ;
+    rdfs:label "float" ;
+    rdfs:isDefinedBy smithy: ;
+    rdfs:subClassOf ast:Node ;
+    smithy:isSupertype true ;
+    smithy:nodeTypeId 117 .
+
+smithy:identifier a owl:Class ;
+    rdfs:label "identifier" ;
+    rdfs:isDefinedBy smithy: ;
+    rdfs:subClassOf ast:Node ;
+    smithy:isSupertype true ;
+    smithy:nodeTypeId 123 .
+
+smithy:inline_structure a owl:Class ;
+    rdfs:label "inline_structure" ;
+    rdfs:isDefinedBy smithy: ;
+    rdfs:subClassOf ast:Node ;
+    smithy:isSupertype true ;
+    smithy:nodeTypeId 97 .
+
+smithy:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+smithy:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+smithy:key_identifier a owl:Class ;
+    rdfs:label "key_identifier" ;
+    rdfs:isDefinedBy smithy: ;
+    rdfs:subClassOf ast:Node ;
+    smithy:isSupertype true ;
+    smithy:nodeTypeId 147 .
+
+smithy:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+smithy:list_statement a owl:Class ;
+    rdfs:label "list_statement" ;
+    rdfs:isDefinedBy smithy: ;
+    rdfs:subClassOf ast:Node ;
+    smithy:isSupertype true ;
+    smithy:nodeTypeId 82 .
+
+smithy:literal a owl:Class ;
+    rdfs:label "literal" ;
+    rdfs:isDefinedBy smithy: ;
+    rdfs:subClassOf ast:Node ;
+    smithy:isSupertype true ;
+    smithy:nodeTypeId 113 .
+
+smithy:map_statement a owl:Class ;
+    rdfs:label "map_statement" ;
+    rdfs:isDefinedBy smithy: ;
+    rdfs:subClassOf ast:Node ;
+    smithy:isSupertype true ;
+    smithy:nodeTypeId 83 .
+
+smithy:metadata_section a owl:Class ;
+    rdfs:label "metadata_section" ;
+    rdfs:isDefinedBy smithy: ;
+    rdfs:subClassOf ast:Node ;
+    smithy:isSupertype true ;
+    smithy:nodeTypeId 65 .
+
+smithy:metadata_statement a owl:Class ;
+    rdfs:label "metadata_statement" ;
+    rdfs:isDefinedBy smithy: ;
+    rdfs:subClassOf ast:Node ;
+    smithy:isSupertype true ;
+    smithy:nodeTypeId 66 .
+
+smithy:mixins a owl:Class ;
+    rdfs:label "mixins" ;
+    rdfs:isDefinedBy smithy: ;
+    rdfs:subClassOf ast:Node ;
+    smithy:isSupertype true ;
+    smithy:nodeTypeId 105 .
+
+smithy:multiline_string_fragment a owl:Class ;
+    rdfs:label "multiline_string_fragment" ;
+    rdfs:isDefinedBy smithy: ;
+    rdfs:subClassOf ast:Node ;
+    smithy:isSupertype true ;
+    smithy:nodeTypeId 121 .
+
+smithy:namespace a owl:Class ;
+    rdfs:label "namespace" ;
+    rdfs:isDefinedBy smithy: ;
+    rdfs:subClassOf ast:Node ;
+    smithy:isSupertype true ;
+    smithy:nodeTypeId 69 .
+
+smithy:namespace_statement a owl:Class ;
+    rdfs:label "namespace_statement" ;
+    rdfs:isDefinedBy smithy: ;
+    rdfs:subClassOf ast:Node ;
+    smithy:isSupertype true ;
+    smithy:nodeTypeId 68 .
+
+smithy:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+smithy:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+smithy:node_array a owl:Class ;
+    rdfs:label "node_array" ;
+    rdfs:isDefinedBy smithy: ;
+    rdfs:subClassOf ast:Node ;
+    smithy:isSupertype true ;
+    smithy:nodeTypeId 109 .
+
+smithy:node_object a owl:Class ;
+    rdfs:label "node_object" ;
+    rdfs:isDefinedBy smithy: ;
+    rdfs:subClassOf ast:Node ;
+    smithy:isSupertype true ;
+    smithy:nodeTypeId 110 .
+
+smithy:node_object_key a owl:Class ;
+    rdfs:label "node_object_key" ;
+    rdfs:isDefinedBy smithy: ;
+    rdfs:subClassOf ast:Node ;
+    smithy:isSupertype true ;
+    smithy:nodeTypeId 112 .
+
+smithy:node_object_kvp a owl:Class ;
+    rdfs:label "node_object_kvp" ;
+    rdfs:isDefinedBy smithy: ;
+    rdfs:subClassOf ast:Node ;
+    smithy:isSupertype true ;
+    smithy:nodeTypeId 111 .
+
+smithy:node_value a owl:Class ;
+    rdfs:label "node_value" ;
+    rdfs:isDefinedBy smithy: ;
+    rdfs:subClassOf ast:Node ;
+    smithy:isSupertype true ;
+    smithy:nodeTypeId 108 .
+
+smithy:null a owl:Class ;
+    rdfs:label "null" ;
+    rdfs:isDefinedBy smithy: ;
+    rdfs:subClassOf ast:Node ;
+    smithy:isSupertype true ;
+    smithy:nodeTypeId 46 .
+
+smithy:number a owl:Class ;
+    rdfs:label "number" ;
+    rdfs:isDefinedBy smithy: ;
+    rdfs:subClassOf ast:Node ;
+    smithy:isSupertype true ;
+    smithy:nodeTypeId 116 .
+
+smithy:operation_body a owl:Class ;
+    rdfs:label "operation_body" ;
+    rdfs:isDefinedBy smithy: ;
+    rdfs:subClassOf ast:Node ;
+    smithy:isSupertype true ;
+    smithy:nodeTypeId 93 .
+
+smithy:operation_error a owl:Class ;
+    rdfs:label "operation_error" ;
+    rdfs:isDefinedBy smithy: ;
+    rdfs:subClassOf ast:Node ;
+    smithy:isSupertype true ;
+    smithy:nodeTypeId 96 .
+
+smithy:operation_error_field a owl:Class ;
+    rdfs:label "operation_error_field" ;
+    rdfs:isDefinedBy smithy: ;
+    rdfs:subClassOf ast:Node ;
+    smithy:isSupertype true ;
+    smithy:nodeTypeId 148 .
+
+smithy:operation_errors a owl:Class ;
+    rdfs:label "operation_errors" ;
+    rdfs:isDefinedBy smithy: ;
+    rdfs:subClassOf ast:Node ;
+    smithy:isSupertype true ;
+    smithy:nodeTypeId 95 .
+
+smithy:operation_field a owl:Class ;
+    rdfs:label "operation_field" ;
+    rdfs:isDefinedBy smithy: ;
+    rdfs:subClassOf ast:Node ;
+    smithy:isSupertype true ;
+    smithy:nodeTypeId 149 .
+
+smithy:operation_member a owl:Class ;
+    rdfs:label "operation_member" ;
+    rdfs:isDefinedBy smithy: ;
+    rdfs:subClassOf ast:Node ;
+    smithy:isSupertype true ;
+    smithy:nodeTypeId 94 .
+
+smithy:operation_statement a owl:Class ;
+    rdfs:label "operation_statement" ;
+    rdfs:isDefinedBy smithy: ;
+    rdfs:subClassOf ast:Node ;
+    smithy:isSupertype true ;
+    smithy:nodeTypeId 88 .
+
+smithy:primitive a owl:Class ;
+    rdfs:label "primitive" ;
+    rdfs:isDefinedBy smithy: ;
+    rdfs:subClassOf ast:Node ;
+    smithy:isSupertype true ;
+    smithy:nodeTypeId 114 .
+
+smithy:resource_statement a owl:Class ;
+    rdfs:label "resource_statement" ;
+    rdfs:isDefinedBy smithy: ;
+    rdfs:subClassOf ast:Node ;
+    smithy:isSupertype true ;
+    smithy:nodeTypeId 89 .
+
+smithy:root_shape_id a owl:Class ;
+    rdfs:label "root_shape_id" ;
+    rdfs:isDefinedBy smithy: ;
+    rdfs:subClassOf ast:Node ;
+    smithy:isSupertype true ;
+    smithy:nodeTypeId 75 .
+
+smithy:service_statement a owl:Class ;
+    rdfs:label "service_statement" ;
+    rdfs:isDefinedBy smithy: ;
+    rdfs:subClassOf ast:Node ;
+    smithy:isSupertype true ;
+    smithy:nodeTypeId 87 .
+
+smithy:set_statement a owl:Class ;
+    rdfs:label "set_statement" ;
+    rdfs:isDefinedBy smithy: ;
+    rdfs:subClassOf ast:Node ;
+    smithy:isSupertype true ;
+    smithy:nodeTypeId 84 .
+
+smithy:shape_body a owl:Class ;
+    rdfs:label "shape_body" ;
+    rdfs:isDefinedBy smithy: ;
+    rdfs:subClassOf ast:Node ;
+    smithy:isSupertype true ;
+    smithy:nodeTypeId 73 .
+
+smithy:shape_id a owl:Class ;
+    rdfs:label "shape_id" ;
+    rdfs:isDefinedBy smithy: ;
+    rdfs:subClassOf ast:Node ;
+    smithy:isSupertype true ;
+    smithy:nodeTypeId 77 .
+
+smithy:shape_id_member a owl:Class ;
+    rdfs:label "shape_id_member" ;
+    rdfs:isDefinedBy smithy: ;
+    rdfs:subClassOf ast:Node ;
+    smithy:isSupertype true ;
+    smithy:nodeTypeId 76 .
+
+smithy:shape_member a owl:Class ;
+    rdfs:label "shape_member" ;
+    rdfs:isDefinedBy smithy: ;
+    rdfs:subClassOf ast:Node ;
+    smithy:isSupertype true ;
+    smithy:nodeTypeId 91 .
+
+smithy:shape_member_elided a owl:Class ;
+    rdfs:label "shape_member_elided" ;
+    rdfs:isDefinedBy smithy: ;
+    rdfs:subClassOf ast:Node ;
+    smithy:isSupertype true ;
+    smithy:nodeTypeId 92 .
+
+smithy:shape_members a owl:Class ;
+    rdfs:label "shape_members" ;
+    rdfs:isDefinedBy smithy: ;
+    rdfs:subClassOf ast:Node ;
+    smithy:isSupertype true ;
+    smithy:nodeTypeId 90 .
+
+smithy:shape_section a owl:Class ;
+    rdfs:label "shape_section" ;
+    rdfs:isDefinedBy smithy: ;
+    rdfs:subClassOf ast:Node ;
+    smithy:isSupertype true ;
+    smithy:nodeTypeId 67 .
+
+smithy:shape_statement a owl:Class ;
+    rdfs:label "shape_statement" ;
+    rdfs:isDefinedBy smithy: ;
+    rdfs:subClassOf ast:Node ;
+    smithy:isSupertype true ;
+    smithy:nodeTypeId 72 .
+
+smithy:simple_shape_statement a owl:Class ;
+    rdfs:label "simple_shape_statement" ;
+    rdfs:isDefinedBy smithy: ;
+    rdfs:subClassOf ast:Node ;
+    smithy:isSupertype true ;
+    smithy:nodeTypeId 78 .
+
+smithy:source_file a owl:Class ;
+    rdfs:label "source_file" ;
+    rdfs:isDefinedBy smithy: ;
+    rdfs:subClassOf ast:Node ;
+    smithy:isSupertype true ;
+    smithy:nodeTypeId 61 .
+
+smithy:string a owl:Class ;
+    rdfs:label "string" ;
+    rdfs:isDefinedBy smithy: ;
+    rdfs:subClassOf ast:Node ;
+    smithy:isSupertype true ;
+    smithy:nodeTypeId 118 .
+
+smithy:string_fragment a owl:Class ;
+    rdfs:label "string_fragment" ;
+    rdfs:isDefinedBy smithy: ;
+    rdfs:subClassOf ast:Node ;
+    smithy:isSupertype true ;
+    smithy:nodeTypeId 52 .
+
+smithy:structure_resource a owl:Class ;
+    rdfs:label "structure_resource" ;
+    rdfs:isDefinedBy smithy: ;
+    rdfs:subClassOf ast:Node ;
+    smithy:isSupertype true ;
+    smithy:nodeTypeId 106 .
+
+smithy:structure_statement a owl:Class ;
+    rdfs:label "structure_statement" ;
+    rdfs:isDefinedBy smithy: ;
+    rdfs:subClassOf ast:Node ;
+    smithy:isSupertype true ;
+    smithy:nodeTypeId 85 .
+
+smithy:trait_body a owl:Class ;
+    rdfs:label "trait_body" ;
+    rdfs:isDefinedBy smithy: ;
+    rdfs:subClassOf ast:Node ;
+    smithy:isSupertype true ;
+    smithy:nodeTypeId 99 .
+
+smithy:trait_body_value a owl:Class ;
+    rdfs:label "trait_body_value" ;
+    rdfs:isDefinedBy smithy: ;
+    rdfs:subClassOf ast:Node ;
+    smithy:isSupertype true ;
+    smithy:nodeTypeId 100 .
+
+smithy:trait_node_value a owl:Class ;
+    rdfs:label "trait_node_value" ;
+    rdfs:isDefinedBy smithy: ;
+    rdfs:subClassOf ast:Node ;
+    smithy:isSupertype true ;
+    smithy:nodeTypeId 150 .
+
+smithy:trait_object_kvp a owl:Class ;
+    rdfs:label "trait_object_kvp" ;
+    rdfs:isDefinedBy smithy: ;
+    rdfs:subClassOf ast:Node ;
+    smithy:isSupertype true ;
+    smithy:nodeTypeId 151 .
+
+smithy:trait_statement a owl:Class ;
+    rdfs:label "trait_statement" ;
+    rdfs:isDefinedBy smithy: ;
+    rdfs:subClassOf ast:Node ;
+    smithy:isSupertype true ;
+    smithy:nodeTypeId 98 .
+
+smithy:trait_structure a owl:Class ;
+    rdfs:label "trait_structure" ;
+    rdfs:isDefinedBy smithy: ;
+    rdfs:subClassOf ast:Node ;
+    smithy:isSupertype true ;
+    smithy:nodeTypeId 101 .
+
+smithy:union_statement a owl:Class ;
+    rdfs:label "union_statement" ;
+    rdfs:isDefinedBy smithy: ;
+    rdfs:subClassOf ast:Node ;
+    smithy:isSupertype true ;
+    smithy:nodeTypeId 86 .
+
+smithy:use_statement a owl:Class ;
+    rdfs:label "use_statement" ;
+    rdfs:isDefinedBy smithy: ;
+    rdfs:subClassOf ast:Node ;
+    smithy:isSupertype true ;
+    smithy:nodeTypeId 71 .
+
+smithy:value_assignment a owl:Class ;
+    rdfs:label "value_assignment" ;
+    rdfs:isDefinedBy smithy: ;
+    rdfs:subClassOf ast:Node ;
+    smithy:isSupertype true ;
+    smithy:nodeTypeId 107 .
+
+smithy: a owl:Ontology ;
+    rdfs:label "Smithy Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for smithy" ;
+    owl:versionInfo "v0.25" ;
+    smithy:abiVersion 14 ;
+    smithy:fieldCount 0 ;
+    smithy:languageName "None" ;
+    smithy:nodeKindCount 152 .
+

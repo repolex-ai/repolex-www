@@ -1,0 +1,652 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix luau: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/luau/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+luau:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+luau:arguments a owl:Class ;
+    rdfs:label "arguments" ;
+    rdfs:isDefinedBy luau: ;
+    rdfs:subClassOf ast:Node ;
+    luau:isSupertype true ;
+    luau:nodeTypeId 144 .
+
+luau:assignment_statement a owl:Class ;
+    rdfs:label "assignment_statement" ;
+    rdfs:isDefinedBy luau: ;
+    rdfs:subClassOf ast:Node ;
+    luau:isSupertype true ;
+    luau:nodeTypeId 102,
+        122 .
+
+luau:attribute a owl:Class ;
+    rdfs:label "attribute" ;
+    rdfs:isDefinedBy luau: ;
+    rdfs:subClassOf ast:Node ;
+    luau:isSupertype true ;
+    luau:nodeTypeId 124 .
+
+luau:binary_expression a owl:Class ;
+    rdfs:label "binary_expression" ;
+    rdfs:isDefinedBy luau: ;
+    rdfs:subClassOf ast:Node ;
+    luau:isSupertype true ;
+    luau:nodeTypeId 150 .
+
+luau:block a owl:Class ;
+    rdfs:label "block" ;
+    rdfs:isDefinedBy luau: ;
+    rdfs:subClassOf ast:Node ;
+    luau:isSupertype true ;
+    luau:nodeTypeId 98 .
+
+luau:bracket_index_expression a owl:Class ;
+    rdfs:label "bracket_index_expression" ;
+    rdfs:isDefinedBy luau: ;
+    rdfs:subClassOf ast:Node ;
+    luau:isSupertype true ;
+    luau:nodeTypeId 140 .
+
+luau:break_statement a owl:Class ;
+    rdfs:label "break_statement" ;
+    rdfs:isDefinedBy luau: ;
+    rdfs:subClassOf ast:Node ;
+    luau:isSupertype true ;
+    luau:nodeTypeId 7 .
+
+luau:builtin_type a owl:Class ;
+    rdfs:label "builtin_type" ;
+    rdfs:isDefinedBy luau: ;
+    rdfs:subClassOf ast:Node ;
+    luau:isSupertype true ;
+    luau:nodeTypeId 158 .
+
+luau:cast_expression a owl:Class ;
+    rdfs:label "cast_expression" ;
+    rdfs:isDefinedBy luau: ;
+    rdfs:subClassOf ast:Node ;
+    luau:isSupertype true ;
+    luau:nodeTypeId 171 .
+
+luau:chunk a owl:Class ;
+    rdfs:label "chunk" ;
+    rdfs:isDefinedBy luau: ;
+    rdfs:subClassOf ast:Node ;
+    luau:isSupertype true ;
+    luau:nodeTypeId 97 .
+
+luau:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy luau: ;
+    rdfs:subClassOf ast:Node ;
+    luau:isSupertype true ;
+    luau:nodeTypeId 152 .
+
+luau:comment_content a owl:Class ;
+    rdfs:label "comment_content" ;
+    rdfs:isDefinedBy luau: ;
+    rdfs:subClassOf ast:Node ;
+    luau:isSupertype true ;
+    luau:nodeTypeId 58,
+        92 .
+
+luau:content a owl:DatatypeProperty ;
+    rdfs:label "content (literal)" ;
+    rdfs:comment "Literal value for content field when it contains a terminal node" ;
+    luau:fieldId 8 ;
+    luau:isTerminalField true .
+
+luau:continue_statement a owl:Class ;
+    rdfs:label "continue_statement" ;
+    rdfs:isDefinedBy luau: ;
+    rdfs:subClassOf ast:Node ;
+    luau:isSupertype true ;
+    luau:nodeTypeId 67 .
+
+luau:do_statement a owl:Class ;
+    rdfs:label "do_statement" ;
+    rdfs:isDefinedBy luau: ;
+    rdfs:subClassOf ast:Node ;
+    luau:isSupertype true ;
+    luau:nodeTypeId 105 .
+
+luau:dot_index_expression a owl:Class ;
+    rdfs:label "dot_index_expression" ;
+    rdfs:isDefinedBy luau: ;
+    rdfs:subClassOf ast:Node ;
+    luau:isSupertype true ;
+    luau:nodeTypeId 119,
+        141 .
+
+luau:else_clause a owl:Class ;
+    rdfs:label "else_clause" ;
+    rdfs:isDefinedBy luau: ;
+    rdfs:subClassOf ast:Node ;
+    luau:isSupertype true ;
+    luau:nodeTypeId 174 .
+
+luau:else_statement a owl:Class ;
+    rdfs:label "else_statement" ;
+    rdfs:isDefinedBy luau: ;
+    rdfs:subClassOf ast:Node ;
+    luau:isSupertype true ;
+    luau:nodeTypeId 110 .
+
+luau:elseif_clause a owl:Class ;
+    rdfs:label "elseif_clause" ;
+    rdfs:isDefinedBy luau: ;
+    rdfs:subClassOf ast:Node ;
+    luau:isSupertype true ;
+    luau:nodeTypeId 173 .
+
+luau:elseif_statement a owl:Class ;
+    rdfs:label "elseif_statement" ;
+    rdfs:isDefinedBy luau: ;
+    rdfs:subClassOf ast:Node ;
+    luau:isSupertype true ;
+    luau:nodeTypeId 109 .
+
+luau:empty_statement a owl:Class ;
+    rdfs:label "empty_statement" ;
+    rdfs:isDefinedBy luau: ;
+    rdfs:subClassOf ast:Node ;
+    luau:isSupertype true ;
+    luau:nodeTypeId 101 .
+
+luau:empty_type a owl:Class ;
+    rdfs:label "empty_type" ;
+    rdfs:isDefinedBy luau: ;
+    rdfs:subClassOf ast:Node ;
+    luau:isSupertype true ;
+    luau:nodeTypeId 163 .
+
+luau:escape_sequence a owl:Class ;
+    rdfs:label "escape_sequence" ;
+    rdfs:isDefinedBy luau: ;
+    rdfs:subClassOf ast:Node ;
+    luau:isSupertype true ;
+    luau:nodeTypeId 33 .
+
+luau:expression_list a owl:Class ;
+    rdfs:label "expression_list" ;
+    rdfs:isDefinedBy luau: ;
+    rdfs:subClassOf ast:Node ;
+    luau:isSupertype true ;
+    luau:nodeTypeId 104,
+        125 .
+
+luau:false a owl:Class ;
+    rdfs:label "false" ;
+    rdfs:isDefinedBy luau: ;
+    rdfs:subClassOf ast:Node ;
+    luau:isSupertype true ;
+    luau:nodeTypeId 26 .
+
+luau:field a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "field",
+        "field (literal)" ;
+    rdfs:comment "Literal value for field field when it contains a terminal node" ;
+    rdfs:isDefinedBy luau: ;
+    rdfs:subClassOf ast:Node ;
+    luau:fieldId 10 ;
+    luau:isSupertype true ;
+    luau:isTerminalField true ;
+    luau:nodeTypeId 149 .
+
+luau:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+luau:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+luau:field_alternative a owl:ObjectProperty ;
+    rdfs:label "alternative (structural)" ;
+    rdfs:comment "Structural reference for alternative field when it contains a non-terminal node" ;
+    luau:fieldId 1 .
+
+luau:field_arguments a owl:ObjectProperty ;
+    rdfs:label "arguments (structural)" ;
+    rdfs:comment "Structural reference for arguments field when it contains a non-terminal node" ;
+    luau:fieldId 2 .
+
+luau:field_attribute a owl:ObjectProperty ;
+    rdfs:label "attribute (structural)" ;
+    rdfs:comment "Structural reference for attribute field when it contains a non-terminal node" ;
+    luau:fieldId 3 .
+
+luau:field_body a owl:ObjectProperty ;
+    rdfs:label "body (structural)" ;
+    rdfs:comment "Structural reference for body field when it contains a non-terminal node" ;
+    luau:fieldId 4 .
+
+luau:field_clause a owl:ObjectProperty ;
+    rdfs:label "clause (structural)" ;
+    rdfs:comment "Structural reference for clause field when it contains a non-terminal node" ;
+    luau:fieldId 5 .
+
+luau:field_condition a owl:ObjectProperty ;
+    rdfs:label "condition (structural)" ;
+    rdfs:comment "Structural reference for condition field when it contains a non-terminal node" ;
+    luau:fieldId 6 .
+
+luau:field_consequence a owl:ObjectProperty ;
+    rdfs:label "consequence (structural)" ;
+    rdfs:comment "Structural reference for consequence field when it contains a non-terminal node" ;
+    luau:fieldId 7 .
+
+luau:field_content a owl:ObjectProperty ;
+    rdfs:label "content (structural)" ;
+    rdfs:comment "Structural reference for content field when it contains a non-terminal node" ;
+    luau:fieldId 8 .
+
+luau:field_end a owl:ObjectProperty ;
+    rdfs:label "end (structural)" ;
+    rdfs:comment "Structural reference for end field when it contains a non-terminal node" ;
+    luau:fieldId 9 .
+
+luau:field_field a owl:ObjectProperty ;
+    rdfs:label "field (structural)" ;
+    rdfs:comment "Structural reference for field field when it contains a non-terminal node" ;
+    luau:fieldId 10 .
+
+luau:field_left a owl:ObjectProperty ;
+    rdfs:label "left (structural)" ;
+    rdfs:comment "Structural reference for left field when it contains a non-terminal node" ;
+    luau:fieldId 11 .
+
+luau:field_name a owl:ObjectProperty ;
+    rdfs:label "name (structural)" ;
+    rdfs:comment "Structural reference for name field when it contains a non-terminal node" ;
+    luau:fieldId 14 .
+
+luau:field_operand a owl:ObjectProperty ;
+    rdfs:label "operand (structural)" ;
+    rdfs:comment "Structural reference for operand field when it contains a non-terminal node" ;
+    luau:fieldId 15 .
+
+luau:field_parameters a owl:ObjectProperty ;
+    rdfs:label "parameters (structural)" ;
+    rdfs:comment "Structural reference for parameters field when it contains a non-terminal node" ;
+    luau:fieldId 16 .
+
+luau:field_right a owl:ObjectProperty ;
+    rdfs:label "right (structural)" ;
+    rdfs:comment "Structural reference for right field when it contains a non-terminal node" ;
+    luau:fieldId 17 .
+
+luau:field_start a owl:ObjectProperty ;
+    rdfs:label "start (structural)" ;
+    rdfs:comment "Structural reference for start field when it contains a non-terminal node" ;
+    luau:fieldId 18 .
+
+luau:field_step a owl:ObjectProperty ;
+    rdfs:label "step (structural)" ;
+    rdfs:comment "Structural reference for step field when it contains a non-terminal node" ;
+    luau:fieldId 19 .
+
+luau:field_table a owl:ObjectProperty ;
+    rdfs:label "table (structural)" ;
+    rdfs:comment "Structural reference for table field when it contains a non-terminal node" ;
+    luau:fieldId 20 .
+
+luau:field_type a owl:Class ;
+    rdfs:label "field_type" ;
+    rdfs:isDefinedBy luau: ;
+    rdfs:subClassOf ast:Node ;
+    luau:isSupertype true ;
+    luau:nodeTypeId 164 .
+
+luau:field_value a owl:ObjectProperty ;
+    rdfs:label "value (structural)" ;
+    rdfs:comment "Structural reference for value field when it contains a non-terminal node" ;
+    luau:fieldId 21 .
+
+luau:for_generic_clause a owl:Class ;
+    rdfs:label "for_generic_clause" ;
+    rdfs:isDefinedBy luau: ;
+    rdfs:subClassOf ast:Node ;
+    luau:isSupertype true ;
+    luau:nodeTypeId 112 .
+
+luau:for_numeric_clause a owl:Class ;
+    rdfs:label "for_numeric_clause" ;
+    rdfs:isDefinedBy luau: ;
+    rdfs:subClassOf ast:Node ;
+    luau:isSupertype true ;
+    luau:nodeTypeId 113 .
+
+luau:for_statement a owl:Class ;
+    rdfs:label "for_statement" ;
+    rdfs:isDefinedBy luau: ;
+    rdfs:subClassOf ast:Node ;
+    luau:isSupertype true ;
+    luau:nodeTypeId 111 .
+
+luau:function_call a owl:Class ;
+    rdfs:label "function_call" ;
+    rdfs:isDefinedBy luau: ;
+    rdfs:subClassOf ast:Node ;
+    luau:isSupertype true ;
+    luau:nodeTypeId 142 .
+
+luau:function_declaration a owl:Class ;
+    rdfs:label "function_declaration" ;
+    rdfs:isDefinedBy luau: ;
+    rdfs:subClassOf ast:Node ;
+    luau:isSupertype true ;
+    luau:nodeTypeId 115,
+        116 .
+
+luau:function_definition a owl:Class ;
+    rdfs:label "function_definition" ;
+    rdfs:isDefinedBy luau: ;
+    rdfs:subClassOf ast:Node ;
+    luau:isSupertype true ;
+    luau:nodeTypeId 134 .
+
+luau:function_type a owl:Class ;
+    rdfs:label "function_type" ;
+    rdfs:isDefinedBy luau: ;
+    rdfs:subClassOf ast:Node ;
+    luau:isSupertype true ;
+    luau:nodeTypeId 160 .
+
+luau:generic_type a owl:Class ;
+    rdfs:label "generic_type" ;
+    rdfs:isDefinedBy luau: ;
+    rdfs:subClassOf ast:Node ;
+    luau:isSupertype true ;
+    luau:nodeTypeId 161 .
+
+luau:generic_type_list a owl:Class ;
+    rdfs:label "generic_type_list" ;
+    rdfs:isDefinedBy luau: ;
+    rdfs:subClassOf ast:Node ;
+    luau:isSupertype true ;
+    luau:nodeTypeId 155 .
+
+luau:hash_bang_line a owl:Class ;
+    rdfs:label "hash_bang_line" ;
+    rdfs:isDefinedBy luau: ;
+    rdfs:subClassOf ast:Node ;
+    luau:isSupertype true ;
+    luau:nodeTypeId 2 .
+
+luau:identifier a owl:Class ;
+    rdfs:label "identifier" ;
+    rdfs:isDefinedBy luau: ;
+    rdfs:subClassOf ast:Node ;
+    luau:isSupertype true ;
+    luau:nodeTypeId 1 .
+
+luau:if_expression a owl:Class ;
+    rdfs:label "if_expression" ;
+    rdfs:isDefinedBy luau: ;
+    rdfs:subClassOf ast:Node ;
+    luau:isSupertype true ;
+    luau:nodeTypeId 172 .
+
+luau:if_statement a owl:Class ;
+    rdfs:label "if_statement" ;
+    rdfs:isDefinedBy luau: ;
+    rdfs:subClassOf ast:Node ;
+    luau:isSupertype true ;
+    luau:nodeTypeId 108 .
+
+luau:interpolation a owl:Class ;
+    rdfs:label "interpolation" ;
+    rdfs:isDefinedBy luau: ;
+    rdfs:subClassOf ast:Node ;
+    luau:isSupertype true ;
+    luau:nodeTypeId 179 .
+
+luau:intersection_type a owl:Class ;
+    rdfs:label "intersection_type" ;
+    rdfs:isDefinedBy luau: ;
+    rdfs:subClassOf ast:Node ;
+    luau:isSupertype true ;
+    luau:nodeTypeId 167 .
+
+luau:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+luau:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+luau:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+luau:literal_type a owl:Class ;
+    rdfs:label "literal_type" ;
+    rdfs:isDefinedBy luau: ;
+    rdfs:subClassOf ast:Node ;
+    luau:isSupertype true ;
+    luau:nodeTypeId 169 .
+
+luau:method a owl:DatatypeProperty ;
+    rdfs:label "method (literal)" ;
+    rdfs:comment "Literal value for method field when it contains a terminal node" ;
+    luau:fieldId 13 ;
+    luau:isTerminalField true .
+
+luau:method_index_expression a owl:Class ;
+    rdfs:label "method_index_expression" ;
+    rdfs:isDefinedBy luau: ;
+    rdfs:subClassOf ast:Node ;
+    luau:isSupertype true ;
+    luau:nodeTypeId 120,
+        143 .
+
+luau:name a owl:DatatypeProperty ;
+    rdfs:label "name (literal)" ;
+    rdfs:comment "Literal value for name field when it contains a terminal node" ;
+    luau:fieldId 14 ;
+    luau:isTerminalField true .
+
+luau:nil a owl:Class ;
+    rdfs:label "nil" ;
+    rdfs:isDefinedBy luau: ;
+    rdfs:subClassOf ast:Node ;
+    luau:isSupertype true ;
+    luau:nodeTypeId 127 .
+
+luau:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+luau:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+luau:number a owl:Class ;
+    rdfs:label "number" ;
+    rdfs:isDefinedBy luau: ;
+    rdfs:subClassOf ast:Node ;
+    luau:isSupertype true ;
+    luau:nodeTypeId 28 .
+
+luau:object_field_type a owl:Class ;
+    rdfs:label "object_field_type" ;
+    rdfs:isDefinedBy luau: ;
+    rdfs:subClassOf ast:Node ;
+    luau:isSupertype true ;
+    luau:nodeTypeId 165 .
+
+luau:object_type a owl:Class ;
+    rdfs:label "object_type" ;
+    rdfs:isDefinedBy luau: ;
+    rdfs:subClassOf ast:Node ;
+    luau:isSupertype true ;
+    luau:nodeTypeId 162 .
+
+luau:optional_type a owl:Class ;
+    rdfs:label "optional_type" ;
+    rdfs:isDefinedBy luau: ;
+    rdfs:subClassOf ast:Node ;
+    luau:isSupertype true ;
+    luau:nodeTypeId 168 .
+
+luau:parameter a owl:Class ;
+    rdfs:label "parameter" ;
+    rdfs:isDefinedBy luau: ;
+    rdfs:subClassOf ast:Node ;
+    luau:isSupertype true ;
+    luau:nodeTypeId 156 .
+
+luau:parameters a owl:Class ;
+    rdfs:label "parameters" ;
+    rdfs:isDefinedBy luau: ;
+    rdfs:subClassOf ast:Node ;
+    luau:isSupertype true ;
+    luau:nodeTypeId 136 .
+
+luau:parenthesized_expression a owl:Class ;
+    rdfs:label "parenthesized_expression" ;
+    rdfs:isDefinedBy luau: ;
+    rdfs:subClassOf ast:Node ;
+    luau:isSupertype true ;
+    luau:nodeTypeId 145 .
+
+luau:repeat_statement a owl:Class ;
+    rdfs:label "repeat_statement" ;
+    rdfs:isDefinedBy luau: ;
+    rdfs:subClassOf ast:Node ;
+    luau:isSupertype true ;
+    luau:nodeTypeId 107 .
+
+luau:return_statement a owl:Class ;
+    rdfs:label "return_statement" ;
+    rdfs:isDefinedBy luau: ;
+    rdfs:subClassOf ast:Node ;
+    luau:isSupertype true ;
+    luau:nodeTypeId 100 .
+
+luau:string a owl:Class ;
+    rdfs:label "string" ;
+    rdfs:isDefinedBy luau: ;
+    rdfs:subClassOf ast:Node ;
+    luau:isSupertype true ;
+    luau:nodeTypeId 128 .
+
+luau:string_content a owl:Class ;
+    rdfs:label "string_content" ;
+    rdfs:isDefinedBy luau: ;
+    rdfs:subClassOf ast:Node ;
+    luau:isSupertype true ;
+    luau:nodeTypeId 95,
+        177 .
+
+luau:table_constructor a owl:Class ;
+    rdfs:label "table_constructor" ;
+    rdfs:isDefinedBy luau: ;
+    rdfs:subClassOf ast:Node ;
+    luau:isSupertype true ;
+    luau:nodeTypeId 146 .
+
+luau:true a owl:Class ;
+    rdfs:label "true" ;
+    rdfs:isDefinedBy luau: ;
+    rdfs:subClassOf ast:Node ;
+    luau:isSupertype true ;
+    luau:nodeTypeId 27 .
+
+luau:tuple_type a owl:Class ;
+    rdfs:label "tuple_type" ;
+    rdfs:isDefinedBy luau: ;
+    rdfs:subClassOf ast:Node ;
+    luau:isSupertype true ;
+    luau:nodeTypeId 159 .
+
+luau:type_definition a owl:Class ;
+    rdfs:label "type_definition" ;
+    rdfs:isDefinedBy luau: ;
+    rdfs:subClassOf ast:Node ;
+    luau:isSupertype true ;
+    luau:nodeTypeId 154 .
+
+luau:unary_expression a owl:Class ;
+    rdfs:label "unary_expression" ;
+    rdfs:isDefinedBy luau: ;
+    rdfs:subClassOf ast:Node ;
+    luau:isSupertype true ;
+    luau:nodeTypeId 151 .
+
+luau:union_type a owl:Class ;
+    rdfs:label "union_type" ;
+    rdfs:isDefinedBy luau: ;
+    rdfs:subClassOf ast:Node ;
+    luau:isSupertype true ;
+    luau:nodeTypeId 166 .
+
+luau:update_statement a owl:Class ;
+    rdfs:label "update_statement" ;
+    rdfs:isDefinedBy luau: ;
+    rdfs:subClassOf ast:Node ;
+    luau:isSupertype true ;
+    luau:nodeTypeId 153 .
+
+luau:vararg_expression a owl:Class ;
+    rdfs:label "vararg_expression" ;
+    rdfs:isDefinedBy luau: ;
+    rdfs:subClassOf ast:Node ;
+    luau:isSupertype true ;
+    luau:nodeTypeId 133 .
+
+luau:variable_declaration a owl:Class ;
+    rdfs:label "variable_declaration" ;
+    rdfs:isDefinedBy luau: ;
+    rdfs:subClassOf ast:Node ;
+    luau:isSupertype true ;
+    luau:nodeTypeId 121 .
+
+luau:variable_list a owl:Class ;
+    rdfs:label "variable_list" ;
+    rdfs:isDefinedBy luau: ;
+    rdfs:subClassOf ast:Node ;
+    luau:isSupertype true ;
+    luau:nodeTypeId 103,
+        123,
+        175 .
+
+luau:variadic_type a owl:Class ;
+    rdfs:label "variadic_type" ;
+    rdfs:isDefinedBy luau: ;
+    rdfs:subClassOf ast:Node ;
+    luau:isSupertype true ;
+    luau:nodeTypeId 170 .
+
+luau:while_statement a owl:Class ;
+    rdfs:label "while_statement" ;
+    rdfs:isDefinedBy luau: ;
+    rdfs:subClassOf ast:Node ;
+    luau:isSupertype true ;
+    luau:nodeTypeId 106 .
+
+luau: a owl:Ontology ;
+    rdfs:label "Luau Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for luau" ;
+    owl:versionInfo "v0.25" ;
+    luau:abiVersion 14 ;
+    luau:fieldCount 21 ;
+    luau:languageName "None" ;
+    luau:nodeKindCount 197 .
+

@@ -1,0 +1,423 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix proto: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/proto/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+proto:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+proto:block_lit a owl:Class ;
+    rdfs:label "block_lit" ;
+    rdfs:isDefinedBy proto: ;
+    rdfs:subClassOf ast:Node ;
+    proto:isSupertype true ;
+    proto:nodeTypeId 107 .
+
+proto:bool a owl:Class ;
+    rdfs:label "bool" ;
+    rdfs:isDefinedBy proto: ;
+    rdfs:subClassOf ast:Node ;
+    proto:isSupertype true ;
+    proto:nodeTypeId 109 .
+
+proto:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy proto: ;
+    rdfs:subClassOf ast:Node ;
+    proto:isSupertype true ;
+    proto:nodeTypeId 69 .
+
+proto:constant a owl:Class ;
+    rdfs:label "constant" ;
+    rdfs:isDefinedBy proto: ;
+    rdfs:subClassOf ast:Node ;
+    proto:isSupertype true ;
+    proto:nodeTypeId 106 .
+
+proto:decimal_lit a owl:Class ;
+    rdfs:label "decimal_lit" ;
+    rdfs:isDefinedBy proto: ;
+    rdfs:subClassOf ast:Node ;
+    proto:isSupertype true ;
+    proto:nodeTypeId 60 .
+
+proto:edition a owl:Class ;
+    rdfs:label "edition" ;
+    rdfs:isDefinedBy proto: ;
+    rdfs:subClassOf ast:Node ;
+    proto:isSupertype true ;
+    proto:nodeTypeId 72 .
+
+proto:empty_statement a owl:Class ;
+    rdfs:label "empty_statement" ;
+    rdfs:isDefinedBy proto: ;
+    rdfs:subClassOf ast:Node ;
+    proto:isSupertype true ;
+    proto:nodeTypeId 71 .
+
+proto:enum a owl:Class ;
+    rdfs:label "enum" ;
+    rdfs:isDefinedBy proto: ;
+    rdfs:subClassOf ast:Node ;
+    proto:isSupertype true ;
+    proto:nodeTypeId 78 .
+
+proto:enum_body a owl:Class ;
+    rdfs:label "enum_body" ;
+    rdfs:isDefinedBy proto: ;
+    rdfs:subClassOf ast:Node ;
+    proto:isSupertype true ;
+    proto:nodeTypeId 80 .
+
+proto:enum_field a owl:Class ;
+    rdfs:label "enum_field" ;
+    rdfs:isDefinedBy proto: ;
+    rdfs:subClassOf ast:Node ;
+    proto:isSupertype true ;
+    proto:nodeTypeId 81 .
+
+proto:enum_name a owl:Class ;
+    rdfs:label "enum_name" ;
+    rdfs:isDefinedBy proto: ;
+    rdfs:subClassOf ast:Node ;
+    proto:isSupertype true ;
+    proto:nodeTypeId 79 .
+
+proto:enum_value_option a owl:Class ;
+    rdfs:label "enum_value_option" ;
+    rdfs:isDefinedBy proto: ;
+    rdfs:subClassOf ast:Node ;
+    proto:isSupertype true ;
+    proto:nodeTypeId 82 .
+
+proto:escape_sequence a owl:Class ;
+    rdfs:label "escape_sequence" ;
+    rdfs:isDefinedBy proto: ;
+    rdfs:subClassOf ast:Node ;
+    proto:isSupertype true ;
+    proto:nodeTypeId 68 .
+
+proto:extend a owl:Class ;
+    rdfs:label "extend" ;
+    rdfs:isDefinedBy proto: ;
+    rdfs:subClassOf ast:Node ;
+    proto:isSupertype true ;
+    proto:nodeTypeId 86 .
+
+proto:extensions a owl:Class ;
+    rdfs:label "extensions" ;
+    rdfs:isDefinedBy proto: ;
+    rdfs:subClassOf ast:Node ;
+    proto:isSupertype true ;
+    proto:nodeTypeId 96 .
+
+proto:false a owl:Class ;
+    rdfs:label "false" ;
+    rdfs:isDefinedBy proto: ;
+    rdfs:subClassOf ast:Node ;
+    proto:isSupertype true ;
+    proto:nodeTypeId 59 .
+
+proto:field a owl:Class ;
+    rdfs:label "field" ;
+    rdfs:isDefinedBy proto: ;
+    rdfs:subClassOf ast:Node ;
+    proto:isSupertype true ;
+    proto:nodeTypeId 87 .
+
+proto:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+proto:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+proto:field_number a owl:Class ;
+    rdfs:label "field_number" ;
+    rdfs:isDefinedBy proto: ;
+    rdfs:subClassOf ast:Node ;
+    proto:isSupertype true ;
+    proto:nodeTypeId 101 .
+
+proto:field_option a owl:Class ;
+    rdfs:label "field_option" ;
+    rdfs:isDefinedBy proto: ;
+    rdfs:subClassOf ast:Node ;
+    proto:isSupertype true ;
+    proto:nodeTypeId 89 .
+
+proto:field_options a owl:Class ;
+    rdfs:label "field_options" ;
+    rdfs:isDefinedBy proto: ;
+    rdfs:subClassOf ast:Node ;
+    proto:isSupertype true ;
+    proto:nodeTypeId 88 .
+
+proto:field_path a owl:ObjectProperty ;
+    rdfs:label "path (structural)" ;
+    rdfs:comment "Structural reference for path field when it contains a non-terminal node" ;
+    proto:fieldId 1 .
+
+proto:field_year a owl:ObjectProperty ;
+    rdfs:label "year (structural)" ;
+    rdfs:comment "Structural reference for year field when it contains a non-terminal node" ;
+    proto:fieldId 2 .
+
+proto:float_lit a owl:Class ;
+    rdfs:label "float_lit" ;
+    rdfs:isDefinedBy proto: ;
+    rdfs:subClassOf ast:Node ;
+    proto:isSupertype true ;
+    proto:nodeTypeId 63 .
+
+proto:full_ident a owl:Class ;
+    rdfs:label "full_ident" ;
+    rdfs:isDefinedBy proto: ;
+    rdfs:subClassOf ast:Node ;
+    proto:isSupertype true ;
+    proto:nodeTypeId 108 .
+
+proto:hex_lit a owl:Class ;
+    rdfs:label "hex_lit" ;
+    rdfs:isDefinedBy proto: ;
+    rdfs:subClassOf ast:Node ;
+    proto:isSupertype true ;
+    proto:nodeTypeId 62 .
+
+proto:identifier a owl:Class ;
+    rdfs:label "identifier" ;
+    rdfs:isDefinedBy proto: ;
+    rdfs:subClassOf ast:Node ;
+    proto:isSupertype true ;
+    proto:nodeTypeId 56 .
+
+proto:import a owl:Class ;
+    rdfs:label "import" ;
+    rdfs:isDefinedBy proto: ;
+    rdfs:subClassOf ast:Node ;
+    proto:isSupertype true ;
+    proto:nodeTypeId 74 .
+
+proto:int_lit a owl:Class ;
+    rdfs:label "int_lit" ;
+    rdfs:isDefinedBy proto: ;
+    rdfs:subClassOf ast:Node ;
+    proto:isSupertype true ;
+    proto:nodeTypeId 110 .
+
+proto:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+proto:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+proto:key_type a owl:Class ;
+    rdfs:label "key_type" ;
+    rdfs:isDefinedBy proto: ;
+    rdfs:subClassOf ast:Node ;
+    proto:isSupertype true ;
+    proto:nodeTypeId 93 .
+
+proto:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+proto:map_field a owl:Class ;
+    rdfs:label "map_field" ;
+    rdfs:isDefinedBy proto: ;
+    rdfs:subClassOf ast:Node ;
+    proto:isSupertype true ;
+    proto:nodeTypeId 92 .
+
+proto:message a owl:Class ;
+    rdfs:label "message" ;
+    rdfs:isDefinedBy proto: ;
+    rdfs:subClassOf ast:Node ;
+    proto:isSupertype true ;
+    proto:nodeTypeId 83 .
+
+proto:message_body a owl:Class ;
+    rdfs:label "message_body" ;
+    rdfs:isDefinedBy proto: ;
+    rdfs:subClassOf ast:Node ;
+    proto:isSupertype true ;
+    proto:nodeTypeId 84 .
+
+proto:message_name a owl:Class ;
+    rdfs:label "message_name" ;
+    rdfs:isDefinedBy proto: ;
+    rdfs:subClassOf ast:Node ;
+    proto:isSupertype true ;
+    proto:nodeTypeId 85 .
+
+proto:message_or_enum_type a owl:Class ;
+    rdfs:label "message_or_enum_type" ;
+    rdfs:isDefinedBy proto: ;
+    rdfs:subClassOf ast:Node ;
+    proto:isSupertype true ;
+    proto:nodeTypeId 100 .
+
+proto:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+proto:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+proto:octal_lit a owl:Class ;
+    rdfs:label "octal_lit" ;
+    rdfs:isDefinedBy proto: ;
+    rdfs:subClassOf ast:Node ;
+    proto:isSupertype true ;
+    proto:nodeTypeId 61 .
+
+proto:oneof a owl:Class ;
+    rdfs:label "oneof" ;
+    rdfs:isDefinedBy proto: ;
+    rdfs:subClassOf ast:Node ;
+    proto:isSupertype true ;
+    proto:nodeTypeId 90 .
+
+proto:oneof_field a owl:Class ;
+    rdfs:label "oneof_field" ;
+    rdfs:isDefinedBy proto: ;
+    rdfs:subClassOf ast:Node ;
+    proto:isSupertype true ;
+    proto:nodeTypeId 91 .
+
+proto:option a owl:Class ;
+    rdfs:label "option" ;
+    rdfs:isDefinedBy proto: ;
+    rdfs:subClassOf ast:Node ;
+    proto:isSupertype true ;
+    proto:nodeTypeId 76 .
+
+proto:package a owl:Class ;
+    rdfs:label "package" ;
+    rdfs:isDefinedBy proto: ;
+    rdfs:subClassOf ast:Node ;
+    proto:isSupertype true ;
+    proto:nodeTypeId 75 .
+
+proto:range a owl:Class ;
+    rdfs:label "range" ;
+    rdfs:isDefinedBy proto: ;
+    rdfs:subClassOf ast:Node ;
+    proto:isSupertype true ;
+    proto:nodeTypeId 98 .
+
+proto:ranges a owl:Class ;
+    rdfs:label "ranges" ;
+    rdfs:isDefinedBy proto: ;
+    rdfs:subClassOf ast:Node ;
+    proto:isSupertype true ;
+    proto:nodeTypeId 97 .
+
+proto:reserved a owl:Class ;
+    rdfs:label "reserved" ;
+    rdfs:isDefinedBy proto: ;
+    rdfs:subClassOf ast:Node ;
+    proto:isSupertype true ;
+    proto:nodeTypeId 95 .
+
+proto:reserved_field_names a owl:Class ;
+    rdfs:label "reserved_field_names" ;
+    rdfs:isDefinedBy proto: ;
+    rdfs:subClassOf ast:Node ;
+    proto:isSupertype true ;
+    proto:nodeTypeId 99 .
+
+proto:reserved_identifier a owl:Class ;
+    rdfs:label "reserved_identifier" ;
+    rdfs:isDefinedBy proto: ;
+    rdfs:subClassOf ast:Node ;
+    proto:isSupertype true ;
+    proto:nodeTypeId 57 .
+
+proto:rpc a owl:Class ;
+    rdfs:label "rpc" ;
+    rdfs:isDefinedBy proto: ;
+    rdfs:subClassOf ast:Node ;
+    proto:isSupertype true ;
+    proto:nodeTypeId 104 .
+
+proto:rpc_name a owl:Class ;
+    rdfs:label "rpc_name" ;
+    rdfs:isDefinedBy proto: ;
+    rdfs:subClassOf ast:Node ;
+    proto:isSupertype true ;
+    proto:nodeTypeId 105 .
+
+proto:service a owl:Class ;
+    rdfs:label "service" ;
+    rdfs:isDefinedBy proto: ;
+    rdfs:subClassOf ast:Node ;
+    proto:isSupertype true ;
+    proto:nodeTypeId 102 .
+
+proto:service_name a owl:Class ;
+    rdfs:label "service_name" ;
+    rdfs:isDefinedBy proto: ;
+    rdfs:subClassOf ast:Node ;
+    proto:isSupertype true ;
+    proto:nodeTypeId 103 .
+
+proto:source_file a owl:Class ;
+    rdfs:label "source_file" ;
+    rdfs:isDefinedBy proto: ;
+    rdfs:subClassOf ast:Node ;
+    proto:isSupertype true ;
+    proto:nodeTypeId 70 .
+
+proto:string a owl:Class ;
+    rdfs:label "string" ;
+    rdfs:isDefinedBy proto: ;
+    rdfs:subClassOf ast:Node ;
+    proto:isSupertype true ;
+    proto:nodeTypeId 111 .
+
+proto:syntax a owl:Class ;
+    rdfs:label "syntax" ;
+    rdfs:isDefinedBy proto: ;
+    rdfs:subClassOf ast:Node ;
+    proto:isSupertype true ;
+    proto:nodeTypeId 73 .
+
+proto:true a owl:Class ;
+    rdfs:label "true" ;
+    rdfs:isDefinedBy proto: ;
+    rdfs:subClassOf ast:Node ;
+    proto:isSupertype true ;
+    proto:nodeTypeId 58 .
+
+proto:type a owl:Class ;
+    rdfs:label "type" ;
+    rdfs:isDefinedBy proto: ;
+    rdfs:subClassOf ast:Node ;
+    proto:isSupertype true ;
+    proto:nodeTypeId 94 .
+
+proto: a owl:Ontology ;
+    rdfs:label "Proto Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for proto" ;
+    owl:versionInfo "v0.25" ;
+    proto:abiVersion 15 ;
+    proto:fieldCount 2 ;
+    proto:languageName "proto" ;
+    proto:nodeKindCount 129 .
+

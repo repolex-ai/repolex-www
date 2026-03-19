@@ -1,0 +1,576 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix squirrel: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/squirrel/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+squirrel:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+squirrel:alternative a owl:DatatypeProperty ;
+    rdfs:label "alternative (literal)" ;
+    rdfs:comment "Literal value for alternative field when it contains a terminal node" ;
+    squirrel:fieldId 1 ;
+    squirrel:isTerminalField true .
+
+squirrel:anonymous_function a owl:Class ;
+    rdfs:label "anonymous_function" ;
+    rdfs:isDefinedBy squirrel: ;
+    rdfs:subClassOf ast:Node ;
+    squirrel:isSupertype true ;
+    squirrel:nodeTypeId 143 .
+
+squirrel:array a owl:Class ;
+    rdfs:label "array" ;
+    rdfs:isDefinedBy squirrel: ;
+    rdfs:subClassOf ast:Node ;
+    squirrel:isSupertype true ;
+    squirrel:nodeTypeId 147 .
+
+squirrel:assignment_expression a owl:Class ;
+    rdfs:label "assignment_expression" ;
+    rdfs:isDefinedBy squirrel: ;
+    rdfs:subClassOf ast:Node ;
+    squirrel:isSupertype true ;
+    squirrel:nodeTypeId 132 .
+
+squirrel:attribute_declaration a owl:Class ;
+    rdfs:label "attribute_declaration" ;
+    rdfs:isDefinedBy squirrel: ;
+    rdfs:subClassOf ast:Node ;
+    squirrel:isSupertype true ;
+    squirrel:nodeTypeId 126 .
+
+squirrel:binary_expression a owl:Class ;
+    rdfs:label "binary_expression" ;
+    rdfs:isDefinedBy squirrel: ;
+    rdfs:subClassOf ast:Node ;
+    squirrel:isSupertype true ;
+    squirrel:nodeTypeId 130 .
+
+squirrel:block a owl:Class ;
+    rdfs:label "block" ;
+    rdfs:isDefinedBy squirrel: ;
+    rdfs:subClassOf ast:Node ;
+    squirrel:isSupertype true ;
+    squirrel:nodeTypeId 98 .
+
+squirrel:bool a owl:Class ;
+    rdfs:label "bool" ;
+    rdfs:isDefinedBy squirrel: ;
+    rdfs:subClassOf ast:Node ;
+    squirrel:isSupertype true ;
+    squirrel:nodeTypeId 152 .
+
+squirrel:break a owl:Class ;
+    rdfs:label "break" ;
+    rdfs:isDefinedBy squirrel: ;
+    rdfs:subClassOf ast:Node ;
+    squirrel:isSupertype true ;
+    squirrel:nodeTypeId 108 .
+
+squirrel:call_args a owl:Class ;
+    rdfs:label "call_args" ;
+    rdfs:isDefinedBy squirrel: ;
+    rdfs:subClassOf ast:Node ;
+    squirrel:isSupertype true ;
+    squirrel:nodeTypeId 142 .
+
+squirrel:call_expression a owl:Class ;
+    rdfs:label "call_expression" ;
+    rdfs:isDefinedBy squirrel: ;
+    rdfs:subClassOf ast:Node ;
+    squirrel:isSupertype true ;
+    squirrel:nodeTypeId 141 .
+
+squirrel:case_statement a owl:Class ;
+    rdfs:label "case_statement" ;
+    rdfs:isDefinedBy squirrel: ;
+    rdfs:subClassOf ast:Node ;
+    squirrel:isSupertype true ;
+    squirrel:nodeTypeId 104 .
+
+squirrel:catch_statement a owl:Class ;
+    rdfs:label "catch_statement" ;
+    rdfs:isDefinedBy squirrel: ;
+    rdfs:subClassOf ast:Node ;
+    squirrel:isSupertype true ;
+    squirrel:nodeTypeId 121 .
+
+squirrel:char a owl:Class ;
+    rdfs:label "char" ;
+    rdfs:isDefinedBy squirrel: ;
+    rdfs:subClassOf ast:Node ;
+    squirrel:isSupertype true ;
+    squirrel:nodeTypeId 150 .
+
+squirrel:class_declaration a owl:Class ;
+    rdfs:label "class_declaration" ;
+    rdfs:isDefinedBy squirrel: ;
+    rdfs:subClassOf ast:Node ;
+    squirrel:isSupertype true ;
+    squirrel:nodeTypeId 118 .
+
+squirrel:clone_expression a owl:Class ;
+    rdfs:label "clone_expression" ;
+    rdfs:isDefinedBy squirrel: ;
+    rdfs:subClassOf ast:Node ;
+    squirrel:isSupertype true ;
+    squirrel:nodeTypeId 146 .
+
+squirrel:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy squirrel: ;
+    rdfs:subClassOf ast:Node ;
+    squirrel:isSupertype true ;
+    squirrel:nodeTypeId 94 .
+
+squirrel:consequence a owl:DatatypeProperty ;
+    rdfs:label "consequence (literal)" ;
+    rdfs:comment "Literal value for consequence field when it contains a terminal node" ;
+    squirrel:fieldId 5 ;
+    squirrel:isTerminalField true .
+
+squirrel:const_declaration a owl:Class ;
+    rdfs:label "const_declaration" ;
+    rdfs:isDefinedBy squirrel: ;
+    rdfs:subClassOf ast:Node ;
+    squirrel:isSupertype true ;
+    squirrel:nodeTypeId 123 .
+
+squirrel:const_value a owl:Class ;
+    rdfs:label "const_value" ;
+    rdfs:isDefinedBy squirrel: ;
+    rdfs:subClassOf ast:Node ;
+    squirrel:isSupertype true ;
+    squirrel:nodeTypeId 124 .
+
+squirrel:continue a owl:Class ;
+    rdfs:label "continue" ;
+    rdfs:isDefinedBy squirrel: ;
+    rdfs:subClassOf ast:Node ;
+    squirrel:isSupertype true ;
+    squirrel:nodeTypeId 109 .
+
+squirrel:default_statement a owl:Class ;
+    rdfs:label "default_statement" ;
+    rdfs:isDefinedBy squirrel: ;
+    rdfs:subClassOf ast:Node ;
+    squirrel:isSupertype true ;
+    squirrel:nodeTypeId 105 .
+
+squirrel:delete_expression a owl:Class ;
+    rdfs:label "delete_expression" ;
+    rdfs:isDefinedBy squirrel: ;
+    rdfs:subClassOf ast:Node ;
+    squirrel:isSupertype true ;
+    squirrel:nodeTypeId 137 .
+
+squirrel:deref_expression a owl:Class ;
+    rdfs:label "deref_expression" ;
+    rdfs:isDefinedBy squirrel: ;
+    rdfs:subClassOf ast:Node ;
+    squirrel:isSupertype true ;
+    squirrel:nodeTypeId 139 .
+
+squirrel:do_while_statement a owl:Class ;
+    rdfs:label "do_while_statement" ;
+    rdfs:isDefinedBy squirrel: ;
+    rdfs:subClassOf ast:Node ;
+    squirrel:isSupertype true ;
+    squirrel:nodeTypeId 102 .
+
+squirrel:else_statement a owl:Class ;
+    rdfs:label "else_statement" ;
+    rdfs:isDefinedBy squirrel: ;
+    rdfs:subClassOf ast:Node ;
+    squirrel:isSupertype true ;
+    squirrel:nodeTypeId 100 .
+
+squirrel:enum_declaration a owl:Class ;
+    rdfs:label "enum_declaration" ;
+    rdfs:isDefinedBy squirrel: ;
+    rdfs:subClassOf ast:Node ;
+    squirrel:isSupertype true ;
+    squirrel:nodeTypeId 125 .
+
+squirrel:escape_sequence a owl:Class ;
+    rdfs:label "escape_sequence" ;
+    rdfs:isDefinedBy squirrel: ;
+    rdfs:subClassOf ast:Node ;
+    squirrel:isSupertype true ;
+    squirrel:nodeTypeId 90 .
+
+squirrel:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+squirrel:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+squirrel:field_alternative a owl:ObjectProperty ;
+    rdfs:label "alternative (structural)" ;
+    rdfs:comment "Structural reference for alternative field when it contains a non-terminal node" ;
+    squirrel:fieldId 1 .
+
+squirrel:field_case a owl:ObjectProperty ;
+    rdfs:label "case (structural)" ;
+    rdfs:comment "Structural reference for case field when it contains a non-terminal node" ;
+    squirrel:fieldId 2 .
+
+squirrel:field_collection a owl:ObjectProperty ;
+    rdfs:label "collection (structural)" ;
+    rdfs:comment "Structural reference for collection field when it contains a non-terminal node" ;
+    squirrel:fieldId 3 .
+
+squirrel:field_condition a owl:ObjectProperty ;
+    rdfs:label "condition (structural)" ;
+    rdfs:comment "Structural reference for condition field when it contains a non-terminal node" ;
+    squirrel:fieldId 4 .
+
+squirrel:field_consequence a owl:ObjectProperty ;
+    rdfs:label "consequence (structural)" ;
+    rdfs:comment "Structural reference for consequence field when it contains a non-terminal node" ;
+    squirrel:fieldId 5 .
+
+squirrel:field_function a owl:ObjectProperty ;
+    rdfs:label "function (structural)" ;
+    rdfs:comment "Structural reference for function field when it contains a non-terminal node" ;
+    squirrel:fieldId 6 .
+
+squirrel:field_increment a owl:ObjectProperty ;
+    rdfs:label "increment (structural)" ;
+    rdfs:comment "Structural reference for increment field when it contains a non-terminal node" ;
+    squirrel:fieldId 7 .
+
+squirrel:field_index a owl:ObjectProperty ;
+    rdfs:label "index (structural)" ;
+    rdfs:comment "Structural reference for index field when it contains a non-terminal node" ;
+    squirrel:fieldId 8 .
+
+squirrel:field_initial a owl:ObjectProperty ;
+    rdfs:label "initial (structural)" ;
+    rdfs:comment "Structural reference for initial field when it contains a non-terminal node" ;
+    squirrel:fieldId 9 .
+
+squirrel:field_left a owl:ObjectProperty ;
+    rdfs:label "left (structural)" ;
+    rdfs:comment "Structural reference for left field when it contains a non-terminal node" ;
+    squirrel:fieldId 10 .
+
+squirrel:field_object a owl:ObjectProperty ;
+    rdfs:label "object (structural)" ;
+    rdfs:comment "Structural reference for object field when it contains a non-terminal node" ;
+    squirrel:fieldId 11 .
+
+squirrel:field_operand a owl:ObjectProperty ;
+    rdfs:label "operand (structural)" ;
+    rdfs:comment "Structural reference for operand field when it contains a non-terminal node" ;
+    squirrel:fieldId 12 .
+
+squirrel:field_operator a owl:ObjectProperty ;
+    rdfs:label "operator (structural)" ;
+    rdfs:comment "Structural reference for operator field when it contains a non-terminal node" ;
+    squirrel:fieldId 13 .
+
+squirrel:field_right a owl:ObjectProperty ;
+    rdfs:label "right (structural)" ;
+    rdfs:comment "Structural reference for right field when it contains a non-terminal node" ;
+    squirrel:fieldId 14 .
+
+squirrel:float a owl:Class ;
+    rdfs:label "float" ;
+    rdfs:isDefinedBy squirrel: ;
+    rdfs:subClassOf ast:Node ;
+    squirrel:isSupertype true ;
+    squirrel:nodeTypeId 83 .
+
+squirrel:for_statement a owl:Class ;
+    rdfs:label "for_statement" ;
+    rdfs:isDefinedBy squirrel: ;
+    rdfs:subClassOf ast:Node ;
+    squirrel:isSupertype true ;
+    squirrel:nodeTypeId 106 .
+
+squirrel:foreach_statement a owl:Class ;
+    rdfs:label "foreach_statement" ;
+    rdfs:isDefinedBy squirrel: ;
+    rdfs:subClassOf ast:Node ;
+    squirrel:isSupertype true ;
+    squirrel:nodeTypeId 107 .
+
+squirrel:function_declaration a owl:Class ;
+    rdfs:label "function_declaration" ;
+    rdfs:isDefinedBy squirrel: ;
+    rdfs:subClassOf ast:Node ;
+    squirrel:isSupertype true ;
+    squirrel:nodeTypeId 115 .
+
+squirrel:global_variable a owl:Class ;
+    rdfs:label "global_variable" ;
+    rdfs:isDefinedBy squirrel: ;
+    rdfs:subClassOf ast:Node ;
+    squirrel:isSupertype true ;
+    squirrel:nodeTypeId 148 .
+
+squirrel:identifier a owl:Class ;
+    rdfs:label "identifier" ;
+    rdfs:isDefinedBy squirrel: ;
+    rdfs:subClassOf ast:Node ;
+    squirrel:isSupertype true ;
+    squirrel:nodeTypeId 1 .
+
+squirrel:if_statement a owl:Class ;
+    rdfs:label "if_statement" ;
+    rdfs:isDefinedBy squirrel: ;
+    rdfs:subClassOf ast:Node ;
+    squirrel:isSupertype true ;
+    squirrel:nodeTypeId 99 .
+
+squirrel:index a owl:DatatypeProperty ;
+    rdfs:label "index (literal)" ;
+    rdfs:comment "Literal value for index field when it contains a terminal node" ;
+    squirrel:fieldId 8 ;
+    squirrel:isTerminalField true .
+
+squirrel:index_expression a owl:Class ;
+    rdfs:label "index_expression" ;
+    rdfs:isDefinedBy squirrel: ;
+    rdfs:subClassOf ast:Node ;
+    squirrel:isSupertype true ;
+    squirrel:nodeTypeId 140 .
+
+squirrel:integer a owl:Class ;
+    rdfs:label "integer" ;
+    rdfs:isDefinedBy squirrel: ;
+    rdfs:subClassOf ast:Node ;
+    squirrel:isSupertype true ;
+    squirrel:nodeTypeId 82 .
+
+squirrel:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+squirrel:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+squirrel:lambda_expression a owl:Class ;
+    rdfs:label "lambda_expression" ;
+    rdfs:isDefinedBy squirrel: ;
+    rdfs:subClassOf ast:Node ;
+    squirrel:isSupertype true ;
+    squirrel:nodeTypeId 144 .
+
+squirrel:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+squirrel:left a owl:DatatypeProperty ;
+    rdfs:label "left (literal)" ;
+    rdfs:comment "Literal value for left field when it contains a terminal node" ;
+    squirrel:fieldId 10 ;
+    squirrel:isTerminalField true .
+
+squirrel:local_declaration a owl:Class ;
+    rdfs:label "local_declaration" ;
+    rdfs:isDefinedBy squirrel: ;
+    rdfs:subClassOf ast:Node ;
+    squirrel:isSupertype true ;
+    squirrel:nodeTypeId 113 .
+
+squirrel:member_declaration a owl:Class ;
+    rdfs:label "member_declaration" ;
+    rdfs:isDefinedBy squirrel: ;
+    rdfs:subClassOf ast:Node ;
+    squirrel:isSupertype true ;
+    squirrel:nodeTypeId 119 .
+
+squirrel:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+squirrel:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+squirrel:null a owl:Class ;
+    rdfs:label "null" ;
+    rdfs:isDefinedBy squirrel: ;
+    rdfs:subClassOf ast:Node ;
+    squirrel:isSupertype true ;
+    squirrel:nodeTypeId 93 .
+
+squirrel:parameter a owl:Class ;
+    rdfs:label "parameter" ;
+    rdfs:isDefinedBy squirrel: ;
+    rdfs:subClassOf ast:Node ;
+    squirrel:isSupertype true ;
+    squirrel:nodeTypeId 117 .
+
+squirrel:parameters a owl:Class ;
+    rdfs:label "parameters" ;
+    rdfs:isDefinedBy squirrel: ;
+    rdfs:subClassOf ast:Node ;
+    squirrel:isSupertype true ;
+    squirrel:nodeTypeId 116 .
+
+squirrel:parenthesized_expression a owl:Class ;
+    rdfs:label "parenthesized_expression" ;
+    rdfs:isDefinedBy squirrel: ;
+    rdfs:subClassOf ast:Node ;
+    squirrel:isSupertype true ;
+    squirrel:nodeTypeId 145 .
+
+squirrel:resume_expression a owl:Class ;
+    rdfs:label "resume_expression" ;
+    rdfs:isDefinedBy squirrel: ;
+    rdfs:subClassOf ast:Node ;
+    squirrel:isSupertype true ;
+    squirrel:nodeTypeId 112 .
+
+squirrel:return a owl:Class ;
+    rdfs:label "return" ;
+    rdfs:isDefinedBy squirrel: ;
+    rdfs:subClassOf ast:Node ;
+    squirrel:isSupertype true ;
+    squirrel:nodeTypeId 110 .
+
+squirrel:script a owl:Class ;
+    rdfs:label "script" ;
+    rdfs:isDefinedBy squirrel: ;
+    rdfs:subClassOf ast:Node ;
+    squirrel:isSupertype true ;
+    squirrel:nodeTypeId 96 .
+
+squirrel:string a owl:Class ;
+    rdfs:label "string" ;
+    rdfs:isDefinedBy squirrel: ;
+    rdfs:subClassOf ast:Node ;
+    squirrel:isSupertype true ;
+    squirrel:nodeTypeId 149 .
+
+squirrel:string_content a owl:Class ;
+    rdfs:label "string_content" ;
+    rdfs:isDefinedBy squirrel: ;
+    rdfs:subClassOf ast:Node ;
+    squirrel:isSupertype true ;
+    squirrel:nodeTypeId 85 .
+
+squirrel:switch_statement a owl:Class ;
+    rdfs:label "switch_statement" ;
+    rdfs:isDefinedBy squirrel: ;
+    rdfs:subClassOf ast:Node ;
+    squirrel:isSupertype true ;
+    squirrel:nodeTypeId 103 .
+
+squirrel:table a owl:Class ;
+    rdfs:label "table" ;
+    rdfs:isDefinedBy squirrel: ;
+    rdfs:subClassOf ast:Node ;
+    squirrel:isSupertype true ;
+    squirrel:nodeTypeId 134 .
+
+squirrel:table_slot a owl:Class ;
+    rdfs:label "table_slot" ;
+    rdfs:isDefinedBy squirrel: ;
+    rdfs:subClassOf ast:Node ;
+    squirrel:isSupertype true ;
+    squirrel:nodeTypeId 136 .
+
+squirrel:table_slots a owl:Class ;
+    rdfs:label "table_slots" ;
+    rdfs:isDefinedBy squirrel: ;
+    rdfs:subClassOf ast:Node ;
+    squirrel:isSupertype true ;
+    squirrel:nodeTypeId 135 .
+
+squirrel:ternary_expression a owl:Class ;
+    rdfs:label "ternary_expression" ;
+    rdfs:isDefinedBy squirrel: ;
+    rdfs:subClassOf ast:Node ;
+    squirrel:isSupertype true ;
+    squirrel:nodeTypeId 131 .
+
+squirrel:throw_statement a owl:Class ;
+    rdfs:label "throw_statement" ;
+    rdfs:isDefinedBy squirrel: ;
+    rdfs:subClassOf ast:Node ;
+    squirrel:isSupertype true ;
+    squirrel:nodeTypeId 122 .
+
+squirrel:try_statement a owl:Class ;
+    rdfs:label "try_statement" ;
+    rdfs:isDefinedBy squirrel: ;
+    rdfs:subClassOf ast:Node ;
+    squirrel:isSupertype true ;
+    squirrel:nodeTypeId 120 .
+
+squirrel:unary_expression a owl:Class ;
+    rdfs:label "unary_expression" ;
+    rdfs:isDefinedBy squirrel: ;
+    rdfs:subClassOf ast:Node ;
+    squirrel:isSupertype true ;
+    squirrel:nodeTypeId 129 .
+
+squirrel:update_expression a owl:Class ;
+    rdfs:label "update_expression" ;
+    rdfs:isDefinedBy squirrel: ;
+    rdfs:subClassOf ast:Node ;
+    squirrel:isSupertype true ;
+    squirrel:nodeTypeId 133 .
+
+squirrel:value a owl:DatatypeProperty ;
+    rdfs:label "value (literal)" ;
+    rdfs:comment "Literal value for value field when it contains a terminal node" ;
+    squirrel:fieldId 15 ;
+    squirrel:isTerminalField true .
+
+squirrel:var_statement a owl:Class ;
+    rdfs:label "var_statement" ;
+    rdfs:isDefinedBy squirrel: ;
+    rdfs:subClassOf ast:Node ;
+    squirrel:isSupertype true ;
+    squirrel:nodeTypeId 138 .
+
+squirrel:verbatim_string a owl:Class ;
+    rdfs:label "verbatim_string" ;
+    rdfs:isDefinedBy squirrel: ;
+    rdfs:subClassOf ast:Node ;
+    squirrel:isSupertype true ;
+    squirrel:nodeTypeId 95 .
+
+squirrel:while_statement a owl:Class ;
+    rdfs:label "while_statement" ;
+    rdfs:isDefinedBy squirrel: ;
+    rdfs:subClassOf ast:Node ;
+    squirrel:isSupertype true ;
+    squirrel:nodeTypeId 101 .
+
+squirrel:yield a owl:Class ;
+    rdfs:label "yield" ;
+    rdfs:isDefinedBy squirrel: ;
+    rdfs:subClassOf ast:Node ;
+    squirrel:isSupertype true ;
+    squirrel:nodeTypeId 111 .
+
+squirrel: a owl:Ontology ;
+    rdfs:label "Squirrel Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for squirrel" ;
+    owl:versionInfo "v0.25" ;
+    squirrel:abiVersion 14 ;
+    squirrel:fieldCount 15 ;
+    squirrel:languageName "None" ;
+    squirrel:nodeKindCount 165 .
+

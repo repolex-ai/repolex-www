@@ -1,0 +1,1376 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix php: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/php/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+php:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+php:abstract_modifier a owl:Class ;
+    rdfs:label "abstract_modifier" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 225 .
+
+php:alias a owl:DatatypeProperty ;
+    rdfs:label "alias (literal)" ;
+    rdfs:comment "Literal value for alias field when it contains a terminal node" ;
+    php:fieldId 1 ;
+    php:isTerminalField true .
+
+php:anonymous_class a owl:Class ;
+    rdfs:label "anonymous_class" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 320 .
+
+php:anonymous_function a owl:Class ;
+    rdfs:label "anonymous_function" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 245 .
+
+php:anonymous_function_use_clause a owl:Class ;
+    rdfs:label "anonymous_function_use_clause" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 246 .
+
+php:argument a owl:Class ;
+    rdfs:label "argument" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 345 .
+
+php:arguments a owl:Class ;
+    rdfs:label "arguments" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 344 .
+
+php:array_creation_expression a owl:Class ;
+    rdfs:label "array_creation_expression" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 355 .
+
+php:array_element_initializer a owl:Class ;
+    rdfs:label "array_element_initializer" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 386 .
+
+php:arrow_function a owl:Class ;
+    rdfs:label "arrow_function" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 249 .
+
+php:assignment_expression a owl:Class ;
+    rdfs:label "assignment_expression" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 324 .
+
+php:attribute a owl:Class ;
+    rdfs:label "attribute" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 358 .
+
+php:attribute_group a owl:Class ;
+    rdfs:label "attribute_group" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 356 .
+
+php:attribute_list a owl:Class ;
+    rdfs:label "attribute_list" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 357 .
+
+php:augmented_assignment_expression a owl:Class ;
+    rdfs:label "augmented_assignment_expression" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 327 .
+
+php:base_clause a owl:Class ;
+    rdfs:label "base_clause" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 217 .
+
+php:binary_expression a owl:Class ;
+    rdfs:label "binary_expression" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 387 .
+
+php:boolean a owl:Class ;
+    rdfs:label "boolean" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 376 .
+
+php:bottom_type a owl:Class ;
+    rdfs:label "bottom_type" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 46 .
+
+php:break_statement a owl:Class ;
+    rdfs:label "break_statement" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 278 .
+
+php:by_ref a owl:Class ;
+    rdfs:label "by_ref" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 384 .
+
+php:case_statement a owl:Class ;
+    rdfs:label "case_statement" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 302 .
+
+php:cast_expression a owl:Class ;
+    rdfs:label "cast_expression" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 322,
+        323 .
+
+php:cast_type a owl:Class ;
+    rdfs:label "cast_type" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 262 .
+
+php:catch_clause a owl:Class ;
+    rdfs:label "catch_clause" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 273 .
+
+php:class_constant_access_expression a owl:Class ;
+    rdfs:label "class_constant_access_expression" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 314 .
+
+php:class_declaration a owl:Class ;
+    rdfs:label "class_declaration" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 222 .
+
+php:class_interface_clause a owl:Class ;
+    rdfs:label "class_interface_clause" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 227 .
+
+php:clone_expression a owl:Class ;
+    rdfs:label "clone_expression" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 311 .
+
+php:colon_block a owl:Class ;
+    rdfs:label "colon_block" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 290 .
+
+php:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 184 .
+
+php:compound_statement a owl:Class ;
+    rdfs:label "compound_statement" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 304 .
+
+php:conditional_expression a owl:Class ;
+    rdfs:label "conditional_expression" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 326 .
+
+php:const_declaration a owl:Class ;
+    rdfs:label "const_declaration" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 229,
+        230 .
+
+php:const_element a owl:Class ;
+    rdfs:label "const_element" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 264,
+        265 .
+
+php:continue_statement a owl:Class ;
+    rdfs:label "continue_statement" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 277 .
+
+php:declaration_list a owl:Class ;
+    rdfs:label "declaration_list" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 223 .
+
+php:declare_directive a owl:Class ;
+    rdfs:label "declare_directive" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 270 .
+
+php:declare_statement a owl:Class ;
+    rdfs:label "declare_statement" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 269 .
+
+php:default_statement a owl:Class ;
+    rdfs:label "default_statement" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 303 .
+
+php:disjunctive_normal_form_type a owl:Class ;
+    rdfs:label "disjunctive_normal_form_type" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 260 .
+
+php:do_statement a owl:Class ;
+    rdfs:label "do_statement" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 282 .
+
+php:dynamic_variable_name a owl:Class ;
+    rdfs:label "dynamic_variable_name" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 379 .
+
+php:echo_statement a owl:Class ;
+    rdfs:label "echo_statement" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 266 .
+
+php:else_clause a owl:Class ;
+    rdfs:label "else_clause" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 292,
+        294 .
+
+php:else_if_clause a owl:Class ;
+    rdfs:label "else_if_clause" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 291,
+        293 .
+
+php:empty_statement a owl:Class ;
+    rdfs:label "empty_statement" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 201 .
+
+php:encapsed_string a owl:Class ;
+    rdfs:label "encapsed_string" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 367 .
+
+php:end_tag a owl:DatatypeProperty ;
+    rdfs:label "end_tag (literal)" ;
+    rdfs:comment "Literal value for end_tag field when it contains a terminal node" ;
+    php:fieldId 10 ;
+    php:isTerminalField true .
+
+php:enum_case a owl:Class ;
+    rdfs:label "enum_case" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 221 .
+
+php:enum_declaration a owl:Class ;
+    rdfs:label "enum_declaration" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 218 .
+
+php:enum_declaration_list a owl:Class ;
+    rdfs:label "enum_declaration_list" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 219 .
+
+php:error_suppression_expression a owl:Class ;
+    rdfs:label "error_suppression_expression" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 310 .
+
+php:escape_sequence a owl:Class ;
+    rdfs:label "escape_sequence" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 138,
+        144 .
+
+php:exit_statement a owl:Class ;
+    rdfs:label "exit_statement" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 267 .
+
+php:expression_statement a owl:Class ;
+    rdfs:label "expression_statement" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 306 .
+
+php:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+php:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+php:field_alternative a owl:ObjectProperty ;
+    rdfs:label "alternative (structural)" ;
+    rdfs:comment "Structural reference for alternative field when it contains a non-terminal node" ;
+    php:fieldId 2 .
+
+php:field_argument a owl:ObjectProperty ;
+    rdfs:label "argument (structural)" ;
+    rdfs:comment "Structural reference for argument field when it contains a non-terminal node" ;
+    php:fieldId 3 .
+
+php:field_arguments a owl:ObjectProperty ;
+    rdfs:label "arguments (structural)" ;
+    rdfs:comment "Structural reference for arguments field when it contains a non-terminal node" ;
+    php:fieldId 4 .
+
+php:field_attributes a owl:ObjectProperty ;
+    rdfs:label "attributes (structural)" ;
+    rdfs:comment "Structural reference for attributes field when it contains a non-terminal node" ;
+    php:fieldId 5 .
+
+php:field_body a owl:ObjectProperty ;
+    rdfs:label "body (structural)" ;
+    rdfs:comment "Structural reference for body field when it contains a non-terminal node" ;
+    php:fieldId 6 .
+
+php:field_condition a owl:ObjectProperty ;
+    rdfs:label "condition (structural)" ;
+    rdfs:comment "Structural reference for condition field when it contains a non-terminal node" ;
+    php:fieldId 7 .
+
+php:field_conditional_expressions a owl:ObjectProperty ;
+    rdfs:label "conditional_expressions (structural)" ;
+    rdfs:comment "Structural reference for conditional_expressions field when it contains a non-terminal node" ;
+    php:fieldId 8 .
+
+php:field_default_value a owl:ObjectProperty ;
+    rdfs:label "default_value (structural)" ;
+    rdfs:comment "Structural reference for default_value field when it contains a non-terminal node" ;
+    php:fieldId 9 .
+
+php:field_function a owl:ObjectProperty ;
+    rdfs:label "function (structural)" ;
+    rdfs:comment "Structural reference for function field when it contains a non-terminal node" ;
+    php:fieldId 12 .
+
+php:field_initialize a owl:ObjectProperty ;
+    rdfs:label "initialize (structural)" ;
+    rdfs:comment "Structural reference for initialize field when it contains a non-terminal node" ;
+    php:fieldId 14 .
+
+php:field_left a owl:ObjectProperty ;
+    rdfs:label "left (structural)" ;
+    rdfs:comment "Structural reference for left field when it contains a non-terminal node" ;
+    php:fieldId 15 .
+
+php:field_name a owl:ObjectProperty ;
+    rdfs:label "name (structural)" ;
+    rdfs:comment "Structural reference for name field when it contains a non-terminal node" ;
+    php:fieldId 16 .
+
+php:field_object a owl:ObjectProperty ;
+    rdfs:label "object (structural)" ;
+    rdfs:comment "Structural reference for object field when it contains a non-terminal node" ;
+    php:fieldId 17 .
+
+php:field_operator a owl:ObjectProperty ;
+    rdfs:label "operator (structural)" ;
+    rdfs:comment "Structural reference for operator field when it contains a non-terminal node" ;
+    php:fieldId 18 .
+
+php:field_parameters a owl:ObjectProperty ;
+    rdfs:label "parameters (structural)" ;
+    rdfs:comment "Structural reference for parameters field when it contains a non-terminal node" ;
+    php:fieldId 19 .
+
+php:field_prefix a owl:ObjectProperty ;
+    rdfs:label "prefix (structural)" ;
+    rdfs:comment "Structural reference for prefix field when it contains a non-terminal node" ;
+    php:fieldId 20 .
+
+php:field_return_expression a owl:ObjectProperty ;
+    rdfs:label "return_expression (structural)" ;
+    rdfs:comment "Structural reference for return_expression field when it contains a non-terminal node" ;
+    php:fieldId 23 .
+
+php:field_return_type a owl:ObjectProperty ;
+    rdfs:label "return_type (structural)" ;
+    rdfs:comment "Structural reference for return_type field when it contains a non-terminal node" ;
+    php:fieldId 24 .
+
+php:field_right a owl:ObjectProperty ;
+    rdfs:label "right (structural)" ;
+    rdfs:comment "Structural reference for right field when it contains a non-terminal node" ;
+    php:fieldId 25 .
+
+php:field_scope a owl:ObjectProperty ;
+    rdfs:label "scope (structural)" ;
+    rdfs:comment "Structural reference for scope field when it contains a non-terminal node" ;
+    php:fieldId 26 .
+
+php:field_type a owl:ObjectProperty ;
+    rdfs:label "type (structural)" ;
+    rdfs:comment "Structural reference for type field when it contains a non-terminal node" ;
+    php:fieldId 28 .
+
+php:field_update a owl:ObjectProperty ;
+    rdfs:label "update (structural)" ;
+    rdfs:comment "Structural reference for update field when it contains a non-terminal node" ;
+    php:fieldId 29 .
+
+php:field_value a owl:ObjectProperty ;
+    rdfs:label "value (structural)" ;
+    rdfs:comment "Structural reference for value field when it contains a non-terminal node" ;
+    php:fieldId 30 .
+
+php:field_visibility a owl:ObjectProperty ;
+    rdfs:label "visibility (structural)" ;
+    rdfs:comment "Structural reference for visibility field when it contains a non-terminal node" ;
+    php:fieldId 31 .
+
+php:final a owl:DatatypeProperty ;
+    rdfs:label "final (literal)" ;
+    rdfs:comment "Literal value for final field when it contains a terminal node" ;
+    php:fieldId 11 ;
+    php:isTerminalField true .
+
+php:final_modifier a owl:Class ;
+    rdfs:label "final_modifier" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 224 .
+
+php:finally_clause a owl:Class ;
+    rdfs:label "finally_clause" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 275 .
+
+php:float a owl:Class ;
+    rdfs:label "float" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 79 .
+
+php:for_statement a owl:Class ;
+    rdfs:label "for_statement" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 283 .
+
+php:foreach_statement a owl:Class ;
+    rdfs:label "foreach_statement" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 286 .
+
+php:formal_parameters a owl:Class ;
+    rdfs:label "formal_parameters" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 250 .
+
+php:function a owl:DatatypeProperty ;
+    rdfs:label "function (literal)" ;
+    rdfs:comment "Literal value for function field when it contains a terminal node" ;
+    php:fieldId 12 ;
+    php:isTerminalField true .
+
+php:function_call_expression a owl:Class ;
+    rdfs:label "function_call_expression" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 338 .
+
+php:function_definition a owl:Class ;
+    rdfs:label "function_definition" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 244 .
+
+php:function_static_declaration a owl:Class ;
+    rdfs:label "function_static_declaration" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 203 .
+
+php:global_declaration a owl:Class ;
+    rdfs:label "global_declaration" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 205 .
+
+php:goto_statement a owl:Class ;
+    rdfs:label "goto_statement" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 276 .
+
+php:heredoc a owl:Class ;
+    rdfs:label "heredoc" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 371 .
+
+php:heredoc_body a owl:Class ;
+    rdfs:label "heredoc_body" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 370 .
+
+php:heredoc_end a owl:Class ;
+    rdfs:label "heredoc_end" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 194 .
+
+php:heredoc_start a owl:Class ;
+    rdfs:label "heredoc_start" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 193 .
+
+php:identifier a owl:DatatypeProperty ;
+    rdfs:label "identifier (literal)" ;
+    rdfs:comment "Literal value for identifier field when it contains a terminal node" ;
+    php:fieldId 13 ;
+    php:isTerminalField true .
+
+php:if_statement a owl:Class ;
+    rdfs:label "if_statement" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 289 .
+
+php:include_expression a owl:Class ;
+    rdfs:label "include_expression" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 388 .
+
+php:include_once_expression a owl:Class ;
+    rdfs:label "include_once_expression" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 389 .
+
+php:integer a owl:Class ;
+    rdfs:label "integer" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 86 .
+
+php:interface_declaration a owl:Class ;
+    rdfs:label "interface_declaration" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 216 .
+
+php:intersection_type a owl:Class ;
+    rdfs:label "intersection_type" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 259 .
+
+php:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+php:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+php:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+php:list_literal a owl:Class ;
+    rdfs:label "list_literal" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 334 .
+
+php:match_block a owl:Class ;
+    rdfs:label "match_block" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 296 .
+
+php:match_condition_list a owl:Class ;
+    rdfs:label "match_condition_list" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 297 .
+
+php:match_conditional_expression a owl:Class ;
+    rdfs:label "match_conditional_expression" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 298 .
+
+php:match_default_expression a owl:Class ;
+    rdfs:label "match_default_expression" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 299 .
+
+php:match_expression a owl:Class ;
+    rdfs:label "match_expression" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 295 .
+
+php:member_access_expression a owl:Class ;
+    rdfs:label "member_access_expression" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 328,
+        329,
+        360 .
+
+php:member_call_expression a owl:Class ;
+    rdfs:label "member_call_expression" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 347 .
+
+php:method_declaration a owl:Class ;
+    rdfs:label "method_declaration" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 237 .
+
+php:name a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "name",
+        "name (literal)" ;
+    rdfs:comment "Literal value for name field when it contains a terminal node" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:fieldId 16 ;
+    php:isSupertype true ;
+    php:isTerminalField true ;
+    php:nodeTypeId 1 .
+
+php:named_label_statement a owl:Class ;
+    rdfs:label "named_label_statement" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 305 .
+
+php:named_type a owl:Class ;
+    rdfs:label "named_type" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 256 .
+
+php:namespace_definition a owl:Class ;
+    rdfs:label "namespace_definition" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 206 .
+
+php:namespace_name a owl:Class ;
+    rdfs:label "namespace_name" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 212 .
+
+php:namespace_use_clause a owl:Class ;
+    rdfs:label "namespace_use_clause" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 208 .
+
+php:namespace_use_declaration a owl:Class ;
+    rdfs:label "namespace_use_declaration" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 207 .
+
+php:namespace_use_group a owl:Class ;
+    rdfs:label "namespace_use_group" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 214 .
+
+php:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+php:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+php:nowdoc a owl:Class ;
+    rdfs:label "nowdoc" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 373 .
+
+php:nowdoc_body a owl:Class ;
+    rdfs:label "nowdoc_body" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 372 .
+
+php:nowdoc_string a owl:Class ;
+    rdfs:label "nowdoc_string" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 195 .
+
+php:null a owl:Class ;
+    rdfs:label "null" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 377 .
+
+php:nullsafe_member_access_expression a owl:Class ;
+    rdfs:label "nullsafe_member_access_expression" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 330,
+        331 .
+
+php:nullsafe_member_call_expression a owl:Class ;
+    rdfs:label "nullsafe_member_call_expression" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 348 .
+
+php:object a owl:DatatypeProperty ;
+    rdfs:label "object (literal)" ;
+    rdfs:comment "Literal value for object field when it contains a terminal node" ;
+    php:fieldId 17 ;
+    php:isTerminalField true .
+
+php:object_creation_expression a owl:Class ;
+    rdfs:label "object_creation_expression" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 316 .
+
+php:operation a owl:Class ;
+    rdfs:label "operation" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 431 .
+
+php:optional_type a owl:Class ;
+    rdfs:label "optional_type" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 257 .
+
+php:pair a owl:Class ;
+    rdfs:label "pair" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 287 .
+
+php:parenthesized_expression a owl:Class ;
+    rdfs:label "parenthesized_expression" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 313 .
+
+php:php_end_tag a owl:Class ;
+    rdfs:label "php_end_tag" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 3 .
+
+php:php_tag a owl:Class ;
+    rdfs:label "php_tag" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 2 .
+
+php:primitive_type a owl:Class ;
+    rdfs:label "primitive_type" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 261 .
+
+php:print_intrinsic a owl:Class ;
+    rdfs:label "print_intrinsic" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 315 .
+
+php:program a owl:Class ;
+    rdfs:label "program" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 197 .
+
+php:property_declaration a owl:Class ;
+    rdfs:label "property_declaration" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 231 .
+
+php:property_element a owl:Class ;
+    rdfs:label "property_element" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 233 .
+
+php:property_hook a owl:Class ;
+    rdfs:label "property_hook" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 235 .
+
+php:property_hook_list a owl:Class ;
+    rdfs:label "property_hook_list" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 234 .
+
+php:property_promotion_parameter a owl:Class ;
+    rdfs:label "property_promotion_parameter" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 251 .
+
+php:qualified_name a owl:Class ;
+    rdfs:label "qualified_name" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 209 .
+
+php:readonly a owl:DatatypeProperty ;
+    rdfs:label "readonly (literal)" ;
+    rdfs:comment "Literal value for readonly field when it contains a terminal node" ;
+    php:fieldId 21 ;
+    php:isTerminalField true .
+
+php:readonly_modifier a owl:Class ;
+    rdfs:label "readonly_modifier" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 226 .
+
+php:reference_assignment_expression a owl:Class ;
+    rdfs:label "reference_assignment_expression" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 325 .
+
+php:reference_modifier a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "reference_modifier",
+        "reference_modifier (literal)" ;
+    rdfs:comment "Literal value for reference_modifier field when it contains a terminal node" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:fieldId 22 ;
+    php:isSupertype true ;
+    php:isTerminalField true ;
+    php:nodeTypeId 202 .
+
+php:relative_name a owl:Class ;
+    rdfs:label "relative_name" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 210 .
+
+php:relative_scope a owl:Class ;
+    rdfs:label "relative_scope" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 342 .
+
+php:require_expression a owl:Class ;
+    rdfs:label "require_expression" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 390 .
+
+php:require_once_expression a owl:Class ;
+    rdfs:label "require_once_expression" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 391 .
+
+php:return_statement a owl:Class ;
+    rdfs:label "return_statement" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 279 .
+
+php:return_type a owl:DatatypeProperty ;
+    rdfs:label "return_type (literal)" ;
+    rdfs:comment "Literal value for return_type field when it contains a terminal node" ;
+    php:fieldId 24 ;
+    php:isTerminalField true .
+
+php:right a owl:DatatypeProperty ;
+    rdfs:label "right (literal)" ;
+    rdfs:comment "Literal value for right field when it contains a terminal node" ;
+    php:fieldId 25 ;
+    php:isTerminalField true .
+
+php:scope a owl:DatatypeProperty ;
+    rdfs:label "scope (literal)" ;
+    rdfs:comment "Literal value for scope field when it contains a terminal node" ;
+    php:fieldId 26 ;
+    php:isTerminalField true .
+
+php:scoped_call_expression a owl:Class ;
+    rdfs:label "scoped_call_expression" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 340 .
+
+php:scoped_property_access_expression a owl:Class ;
+    rdfs:label "scoped_property_access_expression" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 332,
+        333 .
+
+php:sentinel_error a owl:Class ;
+    rdfs:label "sentinel_error" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 196 .
+
+php:sequence_expression a owl:Class ;
+    rdfs:label "sequence_expression" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 285 .
+
+php:shell_command_expression a owl:Class ;
+    rdfs:label "shell_command_expression" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 375 .
+
+php:simple_parameter a owl:Class ;
+    rdfs:label "simple_parameter" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 252 .
+
+php:static_modifier a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "static_modifier",
+        "static_modifier (literal)" ;
+    rdfs:comment "Literal value for static_modifier field when it contains a terminal node" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:fieldId 27 ;
+    php:isSupertype true ;
+    php:isTerminalField true ;
+    php:nodeTypeId 238 .
+
+php:static_variable_declaration a owl:Class ;
+    rdfs:label "static_variable_declaration" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 204 .
+
+php:string a owl:Class ;
+    rdfs:label "string" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 368 .
+
+php:string_content a owl:Class ;
+    rdfs:label "string_content" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 139,
+        186,
+        187,
+        188,
+        189,
+        190,
+        191,
+        369 .
+
+php:subscript_expression a owl:Class ;
+    rdfs:label "subscript_expression" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 351,
+        352,
+        363 .
+
+php:switch_block a owl:Class ;
+    rdfs:label "switch_block" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 301 .
+
+php:switch_statement a owl:Class ;
+    rdfs:label "switch_statement" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 300 .
+
+php:text a owl:Class ;
+    rdfs:label "text" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 199 .
+
+php:text_interpolation a owl:Class ;
+    rdfs:label "text_interpolation" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 198 .
+
+php:throw_expression a owl:Class ;
+    rdfs:label "throw_expression" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 280 .
+
+php:trait_declaration a owl:Class ;
+    rdfs:label "trait_declaration" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 215 .
+
+php:try_statement a owl:Class ;
+    rdfs:label "try_statement" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 272 .
+
+php:type a owl:DatatypeProperty ;
+    rdfs:label "type (literal)" ;
+    rdfs:comment "Literal value for type field when it contains a terminal node" ;
+    php:fieldId 28 ;
+    php:isTerminalField true .
+
+php:type_list a owl:Class ;
+    rdfs:label "type_list" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 274 .
+
+php:unary_op_expression a owl:Class ;
+    rdfs:label "unary_op_expression" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 309,
+        361 .
+
+php:union_type a owl:Class ;
+    rdfs:label "union_type" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 258 .
+
+php:unset_statement a owl:Class ;
+    rdfs:label "unset_statement" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 268 .
+
+php:update_expression a owl:Class ;
+    rdfs:label "update_expression" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 321 .
+
+php:use_as_clause a owl:Class ;
+    rdfs:label "use_as_clause" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 242 .
+
+php:use_declaration a owl:Class ;
+    rdfs:label "use_declaration" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 239 .
+
+php:use_instead_of_clause a owl:Class ;
+    rdfs:label "use_instead_of_clause" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 241 .
+
+php:use_list a owl:Class ;
+    rdfs:label "use_list" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 240 .
+
+php:var_modifier a owl:Class ;
+    rdfs:label "var_modifier" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 34 .
+
+php:variable_name a owl:Class ;
+    rdfs:label "variable_name" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 383 .
+
+php:variadic_parameter a owl:Class ;
+    rdfs:label "variadic_parameter" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 253 .
+
+php:variadic_placeholder a owl:Class ;
+    rdfs:label "variadic_placeholder" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 343 .
+
+php:variadic_unpacking a owl:Class ;
+    rdfs:label "variadic_unpacking" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 349 .
+
+php:visibility_modifier a owl:Class ;
+    rdfs:label "visibility_modifier" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 243 .
+
+php:while_statement a owl:Class ;
+    rdfs:label "while_statement" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 281 .
+
+php:yield_expression a owl:Class ;
+    rdfs:label "yield_expression" ;
+    rdfs:isDefinedBy php: ;
+    rdfs:subClassOf ast:Node ;
+    php:isSupertype true ;
+    php:nodeTypeId 385 .
+
+php: a owl:Ontology ;
+    rdfs:label "Php Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for php" ;
+    owl:versionInfo "v0.25" ;
+    php:abiVersion 15 ;
+    php:fieldCount 31 ;
+    php:languageName "php" ;
+    php:nodeKindCount 432 .
+

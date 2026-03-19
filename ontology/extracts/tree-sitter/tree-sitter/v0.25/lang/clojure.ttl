@@ -1,0 +1,370 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix clojure: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/clojure/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+clojure:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+clojure:anon_fn_lit a owl:Class ;
+    rdfs:label "anon_fn_lit" ;
+    rdfs:isDefinedBy clojure: ;
+    rdfs:subClassOf ast:Node ;
+    clojure:isSupertype true ;
+    clojure:nodeTypeId 53 .
+
+clojure:auto_res_mark a owl:Class ;
+    rdfs:label "auto_res_mark" ;
+    rdfs:isDefinedBy clojure: ;
+    rdfs:subClassOf ast:Node ;
+    clojure:isSupertype true ;
+    clojure:nodeTypeId 57 .
+
+clojure:bool_lit a owl:Class ;
+    rdfs:label "bool_lit" ;
+    rdfs:isDefinedBy clojure: ;
+    rdfs:subClassOf ast:Node ;
+    clojure:isSupertype true ;
+    clojure:nodeTypeId 13 .
+
+clojure:char_lit a owl:Class ;
+    rdfs:label "char_lit" ;
+    rdfs:isDefinedBy clojure: ;
+    rdfs:subClassOf ast:Node ;
+    clojure:isSupertype true ;
+    clojure:nodeTypeId 11 .
+
+clojure:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy clojure: ;
+    rdfs:subClassOf ast:Node ;
+    clojure:isSupertype true ;
+    clojure:nodeTypeId 2 .
+
+clojure:derefing_lit a owl:Class ;
+    rdfs:label "derefing_lit" ;
+    rdfs:isDefinedBy clojure: ;
+    rdfs:subClassOf ast:Node ;
+    clojure:isSupertype true ;
+    clojure:nodeTypeId 63 .
+
+clojure:dis_expr a owl:Class ;
+    rdfs:label "dis_expr" ;
+    rdfs:isDefinedBy clojure: ;
+    rdfs:subClassOf ast:Node ;
+    clojure:isSupertype true ;
+    clojure:nodeTypeId 37 .
+
+clojure:evaling_lit a owl:Class ;
+    rdfs:label "evaling_lit" ;
+    rdfs:isDefinedBy clojure: ;
+    rdfs:subClassOf ast:Node ;
+    clojure:isSupertype true ;
+    clojure:nodeTypeId 61 .
+
+clojure:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+clojure:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+clojure:field_close a owl:ObjectProperty ;
+    rdfs:label "close (structural)" ;
+    rdfs:comment "Structural reference for close field when it contains a non-terminal node" ;
+    clojure:fieldId 1 .
+
+clojure:field_delimiter a owl:ObjectProperty ;
+    rdfs:label "delimiter (structural)" ;
+    rdfs:comment "Structural reference for delimiter field when it contains a non-terminal node" ;
+    clojure:fieldId 2 .
+
+clojure:field_marker a owl:ObjectProperty ;
+    rdfs:label "marker (structural)" ;
+    rdfs:comment "Structural reference for marker field when it contains a non-terminal node" ;
+    clojure:fieldId 3 .
+
+clojure:field_meta a owl:ObjectProperty ;
+    rdfs:label "meta (structural)" ;
+    rdfs:comment "Structural reference for meta field when it contains a non-terminal node" ;
+    clojure:fieldId 4 .
+
+clojure:field_old_meta a owl:ObjectProperty ;
+    rdfs:label "old_meta (structural)" ;
+    rdfs:comment "Structural reference for old_meta field when it contains a non-terminal node" ;
+    clojure:fieldId 7 .
+
+clojure:field_open a owl:ObjectProperty ;
+    rdfs:label "open (structural)" ;
+    rdfs:comment "Structural reference for open field when it contains a non-terminal node" ;
+    clojure:fieldId 8 .
+
+clojure:field_prefix a owl:ObjectProperty ;
+    rdfs:label "prefix (structural)" ;
+    rdfs:comment "Structural reference for prefix field when it contains a non-terminal node" ;
+    clojure:fieldId 9 .
+
+clojure:field_tag a owl:ObjectProperty ;
+    rdfs:label "tag (structural)" ;
+    rdfs:comment "Structural reference for tag field when it contains a non-terminal node" ;
+    clojure:fieldId 10 .
+
+clojure:field_value a owl:ObjectProperty ;
+    rdfs:label "value (structural)" ;
+    rdfs:comment "Structural reference for value field when it contains a non-terminal node" ;
+    clojure:fieldId 11 .
+
+clojure:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+clojure:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+clojure:kwd_lit a owl:Class ;
+    rdfs:label "kwd_lit" ;
+    rdfs:isDefinedBy clojure: ;
+    rdfs:subClassOf ast:Node ;
+    clojure:isSupertype true ;
+    clojure:nodeTypeId 39 .
+
+clojure:kwd_name a owl:Class ;
+    rdfs:label "kwd_name" ;
+    rdfs:isDefinedBy clojure: ;
+    rdfs:subClassOf ast:Node ;
+    clojure:isSupertype true ;
+    clojure:nodeTypeId 6 .
+
+clojure:kwd_ns a owl:Class ;
+    rdfs:label "kwd_ns" ;
+    rdfs:isDefinedBy clojure: ;
+    rdfs:subClassOf ast:Node ;
+    clojure:isSupertype true ;
+    clojure:nodeTypeId 7 .
+
+clojure:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+clojure:list_lit a owl:Class ;
+    rdfs:label "list_lit" ;
+    rdfs:isDefinedBy clojure: ;
+    rdfs:subClassOf ast:Node ;
+    clojure:isSupertype true ;
+    clojure:nodeTypeId 45 .
+
+clojure:map_lit a owl:Class ;
+    rdfs:label "map_lit" ;
+    rdfs:isDefinedBy clojure: ;
+    rdfs:subClassOf ast:Node ;
+    clojure:isSupertype true ;
+    clojure:nodeTypeId 47 .
+
+clojure:meta_lit a owl:Class ;
+    rdfs:label "meta_lit" ;
+    rdfs:isDefinedBy clojure: ;
+    rdfs:subClassOf ast:Node ;
+    clojure:isSupertype true ;
+    clojure:nodeTypeId 43 .
+
+clojure:name a owl:DatatypeProperty ;
+    rdfs:label "name (literal)" ;
+    rdfs:comment "Literal value for name field when it contains a terminal node" ;
+    clojure:fieldId 5 ;
+    clojure:isTerminalField true .
+
+clojure:namespace a owl:DatatypeProperty ;
+    rdfs:label "namespace (literal)" ;
+    rdfs:comment "Literal value for namespace field when it contains a terminal node" ;
+    clojure:fieldId 6 ;
+    clojure:isTerminalField true .
+
+clojure:nil_lit a owl:Class ;
+    rdfs:label "nil_lit" ;
+    rdfs:isDefinedBy clojure: ;
+    rdfs:subClassOf ast:Node ;
+    clojure:isSupertype true ;
+    clojure:nodeTypeId 12 .
+
+clojure:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+clojure:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+clojure:ns_map_lit a owl:Class ;
+    rdfs:label "ns_map_lit" ;
+    rdfs:isDefinedBy clojure: ;
+    rdfs:subClassOf ast:Node ;
+    clojure:isSupertype true ;
+    clojure:nodeTypeId 58 .
+
+clojure:num_lit a owl:Class ;
+    rdfs:label "num_lit" ;
+    rdfs:isDefinedBy clojure: ;
+    rdfs:subClassOf ast:Node ;
+    clojure:isSupertype true ;
+    clojure:nodeTypeId 4 .
+
+clojure:old_meta_lit a owl:Class ;
+    rdfs:label "old_meta_lit" ;
+    rdfs:isDefinedBy clojure: ;
+    rdfs:subClassOf ast:Node ;
+    clojure:isSupertype true ;
+    clojure:nodeTypeId 44 .
+
+clojure:prefix a owl:DatatypeProperty ;
+    rdfs:label "prefix (literal)" ;
+    rdfs:comment "Literal value for prefix field when it contains a terminal node" ;
+    clojure:fieldId 9 ;
+    clojure:isTerminalField true .
+
+clojure:quoting_lit a owl:Class ;
+    rdfs:label "quoting_lit" ;
+    rdfs:isDefinedBy clojure: ;
+    rdfs:subClassOf ast:Node ;
+    clojure:isSupertype true ;
+    clojure:nodeTypeId 64 .
+
+clojure:read_cond_lit a owl:Class ;
+    rdfs:label "read_cond_lit" ;
+    rdfs:isDefinedBy clojure: ;
+    rdfs:subClassOf ast:Node ;
+    clojure:isSupertype true ;
+    clojure:nodeTypeId 55 .
+
+clojure:regex_lit a owl:Class ;
+    rdfs:label "regex_lit" ;
+    rdfs:isDefinedBy clojure: ;
+    rdfs:subClassOf ast:Node ;
+    clojure:isSupertype true ;
+    clojure:nodeTypeId 54 .
+
+clojure:set_lit a owl:Class ;
+    rdfs:label "set_lit" ;
+    rdfs:isDefinedBy clojure: ;
+    rdfs:subClassOf ast:Node ;
+    clojure:isSupertype true ;
+    clojure:nodeTypeId 51 .
+
+clojure:source a owl:Class ;
+    rdfs:label "source" ;
+    rdfs:isDefinedBy clojure: ;
+    rdfs:subClassOf ast:Node ;
+    clojure:isSupertype true ;
+    clojure:nodeTypeId 35 .
+
+clojure:splicing_read_cond_lit a owl:Class ;
+    rdfs:label "splicing_read_cond_lit" ;
+    rdfs:isDefinedBy clojure: ;
+    rdfs:subClassOf ast:Node ;
+    clojure:isSupertype true ;
+    clojure:nodeTypeId 56 .
+
+clojure:str_lit a owl:Class ;
+    rdfs:label "str_lit" ;
+    rdfs:isDefinedBy clojure: ;
+    rdfs:subClassOf ast:Node ;
+    clojure:isSupertype true ;
+    clojure:nodeTypeId 40 .
+
+clojure:sym_lit a owl:Class ;
+    rdfs:label "sym_lit" ;
+    rdfs:isDefinedBy clojure: ;
+    rdfs:subClassOf ast:Node ;
+    clojure:isSupertype true ;
+    clojure:nodeTypeId 41 .
+
+clojure:sym_name a owl:Class ;
+    rdfs:label "sym_name" ;
+    rdfs:isDefinedBy clojure: ;
+    rdfs:subClassOf ast:Node ;
+    clojure:isSupertype true ;
+    clojure:nodeTypeId 15 .
+
+clojure:sym_ns a owl:Class ;
+    rdfs:label "sym_ns" ;
+    rdfs:isDefinedBy clojure: ;
+    rdfs:subClassOf ast:Node ;
+    clojure:isSupertype true ;
+    clojure:nodeTypeId 14 .
+
+clojure:sym_val_lit a owl:Class ;
+    rdfs:label "sym_val_lit" ;
+    rdfs:isDefinedBy clojure: ;
+    rdfs:subClassOf ast:Node ;
+    clojure:isSupertype true ;
+    clojure:nodeTypeId 60 .
+
+clojure:syn_quoting_lit a owl:Class ;
+    rdfs:label "syn_quoting_lit" ;
+    rdfs:isDefinedBy clojure: ;
+    rdfs:subClassOf ast:Node ;
+    clojure:isSupertype true ;
+    clojure:nodeTypeId 65 .
+
+clojure:tagged_or_ctor_lit a owl:Class ;
+    rdfs:label "tagged_or_ctor_lit" ;
+    rdfs:isDefinedBy clojure: ;
+    rdfs:subClassOf ast:Node ;
+    clojure:isSupertype true ;
+    clojure:nodeTypeId 62 .
+
+clojure:unquote_splicing_lit a owl:Class ;
+    rdfs:label "unquote_splicing_lit" ;
+    rdfs:isDefinedBy clojure: ;
+    rdfs:subClassOf ast:Node ;
+    clojure:isSupertype true ;
+    clojure:nodeTypeId 66 .
+
+clojure:unquoting_lit a owl:Class ;
+    rdfs:label "unquoting_lit" ;
+    rdfs:isDefinedBy clojure: ;
+    rdfs:subClassOf ast:Node ;
+    clojure:isSupertype true ;
+    clojure:nodeTypeId 67 .
+
+clojure:value a owl:DatatypeProperty ;
+    rdfs:label "value (literal)" ;
+    rdfs:comment "Literal value for value field when it contains a terminal node" ;
+    clojure:fieldId 11 ;
+    clojure:isTerminalField true .
+
+clojure:var_quoting_lit a owl:Class ;
+    rdfs:label "var_quoting_lit" ;
+    rdfs:isDefinedBy clojure: ;
+    rdfs:subClassOf ast:Node ;
+    clojure:isSupertype true ;
+    clojure:nodeTypeId 59 .
+
+clojure:vec_lit a owl:Class ;
+    rdfs:label "vec_lit" ;
+    rdfs:isDefinedBy clojure: ;
+    rdfs:subClassOf ast:Node ;
+    clojure:isSupertype true ;
+    clojure:nodeTypeId 49 .
+
+clojure: a owl:Ontology ;
+    rdfs:label "Clojure Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for clojure" ;
+    owl:versionInfo "v0.25" ;
+    clojure:abiVersion 14 ;
+    clojure:fieldCount 11 ;
+    clojure:languageName "None" ;
+    clojure:nodeKindCount 73 .
+

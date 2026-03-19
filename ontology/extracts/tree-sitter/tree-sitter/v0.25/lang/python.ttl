@@ -1,0 +1,1106 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix python: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/python/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+python:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+python:alias a owl:DatatypeProperty ;
+    rdfs:label "alias (literal)" ;
+    rdfs:comment "Literal value for alias field when it contains a terminal node" ;
+    python:fieldId 1 ;
+    python:isTerminalField true .
+
+python:aliased_import a owl:Class ;
+    rdfs:label "aliased_import" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 117 .
+
+python:argument_list a owl:Class ;
+    rdfs:label "argument_list" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 158 .
+
+python:as_pattern a owl:Class ;
+    rdfs:label "as_pattern" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 166,
+        186 .
+
+python:as_pattern_target a owl:Class ;
+    rdfs:label "as_pattern_target" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 273 .
+
+python:assert_statement a owl:Class ;
+    rdfs:label "assert_statement" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 121 .
+
+python:assignment a owl:Class ;
+    rdfs:label "assignment" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 199 .
+
+python:attribute a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "attribute",
+        "attribute (literal)" ;
+    rdfs:comment "Literal value for attribute field when it contains a terminal node" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:fieldId 5 ;
+    python:isSupertype true ;
+    python:isTerminalField true ;
+    python:nodeTypeId 204 .
+
+python:augmented_assignment a owl:Class ;
+    rdfs:label "augmented_assignment" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 200 .
+
+python:await a owl:Class ;
+    rdfs:label "await" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 238 .
+
+python:binary_operator a owl:Class ;
+    rdfs:label "binary_operator" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 192 .
+
+python:block a owl:Class ;
+    rdfs:label "block" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 136,
+        161 .
+
+python:boolean_operator a owl:Class ;
+    rdfs:label "boolean_operator" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 191 .
+
+python:break_statement a owl:Class ;
+    rdfs:label "break_statement" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 130 .
+
+python:call a owl:Class ;
+    rdfs:label "call" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 207 .
+
+python:case_clause a owl:Class ;
+    rdfs:label "case_clause" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 137 .
+
+python:case_pattern a owl:Class ;
+    rdfs:label "case_pattern" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 164 .
+
+python:chevron a owl:Class ;
+    rdfs:label "chevron" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 120 .
+
+python:class_definition a owl:Class ;
+    rdfs:label "class_definition" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 155 .
+
+python:class_pattern a owl:Class ;
+    rdfs:label "class_pattern" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 174 .
+
+python:code a owl:DatatypeProperty ;
+    rdfs:label "code (literal)" ;
+    rdfs:comment "Literal value for code field when it contains a terminal node" ;
+    python:fieldId 8 ;
+    python:isTerminalField true .
+
+python:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 99 .
+
+python:comparison_operator a owl:Class ;
+    rdfs:label "comparison_operator" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 196 .
+
+python:complex_pattern a owl:Class ;
+    rdfs:label "complex_pattern" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 175 .
+
+python:concatenated_string a owl:Class ;
+    rdfs:label "concatenated_string" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 231 .
+
+python:conditional_expression a owl:Class ;
+    rdfs:label "conditional_expression" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 230 .
+
+python:constrained_type a owl:Class ;
+    rdfs:label "constrained_type" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 213 .
+
+python:continue_statement a owl:Class ;
+    rdfs:label "continue_statement" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 131 .
+
+python:decorated_definition a owl:Class ;
+    rdfs:label "decorated_definition" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 159 .
+
+python:decorator a owl:Class ;
+    rdfs:label "decorator" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 160 .
+
+python:default_parameter a owl:Class ;
+    rdfs:label "default_parameter" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 182 .
+
+python:delete_statement a owl:Class ;
+    rdfs:label "delete_statement" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 127 .
+
+python:dict_pattern a owl:Class ;
+    rdfs:label "dict_pattern" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 170 .
+
+python:dictionary a owl:Class ;
+    rdfs:label "dictionary" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 219 .
+
+python:dictionary_comprehension a owl:Class ;
+    rdfs:label "dictionary_comprehension" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 222 .
+
+python:dictionary_splat a owl:Class ;
+    rdfs:label "dictionary_splat" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 150 .
+
+python:dictionary_splat_pattern a owl:Class ;
+    rdfs:label "dictionary_splat_pattern" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 185 .
+
+python:dotted_name a owl:Class ;
+    rdfs:label "dotted_name" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 163 .
+
+python:elif_clause a owl:Class ;
+    rdfs:label "elif_clause" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 133 .
+
+python:ellipsis a owl:Class ;
+    rdfs:label "ellipsis" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 88 .
+
+python:else_clause a owl:Class ;
+    rdfs:label "else_clause" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 134 .
+
+python:escape_interpolation a owl:Class ;
+    rdfs:label "escape_interpolation" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 106 .
+
+python:escape_sequence a owl:Class ;
+    rdfs:label "escape_sequence" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 89 .
+
+python:except_clause a owl:Class ;
+    rdfs:label "except_clause" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 141 .
+
+python:exec_statement a owl:Class ;
+    rdfs:label "exec_statement" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 153 .
+
+python:expression_list a owl:Class ;
+    rdfs:label "expression_list" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 162 .
+
+python:false a owl:Class ;
+    rdfs:label "false" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 97 .
+
+python:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+python:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+python:field_alias a owl:ObjectProperty ;
+    rdfs:label "alias (structural)" ;
+    rdfs:comment "Structural reference for alias field when it contains a non-terminal node" ;
+    python:fieldId 1 .
+
+python:field_alternative a owl:ObjectProperty ;
+    rdfs:label "alternative (structural)" ;
+    rdfs:comment "Structural reference for alternative field when it contains a non-terminal node" ;
+    python:fieldId 2 .
+
+python:field_argument a owl:ObjectProperty ;
+    rdfs:label "argument (structural)" ;
+    rdfs:comment "Structural reference for argument field when it contains a non-terminal node" ;
+    python:fieldId 3 .
+
+python:field_arguments a owl:ObjectProperty ;
+    rdfs:label "arguments (structural)" ;
+    rdfs:comment "Structural reference for arguments field when it contains a non-terminal node" ;
+    python:fieldId 4 .
+
+python:field_body a owl:ObjectProperty ;
+    rdfs:label "body (structural)" ;
+    rdfs:comment "Structural reference for body field when it contains a non-terminal node" ;
+    python:fieldId 6 .
+
+python:field_cause a owl:ObjectProperty ;
+    rdfs:label "cause (structural)" ;
+    rdfs:comment "Structural reference for cause field when it contains a non-terminal node" ;
+    python:fieldId 7 .
+
+python:field_code a owl:ObjectProperty ;
+    rdfs:label "code (structural)" ;
+    rdfs:comment "Structural reference for code field when it contains a non-terminal node" ;
+    python:fieldId 8 .
+
+python:field_condition a owl:ObjectProperty ;
+    rdfs:label "condition (structural)" ;
+    rdfs:comment "Structural reference for condition field when it contains a non-terminal node" ;
+    python:fieldId 9 .
+
+python:field_consequence a owl:ObjectProperty ;
+    rdfs:label "consequence (structural)" ;
+    rdfs:comment "Structural reference for consequence field when it contains a non-terminal node" ;
+    python:fieldId 10 .
+
+python:field_definition a owl:ObjectProperty ;
+    rdfs:label "definition (structural)" ;
+    rdfs:comment "Structural reference for definition field when it contains a non-terminal node" ;
+    python:fieldId 11 .
+
+python:field_expression a owl:ObjectProperty ;
+    rdfs:label "expression (structural)" ;
+    rdfs:comment "Structural reference for expression field when it contains a non-terminal node" ;
+    python:fieldId 12 .
+
+python:field_format_specifier a owl:ObjectProperty ;
+    rdfs:label "format_specifier (structural)" ;
+    rdfs:comment "Structural reference for format_specifier field when it contains a non-terminal node" ;
+    python:fieldId 13 .
+
+python:field_function a owl:ObjectProperty ;
+    rdfs:label "function (structural)" ;
+    rdfs:comment "Structural reference for function field when it contains a non-terminal node" ;
+    python:fieldId 14 .
+
+python:field_guard a owl:ObjectProperty ;
+    rdfs:label "guard (structural)" ;
+    rdfs:comment "Structural reference for guard field when it contains a non-terminal node" ;
+    python:fieldId 15 .
+
+python:field_key a owl:ObjectProperty ;
+    rdfs:label "key (structural)" ;
+    rdfs:comment "Structural reference for key field when it contains a non-terminal node" ;
+    python:fieldId 16 .
+
+python:field_left a owl:ObjectProperty ;
+    rdfs:label "left (structural)" ;
+    rdfs:comment "Structural reference for left field when it contains a non-terminal node" ;
+    python:fieldId 17 .
+
+python:field_module_name a owl:ObjectProperty ;
+    rdfs:label "module_name (structural)" ;
+    rdfs:comment "Structural reference for module_name field when it contains a non-terminal node" ;
+    python:fieldId 18 .
+
+python:field_name a owl:ObjectProperty ;
+    rdfs:label "name (structural)" ;
+    rdfs:comment "Structural reference for name field when it contains a non-terminal node" ;
+    python:fieldId 19 .
+
+python:field_object a owl:ObjectProperty ;
+    rdfs:label "object (structural)" ;
+    rdfs:comment "Structural reference for object field when it contains a non-terminal node" ;
+    python:fieldId 20 .
+
+python:field_operator a owl:ObjectProperty ;
+    rdfs:label "operator (structural)" ;
+    rdfs:comment "Structural reference for operator field when it contains a non-terminal node" ;
+    python:fieldId 21 .
+
+python:field_operators a owl:ObjectProperty ;
+    rdfs:label "operators (structural)" ;
+    rdfs:comment "Structural reference for operators field when it contains a non-terminal node" ;
+    python:fieldId 22 .
+
+python:field_parameters a owl:ObjectProperty ;
+    rdfs:label "parameters (structural)" ;
+    rdfs:comment "Structural reference for parameters field when it contains a non-terminal node" ;
+    python:fieldId 23 .
+
+python:field_return_type a owl:ObjectProperty ;
+    rdfs:label "return_type (structural)" ;
+    rdfs:comment "Structural reference for return_type field when it contains a non-terminal node" ;
+    python:fieldId 24 .
+
+python:field_right a owl:ObjectProperty ;
+    rdfs:label "right (structural)" ;
+    rdfs:comment "Structural reference for right field when it contains a non-terminal node" ;
+    python:fieldId 25 .
+
+python:field_subject a owl:ObjectProperty ;
+    rdfs:label "subject (structural)" ;
+    rdfs:comment "Structural reference for subject field when it contains a non-terminal node" ;
+    python:fieldId 26 .
+
+python:field_subscript a owl:ObjectProperty ;
+    rdfs:label "subscript (structural)" ;
+    rdfs:comment "Structural reference for subscript field when it contains a non-terminal node" ;
+    python:fieldId 27 .
+
+python:field_superclasses a owl:ObjectProperty ;
+    rdfs:label "superclasses (structural)" ;
+    rdfs:comment "Structural reference for superclasses field when it contains a non-terminal node" ;
+    python:fieldId 28 .
+
+python:field_type a owl:ObjectProperty ;
+    rdfs:label "type (structural)" ;
+    rdfs:comment "Structural reference for type field when it contains a non-terminal node" ;
+    python:fieldId 29 .
+
+python:field_type_parameters a owl:ObjectProperty ;
+    rdfs:label "type_parameters (structural)" ;
+    rdfs:comment "Structural reference for type_parameters field when it contains a non-terminal node" ;
+    python:fieldId 31 .
+
+python:field_value a owl:ObjectProperty ;
+    rdfs:label "value (structural)" ;
+    rdfs:comment "Structural reference for value field when it contains a non-terminal node" ;
+    python:fieldId 32 .
+
+python:finally_clause a owl:Class ;
+    rdfs:label "finally_clause" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 142 .
+
+python:float a owl:Class ;
+    rdfs:label "float" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 94 .
+
+python:for_in_clause a owl:Class ;
+    rdfs:label "for_in_clause" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 228 .
+
+python:for_statement a owl:Class ;
+    rdfs:label "for_statement" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 138 .
+
+python:format_expression a owl:Class ;
+    rdfs:label "format_expression" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 274 .
+
+python:format_specifier a owl:Class ;
+    rdfs:label "format_specifier" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 237 .
+
+python:function_definition a owl:Class ;
+    rdfs:label "function_definition" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 146 .
+
+python:future_import_statement a owl:Class ;
+    rdfs:label "future_import_statement" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 114 .
+
+python:generator_expression a owl:Class ;
+    rdfs:label "generator_expression" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 224 .
+
+python:generic_type a owl:Class ;
+    rdfs:label "generic_type" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 211 .
+
+python:global_statement a owl:Class ;
+    rdfs:label "global_statement" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 151 .
+
+python:identifier a owl:Class ;
+    rdfs:label "identifier" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 1 .
+
+python:if_clause a owl:Class ;
+    rdfs:label "if_clause" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 229 .
+
+python:if_statement a owl:Class ;
+    rdfs:label "if_statement" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 132 .
+
+python:import_from_statement a owl:Class ;
+    rdfs:label "import_from_statement" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 115 .
+
+python:import_prefix a owl:Class ;
+    rdfs:label "import_prefix" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 112 .
+
+python:import_statement a owl:Class ;
+    rdfs:label "import_statement" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 111 .
+
+python:integer a owl:Class ;
+    rdfs:label "integer" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 93 .
+
+python:interpolation a owl:Class ;
+    rdfs:label "interpolation" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 234 .
+
+python:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+python:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+python:key a owl:DatatypeProperty ;
+    rdfs:label "key (literal)" ;
+    rdfs:comment "Literal value for key field when it contains a terminal node" ;
+    python:fieldId 16 ;
+    python:isTerminalField true .
+
+python:keyword_argument a owl:Class ;
+    rdfs:label "keyword_argument" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 215 .
+
+python:keyword_pattern a owl:Class ;
+    rdfs:label "keyword_pattern" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 172 .
+
+python:keyword_separator a owl:Class ;
+    rdfs:label "keyword_separator" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 240 .
+
+python:lambda a owl:Class ;
+    rdfs:label "lambda" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 197,
+        198 .
+
+python:lambda_parameters a owl:Class ;
+    rdfs:label "lambda_parameters" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 148 .
+
+python:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+python:line_continuation a owl:Class ;
+    rdfs:label "line_continuation" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 100 .
+
+python:list a owl:Class ;
+    rdfs:label "list" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 216 .
+
+python:list_comprehension a owl:Class ;
+    rdfs:label "list_comprehension" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 221 .
+
+python:list_pattern a owl:Class ;
+    rdfs:label "list_pattern" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 168,
+        181 .
+
+python:list_splat a owl:Class ;
+    rdfs:label "list_splat" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 149 .
+
+python:list_splat_pattern a owl:Class ;
+    rdfs:label "list_splat_pattern" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 184 .
+
+python:match_statement a owl:Class ;
+    rdfs:label "match_statement" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 135 .
+
+python:member_type a owl:Class ;
+    rdfs:label "member_type" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 214 .
+
+python:module a owl:Class ;
+    rdfs:label "module" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 108 .
+
+python:name a owl:DatatypeProperty ;
+    rdfs:label "name (literal)" ;
+    rdfs:comment "Literal value for name field when it contains a terminal node" ;
+    python:fieldId 19 ;
+    python:isTerminalField true .
+
+python:named_expression a owl:Class ;
+    rdfs:label "named_expression" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 124 .
+
+python:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+python:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+python:none a owl:Class ;
+    rdfs:label "none" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 98 .
+
+python:nonlocal_statement a owl:Class ;
+    rdfs:label "nonlocal_statement" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 152 .
+
+python:not_operator a owl:Class ;
+    rdfs:label "not_operator" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 190 .
+
+python:pair a owl:Class ;
+    rdfs:label "pair" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 220 .
+
+python:parameters a owl:Class ;
+    rdfs:label "parameters" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 147 .
+
+python:parenthesized_expression a owl:Class ;
+    rdfs:label "parenthesized_expression" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 226 .
+
+python:parenthesized_list_splat a owl:Class ;
+    rdfs:label "parenthesized_list_splat" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 157 .
+
+python:pass_statement a owl:Class ;
+    rdfs:label "pass_statement" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 129 .
+
+python:pattern_list a owl:Class ;
+    rdfs:label "pattern_list" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 201 .
+
+python:positional_separator a owl:Class ;
+    rdfs:label "positional_separator" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 239 .
+
+python:print_statement a owl:Class ;
+    rdfs:label "print_statement" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 119 .
+
+python:raise_statement a owl:Class ;
+    rdfs:label "raise_statement" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 128 .
+
+python:relative_import a owl:Class ;
+    rdfs:label "relative_import" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 113 .
+
+python:return_statement a owl:Class ;
+    rdfs:label "return_statement" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 126 .
+
+python:set a owl:Class ;
+    rdfs:label "set" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 217 .
+
+python:set_comprehension a owl:Class ;
+    rdfs:label "set_comprehension" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 223 .
+
+python:slice a owl:Class ;
+    rdfs:label "slice" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 206 .
+
+python:splat_pattern a owl:Class ;
+    rdfs:label "splat_pattern" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 173 .
+
+python:splat_type a owl:Class ;
+    rdfs:label "splat_type" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 210 .
+
+python:string a owl:Class ;
+    rdfs:label "string" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 232 .
+
+python:string_content a owl:Class ;
+    rdfs:label "string_content" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 233 .
+
+python:string_end a owl:Class ;
+    rdfs:label "string_end" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 107 .
+
+python:string_start a owl:Class ;
+    rdfs:label "string_start" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 104 .
+
+python:subscript a owl:Class ;
+    rdfs:label "subscript" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 205 .
+
+python:true a owl:Class ;
+    rdfs:label "true" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 96 .
+
+python:try_statement a owl:Class ;
+    rdfs:label "try_statement" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 140 .
+
+python:tuple a owl:Class ;
+    rdfs:label "tuple" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 218 .
+
+python:tuple_expression a owl:Class ;
+    rdfs:label "tuple_expression" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 123 .
+
+python:tuple_pattern a owl:Class ;
+    rdfs:label "tuple_pattern" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 169,
+        180 .
+
+python:type a owl:Class ;
+    rdfs:label "type" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 209 .
+
+python:type_alias_statement a owl:Class ;
+    rdfs:label "type_alias_statement" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 154 .
+
+python:type_conversion a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "type_conversion",
+        "type_conversion (literal)" ;
+    rdfs:comment "Literal value for type_conversion field when it contains a terminal node" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:fieldId 30 ;
+    python:isSupertype true ;
+    python:isTerminalField true ;
+    python:nodeTypeId 92 .
+
+python:type_parameter a owl:Class ;
+    rdfs:label "type_parameter" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 156 .
+
+python:typed_default_parameter a owl:Class ;
+    rdfs:label "typed_default_parameter" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 183 .
+
+python:typed_parameter a owl:Class ;
+    rdfs:label "typed_parameter" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 208 .
+
+python:unary_operator a owl:Class ;
+    rdfs:label "unary_operator" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 193 .
+
+python:union_pattern a owl:Class ;
+    rdfs:label "union_pattern" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 167 .
+
+python:union_type a owl:Class ;
+    rdfs:label "union_type" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 212 .
+
+python:while_statement a owl:Class ;
+    rdfs:label "while_statement" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 139 .
+
+python:wildcard_import a owl:Class ;
+    rdfs:label "wildcard_import" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 118 .
+
+python:with_clause a owl:Class ;
+    rdfs:label "with_clause" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 144 .
+
+python:with_item a owl:Class ;
+    rdfs:label "with_item" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 145 .
+
+python:with_statement a owl:Class ;
+    rdfs:label "with_statement" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 143 .
+
+python:yield a owl:Class ;
+    rdfs:label "yield" ;
+    rdfs:isDefinedBy python: ;
+    rdfs:subClassOf ast:Node ;
+    python:isSupertype true ;
+    python:nodeTypeId 203 .
+
+python: a owl:Ontology ;
+    rdfs:label "Python Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for python" ;
+    owl:versionInfo "v0.25" ;
+    python:abiVersion 15 ;
+    python:fieldCount 32 ;
+    python:languageName "python" ;
+    python:nodeKindCount 275 .
+

@@ -1,0 +1,105 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix psv: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/psv/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+psv:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+psv:boolean a owl:Class ;
+    rdfs:label "boolean" ;
+    rdfs:isDefinedBy psv: ;
+    rdfs:subClassOf ast:Node ;
+    psv:isSupertype true ;
+    psv:nodeTypeId 15 .
+
+psv:document a owl:Class ;
+    rdfs:label "document" ;
+    rdfs:isDefinedBy psv: ;
+    rdfs:subClassOf ast:Node ;
+    psv:isSupertype true ;
+    psv:nodeTypeId 10 .
+
+psv:field a owl:Class ;
+    rdfs:label "field" ;
+    rdfs:isDefinedBy psv: ;
+    rdfs:subClassOf ast:Node ;
+    psv:isSupertype true ;
+    psv:nodeTypeId 12 .
+
+psv:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+psv:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+psv:float a owl:Class ;
+    rdfs:label "float" ;
+    rdfs:isDefinedBy psv: ;
+    rdfs:subClassOf ast:Node ;
+    psv:isSupertype true ;
+    psv:nodeTypeId 14 .
+
+psv:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+psv:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+psv:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+psv:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+psv:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+psv:number a owl:Class ;
+    rdfs:label "number" ;
+    rdfs:isDefinedBy psv: ;
+    rdfs:subClassOf ast:Node ;
+    psv:isSupertype true ;
+    psv:nodeTypeId 13 .
+
+psv:row a owl:Class ;
+    rdfs:label "row" ;
+    rdfs:isDefinedBy psv: ;
+    rdfs:subClassOf ast:Node ;
+    psv:isSupertype true ;
+    psv:nodeTypeId 11 .
+
+psv:text a owl:Class ;
+    rdfs:label "text" ;
+    rdfs:isDefinedBy psv: ;
+    rdfs:subClassOf ast:Node ;
+    psv:isSupertype true ;
+    psv:nodeTypeId 3 .
+
+psv: a owl:Ontology ;
+    rdfs:label "Psv Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for psv" ;
+    owl:versionInfo "v0.25" ;
+    psv:abiVersion 14 ;
+    psv:fieldCount 0 ;
+    psv:languageName "None" ;
+    psv:nodeKindCount 19 .
+

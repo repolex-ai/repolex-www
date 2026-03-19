@@ -1,0 +1,1715 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix swift: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/swift/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+swift:_expression a owl:Class ;
+    rdfs:label "_expression" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 547 .
+
+swift:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+swift:additive_expression a owl:Class ;
+    rdfs:label "additive_expression" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 274 .
+
+swift:array_literal a owl:Class ;
+    rdfs:label "array_literal" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 305 .
+
+swift:array_type a owl:Class ;
+    rdfs:label "array_type" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 247 .
+
+swift:as_expression a owl:Class ;
+    rdfs:label "as_expression" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 270 .
+
+swift:as_operator a owl:Class ;
+    rdfs:label "as_operator" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 344 .
+
+swift:assignment a owl:Class ;
+    rdfs:label "assignment" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 362 .
+
+swift:associatedtype_declaration a owl:Class ;
+    rdfs:label "associatedtype_declaration" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 458 .
+
+swift:attribute a owl:Class ;
+    rdfs:label "attribute" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 459 .
+
+swift:availability_condition a owl:Class ;
+    rdfs:label "availability_condition" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 365 .
+
+swift:await_expression a owl:Class ;
+    rdfs:label "await_expression" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 295,
+        356 .
+
+swift:bang a owl:Class ;
+    rdfs:label "bang" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 430 .
+
+swift:bin_literal a owl:Class ;
+    rdfs:label "bin_literal" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 19 .
+
+swift:bitwise_operation a owl:Class ;
+    rdfs:label "bitwise_operation" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 283 .
+
+swift:body a owl:DatatypeProperty ;
+    rdfs:label "body (literal)" ;
+    rdfs:comment "Literal value for body field when it contains a terminal node" ;
+    swift:fieldId 1 ;
+    swift:isTerminalField true .
+
+swift:boolean_literal a owl:Class ;
+    rdfs:label "boolean_literal" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 220 .
+
+swift:bound_identifier a owl:DatatypeProperty ;
+    rdfs:label "bound_identifier (literal)" ;
+    rdfs:comment "Literal value for bound_identifier field when it contains a terminal node" ;
+    swift:fieldId 2 ;
+    swift:isTerminalField true .
+
+swift:call_expression a owl:Class ;
+    rdfs:label "call_expression" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 299,
+        301 .
+
+swift:call_suffix a owl:Class ;
+    rdfs:label "call_suffix" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 286,
+        300 .
+
+swift:capture_list a owl:Class ;
+    rdfs:label "capture_list" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 312 .
+
+swift:capture_list_item a owl:Class ;
+    rdfs:label "capture_list_item" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 313 .
+
+swift:catch_block a owl:Class ;
+    rdfs:label "catch_block" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 328 .
+
+swift:catch_keyword a owl:Class ;
+    rdfs:label "catch_keyword" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 201 .
+
+swift:check_expression a owl:Class ;
+    rdfs:label "check_expression" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 278 .
+
+swift:class_body a owl:Class ;
+    rdfs:label "class_body" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 400 .
+
+swift:class_declaration a owl:Class ;
+    rdfs:label "class_declaration" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 373,
+        398 .
+
+swift:collection a owl:DatatypeProperty ;
+    rdfs:label "collection (literal)" ;
+    rdfs:comment "Literal value for collection field when it contains a terminal node" ;
+    swift:fieldId 4 ;
+    swift:isTerminalField true .
+
+swift:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 3 .
+
+swift:comparison_expression a owl:Class ;
+    rdfs:label "comparison_expression" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 279 .
+
+swift:computed_getter a owl:Class ;
+    rdfs:label "computed_getter" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 446 .
+
+swift:computed_modify a owl:Class ;
+    rdfs:label "computed_modify" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 447 .
+
+swift:computed_property a owl:Class ;
+    rdfs:label "computed_property" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 445 .
+
+swift:computed_setter a owl:Class ;
+    rdfs:label "computed_setter" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 448 .
+
+swift:condition a owl:DatatypeProperty ;
+    rdfs:label "condition (literal)" ;
+    rdfs:comment "Literal value for condition field when it contains a terminal node" ;
+    swift:fieldId 6 ;
+    swift:isTerminalField true .
+
+swift:conjunction_expression a owl:Class ;
+    rdfs:label "conjunction_expression" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 281 .
+
+swift:constrained_type a owl:DatatypeProperty ;
+    rdfs:label "constrained_type (literal)" ;
+    rdfs:comment "Literal value for constrained_type field when it contains a terminal node" ;
+    swift:fieldId 7 ;
+    swift:isTerminalField true .
+
+swift:constructor_expression a owl:Class ;
+    rdfs:label "constructor_expression" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 262 .
+
+swift:constructor_suffix a owl:Class ;
+    rdfs:label "constructor_suffix" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 287 .
+
+swift:control_transfer_statement a owl:Class ;
+    rdfs:label "control_transfer_statement" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 359 .
+
+swift:custom_operator a owl:Class ;
+    rdfs:label "custom_operator" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 284 .
+
+swift:default_keyword a owl:Class ;
+    rdfs:label "default_keyword" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 198 .
+
+swift:default_value a owl:DatatypeProperty ;
+    rdfs:label "default_value (literal)" ;
+    rdfs:comment "Literal value for default_value field when it contains a terminal node" ;
+    swift:fieldId 11 ;
+    swift:isTerminalField true .
+
+swift:deinit_declaration a owl:Class ;
+    rdfs:label "deinit_declaration" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 443 .
+
+swift:deprecated_operator_declaration_body a owl:Class ;
+    rdfs:label "deprecated_operator_declaration_body" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 454 .
+
+swift:diagnostic a owl:Class ;
+    rdfs:label "diagnostic" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 494 .
+
+swift:dictionary_literal a owl:Class ;
+    rdfs:label "dictionary_literal" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 306 .
+
+swift:dictionary_type a owl:Class ;
+    rdfs:label "dictionary_type" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 248 .
+
+swift:didset_clause a owl:Class ;
+    rdfs:label "didset_clause" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 385 .
+
+swift:directive a owl:Class ;
+    rdfs:label "directive" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 492 .
+
+swift:directly_assignable_expression a owl:Class ;
+    rdfs:label "directly_assignable_expression" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 348 .
+
+swift:disjunction_expression a owl:Class ;
+    rdfs:label "disjunction_expression" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 282 .
+
+swift:do_statement a owl:Class ;
+    rdfs:label "do_statement" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 327 .
+
+swift:element a owl:DatatypeProperty ;
+    rdfs:label "element (literal)" ;
+    rdfs:comment "Literal value for element field when it contains a terminal node" ;
+    swift:fieldId 13 ;
+    swift:isTerminalField true .
+
+swift:else a owl:Class ;
+    rdfs:label "else" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 200 .
+
+swift:end a owl:DatatypeProperty ;
+    rdfs:label "end (literal)" ;
+    rdfs:comment "Literal value for end field when it contains a terminal node" ;
+    swift:fieldId 14 ;
+    swift:isTerminalField true .
+
+swift:enum_class_body a owl:Class ;
+    rdfs:label "enum_class_body" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 434 .
+
+swift:enum_entry a owl:Class ;
+    rdfs:label "enum_entry" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 435 .
+
+swift:enum_type_parameters a owl:Class ;
+    rdfs:label "enum_type_parameters" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 437 .
+
+swift:equality_constraint a owl:Class ;
+    rdfs:label "equality_constraint" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 410 .
+
+swift:equality_expression a owl:Class ;
+    rdfs:label "equality_expression" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 280 .
+
+swift:existential_type a owl:Class ;
+    rdfs:label "existential_type" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 254 .
+
+swift:expr a owl:DatatypeProperty ;
+    rdfs:label "expr (literal)" ;
+    rdfs:comment "Literal value for expr field when it contains a terminal node" ;
+    swift:fieldId 16 ;
+    swift:isTerminalField true .
+
+swift:external_macro_definition a owl:Class ;
+    rdfs:label "external_macro_definition" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 397 .
+
+swift:external_name a owl:DatatypeProperty ;
+    rdfs:label "external_name (literal)" ;
+    rdfs:comment "Literal value for external_name field when it contains a terminal node" ;
+    swift:fieldId 17 ;
+    swift:isTerminalField true .
+
+swift:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+swift:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+swift:field_body a owl:ObjectProperty ;
+    rdfs:label "body (structural)" ;
+    rdfs:comment "Structural reference for body field when it contains a non-terminal node" ;
+    swift:fieldId 1 .
+
+swift:field_captures a owl:ObjectProperty ;
+    rdfs:label "captures (structural)" ;
+    rdfs:comment "Structural reference for captures field when it contains a non-terminal node" ;
+    swift:fieldId 3 .
+
+swift:field_collection a owl:ObjectProperty ;
+    rdfs:label "collection (structural)" ;
+    rdfs:comment "Structural reference for collection field when it contains a non-terminal node" ;
+    swift:fieldId 4 .
+
+swift:field_computed_value a owl:ObjectProperty ;
+    rdfs:label "computed_value (structural)" ;
+    rdfs:comment "Structural reference for computed_value field when it contains a non-terminal node" ;
+    swift:fieldId 5 .
+
+swift:field_condition a owl:ObjectProperty ;
+    rdfs:label "condition (structural)" ;
+    rdfs:comment "Structural reference for condition field when it contains a non-terminal node" ;
+    swift:fieldId 6 .
+
+swift:field_constrained_type a owl:ObjectProperty ;
+    rdfs:label "constrained_type (structural)" ;
+    rdfs:comment "Structural reference for constrained_type field when it contains a non-terminal node" ;
+    swift:fieldId 7 .
+
+swift:field_constructed_type a owl:ObjectProperty ;
+    rdfs:label "constructed_type (structural)" ;
+    rdfs:comment "Structural reference for constructed_type field when it contains a non-terminal node" ;
+    swift:fieldId 8 .
+
+swift:field_data_contents a owl:ObjectProperty ;
+    rdfs:label "data_contents (structural)" ;
+    rdfs:comment "Structural reference for data_contents field when it contains a non-terminal node" ;
+    swift:fieldId 9 .
+
+swift:field_declaration_kind a owl:ObjectProperty ;
+    rdfs:label "declaration_kind (structural)" ;
+    rdfs:comment "Structural reference for declaration_kind field when it contains a non-terminal node" ;
+    swift:fieldId 10 .
+
+swift:field_default_value a owl:ObjectProperty ;
+    rdfs:label "default_value (structural)" ;
+    rdfs:comment "Structural reference for default_value field when it contains a non-terminal node" ;
+    swift:fieldId 11 .
+
+swift:field_definition a owl:ObjectProperty ;
+    rdfs:label "definition (structural)" ;
+    rdfs:comment "Structural reference for definition field when it contains a non-terminal node" ;
+    swift:fieldId 12 .
+
+swift:field_element a owl:ObjectProperty ;
+    rdfs:label "element (structural)" ;
+    rdfs:comment "Structural reference for element field when it contains a non-terminal node" ;
+    swift:fieldId 13 .
+
+swift:field_end a owl:ObjectProperty ;
+    rdfs:label "end (structural)" ;
+    rdfs:comment "Structural reference for end field when it contains a non-terminal node" ;
+    swift:fieldId 14 .
+
+swift:field_error a owl:ObjectProperty ;
+    rdfs:label "error (structural)" ;
+    rdfs:comment "Structural reference for error field when it contains a non-terminal node" ;
+    swift:fieldId 15 .
+
+swift:field_expr a owl:ObjectProperty ;
+    rdfs:label "expr (structural)" ;
+    rdfs:comment "Structural reference for expr field when it contains a non-terminal node" ;
+    swift:fieldId 16 .
+
+swift:field_if_false a owl:ObjectProperty ;
+    rdfs:label "if_false (structural)" ;
+    rdfs:comment "Structural reference for if_false field when it contains a non-terminal node" ;
+    swift:fieldId 18 .
+
+swift:field_if_nil a owl:ObjectProperty ;
+    rdfs:label "if_nil (structural)" ;
+    rdfs:comment "Structural reference for if_nil field when it contains a non-terminal node" ;
+    swift:fieldId 19 .
+
+swift:field_if_true a owl:ObjectProperty ;
+    rdfs:label "if_true (structural)" ;
+    rdfs:comment "Structural reference for if_true field when it contains a non-terminal node" ;
+    swift:fieldId 20 .
+
+swift:field_inherits_from a owl:ObjectProperty ;
+    rdfs:label "inherits_from (structural)" ;
+    rdfs:comment "Structural reference for inherits_from field when it contains a non-terminal node" ;
+    swift:fieldId 21 .
+
+swift:field_interpolation a owl:ObjectProperty ;
+    rdfs:label "interpolation (structural)" ;
+    rdfs:comment "Structural reference for interpolation field when it contains a non-terminal node" ;
+    swift:fieldId 22 .
+
+swift:field_item a owl:ObjectProperty ;
+    rdfs:label "item (structural)" ;
+    rdfs:comment "Structural reference for item field when it contains a non-terminal node" ;
+    swift:fieldId 23 .
+
+swift:field_key a owl:ObjectProperty ;
+    rdfs:label "key (structural)" ;
+    rdfs:comment "Structural reference for key field when it contains a non-terminal node" ;
+    swift:fieldId 24 .
+
+swift:field_lhs a owl:ObjectProperty ;
+    rdfs:label "lhs (structural)" ;
+    rdfs:comment "Structural reference for lhs field when it contains a non-terminal node" ;
+    swift:fieldId 25 .
+
+swift:field_must_equal a owl:ObjectProperty ;
+    rdfs:label "must_equal (structural)" ;
+    rdfs:comment "Structural reference for must_equal field when it contains a non-terminal node" ;
+    swift:fieldId 26 .
+
+swift:field_must_inherit a owl:ObjectProperty ;
+    rdfs:label "must_inherit (structural)" ;
+    rdfs:comment "Structural reference for must_inherit field when it contains a non-terminal node" ;
+    swift:fieldId 27 .
+
+swift:field_mutability a owl:ObjectProperty ;
+    rdfs:label "mutability (structural)" ;
+    rdfs:comment "Structural reference for mutability field when it contains a non-terminal node" ;
+    swift:fieldId 28 .
+
+swift:field_name a owl:ObjectProperty ;
+    rdfs:label "name (structural)" ;
+    rdfs:comment "Structural reference for name field when it contains a non-terminal node" ;
+    swift:fieldId 29 .
+
+swift:field_op a owl:ObjectProperty ;
+    rdfs:label "op (structural)" ;
+    rdfs:comment "Structural reference for op field when it contains a non-terminal node" ;
+    swift:fieldId 30 .
+
+swift:field_operation a owl:ObjectProperty ;
+    rdfs:label "operation (structural)" ;
+    rdfs:comment "Structural reference for operation field when it contains a non-terminal node" ;
+    swift:fieldId 31 .
+
+swift:field_operator a owl:ObjectProperty ;
+    rdfs:label "operator (structural)" ;
+    rdfs:comment "Structural reference for operator field when it contains a non-terminal node" ;
+    swift:fieldId 32 .
+
+swift:field_params a owl:ObjectProperty ;
+    rdfs:label "params (structural)" ;
+    rdfs:comment "Structural reference for params field when it contains a non-terminal node" ;
+    swift:fieldId 33 .
+
+swift:field_raw_value a owl:ObjectProperty ;
+    rdfs:label "raw_value (structural)" ;
+    rdfs:comment "Structural reference for raw_value field when it contains a non-terminal node" ;
+    swift:fieldId 34 .
+
+swift:field_reference_specifier a owl:ObjectProperty ;
+    rdfs:label "reference_specifier (structural)" ;
+    rdfs:comment "Structural reference for reference_specifier field when it contains a non-terminal node" ;
+    swift:fieldId 35 .
+
+swift:field_result a owl:ObjectProperty ;
+    rdfs:label "result (structural)" ;
+    rdfs:comment "Structural reference for result field when it contains a non-terminal node" ;
+    swift:fieldId 36 .
+
+swift:field_return_type a owl:ObjectProperty ;
+    rdfs:label "return_type (structural)" ;
+    rdfs:comment "Structural reference for return_type field when it contains a non-terminal node" ;
+    swift:fieldId 37 .
+
+swift:field_rhs a owl:ObjectProperty ;
+    rdfs:label "rhs (structural)" ;
+    rdfs:comment "Structural reference for rhs field when it contains a non-terminal node" ;
+    swift:fieldId 38 .
+
+swift:field_start a owl:ObjectProperty ;
+    rdfs:label "start (structural)" ;
+    rdfs:comment "Structural reference for start field when it contains a non-terminal node" ;
+    swift:fieldId 39 .
+
+swift:field_suffix a owl:ObjectProperty ;
+    rdfs:label "suffix (structural)" ;
+    rdfs:comment "Structural reference for suffix field when it contains a non-terminal node" ;
+    swift:fieldId 40 .
+
+swift:field_target a owl:ObjectProperty ;
+    rdfs:label "target (structural)" ;
+    rdfs:comment "Structural reference for target field when it contains a non-terminal node" ;
+    swift:fieldId 42 .
+
+swift:field_text a owl:ObjectProperty ;
+    rdfs:label "text (structural)" ;
+    rdfs:comment "Structural reference for text field when it contains a non-terminal node" ;
+    swift:fieldId 43 .
+
+swift:field_type a owl:ObjectProperty ;
+    rdfs:label "type (structural)" ;
+    rdfs:comment "Structural reference for type field when it contains a non-terminal node" ;
+    swift:fieldId 44 .
+
+swift:field_value a owl:ObjectProperty ;
+    rdfs:label "value (structural)" ;
+    rdfs:comment "Structural reference for value field when it contains a non-terminal node" ;
+    swift:fieldId 45 .
+
+swift:field_wrapped a owl:ObjectProperty ;
+    rdfs:label "wrapped (structural)" ;
+    rdfs:comment "Structural reference for wrapped field when it contains a non-terminal node" ;
+    swift:fieldId 46 .
+
+swift:for_statement a owl:Class ;
+    rdfs:label "for_statement" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 354 .
+
+swift:fully_open_range a owl:Class ;
+    rdfs:label "fully_open_range" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 548 .
+
+swift:function_body a owl:Class ;
+    rdfs:label "function_body" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 392 .
+
+swift:function_declaration a owl:Class ;
+    rdfs:label "function_declaration" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 372,
+        388 .
+
+swift:function_modifier a owl:Class ;
+    rdfs:label "function_modifier" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 485 .
+
+swift:function_type a owl:Class ;
+    rdfs:label "function_type" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 246 .
+
+swift:getter_specifier a owl:Class ;
+    rdfs:label "getter_specifier" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 449 .
+
+swift:guard_statement a owl:Class ;
+    rdfs:label "guard_statement" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 323 .
+
+swift:hex_literal a owl:Class ;
+    rdfs:label "hex_literal" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 17 .
+
+swift:identifier a owl:Class ;
+    rdfs:label "identifier" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 218 .
+
+swift:if_false a owl:DatatypeProperty ;
+    rdfs:label "if_false (literal)" ;
+    rdfs:comment "Literal value for if_false field when it contains a terminal node" ;
+    swift:fieldId 18 ;
+    swift:isTerminalField true .
+
+swift:if_nil a owl:DatatypeProperty ;
+    rdfs:label "if_nil (literal)" ;
+    rdfs:comment "Literal value for if_nil field when it contains a terminal node" ;
+    swift:fieldId 19 ;
+    swift:isTerminalField true .
+
+swift:if_statement a owl:Class ;
+    rdfs:label "if_statement" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 320 .
+
+swift:if_true a owl:DatatypeProperty ;
+    rdfs:label "if_true (literal)" ;
+    rdfs:comment "Literal value for if_true field when it contains a terminal node" ;
+    swift:fieldId 20 ;
+    swift:isTerminalField true .
+
+swift:import_declaration a owl:Class ;
+    rdfs:label "import_declaration" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 374 .
+
+swift:infix_expression a owl:Class ;
+    rdfs:label "infix_expression" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 276 .
+
+swift:inheritance_constraint a owl:Class ;
+    rdfs:label "inheritance_constraint" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 409 .
+
+swift:inheritance_modifier a owl:Class ;
+    rdfs:label "inheritance_modifier" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 488 .
+
+swift:inheritance_specifier a owl:Class ;
+    rdfs:label "inheritance_specifier" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 402 .
+
+swift:init_declaration a owl:Class ;
+    rdfs:label "init_declaration" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 442 .
+
+swift:integer_literal a owl:Class ;
+    rdfs:label "integer_literal" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 16 .
+
+swift:interpolated_expression a owl:Class ;
+    rdfs:label "interpolated_expression" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 549 .
+
+swift:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+swift:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+swift:key a owl:DatatypeProperty ;
+    rdfs:label "key (literal)" ;
+    rdfs:comment "Literal value for key field when it contains a terminal node" ;
+    swift:fieldId 24 ;
+    swift:isTerminalField true .
+
+swift:key_path_expression a owl:Class ;
+    rdfs:label "key_path_expression" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 330 .
+
+swift:key_path_string_expression a owl:Class ;
+    rdfs:label "key_path_string_expression" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 331 .
+
+swift:lambda_function_type a owl:Class ;
+    rdfs:label "lambda_function_type" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 314 .
+
+swift:lambda_function_type_parameters a owl:Class ;
+    rdfs:label "lambda_function_type_parameters" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 315 .
+
+swift:lambda_literal a owl:Class ;
+    rdfs:label "lambda_literal" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 310 .
+
+swift:lambda_parameter a owl:Class ;
+    rdfs:label "lambda_parameter" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 316 .
+
+swift:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+swift:lhs a owl:DatatypeProperty ;
+    rdfs:label "lhs (literal)" ;
+    rdfs:comment "Literal value for lhs field when it contains a terminal node" ;
+    swift:fieldId 25 ;
+    swift:isTerminalField true .
+
+swift:line_str_text a owl:Class ;
+    rdfs:label "line_str_text" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 224 .
+
+swift:line_string_literal a owl:Class ;
+    rdfs:label "line_string_literal" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 222 .
+
+swift:macro_declaration a owl:Class ;
+    rdfs:label "macro_declaration" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 393 .
+
+swift:macro_definition a owl:Class ;
+    rdfs:label "macro_definition" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 396 .
+
+swift:macro_invocation a owl:Class ;
+    rdfs:label "macro_invocation" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 302 .
+
+swift:member_modifier a owl:Class ;
+    rdfs:label "member_modifier" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 482 .
+
+swift:metatype a owl:Class ;
+    rdfs:label "metatype" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 250 .
+
+swift:modifiers a owl:Class ;
+    rdfs:label "modifiers" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 475 .
+
+swift:modify_specifier a owl:Class ;
+    rdfs:label "modify_specifier" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 451 .
+
+swift:multi_line_str_text a owl:Class ;
+    rdfs:label "multi_line_str_text" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 233 .
+
+swift:multi_line_string_literal a owl:Class ;
+    rdfs:label "multi_line_string_literal" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 227 .
+
+swift:multiline_comment a owl:Class ;
+    rdfs:label "multiline_comment" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 180 .
+
+swift:multiplicative_expression a owl:Class ;
+    rdfs:label "multiplicative_expression" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 273 .
+
+swift:mutation_modifier a owl:Class ;
+    rdfs:label "mutation_modifier" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 486 .
+
+swift:name a owl:DatatypeProperty ;
+    rdfs:label "name (literal)" ;
+    rdfs:comment "Literal value for name field when it contains a terminal node" ;
+    swift:fieldId 29 ;
+    swift:isTerminalField true .
+
+swift:navigation_expression a owl:Class ;
+    rdfs:label "navigation_expression" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 264 .
+
+swift:navigation_suffix a owl:Class ;
+    rdfs:label "navigation_suffix" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 285 .
+
+swift:nil_coalescing_expression a owl:Class ;
+    rdfs:label "nil_coalescing_expression" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 277 .
+
+swift:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+swift:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+swift:oct_literal a owl:Class ;
+    rdfs:label "oct_literal" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 18 .
+
+swift:op a owl:DatatypeProperty ;
+    rdfs:label "op (literal)" ;
+    rdfs:comment "Literal value for op field when it contains a terminal node" ;
+    swift:fieldId 30 ;
+    swift:isTerminalField true .
+
+swift:opaque_type a owl:Class ;
+    rdfs:label "opaque_type" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 253 .
+
+swift:open_end_range_expression a owl:Class ;
+    rdfs:label "open_end_range_expression" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 268 .
+
+swift:open_start_range_expression a owl:Class ;
+    rdfs:label "open_start_range_expression" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 266 .
+
+swift:operation a owl:DatatypeProperty ;
+    rdfs:label "operation (literal)" ;
+    rdfs:comment "Literal value for operation field when it contains a terminal node" ;
+    swift:fieldId 31 ;
+    swift:isTerminalField true .
+
+swift:operator_declaration a owl:Class ;
+    rdfs:label "operator_declaration" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 453 .
+
+swift:optional_type a owl:Class ;
+    rdfs:label "optional_type" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 249 .
+
+swift:ownership_modifier a owl:Class ;
+    rdfs:label "ownership_modifier" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 490 .
+
+swift:parameter a owl:Class ;
+    rdfs:label "parameter" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 416 .
+
+swift:parameter_modifier a owl:Class ;
+    rdfs:label "parameter_modifier" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 489 .
+
+swift:parameter_modifiers a owl:Class ;
+    rdfs:label "parameter_modifiers" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 477 .
+
+swift:pattern a owl:Class ;
+    rdfs:label "pattern" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 465 .
+
+swift:playground_literal a owl:Class ;
+    rdfs:label "playground_literal" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 309 .
+
+swift:postfix_expression a owl:Class ;
+    rdfs:label "postfix_expression" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 261 .
+
+swift:precedence_group_attribute a owl:Class ;
+    rdfs:label "precedence_group_attribute" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 457 .
+
+swift:precedence_group_attributes a owl:Class ;
+    rdfs:label "precedence_group_attributes" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 456 .
+
+swift:precedence_group_declaration a owl:Class ;
+    rdfs:label "precedence_group_declaration" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 455 .
+
+swift:prefix_expression a owl:Class ;
+    rdfs:label "prefix_expression" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 269 .
+
+swift:property_behavior_modifier a owl:Class ;
+    rdfs:label "property_behavior_modifier" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 480 .
+
+swift:property_declaration a owl:Class ;
+    rdfs:label "property_declaration" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 370,
+        378 .
+
+swift:property_modifier a owl:Class ;
+    rdfs:label "property_modifier" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 487 .
+
+swift:protocol_body a owl:Class ;
+    rdfs:label "protocol_body" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 439 .
+
+swift:protocol_composition_type a owl:Class ;
+    rdfs:label "protocol_composition_type" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 257 .
+
+swift:protocol_declaration a owl:Class ;
+    rdfs:label "protocol_declaration" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 438 .
+
+swift:protocol_function_declaration a owl:Class ;
+    rdfs:label "protocol_function_declaration" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 550 .
+
+swift:protocol_property_declaration a owl:Class ;
+    rdfs:label "protocol_property_declaration" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 376 .
+
+swift:protocol_property_requirements a owl:Class ;
+    rdfs:label "protocol_property_requirements" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 377 .
+
+swift:range_expression a owl:Class ;
+    rdfs:label "range_expression" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 275 .
+
+swift:raw_str_continuing_indicator a owl:Class ;
+    rdfs:label "raw_str_continuing_indicator" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 182 .
+
+swift:raw_str_end_part a owl:Class ;
+    rdfs:label "raw_str_end_part" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 183 .
+
+swift:raw_str_interpolation a owl:Class ;
+    rdfs:label "raw_str_interpolation" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 229 .
+
+swift:raw_str_interpolation_start a owl:Class ;
+    rdfs:label "raw_str_interpolation_start" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 29 .
+
+swift:raw_str_part a owl:Class ;
+    rdfs:label "raw_str_part" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 181 .
+
+swift:raw_string_literal a owl:Class ;
+    rdfs:label "raw_string_literal" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 228 .
+
+swift:raw_value a owl:DatatypeProperty ;
+    rdfs:label "raw_value (literal)" ;
+    rdfs:comment "Literal value for raw_value field when it contains a terminal node" ;
+    swift:fieldId 34 ;
+    swift:isTerminalField true .
+
+swift:real_literal a owl:Class ;
+    rdfs:label "real_literal" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 15 .
+
+swift:regex_literal a owl:Class ;
+    rdfs:label "regex_literal" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 234 .
+
+swift:repeat_while_statement a owl:Class ;
+    rdfs:label "repeat_while_statement" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 358 .
+
+swift:result a owl:DatatypeProperty ;
+    rdfs:label "result (literal)" ;
+    rdfs:comment "Literal value for result field when it contains a terminal node" ;
+    swift:fieldId 36 ;
+    swift:isTerminalField true .
+
+swift:rhs a owl:DatatypeProperty ;
+    rdfs:label "rhs (literal)" ;
+    rdfs:comment "Literal value for rhs field when it contains a terminal node" ;
+    swift:fieldId 38 ;
+    swift:isTerminalField true .
+
+swift:selector_expression a owl:Class ;
+    rdfs:label "selector_expression" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 271 .
+
+swift:self_expression a owl:Class ;
+    rdfs:label "self_expression" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 317 .
+
+swift:setter_specifier a owl:Class ;
+    rdfs:label "setter_specifier" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 450 .
+
+swift:shebang_line a owl:Class ;
+    rdfs:label "shebang_line" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 215 .
+
+swift:simple_identifier a owl:Class ;
+    rdfs:label "simple_identifier" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 216 .
+
+swift:source_file a owl:Class ;
+    rdfs:label "source_file" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 213 .
+
+swift:special_literal a owl:Class ;
+    rdfs:label "special_literal" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 308 .
+
+swift:start a owl:DatatypeProperty ;
+    rdfs:label "start (literal)" ;
+    rdfs:comment "Literal value for start field when it contains a terminal node" ;
+    swift:fieldId 39 ;
+    swift:isTerminalField true .
+
+swift:statement_label a owl:Class ;
+    rdfs:label "statement_label" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 106 .
+
+swift:statements a owl:Class ;
+    rdfs:label "statements" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 349 .
+
+swift:str_escaped_char a owl:Class ;
+    rdfs:label "str_escaped_char" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 225 .
+
+swift:subscript_declaration a owl:Class ;
+    rdfs:label "subscript_declaration" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 444 .
+
+swift:suffix a owl:DatatypeProperty ;
+    rdfs:label "suffix (literal)" ;
+    rdfs:comment "Literal value for suffix field when it contains a terminal node" ;
+    swift:fieldId 40 ;
+    swift:isTerminalField true .
+
+swift:super_expression a owl:Class ;
+    rdfs:label "super_expression" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 318 .
+
+swift:suppressed a owl:DatatypeProperty ;
+    rdfs:label "suppressed (literal)" ;
+    rdfs:comment "Literal value for suppressed field when it contains a terminal node" ;
+    swift:fieldId 41 ;
+    swift:isTerminalField true .
+
+swift:suppressed_constraint a owl:Class ;
+    rdfs:label "suppressed_constraint" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 258 .
+
+swift:switch_entry a owl:Class ;
+    rdfs:label "switch_entry" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 325 .
+
+swift:switch_pattern a owl:Class ;
+    rdfs:label "switch_pattern" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 326 .
+
+swift:switch_statement a owl:Class ;
+    rdfs:label "switch_statement" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 324 .
+
+swift:target a owl:DatatypeProperty ;
+    rdfs:label "target (literal)" ;
+    rdfs:comment "Literal value for target field when it contains a terminal node" ;
+    swift:fieldId 42 ;
+    swift:isTerminalField true .
+
+swift:ternary_expression a owl:Class ;
+    rdfs:label "ternary_expression" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 297 .
+
+swift:text a owl:DatatypeProperty ;
+    rdfs:label "text (literal)" ;
+    rdfs:comment "Literal value for text field when it contains a terminal node" ;
+    swift:fieldId 43 ;
+    swift:isTerminalField true .
+
+swift:throw_keyword a owl:Class ;
+    rdfs:label "throw_keyword" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 109 .
+
+swift:throws a owl:Class ;
+    rdfs:label "throws" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 433 .
+
+swift:try_expression a owl:Class ;
+    rdfs:label "try_expression" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 294 .
+
+swift:try_operator a owl:Class ;
+    rdfs:label "try_operator" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 334 .
+
+swift:tuple_expression a owl:Class ;
+    rdfs:label "tuple_expression" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 304 .
+
+swift:tuple_type a owl:Class ;
+    rdfs:label "tuple_type" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 243 .
+
+swift:tuple_type_item a owl:Class ;
+    rdfs:label "tuple_type_item" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 244 .
+
+swift:type_annotation a owl:Class ;
+    rdfs:label "type_annotation" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 237 .
+
+swift:type_arguments a owl:Class ;
+    rdfs:label "type_arguments" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 290 .
+
+swift:type_constraint a owl:Class ;
+    rdfs:label "type_constraint" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 408 .
+
+swift:type_constraints a owl:Class ;
+    rdfs:label "type_constraints" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 407 .
+
+swift:type_identifier a owl:Class ;
+    rdfs:label "type_identifier" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 551 .
+
+swift:type_modifiers a owl:Class ;
+    rdfs:label "type_modifiers" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 481 .
+
+swift:type_pack_expansion a owl:Class ;
+    rdfs:label "type_pack_expansion" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 256 .
+
+swift:type_parameter a owl:Class ;
+    rdfs:label "type_parameter" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 405 .
+
+swift:type_parameter_modifiers a owl:Class ;
+    rdfs:label "type_parameter_modifiers" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 484 .
+
+swift:type_parameter_pack a owl:Class ;
+    rdfs:label "type_parameter_pack" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 255 .
+
+swift:type_parameters a owl:Class ;
+    rdfs:label "type_parameters" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 404 .
+
+swift:typealias_declaration a owl:Class ;
+    rdfs:label "typealias_declaration" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 371,
+        386 .
+
+swift:user_type a owl:Class ;
+    rdfs:label "user_type" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 241 .
+
+swift:value a owl:DatatypeProperty ;
+    rdfs:label "value (literal)" ;
+    rdfs:comment "Literal value for value field when it contains a terminal node" ;
+    swift:fieldId 45 ;
+    swift:isTerminalField true .
+
+swift:value_argument a owl:Class ;
+    rdfs:label "value_argument" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 293 .
+
+swift:value_argument_label a owl:Class ;
+    rdfs:label "value_argument_label" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 292 .
+
+swift:value_arguments a owl:Class ;
+    rdfs:label "value_arguments" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 288,
+        291 .
+
+swift:value_binding_pattern a owl:Class ;
+    rdfs:label "value_binding_pattern" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 467 .
+
+swift:value_pack_expansion a owl:Class ;
+    rdfs:label "value_pack_expansion" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 364 .
+
+swift:value_parameter_pack a owl:Class ;
+    rdfs:label "value_parameter_pack" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 363 .
+
+swift:visibility_modifier a owl:Class ;
+    rdfs:label "visibility_modifier" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 483 .
+
+swift:where_clause a owl:Class ;
+    rdfs:label "where_clause" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 329 .
+
+swift:where_keyword a owl:Class ;
+    rdfs:label "where_keyword" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 199 .
+
+swift:while_statement a owl:Class ;
+    rdfs:label "while_statement" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 357 .
+
+swift:wildcard_pattern a owl:Class ;
+    rdfs:label "wildcard_pattern" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 145 .
+
+swift:willset_clause a owl:Class ;
+    rdfs:label "willset_clause" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 384 .
+
+swift:willset_didset_block a owl:Class ;
+    rdfs:label "willset_didset_block" ;
+    rdfs:isDefinedBy swift: ;
+    rdfs:subClassOf ast:Node ;
+    swift:isSupertype true ;
+    swift:nodeTypeId 383 .
+
+swift: a owl:Ontology ;
+    rdfs:label "Swift Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for swift" ;
+    owl:versionInfo "v0.25" ;
+    swift:abiVersion 14 ;
+    swift:fieldCount 46 ;
+    swift:languageName "None" ;
+    swift:nodeKindCount 552 .
+

@@ -1,0 +1,1337 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix scala: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/scala/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+scala:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+scala:access_modifier a owl:Class ;
+    rdfs:label "access_modifier" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 188 .
+
+scala:access_qualifier a owl:Class ;
+    rdfs:label "access_qualifier" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 189 .
+
+scala:alias a owl:DatatypeProperty ;
+    rdfs:label "alias (literal)" ;
+    rdfs:comment "Literal value for alias field when it contains a terminal node" ;
+    scala:fieldId 1 ;
+    scala:isTerminalField true .
+
+scala:alternative_pattern a owl:Class ;
+    rdfs:label "alternative_pattern" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 242 .
+
+scala:annotated_type a owl:Class ;
+    rdfs:label "annotated_type" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 212 .
+
+scala:annotation a owl:Class ;
+    rdfs:label "annotation" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 165 .
+
+scala:applied_constructor_type a owl:Class ;
+    rdfs:label "applied_constructor_type" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 214 .
+
+scala:arguments a owl:Class ;
+    rdfs:label "arguments" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 277 .
+
+scala:arrow_renamed_identifier a owl:Class ;
+    rdfs:label "arrow_renamed_identifier" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 136 .
+
+scala:as_renamed_identifier a owl:Class ;
+    rdfs:label "as_renamed_identifier" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 137 .
+
+scala:ascription_expression a owl:Class ;
+    rdfs:label "ascription_expression" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 268 .
+
+scala:assignment_expression a owl:Class ;
+    rdfs:label "assignment_expression" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 262 .
+
+scala:base a owl:DatatypeProperty ;
+    rdfs:label "base (literal)" ;
+    rdfs:comment "Literal value for base field when it contains a terminal node" ;
+    scala:fieldId 4 ;
+    scala:isTerminalField true .
+
+scala:binding a owl:Class ;
+    rdfs:label "binding" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 256 .
+
+scala:bindings a owl:Class ;
+    rdfs:label "bindings" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 257 .
+
+scala:block a owl:Class ;
+    rdfs:label "block" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 206 .
+
+scala:block_comment a owl:Class ;
+    rdfs:label "block_comment" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 306 .
+
+scala:body a owl:DatatypeProperty ;
+    rdfs:label "body (literal)" ;
+    rdfs:comment "Literal value for body field when it contains a terminal node" ;
+    scala:fieldId 5 ;
+    scala:isTerminalField true .
+
+scala:boolean_literal a owl:Class ;
+    rdfs:label "boolean_literal" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 287 .
+
+scala:call_expression a owl:Class ;
+    rdfs:label "call_expression" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 264 .
+
+scala:capture_pattern a owl:Class ;
+    rdfs:label "capture_pattern" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 238 .
+
+scala:case_block a owl:Class ;
+    rdfs:label "case_block" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 258 .
+
+scala:case_class_pattern a owl:Class ;
+    rdfs:label "case_class_pattern" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 236 .
+
+scala:case_clause a owl:Class ;
+    rdfs:label "case_clause" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 259 .
+
+scala:catch_clause a owl:Class ;
+    rdfs:label "catch_clause" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 253 .
+
+scala:character_literal a owl:Class ;
+    rdfs:label "character_literal" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 84 .
+
+scala:class_definition a owl:Class ;
+    rdfs:label "class_definition" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 140 .
+
+scala:class_parameter a owl:Class ;
+    rdfs:label "class_parameter" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 201 .
+
+scala:class_parameters a owl:Class ;
+    rdfs:label "class_parameters" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 198 .
+
+scala:colon_argument a owl:Class ;
+    rdfs:label "colon_argument" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 265 .
+
+scala:comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 95,
+        304 .
+
+scala:compilation_unit a owl:Class ;
+    rdfs:label "compilation_unit" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 118 .
+
+scala:compound_type a owl:Class ;
+    rdfs:label "compound_type" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 215 .
+
+scala:condition a owl:DatatypeProperty ;
+    rdfs:label "condition (literal)" ;
+    rdfs:comment "Literal value for condition field when it contains a terminal node" ;
+    scala:fieldId 8 ;
+    scala:isTerminalField true .
+
+scala:context_bound a owl:Class ;
+    rdfs:label "context_bound" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 154 .
+
+scala:contravariant_type_parameter a owl:Class ;
+    rdfs:label "contravariant_type_parameter" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 148 .
+
+scala:covariant_type_parameter a owl:Class ;
+    rdfs:label "covariant_type_parameter" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 147 .
+
+scala:derives_clause a owl:Class ;
+    rdfs:label "derives_clause" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 197 .
+
+scala:do_while_expression a owl:Class ;
+    rdfs:label "do_while_expression" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 299 .
+
+scala:enum_body a owl:Class ;
+    rdfs:label "enum_body" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 122 .
+
+scala:enum_case_definitions a owl:Class ;
+    rdfs:label "enum_case_definitions" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 123 .
+
+scala:enum_definition a owl:Class ;
+    rdfs:label "enum_definition" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 120 .
+
+scala:enumerator a owl:Class ;
+    rdfs:label "enumerator" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 302 .
+
+scala:enumerators a owl:Class ;
+    rdfs:label "enumerators" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 301 .
+
+scala:error_sentinel a owl:Class ;
+    rdfs:label "error_sentinel" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 117 .
+
+scala:escape_sequence a owl:Class ;
+    rdfs:label "escape_sequence" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 85,
+        88 .
+
+scala:export_declaration a owl:Class ;
+    rdfs:label "export_declaration" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 131 .
+
+scala:extends_clause a owl:Class ;
+    rdfs:label "extends_clause" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 196 .
+
+scala:extension_definition a owl:Class ;
+    rdfs:label "extension_definition" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 179 .
+
+scala:extra a owl:DatatypeProperty ;
+    rdfs:label "extra (literal)" ;
+    rdfs:comment "Literal value for extra field when it contains a terminal node" ;
+    scala:fieldId 14 ;
+    scala:isTerminalField true .
+
+scala:field a owl:DatatypeProperty ;
+    rdfs:label "field (literal)" ;
+    rdfs:comment "Literal value for field field when it contains a terminal node" ;
+    scala:fieldId 15 ;
+    scala:isTerminalField true .
+
+scala:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+scala:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+scala:field_alternative a owl:ObjectProperty ;
+    rdfs:label "alternative (structural)" ;
+    rdfs:comment "Structural reference for alternative field when it contains a non-terminal node" ;
+    scala:fieldId 2 .
+
+scala:field_arguments a owl:ObjectProperty ;
+    rdfs:label "arguments (structural)" ;
+    rdfs:comment "Structural reference for arguments field when it contains a non-terminal node" ;
+    scala:fieldId 3 .
+
+scala:field_base a owl:ObjectProperty ;
+    rdfs:label "base (structural)" ;
+    rdfs:comment "Structural reference for base field when it contains a non-terminal node" ;
+    scala:fieldId 4 .
+
+scala:field_body a owl:ObjectProperty ;
+    rdfs:label "body (structural)" ;
+    rdfs:comment "Structural reference for body field when it contains a non-terminal node" ;
+    scala:fieldId 5 .
+
+scala:field_bound a owl:ObjectProperty ;
+    rdfs:label "bound (structural)" ;
+    rdfs:comment "Structural reference for bound field when it contains a non-terminal node" ;
+    scala:fieldId 6 .
+
+scala:field_class_parameters a owl:ObjectProperty ;
+    rdfs:label "class_parameters (structural)" ;
+    rdfs:comment "Structural reference for class_parameters field when it contains a non-terminal node" ;
+    scala:fieldId 7 .
+
+scala:field_condition a owl:ObjectProperty ;
+    rdfs:label "condition (structural)" ;
+    rdfs:comment "Structural reference for condition field when it contains a non-terminal node" ;
+    scala:fieldId 8 .
+
+scala:field_consequence a owl:ObjectProperty ;
+    rdfs:label "consequence (structural)" ;
+    rdfs:comment "Structural reference for consequence field when it contains a non-terminal node" ;
+    scala:fieldId 9 .
+
+scala:field_default_value a owl:ObjectProperty ;
+    rdfs:label "default_value (structural)" ;
+    rdfs:comment "Structural reference for default_value field when it contains a non-terminal node" ;
+    scala:fieldId 10 .
+
+scala:field_derive a owl:ObjectProperty ;
+    rdfs:label "derive (structural)" ;
+    rdfs:comment "Structural reference for derive field when it contains a non-terminal node" ;
+    scala:fieldId 11 .
+
+scala:field_enumerators a owl:ObjectProperty ;
+    rdfs:label "enumerators (structural)" ;
+    rdfs:comment "Structural reference for enumerators field when it contains a non-terminal node" ;
+    scala:fieldId 12 .
+
+scala:field_expression a owl:Class ;
+    rdfs:label "field_expression" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 266 .
+
+scala:field_extend a owl:ObjectProperty ;
+    rdfs:label "extend (structural)" ;
+    rdfs:comment "Structural reference for extend field when it contains a non-terminal node" ;
+    scala:fieldId 13 .
+
+scala:field_extra a owl:ObjectProperty ;
+    rdfs:label "extra (structural)" ;
+    rdfs:comment "Structural reference for extra field when it contains a non-terminal node" ;
+    scala:fieldId 14 .
+
+scala:field_function a owl:ObjectProperty ;
+    rdfs:label "function (structural)" ;
+    rdfs:comment "Structural reference for function field when it contains a non-terminal node" ;
+    scala:fieldId 16 .
+
+scala:field_lambda_start a owl:ObjectProperty ;
+    rdfs:label "lambda_start (structural)" ;
+    rdfs:comment "Structural reference for lambda_start field when it contains a non-terminal node" ;
+    scala:fieldId 18 .
+
+scala:field_left a owl:ObjectProperty ;
+    rdfs:label "left (structural)" ;
+    rdfs:comment "Structural reference for left field when it contains a non-terminal node" ;
+    scala:fieldId 19 .
+
+scala:field_name a owl:ObjectProperty ;
+    rdfs:label "name (structural)" ;
+    rdfs:comment "Structural reference for name field when it contains a non-terminal node" ;
+    scala:fieldId 20 .
+
+scala:field_parameter_types a owl:ObjectProperty ;
+    rdfs:label "parameter_types (structural)" ;
+    rdfs:comment "Structural reference for parameter_types field when it contains a non-terminal node" ;
+    scala:fieldId 22 .
+
+scala:field_parameters a owl:ObjectProperty ;
+    rdfs:label "parameters (structural)" ;
+    rdfs:comment "Structural reference for parameters field when it contains a non-terminal node" ;
+    scala:fieldId 23 .
+
+scala:field_path a owl:ObjectProperty ;
+    rdfs:label "path (structural)" ;
+    rdfs:comment "Structural reference for path field when it contains a non-terminal node" ;
+    scala:fieldId 24 .
+
+scala:field_pattern a owl:ObjectProperty ;
+    rdfs:label "pattern (structural)" ;
+    rdfs:comment "Structural reference for pattern field when it contains a non-terminal node" ;
+    scala:fieldId 25 .
+
+scala:field_return_type a owl:ObjectProperty ;
+    rdfs:label "return_type (structural)" ;
+    rdfs:comment "Structural reference for return_type field when it contains a non-terminal node" ;
+    scala:fieldId 26 .
+
+scala:field_right a owl:ObjectProperty ;
+    rdfs:label "right (structural)" ;
+    rdfs:comment "Structural reference for right field when it contains a non-terminal node" ;
+    scala:fieldId 27 .
+
+scala:field_selector a owl:ObjectProperty ;
+    rdfs:label "selector (structural)" ;
+    rdfs:comment "Structural reference for selector field when it contains a non-terminal node" ;
+    scala:fieldId 28 .
+
+scala:field_type a owl:ObjectProperty ;
+    rdfs:label "type (structural)" ;
+    rdfs:comment "Structural reference for type field when it contains a non-terminal node" ;
+    scala:fieldId 29 .
+
+scala:field_type_arguments a owl:ObjectProperty ;
+    rdfs:label "type_arguments (structural)" ;
+    rdfs:comment "Structural reference for type_arguments field when it contains a non-terminal node" ;
+    scala:fieldId 30 .
+
+scala:field_type_parameters a owl:ObjectProperty ;
+    rdfs:label "type_parameters (structural)" ;
+    rdfs:comment "Structural reference for type_parameters field when it contains a non-terminal node" ;
+    scala:fieldId 31 .
+
+scala:field_value a owl:ObjectProperty ;
+    rdfs:label "value (structural)" ;
+    rdfs:comment "Structural reference for value field when it contains a non-terminal node" ;
+    scala:fieldId 32 .
+
+scala:finally_clause a owl:Class ;
+    rdfs:label "finally_clause" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 255 .
+
+scala:floating_point_literal a owl:Class ;
+    rdfs:label "floating_point_literal" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 81 .
+
+scala:for_expression a owl:Class ;
+    rdfs:label "for_expression" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 300 .
+
+scala:full_enum_case a owl:Class ;
+    rdfs:label "full_enum_case" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 125 .
+
+scala:function a owl:DatatypeProperty ;
+    rdfs:label "function (literal)" ;
+    rdfs:comment "Literal value for function field when it contains a terminal node" ;
+    scala:fieldId 16 ;
+    scala:isTerminalField true .
+
+scala:function_declaration a owl:Class ;
+    rdfs:label "function_declaration" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 175 .
+
+scala:function_definition a owl:Class ;
+    rdfs:label "function_definition" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 174 .
+
+scala:function_type a owl:Class ;
+    rdfs:label "function_type" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 229 .
+
+scala:generic_function a owl:Class ;
+    rdfs:label "generic_function" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 263 .
+
+scala:generic_type a owl:Class ;
+    rdfs:label "generic_type" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 225 .
+
+scala:given_conditional a owl:Class ;
+    rdfs:label "given_conditional" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 354 .
+
+scala:given_definition a owl:Class ;
+    rdfs:label "given_definition" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 180 .
+
+scala:given_pattern a owl:Class ;
+    rdfs:label "given_pattern" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 241 .
+
+scala:guard a owl:Class ;
+    rdfs:label "guard" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 261 .
+
+scala:identifier a owl:Class ;
+    rdfs:label "identifier" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 77,
+        112,
+        281 .
+
+scala:identifiers a owl:Class ;
+    rdfs:label "identifiers" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 283 .
+
+scala:if_expression a owl:Class ;
+    rdfs:label "if_expression" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 249 .
+
+scala:import_declaration a owl:Class ;
+    rdfs:label "import_declaration" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 130 .
+
+scala:indented_block a owl:Class ;
+    rdfs:label "indented_block" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 207 .
+
+scala:indented_cases a owl:Class ;
+    rdfs:label "indented_cases" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 208 .
+
+scala:infix_expression a owl:Class ;
+    rdfs:label "infix_expression" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 269 .
+
+scala:infix_modifier a owl:Class ;
+    rdfs:label "infix_modifier" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 191 .
+
+scala:infix_pattern a owl:Class ;
+    rdfs:label "infix_pattern" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 237 .
+
+scala:infix_type a owl:Class ;
+    rdfs:label "infix_type" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 219 .
+
+scala:inline_modifier a owl:Class ;
+    rdfs:label "inline_modifier" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 190 .
+
+scala:instance_expression a owl:Class ;
+    rdfs:label "instance_expression" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 267 .
+
+scala:integer_literal a owl:Class ;
+    rdfs:label "integer_literal" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 80 .
+
+scala:interpolated_string a owl:Class ;
+    rdfs:label "interpolated_string" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 292,
+        293 .
+
+scala:interpolated_string_expression a owl:Class ;
+    rdfs:label "interpolated_string_expression" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 288 .
+
+scala:interpolation a owl:Class ;
+    rdfs:label "interpolation" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 291 .
+
+scala:interpolator a owl:DatatypeProperty ;
+    rdfs:label "interpolator (literal)" ;
+    rdfs:comment "Literal value for interpolator field when it contains a terminal node" ;
+    scala:fieldId 17 ;
+    scala:isTerminalField true .
+
+scala:into_modifier a owl:Class ;
+    rdfs:label "into_modifier" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 192 .
+
+scala:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+scala:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+scala:lambda_expression a owl:Class ;
+    rdfs:label "lambda_expression" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 248 .
+
+scala:lambda_start a owl:DatatypeProperty ;
+    rdfs:label "lambda_start (literal)" ;
+    rdfs:comment "Literal value for lambda_start field when it contains a terminal node" ;
+    scala:fieldId 18 ;
+    scala:isTerminalField true .
+
+scala:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+scala:lazy_parameter_type a owl:Class ;
+    rdfs:label "lazy_parameter_type" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 232 .
+
+scala:left a owl:DatatypeProperty ;
+    rdfs:label "left (literal)" ;
+    rdfs:comment "Literal value for left field when it contains a terminal node" ;
+    scala:fieldId 19 ;
+    scala:isTerminalField true .
+
+scala:literal_type a owl:Class ;
+    rdfs:label "literal_type" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 286 .
+
+scala:lower_bound a owl:Class ;
+    rdfs:label "lower_bound" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 151 .
+
+scala:macro_body a owl:Class ;
+    rdfs:label "macro_body" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 272 .
+
+scala:match_expression a owl:Class ;
+    rdfs:label "match_expression" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 251 .
+
+scala:match_type a owl:Class ;
+    rdfs:label "match_type" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 227 .
+
+scala:modifiers a owl:Class ;
+    rdfs:label "modifiers" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 187 .
+
+scala:name a owl:DatatypeProperty ;
+    rdfs:label "name (literal)" ;
+    rdfs:comment "Literal value for name field when it contains a terminal node" ;
+    scala:fieldId 20 ;
+    scala:isTerminalField true .
+
+scala:name_and_type a owl:Class ;
+    rdfs:label "name_and_type" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 203 .
+
+scala:named_pattern a owl:Class ;
+    rdfs:label "named_pattern" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 244 .
+
+scala:named_tuple_pattern a owl:Class ;
+    rdfs:label "named_tuple_pattern" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 245 .
+
+scala:named_tuple_type a owl:Class ;
+    rdfs:label "named_tuple_type" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 221 .
+
+scala:namespace_selectors a owl:Class ;
+    rdfs:label "namespace_selectors" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 135 .
+
+scala:namespace_wildcard a owl:Class ;
+    rdfs:label "namespace_wildcard" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 133 .
+
+scala:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+scala:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+scala:null_literal a owl:Class ;
+    rdfs:label "null_literal" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 89 .
+
+scala:object_definition a owl:Class ;
+    rdfs:label "object_definition" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 138 .
+
+scala:opaque_modifier a owl:Class ;
+    rdfs:label "opaque_modifier" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 178 .
+
+scala:open_modifier a owl:Class ;
+    rdfs:label "open_modifier" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 193 .
+
+scala:operator a owl:DatatypeProperty ;
+    rdfs:label "operator (literal)" ;
+    rdfs:comment "Literal value for operator field when it contains a terminal node" ;
+    scala:fieldId 21 ;
+    scala:isTerminalField true .
+
+scala:operator_identifier a owl:Class ;
+    rdfs:label "operator_identifier" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 79 .
+
+scala:package_clause a owl:Class ;
+    rdfs:label "package_clause" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 127 .
+
+scala:package_identifier a owl:Class ;
+    rdfs:label "package_identifier" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 128 .
+
+scala:package_object a owl:Class ;
+    rdfs:label "package_object" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 129 .
+
+scala:parameter a owl:Class ;
+    rdfs:label "parameter" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 202 .
+
+scala:parameter_types a owl:Class ;
+    rdfs:label "parameter_types" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 231 .
+
+scala:parameters a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "parameters",
+        "parameters (literal)" ;
+    rdfs:comment "Literal value for parameters field when it contains a terminal node" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:fieldId 23 ;
+    scala:isSupertype true ;
+    scala:isTerminalField true ;
+    scala:nodeTypeId 199 .
+
+scala:parenthesized_expression a owl:Class ;
+    rdfs:label "parenthesized_expression" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 275 .
+
+scala:path a owl:DatatypeProperty ;
+    rdfs:label "path (literal)" ;
+    rdfs:comment "Literal value for path field when it contains a terminal node" ;
+    scala:fieldId 24 ;
+    scala:isTerminalField true .
+
+scala:postfix_expression a owl:Class ;
+    rdfs:label "postfix_expression" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 270 .
+
+scala:prefix_expression a owl:Class ;
+    rdfs:label "prefix_expression" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 273 .
+
+scala:projected_type a owl:Class ;
+    rdfs:label "projected_type" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 226 .
+
+scala:quote_expression a owl:Class ;
+    rdfs:label "quote_expression" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 280 .
+
+scala:refinement a owl:Class ;
+    rdfs:label "refinement" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 355 .
+
+scala:repeat_pattern a owl:Class ;
+    rdfs:label "repeat_pattern" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 239 .
+
+scala:repeated_parameter_type a owl:Class ;
+    rdfs:label "repeated_parameter_type" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 233 .
+
+scala:return_expression a owl:Class ;
+    rdfs:label "return_expression" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 296 .
+
+scala:return_type a owl:DatatypeProperty ;
+    rdfs:label "return_type (literal)" ;
+    rdfs:comment "Literal value for return_type field when it contains a terminal node" ;
+    scala:fieldId 26 ;
+    scala:isTerminalField true .
+
+scala:right a owl:DatatypeProperty ;
+    rdfs:label "right (literal)" ;
+    rdfs:comment "Literal value for right field when it contains a terminal node" ;
+    scala:fieldId 27 ;
+    scala:isTerminalField true .
+
+scala:self_type a owl:Class ;
+    rdfs:label "self_type" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 163 .
+
+scala:simple_enum_case a owl:Class ;
+    rdfs:label "simple_enum_case" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 124 .
+
+scala:singleton_type a owl:Class ;
+    rdfs:label "singleton_type" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 222 .
+
+scala:splice_expression a owl:Class ;
+    rdfs:label "splice_expression" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 279 .
+
+scala:stable_identifier a owl:Class ;
+    rdfs:label "stable_identifier" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 224 .
+
+scala:stable_type_identifier a owl:Class ;
+    rdfs:label "stable_type_identifier" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 223 .
+
+scala:string a owl:Class ;
+    rdfs:label "string" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 294 .
+
+scala:structural_type a owl:Class ;
+    rdfs:label "structural_type" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 356 .
+
+scala:template_body a owl:Class ;
+    rdfs:label "template_body" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 155 .
+
+scala:throw_expression a owl:Class ;
+    rdfs:label "throw_expression" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 297 .
+
+scala:tracked_modifier a owl:Class ;
+    rdfs:label "tracked_modifier" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 194 .
+
+scala:trait_definition a owl:Class ;
+    rdfs:label "trait_definition" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 144 .
+
+scala:transparent_modifier a owl:Class ;
+    rdfs:label "transparent_modifier" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 195 .
+
+scala:try_expression a owl:Class ;
+    rdfs:label "try_expression" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 252 .
+
+scala:tuple_expression a owl:Class ;
+    rdfs:label "tuple_expression" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 274 .
+
+scala:tuple_pattern a owl:Class ;
+    rdfs:label "tuple_pattern" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 243 .
+
+scala:tuple_type a owl:Class ;
+    rdfs:label "tuple_type" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 220 .
+
+scala:type a owl:DatatypeProperty ;
+    rdfs:label "type (literal)" ;
+    rdfs:comment "Literal value for type field when it contains a terminal node" ;
+    scala:fieldId 29 ;
+    scala:isTerminalField true .
+
+scala:type_arguments a owl:Class ;
+    rdfs:label "type_arguments" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 276 .
+
+scala:type_case_clause a owl:Class ;
+    rdfs:label "type_case_clause" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 228 .
+
+scala:type_definition a owl:Class ;
+    rdfs:label "type_definition" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 172 .
+
+scala:type_identifier a owl:Class ;
+    rdfs:label "type_identifier" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 357 .
+
+scala:type_lambda a owl:Class ;
+    rdfs:label "type_lambda" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 235 .
+
+scala:type_parameters a owl:Class ;
+    rdfs:label "type_parameters" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 145 .
+
+scala:typed_pattern a owl:Class ;
+    rdfs:label "typed_pattern" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 240 .
+
+scala:unit a owl:Class ;
+    rdfs:label "unit" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 295 .
+
+scala:upper_bound a owl:Class ;
+    rdfs:label "upper_bound" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 150 .
+
+scala:using_directive a owl:Class ;
+    rdfs:label "using_directive" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 305 .
+
+scala:using_directive_key a owl:Class ;
+    rdfs:label "using_directive_key" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 99 .
+
+scala:using_directive_value a owl:Class ;
+    rdfs:label "using_directive_value" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 100 .
+
+scala:val_declaration a owl:Class ;
+    rdfs:label "val_declaration" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 167 .
+
+scala:val_definition a owl:Class ;
+    rdfs:label "val_definition" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 166 .
+
+scala:value a owl:DatatypeProperty ;
+    rdfs:label "value (literal)" ;
+    rdfs:comment "Literal value for value field when it contains a terminal node" ;
+    scala:fieldId 32 ;
+    scala:isTerminalField true .
+
+scala:var_declaration a owl:Class ;
+    rdfs:label "var_declaration" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 169 .
+
+scala:var_definition a owl:Class ;
+    rdfs:label "var_definition" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 170 .
+
+scala:view_bound a owl:Class ;
+    rdfs:label "view_bound" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 152 .
+
+scala:while_expression a owl:Class ;
+    rdfs:label "while_expression" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 298 .
+
+scala:wildcard a owl:Class ;
+    rdfs:label "wildcard" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 284 .
+
+scala:with_template_body a owl:Class ;
+    rdfs:label "with_template_body" ;
+    rdfs:isDefinedBy scala: ;
+    rdfs:subClassOf ast:Node ;
+    scala:isSupertype true ;
+    scala:nodeTypeId 160 .
+
+scala: a owl:Ontology ;
+    rdfs:label "Scala Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for scala" ;
+    owl:versionInfo "v0.25" ;
+    scala:abiVersion 14 ;
+    scala:fieldCount 32 ;
+    scala:languageName "None" ;
+    scala:nodeKindCount 358 .
+

@@ -1,0 +1,655 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix beancount: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/beancount/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+beancount:abiVersion a owl:AnnotationProperty ;
+    rdfs:label "ABI version" ;
+    rdfs:comment "Tree-sitter ABI version used by this grammar" .
+
+beancount:account a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "account",
+        "account (literal)" ;
+    rdfs:comment "Literal value for account field when it contains a terminal node" ;
+    rdfs:isDefinedBy beancount: ;
+    rdfs:subClassOf ast:Node ;
+    beancount:fieldId 1 ;
+    beancount:isSupertype true ;
+    beancount:isTerminalField true ;
+    beancount:nodeTypeId 19 .
+
+beancount:amount a owl:Class ;
+    rdfs:label "amount" ;
+    rdfs:isDefinedBy beancount: ;
+    rdfs:subClassOf ast:Node ;
+    beancount:isSupertype true ;
+    beancount:nodeTypeId 92 .
+
+beancount:amount_tolerance a owl:Class ;
+    rdfs:label "amount_tolerance" ;
+    rdfs:isDefinedBy beancount: ;
+    rdfs:subClassOf ast:Node ;
+    beancount:isSupertype true ;
+    beancount:nodeTypeId 93 .
+
+beancount:asterisk a owl:Class ;
+    rdfs:label "asterisk" ;
+    rdfs:isDefinedBy beancount: ;
+    rdfs:subClassOf ast:Node ;
+    beancount:isSupertype true ;
+    beancount:nodeTypeId 65 .
+
+beancount:at a owl:Class ;
+    rdfs:label "at" ;
+    rdfs:isDefinedBy beancount: ;
+    rdfs:subClassOf ast:Node ;
+    beancount:isSupertype true ;
+    beancount:nodeTypeId 10 .
+
+beancount:atat a owl:Class ;
+    rdfs:label "atat" ;
+    rdfs:isDefinedBy beancount: ;
+    rdfs:subClassOf ast:Node ;
+    beancount:isSupertype true ;
+    beancount:nodeTypeId 9 .
+
+beancount:balance a owl:Class ;
+    rdfs:label "balance" ;
+    rdfs:isDefinedBy beancount: ;
+    rdfs:subClassOf ast:Node ;
+    beancount:isSupertype true ;
+    beancount:nodeTypeId 91 .
+
+beancount:binary_number_expr a owl:Class ;
+    rdfs:label "binary_number_expr" ;
+    rdfs:isDefinedBy beancount: ;
+    rdfs:subClassOf ast:Node ;
+    beancount:isSupertype true ;
+    beancount:nodeTypeId 71 .
+
+beancount:bool a owl:Class ;
+    rdfs:label "bool" ;
+    rdfs:isDefinedBy beancount: ;
+    rdfs:subClassOf ast:Node ;
+    beancount:isSupertype true ;
+    beancount:nodeTypeId 17 .
+
+beancount:close a owl:Class ;
+    rdfs:label "close" ;
+    rdfs:isDefinedBy beancount: ;
+    rdfs:subClassOf ast:Node ;
+    beancount:isSupertype true ;
+    beancount:nodeTypeId 88 .
+
+beancount:comment a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "comment",
+        "comment (literal)" ;
+    rdfs:comment "Literal value for comment field when it contains a terminal node" ;
+    rdfs:isDefinedBy beancount: ;
+    rdfs:subClassOf ast:Node ;
+    beancount:fieldId 3 ;
+    beancount:isSupertype true ;
+    beancount:isTerminalField true ;
+    beancount:nodeTypeId 55 .
+
+beancount:commodity a owl:Class ;
+    rdfs:label "commodity" ;
+    rdfs:isDefinedBy beancount: ;
+    rdfs:subClassOf ast:Node ;
+    beancount:isSupertype true ;
+    beancount:nodeTypeId 89 .
+
+beancount:compound_amount a owl:Class ;
+    rdfs:label "compound_amount" ;
+    rdfs:isDefinedBy beancount: ;
+    rdfs:subClassOf ast:Node ;
+    beancount:isSupertype true ;
+    beancount:nodeTypeId 94 .
+
+beancount:cost_comp a owl:Class ;
+    rdfs:label "cost_comp" ;
+    rdfs:isDefinedBy beancount: ;
+    rdfs:subClassOf ast:Node ;
+    beancount:isSupertype true ;
+    beancount:nodeTypeId 98 .
+
+beancount:cost_spec a owl:Class ;
+    rdfs:label "cost_spec" ;
+    rdfs:isDefinedBy beancount: ;
+    rdfs:subClassOf ast:Node ;
+    beancount:isSupertype true ;
+    beancount:nodeTypeId 96 .
+
+beancount:currencies a owl:DatatypeProperty ;
+    rdfs:label "currencies (literal)" ;
+    rdfs:comment "Literal value for currencies field when it contains a terminal node" ;
+    beancount:fieldId 6 ;
+    beancount:isTerminalField true .
+
+beancount:currency a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "currency",
+        "currency (literal)" ;
+    rdfs:comment "Literal value for currency field when it contains a terminal node" ;
+    rdfs:isDefinedBy beancount: ;
+    rdfs:subClassOf ast:Node ;
+    beancount:fieldId 7 ;
+    beancount:isSupertype true ;
+    beancount:isTerminalField true ;
+    beancount:nodeTypeId 20 .
+
+beancount:custom a owl:Class ;
+    rdfs:label "custom" ;
+    rdfs:isDefinedBy beancount: ;
+    rdfs:subClassOf ast:Node ;
+    beancount:isSupertype true ;
+    beancount:nodeTypeId 106 .
+
+beancount:custom_value a owl:Class ;
+    rdfs:label "custom_value" ;
+    rdfs:isDefinedBy beancount: ;
+    rdfs:subClassOf ast:Node ;
+    beancount:isSupertype true ;
+    beancount:nodeTypeId 105 .
+
+beancount:date a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "date",
+        "date (literal)" ;
+    rdfs:comment "Literal value for date field when it contains a terminal node" ;
+    rdfs:isDefinedBy beancount: ;
+    rdfs:subClassOf ast:Node ;
+    beancount:fieldId 9 ;
+    beancount:isSupertype true ;
+    beancount:isTerminalField true ;
+    beancount:nodeTypeId 18 .
+
+beancount:desc a owl:DatatypeProperty ;
+    rdfs:label "desc (literal)" ;
+    rdfs:comment "Literal value for desc field when it contains a terminal node" ;
+    beancount:fieldId 10 ;
+    beancount:isTerminalField true .
+
+beancount:document a owl:Class ;
+    rdfs:label "document" ;
+    rdfs:isDefinedBy beancount: ;
+    rdfs:subClassOf ast:Node ;
+    beancount:isSupertype true ;
+    beancount:nodeTypeId 104 .
+
+beancount:event a owl:Class ;
+    rdfs:label "event" ;
+    rdfs:isDefinedBy beancount: ;
+    rdfs:subClassOf ast:Node ;
+    beancount:isSupertype true ;
+    beancount:nodeTypeId 100 .
+
+beancount:fieldCount a owl:AnnotationProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Total number of fields in this grammar" .
+
+beancount:fieldId a owl:AnnotationProperty ;
+    rdfs:label "field ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this field in this language" ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger .
+
+beancount:field_amount a owl:ObjectProperty ;
+    rdfs:label "amount (structural)" ;
+    rdfs:comment "Structural reference for amount field when it contains a non-terminal node" ;
+    beancount:fieldId 2 .
+
+beancount:field_cost_comp_list a owl:ObjectProperty ;
+    rdfs:label "cost_comp_list (structural)" ;
+    rdfs:comment "Structural reference for cost_comp_list field when it contains a non-terminal node" ;
+    beancount:fieldId 4 .
+
+beancount:field_cost_spec a owl:ObjectProperty ;
+    rdfs:label "cost_spec (structural)" ;
+    rdfs:comment "Structural reference for cost_spec field when it contains a non-terminal node" ;
+    beancount:fieldId 5 .
+
+beancount:field_currencies a owl:ObjectProperty ;
+    rdfs:label "currencies (structural)" ;
+    rdfs:comment "Structural reference for currencies field when it contains a non-terminal node" ;
+    beancount:fieldId 6 .
+
+beancount:field_custom_value_list a owl:ObjectProperty ;
+    rdfs:label "custom_value_list (structural)" ;
+    rdfs:comment "Structural reference for custom_value_list field when it contains a non-terminal node" ;
+    beancount:fieldId 8 .
+
+beancount:field_filename a owl:ObjectProperty ;
+    rdfs:label "filename (structural)" ;
+    rdfs:comment "Structural reference for filename field when it contains a non-terminal node" ;
+    beancount:fieldId 11 .
+
+beancount:field_headline a owl:ObjectProperty ;
+    rdfs:label "headline (structural)" ;
+    rdfs:comment "Structural reference for headline field when it contains a non-terminal node" ;
+    beancount:fieldId 13 .
+
+beancount:field_opt_booking a owl:ObjectProperty ;
+    rdfs:label "opt_booking (structural)" ;
+    rdfs:comment "Structural reference for opt_booking field when it contains a non-terminal node" ;
+    beancount:fieldId 19 .
+
+beancount:field_optflag a owl:ObjectProperty ;
+    rdfs:label "optflag (structural)" ;
+    rdfs:comment "Structural reference for optflag field when it contains a non-terminal node" ;
+    beancount:fieldId 20 .
+
+beancount:field_per a owl:ObjectProperty ;
+    rdfs:label "per (structural)" ;
+    rdfs:comment "Structural reference for per field when it contains a non-terminal node" ;
+    beancount:fieldId 22 .
+
+beancount:field_price_annotation a owl:ObjectProperty ;
+    rdfs:label "price_annotation (structural)" ;
+    rdfs:comment "Structural reference for price_annotation field when it contains a non-terminal node" ;
+    beancount:fieldId 23 .
+
+beancount:field_subsection a owl:ObjectProperty ;
+    rdfs:label "subsection (structural)" ;
+    rdfs:comment "Structural reference for subsection field when it contains a non-terminal node" ;
+    beancount:fieldId 25 .
+
+beancount:field_tags_links a owl:ObjectProperty ;
+    rdfs:label "tags_links (structural)" ;
+    rdfs:comment "Structural reference for tags_links field when it contains a non-terminal node" ;
+    beancount:fieldId 26 .
+
+beancount:field_total a owl:ObjectProperty ;
+    rdfs:label "total (structural)" ;
+    rdfs:comment "Structural reference for total field when it contains a non-terminal node" ;
+    beancount:fieldId 27 .
+
+beancount:field_txn a owl:ObjectProperty ;
+    rdfs:label "txn (structural)" ;
+    rdfs:comment "Structural reference for txn field when it contains a non-terminal node" ;
+    beancount:fieldId 28 .
+
+beancount:file a owl:Class ;
+    rdfs:label "file" ;
+    rdfs:isDefinedBy beancount: ;
+    rdfs:subClassOf ast:Node ;
+    beancount:isSupertype true ;
+    beancount:nodeTypeId 60 .
+
+beancount:filename a owl:Class ;
+    rdfs:label "filename" ;
+    rdfs:isDefinedBy beancount: ;
+    rdfs:subClassOf ast:Node ;
+    beancount:isSupertype true ;
+    beancount:nodeTypeId 103 .
+
+beancount:flag a owl:Class ;
+    rdfs:label "flag" ;
+    rdfs:isDefinedBy beancount: ;
+    rdfs:subClassOf ast:Node ;
+    beancount:isSupertype true ;
+    beancount:nodeTypeId 15 .
+
+beancount:from_account a owl:DatatypeProperty ;
+    rdfs:label "from_account (literal)" ;
+    rdfs:comment "Literal value for from_account field when it contains a terminal node" ;
+    beancount:fieldId 12 ;
+    beancount:isTerminalField true .
+
+beancount:headline a owl:Class ;
+    rdfs:label "headline" ;
+    rdfs:isDefinedBy beancount: ;
+    rdfs:subClassOf ast:Node ;
+    beancount:isSupertype true ;
+    beancount:nodeTypeId 64 .
+
+beancount:identifier a owl:Class ;
+    rdfs:label "identifier" ;
+    rdfs:isDefinedBy beancount: ;
+    rdfs:subClassOf ast:Node ;
+    beancount:isSupertype true ;
+    beancount:nodeTypeId 1 .
+
+beancount:include a owl:Class ;
+    rdfs:label "include" ;
+    rdfs:isDefinedBy beancount: ;
+    rdfs:subClassOf ast:Node ;
+    beancount:isSupertype true ;
+    beancount:nodeTypeId 109 .
+
+beancount:incomplete_amount a owl:Class ;
+    rdfs:label "incomplete_amount" ;
+    rdfs:isDefinedBy beancount: ;
+    rdfs:subClassOf ast:Node ;
+    beancount:isSupertype true ;
+    beancount:nodeTypeId 95 .
+
+beancount:isSupertype a owl:AnnotationProperty ;
+    rdfs:label "is supertype" ;
+    rdfs:comment "Whether this node type is a supertype in the grammar" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean .
+
+beancount:isTerminalField a owl:AnnotationProperty ;
+    rdfs:label "is terminal field" ;
+    rdfs:comment "Whether this field points to terminal (leaf) nodes" ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range xsd:boolean .
+
+beancount:item a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "item",
+        "item (literal)" ;
+    rdfs:comment "Literal value for item field when it contains a terminal node" ;
+    rdfs:isDefinedBy beancount: ;
+    rdfs:subClassOf ast:Node ;
+    beancount:fieldId 14 ;
+    beancount:isSupertype true ;
+    beancount:isTerminalField true ;
+    beancount:nodeTypeId 7 .
+
+beancount:key a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "key",
+        "key (literal)" ;
+    rdfs:comment "Literal value for key field when it contains a terminal node" ;
+    rdfs:isDefinedBy beancount: ;
+    rdfs:subClassOf ast:Node ;
+    beancount:fieldId 15 ;
+    beancount:isSupertype true ;
+    beancount:isTerminalField true ;
+    beancount:nodeTypeId 29 .
+
+beancount:key_value a owl:Class ;
+    rdfs:label "key_value" ;
+    rdfs:isDefinedBy beancount: ;
+    rdfs:subClassOf ast:Node ;
+    beancount:isSupertype true ;
+    beancount:nodeTypeId 79 .
+
+beancount:languageName a owl:AnnotationProperty ;
+    rdfs:label "language name" ;
+    rdfs:comment "Name of the language as reported by tree-sitter" .
+
+beancount:link a owl:Class ;
+    rdfs:label "link" ;
+    rdfs:isDefinedBy beancount: ;
+    rdfs:subClassOf ast:Node ;
+    beancount:isSupertype true ;
+    beancount:nodeTypeId 24 .
+
+beancount:minus a owl:Class ;
+    rdfs:label "minus" ;
+    rdfs:isDefinedBy beancount: ;
+    rdfs:subClassOf ast:Node ;
+    beancount:isSupertype true ;
+    beancount:nodeTypeId 14 .
+
+beancount:name a owl:DatatypeProperty ;
+    rdfs:label "name (literal)" ;
+    rdfs:comment "Literal value for name field when it contains a terminal node" ;
+    beancount:fieldId 16 ;
+    beancount:isTerminalField true .
+
+beancount:narration a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "narration",
+        "narration (literal)" ;
+    rdfs:comment "Literal value for narration field when it contains a terminal node" ;
+    rdfs:isDefinedBy beancount: ;
+    rdfs:subClassOf ast:Node ;
+    beancount:fieldId 17 ;
+    beancount:isSupertype true ;
+    beancount:isTerminalField true ;
+    beancount:nodeTypeId 122 .
+
+beancount:nodeKindCount a owl:AnnotationProperty ;
+    rdfs:label "node kind count" ;
+    rdfs:comment "Total number of node kinds in this grammar" .
+
+beancount:nodeTypeId a owl:AnnotationProperty ;
+    rdfs:label "node type ID" ;
+    rdfs:comment "Tree-sitter internal numeric ID for this node type in this language" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:nonNegativeInteger .
+
+beancount:note a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "note",
+        "note (literal)" ;
+    rdfs:comment "Literal value for note field when it contains a terminal node" ;
+    rdfs:isDefinedBy beancount: ;
+    rdfs:subClassOf ast:Node ;
+    beancount:fieldId 18 ;
+    beancount:isSupertype true ;
+    beancount:isTerminalField true ;
+    beancount:nodeTypeId 102 .
+
+beancount:number a owl:Class ;
+    rdfs:label "number" ;
+    rdfs:isDefinedBy beancount: ;
+    rdfs:subClassOf ast:Node ;
+    beancount:isSupertype true ;
+    beancount:nodeTypeId 22 .
+
+beancount:open a owl:Class ;
+    rdfs:label "open" ;
+    rdfs:isDefinedBy beancount: ;
+    rdfs:subClassOf ast:Node ;
+    beancount:isSupertype true ;
+    beancount:nodeTypeId 86 .
+
+beancount:opt_booking a owl:Class ;
+    rdfs:label "opt_booking" ;
+    rdfs:isDefinedBy beancount: ;
+    rdfs:subClassOf ast:Node ;
+    beancount:isSupertype true ;
+    beancount:nodeTypeId 87 .
+
+beancount:optflag a owl:Class ;
+    rdfs:label "optflag" ;
+    rdfs:isDefinedBy beancount: ;
+    rdfs:subClassOf ast:Node ;
+    beancount:isSupertype true ;
+    beancount:nodeTypeId 75 .
+
+beancount:option a owl:Class ;
+    rdfs:label "option" ;
+    rdfs:isDefinedBy beancount: ;
+    rdfs:subClassOf ast:Node ;
+    beancount:isSupertype true ;
+    beancount:nodeTypeId 108 .
+
+beancount:pad a owl:Class ;
+    rdfs:label "pad" ;
+    rdfs:isDefinedBy beancount: ;
+    rdfs:subClassOf ast:Node ;
+    beancount:isSupertype true ;
+    beancount:nodeTypeId 90 .
+
+beancount:payee a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "payee",
+        "payee (literal)" ;
+    rdfs:comment "Literal value for payee field when it contains a terminal node" ;
+    rdfs:isDefinedBy beancount: ;
+    rdfs:subClassOf ast:Node ;
+    beancount:fieldId 21 ;
+    beancount:isSupertype true ;
+    beancount:isTerminalField true ;
+    beancount:nodeTypeId 123 .
+
+beancount:per a owl:DatatypeProperty ;
+    rdfs:label "per (literal)" ;
+    rdfs:comment "Literal value for per field when it contains a terminal node" ;
+    beancount:fieldId 22 ;
+    beancount:isTerminalField true .
+
+beancount:plugin a owl:Class ;
+    rdfs:label "plugin" ;
+    rdfs:isDefinedBy beancount: ;
+    rdfs:subClassOf ast:Node ;
+    beancount:isSupertype true ;
+    beancount:nodeTypeId 110 .
+
+beancount:plus a owl:Class ;
+    rdfs:label "plus" ;
+    rdfs:isDefinedBy beancount: ;
+    rdfs:subClassOf ast:Node ;
+    beancount:isSupertype true ;
+    beancount:nodeTypeId 13 .
+
+beancount:popmeta a owl:Class ;
+    rdfs:label "popmeta" ;
+    rdfs:isDefinedBy beancount: ;
+    rdfs:subClassOf ast:Node ;
+    beancount:isSupertype true ;
+    beancount:nodeTypeId 85 .
+
+beancount:poptag a owl:Class ;
+    rdfs:label "poptag" ;
+    rdfs:isDefinedBy beancount: ;
+    rdfs:subClassOf ast:Node ;
+    beancount:isSupertype true ;
+    beancount:nodeTypeId 83 .
+
+beancount:posting a owl:Class ;
+    rdfs:label "posting" ;
+    rdfs:isDefinedBy beancount: ;
+    rdfs:subClassOf ast:Node ;
+    beancount:isSupertype true ;
+    beancount:nodeTypeId 77 .
+
+beancount:price a owl:Class ;
+    rdfs:label "price" ;
+    rdfs:isDefinedBy beancount: ;
+    rdfs:subClassOf ast:Node ;
+    beancount:isSupertype true ;
+    beancount:nodeTypeId 99 .
+
+beancount:price_annotation a owl:Class ;
+    rdfs:label "price_annotation" ;
+    rdfs:isDefinedBy beancount: ;
+    rdfs:subClassOf ast:Node ;
+    beancount:isSupertype true ;
+    beancount:nodeTypeId 76 .
+
+beancount:pushmeta a owl:Class ;
+    rdfs:label "pushmeta" ;
+    rdfs:isDefinedBy beancount: ;
+    rdfs:subClassOf ast:Node ;
+    beancount:isSupertype true ;
+    beancount:nodeTypeId 84 .
+
+beancount:pushtag a owl:Class ;
+    rdfs:label "pushtag" ;
+    rdfs:isDefinedBy beancount: ;
+    rdfs:subClassOf ast:Node ;
+    beancount:isSupertype true ;
+    beancount:nodeTypeId 82 .
+
+beancount:query a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "query",
+        "query (literal)" ;
+    rdfs:comment "Literal value for query field when it contains a terminal node" ;
+    rdfs:isDefinedBy beancount: ;
+    rdfs:subClassOf ast:Node ;
+    beancount:fieldId 24 ;
+    beancount:isSupertype true ;
+    beancount:isTerminalField true ;
+    beancount:nodeTypeId 101 .
+
+beancount:section a owl:Class ;
+    rdfs:label "section" ;
+    rdfs:isDefinedBy beancount: ;
+    rdfs:subClassOf ast:Node ;
+    beancount:isSupertype true ;
+    beancount:nodeTypeId 62 .
+
+beancount:slash a owl:Class ;
+    rdfs:label "slash" ;
+    rdfs:isDefinedBy beancount: ;
+    rdfs:subClassOf ast:Node ;
+    beancount:isSupertype true ;
+    beancount:nodeTypeId 12 .
+
+beancount:string a owl:Class ;
+    rdfs:label "string" ;
+    rdfs:isDefinedBy beancount: ;
+    rdfs:subClassOf ast:Node ;
+    beancount:isSupertype true ;
+    beancount:nodeTypeId 21 .
+
+beancount:tag a owl:Class ;
+    rdfs:label "tag" ;
+    rdfs:isDefinedBy beancount: ;
+    rdfs:subClassOf ast:Node ;
+    beancount:isSupertype true ;
+    beancount:nodeTypeId 23 .
+
+beancount:tags_links a owl:Class ;
+    rdfs:label "tags_links" ;
+    rdfs:isDefinedBy beancount: ;
+    rdfs:subClassOf ast:Node ;
+    beancount:isSupertype true ;
+    beancount:nodeTypeId 73 .
+
+beancount:total a owl:DatatypeProperty ;
+    rdfs:label "total (literal)" ;
+    rdfs:comment "Literal value for total field when it contains a terminal node" ;
+    beancount:fieldId 27 ;
+    beancount:isTerminalField true .
+
+beancount:transaction a owl:Class ;
+    rdfs:label "transaction" ;
+    rdfs:isDefinedBy beancount: ;
+    rdfs:subClassOf ast:Node ;
+    beancount:isSupertype true ;
+    beancount:nodeTypeId 74 .
+
+beancount:txn a owl:Class ;
+    rdfs:label "txn" ;
+    rdfs:isDefinedBy beancount: ;
+    rdfs:subClassOf ast:Node ;
+    beancount:isSupertype true ;
+    beancount:nodeTypeId 67 .
+
+beancount:type a owl:DatatypeProperty ;
+    rdfs:label "type (literal)" ;
+    rdfs:comment "Literal value for type field when it contains a terminal node" ;
+    beancount:fieldId 29 ;
+    beancount:isTerminalField true .
+
+beancount:unary_number_expr a owl:Class ;
+    rdfs:label "unary_number_expr" ;
+    rdfs:isDefinedBy beancount: ;
+    rdfs:subClassOf ast:Node ;
+    beancount:isSupertype true ;
+    beancount:nodeTypeId 70 .
+
+beancount:value a owl:Class,
+        owl:DatatypeProperty ;
+    rdfs:label "value",
+        "value (literal)" ;
+    rdfs:comment "Literal value for value field when it contains a terminal node" ;
+    rdfs:isDefinedBy beancount: ;
+    rdfs:subClassOf ast:Node ;
+    beancount:fieldId 30 ;
+    beancount:isSupertype true ;
+    beancount:isTerminalField true ;
+    beancount:nodeTypeId 78 .
+
+beancount: a owl:Ontology ;
+    rdfs:label "Beancount Grammar Ontology" ;
+    rdfs:comment "Tree-sitter grammar ontology for beancount" ;
+    owl:versionInfo "v0.25" ;
+    beancount:abiVersion 15 ;
+    beancount:fieldCount 30 ;
+    beancount:languageName "beancount" ;
+    beancount:nodeKindCount 124 .
+
