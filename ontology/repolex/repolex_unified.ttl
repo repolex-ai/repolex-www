@@ -137009,6 +137009,11 @@ lsp-x:callFromReturn a owl:ObjectProperty ;
     rdfs:comment "Inverse of lsp-x:returnToCall. Inferred by reasoner: if return R flows to call site C, then C receives from R. Enables 'what return values reach this call?' queries." ;
     owl:inverseOf lsp-x:returnToCall .
 
+lsp-x:callSource a owl:ObjectProperty ;
+    rdfs:label "call source" ;
+    rdfs:comment "Inverse of lsp-x:callTarget. Inferred by reasoner: if A lsp-x:callTarget B, then B lsp-x:callSource A. Enables 'who calls this function?' queries without storing both directions." ;
+    owl:inverseOf lsp-x:callTarget .
+
 lsp-x:callTargetFile a owl:DatatypeProperty ;
     rdfs:label "call target file" ;
     rdfs:comment "Repository-relative file path of the call target, extracted from LSP Location response. Convenience property for quick access without following lsp-x:callTarget." ;
@@ -137026,11 +137031,6 @@ lsp-x:callTargetName a owl:DatatypeProperty ;
     rdfs:comment "Symbol name of the call target, extracted from LSP Hover response (best-effort). Convenience property for displaying target name without additional lookups." ;
     rdfs:domain ast:Node ;
     rdfs:range xsd:string .
-
-lsp-x:calledBy a owl:ObjectProperty ;
-    rdfs:label "called by" ;
-    rdfs:comment "Inverse of lsp-x:callTarget. Inferred by reasoner: if A lsp-x:callTarget B, then B lsp-x:calledBy A. Enables 'who calls this function?' queries without storing both directions." ;
-    owl:inverseOf lsp-x:callTarget .
 
 lsp-x:calledByCount a owl:DatatypeProperty ;
     rdfs:label "called by count" ;
@@ -137056,16 +137056,16 @@ lsp-x:importModule a owl:DatatypeProperty ;
     rdfs:domain ast:Node ;
     rdfs:range xsd:string .
 
+lsp-x:importSource a owl:ObjectProperty ;
+    rdfs:label "import source" ;
+    rdfs:comment "Inverse of lsp-x:importTarget. Inferred by reasoner: if module A imports module B, then B lsp-x:importSource A. Enables 'who imports this module?' queries." ;
+    owl:inverseOf lsp-x:importTarget .
+
 lsp-x:importSymbol a owl:DatatypeProperty ;
     rdfs:label "import symbol" ;
     rdfs:comment "Specific symbol name imported from the module (e.g., 'useState' from 'react', 'Path' from 'pathlib'). Optional — not present for wildcard or module-level imports." ;
     rdfs:domain ast:Node ;
     rdfs:range xsd:string .
-
-lsp-x:importedBy a owl:ObjectProperty ;
-    rdfs:label "imported by" ;
-    rdfs:comment "Inverse of lsp-x:importTarget. Inferred by reasoner: if module A imports module B, then B is importedBy A. Enables 'who imports this module?' queries." ;
-    owl:inverseOf lsp-x:importTarget .
 
 lsp-x:inheritanceDepth a owl:DatatypeProperty ;
     rdfs:label "inheritance depth" ;
