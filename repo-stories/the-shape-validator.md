@@ -1,7 +1,7 @@
 ---
 layout: repo-story
 title: "The Shape Validator"
-subtitle: "A Story of TopQuadrant's SHACL, in the Style of Stoner"
+subtitle: "A Story of TopQuadrant's SHACL, in the Style of Stoner by John Edward Williams"
 story_number: "Repo Story No. 2"
 date: 2026-03-21
 authors:
@@ -80,20 +80,90 @@ In 2023, something changed. Six new contributors appeared in a single year, draw
 
 The code is organized the way a careful mind organizes a workshop — everything in its place, nothing extraneous.
 
-[`RuleEngine.java`](https://github.com/TopQuadrant/shacl/blob/a40627da5df455535d3519eb6629057ab52a2843/src/main/java/org/topbraid/shacl/rules/RuleEngine.java#L172-L226) is where validation happens. It walks the graph, applies the shapes, and reports what it finds. It is methodical. It does not skip steps. It does not optimize for speed at the cost of correctness.
+Everything passes through [`JenaUtil`](https://github.com/TopQuadrant/shacl) — **237 calls** across the codebase, more than any other class. It is the workbench itself, the surface on which every operation is performed. Behind it stands [`SH.java`](https://github.com/TopQuadrant/shacl/blob/a40627da5df455535d3519eb6629057ab52a2843/src/main/java/org/topbraid/shacl/vocabulary/SH.java) with 133 calls — the vocabulary constants, invoked whenever a shape is read. And beneath them both, [`ARQFactory`](https://github.com/TopQuadrant/shacl) with 98 calls — the SPARQL query builder, the bridge between shapes and the graph they interrogate.
+
+The class hierarchy follows a pattern so consistent it becomes a philosophy. Every shape type exists twice:
+
+`SHShape` (interface) → `SHShapeImpl` (9 methods, 120 lines)
+`SHPropertyShape` (interface) → `SHPropertyShapeImpl` (12 methods, 107 lines)
+`SHRule` (interface) → `SHRuleImpl` (7 methods, 45 lines)
+
+The interface *is* the specification. The implementation *is* the code. Holger, who co-authored the W3C spec, encoded this duality into the structure of every class. The contract and the behavior, separated cleanly, the way a constitution is separate from the government it describes.
 
 [`DASH.java`](https://github.com/TopQuadrant/shacl/blob/a40627da5df455535d3519eb6629057ab52a2843/src/main/java/org/topbraid/shacl/vocabulary/DASH.java) contains the extensions — the places where the W3C spec was not enough, where practical needs required going beyond the standard. DASH is the conversation between the specification and reality. It is where Holger the standards author met Holger the practitioner, and they negotiated.
 
-The semantic profile of the codebase confirms what the reader already suspects:
+---
 
-| Pattern | Count | Meaning |
-|---------|-------|---------|
-| Observation | 8.6x | For every write, eight reads |
-| Declaration | High | The vocabulary is vast |
-| Mutation | Low | State changes are rare and deliberate |
-| Complexity | Max 14 | Nothing is tangled |
+## The Validation Pipeline
 
-This is not a system that *does things*. It is a system that *knows things*. It validates. It observes. It reports. The distinction matters.
+<!-- IMAGE: A crystal workshop — hundreds of identical diamond shapes on shelves, each one slightly different, each tested against a master pattern. A craftsman's magnifying glass examining one shape against the light. Precise, orderly, obsessive. Engraving style, fine crosshatching. -->
+
+The heart of SHACL is the [`RuleEngine`](https://github.com/TopQuadrant/shacl/blob/a40627da5df455535d3519eb6629057ab52a2843/src/main/java/org/topbraid/shacl/rules/RuleEngine.java#L172-L226). Its pipeline is simple enough to describe in a sentence: a shape comes in, the engine finds its rules, applies them, and infers new triples. Three methods do the work:
+
+**`getShapeRules`** — complexity 14. Finds which rules apply to a given shape. This is the most complex function in the engine, because rules can come from two entirely different places:
+
+[`TripleRule`](https://github.com/TopQuadrant/shacl) (4 methods, 73 lines) — simple: given conditions, produce a triple.
+[`SPARQLRule`](https://github.com/TopQuadrant/shacl) (4 methods, 58 lines) — complex: given conditions, run a full SPARQL query.
+
+Two paths to the same goal. The spec allows both, and the code mirrors this choice exactly.
+
+**`executeShape`** — complexity 10. Where rules meet reality. It walks each rule, applies it to the data, collects the results.
+
+**[`infer`](https://github.com/TopQuadrant/shacl/blob/a40627da5df455535d3519eb6629057ab52a2843/src/main/java/org/topbraid/shacl/rules/RuleEngine.java#L306-L308)** — complexity 1. Three lines of code.
+
+Three lines. A Triple, a Rule, a Shape. That is the entire SHACL rules specification reduced to a single function call. Holger wrote the spec, then wrote this function. The spec says: *given these shapes and these rules, infer these triples*. The function does exactly that. Nothing more.
+
+It is the kind of code that takes nine years to arrive at. Not because it is hard to write, but because it takes nine years to understand that this is all it needs to be.
+
+The semantic profile of the RuleEngine confirms it:
+
+| Pattern | Count | What It Tells Us |
+|---------|-------|-----------------|
+| DataFlow | 65 | It reads shapes, reads data |
+| ControlFlow | 54 | Many decisions — which rules apply? |
+| Declaration | 51 | Well-structured, named clearly |
+| Mutation | 11 | It barely changes anything |
+| Exception | 3 | Almost no error handling |
+
+A 6:1 ratio of reading to mutation. The engine *infers*. It does not *change*. And those three exception handlers — in most codebases, error handling is a fortress. Here it is almost absent. If the rules are wrong, the specification already defines what happens. Holger trusted his own spec.
+
+---
+
+## The Recursive Heart
+
+[`HasShapeFunction.exec`](https://github.com/TopQuadrant/shacl/blob/a40627da5df455535d3519eb6629057ab52a2843/src/main/java/org/topbraid/shacl/arq/functions/HasShapeFunction.java#L96-L156) — complexity 11, 60 lines. This is the function that answers the question at the center of SHACL: *does this node conform to this shape?*
+
+It is called recursively. Shapes can reference other shapes, which reference other shapes. A person has an address, which has a country, which has a code, which must be a string of exactly two characters. Each layer invokes `HasShapeFunction` again. The specification allows infinite recursion. Reality does not.
+
+There is an open issue about this: *"Validation up to certain depth / recursion level?"* It is a question that the spec does not answer, because the spec describes a perfect world where graphs are finite and well-behaved. Holger's code lives in the real world, where they are not. This function is where the ideal meets the actual.
+
+---
+
+## The Proof
+
+The most complex function in the entire codebase is not part of the validator. It is part of the test suite.
+
+[`W3CTestRunner.run`](https://github.com/TopQuadrant/shacl/blob/a40627da5df455535d3519eb6629057ab52a2843/src/main/java/org/topbraid/shacl/testcases/W3CTestRunner.java#L179-L288) — complexity 16, 110 lines. Holger built this to prove that his implementation matches the specification he co-authored. Every edge case in the W3C test suite is handled here. Every corner of the standard is exercised.
+
+The complexity of the test runner exceeds the complexity of the thing being tested. This is not a flaw. It is a statement of priorities. The validator must be simple. The proof that the validator is correct may be as complex as necessary.
+
+A man who writes a standard and then writes the reference implementation and then writes the tests to prove that the implementation matches the standard — this is not engineering. It is an act of intellectual closure. He left nothing unfinished. He left nothing to faith.
+
+---
+
+## The Single Optimization
+
+In the entire codebase, there are exactly **3 calls** to [Caffeine](https://github.com/ben-manes/caffeine), the caching library. They appear in a single file: `OntologyOptimizations.java`. Nowhere else.
+
+Holger added caching exactly once, in exactly one place — the ontology loader, where the same OWL models are read repeatedly. Everywhere else, the code simply runs. No premature optimization. No caching layers. No clever tricks to avoid doing work.
+
+This is not the profile of a programmer who didn't know about performance. This is the profile of a programmer who understood that clarity was more important than speed, and who was right.
+
+---
+
+## This is not a system that *does things*
+
+It is a system that *knows things*. It validates. It observes. It infers. It reports. The distinction matters.
 
 ---
 
