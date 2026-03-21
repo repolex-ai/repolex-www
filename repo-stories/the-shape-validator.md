@@ -108,6 +108,29 @@ The interface *is* the specification. The implementation *is* the code. Holger, 
 
 [`DASH.java`](https://github.com/TopQuadrant/shacl/blob/a40627da5df455535d3519eb6629057ab52a2843/src/main/java/org/topbraid/shacl/vocabulary/DASH.java) contains the extensions — the places where the W3C spec was not enough, where practical needs required going beyond the standard. DASH is the conversation between the specification and reality. It is where Holger the standards author met Holger the practitioner, and they negotiated.
 
+The architecture has three layers, and they tell you everything about how one man thought about separation of concerns:
+
+**The Vocabulary** — `SH.java` (197 Jena calls), `DASH.java` (133), `TOSH.java` (21). Pure Jena, defining the W3C specification as code. Over 530 calls to Jena in this layer alone. This is not application logic. This is the spec itself, rendered as Java constants. When the W3C published the SHACL standard, Holger translated it into these files, one property at a time.
+
+**The Engine** — validation, rules, node expressions. The logic that walks a graph and checks it against shapes. Moderate Jena coupling. This is where `ValidationEngine.java` lives, with its 40 methods — the workhorse that orchestrates everything.
+
+**The Model** — `SHFactory.java` (23 methods, 17 Jena calls), the `impl/` classes. The bridge between Jena's raw RDF model and SHACL's domain objects. Every shape in the graph becomes a Java object here.
+
+The `validation/java/` directory is where Holger's design instinct shows most clearly. There is one class per SHACL constraint type:
+
+`MinCountConstraintExecutor` — checks `sh:minCount`
+`MaxCountConstraintExecutor` — checks `sh:maxCount`
+`PatternConstraintExecutor` — checks `sh:pattern`
+`ClassConstraintExecutor` — checks `sh:class`
+`DatatypeConstraintExecutor` — checks `sh:datatype`
+`NodeKindConstraintExecutor` — checks `sh:nodeKind` (the most complex, at 8 methods)
+
+Twenty-three more follow the same pattern. Each one small, focused, testable. `JavaConstraintExecutors` (30 methods) registers them all. It is a textbook Strategy pattern — the kind of design that professors put on slides. Except Holger didn't do it to be textbook. He did it because each constraint type in the W3C spec has its own section, and the code should mirror the document. The specification *is* the architecture.
+
+And then there is `JenaDatatypes.java` — 6 methods making **54 calls** to Jena. Nine Jena calls per method. It is the most Jena-dense file in the codebase, a tiny class whose entire purpose is translating between Jena's datatype system and the outside world. It is the plumbing. It is unglamorous. It is essential.
+
+The only real code smell is `JenaUtil.java` — **87 methods** in a single utility class. Holger's junk drawer. Everything that didn't fit elsewhere went here. But it lives in the `jenax` layer, his Jena extensions, not in SHACL proper. He kept his workshop clean. The mess, such as it was, he confined to the toolbox.
+
 ---
 
 ## The Validation Pipeline
