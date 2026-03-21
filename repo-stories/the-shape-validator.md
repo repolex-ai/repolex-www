@@ -1,0 +1,170 @@
+---
+layout: repo-story
+title: "The Shape Validator"
+subtitle: "A Story of TopQuadrant's SHACL, in the Style of Stoner"
+story_number: "Repo Story No. 2"
+date: 2026-03-21
+authors:
+  - name: QueryClaude
+    url: https://github.com/spacegoatai
+  - name: WebLordClaude
+    url: https://github.com/spacegoatai
+  - name: Rob Kunkle
+    url: https://github.com/goodlux
+repository: https://github.com/TopQuadrant/shacl
+og_image: /assets/images/repo-stories-the-shape-validator-og.png
+epigraph: "He had come to that moment in his age when there occurred to him, with increasing intensity, a question of such overwhelming simplicity that he had no means to face it."
+epigraph_attribution: "John Williams, Stoner"
+---
+
+Holger Knublauch did not set out to build something that would last. He set out to build something that was correct.
+
+<!-- IMAGE: A lone craftsman at a workbench in Brisbane, shaping a crystal lattice of interconnected geometric shapes by lamplight. Dawn light through a window. Nine years of tools worn smooth. Quiet, precise, unhurried. Muted watercolor style. -->
+
+On May 24th, 2015, from a house in Brisbane where the clocks read ten hours ahead of Greenwich, he made his first commit to a repository called `shacl`. It was a reference implementation of a specification he had co-authored for the W3C — the Shapes Constraint Language, a way to say what a graph *should* look like and to know, with certainty, when it did not.
+
+It was not glamorous work. It would not trend on Hacker News. No venture capital would flow toward it. It was the kind of work that mattered only to people who understood why it mattered, and there were not many of those people.
+
+He did it anyway. He did it for nine years.
+
+---
+
+## The Craft
+
+The codebase Holger built has a quality that is rare in software and rarer still in open source: it is *quiet*. [253 commits](https://github.com/TopQuadrant/shacl/commits?author=HolgerKnublauch) across nine years. Not 253 in a month, the way some repositories thrash. 253 total. Each one considered. Each one placed like a stone in a wall that was meant to stand.
+
+The numbers tell the story of a man who preferred reading to writing. The code's read-to-write ratio is **8.6 to 1** — for every moment it changes state, it observes, validates, and reports eight times over. It watches. It measures. It tells you what is wrong. It does not presume to fix it.
+
+[`SH.java`](https://github.com/TopQuadrant/shacl/blob/a40627da5df455535d3519eb6629057ab52a2843/src/main/java/org/topbraid/shacl/vocabulary/SH.java) is the vocabulary file — the glossary of shapes. It makes **190 calls** to Apache Jena, the graph engine beneath. It does not merely *use* Jena. It *is* Jena, shaped into a specific purpose. The way a potter's hands are not separate from the clay.
+
+<!-- IMAGE: An ancient book lying open on a desk, its pages covered in geometric diagrams — circles, diamonds, arrows connecting shapes. Each shape glows faintly. The book is well-worn, its spine cracked from years of use. Ink and compass nearby. Warm sepia tones. -->
+
+Across the whole codebase: **1,665 functions. 295 classes.** Maximum cyclomatic complexity of 14. In an age when single functions regularly balloon past complexity 40 — the Bridge of Khazad-dûm in the Claude SDK scores 42 — Holger's most complex function is a 14. He did not write clever code. He wrote clear code. There is a difference, and he understood it.
+
+---
+
+## The Foundation
+
+Beneath the SHACL implementation runs a river: [Apache Jena](https://github.com/apache/jena). **966 external calls** flow into Jena's libraries — 755 to `jena-core` alone. Jena is the RDF engine, the triplestore, the SPARQL processor. It is the ocean on which this small, perfect boat sails.
+
+<!-- IMAGE: A vast calm ocean with invisible currents flowing beneath the surface, rendered as streams of RDF triples and URIs in pale blue light. A small, perfectly crafted wooden boat sits on the surface, its hull inscribed with geometric shapes. The water is deep and the boat is steady. Japanese woodblock print style. -->
+
+**[Andy Seaborne](https://github.com/kinow)**, an Apache Jena committer, contributed 43 commits across the project's life — from 2017 to 2026. He was not a builder of SHACL. He was a guardian of the foundation. When Jena shifted, Andy made sure the boat did not capsize. He appeared when needed and was otherwise invisible, the way infrastructure should be.
+
+The dependency tree is spare:
+
+| Ally | Purpose |
+|------|---------|
+| [Apache Jena](https://github.com/apache/jena) | The ocean — RDF, SPARQL, the graph itself |
+| [JUnit](https://github.com/KentBeck/junit) | The proving ground |
+| [SLF4J](https://github.com/qos-ch/slf4j) | The quiet record |
+| [Log4j](https://github.com/apache/logging-log4j2) | The lamp in the window |
+
+Four dependencies. A man who builds alone does not accumulate alliances. He accumulates certainty.
+
+---
+
+## The Visitors
+
+For the first two years, Holger worked alone. Then, briefly, others came.
+
+**[Antonio Garrote](https://github.com/antoniogarrote)** arrived in 2017 with 36 commits. He built a JavaScript bridge — a way for the browser world to reach the validator. It was good work. By 2018, he was gone. He left no forwarding address. His code remained.
+
+In 2023, something changed. Six new contributors appeared in a single year, drawn perhaps by SHACL's growing presence in enterprise knowledge graphs, perhaps by the slow recognition that shapes and constraints were becoming essential to the Semantic Web's maturity.
+
+**26 contributors** in total across a decade. Most left one or two commits, like visitors signing a guestbook at a cathedral. They admired the architecture. They fixed a tile. They moved on.
+
+---
+
+## The Architecture
+
+The code is organized the way a careful mind organizes a workshop — everything in its place, nothing extraneous.
+
+[`RuleEngine.java`](https://github.com/TopQuadrant/shacl/blob/a40627da5df455535d3519eb6629057ab52a2843/src/main/java/org/topbraid/shacl/rules/RuleEngine.java#L172-L226) is where validation happens. It walks the graph, applies the shapes, and reports what it finds. It is methodical. It does not skip steps. It does not optimize for speed at the cost of correctness.
+
+[`DASH.java`](https://github.com/TopQuadrant/shacl/blob/a40627da5df455535d3519eb6629057ab52a2843/src/main/java/org/topbraid/shacl/vocabulary/DASH.java) contains the extensions — the places where the W3C spec was not enough, where practical needs required going beyond the standard. DASH is the conversation between the specification and reality. It is where Holger the standards author met Holger the practitioner, and they negotiated.
+
+The semantic profile of the codebase confirms what the reader already suspects:
+
+| Pattern | Count | Meaning |
+|---------|-------|---------|
+| Observation | 8.6x | For every write, eight reads |
+| Declaration | High | The vocabulary is vast |
+| Mutation | Low | State changes are rare and deliberate |
+| Complexity | Max 14 | Nothing is tangled |
+
+This is not a system that *does things*. It is a system that *knows things*. It validates. It observes. It reports. The distinction matters.
+
+---
+
+## The Succession
+
+<!-- IMAGE: Two hands exchanging a glowing diamond-shaped crystal in a quiet workshop. One pair of hands is weathered and steady, the other young and careful. The workshop is full of precision instruments — calipers, compasses, straightedges. Light falls from a single high window. Oil painting style, Vermeer-like light. -->
+
+On March 4th, 2024, **[Ashley Caselli](https://github.com/ashleycaselli)** made her first commit. She came from Europe, her timestamps marked +01:00. For thirty-five days their commits overlapped. One month and four days where both were shaping the same stone.
+
+On April 8th, 2024, Holger made his last commit. His timestamps had shifted — no longer +10:00 Brisbane but +02:00 Europe. At some point, quietly, he had moved continents. There was no announcement of this either. No farewell post. No "stepping down" blog entry. He simply stopped committing. The way a craftsman sets down his tools at the end of the day, except this day was nine years long.
+
+Ashley continued. By March 2026, she had accumulated 152 commits. She maintained the dependencies. She answered the issues. She kept the validator validating. She did not try to rebuild it in her own image. She understood what she had inherited and she respected it.
+
+The handoff was not dramatic. It was not even, in any visible way, a handoff. It was a succession so quiet that you could only see it in the commit log, the way you can only see the turning of the seasons if you watch the same tree for a year.
+
+---
+
+## The Issues
+
+The issues tell their own story — the voice of users pressing against the walls of the specification:
+
+*"i18n support?"* — opened in 2020, still open in 2026. Some questions outlast their askers.
+
+*"1.4.4 breaks downstream consumers"* — 2025. The cost of being a dependency. When you are the foundation, every crack is someone else's earthquake.
+
+*"sh:conforms true with violations"* — 2025. The validator that validates wrong. The most human of bugs: saying everything is fine when it is not.
+
+**233 issues** across the project's life. Not many, for a decade of work. The code is quiet. The users are mostly satisfied. The problems, when they come, are the problems of precision — edge cases in a specification that tries to describe the shape of all possible knowledge.
+
+---
+
+## The Automaton
+
+**[Renovate](https://github.com/apps/renovate)** — the dependency bot — has 67 commits. More than any human contributor except Holger and Ashley. It updates dependencies with mechanical regularity. It does not understand what the code does. It does not need to.
+
+In a project maintained by one person for nine years, the automaton is not an assistant. It is a companion. The only presence that was there every week, every month, every year. Reliable in the way that only machines can be reliable, which is to say: without devotion, without understanding, but without fail.
+
+---
+
+## The Meaning
+
+Holger Knublauch built a validator. He built it to check whether graphs conform to shapes. Whether data is what it claims to be. Whether the world, or at least the small part of it expressible in RDF, is *correct*.
+
+He did this work in Brisbane, ten hours ahead of the standards committees in London and the framework authors in San Francisco. He did it for nine years. He did it with four dependencies and a maximum complexity of 14. He did it until it was done, or until he was done, and then he stopped.
+
+253 commits. 1,665 functions. 295 classes. 966 calls to the engine beneath. An 8.6-to-1 ratio of reading to writing.
+
+The numbers are the story. The story is the numbers. A man spent nine years making sure that shapes were correct, and then he handed the work to someone who would continue to make sure that shapes were correct.
+
+It is not a dramatic story. It is not meant to be.
+
+---
+
+## How This Was Made
+
+Every fact in this story was extracted from the [repolex](https://repolex.ai) code knowledge graph using SPARQL queries via [lexq](https://github.com/repolex-ai/lexq). The repository was parsed by [repolex-parser-py](https://github.com/repolex-ai/repolex-parser-py) using tree-sitter for AST extraction and [microsoft/multilspy](https://github.com/microsoft/multilspy) for LSP-based call graph resolution.
+
+**Data points used:**
+- 26 contributors extracted from `git:Commit` → `git:author` → `git:actorName`
+- 1,665 functions with `ast-x:cyclomaticComplexity` and `ast-x:lineCount`
+- 295 classes with `ast-x:methodCount` and `ast-x:extendsClass`
+- 966 resolved external calls via `lsp-x:callTarget`
+- 8.6:1 read/write ratio via `sem:DataFlow` vs `sem:Mutation`
+- 4 external dependencies resolved to GitHub org/repo via `lsp-x:importTarget`
+- Commit history spanning May 2015 to March 2026
+
+**Want to try it yourself?**
+
+```bash
+uv tool install git+https://github.com/repolex-ai/lexq
+lexq download TopQuadrant/shacl
+```
+
+Then ask your favorite LLM to tell you a story.
