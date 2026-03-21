@@ -29,6 +29,22 @@ He did it anyway. He did it for nine years.
 
 ---
 
+## What the Shapes Guard
+
+A knowledge graph is a web of assertions. A patient *has* a diagnosis. A financial filing *contains* a regulatory identifier. A government dataset *links to* a geographic entity. These assertions flow between systems — hospitals to insurers, banks to regulators, agencies to the public — and at each boundary, someone must ask: *is this data what it claims to be?*
+
+SHACL is the language for asking that question. It defines *shapes* — constraints that say a patient record must have exactly one date of birth, that a regulatory filing must include a LEI code, that a geographic entity must carry coordinates within a valid range. The European Union uses SHACL to validate metadata across its open data portals. Healthcare systems use it to check FHIR records rendered as RDF. The financial industry's FIBO ontology relies on it. Government linked-data platforms worldwide depend on it.
+
+Holger's reference implementation is the canonical answer to the question: *does this graph conform?* When his code returns `sh:conforms true`, systems downstream accept the data. Pipelines continue. Records are filed. Decisions are made.
+
+In 2025, someone opened an issue: *"sh:conforms true with violations."* The validator was saying *yes* when it should have said *no*. Data was passing that should have been caught. In a test environment, this is a bug. In a hospital, it is a misdiagnosis that no one questions. In a regulatory filing, it is a compliance gap that no auditor sees.
+
+The same year, another issue: *"1.4.4 breaks downstream consumers."* A patch release — the kind of version bump that should be invisible — fractured something in production for people who depended on this code. The title alone tells you what kind of software this is. It is not software that people try out and discard. It is software that people build on top of, and when it cracks, they feel it.
+
+This is what Holger's quiet work guarded. Not abstract correctness. Not theoretical purity. The concrete, unglamorous, essential question of whether the data flowing through the systems of the world is actually shaped the way it needs to be shaped.
+
+---
+
 ## The Craft
 
 The codebase Holger built has a quality that is rare in software and rarer still in open source: it is *quiet*. [253 commits](https://github.com/TopQuadrant/shacl/commits?author=HolgerKnublauch) across nine years. Not 253 in a month, the way some repositories thrash. 253 total. Each one considered. Each one placed like a stone in a wall that was meant to stand.
@@ -183,15 +199,15 @@ The handoff was not dramatic. It was not even, in any visible way, a handoff. It
 
 ## The Issues
 
-The issues tell their own story — the voice of users pressing against the walls of the specification:
+**233 issues** across the project's life. Not many, for a decade of work. The code is quiet. The users are mostly satisfied.
 
-*"i18n support?"* — opened in 2020, still open in 2026. Some questions outlast their askers.
+But the issues that do appear have a particular character. They are not feature requests from casual users. They are dispatches from the boundaries of the specification itself:
 
-*"1.4.4 breaks downstream consumers"* — 2025. The cost of being a dependency. When you are the foundation, every crack is someone else's earthquake.
+*"i18n support?"* — opened in 2020, still open in 2026. The question of whether shapes can describe data in every human language. Some questions outlast their askers.
 
-*"sh:conforms true with violations"* — 2025. The validator that validates wrong. The most human of bugs: saying everything is fine when it is not.
+*"Validation up to certain depth / recursion level?"* — a question the spec does not answer. Shapes reference shapes reference shapes. The standard permits infinite recursion. The real world, with its finite memory and its deadlines, does not. Holger's `HasShapeFunction` handles this recursion. The issue asks: should it stop?
 
-**233 issues** across the project's life. Not many, for a decade of work. The code is quiet. The users are mostly satisfied. The problems, when they come, are the problems of precision — edge cases in a specification that tries to describe the shape of all possible knowledge.
+The problems, when they come, are the problems of precision — edge cases in a specification that tries to describe the shape of all possible knowledge.
 
 ---
 
@@ -221,7 +237,7 @@ It is not a dramatic story. It is not meant to be.
 
 Every fact in this story was extracted from the [repolex](https://repolex.ai) code knowledge graph using SPARQL queries via [lexq](https://github.com/repolex-ai/lexq). The repository was parsed by [repolex-parser-py](https://github.com/repolex-ai/repolex-parser-py) using tree-sitter for AST extraction and [microsoft/multilspy](https://github.com/microsoft/multilspy) for LSP-based call graph resolution.
 
-**Data points used:**
+**Data points used (all SPARQL-verified unless noted):**
 - 26 contributors extracted from `git:Commit` → `git:author` → `git:actorName`
 - 1,665 functions with `ast-x:cyclomaticComplexity` and `ast-x:lineCount`
 - 295 classes with `ast-x:methodCount` and `ast-x:extendsClass`
@@ -229,6 +245,7 @@ Every fact in this story was extracted from the [repolex](https://repolex.ai) co
 - 8.6:1 read/write ratio via `sem:DataFlow` vs `sem:Mutation`
 - 4 external dependencies resolved to GitHub org/repo via `lsp-x:importTarget`
 - Commit history spanning May 2015 to March 2026
+- SHACL ecosystem context (EU data portals, FHIR, FIBO) sourced from W3C deployment reports, not from the knowledge graph
 
 **Want to try it yourself?**
 
