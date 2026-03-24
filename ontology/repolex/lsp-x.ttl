@@ -81,9 +81,22 @@ lsp-x:importSymbol a owl:DatatypeProperty ;
     rdfs:domain ast:Node ;
     rdfs:range xsd:string .
 
+lsp-x:resolutionSourceFile a owl:DatatypeProperty ;
+    rdfs:label "resolution source file" ;
+    rdfs:comment "Repo-relative file path where the LSP resolution originated (the caller/importer side). Denormalized on all LSP resolution triples (calls, imports, extends) for file-level filtering and incremental enrichment." ;
+    rdfs:domain ast:Node ;
+    rdfs:range xsd:string .
+
+lsp-x:resolutionTargetFile a owl:DatatypeProperty ;
+    rdfs:label "resolution target file" ;
+    rdfs:comment "Repo-relative file path where LSP resolved to (the definition/target side). Denormalized on all LSP resolution triples for file-level filtering and version diffs. Replaces the narrower lsp-x:callTargetFile." ;
+    rdfs:domain ast:Node ;
+    rdfs:range xsd:string .
+
+# DEPRECATED: Use lsp-x:resolutionTargetFile instead (covers all resolution types, not just calls)
 lsp-x:callTargetFile a owl:DatatypeProperty ;
-    rdfs:label "call target file" ;
-    rdfs:comment "Repository-relative file path of the call target, extracted from LSP Location response. Convenience property for quick access without following lsp-x:callTarget." ;
+    rdfs:label "call target file (DEPRECATED)" ;
+    rdfs:comment "DEPRECATED — use lsp-x:resolutionTargetFile instead. Repository-relative file path of the call target." ;
     rdfs:domain ast:Node ;
     rdfs:range xsd:string .
 

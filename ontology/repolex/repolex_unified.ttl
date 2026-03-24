@@ -137170,6 +137170,18 @@ lsp-x:paramFromArg a owl:ObjectProperty ;
     rdfs:comment "Inverse of lsp-x:argToParam. Inferred by reasoner: if argument A flows to parameter P, then P receives from A. Enables 'what arguments feed this parameter?' queries." ;
     owl:inverseOf lsp-x:argToParam .
 
+lsp-x:sourceFile a owl:DatatypeProperty ;
+    rdfs:label "source file" ;
+    rdfs:comment "Repo-relative file path where the LSP resolution originated (the caller/importer side). Denormalized on all LSP-enriched triples for file-level filtering and incremental enrichment." ;
+    rdfs:domain ast:Node ;
+    rdfs:range xsd:string .
+
+lsp-x:targetFile a owl:DatatypeProperty ;
+    rdfs:label "target file" ;
+    rdfs:comment "Repo-relative file path where LSP resolved to (the definition/target side). Denormalized on all LSP-enriched triples for file-level filtering and version diffs." ;
+    rdfs:domain ast:Node ;
+    rdfs:range xsd:string .
+
 lsp-x:transitivelyImports a owl:ObjectProperty,
         owl:TransitiveProperty ;
     rdfs:label "transitively imports" ;
