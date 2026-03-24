@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reasoning Ontology — repolex ontology</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --fg: #e6edf3;
+      --muted: #8b949e;
+      --accent: #58a6ff;
+      --border: #30363d;
+      --table-bg: #161b22;
+      --table-hover: #1c2128;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+      line-height: 1.6;
+    }
+    h1 {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.5rem;
+    }
+    h2 {
+      color: var(--accent);
+      margin-top: 2rem;
+    }
+    .version {
+      color: var(--muted);
+      font-size: 0.8em;
+      font-weight: normal;
+    }
+    .ontology-desc {
+      color: var(--muted);
+      font-size: 0.95em;
+      max-width: 80ch;
+    }
+    .meta {
+      color: var(--muted);
+      font-size: 0.85em;
+      margin-bottom: 1rem;
+    }
+    .meta a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .meta a:hover {
+      text-decoration: underline;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-size: 0.9em;
+    }
+    th {
+      text-align: left;
+      padding: 0.5rem 0.75rem;
+      border-bottom: 2px solid var(--border);
+      color: var(--muted);
+      font-weight: 600;
+    }
+    td {
+      padding: 0.4rem 0.75rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    tr:hover td {
+      background: var(--table-hover);
+    }
+    .prop-name {
+      font-family: "SFMono-Regular", Consolas, monospace;
+      font-size: 0.9em;
+      color: var(--accent);
+      white-space: nowrap;
+    }
+    .prop-desc {
+      color: var(--muted);
+      max-width: 50ch;
+    }
+    .prop-supers {
+      font-family: "SFMono-Regular", Consolas, monospace;
+      font-size: 0.85em;
+    }
+    footer {
+      margin-top: 3rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.8em;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Reasoning Ontology <span class="version">1.0</span></h1>
+    <p class="ontology-desc">OWL 2 RL inference rules for the repolex knowledge graph. Defines inverse, transitive, and chain properties that enable automatic inference of implicit relationships. Requires a reasoner (owlrl) to materialize.</p>
+    <div class="meta">
+      73 triples
+      · <a href="reasoning.ttl">Download .ttl</a>
+      · 0 classes
+      · 8 object properties
+      · 0 datatype properties
+    </div>
+
+    <h2>Object Properties (8)</h2>
+    <table>
+      <thead>
+        <tr><th>Property</th><th>Domain</th><th>Range</th><th>Description</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="prop-name">git:childCommit</td>
+          <td>—</td>
+          <td>—</td>
+          <td class="prop-desc">Inverse of git:parent. Inferred by reasoner: if commit B has parent A, then A has child B. Enables &#x27;what commits came after this one?&#x27; queries.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">ast-x:containedInBlob</td>
+          <td>—</td>
+          <td>—</td>
+          <td class="prop-desc">Inverse of ast-x:sourceBlobNode. Inferred by reasoner: if node N is in blob B, then B contains N. Enables &#x27;what nodes are in this blob?&#x27; queries.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">ast-x:importResolvesTo</td>
+          <td>—</td>
+          <td>—</td>
+          <td class="prop-desc">Inferred: follows from import statement through its resolution node to the LSP-resolved target location. Chain: importStatement --resolutionNode--&gt; node --importTarget--&gt; location.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp-x:callFromReturn</td>
+          <td>—</td>
+          <td>—</td>
+          <td class="prop-desc">Inverse of lsp-x:returnToCall. Inferred by reasoner: if return R flows to call site C, then C receives from R. Enables &#x27;what return values reach this call?&#x27; queries.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp-x:callSource</td>
+          <td>—</td>
+          <td>—</td>
+          <td class="prop-desc">Inverse of lsp-x:callTarget. Inferred by reasoner: if A lsp-x:callTarget B, then B lsp-x:callSource A. Enables &#x27;who calls this function?&#x27; queries without storing both directions.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp-x:importSource</td>
+          <td>—</td>
+          <td>—</td>
+          <td class="prop-desc">Inverse of lsp-x:importTarget. Inferred by reasoner: if module A imports module B, then B lsp-x:importSource A. Enables &#x27;who imports this module?&#x27; queries.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp-x:paramFromArg</td>
+          <td>—</td>
+          <td>—</td>
+          <td class="prop-desc">Inverse of lsp-x:argToParam. Inferred by reasoner: if argument A flows to parameter P, then P receives from A. Enables &#x27;what arguments feed this parameter?&#x27; queries.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp-x:transitivelyImports</td>
+          <td>—</td>
+          <td>—</td>
+          <td class="prop-desc">Transitive closure of import relationships. If module A imports B and B imports C, the reasoner infers A transitivelyImports C. Enables full dependency tree queries without recursion.</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </main>
+  <footer>
+    Auto-generated from <code>ontology_src/reasoning.ttl</code>
+    · <a href="https://repolex.ai">repolex.ai</a>
+    · 2026-03-24
+  </footer>
+</body>
+</html>

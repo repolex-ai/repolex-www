@@ -1,0 +1,1997 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GitHub REST API Ontology — repolex ontology</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --fg: #e6edf3;
+      --muted: #8b949e;
+      --accent: #58a6ff;
+      --border: #30363d;
+      --table-bg: #161b22;
+      --table-hover: #1c2128;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+      line-height: 1.6;
+    }
+    h1 {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.5rem;
+    }
+    h2 {
+      color: var(--accent);
+      margin-top: 2rem;
+    }
+    .version {
+      color: var(--muted);
+      font-size: 0.8em;
+      font-weight: normal;
+    }
+    .ontology-desc {
+      color: var(--muted);
+      font-size: 0.95em;
+      max-width: 80ch;
+    }
+    .meta {
+      color: var(--muted);
+      font-size: 0.85em;
+      margin-bottom: 1rem;
+    }
+    .meta a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .meta a:hover {
+      text-decoration: underline;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-size: 0.9em;
+    }
+    th {
+      text-align: left;
+      padding: 0.5rem 0.75rem;
+      border-bottom: 2px solid var(--border);
+      color: var(--muted);
+      font-weight: 600;
+    }
+    td {
+      padding: 0.4rem 0.75rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    tr:hover td {
+      background: var(--table-hover);
+    }
+    .prop-name {
+      font-family: "SFMono-Regular", Consolas, monospace;
+      font-size: 0.9em;
+      color: var(--accent);
+      white-space: nowrap;
+    }
+    .prop-desc {
+      color: var(--muted);
+      max-width: 50ch;
+    }
+    .prop-supers {
+      font-family: "SFMono-Regular", Consolas, monospace;
+      font-size: 0.85em;
+    }
+    footer {
+      margin-top: 3rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.8em;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>GitHub REST API Ontology <span class="version">v2026-03-10</span></h1>
+    <p class="ontology-desc">Ontology for GitHub REST API entities (issues, pull requests, reviews, etc.). Auto-extracted from GitHub&#x27;s official OpenAPI spec (api version 2026-03-10).</p>
+    <div class="meta">
+      1,855 triples
+      · <a href="core.ttl">Download .ttl</a>
+      · 27 classes
+      · 30 object properties
+      · 229 datatype properties
+    </div>
+
+    <h2>Classes (27)</h2>
+    <table>
+      <thead>
+        <tr><th>Class</th><th>Subclass Of</th><th>Description</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="prop-name">gh:AuthorAssociation</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">How the author is associated with the repository.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:CodeScanningAlert</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:DependabotAlert</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">A Dependabot alert.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:DependabotAlertWithRepository</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">A Dependabot alert.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:Discussion</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">A Discussion in a repository.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:GlobalAdvisory</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">A GitHub Security Advisory.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:Issue</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">Issues are a great way to keep track of tasks, enhancements, and bugs for your projects.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:IssueComment</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">Comments provide a way for people to collaborate on an issue.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:Label</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">Color-coded labels help you categorize and filter your issues (just like labels in Gmail).</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:License</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">License Simple</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:Milestone</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">A collection of related issues and pull requests.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:OrgMembership</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">Org Membership</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:Organization</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">Organization Full</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:PullRequest</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">Pull requests let you tell others about changes you&#x27;ve pushed to a repository on GitHub. Once a pull request is sent, interested parties can review the set of changes, discuss potential modifications,...</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:PullRequestReview</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">Pull Request Reviews are reviews on pull requests.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:PullRequestReviewComment</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">Pull Request Review Comments are comments on a portion of the Pull Request&#x27;s diff.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:ReactionRollup</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:Release</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">A release.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:ReleaseAsset</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">Data related to a release.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:Repository</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">Full Repository</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:RepositoryAdvisory</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">A repository security advisory.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:SecretScanningAlert</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:SecurityAdvisoryEcosystem</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">The package&#x27;s language or package management ecosystem.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:Team</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">Groups of organization members that gives permissions on specified repositories.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:TeamFull</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">Groups of organization members that gives permissions on specified repositories.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:User</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">A GitHub user.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:Vulnerability</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">A vulnerability describing the product and its affected versions within a GitHub Security Advisory.</td>
+        </tr>
+      </tbody>
+    </table>
+    <h2>Object Properties (30)</h2>
+    <table>
+      <thead>
+        <tr><th>Property</th><th>Domain</th><th>Range</th><th>Description</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="prop-name">gh:assets</td>
+          <td>gh:Release</td>
+          <td>gh:ReleaseAsset</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:assignedTo</td>
+          <td>gh:SecretScanningAlert</td>
+          <td>gh:User</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:assignees</td>
+          <td>gh:CodeScanningAlert, gh:DependabotAlert, gh:DependabotAlertWithRepository, gh:Issue, gh:PullRequest</td>
+          <td>gh:User</td>
+          <td class="prop-desc">The users assigned to this alert.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:author</td>
+          <td>gh:Release, gh:RepositoryAdvisory</td>
+          <td>gh:User</td>
+          <td class="prop-desc">The author of the advisory.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:closedBy</td>
+          <td>gh:Issue</td>
+          <td>gh:User</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:collaboratingTeams</td>
+          <td>gh:RepositoryAdvisory</td>
+          <td>gh:Team</td>
+          <td class="prop-desc">A list of teams that collaborate on the advisory.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:collaboratingUsers</td>
+          <td>gh:RepositoryAdvisory</td>
+          <td>gh:User</td>
+          <td class="prop-desc">A list of users that collaborate on the advisory.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:creator</td>
+          <td>gh:Milestone</td>
+          <td>gh:User</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:dismissalApprovedBy</td>
+          <td>gh:CodeScanningAlert</td>
+          <td>gh:User</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:dismissedBy</td>
+          <td>gh:CodeScanningAlert, gh:DependabotAlert, gh:DependabotAlertWithRepository</td>
+          <td>gh:User</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:labels</td>
+          <td>gh:Discussion, gh:Issue, gh:PullRequest</td>
+          <td>xsd:string, gh:Label</td>
+          <td class="prop-desc">Labels to associate with this issue; pass one or more label names to replace the set of labels on this issue; send an empty array to clear all labels from the issue; note that the labels are silently ...</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:license</td>
+          <td>gh:Repository</td>
+          <td>gh:License</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:mergedBy</td>
+          <td>gh:PullRequest</td>
+          <td>gh:User</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:milestone</td>
+          <td>gh:Issue, gh:PullRequest</td>
+          <td>gh:Milestone</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:organization</td>
+          <td>gh:Repository</td>
+          <td>gh:User</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:owner</td>
+          <td>gh:Repository</td>
+          <td>gh:User</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:parent</td>
+          <td>gh:Repository</td>
+          <td>gh:Repository</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:pinnedComment</td>
+          <td>gh:Issue</td>
+          <td>gh:IssueComment</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:publisher</td>
+          <td>gh:RepositoryAdvisory</td>
+          <td>gh:User</td>
+          <td class="prop-desc">The publisher of the advisory.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:pushProtectionBypassRequestReviewer</td>
+          <td>gh:SecretScanningAlert</td>
+          <td>gh:User</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:pushProtectionBypassedBy</td>
+          <td>gh:SecretScanningAlert</td>
+          <td>gh:User</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:reactions</td>
+          <td>gh:Issue, gh:IssueComment, gh:PullRequestReviewComment, gh:Release</td>
+          <td>gh:ReactionRollup</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:repository</td>
+          <td>gh:Issue</td>
+          <td>gh:Repository</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:requestedReviewers</td>
+          <td>gh:PullRequest</td>
+          <td>gh:User</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:resolvedBy</td>
+          <td>gh:SecretScanningAlert</td>
+          <td>gh:User</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:source</td>
+          <td>gh:Repository</td>
+          <td>gh:Repository</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:templateRepository</td>
+          <td>gh:Repository</td>
+          <td>gh:Repository</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:uploader</td>
+          <td>gh:ReleaseAsset</td>
+          <td>gh:User</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:user</td>
+          <td>gh:Issue, gh:IssueComment, gh:OrgMembership, gh:PullRequest, gh:PullRequestReview, gh:PullRequestReviewComment</td>
+          <td>gh:User</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:vulnerabilities</td>
+          <td>gh:GlobalAdvisory</td>
+          <td>gh:Vulnerability</td>
+          <td class="prop-desc">The products and respective version ranges affected by the advisory.</td>
+        </tr>
+      </tbody>
+    </table>
+    <h2>Datatype Properties (229)</h2>
+    <table>
+      <thead>
+        <tr><th>Property</th><th>Domain</th><th>Range</th><th>Description</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="prop-name">gh:+1</td>
+          <td>gh:ReactionRollup</td>
+          <td>xsd:integer</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:-1</td>
+          <td>gh:ReactionRollup</td>
+          <td>xsd:integer</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:activeLockReason</td>
+          <td>gh:Discussion, gh:Issue, gh:PullRequest</td>
+          <td>xsd:string</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:additions</td>
+          <td>gh:PullRequest</td>
+          <td>xsd:integer</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:advancedSecurityEnabledForNewRepositories</td>
+          <td>gh:Organization</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc">**Endpoint closing down notice.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.
+
+Whether GitHub Advanced Security is enabled for new rep...</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:allowAutoMerge</td>
+          <td>gh:Repository</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:allowForking</td>
+          <td>gh:Repository</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:allowMergeCommit</td>
+          <td>gh:Repository</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:allowRebaseMerge</td>
+          <td>gh:Repository</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:allowSquashMerge</td>
+          <td>gh:Repository</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:allowUpdateBranch</td>
+          <td>gh:Repository</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:anonymousAccessEnabled</td>
+          <td>gh:Repository</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc">Whether anonymous git access is allowed.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:answerChosenAt</td>
+          <td>gh:Discussion</td>
+          <td>xsd:string</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:answerHtmlUrl</td>
+          <td>gh:Discussion</td>
+          <td>xsd:string</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:archived</td>
+          <td>gh:Repository</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:archivedAt</td>
+          <td>gh:Organization</td>
+          <td>xsd:dateTime</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:assetsUrl</td>
+          <td>gh:Release</td>
+          <td>xsd:anyURI</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:authorAssociation</td>
+          <td>gh:Discussion</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">How the author is associated with the repository.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:billingEmail</td>
+          <td>gh:Organization</td>
+          <td>xsd:string</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:blog</td>
+          <td>gh:Organization</td>
+          <td>xsd:anyURI</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:body</td>
+          <td>gh:Discussion, gh:Issue, gh:IssueComment, gh:PullRequest, gh:PullRequestReview, gh:PullRequestReviewComment, gh:Release</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">Contents of the issue</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:bodyHtml</td>
+          <td>gh:Issue, gh:IssueComment, gh:PullRequestReview, gh:PullRequestReviewComment, gh:Release</td>
+          <td>xsd:string</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:bodyText</td>
+          <td>gh:Issue, gh:IssueComment, gh:PullRequestReview, gh:PullRequestReviewComment, gh:Release</td>
+          <td>xsd:string</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:browserDownloadUrl</td>
+          <td>gh:ReleaseAsset</td>
+          <td>xsd:anyURI</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:changedFiles</td>
+          <td>gh:PullRequest</td>
+          <td>xsd:integer</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:cloneUrl</td>
+          <td>gh:Repository</td>
+          <td>xsd:string</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:closedAt</td>
+          <td>gh:Issue, gh:Milestone, gh:PullRequest, gh:RepositoryAdvisory</td>
+          <td>xsd:dateTime</td>
+          <td class="prop-desc">The date and time of when the advisory was closed, in ISO 8601 format.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:closedIssues</td>
+          <td>gh:Milestone</td>
+          <td>xsd:integer</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:collaborators</td>
+          <td>gh:Organization</td>
+          <td>xsd:integer</td>
+          <td class="prop-desc">The number of collaborators on private repositories.
+
+This field may be null if the number of private repositories is over 50,000.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:color</td>
+          <td>gh:Label</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">6-character hex code, without the leading #, identifying the color</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:comments</td>
+          <td>gh:Discussion, gh:Issue, gh:PullRequest</td>
+          <td>xsd:integer</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:commitId</td>
+          <td>gh:PullRequestReview, gh:PullRequestReviewComment</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">A commit SHA for the review. If the commit object was garbage collected or forcibly deleted, then it no longer exists in Git and this value will be `null`.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:commits</td>
+          <td>gh:PullRequest</td>
+          <td>xsd:integer</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:company</td>
+          <td>gh:Organization</td>
+          <td>xsd:string</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:confused</td>
+          <td>gh:ReactionRollup</td>
+          <td>xsd:integer</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:contentType</td>
+          <td>gh:ReleaseAsset</td>
+          <td>xsd:string</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:createdAt</td>
+          <td>gh:Discussion, gh:Issue, gh:IssueComment, gh:Milestone, gh:Organization, gh:PullRequest, gh:PullRequestReviewComment, gh:Release, gh:ReleaseAsset, gh:Repository, gh:RepositoryAdvisory, gh:TeamFull</td>
+          <td>xsd:dateTime</td>
+          <td class="prop-desc">The date and time of when the advisory was created, in ISO 8601 format.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:credits</td>
+          <td>gh:GlobalAdvisory, gh:RepositoryAdvisory</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">The users who contributed to the advisory.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:cveId</td>
+          <td>gh:GlobalAdvisory, gh:RepositoryAdvisory</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">The Common Vulnerabilities and Exposures (CVE) ID.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:cweIds</td>
+          <td>gh:RepositoryAdvisory</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">A list of only the CWE IDs.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:cwes</td>
+          <td>gh:GlobalAdvisory, gh:RepositoryAdvisory</td>
+          <td>xsd:string</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:default</td>
+          <td>gh:Label</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc">Whether this label comes by default in a new repository.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:defaultBranch</td>
+          <td>gh:Repository</td>
+          <td>xsd:string</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:defaultRepositoryBranch</td>
+          <td>gh:Organization</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">The default branch for repositories created in this organization.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:defaultRepositoryPermission</td>
+          <td>gh:Organization</td>
+          <td>xsd:string</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:deleteBranchOnMerge</td>
+          <td>gh:Repository</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:deletions</td>
+          <td>gh:PullRequest</td>
+          <td>xsd:integer</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:dependabotAlertsEnabledForNewRepositories</td>
+          <td>gh:Organization</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc">**Endpoint closing down notice.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.
+
+Whether Dependabot alerts are automatically enabled for...</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:dependabotSecurityUpdatesEnabledForNewRepositories</td>
+          <td>gh:Organization</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc">**Endpoint closing down notice.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.
+
+Whether Dependabot security updates are automatically e...</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:dependencyGraphEnabledForNewRepositories</td>
+          <td>gh:Organization</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc">**Endpoint closing down notice.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.
+
+Whether dependency graph is automatically enabled for n...</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:deployKeysEnabledForRepositories</td>
+          <td>gh:Organization</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc">Controls whether or not deploy keys may be added and used for repositories in the organization.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:description</td>
+          <td>gh:GlobalAdvisory, gh:Label, gh:Milestone, gh:Organization, gh:Repository, gh:RepositoryAdvisory, gh:Team, gh:TeamFull</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">A detailed description of what the advisory entails.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:diffHunk</td>
+          <td>gh:PullRequestReviewComment</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">The diff of the line that the comment refers to.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:diffUrl</td>
+          <td>gh:PullRequest</td>
+          <td>xsd:anyURI</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:digest</td>
+          <td>gh:ReleaseAsset</td>
+          <td>xsd:string</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:directMembership</td>
+          <td>gh:OrgMembership</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc">Whether the user has direct membership in the organization.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:disabled</td>
+          <td>gh:Repository</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc">Returns whether or not this repository disabled.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:discussionUrl</td>
+          <td>gh:Release</td>
+          <td>xsd:anyURI</td>
+          <td class="prop-desc">The URL of the release discussion.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:diskUsage</td>
+          <td>gh:Organization</td>
+          <td>xsd:integer</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:dismissedComment</td>
+          <td>gh:DependabotAlert, gh:DependabotAlertWithRepository</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">An optional comment associated with the alert&#x27;s dismissal.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:dismissedReason</td>
+          <td>gh:DependabotAlert, gh:DependabotAlertWithRepository</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">The reason that the alert was dismissed.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:displayCommenterFullNameSettingEnabled</td>
+          <td>gh:Organization</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:downloadCount</td>
+          <td>gh:ReleaseAsset</td>
+          <td>xsd:integer</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:draft</td>
+          <td>gh:Issue, gh:PullRequest, gh:Release</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc">Indicates whether or not the pull request is a draft.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:dueOn</td>
+          <td>gh:Milestone</td>
+          <td>xsd:dateTime</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:email</td>
+          <td>gh:Organization, gh:User</td>
+          <td>xsd:string</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:enterpriseId</td>
+          <td>gh:Team, gh:TeamFull</td>
+          <td>xsd:integer</td>
+          <td class="prop-desc">Unique identifier of the enterprise to which this team belongs</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:enterpriseTeamsProvidingIndirectMembership</td>
+          <td>gh:OrgMembership</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">The slugs of the enterprise teams providing the user with indirect membership in the organization.
+A limit of 100 enterprise team slugs is returned.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:eyes</td>
+          <td>gh:ReactionRollup</td>
+          <td>xsd:integer</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:firstPatchedVersion</td>
+          <td>gh:Vulnerability</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">The package version that resolves the vulnerability.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:followers</td>
+          <td>gh:Organization</td>
+          <td>xsd:integer</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:following</td>
+          <td>gh:Organization</td>
+          <td>xsd:integer</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:fork</td>
+          <td>gh:Repository</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:forks</td>
+          <td>gh:Repository</td>
+          <td>xsd:integer</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:forksCount</td>
+          <td>gh:Repository</td>
+          <td>xsd:integer</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:fullName</td>
+          <td>gh:Repository</td>
+          <td>xsd:string</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:ghsaId</td>
+          <td>gh:GlobalAdvisory, gh:RepositoryAdvisory</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">The GitHub Security Advisory ID.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:githubReviewedAt</td>
+          <td>gh:GlobalAdvisory</td>
+          <td>xsd:dateTime</td>
+          <td class="prop-desc">The date and time of when the advisory was reviewed by GitHub, in ISO 8601 format.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:gravatarId</td>
+          <td>gh:User</td>
+          <td>xsd:string</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:hasCommitComments</td>
+          <td>gh:Repository</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:hasDiscussions</td>
+          <td>gh:Repository</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:hasIssues</td>
+          <td>gh:Repository</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:hasMoreLocations</td>
+          <td>gh:SecretScanningAlert</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc">A boolean value representing whether or not the token in the alert was detected in more than one location.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:hasOrganizationProjects</td>
+          <td>gh:Organization</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:hasPages</td>
+          <td>gh:Repository</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:hasProjects</td>
+          <td>gh:Repository</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:hasPullRequests</td>
+          <td>gh:Repository</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:hasRepositoryProjects</td>
+          <td>gh:Organization</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:hasWiki</td>
+          <td>gh:Repository</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:heart</td>
+          <td>gh:ReactionRollup</td>
+          <td>xsd:integer</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:homepage</td>
+          <td>gh:Repository</td>
+          <td>xsd:anyURI</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:hooray</td>
+          <td>gh:ReactionRollup</td>
+          <td>xsd:integer</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:htmlUrl</td>
+          <td>gh:Discussion, gh:GlobalAdvisory, gh:Issue, gh:IssueComment, gh:License, gh:Milestone, gh:Organization, gh:PullRequest, gh:PullRequestReview, gh:PullRequestReviewComment, gh:Release, gh:Repository, gh:RepositoryAdvisory, gh:Team, gh:TeamFull, gh:User</td>
+          <td>xsd:anyURI, xsd:string</td>
+          <td class="prop-desc">HTML URL for the pull request review comment.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:id</td>
+          <td>gh:Discussion, gh:Issue, gh:IssueComment, gh:Label, gh:Milestone, gh:Organization, gh:PullRequest, gh:PullRequestReview, gh:PullRequestReviewComment, gh:Release, gh:ReleaseAsset, gh:Repository, gh:Team, gh:TeamFull, gh:User</td>
+          <td>xsd:integer</td>
+          <td class="prop-desc">The ID of the pull request review comment.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:identifiers</td>
+          <td>gh:GlobalAdvisory, gh:RepositoryAdvisory</td>
+          <td>xsd:string</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:immutable</td>
+          <td>gh:Release</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc">Whether or not the release is immutable.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:inReplyToId</td>
+          <td>gh:PullRequestReviewComment</td>
+          <td>xsd:integer</td>
+          <td class="prop-desc">The comment ID to reply to.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:isBase64Encoded</td>
+          <td>gh:SecretScanningAlert</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc">A boolean value representing whether or not alert is base64 encoded</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:isTemplate</td>
+          <td>gh:Repository</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:isVerified</td>
+          <td>gh:Organization</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:key</td>
+          <td>gh:License</td>
+          <td>xsd:string</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:label</td>
+          <td>gh:ReleaseAsset</td>
+          <td>xsd:string</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:labels</td>
+          <td>gh:Discussion, gh:Issue, gh:PullRequest</td>
+          <td>xsd:string, gh:Label</td>
+          <td class="prop-desc">Labels to associate with this issue; pass one or more label names to replace the set of labels on this issue; send an empty array to clear all labels from the issue; note that the labels are silently ...</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:language</td>
+          <td>gh:Repository</td>
+          <td>xsd:string</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:laugh</td>
+          <td>gh:ReactionRollup</td>
+          <td>xsd:integer</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:line</td>
+          <td>gh:PullRequestReviewComment</td>
+          <td>xsd:integer</td>
+          <td class="prop-desc">The line of the blob to which the comment applies. The last line of the range for a multi-line comment</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:location</td>
+          <td>gh:Organization</td>
+          <td>xsd:string</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:locationsUrl</td>
+          <td>gh:SecretScanningAlert</td>
+          <td>xsd:anyURI</td>
+          <td class="prop-desc">The REST API URL of the code locations for this alert.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:locked</td>
+          <td>gh:Discussion, gh:Issue, gh:PullRequest</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:login</td>
+          <td>gh:Organization, gh:User</td>
+          <td>xsd:string</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:maintainerCanModify</td>
+          <td>gh:PullRequest</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc">Indicates whether maintainers can modify the pull request.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:masterBranch</td>
+          <td>gh:Repository</td>
+          <td>xsd:string</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:membersAllowedRepositoryCreationType</td>
+          <td>gh:Organization</td>
+          <td>xsd:string</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:membersCanChangeRepoVisibility</td>
+          <td>gh:Organization</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:membersCanCreateInternalRepositories</td>
+          <td>gh:Organization</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:membersCanCreatePages</td>
+          <td>gh:Organization</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:membersCanCreatePrivatePages</td>
+          <td>gh:Organization</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:membersCanCreatePrivateRepositories</td>
+          <td>gh:Organization</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:membersCanCreatePublicPages</td>
+          <td>gh:Organization</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:membersCanCreatePublicRepositories</td>
+          <td>gh:Organization</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:membersCanCreateRepositories</td>
+          <td>gh:Organization</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:membersCanCreateTeams</td>
+          <td>gh:Organization</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:membersCanDeleteIssues</td>
+          <td>gh:Organization</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:membersCanDeleteRepositories</td>
+          <td>gh:Organization</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:membersCanForkPrivateRepositories</td>
+          <td>gh:Organization</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:membersCanInviteOutsideCollaborators</td>
+          <td>gh:Organization</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:membersCanViewDependencyInsights</td>
+          <td>gh:Organization</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:membersCount</td>
+          <td>gh:TeamFull</td>
+          <td>xsd:integer</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:mentionsCount</td>
+          <td>gh:Release</td>
+          <td>xsd:integer</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:mergeCommitMessage</td>
+          <td>gh:Repository</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">The default value for a merge commit message.
+
+- `PR_TITLE` - default to the pull request&#x27;s title.
+- `PR_BODY` - default to the pull request&#x27;s body.
+- `BLANK` - default to a blank commit message.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:mergeCommitTitle</td>
+          <td>gh:Repository</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">The default value for a merge commit title.
+
+  - `PR_TITLE` - default to the pull request&#x27;s title.
+  - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123...</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:mergeable</td>
+          <td>gh:PullRequest</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:mergeableState</td>
+          <td>gh:PullRequest</td>
+          <td>xsd:string</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:merged</td>
+          <td>gh:PullRequest</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:mergedAt</td>
+          <td>gh:PullRequest</td>
+          <td>xsd:dateTime</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:multiRepo</td>
+          <td>gh:SecretScanningAlert</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc">Whether the detected secret was found in multiple repositories under the same organization or enterprise.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:name</td>
+          <td>gh:Label, gh:License, gh:Organization, gh:Release, gh:ReleaseAsset, gh:Repository, gh:Team, gh:TeamFull, gh:User</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">Name of the team</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:networkCount</td>
+          <td>gh:Repository</td>
+          <td>xsd:integer</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:notificationSetting</td>
+          <td>gh:Team, gh:TeamFull</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">The notification setting the team has set</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:number</td>
+          <td>gh:Discussion, gh:Issue, gh:Milestone, gh:PullRequest</td>
+          <td>xsd:integer</td>
+          <td class="prop-desc">Number uniquely identifying the issue within its repository</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:nvdPublishedAt</td>
+          <td>gh:GlobalAdvisory</td>
+          <td>xsd:dateTime</td>
+          <td class="prop-desc">The date and time when the advisory was published in the National Vulnerability Database, in ISO 8601 format.
+This field is only populated when the advisory is imported from the National Vulnerability...</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:openIssues</td>
+          <td>gh:Milestone, gh:Repository</td>
+          <td>xsd:integer</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:openIssuesCount</td>
+          <td>gh:Repository</td>
+          <td>xsd:integer</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:organizationId</td>
+          <td>gh:Team, gh:TeamFull</td>
+          <td>xsd:integer</td>
+          <td class="prop-desc">Unique identifier of the organization to which this team belongs</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:organizationUrl</td>
+          <td>gh:OrgMembership</td>
+          <td>xsd:anyURI</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:originalCommitId</td>
+          <td>gh:PullRequestReviewComment</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">The SHA of the original commit to which the comment applies.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:originalLine</td>
+          <td>gh:PullRequestReviewComment</td>
+          <td>xsd:integer</td>
+          <td class="prop-desc">The line of the blob to which the comment applies. The last line of the range for a multi-line comment</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:originalPosition</td>
+          <td>gh:PullRequestReviewComment</td>
+          <td>xsd:integer</td>
+          <td class="prop-desc">The index of the original line in the diff to which the comment applies. This field is closing down; use `original_line` instead.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:originalStartLine</td>
+          <td>gh:PullRequestReviewComment</td>
+          <td>xsd:integer</td>
+          <td class="prop-desc">The first line of the range for a multi-line comment.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:ownedPrivateRepos</td>
+          <td>gh:Organization</td>
+          <td>xsd:integer</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:parentIssueUrl</td>
+          <td>gh:Issue</td>
+          <td>xsd:anyURI</td>
+          <td class="prop-desc">URL to get the parent issue of this issue, if it is a sub-issue</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:patchUrl</td>
+          <td>gh:PullRequest</td>
+          <td>xsd:anyURI</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:path</td>
+          <td>gh:PullRequestReviewComment</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">The relative path of the file to which the comment applies.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:permission</td>
+          <td>gh:Team, gh:TeamFull</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">Permission that the team will have for its repositories</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:position</td>
+          <td>gh:PullRequestReviewComment</td>
+          <td>xsd:integer</td>
+          <td class="prop-desc">The line index in the diff to which the comment applies. This field is closing down; use `line` instead.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:prerelease</td>
+          <td>gh:Release</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc">Whether to identify the release as a prerelease or a full release.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:privacy</td>
+          <td>gh:Team, gh:TeamFull</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">The level of privacy this team should have</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:private</td>
+          <td>gh:Repository</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:privateGists</td>
+          <td>gh:Organization</td>
+          <td>xsd:integer</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:publicGists</td>
+          <td>gh:Organization</td>
+          <td>xsd:integer</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:publicRepos</td>
+          <td>gh:Organization</td>
+          <td>xsd:integer</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:publiclyLeaked</td>
+          <td>gh:SecretScanningAlert</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc">Whether the detected secret was publicly leaked.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:publishedAt</td>
+          <td>gh:GlobalAdvisory, gh:Release, gh:RepositoryAdvisory</td>
+          <td>xsd:dateTime</td>
+          <td class="prop-desc">The date and time of when the advisory was published, in ISO 8601 format.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:pullRequestCreationPolicy</td>
+          <td>gh:Repository</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">The policy controlling who can create pull requests: all or collaborators_only.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:pullRequestReviewId</td>
+          <td>gh:PullRequestReviewComment</td>
+          <td>xsd:integer</td>
+          <td class="prop-desc">The ID of the pull request review to which the comment belongs.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:pushProtectionBypassRequestComment</td>
+          <td>gh:SecretScanningAlert</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">An optional comment when requesting a push protection bypass.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:pushProtectionBypassRequestHtmlUrl</td>
+          <td>gh:SecretScanningAlert</td>
+          <td>xsd:anyURI</td>
+          <td class="prop-desc">The URL to a push protection bypass request.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:pushProtectionBypassRequestReviewerComment</td>
+          <td>gh:SecretScanningAlert</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">An optional comment when reviewing a push protection bypass.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:pushProtectionBypassed</td>
+          <td>gh:SecretScanningAlert</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc">Whether push protection was bypassed for the detected secret.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:pushProtectionBypassedAt</td>
+          <td>gh:SecretScanningAlert</td>
+          <td>xsd:dateTime</td>
+          <td class="prop-desc">The time that push protection was bypassed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:pushedAt</td>
+          <td>gh:Repository</td>
+          <td>xsd:dateTime</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:readersCanCreateDiscussions</td>
+          <td>gh:Organization</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:rebaseable</td>
+          <td>gh:PullRequest</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:references</td>
+          <td>gh:GlobalAdvisory</td>
+          <td>xsd:string</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:reposCount</td>
+          <td>gh:TeamFull</td>
+          <td>xsd:integer</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:repositoryAdvisoryUrl</td>
+          <td>gh:GlobalAdvisory</td>
+          <td>xsd:anyURI</td>
+          <td class="prop-desc">The API URL for the repository advisory.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:resolutionComment</td>
+          <td>gh:SecretScanningAlert</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">An optional comment to resolve an alert.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:resolvedAt</td>
+          <td>gh:SecretScanningAlert</td>
+          <td>xsd:dateTime</td>
+          <td class="prop-desc">The time that the alert was resolved in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:reviewComments</td>
+          <td>gh:PullRequest</td>
+          <td>xsd:integer</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:rocket</td>
+          <td>gh:ReactionRollup</td>
+          <td>xsd:integer</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:role</td>
+          <td>gh:OrgMembership</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">The user&#x27;s membership type in the organization.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:secret</td>
+          <td>gh:SecretScanningAlert</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">The secret that was detected.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:secretScanningEnabledForNewRepositories</td>
+          <td>gh:Organization</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc">**Endpoint closing down notice.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.
+
+Whether secret scanning is automatically enabled for ne...</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:secretScanningPushProtectionCustomLink</td>
+          <td>gh:Organization</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">An optional URL string to display to contributors who are blocked from pushing a secret.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:secretScanningPushProtectionEnabledForNewRepositories</td>
+          <td>gh:Organization</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc">**Endpoint closing down notice.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.
+
+Whether secret scanning push protection is automaticall...</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:secretType</td>
+          <td>gh:SecretScanningAlert</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">The type of secret that secret scanning detected.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:secretTypeDisplayName</td>
+          <td>gh:SecretScanningAlert</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">User-friendly name for the detected secret, matching the `secret_type`.
+For a list of built-in patterns, see &quot;[Supported secret scanning patterns](https://docs.github.com/code-security/secret-scanning...</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:severity</td>
+          <td>gh:GlobalAdvisory, gh:RepositoryAdvisory</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">The severity of the advisory.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:side</td>
+          <td>gh:PullRequestReviewComment</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">The side of the diff to which the comment applies. The side of the last line of the range for a multi-line comment</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:siteAdmin</td>
+          <td>gh:User</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:size</td>
+          <td>gh:ReleaseAsset, gh:Repository</td>
+          <td>xsd:integer</td>
+          <td class="prop-desc">The size of the repository, in kilobytes. Size is calculated hourly. When a repository is initially created, the size is 0.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:slug</td>
+          <td>gh:Team, gh:TeamFull</td>
+          <td>xsd:string</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:sourceCodeLocation</td>
+          <td>gh:GlobalAdvisory</td>
+          <td>xsd:anyURI</td>
+          <td class="prop-desc">The URL of the advisory&#x27;s source code.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:spdxId</td>
+          <td>gh:License</td>
+          <td>xsd:string</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:squashMergeCommitMessage</td>
+          <td>gh:Repository</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">The default value for a squash merge commit message:
+
+- `PR_BODY` - default to the pull request&#x27;s body.
+- `COMMIT_MESSAGES` - default to the branch&#x27;s commit messages.
+- `BLANK` - default to a blank co...</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:squashMergeCommitTitle</td>
+          <td>gh:Repository</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">The default value for a squash merge commit title:
+
+- `PR_TITLE` - default to the pull request&#x27;s title.
+- `COMMIT_OR_PR_TITLE` - default to the commit&#x27;s title (if only one commit) or the pull request&#x27;...</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:stargazersCount</td>
+          <td>gh:Repository</td>
+          <td>xsd:integer</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:starredAt</td>
+          <td>gh:User</td>
+          <td>xsd:string</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:startLine</td>
+          <td>gh:PullRequestReviewComment</td>
+          <td>xsd:integer</td>
+          <td class="prop-desc">The first line of the range for a multi-line comment.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:startSide</td>
+          <td>gh:PullRequestReviewComment</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">The side of the first line of the range for a multi-line comment.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:state</td>
+          <td>gh:DependabotAlert, gh:DependabotAlertWithRepository, gh:Discussion, gh:Issue, gh:Milestone, gh:OrgMembership, gh:PullRequest, gh:PullRequestReview, gh:ReleaseAsset, gh:RepositoryAdvisory</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">State of the issue; either &#x27;open&#x27; or &#x27;closed&#x27;</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:stateReason</td>
+          <td>gh:Discussion, gh:Issue</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">The reason for the current state</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:subjectType</td>
+          <td>gh:PullRequestReviewComment</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">The level at which the comment is targeted, can be a diff line or a file.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:submittedAt</td>
+          <td>gh:PullRequestReview</td>
+          <td>xsd:dateTime</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:subscribersCount</td>
+          <td>gh:Repository</td>
+          <td>xsd:integer</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:subscribersUrl</td>
+          <td>gh:Repository</td>
+          <td>xsd:anyURI</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:subscriptionUrl</td>
+          <td>gh:Repository</td>
+          <td>xsd:anyURI</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:summary</td>
+          <td>gh:GlobalAdvisory, gh:RepositoryAdvisory</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">A short summary of the advisory.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:tagName</td>
+          <td>gh:Release</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">The name of the tag.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:targetCommitish</td>
+          <td>gh:Release</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">Specifies the commitish value that determines where the Git tag is created from.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:tempCloneToken</td>
+          <td>gh:Repository</td>
+          <td>xsd:string</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:timelineUrl</td>
+          <td>gh:Discussion, gh:Issue</td>
+          <td>xsd:anyURI, xsd:string</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:title</td>
+          <td>gh:Discussion, gh:Issue, gh:Milestone, gh:PullRequest</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">The title of the milestone.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:topics</td>
+          <td>gh:Repository</td>
+          <td>xsd:string</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:totalCount</td>
+          <td>gh:ReactionRollup</td>
+          <td>xsd:integer</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:totalPrivateRepos</td>
+          <td>gh:Organization</td>
+          <td>xsd:integer</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:twitterUsername</td>
+          <td>gh:Organization</td>
+          <td>xsd:string</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:twoFactorRequirementEnabled</td>
+          <td>gh:Organization</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:type</td>
+          <td>gh:GlobalAdvisory, gh:Organization, gh:Team, gh:TeamFull, gh:User</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">The ownership type of the team</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:updatedAt</td>
+          <td>gh:Discussion, gh:GlobalAdvisory, gh:Issue, gh:IssueComment, gh:Milestone, gh:Organization, gh:PullRequest, gh:PullRequestReviewComment, gh:Release, gh:ReleaseAsset, gh:Repository, gh:RepositoryAdvisory, gh:TeamFull</td>
+          <td>xsd:dateTime</td>
+          <td class="prop-desc">The date and time of when the advisory was last updated, in ISO 8601 format.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:userViewType</td>
+          <td>gh:User</td>
+          <td>xsd:string</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:validity</td>
+          <td>gh:SecretScanningAlert</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">The token status as of the latest validity check.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:visibility</td>
+          <td>gh:Repository</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">The repository visibility: public, private, or internal.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:vulnerableFunctions</td>
+          <td>gh:Vulnerability</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">The functions in the package that are affected by the vulnerability.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:vulnerableVersionRange</td>
+          <td>gh:Vulnerability</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">The range of the package versions affected by the vulnerability.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:watchers</td>
+          <td>gh:Repository</td>
+          <td>xsd:integer</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:watchersCount</td>
+          <td>gh:Repository</td>
+          <td>xsd:integer</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:webCommitSignoffRequired</td>
+          <td>gh:Organization, gh:Repository</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc"></td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:withdrawnAt</td>
+          <td>gh:GlobalAdvisory, gh:RepositoryAdvisory</td>
+          <td>xsd:dateTime</td>
+          <td class="prop-desc">The date and time of when the advisory was withdrawn, in ISO 8601 format.</td>
+        </tr>
+      </tbody>
+    </table>
+    <h2>Annotation Properties (3)</h2>
+    <table>
+      <thead>
+        <tr><th>Property</th><th>Description</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="prop-name">gh:openApiPropertyName</td>
+          <td class="prop-desc">The original property name from GitHub&#x27;s OpenAPI spec (snake_case)</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:openApiSchemaName</td>
+          <td class="prop-desc">The original schema name from GitHub&#x27;s OpenAPI spec</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:required</td>
+          <td class="prop-desc">Whether this property is required per the OpenAPI spec</td>
+        </tr>
+      </tbody>
+    </table>
+    <h2>Individuals (21)</h2>
+    <table>
+      <thead>
+        <tr><th>Individual</th><th>Type</th><th>Label</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="prop-name">gh:AuthorAssociation_COLLABORATOR</td>
+          <td>gh:AuthorAssociation</td>
+          <td>COLLABORATOR</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:AuthorAssociation_CONTRIBUTOR</td>
+          <td>gh:AuthorAssociation</td>
+          <td>CONTRIBUTOR</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:AuthorAssociation_FIRST_TIMER</td>
+          <td>gh:AuthorAssociation</td>
+          <td>FIRST_TIMER</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:AuthorAssociation_FIRST_TIME_CONTRIBUTOR</td>
+          <td>gh:AuthorAssociation</td>
+          <td>FIRST_TIME_CONTRIBUTOR</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:AuthorAssociation_MANNEQUIN</td>
+          <td>gh:AuthorAssociation</td>
+          <td>MANNEQUIN</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:AuthorAssociation_MEMBER</td>
+          <td>gh:AuthorAssociation</td>
+          <td>MEMBER</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:AuthorAssociation_NONE</td>
+          <td>gh:AuthorAssociation</td>
+          <td>NONE</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:AuthorAssociation_OWNER</td>
+          <td>gh:AuthorAssociation</td>
+          <td>OWNER</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:SecurityAdvisoryEcosystem_actions</td>
+          <td>gh:SecurityAdvisoryEcosystem</td>
+          <td>actions</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:SecurityAdvisoryEcosystem_composer</td>
+          <td>gh:SecurityAdvisoryEcosystem</td>
+          <td>composer</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:SecurityAdvisoryEcosystem_erlang</td>
+          <td>gh:SecurityAdvisoryEcosystem</td>
+          <td>erlang</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:SecurityAdvisoryEcosystem_go</td>
+          <td>gh:SecurityAdvisoryEcosystem</td>
+          <td>go</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:SecurityAdvisoryEcosystem_maven</td>
+          <td>gh:SecurityAdvisoryEcosystem</td>
+          <td>maven</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:SecurityAdvisoryEcosystem_npm</td>
+          <td>gh:SecurityAdvisoryEcosystem</td>
+          <td>npm</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:SecurityAdvisoryEcosystem_nuget</td>
+          <td>gh:SecurityAdvisoryEcosystem</td>
+          <td>nuget</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:SecurityAdvisoryEcosystem_other</td>
+          <td>gh:SecurityAdvisoryEcosystem</td>
+          <td>other</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:SecurityAdvisoryEcosystem_pip</td>
+          <td>gh:SecurityAdvisoryEcosystem</td>
+          <td>pip</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:SecurityAdvisoryEcosystem_pub</td>
+          <td>gh:SecurityAdvisoryEcosystem</td>
+          <td>pub</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:SecurityAdvisoryEcosystem_rubygems</td>
+          <td>gh:SecurityAdvisoryEcosystem</td>
+          <td>rubygems</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:SecurityAdvisoryEcosystem_rust</td>
+          <td>gh:SecurityAdvisoryEcosystem</td>
+          <td>rust</td>
+        </tr>
+        <tr>
+          <td class="prop-name">gh:SecurityAdvisoryEcosystem_swift</td>
+          <td>gh:SecurityAdvisoryEcosystem</td>
+          <td>swift</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </main>
+  <footer>
+    Auto-generated from <code>extracts/github/rest-api/v2026-03-10/core.ttl</code>
+    · <a href="https://repolex.ai">repolex.ai</a>
+    · 2026-03-24
+  </footer>
+</body>
+</html>

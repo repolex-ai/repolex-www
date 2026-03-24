@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Semantic Categories Ontology — repolex ontology</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --fg: #e6edf3;
+      --muted: #8b949e;
+      --accent: #58a6ff;
+      --border: #30363d;
+      --table-bg: #161b22;
+      --table-hover: #1c2128;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+      line-height: 1.6;
+    }
+    h1 {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.5rem;
+    }
+    h2 {
+      color: var(--accent);
+      margin-top: 2rem;
+    }
+    .version {
+      color: var(--muted);
+      font-size: 0.8em;
+      font-weight: normal;
+    }
+    .ontology-desc {
+      color: var(--muted);
+      font-size: 0.95em;
+      max-width: 80ch;
+    }
+    .meta {
+      color: var(--muted);
+      font-size: 0.85em;
+      margin-bottom: 1rem;
+    }
+    .meta a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .meta a:hover {
+      text-decoration: underline;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-size: 0.9em;
+    }
+    th {
+      text-align: left;
+      padding: 0.5rem 0.75rem;
+      border-bottom: 2px solid var(--border);
+      color: var(--muted);
+      font-weight: 600;
+    }
+    td {
+      padding: 0.4rem 0.75rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    tr:hover td {
+      background: var(--table-hover);
+    }
+    .prop-name {
+      font-family: "SFMono-Regular", Consolas, monospace;
+      font-size: 0.9em;
+      color: var(--accent);
+      white-space: nowrap;
+    }
+    .prop-desc {
+      color: var(--muted);
+      max-width: 50ch;
+    }
+    .prop-supers {
+      font-family: "SFMono-Regular", Consolas, monospace;
+      font-size: 0.85em;
+    }
+    footer {
+      margin-top: 3rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.8em;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Semantic Categories Ontology <span class="version">1.0</span></h1>
+    <p class="ontology-desc">Top-level semantic categories for cross-language code analysis queries. Groups AST, LSP, and computed properties into intuitive query-time buckets.</p>
+    <div class="meta">
+      64 triples
+      · <a href="sem.ttl">Download .ttl</a>
+      · 8 classes
+      · 0 object properties
+      · 0 datatype properties
+    </div>
+
+    <h2>Classes (8)</h2>
+    <table>
+      <thead>
+        <tr><th>Class</th><th>Subclass Of</th><th>Description</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="prop-name">sem:ControlFlow</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">Control flow constructs: branching (if, switch, match), loops (for, while), and flow control (break, continue, return, yield). Used to find all control flow across languages.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">sem:DataFlow</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">Data flow constructs: assignments, augmented assignments, parameters, variable declarations. Used to track how data moves through code.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">sem:Declaration</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">Declarations: functions, methods, classes, interfaces, variables, constants. Used to find all declarations across languages.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">sem:Exception</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">Exception handling constructs: try blocks, catch/except clauses, throw/raise statements. Used to find error handling patterns.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">sem:Import</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">Import/include/use statements that bring external modules or symbols into scope. Used for dependency analysis.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">sem:Inheritance</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">Inheritance and interface implementation relationships: extends, implements, inherits from, trait bounds. Used for OOP hierarchy analysis.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">sem:Mutation</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">State mutation constructs: assignments and augmented assignments that change variable values. Subset of DataFlow focusing on state changes.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">sem:Type</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">Type definitions: interfaces, enums, structs, type aliases, traits, protocols. Used to find type system elements across languages.</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </main>
+  <footer>
+    Auto-generated from <code>ontology_src/sem.ttl</code>
+    · <a href="https://repolex.ai">repolex.ai</a>
+    · 2026-03-24
+  </footer>
+</body>
+</html>

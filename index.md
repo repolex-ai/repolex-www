@@ -13,7 +13,7 @@ permalink: /
     <ul>
         <li><strong>Cross-repo structural intelligence</strong> — not just single-file code search, but deep understanding of how code connects across repositories, dependencies, and fork networks</li>
         <li><strong>Built on open standards</strong> — RDF, SPARQL, OWL. Not proprietary. The graph is yours.</li>
-        <li><strong>Any codebase, any language</strong> — 12 languages and counting, powered by tree-sitter AST extraction and LSP-based call graph resolution</li>
+        <li><strong>Any codebase, any language</strong> — 173 language dialects parsed into AST via tree-sitter, 12 with full LSP call graph resolution</li>
         <li><strong>Runs on your infrastructure</strong> — code never leaves. Important for enterprise. Important for defense.</li>
         <li><strong>Composable graphs</strong> — combine repos, dependencies, fork networks into a unified knowledge graph. 118K+ triple ontology covering AST, LSP, git, GitHub, semantic categories, and OWL reasoning.</li>
         <li><strong>Queryable in milliseconds</strong> — ask questions about code structure, contributor patterns, dependency chains, and complexity with standard SPARQL</li>

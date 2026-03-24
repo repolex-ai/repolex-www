@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Git Core Ontology — repolex ontology</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --fg: #e6edf3;
+      --muted: #8b949e;
+      --accent: #58a6ff;
+      --border: #30363d;
+      --table-bg: #161b22;
+      --table-hover: #1c2128;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+      line-height: 1.6;
+    }
+    h1 {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.5rem;
+    }
+    h2 {
+      color: var(--accent);
+      margin-top: 2rem;
+    }
+    .version {
+      color: var(--muted);
+      font-size: 0.8em;
+      font-weight: normal;
+    }
+    .ontology-desc {
+      color: var(--muted);
+      font-size: 0.95em;
+      max-width: 80ch;
+    }
+    .meta {
+      color: var(--muted);
+      font-size: 0.85em;
+      margin-bottom: 1rem;
+    }
+    .meta a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .meta a:hover {
+      text-decoration: underline;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-size: 0.9em;
+    }
+    th {
+      text-align: left;
+      padding: 0.5rem 0.75rem;
+      border-bottom: 2px solid var(--border);
+      color: var(--muted);
+      font-weight: 600;
+    }
+    td {
+      padding: 0.4rem 0.75rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    tr:hover td {
+      background: var(--table-hover);
+    }
+    .prop-name {
+      font-family: "SFMono-Regular", Consolas, monospace;
+      font-size: 0.9em;
+      color: var(--accent);
+      white-space: nowrap;
+    }
+    .prop-desc {
+      color: var(--muted);
+      max-width: 50ch;
+    }
+    .prop-supers {
+      font-family: "SFMono-Regular", Consolas, monospace;
+      font-size: 0.85em;
+    }
+    footer {
+      margin-top: 3rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.8em;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Git Core Ontology <span class="version">v3.1.46</span></h1>
+    <p class="ontology-desc">Core ontology for Git objects (commits, trees, blobs, tags). Extracted by introspection from GitPython bindings.</p>
+    <div class="meta">
+      274 triples
+      · <a href="core.ttl">Download .ttl</a>
+      · 10 classes
+      · 13 object properties
+      · 34 datatype properties
+    </div>
+
+    <h2>Classes (10)</h2>
+    <table>
+      <thead>
+        <tr><th>Class</th><th>Subclass Of</th><th>Description</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="prop-name">git:Actor</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">A person who performed an action in git (author, committer, or tagger). Identified by name and email.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">git:Blob</td>
+          <td class="prop-supers">git:IndexObject</td>
+          <td class="prop-desc">A git blob object. Represents file contents. The same content always produces the same blob hash (content-addressed storage).</td>
+        </tr>
+        <tr>
+          <td class="prop-name">git:Commit</td>
+          <td class="prop-supers">git:Object</td>
+          <td class="prop-desc">A git commit object. Contains a snapshot (tree), parent commits, author/committer info, and a message.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">git:IndexObject</td>
+          <td class="prop-supers">git:Object</td>
+          <td class="prop-desc">GitPython abstraction for objects that can appear in a tree index. Adds path, name, and mode information from the tree context. Parent class of Blob and Tree.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">git:Object</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">Base class for all Git objects. All git objects are identified by their SHA-1 hash.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">git:Reference</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">A git reference (ref). Includes branches, tags, HEAD, and remote-tracking branches. References are mutable pointers to commits.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">git:Remote</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">A remote repository configuration (e.g., &#x27;origin&#x27;).</td>
+        </tr>
+        <tr>
+          <td class="prop-name">git:Repository</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">A git repository. Contains objects, references, and configuration.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">git:Tag</td>
+          <td class="prop-supers">git:Object</td>
+          <td class="prop-desc">An annotated git tag. Contains tagger info, date, message, and points to a tagged object (usually a commit). Lightweight tags are just refs and don&#x27;t have a Tag object.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">git:Tree</td>
+          <td class="prop-supers">git:IndexObject</td>
+          <td class="prop-desc">A git tree object. Represents a directory - contains references to blobs (files) and other trees (subdirectories).</td>
+        </tr>
+      </tbody>
+    </table>
+    <h2>Object Properties (13)</h2>
+    <table>
+      <thead>
+        <tr><th>Property</th><th>Domain</th><th>Range</th><th>Description</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="prop-name">git:author</td>
+          <td>git:Commit</td>
+          <td>git:Actor</td>
+          <td class="prop-desc">The person who originally wrote the code</td>
+        </tr>
+        <tr>
+          <td class="prop-name">git:blob</td>
+          <td>git:Tree</td>
+          <td>git:Blob</td>
+          <td class="prop-desc">Blobs (files) contained directly in this tree</td>
+        </tr>
+        <tr>
+          <td class="prop-name">git:branch</td>
+          <td>git:Repository</td>
+          <td>git:Reference</td>
+          <td class="prop-desc">Local branches in this repository</td>
+        </tr>
+        <tr>
+          <td class="prop-name">git:commit</td>
+          <td>git:Reference</td>
+          <td>git:Commit</td>
+          <td class="prop-desc">The commit this reference points to</td>
+        </tr>
+        <tr>
+          <td class="prop-name">git:committer</td>
+          <td>git:Commit</td>
+          <td>git:Actor</td>
+          <td class="prop-desc">The person who committed the code (may differ from author)</td>
+        </tr>
+        <tr>
+          <td class="prop-name">git:head</td>
+          <td>git:Repository</td>
+          <td>git:Reference</td>
+          <td class="prop-desc">The HEAD reference</td>
+        </tr>
+        <tr>
+          <td class="prop-name">git:parent</td>
+          <td>git:Commit</td>
+          <td>git:Commit</td>
+          <td class="prop-desc">Parent commit(s). Merge commits have multiple parents.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">git:remote</td>
+          <td>git:Repository</td>
+          <td>git:Remote</td>
+          <td class="prop-desc">Remote repositories configured</td>
+        </tr>
+        <tr>
+          <td class="prop-name">git:subtree</td>
+          <td>git:Tree</td>
+          <td>git:Tree</td>
+          <td class="prop-desc">Subtrees (subdirectories) contained in this tree</td>
+        </tr>
+        <tr>
+          <td class="prop-name">git:taggedObject</td>
+          <td>git:Tag</td>
+          <td>git:Object</td>
+          <td class="prop-desc">The object being tagged (usually a commit)</td>
+        </tr>
+        <tr>
+          <td class="prop-name">git:tagger</td>
+          <td>git:Tag</td>
+          <td>git:Actor</td>
+          <td class="prop-desc">Person who created the tag</td>
+        </tr>
+        <tr>
+          <td class="prop-name">git:trackingBranch</td>
+          <td>git:Reference</td>
+          <td>git:Reference</td>
+          <td class="prop-desc">The remote-tracking branch this local branch tracks</td>
+        </tr>
+        <tr>
+          <td class="prop-name">git:tree</td>
+          <td>git:Commit</td>
+          <td>git:Tree</td>
+          <td class="prop-desc">The tree object representing the project snapshot at this commit</td>
+        </tr>
+      </tbody>
+    </table>
+    <h2>Datatype Properties (34)</h2>
+    <table>
+      <thead>
+        <tr><th>Property</th><th>Domain</th><th>Range</th><th>Description</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="prop-name">git:abspath</td>
+          <td>git:IndexObject</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">Absolute path in the working directory</td>
+        </tr>
+        <tr>
+          <td class="prop-name">git:actorName</td>
+          <td>git:Actor</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">The person&#x27;s name</td>
+        </tr>
+        <tr>
+          <td class="prop-name">git:authorTimezone</td>
+          <td>git:Commit</td>
+          <td>xsd:integer</td>
+          <td class="prop-desc">Author&#x27;s timezone offset in seconds</td>
+        </tr>
+        <tr>
+          <td class="prop-name">git:authoredDate</td>
+          <td>git:Commit</td>
+          <td>xsd:dateTime</td>
+          <td class="prop-desc">When the commit was authored (original creation time)</td>
+        </tr>
+        <tr>
+          <td class="prop-name">git:bare</td>
+          <td>git:Repository</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc">Whether this is a bare repository</td>
+        </tr>
+        <tr>
+          <td class="prop-name">git:binsha</td>
+          <td>git:Object</td>
+          <td>xsd:hexBinary</td>
+          <td class="prop-desc">The 20-byte binary SHA-1 hash identifying this object</td>
+        </tr>
+        <tr>
+          <td class="prop-name">git:committedDate</td>
+          <td>git:Commit</td>
+          <td>xsd:dateTime</td>
+          <td class="prop-desc">When the commit was committed (may differ from authored if rebased)</td>
+        </tr>
+        <tr>
+          <td class="prop-name">git:committerTimezone</td>
+          <td>git:Commit</td>
+          <td>xsd:integer</td>
+          <td class="prop-desc">Committer&#x27;s timezone offset in seconds</td>
+        </tr>
+        <tr>
+          <td class="prop-name">git:description</td>
+          <td>git:Repository</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">Repository description from .git/description</td>
+        </tr>
+        <tr>
+          <td class="prop-name">git:email</td>
+          <td>git:Actor</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">The person&#x27;s email address</td>
+        </tr>
+        <tr>
+          <td class="prop-name">git:encoding</td>
+          <td>git:Commit</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">Character encoding of the commit message</td>
+        </tr>
+        <tr>
+          <td class="prop-name">git:fetchUrl</td>
+          <td>git:Remote</td>
+          <td>xsd:anyURI</td>
+          <td class="prop-desc">URL used for fetching</td>
+        </tr>
+        <tr>
+          <td class="prop-name">git:gitDir</td>
+          <td>git:Repository</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">Path to the .git directory</td>
+        </tr>
+        <tr>
+          <td class="prop-name">git:gpgsig</td>
+          <td>git:Commit</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">GPG signature if the commit is signed</td>
+        </tr>
+        <tr>
+          <td class="prop-name">git:hexsha</td>
+          <td>git:Object</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">The 40-character hexadecimal SHA-1 hash identifying this object</td>
+        </tr>
+        <tr>
+          <td class="prop-name">git:isDetached</td>
+          <td>git:Reference</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc">Whether HEAD is in detached state</td>
+        </tr>
+        <tr>
+          <td class="prop-name">git:isRemote</td>
+          <td>git:Reference</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc">Whether this is a remote-tracking reference</td>
+        </tr>
+        <tr>
+          <td class="prop-name">git:message</td>
+          <td>git:Commit</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">The commit message</td>
+        </tr>
+        <tr>
+          <td class="prop-name">git:mimeType</td>
+          <td>git:Blob</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">MIME type of the file content</td>
+        </tr>
+        <tr>
+          <td class="prop-name">git:mode</td>
+          <td>git:IndexObject</td>
+          <td>xsd:integer</td>
+          <td class="prop-desc">Unix file mode bits (e.g., 33188 for regular file, 16384 for directory)</td>
+        </tr>
+        <tr>
+          <td class="prop-name">git:name</td>
+          <td>git:IndexObject</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">Name of the file or directory</td>
+        </tr>
+        <tr>
+          <td class="prop-name">git:path</td>
+          <td>git:IndexObject</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">Path relative to repository root</td>
+        </tr>
+        <tr>
+          <td class="prop-name">git:pushUrl</td>
+          <td>git:Remote</td>
+          <td>xsd:anyURI</td>
+          <td class="prop-desc">URL used for pushing</td>
+        </tr>
+        <tr>
+          <td class="prop-name">git:refName</td>
+          <td>git:Reference</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">Full reference name (e.g., &#x27;refs/heads/main&#x27;)</td>
+        </tr>
+        <tr>
+          <td class="prop-name">git:remoteName</td>
+          <td>git:Remote</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">Name of the remote (e.g., &#x27;origin&#x27;)</td>
+        </tr>
+        <tr>
+          <td class="prop-name">git:shortName</td>
+          <td>git:Reference</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">Short reference name (e.g., &#x27;main&#x27;)</td>
+        </tr>
+        <tr>
+          <td class="prop-name">git:size</td>
+          <td>git:Object</td>
+          <td>xsd:nonNegativeInteger</td>
+          <td class="prop-desc">Size of the object in bytes</td>
+        </tr>
+        <tr>
+          <td class="prop-name">git:summary</td>
+          <td>git:Commit</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">First line of the commit message</td>
+        </tr>
+        <tr>
+          <td class="prop-name">git:tagMessage</td>
+          <td>git:Tag</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">Tag annotation message</td>
+        </tr>
+        <tr>
+          <td class="prop-name">git:tagName</td>
+          <td>git:Tag</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">Name of the tag</td>
+        </tr>
+        <tr>
+          <td class="prop-name">git:taggedDate</td>
+          <td>git:Tag</td>
+          <td>xsd:dateTime</td>
+          <td class="prop-desc">When the tag was created</td>
+        </tr>
+        <tr>
+          <td class="prop-name">git:type</td>
+          <td>git:Object</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">The git object type string (&#x27;commit&#x27;, &#x27;tree&#x27;, &#x27;blob&#x27;, &#x27;tag&#x27;)</td>
+        </tr>
+        <tr>
+          <td class="prop-name">git:url</td>
+          <td>git:Remote</td>
+          <td>xsd:anyURI</td>
+          <td class="prop-desc">URL of the remote repository</td>
+        </tr>
+        <tr>
+          <td class="prop-name">git:workingDir</td>
+          <td>git:Repository</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">Path to the working directory</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </main>
+  <footer>
+    Auto-generated from <code>extracts/gitpython-developers/GitPython/v3.1.46/core.ttl</code>
+    · <a href="https://repolex.ai">repolex.ai</a>
+    · 2026-03-24
+  </footer>
+</body>
+</html>

@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AST Extension Ontology — repolex ontology</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --fg: #e6edf3;
+      --muted: #8b949e;
+      --accent: #58a6ff;
+      --border: #30363d;
+      --table-bg: #161b22;
+      --table-hover: #1c2128;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+      line-height: 1.6;
+    }
+    h1 {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.5rem;
+    }
+    h2 {
+      color: var(--accent);
+      margin-top: 2rem;
+    }
+    .version {
+      color: var(--muted);
+      font-size: 0.8em;
+      font-weight: normal;
+    }
+    .ontology-desc {
+      color: var(--muted);
+      font-size: 0.95em;
+      max-width: 80ch;
+    }
+    .meta {
+      color: var(--muted);
+      font-size: 0.85em;
+      margin-bottom: 1rem;
+    }
+    .meta a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .meta a:hover {
+      text-decoration: underline;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-size: 0.9em;
+    }
+    th {
+      text-align: left;
+      padding: 0.5rem 0.75rem;
+      border-bottom: 2px solid var(--border);
+      color: var(--muted);
+      font-weight: 600;
+    }
+    td {
+      padding: 0.4rem 0.75rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    tr:hover td {
+      background: var(--table-hover);
+    }
+    .prop-name {
+      font-family: "SFMono-Regular", Consolas, monospace;
+      font-size: 0.9em;
+      color: var(--accent);
+      white-space: nowrap;
+    }
+    .prop-desc {
+      color: var(--muted);
+      max-width: 50ch;
+    }
+    .prop-supers {
+      font-family: "SFMono-Regular", Consolas, monospace;
+      font-size: 0.85em;
+    }
+    footer {
+      margin-top: 3rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.8em;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>AST Extension Ontology <span class="version">1.0</span></h1>
+    <p class="ontology-desc">Universal AST types and extensions for cross-language analysis. Maps language-specific tree-sitter nodes to generic ast-x: classes via rdfs:subClassOf.</p>
+    <div class="meta">
+      522 triples
+      · <a href="ast-x.ttl">Download .ttl</a>
+      · 25 classes
+      · 2 object properties
+      · 18 datatype properties
+    </div>
+
+    <h2>Classes (25)</h2>
+    <table>
+      <thead>
+        <tr><th>Class</th><th>Subclass Of</th><th>Description</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="prop-name">ast-x:Assignment</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">Direct value assignment: x = expr. Includes walrus operator := (Python), Go short_var_declaration.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">ast-x:AugmentedAssignment</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">Compound assignment: +=, -=, *=, /=, etc. Reads and writes the same variable.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">ast-x:BreakStatement</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">Early exit: break (exits loop or switch), fallthrough (Go).</td>
+        </tr>
+        <tr>
+          <td class="prop-name">ast-x:CallSite</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">Any function call, method call, or constructor invocation. PRIMARY input for multilspy: each call_site is sent as a DefinitionRequest to resolve the target.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">ast-x:CatchClause</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">Exception handler: catch, except, rescue.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">ast-x:ClassDefinition</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">Any class, interface, struct, enum, trait, or module definition. Includes impl blocks (Rust) and type declarations (Go).</td>
+        </tr>
+        <tr>
+          <td class="prop-name">ast-x:Comment</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">Any comment node in the AST: line comments, block comments, doc comments. Provides context for LLM analysis. Documentation content is available via LSP hover for doc comments.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">ast-x:ContinueStatement</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">Skip to next iteration: continue, next (Ruby), redo (Ruby).</td>
+        </tr>
+        <tr>
+          <td class="prop-name">ast-x:ElseClause</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">Default branch when no condition matches. NOT a decision point - does not contribute to cyclomatic complexity. Separated from ast-x:IfStatement to avoid inflating complexity counts.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">ast-x:ExtendsClause</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">Superclass/parent class declaration. Single inheritance (Java, Ruby) or primary base class (C++, Python). Used to identify class hierarchies.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">ast-x:ForStatement</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">For loop: for-in, for-each, enhanced-for, range-based for. Iterator-driven.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">ast-x:FunctionDefinition</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">Any function, method, constructor, lambda, or closure definition. Used by multilspy to find all references.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">ast-x:IfStatement</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">Conditional branch: if, elif, unless, guard, if-modifier. Each represents a decision point for cyclomatic complexity.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">ast-x:ImplementsClause</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">Interface implementation declaration. Maps to implements (Java, TypeScript), trait bounds (Rust), protocols (Swift).</td>
+        </tr>
+        <tr>
+          <td class="prop-name">ast-x:ImportStatement</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">Any import, use, require, or include directive. Used by multilspy to resolve module paths and cross-file symbol origins.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">ast-x:InheritanceSpecifier</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">General inheritance/delegation declaration. Includes delegation (Kotlin), trait bounds (Rust), interface embedding (Go).</td>
+        </tr>
+        <tr>
+          <td class="prop-name">ast-x:Parameter</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">Individual parameter within a function/method signature. Covers required, optional, typed, default, variadic, and destructured parameters. Children of an ast-x:ParameterList.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">ast-x:ParameterList</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">Container node holding all parameters in a function/method signature. Use ast-x:parameterIndex on child ast-x:Parameter nodes to track position.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">ast-x:ReturnStatement</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">Exit function with optional value: return, co_return (C++20).</td>
+        </tr>
+        <tr>
+          <td class="prop-name">ast-x:SwitchStatement</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">Multi-way dispatch: switch, match, case, when.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">ast-x:ThrowStatement</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">Raise an exception: throw, raise.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">ast-x:TryStatement</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">Exception handling scope: try, try-with-resources (Java), begin (Ruby).</td>
+        </tr>
+        <tr>
+          <td class="prop-name">ast-x:VariableDeclaration</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">Introduces a new variable binding: let, var, const, short_var_declaration (:= in Go).</td>
+        </tr>
+        <tr>
+          <td class="prop-name">ast-x:WhileStatement</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">Condition-driven loop: while, do-while, loop (Rust), until (Ruby).</td>
+        </tr>
+        <tr>
+          <td class="prop-name">ast-x:YieldStatement</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">Generator/coroutine yield: yield, yield_expression, co_yield.</td>
+        </tr>
+      </tbody>
+    </table>
+    <h2>Object Properties (2)</h2>
+    <table>
+      <thead>
+        <tr><th>Property</th><th>Domain</th><th>Range</th><th>Description</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="prop-name">ast-x:resolutionNode</td>
+          <td>—</td>
+          <td>ast:Node</td>
+          <td class="prop-desc">Points from an import statement to the specific child node containing the module/symbol name, extracted via tree-sitter .scm query at blob parse time. The child node has the correct position for LSP r...</td>
+        </tr>
+        <tr>
+          <td class="prop-name">ast-x:sourceBlobNode</td>
+          <td>ast:Node</td>
+          <td>ast:Node</td>
+          <td class="prop-desc">Points to the blob node that contains this AST node&#x27;s source code. Links AST nodes back to their containing blob for retrieval and reference (e.g., &lt;blob/abc123#node_42_1_50_2&gt;).</td>
+        </tr>
+      </tbody>
+    </table>
+    <h2>Datatype Properties (18)</h2>
+    <table>
+      <thead>
+        <tr><th>Property</th><th>Domain</th><th>Range</th><th>Description</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="prop-name">ast-x:assignmentCount</td>
+          <td>—</td>
+          <td>xsd:nonNegativeInteger</td>
+          <td class="prop-desc">Count of assignment operations in the function. High values indicate mutation-heavy code. NOT YET IMPLEMENTED. To implement: Count nodes that are subclasses of ast-x:Assignment or ast-x:AugmentedAssig...</td>
+        </tr>
+        <tr>
+          <td class="prop-name">ast-x:assignsTo</td>
+          <td>ast:Node</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">Target variable name for assignment operations. Extracted from the left-hand side (field_left) of assignment nodes during blob parsing. For simple assignments only; complex targets (destructuring, fie...</td>
+        </tr>
+        <tr>
+          <td class="prop-name">ast-x:branchCount</td>
+          <td>—</td>
+          <td>xsd:nonNegativeInteger</td>
+          <td class="prop-desc">Count of if/switch statements in the function. NOT YET IMPLEMENTED. To implement: Count nodes that are subclasses of ast-x:IfStatement or ast-x:SwitchStatement within function body.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">ast-x:cyclomaticComplexity</td>
+          <td>—</td>
+          <td>xsd:nonNegativeInteger</td>
+          <td class="prop-desc">McCabe cyclomatic complexity: count of decision points + 1. Higher values indicate more complex control flow. NOT YET IMPLEMENTED. To implement: During AST traversal, count decision point nodes (if_st...</td>
+        </tr>
+        <tr>
+          <td class="prop-name">ast-x:docstring</td>
+          <td>ast:Node</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">Documentation text attached to a function, class, or module. Extracted from the first ast-x:Comment child of an ast-x:FunctionDefinition or ast-x:ClassDefinition during parse time. Used for documentat...</td>
+        </tr>
+        <tr>
+          <td class="prop-name">ast-x:exceptionHandlerCount</td>
+          <td>—</td>
+          <td>xsd:nonNegativeInteger</td>
+          <td class="prop-desc">Count of try/catch blocks in the function. NOT YET IMPLEMENTED. To implement: Count nodes that are subclasses of ast-x:TryStatement within function body.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">ast-x:fieldCount</td>
+          <td>—</td>
+          <td>xsd:nonNegativeInteger</td>
+          <td class="prop-desc">Number of fields/properties in a class. NOT YET IMPLEMENTED. To implement: Count field/property declaration nodes within class body. Language-specific patterns needed (field_declaration, property_decl...</td>
+        </tr>
+        <tr>
+          <td class="prop-name">ast-x:filePath</td>
+          <td>ast:Node</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">Repository-relative file path for this AST node (e.g., &#x27;src/main.js&#x27;, &#x27;lib/utils/helper.py&#x27;). Used to locate the source file within the repository structure.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">ast-x:hasDocumentation</td>
+          <td>—</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc">Whether this symbol has documentation comments (JSDoc, docstring, JavaDoc, etc.). Used for documentation coverage analysis. NOT YET IMPLEMENTED. To implement: During AST traversal, check for doc comme...</td>
+        </tr>
+        <tr>
+          <td class="prop-name">ast-x:isOptional</td>
+          <td>ast:Node</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc">Whether this parameter is optional/has a default value. Detected via .scm queries looking for: TypeScript &#x27;?&#x27; suffix, Python/Kotlin default values, etc. Populated during blob parsing.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">ast-x:lineCount</td>
+          <td>—</td>
+          <td>xsd:nonNegativeInteger</td>
+          <td class="prop-desc">Number of lines spanned by this entity (endLine - startLine + 1). NOT YET IMPLEMENTED. To implement: Use ast:endRow - ast:startRow + 1 from tree-sitter node.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">ast-x:localVariableCount</td>
+          <td>—</td>
+          <td>xsd:nonNegativeInteger</td>
+          <td class="prop-desc">Number of local variable declarations in the function. NOT YET IMPLEMENTED. To implement: Count nodes that are subclasses of ast-x:VariableDeclaration within function body (excluding parameters and cl...</td>
+        </tr>
+        <tr>
+          <td class="prop-name">ast-x:loopCount</td>
+          <td>—</td>
+          <td>xsd:nonNegativeInteger</td>
+          <td class="prop-desc">Count of for/while loops in the function. NOT YET IMPLEMENTED. To implement: Count nodes that are subclasses of ast-x:ForStatement or ast-x:WhileStatement within function body.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">ast-x:methodCount</td>
+          <td>—</td>
+          <td>xsd:nonNegativeInteger</td>
+          <td class="prop-desc">Number of methods in a class. NOT YET IMPLEMENTED. To implement: Count child nodes that are subclasses of ast-x:FunctionDefinition within class body.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">ast-x:nestingDepth</td>
+          <td>—</td>
+          <td>xsd:nonNegativeInteger</td>
+          <td class="prop-desc">Maximum depth of nested control flow structures. Deep nesting indicates harder-to-understand code. NOT YET IMPLEMENTED. To implement: During AST traversal, track current depth counter. Increment when ...</td>
+        </tr>
+        <tr>
+          <td class="prop-name">ast-x:parameterCount</td>
+          <td>—</td>
+          <td>xsd:nonNegativeInteger</td>
+          <td class="prop-desc">Number of parameters for a function/method. NOT YET IMPLEMENTED. To implement: Count child nodes that are subclasses of ast-x:Parameter within function definition.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">ast-x:parameterIndex</td>
+          <td>ast:Node</td>
+          <td>xsd:nonNegativeInteger</td>
+          <td class="prop-desc">Zero-indexed position of this parameter in the function signature. Computed during AST traversal by counting parameter positions. Used for argument-to-parameter dataflow mapping.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">ast-x:returnCount</td>
+          <td>—</td>
+          <td>xsd:nonNegativeInteger</td>
+          <td class="prop-desc">Number of return statements in the function. Multiple returns can indicate complex control flow. NOT YET IMPLEMENTED. To implement: Count nodes that are subclasses of ast-x:ReturnStatement within func...</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </main>
+  <footer>
+    Auto-generated from <code>ontology_src/ast-x.ttl</code>
+    · <a href="https://repolex.ai">repolex.ai</a>
+    · 2026-03-24
+  </footer>
+</body>
+</html>

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Repolex Core Ontology — repolex ontology</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --fg: #e6edf3;
+      --muted: #8b949e;
+      --accent: #58a6ff;
+      --border: #30363d;
+      --table-bg: #161b22;
+      --table-hover: #1c2128;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+      line-height: 1.6;
+    }
+    h1 {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.5rem;
+    }
+    h2 {
+      color: var(--accent);
+      margin-top: 2rem;
+    }
+    .version {
+      color: var(--muted);
+      font-size: 0.8em;
+      font-weight: normal;
+    }
+    .ontology-desc {
+      color: var(--muted);
+      font-size: 0.95em;
+      max-width: 80ch;
+    }
+    .meta {
+      color: var(--muted);
+      font-size: 0.85em;
+      margin-bottom: 1rem;
+    }
+    .meta a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .meta a:hover {
+      text-decoration: underline;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-size: 0.9em;
+    }
+    th {
+      text-align: left;
+      padding: 0.5rem 0.75rem;
+      border-bottom: 2px solid var(--border);
+      color: var(--muted);
+      font-weight: 600;
+    }
+    td {
+      padding: 0.4rem 0.75rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    tr:hover td {
+      background: var(--table-hover);
+    }
+    .prop-name {
+      font-family: "SFMono-Regular", Consolas, monospace;
+      font-size: 0.9em;
+      color: var(--accent);
+      white-space: nowrap;
+    }
+    .prop-desc {
+      color: var(--muted);
+      max-width: 50ch;
+    }
+    .prop-supers {
+      font-family: "SFMono-Regular", Consolas, monospace;
+      font-size: 0.85em;
+    }
+    footer {
+      margin-top: 3rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.8em;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Repolex Core Ontology <span class="version">1.0</span></h1>
+    <p class="ontology-desc">Core Repolex application ontology defining repository analysis vocabulary.</p>
+    <div class="meta">
+      159 triples
+      · <a href="repolex.ttl">Download .ttl</a>
+      · 4 classes
+      · 6 object properties
+      · 23 datatype properties
+    </div>
+
+    <h2>Classes (4)</h2>
+    <table>
+      <thead>
+        <tr><th>Class</th><th>Subclass Of</th><th>Description</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="prop-name">repolex:Blob</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">A content-addressed AST blob representing the parsed syntax tree of a source file. Blobs are identified by git blob hash and contain the complete tree-sitter parse tree in RDF form.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">repolex:Dependency</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">An external dependency resolved from a package registry (PyPI, NPM, etc.) to a specific GitHub repository and commit.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">repolex:File</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">A file in a repository</td>
+        </tr>
+        <tr>
+          <td class="prop-name">repolex:GraphFile</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">A serialized RDF graph file produced by the parser. Contains the path and size of a .nq.gz file in the storage repo.</td>
+        </tr>
+      </tbody>
+    </table>
+    <h2>Object Properties (6)</h2>
+    <table>
+      <thead>
+        <tr><th>Property</th><th>Domain</th><th>Range</th><th>Description</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="prop-name">repolex:dependencyRepo</td>
+          <td>git:Commit</td>
+          <td>gh:Repository</td>
+          <td class="prop-desc">A repository that this commit depends on. Resolved from package manifest (requirements.txt, pom.xml, etc.) via package registry to GitHub repo. Used in manifest graphs to build the cross-repo dependen...</td>
+        </tr>
+        <tr>
+          <td class="prop-name">repolex:graphFile</td>
+          <td>git:Commit</td>
+          <td>repolex:GraphFile</td>
+          <td class="prop-desc">Links a commit to one of its output graph files (AST, LSP, repolex, dep, filetree, commit, branch, tag).</td>
+        </tr>
+        <tr>
+          <td class="prop-name">repolex:repository</td>
+          <td>git:Commit</td>
+          <td>gh:Repository</td>
+          <td class="prop-desc">Back-link from a commit to its repository. Convenience property for navigating from commit manifest to repo manifest.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">repolex:root</td>
+          <td>repolex:Blob</td>
+          <td>—</td>
+          <td class="prop-desc">Points to the root AST node of this blob (typically module or compilation_unit)</td>
+        </tr>
+        <tr>
+          <td class="prop-name">repolex:trackedCommit</td>
+          <td>gh:Repository</td>
+          <td>git:Commit</td>
+          <td class="prop-desc">Links a repository to a commit that is tracked for parsing (parsed, pending, or failed). Written by forx to the repo manifest.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">repolex:usesOntology</td>
+          <td>repolex:Blob</td>
+          <td>owl:Ontology</td>
+          <td class="prop-desc">Reference to an ontology URI that this blob uses (e.g., tree-sitter core ontology, language-specific ontology)</td>
+        </tr>
+      </tbody>
+    </table>
+    <h2>Datatype Properties (23)</h2>
+    <table>
+      <thead>
+        <tr><th>Property</th><th>Domain</th><th>Range</th><th>Description</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="prop-name">repolex:blobHash</td>
+          <td>repolex:File</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">Git blob hash (SHA-1) of the file contents</td>
+        </tr>
+        <tr>
+          <td class="prop-name">repolex:blobUri</td>
+          <td>repolex:File</td>
+          <td>xsd:anyURI</td>
+          <td class="prop-desc">URI reference to the blob resource</td>
+        </tr>
+        <tr>
+          <td class="prop-name">repolex:fileName</td>
+          <td>repolex:File</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">Base name of the file (e.g., &#x27;main.py&#x27;)</td>
+        </tr>
+        <tr>
+          <td class="prop-name">repolex:filePath</td>
+          <td>repolex:File</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">Relative path of the file within the repository</td>
+        </tr>
+        <tr>
+          <td class="prop-name">repolex:fileSize</td>
+          <td>repolex:File</td>
+          <td>xsd:integer</td>
+          <td class="prop-desc">Size of the file in bytes</td>
+        </tr>
+        <tr>
+          <td class="prop-name">repolex:githubCommit</td>
+          <td>repolex:Dependency</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">Git commit SHA-1 hash for the resolved version</td>
+        </tr>
+        <tr>
+          <td class="prop-name">repolex:githubLink</td>
+          <td>repolex:Dependency</td>
+          <td>xsd:anyURI</td>
+          <td class="prop-desc">Full GitHub URL to the repository</td>
+        </tr>
+        <tr>
+          <td class="prop-name">repolex:githubOrg</td>
+          <td>repolex:Dependency</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">GitHub organization or user name hosting the dependency</td>
+        </tr>
+        <tr>
+          <td class="prop-name">repolex:githubRepo</td>
+          <td>repolex:Dependency</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">GitHub repository name</td>
+        </tr>
+        <tr>
+          <td class="prop-name">repolex:githubTag</td>
+          <td>repolex:Dependency</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">Git tag corresponding to the resolved package version</td>
+        </tr>
+        <tr>
+          <td class="prop-name">repolex:githubUri</td>
+          <td>repolex:File</td>
+          <td>xsd:anyURI</td>
+          <td class="prop-desc">GitHub web URL for viewing this file</td>
+        </tr>
+        <tr>
+          <td class="prop-name">repolex:graphFilePath</td>
+          <td>repolex:GraphFile</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">Relative path to the .nq.gz file within the storage repo.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">repolex:graphFileSize</td>
+          <td>repolex:GraphFile</td>
+          <td>xsd:integer</td>
+          <td class="prop-desc">Size of the .nq.gz file in bytes.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">repolex:graphType</td>
+          <td>repolex:GraphFile</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">Type of graph: &#x27;ast&#x27;, &#x27;lsp&#x27;, &#x27;repolex&#x27;, &#x27;dep&#x27;, &#x27;filetree&#x27;, &#x27;commit&#x27;, &#x27;branch&#x27;, &#x27;tag&#x27;, &#x27;issue&#x27;, &#x27;pr&#x27;.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">repolex:language</td>
+          <td>—</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">Programming language (e.g., &#x27;python&#x27;, &#x27;javascript&#x27;, &#x27;rust&#x27;)</td>
+        </tr>
+        <tr>
+          <td class="prop-name">repolex:mimeType</td>
+          <td>repolex:File</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">MIME type of the file (e.g., &#x27;text/x-python&#x27;)</td>
+        </tr>
+        <tr>
+          <td class="prop-name">repolex:packageEcosystem</td>
+          <td>repolex:Dependency</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">The package ecosystem/registry (e.g., &#x27;PYPI&#x27;, &#x27;NPM&#x27;, &#x27;MAVEN&#x27;)</td>
+        </tr>
+        <tr>
+          <td class="prop-name">repolex:packageName</td>
+          <td>repolex:Dependency</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">The package name as it appears in the registry (e.g., &#x27;requests&#x27;, &#x27;express&#x27;)</td>
+        </tr>
+        <tr>
+          <td class="prop-name">repolex:packageVersion</td>
+          <td>repolex:Dependency</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">The package version as declared in the dependency specification (e.g., &#x27;2.28.0&#x27;, &#x27;^1.0.0&#x27;)</td>
+        </tr>
+        <tr>
+          <td class="prop-name">repolex:parseStatus</td>
+          <td>git:Commit</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">Status of the parse for this commit: &#x27;parsed&#x27;, &#x27;failed&#x27;, or &#x27;pending&#x27;.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">repolex:parsedAt</td>
+          <td>git:Commit</td>
+          <td>xsd:dateTime</td>
+          <td class="prop-desc">Datetime when this commit was parsed by repolex.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">repolex:parserVersion</td>
+          <td>git:Commit</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">Version of the repolex parser that produced this parse. Used for tracking which parser version generated which data.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">repolex:storageRepo</td>
+          <td>gh:Repository</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">GitHub storage repository where parsed data is stored (e.g., &#x27;repolex-forx/TopQuadrant--shacl&#x27;). Written by forx.</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </main>
+  <footer>
+    Auto-generated from <code>ontology_src/repolex.ttl</code>
+    · <a href="https://repolex.ai">repolex.ai</a>
+    · 2026-03-24
+  </footer>
+</body>
+</html>

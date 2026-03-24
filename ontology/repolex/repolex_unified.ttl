@@ -292,49 +292,43 @@ This field is only visible to organization owners or members of a team with the 
 
 ns1:allowAutoMerge a owl:DatatypeProperty ;
     rdfs:label "allowAutoMerge" ;
-    rdfs:comment "Whether to allow Auto-merge to be used on pull requests." ;
     rdfs:domain ns1:Repository ;
     rdfs:range xsd:boolean ;
     ns1:openApiPropertyName "allow_auto_merge" .
 
 ns1:allowForking a owl:DatatypeProperty ;
     rdfs:label "allowForking" ;
-    rdfs:comment "Whether to allow forking this repo" ;
     rdfs:domain ns1:Repository ;
     rdfs:range xsd:boolean ;
     ns1:openApiPropertyName "allow_forking" .
 
 ns1:allowMergeCommit a owl:DatatypeProperty ;
     rdfs:label "allowMergeCommit" ;
-    rdfs:comment "Whether to allow merge commits for pull requests." ;
     rdfs:domain ns1:Repository ;
     rdfs:range xsd:boolean ;
     ns1:openApiPropertyName "allow_merge_commit" .
 
 ns1:allowRebaseMerge a owl:DatatypeProperty ;
     rdfs:label "allowRebaseMerge" ;
-    rdfs:comment "Whether to allow rebase merges for pull requests." ;
     rdfs:domain ns1:Repository ;
     rdfs:range xsd:boolean ;
     ns1:openApiPropertyName "allow_rebase_merge" .
 
 ns1:allowSquashMerge a owl:DatatypeProperty ;
     rdfs:label "allowSquashMerge" ;
-    rdfs:comment "Whether to allow squash merges for pull requests." ;
     rdfs:domain ns1:Repository ;
     rdfs:range xsd:boolean ;
     ns1:openApiPropertyName "allow_squash_merge" .
 
 ns1:allowUpdateBranch a owl:DatatypeProperty ;
     rdfs:label "allowUpdateBranch" ;
-    rdfs:comment "Whether or not a pull request head branch that is behind its base branch can always be updated even if it is not required to be up to date before merging." ;
     rdfs:domain ns1:Repository ;
     rdfs:range xsd:boolean ;
     ns1:openApiPropertyName "allow_update_branch" .
 
 ns1:anonymousAccessEnabled a owl:DatatypeProperty ;
     rdfs:label "anonymousAccessEnabled" ;
-    rdfs:comment "Whether anonymous git access is enabled for this repository" ;
+    rdfs:comment "Whether anonymous git access is allowed." ;
     rdfs:domain ns1:Repository ;
     rdfs:range xsd:boolean ;
     ns1:openApiPropertyName "anonymous_access_enabled" .
@@ -355,7 +349,6 @@ ns1:answerHtmlUrl a owl:DatatypeProperty ;
 
 ns1:archived a owl:DatatypeProperty ;
     rdfs:label "archived" ;
-    rdfs:comment "Whether the repository is archived." ;
     rdfs:domain ns1:Repository ;
     rdfs:range xsd:boolean ;
     ns1:openApiPropertyName "archived" ;
@@ -650,7 +643,6 @@ ns1:default a owl:DatatypeProperty ;
 
 ns1:defaultBranch a owl:DatatypeProperty ;
     rdfs:label "defaultBranch" ;
-    rdfs:comment "The default branch of the repository." ;
     rdfs:domain ns1:Repository ;
     rdfs:range xsd:string ;
     ns1:openApiPropertyName "default_branch" ;
@@ -671,7 +663,6 @@ ns1:defaultRepositoryPermission a owl:DatatypeProperty ;
 
 ns1:deleteBranchOnMerge a owl:DatatypeProperty ;
     rdfs:label "deleteBranchOnMerge" ;
-    rdfs:comment "Whether to delete head branches when pull requests are merged" ;
     rdfs:domain ns1:Repository ;
     rdfs:range xsd:boolean ;
     ns1:openApiPropertyName "delete_branch_on_merge" .
@@ -958,21 +949,19 @@ ns1:gravatarId a owl:DatatypeProperty ;
 
 ns1:hasCommitComments a owl:DatatypeProperty ;
     rdfs:label "hasCommitComments" ;
-    rdfs:comment "Whether commit comments are enabled." ;
     rdfs:domain ns1:Repository ;
     rdfs:range xsd:boolean ;
     ns1:openApiPropertyName "has_commit_comments" .
 
 ns1:hasDiscussions a owl:DatatypeProperty ;
     rdfs:label "hasDiscussions" ;
-    rdfs:comment "Whether discussions are enabled." ;
     rdfs:domain ns1:Repository ;
     rdfs:range xsd:boolean ;
-    ns1:openApiPropertyName "has_discussions" .
+    ns1:openApiPropertyName "has_discussions" ;
+    ns1:required true .
 
 ns1:hasIssues a owl:DatatypeProperty ;
     rdfs:label "hasIssues" ;
-    rdfs:comment "Whether issues are enabled." ;
     rdfs:domain ns1:Repository ;
     rdfs:range xsd:boolean ;
     ns1:openApiPropertyName "has_issues" ;
@@ -1001,7 +990,6 @@ ns1:hasPages a owl:DatatypeProperty ;
 
 ns1:hasProjects a owl:DatatypeProperty ;
     rdfs:label "hasProjects" ;
-    rdfs:comment "Whether projects are enabled." ;
     rdfs:domain ns1:Repository ;
     rdfs:range xsd:boolean ;
     ns1:openApiPropertyName "has_projects" ;
@@ -1009,7 +997,6 @@ ns1:hasProjects a owl:DatatypeProperty ;
 
 ns1:hasPullRequests a owl:DatatypeProperty ;
     rdfs:label "hasPullRequests" ;
-    rdfs:comment "Whether pull requests are enabled." ;
     rdfs:domain ns1:Repository ;
     rdfs:range xsd:boolean ;
     ns1:openApiPropertyName "has_pull_requests" .
@@ -1023,7 +1010,6 @@ ns1:hasRepositoryProjects a owl:DatatypeProperty ;
 
 ns1:hasWiki a owl:DatatypeProperty ;
     rdfs:label "hasWiki" ;
-    rdfs:comment "Whether the wiki is enabled." ;
     rdfs:domain ns1:Repository ;
     rdfs:range xsd:boolean ;
     ns1:openApiPropertyName "has_wiki" ;
@@ -1080,7 +1066,6 @@ ns1:id a owl:DatatypeProperty ;
     rdfs:comment "The ID of the pull request review comment.",
         "Unique identifier for the label.",
         "Unique identifier of the issue comment",
-        "Unique identifier of the repository",
         "Unique identifier of the review",
         "Unique identifier of the team" ;
     rdfs:domain ns1:Discussion,
@@ -1132,7 +1117,6 @@ ns1:isBase64Encoded a owl:DatatypeProperty ;
 
 ns1:isTemplate a owl:DatatypeProperty ;
     rdfs:label "isTemplate" ;
-    rdfs:comment "Whether this repository acts as a template that can be used to generate new repositories." ;
     rdfs:domain ns1:Repository ;
     rdfs:range xsd:boolean ;
     ns1:openApiPropertyName "is_template" .
@@ -1232,6 +1216,12 @@ ns1:maintainerCanModify a owl:DatatypeProperty ;
     rdfs:range xsd:boolean ;
     ns1:openApiPropertyName "maintainer_can_modify" ;
     ns1:required true .
+
+ns1:masterBranch a owl:DatatypeProperty ;
+    rdfs:label "masterBranch" ;
+    rdfs:domain ns1:Repository ;
+    rdfs:range xsd:string ;
+    ns1:openApiPropertyName "master_branch" .
 
 ns1:membersAllowedRepositoryCreationType a owl:DatatypeProperty ;
     rdfs:label "membersAllowedRepositoryCreationType" ;
@@ -1351,8 +1341,8 @@ ns1:mergeCommitTitle a owl:DatatypeProperty ;
     rdfs:label "mergeCommitTitle" ;
     rdfs:comment """The default value for a merge commit title.
 
-- `PR_TITLE` - default to the pull request's title.
-- `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).""" ;
+  - `PR_TITLE` - default to the pull request's title.
+  - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).""" ;
     rdfs:domain ns1:Repository ;
     rdfs:range xsd:string ;
     ns1:openApiPropertyName "merge_commit_title" .
@@ -1409,8 +1399,7 @@ ns1:name a owl:DatatypeProperty ;
     rdfs:label "name" ;
     rdfs:comment "Name of the team",
         "The file name of the asset.",
-        "The name of the label.",
-        "The name of the repository." ;
+        "The name of the label." ;
     rdfs:domain ns1:Label,
         ns1:License,
         ns1:Organization,
@@ -1422,6 +1411,13 @@ ns1:name a owl:DatatypeProperty ;
         ns1:User ;
     rdfs:range xsd:string ;
     ns1:openApiPropertyName "name" ;
+    ns1:required true .
+
+ns1:networkCount a owl:DatatypeProperty ;
+    rdfs:label "networkCount" ;
+    rdfs:domain ns1:Repository ;
+    rdfs:range xsd:integer ;
+    ns1:openApiPropertyName "network_count" ;
     ns1:required true .
 
 ns1:notificationSetting a owl:DatatypeProperty ;
@@ -1476,6 +1472,12 @@ ns1:openIssuesCount a owl:DatatypeProperty ;
     rdfs:range xsd:integer ;
     ns1:openApiPropertyName "open_issues_count" ;
     ns1:required true .
+
+ns1:organization a owl:ObjectProperty ;
+    rdfs:label "organization" ;
+    rdfs:domain ns1:Repository ;
+    rdfs:range ns1:User ;
+    ns1:openApiPropertyName "organization" .
 
 ns1:organizationId a owl:DatatypeProperty ;
     rdfs:label "organizationId" ;
@@ -1532,6 +1534,12 @@ ns1:owner a owl:ObjectProperty ;
     rdfs:domain ns1:Repository ;
     rdfs:range ns1:User ;
     ns1:openApiPropertyName "owner" .
+
+ns1:parent a owl:ObjectProperty ;
+    rdfs:label "parent" ;
+    rdfs:domain ns1:Repository ;
+    rdfs:range ns1:Repository ;
+    ns1:openApiPropertyName "parent" .
 
 ns1:parentIssueUrl a owl:DatatypeProperty ;
     rdfs:label "parentIssueUrl" ;
@@ -1595,7 +1603,6 @@ ns1:privacy a owl:DatatypeProperty ;
 
 ns1:private a owl:DatatypeProperty ;
     rdfs:label "private" ;
-    rdfs:comment "Whether the repository is private or public." ;
     rdfs:domain ns1:Repository ;
     rdfs:range xsd:boolean ;
     ns1:openApiPropertyName "private" ;
@@ -1905,6 +1912,12 @@ ns1:slug a owl:DatatypeProperty ;
     ns1:openApiPropertyName "slug" ;
     ns1:required true .
 
+ns1:source a owl:ObjectProperty ;
+    rdfs:label "source" ;
+    rdfs:domain ns1:Repository ;
+    rdfs:range ns1:Repository ;
+    ns1:openApiPropertyName "source" .
+
 ns1:sourceCodeLocation a owl:DatatypeProperty ;
     rdfs:label "sourceCodeLocation" ;
     rdfs:comment "The URL of the advisory's source code." ;
@@ -1950,8 +1963,7 @@ ns1:stargazersCount a owl:DatatypeProperty ;
 
 ns1:starredAt a owl:DatatypeProperty ;
     rdfs:label "starredAt" ;
-    rdfs:domain ns1:Repository,
-        ns1:User ;
+    rdfs:domain ns1:User ;
     rdfs:range xsd:string ;
     ns1:openApiPropertyName "starred_at" .
 
@@ -2017,6 +2029,13 @@ ns1:submittedAt a owl:DatatypeProperty ;
     rdfs:range xsd:dateTime ;
     ns1:openApiPropertyName "submitted_at" .
 
+ns1:subscribersCount a owl:DatatypeProperty ;
+    rdfs:label "subscribersCount" ;
+    rdfs:domain ns1:Repository ;
+    rdfs:range xsd:integer ;
+    ns1:openApiPropertyName "subscribers_count" ;
+    ns1:required true .
+
 ns1:subscribersUrl a owl:DatatypeProperty ;
     rdfs:label "subscribersUrl" ;
     rdfs:domain ns1:Repository ;
@@ -2061,6 +2080,12 @@ ns1:tempCloneToken a owl:DatatypeProperty ;
     rdfs:domain ns1:Repository ;
     rdfs:range xsd:string ;
     ns1:openApiPropertyName "temp_clone_token" .
+
+ns1:templateRepository a owl:ObjectProperty ;
+    rdfs:label "templateRepository" ;
+    rdfs:domain ns1:Repository ;
+    rdfs:range ns1:Repository ;
+    ns1:openApiPropertyName "template_repository" .
 
 ns1:timelineUrl a owl:DatatypeProperty ;
     rdfs:label "timelineUrl" ;
@@ -2222,7 +2247,6 @@ ns1:watchersCount a owl:DatatypeProperty ;
 
 ns1:webCommitSignoffRequired a owl:DatatypeProperty ;
     rdfs:label "webCommitSignoffRequired" ;
-    rdfs:comment "Whether to require contributors to sign off on web-based commits" ;
     rdfs:domain ns1:Organization,
         ns1:Repository ;
     rdfs:range xsd:boolean ;
@@ -107201,7 +107225,8 @@ scala:ascription_expression a owl:Class ;
 scala:assignment_expression a owl:Class ;
     rdfs:label "assignment_expression" ;
     rdfs:isDefinedBy scala: ;
-    rdfs:subClassOf ast:Node ;
+    rdfs:subClassOf ast:Node,
+        ast-x:Assignment ;
     scala:isSupertype true ;
     scala:nodeTypeId 262 .
 
@@ -107221,7 +107246,8 @@ scala:binding a owl:Class ;
 scala:bindings a owl:Class ;
     rdfs:label "bindings" ;
     rdfs:isDefinedBy scala: ;
-    rdfs:subClassOf ast:Node ;
+    rdfs:subClassOf ast:Node,
+        ast-x:ParameterList ;
     scala:isSupertype true ;
     scala:nodeTypeId 257 .
 
@@ -107235,7 +107261,8 @@ scala:block a owl:Class ;
 scala:block_comment a owl:Class ;
     rdfs:label "block_comment" ;
     rdfs:isDefinedBy scala: ;
-    rdfs:subClassOf ast:Node ;
+    rdfs:subClassOf ast:Node,
+        ast-x:Comment ;
     scala:isSupertype true ;
     scala:nodeTypeId 306 .
 
@@ -107255,7 +107282,8 @@ scala:boolean_literal a owl:Class ;
 scala:call_expression a owl:Class ;
     rdfs:label "call_expression" ;
     rdfs:isDefinedBy scala: ;
-    rdfs:subClassOf ast:Node ;
+    rdfs:subClassOf ast:Node,
+        ast-x:CallSite ;
     scala:isSupertype true ;
     scala:nodeTypeId 264 .
 
@@ -107290,7 +107318,8 @@ scala:case_clause a owl:Class ;
 scala:catch_clause a owl:Class ;
     rdfs:label "catch_clause" ;
     rdfs:isDefinedBy scala: ;
-    rdfs:subClassOf ast:Node ;
+    rdfs:subClassOf ast:Node,
+        ast-x:CatchClause ;
     scala:isSupertype true ;
     scala:nodeTypeId 253 .
 
@@ -107304,21 +107333,24 @@ scala:character_literal a owl:Class ;
 scala:class_definition a owl:Class ;
     rdfs:label "class_definition" ;
     rdfs:isDefinedBy scala: ;
-    rdfs:subClassOf ast:Node ;
+    rdfs:subClassOf ast:Node,
+        ast-x:ClassDefinition ;
     scala:isSupertype true ;
     scala:nodeTypeId 140 .
 
 scala:class_parameter a owl:Class ;
     rdfs:label "class_parameter" ;
     rdfs:isDefinedBy scala: ;
-    rdfs:subClassOf ast:Node ;
+    rdfs:subClassOf ast:Node,
+        ast-x:Parameter ;
     scala:isSupertype true ;
     scala:nodeTypeId 201 .
 
 scala:class_parameters a owl:Class ;
     rdfs:label "class_parameters" ;
     rdfs:isDefinedBy scala: ;
-    rdfs:subClassOf ast:Node ;
+    rdfs:subClassOf ast:Node,
+        ast-x:ParameterList ;
     scala:isSupertype true ;
     scala:nodeTypeId 198 .
 
@@ -107332,7 +107364,8 @@ scala:colon_argument a owl:Class ;
 scala:comment a owl:Class ;
     rdfs:label "comment" ;
     rdfs:isDefinedBy scala: ;
-    rdfs:subClassOf ast:Node ;
+    rdfs:subClassOf ast:Node,
+        ast-x:Comment ;
     scala:isSupertype true ;
     scala:nodeTypeId 95,
         304 .
@@ -107388,7 +107421,8 @@ scala:derives_clause a owl:Class ;
 scala:do_while_expression a owl:Class ;
     rdfs:label "do_while_expression" ;
     rdfs:isDefinedBy scala: ;
-    rdfs:subClassOf ast:Node ;
+    rdfs:subClassOf ast:Node,
+        ast-x:WhileStatement ;
     scala:isSupertype true ;
     scala:nodeTypeId 299 .
 
@@ -107409,7 +107443,8 @@ scala:enum_case_definitions a owl:Class ;
 scala:enum_definition a owl:Class ;
     rdfs:label "enum_definition" ;
     rdfs:isDefinedBy scala: ;
-    rdfs:subClassOf ast:Node ;
+    rdfs:subClassOf ast:Node,
+        ast-x:ClassDefinition ;
     scala:isSupertype true ;
     scala:nodeTypeId 120 .
 
@@ -107452,7 +107487,8 @@ scala:export_declaration a owl:Class ;
 scala:extends_clause a owl:Class ;
     rdfs:label "extends_clause" ;
     rdfs:isDefinedBy scala: ;
-    rdfs:subClassOf ast:Node ;
+    rdfs:subClassOf ast:Node,
+        ast-x:ExtendsClause ;
     scala:isSupertype true ;
     scala:nodeTypeId 196 .
 
@@ -107649,7 +107685,8 @@ scala:floating_point_literal a owl:Class ;
 scala:for_expression a owl:Class ;
     rdfs:label "for_expression" ;
     rdfs:isDefinedBy scala: ;
-    rdfs:subClassOf ast:Node ;
+    rdfs:subClassOf ast:Node,
+        ast-x:ForStatement ;
     scala:isSupertype true ;
     scala:nodeTypeId 300 .
 
@@ -107669,14 +107706,16 @@ scala:function a owl:DatatypeProperty ;
 scala:function_declaration a owl:Class ;
     rdfs:label "function_declaration" ;
     rdfs:isDefinedBy scala: ;
-    rdfs:subClassOf ast:Node ;
+    rdfs:subClassOf ast:Node,
+        ast-x:FunctionDefinition ;
     scala:isSupertype true ;
     scala:nodeTypeId 175 .
 
 scala:function_definition a owl:Class ;
     rdfs:label "function_definition" ;
     rdfs:isDefinedBy scala: ;
-    rdfs:subClassOf ast:Node ;
+    rdfs:subClassOf ast:Node,
+        ast-x:FunctionDefinition ;
     scala:isSupertype true ;
     scala:nodeTypeId 174 .
 
@@ -107690,7 +107729,8 @@ scala:function_type a owl:Class ;
 scala:generic_function a owl:Class ;
     rdfs:label "generic_function" ;
     rdfs:isDefinedBy scala: ;
-    rdfs:subClassOf ast:Node ;
+    rdfs:subClassOf ast:Node,
+        ast-x:CallSite ;
     scala:isSupertype true ;
     scala:nodeTypeId 263 .
 
@@ -107748,14 +107788,16 @@ scala:identifiers a owl:Class ;
 scala:if_expression a owl:Class ;
     rdfs:label "if_expression" ;
     rdfs:isDefinedBy scala: ;
-    rdfs:subClassOf ast:Node ;
+    rdfs:subClassOf ast:Node,
+        ast-x:IfStatement ;
     scala:isSupertype true ;
     scala:nodeTypeId 249 .
 
 scala:import_declaration a owl:Class ;
     rdfs:label "import_declaration" ;
     rdfs:isDefinedBy scala: ;
-    rdfs:subClassOf ast:Node ;
+    rdfs:subClassOf ast:Node,
+        ast-x:ImportStatement ;
     scala:isSupertype true ;
     scala:nodeTypeId 130 .
 
@@ -107872,7 +107914,8 @@ scala:isTerminalField a owl:AnnotationProperty ;
 scala:lambda_expression a owl:Class ;
     rdfs:label "lambda_expression" ;
     rdfs:isDefinedBy scala: ;
-    rdfs:subClassOf ast:Node ;
+    rdfs:subClassOf ast:Node,
+        ast-x:FunctionDefinition ;
     scala:isSupertype true ;
     scala:nodeTypeId 248 .
 
@@ -107923,7 +107966,8 @@ scala:macro_body a owl:Class ;
 scala:match_expression a owl:Class ;
     rdfs:label "match_expression" ;
     rdfs:isDefinedBy scala: ;
-    rdfs:subClassOf ast:Node ;
+    rdfs:subClassOf ast:Node,
+        ast-x:SwitchStatement ;
     scala:isSupertype true ;
     scala:nodeTypeId 251 .
 
@@ -108009,7 +108053,8 @@ scala:null_literal a owl:Class ;
 scala:object_definition a owl:Class ;
     rdfs:label "object_definition" ;
     rdfs:isDefinedBy scala: ;
-    rdfs:subClassOf ast:Node ;
+    rdfs:subClassOf ast:Node,
+        ast-x:ClassDefinition ;
     scala:isSupertype true ;
     scala:nodeTypeId 138 .
 
@@ -108064,7 +108109,8 @@ scala:package_object a owl:Class ;
 scala:parameter a owl:Class ;
     rdfs:label "parameter" ;
     rdfs:isDefinedBy scala: ;
-    rdfs:subClassOf ast:Node ;
+    rdfs:subClassOf ast:Node,
+        ast-x:Parameter ;
     scala:isSupertype true ;
     scala:nodeTypeId 202 .
 
@@ -108081,7 +108127,8 @@ scala:parameters a owl:Class,
         "parameters (literal)" ;
     rdfs:comment "Literal value for parameters field when it contains a terminal node" ;
     rdfs:isDefinedBy scala: ;
-    rdfs:subClassOf ast:Node ;
+    rdfs:subClassOf ast:Node,
+        ast-x:ParameterList ;
     scala:fieldId 23 ;
     scala:isSupertype true ;
     scala:isTerminalField true ;
@@ -108152,7 +108199,8 @@ scala:repeated_parameter_type a owl:Class ;
 scala:return_expression a owl:Class ;
     rdfs:label "return_expression" ;
     rdfs:isDefinedBy scala: ;
-    rdfs:subClassOf ast:Node ;
+    rdfs:subClassOf ast:Node,
+        ast-x:ReturnStatement ;
     scala:isSupertype true ;
     scala:nodeTypeId 296 .
 
@@ -108234,7 +108282,8 @@ scala:template_body a owl:Class ;
 scala:throw_expression a owl:Class ;
     rdfs:label "throw_expression" ;
     rdfs:isDefinedBy scala: ;
-    rdfs:subClassOf ast:Node ;
+    rdfs:subClassOf ast:Node,
+        ast-x:ThrowStatement ;
     scala:isSupertype true ;
     scala:nodeTypeId 297 .
 
@@ -108248,7 +108297,8 @@ scala:tracked_modifier a owl:Class ;
 scala:trait_definition a owl:Class ;
     rdfs:label "trait_definition" ;
     rdfs:isDefinedBy scala: ;
-    rdfs:subClassOf ast:Node ;
+    rdfs:subClassOf ast:Node,
+        ast-x:ClassDefinition ;
     scala:isSupertype true ;
     scala:nodeTypeId 144 .
 
@@ -108262,7 +108312,8 @@ scala:transparent_modifier a owl:Class ;
 scala:try_expression a owl:Class ;
     rdfs:label "try_expression" ;
     rdfs:isDefinedBy scala: ;
-    rdfs:subClassOf ast:Node ;
+    rdfs:subClassOf ast:Node,
+        ast-x:TryStatement ;
     scala:isSupertype true ;
     scala:nodeTypeId 252 .
 
@@ -108380,14 +108431,16 @@ scala:using_directive_value a owl:Class ;
 scala:val_declaration a owl:Class ;
     rdfs:label "val_declaration" ;
     rdfs:isDefinedBy scala: ;
-    rdfs:subClassOf ast:Node ;
+    rdfs:subClassOf ast:Node,
+        ast-x:VariableDeclaration ;
     scala:isSupertype true ;
     scala:nodeTypeId 167 .
 
 scala:val_definition a owl:Class ;
     rdfs:label "val_definition" ;
     rdfs:isDefinedBy scala: ;
-    rdfs:subClassOf ast:Node ;
+    rdfs:subClassOf ast:Node,
+        ast-x:VariableDeclaration ;
     scala:isSupertype true ;
     scala:nodeTypeId 166 .
 
@@ -108400,14 +108453,16 @@ scala:value a owl:DatatypeProperty ;
 scala:var_declaration a owl:Class ;
     rdfs:label "var_declaration" ;
     rdfs:isDefinedBy scala: ;
-    rdfs:subClassOf ast:Node ;
+    rdfs:subClassOf ast:Node,
+        ast-x:VariableDeclaration ;
     scala:isSupertype true ;
     scala:nodeTypeId 169 .
 
 scala:var_definition a owl:Class ;
     rdfs:label "var_definition" ;
     rdfs:isDefinedBy scala: ;
-    rdfs:subClassOf ast:Node ;
+    rdfs:subClassOf ast:Node,
+        ast-x:VariableDeclaration ;
     scala:isSupertype true ;
     scala:nodeTypeId 170 .
 
@@ -108421,7 +108476,8 @@ scala:view_bound a owl:Class ;
 scala:while_expression a owl:Class ;
     rdfs:label "while_expression" ;
     rdfs:isDefinedBy scala: ;
-    rdfs:subClassOf ast:Node ;
+    rdfs:subClassOf ast:Node,
+        ast-x:WhileStatement ;
     scala:isSupertype true ;
     scala:nodeTypeId 298 .
 
@@ -136816,6 +136872,12 @@ ast-x:cyclomaticComplexity a owl:DatatypeProperty ;
     rdfs:comment "McCabe cyclomatic complexity: count of decision points + 1. Higher values indicate more complex control flow. NOT YET IMPLEMENTED. To implement: During AST traversal, count decision point nodes (if_statement, for_statement, while_statement, switch_statement, conditional_expression, boolean operators &&/||) + 1. Language-specific node types map via ast-x:IfStatement, ast-x:ForStatement, etc." ;
     rdfs:range xsd:nonNegativeInteger .
 
+ast-x:docstring a owl:DatatypeProperty ;
+    rdfs:label "docstring" ;
+    rdfs:comment "Documentation text attached to a function, class, or module. Extracted from the first ast-x:Comment child of an ast-x:FunctionDefinition or ast-x:ClassDefinition during parse time. Used for documentation coverage analysis and LLM context." ;
+    rdfs:domain ast:Node ;
+    rdfs:range xsd:string .
+
 ast-x:exceptionHandlerCount a owl:DatatypeProperty ;
     rdfs:label "exception handler count" ;
     rdfs:comment "Count of try/catch blocks in the function. NOT YET IMPLEMENTED. To implement: Count nodes that are subclasses of ast-x:TryStatement within function body." ;
@@ -136902,6 +136964,12 @@ repolex:blobUri a owl:DatatypeProperty ;
     rdfs:comment "URI reference to the blob resource" ;
     rdfs:domain repolex:File ;
     rdfs:range xsd:anyURI .
+
+repolex:dependencyRepo a owl:ObjectProperty ;
+    rdfs:label "dependency repo" ;
+    rdfs:comment "A repository that this commit depends on. Resolved from package manifest (requirements.txt, pom.xml, etc.) via package registry to GitHub repo. Used in manifest graphs to build the cross-repo dependency web." ;
+    rdfs:domain git:Commit ;
+    rdfs:range ns1:Repository .
 
 repolex:fileName a owl:DatatypeProperty ;
     rdfs:label "file name" ;
@@ -136993,6 +137061,30 @@ repolex:githubUri a owl:DatatypeProperty ;
     rdfs:comment "GitHub web URL for viewing this file" ;
     rdfs:domain repolex:File ;
     rdfs:range xsd:anyURI .
+
+repolex:graphFile a owl:ObjectProperty ;
+    rdfs:label "graph file" ;
+    rdfs:comment "Links a commit to one of its output graph files (AST, LSP, repolex, dep, filetree, commit, branch, tag)." ;
+    rdfs:domain git:Commit ;
+    rdfs:range repolex:GraphFile .
+
+repolex:graphFilePath a owl:DatatypeProperty ;
+    rdfs:label "graph file path" ;
+    rdfs:comment "Relative path to the .nq.gz file within the storage repo." ;
+    rdfs:domain repolex:GraphFile ;
+    rdfs:range xsd:string .
+
+repolex:graphFileSize a owl:DatatypeProperty ;
+    rdfs:label "graph file size" ;
+    rdfs:comment "Size of the .nq.gz file in bytes." ;
+    rdfs:domain repolex:GraphFile ;
+    rdfs:range xsd:integer .
+
+repolex:graphType a owl:DatatypeProperty ;
+    rdfs:label "graph type" ;
+    rdfs:comment "Type of graph: 'ast', 'lsp', 'repolex', 'dep', 'filetree', 'commit', 'branch', 'tag', 'issue', 'pr'." ;
+    rdfs:domain repolex:GraphFile ;
+    rdfs:range xsd:string .
 
 repolex:language a owl:DatatypeProperty ;
     rdfs:label "language" ;
@@ -137197,6 +137289,24 @@ repolex:packageVersion a owl:DatatypeProperty ;
     rdfs:domain repolex:Dependency ;
     rdfs:range xsd:string .
 
+repolex:parseStatus a owl:DatatypeProperty ;
+    rdfs:label "parse status" ;
+    rdfs:comment "Status of the parse for this commit: 'parsed', 'failed', or 'pending'." ;
+    rdfs:domain git:Commit ;
+    rdfs:range xsd:string .
+
+repolex:parsedAt a owl:DatatypeProperty ;
+    rdfs:label "parsed at" ;
+    rdfs:comment "Datetime when this commit was parsed by repolex." ;
+    rdfs:domain git:Commit ;
+    rdfs:range xsd:dateTime .
+
+repolex:parserVersion a owl:DatatypeProperty ;
+    rdfs:label "parser version" ;
+    rdfs:comment "Version of the repolex parser that produced this parse. Used for tracking which parser version generated which data." ;
+    rdfs:domain git:Commit ;
+    rdfs:range xsd:string .
+
 repolex:reasoning a owl:Ontology ;
     rdfs:label "Reasoning Ontology" ;
     rdfs:comment "OWL 2 RL inference rules for the repolex knowledge graph. Defines inverse, transitive, and chain properties that enable automatic inference of implicit relationships. Requires a reasoner (owlrl) to materialize." ;
@@ -137207,6 +137317,12 @@ repolex:repolex_unified.ttl a owl:Ontology ;
     rdfs:comment "Merged ontology generated from repolex_link.ttl. Contains tree-sitter core + 173 language ontologies, GitPython, multilspy, and the repolex cross-language mapping." ;
     owl:versionInfo "1.0" .
 
+repolex:repository a owl:ObjectProperty ;
+    rdfs:label "repository" ;
+    rdfs:comment "Back-link from a commit to its repository. Convenience property for navigating from commit manifest to repo manifest." ;
+    rdfs:domain git:Commit ;
+    rdfs:range ns1:Repository .
+
 repolex:root a owl:ObjectProperty ;
     rdfs:label "root" ;
     rdfs:comment "Points to the root AST node of this blob (typically module or compilation_unit)" ;
@@ -137216,6 +137332,18 @@ repolex:semantic-categories a owl:Ontology ;
     rdfs:label "Semantic Categories Ontology" ;
     rdfs:comment "Top-level semantic categories for cross-language code analysis queries. Groups AST, LSP, and computed properties into intuitive query-time buckets." ;
     owl:versionInfo "1.0" .
+
+repolex:storageRepo a owl:DatatypeProperty ;
+    rdfs:label "storage repo" ;
+    rdfs:comment "GitHub storage repository where parsed data is stored (e.g., 'repolex-forx/TopQuadrant--shacl'). Written by forx." ;
+    rdfs:domain ns1:Repository ;
+    rdfs:range xsd:string .
+
+repolex:trackedCommit a owl:ObjectProperty ;
+    rdfs:label "tracked commit" ;
+    rdfs:comment "Links a repository to a commit that is tracked for parsing (parsed, pending, or failed). Written by forx to the repo manifest." ;
+    rdfs:domain ns1:Repository ;
+    rdfs:range git:Commit .
 
 repolex:usesOntology a owl:ObjectProperty ;
     rdfs:label "uses ontology" ;
@@ -137346,6 +137474,10 @@ lsp:Position a owl:Class ;
 ast:Point a owl:Class ;
     rdfs:label "Point" ;
     rdfs:comment "A position in source code, with row and column." .
+
+repolex:GraphFile a owl:Class ;
+    rdfs:label "Graph File" ;
+    rdfs:comment "A serialized RDF graph file produced by the parser. Contains the path and size of a .nq.gz file in the storage repo." .
 
 ast-x:ImplementsClause a owl:Class ;
     rdfs:label "implements clause" ;
@@ -137482,16 +137614,6 @@ repolex:File a owl:Class ;
     rdfs:label "File" ;
     rdfs:comment "A file in a repository" .
 
-ast-x:ExtendsClause a owl:Class ;
-    rdfs:label "extends clause" ;
-    rdfs:comment "Superclass/parent class declaration. Single inheritance (Java, Ruby) or primary base class (C++, Python). Used to identify class hierarchies." ;
-    rdfs:subClassOf sem:Inheritance .
-
-ast-x:ThrowStatement a owl:Class ;
-    rdfs:label "throw statement" ;
-    rdfs:comment "Raise an exception: throw, raise." ;
-    rdfs:subClassOf sem:Exception .
-
 ns1:AuthorAssociation a owl:Class ;
     rdfs:label "AuthorAssociation" ;
     rdfs:comment "How the author is associated with the repository." .
@@ -137540,6 +137662,16 @@ repolex:Dependency a owl:Class ;
     rdfs:label "Dependency" ;
     rdfs:comment "An external dependency resolved from a package registry (PyPI, NPM, etc.) to a specific GitHub repository and commit." .
 
+ast-x:ExtendsClause a owl:Class ;
+    rdfs:label "extends clause" ;
+    rdfs:comment "Superclass/parent class declaration. Single inheritance (Java, Ruby) or primary base class (C++, Python). Used to identify class hierarchies." ;
+    rdfs:subClassOf sem:Inheritance .
+
+ast-x:ThrowStatement a owl:Class ;
+    rdfs:label "throw statement" ;
+    rdfs:comment "Raise an exception: throw, raise." ;
+    rdfs:subClassOf sem:Exception .
+
 git:Reference a owl:Class ;
     rdfs:label "Reference" ;
     rdfs:comment "A git reference (ref). Includes branches, tags, HEAD, and remote-tracking branches. References are mutable pointers to commits." .
@@ -137556,12 +137688,6 @@ properties: a owl:Ontology ;
     properties:fieldCount 1 ;
     properties:languageName "None" ;
     properties:nodeKindCount 37 .
-
-ast-x:VariableDeclaration a owl:Class ;
-    rdfs:label "variable declaration" ;
-    rdfs:comment "Introduces a new variable binding: let, var, const, short_var_declaration (:= in Go)." ;
-    rdfs:subClassOf sem:DataFlow,
-        sem:Declaration .
 
 sem:ControlFlow a owl:Class ;
     rdfs:label "Control Flow" ;
@@ -137584,11 +137710,6 @@ test: a owl:Ontology ;
     test:fieldCount 3 ;
     test:languageName "None" ;
     test:nodeKindCount 29 .
-
-ast-x:CatchClause a owl:Class ;
-    rdfs:label "catch clause" ;
-    rdfs:comment "Exception handler: catch, except, rescue." ;
-    rdfs:subClassOf sem:Exception .
 
 ns1:IssueComment a owl:Class ;
     rdfs:label "IssueComment" ;
@@ -137613,14 +137734,14 @@ pymanifest: a owl:Ontology ;
     pymanifest:languageName "None" ;
     pymanifest:nodeKindCount 45 .
 
+ast-x:CatchClause a owl:Class ;
+    rdfs:label "catch clause" ;
+    rdfs:comment "Exception handler: catch, except, rescue." ;
+    rdfs:subClassOf sem:Exception .
+
 ast-x:ContinueStatement a owl:Class ;
     rdfs:label "continue statement" ;
     rdfs:comment "Skip to next iteration: continue, next (Ruby), redo (Ruby)." ;
-    rdfs:subClassOf sem:ControlFlow .
-
-ast-x:ReturnStatement a owl:Class ;
-    rdfs:label "return statement" ;
-    rdfs:comment "Exit function with optional value: return, co_return (C++20)." ;
     rdfs:subClassOf sem:ControlFlow .
 
 ns1:Team a owl:Class ;
@@ -137651,10 +137772,10 @@ ast-x:BreakStatement a owl:Class ;
     rdfs:comment "Early exit: break (exits loop or switch), fallthrough (Go)." ;
     rdfs:subClassOf sem:ControlFlow .
 
-ast-x:TryStatement a owl:Class ;
-    rdfs:label "try statement" ;
-    rdfs:comment "Exception handling scope: try, try-with-resources (Java), begin (Ruby)." ;
-    rdfs:subClassOf sem:Exception .
+ast-x:ReturnStatement a owl:Class ;
+    rdfs:label "return statement" ;
+    rdfs:comment "Exit function with optional value: return, co_return (C++20)." ;
+    rdfs:subClassOf sem:ControlFlow .
 
 ns1:ReleaseAsset a owl:Class ;
     rdfs:label "ReleaseAsset" ;
@@ -137674,16 +137795,22 @@ gstlaunch: a owl:Ontology ;
     gstlaunch:languageName "None" ;
     gstlaunch:nodeKindCount 32 .
 
+ast-x:TryStatement a owl:Class ;
+    rdfs:label "try statement" ;
+    rdfs:comment "Exception handling scope: try, try-with-resources (Java), begin (Ruby)." ;
+    rdfs:subClassOf sem:Exception .
+
+ast-x:VariableDeclaration a owl:Class ;
+    rdfs:label "variable declaration" ;
+    rdfs:comment "Introduces a new variable binding: let, var, const, short_var_declaration (:= in Go)." ;
+    rdfs:subClassOf sem:DataFlow,
+        sem:Declaration .
+
 ast-x:Assignment a owl:Class ;
     rdfs:label "assignment" ;
     rdfs:comment "Direct value assignment: x = expr. Includes walrus operator := (Python), Go short_var_declaration." ;
     rdfs:subClassOf sem:DataFlow,
         sem:Mutation .
-
-ast-x:ParameterList a owl:Class ;
-    rdfs:label "parameter list" ;
-    rdfs:comment "Container node holding all parameters in a function/method signature. Use ast-x:parameterIndex on child ast-x:Parameter nodes to track position." ;
-    owl:disjointWith ast-x:Parameter .
 
 sem:Declaration a owl:Class ;
     rdfs:label "Declaration" ;
@@ -137708,23 +137835,6 @@ ungrammar: a owl:Ontology ;
     ungrammar:languageName "None" ;
     ungrammar:nodeKindCount 28 .
 
-ast-x:CallSite a owl:Class ;
-    rdfs:label "call site" ;
-    rdfs:comment "Any function call, method call, or constructor invocation. PRIMARY input for multilspy: each call_site is sent as a DefinitionRequest to resolve the target." .
-
-ast-x:ImportStatement a owl:Class ;
-    rdfs:label "import statement" ;
-    rdfs:comment "Any import, use, require, or include directive. Used by multilspy to resolve module paths and cross-file symbol origins." ;
-    rdfs:subClassOf sem:Import .
-
-git:Commit a owl:Class ;
-    rdfs:label "Commit" ;
-    rdfs:comment "A git commit object. Contains a snapshot (tree), parent commits, author/committer info, and a message." ;
-    rdfs:subClassOf git:Object ;
-    owl:disjointWith git:Blob,
-        git:Tag,
-        git:Tree .
-
 jsdoc: a owl:Ontology ;
     rdfs:label "Jsdoc Grammar Ontology" ;
     rdfs:comment "Tree-sitter grammar ontology for jsdoc" ;
@@ -137734,13 +137844,15 @@ jsdoc: a owl:Ontology ;
     jsdoc:languageName "jsdoc" ;
     jsdoc:nodeKindCount 43 .
 
-ast-x:IfStatement a owl:Class ;
-    rdfs:label "if statement" ;
-    rdfs:comment "Conditional branch: if, elif, unless, guard, if-modifier. Each represents a decision point for cyclomatic complexity." ;
-    rdfs:subClassOf sem:ControlFlow ;
-    owl:disjointWith ast-x:ForStatement,
-        ast-x:SwitchStatement,
-        ast-x:WhileStatement .
+ast-x:ImportStatement a owl:Class ;
+    rdfs:label "import statement" ;
+    rdfs:comment "Any import, use, require, or include directive. Used by multilspy to resolve module paths and cross-file symbol origins." ;
+    rdfs:subClassOf sem:Import .
+
+ast-x:ParameterList a owl:Class ;
+    rdfs:label "parameter list" ;
+    rdfs:comment "Container node holding all parameters in a function/method signature. Use ast-x:parameterIndex on child ast-x:Parameter nodes to track position." ;
+    owl:disjointWith ast-x:Parameter .
 
 ns1:Discussion a owl:Class ;
     rdfs:label "Discussion" ;
@@ -137756,11 +137868,16 @@ gitignore: a owl:Ontology ;
     gitignore:languageName "None" ;
     gitignore:nodeKindCount 51 .
 
-ast-x:ForStatement a owl:Class ;
-    rdfs:label "for statement" ;
-    rdfs:comment "For loop: for-in, for-each, enhanced-for, range-based for. Iterator-driven." ;
+ast-x:CallSite a owl:Class ;
+    rdfs:label "call site" ;
+    rdfs:comment "Any function call, method call, or constructor invocation. PRIMARY input for multilspy: each call_site is sent as a DefinitionRequest to resolve the target." .
+
+ast-x:IfStatement a owl:Class ;
+    rdfs:label "if statement" ;
+    rdfs:comment "Conditional branch: if, elif, unless, guard, if-modifier. Each represents a decision point for cyclomatic complexity." ;
     rdfs:subClassOf sem:ControlFlow ;
-    owl:disjointWith ast-x:SwitchStatement,
+    owl:disjointWith ast-x:ForStatement,
+        ast-x:SwitchStatement,
         ast-x:WhileStatement .
 
 asm: a owl:Ontology ;
@@ -137799,14 +137916,12 @@ query: a owl:Ontology ;
     query:languageName "query" ;
     query:nodeKindCount 50 .
 
-ast-x:Comment a owl:Class ;
-    rdfs:label "comment" ;
-    rdfs:comment "Any comment node in the AST: line comments, block comments, doc comments. Provides context for LLM analysis. Documentation content is available via LSP hover for doc comments." .
-
-ast-x:SwitchStatement a owl:Class ;
-    rdfs:label "switch statement" ;
-    rdfs:comment "Multi-way dispatch: switch, match, case, when." ;
-    rdfs:subClassOf sem:ControlFlow .
+ast-x:ForStatement a owl:Class ;
+    rdfs:label "for statement" ;
+    rdfs:comment "For loop: for-in, for-each, enhanced-for, range-based for. Iterator-driven." ;
+    rdfs:subClassOf sem:ControlFlow ;
+    owl:disjointWith ast-x:SwitchStatement,
+        ast-x:WhileStatement .
 
 ns1:GlobalAdvisory a owl:Class ;
     rdfs:label "GlobalAdvisory" ;
@@ -137858,6 +137973,11 @@ uxntal: a owl:Ontology ;
     uxntal:languageName "None" ;
     uxntal:nodeKindCount 305 .
 
+ast-x:SwitchStatement a owl:Class ;
+    rdfs:label "switch statement" ;
+    rdfs:comment "Multi-way dispatch: switch, match, case, when." ;
+    rdfs:subClassOf sem:ControlFlow .
+
 ns1:Release a owl:Class ;
     rdfs:label "Release" ;
     rdfs:comment "A release." ;
@@ -137899,6 +138019,10 @@ groovy: a owl:Ontology ;
     groovy:languageName "None" ;
     groovy:nodeKindCount 61 .
 
+ast-x:Comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:comment "Any comment node in the AST: line comments, block comments, doc comments. Provides context for LLM analysis. Documentation content is available via LSP hover for doc comments." .
+
 requirements: a owl:Ontology ;
     rdfs:label "Requirements Grammar Ontology" ;
     rdfs:comment "Tree-sitter grammar ontology for requirements" ;
@@ -137935,6 +138059,14 @@ scheme: a owl:Ontology ;
     scheme:languageName "None" ;
     scheme:nodeKindCount 56 .
 
+git:Commit a owl:Class ;
+    rdfs:label "Commit" ;
+    rdfs:comment "A git commit object. Contains a snapshot (tree), parent commits, author/committer info, and a message." ;
+    rdfs:subClassOf git:Object ;
+    owl:disjointWith git:Blob,
+        git:Tag,
+        git:Tree .
+
 chatito: a owl:Ontology ;
     rdfs:label "Chatito Grammar Ontology" ;
     rdfs:comment "Tree-sitter grammar ontology for chatito" ;
@@ -137961,12 +138093,6 @@ udev: a owl:Ontology ;
     udev:fieldCount 1 ;
     udev:languageName "udev" ;
     udev:nodeKindCount 115 .
-
-ast-x:WhileStatement a owl:Class ;
-    rdfs:label "while statement" ;
-    rdfs:comment "Condition-driven loop: while, do-while, loop (Rust), until (Ruby)." ;
-    rdfs:subClassOf sem:ControlFlow ;
-    owl:disjointWith ast-x:SwitchStatement .
 
 ns1:PullRequestReviewComment a owl:Class ;
     rdfs:label "PullRequestReviewComment" ;
@@ -138009,6 +138135,12 @@ prisma: a owl:Ontology ;
     prisma:languageName "None" ;
     prisma:nodeKindCount 83 .
 
+ast-x:WhileStatement a owl:Class ;
+    rdfs:label "while statement" ;
+    rdfs:comment "Condition-driven loop: while, do-while, loop (Rust), until (Ruby)." ;
+    rdfs:subClassOf sem:ControlFlow ;
+    owl:disjointWith ast-x:SwitchStatement .
+
 ns1:Issue a owl:Class ;
     rdfs:label "Issue" ;
     rdfs:comment "Issues are a great way to keep track of tasks, enhancements, and bugs for your projects." ;
@@ -138044,27 +138176,14 @@ markdown_inline: a owl:Ontology ;
     markdown_inline:languageName "markdown_inline" ;
     markdown_inline:nodeKindCount 153 .
 
-ns1:User a owl:Class ;
-    rdfs:label "User" ;
-    rdfs:comment "A GitHub user." ;
-    ns1:openApiSchemaName "simple-user" .
-
 lsp:CompletionItemKind a owl:Class ;
     rdfs:label "CompletionItemKind" ;
     rdfs:comment "Enumeration of completion item kinds. Integer values 1-25. (LSP v3.17.0: CompletionItemKind)" .
 
-ast-x:ClassDefinition a owl:Class ;
-    rdfs:label "class definition" ;
-    rdfs:comment "Any class, interface, struct, enum, trait, or module definition. Includes impl blocks (Rust) and type declarations (Go)." ;
-    rdfs:subClassOf sem:Declaration ;
-    owl:disjointWith ast-x:ImportStatement .
-
-ast-x:FunctionDefinition a owl:Class ;
-    rdfs:label "function definition" ;
-    rdfs:comment "Any function, method, constructor, lambda, or closure definition. Used by multilspy to find all references." ;
-    rdfs:subClassOf sem:Declaration ;
-    owl:disjointWith ast-x:ClassDefinition,
-        ast-x:ImportStatement .
+ns1:User a owl:Class ;
+    rdfs:label "User" ;
+    rdfs:comment "A GitHub user." ;
+    ns1:openApiSchemaName "simple-user" .
 
 lsp:SymbolKind a owl:Class ;
     rdfs:label "SymbolKind" ;
@@ -138097,6 +138216,13 @@ yuck: a owl:Ontology ;
     yuck:languageName "None" ;
     yuck:nodeKindCount 82 .
 
+ast-x:FunctionDefinition a owl:Class ;
+    rdfs:label "function definition" ;
+    rdfs:comment "Any function, method, constructor, lambda, or closure definition. Used by multilspy to find all references." ;
+    rdfs:subClassOf sem:Declaration ;
+    owl:disjointWith ast-x:ClassDefinition,
+        ast-x:ImportStatement .
+
 hyprlang: a owl:Ontology ;
     rdfs:label "Hyprlang Grammar Ontology" ;
     rdfs:comment "Tree-sitter grammar ontology for hyprlang" ;
@@ -138114,6 +138240,12 @@ linkerscript: a owl:Ontology ;
     linkerscript:fieldCount 16 ;
     linkerscript:languageName "None" ;
     linkerscript:nodeKindCount 112 .
+
+ast-x:ClassDefinition a owl:Class ;
+    rdfs:label "class definition" ;
+    rdfs:comment "Any class, interface, struct, enum, trait, or module definition. Includes impl blocks (Rust) and type declarations (Go)." ;
+    rdfs:subClassOf sem:Declaration ;
+    owl:disjointWith ast-x:ImportStatement .
 
 heex: a owl:Ontology ;
     rdfs:label "Heex Grammar Ontology" ;
@@ -138133,12 +138265,6 @@ racket: a owl:Ontology ;
     racket:languageName "None" ;
     racket:nodeKindCount 80 .
 
-ast-x:Parameter a owl:Class ;
-    rdfs:label "parameter" ;
-    rdfs:comment "Individual parameter within a function/method signature. Covers required, optional, typed, default, variadic, and destructured parameters. Children of an ast-x:ParameterList." ;
-    rdfs:subClassOf sem:DataFlow ;
-    owl:disjointWith ast-x:Assignment .
-
 readline: a owl:Ontology ;
     rdfs:label "Readline Grammar Ontology" ;
     rdfs:comment "Tree-sitter grammar ontology for readline" ;
@@ -138147,6 +138273,12 @@ readline: a owl:Ontology ;
     readline:fieldCount 0 ;
     readline:languageName "None" ;
     readline:nodeKindCount 146 .
+
+ast-x:Parameter a owl:Class ;
+    rdfs:label "parameter" ;
+    rdfs:comment "Individual parameter within a function/method signature. Covers required, optional, typed, default, variadic, and destructured parameters. Children of an ast-x:ParameterList." ;
+    rdfs:subClassOf sem:DataFlow ;
+    owl:disjointWith ast-x:Assignment .
 
 clojure: a owl:Ontology ;
     rdfs:label "Clojure Grammar Ontology" ;
@@ -138398,11 +138530,6 @@ svelte: a owl:Ontology ;
     svelte:languageName "None" ;
     svelte:nodeKindCount 97 .
 
-ns1:Repository a owl:Class ;
-    rdfs:label "Repository" ;
-    rdfs:comment "A repository on GitHub." ;
-    ns1:openApiSchemaName "repository" .
-
 ns1:Organization a owl:Class ;
     rdfs:label "Organization" ;
     rdfs:comment "Organization Full" ;
@@ -138542,6 +138669,11 @@ luau: a owl:Ontology ;
     luau:fieldCount 21 ;
     luau:languageName "None" ;
     luau:nodeKindCount 197 .
+
+ns1:Repository a owl:Class ;
+    rdfs:label "Repository" ;
+    rdfs:comment "Full Repository" ;
+    ns1:openApiSchemaName "full-repository" .
 
 magik: a owl:Ontology ;
     rdfs:label "Magik Grammar Ontology" ;

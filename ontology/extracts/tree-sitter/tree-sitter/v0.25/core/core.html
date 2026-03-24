@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AST Core Ontology — repolex ontology</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --fg: #e6edf3;
+      --muted: #8b949e;
+      --accent: #58a6ff;
+      --border: #30363d;
+      --table-bg: #161b22;
+      --table-hover: #1c2128;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+      line-height: 1.6;
+    }
+    h1 {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.5rem;
+    }
+    h2 {
+      color: var(--accent);
+      margin-top: 2rem;
+    }
+    .version {
+      color: var(--muted);
+      font-size: 0.8em;
+      font-weight: normal;
+    }
+    .ontology-desc {
+      color: var(--muted);
+      font-size: 0.95em;
+      max-width: 80ch;
+    }
+    .meta {
+      color: var(--muted);
+      font-size: 0.85em;
+      margin-bottom: 1rem;
+    }
+    .meta a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .meta a:hover {
+      text-decoration: underline;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-size: 0.9em;
+    }
+    th {
+      text-align: left;
+      padding: 0.5rem 0.75rem;
+      border-bottom: 2px solid var(--border);
+      color: var(--muted);
+      font-weight: 600;
+    }
+    td {
+      padding: 0.4rem 0.75rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    tr:hover td {
+      background: var(--table-hover);
+    }
+    .prop-name {
+      font-family: "SFMono-Regular", Consolas, monospace;
+      font-size: 0.9em;
+      color: var(--accent);
+      white-space: nowrap;
+    }
+    .prop-desc {
+      color: var(--muted);
+      max-width: 50ch;
+    }
+    .prop-supers {
+      font-family: "SFMono-Regular", Consolas, monospace;
+      font-size: 0.85em;
+    }
+    footer {
+      margin-top: 3rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.8em;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>AST Core Ontology <span class="version">v0.25</span></h1>
+    <p class="ontology-desc">Core ontology for tree-sitter AST nodes. Extracted by introspection from tree-sitter Python bindings.</p>
+    <div class="meta">
+      170 triples
+      · <a href="core.ttl">Download .ttl</a>
+      · 2 classes
+      · 7 object properties
+      · 25 datatype properties
+    </div>
+
+    <h2>Classes (2)</h2>
+    <table>
+      <thead>
+        <tr><th>Class</th><th>Subclass Of</th><th>Description</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="prop-name">ast:Node</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">Base class for all tree-sitter AST nodes. All language-specific node types (e.g., lang:class_definition) are subclasses of this.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">ast:Point</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">A position in source code, with row and column.</td>
+        </tr>
+      </tbody>
+    </table>
+    <h2>Object Properties (7)</h2>
+    <table>
+      <thead>
+        <tr><th>Property</th><th>Domain</th><th>Range</th><th>Description</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="prop-name">ast:endPoint</td>
+          <td>ast:Node</td>
+          <td>ast:Point</td>
+          <td class="prop-desc">Ending position in source code (Point object with row and column)</td>
+        </tr>
+        <tr>
+          <td class="prop-name">ast:nextNamedSibling</td>
+          <td>ast:Node</td>
+          <td>ast:Node</td>
+          <td class="prop-desc">The next named sibling node</td>
+        </tr>
+        <tr>
+          <td class="prop-name">ast:nextSibling</td>
+          <td>ast:Node</td>
+          <td>ast:Node</td>
+          <td class="prop-desc">The next sibling node</td>
+        </tr>
+        <tr>
+          <td class="prop-name">ast:parent</td>
+          <td>ast:Node</td>
+          <td>ast:Node</td>
+          <td class="prop-desc">The parent node in the AST</td>
+        </tr>
+        <tr>
+          <td class="prop-name">ast:prevNamedSibling</td>
+          <td>ast:Node</td>
+          <td>ast:Node</td>
+          <td class="prop-desc">The previous named sibling node</td>
+        </tr>
+        <tr>
+          <td class="prop-name">ast:prevSibling</td>
+          <td>ast:Node</td>
+          <td>ast:Node</td>
+          <td class="prop-desc">The previous sibling node</td>
+        </tr>
+        <tr>
+          <td class="prop-name">ast:startPoint</td>
+          <td>ast:Node</td>
+          <td>ast:Point</td>
+          <td class="prop-desc">Starting position in source code (Point object with row and column)</td>
+        </tr>
+      </tbody>
+    </table>
+    <h2>Datatype Properties (25)</h2>
+    <table>
+      <thead>
+        <tr><th>Property</th><th>Domain</th><th>Range</th><th>Description</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="prop-name">ast:childCount</td>
+          <td>ast:Node</td>
+          <td>xsd:nonNegativeInteger</td>
+          <td class="prop-desc">Total number of children (named + anonymous)</td>
+        </tr>
+        <tr>
+          <td class="prop-name">ast:column</td>
+          <td>ast:Point</td>
+          <td>xsd:nonNegativeInteger</td>
+          <td class="prop-desc">Column number in source code (0-indexed)</td>
+        </tr>
+        <tr>
+          <td class="prop-name">ast:descendantCount</td>
+          <td>ast:Node</td>
+          <td>xsd:nonNegativeInteger</td>
+          <td class="prop-desc">Total number of descendants in subtree</td>
+        </tr>
+        <tr>
+          <td class="prop-name">ast:endByte</td>
+          <td>ast:Node</td>
+          <td>xsd:nonNegativeInteger</td>
+          <td class="prop-desc">Ending byte offset in source code (exclusive)</td>
+        </tr>
+        <tr>
+          <td class="prop-name">ast:endColumn</td>
+          <td>ast:Node</td>
+          <td>xsd:nonNegativeInteger</td>
+          <td class="prop-desc">Ending column number in source code (0-indexed). Convenience property derived from end_point tuple.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">ast:endRow</td>
+          <td>ast:Node</td>
+          <td>xsd:nonNegativeInteger</td>
+          <td class="prop-desc">Ending row (line) number in source code (0-indexed). Convenience property derived from end_point tuple.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">ast:grammarId</td>
+          <td>ast:Node</td>
+          <td>xsd:integer</td>
+          <td class="prop-desc">Numeric ID of the grammar this node belongs to</td>
+        </tr>
+        <tr>
+          <td class="prop-name">ast:grammarName</td>
+          <td>ast:Node</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">Name of the grammar/language (e.g., &#x27;python&#x27;, &#x27;javascript&#x27;)</td>
+        </tr>
+        <tr>
+          <td class="prop-name">ast:hasChanges</td>
+          <td>ast:Node</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc">Whether this node changed between parses (incremental parsing)</td>
+        </tr>
+        <tr>
+          <td class="prop-name">ast:hasError</td>
+          <td>ast:Node</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc">Whether this node or any descendant has an error</td>
+        </tr>
+        <tr>
+          <td class="prop-name">ast:id</td>
+          <td>ast:Node</td>
+          <td>xsd:nonNegativeInteger</td>
+          <td class="prop-desc">Unique numeric identifier for this node</td>
+        </tr>
+        <tr>
+          <td class="prop-name">ast:isError</td>
+          <td>ast:Node</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc">Whether this node represents a syntax error</td>
+        </tr>
+        <tr>
+          <td class="prop-name">ast:isExtra</td>
+          <td>ast:Node</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc">Whether this node is extra (e.g., comments, whitespace)</td>
+        </tr>
+        <tr>
+          <td class="prop-name">ast:isMissing</td>
+          <td>ast:Node</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc">Whether this node was inserted by error recovery</td>
+        </tr>
+        <tr>
+          <td class="prop-name">ast:isNamed</td>
+          <td>ast:Node</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc">Whether this is a named node (semantic) vs anonymous (punctuation)</td>
+        </tr>
+        <tr>
+          <td class="prop-name">ast:kindId</td>
+          <td>ast:Node</td>
+          <td>xsd:integer</td>
+          <td class="prop-desc">Numeric ID for this node kind in the language grammar</td>
+        </tr>
+        <tr>
+          <td class="prop-name">ast:namedChildCount</td>
+          <td>ast:Node</td>
+          <td>xsd:nonNegativeInteger</td>
+          <td class="prop-desc">Number of named children only</td>
+        </tr>
+        <tr>
+          <td class="prop-name">ast:nextParseState</td>
+          <td>ast:Node</td>
+          <td>xsd:nonNegativeInteger</td>
+          <td class="prop-desc">The parse state after this node</td>
+        </tr>
+        <tr>
+          <td class="prop-name">ast:parseState</td>
+          <td>ast:Node</td>
+          <td>xsd:nonNegativeInteger</td>
+          <td class="prop-desc">The parse state at the start of this node</td>
+        </tr>
+        <tr>
+          <td class="prop-name">ast:row</td>
+          <td>ast:Point</td>
+          <td>xsd:nonNegativeInteger</td>
+          <td class="prop-desc">Row (line) number in source code (0-indexed)</td>
+        </tr>
+        <tr>
+          <td class="prop-name">ast:startByte</td>
+          <td>ast:Node</td>
+          <td>xsd:nonNegativeInteger</td>
+          <td class="prop-desc">Starting byte offset in source code (0-indexed)</td>
+        </tr>
+        <tr>
+          <td class="prop-name">ast:startColumn</td>
+          <td>ast:Node</td>
+          <td>xsd:nonNegativeInteger</td>
+          <td class="prop-desc">Starting column number in source code (0-indexed). Convenience property derived from start_point tuple.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">ast:startRow</td>
+          <td>ast:Node</td>
+          <td>xsd:nonNegativeInteger</td>
+          <td class="prop-desc">Starting row (line) number in source code (0-indexed). Convenience property derived from start_point tuple.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">ast:text</td>
+          <td>ast:Node</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">The source code text for this node</td>
+        </tr>
+        <tr>
+          <td class="prop-name">ast:type</td>
+          <td>ast:Node</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">The node&#x27;s type as a string (e.g., &#x27;class_definition&#x27;, &#x27;identifier&#x27;)</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </main>
+  <footer>
+    Auto-generated from <code>extracts/tree-sitter/tree-sitter/v0.25/core/core.ttl</code>
+    · <a href="https://repolex.ai">repolex.ai</a>
+    · 2026-03-24
+  </footer>
+</body>
+</html>

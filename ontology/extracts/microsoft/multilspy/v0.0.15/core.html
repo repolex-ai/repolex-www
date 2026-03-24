@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>multilspy Core Ontology — repolex ontology</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --fg: #e6edf3;
+      --muted: #8b949e;
+      --accent: #58a6ff;
+      --border: #30363d;
+      --table-bg: #161b22;
+      --table-hover: #1c2128;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+      line-height: 1.6;
+    }
+    h1 {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.5rem;
+    }
+    h2 {
+      color: var(--accent);
+      margin-top: 2rem;
+    }
+    .version {
+      color: var(--muted);
+      font-size: 0.8em;
+      font-weight: normal;
+    }
+    .ontology-desc {
+      color: var(--muted);
+      font-size: 0.95em;
+      max-width: 80ch;
+    }
+    .meta {
+      color: var(--muted);
+      font-size: 0.85em;
+      margin-bottom: 1rem;
+    }
+    .meta a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .meta a:hover {
+      text-decoration: underline;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-size: 0.9em;
+    }
+    th {
+      text-align: left;
+      padding: 0.5rem 0.75rem;
+      border-bottom: 2px solid var(--border);
+      color: var(--muted);
+      font-weight: 600;
+    }
+    td {
+      padding: 0.4rem 0.75rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    tr:hover td {
+      background: var(--table-hover);
+    }
+    .prop-name {
+      font-family: "SFMono-Regular", Consolas, monospace;
+      font-size: 0.9em;
+      color: var(--accent);
+      white-space: nowrap;
+    }
+    .prop-desc {
+      color: var(--muted);
+      max-width: 50ch;
+    }
+    .prop-supers {
+      font-family: "SFMono-Regular", Consolas, monospace;
+      font-size: 0.85em;
+    }
+    footer {
+      margin-top: 3rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.8em;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>multilspy Core Ontology <span class="version">v0.0.15</span></h1>
+    <p class="ontology-desc">Ontology for the types produced by multilspy - a language-agnostic LSP client. Covers all 11 supported language servers (Python, Java, Rust, TypeScript, JavaScript, Go, Ruby, C#, Kotlin, Dart, C++). Types are derived from multilspy&#x27;s multilspy_types.py by introspection. Upstream spec: LSP v3.17.0 (microsoft.github.io/language-server-protocol).</p>
+    <div class="meta">
+      403 triples
+      · <a href="core.ttl">Download .ttl</a>
+      · 20 classes
+      · 12 object properties
+      · 22 datatype properties
+    </div>
+
+    <h2>Classes (20)</h2>
+    <table>
+      <thead>
+        <tr><th>Class</th><th>Subclass Of</th><th>Description</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="prop-name">lsp:CompletionItem</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">A completion item returned by textDocument/completion. Represents a text snippet proposed to complete text being typed. (LSP v3.17.0: CompletionItem, simplified by multilspy)</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:CompletionItemKind</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">Enumeration of completion item kinds. Integer values 1-25. (LSP v3.17.0: CompletionItemKind)</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:CompletionsRequest</td>
+          <td class="prop-supers">lsp:LspRequest</td>
+          <td class="prop-desc">A textDocument/completion request. Returns completion suggestions at the given position. Corresponds to SyncLanguageServer.request_completions().</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:DefinitionRequest</td>
+          <td class="prop-supers">lsp:LspRequest</td>
+          <td class="prop-desc">A textDocument/definition request. Returns the location(s) where the symbol at the given position is defined. Resolves imports and cross-file references. Corresponds to SyncLanguageServer.request_defi...</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:DocumentSymbolsRequest</td>
+          <td class="prop-supers">lsp:LspRequest</td>
+          <td class="prop-desc">A textDocument/documentSymbol request. Returns all symbols (classes, functions, variables, imports) defined in a file. Corresponds to SyncLanguageServer.request_document_symbols().</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:Hover</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">The result of a textDocument/hover request. Contains a human-readable string with type/documentation information for the symbol at the requested position. (LSP v3.17.0: Hover)</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:HoverRequest</td>
+          <td class="prop-supers">lsp:LspRequest</td>
+          <td class="prop-desc">A textDocument/hover request. Returns type signature and documentation for the symbol at the given position. Corresponds to SyncLanguageServer.request_hover().</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:Location</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">Represents a location inside a resource such as a line inside a text file. (LSP v3.17.0: Location, extended by multilspy with absolutePath and relativePath.)</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:LspRequest</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">Abstract base class representing a multilspy query. Subclasses correspond to the six query methods on SyncLanguageServer.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:MarkedString</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">A deprecated hover content format. Either a plain string or a code block with a language identifier and value. Superseded by MarkupContent but still returned by some LSP servers. Corresponds to the Un...</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:MarkupContent</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">A string value whose content is interpreted according to its kind (plaintext or markdown). Used in Hover responses. (LSP v3.17.0: MarkupContent)</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:MarkupKind</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">Describes the content type supported in hover and completion results. Values: plaintext, markdown. (LSP v3.17.0: MarkupKind)</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:Position</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">A position in a text document expressed as zero-based line and character offset. Both fields are zero-based integers. (LSP v3.17.0: Position)</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:Range</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">A range in a text document expressed as start and end positions. (LSP v3.17.0: Range)</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:ReferencesRequest</td>
+          <td class="prop-supers">lsp:LspRequest</td>
+          <td class="prop-desc">A textDocument/references request. Returns all locations in the workspace that reference the symbol at the given position. Corresponds to SyncLanguageServer.request_references().</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:SymbolKind</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">Enumeration of symbol kinds used in document and workspace symbol responses. Integer values 1-26. (LSP v3.17.0: SymbolKind)</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:SymbolTag</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">Extra annotations that tweak the rendering of a symbol. @since LSP v3.16.0. (LSP v3.17.0: SymbolTag)</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:TreeRepr</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">A recursive tree structure returned alongside document symbols by request_document_symbols(). Maps integer node IDs to lists of child TreeRepr nodes, representing the hierarchical nesting of symbols i...</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:UnifiedSymbolInformation</td>
+          <td class="prop-supers">—</td>
+          <td class="prop-desc">Information about a programming construct such as a variable, class, or function. Unifies LSP DocumentSymbol and SymbolInformation into a single type. Returned by request_document_symbols and request_...</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:WorkspaceSymbolRequest</td>
+          <td class="prop-supers">lsp:LspRequest</td>
+          <td class="prop-desc">A workspace/symbol request. Searches for symbols matching a query string across the entire repository. Corresponds to SyncLanguageServer.request_workspace_symbol().</td>
+        </tr>
+      </tbody>
+    </table>
+    <h2>Object Properties (12)</h2>
+    <table>
+      <thead>
+        <tr><th>Property</th><th>Domain</th><th>Range</th><th>Description</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="prop-name">lsp:completionKind</td>
+          <td>lsp:CompletionItem</td>
+          <td>lsp:CompletionItemKind</td>
+          <td class="prop-desc">The kind of completion item (method, function, class, variable, etc.). Note: serialised as &#x27;kind&#x27; in the TypedDict.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:contents</td>
+          <td>lsp:Hover</td>
+          <td>lsp:MarkupContent</td>
+          <td class="prop-desc">The hover contents. May be MarkupContent, a MarkedString, or a list of MarkedStrings (the latter two are deprecated LSP formats).</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:end</td>
+          <td>lsp:Range</td>
+          <td>lsp:Position</td>
+          <td class="prop-desc">The end position of the range (exclusive).</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:hoverRange</td>
+          <td>lsp:Hover</td>
+          <td>lsp:Range</td>
+          <td class="prop-desc">An optional range in the document that is used to visualise the hover. Note: serialised as &#x27;range&#x27; in the TypedDict.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:kind</td>
+          <td>lsp:UnifiedSymbolInformation</td>
+          <td>lsp:SymbolKind</td>
+          <td class="prop-desc">The kind of this symbol (class, method, function, variable, etc.).</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:location</td>
+          <td>lsp:UnifiedSymbolInformation</td>
+          <td>lsp:Location</td>
+          <td class="prop-desc">The location of this symbol. Optional (present for flat symbol info, absent for hierarchical document symbols).</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:markupKind</td>
+          <td>lsp:MarkupContent</td>
+          <td>lsp:MarkupKind</td>
+          <td class="prop-desc">The type of markup (plaintext or markdown). Note: serialised as &#x27;kind&#x27; in the TypedDict.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:range</td>
+          <td>lsp:Location</td>
+          <td>lsp:Range</td>
+          <td class="prop-desc">The range within the document. (LSP spec field.)</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:selectionRange</td>
+          <td>lsp:UnifiedSymbolInformation</td>
+          <td>lsp:Range</td>
+          <td class="prop-desc">The range that should be selected when this symbol is picked, e.g. the name span of a function definition. Present for hierarchical document symbols.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:start</td>
+          <td>lsp:Range</td>
+          <td>lsp:Position</td>
+          <td class="prop-desc">The start position of the range (inclusive).</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:symbolRange</td>
+          <td>lsp:UnifiedSymbolInformation</td>
+          <td>lsp:Range</td>
+          <td class="prop-desc">The range enclosing this symbol including comments. Present for hierarchical document symbols. Note: serialised as &#x27;range&#x27; in the TypedDict.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:treeChildren</td>
+          <td>lsp:TreeRepr</td>
+          <td>lsp:TreeRepr</td>
+          <td class="prop-desc">Child TreeRepr nodes nested under this node, representing symbols defined within the scope of the parent symbol.</td>
+        </tr>
+      </tbody>
+    </table>
+    <h2>Datatype Properties (22)</h2>
+    <table>
+      <thead>
+        <tr><th>Property</th><th>Domain</th><th>Range</th><th>Description</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="prop-name">lsp:absolutePath</td>
+          <td>lsp:Location</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">Absolute filesystem path to the file. (multilspy addition, not in LSP spec.)</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:character</td>
+          <td>lsp:Position</td>
+          <td>xsd:nonNegativeInteger</td>
+          <td class="prop-desc">Zero-based character offset on the line.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:completionDetail</td>
+          <td>lsp:CompletionItem</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">A human-readable string with additional information about this item, such as type or symbol information. Optional. Note: serialised as &#x27;detail&#x27; in the TypedDict.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:completionItemKindValue</td>
+          <td>lsp:CompletionItemKind</td>
+          <td>xsd:integer</td>
+          <td class="prop-desc">The integer value of the CompletionItemKind as defined in the LSP spec.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:completionText</td>
+          <td>lsp:CompletionItem</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">The text to insert when this completion is selected. (multilspy field name; LSP spec uses &#x27;label&#x27;.)</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:containerName</td>
+          <td>lsp:UnifiedSymbolInformation</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">The name of the symbol containing this symbol, for display purposes. Optional.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:deprecated</td>
+          <td>lsp:UnifiedSymbolInformation</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc">Whether this symbol is deprecated. Optional. @deprecated in LSP: use tags instead.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:detail</td>
+          <td>lsp:UnifiedSymbolInformation</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">Additional detail for the symbol, e.g. the signature of a function. Optional.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:line</td>
+          <td>lsp:Position</td>
+          <td>xsd:nonNegativeInteger</td>
+          <td class="prop-desc">Zero-based line number in the document.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:markedStringLanguage</td>
+          <td>lsp:MarkedString</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">The language identifier for the code block (e.g. &#x27;python&#x27;, &#x27;typescript&#x27;). Only present when MarkedString is in code-block form, not plain string form. Note: serialised as &#x27;language&#x27; in the TypedDict.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:markedStringValue</td>
+          <td>lsp:MarkedString</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">The content of the MarkedString - either the full plain string, or the code snippet when in code-block form. Note: serialised as &#x27;value&#x27; in the TypedDict.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:markupKindValue</td>
+          <td>lsp:MarkupKind</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">The string value of the MarkupKind (&#x27;plaintext&#x27; or &#x27;markdown&#x27;).</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:name</td>
+          <td>lsp:UnifiedSymbolInformation</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">The name of the symbol.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:relativePath</td>
+          <td>lsp:Location</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">Path relative to the repository root. Null if the location is outside the repository (e.g. stdlib or third-party). (multilspy addition, not in LSP spec.)</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:requestCharacter</td>
+          <td>lsp:LspRequest</td>
+          <td>xsd:nonNegativeInteger</td>
+          <td class="prop-desc">Zero-based character offset of the query position.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:requestFile</td>
+          <td>lsp:LspRequest</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">Relative path to the file being queried (from repository root).</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:requestLine</td>
+          <td>lsp:LspRequest</td>
+          <td>xsd:nonNegativeInteger</td>
+          <td class="prop-desc">Zero-based line number of the query position.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:symbolKindValue</td>
+          <td>lsp:SymbolKind</td>
+          <td>xsd:integer</td>
+          <td class="prop-desc">The integer value of the SymbolKind as defined in the LSP spec.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:symbolTagValue</td>
+          <td>lsp:SymbolTag</td>
+          <td>xsd:integer</td>
+          <td class="prop-desc">The integer value of the SymbolTag as defined in the LSP spec.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:treeNodeId</td>
+          <td>lsp:TreeRepr</td>
+          <td>xsd:integer</td>
+          <td class="prop-desc">The integer node ID key in the TreeRepr mapping. Corresponds to the index position of the symbol in the document symbols list.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:uri</td>
+          <td>lsp:Location</td>
+          <td>xsd:anyURI</td>
+          <td class="prop-desc">The document URI as a file:// URI string. (LSP spec field.)</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:value</td>
+          <td>lsp:MarkupContent</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">The content itself.</td>
+        </tr>
+      </tbody>
+    </table>
+    <h2>Individuals (54)</h2>
+    <table>
+      <thead>
+        <tr><th>Individual</th><th>Type</th><th>Label</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="prop-name">lsp:CompletionItemKind-Class</td>
+          <td>lsp:CompletionItemKind</td>
+          <td>Class</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:CompletionItemKind-Color</td>
+          <td>lsp:CompletionItemKind</td>
+          <td>Color</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:CompletionItemKind-Constant</td>
+          <td>lsp:CompletionItemKind</td>
+          <td>Constant</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:CompletionItemKind-Constructor</td>
+          <td>lsp:CompletionItemKind</td>
+          <td>Constructor</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:CompletionItemKind-Enum</td>
+          <td>lsp:CompletionItemKind</td>
+          <td>Enum</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:CompletionItemKind-EnumMember</td>
+          <td>lsp:CompletionItemKind</td>
+          <td>EnumMember</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:CompletionItemKind-Event</td>
+          <td>lsp:CompletionItemKind</td>
+          <td>Event</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:CompletionItemKind-Field</td>
+          <td>lsp:CompletionItemKind</td>
+          <td>Field</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:CompletionItemKind-File</td>
+          <td>lsp:CompletionItemKind</td>
+          <td>File</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:CompletionItemKind-Folder</td>
+          <td>lsp:CompletionItemKind</td>
+          <td>Folder</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:CompletionItemKind-Function</td>
+          <td>lsp:CompletionItemKind</td>
+          <td>Function</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:CompletionItemKind-Interface</td>
+          <td>lsp:CompletionItemKind</td>
+          <td>Interface</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:CompletionItemKind-Keyword</td>
+          <td>lsp:CompletionItemKind</td>
+          <td>Keyword</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:CompletionItemKind-Method</td>
+          <td>lsp:CompletionItemKind</td>
+          <td>Method</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:CompletionItemKind-Module</td>
+          <td>lsp:CompletionItemKind</td>
+          <td>Module</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:CompletionItemKind-Operator</td>
+          <td>lsp:CompletionItemKind</td>
+          <td>Operator</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:CompletionItemKind-Property</td>
+          <td>lsp:CompletionItemKind</td>
+          <td>Property</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:CompletionItemKind-Reference</td>
+          <td>lsp:CompletionItemKind</td>
+          <td>Reference</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:CompletionItemKind-Snippet</td>
+          <td>lsp:CompletionItemKind</td>
+          <td>Snippet</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:CompletionItemKind-Struct</td>
+          <td>lsp:CompletionItemKind</td>
+          <td>Struct</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:CompletionItemKind-Text</td>
+          <td>lsp:CompletionItemKind</td>
+          <td>Text</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:CompletionItemKind-TypeParameter</td>
+          <td>lsp:CompletionItemKind</td>
+          <td>TypeParameter</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:CompletionItemKind-Unit</td>
+          <td>lsp:CompletionItemKind</td>
+          <td>Unit</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:CompletionItemKind-Value</td>
+          <td>lsp:CompletionItemKind</td>
+          <td>Value</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:CompletionItemKind-Variable</td>
+          <td>lsp:CompletionItemKind</td>
+          <td>Variable</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:MarkupKind-Markdown</td>
+          <td>lsp:MarkupKind</td>
+          <td>Markdown</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:MarkupKind-PlainText</td>
+          <td>lsp:MarkupKind</td>
+          <td>PlainText</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:SymbolKind-Array</td>
+          <td>lsp:SymbolKind</td>
+          <td>Array</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:SymbolKind-Boolean</td>
+          <td>lsp:SymbolKind</td>
+          <td>Boolean</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:SymbolKind-Class</td>
+          <td>lsp:SymbolKind</td>
+          <td>Class</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:SymbolKind-Constant</td>
+          <td>lsp:SymbolKind</td>
+          <td>Constant</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:SymbolKind-Constructor</td>
+          <td>lsp:SymbolKind</td>
+          <td>Constructor</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:SymbolKind-Enum</td>
+          <td>lsp:SymbolKind</td>
+          <td>Enum</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:SymbolKind-EnumMember</td>
+          <td>lsp:SymbolKind</td>
+          <td>EnumMember</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:SymbolKind-Event</td>
+          <td>lsp:SymbolKind</td>
+          <td>Event</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:SymbolKind-Field</td>
+          <td>lsp:SymbolKind</td>
+          <td>Field</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:SymbolKind-File</td>
+          <td>lsp:SymbolKind</td>
+          <td>File</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:SymbolKind-Function</td>
+          <td>lsp:SymbolKind</td>
+          <td>Function</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:SymbolKind-Interface</td>
+          <td>lsp:SymbolKind</td>
+          <td>Interface</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:SymbolKind-Key</td>
+          <td>lsp:SymbolKind</td>
+          <td>Key</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:SymbolKind-Method</td>
+          <td>lsp:SymbolKind</td>
+          <td>Method</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:SymbolKind-Module</td>
+          <td>lsp:SymbolKind</td>
+          <td>Module</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:SymbolKind-Namespace</td>
+          <td>lsp:SymbolKind</td>
+          <td>Namespace</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:SymbolKind-Null</td>
+          <td>lsp:SymbolKind</td>
+          <td>Null</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:SymbolKind-Number</td>
+          <td>lsp:SymbolKind</td>
+          <td>Number</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:SymbolKind-Object</td>
+          <td>lsp:SymbolKind</td>
+          <td>Object</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:SymbolKind-Operator</td>
+          <td>lsp:SymbolKind</td>
+          <td>Operator</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:SymbolKind-Package</td>
+          <td>lsp:SymbolKind</td>
+          <td>Package</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:SymbolKind-Property</td>
+          <td>lsp:SymbolKind</td>
+          <td>Property</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:SymbolKind-String</td>
+          <td>lsp:SymbolKind</td>
+          <td>String</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:SymbolKind-Struct</td>
+          <td>lsp:SymbolKind</td>
+          <td>Struct</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:SymbolKind-TypeParameter</td>
+          <td>lsp:SymbolKind</td>
+          <td>TypeParameter</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:SymbolKind-Variable</td>
+          <td>lsp:SymbolKind</td>
+          <td>Variable</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp:SymbolTag-Deprecated</td>
+          <td>lsp:SymbolTag</td>
+          <td>Deprecated</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </main>
+  <footer>
+    Auto-generated from <code>extracts/microsoft/multilspy/v0.0.15/core.ttl</code>
+    · <a href="https://repolex.ai">repolex.ai</a>
+    · 2026-03-24
+  </footer>
+</body>
+</html>

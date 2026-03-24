@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LSP Extension Ontology — repolex ontology</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --fg: #e6edf3;
+      --muted: #8b949e;
+      --accent: #58a6ff;
+      --border: #30363d;
+      --table-bg: #161b22;
+      --table-hover: #1c2128;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+      line-height: 1.6;
+    }
+    h1 {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.5rem;
+    }
+    h2 {
+      color: var(--accent);
+      margin-top: 2rem;
+    }
+    .version {
+      color: var(--muted);
+      font-size: 0.8em;
+      font-weight: normal;
+    }
+    .ontology-desc {
+      color: var(--muted);
+      font-size: 0.95em;
+      max-width: 80ch;
+    }
+    .meta {
+      color: var(--muted);
+      font-size: 0.85em;
+      margin-bottom: 1rem;
+    }
+    .meta a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .meta a:hover {
+      text-decoration: underline;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-size: 0.9em;
+    }
+    th {
+      text-align: left;
+      padding: 0.5rem 0.75rem;
+      border-bottom: 2px solid var(--border);
+      color: var(--muted);
+      font-weight: 600;
+    }
+    td {
+      padding: 0.4rem 0.75rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    tr:hover td {
+      background: var(--table-hover);
+    }
+    .prop-name {
+      font-family: "SFMono-Regular", Consolas, monospace;
+      font-size: 0.9em;
+      color: var(--accent);
+      white-space: nowrap;
+    }
+    .prop-desc {
+      color: var(--muted);
+      max-width: 50ch;
+    }
+    .prop-supers {
+      font-family: "SFMono-Regular", Consolas, monospace;
+      font-size: 0.85em;
+    }
+    footer {
+      margin-top: 3rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.8em;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>LSP Extension Ontology <span class="version">1.0</span></h1>
+    <p class="ontology-desc">Properties and metrics derived from LSP data via multilspy resolution and call graph analysis.</p>
+    <div class="meta">
+      69 triples
+      · <a href="lsp-x.ttl">Download .ttl</a>
+      · 0 classes
+      · 4 object properties
+      · 9 datatype properties
+    </div>
+
+    <h2>Object Properties (4)</h2>
+    <table>
+      <thead>
+        <tr><th>Property</th><th>Domain</th><th>Range</th><th>Description</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="prop-name">lsp-x:argToParam</td>
+          <td>ast:Node</td>
+          <td>ast:Node</td>
+          <td class="prop-desc">Links an argument expression at a call site to the parameter definition it passes to. Populated by dataflow analysis after LSP call resolution.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp-x:callTarget</td>
+          <td>ast:Node</td>
+          <td>lsp:Location</td>
+          <td class="prop-desc">The resolved definition/location of a call site, populated by multilspy LSP DefinitionRequest.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp-x:importTarget</td>
+          <td>ast:Node</td>
+          <td>lsp:Location</td>
+          <td class="prop-desc">The resolved location of an imported module/symbol, populated by multilspy LSP resolution.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp-x:returnToCall</td>
+          <td>ast:Node</td>
+          <td>ast:Node</td>
+          <td class="prop-desc">Links a return statement to the call site that receives its value. Populated by dataflow analysis tracking return value flow.</td>
+        </tr>
+      </tbody>
+    </table>
+    <h2>Datatype Properties (9)</h2>
+    <table>
+      <thead>
+        <tr><th>Property</th><th>Domain</th><th>Range</th><th>Description</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="prop-name">lsp-x:callTargetFile</td>
+          <td>ast:Node</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">Repository-relative file path of the call target, extracted from LSP Location response. Convenience property for quick access without following lsp-x:callTarget.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp-x:callTargetLine</td>
+          <td>ast:Node</td>
+          <td>xsd:nonNegativeInteger</td>
+          <td class="prop-desc">Line number where the call target is defined, extracted from LSP Location response. Convenience property for quick access without following lsp-x:callTarget.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp-x:callTargetName</td>
+          <td>ast:Node</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">Symbol name of the call target, extracted from LSP Hover response (best-effort). Convenience property for displaying target name without additional lookups.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp-x:calledByCount</td>
+          <td>ast:Node</td>
+          <td>xsd:nonNegativeInteger</td>
+          <td class="prop-desc">Fan-in: Number of distinct callers that call this function. Computed by counting how many call sites have lsp-x:callTarget pointing to this function.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp-x:callsCount</td>
+          <td>ast:Node</td>
+          <td>xsd:nonNegativeInteger</td>
+          <td class="prop-desc">Fan-out: Number of distinct functions this function calls. Computed by counting distinct lsp-x:callTarget triples where the subject is a call site within this function.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp-x:childClassCount</td>
+          <td>ast:Node</td>
+          <td>xsd:nonNegativeInteger</td>
+          <td class="prop-desc">Number of direct subclasses. Changes to classes with many children have wide ripple effects. Computed from LSP TypeHierarchyRequest (subtypes count).</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp-x:importModule</td>
+          <td>ast:Node</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">The module name or path being imported (e.g., &#x27;react&#x27;, &#x27;lodash&#x27;, &#x27;./utils/helper&#x27;). Extracted from the import statement source text. Convenience property for quick access to import target without LSP ...</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp-x:importSymbol</td>
+          <td>ast:Node</td>
+          <td>xsd:string</td>
+          <td class="prop-desc">Specific symbol name imported from the module (e.g., &#x27;useState&#x27; from &#x27;react&#x27;, &#x27;Path&#x27; from &#x27;pathlib&#x27;). Optional — not present for wildcard or module-level imports.</td>
+        </tr>
+        <tr>
+          <td class="prop-name">lsp-x:inheritanceDepth</td>
+          <td>ast:Node</td>
+          <td>xsd:nonNegativeInteger</td>
+          <td class="prop-desc">Distance from root class in the inheritance hierarchy. Deep hierarchies can be harder to understand. Computed from LSP TypeHierarchyRequest (supertypes traversal).</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </main>
+  <footer>
+    Auto-generated from <code>ontology_src/lsp-x.ttl</code>
+    · <a href="https://repolex.ai">repolex.ai</a>
+    · 2026-03-24
+  </footer>
+</body>
+</html>

@@ -114,49 +114,43 @@ This field is only visible to organization owners or members of a team with the 
 
 gh:allowAutoMerge a owl:DatatypeProperty ;
     rdfs:label "allowAutoMerge" ;
-    rdfs:comment "Whether to allow Auto-merge to be used on pull requests." ;
     rdfs:domain gh:Repository ;
     rdfs:range xsd:boolean ;
     gh:openApiPropertyName "allow_auto_merge" .
 
 gh:allowForking a owl:DatatypeProperty ;
     rdfs:label "allowForking" ;
-    rdfs:comment "Whether to allow forking this repo" ;
     rdfs:domain gh:Repository ;
     rdfs:range xsd:boolean ;
     gh:openApiPropertyName "allow_forking" .
 
 gh:allowMergeCommit a owl:DatatypeProperty ;
     rdfs:label "allowMergeCommit" ;
-    rdfs:comment "Whether to allow merge commits for pull requests." ;
     rdfs:domain gh:Repository ;
     rdfs:range xsd:boolean ;
     gh:openApiPropertyName "allow_merge_commit" .
 
 gh:allowRebaseMerge a owl:DatatypeProperty ;
     rdfs:label "allowRebaseMerge" ;
-    rdfs:comment "Whether to allow rebase merges for pull requests." ;
     rdfs:domain gh:Repository ;
     rdfs:range xsd:boolean ;
     gh:openApiPropertyName "allow_rebase_merge" .
 
 gh:allowSquashMerge a owl:DatatypeProperty ;
     rdfs:label "allowSquashMerge" ;
-    rdfs:comment "Whether to allow squash merges for pull requests." ;
     rdfs:domain gh:Repository ;
     rdfs:range xsd:boolean ;
     gh:openApiPropertyName "allow_squash_merge" .
 
 gh:allowUpdateBranch a owl:DatatypeProperty ;
     rdfs:label "allowUpdateBranch" ;
-    rdfs:comment "Whether or not a pull request head branch that is behind its base branch can always be updated even if it is not required to be up to date before merging." ;
     rdfs:domain gh:Repository ;
     rdfs:range xsd:boolean ;
     gh:openApiPropertyName "allow_update_branch" .
 
 gh:anonymousAccessEnabled a owl:DatatypeProperty ;
     rdfs:label "anonymousAccessEnabled" ;
-    rdfs:comment "Whether anonymous git access is enabled for this repository" ;
+    rdfs:comment "Whether anonymous git access is allowed." ;
     rdfs:domain gh:Repository ;
     rdfs:range xsd:boolean ;
     gh:openApiPropertyName "anonymous_access_enabled" .
@@ -177,7 +171,6 @@ gh:answerHtmlUrl a owl:DatatypeProperty ;
 
 gh:archived a owl:DatatypeProperty ;
     rdfs:label "archived" ;
-    rdfs:comment "Whether the repository is archived." ;
     rdfs:domain gh:Repository ;
     rdfs:range xsd:boolean ;
     gh:openApiPropertyName "archived" ;
@@ -472,7 +465,6 @@ gh:default a owl:DatatypeProperty ;
 
 gh:defaultBranch a owl:DatatypeProperty ;
     rdfs:label "defaultBranch" ;
-    rdfs:comment "The default branch of the repository." ;
     rdfs:domain gh:Repository ;
     rdfs:range xsd:string ;
     gh:openApiPropertyName "default_branch" ;
@@ -493,7 +485,6 @@ gh:defaultRepositoryPermission a owl:DatatypeProperty ;
 
 gh:deleteBranchOnMerge a owl:DatatypeProperty ;
     rdfs:label "deleteBranchOnMerge" ;
-    rdfs:comment "Whether to delete head branches when pull requests are merged" ;
     rdfs:domain gh:Repository ;
     rdfs:range xsd:boolean ;
     gh:openApiPropertyName "delete_branch_on_merge" .
@@ -780,21 +771,19 @@ gh:gravatarId a owl:DatatypeProperty ;
 
 gh:hasCommitComments a owl:DatatypeProperty ;
     rdfs:label "hasCommitComments" ;
-    rdfs:comment "Whether commit comments are enabled." ;
     rdfs:domain gh:Repository ;
     rdfs:range xsd:boolean ;
     gh:openApiPropertyName "has_commit_comments" .
 
 gh:hasDiscussions a owl:DatatypeProperty ;
     rdfs:label "hasDiscussions" ;
-    rdfs:comment "Whether discussions are enabled." ;
     rdfs:domain gh:Repository ;
     rdfs:range xsd:boolean ;
-    gh:openApiPropertyName "has_discussions" .
+    gh:openApiPropertyName "has_discussions" ;
+    gh:required true .
 
 gh:hasIssues a owl:DatatypeProperty ;
     rdfs:label "hasIssues" ;
-    rdfs:comment "Whether issues are enabled." ;
     rdfs:domain gh:Repository ;
     rdfs:range xsd:boolean ;
     gh:openApiPropertyName "has_issues" ;
@@ -823,7 +812,6 @@ gh:hasPages a owl:DatatypeProperty ;
 
 gh:hasProjects a owl:DatatypeProperty ;
     rdfs:label "hasProjects" ;
-    rdfs:comment "Whether projects are enabled." ;
     rdfs:domain gh:Repository ;
     rdfs:range xsd:boolean ;
     gh:openApiPropertyName "has_projects" ;
@@ -831,7 +819,6 @@ gh:hasProjects a owl:DatatypeProperty ;
 
 gh:hasPullRequests a owl:DatatypeProperty ;
     rdfs:label "hasPullRequests" ;
-    rdfs:comment "Whether pull requests are enabled." ;
     rdfs:domain gh:Repository ;
     rdfs:range xsd:boolean ;
     gh:openApiPropertyName "has_pull_requests" .
@@ -845,7 +832,6 @@ gh:hasRepositoryProjects a owl:DatatypeProperty ;
 
 gh:hasWiki a owl:DatatypeProperty ;
     rdfs:label "hasWiki" ;
-    rdfs:comment "Whether the wiki is enabled." ;
     rdfs:domain gh:Repository ;
     rdfs:range xsd:boolean ;
     gh:openApiPropertyName "has_wiki" ;
@@ -902,7 +888,6 @@ gh:id a owl:DatatypeProperty ;
     rdfs:comment "The ID of the pull request review comment.",
         "Unique identifier for the label.",
         "Unique identifier of the issue comment",
-        "Unique identifier of the repository",
         "Unique identifier of the review",
         "Unique identifier of the team" ;
     rdfs:domain gh:Discussion,
@@ -954,7 +939,6 @@ gh:isBase64Encoded a owl:DatatypeProperty ;
 
 gh:isTemplate a owl:DatatypeProperty ;
     rdfs:label "isTemplate" ;
-    rdfs:comment "Whether this repository acts as a template that can be used to generate new repositories." ;
     rdfs:domain gh:Repository ;
     rdfs:range xsd:boolean ;
     gh:openApiPropertyName "is_template" .
@@ -1054,6 +1038,12 @@ gh:maintainerCanModify a owl:DatatypeProperty ;
     rdfs:range xsd:boolean ;
     gh:openApiPropertyName "maintainer_can_modify" ;
     gh:required true .
+
+gh:masterBranch a owl:DatatypeProperty ;
+    rdfs:label "masterBranch" ;
+    rdfs:domain gh:Repository ;
+    rdfs:range xsd:string ;
+    gh:openApiPropertyName "master_branch" .
 
 gh:membersAllowedRepositoryCreationType a owl:DatatypeProperty ;
     rdfs:label "membersAllowedRepositoryCreationType" ;
@@ -1173,8 +1163,8 @@ gh:mergeCommitTitle a owl:DatatypeProperty ;
     rdfs:label "mergeCommitTitle" ;
     rdfs:comment """The default value for a merge commit title.
 
-- `PR_TITLE` - default to the pull request's title.
-- `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).""" ;
+  - `PR_TITLE` - default to the pull request's title.
+  - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).""" ;
     rdfs:domain gh:Repository ;
     rdfs:range xsd:string ;
     gh:openApiPropertyName "merge_commit_title" .
@@ -1231,8 +1221,7 @@ gh:name a owl:DatatypeProperty ;
     rdfs:label "name" ;
     rdfs:comment "Name of the team",
         "The file name of the asset.",
-        "The name of the label.",
-        "The name of the repository." ;
+        "The name of the label." ;
     rdfs:domain gh:Label,
         gh:License,
         gh:Organization,
@@ -1244,6 +1233,13 @@ gh:name a owl:DatatypeProperty ;
         gh:User ;
     rdfs:range xsd:string ;
     gh:openApiPropertyName "name" ;
+    gh:required true .
+
+gh:networkCount a owl:DatatypeProperty ;
+    rdfs:label "networkCount" ;
+    rdfs:domain gh:Repository ;
+    rdfs:range xsd:integer ;
+    gh:openApiPropertyName "network_count" ;
     gh:required true .
 
 gh:notificationSetting a owl:DatatypeProperty ;
@@ -1298,6 +1294,12 @@ gh:openIssuesCount a owl:DatatypeProperty ;
     rdfs:range xsd:integer ;
     gh:openApiPropertyName "open_issues_count" ;
     gh:required true .
+
+gh:organization a owl:ObjectProperty ;
+    rdfs:label "organization" ;
+    rdfs:domain gh:Repository ;
+    rdfs:range gh:User ;
+    gh:openApiPropertyName "organization" .
 
 gh:organizationId a owl:DatatypeProperty ;
     rdfs:label "organizationId" ;
@@ -1354,6 +1356,12 @@ gh:owner a owl:ObjectProperty ;
     rdfs:domain gh:Repository ;
     rdfs:range gh:User ;
     gh:openApiPropertyName "owner" .
+
+gh:parent a owl:ObjectProperty ;
+    rdfs:label "parent" ;
+    rdfs:domain gh:Repository ;
+    rdfs:range gh:Repository ;
+    gh:openApiPropertyName "parent" .
 
 gh:parentIssueUrl a owl:DatatypeProperty ;
     rdfs:label "parentIssueUrl" ;
@@ -1417,7 +1425,6 @@ gh:privacy a owl:DatatypeProperty ;
 
 gh:private a owl:DatatypeProperty ;
     rdfs:label "private" ;
-    rdfs:comment "Whether the repository is private or public." ;
     rdfs:domain gh:Repository ;
     rdfs:range xsd:boolean ;
     gh:openApiPropertyName "private" ;
@@ -1727,6 +1734,12 @@ gh:slug a owl:DatatypeProperty ;
     gh:openApiPropertyName "slug" ;
     gh:required true .
 
+gh:source a owl:ObjectProperty ;
+    rdfs:label "source" ;
+    rdfs:domain gh:Repository ;
+    rdfs:range gh:Repository ;
+    gh:openApiPropertyName "source" .
+
 gh:sourceCodeLocation a owl:DatatypeProperty ;
     rdfs:label "sourceCodeLocation" ;
     rdfs:comment "The URL of the advisory's source code." ;
@@ -1772,8 +1785,7 @@ gh:stargazersCount a owl:DatatypeProperty ;
 
 gh:starredAt a owl:DatatypeProperty ;
     rdfs:label "starredAt" ;
-    rdfs:domain gh:Repository,
-        gh:User ;
+    rdfs:domain gh:User ;
     rdfs:range xsd:string ;
     gh:openApiPropertyName "starred_at" .
 
@@ -1839,6 +1851,13 @@ gh:submittedAt a owl:DatatypeProperty ;
     rdfs:range xsd:dateTime ;
     gh:openApiPropertyName "submitted_at" .
 
+gh:subscribersCount a owl:DatatypeProperty ;
+    rdfs:label "subscribersCount" ;
+    rdfs:domain gh:Repository ;
+    rdfs:range xsd:integer ;
+    gh:openApiPropertyName "subscribers_count" ;
+    gh:required true .
+
 gh:subscribersUrl a owl:DatatypeProperty ;
     rdfs:label "subscribersUrl" ;
     rdfs:domain gh:Repository ;
@@ -1883,6 +1902,12 @@ gh:tempCloneToken a owl:DatatypeProperty ;
     rdfs:domain gh:Repository ;
     rdfs:range xsd:string ;
     gh:openApiPropertyName "temp_clone_token" .
+
+gh:templateRepository a owl:ObjectProperty ;
+    rdfs:label "templateRepository" ;
+    rdfs:domain gh:Repository ;
+    rdfs:range gh:Repository ;
+    gh:openApiPropertyName "template_repository" .
 
 gh:timelineUrl a owl:DatatypeProperty ;
     rdfs:label "timelineUrl" ;
@@ -2044,7 +2069,6 @@ gh:watchersCount a owl:DatatypeProperty ;
 
 gh:webCommitSignoffRequired a owl:DatatypeProperty ;
     rdfs:label "webCommitSignoffRequired" ;
-    rdfs:comment "Whether to require contributors to sign off on web-based commits" ;
     rdfs:domain gh:Organization,
         gh:Repository ;
     rdfs:range xsd:boolean ;
@@ -2179,13 +2203,13 @@ gh:PullRequest a owl:Class ;
     rdfs:comment "Pull requests let you tell others about changes you've pushed to a repository on GitHub. Once a pull request is sent, interested parties can review the set of changes, discuss potential modifications, and even push follow-up commits if necessary." ;
     gh:openApiSchemaName "pull-request" .
 
-gh:Repository a owl:Class ;
-    rdfs:label "Repository" ;
-    rdfs:comment "A repository on GitHub." ;
-    gh:openApiSchemaName "repository" .
-
 gh:Organization a owl:Class ;
     rdfs:label "Organization" ;
     rdfs:comment "Organization Full" ;
     gh:openApiSchemaName "organization-full" .
+
+gh:Repository a owl:Class ;
+    rdfs:label "Repository" ;
+    rdfs:comment "Full Repository" ;
+    gh:openApiSchemaName "full-repository" .
 
