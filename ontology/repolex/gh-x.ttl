@@ -1,0 +1,108 @@
+@prefix gh: <https://repolex.ai/ontology/extracts/github/rest-api/v2026-03-10/> .
+@prefix gh-x: <https://repolex.ai/ontology/repolex/gh-extension/> .
+@prefix git: <https://repolex.ai/ontology/extracts/gitpython-developers/GitPython/v3.1.46/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# =============================================================================
+# GITHUB EXTENSION ONTOLOGY
+# =============================================================================
+# Cross-cutting types and convenience properties for GitHub data.
+#
+# This ontology extends the auto-extracted GitHub REST API ontology (gh:)
+# with repolex-specific superclasses and properties that are NOT in the
+# upstream OpenAPI spec.
+#
+# Design follows the ast-x: / lsp-x: pattern:
+#   - New classes and properties go in gh-x: namespace
+#   - Extracted classes (gh:Issue, gh:PullRequest) get rdfs:subClassOf
+#     mappings to the new gh-x: superclass
+#
+# Categories:
+#   1. Universal superclass (gh-x:Item) for cross-type queries
+#   2. Convenience properties (totalReactions, etc.)
+#   3. PR-specific ref/sha properties (not in OpenAPI extract)
+# =============================================================================
+
+<https://repolex.ai/ontology/repolex/gh-extension> a owl:Ontology ;
+    rdfs:label "GitHub Extension Ontology" ;
+    rdfs:comment "Repolex extension types and properties for GitHub data. Defines gh-x:Item superclass and convenience properties not found in the upstream GitHub OpenAPI spec." ;
+    owl:versionInfo "1.0" .
+
+
+# =============================================================================
+# UNIVERSAL SUPERCLASS: gh-x:Item
+# =============================================================================
+# A single superclass for all "numbered, authored, timestamped" GitHub
+# entities. Enables queries like "all items by author X" or "items with
+# reactions > N" without union across Issue/PR/Discussion.
+#
+# Current subclasses: gh:Issue, gh:PullRequest
+# Future:             gh:Discussion (when added to extract)
+# =============================================================================
+
+gh-x:Item a owl:Class ;
+    rdfs:label "Item" ;
+    rdfs:comment "Abstract superclass for numbered, authored, timestamped GitHub entities (issues, pull requests, discussions). Enables cross-type queries without UNION." .
+
+gh:Issue rdfs:subClassOf gh-x:Item .
+gh:PullRequest rdfs:subClassOf gh-x:Item .
+
+
+# =============================================================================
+# CONVENIENCE PROPERTIES ON gh-x:Item
+# =============================================================================
+# Properties shared across all Item subtypes. These are derived/computed
+# by repolex parsers, not present in the GitHub OpenAPI extract.
+# =============================================================================
+
+gh-x:totalReactions a owl:DatatypeProperty ;
+    rdfs:label "totalReactions" ;
+    rdfs:comment "Sum of all reaction counts on this item. Computed from the GitHub API reactions.total_count field as a convenience rollup." ;
+    rdfs:domain gh-x:Item ;
+    rdfs:range xsd:integer .
+
+
+# =============================================================================
+# PULL REQUEST REF/SHA PROPERTIES
+# =============================================================================
+# Properties specific to pull requests that capture branch references and
+# commit SHAs. These are derived from the nested head/base objects in the
+# GitHub API response, not directly modeled in the OpenAPI extract.
+# =============================================================================
+
+gh-x:headRef a owl:DatatypeProperty ;
+    rdfs:label "headRef" ;
+    rdfs:comment "Branch name of the PR's head (source) branch. Extracted from the GitHub API head.ref field." ;
+    rdfs:domain gh:PullRequest ;
+    rdfs:range xsd:string .
+
+gh-x:baseRef a owl:DatatypeProperty ;
+    rdfs:label "baseRef" ;
+    rdfs:comment "Branch name of the PR's base (target) branch. Extracted from the GitHub API base.ref field." ;
+    rdfs:domain gh:PullRequest ;
+    rdfs:range xsd:string .
+
+gh-x:headSha a owl:ObjectProperty ;
+    rdfs:label "headSha" ;
+    rdfs:comment "Points to the git:Commit at the tip of the PR's head branch. Extracted from the GitHub API head.sha field and linked to the corresponding commit URI." ;
+    rdfs:domain gh:PullRequest ;
+    rdfs:range git:Commit .
+
+gh-x:mergeCommitSha a owl:ObjectProperty ;
+    rdfs:label "mergeCommitSha" ;
+    rdfs:comment "Points to the git:Commit created when this PR was merged. Extracted from the GitHub API merge_commit_sha field and linked to the corresponding commit URI." ;
+    rdfs:domain gh:PullRequest ;
+    rdfs:range git:Commit .
+
+
+# =============================================================================
+# FORK NETWORK PROPERTIES
+# =============================================================================
+# gh:parent and gh:source are now in the extracted gh: ontology (injected
+# from the full-repository schema). No gh-x: properties needed.
+#
+# gh:parent  — immediate fork parent (gh:Repository → gh:Repository)
+# gh:source  — root of the fork network (gh:Repository → gh:Repository)
+# =============================================================================

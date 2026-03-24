@@ -1,0 +1,162 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix lsp: <https://repolex.ai/ontology/extracts/microsoft/multilspy/v0.0.15/core/> .
+@prefix lsp-x: <https://repolex.ai/ontology/repolex/lsp-extension/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# =============================================================================
+# LSP EXTENSION ONTOLOGY
+# =============================================================================
+# Properties and metrics derived from LSP (Language Server Protocol) data.
+#
+# This ontology defines properties that are populated by multilspy LSP calls
+# and analysis of LSP responses (definition resolution, call graphs, type
+# hierarchies, etc.).
+#
+# Categories:
+#   1. Dataflow properties (arg-to-param linking, return tracking)
+#   2. LSP target properties (call/import resolution)
+#   3. Call graph metrics (fan-in, fan-out)
+#   4. Inheritance metrics (type hierarchy depth)
+#
+# Note: AST-derived metrics (complexity, line counts, etc.) are in ast-x.ttl
+# Note: Cross-cutting metrics that combine sources are in metrics.ttl
+# =============================================================================
+
+<https://repolex.ai/ontology/repolex/lsp-extension> a owl:Ontology ;
+    rdfs:label "LSP Extension Ontology" ;
+    rdfs:comment "Properties and metrics derived from LSP data via multilspy resolution and call graph analysis." ;
+    owl:versionInfo "1.0" .
+
+
+# =============================================================================
+# DATAFLOW PROPERTIES
+# =============================================================================
+# Properties linking call sites to definitions for dataflow analysis.
+# Populated after LSP call/reference resolution.
+# =============================================================================
+
+lsp-x:argToParam a owl:ObjectProperty ;
+    rdfs:label "argument to parameter" ;
+    rdfs:comment "Links an argument expression at a call site to the parameter definition it passes to. Populated by dataflow analysis after LSP call resolution." ;
+    rdfs:domain ast:Node ;
+    rdfs:range ast:Node .
+
+lsp-x:returnToCall a owl:ObjectProperty ;
+    rdfs:label "return to call" ;
+    rdfs:comment "Links a return statement to the call site that receives its value. Populated by dataflow analysis tracking return value flow." ;
+    rdfs:domain ast:Node ;
+    rdfs:range ast:Node .
+
+
+# =============================================================================
+# LSP TARGET PROPERTIES
+# =============================================================================
+# Cross-language properties populated by multilspy LSP resolution.
+# Core LSP DefinitionRequest and reference tracking.
+# =============================================================================
+
+lsp-x:callTarget a owl:ObjectProperty ;
+    rdfs:label "call target" ;
+    rdfs:comment "The resolved definition/location of a call site, populated by multilspy LSP DefinitionRequest." ;
+    rdfs:domain ast:Node ;
+    rdfs:range lsp:Location .
+
+lsp-x:importTarget a owl:ObjectProperty ;
+    rdfs:label "import target" ;
+    rdfs:comment "The resolved location of an imported module/symbol, populated by multilspy LSP resolution." ;
+    rdfs:domain ast:Node ;
+    rdfs:range lsp:Location .
+
+lsp-x:importModule a owl:DatatypeProperty ;
+    rdfs:label "import module" ;
+    rdfs:comment "The module name or path being imported (e.g., 'react', 'lodash', './utils/helper'). Extracted from the import statement source text. Convenience property for quick access to import target without LSP resolution." ;
+    rdfs:domain ast:Node ;
+    rdfs:range xsd:string .
+
+lsp-x:importSymbol a owl:DatatypeProperty ;
+    rdfs:label "import symbol" ;
+    rdfs:comment "Specific symbol name imported from the module (e.g., 'useState' from 'react', 'Path' from 'pathlib'). Optional — not present for wildcard or module-level imports." ;
+    rdfs:domain ast:Node ;
+    rdfs:range xsd:string .
+
+lsp-x:callTargetFile a owl:DatatypeProperty ;
+    rdfs:label "call target file" ;
+    rdfs:comment "Repository-relative file path of the call target, extracted from LSP Location response. Convenience property for quick access without following lsp-x:callTarget." ;
+    rdfs:domain ast:Node ;
+    rdfs:range xsd:string .
+
+lsp-x:callTargetLine a owl:DatatypeProperty ;
+    rdfs:label "call target line" ;
+    rdfs:comment "Line number where the call target is defined, extracted from LSP Location response. Convenience property for quick access without following lsp-x:callTarget." ;
+    rdfs:domain ast:Node ;
+    rdfs:range xsd:nonNegativeInteger .
+
+lsp-x:callTargetName a owl:DatatypeProperty ;
+    rdfs:label "call target name" ;
+    rdfs:comment "Symbol name of the call target, extracted from LSP Hover response (best-effort). Convenience property for displaying target name without additional lookups." ;
+    rdfs:domain ast:Node ;
+    rdfs:range xsd:string .
+
+
+# =============================================================================
+# CALL GRAPH METRICS
+# =============================================================================
+# Metrics computed from LSP call graph analysis.
+# Requires lsp-x:callTarget resolution to be populated first.
+# =============================================================================
+
+lsp-x:callsCount a owl:DatatypeProperty ;
+    rdfs:label "calls count" ;
+    rdfs:comment "Fan-out: Number of distinct functions this function calls. Computed by counting distinct lsp-x:callTarget triples where the subject is a call site within this function." ;
+    rdfs:domain ast:Node ;
+    rdfs:range xsd:nonNegativeInteger .
+
+lsp-x:calledByCount a owl:DatatypeProperty ;
+    rdfs:label "called by count" ;
+    rdfs:comment "Fan-in: Number of distinct callers that call this function. Computed by counting how many call sites have lsp-x:callTarget pointing to this function." ;
+    rdfs:domain ast:Node ;
+    rdfs:range xsd:nonNegativeInteger .
+
+
+# =============================================================================
+# INHERITANCE METRICS
+# =============================================================================
+# Metrics from LSP TypeHierarchy analysis.
+# Requires LSP TypeHierarchyRequest support.
+# =============================================================================
+
+lsp-x:inheritanceDepth a owl:DatatypeProperty ;
+    rdfs:label "inheritance depth" ;
+    rdfs:comment "Distance from root class in the inheritance hierarchy. Deep hierarchies can be harder to understand. Computed from LSP TypeHierarchyRequest (supertypes traversal)." ;
+    rdfs:domain ast:Node ;
+    rdfs:range xsd:nonNegativeInteger .
+
+lsp-x:childClassCount a owl:DatatypeProperty ;
+    rdfs:label "child class count" ;
+    rdfs:comment "Number of direct subclasses. Changes to classes with many children have wide ripple effects. Computed from LSP TypeHierarchyRequest (subtypes count)." ;
+    rdfs:domain ast:Node ;
+    rdfs:range xsd:nonNegativeInteger .
+
+
+# =============================================================================
+# LSP TREE STRUCTURES (FUTURE - NOT YET IMPLEMENTED)
+# =============================================================================
+# Support for LSP tree representations from multilspy TreeRepr.
+#
+# Potential tree types:
+#   - DocumentSymbol tree: symbol hierarchy within a file (classes, methods, etc.)
+#   - CallHierarchy tree: incoming/outgoing call chains
+#   - TypeHierarchy tree: inheritance chains (supertypes/subtypes)
+#
+# Properties will be added here as needed when TreeRepr is integrated.
+# Examples of what might be needed:
+#   - lsp-x:symbolParent - parent symbol in DocumentSymbol hierarchy
+#   - lsp-x:symbolChildren - child symbols (methods in class, nested functions)
+#   - lsp-x:symbolDepth - nesting depth in symbol tree
+#   - lsp-x:incomingCalls - CallHierarchyIncomingCall items
+#   - lsp-x:outgoingCalls - CallHierarchyOutgoingCall items
+#
+# Wait until actual TreeRepr usage patterns emerge before defining these.
+# =============================================================================

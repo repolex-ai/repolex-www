@@ -1,0 +1,228 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix repolex: <https://repolex.ai/ontology/repolex/> .
+@prefix git: <https://repolex.ai/ontology/extracts/gitpython-developers/GitPython/v3.1.46/core/> .
+@prefix gh: <https://repolex.ai/ontology/extracts/github/rest-api/v2026-03-10/> .
+
+# =============================================================================
+# REPOLEX CORE ONTOLOGY
+# =============================================================================
+# Application-level ontology defining Repolex-specific classes and properties.
+# This file is the source for repolex: namespace vocabulary.
+#
+# Add Repolex-specific properties and classes here as needed.
+# =============================================================================
+
+<https://repolex.ai/ontology/repolex/> a owl:Ontology ;
+    rdfs:label "Repolex Core Ontology" ;
+    rdfs:comment "Core Repolex application ontology defining repository analysis vocabulary." ;
+    owl:versionInfo "1.0" .
+
+# =============================================================================
+# File
+# =============================================================================
+
+repolex:File a owl:Class ;
+    rdfs:label "File" ;
+    rdfs:comment "A file in a repository" .
+
+repolex:filePath a owl:DatatypeProperty ;
+    rdfs:label "file path" ;
+    rdfs:comment "Relative path of the file within the repository" ;
+    rdfs:domain repolex:File ;
+    rdfs:range xsd:string .
+
+repolex:fileName a owl:DatatypeProperty ;
+    rdfs:label "file name" ;
+    rdfs:comment "Base name of the file (e.g., 'main.py')" ;
+    rdfs:domain repolex:File ;
+    rdfs:range xsd:string .
+
+repolex:mimeType a owl:DatatypeProperty ;
+    rdfs:label "MIME type" ;
+    rdfs:comment "MIME type of the file (e.g., 'text/x-python')" ;
+    rdfs:domain repolex:File ;
+    rdfs:range xsd:string .
+
+repolex:language a owl:DatatypeProperty ;
+    rdfs:label "language" ;
+    rdfs:comment "Programming language (e.g., 'python', 'javascript', 'rust')" ;
+    rdfs:range xsd:string .
+
+repolex:fileSize a owl:DatatypeProperty ;
+    rdfs:label "file size" ;
+    rdfs:comment "Size of the file in bytes" ;
+    rdfs:domain repolex:File ;
+    rdfs:range xsd:integer .
+
+repolex:blobHash a owl:DatatypeProperty ;
+    rdfs:label "blob hash" ;
+    rdfs:comment "Git blob hash (SHA-1) of the file contents" ;
+    rdfs:domain repolex:File ;
+    rdfs:range xsd:string .
+
+repolex:blobUri a owl:DatatypeProperty ;
+    rdfs:label "blob URI" ;
+    rdfs:comment "URI reference to the blob resource" ;
+    rdfs:domain repolex:File ;
+    rdfs:range xsd:anyURI .
+
+repolex:githubUri a owl:DatatypeProperty ;
+    rdfs:label "GitHub URI" ;
+    rdfs:comment "GitHub web URL for viewing this file" ;
+    rdfs:domain repolex:File ;
+    rdfs:range xsd:anyURI .
+
+# =============================================================================
+# Dependency
+# =============================================================================
+
+repolex:Dependency a owl:Class ;
+    rdfs:label "Dependency" ;
+    rdfs:comment "An external dependency resolved from a package registry (PyPI, NPM, etc.) to a specific GitHub repository and commit." .
+
+repolex:packageName a owl:DatatypeProperty ;
+    rdfs:label "package name" ;
+    rdfs:comment "The package name as it appears in the registry (e.g., 'requests', 'express')" ;
+    rdfs:domain repolex:Dependency ;
+    rdfs:range xsd:string .
+
+repolex:packageEcosystem a owl:DatatypeProperty ;
+    rdfs:label "package ecosystem" ;
+    rdfs:comment "The package ecosystem/registry (e.g., 'PYPI', 'NPM', 'MAVEN')" ;
+    rdfs:domain repolex:Dependency ;
+    rdfs:range xsd:string .
+
+repolex:packageVersion a owl:DatatypeProperty ;
+    rdfs:label "package version" ;
+    rdfs:comment "The package version as declared in the dependency specification (e.g., '2.28.0', '^1.0.0')" ;
+    rdfs:domain repolex:Dependency ;
+    rdfs:range xsd:string .
+
+repolex:githubOrg a owl:DatatypeProperty ;
+    rdfs:label "GitHub organization" ;
+    rdfs:comment "GitHub organization or user name hosting the dependency" ;
+    rdfs:domain repolex:Dependency ;
+    rdfs:range xsd:string .
+
+repolex:githubRepo a owl:DatatypeProperty ;
+    rdfs:label "GitHub repository" ;
+    rdfs:comment "GitHub repository name" ;
+    rdfs:domain repolex:Dependency ;
+    rdfs:range xsd:string .
+
+repolex:githubLink a owl:DatatypeProperty ;
+    rdfs:label "GitHub link" ;
+    rdfs:comment "Full GitHub URL to the repository" ;
+    rdfs:domain repolex:Dependency ;
+    rdfs:range xsd:anyURI .
+
+repolex:githubTag a owl:DatatypeProperty ;
+    rdfs:label "GitHub tag" ;
+    rdfs:comment "Git tag corresponding to the resolved package version" ;
+    rdfs:domain repolex:Dependency ;
+    rdfs:range xsd:string .
+
+repolex:githubCommit a owl:DatatypeProperty ;
+    rdfs:label "GitHub commit" ;
+    rdfs:comment "Git commit SHA-1 hash for the resolved version" ;
+    rdfs:domain repolex:Dependency ;
+    rdfs:range xsd:string .
+
+# =============================================================================
+# Blob
+# =============================================================================
+
+repolex:Blob a owl:Class ;
+    rdfs:label "Blob" ;
+    rdfs:comment "A content-addressed AST blob representing the parsed syntax tree of a source file. Blobs are identified by git blob hash and contain the complete tree-sitter parse tree in RDF form." .
+
+repolex:usesOntology a owl:ObjectProperty ;
+    rdfs:label "uses ontology" ;
+    rdfs:comment "Reference to an ontology URI that this blob uses (e.g., tree-sitter core ontology, language-specific ontology)" ;
+    rdfs:domain repolex:Blob ;
+    rdfs:range owl:Ontology .
+
+repolex:root a owl:ObjectProperty ;
+    rdfs:label "root" ;
+    rdfs:comment "Points to the root AST node of this blob (typically module or compilation_unit)" ;
+    rdfs:domain repolex:Blob .
+
+# =============================================================================
+# Parse Tracking
+# =============================================================================
+
+repolex:parseStatus a owl:DatatypeProperty ;
+    rdfs:label "parse status" ;
+    rdfs:comment "Status of the parse for this commit: 'parsed', 'failed', or 'pending'." ;
+    rdfs:domain git:Commit ;
+    rdfs:range xsd:string .
+
+repolex:parsedAt a owl:DatatypeProperty ;
+    rdfs:label "parsed at" ;
+    rdfs:comment "Datetime when this commit was parsed by repolex." ;
+    rdfs:domain git:Commit ;
+    rdfs:range xsd:dateTime .
+
+repolex:dependencyRepo a owl:ObjectProperty ;
+    rdfs:label "dependency repo" ;
+    rdfs:comment "A repository that this commit depends on. Resolved from package manifest (requirements.txt, pom.xml, etc.) via package registry to GitHub repo. Used in manifest graphs to build the cross-repo dependency web." ;
+    rdfs:domain git:Commit ;
+    rdfs:range gh:Repository .
+
+repolex:parserVersion a owl:DatatypeProperty ;
+    rdfs:label "parser version" ;
+    rdfs:comment "Version of the repolex parser that produced this parse. Used for tracking which parser version generated which data." ;
+    rdfs:domain git:Commit ;
+    rdfs:range xsd:string .
+
+repolex:repository a owl:ObjectProperty ;
+    rdfs:label "repository" ;
+    rdfs:comment "Back-link from a commit to its repository. Convenience property for navigating from commit manifest to repo manifest." ;
+    rdfs:domain git:Commit ;
+    rdfs:range gh:Repository .
+
+repolex:storageRepo a owl:DatatypeProperty ;
+    rdfs:label "storage repo" ;
+    rdfs:comment "GitHub storage repository where parsed data is stored (e.g., 'repolex-forx/TopQuadrant--shacl'). Written by forx." ;
+    rdfs:domain gh:Repository ;
+    rdfs:range xsd:string .
+
+repolex:trackedCommit a owl:ObjectProperty ;
+    rdfs:label "tracked commit" ;
+    rdfs:comment "Links a repository to a commit that is tracked for parsing (parsed, pending, or failed). Written by forx to the repo manifest." ;
+    rdfs:domain gh:Repository ;
+    rdfs:range git:Commit .
+
+# =============================================================================
+# Graph File
+# =============================================================================
+
+repolex:GraphFile a owl:Class ;
+    rdfs:label "Graph File" ;
+    rdfs:comment "A serialized RDF graph file produced by the parser. Contains the path and size of a .nq.gz file in the storage repo." .
+
+repolex:graphFile a owl:ObjectProperty ;
+    rdfs:label "graph file" ;
+    rdfs:comment "Links a commit to one of its output graph files (AST, LSP, repolex, dep, filetree, commit, branch, tag)." ;
+    rdfs:domain git:Commit ;
+    rdfs:range repolex:GraphFile .
+
+repolex:graphType a owl:DatatypeProperty ;
+    rdfs:label "graph type" ;
+    rdfs:comment "Type of graph: 'ast', 'lsp', 'repolex', 'dep', 'filetree', 'commit', 'branch', 'tag', 'issue', 'pr'." ;
+    rdfs:domain repolex:GraphFile ;
+    rdfs:range xsd:string .
+
+repolex:graphFilePath a owl:DatatypeProperty ;
+    rdfs:label "graph file path" ;
+    rdfs:comment "Relative path to the .nq.gz file within the storage repo." ;
+    rdfs:domain repolex:GraphFile ;
+    rdfs:range xsd:string .
+
+repolex:graphFileSize a owl:DatatypeProperty ;
+    rdfs:label "graph file size" ;
+    rdfs:comment "Size of the .nq.gz file in bytes." ;
+    rdfs:domain repolex:GraphFile ;
+    rdfs:range xsd:integer .

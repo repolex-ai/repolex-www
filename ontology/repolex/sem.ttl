@@ -1,0 +1,191 @@
+@prefix ast-x: <https://repolex.ai/ontology/repolex/ast-extension/> .
+@prefix lsp: <https://repolex.ai/ontology/extracts/microsoft/multilspy/v0.0.15/core/> .
+@prefix lsp-x: <https://repolex.ai/ontology/repolex/lsp-extension/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sem: <https://repolex.ai/ontology/repolex/semantic-categories/> .
+
+# =============================================================================
+# SEMANTIC CATEGORIES ONTOLOGY
+# =============================================================================
+# Top-level semantic categories for query-time grouping across languages.
+#
+# These categories are conceptual buckets that span multiple data sources
+# (ast:, ast-x:, lsp:, lsp-x:) and enable intuitive cross-language queries
+# like "find all control flow" or "find all type definitions" without
+# needing to know language-specific syntax.
+#
+# Categories:
+#   1. Control Flow - branching and loops (if, while, for, switch, etc.)
+#   2. Data Flow - assignments, parameters, variable usage
+#   3. Exception - exception handling (try, catch, throw)
+#   4. Declaration - function, class, variable declarations
+#   5. Mutation - state changes (assignments, updates)
+#   6. Import - module/symbol imports
+#   7. Inheritance - class relationships (extends, implements, traits)
+#   8. Type - type definitions (interface, enum, struct, type alias)
+#
+# Future possibilities (not yet implemented):
+#   - sem:Dependency - package dependencies (from package.json, Cargo.toml, etc.)
+#   - sem:PackageMetadata - package name, version, author (from manifests)
+#   - sem:DevDependency - dev-only dependencies
+#   - sem:CIJob - CI/CD jobs (from .github/workflows, .gitlab-ci.yml)
+#   - sem:ConfigVariable - config/environment variables
+#   - sem:Export - exported symbols/API surface
+#   - sem:Comment - code comments and documentation
+#
+# Note: These require context-aware parsing of config formats (TOML, JSON, YAML)
+# to determine semantic meaning. Tree-sitter parsers exist for these formats,
+# but mappings need file path context (e.g., is this package.json or tsconfig.json?).
+# =============================================================================
+
+<https://repolex.ai/ontology/repolex/semantic-categories> a owl:Ontology ;
+    rdfs:label "Semantic Categories Ontology" ;
+    rdfs:comment "Top-level semantic categories for cross-language code analysis queries. Groups AST, LSP, and computed properties into intuitive query-time buckets." ;
+    owl:versionInfo "1.0" .
+
+
+# =============================================================================
+# CATEGORY DEFINITIONS
+# =============================================================================
+
+sem:ControlFlow a owl:Class ;
+    rdfs:label "Control Flow" ;
+    rdfs:comment "Control flow constructs: branching (if, switch, match), loops (for, while), and flow control (break, continue, return, yield). Used to find all control flow across languages." .
+
+sem:DataFlow a owl:Class ;
+    rdfs:label "Data Flow" ;
+    rdfs:comment "Data flow constructs: assignments, augmented assignments, parameters, variable declarations. Used to track how data moves through code." .
+
+sem:Exception a owl:Class ;
+    rdfs:label "Exception Handling" ;
+    rdfs:comment "Exception handling constructs: try blocks, catch/except clauses, throw/raise statements. Used to find error handling patterns." .
+
+sem:Declaration a owl:Class ;
+    rdfs:label "Declaration" ;
+    rdfs:comment "Declarations: functions, methods, classes, interfaces, variables, constants. Used to find all declarations across languages." .
+
+sem:Mutation a owl:Class ;
+    rdfs:label "Mutation" ;
+    rdfs:comment "State mutation constructs: assignments and augmented assignments that change variable values. Subset of DataFlow focusing on state changes." .
+
+sem:Import a owl:Class ;
+    rdfs:label "Import" ;
+    rdfs:comment "Import/include/use statements that bring external modules or symbols into scope. Used for dependency analysis." .
+
+sem:Inheritance a owl:Class ;
+    rdfs:label "Inheritance" ;
+    rdfs:comment "Inheritance and interface implementation relationships: extends, implements, inherits from, trait bounds. Used for OOP hierarchy analysis." .
+
+sem:Type a owl:Class ;
+    rdfs:label "Type Definition" ;
+    rdfs:comment "Type definitions: interfaces, enums, structs, type aliases, traits, protocols. Used to find type system elements across languages." .
+
+
+# =============================================================================
+# AST-X MAPPINGS: CONTROL FLOW
+# =============================================================================
+
+ast-x:IfStatement rdfs:subClassOf sem:ControlFlow .
+ast-x:ForStatement rdfs:subClassOf sem:ControlFlow .
+ast-x:WhileStatement rdfs:subClassOf sem:ControlFlow .
+ast-x:SwitchStatement rdfs:subClassOf sem:ControlFlow .
+ast-x:BreakStatement rdfs:subClassOf sem:ControlFlow .
+ast-x:ContinueStatement rdfs:subClassOf sem:ControlFlow .
+ast-x:ReturnStatement rdfs:subClassOf sem:ControlFlow .
+ast-x:YieldStatement rdfs:subClassOf sem:ControlFlow .
+
+
+# =============================================================================
+# AST-X MAPPINGS: DATA FLOW
+# =============================================================================
+
+ast-x:Assignment rdfs:subClassOf sem:DataFlow .
+ast-x:AugmentedAssignment rdfs:subClassOf sem:DataFlow .
+ast-x:Parameter rdfs:subClassOf sem:DataFlow .
+ast-x:VariableDeclaration rdfs:subClassOf sem:DataFlow .
+
+
+# =============================================================================
+# AST-X MAPPINGS: EXCEPTION HANDLING
+# =============================================================================
+
+ast-x:TryStatement rdfs:subClassOf sem:Exception .
+ast-x:CatchClause rdfs:subClassOf sem:Exception .
+ast-x:ThrowStatement rdfs:subClassOf sem:Exception .
+
+
+# =============================================================================
+# AST-X MAPPINGS: DECLARATIONS
+# =============================================================================
+
+ast-x:FunctionDefinition rdfs:subClassOf sem:Declaration .
+ast-x:ClassDefinition rdfs:subClassOf sem:Declaration .
+ast-x:VariableDeclaration rdfs:subClassOf sem:Declaration .
+
+
+# =============================================================================
+# AST-X MAPPINGS: MUTATION
+# =============================================================================
+# Mutation is a subset of DataFlow focusing on state changes.
+# =============================================================================
+
+ast-x:Assignment rdfs:subClassOf sem:Mutation .
+ast-x:AugmentedAssignment rdfs:subClassOf sem:Mutation .
+
+
+# =============================================================================
+# AST-X MAPPINGS: IMPORTS
+# =============================================================================
+
+ast-x:ImportStatement rdfs:subClassOf sem:Import .
+
+
+# =============================================================================
+# LSP MAPPINGS: TYPE DEFINITIONS
+# =============================================================================
+# LSP SymbolKind provides normalized type categories across languages.
+# =============================================================================
+
+lsp:SymbolKind-Interface rdfs:subClassOf sem:Type .
+lsp:SymbolKind-Enum rdfs:subClassOf sem:Type .
+lsp:SymbolKind-Struct rdfs:subClassOf sem:Type .
+lsp:SymbolKind-Class rdfs:subClassOf sem:Type .
+
+
+# =============================================================================
+# LSP MAPPINGS: DECLARATIONS
+# =============================================================================
+# LSP SymbolKind provides normalized declaration categories.
+# =============================================================================
+
+lsp:SymbolKind-Function rdfs:subClassOf sem:Declaration .
+lsp:SymbolKind-Method rdfs:subClassOf sem:Declaration .
+lsp:SymbolKind-Constructor rdfs:subClassOf sem:Declaration .
+lsp:SymbolKind-Variable rdfs:subClassOf sem:Declaration .
+lsp:SymbolKind-Field rdfs:subClassOf sem:Declaration .
+lsp:SymbolKind-Property rdfs:subClassOf sem:Declaration .
+lsp:SymbolKind-Constant rdfs:subClassOf sem:Declaration .
+lsp:SymbolKind-Class rdfs:subClassOf sem:Declaration .
+lsp:SymbolKind-Interface rdfs:subClassOf sem:Declaration .
+lsp:SymbolKind-Enum rdfs:subClassOf sem:Declaration .
+lsp:SymbolKind-Struct rdfs:subClassOf sem:Declaration .
+
+
+# =============================================================================
+# NOTES ON INHERITANCE CATEGORY
+# =============================================================================
+# The sem:Inheritance category is for class relationships (extends, implements,
+# inherits from, trait bounds). These relationships are typically expressed via:
+#
+# 1. LSP TypeHierarchy requests (supertypes/subtypes) - runtime resolution
+# 2. AST nodes for inheritance clauses - static structure
+#
+# Since inheritance is often resolved at LSP time rather than parse time,
+# and the specific AST nodes vary significantly by language (Java's extends_list,
+# Python's argument_list in class definition, Rust's trait_bounds, etc.),
+# we leave this category defined but without static AST mappings.
+#
+# Usage: Query for relationships discovered by LSP TypeHierarchy or populate
+# via language-specific AST patterns as needed.
+# =============================================================================

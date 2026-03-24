@@ -1,0 +1,830 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix ast-x: <https://repolex.ai/ontology/repolex/ast-extension/> .
+@prefix lsp: <https://repolex.ai/ontology/extracts/microsoft/multilspy/v0.0.15/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Tree-sitter language namespaces (v0.25)
+@prefix cpp:        <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/cpp/> .
+@prefix csharp:     <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/csharp/> .
+@prefix dart:       <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/dart/> .
+@prefix go:         <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/go/> .
+@prefix java:       <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/java/> .
+@prefix javascript: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/javascript/> .
+@prefix kotlin:     <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/kotlin/> .
+@prefix python:     <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/python/> .
+@prefix ruby:       <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/ruby/> .
+@prefix rust:       <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/rust/> .
+@prefix scala:      <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/scala/> .
+@prefix typescript: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/typescript/> .
+
+# =============================================================================
+# AST EXTENSION ONTOLOGY
+# =============================================================================
+# Universal AST types and one-off AST properties for cross-language analysis.
+#
+# This ontology maps language-specific tree-sitter node types to generic
+# ast-x: classes via rdfs:subClassOf, enabling cross-language SPARQL queries.
+#
+# Organization:
+#   1. One-off AST properties (SCM-extracted, etc.)
+#   2. Universal AST type definitions (control flow, dataflow, LSP)
+#   3. Language-specific subclass mappings (by language)
+#
+# Languages covered (multilspy supported):
+#   C++, C#, Dart, Go, Java, JavaScript, Kotlin, Python, Ruby, Rust, TypeScript
+# =============================================================================
+
+<https://repolex.ai/ontology/repolex/ast-extension> a owl:Ontology ;
+    rdfs:label "AST Extension Ontology" ;
+    rdfs:comment "Universal AST types and extensions for cross-language analysis. Maps language-specific tree-sitter nodes to generic ast-x: classes via rdfs:subClassOf." ;
+    owl:versionInfo "1.0" .
+
+
+# =============================================================================
+# ONE-OFF AST PROPERTIES
+# =============================================================================
+# Properties that don't fit the subclassing pattern but are needed for AST analysis.
+# =============================================================================
+
+ast-x:resolutionNode a owl:ObjectProperty ;
+    rdfs:label "resolution node" ;
+    rdfs:comment "Points from an import statement to the specific child node containing the module/symbol name, extracted via tree-sitter .scm query at blob parse time. The child node has the correct position for LSP resolution." ;
+    rdfs:range ast:Node .
+
+ast-x:filePath a owl:DatatypeProperty ;
+    rdfs:label "file path" ;
+    rdfs:comment "Repository-relative file path for this AST node (e.g., 'src/main.js', 'lib/utils/helper.py'). Used to locate the source file within the repository structure." ;
+    rdfs:domain ast:Node ;
+    rdfs:range xsd:string .
+
+ast-x:sourceBlobNode a owl:ObjectProperty ;
+    rdfs:label "source blob node" ;
+    rdfs:comment "Points to the blob node that contains this AST node's source code. Links AST nodes back to their containing blob for retrieval and reference (e.g., <blob/abc123#node_42_1_50_2>)." ;
+    rdfs:domain ast:Node ;
+    rdfs:range ast:Node .
+
+ast-x:assignsTo a owl:DatatypeProperty ;
+    rdfs:label "assigns to" ;
+    rdfs:comment "Target variable name for assignment operations. Extracted from the left-hand side (field_left) of assignment nodes during blob parsing. For simple assignments only; complex targets (destructuring, field access) require following the assignment structure." ;
+    rdfs:domain ast:Node ;
+    rdfs:range xsd:string .
+
+ast-x:parameterIndex a owl:DatatypeProperty ;
+    rdfs:label "parameter index" ;
+    rdfs:comment "Zero-indexed position of this parameter in the function signature. Computed during AST traversal by counting parameter positions. Used for argument-to-parameter dataflow mapping." ;
+    rdfs:domain ast:Node ;
+    rdfs:range xsd:nonNegativeInteger .
+
+ast-x:isOptional a owl:DatatypeProperty ;
+    rdfs:label "is optional" ;
+    rdfs:comment "Whether this parameter is optional/has a default value. Detected via .scm queries looking for: TypeScript '?' suffix, Python/Kotlin default values, etc. Populated during blob parsing." ;
+    rdfs:domain ast:Node ;
+    rdfs:range xsd:boolean .
+
+ast-x:docstring a owl:DatatypeProperty ;
+    rdfs:label "docstring" ;
+    rdfs:comment "Documentation text attached to a function, class, or module. Extracted from the first ast-x:Comment child of an ast-x:FunctionDefinition or ast-x:ClassDefinition during parse time. Used for documentation coverage analysis and LLM context." ;
+    rdfs:domain ast:Node ;
+    rdfs:range xsd:string .
+
+
+# =============================================================================
+# UNIVERSAL CONTROL FLOW TYPES
+# =============================================================================
+# Generic control flow constructs for cross-language analysis.
+# =============================================================================
+
+ast-x:IfStatement a owl:Class ;
+    rdfs:label "if statement" ;
+    rdfs:comment "Conditional branch: if, elif, unless, guard, if-modifier. Each represents a decision point for cyclomatic complexity." .
+
+ast-x:ElseClause a owl:Class ;
+    rdfs:label "else clause" ;
+    rdfs:comment "Default branch when no condition matches. NOT a decision point - does not contribute to cyclomatic complexity. Separated from ast-x:IfStatement to avoid inflating complexity counts." .
+
+ast-x:ForStatement a owl:Class ;
+    rdfs:label "for statement" ;
+    rdfs:comment "For loop: for-in, for-each, enhanced-for, range-based for. Iterator-driven." .
+
+ast-x:WhileStatement a owl:Class ;
+    rdfs:label "while statement" ;
+    rdfs:comment "Condition-driven loop: while, do-while, loop (Rust), until (Ruby)." .
+
+ast-x:SwitchStatement a owl:Class ;
+    rdfs:label "switch statement" ;
+    rdfs:comment "Multi-way dispatch: switch, match, case, when." .
+
+ast-x:BreakStatement a owl:Class ;
+    rdfs:label "break statement" ;
+    rdfs:comment "Early exit: break (exits loop or switch), fallthrough (Go)." .
+
+ast-x:ContinueStatement a owl:Class ;
+    rdfs:label "continue statement" ;
+    rdfs:comment "Skip to next iteration: continue, next (Ruby), redo (Ruby)." .
+
+ast-x:ReturnStatement a owl:Class ;
+    rdfs:label "return statement" ;
+    rdfs:comment "Exit function with optional value: return, co_return (C++20)." .
+
+ast-x:ThrowStatement a owl:Class ;
+    rdfs:label "throw statement" ;
+    rdfs:comment "Raise an exception: throw, raise." .
+
+ast-x:TryStatement a owl:Class ;
+    rdfs:label "try statement" ;
+    rdfs:comment "Exception handling scope: try, try-with-resources (Java), begin (Ruby)." .
+
+ast-x:CatchClause a owl:Class ;
+    rdfs:label "catch clause" ;
+    rdfs:comment "Exception handler: catch, except, rescue." .
+
+ast-x:YieldStatement a owl:Class ;
+    rdfs:label "yield statement" ;
+    rdfs:comment "Generator/coroutine yield: yield, yield_expression, co_yield." .
+
+
+# =============================================================================
+# UNIVERSAL DATAFLOW TYPES
+# =============================================================================
+# Generic dataflow constructs for tracking data movement and variable binding.
+# =============================================================================
+
+ast-x:Assignment a owl:Class ;
+    rdfs:label "assignment" ;
+    rdfs:comment "Direct value assignment: x = expr. Includes walrus operator := (Python), Go short_var_declaration." .
+
+ast-x:AugmentedAssignment a owl:Class ;
+    rdfs:label "augmented assignment" ;
+    rdfs:comment "Compound assignment: +=, -=, *=, /=, etc. Reads and writes the same variable." .
+
+ast-x:VariableDeclaration a owl:Class ;
+    rdfs:label "variable declaration" ;
+    rdfs:comment "Introduces a new variable binding: let, var, const, short_var_declaration (:= in Go)." .
+
+ast-x:ParameterList a owl:Class ;
+    rdfs:label "parameter list" ;
+    rdfs:comment "Container node holding all parameters in a function/method signature. Use ast-x:parameterIndex on child ast-x:Parameter nodes to track position." .
+
+ast-x:Parameter a owl:Class ;
+    rdfs:label "parameter" ;
+    rdfs:comment "Individual parameter within a function/method signature. Covers required, optional, typed, default, variadic, and destructured parameters. Children of an ast-x:ParameterList." .
+
+
+# =============================================================================
+# UNIVERSAL LSP TYPES
+# =============================================================================
+# Cross-language classes for LSP-based code analysis and symbol resolution.
+# =============================================================================
+
+ast-x:FunctionDefinition a owl:Class ;
+    rdfs:label "function definition" ;
+    rdfs:comment "Any function, method, constructor, lambda, or closure definition. Used by multilspy to find all references." .
+
+ast-x:ClassDefinition a owl:Class ;
+    rdfs:label "class definition" ;
+    rdfs:comment "Any class, interface, struct, enum, trait, or module definition. Includes impl blocks (Rust) and type declarations (Go)." .
+
+ast-x:CallSite a owl:Class ;
+    rdfs:label "call site" ;
+    rdfs:comment "Any function call, method call, or constructor invocation. PRIMARY input for multilspy: each call_site is sent as a DefinitionRequest to resolve the target." .
+
+ast-x:ImportStatement a owl:Class ;
+    rdfs:label "import statement" ;
+    rdfs:comment "Any import, use, require, or include directive. Used by multilspy to resolve module paths and cross-file symbol origins." .
+
+ast-x:Comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:comment "Any comment node in the AST: line comments, block comments, doc comments. Provides context for LLM analysis. Documentation content is available via LSP hover for doc comments." .
+
+
+# =============================================================================
+# UNIVERSAL INHERITANCE TYPES
+# =============================================================================
+# Generic inheritance constructs for OOP hierarchy analysis.
+# =============================================================================
+
+ast-x:ExtendsClause a owl:Class ;
+    rdfs:label "extends clause" ;
+    rdfs:comment "Superclass/parent class declaration. Single inheritance (Java, Ruby) or primary base class (C++, Python). Used to identify class hierarchies." .
+
+ast-x:ImplementsClause a owl:Class ;
+    rdfs:label "implements clause" ;
+    rdfs:comment "Interface implementation declaration. Maps to implements (Java, TypeScript), trait bounds (Rust), protocols (Swift)." .
+
+ast-x:InheritanceSpecifier a owl:Class ;
+    rdfs:label "inheritance specifier" ;
+    rdfs:comment "General inheritance/delegation declaration. Includes delegation (Kotlin), trait bounds (Rust), interface embedding (Go)." .
+
+
+# =============================================================================
+# C++ MAPPINGS
+# =============================================================================
+
+## Control Flow
+cpp:if_statement        rdfs:subClassOf ast-x:IfStatement .
+cpp:for_statement       rdfs:subClassOf ast-x:ForStatement .
+cpp:for_range_loop      rdfs:subClassOf ast-x:ForStatement .
+cpp:while_statement     rdfs:subClassOf ast-x:WhileStatement .
+cpp:do_statement        rdfs:subClassOf ast-x:WhileStatement .
+cpp:switch_statement    rdfs:subClassOf ast-x:SwitchStatement .
+cpp:break_statement     rdfs:subClassOf ast-x:BreakStatement .
+cpp:continue_statement  rdfs:subClassOf ast-x:ContinueStatement .
+cpp:return_statement    rdfs:subClassOf ast-x:ReturnStatement .
+cpp:co_return_statement rdfs:subClassOf ast-x:ReturnStatement .
+cpp:throw_statement     rdfs:subClassOf ast-x:ThrowStatement .
+cpp:try_statement       rdfs:subClassOf ast-x:TryStatement .
+cpp:seh_try_statement   rdfs:subClassOf ast-x:TryStatement .
+cpp:catch_clause        rdfs:subClassOf ast-x:CatchClause .
+cpp:seh_except_clause   rdfs:subClassOf ast-x:CatchClause .
+cpp:co_yield_statement  rdfs:subClassOf ast-x:YieldStatement .
+
+## Dataflow
+cpp:assignment_expression          rdfs:subClassOf ast-x:Assignment .
+cpp:parameter_list                 rdfs:subClassOf ast-x:ParameterList .
+cpp:parameter_declaration          rdfs:subClassOf ast-x:Parameter .
+cpp:optional_parameter_declaration rdfs:subClassOf ast-x:Parameter .
+cpp:variadic_parameter_declaration rdfs:subClassOf ast-x:Parameter .
+
+## LSP
+cpp:function_definition  rdfs:subClassOf ast-x:FunctionDefinition .
+cpp:class_specifier      rdfs:subClassOf ast-x:ClassDefinition .
+cpp:struct_specifier     rdfs:subClassOf ast-x:ClassDefinition .
+cpp:call_expression      rdfs:subClassOf ast-x:CallSite .
+cpp:preproc_include      rdfs:subClassOf ast-x:ImportStatement .
+
+## Inheritance
+cpp:base_class_clause    rdfs:subClassOf ast-x:ExtendsClause .
+
+## Comments
+cpp:comment              rdfs:subClassOf ast-x:Comment .
+
+
+# =============================================================================
+# C# MAPPINGS
+# =============================================================================
+
+## Control Flow
+csharp:if_statement       rdfs:subClassOf ast-x:IfStatement .
+csharp:for_statement      rdfs:subClassOf ast-x:ForStatement .
+csharp:foreach_statement  rdfs:subClassOf ast-x:ForStatement .
+csharp:while_statement    rdfs:subClassOf ast-x:WhileStatement .
+csharp:do_statement       rdfs:subClassOf ast-x:WhileStatement .
+csharp:switch_statement   rdfs:subClassOf ast-x:SwitchStatement .
+csharp:break_statement    rdfs:subClassOf ast-x:BreakStatement .
+csharp:continue_statement rdfs:subClassOf ast-x:ContinueStatement .
+csharp:return_statement   rdfs:subClassOf ast-x:ReturnStatement .
+csharp:throw_statement    rdfs:subClassOf ast-x:ThrowStatement .
+csharp:try_statement      rdfs:subClassOf ast-x:TryStatement .
+csharp:catch_clause       rdfs:subClassOf ast-x:CatchClause .
+csharp:yield_statement    rdfs:subClassOf ast-x:YieldStatement .
+
+## Dataflow
+csharp:assignment_expression rdfs:subClassOf ast-x:Assignment .
+csharp:variable_declaration  rdfs:subClassOf ast-x:VariableDeclaration .
+csharp:parameter_list        rdfs:subClassOf ast-x:ParameterList .
+csharp:parameter             rdfs:subClassOf ast-x:Parameter .
+
+## LSP
+csharp:method_declaration       rdfs:subClassOf ast-x:FunctionDefinition .
+csharp:constructor_declaration  rdfs:subClassOf ast-x:FunctionDefinition .
+csharp:class_declaration        rdfs:subClassOf ast-x:ClassDefinition .
+csharp:struct_declaration       rdfs:subClassOf ast-x:ClassDefinition .
+csharp:interface_declaration    rdfs:subClassOf ast-x:ClassDefinition .
+csharp:invocation_expression    rdfs:subClassOf ast-x:CallSite .
+csharp:using_directive          rdfs:subClassOf ast-x:ImportStatement .
+
+## Comments
+csharp:comment           rdfs:subClassOf ast-x:Comment .
+
+
+# =============================================================================
+# DART MAPPINGS
+# =============================================================================
+
+## Control Flow
+dart:if_statement       rdfs:subClassOf ast-x:IfStatement .
+dart:for_statement      rdfs:subClassOf ast-x:ForStatement .
+dart:while_statement    rdfs:subClassOf ast-x:WhileStatement .
+dart:do_statement       rdfs:subClassOf ast-x:WhileStatement .
+dart:switch_statement   rdfs:subClassOf ast-x:SwitchStatement .
+dart:break_statement    rdfs:subClassOf ast-x:BreakStatement .
+dart:continue_statement rdfs:subClassOf ast-x:ContinueStatement .
+dart:return_statement   rdfs:subClassOf ast-x:ReturnStatement .
+dart:rethrow_statement  rdfs:subClassOf ast-x:ThrowStatement .
+dart:try_statement      rdfs:subClassOf ast-x:TryStatement .
+dart:catch_clause       rdfs:subClassOf ast-x:CatchClause .
+
+## Dataflow
+dart:assignment_expression                 rdfs:subClassOf ast-x:Assignment .
+dart:assignment_expression_without_cascade rdfs:subClassOf ast-x:Assignment .
+dart:local_variable_declaration            rdfs:subClassOf ast-x:VariableDeclaration .
+dart:formal_parameter_list                 rdfs:subClassOf ast-x:ParameterList .
+dart:formal_parameter                      rdfs:subClassOf ast-x:Parameter .
+dart:destructured_parameter                rdfs:subClassOf ast-x:Parameter .
+dart:super_formal_parameter                rdfs:subClassOf ast-x:Parameter .
+
+## LSP
+dart:function_signature     rdfs:subClassOf ast-x:FunctionDefinition .
+dart:function_expression    rdfs:subClassOf ast-x:FunctionDefinition .
+dart:class_definition       rdfs:subClassOf ast-x:ClassDefinition .
+dart:mixin_declaration      rdfs:subClassOf ast-x:ClassDefinition .
+dart:function_expression_body rdfs:subClassOf ast-x:CallSite .
+dart:import_or_export       rdfs:subClassOf ast-x:ImportStatement .
+
+## Inheritance
+dart:superclass             rdfs:subClassOf ast-x:ExtendsClause .
+
+## Comments
+dart:comment                rdfs:subClassOf ast-x:Comment .
+dart:documentation_comment  rdfs:subClassOf ast-x:Comment .
+
+
+# =============================================================================
+# GO MAPPINGS
+# =============================================================================
+
+## Control Flow
+go:if_statement                rdfs:subClassOf ast-x:IfStatement .
+go:for_statement               rdfs:subClassOf ast-x:ForStatement .
+go:expression_switch_statement rdfs:subClassOf ast-x:SwitchStatement .
+go:type_switch_statement       rdfs:subClassOf ast-x:SwitchStatement .
+go:break_statement             rdfs:subClassOf ast-x:BreakStatement .
+go:fallthrough_statement       rdfs:subClassOf ast-x:BreakStatement .
+go:continue_statement          rdfs:subClassOf ast-x:ContinueStatement .
+go:return_statement            rdfs:subClassOf ast-x:ReturnStatement .
+
+## Dataflow
+go:assignment_statement  rdfs:subClassOf ast-x:Assignment .
+go:short_var_declaration rdfs:subClassOf ast-x:VariableDeclaration .
+go:var_declaration       rdfs:subClassOf ast-x:VariableDeclaration .
+go:parameter_list        rdfs:subClassOf ast-x:ParameterList .
+go:parameter_declaration rdfs:subClassOf ast-x:Parameter .
+go:variadic_parameter_declaration rdfs:subClassOf ast-x:Parameter .
+
+## LSP
+go:function_declaration rdfs:subClassOf ast-x:FunctionDefinition .
+go:method_declaration   rdfs:subClassOf ast-x:FunctionDefinition .
+go:type_declaration     rdfs:subClassOf ast-x:ClassDefinition .
+go:struct_type          rdfs:subClassOf ast-x:ClassDefinition .
+go:interface_type       rdfs:subClassOf ast-x:ClassDefinition .
+go:call_expression      rdfs:subClassOf ast-x:CallSite .
+go:import_declaration   rdfs:subClassOf ast-x:ImportStatement .
+
+## Inheritance
+# Note: Go uses struct embedding and interface satisfaction, not traditional inheritance
+go:interface_type       rdfs:subClassOf ast-x:InheritanceSpecifier .
+
+## Comments
+go:comment              rdfs:subClassOf ast-x:Comment .
+
+
+# =============================================================================
+# JAVA MAPPINGS
+# =============================================================================
+
+## Control Flow
+java:if_statement                  rdfs:subClassOf ast-x:IfStatement .
+java:for_statement                 rdfs:subClassOf ast-x:ForStatement .
+java:enhanced_for_statement        rdfs:subClassOf ast-x:ForStatement .
+java:while_statement               rdfs:subClassOf ast-x:WhileStatement .
+java:do_statement                  rdfs:subClassOf ast-x:WhileStatement .
+java:switch_expression             rdfs:subClassOf ast-x:SwitchStatement .
+java:break_statement               rdfs:subClassOf ast-x:BreakStatement .
+java:continue_statement            rdfs:subClassOf ast-x:ContinueStatement .
+java:return_statement              rdfs:subClassOf ast-x:ReturnStatement .
+java:throw_statement               rdfs:subClassOf ast-x:ThrowStatement .
+java:try_statement                 rdfs:subClassOf ast-x:TryStatement .
+java:try_with_resources_statement  rdfs:subClassOf ast-x:TryStatement .
+java:catch_clause                  rdfs:subClassOf ast-x:CatchClause .
+
+## Dataflow
+java:assignment_expression      rdfs:subClassOf ast-x:Assignment .
+java:local_variable_declaration rdfs:subClassOf ast-x:VariableDeclaration .
+java:formal_parameters          rdfs:subClassOf ast-x:ParameterList .
+java:formal_parameter           rdfs:subClassOf ast-x:Parameter .
+java:spread_parameter           rdfs:subClassOf ast-x:Parameter .
+java:receiver_parameter         rdfs:subClassOf ast-x:Parameter .
+
+## LSP
+java:method_declaration      rdfs:subClassOf ast-x:FunctionDefinition .
+java:constructor_declaration rdfs:subClassOf ast-x:FunctionDefinition .
+java:lambda_expression       rdfs:subClassOf ast-x:FunctionDefinition .
+java:class_declaration       rdfs:subClassOf ast-x:ClassDefinition .
+java:interface_declaration   rdfs:subClassOf ast-x:ClassDefinition .
+java:enum_declaration        rdfs:subClassOf ast-x:ClassDefinition .
+java:method_invocation       rdfs:subClassOf ast-x:CallSite .
+java:object_creation_expression rdfs:subClassOf ast-x:CallSite .
+java:import_declaration      rdfs:subClassOf ast-x:ImportStatement .
+
+## Inheritance
+java:superclass              rdfs:subClassOf ast-x:ExtendsClause .
+java:extends_interfaces      rdfs:subClassOf ast-x:ImplementsClause .
+
+## Comments
+java:line_comment            rdfs:subClassOf ast-x:Comment .
+java:block_comment           rdfs:subClassOf ast-x:Comment .
+
+
+# =============================================================================
+# JAVASCRIPT MAPPINGS
+# =============================================================================
+
+## Control Flow
+javascript:if_statement       rdfs:subClassOf ast-x:IfStatement .
+javascript:else_clause        rdfs:subClassOf ast-x:ElseClause .
+javascript:for_statement      rdfs:subClassOf ast-x:ForStatement .
+javascript:for_in_statement   rdfs:subClassOf ast-x:ForStatement .
+javascript:while_statement    rdfs:subClassOf ast-x:WhileStatement .
+javascript:do_statement       rdfs:subClassOf ast-x:WhileStatement .
+javascript:switch_statement   rdfs:subClassOf ast-x:SwitchStatement .
+javascript:break_statement    rdfs:subClassOf ast-x:BreakStatement .
+javascript:continue_statement rdfs:subClassOf ast-x:ContinueStatement .
+javascript:return_statement   rdfs:subClassOf ast-x:ReturnStatement .
+javascript:throw_statement    rdfs:subClassOf ast-x:ThrowStatement .
+javascript:try_statement      rdfs:subClassOf ast-x:TryStatement .
+javascript:catch_clause       rdfs:subClassOf ast-x:CatchClause .
+javascript:yield_expression   rdfs:subClassOf ast-x:YieldStatement .
+
+## Dataflow
+javascript:assignment_expression rdfs:subClassOf ast-x:Assignment .
+javascript:augmented_assignment_expression rdfs:subClassOf ast-x:AugmentedAssignment .
+javascript:variable_declaration rdfs:subClassOf ast-x:VariableDeclaration .
+javascript:formal_parameters    rdfs:subClassOf ast-x:ParameterList .
+
+## LSP
+javascript:function_declaration  rdfs:subClassOf ast-x:FunctionDefinition .
+javascript:function              rdfs:subClassOf ast-x:FunctionDefinition .
+javascript:arrow_function        rdfs:subClassOf ast-x:FunctionDefinition .
+javascript:method_definition     rdfs:subClassOf ast-x:FunctionDefinition .
+javascript:class_declaration     rdfs:subClassOf ast-x:ClassDefinition .
+javascript:call_expression       rdfs:subClassOf ast-x:CallSite .
+javascript:new_expression        rdfs:subClassOf ast-x:CallSite .
+javascript:import_statement      rdfs:subClassOf ast-x:ImportStatement .
+
+## Inheritance
+javascript:class_heritage        rdfs:subClassOf ast-x:ExtendsClause .
+
+## Comments
+javascript:comment               rdfs:subClassOf ast-x:Comment .
+javascript:html_comment          rdfs:subClassOf ast-x:Comment .
+
+
+# =============================================================================
+# KOTLIN MAPPINGS
+# =============================================================================
+
+## Control Flow
+kotlin:if_expression      rdfs:subClassOf ast-x:IfStatement .
+kotlin:for_statement      rdfs:subClassOf ast-x:ForStatement .
+kotlin:while_statement    rdfs:subClassOf ast-x:WhileStatement .
+kotlin:do_while_statement rdfs:subClassOf ast-x:WhileStatement .
+kotlin:when_expression    rdfs:subClassOf ast-x:SwitchStatement .
+kotlin:jump_expression    rdfs:subClassOf ast-x:BreakStatement .
+kotlin:try_expression     rdfs:subClassOf ast-x:TryStatement .
+kotlin:catch_block        rdfs:subClassOf ast-x:CatchClause .
+
+## Dataflow
+kotlin:assignment         rdfs:subClassOf ast-x:Assignment .
+kotlin:variable_declaration rdfs:subClassOf ast-x:VariableDeclaration .
+kotlin:function_value_parameters rdfs:subClassOf ast-x:ParameterList .
+kotlin:parameter                 rdfs:subClassOf ast-x:Parameter .
+kotlin:class_parameter           rdfs:subClassOf ast-x:Parameter .
+kotlin:parameter_with_optional_type rdfs:subClassOf ast-x:Parameter .
+
+## LSP
+kotlin:function_declaration rdfs:subClassOf ast-x:FunctionDefinition .
+kotlin:lambda_literal       rdfs:subClassOf ast-x:FunctionDefinition .
+kotlin:class_declaration    rdfs:subClassOf ast-x:ClassDefinition .
+kotlin:object_declaration   rdfs:subClassOf ast-x:ClassDefinition .
+kotlin:call_expression      rdfs:subClassOf ast-x:CallSite .
+kotlin:import_header        rdfs:subClassOf ast-x:ImportStatement .
+
+## Inheritance
+kotlin:delegation_specifier rdfs:subClassOf ast-x:InheritanceSpecifier .
+kotlin:explicit_delegation  rdfs:subClassOf ast-x:InheritanceSpecifier .
+
+## Comments
+kotlin:line_comment         rdfs:subClassOf ast-x:Comment .
+kotlin:multiline_comment    rdfs:subClassOf ast-x:Comment .
+
+
+# =============================================================================
+# PYTHON MAPPINGS
+# =============================================================================
+
+## Control Flow
+python:if_statement       rdfs:subClassOf ast-x:IfStatement .
+python:elif_clause        rdfs:subClassOf ast-x:IfStatement .
+python:else_clause        rdfs:subClassOf ast-x:ElseClause .
+python:for_statement      rdfs:subClassOf ast-x:ForStatement .
+python:while_statement    rdfs:subClassOf ast-x:WhileStatement .
+python:match_statement    rdfs:subClassOf ast-x:SwitchStatement .
+python:case_clause        rdfs:subClassOf ast-x:SwitchStatement .
+python:break_statement    rdfs:subClassOf ast-x:BreakStatement .
+python:continue_statement rdfs:subClassOf ast-x:ContinueStatement .
+python:return_statement   rdfs:subClassOf ast-x:ReturnStatement .
+python:raise_statement    rdfs:subClassOf ast-x:ThrowStatement .
+python:try_statement      rdfs:subClassOf ast-x:TryStatement .
+python:except_clause      rdfs:subClassOf ast-x:CatchClause .
+python:yield             rdfs:subClassOf ast-x:YieldStatement .
+
+## Dataflow
+python:assignment           rdfs:subClassOf ast-x:Assignment .
+python:augmented_assignment rdfs:subClassOf ast-x:AugmentedAssignment .
+python:parameters              rdfs:subClassOf ast-x:ParameterList .
+python:default_parameter       rdfs:subClassOf ast-x:Parameter .
+python:typed_parameter         rdfs:subClassOf ast-x:Parameter .
+python:typed_default_parameter rdfs:subClassOf ast-x:Parameter .
+python:list_splat_pattern      rdfs:subClassOf ast-x:Parameter .
+python:dictionary_splat_pattern rdfs:subClassOf ast-x:Parameter .
+
+## LSP
+python:function_definition rdfs:subClassOf ast-x:FunctionDefinition .
+python:lambda              rdfs:subClassOf ast-x:FunctionDefinition .
+python:class_definition    rdfs:subClassOf ast-x:ClassDefinition .
+python:call                rdfs:subClassOf ast-x:CallSite .
+python:import_statement    rdfs:subClassOf ast-x:ImportStatement .
+python:import_from_statement rdfs:subClassOf ast-x:ImportStatement .
+
+## Inheritance
+# NOTE: Python reuses argument_list for all arg lists. ExtendsClause is
+# handled via .scm query in python.scm (matches argument_list only when
+# parent is class_definition). No rdfs:subClassOf mapping here.
+
+## Comments
+python:comment             rdfs:subClassOf ast-x:Comment .
+
+
+# =============================================================================
+# RUBY MAPPINGS
+# =============================================================================
+
+## Control Flow
+ruby:if               rdfs:subClassOf ast-x:IfStatement .
+ruby:elsif            rdfs:subClassOf ast-x:IfStatement .
+ruby:else             rdfs:subClassOf ast-x:ElseClause .
+ruby:unless           rdfs:subClassOf ast-x:IfStatement .
+ruby:if_modifier      rdfs:subClassOf ast-x:IfStatement .
+ruby:unless_modifier  rdfs:subClassOf ast-x:IfStatement .
+ruby:for              rdfs:subClassOf ast-x:ForStatement .
+ruby:while            rdfs:subClassOf ast-x:WhileStatement .
+ruby:until            rdfs:subClassOf ast-x:WhileStatement .
+ruby:while_modifier   rdfs:subClassOf ast-x:WhileStatement .
+ruby:until_modifier   rdfs:subClassOf ast-x:WhileStatement .
+ruby:case             rdfs:subClassOf ast-x:SwitchStatement .
+ruby:case_match       rdfs:subClassOf ast-x:SwitchStatement .
+ruby:break            rdfs:subClassOf ast-x:BreakStatement .
+ruby:next             rdfs:subClassOf ast-x:ContinueStatement .
+ruby:redo             rdfs:subClassOf ast-x:ContinueStatement .
+ruby:return           rdfs:subClassOf ast-x:ReturnStatement .
+ruby:begin_block      rdfs:subClassOf ast-x:TryStatement .
+ruby:rescue           rdfs:subClassOf ast-x:CatchClause .
+ruby:yield            rdfs:subClassOf ast-x:YieldStatement .
+
+## Dataflow
+ruby:assignment          rdfs:subClassOf ast-x:Assignment .
+ruby:operator_assignment rdfs:subClassOf ast-x:AugmentedAssignment .
+ruby:method_parameters   rdfs:subClassOf ast-x:ParameterList .
+ruby:block_parameters    rdfs:subClassOf ast-x:ParameterList .
+ruby:lambda_parameters   rdfs:subClassOf ast-x:ParameterList .
+ruby:optional_parameter  rdfs:subClassOf ast-x:Parameter .
+ruby:keyword_parameter   rdfs:subClassOf ast-x:Parameter .
+ruby:splat_parameter     rdfs:subClassOf ast-x:Parameter .
+ruby:hash_splat_parameter rdfs:subClassOf ast-x:Parameter .
+ruby:block_parameter     rdfs:subClassOf ast-x:Parameter .
+ruby:destructured_parameter rdfs:subClassOf ast-x:Parameter .
+
+## LSP
+ruby:method              rdfs:subClassOf ast-x:FunctionDefinition .
+ruby:singleton_method    rdfs:subClassOf ast-x:FunctionDefinition .
+ruby:lambda              rdfs:subClassOf ast-x:FunctionDefinition .
+ruby:class               rdfs:subClassOf ast-x:ClassDefinition .
+ruby:module              rdfs:subClassOf ast-x:ClassDefinition .
+ruby:singleton_class     rdfs:subClassOf ast-x:ClassDefinition .
+ruby:call                rdfs:subClassOf ast-x:CallSite .
+ruby:require             rdfs:subClassOf ast-x:ImportStatement .
+ruby:require_relative    rdfs:subClassOf ast-x:ImportStatement .
+
+## Inheritance
+ruby:superclass          rdfs:subClassOf ast-x:ExtendsClause .
+
+## Comments
+ruby:comment             rdfs:subClassOf ast-x:Comment .
+
+
+# =============================================================================
+# RUST MAPPINGS
+# =============================================================================
+
+## Control Flow
+rust:if_expression       rdfs:subClassOf ast-x:IfStatement .
+rust:else_clause         rdfs:subClassOf ast-x:ElseClause .
+rust:for_expression      rdfs:subClassOf ast-x:ForStatement .
+rust:while_expression    rdfs:subClassOf ast-x:WhileStatement .
+rust:loop_expression     rdfs:subClassOf ast-x:WhileStatement .
+rust:match_expression    rdfs:subClassOf ast-x:SwitchStatement .
+rust:match_arm           rdfs:subClassOf ast-x:SwitchStatement .
+rust:break_expression    rdfs:subClassOf ast-x:BreakStatement .
+rust:continue_expression rdfs:subClassOf ast-x:ContinueStatement .
+rust:return_expression   rdfs:subClassOf ast-x:ReturnStatement .
+rust:try_block           rdfs:subClassOf ast-x:TryStatement .
+
+## Dataflow
+rust:assignment_expression rdfs:subClassOf ast-x:Assignment .
+rust:compound_assignment_expr rdfs:subClassOf ast-x:AugmentedAssignment .
+rust:let_declaration       rdfs:subClassOf ast-x:VariableDeclaration .
+rust:parameters            rdfs:subClassOf ast-x:ParameterList .
+rust:parameter             rdfs:subClassOf ast-x:Parameter .
+rust:self_parameter        rdfs:subClassOf ast-x:Parameter .
+rust:variadic_parameter    rdfs:subClassOf ast-x:Parameter .
+
+## LSP
+rust:function_item       rdfs:subClassOf ast-x:FunctionDefinition .
+rust:closure_expression  rdfs:subClassOf ast-x:FunctionDefinition .
+rust:struct_item         rdfs:subClassOf ast-x:ClassDefinition .
+rust:enum_item           rdfs:subClassOf ast-x:ClassDefinition .
+rust:trait_item          rdfs:subClassOf ast-x:ClassDefinition .
+rust:impl_item           rdfs:subClassOf ast-x:ClassDefinition .
+rust:call_expression     rdfs:subClassOf ast-x:CallSite .
+rust:macro_invocation    rdfs:subClassOf ast-x:CallSite .
+rust:use_declaration     rdfs:subClassOf ast-x:ImportStatement .
+
+## Inheritance
+rust:trait_bounds        rdfs:subClassOf ast-x:ImplementsClause .
+rust:where_clause        rdfs:subClassOf ast-x:ImplementsClause .
+
+## Comments
+rust:line_comment        rdfs:subClassOf ast-x:Comment .
+rust:block_comment       rdfs:subClassOf ast-x:Comment .
+rust:doc_comment         rdfs:subClassOf ast-x:Comment .
+
+
+# =============================================================================
+# SCALA MAPPINGS
+# =============================================================================
+
+## Control Flow
+scala:if_expression      rdfs:subClassOf ast-x:IfStatement .
+scala:for_expression     rdfs:subClassOf ast-x:ForStatement .
+scala:while_expression   rdfs:subClassOf ast-x:WhileStatement .
+scala:do_while_expression rdfs:subClassOf ast-x:WhileStatement .
+scala:match_expression   rdfs:subClassOf ast-x:SwitchStatement .
+scala:return_expression  rdfs:subClassOf ast-x:ReturnStatement .
+scala:throw_expression   rdfs:subClassOf ast-x:ThrowStatement .
+scala:try_expression     rdfs:subClassOf ast-x:TryStatement .
+scala:catch_clause       rdfs:subClassOf ast-x:CatchClause .
+
+## Dataflow
+scala:assignment_expression rdfs:subClassOf ast-x:Assignment .
+scala:val_definition     rdfs:subClassOf ast-x:VariableDeclaration .
+scala:var_definition     rdfs:subClassOf ast-x:VariableDeclaration .
+scala:val_declaration    rdfs:subClassOf ast-x:VariableDeclaration .
+scala:var_declaration    rdfs:subClassOf ast-x:VariableDeclaration .
+scala:parameters         rdfs:subClassOf ast-x:ParameterList .
+scala:class_parameters   rdfs:subClassOf ast-x:ParameterList .
+scala:bindings           rdfs:subClassOf ast-x:ParameterList .
+scala:parameter          rdfs:subClassOf ast-x:Parameter .
+scala:class_parameter    rdfs:subClassOf ast-x:Parameter .
+
+## LSP
+scala:function_definition rdfs:subClassOf ast-x:FunctionDefinition .
+scala:function_declaration rdfs:subClassOf ast-x:FunctionDefinition .
+scala:lambda_expression  rdfs:subClassOf ast-x:FunctionDefinition .
+scala:class_definition   rdfs:subClassOf ast-x:ClassDefinition .
+scala:trait_definition   rdfs:subClassOf ast-x:ClassDefinition .
+scala:object_definition  rdfs:subClassOf ast-x:ClassDefinition .
+scala:enum_definition    rdfs:subClassOf ast-x:ClassDefinition .
+scala:call_expression    rdfs:subClassOf ast-x:CallSite .
+scala:generic_function   rdfs:subClassOf ast-x:CallSite .
+scala:import_declaration rdfs:subClassOf ast-x:ImportStatement .
+
+## Inheritance
+scala:extends_clause     rdfs:subClassOf ast-x:ExtendsClause .
+
+## Comments
+scala:comment            rdfs:subClassOf ast-x:Comment .
+scala:block_comment      rdfs:subClassOf ast-x:Comment .
+
+
+# =============================================================================
+# TYPESCRIPT MAPPINGS
+# =============================================================================
+
+## Control Flow
+typescript:if_statement       rdfs:subClassOf ast-x:IfStatement .
+typescript:else_clause        rdfs:subClassOf ast-x:ElseClause .
+typescript:for_statement      rdfs:subClassOf ast-x:ForStatement .
+typescript:for_in_statement   rdfs:subClassOf ast-x:ForStatement .
+typescript:while_statement    rdfs:subClassOf ast-x:WhileStatement .
+typescript:do_statement       rdfs:subClassOf ast-x:WhileStatement .
+typescript:switch_statement   rdfs:subClassOf ast-x:SwitchStatement .
+typescript:break_statement    rdfs:subClassOf ast-x:BreakStatement .
+typescript:continue_statement rdfs:subClassOf ast-x:ContinueStatement .
+typescript:return_statement   rdfs:subClassOf ast-x:ReturnStatement .
+typescript:throw_statement    rdfs:subClassOf ast-x:ThrowStatement .
+typescript:try_statement      rdfs:subClassOf ast-x:TryStatement .
+typescript:catch_clause       rdfs:subClassOf ast-x:CatchClause .
+typescript:yield_expression   rdfs:subClassOf ast-x:YieldStatement .
+
+## Dataflow
+typescript:assignment_expression rdfs:subClassOf ast-x:Assignment .
+typescript:augmented_assignment_expression rdfs:subClassOf ast-x:AugmentedAssignment .
+typescript:variable_declaration rdfs:subClassOf ast-x:VariableDeclaration .
+typescript:formal_parameters    rdfs:subClassOf ast-x:ParameterList .
+typescript:required_parameter   rdfs:subClassOf ast-x:Parameter .
+typescript:optional_parameter   rdfs:subClassOf ast-x:Parameter .
+
+## LSP
+typescript:function_declaration  rdfs:subClassOf ast-x:FunctionDefinition .
+typescript:function              rdfs:subClassOf ast-x:FunctionDefinition .
+typescript:arrow_function        rdfs:subClassOf ast-x:FunctionDefinition .
+typescript:method_definition     rdfs:subClassOf ast-x:FunctionDefinition .
+typescript:class_declaration     rdfs:subClassOf ast-x:ClassDefinition .
+typescript:interface_declaration rdfs:subClassOf ast-x:ClassDefinition .
+typescript:call_expression       rdfs:subClassOf ast-x:CallSite .
+typescript:new_expression        rdfs:subClassOf ast-x:CallSite .
+typescript:import_statement      rdfs:subClassOf ast-x:ImportStatement .
+
+## Inheritance
+typescript:extends_clause        rdfs:subClassOf ast-x:ExtendsClause .
+typescript:extends_type_clause   rdfs:subClassOf ast-x:ExtendsClause .
+typescript:implements_clause     rdfs:subClassOf ast-x:ImplementsClause .
+
+## Comments
+typescript:comment               rdfs:subClassOf ast-x:Comment .
+typescript:html_comment          rdfs:subClassOf ast-x:Comment .
+
+
+# =============================================================================
+# AST-DERIVED METRICS (NOT YET IMPLEMENTED)
+# =============================================================================
+# Metrics computed purely from AST structure during tree-sitter traversal.
+# These require no LSP resolution - just counting/analyzing AST nodes.
+# =============================================================================
+
+ast-x:cyclomaticComplexity a owl:DatatypeProperty ;
+    rdfs:label "cyclomatic complexity" ;
+    rdfs:comment "McCabe cyclomatic complexity: count of decision points + 1. Higher values indicate more complex control flow. NOT YET IMPLEMENTED. To implement: During AST traversal, count decision point nodes (if_statement, for_statement, while_statement, switch_statement, conditional_expression, boolean operators &&/||) + 1. Language-specific node types map via ast-x:IfStatement, ast-x:ForStatement, etc." ;
+    rdfs:range xsd:nonNegativeInteger .
+
+ast-x:nestingDepth a owl:DatatypeProperty ;
+    rdfs:label "nesting depth" ;
+    rdfs:comment "Maximum depth of nested control flow structures. Deep nesting indicates harder-to-understand code. NOT YET IMPLEMENTED. To implement: During AST traversal, track current depth counter. Increment when entering control flow nodes (subclasses of sem:ControlFlow), decrement when exiting. Record max depth reached." ;
+    rdfs:range xsd:nonNegativeInteger .
+
+ast-x:branchCount a owl:DatatypeProperty ;
+    rdfs:label "branch count" ;
+    rdfs:comment "Count of if/switch statements in the function. NOT YET IMPLEMENTED. To implement: Count nodes that are subclasses of ast-x:IfStatement or ast-x:SwitchStatement within function body." ;
+    rdfs:range xsd:nonNegativeInteger .
+
+ast-x:loopCount a owl:DatatypeProperty ;
+    rdfs:label "loop count" ;
+    rdfs:comment "Count of for/while loops in the function. NOT YET IMPLEMENTED. To implement: Count nodes that are subclasses of ast-x:ForStatement or ast-x:WhileStatement within function body." ;
+    rdfs:range xsd:nonNegativeInteger .
+
+ast-x:returnCount a owl:DatatypeProperty ;
+    rdfs:label "return count" ;
+    rdfs:comment "Number of return statements in the function. Multiple returns can indicate complex control flow. NOT YET IMPLEMENTED. To implement: Count nodes that are subclasses of ast-x:ReturnStatement within function body." ;
+    rdfs:range xsd:nonNegativeInteger .
+
+ast-x:exceptionHandlerCount a owl:DatatypeProperty ;
+    rdfs:label "exception handler count" ;
+    rdfs:comment "Count of try/catch blocks in the function. NOT YET IMPLEMENTED. To implement: Count nodes that are subclasses of ast-x:TryStatement within function body." ;
+    rdfs:range xsd:nonNegativeInteger .
+
+ast-x:lineCount a owl:DatatypeProperty ;
+    rdfs:label "line count" ;
+    rdfs:comment "Number of lines spanned by this entity (endLine - startLine + 1). NOT YET IMPLEMENTED. To implement: Use ast:endRow - ast:startRow + 1 from tree-sitter node." ;
+    rdfs:range xsd:nonNegativeInteger .
+
+ast-x:parameterCount a owl:DatatypeProperty ;
+    rdfs:label "parameter count" ;
+    rdfs:comment "Number of parameters for a function/method. NOT YET IMPLEMENTED. To implement: Count child nodes that are subclasses of ast-x:Parameter within function definition." ;
+    rdfs:range xsd:nonNegativeInteger .
+
+ast-x:methodCount a owl:DatatypeProperty ;
+    rdfs:label "method count" ;
+    rdfs:comment "Number of methods in a class. NOT YET IMPLEMENTED. To implement: Count child nodes that are subclasses of ast-x:FunctionDefinition within class body." ;
+    rdfs:range xsd:nonNegativeInteger .
+
+ast-x:fieldCount a owl:DatatypeProperty ;
+    rdfs:label "field count" ;
+    rdfs:comment "Number of fields/properties in a class. NOT YET IMPLEMENTED. To implement: Count field/property declaration nodes within class body. Language-specific patterns needed (field_declaration, property_declaration, etc.)." ;
+    rdfs:range xsd:nonNegativeInteger .
+
+ast-x:assignmentCount a owl:DatatypeProperty ;
+    rdfs:label "assignment count" ;
+    rdfs:comment "Count of assignment operations in the function. High values indicate mutation-heavy code. NOT YET IMPLEMENTED. To implement: Count nodes that are subclasses of ast-x:Assignment or ast-x:AugmentedAssignment within function body." ;
+    rdfs:range xsd:nonNegativeInteger .
+
+ast-x:localVariableCount a owl:DatatypeProperty ;
+    rdfs:label "local variable count" ;
+    rdfs:comment "Number of local variable declarations in the function. NOT YET IMPLEMENTED. To implement: Count nodes that are subclasses of ast-x:VariableDeclaration within function body (excluding parameters and class fields)." ;
+    rdfs:range xsd:nonNegativeInteger .
+
+ast-x:hasDocumentation a owl:DatatypeProperty ;
+    rdfs:label "has documentation" ;
+    rdfs:comment "Whether this symbol has documentation comments (JSDoc, docstring, JavaDoc, etc.). Used for documentation coverage analysis. NOT YET IMPLEMENTED. To implement: During AST traversal, check for doc comment nodes immediately preceding or inside the definition. Language-specific patterns: jsdoc comment nodes (JS/TS), expression_statement with string literal at function start (Python), block_comment starting with /** (Java/C++), triple-slash comments (C#), etc." ;
+    rdfs:range xsd:boolean .

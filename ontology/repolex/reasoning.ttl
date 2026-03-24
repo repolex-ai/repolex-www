@@ -1,0 +1,305 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix ast-x: <https://repolex.ai/ontology/repolex/ast-extension/> .
+@prefix lsp: <https://repolex.ai/ontology/extracts/microsoft/multilspy/v0.0.15/core/> .
+@prefix lsp-x: <https://repolex.ai/ontology/repolex/lsp-extension/> .
+@prefix git: <https://repolex.ai/ontology/extracts/gitpython-developers/GitPython/v3.1.46/core/> .
+@prefix gh: <https://repolex.ai/ontology/extracts/github/rest-api/v2026-03-10/> .
+@prefix gh-x: <https://repolex.ai/ontology/repolex/gh-extension/> .
+@prefix sem: <https://repolex.ai/ontology/repolex/semantic-categories/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# =============================================================================
+# REASONING ONTOLOGY (OWL 2 RL)
+# =============================================================================
+# Inference rules that generate new triples from existing data.
+#
+# This ontology adds NO new data — it defines logical relationships that
+# allow a reasoner (owlrl, RDFox, etc.) to materialize implicit knowledge.
+#
+# After reasoning, the graph contains triples that were logically entailed
+# but never explicitly stated. This makes SPARQL queries simpler and enables
+# QueryClaude to discover patterns without complex joins.
+#
+# OWL 2 RL guarantees:
+#   - Polynomial time complexity
+#   - Deterministic results (same input → same output)
+#   - Forward-chaining rule implementation
+#
+# Categories:
+#   1. Inverse properties — query relationships in both directions
+#   2. Transitive properties — follow chains without recursive SPARQL
+#   3. Symmetric properties — bidirectional relationships
+#   4. Property chains — compose multi-hop paths into single properties
+#   5. Disjointness — data quality constraints
+# =============================================================================
+
+<https://repolex.ai/ontology/repolex/reasoning> a owl:Ontology ;
+    rdfs:label "Reasoning Ontology" ;
+    rdfs:comment "OWL 2 RL inference rules for the repolex knowledge graph. Defines inverse, transitive, and chain properties that enable automatic inference of implicit relationships. Requires a reasoner (owlrl) to materialize." ;
+    owl:versionInfo "1.0" .
+
+
+# =============================================================================
+# 1. INVERSE PROPERTIES
+# =============================================================================
+# For every A→B relationship, automatically infer B→A.
+# Store one direction, query both.
+# =============================================================================
+
+# --- Call Graph Inverses ---
+
+lsp-x:callSource a owl:ObjectProperty ;
+    rdfs:label "call source" ;
+    rdfs:comment "Inverse of lsp-x:callTarget. Inferred by reasoner: if A lsp-x:callTarget B, then B lsp-x:callSource A. Enables 'who calls this function?' queries without storing both directions." ;
+    owl:inverseOf lsp-x:callTarget .
+
+# --- Import Inverses ---
+
+lsp-x:importSource a owl:ObjectProperty ;
+    rdfs:label "import source" ;
+    rdfs:comment "Inverse of lsp-x:importTarget. Inferred by reasoner: if module A imports module B, then B lsp-x:importSource A. Enables 'who imports this module?' queries." ;
+    owl:inverseOf lsp-x:importTarget .
+
+# --- Dataflow Inverses ---
+
+lsp-x:paramFromArg a owl:ObjectProperty ;
+    rdfs:label "parameter from argument" ;
+    rdfs:comment "Inverse of lsp-x:argToParam. Inferred by reasoner: if argument A flows to parameter P, then P receives from A. Enables 'what arguments feed this parameter?' queries." ;
+    owl:inverseOf lsp-x:argToParam .
+
+lsp-x:callFromReturn a owl:ObjectProperty ;
+    rdfs:label "call from return" ;
+    rdfs:comment "Inverse of lsp-x:returnToCall. Inferred by reasoner: if return R flows to call site C, then C receives from R. Enables 'what return values reach this call?' queries." ;
+    owl:inverseOf lsp-x:returnToCall .
+
+# --- Git Inverses ---
+
+git:childCommit a owl:ObjectProperty ;
+    rdfs:label "child commit" ;
+    rdfs:comment "Inverse of git:parent. Inferred by reasoner: if commit B has parent A, then A has child B. Enables 'what commits came after this one?' queries." ;
+    owl:inverseOf git:parent .
+
+# --- AST Inverses ---
+
+ast-x:containedInBlob a owl:ObjectProperty ;
+    rdfs:label "contained in blob" ;
+    rdfs:comment "Inverse of ast-x:sourceBlobNode. Inferred by reasoner: if node N is in blob B, then B contains N. Enables 'what nodes are in this blob?' queries." ;
+    owl:inverseOf ast-x:sourceBlobNode .
+
+
+# =============================================================================
+# 2. TRANSITIVE PROPERTIES
+# =============================================================================
+# If A→B and B→C, automatically infer A→C.
+# Enables ancestor/descendant queries without recursive SPARQL.
+# =============================================================================
+
+# --- Git Ancestry ---
+# git:parent is already defined as ObjectProperty in the git ontology.
+# Declaring it transitive means: if commit C has parent B, and B has parent A,
+# then C has (transitive) parent A. Query all ancestors of any commit directly.
+
+git:parent a owl:TransitiveProperty .
+
+# --- Import Chains ---
+# Transitive import resolution: if A imports B and B imports C,
+# then A transitively depends on C. Critical for impact analysis.
+
+lsp-x:transitivelyImports a owl:ObjectProperty, owl:TransitiveProperty ;
+    rdfs:label "transitively imports" ;
+    rdfs:comment "Transitive closure of import relationships. If module A imports B and B imports C, the reasoner infers A transitivelyImports C. Enables full dependency tree queries without recursion." ;
+    rdfs:subPropertyOf lsp-x:importTarget .
+
+# --- AST Tree Structure ---
+# ast:parent is the tree-sitter parent pointer. Making it transitive means
+# you can query "is this node anywhere inside a class definition?" directly.
+
+ast:parent a owl:TransitiveProperty .
+
+
+# =============================================================================
+# 3. SYMMETRIC PROPERTIES
+# =============================================================================
+# If A→B, automatically infer B→A.
+# For inherently bidirectional relationships.
+# =============================================================================
+
+# --- Sibling relationship (future) ---
+# Not declaring any symmetric properties yet. Noting the pattern for when
+# we need things like "mutually dependent modules" or "co-changed files".
+
+
+# =============================================================================
+# 4. PROPERTY CHAINS
+# =============================================================================
+# Compose multi-hop traversals into single inferred properties.
+# A owl:propertyChainAxiom (p1 p2 p3) means: if A-p1->B-p2->C-p3->D,
+# infer A→D directly.
+# =============================================================================
+
+# --- Call Target File (inferred) ---
+# If a call site targets a location, and that location has a file path,
+# we can infer the file directly on the call site.
+# Note: We already have lsp-x:callTargetFile as a convenience denorm,
+# but this shows how it COULD be inferred instead of stored.
+
+# --- Function's Blob → Function's File ---
+# Chain: function --sourceBlobNode--> blob --filePath...
+# (would need blob to have filePath, which it gets from ast-x:filePath)
+
+# --- PR → Changed Files (via commits) ---
+# Chain: PR --headSha--> commit --tree--> tree --blob--> blob
+# This is aspirational — needs all intermediate links populated.
+# gh-x:prChangedBlob owl:propertyChainAxiom (gh-x:headSha git:tree git:blob) .
+
+# --- Commit Author → GitHub User ---
+# When a commit's git:author (Actor) is multi-typed as gh:User,
+# no chain needed — same node. But if they're separate:
+
+# --- Import Resolution Chain ---
+# From import statement → resolution node → LSP target → target file
+# ast-x:importResolvesTo owl:propertyChainAxiom (ast-x:resolutionNode lsp-x:importTarget) .
+
+# Uncomment chains as the intermediate links get populated:
+
+ast-x:importResolvesTo a owl:ObjectProperty ;
+    rdfs:label "import resolves to" ;
+    rdfs:comment "Inferred: follows from import statement through its resolution node to the LSP-resolved target location. Chain: importStatement --resolutionNode--> node --importTarget--> location." ;
+    owl:propertyChainAxiom (ast-x:resolutionNode lsp-x:importTarget) .
+
+
+# =============================================================================
+# 5. DISJOINTNESS CONSTRAINTS
+# =============================================================================
+# Classes that cannot overlap. If the reasoner finds an individual that
+# is typed as both, it flags an inconsistency — a data quality error.
+# =============================================================================
+
+# --- Git Object Types ---
+# A git object is exactly one of: Commit, Blob, Tree, Tag.
+# Finding something typed as both Commit and Blob means bad data.
+
+git:Commit owl:disjointWith git:Blob .
+git:Commit owl:disjointWith git:Tree .
+git:Commit owl:disjointWith git:Tag .
+git:Blob owl:disjointWith git:Tree .
+git:Blob owl:disjointWith git:Tag .
+git:Tree owl:disjointWith git:Tag .
+
+# --- GitHub Entity Types ---
+# An issue is not a pull request (even though they share gh-x:Item superclass).
+
+gh:Issue owl:disjointWith gh:PullRequest .
+gh:Issue owl:disjointWith gh:PullRequestReview .
+gh:PullRequest owl:disjointWith gh:IssueComment .
+gh:Label owl:disjointWith gh:Milestone .
+
+# --- AST Universal Types ---
+# Control flow types should not overlap.
+
+ast-x:IfStatement owl:disjointWith ast-x:ForStatement .
+ast-x:IfStatement owl:disjointWith ast-x:WhileStatement .
+ast-x:IfStatement owl:disjointWith ast-x:SwitchStatement .
+ast-x:ForStatement owl:disjointWith ast-x:WhileStatement .
+ast-x:ForStatement owl:disjointWith ast-x:SwitchStatement .
+ast-x:WhileStatement owl:disjointWith ast-x:SwitchStatement .
+
+# Functions are not classes.
+ast-x:FunctionDefinition owl:disjointWith ast-x:ClassDefinition .
+ast-x:FunctionDefinition owl:disjointWith ast-x:ImportStatement .
+ast-x:ClassDefinition owl:disjointWith ast-x:ImportStatement .
+
+# Parameters are not assignments.
+ast-x:Parameter owl:disjointWith ast-x:Assignment .
+ast-x:ParameterList owl:disjointWith ast-x:Parameter .
+
+
+# =============================================================================
+# 6. FUNCTIONAL PROPERTIES
+# =============================================================================
+# Properties that can have at most one value per subject.
+# Enables the reasoner to detect contradictions if multiple values appear.
+# =============================================================================
+
+# A node exists in exactly one file.
+ast-x:filePath a owl:FunctionalProperty .
+
+# A node belongs to exactly one blob.
+ast-x:sourceBlobNode a owl:FunctionalProperty .
+
+# A parameter has exactly one index.
+ast-x:parameterIndex a owl:FunctionalProperty .
+
+# A PR has exactly one head SHA and one merge commit.
+gh-x:headSha a owl:FunctionalProperty .
+gh-x:mergeCommitSha a owl:FunctionalProperty .
+
+
+# =============================================================================
+# 7. SEMANTIC CATEGORY INFERENCE
+# =============================================================================
+# Inheritance mappings that bridge ast-x and sem: layers.
+# These are already in sem.ttl, but we add the ones that follow from
+# the new universal types added since sem.ttl was written.
+# =============================================================================
+
+ast-x:ExtendsClause rdfs:subClassOf sem:Inheritance .
+ast-x:ImplementsClause rdfs:subClassOf sem:Inheritance .
+ast-x:InheritanceSpecifier rdfs:subClassOf sem:Inheritance .
+ast-x:ElseClause rdfs:subClassOf sem:ControlFlow .
+
+
+# =============================================================================
+# NOTES ON WHAT THE REASONER PRODUCES
+# =============================================================================
+#
+# After running owlrl on a graph containing this ontology + repository data:
+#
+# INVERSE PROPERTIES:
+#   For every (A lsp-x:callTarget B) → adds (B lsp-x:callSource A)
+#   For every (A lsp-x:importTarget B) → adds (B lsp-x:importSource A)
+#   For every (A lsp-x:argToParam B) → adds (B lsp-x:paramFromArg A)
+#   For every (A git:parent B) → adds (B git:childCommit A)
+#
+# TRANSITIVE CLOSURE:
+#   For every chain A→B→C via git:parent → adds (A git:parent C)
+#   For every chain A→B→C via lsp-x:importTarget → adds (A lsp-x:transitivelyImports C)
+#   For every chain A→B→C via ast:parent → adds (A ast:parent C)
+#
+# PROPERTY CHAINS:
+#   For every (import --resolutionNode--> node --importTarget--> loc)
+#     → adds (import ast-x:importResolvesTo loc)
+#
+# DISJOINTNESS:
+#   If any node is typed as both git:Commit and git:Blob → INCONSISTENCY
+#   If any node is typed as both ast-x:FunctionDefinition and ast-x:ClassDefinition → INCONSISTENCY
+#
+# FUNCTIONAL:
+#   If any node has two different ast-x:filePath values → INCONSISTENCY
+#
+# SEMANTIC CATEGORIES:
+#   For every (node a ast-x:ExtendsClause) → adds (node a sem:Inheritance)
+#   For every (node a ast-x:ElseClause) → adds (node a sem:ControlFlow)
+#
+# =============================================================================
+#
+# Usage with owlrl:
+#
+#   from rdflib import Graph
+#   import owlrl
+#
+#   g = Graph()
+#   g.parse("ontology/repolex/repolex_unified.ttl")
+#   g.parse("data/my_repo.ttl")  # parsed repository data
+#
+#   # Materialize all inferences
+#   owlrl.DeductiveClosure(owlrl.OWLRL_Semantics).expand(g)
+#
+#   # Now query inferred triples directly:
+#   # "Who calls function X?" — uses inferred lsp-x:callSource
+#   # "All ancestors of commit Y?" — uses transitive git:parent
+#   # "Full dependency tree of module Z?" — uses lsp-x:transitivelyImports
+#
+# =============================================================================

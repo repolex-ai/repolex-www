@@ -1,0 +1,156 @@
+@prefix ast: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix ast-x: <https://repolex.ai/ontology/repolex/ast-extension/> .
+@prefix lsp-x: <https://repolex.ai/ontology/repolex/lsp-extension/> .
+@prefix metrics: <https://repolex.ai/ontology/repolex/metrics/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# =============================================================================
+# METRICS ONTOLOGY
+# =============================================================================
+# Cross-cutting code quality metrics that combine data from multiple sources.
+#
+# This ontology is for metrics that require:
+#   - Both AST and LSP data
+#   - External tool integration (coverage, linters, etc.)
+#   - Higher-level analysis combining multiple metrics
+#
+# Provenance clarity:
+#   - ast-x: Pure AST metrics (complexity, line counts, node counts)
+#   - lsp-x: Pure LSP metrics (call graph, type hierarchy)
+#   - metrics: Combines ast-x + lsp-x + external sources
+#
+# All properties in this file are NOT YET IMPLEMENTED.
+# They serve as a roadmap for future code quality analysis features.
+# =============================================================================
+
+<https://repolex.ai/ontology/repolex/metrics> a owl:Ontology ;
+    rdfs:label "Metrics Ontology" ;
+    rdfs:comment "Cross-cutting code quality metrics combining AST, LSP, and external data sources." ;
+    owl:versionInfo "1.0" .
+
+
+# =============================================================================
+# DEAD CODE DETECTION (NOT YET IMPLEMENTED)
+# =============================================================================
+# Metrics for identifying unused, unreachable, or unnecessary code.
+# Combines call graph analysis (lsp-x) with entry point detection (ast-x).
+# =============================================================================
+
+metrics:isReachable a owl:DatatypeProperty ;
+    rdfs:label "is reachable" ;
+    rdfs:comment "Whether this code is reachable from entry points. Used for dead code elimination. NOT YET IMPLEMENTED. To implement: (1) Identify entry points (main(), if __name__ == '__main__', @Test annotations, module.exports, public APIs); (2) Build call graph from lsp-x:callTarget; (3) Run graph traversal (BFS/DFS) from entry points; (4) Mark all visited functions as reachable=true. Requires: complete lsp-x:callTarget resolution + language-specific entry point patterns." ;
+    rdfs:domain ast:Node ;
+    rdfs:range xsd:boolean .
+
+metrics:isUsed a owl:DatatypeProperty ;
+    rdfs:label "is used" ;
+    rdfs:comment "Whether this variable/import/symbol is actually referenced. Used for unused code detection. NOT YET IMPLEMENTED. To implement: For imports, check if lsp-x:importTarget symbol appears in any identifier/call. For variables, check if appears in any expression beyond declaration. For functions, check lsp-x:calledByCount > 0. Can use LSP ReferencesRequest or AST-based usage tracking." ;
+    rdfs:domain ast:Node ;
+    rdfs:range xsd:boolean .
+
+metrics:isPublicAPI a owl:DatatypeProperty ;
+    rdfs:label "is public API" ;
+    rdfs:comment "Whether this symbol is part of the public API (exported/public). Used to distinguish internal code (safe to delete if unused) from external-facing code (breaking change risk). NOT YET IMPLEMENTED. To implement: Check if symbol appears in export statements (JS/TS), has public/export modifier (Java/C#/Rust), is at module level without leading underscore (Python convention), or is in __all__ (Python). Combine AST analysis with language-specific visibility rules and LSP workspace symbol info." ;
+    rdfs:domain ast:Node ;
+    rdfs:range xsd:boolean .
+
+
+# =============================================================================
+# COUPLING METRICS (NOT YET IMPLEMENTED)
+# =============================================================================
+# Metrics for measuring dependencies between code units.
+# Combines call graph (lsp-x) with module/class structure (ast-x).
+# =============================================================================
+
+metrics:couplingCount a owl:DatatypeProperty ;
+    rdfs:label "coupling count" ;
+    rdfs:comment "Number of distinct external classes/modules this entity depends on. High coupling indicates tight dependencies and reduced modularity. NOT YET IMPLEMENTED. To implement: For each function/class, traverse all call sites (subclasses of ast-x:CallSite), collect lsp-x:callTarget destinations, group by containing module/class (via ast:parent chain), count distinct external modules. Requires: lsp-x:callTarget resolution + module boundary detection." ;
+    rdfs:domain ast:Node ;
+    rdfs:range xsd:nonNegativeInteger .
+
+metrics:hasCircularDependency a owl:DatatypeProperty ;
+    rdfs:label "has circular dependency" ;
+    rdfs:comment "Whether this module is part of a circular import dependency. Code smell indicator. NOT YET IMPLEMENTED. To implement: Build module dependency graph from lsp-x:importTarget resolution. Run cycle detection algorithm (Tarjan's SCC or DFS with recursion stack). Mark all modules in detected cycles. Requires: complete import resolution across all files in repository." ;
+    rdfs:domain ast:Node ;
+    rdfs:range xsd:boolean .
+
+
+# =============================================================================
+# CODE SMELL FLAGS (NOT YET IMPLEMENTED)
+# =============================================================================
+# Boolean flags for common code smells.
+# These combine existing ast-x metrics with threshold logic.
+# Can be materialized from simple threshold checks on existing metrics.
+# =============================================================================
+
+metrics:isGodClass a owl:DatatypeProperty ;
+    rdfs:label "is god class" ;
+    rdfs:comment "Whether this class has too many responsibilities (methods > 20 OR fields > 15). Code smell indicator. NOT YET IMPLEMENTED. To implement: Query for classes where ast-x:methodCount > 20 OR ast-x:fieldCount > 15. Thresholds configurable. Can be materialized from SPARQL query or computed inline during metrics pass. Requires: ast-x:methodCount and ast-x:fieldCount to be populated." ;
+    rdfs:domain ast:Node ;
+    rdfs:range xsd:boolean .
+
+metrics:isComplexFunction a owl:DatatypeProperty ;
+    rdfs:label "is complex function" ;
+    rdfs:comment "Whether this function is too complex (cyclomatic complexity > 10). Code smell indicator. NOT YET IMPLEMENTED. To implement: Query for functions where ast-x:cyclomaticComplexity > 10. Threshold configurable (common values: 10-15). Can be materialized from existing complexity metric. Requires: ast-x:cyclomaticComplexity to be populated." ;
+    rdfs:domain ast:Node ;
+    rdfs:range xsd:boolean .
+
+metrics:isLongFunction a owl:DatatypeProperty ;
+    rdfs:label "is long function" ;
+    rdfs:comment "Whether this function is too long (line count > 100). Code smell indicator. NOT YET IMPLEMENTED. To implement: Query for functions where ast-x:lineCount > 100. Threshold configurable (common values: 50-200). Can be materialized from existing line count. Requires: ast-x:lineCount to be populated." ;
+    rdfs:domain ast:Node ;
+    rdfs:range xsd:boolean .
+
+metrics:hasHighCoupling a owl:DatatypeProperty ;
+    rdfs:label "has high coupling" ;
+    rdfs:comment "Whether this class/module has excessive external dependencies (couplingCount > threshold). Code smell indicator. NOT YET IMPLEMENTED. To implement: Query for entities where metrics:couplingCount > threshold (e.g., 10). Requires: metrics:couplingCount to be populated." ;
+    rdfs:domain ast:Node ;
+    rdfs:range xsd:boolean .
+
+
+# =============================================================================
+# EXTERNAL TOOL INTEGRATION (NOT YET IMPLEMENTED)
+# =============================================================================
+# Metrics from external tools (coverage, linters, formatters, etc.).
+# These require running external tools and correlating results with RDF data.
+# =============================================================================
+
+metrics:testCoverage a owl:DatatypeProperty ;
+    rdfs:label "test coverage" ;
+    rdfs:comment "Code coverage percentage for this function/class from test execution. Used to find untested code. NOT YET IMPLEMENTED. To implement: (1) Run coverage tool (coverage.py for Python, istanbul/nyc for JS, JaCoCo for Java, etc.); (2) Parse coverage report (JSON/XML/LCOV format); (3) Join coverage data with RDF nodes by file path + line ranges (ast:startRow, ast:endRow); (4) Calculate coverage percentage per function/class. Requires: running tests + correlating external data with AST nodes." ;
+    rdfs:domain ast:Node ;
+    rdfs:range xsd:decimal .
+
+metrics:lintViolationCount a owl:DatatypeProperty ;
+    rdfs:label "lint violation count" ;
+    rdfs:comment "Number of linter violations in this entity. Used for code quality assessment. NOT YET IMPLEMENTED. To implement: Run language-specific linter (pylint, eslint, clippy, etc.), parse output (JSON format), correlate violations with AST nodes by line/column position, count violations per entity. Requires: external linter integration + position mapping." ;
+    rdfs:domain ast:Node ;
+    rdfs:range xsd:nonNegativeInteger .
+
+metrics:securityVulnerabilityCount a owl:DatatypeProperty ;
+    rdfs:label "security vulnerability count" ;
+    rdfs:comment "Number of security vulnerabilities detected in this entity. Used for security assessment. NOT YET IMPLEMENTED. To implement: Run security scanner (bandit, semgrep, CodeQL, etc.), parse findings, map to AST nodes, count vulnerabilities. Requires: security tool integration + finding correlation." ;
+    rdfs:domain ast:Node ;
+    rdfs:range xsd:nonNegativeInteger .
+
+
+# =============================================================================
+# CHANGE IMPACT METRICS (NOT YET IMPLEMENTED)
+# =============================================================================
+# Metrics for understanding change impact and risk.
+# Combines git history with call graph and structural analysis.
+# =============================================================================
+
+metrics:changeFrequency a owl:DatatypeProperty ;
+    rdfs:label "change frequency" ;
+    rdfs:comment "Number of times this entity has been modified in git history. High churn may indicate instability or complexity. NOT YET IMPLEMENTED. To implement: Query git log for commits touching this file, filter to line range of entity (ast:startRow to ast:endRow), count commits. Requires: git history integration + blame/log analysis." ;
+    rdfs:domain ast:Node ;
+    rdfs:range xsd:nonNegativeInteger .
+
+metrics:impactRadius a owl:DatatypeProperty ;
+    rdfs:label "impact radius" ;
+    rdfs:comment "Number of entities that transitively depend on this entity. High impact radius means changes affect many other parts of the codebase. NOT YET IMPLEMENTED. To implement: Build dependency graph from lsp-x:callTarget and lsp-x:importTarget, run transitive closure from this entity, count reachable entities. Requires: complete call/import graph + graph traversal." ;
+    rdfs:domain ast:Node ;
+    rdfs:range xsd:nonNegativeInteger .
