@@ -17,6 +17,7 @@ permalink: /
         <li><strong>Runs on your infrastructure</strong> — code never leaves. Important for enterprise. Important for defense.</li>
         <li><strong>Composable graphs</strong> — combine repos, dependencies, fork networks into a unified knowledge graph. 118K+ triple ontology covering AST, LSP, git, GitHub, semantic categories, and OWL reasoning.</li>
         <li><strong>Queryable in milliseconds</strong> — ask questions about code structure, contributor patterns, dependency chains, and complexity with standard SPARQL</li>
+        <li><strong>Built for LLMs</strong> — pre-parsed, compressed, and structured so your model gets maximum signal per token of context</li>
     </ul>
 </section>
 
