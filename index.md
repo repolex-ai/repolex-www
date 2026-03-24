@@ -4,9 +4,8 @@ permalink: /
 ---
 
 <section class="intro">
-    <p>Bring the code intelligence that Google and Meta built internally — and that gives them a massive engineering advantage — to everyone else.</p>
-    <p>Kythe, CodeSearch, the internal dependency graphs, the cross-repo analysis, the structural understanding that makes their 10,000th engineer as effective as their 100th — all of that is locked behind their walls.</p>
-    <p><strong>repolex is the open source version.</strong></p>
+    <p>Big Tech built internal code intelligence systems — dependency graphs, cross-repo analysis, structural understanding — that make their 10,000th engineer as effective as their 100th. That tooling is locked behind their walls.</p>
+    <p><strong>repolex is the open source version.</strong> Built on open standards. Works on any codebase. The graph is yours.</p>
 </section>
 
 <section class="features">
