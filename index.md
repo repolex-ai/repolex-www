@@ -5,7 +5,7 @@ permalink: /
 
 <section class="intro">
     <p>Big Tech built internal code intelligence systems — dependency graphs, cross-repo analysis, structural understanding — that make their 10,000th engineer as effective as their 100th. That tooling is locked behind their walls.</p>
-    <p><strong>repolex is the open source version.</strong> Built on open standards. Works on any codebase. The graph is yours.</p>
+    <p><strong>repolex is the open source version.</strong> Built on open standards. Works on any codebase. The graph is yours — extend it if and how you like.</p>
 </section>
 
 <section class="features">
