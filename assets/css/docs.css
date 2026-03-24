@@ -19,10 +19,10 @@ body.docs-layout {
     border-right: 1px solid black;
     padding: 2rem 1.5rem;
     position: fixed;
-    height: 100vh;
+    height: calc(100vh - 41px);
     overflow-y: auto;
     left: 0;
-    top: 0;
+    top: 41px;
 }
 
 .docs-header h2 {

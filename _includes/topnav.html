@@ -1,0 +1,9 @@
+<nav class="topnav">
+    <a href="{{ '/' | relative_url }}" class="topnav-brand">repolex.ai</a>
+    <div class="topnav-links">
+        <a href="{{ '/docs/' | relative_url }}" {% if page.layout == 'docs' %}class="current"{% endif %}>Docs</a>
+        <a href="{{ '/blog' | relative_url }}" {% if page.layout == 'blog-sidebar' or page.layout == 'post-with-toc' %}class="current"{% endif %}>Blog</a>
+        <a href="{{ '/repo-stories/' | relative_url }}" {% if page.layout == 'repo-story' %}class="current"{% endif %}>Repo Stories</a>
+        <a href="https://github.com/repolex-ai">GitHub</a>
+    </div>
+</nav>

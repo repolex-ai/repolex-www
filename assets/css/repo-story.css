@@ -11,29 +11,11 @@ body.repo-story-layout {
     color: #1a1a1a;
 }
 
-/* --- Navigation --- */
+/* --- Topnav override for parchment --- */
 
-.story-nav {
-    padding: 1.5rem 2rem;
-    font-family: 'American Typewriter', 'Courier New', monospace;
-    font-size: 0.85rem;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-}
-
-.story-nav a {
-    color: #666;
-    text-decoration: none;
-}
-
-.story-nav a:hover {
-    color: #1a1a1a;
-    text-decoration: underline;
-}
-
-.story-nav .nav-sep {
-    color: #ccc;
-    margin: 0 0.5rem;
+body.repo-story-layout .topnav {
+    background: #faf8f4;
+    border-bottom-color: #ddd;
 }
 
 /* --- Article container --- */
