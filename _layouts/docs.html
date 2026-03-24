@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if page.title %}{{ page.title }} - {% endif %}repolex.ai docs</title>
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/docs.css' | relative_url }}">
+</head>
+<body class="docs-layout">
+    <button class="mobile-menu-toggle" id="menuToggle">☰ Docs</button>
+
+    <div class="docs-sidebar" id="docsSidebar">
+        <div class="docs-header">
+            <h2><a href="{{ '/' | relative_url }}">repolex.ai</a></h2>
+            <p class="docs-subtitle">Documentation</p>
+        </div>
+        <nav class="docs-nav">
+            <ul>
+                {% for doc in site.docs %}
+                <li class="{% if page.url == doc.url %}current{% endif %}">
+                    <a href="{{ doc.url | relative_url }}">
+                        {% if doc.nav_title %}{{ doc.nav_title }}{% else %}{{ doc.title }}{% endif %}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+
+            <h4 class="docs-nav-section">Ontology Reference</h4>
+            <ul>
+                <li><a href="{{ '/ontology/repolex/docs/ast-x.html' | relative_url }}">AST Extension (ast-x)</a></li>
+                <li><a href="{{ '/ontology/repolex/docs/lsp-x.html' | relative_url }}">LSP Extension (lsp-x)</a></li>
+                <li><a href="{{ '/ontology/repolex/docs/gh-x.html' | relative_url }}">GitHub Extension (gh-x)</a></li>
+                <li><a href="{{ '/ontology/repolex/docs/sem.html' | relative_url }}">Semantic Categories (sem)</a></li>
+                <li><a href="{{ '/ontology/repolex/docs/metrics.html' | relative_url }}">Metrics</a></li>
+                <li><a href="{{ '/ontology/repolex/docs/reasoning.html' | relative_url }}">OWL Reasoning</a></li>
+                <li><a href="{{ '/ontology/repolex/docs/repolex.html' | relative_url }}">Core (repolex)</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="docs-content">
+        <article>
+            <h1>{{ page.title }}</h1>
+            <div class="content">
+                {{ content }}
+            </div>
+        </article>
+    </div>
+
+    <footer class="docs-footer">
+        <p><a href="{{ '/' | relative_url }}">Home</a> | <a href="{{ '/blog' | relative_url }}">Blog</a> | <a href="{{ '/repo-stories/' | relative_url }}">Repo Stories</a> | <a href="https://github.com/repolex-ai">GitHub</a></p>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuToggle = document.getElementById('menuToggle');
+        const sidebar = document.getElementById('docsSidebar');
+
+        if (menuToggle && sidebar) {
+            menuToggle.addEventListener('click', function() {
+                sidebar.classList.toggle('open');
+                this.textContent = sidebar.classList.contains('open') ? '✕ Close' : '☰ Docs';
+            });
+
+            document.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768 &&
+                    !sidebar.contains(e.target) &&
+                    e.target !== menuToggle) {
+                    sidebar.classList.remove('open');
+                    menuToggle.textContent = '☰ Docs';
+                }
+            });
+        }
+    });
+    </script>
+</body>
+</html>

@@ -10,6 +10,10 @@ collections:
   posts:
     output: true
     permalink: /blog/:year/:month/:day/:title/
+  docs:
+    output: true
+    permalink: /docs/:title/
+    sort_by: order
 
 defaults:
   - scope:
@@ -17,6 +21,11 @@ defaults:
       type: "posts"
     values:
       layout: "post"
+  - scope:
+      path: ""
+      type: "docs"
+    values:
+      layout: "docs"
 
 exclude:
   - README.md

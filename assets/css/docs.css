@@ -1,0 +1,224 @@
+/* ============================================
+   Docs layout — left sidebar + content
+   ============================================ */
+
+body.docs-layout {
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: row;
+}
+
+/* --- Sidebar --- */
+
+.docs-sidebar {
+    width: 280px;
+    background: white;
+    border-right: 1px solid black;
+    padding: 2rem 1.5rem;
+    position: fixed;
+    height: 100vh;
+    overflow-y: auto;
+    left: 0;
+    top: 0;
+}
+
+.docs-header h2 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.8rem;
+}
+
+.docs-header h2 a {
+    text-decoration: none;
+    color: black;
+}
+
+.docs-header h2 a:hover {
+    text-decoration: underline;
+}
+
+.docs-subtitle {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+/* --- Navigation --- */
+
+.docs-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem 0;
+}
+
+.docs-nav li {
+    margin-bottom: 0.25rem;
+}
+
+.docs-nav li a {
+    display: block;
+    padding: 0.35rem 0.75rem;
+    font-size: 0.9rem;
+    color: #333;
+    text-decoration: none;
+    border-radius: 2px;
+}
+
+.docs-nav li a:hover {
+    background: #f5f5f5;
+}
+
+.docs-nav li.current a {
+    background: #e6f3ff;
+    color: black;
+}
+
+.docs-nav-section {
+    font-size: 0.75rem;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #999;
+    margin: 1.5rem 0 0.75rem 0;
+    padding: 0 0.75rem;
+    border-top: 1px solid #eee;
+    padding-top: 1rem;
+}
+
+/* --- Content --- */
+
+.docs-content {
+    margin-left: 280px;
+    padding: 3rem 4rem;
+    max-width: 900px;
+    flex: 1;
+}
+
+.docs-content article h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid black;
+    padding-bottom: 0.75rem;
+}
+
+.docs-content .content {
+    margin-top: 2rem;
+}
+
+.docs-content .content h2 {
+    font-size: 1.4rem;
+    margin: 2.5rem 0 1rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.docs-content .content h3 {
+    font-size: 1.15rem;
+    margin: 2rem 0 0.75rem 0;
+}
+
+.docs-content .content p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+}
+
+.docs-content .content ul,
+.docs-content .content ol {
+    margin: 0.5rem 0 1rem 1.5rem;
+}
+
+.docs-content .content li {
+    margin-bottom: 0.4rem;
+    line-height: 1.6;
+}
+
+.docs-content .content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    font-size: 0.9rem;
+}
+
+.docs-content .content th {
+    text-align: left;
+    padding: 0.5rem 0.75rem;
+    border-bottom: 2px solid black;
+    font-weight: normal;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.docs-content .content td {
+    padding: 0.5rem 0.75rem;
+    border-bottom: 1px solid #ddd;
+    vertical-align: top;
+}
+
+.docs-content .content pre {
+    background: #f5f5f5;
+    border: 1px solid black;
+    padding: 1rem;
+    overflow-x: auto;
+    margin: 1rem 0;
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+.docs-content .content code {
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+    background: #f5f5f5;
+    padding: 0.15rem 0.3rem;
+}
+
+.docs-content .content pre code {
+    background: none;
+    padding: 0;
+}
+
+/* --- Footer --- */
+
+.docs-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 280px;
+    padding: 1rem 1.5rem;
+    border-top: 1px solid black;
+    background: white;
+    text-align: center;
+    font-size: 0.85rem;
+}
+
+/* --- Responsive --- */
+
+@media (max-width: 768px) {
+    .docs-sidebar {
+        position: fixed;
+        left: -280px;
+        width: 280px;
+        height: 100vh;
+        z-index: 1000;
+        transition: left 0.3s ease;
+        box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+    }
+
+    .docs-sidebar.open {
+        left: 0;
+    }
+
+    .docs-content {
+        margin-left: 0;
+        padding: 2rem 1rem;
+        padding-top: 4rem;
+    }
+
+    .docs-footer {
+        position: relative;
+        width: 100%;
+        left: 0;
+    }
+}
