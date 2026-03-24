@@ -69,10 +69,15 @@ body {
     background: white;
     color: black;
     line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    padding-top: 41px;
+}
+
+main {
     max-width: 800px;
     margin: 0 auto;
     padding: 2rem;
-    padding-top: 3.5rem;
 }
 
 header {
@@ -98,10 +103,6 @@ h3 {
     font-size: 1.2rem;
     font-weight: normal;
     margin: 1.5rem 0 0.5rem 0;
-}
-
-main {
-    margin-top: 2rem;
 }
 
 section {
@@ -252,13 +253,12 @@ article .content figcaption {
 }
 
 /* Blog sidebar layout */
-body.blog-layout {
+.blog-layout {
     max-width: 100%;
     padding: 0;
-    padding-top: 41px;
     margin: 0;
     display: flex;
-    min-height: 100vh;
+    min-height: calc(100vh - 41px);
     flex-direction: row;
 }
 
@@ -484,7 +484,7 @@ iframe.giscus-frame {
         display: block;
     }
 
-    body.blog-layout {
+    .blog-layout {
         flex-direction: column;
     }
 

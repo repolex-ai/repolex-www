@@ -2,13 +2,7 @@
    Repo Stories — literary layout for repolex.ai
    ============================================ */
 
-/* Reset the default body constraints */
 body.repo-story-layout {
-    max-width: 100%;
-    margin: 0;
-    padding: 0;
-    padding-top: 41px;
-    background: #fff;
     color: #1a1a1a;
 }
 

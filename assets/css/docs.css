@@ -2,13 +2,12 @@
    Docs layout — left sidebar + content
    ============================================ */
 
-body.docs-layout {
+.docs-layout {
     max-width: 100%;
     padding: 0;
-    padding-top: 41px;
     margin: 0;
     display: flex;
-    min-height: 100vh;
+    min-height: calc(100vh - 41px);
     flex-direction: row;
 }
 

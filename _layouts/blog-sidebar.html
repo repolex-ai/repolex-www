@@ -6,38 +6,40 @@
     <title>{% if page.title %}{{ page.title }} - {% endif %}repolex.ai</title>
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
-<body class="blog-layout">
+<body>
     {% include topnav.html %}
-    <button class="mobile-menu-toggle" id="menuToggle">☰ Menu</button>
 
-    <div class="nav-sidebar" id="navSidebar">
-        <div class="nav-header">
-            <h2><a href="{{ '/' | relative_url }}">repolex.ai</a></h2>
-            <p class="nav-subtitle">Tech Notes</p>
-        </div>
-        <div class="post-list">
-            {% for post in site.posts %}
-            {% unless post.status == "draft" %}
-            <div class="post-link{% if page.url == post.url %} current{% endif %}">
-                <a href="{{ post.url | relative_url }}">
-                    <span class="date">{{ post.date | date: "%B %-d, %Y" }}</span>
-                    <span class="title">{{ post.title }}</span>
-                </a>
+    <div class="blog-layout">
+        <button class="mobile-menu-toggle" id="menuToggle">☰ Menu</button>
+
+        <div class="nav-sidebar" id="navSidebar">
+            <div class="nav-header">
+                <h2><a href="{{ '/' | relative_url }}">repolex.ai</a></h2>
+                <p class="nav-subtitle">Tech Notes</p>
             </div>
-            {% endunless %}
-            {% endfor %}
+            <div class="post-list">
+                {% for post in site.posts %}
+                {% unless post.status == "draft" %}
+                <div class="post-link{% if page.url == post.url %} current{% endif %}">
+                    <a href="{{ post.url | relative_url }}">
+                        <span class="date">{{ post.date | date: "%B %-d, %Y" }}</span>
+                        <span class="title">{{ post.title }}</span>
+                    </a>
+                </div>
+                {% endunless %}
+                {% endfor %}
+            </div>
         </div>
-    </div>
-    <div class="content-area">
-        {{ content }}
-    </div>
+        <div class="content-area">
+            {{ content }}
+        </div>
 
-    <footer class="blog-footer">
-        <p><a href="{{ '/' | relative_url }}">Home</a> | <a href="{{ '/blog' | relative_url }}">Blog</a> | <a href="https://github.com/repolex-ai">GitHub</a></p>
-    </footer>
+        <footer class="blog-footer">
+            <p><a href="{{ '/' | relative_url }}">Home</a> | <a href="{{ '/blog' | relative_url }}">Blog</a> | <a href="https://github.com/repolex-ai">GitHub</a></p>
+        </footer>
+    </div>
 
     <script>
-    // Mobile menu toggle
     document.addEventListener('DOMContentLoaded', function() {
         const menuToggle = document.getElementById('menuToggle');
         const navSidebar = document.getElementById('navSidebar');
@@ -48,7 +50,6 @@
                 this.textContent = navSidebar.classList.contains('open') ? '✕ Close' : '☰ Menu';
             });
 
-            // Close menu when clicking a link on mobile
             const postLinks = navSidebar.querySelectorAll('.post-link a');
             postLinks.forEach(link => {
                 link.addEventListener('click', function() {
@@ -59,7 +60,6 @@
                 });
             });
 
-            // Close menu when clicking outside
             document.addEventListener('click', function(e) {
                 if (window.innerWidth <= 768 &&
                     !navSidebar.contains(e.target) &&
