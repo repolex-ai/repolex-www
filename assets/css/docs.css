@@ -5,6 +5,7 @@
 body.docs-layout {
     max-width: 100%;
     padding: 0;
+    padding-top: 41px;
     margin: 0;
     display: flex;
     min-height: 100vh;

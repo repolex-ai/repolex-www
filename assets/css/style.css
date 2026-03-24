@@ -14,8 +14,11 @@
     border-bottom: 1px solid black;
     font-size: 0.85rem;
     background: white;
-    position: relative;
-    z-index: 100;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1100;
 }
 
 .topnav-brand {
@@ -69,6 +72,7 @@ body {
     max-width: 800px;
     margin: 0 auto;
     padding: 2rem;
+    padding-top: 3.5rem;
 }
 
 header {
@@ -251,6 +255,7 @@ article .content figcaption {
 body.blog-layout {
     max-width: 100%;
     padding: 0;
+    padding-top: 41px;
     margin: 0;
     display: flex;
     min-height: 100vh;
@@ -463,7 +468,7 @@ iframe.giscus-frame {
 .mobile-menu-toggle {
     display: none;
     position: fixed;
-    top: 1rem;
+    top: 3.5rem;
     left: 1rem;
     z-index: 1001;
     background: white;
