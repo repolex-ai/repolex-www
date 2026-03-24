@@ -1,6 +1,6 @@
 ---
-title: Getting Started
-nav_title: Getting Started
+title: Quick Setup
+nav_title: Quick Setup
 order: 0
 ---
 
