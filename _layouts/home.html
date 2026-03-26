@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% if page.title %}{{ page.title }} - {% endif %}repolex.ai</title>
+    <title>repolex.ai</title>
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/home.css' | relative_url }}">
 </head>
 <body>
     {% include topnav.html %}
-    {% include graph-bg.html intensity=0.25 density=25000 %}
+    {% include graph-bg.html intensity=1.0 density=12000 %}
 
-    <main>
+    <div class="page">
         {{ content }}
-    </main>
+    </div>
 </body>
 </html>

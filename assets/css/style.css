@@ -13,7 +13,8 @@
     padding: 0.75rem 2rem;
     border-bottom: 1px solid #ddd;
     font-size: 0.85rem;
-    background: white;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(4px);
     position: fixed;
     top: 0;
     left: 0;

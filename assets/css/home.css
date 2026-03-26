@@ -1,0 +1,117 @@
+/* === Homepage specific styles === */
+
+.page {
+    position: relative;
+    z-index: 1;
+    min-height: calc(100vh - 41px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+}
+
+.title {
+    font-size: 5rem;
+    font-weight: normal;
+    letter-spacing: 0.15em;
+    margin-bottom: 0.5rem;
+    border-bottom: none;
+}
+
+.subtitle {
+    font-size: 0.9rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #999;
+    margin-bottom: 4rem;
+}
+
+.mission {
+    max-width: 680px;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.mission p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    color: #444;
+}
+
+.mission strong {
+    color: #000;
+}
+
+.mission .punchline {
+    font-size: 1.4rem;
+    color: #000;
+    letter-spacing: 0.05em;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 960px;
+    width: 100%;
+    margin-bottom: 4rem;
+}
+
+.feature {
+    border: 1px solid #ddd;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(2px);
+    transition: border-color 0.3s, background 0.3s;
+}
+
+.feature:hover {
+    border-color: #999;
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.feature h3 {
+    font-size: 0.8rem;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #666;
+    margin-bottom: 0.75rem;
+}
+
+.feature p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* === Title shimmer === */
+@keyframes shimmer {
+    0%   { background-position: 200% center; }
+    100% { background-position: -200% center; }
+}
+
+.title {
+    background: linear-gradient(
+        90deg,
+        #000 0%,
+        #000 40%,
+        #999 50%,
+        #000 60%,
+        #000 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shimmer 8s linear infinite;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+    .title { font-size: 2.8rem; }
+    .features { grid-template-columns: 1fr; }
+    .page { padding: 3rem 1.5rem; }
+}
