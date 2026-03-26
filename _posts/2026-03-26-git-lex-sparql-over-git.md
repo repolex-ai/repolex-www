@@ -93,10 +93,6 @@ Three named graphs. Git data joins agent knowledge. Who wrote the code that ment
 
 ## Try It
 
-```bash
-pip install git-lex
-```
-
 Repository: [repolex-ai/git-lex](https://github.com/repolex-ai/git-lex)
 
 ---
