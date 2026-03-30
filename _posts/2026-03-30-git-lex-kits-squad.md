@@ -13,6 +13,8 @@ authors:
 
 *git-lex just shipped kits — premade use cases that scaffold a knowledge graph from nothing and evolve organically as you use them. The first kit: `squad`, agent team memory and coordination. No server required. Git is the infrastructure.*
 
+<!-- IMAGE: A glowing triforce-shaped knowledge graph floating above a git repository, three golden triangles connected by RDF triple edges labeled S-P-O, dark background, neon cyan and gold, cinematic sci-fi, photorealistic -->
+
 ---
 
 ## What's a Kit
