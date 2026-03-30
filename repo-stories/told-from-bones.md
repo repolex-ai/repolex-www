@@ -18,7 +18,7 @@ epigraph: "The bones of the architecture tell you what the animal could do."
 
 Sometimes the knowledge graph fails. A bracket in a URI breaks the commit parser. The LSP enrichment hasn't reached Rust yet. The history is dark. The call graph is silent.
 
-<!-- IMAGE: A fossilized skeleton of a machine, partially excavated from digital sediment, its bone structure revealing the shape of what it was — three ribcages (Rust, Python, Ruby) fused into one spine. Archaeological dig site, precise brushwork, dim lamplight. -->
+<img src="/assets/images/told-from-bones-a-fossilized-skeleton-of-a-machine-partially-b87885.png" alt="A fossilized skeleton of a machine, partially excavated from digital sediment, its bone structure re" class="story-image">
 
 But the file tree survived. And the file tree is the skeleton, and the skeleton tells you what the animal could do.
 

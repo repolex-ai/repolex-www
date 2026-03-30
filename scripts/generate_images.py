@@ -87,8 +87,8 @@ def generate_image(prompt: str, output_path: Path, model: str, dry_run: bool = F
 def process_file(md_path: Path, model: str = MODEL, dry_run: bool = False) -> list[dict]:
     content = md_path.read_text()
     results = []
+    new_content = content
 
-    # Get context from filename for better filenames
     context = md_path.stem.replace('-', ' ')
 
     markers = IMAGE_MARKER.findall(content)
@@ -101,18 +101,25 @@ def process_file(md_path: Path, model: str = MODEL, dry_run: bool = False) -> li
         filename = prompt_to_filename(prompt, context)
         output_path = ASSETS_DIR / filename
         web_path = f"/assets/images/{filename}"
+        img_tag = f'<img src="{web_path}" alt="{prompt[:100]}" class="story-image">'
 
-        if output_path.exists() and not dry_run:
+        if output_path.exists():
             print(f"  Skipping (exists): {filename}")
-            results.append({"prompt": prompt, "path": web_path, "status": "exists"})
-            continue
+            status = "exists"
+        else:
+            success = generate_image(prompt, output_path, model, dry_run)
+            status = "generated" if success else "failed"
 
-        success = generate_image(prompt, output_path, model, dry_run)
-        results.append({
-            "prompt": prompt,
-            "path": web_path,
-            "status": "generated" if success else "failed"
-        })
+        results.append({"prompt": prompt, "path": web_path, "status": status})
+
+        # Replace the marker with the img tag (unless failed or dry-run)
+        if status in ("exists", "generated") and not dry_run:
+            marker_pattern = re.compile(r'<!--\s*IMAGE:\s*' + re.escape(prompt) + r'\s*-->')
+            new_content = marker_pattern.sub(img_tag, new_content)
+
+    if new_content != content and not dry_run:
+        md_path.write_text(new_content)
+        print(f"  Updated: {md_path.name}")
 
     return results
 

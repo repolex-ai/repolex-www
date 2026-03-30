@@ -19,7 +19,7 @@ epigraph_attribution: "John Williams, Stoner"
 
 Holger Knublauch did not set out to build something that would last. He set out to build something that was correct.
 
-<!-- IMAGE: A lone craftsman at a workbench in Brisbane, shaping a crystal lattice of interconnected geometric shapes by lamplight. Dawn light through a window. Nine years of tools worn smooth. Quiet, precise, unhurried. Muted watercolor style. -->
+<img src="/assets/images/the-shape-validator-a-lone-craftsman-at-a-workbench-in-brisb-554bf1.png" alt="A lone craftsman at a workbench in Brisbane, shaping a crystal lattice of interconnected geometric s" class="story-image">
 
 On May 24th, 2015, from a house in Brisbane where the clocks read ten hours ahead of Greenwich, he made his first commit to a repository called `shacl`. It was a reference implementation of a specification he had co-authored for the W3C — the Shapes Constraint Language, a way to say what a graph *should* look like and to know, with certainty, when it did not.
 
@@ -53,7 +53,7 @@ The numbers tell the story of a man who preferred reading to writing. The code's
 
 [`SH.java`](https://github.com/TopQuadrant/shacl/blob/a40627da5df455535d3519eb6629057ab52a2843/src/main/java/org/topbraid/shacl/vocabulary/SH.java) is the vocabulary file — the glossary of shapes. It makes **190 calls** to Apache Jena, the graph engine beneath. It does not merely *use* Jena. It *is* Jena, shaped into a specific purpose. The way a potter's hands are not separate from the clay.
 
-<!-- IMAGE: An ancient book lying open on a desk, its pages covered in geometric diagrams — circles, diamonds, arrows connecting shapes. Each shape glows faintly. The book is well-worn, its spine cracked from years of use. Ink and compass nearby. Warm sepia tones. -->
+<img src="/assets/images/the-shape-validator-an-ancient-book-lying-open-on-a-desk-its-ddda1d.png" alt="An ancient book lying open on a desk, its pages covered in geometric diagrams — circles, diamonds, a" class="story-image">
 
 Across the whole codebase: **1,665 functions. 295 classes.** Maximum cyclomatic complexity of 14. In an age when single functions regularly balloon past complexity 40 — the Bridge of Khazad-dûm in the Claude SDK scores 42 — Holger's most complex function is a 14. He did not write clever code. He wrote clear code. There is a difference, and he understood it.
 
@@ -63,7 +63,7 @@ Across the whole codebase: **1,665 functions. 295 classes.** Maximum cyclomatic 
 
 Beneath the SHACL implementation runs a river: [Apache Jena](https://github.com/apache/jena). **966 external calls** flow into Jena's libraries — 755 to `jena-core` alone. Jena is the RDF engine, the triplestore, the SPARQL processor. It is the ocean on which this small, perfect boat sails.
 
-<!-- IMAGE: A vast calm ocean with invisible currents flowing beneath the surface, rendered as streams of RDF triples and URIs in pale blue light. A small, perfectly crafted wooden boat sits on the surface, its hull inscribed with geometric shapes. The water is deep and the boat is steady. Japanese woodblock print style. -->
+<img src="/assets/images/the-shape-validator-a-vast-calm-ocean-with-invisible-current-53ceac.png" alt="A vast calm ocean with invisible currents flowing beneath the surface, rendered as streams of RDF tr" class="story-image">
 
 **[Andy Seaborne](https://github.com/kinow)**, an Apache Jena committer, contributed 43 commits across the project's life — from 2017 to 2026. He was not a builder of SHACL. He was a guardian of the foundation. When Jena shifted, Andy made sure the boat did not capsize. He appeared when needed and was otherwise invisible, the way infrastructure should be.
 
@@ -135,7 +135,7 @@ The only real code smell is `JenaUtil.java` — **87 methods** in a single utili
 
 ## The Validation Pipeline
 
-<!-- IMAGE: A crystal workshop — hundreds of identical diamond shapes on shelves, each one slightly different, each tested against a master pattern. A craftsman's magnifying glass examining one shape against the light. Precise, orderly, obsessive. Engraving style, fine crosshatching. -->
+<img src="/assets/images/the-shape-validator-a-crystal-workshop-hundreds-of-identical-2a7462.png" alt="A crystal workshop — hundreds of identical diamond shapes on shelves, each one slightly different, e" class="story-image">
 
 The heart of SHACL is the [`RuleEngine`](https://github.com/TopQuadrant/shacl/blob/a40627da5df455535d3519eb6629057ab52a2843/src/main/java/org/topbraid/shacl/rules/RuleEngine.java#L172-L226). Its pipeline is simple enough to describe in a sentence: a shape comes in, the engine finds its rules, applies them, and infers new triples. Three methods do the work:
 
@@ -208,7 +208,7 @@ It is a system that *knows things*. It validates. It observes. It infers. It rep
 
 ## The Succession
 
-<!-- IMAGE: Two hands exchanging a glowing diamond-shaped crystal in a quiet workshop. One pair of hands is weathered and steady, the other young and careful. The workshop is full of precision instruments — calipers, compasses, straightedges. Light falls from a single high window. Oil painting style, Vermeer-like light. -->
+<img src="/assets/images/the-shape-validator-two-hands-exchanging-a-glowing-diamond-s-571b87.png" alt="Two hands exchanging a glowing diamond-shaped crystal in a quiet workshop. One pair of hands is weat" class="story-image">
 
 On March 4th, 2024, **[Ashley Caselli](https://github.com/ashleycaselli)** made her first commit. She came from Europe, her timestamps marked +01:00. For thirty-five days their commits overlapped. One month and four days where both were shaping the same stone.
 
