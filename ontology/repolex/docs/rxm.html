@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RXM — Repolex Metrics — repolex ontology</title>
+  <style>
+    body {
+      font-family: 'American Typewriter', 'Courier New', monospace;
+      background: #fff;
+      color: #000;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+      line-height: 1.6;
+    }
+    h1 {
+      font-weight: normal;
+      font-size: 3rem;
+      border-bottom: 1px solid #000;
+      padding-bottom: 0.5rem;
+    }
+    h2 {
+      font-weight: normal;
+      font-size: 1.5rem;
+      margin-top: 2rem;
+    }
+    .version {
+      color: #999;
+      font-size: 0.8em;
+      font-weight: normal;
+    }
+    .ontology-desc {
+      color: #666;
+      font-size: 0.95em;
+      max-width: 80ch;
+    }
+    .meta {
+      color: #666;
+      font-size: 0.85em;
+      margin-bottom: 1rem;
+    }
+    .meta a {
+      color: #000;
+      text-decoration: underline;
+    }
+    .meta a:hover {
+      text-decoration: none;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-size: 0.9em;
+    }
+    th {
+      text-align: left;
+      padding: 0.5rem 0.75rem;
+      border-bottom: 2px solid #000;
+      font-weight: normal;
+      color: #000;
+    }
+    td {
+      padding: 0.4rem 0.75rem;
+      border-bottom: 1px solid #ddd;
+      vertical-align: top;
+    }
+    tr:hover td {
+      background: #f5f5f5;
+    }
+    .prop-name {
+      font-family: 'Courier New', monospace;
+      font-size: 0.9em;
+      white-space: nowrap;
+    }
+    .prop-desc {
+      color: #666;
+      max-width: 50ch;
+    }
+    .prop-supers {
+      font-family: 'Courier New', monospace;
+      font-size: 0.85em;
+    }
+    footer {
+      margin-top: 3rem;
+      padding-top: 1rem;
+      border-top: 1px solid #000;
+      color: #999;
+      font-size: 0.8em;
+    }
+    footer a {
+      color: #000;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>RXM — Repolex Metrics <span class="version">1.0</span></h1>
+    <p class="ontology-desc">Derived code quality metrics combining AST, LSP, and graph analysis. The analysis layer that turns raw structural data into actionable insights.</p>
+    <div class="meta">
+      59 triples
+      · <a href="rxm.ttl">Download .ttl</a>
+      · 0 classes
+      · 0 object properties
+      · 11 datatype properties
+    </div>
+
+    <h2>Datatype Properties (11)</h2>
+    <table>
+      <thead>
+        <tr><th>Property</th><th>Domain</th><th>Range</th><th>Description</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="prop-name">repolex:rxm/changeFrequency</td>
+          <td>ast:Node</td>
+          <td>xsd:nonNegativeInteger</td>
+          <td class="prop-desc">Number of times this entity has been modified in git history. High churn may indicate instability or complexity. NOT YET IMPLEMENTED. To implement: Query git log for commits touching this file, filter...</td>
+        </tr>
+        <tr>
+          <td class="prop-name">repolex:rxm/couplingCount</td>
+          <td>ast:Node</td>
+          <td>xsd:nonNegativeInteger</td>
+          <td class="prop-desc">Number of distinct external classes/modules this entity depends on. High coupling indicates tight dependencies and reduced modularity. NOT YET IMPLEMENTED. To implement: For each function/class, trave...</td>
+        </tr>
+        <tr>
+          <td class="prop-name">repolex:rxm/hasCircularDependency</td>
+          <td>ast:Node</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc">Whether this module is part of a circular import dependency. Code smell indicator. NOT YET IMPLEMENTED. To implement: Build module dependency graph from lsp-x:importTarget resolution. Run cycle detect...</td>
+        </tr>
+        <tr>
+          <td class="prop-name">repolex:rxm/hasHighCoupling</td>
+          <td>ast:Node</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc">Whether this class/module has excessive external dependencies (couplingCount &gt; threshold). Code smell indicator. NOT YET IMPLEMENTED. To implement: Query for entities where rxm:couplingCount &gt; thresho...</td>
+        </tr>
+        <tr>
+          <td class="prop-name">repolex:rxm/impactRadius</td>
+          <td>ast:Node</td>
+          <td>xsd:nonNegativeInteger</td>
+          <td class="prop-desc">Number of entities that transitively depend on this entity. High impact radius means changes affect many other parts of the codebase. NOT YET IMPLEMENTED. To implement: Build dependency graph from lsp...</td>
+        </tr>
+        <tr>
+          <td class="prop-name">repolex:rxm/isComplexFunction</td>
+          <td>ast:Node</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc">Whether this function is too complex (cyclomatic complexity &gt; 10). Code smell indicator. NOT YET IMPLEMENTED. To implement: Query for functions where ast-x:cyclomaticComplexity &gt; 10. Threshold configu...</td>
+        </tr>
+        <tr>
+          <td class="prop-name">repolex:rxm/isGodClass</td>
+          <td>ast:Node</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc">Whether this class has too many responsibilities (methods &gt; 20 OR fields &gt; 15). Code smell indicator. NOT YET IMPLEMENTED. To implement: Query for classes where ast-x:methodCount &gt; 20 OR ast-x:fieldCo...</td>
+        </tr>
+        <tr>
+          <td class="prop-name">repolex:rxm/isLongFunction</td>
+          <td>ast:Node</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc">Whether this function is too long (line count &gt; 100). Code smell indicator. NOT YET IMPLEMENTED. To implement: Query for functions where ast-x:lineCount &gt; 100. Threshold configurable (common values: 5...</td>
+        </tr>
+        <tr>
+          <td class="prop-name">repolex:rxm/isPublicAPI</td>
+          <td>ast:Node</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc">Whether this symbol is part of the public API (exported/public). Used to distinguish internal code (safe to delete if unused) from external-facing code (breaking change risk). NOT YET IMPLEMENTED. To ...</td>
+        </tr>
+        <tr>
+          <td class="prop-name">repolex:rxm/isReachable</td>
+          <td>ast:Node</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc">Whether this code is reachable from entry points. Used for dead code elimination. NOT YET IMPLEMENTED. To implement: (1) Identify entry points (main(), if __name__ == &#x27;__main__&#x27;, @Test annotations, mo...</td>
+        </tr>
+        <tr>
+          <td class="prop-name">repolex:rxm/isUsed</td>
+          <td>ast:Node</td>
+          <td>xsd:boolean</td>
+          <td class="prop-desc">Whether this variable/import/symbol is actually referenced. Used for unused code detection. NOT YET IMPLEMENTED. To implement: For imports, check if lsp-x:importTarget symbol appears in any identifier...</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </main>
+  <footer>
+    Auto-generated from <code>ontology_src/rxm.ttl</code>
+    · <a href="https://repolex.ai">repolex.ai</a>
+    · 2026-03-28
+  </footer>
+</body>
+</html>

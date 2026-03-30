@@ -17,6 +17,7 @@
 @prefix ruby:       <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/ruby/> .
 @prefix rust:       <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/rust/> .
 @prefix scala:      <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/scala/> .
+@prefix swift:      <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/swift/> .
 @prefix typescript: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/typescript/> .
 
 # =============================================================================
@@ -706,6 +707,51 @@ scala:extends_clause     rdfs:subClassOf ast-x:ExtendsClause .
 ## Comments
 scala:comment            rdfs:subClassOf ast-x:Comment .
 scala:block_comment      rdfs:subClassOf ast-x:Comment .
+
+
+# =============================================================================
+# SWIFT MAPPINGS
+# =============================================================================
+
+## Control Flow
+swift:if_statement           rdfs:subClassOf ast-x:IfStatement .
+swift:guard_statement        rdfs:subClassOf ast-x:IfStatement .
+swift:else                   rdfs:subClassOf ast-x:ElseClause .
+swift:for_statement          rdfs:subClassOf ast-x:ForStatement .
+swift:while_statement        rdfs:subClassOf ast-x:WhileStatement .
+swift:repeat_while_statement rdfs:subClassOf ast-x:WhileStatement .
+swift:switch_statement       rdfs:subClassOf ast-x:SwitchStatement .
+swift:control_transfer_statement rdfs:subClassOf ast-x:BreakStatement .
+swift:throw_keyword          rdfs:subClassOf ast-x:ThrowStatement .
+swift:do_statement           rdfs:subClassOf ast-x:TryStatement .
+swift:catch_block            rdfs:subClassOf ast-x:CatchClause .
+
+## Dataflow
+swift:assignment             rdfs:subClassOf ast-x:Assignment .
+swift:property_declaration   rdfs:subClassOf ast-x:VariableDeclaration .
+swift:value_binding_pattern  rdfs:subClassOf ast-x:VariableDeclaration .
+swift:parameter              rdfs:subClassOf ast-x:Parameter .
+swift:lambda_parameter       rdfs:subClassOf ast-x:Parameter .
+
+## LSP
+swift:function_declaration   rdfs:subClassOf ast-x:FunctionDefinition .
+swift:init_declaration       rdfs:subClassOf ast-x:FunctionDefinition .
+swift:deinit_declaration     rdfs:subClassOf ast-x:FunctionDefinition .
+swift:lambda_literal         rdfs:subClassOf ast-x:FunctionDefinition .
+swift:class_declaration      rdfs:subClassOf ast-x:ClassDefinition .
+swift:protocol_declaration   rdfs:subClassOf ast-x:ClassDefinition .
+swift:enum_entry             rdfs:subClassOf ast-x:ClassDefinition .
+swift:typealias_declaration  rdfs:subClassOf ast-x:ClassDefinition .
+swift:call_expression        rdfs:subClassOf ast-x:CallSite .
+swift:constructor_expression rdfs:subClassOf ast-x:CallSite .
+swift:import_declaration     rdfs:subClassOf ast-x:ImportStatement .
+
+## Inheritance
+swift:inheritance_specifier  rdfs:subClassOf ast-x:ExtendsClause .
+
+## Comments
+swift:comment                rdfs:subClassOf ast-x:Comment .
+swift:multiline_comment      rdfs:subClassOf ast-x:Comment .
 
 
 # =============================================================================
