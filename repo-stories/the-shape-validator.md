@@ -19,7 +19,6 @@ epigraph_attribution: "John Williams, Stoner"
 
 Holger Knublauch did not set out to build something that would last. He set out to build something that was correct.
 
-<img src="/assets/images/the-shape-validator-a-lone-craftsman-at-a-cluttered-workshop-419070.png" alt="A lone craftsman at a cluttered workshop bench, hunched over a glowing geometric lattice he is build" class="story-image">
 
 On May 24th, 2015, from a house in Brisbane where the clocks read ten hours ahead of Greenwich, he made his first commit to a repository called `shacl`. It was a reference implementation of a specification he had co-authored for the W3C — the Shapes Constraint Language, a way to say what a graph *should* look like and to know, with certainty, when it did not.
 
@@ -53,7 +52,6 @@ The numbers tell the story of a man who preferred reading to writing. The code's
 
 [`SH.java`](https://github.com/TopQuadrant/shacl/blob/a40627da5df455535d3519eb6629057ab52a2843/src/main/java/org/topbraid/shacl/vocabulary/SH.java) is the vocabulary file — the glossary of shapes. It makes **190 calls** to Apache Jena, the graph engine beneath. It does not merely *use* Jena. It *is* Jena, shaped into a specific purpose. The way a potter's hands are not separate from the clay.
 
-<img src="/assets/images/the-shape-validator-an-enormous-ancient-grimoire-splayed-ope-e497bc.png" alt="An enormous ancient grimoire splayed open, its pages covered in geometric constraint diagrams and RD" class="story-image">
 
 Across the whole codebase: **1,665 functions. 295 classes.** Maximum cyclomatic complexity of 14. In an age when single functions regularly balloon past complexity 40 — the Bridge of Khazad-dûm in the Claude SDK scores 42 — Holger's most complex function is a 14. He did not write clever code. He wrote clear code. There is a difference, and he understood it.
 
@@ -63,7 +61,6 @@ Across the whole codebase: **1,665 functions. 295 classes.** Maximum cyclomatic 
 
 Beneath the SHACL implementation runs a river: [Apache Jena](https://github.com/apache/jena). **966 external calls** flow into Jena's libraries — 755 to `jena-core` alone. Jena is the RDF engine, the triplestore, the SPARQL processor. It is the ocean on which this small, perfect boat sails.
 
-<img src="/assets/images/the-shape-validator-a-vast-churning-ocean-viewed-from-below--6911f7.png" alt="A vast churning ocean viewed from below, its currents rendered as writhing RDF triple streams and SP" class="story-image">
 
 **[Andy Seaborne](https://github.com/kinow)**, an Apache Jena committer, contributed 43 commits across the project's life — from 2017 to 2026. He was not a builder of SHACL. He was a guardian of the foundation. When Jena shifted, Andy made sure the boat did not capsize. He appeared when needed and was otherwise invisible, the way infrastructure should be.
 
@@ -135,7 +132,6 @@ The only real code smell is `JenaUtil.java` — **87 methods** in a single utili
 
 ## The Validation Pipeline
 
-<img src="/assets/images/the-shape-validator-a-vast-grotesque-workshop-crammed-floor--b1b7d3.png" alt="A vast grotesque workshop crammed floor-to-ceiling with diamond-shaped crystal validators on shelves" class="story-image">
 
 The heart of SHACL is the [`RuleEngine`](https://github.com/TopQuadrant/shacl/blob/a40627da5df455535d3519eb6629057ab52a2843/src/main/java/org/topbraid/shacl/rules/RuleEngine.java#L172-L226). Its pipeline is simple enough to describe in a sentence: a shape comes in, the engine finds its rules, applies them, and infers new triples. Three methods do the work:
 
@@ -208,7 +204,6 @@ It is a system that *knows things*. It validates. It observes. It infers. It rep
 
 ## The Succession
 
-<img src="/assets/images/the-shape-validator-two-pairs-of-hands-one-weathered-and-ret-2044fd.png" alt="Two pairs of hands — one weathered and retreating, one young and reaching — exchanging a glowing SHA" class="story-image">
 
 On March 4th, 2024, **[Ashley Caselli](https://github.com/ashleycaselli)** made her first commit. She came from Europe, her timestamps marked +01:00. For thirty-five days their commits overlapped. One month and four days where both were shaping the same stone.
 
