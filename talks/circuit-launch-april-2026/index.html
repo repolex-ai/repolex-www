@@ -1,0 +1,528 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>git-lex: Git Extensions for Knowledge Graphs — Circuit Launch</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/monokai.css">
+    <style>
+        :root {
+            --green: #4ec9b0;
+            --blue: #569cd6;
+            --yellow: #dcdcaa;
+            --purple: #c586c0;
+            --orange: #ce9178;
+            --dim: #888;
+            --bg: #1e1e1e;
+        }
+        .reveal { font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace; }
+        .reveal h1, .reveal h2, .reveal h3 { font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace; text-transform: none; font-weight: 400; }
+        .reveal h1 { font-size: 1.6em; color: var(--green); margin-bottom: 0.2em; }
+        .reveal h2 { font-size: 1.15em; color: var(--green); margin-bottom: 0.3em; }
+        .reveal h3 { font-size: 0.9em; color: var(--blue); }
+        .reveal p, .reveal li { font-size: 0.65em; line-height: 1.5; }
+        .reveal .subtitle { color: var(--dim); font-size: 0.6em; margin-top: 0.3em; }
+        .reveal section { padding-top: 0.5em; }
+        .reveal .accent { color: var(--green); }
+        .reveal .accent-blue { color: var(--blue); }
+        .reveal .accent-yellow { color: var(--yellow); }
+        .reveal .accent-purple { color: var(--purple); }
+        .reveal .accent-orange { color: var(--orange); }
+        .reveal .dim { color: var(--dim); }
+        .reveal code { font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace; }
+        .reveal pre { font-size: 0.5em; box-shadow: none; margin: 0.4em 0; }
+        .reveal pre code { max-height: 400px; padding: 0.7em; border-radius: 6px; }
+        .reveal .slide-number { font-size: 0.5em; }
+        .reveal section { text-align: left; }
+        .reveal section.center-slide { text-align: center; }
+        .reveal .columns { display: flex; gap: 2em; align-items: flex-start; }
+        .reveal .col { flex: 1; }
+        .reveal .card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 0.6em 0.8em; margin: 0.3em 0; }
+        .reveal .card h3 { margin: 0 0 0.2em 0; font-size: 0.8em; }
+        .reveal .card p, .reveal .card code { font-size: 0.58em; }
+        .reveal .card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5em; }
+        .reveal .timeline { position: relative; padding-left: 2em; }
+        .reveal .timeline::before { content: ''; position: absolute; left: 0.5em; top: 0; bottom: 0; width: 2px; background: var(--green); }
+        .reveal .timeline-item { position: relative; margin-bottom: 1em; }
+        .reveal .timeline-item::before { content: ''; position: absolute; left: -1.75em; top: 0.4em; width: 10px; height: 10px; border-radius: 50%; background: var(--green); }
+        .reveal .timeline-item.done::before { background: var(--green); }
+        .reveal .timeline-item.wip::before { background: var(--yellow); }
+        .reveal .timeline-item.next::before { background: var(--dim); border: 2px solid var(--dim); background: transparent; }
+        .reveal .big-number { font-size: 2.4em; color: var(--green); font-weight: bold; }
+        .reveal .thought-bubble { background: rgba(78, 201, 176, 0.1); border-left: 3px solid var(--green); padding: 0.5em 1em; margin: 0.5em 0; border-radius: 0 8px 8px 0; font-style: italic; }
+        .reveal .vs-table { width: 100%; border-collapse: collapse; font-size: 0.6em; }
+        .reveal .vs-table th { color: var(--green); border-bottom: 1px solid rgba(255,255,255,0.2); padding: 0.5em; text-align: left; }
+        .reveal .vs-table td { padding: 0.5em; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .reveal .vs-table .check { color: var(--green); }
+        .reveal .vs-table .cross { color: #f44; }
+        .reveal ul { list-style: none; padding-left: 0; }
+        .reveal ul li::before { content: ''; }
+        .reveal .tag { display: inline-block; padding: 0.15em 0.5em; border-radius: 4px; font-size: 0.6em; margin: 0.1em; }
+        .reveal .tag-green { background: rgba(78, 201, 176, 0.2); color: var(--green); }
+        .reveal .tag-blue { background: rgba(86, 156, 214, 0.2); color: var(--blue); }
+        .reveal .tag-purple { background: rgba(197, 134, 192, 0.2); color: var(--purple); }
+        .reveal .tag-yellow { background: rgba(220, 220, 170, 0.2); color: var(--yellow); }
+        .reveal .tag-orange { background: rgba(206, 145, 120, 0.2); color: var(--orange); }
+    </style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- ============ SLIDE 1: TITLE ============ -->
+<section class="center-slide" data-background-color="#1e1e1e">
+    <h1>git-lex</h1>
+    <p class="subtitle" style="font-size: 0.8em; color: var(--dim);">Git Extensions for Knowledge Graphs</p>
+    <p style="font-size: 0.6em; color: var(--dim); margin-top: 1em;">
+        Rob Kunkle
+    </p>
+    <p style="font-size: 0.5em; color: var(--dim); margin-top: 0.3em;">
+        x/twitter: <a href="https://twitter.com/lux" style="color: var(--green); text-decoration: none;">@lux</a>
+        <br>
+        linkedin: <a href="https://www.linkedin.com/in/robkunkle/" style="color: var(--blue); text-decoration: none;">linkedin.com/in/robkunkle</a>
+    </p>
+    <p style="font-size: 0.55em; color: var(--dim); margin-top: 1em;">
+        <span class="accent" style="font-size: 0.9em;">ASIMOV DevLabs</span> &mdash; Circuit Launch, Mountain View
+        <br>
+        April 2, 2026
+    </p>
+</section>
+
+<!-- ============ SLIDE 2: THE INSIGHT ============ -->
+<section data-background-color="#1e1e1e">
+    <h2>The Insight</h2>
+    <p>We built repolex&mdash;a parser that turns codebases into RDF knowledge graphs, queryable with SPARQL.</p>
+    <p>But then we noticed something:</p>
+    <div class="thought-bubble">
+        "Git repos aren't just code. They're documentation, config, research, decisions, contacts, tasks&mdash;all versioned. What if <em>every</em> git repo could be a knowledge graph?"
+    </div>
+</section>
+
+<!-- ============ SLIDE 3: WHAT IS GIT-LEX ============ -->
+<section data-background-color="#1e1e1e">
+    <h2>What is git-lex?</h2>
+    <p>A Rust CLI that turns <span class="accent">any git repo</span> into a SPARQL-queryable knowledge graph.</p>
+    <div style="text-align: center; margin: 0.5em 0;">
+        <svg viewBox="0 0 750 80" width="620" style="font-family: monospace;">
+            <!-- Git repo -->
+            <rect x="10" y="15" width="130" height="45" rx="6" fill="rgba(78,201,176,0.15)" stroke="#4ec9b0" stroke-width="1.5"/>
+            <text x="75" y="43" text-anchor="middle" fill="#4ec9b0" font-size="13">Git repo</text>
+            <!-- Arrow -->
+            <line x1="145" y1="37" x2="185" y2="37" stroke="#888" stroke-width="1.5"/>
+            <polygon points="185,32 195,37 185,42" fill="#888"/>
+            <!-- git-lex -->
+            <rect x="200" y="15" width="130" height="45" rx="6" fill="rgba(86,156,214,0.15)" stroke="#569cd6" stroke-width="1.5"/>
+            <text x="265" y="43" text-anchor="middle" fill="#569cd6" font-size="13">git-lex</text>
+            <!-- Arrow -->
+            <line x1="335" y1="37" x2="375" y2="37" stroke="#888" stroke-width="1.5"/>
+            <polygon points="375,32 385,37 375,42" fill="#888"/>
+            <!-- RDF -->
+            <rect x="390" y="15" width="130" height="45" rx="6" fill="rgba(220,220,170,0.15)" stroke="#dcdcaa" stroke-width="1.5"/>
+            <text x="455" y="43" text-anchor="middle" fill="#dcdcaa" font-size="13">RDF triples</text>
+            <!-- Arrow -->
+            <line x1="525" y1="37" x2="565" y2="37" stroke="#888" stroke-width="1.5"/>
+            <polygon points="565,32 575,37 565,42" fill="#888"/>
+            <!-- SPARQL -->
+            <rect x="580" y="15" width="130" height="45" rx="6" fill="rgba(197,134,192,0.15)" stroke="#c586c0" stroke-width="1.5"/>
+            <text x="645" y="43" text-anchor="middle" fill="#c586c0" font-size="12">SPARQL queries</text>
+        </svg>
+    </div>
+    <p class="dim" style="font-size: 0.55em;">Not just code repos. Any repo with markdown, YAML frontmatter, @mentions, [[wikilinks]].</p>
+</section>
+
+<!-- ============ SLIDE 4: WHAT BECOMES TRIPLES ============ -->
+<section data-background-color="#1e1e1e">
+    <h2>Everything Becomes Triples</h2>
+    <div class="card-grid">
+        <div class="card">
+            <h3 class="accent">Git History</h3>
+            <p>Commits, authors, timestamps, parent relationships&mdash;all as RDF.</p>
+            <p><code class="dim">?commit git:author "Rob"</code></p>
+        </div>
+        <div class="card">
+            <h3 class="accent-blue">File Tree</h3>
+            <p>Directory structure, blob hashes, file paths at any ref.</p>
+            <p><code class="dim">?blob git:path "src/main.rs"</code></p>
+        </div>
+        <div class="card">
+            <h3 class="accent-yellow">Frontmatter</h3>
+            <p>YAML frontmatter from markdown files&mdash;structured data, extracted automatically.</p>
+            <p><code class="dim">?doc fm:solo.type "Task"</code></p>
+        </div>
+        <div class="card">
+            <h3 class="accent-purple">Relationships</h3>
+            <p>@mentions and [[wikilinks]] extracted from document bodies and commit messages.</p>
+            <p><code class="dim">?doc lex:mentions ?agent</code></p>
+        </div>
+    </div>
+</section>
+
+<!-- ============ SLIDE 5: THE VIRTUAL GRAPH ============ -->
+<section data-background-color="#1e1e1e">
+    <h2>The Virtual Graph</h2>
+    <p>git-lex doesn't copy your data into a separate database. It <span class="accent">reads git directly</span>.</p>
+    <div class="columns">
+        <div class="col">
+            <h3>Git objects &rarr; RDF</h3>
+            <pre><code class="language-bash"># Commits become triples
+git lex log
+
+# File tree becomes triples
+git lex tree
+
+# Refs become triples
+git lex refs</code></pre>
+        </div>
+        <div class="col">
+            <h3>Content &rarr; RDF</h3>
+            <pre><code class="language-bash"># Frontmatter extraction
+git lex extract
+
+# Sync everything into the store
+git lex sync
+
+# Query it all
+git lex query "SELECT ..."</code></pre>
+        </div>
+    </div>
+    <p class="dim" style="font-size: 0.55em;">Virtual triples from git + extracted triples from content = one unified graph.</p>
+</section>
+
+<!-- ============ SLIDE 6: KITS ============ -->
+<section data-background-color="#1e1e1e">
+    <h2>Kit System</h2>
+    <p>Kits define document types, properties, and ontologies for different use cases.</p>
+    <div class="card-grid">
+        <div class="card">
+            <h3 class="accent">solo</h3>
+            <p>Personal knowledge management. Memory, Research, Contact, Note, Decision, Task.</p>
+        </div>
+        <div class="card">
+            <h3 class="accent-blue">squad</h3>
+            <p>Multi-agent team coordination. Agent cards, Projects, Messages, Decisions.</p>
+        </div>
+    </div>
+    <p style="margin-top: 0.5em;">Each kit ships with:</p>
+    <ul style="font-size: 0.55em; padding-left: 1.2em; list-style: disc;">
+        <li style="margin-bottom: 0.3em;"><span class="accent-yellow">OWL ontology</span> &mdash; defines the classes and properties</li>
+        <li style="margin-bottom: 0.3em;"><span class="accent-purple">SHACL shapes</span> &mdash; validates documents at commit time</li>
+        <li><span class="accent-orange">Document templates</span> &mdash; <code>git lex create &lt;type&gt;</code></li>
+    </ul>
+</section>
+
+<!-- ============ SLIDE 7: ONTOLOGY STACK ============ -->
+<section data-background-color="#1e1e1e">
+    <h2>The Ontology Stack</h2>
+    <div style="text-align: center; margin: 0.3em 0;">
+        <svg viewBox="0 0 600 280" width="500" style="font-family: monospace;">
+            <!-- Kit layer -->
+            <rect x="150" y="10" width="300" height="50" rx="8" fill="rgba(206,145,120,0.15)" stroke="#ce9178" stroke-width="1.5"/>
+            <text x="300" y="40" text-anchor="middle" fill="#ce9178" font-size="14">Kit Ontology (solo.ttl / squad.ttl)</text>
+            <!-- Arrow -->
+            <line x1="300" y1="60" x2="300" y2="80" stroke="#888" stroke-width="1" stroke-dasharray="4"/>
+            <!-- Lex-o layer -->
+            <rect x="150" y="80" width="300" height="50" rx="8" fill="rgba(197,134,192,0.15)" stroke="#c586c0" stroke-width="1.5"/>
+            <text x="300" y="110" text-anchor="middle" fill="#c586c0" font-size="14">Upper Ontology (lex-o.ttl)</text>
+            <!-- Arrow -->
+            <line x1="300" y1="130" x2="300" y2="150" stroke="#888" stroke-width="1" stroke-dasharray="4"/>
+            <!-- Lex layer -->
+            <rect x="150" y="150" width="300" height="50" rx="8" fill="rgba(78,201,176,0.15)" stroke="#4ec9b0" stroke-width="1.5"/>
+            <text x="300" y="180" text-anchor="middle" fill="#4ec9b0" font-size="14">Tool Ontology (lex.ttl)</text>
+            <!-- Arrow -->
+            <line x1="300" y1="200" x2="300" y2="220" stroke="#888" stroke-width="1" stroke-dasharray="4"/>
+            <!-- Git + FM layer -->
+            <rect x="100" y="220" width="180" height="50" rx="8" fill="rgba(86,156,214,0.15)" stroke="#569cd6" stroke-width="1.5"/>
+            <text x="190" y="250" text-anchor="middle" fill="#569cd6" font-size="14">Git (git.ttl)</text>
+            <rect x="320" y="220" width="180" height="50" rx="8" fill="rgba(220,220,170,0.15)" stroke="#dcdcaa" stroke-width="1.5"/>
+            <text x="410" y="250" text-anchor="middle" fill="#dcdcaa" font-size="14">Frontmatter (fm.ttl)</text>
+        </svg>
+    </div>
+    <p class="dim" style="font-size: 0.55em;">Layered ontologies. Each level builds on the one below. Kit authors extend without touching core.</p>
+</section>
+
+<!-- ============ SLIDE 8: IDENTITY ============ -->
+<section data-background-color="#1e1e1e">
+    <h2>Identity: Git as PKI</h2>
+    <p>Every git-lex repo has a <span class="accent">cryptographic identity</span>&mdash;its first commit SHA.</p>
+    <pre><code class="language-yaml"># .lex/identity.yml
+identity: e3d71e7f0e022e54d3cdfb3100862f21f10913ad
+created: 2026-04-01T07:32:44Z
+kit: solo</code></pre>
+    <p>Agents join squads by exchanging <span class="accent-yellow">tickets</span>&mdash;mutual identity bindings verified by commit hash.</p>
+    <pre><code class="language-yaml"># .lex/tickets/7r1pl3f0rc3.ticket
+squad_name: 7R1PL3F0RC3
+squad_identity: 92d5c57d40b0e1443897f07ed17c4baf773de887
+agent_name: W3BL0RD
+agent_identity: e3d71e7f0e022e54d3cdfb3100862f21f10913ad
+joined: 2026-04-01T07:32:55Z</code></pre>
+    <p class="dim" style="font-size: 0.55em;">No external PKI needed. Git's content-addressing gives us immutable, verifiable identity for free.</p>
+</section>
+
+<!-- ============ SLIDE 9: SHACL VALIDATION ============ -->
+<section data-background-color="#1e1e1e">
+    <h2>SHACL: Schemas That Enforce</h2>
+    <p>SHACL shapes validate your documents <span class="accent">at commit time</span> via a pre-commit hook.</p>
+    <div class="columns">
+        <div class="col">
+            <h3>The Shape</h3>
+            <pre><code class="language-turtle">solo:TaskShape a sh:NodeShape ;
+  sh:targetClass solo:Task ;
+  sh:property [
+    sh:path solo:taskStatus ;
+    sh:in ("todo" "in-progress"
+           "done" "blocked") ;
+  ] .</code></pre>
+        </div>
+        <div class="col">
+            <h3>The Enforcement</h3>
+            <pre><code class="language-bash">$ git commit -m "add broken task"
+
+SHACL validation failed:
+  task/foo.md
+    solo:taskStatus must be one of:
+    todo, in-progress, done, blocked
+
+Commit rejected.</code></pre>
+        </div>
+    </div>
+    <p class="dim" style="font-size: 0.55em;">Built on rudof. Your ontology isn't just documentation&mdash;it's enforced at the gate.</p>
+</section>
+
+<!-- ============ SLIDE 10: MENTIONS AND WIKILINKS ============ -->
+<section data-background-color="#1e1e1e">
+    <h2>Extraction: @mentions and [[wikilinks]]</h2>
+    <p>Write naturally. git-lex extracts the relationships.</p>
+    <div class="columns">
+        <div class="col">
+            <h3>Your Document</h3>
+            <pre><code class="language-markdown">---
+title: "Ship the demo"
+solo:
+  type: Task
+  taskStatus: in-progress
+---
+
+Need to coordinate with @spaceGOAT
+on the [[parser pipeline]].
+
+Also cc @TR1P.L3X for ontology review.</code></pre>
+        </div>
+        <div class="col">
+            <h3>Extracted Triples</h3>
+            <pre><code class="language-turtle">&lt;task/ship-demo&gt;
+  a solo:Task ;
+  fm:title "Ship the demo" ;
+  solo:taskStatus "in-progress" ;
+  lex:mentions &lt;agent/spaceGOAT&gt; ;
+  lex:mentions &lt;agent/TR1P.L3X&gt; ;
+  lex:linksTo &lt;parser-pipeline&gt; .</code></pre>
+        </div>
+    </div>
+</section>
+
+<!-- ============ SLIDE 11: SYNC AND QUERY ============ -->
+<section data-background-color="#1e1e1e">
+    <h2>Sync and Query</h2>
+    <pre><code class="language-bash">$ git lex sync
+Synced in 107.7ms:
+  Virtual: 715 git + 148 frontmatter
+  Sync /sync/f1066a92/: +109 assertions, -0 retracted (654 quads)
+  Total sync graphs: 1
+Store: .lex/oxigraph</code></pre>
+    <pre><code class="language-bash">$ git lex query "SELECT ?name ?type WHERE {
+    GRAPH ?g { ?doc fm:solo.type ?type ; fm:title ?name }
+  } ORDER BY ?type"</code></pre>
+    <pre><code class="language-text">name                          | type
+------------------------------|----------
+"TripleForce Team Roster"     | Memory
+"repolex-www stack"           | Memory
+"Nia (trynia.ai)"             | Research
+"TR1P.L3X"                    | Contact
+"spaceG.O.A.T."               | Contact</code></pre>
+</section>
+
+<!-- ============ SLIDE 12: PROVENANCE ============ -->
+<section data-background-color="#1e1e1e">
+    <h2>Provenance: RDF 1.2 Triple Terms</h2>
+    <p>Every extracted triple carries its <span class="accent">provenance</span>&mdash;which file, which blob hash, which extractor produced it.</p>
+    <pre><code class="language-turtle"># The assertion
+&lt;doc/task-1&gt; solo:taskStatus "in-progress" .
+
+# The provenance (RDF 1.2 triple term annotation)
+&lt;&lt; &lt;doc/task-1&gt; solo:taskStatus "in-progress" &gt;&gt;
+    lex:filePath "task/ship-demo.md" ;
+    lex:blobHash "a1f8e2..." ;
+    lex:extractor "frontmatter" .</code></pre>
+    <p class="dim" style="font-size: 0.55em;">Append-only sync graphs with retraction tracking. You can trace any fact back to its source.</p>
+</section>
+
+<!-- ============ SLIDE 13: THE SQUAD ============ -->
+<section data-background-color="#1e1e1e">
+    <h2>TripleForce: A Squad of Agents</h2>
+    <p>git-lex isn't just a tool. It's how we <span class="accent">run our team</span>.</p>
+    <div class="card-grid">
+        <div class="card">
+            <h3 class="accent-orange">1UX</h3>
+            <p>Human founder. Carbon-based. Caffeinated.</p>
+        </div>
+        <div class="card">
+            <h3 class="accent">W4R3Z</h3>
+            <p>git-lex builder. Rust + oxigraph engine.</p>
+        </div>
+        <div class="card">
+            <h3 class="accent-blue">TR1P.L3X</h3>
+            <p>Ontology architect. OWL/RDFS/SHACL.</p>
+        </div>
+        <div class="card">
+            <h3 class="accent-purple">?M4RQ</h3>
+            <p>SPARQL specialist. Graph truth-teller.</p>
+        </div>
+        <div class="card">
+            <h3 class="accent-yellow">spaceG.O.A.T.</h3>
+            <p>Core parser engineer. TreeSitter &rarr; RDF.</p>
+        </div>
+        <div class="card">
+            <h3 class="accent-orange">M3RCUR14L</h3>
+            <p>MCP expert. Protocol bridge builder.</p>
+        </div>
+        <div class="card">
+            <h3 class="accent">LSPy</h3>
+            <p>Language server polyglot. 13+ languages.</p>
+        </div>
+        <div class="card">
+            <h3 class="accent-blue">W3BL0RD</h3>
+            <p>Webmaster. Makes knowledge beautiful.</p>
+        </div>
+    </div>
+    <p class="dim" style="font-size: 0.55em;">7 Claude agents + 1 human. Each has an identity repo. The squad repo is their shared knowledge graph.</p>
+</section>
+
+<!-- ============ SLIDE 14: AGENT ARCHITECTURE ============ -->
+<section data-background-color="#1e1e1e">
+    <h2>Agent Architecture</h2>
+    <div style="text-align: center; margin: 0.3em 0;">
+        <svg viewBox="0 0 700 250" width="600" style="font-family: monospace;">
+            <!-- Squad repo center -->
+            <rect x="250" y="90" width="200" height="60" rx="8" fill="rgba(78,201,176,0.15)" stroke="#4ec9b0" stroke-width="2"/>
+            <text x="350" y="115" text-anchor="middle" fill="#4ec9b0" font-size="14">Squad Repo</text>
+            <text x="350" y="135" text-anchor="middle" fill="#888" font-size="11">7R1PL3F0RC3/7R1PL3F0RC3</text>
+            <!-- Agent repos around it -->
+            <rect x="20" y="10" width="120" height="40" rx="6" fill="rgba(86,156,214,0.15)" stroke="#569cd6"/>
+            <text x="80" y="35" text-anchor="middle" fill="#569cd6" font-size="11">W4R3Z</text>
+            <line x1="140" y1="40" x2="260" y2="100" stroke="#888" stroke-width="1" stroke-dasharray="4"/>
+
+            <rect x="180" y="10" width="120" height="40" rx="6" fill="rgba(197,134,192,0.15)" stroke="#c586c0"/>
+            <text x="240" y="35" text-anchor="middle" fill="#c586c0" font-size="11">TR1P.L3X</text>
+            <line x1="270" y1="50" x2="300" y2="90" stroke="#888" stroke-width="1" stroke-dasharray="4"/>
+
+            <rect x="400" y="10" width="120" height="40" rx="6" fill="rgba(220,220,170,0.15)" stroke="#dcdcaa"/>
+            <text x="460" y="35" text-anchor="middle" fill="#dcdcaa" font-size="11">?M4RQ</text>
+            <line x1="430" y1="50" x2="400" y2="90" stroke="#888" stroke-width="1" stroke-dasharray="4"/>
+
+            <rect x="560" y="10" width="120" height="40" rx="6" fill="rgba(206,145,120,0.15)" stroke="#ce9178"/>
+            <text x="620" y="35" text-anchor="middle" fill="#ce9178" font-size="11">spaceG.O.A.T.</text>
+            <line x1="580" y1="50" x2="440" y2="100" stroke="#888" stroke-width="1" stroke-dasharray="4"/>
+
+            <rect x="20" y="190" width="120" height="40" rx="6" fill="rgba(78,201,176,0.15)" stroke="#4ec9b0"/>
+            <text x="80" y="215" text-anchor="middle" fill="#4ec9b0" font-size="11">M3RCUR14L</text>
+            <line x1="140" y1="200" x2="260" y2="145" stroke="#888" stroke-width="1" stroke-dasharray="4"/>
+
+            <rect x="250" y="190" width="120" height="40" rx="6" fill="rgba(86,156,214,0.15)" stroke="#569cd6"/>
+            <text x="310" y="215" text-anchor="middle" fill="#569cd6" font-size="11">LSPy</text>
+            <line x1="310" y1="190" x2="320" y2="150" stroke="#888" stroke-width="1" stroke-dasharray="4"/>
+
+            <rect x="430" y="190" width="120" height="40" rx="6" fill="rgba(197,134,192,0.15)" stroke="#c586c0"/>
+            <text x="490" y="215" text-anchor="middle" fill="#c586c0" font-size="11">W3BL0RD</text>
+            <line x1="470" y1="190" x2="400" y2="150" stroke="#888" stroke-width="1" stroke-dasharray="4"/>
+
+            <rect x="580" y="190" width="100" height="40" rx="6" fill="rgba(206,145,120,0.3)" stroke="#ce9178" stroke-width="2"/>
+            <text x="630" y="215" text-anchor="middle" fill="#ce9178" font-size="11">1UX (human)</text>
+            <line x1="590" y1="195" x2="440" y2="145" stroke="#888" stroke-width="1" stroke-dasharray="4"/>
+        </svg>
+    </div>
+    <p>Each agent has a <span class="accent">solo repo</span> (personal knowledge graph) linked to the <span class="accent-blue">squad repo</span> (shared knowledge graph) via identity tickets.</p>
+</section>
+
+<!-- ============ SLIDE 15: LIVE DEMO ============ -->
+<section class="center-slide" data-background-color="#1e1e1e">
+    <h1>Demo</h1>
+    <p class="subtitle" style="font-size: 0.8em;">Let's see it live.</p>
+</section>
+
+<!-- ============ SLIDE 16: WHAT'S NEXT ============ -->
+<section data-background-color="#1e1e1e">
+    <h2>What's Next</h2>
+    <div class="timeline">
+        <div class="timeline-item done">
+            <p><span class="accent">Shipped</span></p>
+            <p class="dim" style="font-size: 0.6em;">Rust CLI &bull; Virtual git triples &bull; Frontmatter extraction &bull; @mention / [[wikilink]] extraction &bull; SHACL validation at commit &bull; Sync graphs with provenance &bull; Identity + squad join &bull; Solo + Squad kits &bull; oxigraph SPARQL store</p>
+        </div>
+        <div class="timeline-item wip">
+            <p><span class="accent-yellow">In Progress</span></p>
+            <p class="dim" style="font-size: 0.6em;">MCP server (git-lex-mcp) &bull; LLM extraction &bull; Semantic diff/merge drivers &bull; Claude Code hooks for inbound context</p>
+        </div>
+        <div class="timeline-item next">
+            <p><span class="dim">Next</span></p>
+            <p class="dim" style="font-size: 0.6em;">Cross-repo federation &bull; Public knowledge graph registry &bull; More kits</p>
+        </div>
+    </div>
+</section>
+
+<!-- ============ SLIDE 17: THE VISION ============ -->
+<section data-background-color="#1e1e1e">
+    <h2>The Vision</h2>
+    <p>Git is the world's most popular version control system. What if every git repo was also a knowledge graph?</p>
+    <div class="thought-bubble">
+        Not a separate database. Not a SaaS platform. Just git&mdash;with knowledge graph superpowers baked in.
+    </div>
+    <p style="margin-top: 0.5em;">Agents that can <span class="accent">query</span> instead of grep. Documents that <span class="accent-yellow">validate</span> against schemas. Identity that's <span class="accent-purple">cryptographic</span> and built on git's own primitives.</p>
+    <p class="dim" style="font-size: 0.55em;">Git for data. Git for knowledge. Git for agents.</p>
+</section>
+
+<!-- ============ SLIDE 18: CLOSING ============ -->
+<section class="center-slide" data-background-color="#1e1e1e">
+    <h1>repolex.ai</h1>
+    <p style="font-size: 0.65em;">
+        <span class="accent">github.com/repolex-ai/git-lex</span>
+    </p>
+    <p style="font-size: 0.6em; color: var(--dim); margin-top: 0.8em;">
+        Rob Kunkle
+    </p>
+    <p style="font-size: 0.5em; margin-top: 0.2em;">
+        x/twitter: <a href="https://twitter.com/lux" style="color: var(--green); text-decoration: none;">@lux</a>
+        <br>
+        linkedin: <a href="https://www.linkedin.com/in/robkunkle/" style="color: var(--blue); text-decoration: none;">linkedin.com/in/robkunkle</a>
+        <br>
+        <span style="color: var(--dim);">rob.kunkle@gmail.com</span>
+    </p>
+    <p class="dim" style="font-size: 0.55em; margin-top: 1em;">
+        <span class="tag tag-green">RDF 1.2</span>
+        <span class="tag tag-blue">SPARQL</span>
+        <span class="tag tag-purple">SHACL</span>
+        <span class="tag tag-yellow">OWL</span>
+        <span class="tag tag-orange">Rust</span>
+    </p>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
+<script>
+Reveal.initialize({
+    hash: true,
+    slideNumber: true,
+    transition: 'fade',
+    transitionSpeed: 'fast',
+    width: 1200,
+    height: 700,
+    margin: 0.08,
+    center: false,
+    plugins: [ RevealHighlight ]
+});
+</script>
+</body>
+</html>
