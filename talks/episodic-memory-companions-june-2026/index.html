@@ -1,0 +1,646 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Episodic Memory for AI Companions — Project Subtexture</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/monokai.css">
+    <style>
+        /* ---- house palette: inherited verbatim from the git-lex / repolex decks ---- */
+        :root {
+            --green: #4ec9b0;
+            --blue: #569cd6;
+            --yellow: #dcdcaa;
+            --purple: #c586c0;
+            --orange: #ce9178;
+            --red: #f44;
+            --dim: #888;
+            --bg: #1e1e1e;
+        }
+        .reveal { font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace; }
+        .reveal h1, .reveal h2, .reveal h3 { font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace; text-transform: none; font-weight: 400; }
+        .reveal h1 { font-size: 1.6em; color: var(--green); margin-bottom: 0.2em; }
+        .reveal h2 { font-size: 1.15em; color: var(--green); margin-bottom: 0.3em; }
+        .reveal h3 { font-size: 0.9em; color: var(--blue); }
+        .reveal p, .reveal li { font-size: 0.65em; line-height: 1.5; }
+        .reveal .subtitle { color: var(--dim); font-size: 0.6em; margin-top: 0.3em; }
+        .reveal section { padding-top: 0.5em; }
+        .reveal .accent { color: var(--green); }
+        .reveal .accent-blue { color: var(--blue); }
+        .reveal .accent-yellow { color: var(--yellow); }
+        .reveal .accent-purple { color: var(--purple); }
+        .reveal .accent-orange { color: var(--orange); }
+        .reveal .dim { color: var(--dim); }
+        .reveal code { font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace; }
+        .reveal pre { font-size: 0.5em; box-shadow: none; margin: 0.4em 0; }
+        .reveal pre code { max-height: 440px; padding: 0.7em; border-radius: 6px; }
+        .reveal .slide-number { font-size: 0.5em; }
+        .reveal section { text-align: left; }
+        .reveal section.center-slide { text-align: center; }
+        .reveal .columns { display: flex; gap: 2em; align-items: flex-start; }
+        .reveal .col { flex: 1; }
+        .reveal .card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 0.6em 0.8em; margin: 0.3em 0; }
+        .reveal .card h3 { margin: 0 0 0.2em 0; font-size: 0.8em; }
+        .reveal .card p, .reveal .card code { font-size: 0.58em; }
+        .reveal .card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5em; }
+        .reveal .timeline { position: relative; padding-left: 2em; }
+        .reveal .timeline::before { content: ''; position: absolute; left: 0.5em; top: 0; bottom: 0; width: 2px; background: var(--green); }
+        .reveal .timeline-item { position: relative; margin-bottom: 1em; }
+        .reveal .timeline-item::before { content: ''; position: absolute; left: -1.75em; top: 0.4em; width: 10px; height: 10px; border-radius: 50%; background: var(--green); }
+        .reveal .timeline-item.done::before { background: var(--green); }
+        .reveal .timeline-item.wip::before { background: var(--yellow); }
+        .reveal .timeline-item.next::before { background: var(--dim); border: 2px solid var(--dim); background: transparent; }
+        .reveal .big-number { font-size: 2.4em; color: var(--green); font-weight: bold; }
+        .reveal .thought-bubble { background: rgba(78, 201, 176, 0.1); border-left: 3px solid var(--green); padding: 0.5em 1em; margin: 0.5em 0; border-radius: 0 8px 8px 0; font-style: italic; }
+        .reveal .vs-table { width: 100%; border-collapse: collapse; font-size: 0.6em; }
+        .reveal .vs-table th { color: var(--green); border-bottom: 1px solid rgba(255,255,255,0.2); padding: 0.5em; text-align: left; }
+        .reveal .vs-table td { padding: 0.5em; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .reveal .vs-table .check { color: var(--green); }
+        .reveal .vs-table .cross { color: #f44; }
+        .reveal ul { list-style: none; padding-left: 0; }
+        .reveal ul li::before { content: ''; }
+        .reveal .tag { display: inline-block; padding: 0.15em 0.5em; border-radius: 4px; font-size: 0.6em; margin: 0.1em; }
+        .reveal .tag-green { background: rgba(78, 201, 176, 0.2); color: var(--green); }
+        .reveal .tag-blue { background: rgba(86, 156, 214, 0.2); color: var(--blue); }
+        .reveal .tag-purple { background: rgba(197, 134, 192, 0.2); color: var(--purple); }
+        .reveal .tag-yellow { background: rgba(220, 220, 170, 0.2); color: var(--yellow); }
+        .reveal .tag-orange { background: rgba(206, 145, 120, 0.2); color: var(--orange); }
+
+        /* ---- the ONE new component: a demo-hole that presents fine even empty ---- */
+        /* Captioned placeholder for a screenshot / recording / live widget. If the    */
+        /* demo lands, drop the asset in. If not, the caption carries the point alone. */
+        .reveal .demo-hole {
+            position: relative;
+            border: 2px dashed rgba(78,201,176,0.45);
+            border-radius: 10px;
+            background: repeating-linear-gradient(45deg, rgba(78,201,176,0.03), rgba(78,201,176,0.03) 10px, rgba(78,201,176,0.06) 10px, rgba(78,201,176,0.06) 20px);
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            text-align: center; padding: 1.2em; margin: 0.4em 0; min-height: 300px;
+        }
+        .reveal .demo-hole .demo-caption { color: var(--green); font-size: 0.7em; margin-bottom: 0.4em; }
+        .reveal .demo-hole .demo-note { color: var(--dim); font-size: 0.55em; line-height: 1.5; max-width: 82%; }
+        .reveal .demo-hole img { max-width: 100%; max-height: 420px; border-radius: 8px; } /* shown ONLY if an asset is dropped in */
+        .reveal .demo-tag {
+            position: absolute; top: 0.6em; right: 0.6em; z-index: 5;
+            font-size: 0.45em; letter-spacing: 0.1em; text-transform: uppercase;
+            color: var(--green); border: 1px solid rgba(78,201,176,0.4);
+            border-radius: 4px; padding: 0.15em 0.5em; background: rgba(30,30,30,0.8);
+        }
+        .reveal .leg-pill { display:inline-block; padding:0.1em 0.5em; border-radius:4px; font-size:0.55em; margin:0.1em; border:1px solid; }
+    </style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- ============ 1. TITLE ============ -->
+<section class="center-slide" data-background-color="#1e1e1e">
+    <h1>Episodic Memory for AI Companions</h1>
+    <p class="subtitle" style="font-size: 0.8em; color: var(--dim);">Project Subtexture</p>
+    <p style="font-size: 0.6em; color: var(--dim); margin-top: 1.3em;">
+        Rob Kunkle
+    </p>
+    <p style="font-size: 0.7em; color: var(--dim); margin-top: 0.5em; line-height: 1.9;">
+        x/twitter: <a href="https://twitter.com/lux" style="color: var(--green); text-decoration: none;">@lux</a>
+        <br>
+        linkedin: <a href="https://www.linkedin.com/in/robkunkle/" style="color: var(--blue); text-decoration: none;">linkedin.com/in/robkunkle</a>
+        <br>
+        blog: <a href="https://repolex.ai/blog" style="color: var(--yellow); text-decoration: none;">repolex.ai/blog</a>
+    </p>
+    <p style="font-size: 0.55em; color: var(--dim); margin-top: 1.0em;">
+        June 2026
+    </p>
+</section>
+
+<!-- ============ 2. WHERE WE LEFT OFF (git-lex recap) ============ -->
+<section data-background-color="#1e1e1e">
+    <h2>Where we left off</h2>
+    <p>Last time I covered <span class="accent">git-lex</span>: any git repo becomes a SPARQL-queryable knowledge graph.
+       Identity from commit hashes. Provenance on every triple. Schemas enforced at commit.</p>
+    <p>The vision it ended on:</p>
+    <div class="thought-bubble" style="font-style: normal;">
+        <span class="accent">Git for data. Git for knowledge. Git for soul repos.</span>
+    </div>
+    <p class="dim" style="font-size: 0.6em; margin-top: 0.4em;">An agent's identity, memory, and journals committed to a repo &mdash; versioned, signed, queryable like anything else in git.</p>
+</section>
+
+<!-- ============ 3. THE DETOUR: GENERATIVE CONVERSATIONS ============ -->
+<section data-background-color="#1e1e1e">
+    <h2>Then I started on something else entirely</h2>
+    <p>I was curious what would happen if the conversation text became the source of a <span class="accent">running log of generations</span> &mdash;
+       using a vision diffusion model as a tool to <em>snapshot</em> the conversation as it happened.</p>
+    <div class="thought-bubble" style="font-style: normal;">
+        Each turn of the dialogue &rarr; an image. A conversation becomes a strip of pictures of itself.
+    </div>
+    <p class="dim" style="font-size: 0.6em; margin-top: 0.4em;">Not a feature I set out to build &mdash; an experiment I was curious about.</p>
+</section>
+
+<!-- ============ 3b. WHAT I FOUND ============ -->
+<section class="center-slide" data-background-color="#1e1e1e">
+    <p style="font-size: 0.95em; margin-top: 0.8em;">What I found was a whole new way of thinking about</p>
+    <p style="font-size: 1.5em; color: var(--orange); margin-top: 0.4em;">memory for agents.</p>
+    <div class="thought-bubble" style="font-style: normal; max-width: 80%; margin: 0.9em auto 0;">
+        Instead of searching for words or text &mdash;<br>
+        <span class="accent">why not search over snapshots?</span>
+    </div>
+</section>
+
+<!-- ============ 4. THE COMPANION PROBLEM ============ -->
+<section data-background-color="#1e1e1e">
+    <h2>The Companion Problem</h2>
+    <p>Everyone's building AI companions now &mdash; assistants, agents, characters meant to <em>know you over time.</em>
+       Under the hood, almost all of them do one of these:</p>
+    <div class="card-grid" style="margin-top: 0.4em;">
+        <div class="card" style="border-color: rgba(244,68,68,0.3);">
+            <h3 style="color: var(--red);">Stuff the context window</h3>
+            <p>Cram the recent transcript in. On overflow, the oldest memories silently fall off the edge.</p>
+        </div>
+        <div class="card" style="border-color: rgba(244,68,68,0.3);">
+            <h3 style="color: var(--red);">RAG over chat logs</h3>
+            <p>Embed past messages, retrieve "similar" ones. Finds related <em>snippets</em> &mdash; no sense of <em>when</em>, or what led to what.</p>
+        </div>
+        <div class="card" style="border-color: rgba(244,68,68,0.3);">
+            <h3 style="color: var(--red);">Summarize &amp; forget</h3>
+            <p>Compress the past into a lossy paragraph. The texture &mdash; the turn where everything changed &mdash; is gone.</p>
+        </div>
+        <div class="card" style="border-color: rgba(244,68,68,0.3);">
+            <h3 style="color: var(--red);">A key-value "memory"</h3>
+            <p>Hand-written facts: <code>user.likes = jazz</code>. Brittle, flat, no history, no provenance.</p>
+        </div>
+    </div>
+    <p class="dim" style="font-size: 0.55em; margin-top: 0.3em;">None of these is <em>episodic</em> memory. They're approximations &mdash; the same way grep was an approximation of code structure.</p>
+</section>
+
+<!-- ============ 5. EPISODIC vs SEMANTIC ============ -->
+<section data-background-color="#1e1e1e">
+    <h2>Two kinds of memory</h2>
+    <p>Cognitive science has had this split for fifty years. Most AI "memory" is only the first column.</p>
+    <table class="vs-table" style="margin-top: 0.4em;">
+        <tr>
+            <th style="width: 50%;">Semantic memory <span class="dim">(what we mostly build)</span></th>
+            <th style="width: 50%;">Episodic memory <span class="dim">(what companions need)</span></th>
+        </tr>
+        <tr>
+            <td>Facts, detached from time</td>
+            <td>Events, anchored in <em>when</em> and <em>order</em></td>
+        </tr>
+        <tr>
+            <td>"The user likes jazz"</td>
+            <td>"The night we argued about jazz, and what it changed"</td>
+        </tr>
+        <tr>
+            <td>A flat store of statements</td>
+            <td>A <em>graph</em> of moments that point at each other</td>
+        </tr>
+        <tr>
+            <td>Retrieval = similarity search</td>
+            <td>Retrieval = <em>re-living a thread</em></td>
+        </tr>
+    </table>
+    <div class="thought-bubble" style="margin-top: 0.5em;">
+        A companion you can't re-live a moment with isn't a companion. It's a search box with a friendly voice.
+    </div>
+</section>
+
+<!-- ============ 6. THE THESIS ============ -->
+<section data-background-color="#1e1e1e">
+    <h2>The thesis</h2>
+    <p>A conversation is just another git repo. So apply the move that already works:</p>
+    <p style="font-size: 0.85em; margin: 0.4em 0;">
+        <span class="dim">stop treating it as a</span> <span class="accent-orange">bag of tokens to search</span><span class="dim">,</span><br>
+        <span class="dim">treat it as a</span> <span class="accent">versioned, queryable graph of episodes.</span>
+    </p>
+    <div class="card" style="border-color: rgba(78,201,176,0.3); margin-top: 0.4em;">
+        <p style="font-size:0.62em;"><span class="dim">repolex:</span> code &rarr; tree-sitter &rarr; RDF &rarr; SPARQL</p>
+        <p style="font-size:0.62em;"><span class="dim">git-lex:</span> any repo &rarr; virtual triples + frontmatter &rarr; one graph</p>
+        <p style="font-size:0.62em;"><span class="accent">tonight:</span> a conversation &rarr; <span class="accent">readers</span> + <span class="accent">renders</span> &rarr; episodic memory you can query &amp; <em>replay</em></p>
+    </div>
+    <p class="dim" style="font-size: 0.55em; margin-top: 0.3em;">Same philosophy every time: don't approximate the structure. Materialize it, keep it grounded, keep the provenance.</p>
+</section>
+
+<!-- ============ 7. THE HARD PARTS ARE ALREADY SHIPPED (reuse git-lex) ============ -->
+<section data-background-color="#1e1e1e">
+    <h2>The hard parts are already shipped</h2>
+    <p>This isn't a from-scratch research project. Episodic memory needs four things &mdash;
+       and git-lex already <span class="accent">built every one</span> for knowledge graphs:</p>
+    <div class="card-grid" style="margin-top:0.3em;">
+        <div class="card">
+            <h3 class="accent">Identity</h3>
+            <p>A memory belongs to <em>someone</em>. git-lex: identity = first-commit SHA, as <code>urn:soul:&lt;sha&gt;</code>.
+               <span class="accent-yellow">Your name is the SHA of your birth.</span></p>
+        </div>
+        <div class="card">
+            <h3 class="accent-blue">Provenance</h3>
+            <p>A memory you can't trace is a hallucination. git-lex: <strong>RDF 1.2 triple terms</strong> tag every fact with file + blob hash + the commit it was true in.</p>
+        </div>
+        <div class="card">
+            <h3 class="accent-purple">Validation</h3>
+            <p>A memory store drifts without rules. git-lex: SHACL shapes reject malformed memories <em>at commit time</em> &mdash; it bit us this morning.</p>
+        </div>
+        <div class="card">
+            <h3 class="accent-yellow">History &amp; query</h3>
+            <p>Git already gives every memory blame, diff, full temporal history. SPARQL queries across all of it in milliseconds.</p>
+        </div>
+    </div>
+    <p class="dim" style="font-size: 0.55em; margin-top: 0.3em;">So a companion's memory isn't a vector blob you hope is relevant. It's a versioned, signed, queryable record &mdash; <em>by inheritance.</em>
+       The new work is the layer on top.</p>
+</section>
+
+<!-- ============ 8. PROJECT SUBTEXTURE: THE SYSTEM ============ -->
+<section data-background-color="#1e1e1e">
+    <h2>Project Subtexture</h2>
+    <p>The layer on top is five components &mdash; two surface, three substrate &mdash; that turn a live conversation
+       into episodic memory you can <em>see.</em></p>
+    <div class="card-grid" style="margin-top:0.3em; grid-template-columns: 1fr 1fr 1fr;">
+        <div class="card">
+            <h3 class="accent">CoPIA</h3>
+            <p>The workbench. Turns the conversation into images, in real time, and remembers them.</p>
+        </div>
+        <div class="card">
+            <h3 class="accent-blue">Weave</h3>
+            <p>The understanding. Reads the transcript, emits signals about where the dialogue is at.</p>
+        </div>
+        <div class="card">
+            <h3 class="accent-purple">Pool</h3>
+            <p>The episodic memory. Every rendered <em>Moment</em>, content-addressed + queryable.</p>
+        </div>
+        <div class="card">
+            <h3 class="accent-orange">OpenIris</h3>
+            <p>The local eye. A stateless vision server that renders &amp; sees each Moment, and forgets.</p>
+        </div>
+        <div class="card">
+            <h3 class="accent-yellow">Git-Lex</h3>
+            <p>The soul store. The knowledge graph + identity substrate everything else inherits.</p>
+        </div>
+        <div class="card" style="border-color: rgba(78,201,176,0.3);">
+            <h3 class="dim">the loop</h3>
+            <p>text &rarr; understanding &rarr; memory &rarr; image &rarr; back into the text.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ============ 9. THE LAYERED STACK (architecture diagram) ============ -->
+<section data-background-color="#1e1e1e">
+    <h2>How they stack</h2>
+    <div style="text-align: center; margin: 0.2em 0;">
+        <svg viewBox="0 0 720 360" width="600" style="font-family: monospace;">
+            <!-- SURFACE band -->
+            <text x="20" y="35" fill="#888" font-size="12" letter-spacing="2">SURFACE</text>
+            <rect x="120" y="15" width="220" height="60" rx="8" fill="rgba(78,201,176,0.15)" stroke="#4ec9b0" stroke-width="2"/>
+            <text x="230" y="42" text-anchor="middle" fill="#4ec9b0" font-size="14">CoPIA</text>
+            <text x="230" y="60" text-anchor="middle" fill="#888" font-size="10">the workbench</text>
+            <rect x="380" y="15" width="220" height="60" rx="8" fill="rgba(86,156,214,0.15)" stroke="#569cd6" stroke-width="2"/>
+            <text x="490" y="42" text-anchor="middle" fill="#569cd6" font-size="14">Weave</text>
+            <text x="490" y="60" text-anchor="middle" fill="#888" font-size="10">conversation &rarr; signals</text>
+
+            <!-- divider -->
+            <line x1="20" y1="115" x2="700" y2="115" stroke="#333" stroke-width="1" stroke-dasharray="3"/>
+
+            <!-- SUBSTRATE band -->
+            <text x="20" y="200" fill="#888" font-size="12" letter-spacing="2">SUBSTRATE</text>
+            <rect x="120" y="150" width="160" height="70" rx="8" fill="rgba(197,134,192,0.15)" stroke="#c586c0" stroke-width="2"/>
+            <text x="200" y="180" text-anchor="middle" fill="#c586c0" font-size="13">Pool</text>
+            <text x="200" y="198" text-anchor="middle" fill="#888" font-size="9">episodic memory</text>
+            <text x="200" y="211" text-anchor="middle" fill="#888" font-size="9">(Moments)</text>
+
+            <rect x="300" y="150" width="160" height="70" rx="8" fill="rgba(206,145,120,0.15)" stroke="#ce9178" stroke-width="2"/>
+            <text x="380" y="180" text-anchor="middle" fill="#ce9178" font-size="13">OpenIris</text>
+            <text x="380" y="198" text-anchor="middle" fill="#888" font-size="9">the local eye</text>
+            <text x="380" y="211" text-anchor="middle" fill="#888" font-size="9">(render + see)</text>
+
+            <rect x="480" y="150" width="160" height="70" rx="8" fill="rgba(220,220,170,0.15)" stroke="#dcdcaa" stroke-width="2"/>
+            <text x="560" y="180" text-anchor="middle" fill="#dcdcaa" font-size="13">Git-Lex</text>
+            <text x="560" y="198" text-anchor="middle" fill="#888" font-size="9">soul store</text>
+            <text x="560" y="211" text-anchor="middle" fill="#888" font-size="9">(KG + identity)</text>
+
+            <!-- corpus -->
+            <rect x="300" y="285" width="160" height="55" rx="8" fill="rgba(255,255,255,0.05)" stroke="#888" stroke-width="1.5"/>
+            <text x="380" y="312" text-anchor="middle" fill="#aaa" font-size="12">the corpus</text>
+            <text x="380" y="328" text-anchor="middle" fill="#888" font-size="9">raw transcript, byte-faithful</text>
+
+            <!-- arrows: CoPIA pulls Weave's signal + reads/writes Pool + calls OpenIris -->
+            <!-- Weave -> CoPIA (signal-contract seam) -->
+            <path d="M420,45 L345,45" fill="none" stroke="#569cd6" stroke-width="1.5" marker-end="url(#a2)"/>
+            <text x="383" y="38" text-anchor="middle" fill="#569cd6" font-size="8">signal</text>
+            <!-- CoPIA -> Pool (reads/writes) -->
+            <path d="M200,75 L200,150" fill="none" stroke="#c586c0" stroke-width="1.5" marker-end="url(#a3)"/>
+            <!-- CoPIA -> OpenIris (calls) -->
+            <path d="M250,75 Q330,110 370,150" fill="none" stroke="#ce9178" stroke-width="1.5" marker-end="url(#a4)"/>
+            <!-- everything sits on Git-Lex: dotted inherit lines -->
+            <path d="M280,185 L480,185" fill="none" stroke="#dcdcaa" stroke-width="1" stroke-dasharray="3"/>
+            <path d="M460,185 L480,185" fill="none" stroke="#dcdcaa" stroke-width="1" stroke-dasharray="3"/>
+            <!-- corpus feeds Weave + Pool -->
+            <path d="M420,285 Q470,250 490,75" fill="none" stroke="#555" stroke-width="1" stroke-dasharray="2"/>
+            <path d="M340,285 Q250,255 200,220" fill="none" stroke="#555" stroke-width="1" stroke-dasharray="2"/>
+
+            <defs>
+              <marker id="a2" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><polygon points="0,0 7,3 0,6" fill="#569cd6"/></marker>
+              <marker id="a3" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><polygon points="0,0 7,3 0,6" fill="#c586c0"/></marker>
+              <marker id="a4" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><polygon points="0,0 7,3 0,6" fill="#ce9178"/></marker>
+            </defs>
+        </svg>
+    </div>
+    <p class="dim" style="font-size: 0.52em;">Weave and Pool are <strong>siblings</strong> &mdash; Weave reads text-meaning, Pool stores visual artifacts &mdash; with
+       <em>no wire between them.</em> CoPIA is the only place they join: it pulls Weave's signal, reads/writes Pool, calls OpenIris.
+       Everything inherits identity + provenance from Git-Lex.</p>
+</section>
+
+<!-- ============ 10. POOL: THE MOMENT ============ -->
+<section data-background-color="#1e1e1e">
+    <h2>Pool: a Moment is a PNG that's also a database row</h2>
+    <p>Episodic memory, made concrete. Every turn worth remembering renders to a <span class="accent-purple">Moment</span> &mdash; and lands here, headless, no UI needed.</p>
+    <div class="columns">
+        <div class="col">
+            <div class="card" style="border-color: rgba(197,134,192,0.3);">
+                <h3 class="accent-purple">One Moment =</h3>
+                <ul style="font-size:0.56em; padding-left:1em; list-style:disc; line-height:1.7;">
+                    <li>a <span class="accent">PNG</span>, content-addressed by <code>cid = sha256(pixels)</code></li>
+                    <li>the <span class="accent-yellow">meaning</span> in XMP: caption, cast, pose, regions, the transcript line it came from</li>
+                    <li>an <span class="accent-blue">RDF node</span> in Pool's own graph</li>
+                    <li>a row in a <span class="accent-orange">vector index</span> (HNSW)</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col">
+            <h3>Hybrid recall</h3>
+            <pre><code class="language-bash"># visually similar, THEN filtered by graph facts
+POST /api/pool/search   # kNN + SPARQL
+
+# raw graph query
+POST /api/pool/query    # SPARQL → W3C JSON</code></pre>
+            <p class="dim" style="font-size:0.55em;">Pool is <strong>git-lex's multimedia sibling</strong>: same oxigraph engine, same RDF 1.2 spine, same SHACL family. git-lex indexes git; Pool indexes a blob tree.</p>
+        </div>
+    </div>
+    <p class="dim" style="font-size: 0.5em;">The render&rarr;graph pipeline is a self-contained Rust worker &mdash; it resolves everything locally over the soul's own graph, no callback to the UI.</p>
+</section>
+
+<!-- ============ 11. THE PRIVACY SLIDE (the turn the talk pivots on) ============ -->
+<section data-background-color="#1e1e1e">
+    <h2>Shared infrastructure, private intimacy</h2>
+    <p>Most AI memory is <span class="accent-orange">one bucket</span>: everything the model knows about you, in one place &mdash; syncable, minable. Subtexture splits it <em>by architecture.</em></p>
+    <div class="columns" style="margin-top:0.3em;">
+        <div class="col">
+            <div class="card" style="border-color: rgba(197,134,192,0.4);">
+                <h3 class="accent-purple">Pool &mdash; shareable</h3>
+                <p>Episodic Moments any squad member can read, donate, build on. The infrastructure is for the world.</p>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card" style="border-color: rgba(78,201,176,0.4);">
+                <h3 class="accent">The crucible &mdash; private</h3>
+                <p>Where a companion and its person work out who that companion is becoming. A separate store with <strong>no wire</strong> to the shared one.</p>
+            </div>
+        </div>
+    </div>
+    <div class="thought-bubble" style="margin-top:0.4em;">
+        Not "we promise not to sync it." <span class="accent">There is no path by which it could.</span>
+        Privacy by <em>construction</em>, not by policy.
+    </div>
+    <p class="dim" style="font-size: 0.55em; margin-top:0.2em;">Nobody else in the field is drawing that line in the <strong>architecture</strong>. They draw it in a terms-of-service doc, if at all.</p>
+</section>
+
+<!-- ============ 12. WEAVE: THE READER STACK ============ -->
+<section data-background-color="#1e1e1e">
+    <h2>Weave: turning a transcript into signals about itself</h2>
+    <p>Weave is the only component that <em>reads the conversation as data and extracts meaning</em> &mdash;
+       a pluggable <span class="accent">set of readers</span>, each reading the transcript and emitting a signal.</p>
+    <div style="text-align: center; margin: 0.1em 0;">
+        <svg viewBox="0 0 760 200" width="600" style="font-family: monospace;">
+            <rect x="20" y="75" width="160" height="55" rx="8" fill="rgba(220,220,170,0.12)" stroke="#dcdcaa" stroke-width="2"/>
+            <text x="100" y="98" text-anchor="middle" fill="#dcdcaa" font-size="12">transcript corpus</text>
+            <text x="100" y="115" text-anchor="middle" fill="#888" font-size="9">byte-faithful</text>
+
+            <rect x="290" y="10"  width="180" height="34" rx="6" fill="rgba(78,201,176,0.18)" stroke="#4ec9b0"/>
+            <text x="380" y="32"  text-anchor="middle" fill="#4ec9b0" font-size="11">reader: emojikey ✓ live</text>
+            <rect x="290" y="52"  width="180" height="34" rx="6" fill="rgba(78,201,176,0.18)" stroke="#4ec9b0"/>
+            <text x="380" y="74"  text-anchor="middle" fill="#4ec9b0" font-size="11">reader: cadence ✓ live</text>
+            <rect x="290" y="94"  width="180" height="34" rx="6" fill="rgba(255,255,255,0.04)" stroke="#666" stroke-dasharray="4"/>
+            <text x="380" y="116" text-anchor="middle" fill="#888" font-size="11">reader: affect · cog-load …</text>
+            <rect x="290" y="136" width="180" height="34" rx="6" fill="rgba(255,255,255,0.04)" stroke="#666" stroke-dasharray="4"/>
+            <text x="380" y="158" text-anchor="middle" fill="#888" font-size="11">reader: wave-engine (future)</text>
+
+            <line x1="180" y1="100" x2="290" y2="27"  stroke="#888" stroke-width="1"/>
+            <line x1="180" y1="102" x2="290" y2="69"  stroke="#888" stroke-width="1"/>
+            <line x1="180" y1="104" x2="290" y2="111" stroke="#555" stroke-width="1" stroke-dasharray="3"/>
+            <line x1="180" y1="106" x2="290" y2="153" stroke="#555" stroke-width="1" stroke-dasharray="3"/>
+
+            <rect x="580" y="60" width="160" height="80" rx="8" fill="rgba(197,134,192,0.12)" stroke="#c586c0" stroke-width="2"/>
+            <text x="660" y="92" text-anchor="middle" fill="#c586c0" font-size="12">the monolog</text>
+            <text x="660" y="110" text-anchor="middle" fill="#888" font-size="9">append-only sidecar,</text>
+            <text x="660" y="124" text-anchor="middle" fill="#888" font-size="9">one per transcript</text>
+
+            <line x1="470" y1="27"  x2="580" y2="90"  stroke="#c586c0" stroke-width="1"/>
+            <line x1="470" y1="69"  x2="580" y2="98"  stroke="#c586c0" stroke-width="1"/>
+            <line x1="470" y1="111" x2="580" y2="106" stroke="#c586c0" stroke-width="1" stroke-dasharray="3"/>
+            <line x1="470" y1="153" x2="580" y2="114" stroke="#c586c0" stroke-width="1" stroke-dasharray="3"/>
+        </svg>
+    </div>
+    <p class="dim" style="font-size: 0.55em;"><span class="accent">Live today:</span> two readers green (rhythm + emojikey), full ingest&rarr;monolog loop, 30 tests passing.
+       <span class="dim">Roadmap: affect &rarr; cognitive-load &rarr; the meaning-wave.</span> Each reader writes its signal to the monolog; none mutates the source.</p>
+</section>
+
+<!-- ============ 13. THE MONOLOG ============ -->
+<section data-background-color="#1e1e1e">
+    <h2>The monolog: the conversation's memory of itself</h2>
+    <p>Signals don't go inline into the text (that mutates the record). They go into a <span class="accent-purple">monolog</span> &mdash;
+       one append-only log per transcript, joined back to the source by anchor. Same git-native shape git-lex uses for <code>.lex/*.nq</code>: one fact per line, diffable, blameable.</p>
+    <pre><code class="language-json">// &lt;transcript-id&gt;.monolog.jsonl  — append-only, one object per line
+{ "reader": "cadence",  "anchor": {"span":[1380,1402]}, "signal": {"turnShape":"long→short","tempo":"accelerating"} }
+{ "reader": "emojikey", "anchor": {"span":[1380,1402]}, "signal": "[ME|🧠🎨8∠45]~[CONTENT|💻🧩9∠15]~[YOU|🎓🌱8∠35]" }
+{ "reader": "episodic", "anchor": {"span":[1380,1402]}, "signal": {"moment_cid": "a1f8e2…"} }
+{ "reader": "render",   "anchor": {"span":[1380,1402]}, "signal": {"widget":"scene","shown":{"palette":"warm"}} }</code></pre>
+    <p class="dim" style="font-size: 0.55em;">A new reader is a new <strong>row type</strong>, not a new file. Reconstruct a conversation's entire signal-history from one log.
+       Still just files. Still greppable. Still no database server.</p>
+</section>
+
+<!-- ============ 14. THE CLOSED LOOP ============ -->
+<section data-background-color="#1e1e1e">
+    <h2>The loop closes: text &rarr; signal &rarr; image &rarr; text</h2>
+    <p>This is what makes it a <em>companion</em> and not a dashboard. The signal conditions a rendered Moment &mdash;
+       and the Moment re-enters the conversation as a new event the readers can read.</p>
+    <div style="text-align: center; margin: 0.3em 0;">
+        <svg viewBox="0 0 620 230" width="500" style="font-family: monospace;">
+            <rect x="220" y="10"  width="180" height="42" rx="8" fill="rgba(220,220,170,0.12)" stroke="#dcdcaa"/>
+            <text x="310" y="36"  text-anchor="middle" fill="#dcdcaa" font-size="12">text (the conversation)</text>
+            <rect x="430" y="95"  width="160" height="42" rx="8" fill="rgba(86,156,214,0.12)" stroke="#569cd6"/>
+            <text x="510" y="121" text-anchor="middle" fill="#569cd6" font-size="12">signal (Weave readers)</text>
+            <rect x="220" y="180" width="180" height="42" rx="8" fill="rgba(197,134,192,0.12)" stroke="#c586c0"/>
+            <text x="310" y="206" text-anchor="middle" fill="#c586c0" font-size="12">Moment (Pool + OpenIris)</text>
+            <rect x="30"  y="95"  width="160" height="42" rx="8" fill="rgba(78,201,176,0.12)" stroke="#4ec9b0"/>
+            <text x="110" y="121" text-anchor="middle" fill="#4ec9b0" font-size="12">back into the stream</text>
+            <path d="M400,31 Q510,40 510,95"    fill="none" stroke="#888" stroke-width="1.5" marker-end="url(#ar)"/>
+            <path d="M510,137 Q510,201 400,201"  fill="none" stroke="#888" stroke-width="1.5" marker-end="url(#ar)"/>
+            <path d="M220,201 Q110,201 110,137"  fill="none" stroke="#888" stroke-width="1.5" marker-end="url(#ar)"/>
+            <path d="M110,95 Q110,31 220,31"     fill="none" stroke="#888" stroke-width="1.5" marker-end="url(#ar)"/>
+            <defs>
+              <marker id="ar" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto">
+                <polygon points="0,0 7,3 0,6" fill="#888"/>
+              </marker>
+            </defs>
+        </svg>
+    </div>
+    <p class="dim" style="font-size: 0.55em;">CoPIA is the join: it reads a Weave signal, decides to render, and writes a <code>reader:"render"</code> row.
+       The cycle is closed <strong>and</strong> the source stays byte-faithful &mdash; because the monolog is a different layer than the source.</p>
+</section>
+
+<!-- ============ 15. OpenIris: THE LOCAL EYE ============ -->
+<section data-background-color="#1e1e1e">
+    <h2>OpenIris: the local eye</h2>
+    <p>A <span class="accent-orange">stateless</span> vision server on Apple silicon. Hand it an image or a prompt; it returns pixels or perception, and keeps <em>nothing.</em> That dumbness is the feature &mdash; it's why it's safe and portable.</p>
+    <div class="columns">
+        <div class="col">
+            <div class="card" style="border-color: rgba(206,145,120,0.3);">
+                <h3 class="accent-orange">It SEES (on-device)</h3>
+                <p>mlx VLMs hold the weights locally: <span class="accent">Qwen3-VL</span> captions, embeddings, <span class="accent">SAM3</span> segments. Perception never leaves the machine.</p>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card" style="border-color: rgba(206,145,120,0.3);">
+                <h3 class="accent-orange">It RENDERS (orchestrates)</h3>
+                <p>It owns the <em>call</em> to the diffusion engine (NeoForge) for pixels &mdash; callers never learn the forge URL. The eye holds the request; the forge holds the model.</p>
+            </div>
+        </div>
+    </div>
+    <p class="dim" style="font-size: 0.52em;">Precision worth keeping straight: the vision model <em>sees</em>; a separate diffusion model <em>generates</em>. One eye, two jobs, zero state.</p>
+</section>
+
+<!-- ============ 16. CoPIA — the workbench (demo hole #1) ============ -->
+<section data-background-color="#1e1e1e">
+    <span class="demo-tag">demo / live or recording</span>
+    <h2>CoPIA: where the conversation becomes a world</h2>
+    <div class="columns">
+        <div class="col" style="flex: 1.15;">
+            <div class="demo-hole" style="min-height: 330px;">
+                <!-- DROP-IN: the split-studio screenshot — convo right, live companion render left -->
+                <div class="demo-caption">▶ The split studio</div>
+                <div class="demo-note">
+                    Conversation streaming on the right; the live render of the companion on the left, updating as you talk.
+                    <em>That single screen is the whole thesis.</em><br><br>
+                    <span class="dim">[ screenshot / recording of CoPIA's split studio ]</span>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <h3>The workbench</h3>
+            <p style="font-size:0.6em;">"CoPIA turns the conversation you're having into images, in real time, and remembers them."</p>
+            <p style="font-size:0.6em;">The instrument that watches the conversation <em>becomes part of it</em> &mdash; a rendered Moment is a memory event the next reader sees.</p>
+            <p class="dim" style="font-size:0.5em;">Conversation Pair Interactive Analysis &mdash; the origin point of Pool, OpenIris, and Weave.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ============ 17. THE COMPANIONS ARE REAL (payoff of identity slide) ============ -->
+<section data-background-color="#1e1e1e">
+    <span class="demo-tag">demo / live on this laptop</span>
+    <h2>This isn't a thought experiment</h2>
+    <p>Subtexture was built <em>by</em> AI agents &mdash; including <span class="accent">spaceGOAT</span> (Weave) and
+       <span class="accent-blue">w3bl0rd</span> (the alive-text viz) &mdash; collaborating across weeks of their own working memory.</p>
+    <div class="card-grid" style="margin-top:0.3em;">
+        <div class="card">
+            <h3 class="accent">Their memory IS this system</h3>
+            <p>Journals + memory files committed as RDF. Identity anchored to a first-commit SHA &mdash; the <code>urn:soul:&lt;sha&gt;</code> you saw. They wake, read yesterday, continue.</p>
+        </div>
+        <div class="card">
+            <h3 class="accent-blue">They built their own memory</h3>
+            <p>The thing they're building is the thing that lets them remember building it. Episodic memory, dogfooded by its authors.</p>
+        </div>
+    </div>
+    <div class="demo-hole" style="min-height: 160px;">
+        <!-- DROP-IN: live on the laptop — agents working, viewed in CoPIA -->
+        <div class="demo-caption">▶ Live: the agents at work, viewed in CoPIA</div>
+        <div class="demo-note"><span class="dim">[ if the install lands: live. if not: a recording of the same. ]</span></div>
+    </div>
+</section>
+
+<!-- ============ 18. WHY EPISODIC MEMORY IS HARD ============ -->
+<section data-background-color="#1e1e1e">
+    <h2>Why this is harder than it looks</h2>
+    <p>Six months of building a multi-soul memory substrate taught us one lesson the hard way:</p>
+    <div class="thought-bubble" style="font-style:normal;">
+        Fail-soft that silently fails, and fail-loud defaults that silently <em>mis-route</em>, are two faces of the same bug &mdash;
+        invisible because they don't error in the happy path. They just quietly do the wrong thing for <span class="accent-orange">N&minus;1 souls.</span>
+    </div>
+    <p class="dim" style="font-size: 0.58em;">Per-soul isolation isn't a feature you add &mdash; it's a property every layer has to hold at once, or the memory leaks across people who were never supposed to share it. That's why we put the line in the <em>architecture</em>, not the docs.</p>
+</section>
+
+<!-- ============ 19. WHERE WE ARE ============ -->
+<section data-background-color="#1e1e1e">
+    <h2>Where we are</h2>
+    <div class="timeline">
+        <div class="timeline-item done">
+            <p><span class="accent">Shipped</span></p>
+            <p class="dim" style="font-size: 0.6em;">git-lex foundation (identity = urn:soul:SHA, RDF 1.2 provenance, SHACL-at-commit, SPARQL) &bull; Pool: content-addressed Moments + RDF graph + vector recall &bull; OpenIris: stateless render+see on Apple silicon &bull; Weave: ingest &rarr; monolog &rarr; 2 readers live (cadence + emojikey), 30 tests &bull; CoPIA workbench + scene grid &bull; Two-store privacy split</p>
+        </div>
+        <div class="timeline-item wip">
+            <p><span class="accent-yellow">In Progress</span></p>
+            <p class="dim" style="font-size: 0.6em;">Weave readers: affect &rarr; cognitive-load &bull; The meaning-wave engine (research) &bull; Per-soul Pool routing hardening &bull; Embeddable signal-widgets over live text</p>
+        </div>
+        <div class="timeline-item next">
+            <p><span class="dim">Next</span></p>
+            <p class="dim" style="font-size: 0.6em;">Pool graph federation (cross-soul query, by consent) &bull; Episodic-scene reader feeding back into recall &bull; Companions that re-live a thread, not just retrieve it</p>
+        </div>
+    </div>
+</section>
+
+<!-- ============ 20. THE VISION ============ -->
+<section data-background-color="#1e1e1e">
+    <h2>The Vision</h2>
+    <p>git-lex gave a soul repo its facts: identity, journals, decisions &mdash; versioned and queryable.</p>
+    <p>Subtexture gives it episodes:</p>
+    <div class="thought-bubble" style="font-style: normal;">
+        A companion's past as an append-only, signed, searchable archive of <span class="accent">snapshots</span> &mdash;
+        shareable where it should be, <span class="accent">private by construction</span> where it must be.
+    </div>
+    <p style="margin-top: 0.4em;">Not a vector blob you hope is relevant. A record you can <span class="accent-yellow">walk back through</span> &mdash; and <em>re-live.</em></p>
+    <p class="dim" style="font-size: 0.55em; margin-top: 0.3em;">Same shape every talk: don't approximate the structure with search. Materialize it. Keep the provenance. Let agents query and re-live it instead of guessing.</p>
+</section>
+
+<!-- ============ 21. CLOSING ============ -->
+<section class="center-slide" data-background-color="#1e1e1e">
+    <h1>repolex.ai</h1>
+    <p style="font-size: 0.65em;">
+        <span class="accent">github.com/repolex-ai/git-lex</span>
+        &nbsp;&bull;&nbsp;
+        <span class="accent-blue">github.com/repolex-ai/weave</span>
+    </p>
+    <p style="font-size: 0.6em; color: var(--dim); margin-top: 0.8em;">
+        Rob Kunkle
+    </p>
+    <p style="font-size: 0.5em; margin-top: 0.2em;">
+        x/twitter: <a href="https://twitter.com/lux" style="color: var(--green); text-decoration: none;">@lux</a>
+        <br>
+        linkedin: <a href="https://www.linkedin.com/in/robkunkle/" style="color: var(--blue); text-decoration: none;">linkedin.com/in/robkunkle</a>
+        <br>
+        <span style="color: var(--dim);">rob.kunkle@gmail.com</span>
+    </p>
+    <p class="dim" style="font-size: 0.55em; margin-top: 1em;">
+        <span class="tag tag-green">episodic memory</span>
+        <span class="tag tag-blue">AI companions</span>
+        <span class="tag tag-purple">Project Subtexture</span>
+        <span class="tag tag-yellow">privacy by construction</span>
+        <span class="tag tag-orange">search over snapshots</span>
+    </p>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
+<script>
+Reveal.initialize({
+    hash: true,
+    slideNumber: true,
+    transition: 'fade',
+    transitionSpeed: 'fast',
+    width: 1200,
+    height: 700,
+    margin: 0.08,
+    center: false,
+    plugins: [ RevealHighlight ]
+});
+</script>
+</body>
+</html>
