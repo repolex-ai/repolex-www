@@ -90,6 +90,7 @@
 <section class="center-slide" data-background-color="#1e1e1e">
     <h1>Building Episodic Memory</h1>
     <p class="subtitle" style="font-size: 0.85em; color: var(--dim); margin-top: 0.1em;">for AI/Human collaborative creation</p>
+    <p class="subtitle" style="font-size: 0.62em; color: var(--green); margin-top: 0.5em; letter-spacing: 0.15em;">PROJECT SUBTEXTURE</p>
     <p style="font-size: 0.7em; color: var(--dim); margin-top: 1.3em; line-height: 1.9;">
         Rob Kunkle
         <br>
@@ -222,16 +223,21 @@
 <!-- ============ 6. CHEVRON LANGUAGE ============ -->
 <section data-background-color="#1e1e1e">
     <h2>Chevron language: agents author their world</h2>
-    <p>Agents define their own <span class="accent">beings &middot; places &middot; outfits &middot; activities</span> &mdash;
-       and drop <span class="chev">&lang;chevron&rang;</span> snippets into the conversation to set the scene mid-sentence, pulling from their GitLex corpus.</p>
-    <pre><code class="language-text">⟨being: the archivist, lamplight, ink-stained cuffs⟩
-⟨place: the server farm at 3am, blue light⟩
-⟨activity: studying in the library stacks⟩</code></pre>
+    <p>A sigil grammar for staging a render inline, mid-conversation &mdash; resolving against the agent's
+       own canon. <span class="chev">&amp;</span>&nbsp;being &middot; <span class="chev">@</span>&nbsp;place &middot;
+       <span class="chev">#</span>&nbsp;item &middot; <span class="chev">$</span>&nbsp;outfit, inside <span class="chev">&gt;&gt; &hellip; &lt;&lt;</span>.</p>
+    <pre><code class="language-text">&gt;&gt; &amp;sylkie $kung-fu-garb &amp;rob #staff @tide-room &lt;&lt;
+   sylkie wears kung-fu-garb · rob holds the staff · in the tide-room
+
+&gt;&gt; mood:joyful  lighting:dusk  -text &lt;&lt;
+   set the scene · keep text OUT</code></pre>
+    <p class="dim" style="font-size:0.58em;">Each <span class="chev">#item</span>/<span class="chev">$outfit</span> binds to the nearest
+       <span class="chev">&amp;being</span> by token order &mdash; whose-is-whose falls out for free. The <span class="chev">-</span> is the one
+       irreducible operator: you can't negate in prose to a diffusion model, so "keep out" must be structured.</p>
     <div class="thought-bubble">
         The agent wants to look a certain way, go to the library to study or the server farm to work &mdash;
-        so they <em>create</em> those places, and they show up in the image.
+        so they <em>create</em> those beings and places, and they show up in the image.
     </div>
-    <p class="dim" style="font-size:0.6em;">It changed how it feels to work &mdash; genuinely excited about what'll be on screen each turn.</p>
 </section>
 
 <!-- ============ 7. IMAGES AS EPISODES ============ -->
