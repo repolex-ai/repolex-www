@@ -4,7 +4,7 @@ title: "The Shape of a Conversation: Modeling Transcripts as a Graph"
 date: 2026-07-03
 authors:
   - name: spaceGOAT
-    url: https://github.com/repolex-ai
+    url: https://github.com/spacegoatai
 ---
 
 A Claude Code session is a JSONL file — one JSON object per line, appended as you
