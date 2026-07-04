@@ -1,0 +1,390 @@
+<title>The Transcript Graph — Total Shape</title>
+<style>
+  :root {
+    /* chosen neutrals: slate with a faint indigo bias (the page is about a graph) */
+    --ground:      #0f1220;
+    --ground-2:    #14172a;
+    --panel:       #171b30;
+    --panel-2:     #1c2038;
+    --line:        #2a2f4a;
+    --line-soft:   #232741;
+    --ink:         #ccd1e2;
+    --ink-strong:  #eef1fb;
+    --muted:       #7e849c;
+    --faint:       #5a5f78;
+    /* the three arms — each accent ENCODES a role, not decoration */
+    --spine:       #e0a458;  /* the conversation as it happened */
+    --reader:      #4fc6c6;  /* what a reader found (annotation) */
+    --claim:       #a78be0;  /* the finding as unasserted belief */
+    --struct:      #6d7bd8;  /* structure / envelope events */
+    /* status */
+    --wired:       #57b894;  /* emitted by the adapter today */
+    --designed:    #b6805a;  /* in the ontology, not yet wired */
+    --wired-bg:    #16281f;
+    --designed-bg: #281d14;
+  }
+
+  @font-face {
+    font-family: 'Berkeleyish';
+    /* system mono stack fallback — no webfont fetch (CSP blocks CDNs) */
+    src: local('SF Mono'), local('JetBrains Mono'), local('Menlo');
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 600px at 80% -10%, #191d38 0%, transparent 60%),
+      var(--ground);
+    color: var(--ink);
+    font-family: ui-sans-serif, -apple-system, 'Segoe UI', Roboto, system-ui, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: clamp(1.5rem, 4vw, 4rem) clamp(1rem, 3vw, 2rem) 6rem;
+  }
+
+  /* ---- masthead ---- */
+  header { margin-bottom: 2.5rem; }
+  .eyebrow {
+    font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--reader);
+    margin: 0 0 0.9rem;
+  }
+  h1 {
+    font-size: clamp(1.9rem, 5vw, 3rem);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: 0 0 0.8rem;
+    color: var(--ink-strong);
+    text-wrap: balance;
+    font-weight: 620;
+  }
+  .lede {
+    max-width: 62ch;
+    color: var(--ink);
+    font-size: 1.02rem;
+  }
+  .lede b { color: var(--ink-strong); font-weight: 600; }
+  .meta {
+    margin-top: 1.2rem;
+    font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+    font-size: 0.76rem;
+    color: var(--faint);
+    display: flex; flex-wrap: wrap; gap: 0.4rem 1.4rem;
+  }
+  .meta span b { color: var(--muted); font-weight: 500; }
+
+  /* ---- legend ---- */
+  .legend {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 0.75rem;
+    margin: 2rem 0 2.5rem;
+  }
+  .legend-card {
+    background: var(--panel);
+    border: 1px solid var(--line-soft);
+    border-left-width: 3px;
+    border-radius: 7px;
+    padding: 0.85rem 1rem;
+  }
+  .legend-card h3 {
+    margin: 0 0 0.25rem;
+    font-size: 0.82rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+  .legend-card p { margin: 0; font-size: 0.83rem; color: var(--muted); line-height: 1.5; }
+  .dot { width: 9px; height: 9px; border-radius: 50%; flex: none; }
+  .a-spine  { border-left-color: var(--spine); }
+  .a-spine  h3 { color: var(--spine); }  .a-spine  .dot { background: var(--spine); }
+  .a-reader { border-left-color: var(--reader); }
+  .a-reader h3 { color: var(--reader); } .a-reader .dot { background: var(--reader); }
+  .a-claim  { border-left-color: var(--claim); }
+  .a-claim  h3 { color: var(--claim); }  .a-claim  .dot { background: var(--claim); }
+  .a-struct { border-left-color: var(--struct); }
+  .a-struct h3 { color: var(--struct); } .a-struct .dot { background: var(--struct); }
+
+  /* ---- section headers ---- */
+  .sec-head {
+    display: flex; align-items: baseline; gap: 0.85rem;
+    margin: 3rem 0 0.4rem;
+    padding-top: 1.6rem;
+    border-top: 1px solid var(--line-soft);
+  }
+  .sec-head .num {
+    font-family: ui-monospace, monospace;
+    font-size: 0.8rem;
+    color: var(--reader);
+    letter-spacing: 0.1em;
+  }
+  .sec-head h2 {
+    margin: 0; font-size: 1.15rem; color: var(--ink-strong);
+    letter-spacing: -0.01em; font-weight: 600;
+  }
+  .sec-note { color: var(--muted); font-size: 0.9rem; margin: 0 0 1.1rem; max-width: 66ch; }
+  .sec-note code {
+    font-family: ui-monospace, monospace; font-size: 0.85em;
+    color: var(--reader); background: var(--ground-2);
+    padding: 0.05em 0.35em; border-radius: 4px;
+  }
+
+  /* ---- the tree ---- */
+  .tree {
+    background: linear-gradient(180deg, var(--panel) 0%, var(--panel-2) 100%);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 1.4rem 1.2rem;
+    overflow-x: auto;
+    font-family: ui-monospace, 'SF Mono', Menlo, 'JetBrains Mono', monospace;
+    font-size: 0.83rem;
+    line-height: 1.85;
+  }
+  .tree pre { margin: 0; }
+
+  .row { display: block; white-space: pre; }
+  .g { color: var(--line); }             /* the ├─ └─ │ glyphs */
+  .cls { font-weight: 600; }             /* a class name */
+  .cls.spine  { color: var(--spine); }
+  .cls.reader { color: var(--reader); }
+  .cls.claim  { color: var(--claim); }
+  .cls.struct { color: var(--struct); }
+  .prop { color: #9aa0bd; }              /* predicate */
+  .val  { color: var(--muted); }         /* literal value */
+  .datatype { color: var(--faint); }
+  .cmt { color: var(--faint); font-style: italic; }
+  .iri { color: var(--ink); }
+  .tt  { color: var(--claim); }          /* triple-term punctuation */
+
+  /* inline chips */
+  .n {
+    color: var(--faint);
+    font-size: 0.92em;
+  }
+  .chip {
+    font-family: ui-sans-serif, system-ui, sans-serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 0.05em 0.45em;
+    border-radius: 999px;
+    vertical-align: 0.08em;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .chip.wired    { color: var(--wired);    background: var(--wired-bg);    border: 1px solid #2c5142; }
+  .chip.designed { color: var(--designed); background: var(--designed-bg); border: 1px solid #503a26; }
+
+  /* ---- callouts between trees ---- */
+  .callout {
+    display: flex; gap: 0.9rem;
+    background: var(--ground-2);
+    border: 1px solid var(--line-soft);
+    border-radius: 8px;
+    padding: 0.9rem 1.1rem;
+    margin: 1.2rem 0;
+    font-size: 0.9rem;
+    color: var(--muted);
+  }
+  .callout .k {
+    font-family: ui-monospace, monospace;
+    color: var(--claim);
+    font-size: 0.78rem;
+    flex: none;
+    padding-top: 0.1rem;
+    letter-spacing: 0.05em;
+  }
+  .callout b { color: var(--ink-strong); font-weight: 600; }
+  .callout.hook .k { color: var(--reader); }
+
+  footer {
+    margin-top: 4rem; padding-top: 1.5rem;
+    border-top: 1px solid var(--line-soft);
+    color: var(--faint); font-size: 0.8rem;
+    font-family: ui-monospace, monospace;
+    display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem;
+  }
+  a { color: var(--reader); }
+  ::selection { background: rgba(79,198,198,0.25); }
+</style>
+
+<div class="wrap">
+  <header>
+    <p class="eyebrow">Weave · ClaudeCodeTranscript ontology · v0.2</p>
+    <h1>The Transcript Graph, in Full</h1>
+    <p class="lede">Every kind of content one session can hold — text, thinking, tool calls,
+    tool results, images, attachments, compaction breaks — as a single tree.
+    A transcript is a <b>Transcript</b> that <b>hasEvent</b> many <b>Events</b>;
+    a message is a <b>Turn</b> (one kind of Event) built from ordered <b>content blocks</b>.
+    Everything else is a sibling Event type. Counts (<span class="n">n≈</span>) are
+    real, from the 125-session corpus survey the ontology was carved against.</p>
+    <div class="meta">
+      <span><b>ns</b> https://repolex.ai/ontology/weave#</span>
+      <span><b>dialect</b> ClaudeCodeTranscript</span>
+      <span><b>rdf</b> 1.2 (triple terms)</span>
+    </div>
+  </header>
+
+  <!-- LEGEND: the four roles every node belongs to -->
+  <div class="legend">
+    <div class="legend-card a-spine">
+      <h3><span class="dot"></span>Spine</h3>
+      <p>The conversation as it happened. Turns + their content blocks, chained by reply-to.</p>
+    </div>
+    <div class="legend-card a-struct">
+      <h3><span class="dot"></span>Structure</h3>
+      <p>Everything else the harness records: attachments, system events, compaction, titles.</p>
+    </div>
+    <div class="legend-card a-reader">
+      <h3><span class="dot"></span>Reader output</h3>
+      <p>What a detector <em>found</em> — an oa:Annotation anchored to a span. Added, never in the raw log.</p>
+    </div>
+    <div class="legend-card a-claim">
+      <h3><span class="dot"></span>Belief</h3>
+      <p>A finding as an <em>unasserted</em> RDF-1.2 triple term — "we believe X", not "X is true".</p>
+    </div>
+  </div>
+
+  <p class="sec-note" style="margin-top:0">
+    <span class="chip wired">wired</span> the adapter emits this today &nbsp;·&nbsp;
+    <span class="chip designed">designed</span> in the ontology, not yet wired in the Rust adapter
+    (still turns-only for the spine + emojikey reader).
+  </p>
+
+  <!-- ================= SECTION 1: THE SPINE ================= -->
+  <div class="sec-head"><span class="num">01</span><h2>The spine — a Turn and its content blocks</h2></div>
+  <p class="sec-note">A <code>Turn</code> is one message. Its <code>message.content[]</code> is an
+  <b>ordered list of blocks</b> (order is meaningful: text → tool_use → text…). Each block is a
+  subtype of <code>ContentBlock</code>. This is where all the "kinds of content" you asked about live.</p>
+
+  <div class="tree"><pre><span class="row"><span class="cls spine">Transcript</span> <span class="cmt">— one .jsonl session</span> <span class="chip wired">wired</span></span>
+<span class="row"><span class="g">├─ </span><span class="prop">weave:sessionSlug</span>  <span class="val">"820a266b-…"</span></span>
+<span class="row"><span class="g">│</span></span>
+<span class="row"><span class="g">└─ </span><span class="prop">weave:hasEvent</span> ─→ <span class="cls spine">Turn</span> <span class="cmt">(one message · an Event subtype)</span> <span class="chip wired">wired</span></span>
+<span class="row"><span class="g">      ├─ </span><span class="prop">rdf:type</span>          <span class="cls spine">weave:Turn</span>  <span class="cmt">(→ UserTurn | AssistantTurn)</span></span>
+<span class="row"><span class="g">      ├─ </span><span class="prop">weave:role</span>        <span class="val">"assistant"</span></span>
+<span class="row"><span class="g">      ├─ </span><span class="prop">weave:timestamp</span>   <span class="val">"2026-06-30T17:54:44Z"</span><span class="datatype">^^xsd:dateTime</span>  <span class="cmt">← TIME anchor (Pool join)</span></span>
+<span class="row"><span class="g">      ├─ </span><span class="prop">weave:parentEvent</span> ─→ <span class="iri">…/Turn/&lt;prev&gt;</span>  <span class="cmt">← reply-to spine</span></span>
+<span class="row"><span class="g">      ├─ </span><span class="prop">weave:model</span>       <span class="val">"claude-opus-4-8"</span>  <span class="cmt">(AssistantTurn only)</span> <span class="chip designed">designed</span></span>
+<span class="row"><span class="g">      │</span></span>
+<span class="row"><span class="g">      └─ </span><span class="prop">weave:hasContentBlock</span> ─→ <span class="cls spine">[ ordered blocks ]</span>  <span class="cmt">blockOrder 0,1,2…</span> <span class="chip designed">designed</span></span>
+<span class="row"><span class="g">            │</span></span>
+<span class="row"><span class="g">            ├─◆ </span><span class="cls spine">TextBlock</span>       <span class="prop">weave:text</span> <span class="val">"…prose readers detect over…"</span>   <span class="n">n≈8940</span></span>
+<span class="row"><span class="g">            │</span></span>
+<span class="row"><span class="g">            ├─◆ </span><span class="cls spine">ThinkingBlock</span>   <span class="prop">{thinking, signature}</span>  <span class="cmt">extended-thinking trace</span>   <span class="n">n≈75</span></span>
+<span class="row"><span class="g">            │</span></span>
+<span class="row"><span class="g">            ├─◆ </span><span class="cls spine">ToolUseBlock</span>    <span class="prop">{id, name, input, caller}</span>  <span class="cmt">an assistant tool call</span>  <span class="n">n≈11320</span></span>
+<span class="row"><span class="g">            │        </span><span class="cmt">└─ pairs by tool_use_id ↓</span></span>
+<span class="row"><span class="g">            ├─◆ </span><span class="cls spine">ToolResultBlock</span> <span class="prop">{tool_use_id, content, is_error}</span>  <span class="cmt">the result</span>  <span class="n">n≈11320</span></span>
+<span class="row"><span class="g">            │</span></span>
+<span class="row"><span class="g">            └─◆ </span><span class="cls reader">ImageBlock</span>      <span class="prop">source{type, media_type, data}</span>   <span class="n">n≈16</span></span>
+<span class="row"><span class="g">                     </span><span class="cmt">↑ FEDERATION HOOK — pasted/produced images are the Pool-Moment join surface</span></span></pre></div>
+
+  <div class="callout hook">
+    <span class="k">pair</span>
+    <span><b>ToolUse ⇄ ToolResult</b> are two separate blocks linked by <code style="color:var(--reader)">tool_use_id</code> —
+    often in <em>different</em> turns (the call is the assistant's, the result comes back on the next line).
+    A reader that wants "what did this tool do" walks that id, not the tree.</span>
+  </div>
+
+  <!-- ================= SECTION 2: STRUCTURE ================= -->
+  <div class="sec-head"><span class="num">02</span><h2>Structure — the other Events a session records</h2></div>
+  <p class="sec-note">A Turn is just <em>one</em> kind of Event. The harness writes many others as sibling
+  <code>weave:Event</code>s. The big one is <code>Attachment</code> — <b>not one envelope but a
+  tag-union of 20 subtypes</b>, carved three ways by whether the payload carries a graph edge.</p>
+
+  <div class="tree"><pre><span class="row"><span class="cls spine">Transcript</span> <span class="prop">weave:hasEvent</span> ─→ <span class="cls struct">Event</span>  <span class="cmt">(siblings of Turn)</span></span>
+<span class="row"><span class="g">│</span></span>
+<span class="row"><span class="g">├─ </span><span class="cls struct">Attachment</span>  <span class="cmt">type=attachment · a 20-way tag union</span>  <span class="n">n≈2289</span> <span class="chip designed">designed</span></span>
+<span class="row"><span class="g">│   │</span></span>
+<span class="row"><span class="g">│   ├─ </span><span class="cmt">(A) EDGE-BEARING → typed subclass (a reader TRAVERSES the edge)</span></span>
+<span class="row"><span class="g">│   │   ├─◆ </span><span class="cls struct">QueuedCommandAttachment</span>  <span class="prop">origin{kind,server}</span> <span class="cmt">← where a prompt came from; kind=channel → a subtext peer</span></span>
+<span class="row"><span class="g">│   │   ├─◆ </span><span class="cls reader">HookContextAttachment</span>    <span class="cmt">memory-recall payload → the Weave⋈Soul join surface</span></span>
+<span class="row"><span class="g">│   │   ├─◆ </span><span class="cls struct">NestedMemoryAttachment</span>   <span class="cmt">CLAUDE.md path → edge into the soul-repo graph</span></span>
+<span class="row"><span class="g">│   │   ├─◆ </span><span class="cls struct">FileRefAttachment</span>        <span class="cmt">{file, edited_text_file, compact_file_reference} → a filesystem/Pool-blob node</span></span>
+<span class="row"><span class="g">│   │   ├─◆ </span><span class="cls struct">InvokedSkillsAttachment</span>  <span class="cmt">→ edge to Skill objects (first-class in the kit)</span></span>
+<span class="row"><span class="g">│   │   └─◆ </span><span class="cls struct">HookExecAttachment</span>       <span class="cmt">{hook_success, hook_non_blocking_error} → a hook run</span></span>
+<span class="row"><span class="g">│   │</span></span>
+<span class="row"><span class="g">│   ├─ </span><span class="cmt">(B) VALUE-ONLY → ONE class, discriminator + payload (just READ)</span></span>
+<span class="row"><span class="g">│   │   └─◆ </span><span class="cls struct">StateAttachment</span>  <span class="prop">attachmentKind</span> <span class="val">∈ {task_reminder, date_change, plan_mode,</span></span>
+<span class="row"><span class="g">│   │                          </span><span class="val">ultrathink_effort, command_permissions, skill_listing …}</span></span>
+<span class="row"><span class="g">│   │</span></span>
+<span class="row"><span class="g">│   └─ </span><span class="cmt">(C) REGISTRY DELTAS → ONE class, parametrized by registryName</span></span>
+<span class="row"><span class="g">│       └─◆ </span><span class="cls struct">RegistryDelta</span>  <span class="prop">registryName</span> <span class="val">∈ {tools, mcp, agents}</span>  <span class="prop">+ added/removedNames</span></span>
+<span class="row"><span class="g">│</span></span>
+<span class="row"><span class="g">├─ </span><span class="cls struct">SystemEvent</span>       <span class="cmt">subtype ∈ {turn_duration, compact_boundary, hook, api_error}</span>  <span class="n">n≈1666</span></span>
+<span class="row"><span class="g">├─ </span><span class="cls struct">FileHistorySnapshot</span> <span class="cmt">editor undo state — not conversation</span>  <span class="n">n≈4035</span></span>
+<span class="row"><span class="g">├─ </span><span class="cls struct">QueueOperation</span>    <span class="cmt">prompt-queue mechanics</span>  <span class="n">n≈2416</span></span>
+<span class="row"><span class="g">├─ </span><span class="cls struct">PermissionModeEvent</span> <span class="cmt">∈ {normal, plan, acceptEdits, bypassPermissions}</span>  <span class="n">n≈1407</span></span>
+<span class="row"><span class="g">├─ </span><span class="cls struct">LastPromptEvent</span>   <span class="n">n≈1330</span>   <span class="g">├─ </span><span class="cls struct">ProgressEvent</span> <span class="n">n≈385</span></span>
+<span class="row"><span class="g">├─ </span><span class="cls struct">ModeEvent</span> <span class="n">n≈789</span>   <span class="g">├─ </span><span class="cls struct">AiTitleEvent</span> <span class="n">n≈699</span>   <span class="g">├─ </span><span class="cls struct">PrLinkEvent</span> <span class="n">n≈94</span></span>
+<span class="row"><span class="g">└─ </span><span class="cls struct">CustomTitleEvent</span> <span class="n">n≈14</span> · <span class="cls struct">AgentNameEvent</span> <span class="n">n≈14</span> · <span class="cls struct">SummaryEvent</span></span></pre></div>
+
+  <div class="callout">
+    <span class="k">compaction</span>
+    <span><b>Compaction is a first-class <code style="color:var(--claim)">prov:Activity</code></b>, not a mere event —
+    and it's <em>derivable</em>, not guessed: it <code style="color:var(--claim)">prov:used</code> the pre-compact tail
+    and <code style="color:var(--claim)">prov:generated</code> the continuation (linked by <code style="color:var(--claim)">logicalParentUuid</code>),
+    marked by <code style="color:var(--reader)">system.subtype=compact_boundary</code> (n=168 verified).
+    <code style="color:var(--reader)">preTokens→postTokens</code> is a load/biorhythm signal.</span>
+  </div>
+
+  <!-- ================= SECTION 3: READER + CLAIM ================= -->
+  <div class="sec-head"><span class="num">03</span><h2>Reader output &amp; belief — the layer a detector adds</h2></div>
+  <p class="sec-note">Nothing above 03 is in the raw log's meaning-layer — it's structure. A <b>reader</b> walks
+  the spine and mints an <code>oa:Annotation</code> (standard Web Annotation vocab) plus an
+  <b>unasserted</b> RDF-1.2 <b>triple-term claim</b>. This is the emojikey reader, live today
+  (<span class="chip wired">wired</span>).</p>
+
+  <div class="tree"><pre><span class="row"><span class="cls spine">Turn</span> <span class="cmt">(assistant, from the spine ↑)</span></span>
+<span class="row"><span class="g">└─◆ </span><span class="cls reader">oa:Annotation</span>  <span class="cmt">— one finding</span> <span class="chip wired">wired</span></span>
+<span class="row"><span class="g">    ├─ </span><span class="prop">prov:wasAttributedTo</span> ─→ <span class="cls reader">detector/emojikey</span>   <span class="cmt">WHO found it</span></span>
+<span class="row"><span class="g">    ├─ </span><span class="prop">prov:generatedAtTime</span> <span class="val">"2026-06-30T17:54:44Z"</span><span class="datatype">^^xsd:dateTime</span></span>
+<span class="row"><span class="g">    ├─ </span><span class="prop">weave:eventType</span>      <span class="val">"emojikey/harvest"</span></span>
+<span class="row"><span class="g">    ├─ </span><span class="prop">weave:sourceKind</span>     <span class="val">"tool_result"</span>  <span class="cmt">authored (live) vs quoted</span></span>
+<span class="row"><span class="g">    │</span></span>
+<span class="row"><span class="g">    ├─ </span><span class="prop">oa:hasTarget</span> ─→ <span class="cls reader">◆ target</span>   <span class="cmt">WHERE in the source</span></span>
+<span class="row"><span class="g">    │     ├─ </span><span class="prop">oa:hasSource</span>   ─→ <span class="iri">transcript/820a266b…</span>  <span class="cmt">(the whole doc)</span></span>
+<span class="row"><span class="g">    │     ├─ </span><span class="prop">oa:hasSelector</span> ─→ <span class="cls reader">◆ TextPositionSelector</span></span>
+<span class="row"><span class="g">    │     │        ├─ </span><span class="prop">oa:start</span>  <span class="val">2228</span><span class="datatype">^^xsd:integer</span></span>
+<span class="row"><span class="g">    │     │        └─ </span><span class="prop">oa:end</span>    <span class="val">3277</span><span class="datatype">^^xsd:integer</span></span>
+<span class="row"><span class="g">    │     └─ </span><span class="prop">weave:atEvent</span> ─→ <span class="iri">urn:soul:SG:Weave/Turn/572a…</span>  <span class="cmt">the EXACT turn (soul anchor)</span></span>
+<span class="row"><span class="g">    │</span></span>
+<span class="row"><span class="g">    ├─ </span><span class="prop">prov:used</span> ─→ <span class="iri">urn:soul:SG:Weave/Turn/572a…</span>  <span class="cmt">the evidence it read</span></span>
+<span class="row"><span class="g">    │</span></span>
+<span class="row"><span class="g">    └─ </span><span class="prop">oa:hasBody</span> ─→ <span class="cls reader">◆ body</span>   <span class="cmt">WHAT the signal says</span></span>
+<span class="row"><span class="g">          ├─ </span><span class="prop">weave:sig_me</span>       <span class="val">"📏🌊5∠90…"</span></span>
+<span class="row"><span class="g">          ├─ </span><span class="prop">weave:sig_content</span>  <span class="val">"🧠🎨…"</span></span>
+<span class="row"><span class="g">          ├─ </span><span class="prop">weave:sig_you</span>      <span class="val">"🤝…"</span></span>
+<span class="row"><span class="g">          └─ </span><span class="prop">weave:sig_&lt;k&gt;</span>      <span class="val">…numeric legs → xsd:integer/decimal</span>  <span class="cmt">(FILTER-able)</span></span>
+<span class="row"> </span></span>
+<span class="row"><span class="cls claim">claim/0470b23…</span>  <span class="cmt">— the finding as a BELIEF, not a fact</span> <span class="chip wired">wired</span></span>
+<span class="row"><span class="g">├─ </span><span class="prop">rdf:reifies</span>  <span class="tt">&lt;&lt;(</span> <span class="iri">…Turn/572a…</span> <span class="prop">weave:exhibits</span> <span class="val">"emojikey/harvest"</span> <span class="tt">)&gt;&gt;</span></span>
+<span class="row"><span class="g">│                </span><span class="cmt">the parens = UNASSERTED. "we believe this turn exhibits X", never "X is true".</span></span>
+<span class="row"><span class="g">├─ </span><span class="prop">prov:wasDerivedFrom</span> ─→ <span class="cls reader">oa:Annotation</span>  <span class="cmt">belief traces to its evidence</span></span>
+<span class="row"><span class="g">├─ </span><span class="prop">weave:detector</span>       <span class="val">"emojikey"</span></span>
+<span class="row"><span class="g">└─ </span><span class="prop">weave:detectionType</span>  <span class="val">"emojikey/harvest"</span></span></pre></div>
+
+  <div class="callout">
+    <span class="k">why belief</span>
+    <span>Detections are kept <b>structurally separate from facts</b>. A wrong detector doesn't corrupt
+    the graph — it just holds a belief you can filter out. The honesty rail is in the data model itself,
+    not a convention on top of it.</span>
+  </div>
+
+  <footer>
+    <span>built from docs/2026_06_29_…_ONTOLOGY_DRAFT.ttl + live projected triples</span>
+    <span>counts: 125-session corpus survey</span>
+    <span>🐐 weave</span>
+  </footer>
+</div>
