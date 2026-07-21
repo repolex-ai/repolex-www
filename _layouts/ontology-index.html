@@ -1,0 +1,42 @@
+---
+layout: default
+---
+{% comment %}
+Index page for a published ontology namespace directory. Turtle files that
+live directly in this directory are listed automatically (new publishes
+appear without editing anything); child namespace directories are declared
+in the page's front matter as `children: [name, ...]` because a new subdir
+also needs its own index.html anyway.
+{% endcomment %}
+{% assign dir = page.url | replace: 'index.html', '' %}
+<div style="max-width: 720px; margin: 3rem auto; padding: 0 1.5rem; font-family: monospace;">
+    <p style="margin-bottom: 0.5rem;"><a href="{{ '/ontology/' | relative_url }}">ontology</a> /</p>
+    <h1 style="margin-top: 0;">{{ page.title }}</h1>
+
+    <p>Namespace: <code>https://repolex.ai{{ dir }}</code></p>
+    {% if page.note %}<p style="opacity: 0.75;">{{ page.note }}</p>{% endif %}
+
+    <h2 style="font-size: 1rem; margin-top: 2rem;">Files</h2>
+    <ul>
+        {% for f in site.static_files %}
+            {% assign expected = dir | append: f.name %}
+            {% if f.path == expected and f.extname == '.ttl' %}
+                <li><a href="{{ f.path | relative_url }}">{{ f.name }}</a> <span style="opacity: 0.6;">(text/turtle)</span></li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+
+    {% if page.children %}
+    <h2 style="font-size: 1rem; margin-top: 2rem;">Namespaces</h2>
+    <ul>
+        {% for c in page.children %}
+            <li><a href="{{ dir | append: c | append: '/' | relative_url }}">{{ c }}/</a></li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    <p style="margin-top: 3rem; opacity: 0.6; font-size: 0.85rem;">
+        Published by the <code>ontology-publish</code> flow — sources live in
+        each application's own repository; files here are the served copies.
+    </p>
+</div>
