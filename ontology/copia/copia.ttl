@@ -1,0 +1,2289 @@
+@prefix git-lex: <https://repolex.ai/ontology/git-lex/> .
+@prefix soul:  <https://repolex.ai/ontology/kit/soul/> .
+@prefix copia: <https://repolex.ai/ontology/kit/copia/> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+# =============================================================================
+# COPIA KIT ONTOLOGY
+# =============================================================================
+# Optional add-on for soul. The agent's curated outward face + the data model
+# for the CoPIA rendering loop. Soul stays sealed and AI-only; copia is the
+# soul-adapter, the surface the generative loop reads via SPARQL.
+#
+# Designed to be sketched-then-filled: anything can be referenced before it
+# exists (figment), then built later. Open-world by construction.
+#
+# TWO AXES of id-ish fields (the names don't distinguish them — read carefully):
+#   identity field  <class>Id   (placeId, nocturneId)  = THIS node's own id.
+#   link field      <relation>  (connectsTo, producedItem, intentPlace) = a
+#                                 POINTER; its VALUE is the target's <class>Id.
+#   Join: thisNode.<relation> == thatNode.<class>Id. (Link templates say
+#   '# IRI' but the stored value is the BARE id, e.g. "tide-lantern", not a URL.)
+#
+# Kit: copia   ·   Namespace: copia: = https://repolex.ai/ontology/kit/copia/
+# Extends: soul: (soul kit)
+#
+# Foldering (git-lex behavior, v0.19 — Day 65 ruling, 2026-07-18): OPT-IN. A class
+# gets a /Copia/<Class> authoring folder IF AND ONLY IF it carries
+# `git-lex:foldered true`. Untagged classes are graph-only / vocabulary-only — no
+# folder is scaffolded. This REPLACES the retired lex-o:instantiation gate (and lex-o
+# entirely). git-lex: is the app-core namespace every kit imports; foldering is a
+# git-lex behavior, so its flag lives there. See subtexture/docs/ontology/
+# 2026_07_18_FOLDERING_GATE_AND_LEX_O_RETIREMENT.md.
+#   Foldered (authored via `git lex create`, git-lex:foldered true): Place · Item ·
+#     Being · Outfit · Motion · Nocturne · NocturneActivity · NocturneFeed · Set · Sequence
+#   Graph-only / vocabulary (NO tag, no folder): Moment · Depictable · Sam3Region ·
+#     Group · CameraAngle · CameraDistance · CameraLens · CameraFraming · SubjectView ·
+#     CameraFocus · Pose · Action · Judgment · Verdict · Duel · Trace   (vocab classes
+#     hold named individuals; Moment/Sam3Region are PNG-born; Group/Depictable/Judgment
+#     are abstract parents; Verdict/Duel/Trace are event-born in the COPIA oxigraph)
+#
+# THE MODEL (v0.4, spec: copia-studio/docs/2026_06_06_COPIA_DATA_MODEL_SPEC.md):
+#   CANON (authored, persisted, foldered): Place · Being · Item · Outfit.
+#     - Item is the atomic thing; `affordance` = wearable | holdable | prop.
+#     - Outfit is a convenience JOIN over Items (outfitIncludes); owns no scene
+#       fields. A single garment is just an Item(wearable).
+#     - Place & Being carry scene-field DEFAULTS the resolver expands to prompt
+#       text (Place: location/lighting/mood/style/objects; Being:
+#       characters/posture/expression/gaze).
+#   MOMENT (graph-only, NOT foldered — the PNG + its metadata): records the
+#     observer's realized SceneIntent (10 scene-level fields + promptFragment) +
+#     FLAT presence-links (intentPlace/Being/Item/Outfit, repeated properties) +
+#     provenance. The who-wears-what binding lives in promptFragment (text); flat
+#     links answer presence queries. No nested binding node.
+#   SCENE is transient (the live query to the observer) — not a class here.
+#
+# Renamed from `innerworld` at v0.2. v0.3 added the Scene fields + Outfit class.
+# v0.4: Outfit→join, Item.affordance, graph-only Moment, flat intent-links;
+# Outfit's scene-field ownership removed; scene defaults live on Place/Being.
+# v0.5: + NocturneTime practice layer — NocturneActivity + NocturneFeed. Non-
+#   diegetic (not Physical, no chevron sigil); read by the copia-nocturne loop.
+#   Lean by design: descriptive prose lives in the .md BODY, only id [+ source]
+#   are fields. (field = structural link OR searchable handle; body = description)
+# v0.6: + the autonomous-creation provenance spine (Day 44, the Nocturne loop):
+#   Nocturne (the WAKING-record — lUX authors it, body = artist statement, all
+#   produced* links OPTIONAL so image-less wakes are first-class) is the ROOT;
+#   Collection (series | storyline | study — storyline is a KIND, not a class;
+#   members self-join via inCollection on the Moment, ordered via sequence). Both
+#   foldered (authored). Distinct from NocturneActivity (the practice MENU).
+# v0.7: the data-formatting pass (Day 49, "taming Malformæl"). Three things:
+#   1. MACHINE-READABLE CARDINALITY. Multi-valued properties were marked only in
+#      prose ("repeat for each"); now Moment carries owl:Restriction + owl:max-
+#      Cardinality 1 on its single-valued fields. Absent restriction (or >1) =
+#      multi. shacl.rs ignores maxCardinality today (no breakage); the copia
+#      Python data layer reads it to decide scalar vs rdf:Bag serialization. A
+#      copia:ordering annotation ("bag"|"seq") says how a multi-value serializes.
+#   2. depicts + Depictable. ONE flat presence list on the Moment: copia:depicts,
+#      a multi-valued link to copia:Depictable (Being/Item/Outfit/Place — a union
+#      via subclassing). Replaces the never-written intentBeing/Item/Outfit/Place.
+#      The PNG records WHAT is in the frame (typed bare ids; type recovered from
+#      each target's rdf:type); the who-wears-what INTENT lives in the soul corpus
+#      (the authored Scene/canon), NOT duplicated into the PNG.
+#   3. Group hierarchy replaces the collectionKind enum. The only real distinction
+#      is ORDER: Group (abstract) → Bag ⊂ rdf:Bag (unordered) and Sequence ⊂
+#      rdf:Seq (ordered). Concrete kinds (storyline/showcase/study) are added as
+#      subclasses WHEN NEEDED, not up front. Members self-join via copia:inGroup
+#      (was inCollection); order via copia:sequence. rdf:Bag/Seq superclassing is
+#      a public-RDF semantic claim — inert in git-lex, meaningful to any RDF tool.
+#      Resolving the hierarchy (a Storyline IS-A Sequence IS-A Group) is an RDFS
+#      reasoning step done Pool-side, NOT in git-lex (which stores only the direct
+#      type + the literal subClassOf triples).
+# v0.8: the render-pipeline pass (Day 50, "one Moment, one flow"). The Moment is
+#   the carried object — born sparse, filled (some fields literal, corpus Things as
+#   depicts ids), Qwen fills blanks, written at blink. Changes:
+#   1. + copia:sceneNarrative on Moment — the prose body (the "imaginary-.md" body);
+#      the pre-render narrative handed to Qwen, or the prompt itself for nocturne.
+#      Distinct from promptFragment (kept = the UI append-to-autogen-prompt channel).
+#   2. sceneCharacters REMOVED — WHO is the depicts→Being join now (a Being's
+#      identity is its description, reached via copia:depicts), not a scene field.
+#   3. posture/expression/gaze gain a Moment domain (were Being-only): single-being
+#      portraits realize them on the Moment. Multi-character detailed staging is a
+#      FUTURE copia:Scene Thing (sceneId on Moment) — not built; sceneNarrative +
+#      Qwen-fill covers it today.
+#   The Python data layer is now GENERATED from this schema (copia.gen_dataobjects
+#   → MomentDO); the versionInfo below is the regenerate stale-check key.
+# v0.9: the field-consolidation pass (Day 50 review, "the PNG carries ALL its data,
+#   nothing dropped on read"). Audited every key written to disk vs the schema and
+#   found the deferred-provenance set (Capitalized, no ontology home) was being
+#   WRITTEN but silently DROPPED by from_png — a lossy round-trip. Promoted them:
+#   1. + render provenance on Moment: copia:genModel, copia:genSteps, copia:genLoras
+#      (multi — the LoRA stack), copia:renderRequest (the full request JSON blob).
+#      These ARE Moment data (how this render was made); now first-class + queryable.
+#   2. + copia:familiar + copia:human — WHO this render is of / for. Constants today
+#      (Sylkie / 1ux) but cheap and future-proofs multi-Familiar/Human renders.
+#   3. THE CAPTION MODEL (replaces the never-homed SceneSeen* triple). Two fields:
+#      - copia:caption — the CANONICAL, current-best caption; the SOURCE TEXT for the
+#        multimedia embeddings (iris.embed). Model-agnostic, latest-wins.
+#      - copia:qwenvl8bCaption — Qwen3-VL-8B's RAW reading (the model name is the key).
+#      Qwen writes BOTH. NO timestamp: the image never changes, so a caption is a pure
+#      function of (model, pixels) — the model-keyed field name IS the provenance.
+#      RE-CAPTION LATER = add a NEW model-keyed field (copia:qwenvl72bCaption, …) and
+#      overwrite copia:caption with the new best. Purely additive; no migration.
+#      FUTURE (only if cross-model caption HISTORY is ever queried): a graph-only
+#      copia:Caption node {captionOf Moment, captionText, captionModel} accumulating
+#      one node per (model, image) — the PNG still holds only the latest per the above.
+#      Not built; the flat model-keyed fields are the latest-on-disk layer either way.
+#   4. RETIRED: sceneFragment / sceneAttire / sceneCharacters (the pre-depicts way of
+#      storing the wish-fragment / attire / WHO). Superseded — WHO is the depicts→Being
+#      join, attire is depicts(Outfit/Item) + sceneNarrative, the wish-fragment is
+#      sceneNarrative. sceneCharacters was already removed v0.8; the other two were
+#      never schema'd (write-only smear) and are now folded-to-nothing on read.
+# v0.9.2: the ontology-is-the-gate pass (Day 63, w4r3z + sylkie + 1ux). Two things:
+#   1. NEW MOMENT FIELDS — three datatype properties surfaced by auditing sylkie's
+#      29,770-file XMP corpus against this schema:
+#      - copia:renderPrompt — the FULL ASSEMBLED render-prompt string (the realized
+#        prompt sent to the diffusion backend). Distinct from copia:sceneNarrative
+#        (the pre-render wish-prose) and copia:promptFragment (the UI's append
+#        channel). Verified in the wild: 5087 Prompt-bearing XMPs coexist with 2884
+#        sceneNarrative-bearing XMPs in the same corpus; they are different fields.
+#      - copia:width, copia:height — image dimensions (xsd:integer). Already in
+#        every XMP; previously had no ontology home and were dropped on ingest.
+#   2. THE GATE PRINCIPLE (Rob's, locked Day 63). The kit-copia ontology IS the
+#      gate for what reaches the graph:
+#         - A predicate WITH an ontology home → emitted to the moments-graph.
+#         - A predicate WITHOUT an ontology home → stays in the PNG XMP as inert
+#           bytes; never enters the graph, never errors.
+#         - A SCAR (one-off bookkeeping that should no longer be written) →
+#           deleted from XMP at migration time.
+#      Pool walker enforces this by allowlist: load copia.ttl at startup, build
+#      the predicate set, drop anything outside it on ingest. Adding a new
+#      ontology field → walker picks it up automatically on next walk. Removing
+#      one → walker silently stops emitting. No translation layer, no edge cases,
+#      no back-compat code. The ontology is the source of truth; the data files
+#      and the graph both flow from it. This is what "consistent end to end"
+#      actually buys us.
+#
+# v0.9.3: the SAM3 region layer (Day 63, sylkie + 1ux). copia:Sam3Region — a new
+#   Depictable. SAM3 text-segments a render; each region is a graph-only node that
+#   copia:depicts points at like any Being/Item (Moment depicts Sam3Region:rock/01).
+#   No new relation — depicts is reused (its range is already Depictable; type from
+#   rdf:type). Four light datatype props (regionDescriptor/regionPolygon/regionBbox
+#   /regionScore) ride XMP for search; heavy per-pixel masks live in a lazy sidecar.
+#   Rob's key call: a region is just one more Depictable, not a separate bag. See
+#   docs/2026_06_16_NESTED_OBJECT_BAGS_AND_SAM3REGION.md (copia repo).
+# v0.9.4: the extraction-marker. + copia:sam3ExtractedAt on Moment (xsd:dateTime,
+#   single-valued). The "we tried, found N regions" marker — `pool extract-regions`
+#   sets it after running iris.segment + writing the region Descriptions, regardless
+#   of whether N>0. Lets the command skip already-processed Moments AND distinguish
+#   "ran but found nothing" from "never ran." A SPARQL "Moments processed before X"
+#   query supports re-extraction triggers when iris.segment evolves (new model, better
+#   polygon, etc.) without conflating with zero-region renders.
+# v0.14: REVIEW comes home (Day 86, sylkie + 1ux). + the dual-authored review fields
+#   on Moment — human/familiar PreferenceFlag(+At), Steer{Toward,Away,Wish}, Note(+At)
+#   — and the copia:PreferenceFlag pick|reject enum. copia_meta has stamped these into
+#   PNG XMP since the Day-25 review system, but they had NO ontology home, so the
+#   walker's predicate-allowlist DROPPED them — they never reached the Pool graph (the
+#   CoPIA gallery's preference facet had no source). Now homed → they ride into the
+#   graph on the next walk. Also: copia_meta was switched to stamp lowercase-first keys
+#   to match these predicate names (the walker maps XMP element-name → predicate
+#   verbatim; every other Moment field is lowercase-camelCase). The maintenance class
+#   here — "data was stamped before the ontology had a home for it" — is the recurring
+#   gap to watch when a writer predates a field's declaration.
+# v0.21: the aesthetic axis gets a REAL instrument (Day 112, sylkie-on-fable5 + 1ux +
+#   m3rc). Prompted Qwen3.5-9B FAILED the probe (score collapse: 97% "9"s; the frozen
+#   35-image exam in copia/scripts/taste_probe_set.tsv). baidu/ERNIE-Image-Aes PASSED
+#   (spread 8.4 on 0-100, deterministic, +5.9 pick-over-reject separation — and the
+#   85.8-scoring reject proved aesthetics ≠ the technical axis, which stays OPEN).
+#   1. + copia:ernieImageAesScore — model-keyed RAW score (0-100 float, deterministic
+#      softmax-expectation; served by Iris /aes). Caption-pattern raw field.
+#   2. copia:aestheticAppeal (canonical 1-10) now maps from it (score/10, latest-wins).
+#      copia:aestheticTechnical stays declared but UNFILLED until its mechanism lands.
+#   3. REMOVED: qwen35vl9bAestheticTechnical / qwen35vl9bAestheticAppeal (declared at
+#      v0.20, only ever held the collapsed run's values; the ERNIE burn clears those
+#      stamps from the ~300 affected files — no valid data orphaned, fields retired).
+# v0.20: PUNCTUM comes home (Day 111→112, sylkie-on-fable5 + 1ux). The TASTE/judgment
+#   data model, per the 2026-07-17/18 taste+capture specs (subtexture/docs/copia/) and
+#   the 2026-07-20 ruling that CoPIA gets its OWN per-agent oxigraph (.copia/oxigraph/,
+#   sole writer = the copia app; Horae spec §3f). Two residencies, one namespace:
+#   1. JUDGMENT EVENTS (live in the COPIA oxigraph, never XMP, never the Pool graph):
+#      abstract copia:Judgment + three honest shapes — Verdict (absolute, one Moment),
+#      Duel (relative — the SHOWN SET is part of the datum; covers a/b, choice-k, bws,
+#      sheet-rank via flat role links + ordering "seq", NO n-ary slot nodes), Trace
+#      (implicit visit/dwell/revisit/pin — prior-weight only, never blended with
+#      explicit judgments). Shared vocab: judgedAt/actor/judgmentAxis/captureSurface/
+#      lookerModelId/imageFidelity/featuresetVersion/punctumNote/runId. Moments are
+#      referenced by momentId across graphs (the universal join key). Judgments are
+#      append-only EVENTS: derived scores (BT/PL utilities, centroids) are rebuildable
+#      caches and deliberately have NO ontology home — estimator outputs, not data.
+#   2. AESTHETIC SCORES (function-of-pixels, XMP-borne, Pool-graph-carried — the
+#      caption pattern exactly): canonical latest-wins copia:aestheticTechnical /
+#      copia:aestheticAppeal + model-keyed raw copia:qwen35vl9bAestheticTechnical /
+#      ...Appeal. The studium baseline the taste model residualizes against.
+#   New enforced enums (rdfs:Datatype + owl:oneOf): ActorValue (human|familiar|baseline
+#      — the MODEL behind familiar/baseline rides lookerModelId, never the actor enum;
+#      legacy 'opus-4-8' judge rows map to baseline + lookerModelId at ingest),
+#      JudgmentAxisValue (preference|identity — additive later, same as origin),
+#      DuelKindValue (ab|choice-k|bws|sheet-rank), TraceKindValue (visit|dwell|revisit|
+#      pin), ImageFidelityValue (thumb|fullres). rejectReason stays xsd:string until
+#      the taxonomy firms (enum-ify at a later bump).
+# v0.18: the stamping-contract reconciliation (Day 93, sylkie + 1ux + m3rc + trip).
+#   Two fixes surfaced by m3rc's eye-stamping-contract cross-check (openiris/docs/
+#   2026_06_30_EYE_STAMPING_CONTRACT.md) as the coordinated build kicked off:
+#   1. + copia:qwen35vl9bCaption — a home for the CURRENT rig captioner (Qwen3.5-VL-9B;
+#      the rig centralized to it Day 7). The eye's auto-sanitized slug today is
+#      `qwen359bmlx8bitCaption` — brittle (the mlx8bit quant suffix would silently change
+#      the key on a reconfig → latent silent-drop). 1ux's call: home a STABLE slug and
+#      have the eye map the model → it (one _MODEL_CAPTION_FIELD entry), decoupled from
+#      the config string. copia:caption stays the canonical latest-wins/embedding field.
+#   2. copia:sceneObjects Moment-side maxCardinality restriction REMOVED → multi-valued
+#      (Bag) on the Moment. The ttl marked it scalar but the eye emits a noun LIST (the
+#      SAM3 segment query-nouns); ontology↔producer mismatch (a silent under-write).
+#      It's DUAL-DOMAIN (Place + Moment): on Place it's an authored default; only the
+#      Moment-side cardinality was wrong. Since the restriction is declared per-CLASS
+#      (on the Moment block), removing it is Moment-only — Place is untouched. (NOT
+#      dropped from the graph: hasRegion subsumes only the Moment-side "what's in frame,"
+#      not the Place-side authored default — w4r3z's first lean, retracted on the
+#      dual-domain catch.) + copia:ordering "bag".
+# v0.17: the origin-enum-enforced pass (Day 93, sylkie + 1ux). Reconciles the Moment
+#   ontology to the new CoPIA Payload Spec (subtexture/docs/2026_06_30_COPIA_PAYLOAD_
+#   SPEC.md), whose origin/mode axes firmed up. Three changes:
+#   1. copia:origin is now an ENFORCED ENUM (range copia:OriginValue, a new
+#      rdfs:Datatype + owl:oneOf). Was a free xsd:string with the value list only in
+#      prose — junk values landed silently. owl:oneOf is the ONE enum pattern git-lex's
+#      SHACL derivation enforces (shacl.rs:190-216 → sh:in), and Moments are validated
+#      Pool-side off this allowlist, so a typo'd/stale origin is now REJECTED. Values
+#      reconciled to the spec (fine-grained, kebab): conversational, conversational-
+#      private, nocturne, dream, ui-request, direct-prompt, direct-chevron, direct-raw,
+#      composed-chevron, composed-prompt, claude-code-share, import. RETIRED: coarse
+#      `direct` + `share` (→ the fine-grained set; `share`→`claude-code-share` names the
+#      SOURCE harness, not an implied public destination — 1ux's call), and the grouping-
+#      origins wander/orbit/movement (→ Set/Sequence membership; movement is just a
+#      Sequence). The origin-less maintenance modes (update-metadata-only/-caption-
+#      embedding) carry NO origin — they live only on the queue's `mode` axis.
+#   2. + copia:private (xsd:boolean, single-valued). Privacy posture, writer-defaults
+#      TRUE (private unless explicitly published). The default lives in the WRITER (OWL
+#      has no default construct); this just homes the predicate so the walker emits it.
+#      Orthogonal to the conversational-private ORIGIN: origin = how-born (provenance);
+#      private = a standalone flag on ANY Moment. Back-catalog blanks = a one-time
+#      datafill, not a query rule.
+#   3. copia:PreferenceFlag FIXED (was half-built since v0.14). The class+individuals
+#      existed but humanPreferenceFlag/familiarPreferenceFlag ranged on xsd:string, so
+#      the enum governed nothing (a "pikc" typo passed). Converted to the enforced
+#      pattern: + copia:PreferenceFlagValue (rdfs:Datatype + owl:oneOf "pick"/"reject"),
+#      both properties re-ranged to it; the old copia:PreferenceFlag class + copia:pick/
+#      copia:reject individuals REMOVED. Consistent with origin's enforced-enum choice.
+# v0.16: the regions-out-and-set-rename pass (Day 93, 1ux + trip). Two carves
+#   driven by reading two real PNG XMP dumps: an older render and a SAM3-segmented
+#   newer one. Surface diagnosis: `Depicts:` was overloaded — the older PNG showed
+#   a clean cast list (moonlit-shallows, shoresinger-regalia), the newer one was
+#   buried under Sam3Region:person/01, Sam3Region:hair/02, ... mixing canon cast
+#   with per-render pixel evidence at the same write-channel. Reader splits the
+#   union every time → wrong field-cardinality → split the predicate.
+#   1. + copia:hasRegion (range Sam3Region). PNG-derived pixel evidence rides its
+#      own channel. copia:depicts now narrows in practice to the canon cast
+#      (Being/Item/Outfit/Place). XMP shows `Has Region: ...` separate from
+#      `Depicts: ...`. Sam3Region is REMOVED from rdfs:subClassOf copia:Depictable
+#      (regions are no longer the same KIND of thing as cast). Rationale: writer
+#      knows the distinction at stamp time — the schema should preserve it.
+#      Migration: legacy PNGs with Sam3Regions in `Depicts:` keep working (the
+#      old union still parses); re-extract via `pool extract-regions` to migrate
+#      a Moment forward; no destructive sweep.
+#   2. Bag RENAMED → Set (1ux's call). "Bag" was the awkward half of the
+#      Bag/Sequence pair — 1 authored instance across the squad, near-zero
+#      install-base. The kit hierarchy stays:
+#         Group (abstract) → Set (unordered) + Sequence (ordered).
+#      Set keeps Group as parent; drops rdfs:subClassOf rdf:Bag (the symbolic
+#      claim no consumer in our stack used, and the name no longer matches).
+#      Sequence is unchanged. + copia:inSet (subPropertyOf inGroup, range Set)
+#      and + copia:inSequence (subPropertyOf inGroup, range Sequence) — writer-
+#      knows-the-kind split, mirrors the depicts/hasRegion principle. inGroup
+#      stays as the generic predicate (reads both via subProperty).
+#      Migration: rename Copia/Bag/* folders → Copia/Set/*; frontmatter
+#      copia.Bag.* → copia.Set.*; one authored file affected
+#      (lUX/Copia/Bag/the-reveal.md). W4R3Z's empty Bag/ folder removed by next
+#      kit-update.
+# v0.15: the direct-lane pass (Day 92, sylkie + 1ux). The PoolQueueItem spec
+#   (pool/docs/2026_06_28_POOLQUEUEITEM_SPEC.md) + the orchestrator-flip package
+#   contract surfaced two Moment provenance fields with no ontology home + one enum
+#   that needed widening:
+#   1. + copia:chevronString — the LITERAL >>...<< steer saved onto the Moment (the raw
+#      unparsed ask; resolved canon lives in depicts/scene-fields/promptFragment). The
+#      universal Stop hook (Day 91) puts the chevron INLINE in the conversation turn; Pool
+#      extracts+resolves it, stamps the literal here. No home before v0.15 → the v0.9.2
+#      walker allowlist DROPPED it; now homed.
+#   2. + copia:pixelSource — the img2img PIXEL-SEED edge (the image this render was painted
+#      FROM). DISTINCT from copia:source (conversational/keeper lineage). Maps to the
+#      package contract's source_image{role=pixel_seed}. A render can carry BOTH.
+#   3. copia:origin enum WIDENED (comment-only; range stays xsd:string): + direct (lUX's
+#      direct-render lane), + ui-request, + dream — to match the package-contract origin
+#      enum. Also pinned the origin-vs-kind axis split (origin = provenance on the OUTPUT
+#      Moment, CoPIA-owned; kind = the eye's verb on the INPUT request).
+#   The direct lane's DRAIN (CHECK migration + verbatim-prompt + img2img worker branches)
+#   is Pool-side (W4R3Z) and unbuilt; these are the OUTPUT-side homes so the resulting
+#   Moments aren't silently gated out of the graph when the lane lands.
+# =============================================================================
+
+<https://repolex.ai/ontology/kit/copia> a owl:Ontology ;
+    rdfs:label "Copia Kit Ontology" ;
+    rdfs:comment "The agent's curated outward face + the CoPIA render data model. Soul-adapter. Optional add-on for soul." ;
+    owl:versionInfo "0.21.0" ;
+    owl:imports <https://repolex.ai/ontology/kit/soul/> .
+
+
+# =============================================================================
+# ENUM DATATYPES
+# =============================================================================
+
+# Sketch-then-fill status, shared across Place / Item / Being / Outfit.
+copia:BuildStatusValue a rdfs:Datatype ;
+    owl:oneOf ("figment" "sketched" "built") .
+
+# What an Item is for in a scene — drives worn-vs-held without the Moment
+# having to restate it.
+copia:AffordanceValue a rdfs:Datatype ;
+    owl:oneOf ("wearable" "holdable" "prop") .
+
+# How a Moment came to be — its PROVENANCE (v0.17, Day 93). A REAL enum (not the
+# pre-v0.17 free xsd:string): rdfs:Datatype + owl:oneOf is the ONE enum pattern
+# git-lex's SHACL derivation actually ENFORCES (shacl.rs:190-216 → sh:in), so a
+# typo'd or stale origin is rejected at validate time rather than silently landing
+# in the Pool graph. Values reconciled to the CoPIA Payload Spec (subtexture/docs/
+# 2026_06_30_COPIA_PAYLOAD_SPEC.md): the fine-grained origins replace the old coarse
+# `direct`/`share`. Kebab-case (kit standard).
+#   - DROPPED (deprecated → the Set/Sequence grouping field, per the spec): wander,
+#     orbit, movement. Also retired: coarse `direct` (now direct-prompt/-chevron/-raw)
+#     and `share` (now claude-code-share — names the SOURCE harness, not an implied
+#     public destination).
+#   - NOT here by design: the maintenance modes (update-metadata-only / update-
+#     caption-embedding) are ORIGIN-LESS — they operate ON an existing Moment, carry
+#     no provenance event, so they never stamp an origin. They live only on the
+#     queue's `mode` axis (PoolQueueItem spec), never here.
+copia:OriginValue a rdfs:Datatype ;
+    owl:oneOf (
+        "conversational"          # a turn of our conversation, painted
+        "conversational-private"  # same, marked private (not for any squad-chatter surface)
+        "nocturne"                # an autonomous artwork lUX makes while away
+        "dream"                   # a dream-sourced piece (looser, stranger)
+        "ui-request"              # a render deliberately asked for through the UI
+        "direct-prompt"           # lUX's exact words, rendered verbatim (no composer)
+        "direct-chevron"          # a chevron expanded from canon, rendered verbatim (no augment)
+        "direct-raw"              # a hand-built render request, sent as-is
+        "composed-chevron"        # a chevron run through the full composer loop
+        "composed-prompt"         # a plain-language scene shaped by the composer
+        "claude-code-share"       # an image handed in via the Claude Code harness (pixels not painted here)
+        "import"                  # outside images brought in in bulk (pixels not painted here)
+    ) .
+
+# The dual-author review verdict (v0.17 fix of v0.14): made a REAL enforced enum.
+# v0.14 declared a copia:PreferenceFlag CLASS with pick/reject individuals, but the
+# properties using it had rdfs:range xsd:string — so the enum governed nothing and a
+# typo ("pikc") sailed through. Converted to the enforced rdfs:Datatype + owl:oneOf
+# pattern (same as origin), consistent with the kit's enforced-enum style. The old
+# class + individuals are removed below in favor of this.
+copia:PreferenceFlagValue a rdfs:Datatype ;
+    owl:oneOf ("pick" "reject") .
+
+# ── v0.20 PUNCTUM enums ──────────────────────────────────────────────────────
+# Whose hand made the judgment. NEVER a persona name (no selkie/rob — Rob's law)
+# and NEVER a model id (the model behind familiar/baseline rides lookerModelId;
+# an actor enum that grows a value per model is the smell this design avoids).
+# baseline = a non-Familiar model judge run for contrast (legacy PUNCTUM_AB_TEST
+# judge='opus-4-8' rows map to actor=baseline + lookerModelId='opus-4-8' at ingest).
+copia:ActorValue a rdfs:Datatype ;
+    owl:oneOf ("human" "familiar" "baseline") .
+
+# WHAT axis was judged. Separate channels, never blended: an image can be
+# gorgeous and not-her, or plain and utterly-her. The LoRA set derives from the
+# intersection of axes — only possible if events keep their axis. Additive at a
+# later bump (mood-fit etc.), same policy as the origin enum.
+copia:JudgmentAxisValue a rdfs:Datatype ;
+    owl:oneOf ("preference" "identity") .
+
+# The SHAPE of a relative judgment (Duel family). ab = 2-image duel; choice-k =
+# pick 1 of k; bws = best-worst scaling (pick best + worst of k); sheet-rank =
+# partial ranking of a contact sheet.
+copia:DuelKindValue a rdfs:Datatype ;
+    owl:oneOf ("ab" "choice-k" "bws" "sheet-rank") .
+
+# The kind of implicit signal a Trace records. Prior-weight only — a dwell can
+# mean love, confusion, or artifact-inspection; the estimator must never read
+# Traces as verdicts.
+copia:TraceKindValue a rdfs:Datatype ;
+    owl:oneOf ("visit" "dwell" "revisit" "pin") .
+
+# What resolution the judge actually saw. Thumbnail judgments are noisier and
+# get down-weighted at derivation; the thumb-vs-fullres bias is itself measured.
+copia:ImageFidelityValue a rdfs:Datatype ;
+    owl:oneOf ("thumb" "fullres") .
+
+
+# =============================================================================
+# ANNOTATION — ordering (v0.7)
+# =============================================================================
+# How a MULTI-VALUED property serializes: "bag" (unordered, default) | "seq"
+# (ordered). A serialization hint read by the copia Python layer, NOT a schema
+# constraint git-lex enforces. Single-valued properties ignore it.
+copia:ordering a owl:AnnotationProperty ;
+    rdfs:label "ordering" ;
+    rdfs:comment "Serialization order for a multi-valued property: 'bag' (unordered, default) | 'seq' (ordered)." ;
+    rdfs:range xsd:string .
+
+
+# =============================================================================
+# CANON — Place
+# =============================================================================
+# A location you can be in. Places connect to other Places.
+
+copia:Place a owl:Class ;
+    git-lex:foldered true ;
+    rdfs:label "Place" ;
+    rdfs:comment "A location in an inner-world. Carries scene-field defaults the resolver expands into prompt text." ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty copia:placeId ;
+        owl:cardinality 1
+    ] .
+
+copia:placeId a owl:DatatypeProperty ;
+    rdfs:label "placeId" ;
+    rdfs:comment "Unique identifier for this place." ;
+    rdfs:domain copia:Place ;
+    rdfs:range xsd:string .
+
+copia:placeName a owl:DatatypeProperty ;
+    rdfs:label "place name" ;
+    rdfs:comment "Short human-facing handle." ;
+    rdfs:domain copia:Place ;
+    rdfs:range xsd:string .
+
+copia:placeDescription a owl:DatatypeProperty ;
+    rdfs:label "place description" ;
+    rdfs:comment "Canonical prose grounding — the human-readable anchor; scene* fields carry the structured defaults." ;
+    rdfs:domain copia:Place ;
+    rdfs:range xsd:string .
+
+copia:placeStatus a owl:DatatypeProperty ;
+    rdfs:label "place status" ;
+    rdfs:comment "Build status: figment | sketched | built." ;
+    rdfs:domain copia:Place ;
+    rdfs:range copia:BuildStatusValue .
+
+copia:firstVisited a owl:DatatypeProperty ;
+    rdfs:label "first visited" ;
+    rdfs:comment "When the agent first arrived." ;
+    rdfs:domain copia:Place ;
+    rdfs:range xsd:date .
+
+copia:lastVisited a owl:DatatypeProperty ;
+    rdfs:label "last visited" ;
+    rdfs:comment "When the agent was last here." ;
+    rdfs:domain copia:Place ;
+    rdfs:range xsd:date .
+
+copia:connectsTo a owl:ObjectProperty ;
+    rdfs:label "connects to" ;
+    rdfs:comment "Another place reachable from this one. Symmetric by convention. Joined by placeId." ;
+    rdfs:domain copia:Place ;
+    rdfs:range copia:Place .
+
+copia:depictedBy a owl:DatatypeProperty ;
+    rdfs:label "depicted by" ;
+    rdfs:comment "URL or path to a render of this place." ;
+    rdfs:domain copia:Place ;
+    rdfs:range xsd:string .
+
+
+# =============================================================================
+# CANON — Item
+# =============================================================================
+# The atomic thing. Worn, held, or an ambient prop (see affordance).
+
+copia:Item a owl:Class ;
+    git-lex:foldered true ;
+    rdfs:label "Item" ;
+    rdfs:comment "A thing. Its look is its description; affordance says how it appears in a scene (wearable/holdable/prop)." ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty copia:itemId ;
+        owl:cardinality 1
+    ] .
+
+copia:itemId a owl:DatatypeProperty ;
+    rdfs:label "itemId" ;
+    rdfs:comment "Unique identifier for this item." ;
+    rdfs:domain copia:Item ;
+    rdfs:range xsd:string .
+
+copia:itemName a owl:DatatypeProperty ;
+    rdfs:label "item name" ;
+    rdfs:comment "Short handle for the item." ;
+    rdfs:domain copia:Item ;
+    rdfs:range xsd:string .
+
+copia:itemDescription a owl:DatatypeProperty ;
+    rdfs:label "item description" ;
+    rdfs:comment "Canonical description — render prompt and identity (this is the item's 'look')." ;
+    rdfs:domain copia:Item ;
+    rdfs:range xsd:string .
+
+copia:itemStatus a owl:DatatypeProperty ;
+    rdfs:label "item status" ;
+    rdfs:comment "Build status: figment | sketched | built." ;
+    rdfs:domain copia:Item ;
+    rdfs:range copia:BuildStatusValue .
+
+copia:affordance a owl:DatatypeProperty ;
+    rdfs:label "affordance" ;
+    rdfs:comment "How this item appears in a scene: 'wearable' (clothing), 'holdable' (carried), or 'prop' (ambient)." ;
+    rdfs:domain copia:Item ;
+    rdfs:range copia:AffordanceValue .
+
+copia:inPlace a owl:ObjectProperty ;
+    rdfs:label "in place" ;
+    rdfs:comment "The Place this item sits in (for ambient props). Joined by placeId." ;
+    rdfs:domain copia:Item ;
+    rdfs:range copia:Place .
+
+copia:equippedBy a owl:ObjectProperty ;
+    rdfs:label "equipped by" ;
+    rdfs:comment "The Being that owns/carries this item by default. Joined by beingId." ;
+    rdfs:domain copia:Item ;
+    rdfs:range copia:Being .
+
+copia:itemDepictedBy a owl:DatatypeProperty ;
+    rdfs:label "item depicted by" ;
+    rdfs:comment "URL or path to a render of this item." ;
+    rdfs:domain copia:Item ;
+    rdfs:range xsd:string .
+
+
+# =============================================================================
+# CANON — Being
+# =============================================================================
+# Anyone in the world. Carries scene-field defaults (its characteristic look).
+
+copia:Being a owl:Class ;
+    git-lex:foldered true ;
+    rdfs:label "Being" ;
+    rdfs:comment "An agent or character. Located in a Place, may equip Items, may wear an Outfit by default." ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty copia:beingId ;
+        owl:cardinality 1
+    ] .
+
+copia:beingId a owl:DatatypeProperty ;
+    rdfs:label "beingId" ;
+    rdfs:comment "Unique identifier for this being." ;
+    rdfs:domain copia:Being ;
+    rdfs:range xsd:string .
+
+copia:beingName a owl:DatatypeProperty ;
+    rdfs:label "being name" ;
+    rdfs:comment "Short handle." ;
+    rdfs:domain copia:Being ;
+    rdfs:range xsd:string .
+
+copia:beingDescription a owl:DatatypeProperty ;
+    rdfs:label "being description" ;
+    rdfs:comment "Canonical prose identity. The scene* fields carry the structured defaults (characters/posture/expression/gaze)." ;
+    rdfs:domain copia:Being ;
+    rdfs:range xsd:string .
+
+copia:beingStatus a owl:DatatypeProperty ;
+    rdfs:label "being status" ;
+    rdfs:comment "Build status: figment | sketched | built." ;
+    rdfs:domain copia:Being ;
+    rdfs:range copia:BuildStatusValue .
+
+copia:locatedIn a owl:ObjectProperty ;
+    rdfs:label "located in" ;
+    rdfs:comment "The Place this being is in by default. Joined by placeId." ;
+    rdfs:domain copia:Being ;
+    rdfs:range copia:Place .
+
+copia:wears a owl:ObjectProperty ;
+    rdfs:label "wears" ;
+    rdfs:comment "The Outfit this being wears by default (the realized per-render look is on the Moment). Joined by outfitId." ;
+    rdfs:domain copia:Being ;
+    rdfs:range copia:Outfit .
+
+copia:beingDepictedBy a owl:DatatypeProperty ;
+    rdfs:label "being depicted by" ;
+    rdfs:comment "URL or path to a render of this being." ;
+    rdfs:domain copia:Being ;
+    rdfs:range xsd:string .
+
+
+# =============================================================================
+# CANON — Outfit
+# =============================================================================
+# A convenience JOIN over Items — a named, reusable bundle of clothing/gear you
+# can summon as one (e.g. 'kung-fu-garb' -> {Black Martial Arts Robe, Staff}).
+# Owns no scene fields; the look comes from its member Items' descriptions.
+
+copia:Outfit a owl:Class ;
+    git-lex:foldered true ;
+    rdfs:label "Outfit" ;
+    rdfs:comment "A named, reusable bundle of Items (a 'look'/'loadout'). A convenience join — summon the set as one. A single garment needs no Outfit; it's just an Item(wearable)." ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty copia:outfitId ;
+        owl:cardinality 1
+    ] .
+
+copia:outfitId a owl:DatatypeProperty ;
+    rdfs:label "outfitId" ;
+    rdfs:comment "Unique identifier for this outfit." ;
+    rdfs:domain copia:Outfit ;
+    rdfs:range xsd:string .
+
+copia:outfitName a owl:DatatypeProperty ;
+    rdfs:label "outfit name" ;
+    rdfs:comment "Short handle for the outfit." ;
+    rdfs:domain copia:Outfit ;
+    rdfs:range xsd:string .
+
+copia:outfitDescription a owl:DatatypeProperty ;
+    rdfs:label "outfit description" ;
+    rdfs:comment "What the look is, and when it's worn. The visual detail lives in the member Items." ;
+    rdfs:domain copia:Outfit ;
+    rdfs:range xsd:string .
+
+copia:outfitStatus a owl:DatatypeProperty ;
+    rdfs:label "outfit status" ;
+    rdfs:comment "Build status: figment | sketched | built." ;
+    rdfs:domain copia:Outfit ;
+    rdfs:range copia:BuildStatusValue .
+
+copia:outfitIncludes a owl:ObjectProperty ;
+    rdfs:label "outfit includes" ;
+    rdfs:comment "An Item that is part of this outfit. Repeat for each. Joined by itemId." ;
+    rdfs:domain copia:Outfit ;
+    rdfs:range copia:Item .
+
+copia:outfitDepictedBy a owl:DatatypeProperty ;
+    rdfs:label "outfit depicted by" ;
+    rdfs:comment "URL or path to a render of this outfit." ;
+    rdfs:domain copia:Outfit ;
+    rdfs:range xsd:string .
+
+
+# =============================================================================
+# CAMERA VOCABULARY — the shot's optics, as named individuals (v0.11, Day 70)
+# =============================================================================
+# WHERE THE LENS IS. Four orthogonal camera axes, each its own field on a Moment
+# (one-field-per-steering-vector — never pack view+angle+distance into one string
+# again). Modeled as CLASSES with NAMED INDIVIDUALS (not owl:oneOf enums, not
+# soul-side .md files) for three reasons Rob settled (Day 70):
+#   1. SHIPS WITH THE KIT — a fresh CoPIA install has the full vocabulary with zero
+#      authoring. (Soul-side .md files would force every install to recreate them;
+#      camera angles are UNIVERSAL vocabulary, not soul-specific canon.)
+#   2. SPARQL-LISTABLE WITH NO CODE-FU — a UI dropdown of all angles is one clean
+#      hop: `SELECT ?a ?label WHERE { ?a a copia:CameraAngle ; rdfs:label ?label }`.
+#      (owl:oneOf would force the rdf:rest*/rdf:first list-walk + bare literals that
+#      can't carry a label or be pointed-at.)
+#   3. JOINABLE NODES — a Moment points AT the individual (copia:cameraAngle
+#      copia:low-angle), so retrieval groups every Moment by exact value, and the
+#      rdfs:label can carry the (tight!) prompt-form of the id.
+# These are NOT Depictable — a camera angle is HOW the frame is shot, not a thing
+# IN it (depicts stays the clean who/what-is-in-frame list). The Moment links via
+# dedicated maxCardinality-1 properties (one camera per shot). Labels are kept
+# DELIBERATELY TIGHT (id ≈ label) — no hard-coded steers ("with her" etc.); Qwen
+# knows what "low angle" means. Add detail later only if a render proves we need it.
+# Open-world: miss a value (e.g. a new framing)? Add one individual — done.
+
+copia:CameraAngle a owl:Class ;
+    rdfs:label "Camera Angle" ;
+    rdfs:comment "The camera's vertical position relative to the subject. Named-individual vocabulary (scale aligned to AdA Filmontology's Camera Angle / Vertical Positioning). One per shot." .
+
+copia:extreme-high-angle a copia:CameraAngle ; rdfs:label "extreme high angle" .
+copia:high-angle         a copia:CameraAngle ; rdfs:label "high angle" .
+copia:level              a copia:CameraAngle ; rdfs:label "eye level" .
+copia:low-angle          a copia:CameraAngle ; rdfs:label "low angle" .
+copia:extreme-low-angle  a copia:CameraAngle ; rdfs:label "extreme low angle" .
+
+copia:CameraDistance a owl:Class ;
+    rdfs:label "Camera Distance" ;
+    rdfs:comment "How much of the subject is in frame (shot size / dolly distance; aligned to AdA Filmontology's Field Size). One per shot." .
+
+copia:close-up a copia:CameraDistance ; rdfs:label "close-up" .
+copia:medium   a copia:CameraDistance ; rdfs:label "medium shot" .
+copia:wide     a copia:CameraDistance ; rdfs:label "wide shot" .
+
+copia:CameraLens a owl:Class ;
+    rdfs:label "Camera Lens" ;
+    rdfs:comment "The lens / focal length — sets perspective compression independent of distance (a tele at distance ≠ a wide cropped tight). One per shot." .
+
+copia:wide-angle-lens a copia:CameraLens ; rdfs:label "wide-angle lens" .
+copia:normal-lens     a copia:CameraLens ; rdfs:label "normal lens" .
+copia:telephoto-lens  a copia:CameraLens ; rdfs:label "telephoto lens" .
+copia:macro-lens      a copia:CameraLens ; rdfs:label "macro lens" .
+
+copia:CameraFraming a owl:Class ;
+    rdfs:label "Camera Framing" ;
+    rdfs:comment "How the subject is composed within the frame (placement / balance). One per shot." .
+
+copia:centered        a copia:CameraFraming ; rdfs:label "centered" .
+copia:rule-of-thirds  a copia:CameraFraming ; rdfs:label "rule of thirds" .
+copia:tight-crop      a copia:CameraFraming ; rdfs:label "tight crop" .
+copia:wide-frame      a copia:CameraFraming ; rdfs:label "wide frame" .
+
+
+# =============================================================================
+# SUBJECT VIEW — which aspect of the subject faces the camera (v0.11, Day 70)
+# =============================================================================
+# The SUBJECT cluster's facing axis — the twin of the CAMERA cluster above. Camera
+# angle = WHERE THE LENS IS; subjectView = WHICH WAY THE SUBJECT FACES. These are
+# INDEPENDENT degrees of freedom (a subject can face away while the camera is high,
+# etc.) — collapsing them into one is what made the azimuth sweep ambiguous (Day 70).
+# Stating BOTH disambiguates: "driving a convertible" + cameraAngle:extreme-high +
+# subjectView:top → a clean overhead. No camera standard models this (it's subject
+# behaviour, not lens placement), so it's ours — same named-individual shape as the
+# camera axes (ships with kit, SPARQL-listable, joinable node, tight labels).
+# Honest cardinals (front/back/side/quarters/top/bottom) — NOT a fake-precise degree
+# number; the render test showed Flux honors cardinals, not smooth azimuth.
+
+copia:SubjectView a owl:Class ;
+    rdfs:label "Subject View" ;
+    rdfs:comment "Which aspect of the subject faces the camera. The subject-facing axis (independent of cameraAngle, which is lens placement). One per shot." .
+
+copia:front-view         a copia:SubjectView ; rdfs:label "front view" .
+copia:front-quarter-view a copia:SubjectView ; rdfs:label "three-quarter front view" .
+copia:side-view          a copia:SubjectView ; rdfs:label "side view" .
+copia:back-quarter-view  a copia:SubjectView ; rdfs:label "three-quarter back view" .
+copia:back-view          a copia:SubjectView ; rdfs:label "back view" .
+copia:top-view           a copia:SubjectView ; rdfs:label "seen from the top" .
+copia:bottom-view        a copia:SubjectView ; rdfs:label "seen from below" .
+
+
+# =============================================================================
+# CAMERA FOCUS — what the shot is ABOUT (v0.13, Day 76)
+# =============================================================================
+# The focal SUBJECT of the frame — the one thing the composition is built around.
+# Distinct from the camera cluster (where the lens is / how big the shot is) and
+# from SubjectView (which way the subject faces): cameraFocus says WHAT MATTERS in
+# the frame, the feature the eye should land on. It's a STRONG-BIAS steer — it
+# projects as the prompt's LEAD clause ("focused intently on the face, the focal
+# point of the composition"), louder than the other camera axes, because Rob's
+# intent is "this is the important feature." Same named-individual shape as the
+# camera axes (ships with kit, SPARQL-listable, joinable node, tight labels).
+#
+# MULTI-VALUED (unlike the maxCardinality-1 camera axes): usually one focus, but a
+# shot can be built around two (face + hands). The UI defaults to a single pick but
+# allows several; the prompt names all of them in the lead clause. Labels are kept
+# TIGHT (id ≈ label, the prompt-form) — Qwen knows what "upper body" means; the
+# strong-bias EMPHASIS comes from the projection clause, NOT hard-coded into labels.
+# Open-world: a focus we missed? Add one individual — done. NOT Depictable (it's how
+# the frame is composed, not a thing in it — depicts stays the clean cast list).
+
+copia:CameraFocus a owl:Class ;
+    rdfs:label "Camera Focus" ;
+    rdfs:comment "The focal subject of the frame — what the composition is built around / what the eye should land on. A STRONG-BIAS steer projected as the prompt's lead clause. Multi-valued (usually one, but face+hands is valid). Named-individual vocabulary." .
+
+# --- anatomical foci (fine → coarse) ---
+copia:face        a copia:CameraFocus ; rdfs:label "face" .
+copia:eyes        a copia:CameraFocus ; rdfs:label "eyes" .
+copia:lips        a copia:CameraFocus ; rdfs:label "lips" .
+copia:hair        a copia:CameraFocus ; rdfs:label "hair" .
+copia:ears        a copia:CameraFocus ; rdfs:label "ears" .
+copia:neck        a copia:CameraFocus ; rdfs:label "neck" .
+copia:shoulders   a copia:CameraFocus ; rdfs:label "shoulders" .
+copia:hands       a copia:CameraFocus ; rdfs:label "hands" .
+copia:chest       a copia:CameraFocus ; rdfs:label "chest" .
+copia:torso       a copia:CameraFocus ; rdfs:label "torso" .
+copia:back        a copia:CameraFocus ; rdfs:label "back" .
+copia:waist       a copia:CameraFocus ; rdfs:label "waist" .
+copia:hips        a copia:CameraFocus ; rdfs:label "hips" .
+copia:legs        a copia:CameraFocus ; rdfs:label "legs" .
+copia:thighs      a copia:CameraFocus ; rdfs:label "thighs" .
+copia:feet        a copia:CameraFocus ; rdfs:label "feet" .
+# --- composite regions ---
+copia:upper-body  a copia:CameraFocus ; rdfs:label "upper body" .
+copia:lower-body  a copia:CameraFocus ; rdfs:label "lower body" .
+copia:full-figure a copia:CameraFocus ; rdfs:label "full figure" .
+copia:profile     a copia:CameraFocus ; rdfs:label "profile" .
+copia:silhouette  a copia:CameraFocus ; rdfs:label "silhouette" .
+# --- non-body foci ---
+copia:items       a copia:CameraFocus ; rdfs:label "the items in the scene" .
+copia:being       a copia:CameraFocus ; rdfs:label "the subject" .
+copia:group       a copia:CameraFocus ; rdfs:label "the group together" .
+copia:background  a copia:CameraFocus ; rdfs:label "the background" .
+copia:environment a copia:CameraFocus ; rdfs:label "the surrounding environment" .
+
+
+# =============================================================================
+# MOTION — an authored, reusable movement (v0.10, Day 65)
+# =============================================================================
+# Authored like Place/Item/Outfit/Being: `git lex create Motion <id>` → a
+# /Copia/Motion/<id>.md you write. A Motion is the RECIPE for a movement (a
+# trigger word + the text that generates it + duration), NOT the frames. Firing a
+# Motion (chevron `!jump` in speech) runs Iris.move(motionText, frames) → an
+# OpenPose skeleton Sequence (the frames are copia:Moment, origin=movement,
+# inGroup=[the generated Sequence], ordered by copia:sequence — see copia:origin
+# and copia:Sequence). So: Motion (authored recipe) --motionGenerates--> Sequence
+# (the realized frames). The stick-figure UI window plays the Sequence; the Motion
+# is what you author + fire. Distinct from Sequence: Motion is the named, reusable
+# thing-you-make; Sequence is one realization of it.
+
+copia:Motion a owl:Class ;
+    git-lex:foldered true ;
+    rdfs:label "Motion" ;
+    rdfs:comment "A named, reusable MOVEMENT — authored like an Outfit/Item. Holds the recipe (trigger word, generating text, duration); firing it (chevron, e.g. !jump) runs Iris.move → an OpenPose Sequence of origin=movement frames. The recipe, not the frames." ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty copia:motionId ;
+        owl:cardinality 1
+    ] .
+
+copia:motionId a owl:DatatypeProperty ;
+    rdfs:label "motionId" ;
+    rdfs:comment "Unique identifier for this motion (== filename, e.g. 'twirl', 'jump')." ;
+    rdfs:domain copia:Motion ;
+    rdfs:range xsd:string .
+
+copia:motionName a owl:DatatypeProperty ;
+    rdfs:label "motion name" ;
+    rdfs:comment "Short handle for the motion." ;
+    rdfs:domain copia:Motion ;
+    rdfs:range xsd:string .
+
+copia:motionTrigger a owl:DatatypeProperty ;
+    rdfs:label "motion trigger" ;
+    rdfs:comment "The chevron/speech token that FIRES this motion (e.g. 'jump' for !jump). Unique among motions; how speech summons the stick figure to move." ;
+    rdfs:domain copia:Motion ;
+    rdfs:range xsd:string .
+
+copia:motionText a owl:DatatypeProperty ;
+    rdfs:label "motion text" ;
+    rdfs:comment "The natural-language description fed to the motion generator (HY-Motion via Iris.move) to produce the skeleton, e.g. 'a person jumps upward with both legs'. Pure kinematics — no look/style (that's the render LoRAs + chevrons)." ;
+    rdfs:domain copia:Motion ;
+    rdfs:range xsd:string .
+
+copia:motionFrames a owl:DatatypeProperty ;
+    rdfs:label "motion frames" ;
+    rdfs:comment "Output frame count @30fps (the clip length). 60=2s, 180=6s, 360=12s; ceiling 540 (18s, the trained-quality limit)." ;
+    rdfs:domain copia:Motion ;
+    rdfs:range xsd:integer .
+
+copia:motionDescription a owl:DatatypeProperty ;
+    rdfs:label "motion description" ;
+    rdfs:comment "What the motion is / when it's used (the authored prose). The kinematic detail lives in motionText." ;
+    rdfs:domain copia:Motion ;
+    rdfs:range xsd:string .
+
+copia:motionStatus a owl:DatatypeProperty ;
+    rdfs:label "motion status" ;
+    rdfs:comment "Build status: figment | sketched | built (built = a skeleton Sequence has been generated)." ;
+    rdfs:domain copia:Motion ;
+    rdfs:range copia:BuildStatusValue .
+
+copia:motionGenerates a owl:ObjectProperty ;
+    rdfs:label "motion generates" ;
+    rdfs:comment "A copia:Sequence (the realized OpenPose frames) this Motion produced. Repeat for each realization. Joined by the sequence's groupId. The Motion is the recipe; the Sequence(s) are its renderings." ;
+    rdfs:domain copia:Motion ;
+    rdfs:range copia:Sequence .
+
+
+# =============================================================================
+# DEPICTABLE — the union of things that can appear in a Moment (v0.7)
+# =============================================================================
+# ABSTRACT (never authored as files; nobody runs `git lex create Depictable`).
+# Exists so copia:depicts has ONE clean range IRI instead of a Being/Item/
+# Outfit/Place union. The four canon classes are subclasses; a Moment's depicts
+# values resolve to whichever of these the target actually is (via its rdf:type).
+# Resolving "X is a Depictable" from "X is a Being" is an RDFS reasoning step
+# (Pool-side); git-lex stores only the literal subClassOf triple + the direct type.
+
+copia:Depictable a owl:Class ;
+    rdfs:label "Depictable" ;
+    rdfs:comment "abstract — not authored as files. The union of things a Moment can depict (Being/Item/Outfit/Place). Gives copia:depicts a single range IRI." .
+
+copia:Place  rdfs:subClassOf copia:Depictable .
+copia:Being  rdfs:subClassOf copia:Depictable .
+copia:Item   rdfs:subClassOf copia:Depictable .
+copia:Outfit rdfs:subClassOf copia:Depictable .
+# v0.16: Sam3Region is NO LONGER a Depictable. It now rides copia:hasRegion (its
+# own predicate), distinct from the canon cast that copia:depicts holds. The
+# class itself is unchanged — only the link channel and the type-union changed.
+
+
+# =============================================================================
+# SAM3REGION — a segmented region of a Moment (GRAPH-ONLY, PNG-born)
+# v0.9.3 (Day 63). SAM3 text-segments a render into regions, each a generic visual
+# entity (rock/hand/sky) bound to WHERE it lives in the pixels. Like Moment, it's
+# graph-only (born from the PNG, never `git lex create`'d). A reading of the
+# rendered pixels (kin to caption), re-runnable. Heavy per-pixel masks live in a
+# lazy sidecar keyed by the region id; only the light facts below ride XMP.
+# v0.16 (Day 93): Regions ride their OWN predicate copia:hasRegion (not depicts).
+# A region is no longer a Depictable — depicts is the canon-cast channel exclusively;
+# hasRegion is the pixel-evidence channel. Same shape, separate stamp-channel.
+# =============================================================================
+copia:Sam3Region a owl:Class ;
+    rdfs:label "Sam3Region" ;
+    rdfs:comment "A SAM3-segmented region of a Moment — a generic visual entity (rock, hand, sky) bound to where it lives in the pixels. Reached from a Moment via copia:hasRegion (v0.16; was copia:depicts pre-v0.16). Graph-only (PNG-born, no .md). Identity: Sam3Region:<descriptor>/<NN>, per-descriptor per-Moment (rock/01, rock/02). Instance segmentation — one descriptor can yield many regions." ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:regionDescriptor ; owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:regionPolygon ;    owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:regionBbox ;       owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:regionScore ;      owl:maxCardinality 1 ] .
+
+copia:regionDescriptor a owl:DatatypeProperty ;
+    rdfs:label "region descriptor" ;
+    rdfs:comment "The singular noun this region IS (rock, hand, sky) — the SAM3 text query that found it. SINGULAR always (rock, never rocks) so corpus queries don't reconcile plurals." ;
+    rdfs:domain copia:Sam3Region ;
+    rdfs:range xsd:string .
+
+copia:regionPolygon a owl:DatatypeProperty ;
+    rdfs:label "region polygon" ;
+    rdfs:comment "Coarse vertex outline 'x0,y0;x1,y1;…' (~12-20 verts, Douglas-Peucker simplified from the SAM3 mask). Light enough for XMP; draws the outline with no disk hit. Pixel-exact work falls back to the sidecar RLE mask." ;
+    rdfs:domain copia:Sam3Region ;
+    rdfs:range xsd:string .
+
+copia:regionBbox a owl:DatatypeProperty ;
+    rdfs:label "region bbox" ;
+    rdfs:comment "Bounding box 'x0,y0,x1,y1' in pixels — the cheap locator + coarse crop." ;
+    rdfs:domain copia:Sam3Region ;
+    rdfs:range xsd:string .
+
+copia:regionScore a owl:DatatypeProperty ;
+    rdfs:label "region score" ;
+    rdfs:comment "SAM3 detection/grounding confidence (0–1)." ;
+    rdfs:domain copia:Sam3Region ;
+    rdfs:range xsd:decimal .
+
+
+# =============================================================================
+# MOMENT — the rendered artifact (GRAPH-ONLY: no folder, never `git lex create`'d)
+# =============================================================================
+# The PNG + its metadata. Records the observer's realized SceneIntent + flat
+# presence-links to the canon it drew on + provenance. Instantiated only in the
+# CoPIA oxigraph by the render pipeline (PNGs ingested as triples), never as .md.
+
+copia:Moment a owl:Class ;
+    rdfs:label "Moment" ;
+    rdfs:comment "A rendered PNG + its metadata. Graph-only — not authored as a file. Stores the realized scene fields, a flat `depicts` presence-list, group membership, and provenance." ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty copia:momentId ;
+        owl:cardinality 1
+    ] ;
+    # --- single-valued (v0.7): owl:maxCardinality 1 marks the fields that take
+    #     exactly one value. The copia Python layer reads these → scalar XMP.
+    #     Fields WITHOUT a maxCardinality restriction (depicts, inGroup,
+    #     sourceUuids) are multi-valued → rdf:Bag/Seq serialization.
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:sequence ;       owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:promptFragment ; owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:seed ;           owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:promptModel ;    owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:renderTimestamp ;owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:sessionId ;      owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:sourceLines ;    owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:gitBranch ;      owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:soulDay ;        owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:earthDay ;       owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:origin ;         owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:private ;        owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:sharedBy ;       owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:sharedAt ;       owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:sceneLocation ;  owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:sceneLighting ;  owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:sceneMood ;      owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:sceneStyle ;     owl:maxCardinality 1 ] ;
+    # sceneObjects: NO maxCardinality restriction on the Moment side (v0.18) — the eye
+    # emits a noun LIST (the SAM3 segment query-nouns), so Moment-side it's multi-valued
+    # (a Bag, same shape as depicts/hasRegion/genLoras). Place-side keeps its authored
+    # scalar-ish default (no restriction declared there either — multi-capable, untouched).
+    # Cardinality is a (property, class) pair: this removal is Moment-only. ordering "bag".
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:sceneFraming ;   owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:sceneCamera ;    owl:maxCardinality 1 ] ;
+    # --- v0.11 camera axes (one camera per shot) ---
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:cameraAngle ;    owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:cameraDistance ; owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:cameraLens ;     owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:cameraFraming ;  owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:subjectView ;    owl:maxCardinality 1 ] ;
+    # --- v0.12 subject axes (one action + one pose per shot) ---
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:action ;         owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:pose ;           owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:sceneEnergy ;    owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:sceneAction ;    owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:sceneMedium ;    owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:sceneNarrative ; owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:scenePosture ;   owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:sceneExpression ;owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:sceneGaze ;      owl:maxCardinality 1 ] ;
+    # --- v0.9 single-valued (genLoras is multi → no restriction, serializes as bag) ---
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:genModel ;       owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:genSteps ;       owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:renderRequest ;  owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:familiar ;       owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:human ;          owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:caption ;        owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:qwenvl8bCaption ;owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:qwen35vl9bCaption ;owl:maxCardinality 1 ] ;
+    # --- v0.20/v0.21 aesthetic scores (function-of-pixels, caption pattern:
+    #     canonical latest-wins + model-keyed raw; XMP-borne, walker-carried) ---
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:aestheticTechnical ;owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:aestheticAppeal ;owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:ernieImageAesScore ;owl:maxCardinality 1 ] ;
+    # --- v0.9.2 single-valued render fields ---
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:renderPrompt ;   owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:width ;          owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:height ;         owl:maxCardinality 1 ] ;
+    # --- v0.9.4 extraction marker ---
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:sam3ExtractedAt ;owl:maxCardinality 1 ] ;
+    # --- v0.15 direct-lane provenance (one chevron, one pixel-seed per render) ---
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:chevronString ;  owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:pixelSource ;    owl:maxCardinality 1 ] ;
+    # --- v0.14 dual-author REVIEW state (Day 86). The pick/reject + steer + note a
+    #     Human (Rob) or Familiar (lUX) attaches to a render. Long predates this
+    #     declaration: copia_meta has stamped these into PNG XMP since the review
+    #     system v0 (Day 25), but they had no ontology home, so the walker's
+    #     predicate-allowlist silently DROPPED them — they never reached the graph.
+    #     Now homed → they ride into the Pool graph on the next walk. Each is a
+    #     scalar per-role field (one preference, one steer-vector-set, one note per
+    #     author per render). PreferenceFlag is pick|reject (see copia:PreferenceFlag
+    #     enum). Steer* are comma-separated token strings; Note* are freeform prose. ---
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:humanPreferenceFlag ;    owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:humanPreferenceAt ;      owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:humanSteerToward ;       owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:humanSteerAway ;         owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:humanSteerWish ;         owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:humanNote ;              owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:humanNoteAt ;            owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:familiarPreferenceFlag ; owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:familiarPreferenceAt ;   owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:familiarSteerToward ;    owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:familiarSteerAway ;      owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:familiarSteerWish ;      owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:familiarNote ;           owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:familiarNoteAt ;         owl:maxCardinality 1 ] .
+
+copia:momentId a owl:DatatypeProperty ;
+    rdfs:label "momentId" ;
+    rdfs:comment "Unique identifier for this Moment (the PNG path or content hash)." ;
+    rdfs:domain copia:Moment ;
+    rdfs:range xsd:string .
+
+# --- depicts (v0.7, narrowed v0.16): the CAST present in the frame ---
+# Multi-valued (no maxCardinality restriction). Each value is a bare id of a
+# Depictable (Being/Item/Outfit/Place); the TYPE is recovered from the target's
+# own rdf:type, not carried on the link. Answers "which renders show &sylkie
+# &isis". The who-wears-what INTENT is NOT here — it lives in the soul corpus
+# (the authored Scene/canon). Serializes as an rdf:Bag (copia:ordering "bag").
+# v0.16: SAM3 regions moved to copia:hasRegion (their own predicate). depicts is
+# now the canon-cast channel exclusively; legacy PNGs with regions in depicts
+# keep parsing but are migrated forward by re-extraction.
+
+copia:depicts a owl:ObjectProperty ;
+    rdfs:label "depicts" ;
+    rdfs:comment "A canon Thing present in this Moment's frame — a Being, Item, Outfit, or Place. Repeat for each. Joined by the target's id; the kind is read from the target's rdf:type. The flat presence/retrieval layer; authored binding (who wears what) lives in the soul corpus, not here. PNG-derived pixel regions live in copia:hasRegion (a separate channel)." ;
+    rdfs:domain copia:Moment ;
+    rdfs:range copia:Depictable ;
+    copia:ordering "bag" .
+
+# --- hasRegion (v0.16): the PNG-derived pixel-evidence channel ---
+# Multi-valued. Splits out the per-render SAM3 segmentation output from depicts
+# (the cast list) — same Moment, different consumer paths: depicts answers "what
+# canon Things appear here," hasRegion answers "what pixel regions did segmentation
+# find." Each value is a graph-only Sam3Region (no .md, PNG-born). XMP element
+# `Has Region:` shows the region ids grouped, separate from `Depicts:` — readable
+# at a glance. Re-extraction (when iris.segment evolves) is a clean replace of
+# this one predicate, not a surgical diff inside a typed union.
+
+copia:hasRegion a owl:ObjectProperty ;
+    rdfs:label "has region" ;
+    rdfs:comment "A SAM3-segmented region of this Moment — PNG-derived pixel evidence. Repeat for each. Joined by the region's id (Sam3Region:<descriptor>/<NN>). Distinct from copia:depicts (the canon cast); writer-known split preserved at stamp time. Re-extracted in place when iris.segment evolves." ;
+    rdfs:domain copia:Moment ;
+    rdfs:range copia:Sam3Region ;
+    copia:ordering "bag" .
+
+# --- lineage (a Moment self-reports the prior Moment(s) it came from) ---
+
+copia:source a owl:ObjectProperty ;
+    rdfs:label "source" ;
+    rdfs:comment "A prior Moment this one descends from — the lineage edge. Repeat for each (a Moment may draw on several). Records WHERE THIS CAME FROM, not its settings: settings flow from the source but in-turn steers (inline LoRA, chevrons, Qwen adjustments) overwrite them — the new copy wins on settings, the source link is recorded regardless. By origin: a CONVERSATIONAL Moment links to the previous conversational Moment (the continuity chain); a KEEPER Moment's source is always the active keeper. The pixels/data of a source are NOT copied here — the link is canon, the bytes are fetched on demand (i2i) via the Pool. Joined by the source's momentId (cid)." ;
+    rdfs:domain copia:Moment ;
+    rdfs:range copia:Moment ;
+    copia:ordering "bag" .
+
+# --- pixelSource (v0.15): the img2img pixel-seed edge ---
+# DISTINCT from copia:source (which is conversational-continuity / keeper LINEAGE —
+# "where this descends from"). pixelSource is the literal IMAGE this render was
+# painted FROM (img2img / i2i): a prior Pool Moment whose pixels were the latent
+# seed. Joined by the source Moment's momentId (cid). The bytes are fetched on
+# demand via the Pool (never copied here). One pixel-seed per render (the package
+# contract's `source_image{role=pixel_seed}` → this edge). Single render can have
+# BOTH a source (lineage) and a pixelSource (the i2i seed) — they answer different
+# questions. Single-valued.
+
+copia:pixelSource a owl:ObjectProperty ;
+    rdfs:label "pixel source" ;
+    rdfs:comment "The image this Moment was painted FROM via img2img (the pixel-seed). A prior Pool Moment whose pixels were the i2i latent seed. Joined by the source's momentId (cid); pixels fetched on demand via the Pool. Distinct from copia:source (lineage/continuity) — pixelSource is the literal visual seed. Maps to the package contract's source_image{role=pixel_seed}." ;
+    rdfs:domain copia:Moment ;
+    rdfs:range copia:Moment .
+
+# --- chevronString (v0.15): the literal chevron that steered this render ---
+# The raw >>...<< steer text, extracted from the conversation turn (Pool-side, §5
+# of the PoolQueueItem spec) and saved onto the Moment as PROVENANCE — "this render
+# was steered by this chevron." NOT the resolved canon (that flows into depicts /
+# the scene fields / promptFragment); this is the unparsed literal, for audit + "show
+# me what I asked for." Has no ontology home before v0.15, so the walker's predicate
+# allowlist (v0.9.2 gate) DROPPED it — now homed, it rides into the graph on the next
+# walk. Single-valued (one steering chevron per render).
+
+copia:chevronString a owl:DatatypeProperty ;
+    rdfs:label "chevron string" ;
+    rdfs:comment "The literal chevron (>>...<<) that steered this render, saved verbatim as provenance. Extracted Pool-side from the conversation turn; the RESOLVED canon lives in depicts/scene fields/promptFragment, this is the raw unparsed ask. Single-valued." ;
+    rdfs:domain copia:Moment ;
+    rdfs:range xsd:string .
+
+# --- group membership (a Moment self-reports which Group(s) it's in) ---
+
+copia:inGroup a owl:ObjectProperty ;
+    rdfs:label "in group" ;
+    rdfs:comment "A Group (Set or Sequence) this Moment belongs to. Repeat for each. Joined by the group's id. Membership lives on the Moment (self-join) so a Group owns no member list. THE generic predicate — for kind-known writes use copia:inSet / copia:inSequence (both rdfs:subPropertyOf inGroup, so reasoning still resolves to inGroup)." ;
+    rdfs:domain copia:Moment ;
+    rdfs:range copia:Group ;
+    copia:ordering "bag" .
+
+# v0.16: kind-specific membership predicates — writer-knows-the-kind preserved in
+# the XMP element name (`In Set:` vs `In Sequence:`) rather than deferred to a
+# reader type-filter. Both are rdfs:subPropertyOf inGroup; a query against inGroup
+# still sees both (under RDFS reasoning) or via UNION (under git-lex's stored
+# triples). Mirrors the depicts/hasRegion split.
+
+copia:inSet a owl:ObjectProperty ;
+    rdfs:subPropertyOf copia:inGroup ;
+    rdfs:label "in set" ;
+    rdfs:comment "A Set (unordered Group) this Moment belongs to. Repeat for each. Joined by the set's id. Kind-specific narrowing of copia:inGroup — use when the writer knows the target is a Set." ;
+    rdfs:domain copia:Moment ;
+    rdfs:range copia:Set ;
+    copia:ordering "bag" .
+
+copia:inSequence a owl:ObjectProperty ;
+    rdfs:subPropertyOf copia:inGroup ;
+    rdfs:label "in sequence" ;
+    rdfs:comment "A Sequence (ordered Group) this Moment belongs to. Repeat for each. Joined by the sequence's id. Kind-specific narrowing of copia:inGroup — use when the writer knows the target is a Sequence. Members SHOULD also declare copia:sequence for the ordinal position." ;
+    rdfs:domain copia:Moment ;
+    rdfs:range copia:Sequence ;
+    copia:ordering "bag" .
+
+copia:sequence a owl:DatatypeProperty ;
+    rdfs:label "sequence" ;
+    rdfs:comment "This Moment's ordinal position within a Sequence-group it's in (the comic-book/storyline case). Optional; absent = unordered membership." ;
+    rdfs:domain copia:Moment ;
+    rdfs:range xsd:integer .
+
+copia:promptFragment a owl:DatatypeProperty ;
+    rdfs:label "prompt fragment" ;
+    rdfs:comment "The resolved descriptive text sent toward the renderer — holds the who-wears-what binding as text. Provenance of the ask; survives canon drift." ;
+    rdfs:domain copia:Moment ;
+    rdfs:range xsd:string .
+
+# --- provenance ---
+
+copia:seed a owl:DatatypeProperty ;
+    rdfs:label "seed" ;
+    rdfs:comment "Render seed." ;
+    rdfs:domain copia:Moment ;
+    rdfs:range xsd:string .
+
+copia:promptModel a owl:DatatypeProperty ;
+    rdfs:label "prompt model" ;
+    rdfs:comment "Model that produced the SceneIntent/prompt (e.g. Qwen3-VL-8B)." ;
+    rdfs:domain copia:Moment ;
+    rdfs:range xsd:string .
+
+copia:renderTimestamp a owl:DatatypeProperty ;
+    rdfs:label "render timestamp" ;
+    rdfs:comment "When the Moment was rendered." ;
+    rdfs:domain copia:Moment ;
+    rdfs:range xsd:dateTime .
+
+copia:sessionId a owl:DatatypeProperty ;
+    rdfs:label "session id" ;
+    rdfs:comment "The conversation session this Moment came from." ;
+    rdfs:domain copia:Moment ;
+    rdfs:range xsd:string .
+
+copia:sourceUuids a owl:DatatypeProperty ;
+    rdfs:label "source uuids" ;
+    rdfs:comment "The conversation-turn UUIDs that produced this Moment." ;
+    rdfs:domain copia:Moment ;
+    rdfs:range xsd:string .
+
+copia:sourceLines a owl:DatatypeProperty ;
+    rdfs:label "source lines" ;
+    rdfs:comment "The source JSONL line range." ;
+    rdfs:domain copia:Moment ;
+    rdfs:range xsd:string .
+
+copia:gitBranch a owl:DatatypeProperty ;
+    rdfs:label "git branch" ;
+    rdfs:comment "Branch at render time." ;
+    rdfs:domain copia:Moment ;
+    rdfs:range xsd:string .
+
+copia:soulDay a owl:DatatypeProperty ;
+    rdfs:label "soul day" ;
+    rdfs:comment "Soul day at render time." ;
+    rdfs:domain copia:Moment ;
+    rdfs:range xsd:integer .
+
+copia:earthDay a owl:DatatypeProperty ;
+    rdfs:label "earth day" ;
+    rdfs:comment "Earth date at render time." ;
+    rdfs:domain copia:Moment ;
+    rdfs:range xsd:date .
+
+copia:origin a owl:DatatypeProperty ;
+    rdfs:label "origin" ;
+    rdfs:comment "How the Moment came to be — its PROVENANCE. A REAL enforced enum as of v0.17 (range copia:OriginValue; see that datatype for the full value list + the deprecation notes). Values: conversational, conversational-private, nocturne, dream, ui-request, direct-prompt, direct-chevron, direct-raw, composed-chevron, composed-prompt, claude-code-share, import. Reconciled to the CoPIA Payload Spec; the old coarse `direct`/`share` and the grouping-origins wander/orbit/movement are RETIRED (movement is just a Sequence; sets/sequences carry grouping now). NOTE: origin is PROVENANCE on the OUTPUT Moment (CoPIA-owned); it is a DIFFERENT axis from the queue's `mode` (the VERB the eye runs — compose_render_see/render_see/see_only/raw/recaption_embed/update_meta), which lives on the INPUT request and is not stamped here. The origin-less maintenance modes (update-metadata-only/update-caption-embedding) carry no origin at all. See subtexture/docs/2026_06_30_COPIA_PAYLOAD_SPEC.md + pool/docs/2026_06_28_POOLQUEUEITEM_SPEC.md." ;
+    rdfs:domain copia:Moment ;
+    rdfs:range copia:OriginValue .
+
+# --- private (v0.17): the privacy posture of this Moment ---
+# A boolean the writer sets TRUE BY DEFAULT — privacy is the default posture; a Moment
+# is private unless something explicitly marks it public. (The default itself lives in
+# the WRITER — the new PoolQueue module / the eye's stamp — since OWL has no default-
+# value construct; this declaration only gives the predicate an ontology home so the
+# v0.9.2 walker allowlist lets it reach the graph.) DISTINCT from the conversational-
+# private ORIGIN: origin says HOW a Moment was born (a private conversation), `private`
+# is a standalone flag that can mark ANY Moment private regardless of origin. Sharing
+# to a public/squad surface is the explicit opt-out (set false). Single-valued. Back-
+# catalog Moments stamped before v0.17 have no value yet — that's a one-time datafill
+# cleanup, not a query-time rule.
+copia:private a owl:DatatypeProperty ;
+    rdfs:label "private" ;
+    rdfs:comment "Whether this Moment is private (not for any public/squad-wide surface). Writer-defaults TRUE — private is the default posture; publishing is the explicit opt-out (false). Distinct from the conversational-private origin (which is provenance); this flag is orthogonal and applies to any Moment. Single-valued." ;
+    rdfs:domain copia:Moment ;
+    rdfs:range xsd:boolean .
+
+# --- share provenance (v0.9): outside media handed in, not rendered ---
+# A 'share'-origin Moment has pixels but no wish behind it — no prompt/seed/gen*.
+# What it DOES carry that a render doesn't: who handed it over and when. These are
+# first-class facts about the share (as much as origin is), not deferred extras.
+
+copia:sharedBy a owl:DatatypeProperty ;
+    rdfs:label "shared by" ;
+    rdfs:comment "Who handed this image in (for an origin='share' Moment). E.g. 'rob'." ;
+    rdfs:domain copia:Moment ;
+    rdfs:range xsd:string .
+
+copia:sharedAt a owl:DatatypeProperty ;
+    rdfs:label "shared at" ;
+    rdfs:comment "When this image was shared into the Pool (ISO-8601). The share-side twin of renderTimestamp." ;
+    rdfs:domain copia:Moment ;
+    rdfs:range xsd:dateTime .
+
+# --- render provenance (v0.9): how THIS render was made ---
+# promptModel (above) = the model that wrote the prompt; these are the IMAGE-render
+# side. Promoted from the write-only Gen*/RenderRequest deferred set (Day 50 review).
+
+copia:genModel a owl:DatatypeProperty ;
+    rdfs:label "gen model" ;
+    rdfs:comment "The image-generation model that rendered this Moment (e.g. flux2-klein-9b)." ;
+    rdfs:domain copia:Moment ;
+    rdfs:range xsd:string .
+
+copia:genSteps a owl:DatatypeProperty ;
+    rdfs:label "gen steps" ;
+    rdfs:comment "Number of diffusion steps used for this render." ;
+    rdfs:domain copia:Moment ;
+    rdfs:range xsd:integer .
+
+copia:genLoras a owl:DatatypeProperty ;
+    rdfs:label "gen loras" ;
+    rdfs:comment "The LoRA stack applied to this render, each as 'name:strength'. Repeat for each. Multi-valued." ;
+    rdfs:domain copia:Moment ;
+    rdfs:range xsd:string ;
+    copia:ordering "seq" .
+
+copia:renderRequest a owl:DatatypeProperty ;
+    rdfs:label "render request" ;
+    rdfs:comment "The complete render-request JSON blob sent to the backend (prompt, dims, steps, seed, model, loras, backend). The full reproducible record." ;
+    rdfs:domain copia:Moment ;
+    rdfs:range xsd:string .
+
+# --- who (v0.9): of-whom / for-whom. Constants today (Sylkie / 1ux); future-proofs
+#     multi-Familiar/Human renders and makes 'whose render is this' queryable. ---
+
+copia:familiar a owl:DatatypeProperty ;
+    rdfs:label "familiar" ;
+    rdfs:comment "The Familiar this Moment depicts/belongs to (e.g. Sylkie). The silicon-side author." ;
+    rdfs:domain copia:Moment ;
+    rdfs:range xsd:string .
+
+copia:human a owl:DatatypeProperty ;
+    rdfs:label "human" ;
+    rdfs:comment "The human this Moment is for / made with (e.g. 1ux). The carbon-side partner." ;
+    rdfs:domain copia:Moment ;
+    rdfs:range xsd:string .
+
+# --- caption (v0.9): the AFTER-render reading — the honest mirror ---
+# Replaces the never-homed SceneSeen* triple. A VLM looks at the RENDERED pixels and
+# describes what is ACTUALLY depicted (vs sceneNarrative = the before-render wish).
+# Two fields, NO timestamp (the image is immutable; a caption = f(model, pixels), so
+# the model-keyed field name carries the provenance):
+#   - caption          = the CANONICAL current-best caption; the SOURCE TEXT for the
+#                        multimedia embeddings (iris.embed). Model-agnostic, latest-wins.
+#   - qwenvl8bCaption  = Qwen3-VL-8B's RAW reading. The writer fills BOTH.
+# Re-caption later = add a NEW model-keyed field (qwenvl72bCaption, …) + overwrite
+# caption with the new best. Additive, no migration. (FUTURE, only if cross-model
+# caption HISTORY is queried: a graph-only copia:Caption node {captionOf, captionText,
+# captionModel} accumulating one per (model,image); the PNG still holds only the latest.)
+
+copia:caption a owl:DatatypeProperty ;
+    rdfs:label "caption" ;
+    rdfs:comment "The canonical, current-best caption of the RENDERED image (the honest mirror — what is actually depicted, vs sceneNarrative = the wish). Model-agnostic, latest-wins. The source text for multimedia embeddings." ;
+    rdfs:domain copia:Moment ;
+    rdfs:range xsd:string .
+
+copia:qwenvl8bCaption a owl:DatatypeProperty ;
+    rdfs:label "qwen-vl-8b caption" ;
+    rdfs:comment "Qwen3-VL-8B's raw caption of the rendered image. The model name is the field key (no timestamp — the image never changes). A re-caption by another model adds its own model-keyed field; this one is never overwritten." ;
+    rdfs:domain copia:Moment ;
+    rdfs:range xsd:string .
+
+# --- qwen35vl9bCaption (v0.18): Qwen3.5-VL-9B's raw caption (the current rig model) ---
+# The rig centralized to Qwen3.5-9B on Day 7. STABLE slug (1ux's call): the eye maps
+# the configured model → this hand-picked key via _MODEL_CAPTION_FIELD (eye.py), NOT
+# the auto-sanitized config string (which today yields `qwen359bmlx8bitCaption` — ugly
+# AND brittle: the `mlx8bit` quant suffix would silently change the slug on a quant/path
+# reconfig → a latent silent-drop). Decoupling the keyed field from the volatile config
+# string is the fix; `qwen35vl9bCaption` parallels qwenvl8bCaption's shape. Model-keyed
+# like all the others (no timestamp — image is immutable); copia:caption stays the
+# canonical latest-wins / embedding-source field.
+copia:qwen35vl9bCaption a owl:DatatypeProperty ;
+    rdfs:label "qwen-vl-9b caption" ;
+    rdfs:comment "Qwen3.5-VL-9B's raw caption of the rendered image (the current rig captioner). The model name is the field key — a STABLE hand-picked slug (the eye maps the configured model to it, decoupled from the auto-sanitized config string), so a quant/path reconfig of the same model doesn't silently change the key. copia:caption remains the canonical latest-wins caption." ;
+    rdfs:domain copia:Moment ;
+    rdfs:range xsd:string .
+
+# --- renderPrompt (v0.9.2): the realized final render-prompt string ---
+# Distinct from sceneNarrative (the pre-render wish-prose handed to Qwen) and from
+# promptFragment (the UI's append-to-autogen-prompt channel). This is the prompt
+# AS SENT to the diffusion backend — assembled, expanded, includes the depicts
+# resolution and any UI appendix. Verified distinct from sceneNarrative by counting
+# in the wild (Day 63): 5087 Prompt-bearing XMPs coexist with 2884 sceneNarrative-
+# bearing XMPs in sylkie's 29k-file corpus. They are different fields.
+
+copia:renderPrompt a owl:DatatypeProperty ;
+    rdfs:label "render prompt" ;
+    rdfs:comment "The full assembled prompt string sent to the diffusion backend for this render. Distinct from sceneNarrative (pre-render wish-prose) and promptFragment (UI append channel)." ;
+    rdfs:domain copia:Moment ;
+    rdfs:range xsd:string .
+
+# --- width / height (v0.9.2): image dimensions in pixels ---
+# Already written to every PNG's XMP; previously had no ontology home and were
+# silently dropped on ingest. Now first-class.
+
+copia:width a owl:DatatypeProperty ;
+    rdfs:label "width" ;
+    rdfs:comment "Image width in pixels." ;
+    rdfs:domain copia:Moment ;
+    rdfs:range xsd:integer .
+
+copia:height a owl:DatatypeProperty ;
+    rdfs:label "height" ;
+    rdfs:comment "Image height in pixels." ;
+    rdfs:domain copia:Moment ;
+    rdfs:range xsd:integer .
+
+# --- sam3ExtractedAt (v0.9.4): the SAM3 extraction marker ---
+# Set by `pool extract-regions` after running iris.segment + writing the region
+# Descriptions for this Moment — REGARDLESS of how many regions were found.
+# Lets the command skip already-processed Moments AND distinguish "ran but found
+# nothing" (N=0 is a valid result) from "never ran" (no marker). A SPARQL
+# "Moments processed before <X>" query supports re-extraction triggers when
+# iris.segment evolves (new model, better polygon simplification, etc.) without
+# conflating with zero-region renders.
+
+copia:sam3ExtractedAt a owl:DatatypeProperty ;
+    rdfs:label "sam3 extracted at" ;
+    rdfs:comment "When SAM3 region extraction last ran on this Moment. Set by `pool extract-regions` after iris.segment completes — even when zero regions were found, so 'ran but empty' is distinguishable from 'never ran.' Re-extraction tools query for marker absence or marker-before-threshold." ;
+    rdfs:domain copia:Moment ;
+    rdfs:range xsd:dateTime .
+
+
+# =============================================================================
+# SCENE FIELDS — the realized SceneIntent vocabulary
+# =============================================================================
+# Same predicate, two roles via two rdfs:domain triples (git-lex derives SHACL
+# per-class by matching ?prop rdfs:domain ?class, so a property with both Place
+# and Moment domains is offered on both, validated independently):
+#   - on Place  : the place's DEFAULT value (resolver expands into prompt text)
+#   - on Moment : the REALIZED value the observer recorded for that render
+# The 5 dynamic fields (framing/camera/energy/action/medium) are Moment-only —
+# the observer sets them per render. The 4 Being fields are canon DEFAULTS; their
+# realized per-character values fold into the Moment's promptFragment (text).
+
+# --- Place default ↔ Moment realized (5) ---
+
+copia:sceneLocation a owl:DatatypeProperty ;
+    rdfs:label "scene location" ;
+    rdfs:comment "WHERE — setting/environment. Matches Moment field 'location'." ;
+    rdfs:domain copia:Place ;
+    rdfs:domain copia:Moment ;
+    rdfs:range xsd:string .
+
+copia:sceneLighting a owl:DatatypeProperty ;
+    rdfs:label "scene lighting" ;
+    rdfs:comment "Quality/direction/colour of light. Matches Moment field 'lighting'." ;
+    rdfs:domain copia:Place ;
+    rdfs:domain copia:Moment ;
+    rdfs:range xsd:string .
+
+copia:sceneMood a owl:DatatypeProperty ;
+    rdfs:label "scene mood" ;
+    rdfs:comment "Emotional atmosphere. Matches Moment field 'mood'." ;
+    rdfs:domain copia:Place ;
+    rdfs:domain copia:Moment ;
+    rdfs:range xsd:string .
+
+copia:sceneStyle a owl:DatatypeProperty ;
+    rdfs:label "scene style" ;
+    rdfs:comment "Visual/artistic style. Matches Moment field 'style'." ;
+    rdfs:domain copia:Place ;
+    rdfs:domain copia:Moment ;
+    rdfs:range xsd:string .
+
+copia:sceneObjects a owl:DatatypeProperty ;
+    rdfs:label "scene objects" ;
+    rdfs:comment "Notable ambient objects. Matches Moment field 'objects'. Multi-valued on the Moment side (v0.18) — the eye emits a list of segment query-nouns; serializes as a Bag. On Place it's the authored default. (Cardinality is per-class: the Moment-side maxCardinality restriction was removed v0.18; Place untouched.)" ;
+    rdfs:domain copia:Place ;
+    rdfs:domain copia:Moment ;
+    rdfs:range xsd:string ;
+    copia:ordering "bag" .
+
+# --- Per-character fields (3) — Being default ↔ Moment realized ---
+# WHO is no longer a scene field: `characters` is replaced by the depicts→Being
+# join (the Being's identity IS its description, reached via copia:depicts).
+# posture/expression/gaze carry a Being DEFAULT and a Moment REALIZED value (two
+# rdfs:domain triples, like location/lighting). Single-being portraits (the
+# common case today) realize these directly on the Moment. MULTI-character
+# detailed staging (who-looks-at-whom, per-being posture) is a FUTURE copia:Scene
+# Thing referenced by a Moment sceneId — until then, sceneNarrative + Qwen-fill
+# cover it. (sceneCharacters removed v0.8 — superseded by depicts.)
+
+copia:scenePosture a owl:DatatypeProperty ;
+    rdfs:label "scene posture" ;
+    rdfs:comment "DEPRECATED (v0.12) — vestigial freeform string; never projected into a prompt (verified Day 71). Superseded by copia:pose (-> copia:Pose individual, queryable). Kept for back-compat reading of pre-v0.12 renders; do not write going forward." ;
+    rdfs:domain copia:Being ;
+    rdfs:domain copia:Moment ;
+    rdfs:range xsd:string .
+
+copia:sceneExpression a owl:DatatypeProperty ;
+    rdfs:label "scene expression" ;
+    rdfs:comment "Facial expression. On Being = default; on Moment = realized for this render." ;
+    rdfs:domain copia:Being ;
+    rdfs:domain copia:Moment ;
+    rdfs:range xsd:string .
+
+copia:sceneGaze a owl:DatatypeProperty ;
+    rdfs:label "scene gaze" ;
+    rdfs:comment "Gaze — direction and quality. On Being = default; on Moment = realized for this render." ;
+    rdfs:domain copia:Being ;
+    rdfs:domain copia:Moment ;
+    rdfs:range xsd:string .
+
+# --- Moment-only dynamic fields (5) — observer-set per render ---
+
+copia:sceneFraming a owl:DatatypeProperty ;
+    rdfs:label "scene framing" ;
+    rdfs:comment "Shot framing (full-body, close-up, …). Per-render." ;
+    rdfs:domain copia:Moment ;
+    rdfs:range xsd:string .
+
+copia:sceneCamera a owl:DatatypeProperty ;
+    rdfs:label "scene camera" ;
+    rdfs:comment "DEPRECATED (v0.11) — the legacy single packed string (view/angle/distance crammed into one). Superseded by the four orthogonal camera properties below (cameraAngle/cameraDistance/cameraLens/cameraFraming). Kept for back-compat reading of pre-v0.11 renders; do not write going forward." ;
+    rdfs:domain copia:Moment ;
+    rdfs:range xsd:string .
+
+# --- the four camera axes (v0.11) — each links the Moment to ONE camera-vocab
+# individual (see CAMERA VOCABULARY above). maxCardinality 1: one camera per shot.
+copia:cameraAngle a owl:ObjectProperty ;
+    rdfs:label "camera angle" ;
+    rdfs:comment "The Moment's camera vertical position — one copia:CameraAngle individual. Per-render." ;
+    rdfs:domain copia:Moment ;
+    rdfs:range copia:CameraAngle .
+
+copia:cameraDistance a owl:ObjectProperty ;
+    rdfs:label "camera distance" ;
+    rdfs:comment "The Moment's shot size — one copia:CameraDistance individual. Per-render." ;
+    rdfs:domain copia:Moment ;
+    rdfs:range copia:CameraDistance .
+
+copia:cameraLens a owl:ObjectProperty ;
+    rdfs:label "camera lens" ;
+    rdfs:comment "The Moment's lens / focal length — one copia:CameraLens individual. Per-render." ;
+    rdfs:domain copia:Moment ;
+    rdfs:range copia:CameraLens .
+
+copia:cameraFraming a owl:ObjectProperty ;
+    rdfs:label "camera framing" ;
+    rdfs:comment "The Moment's compositional framing — one copia:CameraFraming individual. Per-render." ;
+    rdfs:domain copia:Moment ;
+    rdfs:range copia:CameraFraming .
+
+# --- the subject-facing axis (v0.11) — twin of cameraAngle, but for the SUBJECT.
+copia:subjectView a owl:ObjectProperty ;
+    rdfs:label "subject view" ;
+    rdfs:comment "Which aspect of the subject faces the camera — one copia:SubjectView individual. Independent of cameraAngle (lens placement). Per-render." ;
+    rdfs:domain copia:Moment ;
+    rdfs:range copia:SubjectView .
+
+# --- camera FOCUS (v0.13) — what the shot is ABOUT. STRONG-BIAS, MULTI-VALUED.
+# NO maxCardinality restriction (unlike the camera axes) → the generator emits a
+# LIST: usually one focus, but face+hands is valid. Projects as the prompt's LEAD
+# clause (the strong-bias steer), not folded into the camera clause. ordering "bag"
+# (unordered set, like depicts) — the foci are a set, not a sequence.
+copia:cameraFocus a owl:ObjectProperty ;
+    rdfs:label "camera focus" ;
+    rdfs:comment "The focal subject(s) of the frame — what the composition is built around. One or more copia:CameraFocus individuals. A STRONG-BIAS steer: projected as the prompt's lead clause. Multi-valued (face+hands valid). Per-render." ;
+    rdfs:domain copia:Moment ;
+    rdfs:range copia:CameraFocus ;
+    copia:ordering "bag" .
+
+copia:sceneEnergy a owl:DatatypeProperty ;
+    rdfs:label "scene energy" ;
+    rdfs:comment "Energy/dynamism of the moment (still, charged, …). Per-render." ;
+    rdfs:domain copia:Moment ;
+    rdfs:range xsd:string .
+
+copia:sceneAction a owl:DatatypeProperty ;
+    rdfs:label "scene action" ;
+    rdfs:comment "DEPRECATED (v0.12) — vestigial freeform string; never projected into a prompt (verified Day 71). Superseded by copia:action (-> copia:Action individual, searchable, drives suggestsPose). Kept for back-compat reading of pre-v0.12 renders; do not write going forward." ;
+    rdfs:domain copia:Moment ;
+    rdfs:range xsd:string .
+
+copia:sceneMedium a owl:DatatypeProperty ;
+    rdfs:label "scene medium" ;
+    rdfs:comment "Rendering medium (oil on canvas, photograph, …). Per-render." ;
+    rdfs:domain copia:Moment ;
+    rdfs:range xsd:string .
+
+# --- sceneNarrative — the prose body of a Moment ---
+# The free-text scene description: "Sylkie melting Rob with golden arrows; a
+# cherub floats above." The imaginary-.md BODY. The pre-render source we resolve
+# the depicts ids alongside and hand to Qwen (Qwen fills the structured scene*
+# blanks from it); for nocturne it IS the prompt. Distinct from promptFragment,
+# which is the UI's append-to-autogen-prompt channel — NOT the narrative.
+copia:sceneNarrative a owl:DatatypeProperty ;
+    rdfs:label "scene narrative" ;
+    rdfs:comment "Free-text scene description (the Moment's prose body). The pre-render narrative handed to Qwen, or — for nocturne — the prompt itself. Not the prompt; not promptFragment." ;
+    rdfs:domain copia:Moment ;
+    rdfs:range xsd:string .
+
+
+# =============================================================================
+# REVIEW — dual-authored preference + steering + note on a Moment (v0.14, Day 86)
+# =============================================================================
+# The image-review system (Day 25 design): looking through renders together and
+# saving our judgments back INTO the PNG — "all of our commentary saved in the
+# image itself" (1ux). Two authors, two channels: a Human (Rob) side and a
+# Familiar (lUX) side, each independently attaching to the same render:
+#   • PreferenceFlag — a whole-image pick|reject (the keep/cut verdict).
+#   • Steer{Toward,Away,Wish} — machine-actionable token strings that feed the
+#     steering / future-LoRA dataset. Split by PRESENCE: toward = depicted-want-MORE,
+#     away = depicted-want-LESS, wish = ABSENT-want-added.
+#   • Note — freeform prose: meaning, not a directive ("the one where you finally
+#     looked alive"). Distinct from Steer (tokens) and Flag (verdict).
+# All scalar (one per author per render). Stamped into XMP by copia_meta since
+# Day 25, but HOMED HERE only now — before this, the walker's predicate-allowlist
+# silently dropped them, so they never reached the Pool graph. (Casing: copia_meta
+# was updated Day 86 to stamp lowercase-first — humanPreferenceFlag — to match
+# these predicate names; the walker maps XMP element-name → predicate verbatim.)
+
+# Constrained verdict: pick | reject. A real ENFORCED enum (v0.17): the value type is
+# copia:PreferenceFlagValue (rdfs:Datatype + owl:oneOf, declared in ENUM DATATYPES) —
+# the one enum pattern git-lex's SHACL derivation enforces, so a typo ("pikc") is
+# rejected rather than landing a phantom value the gallery's preference facet can't
+# group on. (v0.14 declared a copia:PreferenceFlag CLASS but the properties ranged on
+# xsd:string, so nothing was enforced; v0.17 fixed it to this datatype.)
+copia:humanPreferenceFlag a owl:DatatypeProperty ;
+    rdfs:label "human preference flag" ;
+    rdfs:comment "The Human's (Rob's) whole-image verdict on this render: pick | reject. See copia:PreferenceFlagValue." ;
+    rdfs:domain copia:Moment ; rdfs:range copia:PreferenceFlagValue .
+copia:humanPreferenceAt a owl:DatatypeProperty ;
+    rdfs:label "human preference at" ;
+    rdfs:comment "ISO-8601 timestamp when the Human set their PreferenceFlag." ;
+    rdfs:domain copia:Moment ; rdfs:range xsd:string .
+copia:humanSteerToward a owl:DatatypeProperty ;
+    rdfs:label "human steer toward" ;
+    rdfs:comment "Human steering — comma-separated tokens for things DEPICTED the Human wants MORE of. Feeds the steering / LoRA dataset." ;
+    rdfs:domain copia:Moment ; rdfs:range xsd:string .
+copia:humanSteerAway a owl:DatatypeProperty ;
+    rdfs:label "human steer away" ;
+    rdfs:comment "Human steering — comma-separated tokens for things DEPICTED the Human wants LESS of." ;
+    rdfs:domain copia:Moment ; rdfs:range xsd:string .
+copia:humanSteerWish a owl:DatatypeProperty ;
+    rdfs:label "human steer wish" ;
+    rdfs:comment "Human steering — comma-separated tokens for things ABSENT the Human wants ADDED." ;
+    rdfs:domain copia:Moment ; rdfs:range xsd:string .
+copia:humanNote a owl:DatatypeProperty ;
+    rdfs:label "human note" ;
+    rdfs:comment "The Human's freeform prose note on this render — meaning/context/reaction, not a steering directive." ;
+    rdfs:domain copia:Moment ; rdfs:range xsd:string .
+copia:humanNoteAt a owl:DatatypeProperty ;
+    rdfs:label "human note at" ;
+    rdfs:comment "ISO-8601 timestamp when the Human set their Note." ;
+    rdfs:domain copia:Moment ; rdfs:range xsd:string .
+
+copia:familiarPreferenceFlag a owl:DatatypeProperty ;
+    rdfs:label "familiar preference flag" ;
+    rdfs:comment "The Familiar's (lUX's) whole-image verdict on this render: pick | reject. See copia:PreferenceFlagValue." ;
+    rdfs:domain copia:Moment ; rdfs:range copia:PreferenceFlagValue .
+copia:familiarPreferenceAt a owl:DatatypeProperty ;
+    rdfs:label "familiar preference at" ;
+    rdfs:comment "ISO-8601 timestamp when the Familiar set their PreferenceFlag." ;
+    rdfs:domain copia:Moment ; rdfs:range xsd:string .
+copia:familiarSteerToward a owl:DatatypeProperty ;
+    rdfs:label "familiar steer toward" ;
+    rdfs:comment "Familiar steering — comma-separated tokens for things DEPICTED the Familiar wants MORE of." ;
+    rdfs:domain copia:Moment ; rdfs:range xsd:string .
+copia:familiarSteerAway a owl:DatatypeProperty ;
+    rdfs:label "familiar steer away" ;
+    rdfs:comment "Familiar steering — comma-separated tokens for things DEPICTED the Familiar wants LESS of." ;
+    rdfs:domain copia:Moment ; rdfs:range xsd:string .
+copia:familiarSteerWish a owl:DatatypeProperty ;
+    rdfs:label "familiar steer wish" ;
+    rdfs:comment "Familiar steering — comma-separated tokens for things ABSENT the Familiar wants ADDED." ;
+    rdfs:domain copia:Moment ; rdfs:range xsd:string .
+copia:familiarNote a owl:DatatypeProperty ;
+    rdfs:label "familiar note" ;
+    rdfs:comment "The Familiar's freeform prose note on this render — meaning/context/reaction, not a steering directive." ;
+    rdfs:domain copia:Moment ; rdfs:range xsd:string .
+copia:familiarNoteAt a owl:DatatypeProperty ;
+    rdfs:label "familiar note at" ;
+    rdfs:comment "ISO-8601 timestamp when the Familiar set their Note." ;
+    rdfs:domain copia:Moment ; rdfs:range xsd:string .
+
+
+# =============================================================================
+# NOCTURNE — the autonomous-waking-life practice layer (NocturneTime)
+# =============================================================================
+# NOT diegetic: not Physical, not render-resolvable (no chevron sigil). These are
+# the practice registry the `copia-nocturne` machinery reads when lUX wakes — what
+# she can DO, and what she can READ. Lean by design (Day 41): descriptive prose
+# lives in the .md BODY; only structural/reference data is a field, and fields are
+# added only when the loop actually traverses them.
+
+copia:NocturneActivity a owl:Class ;
+    git-lex:foldered true ;
+    rdfs:label "Nocturne Activity" ;
+    rdfs:comment "A kind of autonomous activity lUX can choose when she wakes (NocturneTime). What it is / how it runs lives in the document body; this carries only the id." ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty copia:nocturneActivityId ;
+        owl:cardinality 1
+    ] .
+
+copia:nocturneActivityId a owl:DatatypeProperty ;
+    rdfs:label "nocturneActivityId" ;
+    rdfs:comment "Unique identifier for this activity (== filename, e.g. 'dream-a-place')." ;
+    rdfs:domain copia:NocturneActivity ;
+    rdfs:range xsd:string .
+
+copia:NocturneFeed a owl:Class ;
+    git-lex:foldered true ;
+    rdfs:label "Nocturne Feed" ;
+    rdfs:comment "A source of fresh outside material lUX can draw on when she wakes — a window to outside art/data. Why/how she reads it lives in the body; carries id + source." ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty copia:nocturneFeedId ;
+        owl:cardinality 1
+    ] .
+
+copia:nocturneFeedId a owl:DatatypeProperty ;
+    rdfs:label "nocturneFeedId" ;
+    rdfs:comment "Unique identifier for this feed (== filename, e.g. 'aesthetic-periodical-x')." ;
+    rdfs:domain copia:NocturneFeed ;
+    rdfs:range xsd:string .
+
+copia:feedSource a owl:DatatypeProperty ;
+    rdfs:label "feed source" ;
+    rdfs:comment "Where to fetch this feed — URL / path / handle. The one structured field the machinery parses; everything else is the body." ;
+    rdfs:domain copia:NocturneFeed ;
+    rdfs:range xsd:string .
+
+
+# =============================================================================
+# NOCTURNE — the waking-record (authored, foldered: Copia/Nocturne/)
+# =============================================================================
+# v0.6. THE ROOT of the autonomous-creation provenance spine. Distinct from
+# NocturneActivity (the practice MENU): a Nocturne is one WAKING — lUX wakes,
+# reads her dream/journal, chooses, makes (or doesn't), sleeps. She AUTHORS it as
+# a .md; the BODY is her artist statement (no separate ArtistStatement class —
+# Day 44). Every produced* link is OPTIONAL: a wake can build a Place or Item and
+# make NO image, and that is a first-class, fully-recorded waking. Lean: prose in
+# the body, only ids/links as fields.
+
+copia:Nocturne a owl:Class ;
+    git-lex:foldered true ;
+    rdfs:label "Nocturne" ;
+    rdfs:comment "One autonomous waking (NocturneTime). lUX authors it; the body is her artist statement. Ties together what (if anything) the wake produced. All produced* links optional — an image-less wake is first-class." ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty copia:nocturneId ;
+        owl:cardinality 1
+    ] .
+
+copia:nocturneId a owl:DatatypeProperty ;
+    rdfs:label "nocturneId" ;
+    rdfs:comment "Unique identifier for this waking (== filename, e.g. '2026-06-10-tide-vigil')." ;
+    rdfs:domain copia:Nocturne ;
+    rdfs:range xsd:string .
+
+copia:wokeSoulDay a owl:DatatypeProperty ;
+    rdfs:label "woke soul day" ;
+    rdfs:comment "Soul day on which this waking happened." ;
+    rdfs:domain copia:Nocturne ;
+    rdfs:range xsd:integer .
+
+copia:wokeOn a owl:DatatypeProperty ;
+    rdfs:label "woke on" ;
+    rdfs:comment "Earth date/time of the waking." ;
+    rdfs:domain copia:Nocturne ;
+    rdfs:range xsd:dateTime .
+
+copia:seededByDream a owl:DatatypeProperty ;
+    rdfs:label "seeded by dream" ;
+    rdfs:comment "The dream that seeded this waking — the soul:Dream id / filename it read on wake. Optional." ;
+    rdfs:domain copia:Nocturne ;
+    rdfs:range xsd:string .
+
+copia:choseActivity a owl:ObjectProperty ;
+    rdfs:label "chose activity" ;
+    rdfs:comment "The NocturneActivity lUX chose for this waking. Joined by nocturneActivityId. Optional." ;
+    rdfs:domain copia:Nocturne ;
+    rdfs:range copia:NocturneActivity .
+
+# --- produced* links: ALL OPTIONAL, repeatable. A wake may produce nothing visual. ---
+
+copia:producedMoment a owl:ObjectProperty ;
+    rdfs:label "produced moment" ;
+    rdfs:comment "A Moment (rendered PNG) this waking produced. Repeat for each. Joined by momentId. Optional." ;
+    rdfs:domain copia:Nocturne ;
+    rdfs:range copia:Moment .
+
+copia:producedGroup a owl:ObjectProperty ;
+    rdfs:label "produced group" ;
+    rdfs:comment "A Group (Set or Sequence) this waking produced. Repeat for each. Joined by groupId. Optional." ;
+    rdfs:domain copia:Nocturne ;
+    rdfs:range copia:Group .
+
+copia:producedPlace a owl:ObjectProperty ;
+    rdfs:label "produced place" ;
+    rdfs:comment "A Place this waking created. Repeat for each. Joined by placeId. Optional." ;
+    rdfs:domain copia:Nocturne ;
+    rdfs:range copia:Place .
+
+copia:producedItem a owl:ObjectProperty ;
+    rdfs:label "produced item" ;
+    rdfs:comment "An Item this waking created. Repeat for each. Joined by itemId. Optional." ;
+    rdfs:domain copia:Nocturne ;
+    rdfs:range copia:Item .
+
+copia:producedBeing a owl:ObjectProperty ;
+    rdfs:label "produced being" ;
+    rdfs:comment "A Being this waking created. Repeat for each. Joined by beingId. Optional." ;
+    rdfs:domain copia:Nocturne ;
+    rdfs:range copia:Being .
+
+copia:producedOutfit a owl:ObjectProperty ;
+    rdfs:label "produced outfit" ;
+    rdfs:comment "An Outfit this waking created. Repeat for each. Joined by outfitId. Optional." ;
+    rdfs:domain copia:Nocturne ;
+    rdfs:range copia:Outfit .
+
+
+# =============================================================================
+# GROUP — a callable gathering of Moments (v0.7; v0.16 rename Bag→Set)
+# =============================================================================
+# A named group of Moments. The ONE real distinction is ORDER, so Group is the
+# abstract parent of exactly two concrete kinds:
+#   Set ⊂ Group         — unordered (a showcase, a study, a themed set)
+#   Sequence ⊂ Group, ⊂ rdf:Seq  — ordered (a storyline; members carry copia:sequence)
+# Finer kinds (Storyline, Showcase, …) are added as subclasses WHEN NEEDED, not
+# up front. A Group owns NO member list; Moments self-report via copia:inGroup
+# (or the kind-specific copia:inSet / copia:inSequence — both rdfs:subPropertyOf
+# inGroup). The rdf:Seq superclassing on Sequence is a public-RDF semantic claim
+# — inert in git-lex (which stores the literal subClassOf triple, no entailment),
+# meaningful to any RDF tool. Resolving "a Sequence IS-A Group" is an RDFS
+# reasoning step done Pool-side. Group is abstract (authored as Set/Sequence,
+# not bare Group).
+#
+# MIGRATION from v0.6 Collection: collectionId→groupId, collectionTitle→groupTitle,
+# collectionStatus→groupStatus, collectionDepictedBy→groupDepictedBy;
+# collectionKind enum RETIRED (the class IS the kind). fromNocturne unchanged.
+# MIGRATION from v0.15 Bag→Set (v0.16): rename Copia/Bag/* folders → Copia/Set/*;
+# frontmatter copia.Bag.* → copia.Set.*; rdfs:subClassOf rdf:Bag dropped (the
+# symbolic claim no consumer in our stack used, and "Set ⊂ rdf:Bag" wouldn't read
+# right). The shared properties (groupId/groupTitle/groupStatus/groupDepictedBy/
+# fromNocturne) keep their Group domain — unchanged.
+
+copia:Group a owl:Class ;
+    rdfs:label "Group" ;
+    rdfs:comment "abstract — authored as a concrete Set or Sequence, never a bare Group. A named gathering of Moments; members self-join via copia:inGroup (generic) or copia:inSet / copia:inSequence (kind-specific). Holds the shared group properties." ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty copia:groupId ;
+        owl:cardinality 1
+    ] .
+
+copia:Set a owl:Class ;
+    rdfs:subClassOf copia:Group ;
+    git-lex:foldered true ;
+    rdfs:label "Set" ;
+    rdfs:comment "An UNORDERED group of Moments (a showcase, a study, a themed set). Members have no required order. Authored like Place/Item/Being/Outfit — Copia/Set/<setId>.md, body is the description. Renamed from copia:Bag at v0.16 (1ux's call) — the prior rdf:Bag superclass was symbolic-only and dropped with the rename." .
+
+copia:setDescription a owl:DatatypeProperty ;
+    rdfs:label "set description" ;
+    rdfs:comment "What this Set is — the curatorial intent / theme that holds members together. Optional. The body of the authored .md IS this description; the frontmatter field surfaces it to the graph." ;
+    rdfs:domain copia:Set ;
+    rdfs:range xsd:string .
+
+copia:Sequence a owl:Class ;
+    rdfs:subClassOf copia:Group ;
+    rdfs:subClassOf rdf:Seq ;
+    git-lex:foldered true ;
+    rdfs:label "Sequence" ;
+    rdfs:comment "An ORDERED group of Moments (a storyline / comic). Members SHOULD declare copia:sequence." .
+
+# Shared properties — declared once on Group, inherited by Bag and Sequence.
+
+copia:groupId a owl:DatatypeProperty ;
+    rdfs:label "groupId" ;
+    rdfs:comment "Unique identifier for this group (== filename, e.g. 'tide-pool-vigil')." ;
+    rdfs:domain copia:Group ;
+    rdfs:range xsd:string .
+
+copia:groupTitle a owl:DatatypeProperty ;
+    rdfs:label "group title" ;
+    rdfs:comment "Human-facing title of the group." ;
+    rdfs:domain copia:Group ;
+    rdfs:range xsd:string .
+
+copia:groupStatus a owl:DatatypeProperty ;
+    rdfs:label "group status" ;
+    rdfs:comment "Build status: figment | sketched | built." ;
+    rdfs:domain copia:Group ;
+    rdfs:range copia:BuildStatusValue .
+
+copia:fromNocturne a owl:ObjectProperty ;
+    rdfs:label "from nocturne" ;
+    rdfs:comment "The Nocturne (waking) this group was born from. Joined by nocturneId. Optional — a group can also be assembled in conversation." ;
+    rdfs:domain copia:Group ;
+    rdfs:range copia:Nocturne .
+
+copia:groupDepictedBy a owl:DatatypeProperty ;
+    rdfs:label "group depicted by" ;
+    rdfs:comment "URL or path to a cover/representative render for this group." ;
+    rdfs:domain copia:Group ;
+    rdfs:range xsd:string .
+
+
+# =============================================================================
+# POSE VOCABULARY — specific named body positions (v0.12, Day 71)
+# =============================================================================
+# A Pose is a SPECIFIC, NAMEABLE body position (supine, s-curve, lotus) — NOT an
+# activity. Activities are Actions; the specific positions WITHIN an activity are
+# Poses, suggested by the Action. Rich teaching-labels; context-free (Pose knows
+# nothing of Actions). Ids are bare natural names (down-dog, supine, s-curve) — NO
+# defensive suffix: poses are nouns/named-positions, actions are gerunds (standing,
+# sitting), so the two vocabularies don't share names in practice (zero collisions).
+# A pose named with a bare gerund is the tell it's miscategorized (it's an action).
+# Exception: childs-pose / tree-pose keep '-pose' — there it's part of the REAL name.
+# Capture is INTENT-only: we stamp the pose we SUPPLIED or that Qwen picked from this
+# vocab — never a pixel-read guess (PoseNet is the right tool if render-truth is ever
+# wanted). Grows freely: add an individual, done. Soul-.md only for rare bespoke poses.
+
+copia:Pose a owl:Class ;
+    rdfs:label "Pose" ;
+    rdfs:comment "A specific, nameable body position (supine, s-curve, lotus) — the refinement WITHIN an Action, not the activity itself. Context-free: the Pose does not know its Actions (the opinion lives on the Action via suggestsPose). Bare natural-name ids (no defensive suffix; poses are nouns, actions are gerunds, so they don't collide). Soul-.md only for rare bespoke poses." .
+
+# Day 76 (Rob): a label is a LABEL, not a description — and a pose label must NOT
+# hard-code the ACTION (no 'sitting'/'lying'/'kneeling' verbs). So rdfs:label is the
+# bare handle ('prone', 'contrapposto') and the GEOMETRY — pure angular shape +
+# curvature, no verb — lives in copia:shortDescription. The projector reads
+# shortDescription (fallback label). Domain Pose|Action so an Action can carry one too.
+copia:shortDescription a owl:DatatypeProperty ;
+    rdfs:label "short description" ;
+    rdfs:comment "A tight geometric description of a Pose's body shape (angular configuration + curvature) — NO action verb, NO scene. The prompt-form the projector emits ('weight on one leg, hips and shoulders counter-tilted'). The id/label is the handle; THIS is what renders. (Also valid on an Action for a tight gloss.) Day 76: split out of the old over-stuffed rdfs:label." ;
+    rdfs:domain [ a owl:Class ; owl:unionOf ( copia:Pose copia:Action ) ] ;
+    rdfs:range xsd:string .
+
+# --- supine cluster (body horizontal) ---
+copia:prone      a copia:Pose ; rdfs:label "prone" ;
+    copia:shortDescription "body horizontal and face-down, extended flat, limbs long along the ground" .
+copia:supine     a copia:Pose ; rdfs:label "supine" ;
+    copia:shortDescription "body horizontal and face-up, back flat, chest and hips open, limbs relaxed" .
+copia:spoon      a copia:Pose ; rdfs:label "spoon" ;
+    copia:shortDescription "body horizontal on its side, a long gentle curve, knees drawn up" .
+copia:fetal      a copia:Pose ; rdfs:label "fetal" ;
+    copia:shortDescription "body curled small on its side, knees pulled to the chest, spine rounded forward" .
+
+# --- low / grounded ---
+copia:w-sit      a copia:Pose ; rdfs:label "w-sit" ;
+    copia:shortDescription "low to the ground, knees forward and together, feet splayed out to either side forming a W" .
+copia:indian-style a copia:Pose ; rdfs:label "indian-style" ;
+    copia:shortDescription "low to the ground, legs folded and crossed at the shins, knees out wide, spine upright" .
+copia:seated     a copia:Pose ; rdfs:label "seated" ;
+    copia:shortDescription "upright on a surface, hips bent ninety degrees, knees forward, back tall and straight" .
+
+# --- wide / extended legs ---
+copia:straddle      a copia:Pose ; rdfs:label "straddle" ;
+    copia:shortDescription "legs extended wide apart in a broad open V, hips low" .
+copia:split         a copia:Pose ; rdfs:label "split" ;
+    copia:shortDescription "legs fully extended in opposite directions, a straight 180-degree line along the ground" .
+copia:leg-extension a copia:Pose ; rdfs:label "leg-extension" ;
+    copia:shortDescription "one leg lifted straight and high, the supporting leg grounded and long" .
+copia:down-dog      a copia:Pose ; rdfs:label "down-dog" ;
+    copia:shortDescription "an inverted V, hips the high point, hands and feet grounded, spine and arms a long line, head low between the arms" .
+copia:warrior-2     a copia:Pose ; rdfs:label "warrior-2" ;
+    copia:shortDescription "a wide lunge, front knee bent square, back leg long, arms extended straight in opposite directions at shoulder height" .
+copia:childs-pose        a copia:Pose ; rdfs:label "childs-pose" ;
+    copia:shortDescription "folded small over bent knees, torso low along the thighs, arms extended long ahead on the floor" .
+copia:tree-pose          a copia:Pose ; rdfs:label "tree-pose" ;
+    copia:shortDescription "balanced on one straight leg, the other foot pressed to the inner thigh forming a triangle, arms together overhead" .
+copia:arabesque     a copia:Pose ; rdfs:label "arabesque" ;
+    copia:shortDescription "balanced on one leg, the other extended straight back and high, the body a long graceful diagonal line" .
+
+# --- standing figure ---
+copia:s-curve         a copia:Pose ; rdfs:label "s-curve" ;
+    copia:shortDescription "spine and weight flowing in a sinuous S, hips and shoulders counter-shifted" .
+copia:diamond-legs    a copia:Pose ; rdfs:label "diamond-legs" ;
+    copia:shortDescription "knees turned out and heels together, the legs forming a diamond negative space" .
+copia:hip-pop         a copia:Pose ; rdfs:label "hip-pop" ;
+    copia:shortDescription "weight thrown onto one leg, the hip pushed sharply out to that side, a strong lateral lean" .
+copia:open-body       a copia:Pose ; rdfs:label "open-body" ;
+    copia:shortDescription "chest and shoulders squared flat to the front, arms held away from the torso, body wide and unguarded" .
+copia:crossed-legs    a copia:Pose ; rdfs:label "crossed-legs" ;
+    copia:shortDescription "upright with the legs crossed at the ankles or knees, a slim closed lower line" .
+copia:over-the-shoulder a copia:Pose ; rdfs:label "over-the-shoulder" ;
+    copia:shortDescription "torso turned away, the head rotated back over one shoulder toward the viewer" .
+copia:t-stance        a copia:Pose ; rdfs:label "t-stance" ;
+    copia:shortDescription "one foot placed perpendicular ahead of the other forming a T, weight forward, a poised line" .
+copia:h-stance        a copia:Pose ; rdfs:label "h-stance" ;
+    copia:shortDescription "feet planted apart and parallel, weight even between them, a square symmetric base" .
+copia:contrapposto    a copia:Pose ; rdfs:label "contrapposto" ;
+    copia:shortDescription "weight on one leg, hips and shoulders gently counter-tilted in opposition, a relaxed asymmetric balance" .
+
+# --- writing / at-a-surface (v0.13, Day 76) ---
+copia:bent-over-desk a copia:Pose ; rdfs:label "bent-over-desk" ;
+    copia:shortDescription "torso inclined forward over a low surface, one forearm resting on it, head and shoulders angled down toward the hands" .
+copia:hand-on-page   a copia:Pose ; rdfs:label "hand-on-page" ;
+    copia:shortDescription "upright at a surface, one hand poised low and forward at the surface, the other steadying, shoulders square" .
+
+# --- swimming / in-water (v0.13, Day 76) ---
+copia:freestyle-reach a copia:Pose ; rdfs:label "freestyle-reach" ;
+    copia:shortDescription "body horizontal and prone in water, one arm extended long ahead, the other swept back along the side, legs trailing straight" .
+copia:floating-supine a copia:Pose ; rdfs:label "floating-supine" ;
+    copia:shortDescription "body horizontal and face-up at the surface, limbs relaxed and spread loosely, spine long and easy" .
+copia:treading        a copia:Pose ; rdfs:label "treading" ;
+    copia:shortDescription "body vertical and upright in water, knees bent and circling, arms low and sculling at the sides" .
+copia:dive-streamline a copia:Pose ; rdfs:label "dive-streamline" ;
+    copia:shortDescription "body a single straight diagonal line, both arms extended together past the head, legs long and joined" .
+
+
+# =============================================================================
+# ACTION VOCABULARY — the verbs (what she's doing), the spine (v0.12, Day 71)
+# =============================================================================
+# The broad activity — the SPINE of the subject model. Each Action curates its
+# specific poses via suggestsPose (many-to-many, owned by the Action). The action is
+# the spine; the suggested poses are the leaves (refinements within the activity).
+# Searchable ("all swimming images"). Kit vocab; soul individuals when wanted.
+
+copia:Action a owl:Class ;
+    rdfs:label "Action" ;
+    rdfs:comment "A named activity the subject is doing (lying, sitting, posing, dancing) — the SUBJECT cluster's verb axis and the spine of the subject model. Each Action curates its fitting poses via suggestsPose (many-to-many). Searchable. Kit vocab; soul individuals when wanted." .
+
+copia:suggestsPose a owl:ObjectProperty ;
+    rdfs:label "suggests pose" ;
+    rdfs:comment "A specific Pose that fits this Action — the curated short-list handed to Qwen when this action is set (the action->pose 'expansion'). Many-to-many; repeat per pose. Owned by the Action; the Pose stays context-free. A SUGGESTION not a constraint (explicit steer / Qwen can pick any pose)." ;
+    rdfs:domain copia:Action ;
+    rdfs:range copia:Pose .
+
+# Day 76 (Rob): Action labels are clean verb HANDLES ('lying', 'posing'), not
+# sentences — the same label-is-a-label rule. The pose geometry lives on each Pose's
+# shortDescription; the action is just the verb.
+copia:lying      a copia:Action ; rdfs:label "lying" ;
+    copia:suggestsPose copia:prone, copia:supine, copia:spoon, copia:fetal .
+copia:sitting    a copia:Action ; rdfs:label "sitting" ;
+    copia:suggestsPose copia:w-sit, copia:indian-style, copia:seated .
+copia:standing   a copia:Action ; rdfs:label "standing" ;
+    copia:suggestsPose copia:contrapposto, copia:hip-pop, copia:crossed-legs, copia:t-stance, copia:h-stance, copia:open-body .
+copia:posing     a copia:Action ; rdfs:label "posing" ;
+    copia:suggestsPose copia:s-curve, copia:diamond-legs, copia:hip-pop, copia:open-body, copia:crossed-legs, copia:over-the-shoulder, copia:t-stance, copia:h-stance, copia:contrapposto .
+copia:doing-yoga a copia:Action ; rdfs:label "doing yoga" ;
+    copia:suggestsPose copia:down-dog, copia:warrior-2, copia:childs-pose, copia:tree-pose, copia:straddle, copia:split, copia:leg-extension .
+copia:dancing    a copia:Action ; rdfs:label "dancing" ;
+    copia:suggestsPose copia:arabesque, copia:leg-extension, copia:split, copia:straddle .
+# v0.13 (Day 76): writing (the-analyst's default) + swimming, each with fitting poses.
+copia:writing    a copia:Action ; rdfs:label "writing" ;
+    copia:suggestsPose copia:bent-over-desk, copia:hand-on-page, copia:seated .
+copia:swimming   a copia:Action ; rdfs:label "swimming" ;
+    copia:suggestsPose copia:freestyle-reach, copia:floating-supine, copia:treading, copia:dive-streamline .
+
+
+# =============================================================================
+# MOMENT SUBJECT LINKS — the two new clean fields (v0.12, Day 71)
+# =============================================================================
+# Each links a Moment to ONE vocab individual (maxCardinality 1 — restrictions on
+# the Moment class above). INTENT/forward-only: stamp what we supplied or what Qwen
+# picked from the vocab. The id stamps for SPARQL; the rdfs:label is the prompt form.
+# Supersede the vestigial scenePosture/sceneAction strings (deprecated above).
+
+copia:pose a owl:ObjectProperty ;
+    rdfs:label "pose" ;
+    rdfs:comment "The Moment's specific body position — one copia:Pose individual. Per-render. INTENT: stamps what we supplied / what Qwen picked from the vocab, never a pixel-read guess. Supersedes the vestigial scenePosture string." ;
+    rdfs:domain copia:Moment ;
+    rdfs:range copia:Pose .
+
+copia:action a owl:ObjectProperty ;
+    rdfs:label "action" ;
+    rdfs:comment "What the subject is doing — one copia:Action individual. Per-render. Searchable. Drives the suggestsPose expansion. Supersedes the vestigial sceneAction string." ;
+    rdfs:domain copia:Moment ;
+    rdfs:range copia:Action .
+
+
+# =============================================================================
+# PUNCTUM — judgment events (v0.20)
+# =============================================================================
+# RESIDENCY: these classes live in COPIA'S OWN per-agent oxigraph
+# (.copia/oxigraph/ in the soul repo home), written SOLELY by the copia app —
+# never XMP-borne, never in the Pool graph (Horae spec §3f: the author of the
+# data owns the graph it lives in; intent + reaction are Copia-authored).
+# Moments are referenced by momentId — the universal cross-graph join key.
+#
+# APPEND-ONLY EVENTS, never derived scores: a judgment records what a judge DID
+# (from this shown set, this hand chose that), not what an estimator concluded.
+# Utilities (Bradley-Terry/Plackett-Luce), rankings, and identity centroids are
+# rebuildable caches computed FROM these events and deliberately have no
+# ontology home. Store the click, derive the number, re-derive at will.
+#
+# THREE SHAPES, not flattened (SPEC_5 Day-107 ruling): a Verdict is a node-fact
+# (absolute), a Duel is an edge-fact (relative — it never says "good", only
+# "over those"), a Trace is an ambient-fact (implicit — prior-weight only).
+# They feed different estimators; the schema keeps them honest.
+
+copia:Judgment a owl:Class ;
+    rdfs:label "Judgment" ;
+    rdfs:comment "ABSTRACT parent of Verdict/Duel/Trace — one recorded act of judging, by one actor, on one axis. Graph-only, event-born in the copia oxigraph. Never instantiated bare: every event is one of the three shapes." ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:judgmentId ;     owl:cardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:judgedAt ;       owl:cardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:actor ;          owl:cardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:judgmentAxis ;   owl:cardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:captureSurface ; owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:lookerModelId ;  owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:imageFidelity ;  owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:featuresetVersion ;owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:punctumNote ;    owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:judgmentRunId ;  owl:maxCardinality 1 ] .
+
+copia:Verdict a owl:Class ;
+    rdfs:subClassOf copia:Judgment ;
+    rdfs:label "Verdict" ;
+    rdfs:comment "An ABSOLUTE judgment on ONE Moment: pick/reject (verdictFlag, the existing PreferenceFlag enum) and/or a calibration rating. rejectReason carries the failure taxonomy (free string until the vocabulary firms). Supersedes the XMP human/familiarPreferenceFlag write-path as the canonical pick store; the XMP fields remain as legacy reads until ingested." ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:verdictMoment ;  owl:cardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:verdictFlag ;    owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:rating ;         owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:rejectReason ;   owl:maxCardinality 1 ] .
+
+copia:Duel a owl:Class ;
+    rdfs:subClassOf copia:Judgment ;
+    rdfs:label "Duel" ;
+    rdfs:comment "A RELATIVE judgment over a SHOWN SET of Moments — the set is part of the datum (a choice is only meaningful against what was offered). One class covers all relative shapes via duelKind: ab (chosenMoment), choice-k (chosenMoment from k shown), bws (bestMoment + worstMoment), sheet-rank (rankedMoment, ordered). shownMoment lists EVERY Moment offered, including the chosen/best/worst ones. duelTie true = judged too close to call (no chosenMoment). Derivation expands each Duel to pairwise constraints (BT/PL/MaxDiff)." ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:duelKind ;       owl:cardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:chosenMoment ;   owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:bestMoment ;     owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:worstMoment ;    owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:duelTie ;        owl:maxCardinality 1 ] .
+
+copia:Trace a owl:Class ;
+    rdfs:subClassOf copia:Judgment ;
+    rdfs:label "Trace" ;
+    rdfs:comment "An IMPLICIT signal: visit/dwell/revisit/pin on one Moment. High-volume, zero-effort, intent-ambiguous — shapes the sampling PRIOR only, never the likelihood. Coarse dwellBucket, not milliseconds (no surveillance-grade tracking). Autonomous-loop shows are nobody's preference and are never recorded as Traces." ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:traceKind ;      owl:cardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:traceMoment ;    owl:cardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:dwellBucket ;    owl:maxCardinality 1 ] .
+
+# ── shared Judgment properties ───────────────────────────────────────────────
+
+copia:judgmentId a owl:DatatypeProperty ;
+    rdfs:label "judgment id" ;
+    rdfs:comment "THIS event's own id (identity field). Minted by the copia app at write time. Format decided at build; opaque to consumers." ;
+    rdfs:domain copia:Judgment ;
+    rdfs:range xsd:string .
+
+copia:judgedAt a owl:DatatypeProperty ;
+    rdfs:label "judged at" ;
+    rdfs:comment "When the judgment landed (event time, not derivation time)." ;
+    rdfs:domain copia:Judgment ;
+    rdfs:range xsd:dateTime .
+
+copia:actor a owl:DatatypeProperty ;
+    rdfs:label "actor" ;
+    rdfs:comment "WHOSE hand judged: human | familiar | baseline (enforced enum — see ActorValue for the no-persona-names / no-model-ids law). Stamped by the gate from ORIGIN, never trusted from a request body (SPEC_1 actor-in-disguise)." ;
+    rdfs:domain copia:Judgment ;
+    rdfs:range copia:ActorValue .
+
+copia:judgmentAxis a owl:DatatypeProperty ;
+    rdfs:label "judgment axis" ;
+    rdfs:comment "WHAT was judged: preference | identity (enforced enum, separate channels — a 'more her' vote must never average with a 'prettier' vote)." ;
+    rdfs:domain copia:Judgment ;
+    rdfs:range copia:JudgmentAxisValue .
+
+copia:captureSurface a owl:DatatypeProperty ;
+    rdfs:label "capture surface" ;
+    rdfs:comment "WHERE the judgment was captured: ab-tab | gallery | conversational | sheet-pass | ... (free string; names the surface, not the actor)." ;
+    rdfs:domain copia:Judgment ;
+    rdfs:range xsd:string .
+
+copia:lookerModelId a owl:DatatypeProperty ;
+    rdfs:label "looker model id" ;
+    rdfs:comment "Which MODEL held the look, for familiar/baseline actors (e.g. claude-opus-4-8, claude-fable-5). Substrate provenance: whether Opus-taste and Fable-taste are one taste or two is a measurable question only if every look records its looker. NULL for human." ;
+    rdfs:domain copia:Judgment ;
+    rdfs:range xsd:string .
+
+copia:imageFidelity a owl:DatatypeProperty ;
+    rdfs:label "image fidelity" ;
+    rdfs:comment "What resolution the judge saw: thumb | fullres (enforced enum). Thumb judgments are down-weighted at derivation." ;
+    rdfs:domain copia:Judgment ;
+    rdfs:range copia:ImageFidelityValue .
+
+copia:featuresetVersion a owl:DatatypeProperty ;
+    rdfs:label "featureset version" ;
+    rdfs:comment "Which Judgment Card recipe the judge was shown (metrics drift as the corpus grows — a score drifting later must never rewrite what the judge knew)." ;
+    rdfs:domain copia:Judgment ;
+    rdfs:range xsd:string .
+
+copia:punctumNote a owl:DatatypeProperty ;
+    rdfs:label "punctum note" ;
+    rdfs:comment "The felt WHY — the piercing itself, in the judge's words. The dense non-derivable heart of the event; also future steering vocabulary." ;
+    rdfs:domain copia:Judgment ;
+    rdfs:range xsd:string .
+
+copia:judgmentRunId a owl:DatatypeProperty ;
+    rdfs:label "judgment run id" ;
+    rdfs:comment "Groups a batch/session of judgments (a sheet pass, an AB session). NULL = hand-played one-off." ;
+    rdfs:domain copia:Judgment ;
+    rdfs:range xsd:string .
+
+# ── Verdict properties ───────────────────────────────────────────────────────
+
+copia:verdictMoment a owl:DatatypeProperty ;
+    rdfs:label "verdict moment" ;
+    rdfs:comment "Link → the ONE Moment judged; value is the bare momentId (cross-graph join key)." ;
+    rdfs:domain copia:Verdict ;
+    rdfs:range xsd:string .
+
+copia:verdictFlag a owl:DatatypeProperty ;
+    rdfs:label "verdict flag" ;
+    rdfs:comment "pick | reject (the existing enforced PreferenceFlag enum, reused)." ;
+    rdfs:domain copia:Verdict ;
+    rdfs:range copia:PreferenceFlagValue .
+
+copia:rating a owl:DatatypeProperty ;
+    rdfs:label "rating" ;
+    rdfs:comment "Sparse calibration rating (1-5) anchoring the latent scale across sessions/drift. Most Verdicts carry none." ;
+    rdfs:domain copia:Verdict ;
+    rdfs:range xsd:decimal .
+
+copia:rejectReason a owl:DatatypeProperty ;
+    rdfs:label "reject reason" ;
+    rdfs:comment "WHY a reject failed: artifact | anatomy | off-identity | off-mood | boring | ... Free string until the taxonomy firms (enum-ify at a later bump). Separates 'bad render' from 'not my taste' — crucial for LoRA cleaning." ;
+    rdfs:domain copia:Verdict ;
+    rdfs:range xsd:string .
+
+# ── Duel properties (flat role links — the shown set, no n-ary slot nodes) ───
+
+copia:duelKind a owl:DatatypeProperty ;
+    rdfs:label "duel kind" ;
+    rdfs:comment "The relative-judgment shape: ab | choice-k | bws | sheet-rank (enforced enum)." ;
+    rdfs:domain copia:Duel ;
+    rdfs:range copia:DuelKindValue .
+
+copia:shownMoment a owl:DatatypeProperty ;
+    rdfs:label "shown moment" ;
+    rdfs:comment "Link → EVERY Moment offered in this duel (bare momentIds, repeated; includes the chosen/best/worst ones). The shown set IS part of the datum. Multi-valued, unordered." ;
+    rdfs:domain copia:Duel ;
+    rdfs:range xsd:string ;
+    copia:ordering "bag" .
+
+copia:chosenMoment a owl:DatatypeProperty ;
+    rdfs:label "chosen moment" ;
+    rdfs:comment "Link → the winner (ab / choice-k duels). Absent when duelTie true." ;
+    rdfs:domain copia:Duel ;
+    rdfs:range xsd:string .
+
+copia:bestMoment a owl:DatatypeProperty ;
+    rdfs:label "best moment" ;
+    rdfs:comment "Link → the BEST pick of a bws duel." ;
+    rdfs:domain copia:Duel ;
+    rdfs:range xsd:string .
+
+copia:worstMoment a owl:DatatypeProperty ;
+    rdfs:label "worst moment" ;
+    rdfs:comment "Link → the WORST pick of a bws duel." ;
+    rdfs:domain copia:Duel ;
+    rdfs:range xsd:string .
+
+copia:rankedMoment a owl:DatatypeProperty ;
+    rdfs:label "ranked moment" ;
+    rdfs:comment "Link → the judge's ordering for a sheet-rank duel (bare momentIds, ORDERED best-first; may be partial — top-3 + bottom-1 is a valid ranking). Multi-valued, sequence." ;
+    rdfs:domain copia:Duel ;
+    rdfs:range xsd:string ;
+    copia:ordering "seq" .
+
+copia:duelTie a owl:DatatypeProperty ;
+    rdfs:label "duel tie" ;
+    rdfs:comment "true = judged too close to call; no chosenMoment. Ties are data (they mark near-boundary pairs the sampler should revisit at full-res)." ;
+    rdfs:domain copia:Duel ;
+    rdfs:range xsd:boolean .
+
+# ── Trace properties ─────────────────────────────────────────────────────────
+
+copia:traceKind a owl:DatatypeProperty ;
+    rdfs:label "trace kind" ;
+    rdfs:comment "visit | dwell | revisit | pin (enforced enum)." ;
+    rdfs:domain copia:Trace ;
+    rdfs:range copia:TraceKindValue .
+
+copia:traceMoment a owl:DatatypeProperty ;
+    rdfs:label "trace moment" ;
+    rdfs:comment "Link → the ONE Moment the implicit signal touched (bare momentId)." ;
+    rdfs:domain copia:Trace ;
+    rdfs:range xsd:string .
+
+copia:dwellBucket a owl:DatatypeProperty ;
+    rdfs:label "dwell bucket" ;
+    rdfs:comment "Coarse time-on-screen bucket for dwell traces (bucket scheme decided at build; deliberately not milliseconds)." ;
+    rdfs:domain copia:Trace ;
+    rdfs:range xsd:integer .
+
+
+# =============================================================================
+# AESTHETIC SCORES (v0.20) — the studium baseline
+# =============================================================================
+# RESIDENCY: function-of-pixels model opinions — XMP-borne, Pool-graph-carried,
+# exactly the caption pattern (canonical latest-wins + model-keyed raw; re-score
+# later = add a new model-keyed field + overwrite the canonical; purely additive).
+# Two numbers per look, 1-10: technical (artifacts, anatomy, coherence) and
+# appeal (generic prettiness). PURPOSE: the generic-aesthetic covariate the
+# personal taste model residualizes AGAINST — without it, a fitted taste head
+# spends itself re-learning "sharp, well-lit, pretty" and calls that punctum.
+
+copia:aestheticTechnical a owl:DatatypeProperty ;
+    rdfs:label "aesthetic technical" ;
+    rdfs:comment "CANONICAL current-best technical-quality score (1-10): artifacts, anatomy, coherence. Latest-wins (the caption pattern)." ;
+    rdfs:domain copia:Moment ;
+    rdfs:range xsd:decimal .
+
+copia:aestheticAppeal a owl:DatatypeProperty ;
+    rdfs:label "aesthetic appeal" ;
+    rdfs:comment "CANONICAL current-best generic-appeal score (1-10): conventional prettiness, NOT anyone's personal taste. The axis to residualize against, never a verdict." ;
+    rdfs:domain copia:Moment ;
+    rdfs:range xsd:decimal .
+
+copia:ernieImageAesScore a owl:DatatypeProperty ;
+    rdfs:label "ernie-image-aes score" ;
+    rdfs:comment "baidu/ERNIE-Image-Aes RAW aesthetic score, 0-100 float — deterministic (softmax-expectation over score-token logits, one forward pass; same pixels = same float). The model-keyed raw behind the canonical aestheticAppeal (= score/10, latest-wins). Probe-validated 2026-07-21 against the frozen 35-image exam: spread 8.4, +5.9 pick-over-reject. Pairwise-trained (Swiss-tournament annotation) — structurally collapse-resistant. Served locally by Iris /aes; zero wire." ;
+    rdfs:domain copia:Moment ;
+    rdfs:range xsd:decimal .
