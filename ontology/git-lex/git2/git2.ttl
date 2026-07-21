@@ -1,0 +1,329 @@
+@prefix git2: <https://repolex.ai/ontology/git-lex/git2/> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+# =============================================================================
+# GIT-LEX git2 ONTOLOGY (git2:)
+# =============================================================================
+# A faithful, verbatim mirror of the git2 (libgit2) Rust library's object model,
+# for the git2 objects git-lex actually reads. Every class is a git2 type; every
+# property is a git2 accessor, named as git2 names it. The domain of this
+# vocabulary IS the git2 library — if git-lex ever modelled a different git
+# library, that would be a different vocabulary.
+#
+# Namespace: git2: = https://repolex.ai/ontology/git-lex/git2/
+# A parser namespace nested under the git-lex application.
+#
+# Library reference: git2 0.20 (crate binding to libgit2). Accessor names are
+# cited in each comment. Where git2 reuses one accessor name across types with
+# the SAME meaning (id, name), one property carries multiple rdfs:domain triples.
+# Where the meaning differs by type, the property name is qualified so the
+# vocabulary stays unambiguous.
+# =============================================================================
+
+<https://repolex.ai/ontology/git-lex/git2/> a owl:Ontology ;
+    rdfs:label "git-lex git2 Ontology" ;
+    rdfs:comment "A verbatim mirror of the git2 (libgit2) object model, for the git2 objects git-lex reads. Classes = git2 types, properties = git2 accessors. Derived (non-library) values are named as such: git2:xsdDateTimeDerived, git2:ordinalDerived." ;
+    owl:versionInfo "0.3.0" .
+
+# =============================================================================
+# Classes (git2 type → git2: class)
+# =============================================================================
+
+git2:Repository a owl:Class ;
+    rdfs:label "Repository" ;
+    rdfs:comment "A git repository (git2::Repository)." .
+
+git2:Commit a owl:Class ;
+    rdfs:label "Commit" ;
+    rdfs:comment "A git commit object (git2::Commit)." .
+
+git2:Signature a owl:Class ;
+    rdfs:label "Signature" ;
+    rdfs:comment "A git action signature (git2::Signature): a name, an email, and a time. A value object attached per commit (as author and committer) and per blame hunk — not a deduplicated person." .
+
+git2:IndexEntry a owl:Class ;
+    rdfs:label "IndexEntry" ;
+    rdfs:comment "A single file at a commit (git2::IndexEntry): a full repo-relative path bound to a blob id. git-lex materializes these by reading a commit's tree into an index (read_tree over commit.tree()), giving a flat list of every file present at that commit with its full path — never the mutable staging index. The flat 'what files are here and where' view; git-lex does not model git's internal tree-object nesting." .
+
+git2:Blob a owl:Class ;
+    rdfs:label "Blob" ;
+    rdfs:comment "A git blob object (git2::Blob): file content addressed by its id. No path — a blob is pure content, shared by every tree entry with identical bytes." .
+
+git2:Reference a owl:Class ;
+    rdfs:label "Reference" ;
+    rdfs:comment "A git reference (git2::Reference): a named pointer to an object (branch or tag)." .
+
+git2:Branch a owl:Class ;
+    rdfs:subClassOf git2:Reference ;
+    rdfs:label "Branch" ;
+    rdfs:comment "A branch reference (git2::Branch)." .
+
+git2:Tag a owl:Class ;
+    rdfs:subClassOf git2:Reference ;
+    rdfs:label "Tag" ;
+    rdfs:comment "A tag reference (git2::Tag / a tag reference)." .
+
+git2:DiffDelta a owl:Class ;
+    rdfs:label "DiffDelta" ;
+    rdfs:comment "A single file change within a diff (git2::DiffDelta): a status plus an old and new file side." .
+
+git2:BlameHunk a owl:Class ;
+    rdfs:label "BlameHunk" ;
+    rdfs:comment "A contiguous run of lines attributed to one commit within a file's blame (git2::BlameHunk). Carries the original and final signatures for that hunk." .
+
+# =============================================================================
+# id — git2 `id()` returns an Oid on Commit, IndexEntry, Blob.
+# One property, one meaning (the object's hex id), multiple domains. On an
+# IndexEntry the id IS the blob oid, so it joins the entry to its git2:Blob.
+# =============================================================================
+
+git2:id a owl:DatatypeProperty ;
+    rdfs:domain git2:Commit ;
+    rdfs:domain git2:IndexEntry ;
+    rdfs:domain git2:Blob ;
+    rdfs:range xsd:string ;
+    rdfs:label "id" ;
+    rdfs:comment "The object id (Oid) as a hex string (git2 `id()`). Present on Commit and Blob; on an IndexEntry it is the entry's blob oid (git2 IndexEntry `id`), joining the entry to its Blob." .
+
+# =============================================================================
+# name — git2 `name()` on Signature and Reference. Same accessor NAME, DIFFERENT
+# meaning per type (a person's name vs a ref name), so each is a distinct,
+# qualified property rather than one overloaded `git2:name`.
+# =============================================================================
+
+git2:signatureName a owl:DatatypeProperty ;
+    rdfs:domain git2:Signature ;
+    rdfs:range xsd:string ;
+    rdfs:label "signatureName" ;
+    rdfs:comment "The signature's person name (git2 Signature `name()`)." .
+
+git2:refName a owl:DatatypeProperty ;
+    rdfs:domain git2:Reference ;
+    rdfs:range xsd:string ;
+    rdfs:label "refName" ;
+    rdfs:comment "The reference's full name, e.g. refs/heads/main (git2 Reference `name()`)." .
+
+# =============================================================================
+# Commit properties (git2::Commit accessors)
+# =============================================================================
+
+git2:summary a owl:DatatypeProperty ;
+    rdfs:domain git2:Commit ;
+    rdfs:range xsd:string ;
+    rdfs:label "summary" ;
+    rdfs:comment "The commit message summary — first paragraph / subject line (git2 `summary()`)." .
+
+git2:message a owl:DatatypeProperty ;
+    rdfs:domain git2:Commit ;
+    rdfs:range xsd:string ;
+    rdfs:label "message" ;
+    rdfs:comment "The full commit message (git2 `message()`)." .
+
+git2:body a owl:DatatypeProperty ;
+    rdfs:domain git2:Commit ;
+    rdfs:range xsd:string ;
+    rdfs:label "body" ;
+    rdfs:comment "The commit message body — everything after the summary (git2 `body()`)." .
+
+git2:author a owl:ObjectProperty ;
+    rdfs:domain git2:Commit ;
+    rdfs:range git2:Signature ;
+    rdfs:label "author" ;
+    rdfs:comment "The commit's author signature (git2 `author()`)." .
+
+git2:committer a owl:ObjectProperty ;
+    rdfs:domain git2:Commit ;
+    rdfs:range git2:Signature ;
+    rdfs:label "committer" ;
+    rdfs:comment "The commit's committer signature (git2 `committer()`)." .
+
+git2:parent a owl:ObjectProperty ;
+    rdfs:domain git2:Commit ;
+    rdfs:range git2:Commit ;
+    rdfs:label "parent" ;
+    rdfs:comment "A parent commit (git2 `parent_ids()`). A merge commit has more than one." .
+
+git2:ordinalDerived a owl:DatatypeProperty ;
+    rdfs:domain git2:Commit ;
+    rdfs:range xsd:integer ;
+    rdfs:label "ordinalDerived" ;
+    rdfs:comment "DERIVED — not a library value. The commit's position in the repository's topological walk order (1 = genesis), stamped by git-lex at sync. git2 (and git itself) do not number commits; this exists as the ordering authority for latest-event-wins, where author dates can tie or lie (rebase/amend)." .
+
+git2:file a owl:ObjectProperty ;
+    rdfs:domain git2:Commit ;
+    rdfs:range git2:IndexEntry ;
+    rdfs:label "file" ;
+    rdfs:comment "A file present at this commit (git-lex reads the commit's tree into an index and iterates its entries). Repeat per file." .
+
+# =============================================================================
+# Signature properties (git2::Signature accessors) — name is git2:signatureName above
+# =============================================================================
+
+git2:email a owl:DatatypeProperty ;
+    rdfs:domain git2:Signature ;
+    rdfs:range xsd:string ;
+    rdfs:label "email" ;
+    rdfs:comment "The signature's email (git2 Signature `email()`)." .
+
+# --- time: the raw pair is the library (and git's own stored bytes); the
+#     dateTime is git-lex's derivation, and its name says so. git2's Time
+#     offers exactly seconds() + offset_minutes() and NO datetime conversion;
+#     a commit object literally stores "1626754800 +0200". (Time::sign() is
+#     not modelled — derivable from offsetMinutes' sign.) A commit's
+#     author-time and commit-time each live on their respective Signature. ---
+
+git2:seconds a owl:DatatypeProperty ;
+    rdfs:domain git2:Signature ;
+    rdfs:range xsd:integer ;
+    rdfs:label "seconds" ;
+    rdfs:comment "Seconds since epoch — raw, library-native (git2 Time `seconds()`, via Signature `when()`). This is the value git itself stores in the commit bytes." .
+
+git2:offsetMinutes a owl:DatatypeProperty ;
+    rdfs:domain git2:Signature ;
+    rdfs:range xsd:integer ;
+    rdfs:label "offsetMinutes" ;
+    rdfs:comment "Timezone offset in minutes — raw, library-native (git2 Time `offset_minutes()`, via Signature `when()`). Negative for west of UTC." .
+
+git2:xsdDateTimeDerived a owl:DatatypeProperty ;
+    rdfs:domain git2:Signature ;
+    rdfs:range xsd:dateTime ;
+    rdfs:label "xsdDateTimeDerived" ;
+    rdfs:comment "DERIVED — not a library value. The signature's time as an xsd:dateTime, computed by git-lex from git2:seconds + git2:offsetMinutes. git2 (and git itself) provide only the raw pair; this conversion exists for query ergonomics, and its name carries its status so it is never mistaken for a git2 accessor." .
+
+# =============================================================================
+# IndexEntry properties (git2::IndexEntry fields)
+# id (the blob oid) is git2:id above. git-lex models the fields it uses; the
+# filesystem-stat fields (ctime/mtime/dev/ino/uid/gid/flags) are not modelled.
+# =============================================================================
+
+git2:path a owl:DatatypeProperty ;
+    rdfs:domain git2:IndexEntry ;
+    rdfs:range xsd:string ;
+    rdfs:label "path" ;
+    rdfs:comment "The full repo-relative path of this file (git2 IndexEntry `path`). Scoped to IndexEntry: within that class there is exactly one kind of path, so the name is precise. For git-lex this is always a committed path (materialized from a commit's tree), never the staging index." .
+
+git2:fileSize a owl:DatatypeProperty ;
+    rdfs:domain git2:IndexEntry ;
+    rdfs:range xsd:integer ;
+    rdfs:label "fileSize" ;
+    rdfs:comment "The file's size in bytes (git2 IndexEntry `file_size`)." .
+
+git2:mode a owl:DatatypeProperty ;
+    rdfs:domain git2:IndexEntry ;
+    rdfs:range xsd:integer ;
+    rdfs:label "mode" ;
+    rdfs:comment "The file's UNIX mode (git2 IndexEntry `mode`)." .
+
+git2:blob a owl:ObjectProperty ;
+    rdfs:domain git2:IndexEntry ;
+    rdfs:range git2:Blob ;
+    rdfs:label "blob" ;
+    rdfs:comment "The content blob this entry points at — joined by the entry's blob oid (git2 IndexEntry `id`)." .
+
+# =============================================================================
+# Blob properties (git2::Blob accessors)
+# =============================================================================
+
+git2:size a owl:DatatypeProperty ;
+    rdfs:domain git2:Blob ;
+    rdfs:range xsd:integer ;
+    rdfs:label "size" ;
+    rdfs:comment "Blob content size in bytes (git2 Blob `size()`)." .
+
+git2:isBinary a owl:DatatypeProperty ;
+    rdfs:domain git2:Blob ;
+    rdfs:range xsd:boolean ;
+    rdfs:label "isBinary" ;
+    rdfs:comment "Whether the blob content is binary (git2 Blob `is_binary()`)." .
+
+# =============================================================================
+# Reference properties (git2::Reference accessors) — refName is above
+# =============================================================================
+
+git2:shorthand a owl:DatatypeProperty ;
+    rdfs:domain git2:Reference ;
+    rdfs:range xsd:string ;
+    rdfs:label "shorthand" ;
+    rdfs:comment "The reference's human-readable short name (git2 Reference `shorthand()`)." .
+
+git2:target a owl:ObjectProperty ;
+    rdfs:domain git2:Reference ;
+    rdfs:range git2:Commit ;
+    rdfs:label "target" ;
+    rdfs:comment "The object this reference points at, by id (git2 Reference `target()`)." .
+
+# =============================================================================
+# DiffDelta properties (git2::DiffDelta / DiffFile accessors)
+# =============================================================================
+
+git2:status a owl:DatatypeProperty ;
+    rdfs:domain git2:DiffDelta ;
+    rdfs:range xsd:string ;
+    rdfs:label "status" ;
+    rdfs:comment "The kind of change (git2 DiffDelta `status()` → Delta): one of unmodified, added, deleted, modified, renamed, copied, ignored, untracked, typechange, unreadable, conflicted." .
+
+git2:oldPath a owl:DatatypeProperty ;
+    rdfs:domain git2:DiffDelta ;
+    rdfs:range xsd:string ;
+    rdfs:label "oldPath" ;
+    rdfs:comment "The old-side file path (git2 DiffDelta `old_file()` → DiffFile `path()`)." .
+
+git2:newPath a owl:DatatypeProperty ;
+    rdfs:domain git2:DiffDelta ;
+    rdfs:range xsd:string ;
+    rdfs:label "newPath" ;
+    rdfs:comment "The new-side file path (git2 DiffDelta `new_file()` → DiffFile `path()`)." .
+
+# =============================================================================
+# BlameHunk properties (git2::BlameHunk accessors)
+# =============================================================================
+
+git2:origCommitId a owl:DatatypeProperty ;
+    rdfs:domain git2:BlameHunk ;
+    rdfs:range xsd:string ;
+    rdfs:label "origCommitId" ;
+    rdfs:comment "The original commit id for this hunk (git2 BlameHunk `orig_commit_id()`)." .
+
+git2:finalCommitId a owl:DatatypeProperty ;
+    rdfs:domain git2:BlameHunk ;
+    rdfs:range xsd:string ;
+    rdfs:label "finalCommitId" ;
+    rdfs:comment "The final commit id for this hunk (git2 BlameHunk `final_commit_id()`)." .
+
+git2:origSignature a owl:ObjectProperty ;
+    rdfs:domain git2:BlameHunk ;
+    rdfs:range git2:Signature ;
+    rdfs:label "origSignature" ;
+    rdfs:comment "The original signature for this hunk (git2 BlameHunk `orig_signature()`)." .
+
+git2:finalSignature a owl:ObjectProperty ;
+    rdfs:domain git2:BlameHunk ;
+    rdfs:range git2:Signature ;
+    rdfs:label "finalSignature" ;
+    rdfs:comment "The final signature for this hunk (git2 BlameHunk `final_signature()`)." .
+
+git2:origStartLine a owl:DatatypeProperty ;
+    rdfs:domain git2:BlameHunk ;
+    rdfs:range xsd:integer ;
+    rdfs:label "origStartLine" ;
+    rdfs:comment "The 1-based line where this hunk begins in the original file (git2 BlameHunk `orig_start_line()`)." .
+
+git2:finalStartLine a owl:DatatypeProperty ;
+    rdfs:domain git2:BlameHunk ;
+    rdfs:range xsd:integer ;
+    rdfs:label "finalStartLine" ;
+    rdfs:comment "The 1-based line where this hunk begins in the final file (git2 BlameHunk `final_start_line()`)." .
+
+git2:linesInHunk a owl:DatatypeProperty ;
+    rdfs:domain git2:BlameHunk ;
+    rdfs:range xsd:integer ;
+    rdfs:label "linesInHunk" ;
+    rdfs:comment "The number of lines in this hunk (git2 BlameHunk `lines_in_hunk()`)." .
+
+git2:hunkPath a owl:DatatypeProperty ;
+    rdfs:domain git2:BlameHunk ;
+    rdfs:range xsd:string ;
+    rdfs:label "hunkPath" ;
+    rdfs:comment "The file path this blame hunk belongs to (git2 BlameHunk `path()`)." .

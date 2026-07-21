@@ -1,0 +1,37 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix fm: <https://repolex.ai/ontology/git-lex/fm/> .
+
+# =============================================================================
+# GIT-LEX FRONTMATTER ONTOLOGY (fm:)
+# =============================================================================
+# The OPEN namespace for user-authored YAML frontmatter keys. This is a
+# firewall: it keeps arbitrary keys a user writes in their frontmatter OUT of
+# git-lex's own curated vocabulary (git-lex:). A parser namespace under the
+# git-lex application.
+#
+# Namespace: fm: = https://repolex.ai/ontology/git-lex/fm/
+#
+# HOW IT WORKS: every frontmatter key is minted dynamically into a predicate
+# under fm: at sync time — a YAML key "tags" becomes fm:tags, "status" becomes
+# fm:status, and any key git-lex has never seen still works as fm:<key>. This
+# is the RDF-native version of "your custom metadata just works": the keys
+# become queryable predicates without polluting the core schema.
+#
+# This file therefore declares NO fixed properties. The vocabulary is the
+# user's, grown per-repo from their own frontmatter.
+#
+# (Formerly declared 8 "common" example properties — path, title, tags, status,
+# author, date, project, technologies. They were purely decorative: no code
+# read them, and two of them documented multi-value behavior the code did not
+# implement. Removed. The one real one, fm:path, was NOT a user key at all — it
+# was a synthetic file-location fact git-lex mints itself, so it moved to
+# git:path where the file-location vocabulary lives.)
+# =============================================================================
+
+<https://repolex.ai/ontology/git-lex/fm/> a owl:Ontology ;
+    rdfs:label "git-lex Frontmatter Ontology" ;
+    rdfs:comment "Open namespace for user-authored YAML frontmatter keys. Keys are minted as fm: predicates dynamically at sync time; no fixed vocabulary is declared here." ;
+    owl:versionInfo "0.1.0" .

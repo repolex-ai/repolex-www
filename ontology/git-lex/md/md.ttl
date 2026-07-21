@@ -1,0 +1,60 @@
+@prefix md: <https://repolex.ai/ontology/git-lex/md/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# =============================================================================
+# GIT-LEX MARKDOWN ONTOLOGY
+# =============================================================================
+# Properties extracted from markdown body text via tree-sitter.
+# Tier 1 extraction — pattern-based, no LLM.
+#
+# Namespace: md: = https://repolex.ai/ontology/git-lex/md/
+# =============================================================================
+
+<https://repolex.ai/ontology/git-lex/md> a owl:Ontology ;
+    rdfs:label "git-lex Markdown Ontology" ;
+    rdfs:comment "Properties extracted from markdown body text. Links, structure, and content." ;
+    owl:versionInfo "0.2" .
+
+
+# =============================================================================
+# LINKS — the code-emitted body vocabulary (v0.2)
+# =============================================================================
+# These two ARE emitted by the extractor (grep-verified: nquad.rs:561/759/765,
+# main.rs:2047). They were homeless — the code minted them under the retired
+# lex: namespace (<.../git-lex/lex/linksTo>, <.../lex/mentions>), which no longer
+# exists. Declared here in md: (markdown-body facts belong to the md parser); the
+# emit sites flip lex: → md: to match.
+
+md:linksTo a owl:ObjectProperty ;
+    rdfs:label "links to" ;
+    rdfs:comment "A [[wikilink]] from this document's body to another document. RESOLVED links carry an IRI object (the target document); an UNRESOLVED/broken wikilink falls back to a flat string literal (the raw link text) — the extractor emits both forms on this same predicate (nquad.rs:759 resolved, :765 unresolved). Doc-to-doc relationship." .
+
+md:mentions a owl:ObjectProperty ;
+    rdfs:label "mentions" ;
+    rdfs:comment "An @mention in this document's body — a reference to a named entity/handle. Emitted by the body extractor (main.rs:2047)." .
+
+
+# =============================================================================
+# LINKS — declared-but-unemitted (decorative; reconcile pending)
+# =============================================================================
+# NOTE (2026-07-18): these three describe standard markdown [text](path) links,
+# but the extractor does NOT emit them (grep-verified: zero emit sites). They are
+# currently decorative. Kept as-is this pass (moved verbatim from the CLI tree);
+# flagged for a keep-or-cut decision — either wire the extractor to emit them, or
+# remove them so the ontology declares only what the code produces.
+
+md:internalLink a owl:ObjectProperty ;
+    rdfs:label "internal link" ;
+    rdfs:comment "A markdown link [text](path) that resolves to a file within the repo. (DECORATIVE — not currently emitted by the extractor; reconcile pending.)" .
+
+md:externalLink a owl:DatatypeProperty ;
+    rdfs:label "external link" ;
+    rdfs:comment "A markdown link [text](https://...) pointing to an external URL. (DECORATIVE — not currently emitted by the extractor; reconcile pending.)" ;
+    rdfs:range xsd:anyURI .
+
+md:unresolvedLink a owl:DatatypeProperty ;
+    rdfs:label "unresolved link" ;
+    rdfs:comment "A markdown link [text](path) where the target file does not exist in the repo. (DECORATIVE — not currently emitted by the extractor; reconcile pending.)" ;
+    rdfs:range xsd:string .

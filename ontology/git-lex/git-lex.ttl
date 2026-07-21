@@ -1,0 +1,163 @@
+@prefix git-lex: <https://repolex.ai/ontology/git-lex/> .
+@prefix git2:    <https://repolex.ai/ontology/git-lex/git2/> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix sd:      <http://www.w3.org/ns/sparql-service-description#> .
+
+# =============================================================================
+# GIT-LEX CORE ONTOLOGY (git-lex:)
+# =============================================================================
+# The vocabulary git-lex authors about the documents it tracks. This is the
+# application's own namespace — a peer of the parser namespaces nested beside
+# it (git/, md/, fm/), each of which has its own predicate space.
+#
+# Namespace: git-lex: = https://repolex.ai/ontology/git-lex/
+#
+# Kept deliberately small: git-lex tracks markdown files and types each as a
+# Document; its SpoEvents record each statement's lifecycle. Everything else about a file's git identity lives in the git
+# parser namespace, its markdown body in md:, its frontmatter keys in fm:.
+# This file holds only git-lex's own machinery.
+#
+# (Formerly the lex: namespace. lex: was invented only to name "the app's own
+# vocabulary" when git-lex/git-lex looked redundant — it was never needed; the
+# app's vocabulary lives at the app's root namespace, like every other app.)
+# =============================================================================
+
+git-lex: a owl:Ontology ;
+    rdfs:label "git-lex Core Ontology" ;
+    rdfs:comment "The vocabulary git-lex authors about the markdown documents it tracks." ;
+    owl:versionInfo "0.7" .
+
+# =============================================================================
+# Classes
+# =============================================================================
+
+git-lex:Document a owl:Class ;
+    rdfs:label "Document" ;
+    rdfs:comment "A content file git-lex tracks. The primary unit of knowledge. Every tracked .md file is a Document." .
+
+git-lex:NamedGraph a owl:Class ;
+    rdfs:subClassOf sd:NamedGraph ;
+    rdfs:label "NamedGraph" ;
+    rdfs:comment "A named graph git-lex maintains in a repo's knowledge base. Instance IRIs are derived under the git-lex application slug and typed against this class in the default graph for zero-knowledge discovery. Note the two-resources distinction: the NamedGraph OBJECT (this IRI) is the queryable thing that describes the graph; the graph it names is carried via sd:name. Anchored to the W3C SPARQL Service Description sd:NamedGraph — the one external supertype git-lex adopts, because it is a real standard class, not an invented layer." .
+
+git-lex:LexHistoryGraph a owl:Class ;
+    rdfs:subClassOf git-lex:NamedGraph ;
+    rdfs:label "LexHistoryGraph" ;
+    rdfs:comment "The one graph: a repo's statement history as a named graph — base facts alongside the SpoEvents that record their lifecycle. 'Now' is a view derived from it (see git-lex:SpoEvent). Each repo's store holds exactly one, named https://repolex.ai/git-lex/LexHistoryGraph (a per-store singleton — no instance segment needed). Distinct by name from the retired legacy history graph. Event ordering within the graph follows git2:ordinalDerived." .
+
+# =============================================================================
+# Properties
+# =============================================================================
+
+git-lex:name a owl:DatatypeProperty ;
+    rdfs:label "name" ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Human-readable name. Used on tracked documents, and on the repo node (repo.yml `name:`)." .
+
+# =============================================================================
+# The repo (git-lex:Repo)
+# =============================================================================
+# What git-lex knows about the repository it manages, beyond what git2 sees.
+# One property per .lex/repo.yml key — what's in repo.yml is what's queryable,
+# no curation layer. The node keeps its ruled IRI
+# (git-lex/git2/Repository/<genesisSha>) and carries BOTH types
+# (git-lex:Repo + git2:Repository) — the path names the git2-layer identity,
+# the git-lex type adds the management layer. repo.yml's `first_commit` does
+# NOT become a property: it IS genesisSha (computed from git; the yml
+# duplicate retires in config cleanup). `name` is git-lex:name above.
+
+git-lex:Repo a owl:Class ;
+    rdfs:subClassOf git2:Repository ;
+    rdfs:label "Repo" ;
+    rdfs:comment "A git repository under git-lex management: a git2:Repository that additionally carries .lex/repo.yml — its kit, genesis identity, and the repo facts git-lex itself maintains." .
+
+git-lex:genesisSha a owl:DatatypeProperty ;
+    rdfs:domain git-lex:Repo ;
+    rdfs:range xsd:string ;
+    rdfs:label "genesisSha" ;
+    rdfs:comment "The full 40-character SHA of the repository's first (genesis) commit — the repo's stable identity across renames and remotes, and the derivation of its node IRI. Computed from git; git2 has no genesis concept, so the concept is git-lex's." .
+
+git-lex:kit a owl:DatatypeProperty ;
+    rdfs:domain git-lex:Repo ;
+    rdfs:range xsd:string ;
+    rdfs:label "kit" ;
+    rdfs:comment "The base kit installed in this repo (repo.yml `kit:`), e.g. repolex-ai/git-lex-kit-soul." .
+
+git-lex:created a owl:DatatypeProperty ;
+    rdfs:domain git-lex:Repo ;
+    rdfs:range xsd:date ;
+    rdfs:label "created" ;
+    rdfs:comment "When the repo was initialized by git-lex (repo.yml `created:`)." .
+
+git-lex:agentName a owl:DatatypeProperty ;
+    rdfs:domain git-lex:Repo ;
+    rdfs:range xsd:string ;
+    rdfs:label "agentName" ;
+    rdfs:comment "The agent this repo belongs to (repo.yml `agent_name:`)." .
+
+git-lex:agentEmail a owl:DatatypeProperty ;
+    rdfs:domain git-lex:Repo ;
+    rdfs:range xsd:string ;
+    rdfs:label "agentEmail" ;
+    rdfs:comment "The agent's email (repo.yml `agent_email:`)." .
+
+git-lex:version a owl:DatatypeProperty ;
+    rdfs:domain git-lex:Repo ;
+    rdfs:range xsd:string ;
+    rdfs:label "version" ;
+    rdfs:comment "The repo config version (repo.yml `version:`)." .
+
+git-lex:optionalKit a owl:DatatypeProperty ;
+    rdfs:domain git-lex:Repo ;
+    rdfs:range xsd:string ;
+    rdfs:label "optionalKit" ;
+    rdfs:comment "An optional kit installed in this repo (repo.yml `optional_kits:`). Multi-valued — one triple per kit." .
+
+git-lex:substrate a owl:DatatypeProperty ;
+    rdfs:domain git-lex:Repo ;
+    rdfs:range xsd:string ;
+    rdfs:label "substrate" ;
+    rdfs:comment "A harness substrate declared for this repo (repo.yml `substrates:`). Multi-valued — one triple per substrate." .
+
+# =============================================================================
+# The statement lifecycle (SpoEvent)
+# =============================================================================
+# git-lex's append-only record of every statement's lifecycle. A statement
+# (one s-p-o triple, e.g. one tag value in frontmatter) is identified by its
+# RDF 1.2 triple term <<( s p o )>> — the W3C-standard representative of a
+# statement, which needs no class of its own. What DOES need a class is the
+# EVENT: the dated fact that a statement entered or left the graph in a
+# specific commit. Everything here is derived deterministically from the
+# repo's documents and commits — nothing is created except by git itself.
+#
+#   git-lex:SpoEvent/<eventId>
+#       rdf:type            git-lex:SpoEvent ;
+#       rdf:reifies         <<( s p o )>> ;         # the statement
+#       git-lex:assertedIn  git2:Commit/<sha> .     # OR retractedIn — never both
+#
+# Structural contract (enforced by the emitter's integrity checks, not here):
+# exactly one rdf:reifies; exactly one of assertedIn XOR retractedIn. The
+# event IRI is derived from the event's identity: triple + commit + direction.
+# NOTE for emitters: Turtle 1.2's annotation syntax {| ... |} ASSERTS the base
+# triple as it annotates — usable for assert events only; a retraction must
+# reference its statement WITHOUT asserting it, so the bare reifier form above
+# is used uniformly for both directions.
+
+git-lex:SpoEvent a owl:Class ;
+    rdfs:label "SpoEvent" ;
+    rdfs:comment "One temporal event in a statement's lifecycle: the statement (identified by the rdf:reifies triple term) entered the graph (assertedIn) or left it (retractedIn) in a specific commit. The assert and any later retract of the same statement are separate events; latest-event-wins gives current state. Instances live in the one graph, alongside the base facts they chronicle. The store maintains no separate 'now' graph: within the store, 'now' is a VIEW — a query, or a materialized graph, of the latest assertions that have not been retracted — derived from this one graph. (git-lex's direct query path — an ephemeral passthrough of git's current info, never stored — is a separate concern, outside this model.) Multivalued frontmatter is a SET of independent facts — each value is its own statement with its own independent lifecycle, diffed as resolved sets per commit; order and duplicates are not represented. Per-statement retraction is what makes multivalue work: a removed value has no superseding assertion, only its retraction event." .
+
+git-lex:assertedIn a owl:ObjectProperty ;
+    rdfs:domain git-lex:SpoEvent ;
+    rdfs:range git2:Commit ;
+    rdfs:label "asserted in" ;
+    rdfs:comment "The commit in which this statement entered the graph." .
+
+git-lex:retractedIn a owl:ObjectProperty ;
+    rdfs:domain git-lex:SpoEvent ;
+    rdfs:range git2:Commit ;
+    rdfs:label "retracted in" ;
+    rdfs:comment "The commit in which this statement left the graph. Nothing is deleted (events are append-only); this event records that the statement is no longer asserted as of this commit." .
