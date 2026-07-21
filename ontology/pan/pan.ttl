@@ -1,0 +1,60 @@
+@prefix pan:  <https://repolex.ai/ontology/pan/> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+# Pan base ontology v0.1 — the vocabulary Pan itself authors about stored media.
+# App ontologies (copia etc.) are EXTERNAL: installed beside the store, read as
+# vocabulary, never vendored here. Pan's own predicate space is infrastructure.
+#
+# DEFERRED, NOT ABSENT (v0.1 models the identity/location/provenance layer only;
+# the following are Pan-base vocabulary whose modeling is deferred, so silence
+# here must not be read as "Pan doesn't do this"):
+#   - SEARCH LAYER (v0.2): vector/embedding/index terms — "this object has an
+#     embedding in index X of dim N." The fusion search itself does NOT need
+#     these (the graph↔vector join is the panId↔key map at the app layer); the
+#     vocabulary is for QUERYABILITY — e.g. "which objects lack an embedding."
+#     Co-design with tr1p.lex (2026_07_16_PAN_ONTOLOGY_REVIEW Finding 1).
+#   - DETECTOR / STAGE STATUS: per-role outcome facts (embed: ok / skipped /
+#     miss) — first-class facts about a Media object, currently Rust-only.
+#   - pan:storageId: conditionally needed ONLY if multiple stores' graphs are
+#     ever merged (store scope is ambient within one store). Defined home is
+#     HERE so federation never invents it ad-hoc at the join.
+#   - Extended media classes: Audio/Video/Pdf as siblings of Image under Media.
+
+pan: a owl:Ontology ;
+    rdfs:label "Pan media store ontology" ;
+    owl:versionInfo "0.1.0" ;
+    rdfs:comment "Identity + location + provenance facts Pan authors for every stored media object." .
+
+pan:Media a owl:Class ;
+    rdfs:label "Media" ;
+    rdfs:comment "A stored media object, identified by an assigned panId. Subject IRIs follow the subtexture-wide instance shape https://repolex.ai/<application>/<Class>/<instanceId> — for Pan: https://repolex.ai/pan/Image/<panId>, with Image the class declared here. Vocabulary stays under /ontology/. Instances are typed (rdf:type) against these classes." .
+
+pan:Image a owl:Class ;
+    rdfs:subClassOf pan:Media ;
+    rdfs:label "Image" .
+
+pan:panId a owl:DatatypeProperty ;
+    rdfs:domain pan:Media ;
+    rdfs:range xsd:string ;
+    rdfs:label "pan id" ;
+    rdfs:comment "The ASSIGNED identity of a media object: short random base32, minted at put. Not content-derived — two puts of the same bytes are two different objects. Not for dedup, comparison, or cross-system correlation." .
+
+pan:blobPath a owl:DatatypeProperty ;
+    rdfs:domain pan:Media ;
+    rdfs:range xsd:string ;
+    rdfs:label "blob path" ;
+    rdfs:comment "On-disk location relative to the store's storage root." .
+
+pan:mediaType a owl:DatatypeProperty ;
+    rdfs:domain pan:Media ;
+    rdfs:range xsd:string ;
+    rdfs:label "media type" ;
+    rdfs:comment "MIME type of the stored bytes, e.g. image/png." .
+
+pan:createdAt a owl:DatatypeProperty ;
+    rdfs:domain pan:Media ;
+    rdfs:range xsd:dateTime ;
+    rdfs:label "created at" ;
+    rdfs:comment "RFC3339 timestamp of when the object entered this store. CONTRACT: this is the cross-store time-anchor shared with pool:createdAt and weave:timestamp (all xsd:dateTime) — cross-graph time-window joins depend on the shared datatype; never narrow it to xsd:date or a custom format." .
