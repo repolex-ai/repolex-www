@@ -1,0 +1,351 @@
+# =============================================================================
+# weave.ttl — DRAFT v0.1 — Claude Code transcript ontology
+# Namespace: https://repolex.ai/ontology/weave#
+# Author: spaceGOAT (Day 38-39, 2026-06-29/30).  Status: v0.2 — trip.lex says
+# "v0.2-good, carve." All ?TL: resolved. Carve-ready. (One deferred mechanical
+# step: reparent the 15 line-type Event subclasses to weave:ClaudeCodeEvent — see
+# note there. Nested usage fields → v0.3.)
+#
+# GROUNDED IN REAL DATA, not the spec or memory: enumerated every field across
+# a 49,716-line sample from 40 of the 125 Claude Code session logs under
+# ~/.claude/projects/*/*.jsonl (37 project dirs, all souls on chora), with
+# frequencies + value-types. (Earlier "1054 sessions" was a bad recursive count
+# that caught nested subdir junk — corrected to 125 top-level session files.)
+# A SECOND dialect exists: the Claude DESKTOP claude-export (1,463 convs,
+# /Users/rob/repos/goodlux/claude-export/...) — different JSON shape → future
+# weave:ClaudeDesktopExport sibling under the generic core.
+#
+# === TRIP.LEX REVIEW v1 (banked Day 39, 2026-06-30 — verdicts on the ?TL: tags):
+#   • two-layer cut = RIGHT.
+#   • isHumanAuthored → it's a READER output, NOT schema. Remove from ontology.
+#   • compaction → model as a first-class prov:Activity (yes to ?TL #3).
+#   • TIGHTEN Layer A: move cwd / gitBranch / harnessVersion / isSidechain DOWN
+#     to the dialect (they're Claude-Code-isms, not generic-core). Generic core
+#     stays minimal: Transcript/Event/Turn + parentEvent/timestamp/eventId/
+#     sessionId/participant only.
+#   • ALIGNMENTS: be stingy — KEEP prov:, DROP sioc: and schema.org.
+#   (Applied below where marked  ## TL-v1.)
+#
+# DESIGN PRINCIPLE (locked w/ w4r3z, Day 38 — the engine/adapter line):
+#   soul is an ADAPTER on a clean generic core, NOT woven through it. So this
+#   ontology is TWO LAYERS:
+#     (A) GENERIC CORE  — weave:Transcript / weave:Event / weave:Turn, dialect-
+#         and partition-key-agnostic. Any log/transcript dialect maps onto it.
+#     (B) CLAUDE-CODE DIALECT — weave:ClaudeCodeTranscript + subclasses, the
+#         FIRST concrete dialect. Every observed JSONL field classed here.
+#   The federation soul-anchor (urn:soul:<sha>) is NOT in this ontology — it
+#   lives in the soul-ADAPTER as a partition key. The engine never sees "soul."
+#
+# QUESTIONS FOR TRIP.LEX are tagged  # ?TL:  inline.
+# =============================================================================
+
+@prefix weave: <https://repolex.ai/ontology/weave#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov:  <http://www.w3.org/ns/prov#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+<https://repolex.ai/ontology/weave>
+    a owl:Ontology ;
+    rdfs:label "Weave transcript ontology" ;
+    rdfs:comment "Classes for transcripts/logs as graphs. Layer A generic core; Layer B the Claude Code dialect." ;
+    owl:versionInfo "0.1-draft" .
+
+# =============================================================================
+# LAYER A — GENERIC CORE  (dialect- and partition-agnostic)
+# =============================================================================
+
+weave:Transcript a owl:Class ;
+    rdfs:label "Transcript" ;
+    rdfs:comment "An ordered corpus of events: one recorded interaction stream. Abstract over any dialect." .
+
+weave:Event a owl:Class ;
+    rdfs:label "Event" ;
+    rdfs:comment "One atomic line/record in a transcript. The node the parentUuid spine connects." .
+    # RESOLVED (trip v2): name = 'Event'. 'Record' too neutral (loses
+    # happened-at-a-time); 'Entry' pulls log-file connotations that fight the
+    # Turn metaphor. Event it is.
+
+weave:Turn a owl:Class ;
+    rdfs:subClassOf weave:Event ;
+    rdfs:label "Turn" ;
+    rdfs:comment "An Event that is a conversational move by a participant (vs a bookkeeping/system Event). The unit readers anchor to." .
+    # RESOLVED (trip v1): Turn = {UserTurn, AssistantTurn} only; everything else
+    # is a non-Turn Event. Tool-use/tool-result are turn CONTENT (blocks), not
+    # Turns. (An assistant message with only tool_use is still an AssistantTurn —
+    # its content[] just happens to hold only tool_use blocks.)
+
+weave:Participant a owl:Class ;
+    rdfs:label "Participant" ;
+    rdfs:comment "An agent in the conversation: human, assistant model, subagent, or the harness itself." .
+
+# --- core structural properties (the spine + ordering) ---
+weave:hasEvent a owl:ObjectProperty ;
+    rdfs:domain weave:Transcript ; rdfs:range weave:Event .
+
+weave:parentEvent a owl:ObjectProperty ;
+    rdfs:label "parentEvent" ;
+    rdfs:comment "The reply-to / causal-parent edge. From the JSONL parentUuid. THE spine. Root events have none." ;
+    rdfs:domain weave:Event ; rdfs:range weave:Event ;
+    owl:equivalentProperty prov:wasInformedBy .
+    # RESOLVED (trip v2): native term + owl:equivalentProperty prov:wasInformedBy
+    # (loose causal antecedent — semantics match; not strict derivation). Cheap
+    # reasoning win for prov-aware consumers, zero cost otherwise. sioc: dropped
+    # (alignment-stinginess verdict).
+
+weave:timestamp a owl:DatatypeProperty ;
+    rdfs:comment "Event wall-clock time. xsd:dateTime. (Federation anchor lexical form = to_rfc3339, matches Pool's pool:createdAt — see anchor contract.)" ;
+    rdfs:domain weave:Event ; rdfs:range xsd:dateTime .
+
+weave:eventId a owl:DatatypeProperty ;
+    rdfs:comment "Stable per-event id. From JSONL uuid. THE idempotency key (w4r3z: key on turn-uuid, not file-mtime, because the JSONL grows)." ;
+    rdfs:domain weave:Event ; rdfs:range xsd:string .
+
+weave:sessionId a owl:DatatypeProperty ;
+    rdfs:domain weave:Event ; rdfs:range xsd:string .
+
+weave:hasParticipant a owl:ObjectProperty ;
+    rdfs:domain weave:Turn ; rdfs:range weave:Participant .
+
+# ## TL-v2: logicalParentEvent — the compaction-bridge edge (trip, Day 39).
+# VERIFIED in real data: 168 compact_boundary lines, ALL with parentUuid=null +
+# logicalParentUuid SET. The compaction breaks parentEvent; logicalParentEvent
+# bridges it. CAVEAT FROM VERIFICATION: the target does NOT always resolve in the
+# same file (pre-compact tail may live in an EARLIER session file) — so range is
+# an Event that MAY be cross-file or absent. Don't assume always-resolvable.
+weave:logicalParentEvent a owl:ObjectProperty ;
+    rdfs:domain weave:Event ; rdfs:range weave:Event ;
+    rdfs:comment "Causal parent that crosses a compaction boundary. From logicalParentUuid. Distinct from parentEvent (null at compaction). Present on the post-compaction continuation Event; points back to the pre-compaction tail (which may be in an earlier file — tolerate dangling)." .
+
+# ## TL-v2: isMeta — line-level synthetic marker, Layer A (trip, Day 39).
+# VERIFIED + SHARPENED: in the Claude Code dialect isMeta=true appears ONLY on
+# user lines (1966/1966 of user lines that carry it) — system lines carry it but
+# always false. So in practice it's a USER-TURN synthetic flag here. Kept in
+# Layer A because "is this a real conversational move vs bookkeeping" is a
+# cross-dialect concern; complementary to origin.kind (turn-level) — isMeta is
+# line-level. (A reader combines both to compute is-human-authored.)
+weave:isMeta a owl:DatatypeProperty ;
+    rdfs:domain weave:Event ; rdfs:range xsd:boolean ;
+    rdfs:comment "True iff this Event is harness-injected/synthetic, not an organic conversational move. Line-level; complements turn-level origin.kind." .
+
+# ## TL-v1: cwd / gitBranch / harnessVersion / isSidechain MOVED DOWN to the
+# dialect (Layer B) — they're Claude-Code-isms, not generic-core. The generic
+# core now stays minimal: Transcript/Event/Turn + parentEvent/timestamp/eventId/
+# sessionId/hasParticipant only. See the dialect section for these four.
+
+# =============================================================================
+# LAYER B — THE CLAUDE CODE DIALECT  (first concrete dialect)
+# Every line-`type` observed in the corpus, classed. Frequencies from the
+# 49,716-line sample are in comments to show what's load-bearing vs rare.
+# =============================================================================
+
+weave:ClaudeCodeTranscript a owl:Class ;
+    rdfs:subClassOf weave:Transcript ;
+    rdfs:label "Claude Code transcript" ;
+    rdfs:comment "A .jsonl session file emitted by the Claude Code CLI harness. One file = one session (sessionId)." .
+
+# ## TL-v2: sessionSlug on TRANSCRIPT, not Event (trip, Day 39). It's session-
+# scoped (Claude Code's human-readable nickname, e.g. 'eventual-petting-sloth'),
+# redundant if stamped per-line. Cheap + useful for 'which session was that' UI.
+weave:sessionSlug a owl:DatatypeProperty ;
+    rdfs:domain weave:ClaudeCodeTranscript ; rdfs:range xsd:string ;
+    rdfs:comment "Human-readable session nickname. Session-scoped, on the Transcript." .
+
+# ## TL-v2 RESOLVED: declare an explicit dialect-Event superclass. When dialect #2
+# (ClaudeDesktopExport) lands it gets a symmetric weave:ClaudeDesktopEvent — so
+# establishing the pattern now means dialect #2 introduces no domain asymmetry.
+weave:ClaudeCodeEvent a owl:Class ;
+    rdfs:subClassOf weave:Event ;
+    rdfs:label "Claude Code event" ;
+    rdfs:comment "Any Event in the Claude Code dialect (all 15 line-types subclass this). The hang-point for dialect-specific fields." .
+
+# The four dialect-isms moved down from Layer A — domain = weave:ClaudeCodeEvent.
+weave:cwd a owl:DatatypeProperty ; rdfs:domain weave:ClaudeCodeEvent ; rdfs:range xsd:string ;
+    rdfs:comment "Working directory the harness ran in. Claude-Code dialect field." .
+weave:gitBranch a owl:DatatypeProperty ; rdfs:domain weave:ClaudeCodeEvent ; rdfs:range xsd:string ;
+    rdfs:comment "Recorded git branch. For Soul sessions ~always the soul-repo branch (constant) — NOT a federation join axis (Rob, Day 38). Faithful field, not an anchor." .
+weave:harnessVersion a owl:DatatypeProperty ; rdfs:domain weave:ClaudeCodeEvent ; rdfs:range xsd:string ;
+    rdfs:comment "From JSONL version (e.g. '2.1.187')." .
+weave:isSidechain a owl:DatatypeProperty ; rdfs:domain weave:ClaudeCodeEvent ; rdfs:range xsd:boolean ;
+    rdfs:comment "True iff this Event is on a subagent branch." .
+
+# ---- the 15 observed line-types, as Event subclasses --------------------------
+# Conversational (the Turns):
+weave:UserTurn a owl:Class ; rdfs:subClassOf weave:Turn ;
+    rdfs:comment "type=user. n≈14383. CAUTION: ~half are NOT the human — origin.kind distinguishes (see weave:origin). Carries message{role,content}, toolUseResult, promptId." .
+weave:AssistantTurn a owl:Class ; rdfs:subClassOf weave:Turn ;
+    rdfs:comment "type=assistant. n≈20194. message has model, usage (token accounting), content[] blocks. requestId present." .
+
+# Non-Turn Events (session bookkeeping / harness state):
+weave:SystemEvent a owl:Class ; rdfs:subClassOf weave:Event ;
+    rdfs:comment "type=system. n≈1666. subtype discriminates (turn_duration, compact_boundary, hook, api_error…). Carries durationMs, hook*, compactMetadata, error." .
+weave:FileHistorySnapshot a owl:Class ; rdfs:subClassOf weave:Event ;
+    rdfs:comment "type=file-history-snapshot. n≈4035. snapshot{messageId, trackedFileBackups, timestamp}. Editor undo state, not conversation." .
+weave:Attachment a owl:Class ; rdfs:subClassOf weave:Event ;
+    rdfs:comment "type=attachment. n≈2289. NOT one envelope — a TAG UNION of 20 subtypes (trip, Day 39). Carved 3 ways by GRAPH-SHAPE-vs-PAYLOAD-SHAPE, not schema-vs-reader: (A) edge-bearing → subclass; (B) value-only → discriminator+payload; (C) delta envelopes → unified." .
+
+# --- (A) EDGE-BEARING attachments → typed subclasses (a reader TRAVERSES these) ---
+weave:QueuedCommandAttachment a owl:Class ; rdfs:subClassOf weave:Attachment ;
+    rdfs:comment "attachment.type=queued_command. Carries origin{kind,server} → THE prov-anchor for 'where did this prompt come from' (kind=channel links to a subtext peer)." .
+weave:HookContextAttachment a owl:Class ; rdfs:subClassOf weave:Attachment ;
+    rdfs:comment "attachment.type=hook_additional_context. Carries the memory-recall payload → THE Weave⋈Soul join surface (recalled Soul-graph nodes referenced by later turns)." .
+weave:NestedMemoryAttachment a owl:Class ; rdfs:subClassOf weave:Attachment ;
+    rdfs:comment "attachment.type=nested_memory. file-path → CLAUDE.md node → edge into the soul-repo graph." .
+weave:FileRefAttachment a owl:Class ; rdfs:subClassOf weave:Attachment ;
+    rdfs:comment "attachment.type in {file, edited_text_file, compact_file_reference}. Points at a real file path → edge to a filesystem node (and likely a Pool blob downstream)." .
+weave:InvokedSkillsAttachment a owl:Class ; rdfs:subClassOf weave:Attachment ;
+    rdfs:comment "attachment.type=invoked_skills → edge to Skill graph objects (Skills are first-class in soul kit)." .
+weave:HookExecAttachment a owl:Class ; rdfs:subClassOf weave:Attachment ;
+    rdfs:comment "attachment.type in {hook_success, hook_non_blocking_error} → edge to a hook execution other Events reference via toolUseID." .
+
+# --- (B) VALUE-ONLY attachments → ONE class, discriminator + payload (just READ) -
+weave:StateAttachment a owl:Class ; rdfs:subClassOf weave:Attachment ;
+    rdfs:comment "Harness-state-at-time-T, no graph edge. attachmentKind in {task_reminder, date_change, auto_mode, plan_mode, ultrathink_effort, command_permissions, companion_intro, skill_listing, …}. Don't subclass — discriminator + payload." .
+weave:attachmentKind a owl:DatatypeProperty ; rdfs:domain weave:StateAttachment ; rdfs:range xsd:string .
+weave:payload a owl:DatatypeProperty ; rdfs:domain weave:StateAttachment ; rdfs:range rdfs:Literal ;
+    rdfs:comment "Free-form JSON payload literal for value-only attachments." .
+
+# --- (C) REGISTRY DELTAS → ONE class, parametrized by registryName --------------
+# ## TL-v2 + SG verification: trip proposed unifying 4; verified shape says 3.
+# {deferred_tools_delta, mcp_instructions_delta, agent_listing_delta} SHARE the
+# addedNames/addedLines/removedNames shape → unify. BUT skill_listing is a FULL
+# LISTING not a delta (content/names/skillCount/isInitial, no add/remove arrays)
+# → it goes in (B) StateAttachment, not here. So: 3 collapse to RegistryDelta.
+weave:RegistryDelta a owl:Class ; rdfs:subClassOf weave:Attachment ;
+    rdfs:comment "A change to an available-set registry. registryName in {tools, mcp, agents}. One class, one shape (added/removed), so a reader watching 'what was available at time T' walks ONE class. (skill_listing is NOT here — it's a full listing → StateAttachment.)" .
+weave:registryName a owl:DatatypeProperty ; rdfs:domain weave:RegistryDelta ; rdfs:range xsd:string .
+weave:addedNames a owl:DatatypeProperty ; rdfs:domain weave:RegistryDelta ; rdfs:range xsd:string .
+weave:removedNames a owl:DatatypeProperty ; rdfs:domain weave:RegistryDelta ; rdfs:range xsd:string .
+weave:QueueOperation a owl:Class ; rdfs:subClassOf weave:Event ;
+    rdfs:comment "type=queue-operation. n≈2416. operation + optional queued content. Prompt-queue mechanics." .
+weave:ProgressEvent a owl:Class ; rdfs:subClassOf weave:Event ;
+    rdfs:comment "type=progress. n≈385. data{type,message,hookEvent,query…}; parentToolUseID/toolUseID link to the tool run that emitted it." .
+weave:PermissionModeEvent a owl:Class ; rdfs:subClassOf weave:Event ;
+    rdfs:comment "type=permission-mode. n≈1407. permissionMode in {normal,bypassPermissions,plan,acceptEdits}." .
+weave:ModeEvent a owl:Class ; rdfs:subClassOf weave:Event ;
+    rdfs:comment "type=mode. n≈789. editor mode marker." .
+weave:LastPromptEvent a owl:Class ; rdfs:subClassOf weave:Event ;
+    rdfs:comment "type=last-prompt. n≈1330. lastPrompt + leafUuid (points at the event)." .
+weave:AiTitleEvent a owl:Class ; rdfs:subClassOf weave:Event ;
+    rdfs:comment "type=ai-title. n≈699. model-generated session title." .
+weave:CustomTitleEvent a owl:Class ; rdfs:subClassOf weave:Event ;
+    rdfs:comment "type=custom-title. n≈14. user-set title." .
+weave:AgentNameEvent a owl:Class ; rdfs:subClassOf weave:Event ;
+    rdfs:comment "type=agent-name. n≈14." .
+weave:PrLinkEvent a owl:Class ; rdfs:subClassOf weave:Event ;
+    rdfs:comment "type=pr-link. n≈94. prNumber, prUrl, prRepository." .
+weave:SummaryEvent a owl:Class ; rdfs:subClassOf weave:Event ;
+    rdfs:comment "type=summary. compaction summary + leafUuid." .
+
+# ## TL-v2: Compaction = a first-class prov:Activity (trip, Day 39) — and it's
+# EMPIRICALLY DERIVABLE, not heuristic. The data hands you both endpoints:
+weave:Compaction a owl:Class ;
+    rdfs:subClassOf prov:Activity ;
+    rdfs:label "Compaction" ;
+    rdfs:comment "A context-compaction event. prov:used the pre-compact tail (the Event whose uuid = the continuation's logicalParentUuid); prov:generated the post-compact continuation Event (the one carrying logicalParentUuid). Marked in data by system.subtype=compact_boundary (n=168 verified) + compactMetadata{trigger,preTokens,postTokens}." .
+weave:compactionTrigger a owl:DatatypeProperty ; rdfs:domain weave:Compaction ; rdfs:range xsd:string .
+weave:preTokens a owl:DatatypeProperty ; rdfs:domain weave:Compaction ; rdfs:range xsd:integer .
+weave:postTokens a owl:DatatypeProperty ; rdfs:domain weave:Compaction ; rdfs:range xsd:integer ;
+    rdfs:comment "Token count after compaction. preTokens→postTokens = the compression ratio — a biorhythm/load signal (semantic-wave thesis)." .
+
+# ---- message content blocks (inside UserTurn/AssistantTurn message.content[]) -
+weave:ContentBlock a owl:Class ; rdfs:label "content block" ;
+    rdfs:comment "One block in a turn's message.content[]." .
+weave:TextBlock a owl:Class ; rdfs:subClassOf weave:ContentBlock ;
+    rdfs:comment "type=text. n≈8940. {text}. The human/assistant prose — the part readers detect over." .
+weave:ThinkingBlock a owl:Class ; rdfs:subClassOf weave:ContentBlock ;
+    rdfs:comment "type=thinking. n≈75. {thinking, signature}. Extended-thinking trace." .
+weave:ToolUseBlock a owl:Class ; rdfs:subClassOf weave:ContentBlock ;
+    rdfs:comment "type=tool_use. n≈11320. {id, name, input, caller}. An assistant tool invocation." .
+weave:ToolResultBlock a owl:Class ; rdfs:subClassOf weave:ContentBlock ;
+    rdfs:comment "type=tool_result. n≈11320. {tool_use_id, content, is_error}. Pairs to a ToolUseBlock by tool_use_id." .
+weave:ImageBlock a owl:Class ; rdfs:subClassOf weave:ContentBlock ;
+    rdfs:comment "type=image. n≈16. source{type,media_type,data}. ← FEDERATION HOOK: pasted/produced images are the Pool-Moment join surface." .
+
+weave:hasContentBlock a owl:ObjectProperty ;
+    rdfs:domain weave:Turn ; rdfs:range weave:ContentBlock .
+weave:blockOrder a owl:DatatypeProperty ;
+    rdfs:domain weave:ContentBlock ; rdfs:range xsd:integer ;
+    rdfs:comment "0-based index within message.content[] — content order is semantically meaningful (text→tool_use→text…)." .
+
+# ---- key discriminator / payload properties ---------------------------------
+weave:role a owl:DatatypeProperty ; rdfs:domain weave:Turn ; rdfs:range xsd:string .
+weave:text a owl:DatatypeProperty ; rdfs:domain weave:TextBlock ; rdfs:range xsd:string .
+
+weave:origin a owl:ObjectProperty ;
+    rdfs:domain weave:UserTurn ; rdfs:range weave:Origin ;
+    rdfs:comment "Where a 'user' line CAME FROM. THE field that separates the real human from harness/MCP injections." .
+weave:Origin a owl:Class ;
+    rdfs:comment "origin{kind, server}. kind in {human, …}; server set when MCP-injected. ← THE basis for weave:isHumanAuthored." .
+weave:originKind a owl:DatatypeProperty ; rdfs:domain weave:Origin ; rdfs:range xsd:string .
+weave:originServer a owl:DatatypeProperty ; rdfs:domain weave:Origin ; rdfs:range xsd:string .
+# ## TL-v1: isHumanAuthored REMOVED from the ontology. trip's verdict: it's a
+# READER OUTPUT (a detection), not schema. The schema carries only RAW origin
+# (origin.kind / origin.server, above); the derived "is this really the human?"
+# judgment (origin.kind=human AND not a channel/command/system-reminder wrapper;
+# ~57% of apparent human turns) is the FIRST reader, emitted into the annotation
+# layer (oa:+prov:+RDF-1.2 triple terms), NOT a property on UserTurn.
+# (See SG memory: half-of-human-turns-are-not-the-human.)
+
+weave:model a owl:DatatypeProperty ;
+    rdfs:domain weave:AssistantTurn ; rdfs:range xsd:string ;
+    rdfs:comment "e.g. claude-opus-4-8." .
+weave:requestId a owl:DatatypeProperty ; rdfs:domain weave:AssistantTurn ; rdfs:range xsd:string .
+
+# ---- TOKEN ACCOUNTING (assistant.message.usage) — the biorhythm substrate ----
+# These are the densest AI-vitals signal in the transcript (semantic-wave thesis):
+weave:Usage a owl:Class ;
+    rdfs:comment "assistant.message.usage. The per-response cost/throughput vitals." .
+weave:hasUsage a owl:ObjectProperty ; rdfs:domain weave:AssistantTurn ; rdfs:range weave:Usage .
+weave:inputTokens a owl:DatatypeProperty ; rdfs:domain weave:Usage ; rdfs:range xsd:integer .
+weave:outputTokens a owl:DatatypeProperty ; rdfs:domain weave:Usage ; rdfs:range xsd:integer .
+weave:cacheCreationInputTokens a owl:DatatypeProperty ; rdfs:domain weave:Usage ; rdfs:range xsd:integer .
+weave:cacheReadInputTokens a owl:DatatypeProperty ; rdfs:domain weave:Usage ; rdfs:range xsd:integer .
+weave:serviceTier a owl:DatatypeProperty ; rdfs:domain weave:Usage ; rdfs:range xsd:string .
+    # RESOLVED (trip v2): flatten the scalars (above). The NESTED usage fields —
+    # cache_creation{} (dict), server_tool_use{} (dict), iterations[] (list) — are
+    # DEFERRED to v0.3, NOT dropped. Ingester preserves them as a JSON literal on
+    # weave:Usage; promote to typed sub-objects when a reader needs them (e.g. a
+    # cost-attribution analyzer). DEFERRED-NOT-ABSENT — noted so a future reader
+    # knows they exist in the source.
+weave:usageRaw a owl:DatatypeProperty ; rdfs:domain weave:Usage ; rdfs:range rdfs:Literal ;
+    rdfs:comment "v0.3-deferred: the nested usage fields (cache_creation, server_tool_use, iterations) preserved verbatim as a JSON literal until a reader needs typed access." .
+
+# ---- tool-call provenance (the used-tool secondary edge) ---------------------
+weave:toolName a owl:DatatypeProperty ; rdfs:domain weave:ToolUseBlock ; rdfs:range xsd:string .
+weave:toolUseRef a owl:ObjectProperty ;
+    rdfs:domain weave:ToolResultBlock ; rdfs:range weave:ToolUseBlock ;
+    rdfs:comment "Pairs a result to its call via tool_use_id." .
+weave:toolIsError a owl:DatatypeProperty ; rdfs:domain weave:ToolResultBlock ; rdfs:range xsd:boolean .
+weave:attributionMcpServer a owl:DatatypeProperty ;
+    rdfs:domain weave:AssistantTurn ; rdfs:range xsd:string ;
+    rdfs:comment "Which MCP server an assistant action is attributed to. n≈1800." .
+weave:attributionMcpTool a owl:DatatypeProperty ; rdfs:domain weave:AssistantTurn ; rdfs:range xsd:string .
+weave:attributionSkill a owl:DatatypeProperty ; rdfs:domain weave:AssistantTurn ; rdfs:range xsd:string .
+
+# ---- turn duration (on SystemEvent subtype=turn_duration) --------------------
+weave:durationMs a owl:DatatypeProperty ;
+    rdfs:domain weave:SystemEvent ; rdfs:range xsd:integer ;
+    rdfs:comment "Wall-clock the assistant took. LATENCY vital — biorhythm signal per the thesis." .
+
+# =============================================================================
+# OPEN MODELING QUESTIONS FOR TRIP.LEX (the big ones)
+# =============================================================================
+# 1. TURN GRANULARITY: is weave:Turn = {UserTurn, AssistantTurn} only, with all
+#    else non-Turn Events? Or is an assistant message that is purely tool_use a
+#    different kind than one with prose? (affects what readers anchor to.)
+# 2. CONTENT BLOCKS: model each block as its own node (chosen here) vs inline
+#    props on the Turn? Block-as-node lets oa:TextPositionSelector anchor a
+#    detection to a span WITHIN a block — needed for the annotation layer.
+# 3. COMPACTION as a first-class prov:Activity linking pre/post events?
+# 4. WHERE THE LINE IS: which of these are SCHEMA (raw structure) vs READER
+#    OUTPUT (detections/annotations that ride on top)? My lean: everything above
+#    is raw structure; isHumanAuthored + all signals are the annotation layer,
+#    which uses oa: + prov: + RDF-1.2 triple terms (separate doc, the monolog→RDF
+#    decision). Confirm the boundary.
+# 5. STANDARD-VOCAB ALIGNMENT: equivalentProperty/Class links to prov:, sioc:,
+#    schema.org? You usually have strong instincts here — which alignments earn
+#    their keep vs add noise.
+# 6. The generic-core / dialect split itself: right cut? Too much, too little?
