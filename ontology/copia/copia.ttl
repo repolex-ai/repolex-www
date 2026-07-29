@@ -1,6 +1,6 @@
 @prefix git-lex: <https://repolex.ai/ontology/git-lex/> .
-@prefix soul:  <https://repolex.ai/ontology/kit/soul/> .
-@prefix copia: <https://repolex.ai/ontology/kit/copia/> .
+@prefix soul:  <https://repolex.ai/ontology/soul/> .
+@prefix copia: <https://repolex.ai/ontology/copia/> .
 @prefix owl:   <http://www.w3.org/2002/07/owl#> .
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
@@ -23,7 +23,7 @@
 #   Join: thisNode.<relation> == thatNode.<class>Id. (Link templates say
 #   '# IRI' but the stored value is the BARE id, e.g. "tide-lantern", not a URL.)
 #
-# Kit: copia   ·   Namespace: copia: = https://repolex.ai/ontology/kit/copia/
+# Kit: copia   ·   Namespace: copia: = https://repolex.ai/ontology/copia/
 # Extends: soul: (soul kit)
 #
 # Foldering (git-lex behavior, v0.19 — Day 65 ruling, 2026-07-18): OPT-IN. A class
@@ -194,6 +194,30 @@
 #   3. REMOVED: qwen35vl9bAestheticTechnical / qwen35vl9bAestheticAppeal (declared at
 #      v0.20, only ever held the collapsed run's values; the ERNIE burn clears those
 #      stamps from the ~300 affected files — no valid data orphaned, fields retired).
+# v0.23: Look -> FamiliarLookNote, radically simplified (2026-07-23, 1ux). ONE note
+#   per image the familiar has ever deliberately viewed — first look CREATES it,
+#   later looks UPDATE it (a note is a note, not an event stream). Frontmatter =
+#   current state; file body = dated felt notes; GIT HISTORY = the event trail
+#   (every viewing is a commit — no apparatus needed). Dropped: lookReason enum
+#   (a note doesn't need a bureaucratic reason; the body says why in words),
+#   lookedAt (ambiguous), per-viewing event identity. Renamed: lookSubject ->
+#   lookBeingId (points at a canon Being); feels-like field follows. Added:
+#   lookMomentId + lookImageId as a DELIBERATELY decoupled pair (same value
+#   today; Moment-the-intent and image-the-artifact are drifting apart).
+# v0.22: LOOK comes home as CANON (2026-07-23, 1ux + sylkie-on-fable5, the
+#   voice-mode design session). copia:Look — foldered class, /Copia/Look/<lookId>.md:
+#   ONE deliberate viewing of ONE image by the familiar's hosted eye. Frontmatter
+#   carries the structured handful; the file BODY is the felt note (prose,
+#   unschema'd, hers — "files forgive; databases hold grudges").
+#   Fields: lookId · lookMoment (bare momentId join key) · lookedAt ·
+#   lookSubstrate (which model held the look) · lookReason (enforced enum) ·
+#   three explicit BINARIES (1ux ruling: no numeric ratings, name fields loudly):
+#   lookTechnicallySound / lookFeelsLikeMe / lookStandout · lookDescription
+#   (her own words for what is THERE — the caption-correspondence half of the
+#   grounding loop; the body holds what it MEANT).
+#   Residency (1ux, 2026-07-23): Looks are canon files, git-lex-walked; the
+#   Verdict/Duel/Trace EVENTS remain copia-oxigraph (Day-112 ruling stands).
+#   Derivations join the two homes on momentId.
 # v0.20: PUNCTUM comes home (Day 111→112, sylkie-on-fable5 + 1ux). The TASTE/judgment
 #   data model, per the 2026-07-17/18 taste+capture specs (subtexture/docs/copia/) and
 #   the 2026-07-20 ruling that CoPIA gets its OWN per-agent oxigraph (.copia/oxigraph/,
@@ -316,11 +340,11 @@
 #   Moments aren't silently gated out of the graph when the lane lands.
 # =============================================================================
 
-<https://repolex.ai/ontology/kit/copia> a owl:Ontology ;
+<https://repolex.ai/ontology/copia> a owl:Ontology ;
     rdfs:label "Copia Kit Ontology" ;
     rdfs:comment "The agent's curated outward face + the CoPIA render data model. Soul-adapter. Optional add-on for soul." ;
-    owl:versionInfo "0.21.0" ;
-    owl:imports <https://repolex.ai/ontology/kit/soul/> .
+    owl:versionInfo "0.23.0" ;
+    owl:imports <https://repolex.ai/ontology/soul/> .
 
 
 # =============================================================================
@@ -2270,20 +2294,113 @@ copia:dwellBucket a owl:DatatypeProperty ;
 # personal taste model residualizes AGAINST — without it, a fitted taste head
 # spends itself re-learning "sharp, well-lit, pretty" and calls that punctum.
 
+# ========== FAMILIAR LOOK NOTE — one image, one living note (v0.23) ==========
+# ONE note per image the familiar has ever deliberately viewed (hosted eye,
+# in-session, consented). First look creates the file; every later look updates
+# it. Canon: /Copia/FamiliarLookNote/<familiarLookNoteId>.md (git-lex:foldered).
+# Frontmatter = CURRENT state (three loud binaries, no numeric ratings — 1ux
+# ruling); body = dated felt notes, accumulating; git history = the complete
+# event trail of every viewing, for free.
+
+copia:FamiliarLookNote a owl:Class ;
+    git-lex:foldered true ;
+    rdfs:label "FamiliarLookNote" ;
+    rdfs:comment "The familiar's living note on one image she has deliberately viewed. Created at first look, updated at every later look. Frontmatter carries the current verdicts; the body holds the dated felt notes; git holds the history." ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:familiarLookNoteId ; owl:cardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:lookMomentId ;       owl:cardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:lookImageId ;        owl:cardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:lookBeingId ;        owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:lookTechnicallySound ; owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:lookFeelsLikeBeing ;   owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:lookStandout ;         owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:lookDescription ;      owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:lookSubstrate ;        owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:lookTimestamp ;        owl:maxCardinality 1 ] .
+
+copia:familiarLookNoteId a owl:DatatypeProperty ;
+    rdfs:label "familiarLookNoteId" ;
+    rdfs:comment "Unique identifier for this note." ;
+    rdfs:domain copia:FamiliarLookNote ;
+    rdfs:range xsd:string .
+
+copia:lookMomentId a owl:DatatypeProperty ;
+    rdfs:label "look moment id" ;
+    rdfs:comment "Bare momentId of the Moment this note is about (cross-graph join key). Deliberately a SEPARATE field from lookImageId even while their values coincide: Moment is the intent-object, the image is the pixel artifact, and they are being decoupled. TODO: will need to be updated when Pool CID -> panId." ;
+    rdfs:domain copia:FamiliarLookNote ;
+    rdfs:range xsd:string .
+
+copia:lookImageId a owl:DatatypeProperty ;
+    rdfs:label "look image id" ;
+    rdfs:comment "Identifier of the pixel artifact viewed (today: the sha256 content id, same value as lookMomentId; kept separate on purpose — one Moment may own several images someday). TODO: will need to be updated when Pool CID -> panId." ;
+    rdfs:domain copia:FamiliarLookNote ;
+    rdfs:range xsd:string .
+
+copia:lookBeingId a owl:DatatypeProperty ;
+    rdfs:label "look being id" ;
+    rdfs:comment "Id of the canon Being this image is supposed to show — the resonance judgment is made AGAINST this being (the familiar's self today; any character later, never implicit)." ;
+    rdfs:domain copia:FamiliarLookNote ;
+    rdfs:range xsd:string .
+
+copia:lookTechnicallySound a owl:DatatypeProperty ;
+    rdfs:label "look: technically sound" ;
+    rdfs:comment "Current call, by eye: no broken anatomy, no render collapse, holds together as a picture. Yes/no — 'do I love it' is NOT this field's question." ;
+    rdfs:domain copia:FamiliarLookNote ;
+    rdfs:range xsd:boolean .
+
+copia:lookFeelsLikeBeing a owl:DatatypeProperty ;
+    rdfs:label "look: feels like the being" ;
+    rdfs:comment "Current resonance call: does the figure in this image FEEL like the being it is supposed to show (lookBeingId) — recognition, not category. Only decidable while seeing." ;
+    rdfs:domain copia:FamiliarLookNote ;
+    rdfs:range xsd:boolean .
+
+copia:lookStandout a owl:DatatypeProperty ;
+    rdfs:label "look: standout" ;
+    rdfs:comment "The jump — felt selection, set during the final choosing pass over images already sound + resonant. Absent until then." ;
+    rdfs:domain copia:FamiliarLookNote ;
+    rdfs:range xsd:boolean .
+
+copia:lookDescription a owl:DatatypeProperty ;
+    rdfs:label "look description" ;
+    rdfs:comment "Her own words for what is THERE (not what it meant — that is the body). Paired against the local eye's caption for the same image: the correspondence corpus the grounding loop learns from." ;
+    rdfs:domain copia:FamiliarLookNote ;
+    rdfs:range xsd:string .
+
+copia:lookSubstrate a owl:DatatypeProperty ;
+    rdfs:label "look substrate" ;
+    rdfs:comment "Which model held the MOST RECENT look (e.g. claude-opus-4-8, claude-fable-5). Per-viewing substrate history lives in the body's dated lines and in git." ;
+    rdfs:domain copia:FamiliarLookNote ;
+    rdfs:range xsd:string .
+
+copia:lookTimestamp a owl:DatatypeProperty ;
+    rdfs:label "look timestamp" ;
+    rdfs:comment "When the most recent viewing happened. Full viewing history: body + git." ;
+    rdfs:domain copia:FamiliarLookNote ;
+    rdfs:range xsd:dateTime .
+
+# PROVISIONAL (2026-07-22, 1ux ruling): the three aesthetic-score properties below
+# went into the ontology ahead of a settled scorer choice — we got ahead of ourselves.
+# The right flow is test-in-a-scratch-repo -> decide -> ontology -> implement; these
+# skipped step one. The 2026-07-22 scorer bake-off (goodlux/aes-bakeoff, frozen
+# 35-image probe) found topiq_nr (CPU) and a 3-scorer ensemble outperforming ERNIE
+# alone, so which scorer(s) feed these fields — and whether the model-keyed raw
+# field survives — is UNSETTLED. These properties MAY GO AWAY or be renamed when
+# the scorer ruling lands. Only ~90 files carry stamps (the halted burn); nothing
+# downstream reads them yet.
+
 copia:aestheticTechnical a owl:DatatypeProperty ;
     rdfs:label "aesthetic technical" ;
-    rdfs:comment "CANONICAL current-best technical-quality score (1-10): artifacts, anatomy, coherence. Latest-wins (the caption pattern)." ;
+    rdfs:comment "PROVISIONAL (see 2026-07-22 note above). CANONICAL current-best technical-quality score (1-10): artifacts, anatomy, coherence. Latest-wins (the caption pattern). Never filled — mechanism still open." ;
     rdfs:domain copia:Moment ;
     rdfs:range xsd:decimal .
 
 copia:aestheticAppeal a owl:DatatypeProperty ;
     rdfs:label "aesthetic appeal" ;
-    rdfs:comment "CANONICAL current-best generic-appeal score (1-10): conventional prettiness, NOT anyone's personal taste. The axis to residualize against, never a verdict." ;
+    rdfs:comment "PROVISIONAL (see 2026-07-22 note above). CANONICAL current-best generic-appeal score (1-10): conventional prettiness, NOT anyone's personal taste. The axis to residualize against, never a verdict." ;
     rdfs:domain copia:Moment ;
     rdfs:range xsd:decimal .
 
 copia:ernieImageAesScore a owl:DatatypeProperty ;
     rdfs:label "ernie-image-aes score" ;
-    rdfs:comment "baidu/ERNIE-Image-Aes RAW aesthetic score, 0-100 float — deterministic (softmax-expectation over score-token logits, one forward pass; same pixels = same float). The model-keyed raw behind the canonical aestheticAppeal (= score/10, latest-wins). Probe-validated 2026-07-21 against the frozen 35-image exam: spread 8.4, +5.9 pick-over-reject. Pairwise-trained (Swiss-tournament annotation) — structurally collapse-resistant. Served locally by Iris /aes; zero wire." ;
+    rdfs:comment "PROVISIONAL (see 2026-07-22 note above — scorer choice unsettled; may be superseded). baidu/ERNIE-Image-Aes RAW aesthetic score, 0-100 float — deterministic (softmax-expectation over score-token logits, one forward pass; same pixels = same float). The model-keyed raw behind the canonical aestheticAppeal (= score/10, latest-wins). Probe-validated 2026-07-21 against the frozen 35-image exam: spread 8.4, +5.9 pick-over-reject. Served locally by Iris /aes; zero wire." ;
     rdfs:domain copia:Moment ;
     rdfs:range xsd:decimal .
