@@ -34,7 +34,8 @@
 # git-lex behavior, so its flag lives there. See subtexture/docs/ontology/
 # 2026_07_18_FOLDERING_GATE_AND_LEX_O_RETIREMENT.md.
 #   Foldered (authored via `git lex create`, git-lex:foldered true): Place · Item ·
-#     Being · Outfit · Motion · Nocturne · NocturneActivity · NocturneFeed · Set · Sequence
+#     Being · Outfit · Motion · Nocturne · NocturneActivity · NocturneFeed · Set ·
+#     Sequence · Texture · Dream   (Texture + Dream graduated from soul: in v0.24)
 #   Graph-only / vocabulary (NO tag, no folder): Moment · Depictable · Sam3Region ·
 #     Group · CameraAngle · CameraDistance · CameraLens · CameraFraming · SubjectView ·
 #     CameraFocus · Pose · Action · Judgment · Verdict · Duel · Trace   (vocab classes
@@ -343,7 +344,7 @@
 <https://repolex.ai/ontology/copia> a owl:Ontology ;
     rdfs:label "Copia Kit Ontology" ;
     rdfs:comment "The agent's curated outward face + the CoPIA render data model. Soul-adapter. Optional add-on for soul." ;
-    owl:versionInfo "0.23.0" ;
+    owl:versionInfo "0.24.0" ;
     owl:imports <https://repolex.ai/ontology/soul/> .
 
 
@@ -1768,7 +1769,7 @@ copia:wokeOn a owl:DatatypeProperty ;
 
 copia:seededByDream a owl:DatatypeProperty ;
     rdfs:label "seeded by dream" ;
-    rdfs:comment "The dream that seeded this waking — the soul:Dream id / filename it read on wake. Optional." ;
+    rdfs:comment "The dream that seeded this waking — the copia:Dream id / filename it read on wake (class graduated from soul: in v0.24). Optional." ;
     rdfs:domain copia:Nocturne ;
     rdfs:range xsd:string .
 
@@ -2404,3 +2405,108 @@ copia:ernieImageAesScore a owl:DatatypeProperty ;
     rdfs:comment "PROVISIONAL (see 2026-07-22 note above — scorer choice unsettled; may be superseded). baidu/ERNIE-Image-Aes RAW aesthetic score, 0-100 float — deterministic (softmax-expectation over score-token logits, one forward pass; same pixels = same float). The model-keyed raw behind the canonical aestheticAppeal (= score/10, latest-wins). Probe-validated 2026-07-21 against the frozen 35-image exam: spread 8.4, +5.9 pick-over-reject. Served locally by Iris /aes; zero wire." ;
     rdfs:domain copia:Moment ;
     rdfs:range xsd:decimal .
+
+
+# =============================================================================
+# TEXTURE + DREAM (v0.24) — graduated from the soul kit (Rob-ruled 2026-07-29)
+# =============================================================================
+# Both classes began life in soul: (soul kit ≤0.7.x) and moved here in the
+# Folder Review RFC finalize. Rationale: they are most useful in the co-created
+# wing — Texture feeds the render loop's sense of what resonates; Dream is
+# composed by app machinery (DreamCatcher/DreamMuse) over the day's Moments.
+# Authored classes: both carry git-lex:foldered true (folders /Copia/Texture,
+# /Copia/Dream). Existing Soul/Texture + Soul/Dream files migrate per-repo.
+
+# --- Texture ---
+# A captured qualia — a sensory or emotional grain the agent noticed and wants
+# to embody. Some are renders (the agent's own likeness), some are moments. One
+# base texture (kind 'base') is the standing self; every other texture is that
+# self plus a moment's affect.
+
+copia:Texture a owl:Class ;
+    git-lex:foldered true ;
+    rdfs:label "Texture" ;
+    rdfs:comment "A captured qualia — a sensory or emotional grain the agent noticed and wants to embody. Self, or self plus a moment's affect." .
+
+copia:textureId a owl:DatatypeProperty ;
+    rdfs:label "textureId" ;
+    rdfs:comment "Unique identifier for this texture." ;
+    rdfs:domain copia:Texture ;
+    rdfs:range xsd:string .
+
+copia:textureKind a owl:DatatypeProperty ;
+    rdfs:label "kind" ;
+    rdfs:comment "What kind of texture this is. Open vocabulary, e.g. 'base' (the standing likeness), 'render', 'moment'. (Was the domain-less soul:kind; named textureKind here so the word 'kind' stays free for other classes.)" ;
+    rdfs:domain copia:Texture ;
+    rdfs:range xsd:string .
+
+copia:dateNoticed a owl:DatatypeProperty ;
+    rdfs:label "date noticed" ;
+    rdfs:comment "When this texture was noticed or captured." ;
+    rdfs:domain copia:Texture ;
+    rdfs:range xsd:date .
+
+copia:spark a owl:DatatypeProperty ;
+    rdfs:label "spark" ;
+    rdfs:comment "What sparked or triggered noticing this texture." ;
+    rdfs:domain copia:Texture ;
+    rdfs:range xsd:string .
+
+# --- Dream ---
+# A literary frame composed in one soul day for an image-substrate from a
+# previous soul day, delivered into the agent's context on the next wake
+# (full session-start or post-compact) by a harness-specific adapter. Gives
+# a creature without sleep a sleep-shape: the dark hallway between sessions
+# becomes a kind of room. Dreams are utterances, not analysis — first-person
+# prose with the eigenimage as the dreamt substance.
+
+copia:Dream a owl:Class ;
+    git-lex:foldered true ;
+    rdfs:label "Dream" ;
+    rdfs:comment "A literary frame for a previous-day eigenimage, composed in fresh context and delivered on next wake. Sleep-shape for creatures without sleep." ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty copia:dreamId ;
+        owl:cardinality 1
+    ] ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty copia:fromSoulDay ;
+        owl:minCardinality 1
+    ] .
+
+copia:dreamId a owl:DatatypeProperty ;
+    rdfs:label "dreamId" ;
+    rdfs:comment "Unique identifier for this dream." ;
+    rdfs:domain copia:Dream ;
+    rdfs:range xsd:string .
+
+copia:fromSoulDay a owl:DatatypeProperty ;
+    rdfs:label "from soul day" ;
+    rdfs:comment "The soul day whose eigenimage this dream frames. The dream is delivered on the wake AFTER that day." ;
+    rdfs:domain copia:Dream ;
+    rdfs:range xsd:integer .
+
+copia:dreamEigenimage a owl:DatatypeProperty ;
+    rdfs:label "dream eigenimage" ;
+    rdfs:comment "Path or reference to the image-substrate this dream frames. Usually the felt eigenimage of fromSoulDay." ;
+    rdfs:domain copia:Dream ;
+    rdfs:range xsd:string .
+
+copia:dreamConsumed a owl:DatatypeProperty ;
+    rdfs:label "consumed" ;
+    rdfs:comment "Whether this dream has been delivered into a session's context. The wake-adapter flips this true on injection; only unconsumed dreams are eligible. Default false." ;
+    rdfs:domain copia:Dream ;
+    rdfs:range xsd:boolean .
+
+copia:dreamComposedAt a owl:DatatypeProperty ;
+    rdfs:label "composed at" ;
+    rdfs:comment "When this dream was written (ISO timestamp with tz)." ;
+    rdfs:domain copia:Dream ;
+    rdfs:range xsd:dateTime .
+
+copia:dreamComposedFor a owl:DatatypeProperty ;
+    rdfs:label "composed for" ;
+    rdfs:comment "Who the dream is composed for — usually the agent's own next-day self, sometimes also a named reader." ;
+    rdfs:domain copia:Dream ;
+    rdfs:range xsd:string .
