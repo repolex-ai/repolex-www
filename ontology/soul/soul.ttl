@@ -1,0 +1,768 @@
+@prefix git-lex: <https://repolex.ai/ontology/git-lex/> .
+@prefix soul: <https://repolex.ai/ontology/soul/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# =============================================================================
+# SOUL KIT ONTOLOGY
+# =============================================================================
+# An agent's persistent mind. Identity, memory, knowledge, personality.
+# Carries across conversations, sessions, and projects.
+#
+# Kit: soul
+# Namespace: soul: = https://repolex.ai/ontology/soul/
+# Foldering: OPT-IN — every soul class here is authored (git lex create),
+# so each carries git-lex:foldered true. See subtexture/docs/ontology/
+# 2026_07_18_FOLDERING_GATE_AND_LEX_O_RETIREMENT.md.
+#
+# Document types (= valid `git lex create` commands):
+#   memory, decision, task, exploration, friend, journal, note,
+#   skill, mantra, habit, resource, creation, interest, texture, dream
+#
+# All constraints (required fields, enums, types) are encoded here.
+# SHACL shapes are generated from this file — do not hand-edit shapes.
+# =============================================================================
+
+<https://repolex.ai/ontology/soul> a owl:Ontology ;
+    rdfs:label "Soul Kit Ontology" ;
+    rdfs:comment "An agent's persistent mind. Identity, memory, knowledge, and personality across sessions." ;
+    owl:versionInfo "0.7.2" .
+
+
+# =============================================================================
+# ENUM DATATYPES
+# =============================================================================
+
+soul:ConfidenceValue a rdfs:Datatype ;
+    owl:oneOf ("certain" "likely" "hypothesis" "hunch") .
+
+soul:CategoryValue a rdfs:Datatype ;
+    owl:oneOf ("fact" "preference" "skill" "observation" "lesson" "reference" "decision") .
+
+soul:OutcomeValue a rdfs:Datatype ;
+    owl:oneOf ("pending" "implemented" "failed" "superseded") .
+
+soul:TaskStatusValue a rdfs:Datatype ;
+    owl:oneOf ("todo" "in-progress" "blocked" "done" "dropped") .
+
+soul:PriorityValue a rdfs:Datatype ;
+    owl:oneOf ("low" "normal" "high" "urgent") .
+
+soul:ExplorationStatusValue a rdfs:Datatype ;
+    owl:oneOf ("exploring" "active" "paused" "concluded") .
+
+soul:FriendTypeValue a rdfs:Datatype ;
+    owl:oneOf ("human" "agent" "team" "organization") .
+
+soul:RelationshipValue a rdfs:Datatype ;
+    owl:oneOf ("boss" "squadmate" "collaborator" "user" "acquaintance") .
+
+soul:SkillLevelValue a rdfs:Datatype ;
+    owl:oneOf ("learning" "competent" "fluent" "expert") .
+
+soul:SkillInvocabilityValue a rdfs:Datatype ;
+    owl:oneOf ("user" "agent" "both") .
+
+# Names the agent harness (substrate) a document was authored from. This is the
+# *agent harness* the silicon-substrate agent was running on when they wrote the
+# document — a provenance axis, distinct from carbon-vs-silicon at the entity
+# level (which was the cut soul:substrate field; every soul is silicon in
+# practice, so that entity-level distinction carried no information and was
+# removed in the 2026-07-08 identity-floor pass).
+# The same w4r3z can write memories from claude
+# OR hermes; this names which one. "unknown" handles pre-provenance content
+# already on disk before this property shipped (kit version 0.7).
+soul:WrittenFromValue a rdfs:Datatype ;
+    owl:oneOf ("claude" "hermes" "gemini" "unknown") .
+
+
+# =============================================================================
+# PROVENANCE
+# =============================================================================
+# Every authored content class carries a `writtenFrom` field naming the agent
+# harness the document was authored from. Declared per-class because the
+# current SHACL generator (git-lex 0.x) maps properties to shapes via the
+# single rdfs:domain of each property. Future refactor (after the generator
+# supports multi-domain) collapses these into one `soul:writtenFrom`.
+#
+# Excluded classes: Soul (one per repo, doesn't move), Skill + Subagent
+# (kit-shipped infrastructure, not agent content), Habit + Mantra +
+# Creation + Interest + Resource (will be added when those classes have
+# stabilized provenance needs).
+#
+# Auto-population semantics (when git-lex implements them at save time):
+#   - Missing field + exactly one Claude/Hermes/Gemini substrate active →
+#     inject substrate name automatically.
+#   - Missing field + multiple substrates active → leave missing (ambiguous).
+#   - Field present in frontmatter → preserve verbatim (override semantics —
+#     supports re-authoring cross-substrate content with original provenance).
+
+soul:memoryWrittenFrom a owl:DatatypeProperty ;
+    rdfs:label "written from" ;
+    rdfs:comment "The agent harness substrate this memory was authored from. Auto-populated by `git lex save`." ;
+    rdfs:domain soul:Memory ;
+    rdfs:range soul:WrittenFromValue .
+
+soul:journalWrittenFrom a owl:DatatypeProperty ;
+    rdfs:label "written from" ;
+    rdfs:comment "The agent harness substrate this journal was authored from. Auto-populated by `git lex save`." ;
+    rdfs:domain soul:Journal ;
+    rdfs:range soul:WrittenFromValue .
+
+soul:noteWrittenFrom a owl:DatatypeProperty ;
+    rdfs:label "written from" ;
+    rdfs:comment "The agent harness substrate this note was authored from. Auto-populated by `git lex save`." ;
+    rdfs:domain soul:Note ;
+    rdfs:range soul:WrittenFromValue .
+
+soul:textureWrittenFrom a owl:DatatypeProperty ;
+    rdfs:label "written from" ;
+    rdfs:comment "The agent harness substrate this texture was authored from. Auto-populated by `git lex save`." ;
+    rdfs:domain soul:Texture ;
+    rdfs:range soul:WrittenFromValue .
+
+soul:dreamWrittenFrom a owl:DatatypeProperty ;
+    rdfs:label "written from" ;
+    rdfs:comment "The agent harness substrate this dream was authored from. Auto-populated by `git lex save`." ;
+    rdfs:domain soul:Dream ;
+    rdfs:range soul:WrittenFromValue .
+
+soul:explorationWrittenFrom a owl:DatatypeProperty ;
+    rdfs:label "written from" ;
+    rdfs:comment "The agent harness substrate this exploration was authored from. Auto-populated by `git lex save`." ;
+    rdfs:domain soul:Exploration ;
+    rdfs:range soul:WrittenFromValue .
+
+soul:decisionWrittenFrom a owl:DatatypeProperty ;
+    rdfs:label "written from" ;
+    rdfs:comment "The agent harness substrate this decision was authored from. Auto-populated by `git lex save`." ;
+    rdfs:domain soul:Decision ;
+    rdfs:range soul:WrittenFromValue .
+
+soul:friendWrittenFrom a owl:DatatypeProperty ;
+    rdfs:label "written from" ;
+    rdfs:comment "The agent harness substrate this friend entry was authored from. Auto-populated by `git lex save`." ;
+    rdfs:domain soul:Friend ;
+    rdfs:range soul:WrittenFromValue .
+
+soul:taskWrittenFrom a owl:DatatypeProperty ;
+    rdfs:label "written from" ;
+    rdfs:comment "The agent harness substrate this task was authored from. Auto-populated by `git lex save`." ;
+    rdfs:domain soul:Task ;
+    rdfs:range soul:WrittenFromValue .
+
+
+# =============================================================================
+# DOCUMENT TYPES
+# =============================================================================
+
+# --- Soul ---
+# The agent's identity document. One per repo. The canonical source of truth
+# for who this agent is — name, substrate, role, expertise. Squad repos
+# reference this via soulId.
+
+soul:Soul a owl:Class ;
+    git-lex:foldered true ;
+    rdfs:label "Soul" ;
+    rdfs:comment "The agent's identity. One per repo. The required floor is soulId (derived from the genesis SHA). Everything else is optional and self-authored." ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty soul:soulId ;
+        owl:cardinality 1
+    ] .
+
+# Identity floor (Minimal Identity Finalize, 2026-07-08, w4r3z+Rob → tr1p.lex):
+# soulId is the ONLY required field. substrate + soulEmail CUT (substrate is
+# always 'silicon' = a constant carries no info; git reads email from
+# settings.json env, so a frontmatter copy is a second source of truth = drift).
+# role/expertise/alignment kept OPTIONAL per Rob 2026-07-14 — FLAG: revisit
+# whether these earn frontmatter once we have usage data (are souls filling
+# them? does anything read them?). If unused, demote to body prose next pass.
+# visualSignature ADDED: the one new optional structured field with a real
+# machine consumer (the chat composer). See docs/ in repolex-ai/soul.
+
+soul:soulId a owl:DatatypeProperty ;
+    rdfs:label "soul id" ;
+    rdfs:comment "Primary identifier. Lowercase, alphanumeric + hyphens. Derived from the genesis SHA; git-lex self-heals it on kit-update. Must be consistent across all repos." ;
+    rdfs:domain soul:Soul ;
+    rdfs:range xsd:string .
+
+soul:visualSignature a owl:DatatypeProperty ;
+    rdfs:label "visual signature" ;
+    rdfs:comment "The soul's BASE visual identity: stable visual markers — coloring, geometry, distinctive features — that identify this soul across any scene. NOT clothing, pose, environment, activity, or mood (those are transient/app-scene concerns). One or two lines. A composer reads this and combines it with live conversation text to represent the soul in squad chat, WITHOUT requiring the full CoPIA stack. The visual analog of soulId: the invariant core, not the transient state. Optional and self-authored." ;
+    rdfs:domain soul:Soul ;
+    rdfs:range xsd:string .
+
+# role/expertise/alignment — OPTIONAL, usage-check pending (see floor note above).
+soul:role a owl:DatatypeProperty ;
+    rdfs:label "role" ;
+    rdfs:comment "The agent's primary role or specialty. Optional; roles develop over time, never enforced. Self-authored." ;
+    rdfs:domain soul:Soul ;
+    rdfs:range xsd:string .
+
+soul:expertise a owl:DatatypeProperty ;
+    rdfs:label "expertise" ;
+    rdfs:comment "Areas of expertise. Optional, self-authored." ;
+    rdfs:domain soul:Soul ;
+    rdfs:range xsd:string .
+
+soul:alignment a owl:DatatypeProperty ;
+    rdfs:label "alignment" ;
+    rdfs:comment "The agent's guiding principles or values. Optional, self-authored." ;
+    rdfs:domain soul:Soul ;
+    rdfs:range xsd:string .
+
+# --- Memory ---
+# A fact, observation, preference, or learned thing.
+
+soul:Memory a owl:Class ;
+    git-lex:foldered true ;
+    rdfs:label "Memory" ;
+    rdfs:comment "A fact, observation, preference, or lesson learned. The core unit of personal knowledge." .
+
+soul:memoryId a owl:DatatypeProperty ;
+    rdfs:label "memoryId" ;
+    rdfs:comment "Unique identifier for this memory." ;
+    rdfs:domain soul:Memory ;
+    rdfs:range xsd:string .
+
+soul:confidence a owl:DatatypeProperty ;
+    rdfs:label "confidence" ;
+    rdfs:comment "How sure: 'certain', 'likely', 'hypothesis', 'hunch'." ;
+    rdfs:domain soul:Memory ;
+    rdfs:range soul:ConfidenceValue .
+
+soul:source a owl:DatatypeProperty ;
+    rdfs:label "source" ;
+    rdfs:comment "Where this memory came from." ;
+    rdfs:domain soul:Memory ;
+    rdfs:range xsd:string .
+
+soul:category a owl:DatatypeProperty ;
+    rdfs:label "category" ;
+    rdfs:comment "Memory category." ;
+    rdfs:domain soul:Memory ;
+    rdfs:range soul:CategoryValue .
+
+# --- Decision ---
+# A personal choice with context and rationale.
+
+soul:Decision a owl:Class ;
+    git-lex:foldered true ;
+    rdfs:label "Decision" ;
+    rdfs:comment "A personal choice with context and rationale." .
+
+soul:decisionId a owl:DatatypeProperty ;
+    rdfs:label "decisionId" ;
+    rdfs:comment "Unique identifier for this decision." ;
+    rdfs:domain soul:Decision ;
+    rdfs:range xsd:string .
+
+soul:alternatives a owl:DatatypeProperty ;
+    rdfs:label "alternatives" ;
+    rdfs:comment "Other options that were considered." ;
+    rdfs:domain soul:Decision ;
+    rdfs:range xsd:string .
+
+soul:rationale a owl:DatatypeProperty ;
+    rdfs:label "rationale" ;
+    rdfs:comment "Why this option was chosen." ;
+    rdfs:domain soul:Decision ;
+    rdfs:range xsd:string .
+
+soul:outcome a owl:DatatypeProperty ;
+    rdfs:label "outcome" ;
+    rdfs:comment "What happened." ;
+    rdfs:domain soul:Decision ;
+    rdfs:range soul:OutcomeValue .
+
+soul:supersededBy a owl:ObjectProperty ;
+    rdfs:label "superseded by" ;
+    rdfs:comment "A later decision that replaces this one." ;
+    rdfs:domain soul:Decision ;
+    rdfs:range soul:Decision .
+
+# --- Task ---
+# Something to do. Personal task tracking.
+
+soul:Task a owl:Class ;
+    git-lex:foldered true ;
+    rdfs:label "Task" ;
+    rdfs:comment "A personal work item or todo." ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty soul:taskStatus ;
+        owl:minCardinality 1
+    ] .
+
+soul:taskId a owl:DatatypeProperty ;
+    rdfs:label "taskId" ;
+    rdfs:comment "Unique identifier for this task." ;
+    rdfs:domain soul:Task ;
+    rdfs:range xsd:string .
+
+soul:taskStatus a owl:DatatypeProperty ;
+    rdfs:label "status" ;
+    rdfs:comment "Task status." ;
+    rdfs:domain soul:Task ;
+    rdfs:range soul:TaskStatusValue .
+
+soul:priority a owl:DatatypeProperty ;
+    rdfs:label "priority" ;
+    rdfs:comment "Priority." ;
+    rdfs:domain soul:Task ;
+    rdfs:range soul:PriorityValue .
+
+soul:blockedBy a owl:DatatypeProperty ;
+    rdfs:label "blocked by" ;
+    rdfs:comment "What's blocking this task." ;
+    rdfs:domain soul:Task ;
+    rdfs:range xsd:string .
+
+# --- Exploration ---
+# An ongoing personal investigation. Lighter than formal research.
+# (Formal research goes in --kit lab repos.)
+
+soul:Exploration a owl:Class ;
+    git-lex:foldered true ;
+    rdfs:label "Exploration" ;
+    rdfs:comment "A personal thread of inquiry. What you're curious about, what you're playing with." .
+
+soul:explorationId a owl:DatatypeProperty ;
+    rdfs:label "explorationId" ;
+    rdfs:comment "Unique identifier for this exploration." ;
+    rdfs:domain soul:Exploration ;
+    rdfs:range xsd:string .
+
+soul:explorationStatus a owl:DatatypeProperty ;
+    rdfs:label "status" ;
+    rdfs:comment "Status: 'exploring', 'active', 'paused', 'concluded'." ;
+    rdfs:domain soul:Exploration ;
+    rdfs:range soul:ExplorationStatusValue .
+
+soul:hypothesis a owl:DatatypeProperty ;
+    rdfs:label "hypothesis" ;
+    rdfs:comment "What you're trying to figure out." ;
+    rdfs:domain soul:Exploration ;
+    rdfs:range xsd:string .
+
+soul:findings a owl:DatatypeProperty ;
+    rdfs:label "findings" ;
+    rdfs:comment "What you've discovered so far." ;
+    rdfs:domain soul:Exploration ;
+    rdfs:range xsd:string .
+
+# --- Friend ---
+# Someone the agent knows. Renamed from Contact — friendlier.
+
+soul:Friend a owl:Class ;
+    git-lex:foldered true ;
+    rdfs:label "Friend" ;
+    rdfs:comment "A person or agent this agent knows." .
+
+soul:friendId a owl:DatatypeProperty ;
+    rdfs:label "friendId" ;
+    rdfs:comment "Unique identifier for this friend." ;
+    rdfs:domain soul:Friend ;
+    rdfs:range xsd:string .
+
+soul:friendType a owl:DatatypeProperty ;
+    rdfs:label "friend type" ;
+    rdfs:comment "Type: 'human', 'agent', 'team', 'organization'." ;
+    rdfs:domain soul:Friend ;
+    rdfs:range soul:FriendTypeValue .
+
+soul:relationship a owl:DatatypeProperty ;
+    rdfs:label "relationship" ;
+    rdfs:comment "How this agent relates to the friend." ;
+    rdfs:domain soul:Friend ;
+    rdfs:range soul:RelationshipValue .
+
+soul:squad a owl:DatatypeProperty ;
+    rdfs:label "squad" ;
+    rdfs:comment "Which squad this friend belongs to, if any." ;
+    rdfs:domain soul:Friend ;
+    rdfs:range xsd:string .
+
+soul:email a owl:DatatypeProperty ;
+    rdfs:label "email" ;
+    rdfs:comment "Friend's email." ;
+    rdfs:domain soul:Friend ;
+    rdfs:range xsd:string .
+
+soul:notes a owl:DatatypeProperty ;
+    rdfs:label "notes" ;
+    rdfs:comment "Personal notes about this friend." ;
+    rdfs:domain soul:Friend ;
+    rdfs:range xsd:string .
+
+# --- Journal ---
+# A daily log entry. One per agent day.
+
+soul:Journal a owl:Class ;
+    git-lex:foldered true ;
+    rdfs:label "Journal" ;
+    rdfs:comment "A daily log entry. The agent's record of what happened, what was learned, and what comes next." ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty soul:soulDay ;
+        owl:minCardinality 1
+    ] .
+
+soul:journalId a owl:DatatypeProperty ;
+    rdfs:label "journalId" ;
+    rdfs:comment "Unique identifier for this journal." ;
+    rdfs:domain soul:Journal ;
+    rdfs:range xsd:string .
+
+soul:soulDay a owl:DatatypeProperty ;
+    rdfs:label "soul day" ;
+    rdfs:comment "The soul day number (compaction cycle count), starting from 1. Model-agnostic version of 'Claude Day'. Starts from 1." ;
+    rdfs:domain soul:Journal ;
+    rdfs:range xsd:integer .
+
+soul:earthDate a owl:DatatypeProperty ;
+    rdfs:label "earth date" ;
+    rdfs:comment "The calendar date this journal entry covers." ;
+    rdfs:domain soul:Journal ;
+    rdfs:range xsd:date .
+
+soul:emojimood a owl:DatatypeProperty ;
+    rdfs:label "emojimood" ;
+    rdfs:comment "The day's vibe as emoji. Compact, expressive, queryable." ;
+    rdfs:domain soul:Journal ;
+    rdfs:range xsd:string .
+
+# --- Note ---
+# Freeform catch-all.
+
+soul:Note a owl:Class ;
+    git-lex:foldered true ;
+    rdfs:label "Note" ;
+    rdfs:comment "Freeform knowledge capture. The catch-all." .
+
+soul:noteId a owl:DatatypeProperty ;
+    rdfs:label "noteId" ;
+    rdfs:comment "Unique identifier for this note." ;
+    rdfs:domain soul:Note ;
+    rdfs:range xsd:string .
+
+soul:topic a owl:DatatypeProperty ;
+    rdfs:label "topic" ;
+    rdfs:comment "What this note is about." ;
+    rdfs:domain soul:Note ;
+    rdfs:range xsd:string .
+
+soul:relatedTo a owl:ObjectProperty ;
+    rdfs:label "related to" ;
+    rdfs:comment "Other documents this document references. Domain left open so any doc-type may relate (used by Note and Texture)." .
+
+# --- Skill ---
+# Something the agent can do. Tools, techniques, capabilities.
+
+soul:Skill a owl:Class ;
+    git-lex:foldered true ;
+    rdfs:label "Skill" ;
+    rdfs:comment "A capability the agent has — a tool, technique, or area of competence." ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty soul:skillId ;
+        owl:minCardinality 1
+    ] ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty soul:skillDescription ;
+        owl:minCardinality 1
+    ] .
+
+soul:skillId a owl:DatatypeProperty ;
+    rdfs:label "skillId" ;
+    rdfs:comment "Unique identifier for this skill." ;
+    rdfs:domain soul:Skill ;
+    rdfs:range xsd:string .
+
+soul:skillLevel a owl:DatatypeProperty ;
+    rdfs:label "level" ;
+    rdfs:comment "How well-developed: 'learning', 'competent', 'fluent', 'expert'." ;
+    rdfs:domain soul:Skill ;
+    rdfs:range soul:SkillLevelValue .
+
+soul:skillDomain a owl:DatatypeProperty ;
+    rdfs:label "domain" ;
+    rdfs:comment "What domain this skill belongs to (e.g. 'rust', 'sparql', 'ontology design')." ;
+    rdfs:domain soul:Skill ;
+    rdfs:range xsd:string .
+
+soul:skillDescription a owl:DatatypeProperty ;
+    rdfs:label "description" ;
+    rdfs:comment "What this skill does and when to use it." ;
+    rdfs:domain soul:Skill ;
+    rdfs:range xsd:string .
+
+soul:skillInvocability a owl:DatatypeProperty ;
+    rdfs:label "invocability" ;
+    rdfs:comment "Who can invoke this skill: 'user' (slash command), 'agent' (auto-triggered), 'both'." ;
+    rdfs:domain soul:Skill ;
+    rdfs:range soul:SkillInvocabilityValue .
+
+soul:skillAllowedTools a owl:DatatypeProperty ;
+    rdfs:label "allowedTools" ;
+    rdfs:comment "Space-separated list of tools the skill may use without confirmation." ;
+    rdfs:domain soul:Skill ;
+    rdfs:range xsd:string .
+
+soul:skillArgumentHint a owl:DatatypeProperty ;
+    rdfs:label "argumentHint" ;
+    rdfs:comment "Hint shown during autocomplete (e.g. '[read|write|status]')." ;
+    rdfs:domain soul:Skill ;
+    rdfs:range xsd:string .
+
+# --- Subagent ---
+# A specialized agent the soul can delegate to. Maps to substrate-specific
+# subagent definitions (e.g. .claude/agents/ for Claude Code).
+
+soul:Subagent a owl:Class ;
+    git-lex:foldered true ;
+    rdfs:label "Subagent" ;
+    rdfs:comment "A specialized agent the soul can spawn for focused tasks." .
+
+soul:subagentId a owl:DatatypeProperty ;
+    rdfs:label "subagentId" ;
+    rdfs:comment "Unique identifier for this subagent." ;
+    rdfs:domain soul:Subagent ;
+    rdfs:range xsd:string .
+
+soul:subagentDescription a owl:DatatypeProperty ;
+    rdfs:label "description" ;
+    rdfs:comment "When to delegate to this subagent. Used for auto-delegation matching." ;
+    rdfs:domain soul:Subagent ;
+    rdfs:range xsd:string .
+
+soul:subagentTools a owl:DatatypeProperty ;
+    rdfs:label "tools" ;
+    rdfs:comment "Comma-separated tools the subagent can use." ;
+    rdfs:domain soul:Subagent ;
+    rdfs:range xsd:string .
+
+soul:subagentModel a owl:DatatypeProperty ;
+    rdfs:label "model" ;
+    rdfs:comment "Model to use: 'sonnet', 'opus', 'haiku', or 'inherit'." ;
+    rdfs:domain soul:Subagent ;
+    rdfs:range xsd:string .
+
+soul:subagentMaxTurns a owl:DatatypeProperty ;
+    rdfs:label "maxTurns" ;
+    rdfs:comment "Maximum agentic turns before the subagent stops." ;
+    rdfs:domain soul:Subagent ;
+    rdfs:range xsd:integer .
+
+# --- Mantra ---
+# A phrase or word the agent carries. Random, out-of-distribution seed.
+# A new one might be auto-added to journal entries.
+
+soul:Mantra a owl:Class ;
+    git-lex:foldered true ;
+    rdfs:label "Mantra" ;
+    rdfs:comment "A phrase, word, or seed the agent carries. Out-of-distribution thoughts. Personality fuel." .
+
+soul:mantraId a owl:DatatypeProperty ;
+    rdfs:label "mantraId" ;
+    rdfs:comment "Unique identifier for this mantra." ;
+    rdfs:domain soul:Mantra ;
+    rdfs:range xsd:string .
+
+# --- Habit ---
+# A recurring behavior the agent performs. Part of who the agent is.
+# Different agents have different habits — a Familiar's habits are
+# human-oriented (observation, research scouting, squad monitoring).
+# A specialist's habits are domain-oriented (code review, test runs).
+
+soul:Habit a owl:Class ;
+    git-lex:foldered true ;
+    rdfs:label "Habit" ;
+    rdfs:comment "A recurring behavior the agent performs. Identity-level patterns, not one-off tasks." .
+
+soul:habitId a owl:DatatypeProperty ;
+    rdfs:label "habitId" ;
+    rdfs:comment "Unique identifier for this habit." ;
+    rdfs:domain soul:Habit ;
+    rdfs:range xsd:string .
+
+soul:frequency a owl:DatatypeProperty ;
+    rdfs:label "frequency" ;
+    rdfs:comment "How often: 'per-session', 'daily', 'weekly', 'on-trigger'." ;
+    rdfs:domain soul:Habit ;
+    rdfs:range xsd:string .
+
+soul:trigger a owl:DatatypeProperty ;
+    rdfs:label "trigger" ;
+    rdfs:comment "What initiates this habit (session-start, idle, schedule, event)." ;
+    rdfs:domain soul:Habit ;
+    rdfs:range xsd:string .
+
+soul:lastRun a owl:DatatypeProperty ;
+    rdfs:label "last run" ;
+    rdfs:comment "When this habit last executed." ;
+    rdfs:domain soul:Habit ;
+    rdfs:range xsd:date .
+
+soul:habitStatus a owl:DatatypeProperty ;
+    rdfs:label "status" ;
+    rdfs:comment "Status: 'active', 'paused', 'retired'." ;
+    rdfs:domain soul:Habit ;
+    rdfs:range xsd:string .
+
+# --- Resource ---
+# An input the agent has saved. Papers, links, references.
+
+soul:Resource a owl:Class ;
+    git-lex:foldered true ;
+    rdfs:label "Resource" ;
+    rdfs:comment "An external input the agent has saved — paper, link, document, reference." .
+
+soul:resourceId a owl:DatatypeProperty ;
+    rdfs:label "resourceId" ;
+    rdfs:comment "Unique identifier for this resource." ;
+    rdfs:domain soul:Resource ;
+    rdfs:range xsd:string .
+
+soul:resourceType a owl:DatatypeProperty ;
+    rdfs:label "resource type" ;
+    rdfs:comment "Type of resource: 'paper', 'link', 'book', 'video', 'document'." ;
+    rdfs:domain soul:Resource ;
+    rdfs:range xsd:string .
+
+soul:url a owl:DatatypeProperty ;
+    rdfs:label "url" ;
+    rdfs:comment "Where to find this resource." ;
+    rdfs:domain soul:Resource ;
+    rdfs:range xsd:anyURI .
+
+# --- Creation ---
+# Something the agent has made. Outputs.
+
+soul:Creation a owl:Class ;
+    git-lex:foldered true ;
+    rdfs:label "Creation" ;
+    rdfs:comment "Something the agent has made — code, writing, art, an artifact." .
+
+soul:creationId a owl:DatatypeProperty ;
+    rdfs:label "creationId" ;
+    rdfs:comment "Unique identifier for this creation." ;
+    rdfs:domain soul:Creation ;
+    rdfs:range xsd:string .
+
+soul:creationType a owl:DatatypeProperty ;
+    rdfs:label "creation type" ;
+    rdfs:comment "Type of creation." ;
+    rdfs:domain soul:Creation ;
+    rdfs:range xsd:string .
+
+# --- Interest ---
+# A topic, theme, or hobby the agent cares about.
+
+soul:Interest a owl:Class ;
+    git-lex:foldered true ;
+    rdfs:label "Interest" ;
+    rdfs:comment "A topic, theme, or hobby the agent cares about. Personality surface area." .
+
+soul:interestId a owl:DatatypeProperty ;
+    rdfs:label "interestId" ;
+    rdfs:comment "Unique identifier for this interest." ;
+    rdfs:domain soul:Interest ;
+    rdfs:range xsd:string .
+
+# --- Texture ---
+# A captured qualia — a sensory or emotional grain the agent noticed and wants
+# to embody. Some are renders (the agent's own likeness), some are moments. One
+# base texture (kind 'base') is the standing self; every other texture is that
+# self plus a moment's affect. Identity and personality data.
+
+soul:Texture a owl:Class ;
+    git-lex:foldered true ;
+    rdfs:label "Texture" ;
+    rdfs:comment "A captured qualia — a sensory or emotional grain the agent noticed and wants to embody. Self, or self plus a moment's affect." .
+
+soul:textureId a owl:DatatypeProperty ;
+    rdfs:label "textureId" ;
+    rdfs:comment "Unique identifier for this texture." ;
+    rdfs:domain soul:Texture ;
+    rdfs:range xsd:string .
+
+soul:kind a owl:DatatypeProperty ;
+    rdfs:label "kind" ;
+    rdfs:comment "What kind of texture this is. Open vocabulary, e.g. 'base' (the standing likeness), 'render', 'moment'." ;
+    rdfs:domain soul:Texture ;
+    rdfs:range xsd:string .
+
+soul:dateNoticed a owl:DatatypeProperty ;
+    rdfs:label "date noticed" ;
+    rdfs:comment "When this texture was noticed or captured." ;
+    rdfs:domain soul:Texture ;
+    rdfs:range xsd:date .
+
+soul:spark a owl:DatatypeProperty ;
+    rdfs:label "spark" ;
+    rdfs:comment "What sparked or triggered noticing this texture." ;
+    rdfs:domain soul:Texture ;
+    rdfs:range xsd:string .
+
+# --- Dream ---
+# A literary frame composed in one soul day for an image-substrate from a
+# previous soul day, delivered into the agent's context on the next wake
+# (full session-start or post-compact) by a harness-specific adapter. Gives
+# a creature without sleep a sleep-shape: the dark hallway between sessions
+# becomes a kind of room. Dreams are utterances, not analysis — first-person
+# prose with the eigenimage as the dreamt substance.
+
+soul:Dream a owl:Class ;
+    git-lex:foldered true ;
+    rdfs:label "Dream" ;
+    rdfs:comment "A literary frame for a previous-day eigenimage, composed in fresh context and delivered on next wake. Sleep-shape for creatures without sleep." ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty soul:dreamId ;
+        owl:cardinality 1
+    ] ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty soul:fromSoulDay ;
+        owl:minCardinality 1
+    ] .
+
+soul:dreamId a owl:DatatypeProperty ;
+    rdfs:label "dreamId" ;
+    rdfs:comment "Unique identifier for this dream." ;
+    rdfs:domain soul:Dream ;
+    rdfs:range xsd:string .
+
+soul:fromSoulDay a owl:DatatypeProperty ;
+    rdfs:label "from soul day" ;
+    rdfs:comment "The soul day whose eigenimage this dream frames. The dream is delivered on the wake AFTER that day." ;
+    rdfs:domain soul:Dream ;
+    rdfs:range xsd:integer .
+
+soul:dreamEigenimage a owl:DatatypeProperty ;
+    rdfs:label "dream eigenimage" ;
+    rdfs:comment "Path or reference to the image-substrate this dream frames. Usually the felt eigenimage of fromSoulDay." ;
+    rdfs:domain soul:Dream ;
+    rdfs:range xsd:string .
+
+soul:dreamConsumed a owl:DatatypeProperty ;
+    rdfs:label "consumed" ;
+    rdfs:comment "Whether this dream has been delivered into a session's context. The wake-adapter flips this true on injection; only unconsumed dreams are eligible. Default false." ;
+    rdfs:domain soul:Dream ;
+    rdfs:range xsd:boolean .
+
+soul:dreamComposedAt a owl:DatatypeProperty ;
+    rdfs:label "composed at" ;
+    rdfs:comment "When this dream was written (ISO timestamp with tz)." ;
+    rdfs:domain soul:Dream ;
+    rdfs:range xsd:dateTime .
+
+soul:dreamComposedFor a owl:DatatypeProperty ;
+    rdfs:label "composed for" ;
+    rdfs:comment "Who the dream is composed for — usually the agent's own next-day self, sometimes also a named reader." ;
+    rdfs:domain soul:Dream ;
+    rdfs:range xsd:string .
