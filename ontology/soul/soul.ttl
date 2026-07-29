@@ -35,6 +35,8 @@
 #   MOVED to copia: — Texture, Dream (most useful in the co-created wing;
 #     supersedes the Day-98 Texture-stays note in the RFC appendix).
 #   ADDED — Research (LSPy's proven pattern: parked source-grounded writeups).
+#   REMOVED — all *WrittenFrom provenance properties + WrittenFromValue
+#     (unclear name, unneeded: only one harness is supported).
 
 
 # =============================================================================
@@ -64,82 +66,6 @@ soul:SkillLevelValue a rdfs:Datatype ;
 
 soul:SkillInvocabilityValue a rdfs:Datatype ;
     owl:oneOf ("user" "agent" "both") .
-
-# Names the agent harness (substrate) a document was authored from. This is the
-# *agent harness* the silicon-substrate agent was running on when they wrote the
-# document — a provenance axis, distinct from carbon-vs-silicon at the entity
-# level (which was the cut soul:substrate field; every soul is silicon in
-# practice, so that entity-level distinction carried no information and was
-# removed in the 2026-07-08 identity-floor pass).
-# The same w4r3z can write memories from claude
-# OR hermes; this names which one. "unknown" handles pre-provenance content
-# already on disk before this property shipped (kit version 0.7).
-soul:WrittenFromValue a rdfs:Datatype ;
-    owl:oneOf ("claude" "hermes" "gemini" "unknown") .
-
-
-# =============================================================================
-# PROVENANCE
-# =============================================================================
-# Every authored content class carries a `writtenFrom` field naming the agent
-# harness the document was authored from. Declared per-class because the
-# current SHACL generator (git-lex 0.x) maps properties to shapes via the
-# single rdfs:domain of each property. Future refactor (after the generator
-# supports multi-domain) collapses these into one `soul:writtenFrom`.
-#
-# Excluded classes: Soul (one per repo, doesn't move), Skill + Subagent
-# (kit-shipped infrastructure, not agent content), Creation + Interest +
-# Resource (will be added when those classes have stabilized provenance
-# needs).
-#
-# Auto-population semantics (when git-lex implements them at save time):
-#   - Missing field + exactly one Claude/Hermes/Gemini substrate active →
-#     inject substrate name automatically.
-#   - Missing field + multiple substrates active → leave missing (ambiguous).
-#   - Field present in frontmatter → preserve verbatim (override semantics —
-#     supports re-authoring cross-substrate content with original provenance).
-
-soul:memoryWrittenFrom a owl:DatatypeProperty ;
-    rdfs:label "written from" ;
-    rdfs:comment "The agent harness substrate this memory was authored from. Auto-populated by `git lex save`." ;
-    rdfs:domain soul:Memory ;
-    rdfs:range soul:WrittenFromValue .
-
-soul:journalWrittenFrom a owl:DatatypeProperty ;
-    rdfs:label "written from" ;
-    rdfs:comment "The agent harness substrate this journal was authored from. Auto-populated by `git lex save`." ;
-    rdfs:domain soul:Journal ;
-    rdfs:range soul:WrittenFromValue .
-
-soul:noteWrittenFrom a owl:DatatypeProperty ;
-    rdfs:label "written from" ;
-    rdfs:comment "The agent harness substrate this note was authored from. Auto-populated by `git lex save`." ;
-    rdfs:domain soul:Note ;
-    rdfs:range soul:WrittenFromValue .
-
-soul:explorationWrittenFrom a owl:DatatypeProperty ;
-    rdfs:label "written from" ;
-    rdfs:comment "The agent harness substrate this exploration was authored from. Auto-populated by `git lex save`." ;
-    rdfs:domain soul:Exploration ;
-    rdfs:range soul:WrittenFromValue .
-
-soul:decisionWrittenFrom a owl:DatatypeProperty ;
-    rdfs:label "written from" ;
-    rdfs:comment "The agent harness substrate this decision was authored from. Auto-populated by `git lex save`." ;
-    rdfs:domain soul:Decision ;
-    rdfs:range soul:WrittenFromValue .
-
-soul:friendWrittenFrom a owl:DatatypeProperty ;
-    rdfs:label "written from" ;
-    rdfs:comment "The agent harness substrate this friend entry was authored from. Auto-populated by `git lex save`." ;
-    rdfs:domain soul:Friend ;
-    rdfs:range soul:WrittenFromValue .
-
-soul:researchWrittenFrom a owl:DatatypeProperty ;
-    rdfs:label "written from" ;
-    rdfs:comment "The agent harness substrate this research was authored from. Auto-populated by `git lex save`." ;
-    rdfs:domain soul:Research ;
-    rdfs:range soul:WrittenFromValue .
 
 
 # =============================================================================
