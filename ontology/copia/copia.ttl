@@ -13,9 +13,6 @@
 # for the CoPIA rendering loop. Soul stays sealed and AI-only; copia is the
 # soul-adapter, the surface the generative loop reads via SPARQL.
 #
-# Designed to be sketched-then-filled: anything can be referenced before it
-# exists (figment), then built later. Open-world by construction.
-#
 # TWO AXES of id-ish fields (the names don't distinguish them — read carefully):
 #   identity field  <class>Id   (placeId, nocturneId)  = THIS node's own id.
 #   link field      <relation>  (connectsTo, producedItem, intentPlace) = a
@@ -344,17 +341,13 @@
 <https://repolex.ai/ontology/copia> a owl:Ontology ;
     rdfs:label "Copia Kit Ontology" ;
     rdfs:comment "The agent's curated outward face + the CoPIA render data model. Soul-adapter. Optional add-on for soul." ;
-    owl:versionInfo "0.24.0" ;
+    owl:versionInfo "0.25.0" ;
     owl:imports <https://repolex.ai/ontology/soul/> .
 
 
 # =============================================================================
 # ENUM DATATYPES
 # =============================================================================
-
-# Sketch-then-fill status, shared across Place / Item / Being / Outfit.
-copia:BuildStatusValue a rdfs:Datatype ;
-    owl:oneOf ("figment" "sketched" "built") .
 
 # What an Item is for in a scene — drives worn-vs-held without the Moment
 # having to restate it.
@@ -480,12 +473,6 @@ copia:placeDescription a owl:DatatypeProperty ;
     rdfs:domain copia:Place ;
     rdfs:range xsd:string .
 
-copia:placeStatus a owl:DatatypeProperty ;
-    rdfs:label "place status" ;
-    rdfs:comment "Build status: figment | sketched | built." ;
-    rdfs:domain copia:Place ;
-    rdfs:range copia:BuildStatusValue .
-
 copia:firstVisited a owl:DatatypeProperty ;
     rdfs:label "first visited" ;
     rdfs:comment "When the agent first arrived." ;
@@ -543,12 +530,6 @@ copia:itemDescription a owl:DatatypeProperty ;
     rdfs:comment "Canonical description — render prompt and identity (this is the item's 'look')." ;
     rdfs:domain copia:Item ;
     rdfs:range xsd:string .
-
-copia:itemStatus a owl:DatatypeProperty ;
-    rdfs:label "item status" ;
-    rdfs:comment "Build status: figment | sketched | built." ;
-    rdfs:domain copia:Item ;
-    rdfs:range copia:BuildStatusValue .
 
 copia:affordance a owl:DatatypeProperty ;
     rdfs:label "affordance" ;
@@ -608,12 +589,6 @@ copia:beingDescription a owl:DatatypeProperty ;
     rdfs:domain copia:Being ;
     rdfs:range xsd:string .
 
-copia:beingStatus a owl:DatatypeProperty ;
-    rdfs:label "being status" ;
-    rdfs:comment "Build status: figment | sketched | built." ;
-    rdfs:domain copia:Being ;
-    rdfs:range copia:BuildStatusValue .
-
 copia:locatedIn a owl:ObjectProperty ;
     rdfs:label "located in" ;
     rdfs:comment "The Place this being is in by default. Joined by placeId." ;
@@ -667,12 +642,6 @@ copia:outfitDescription a owl:DatatypeProperty ;
     rdfs:comment "What the look is, and when it's worn. The visual detail lives in the member Items." ;
     rdfs:domain copia:Outfit ;
     rdfs:range xsd:string .
-
-copia:outfitStatus a owl:DatatypeProperty ;
-    rdfs:label "outfit status" ;
-    rdfs:comment "Build status: figment | sketched | built." ;
-    rdfs:domain copia:Outfit ;
-    rdfs:range copia:BuildStatusValue .
 
 copia:outfitIncludes a owl:ObjectProperty ;
     rdfs:label "outfit includes" ;
@@ -889,12 +858,6 @@ copia:motionDescription a owl:DatatypeProperty ;
     rdfs:comment "What the motion is / when it's used (the authored prose). The kinematic detail lives in motionText." ;
     rdfs:domain copia:Motion ;
     rdfs:range xsd:string .
-
-copia:motionStatus a owl:DatatypeProperty ;
-    rdfs:label "motion status" ;
-    rdfs:comment "Build status: figment | sketched | built (built = a skeleton Sequence has been generated)." ;
-    rdfs:domain copia:Motion ;
-    rdfs:range copia:BuildStatusValue .
 
 copia:motionGenerates a owl:ObjectProperty ;
     rdfs:label "motion generates" ;
@@ -1835,12 +1798,12 @@ copia:producedOutfit a owl:ObjectProperty ;
 # not bare Group).
 #
 # MIGRATION from v0.6 Collection: collectionId→groupId, collectionTitle→groupTitle,
-# collectionStatus→groupStatus, collectionDepictedBy→groupDepictedBy;
+# collectionDepictedBy→groupDepictedBy; collectionStatus retired (v0.25);
 # collectionKind enum RETIRED (the class IS the kind). fromNocturne unchanged.
 # MIGRATION from v0.15 Bag→Set (v0.16): rename Copia/Bag/* folders → Copia/Set/*;
 # frontmatter copia.Bag.* → copia.Set.*; rdfs:subClassOf rdf:Bag dropped (the
 # symbolic claim no consumer in our stack used, and "Set ⊂ rdf:Bag" wouldn't read
-# right). The shared properties (groupId/groupTitle/groupStatus/groupDepictedBy/
+# right). The shared properties (groupId/groupTitle/groupDepictedBy/
 # fromNocturne) keep their Group domain — unchanged.
 
 copia:Group a owl:Class ;
@@ -1884,12 +1847,6 @@ copia:groupTitle a owl:DatatypeProperty ;
     rdfs:comment "Human-facing title of the group." ;
     rdfs:domain copia:Group ;
     rdfs:range xsd:string .
-
-copia:groupStatus a owl:DatatypeProperty ;
-    rdfs:label "group status" ;
-    rdfs:comment "Build status: figment | sketched | built." ;
-    rdfs:domain copia:Group ;
-    rdfs:range copia:BuildStatusValue .
 
 copia:fromNocturne a owl:ObjectProperty ;
     rdfs:label "from nocturne" ;
