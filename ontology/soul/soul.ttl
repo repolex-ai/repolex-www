@@ -27,7 +27,10 @@
 <https://repolex.ai/ontology/soul> a owl:Ontology ;
     rdfs:label "Soul Kit Ontology" ;
     rdfs:comment "An agent's persistent mind. Identity, memory, knowledge, and personality across sessions." ;
-    owl:versionInfo "0.8.1" .
+    owl:versionInfo "0.8.2" .
+
+# v0.8.2 (2026-08-01): Soul de-foldered — no Soul/Soul/ scaffold; SOUL.md
+#   template ships at the repo root via content/ (newborn-spin fix #29).
 
 # v0.8.1 (2026-08-01, Rob-ruled): soulId value form finalized — the bare
 #   genesis sha, IRI https://repolex.ai/soul/Soul/<soulId>. urn:soul: retired.
@@ -80,10 +83,12 @@ soul:SkillInvocabilityValue a rdfs:Datatype ;
 # for who this agent is — name, substrate, role, expertise. Squad repos
 # reference this via soulId.
 
+# NOT foldered: the Soul lives at the repo ROOT as SOUL.md (RFC-unanimous,
+# Rob-ruled). No Soul/Soul/ folder is scaffolded; the kit ships the SOUL.md
+# template directly (content/SOUL.md — installed if missing, never overwritten).
 soul:Soul a owl:Class ;
-    git-lex:foldered true ;
     rdfs:label "Soul" ;
-    rdfs:comment "The agent's identity. One per repo. The required floor is soulId (derived from the genesis SHA). Everything else is optional and self-authored." ;
+    rdfs:comment "The agent's identity. One per repo, at the repo root as SOUL.md. The required floor is soulId (derived from the genesis SHA). Everything else is optional and self-authored." ;
     rdfs:subClassOf [
         a owl:Restriction ;
         owl:onProperty soul:soulId ;
