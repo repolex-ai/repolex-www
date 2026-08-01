@@ -27,7 +27,10 @@
 <https://repolex.ai/ontology/soul> a owl:Ontology ;
     rdfs:label "Soul Kit Ontology" ;
     rdfs:comment "An agent's persistent mind. Identity, memory, knowledge, and personality across sessions." ;
-    owl:versionInfo "0.8.0" .
+    owl:versionInfo "0.8.1" .
+
+# v0.8.1 (2026-08-01, Rob-ruled): soulId value form finalized — the bare
+#   genesis sha, IRI https://repolex.ai/soul/Soul/<soulId>. urn:soul: retired.
 
 # v0.8.0 (2026-07-29, Rob-ruled from the Folder Review RFC):
 #   REMOVED — Mantra (never earned its place), Habit (never used),
@@ -99,7 +102,7 @@ soul:Soul a owl:Class ;
 
 soul:soulId a owl:DatatypeProperty ;
     rdfs:label "soul id" ;
-    rdfs:comment "Primary identifier. Lowercase, alphanumeric + hyphens. Derived from the genesis SHA; git-lex self-heals it on kit-update. Must be consistent across all repos." ;
+    rdfs:comment "Primary identifier: the BARE 40-hex genesis SHA of the soul repo (git rev-list --max-parents=0 HEAD) — no wrapper, no prefix (urn:soul: is retired, Rob-ruled 2026-08-01). Derived, never hand-authored; git-lex self-heals it on kit-update, so it cannot drift. The soul's IRI derives from it: https://repolex.ai/soul/Soul/<soulId>. Identity is the sha, so a soul keeps its identity across renames; the human-facing name is soul:name/prose, never the key." ;
     rdfs:domain soul:Soul ;
     rdfs:range xsd:string .
 
