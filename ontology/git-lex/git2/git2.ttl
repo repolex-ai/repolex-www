@@ -79,10 +79,10 @@ git2:BlameHunk a owl:Class ;
 # IndexEntry the id IS the blob oid, so it joins the entry to its git2:Blob.
 # =============================================================================
 
+# Domain deliberately OPEN: multiple rdfs:domain triples INTERSECT in RDFS
+# (they would entail every id-carrier is simultaneously Commit AND IndexEntry
+# AND Blob — false). Usage is stated here instead: Commit, Blob, IndexEntry.
 git2:id a owl:DatatypeProperty ;
-    rdfs:domain git2:Commit ;
-    rdfs:domain git2:IndexEntry ;
-    rdfs:domain git2:Blob ;
     rdfs:range xsd:string ;
     rdfs:label "id" ;
     rdfs:comment "The object id (Oid) as a hex string (git2 `id()`). Present on Commit and Blob; on an IndexEntry it is the entry's blob oid (git2 IndexEntry `id`), joining the entry to its Blob." .
