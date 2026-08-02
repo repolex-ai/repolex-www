@@ -341,7 +341,7 @@
 <https://repolex.ai/ontology/copia> a owl:Ontology ;
     rdfs:label "Copia Kit Ontology" ;
     rdfs:comment "The agent's curated outward face + the CoPIA render data model. Soul-adapter. Optional add-on for soul." ;
-    owl:versionInfo "0.26.0" ;
+    owl:versionInfo "0.26.1" ;
     owl:imports <https://repolex.ai/ontology/soul/> .
 
 
@@ -1402,39 +1402,39 @@ copia:sam3ExtractedAt a owl:DatatypeProperty ;
 
 # --- Place default ↔ Moment realized (5) ---
 
+# Domain deliberately OPEN (multiple rdfs:domain triples INTERSECT in RDFS —
+# would falsely entail dual-typing). Used on: Place, Moment.
 copia:sceneLocation a owl:DatatypeProperty ;
     rdfs:label "scene location" ;
     rdfs:comment "WHERE — setting/environment. Matches Moment field 'location'." ;
-    rdfs:domain copia:Place ;
-    rdfs:domain copia:Moment ;
     rdfs:range xsd:string .
 
+# Domain deliberately OPEN (multiple rdfs:domain triples INTERSECT in RDFS —
+# would falsely entail dual-typing). Used on: Place, Moment.
 copia:sceneLighting a owl:DatatypeProperty ;
     rdfs:label "scene lighting" ;
     rdfs:comment "Quality/direction/colour of light. Matches Moment field 'lighting'." ;
-    rdfs:domain copia:Place ;
-    rdfs:domain copia:Moment ;
     rdfs:range xsd:string .
 
+# Domain deliberately OPEN (multiple rdfs:domain triples INTERSECT in RDFS —
+# would falsely entail dual-typing). Used on: Place, Moment.
 copia:sceneMood a owl:DatatypeProperty ;
     rdfs:label "scene mood" ;
     rdfs:comment "Emotional atmosphere. Matches Moment field 'mood'." ;
-    rdfs:domain copia:Place ;
-    rdfs:domain copia:Moment ;
     rdfs:range xsd:string .
 
+# Domain deliberately OPEN (multiple rdfs:domain triples INTERSECT in RDFS —
+# would falsely entail dual-typing). Used on: Place, Moment.
 copia:sceneStyle a owl:DatatypeProperty ;
     rdfs:label "scene style" ;
     rdfs:comment "Visual/artistic style. Matches Moment field 'style'." ;
-    rdfs:domain copia:Place ;
-    rdfs:domain copia:Moment ;
     rdfs:range xsd:string .
 
+# Domain deliberately OPEN (multiple rdfs:domain triples INTERSECT in RDFS —
+# would falsely entail dual-typing). Used on: Place, Moment.
 copia:sceneObjects a owl:DatatypeProperty ;
     rdfs:label "scene objects" ;
     rdfs:comment "Notable ambient objects. Matches Moment field 'objects'. Multi-valued on the Moment side (v0.18) — the eye emits a list of segment query-nouns; serializes as a Bag. On Place it's the authored default. (Cardinality is per-class: the Moment-side maxCardinality restriction was removed v0.18; Place untouched.)" ;
-    rdfs:domain copia:Place ;
-    rdfs:domain copia:Moment ;
     rdfs:range xsd:string ;
     copia:ordering "bag" .
 
@@ -1448,25 +1448,25 @@ copia:sceneObjects a owl:DatatypeProperty ;
 # Thing referenced by a Moment sceneId — until then, sceneNarrative + Qwen-fill
 # cover it. (sceneCharacters removed v0.8 — superseded by depicts.)
 
+# Domain deliberately OPEN (multiple rdfs:domain triples INTERSECT in RDFS —
+# would falsely entail dual-typing). Used on: Being, Moment.
 copia:scenePosture a owl:DatatypeProperty ;
     rdfs:label "scene posture" ;
     rdfs:comment "DEPRECATED (v0.12) — vestigial freeform string; never projected into a prompt (verified Day 71). Superseded by copia:pose (-> copia:Pose individual, queryable). Kept for back-compat reading of pre-v0.12 renders; do not write going forward." ;
-    rdfs:domain copia:Being ;
-    rdfs:domain copia:Moment ;
     rdfs:range xsd:string .
 
+# Domain deliberately OPEN (multiple rdfs:domain triples INTERSECT in RDFS —
+# would falsely entail dual-typing). Used on: Being, Moment.
 copia:sceneExpression a owl:DatatypeProperty ;
     rdfs:label "scene expression" ;
     rdfs:comment "Facial expression. On Being = default; on Moment = realized for this render." ;
-    rdfs:domain copia:Being ;
-    rdfs:domain copia:Moment ;
     rdfs:range xsd:string .
 
+# Domain deliberately OPEN (multiple rdfs:domain triples INTERSECT in RDFS —
+# would falsely entail dual-typing). Used on: Being, Moment.
 copia:sceneGaze a owl:DatatypeProperty ;
     rdfs:label "scene gaze" ;
     rdfs:comment "Gaze — direction and quality. On Being = default; on Moment = realized for this render." ;
-    rdfs:domain copia:Being ;
-    rdfs:domain copia:Moment ;
     rdfs:range xsd:string .
 
 # --- Moment-only dynamic fields (5) — observer-set per render ---
