@@ -341,7 +341,7 @@
 <https://repolex.ai/ontology/copia> a owl:Ontology ;
     rdfs:label "Copia Kit Ontology" ;
     rdfs:comment "The agent's curated outward face + the CoPIA render data model. Soul-adapter. Optional add-on for soul." ;
-    owl:versionInfo "0.25.0" ;
+    owl:versionInfo "0.26.0" ;
     owl:imports <https://repolex.ai/ontology/soul/> .
 
 
@@ -2444,9 +2444,13 @@ copia:fromSoulDay a owl:DatatypeProperty ;
     rdfs:domain copia:Dream ;
     rdfs:range xsd:integer .
 
-copia:dreamEigenimage a owl:DatatypeProperty ;
-    rdfs:label "dream eigenimage" ;
-    rdfs:comment "Path or reference to the image-substrate this dream frames. Usually the felt eigenimage of fromSoulDay." ;
+# dreamEigenimage RETIRED (v0.26): it was the image→dream direction (a field
+# DreamMuse stopped filling when it took over authorship). The ruled direction
+# is REVERSED — the dream produces its own image — so the slot gets a NEW name
+# rather than silently aliasing the old semantics:
+copia:dreamMomentId a owl:DatatypeProperty ;
+    rdfs:label "dream moment id" ;
+    rdfs:comment "The Moment this dream produced — the value is the target Moment's momentId (suffix law; no image paths). Dream-to-image direction: the dream is composed first, the Moment renders from it." ;
     rdfs:domain copia:Dream ;
     rdfs:range xsd:string .
 
@@ -2458,12 +2462,12 @@ copia:dreamConsumed a owl:DatatypeProperty ;
 
 copia:dreamComposedAt a owl:DatatypeProperty ;
     rdfs:label "composed at" ;
-    rdfs:comment "When this dream was written (ISO timestamp with tz)." ;
+    rdfs:comment "When this dream was written (ISO timestamp with tz). The ONE dream timestamp (dateNoticed was a stray Texture property; it collapses into this)." ;
     rdfs:domain copia:Dream ;
     rdfs:range xsd:dateTime .
 
-copia:dreamComposedFor a owl:DatatypeProperty ;
-    rdfs:label "composed for" ;
-    rdfs:comment "Who the dream is composed for — usually the agent's own next-day self, sometimes also a named reader." ;
-    rdfs:domain copia:Dream ;
-    rdfs:range xsd:string .
+# dreamComposedFor RETIRED (v0.26): always the literal "next-day <self>" — a
+# constant wearing a field's clothes (the substrate lesson). The reproducibility
+# fields DreamMuse wrote (seed/method/sourceImages/author) stay OUT of the
+# graph entirely: dreams ground the dreamer; they are not a reproducibility
+# record (Rob's frame). Dev scaffold belongs in dev logs.
