@@ -1,0 +1,123 @@
+@prefix git-lex: <https://repolex.ai/ontology/git-lex/> .
+@prefix ravel:   <https://repolex.ai/ontology/ravel/> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+# =============================================================================
+# RAVEL ONTOLOGY (v0.1.0)
+# =============================================================================
+# Vocabulary for ravel, the transcript-graph engine: conversations (Claude Code
+# session logs and, later, other harness dialects) projected into RDF 1.2 and
+# stored per soul in `.ravel/oxigraph`.
+#
+# DISCIPLINE: this file declares ONLY what the code emits today (the pan.ttl
+# law — formalize, don't invent). The wider transcript type-space (attachments,
+# compaction activities, session metadata — the Day-39 design draft, see
+# ravel/docs/2026_06_29_CLAUDE_CODE_TRANSCRIPT_ONTOLOGY_DRAFT.ttl) is
+# DEFERRED, not absent — see the deferred block at the end.
+#
+# FOLDERING: no class in this file carries `git-lex:foldered true` — ravel
+# classes are graph-only BY DESIGN. Instances live in the store, never as
+# authored markdown; kit-add scaffolds ZERO folders in the soul corpus.
+#
+# NAMESPACES: vocabulary here (`…/ontology/ravel/`, slash, no #); instance
+# IRIs under the product base (`https://repolex.ai/ravel/<Class>/<id>` — Turn,
+# Annotation, Claim, Detector, Transcript, NamedGraph). Never mixed.
+#
+# The annotation layer decorates W3C shapes rather than reinventing them: an
+# annotation is an `oa:Annotation` (with `oa:TextPositionSelector` spans), a
+# detector is a `prov:SoftwareAgent`, evidence flows through `prov:used` /
+# `prov:wasDerivedFrom`, and the world-claim ("this turn exhibits X") is an
+# UNASSERTED RDF 1.2 triple term reachable via `rdf:reifies`. Ravel predicates
+# below carry only what those vocabularies don't.
+
+<https://repolex.ai/ontology/ravel>
+    a owl:Ontology ;
+    rdfs:label "Ravel ontology" ;
+    rdfs:comment "Transcript-graph vocabulary: conversational turns and the reader-annotation layer over them. Graph-only — no authored documents." ;
+    owl:versionInfo "0.1.0" .
+
+# ─── The spine ───────────────────────────────────────────────────────────────
+
+ravel:Turn a owl:Class ;
+    rdfs:label "Turn" ;
+    rdfs:comment "One conversational event in a transcript (a user or assistant message). Written by ravel's projector, never authored by hand." .
+
+ravel:turnId a owl:DatatypeProperty ;
+    rdfs:label "turnId" ;
+    rdfs:comment "Unique identifier for this turn — the transcript event's stable id (the idempotency key). Unique within the class." ;
+    rdfs:domain ravel:Turn ;
+    rdfs:range xsd:string .
+
+ravel:parentTurn a owl:ObjectProperty ;
+    rdfs:label "parentTurn" ;
+    rdfs:comment "The turn this one replies to — the reply-to spine. Absent at a conversation root or compaction break." ;
+    rdfs:domain ravel:Turn ;
+    rdfs:range ravel:Turn .
+
+ravel:role a owl:DatatypeProperty ;
+    rdfs:label "role" ;
+    rdfs:comment "Speaker role as the source dialect states it ('user', 'assistant', …). Deliberately NOT an enum: dialects may add roles and ravel records, not police, them." ;
+    rdfs:domain ravel:Turn ;
+    rdfs:range xsd:string .
+
+ravel:timestamp a owl:DatatypeProperty ;
+    rdfs:label "timestamp" ;
+    rdfs:comment "When this turn happened. THE FEDERATION TIME ANCHOR: shared xsd:dateTime contract with pan:createdAt (and git2:xsdDateTimeDerived) — cross-store time-window joins depend on this staying xsd:dateTime. Do not 'improve' it." ;
+    rdfs:domain ravel:Turn ;
+    rdfs:range xsd:dateTime .
+
+ravel:text a owl:DatatypeProperty ;
+    rdfs:label "text" ;
+    rdfs:comment "The turn's concatenated text content, when any." ;
+    rdfs:domain ravel:Turn ;
+    rdfs:range xsd:string .
+
+# ─── The annotation layer (decorates oa:/prov: shapes) ──────────────────────
+
+ravel:detectionType a owl:DatatypeProperty ;
+    rdfs:label "detectionType" ;
+    rdfs:comment "What a reader detected, as a stable slug ('emojikey/harvest'). Carried on the oa:Annotation and on the Claim node." ;
+    rdfs:range xsd:string .
+
+ravel:TextOriginValue a rdfs:Datatype ;
+    owl:oneOf ("authored" "tool_result") .
+
+ravel:textOrigin a owl:DatatypeProperty ;
+    rdfs:label "textOrigin" ;
+    rdfs:comment "Where the matched text came from: 'authored' (live emission by the speaker) or 'tool_result' (quoted inside pasted tool output). The lossless-emit provenance tag — queries filter, ingest never drops." ;
+    rdfs:range ravel:TextOriginValue .
+
+ravel:readerName a owl:DatatypeProperty ;
+    rdfs:label "readerName" ;
+    rdfs:comment "The reader's name, on its prov:SoftwareAgent node ('emojikey')." ;
+    rdfs:range xsd:string .
+
+ravel:detectorName a owl:DatatypeProperty ;
+    rdfs:label "detectorName" ;
+    rdfs:comment "The reader that produced a Claim, denormalized onto the Claim node so belief-layer queries need no join." ;
+    rdfs:range xsd:string .
+
+ravel:atTurn a owl:ObjectProperty ;
+    rdfs:label "atTurn" ;
+    rdfs:comment "Anchors an annotation target to the exact Turn node (address-by-identity, alongside the oa: character-span selector)." ;
+    rdfs:range ravel:Turn .
+
+ravel:exhibits a owl:DatatypeProperty ;
+    rdfs:label "exhibits" ;
+    rdfs:comment "The world-claim predicate: <<( turn ravel:exhibits 'detection-slug' )>>. Appears ONLY inside unasserted RDF 1.2 triple terms (via rdf:reifies) — asserting it directly is a modeling error; the belief layer exists so the graph never asserts what a reader merely claims." ;
+    rdfs:range xsd:string .
+
+# ─── DEFERRED (declared so absence reads as roadmap, not ignorance) ──────────
+# · sig_* — per-reader signal-leg property family (dynamic names, numeric legs
+#   typed xsd at emission). Needs a modeling ruling (property family vs
+#   reified legs) before ontology declaration.
+# · Transcript / Claim / Detector / Annotation as ravel-owned classes — nodes
+#   exist (typed by oa:/prov: or untyped); ravel class homes deferred until a
+#   query needs them.
+# · The full ClaudeCode transcript type-space (attachments, compaction
+#   prov:Activity, session metadata) — Day-39 draft; promotes term-by-term as
+#   readers emit it.
+# · Embedding/search vocabulary — waits on the stack embedder weights lock
+#   (candle-MiniLM class, one 384-d text space).
