@@ -28,7 +28,11 @@
 git-lex: a owl:Ontology ;
     rdfs:label "git-lex Core Ontology" ;
     rdfs:comment "The vocabulary git-lex authors about the markdown documents it tracks." ;
-    owl:versionInfo "0.7" .
+    owl:versionInfo "0.8" .
+
+# v0.8 (2026-08-02, Rob-ruled): File plane lands (inert until the re-anchor
+#   release) — git-lex:File class + derived git-lex:fileId; Document marked
+#   RETIRING (renamed to File on the train, emitter still types Document today).
 
 # =============================================================================
 # Classes
@@ -36,7 +40,24 @@ git-lex: a owl:Ontology ;
 
 git-lex:Document a owl:Class ;
     rdfs:label "Document" ;
-    rdfs:comment "A content file git-lex tracks. The primary unit of knowledge. Every tracked .md file is a Document." .
+    rdfs:comment "A content file git-lex tracks. The primary unit of knowledge. Every tracked .md file is a Document. RETIRING: renamed to git-lex:File on the re-anchor release (Rob-ruled 2026-07-30, Thing & File identity model) — the current emitter still types against this class, so the rename rides the release train; File below is the ruled name, inert until then." .
+
+# --- The File plane (Thing & File identity model, Rob-ruled 2026-07-30) ---
+# Two planes: every file in the repo is a File (id = its repo-relative path);
+# some files additionally express a Thing (an ontology-defined entity with its
+# own per-class id). The two natures never share an identity. INERT until the
+# re-anchor release: nothing in the current binary reads or emits these; the
+# re-anchor emitter anchors file facts at git-lex/File/<path> and Thing facts
+# at <ns>/<Class>/<id>, connected by the derived fileId below.
+
+git-lex:File a owl:Class ;
+    rdfs:label "File" ;
+    rdfs:comment "A file at a repo-relative path, through time. Its id IS the path, so a File node is an address, not a lifetime: content changes, deletions, and later unrelated files at the same path are all states of the address, recorded in history. IRI: git-lex/File/<path>. File-plane facts live here: prose links (wikilinks follow paths, by the path law) and free-form fm: frontmatter keys. Facts about the Thing a file expresses live on the Thing node instead (see fileId). Supersedes git-lex:Document at the re-anchor release." .
+
+git-lex:fileId a owl:DatatypeProperty ;
+    rdfs:label "fileId" ;
+    rdfs:comment "DERIVED, never authored: the repo-relative path of the File currently expressing this Thing — the File's id, stamped by git-lex at save from the file's position, re-derived on move. This is the one connection between the Thing plane and the File plane; 'where has this Thing lived' is its temporal history. Domain open: any Thing carries it. Name obeys the reference-suffix law (...Id = the target's id; a File's id is its path)." ;
+    rdfs:range xsd:string .
 
 git-lex:NamedGraph a owl:Class ;
     rdfs:subClassOf sd:NamedGraph ;

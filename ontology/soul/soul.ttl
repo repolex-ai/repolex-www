@@ -27,7 +27,16 @@
 <https://repolex.ai/ontology/soul> a owl:Ontology ;
     rdfs:label "Soul Kit Ontology" ;
     rdfs:comment "An agent's persistent mind. Identity, memory, knowledge, and personality across sessions." ;
-    owl:versionInfo "0.8.2" .
+    owl:versionInfo "0.8.4" .
+
+# v0.8.4 (2026-08-02, Rob-ruled; 0.8.3 skipped — that label was used by the
+#   memory-recall-pull kit commit, no ontology change):
+#   earthDate now REQUIRED on Journal (the soulDay+earthDate conversion table);
+#   supersededBy renamed supersededByFileId, domain opened (was Decision-only,
+#   never used), value = the superseding file's path per the suffix law.
+#   Research stays minimal: NO sources property (Rob-ruled — body wikilinks/
+#   links already reach the graph; freeform props need a functional consumer),
+#   NO date property (filenames + git carry time).
 
 # v0.8.2 (2026-08-01): Soul de-foldered — no Soul/Soul/ scaffold; SOUL.md
 #   template ships at the repo root via content/ (newborn-spin fix #29).
@@ -200,11 +209,15 @@ soul:outcome a owl:DatatypeProperty ;
     rdfs:domain soul:Decision ;
     rdfs:range soul:OutcomeValue .
 
-soul:supersededBy a owl:ObjectProperty ;
-    rdfs:label "superseded by" ;
-    rdfs:comment "A later decision that replaces this one." ;
-    rdfs:domain soul:Decision ;
-    rdfs:range soul:Decision .
+# Domain left open (usable on Decision, Research, or any doc-type): stale
+# knowledge is the shared failure mode. Renamed from soul:supersededBy
+# (declared-never-used, so the rename is free) per the reference-suffix law —
+# the name says exactly what the value is: the superseding FILE's id, which
+# is its repo-relative path.
+soul:supersededByFileId a owl:DatatypeProperty ;
+    rdfs:label "superseded by file id" ;
+    rdfs:comment "The repo-relative path of the file that replaces this one (a File id, per the suffix law). Write it on the OLD document when a newer one corrects or supersedes it, so a reader who lands on stale knowledge is pointed forward. The old document stays as history." ;
+    rdfs:range xsd:string .
 
 # --- Exploration ---
 # An ongoing personal investigation. Lighter than formal research.
@@ -308,7 +321,12 @@ soul:notes a owl:DatatypeProperty ;
 soul:Journal a owl:Class ;
     git-lex:foldered true ;
     rdfs:label "Journal" ;
-    rdfs:comment "A daily log entry. The agent's record of what happened, what was learned, and what comes next." ;
+    rdfs:comment "A daily log entry. The agent's record of what happened, what was learned, and what comes next. The soulDay + earthDate pair is load-bearing beyond the entry itself: it is the repo's only conversion table between soul-time and wall-clock time (temporal recall resolves 'day N' through it), which is why BOTH are required." ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty soul:earthDate ;
+        owl:minCardinality 1
+    ] ;
     rdfs:subClassOf [
         a owl:Restriction ;
         owl:onProperty soul:soulDay ;
