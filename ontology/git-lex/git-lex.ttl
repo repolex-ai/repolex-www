@@ -54,10 +54,10 @@ git-lex:File a owl:Class ;
     rdfs:label "File" ;
     rdfs:comment "A file at a repo-relative path, through time. Its id IS the path, so a File node is an address, not a lifetime: content changes, deletions, and later unrelated files at the same path are all states of the address, recorded in history. IRI: git-lex/File/<path>. File-plane facts live here: prose links (wikilinks follow paths, by the path law) and free-form fm: frontmatter keys. Facts about the Thing a file expresses live on the Thing node instead (see fileId). Supersedes git-lex:Document at the re-anchor release." .
 
-git-lex:fileId a owl:DatatypeProperty ;
+git-lex:fileId a owl:ObjectProperty ;
     rdfs:label "fileId" ;
-    rdfs:comment "DERIVED, never authored: the repo-relative path of the File currently expressing this Thing — the File's id, stamped by git-lex at save from the file's position, re-derived on move. This is the one connection between the Thing plane and the File plane; 'where has this Thing lived' is its temporal history. Domain open: any Thing carries it. Name obeys the reference-suffix law (...Id = the target's id; a File's id is its path)." ;
-    rdfs:range xsd:string .
+    rdfs:comment "DERIVED, never authored: the File currently expressing this Thing, stamped by git-lex at save from the file's position, re-derived on move. Emitted as an IRI edge to the File node (git-lex/File/<path>) so Thing-to-File-to-links joins need no string surgery — the same house pattern as every ...Id reference: the NAME describes the id the value derives from (a File's id is its path), the GRAPH object is the resolved node. This is the one connection between the planes; 'where has this Thing lived' is its temporal history. Domain open: any Thing carries it." ;
+    rdfs:range git-lex:File .
 
 git-lex:NamedGraph a owl:Class ;
     rdfs:subClassOf sd:NamedGraph ;
