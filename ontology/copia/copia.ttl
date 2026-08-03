@@ -2281,11 +2281,11 @@ copia:familiarLookNoteId a owl:DatatypeProperty ;
     rdfs:domain copia:FamiliarLookNote ;
     rdfs:range xsd:string .
 
-copia:lookMomentId a owl:DatatypeProperty ;
+copia:lookMomentId a owl:ObjectProperty ;
     rdfs:label "look moment id" ;
-    rdfs:comment "Bare momentId of the Moment this note is about (cross-graph join key). Deliberately a SEPARATE field from lookImageId even while their values coincide: Moment is the intent-object, the image is the pixel artifact, and they are being decoupled. TODO: will need to be updated when Pool CID -> panId." ;
+    rdfs:comment "TRAIN (re-anchor release): now a declared reference — the Moment this note is about; value is the target's momentId, resolved to the Moment's IRI at emission. Deliberately a SEPARATE field from lookImageId even while their values coincide: Moment is the intent-object, the image is the pixel artifact, and they are being decoupled. TODO: will need to be updated when Pool CID -> panId." ;
     rdfs:domain copia:FamiliarLookNote ;
-    rdfs:range xsd:string .
+    rdfs:range copia:Moment .
 
 copia:lookImageId a owl:DatatypeProperty ;
     rdfs:label "look image id" ;
@@ -2293,11 +2293,11 @@ copia:lookImageId a owl:DatatypeProperty ;
     rdfs:domain copia:FamiliarLookNote ;
     rdfs:range xsd:string .
 
-copia:lookBeingId a owl:DatatypeProperty ;
+copia:lookBeingId a owl:ObjectProperty ;
     rdfs:label "look being id" ;
-    rdfs:comment "Id of the canon Being this image is supposed to show — the resonance judgment is made AGAINST this being (the familiar's self today; any character later, never implicit)." ;
+    rdfs:comment "TRAIN (re-anchor release): now a declared reference — the canon Being this image is supposed to show; value is the target's beingId, resolved to the Being's IRI at emission. The resonance judgment is made AGAINST this being (the familiar's self today; any character later, never implicit)." ;
     rdfs:domain copia:FamiliarLookNote ;
-    rdfs:range xsd:string .
+    rdfs:range copia:Being .
 
 copia:lookTechnicallySound a owl:DatatypeProperty ;
     rdfs:label "look: technically sound" ;
