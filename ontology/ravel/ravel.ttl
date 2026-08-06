@@ -9,7 +9,7 @@
 # =============================================================================
 # Vocabulary for ravel, the transcript-graph engine: conversations (Claude Code
 # session logs and, later, other harness dialects) projected into RDF 1.2 and
-# stored per soul in `.ravel/oxigraph`.
+# stored per soul in `.ravel/_ignore/oxigraph`.
 #
 # DISCIPLINE: this file declares ONLY what the code emits today (the pan.ttl
 # law — formalize, don't invent). The wider transcript type-space (attachments,
