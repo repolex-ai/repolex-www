@@ -27,8 +27,12 @@
 <https://repolex.ai/ontology/soul> a owl:Ontology ;
     rdfs:label "Soul Kit Ontology" ;
     rdfs:comment "An agent's persistent mind. Identity, memory, knowledge, and personality across sessions." ;
-    owl:versionInfo "0.9.1" .
+    owl:versionInfo "0.9.2" .
 
+# v0.9.2 (2026-08-07): + soul:writtenFrom (the bare pre-rename form) to the
+#   deprecation appendix — data-era vocabulary that no ttl ever declared but
+#   early documents authored. The retroactive law's scope clarified by the
+#   find: cover what historical DATA uses, not merely what ttls once shipped.
 # v0.9.1 (2026-08-07): DEPRECATE-NEVER-DELETE enforced retroactively — the
 #   lifecycle spec's first field receipt. v0.9.0 DELETED its cut classes from
 #   this file; W4R3Z's root-cause on TR1P.L3X's store proved a deleted class
@@ -495,6 +499,8 @@ soul:dreamComposedFor a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain
 
 # WrittenFrom provenance family (removed v0.8.0) + the one-day supersededByFileId (v0.8.4->0.8.5)
 soul:WrittenFrom a owl:DatatypeProperty ; owl:deprecated true ; rdfs:label "WrittenFrom (deprecated)" .
+soul:writtenFrom a owl:DatatypeProperty ; owl:deprecated true ; rdfs:label "writtenFrom (deprecated)" ;
+    rdfs:comment "The PRE-RENAME form: never declared in any shipped ttl, but authored in early-era data (e.g. soul.Journal.writtenFrom, pre-v0.7) before the family took per-class names. Deprecated v0.9.2 because replay answers to what data SAYS, not what ttls blessed — W4R3Z's canary-session find." .
 soul:memoryWrittenFrom a owl:DatatypeProperty ; owl:deprecated true ; rdfs:label "memoryWrittenFrom (deprecated)" .
 soul:journalWrittenFrom a owl:DatatypeProperty ; owl:deprecated true ; rdfs:label "journalWrittenFrom (deprecated)" .
 soul:noteWrittenFrom a owl:DatatypeProperty ; owl:deprecated true ; rdfs:label "noteWrittenFrom (deprecated)" .
