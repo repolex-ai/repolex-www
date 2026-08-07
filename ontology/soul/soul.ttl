@@ -3,6 +3,7 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 
 # =============================================================================
 # SOUL KIT ONTOLOGY
@@ -26,8 +27,20 @@
 <https://repolex.ai/ontology/soul> a owl:Ontology ;
     rdfs:label "Soul Kit Ontology" ;
     rdfs:comment "An agent's persistent mind. Identity, memory, knowledge, and personality across sessions." ;
-    owl:versionInfo "0.9.0" .
+    owl:versionInfo "0.9.1" .
 
+# v0.9.1 (2026-08-07): DEPRECATE-NEVER-DELETE enforced retroactively — the
+#   lifecycle spec's first field receipt. v0.9.0 DELETED its cut classes from
+#   this file; W4R3Z's root-cause on TR1P.L3X's store proved a deleted class
+#   doesn't just lose its warning text, it loses its history's REPLAYABILITY:
+#   the walk resolves historical sidecars under the CURRENT ontology, so
+#   soul.Friend.* lines could neither re-assert NOR RETRACT — ghost Things
+#   stuck in the now-graph, and a full rebuild would silently erase Friend's
+#   entire life. Every class this kit ever cut (0.8.0 + 0.9.0) is therefore
+#   re-declared below as DEPRECATED: owl:deprecated true, dcterms:isReplacedBy
+#   where a successor exists. Deprecated IS declared: history replays, verify
+#   passes, readers are warned. Nothing in the DEPRECATED section may be used
+#   for new documents.
 # v0.9.0 (2026-08-07, Rob-ruled — the why-test walkthrough, whole-kit review):
 #   THE SHAPE: Soul, Journal, Note, Pursuit, Exploration (+ Memory, Skill
 #   frozen — see below). Identity, time, thought, curiosity, knowledge.
@@ -368,3 +381,129 @@ soul:pursuitId a owl:DatatypeProperty ;
     rdfs:domain soul:Pursuit ;
     rdfs:range xsd:string .
 
+
+# =============================================================================
+# DEPRECATED — retired vocabulary, kept declared so history can replay.
+# DEPRECATE-NEVER-DELETE (lifecycle spec): a class deleted from this file
+# makes every historical fact under it unresolvable — asserts AND retractions.
+# Nothing below may be used for new documents; the save gate warns on sight.
+# =============================================================================
+
+# --- retired at v0.9.0 (the why-test walkthrough) ---
+
+soul:Friend a owl:Class ;
+    owl:deprecated true ;
+    dcterms:isReplacedBy soul:Note ;
+    rdfs:label "Friend (deprecated)" ;
+    rdfs:comment "DEPRECATED v0.9.0 — peers are known live via subtext and squad tickets; what matters about a person is a Note. Declared only so history replays." .
+soul:friendId a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Friend ; rdfs:range xsd:string ; rdfs:label "friendId (deprecated)" .
+soul:friendType a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Friend ; rdfs:label "friendType (deprecated)" .
+soul:relationship a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Friend ; rdfs:label "relationship (deprecated)" .
+soul:squad a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Friend ; rdfs:label "squad (deprecated)" .
+soul:email a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Friend ; rdfs:label "email (deprecated)" .
+soul:notes a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Friend ; rdfs:label "notes (deprecated)" .
+soul:FriendTypeValue a rdfs:Datatype ; owl:deprecated true ; owl:oneOf ("agent" "human" "organization" "team") .
+soul:RelationshipValue a rdfs:Datatype ; owl:deprecated true ; owl:oneOf ("acquaintance" "boss" "collaborator" "squadmate" "user") .
+
+soul:Creation a owl:Class ;
+    owl:deprecated true ;
+    dcterms:isReplacedBy soul:Note ;
+    rdfs:label "Creation (deprecated)" ;
+    rdfs:comment "DEPRECATED v0.9.0 — artifacts live in project repos; the soul holds a pointer (Note or Journal link). Declared only so history replays." .
+soul:creationId a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Creation ; rdfs:range xsd:string ; rdfs:label "creationId (deprecated)" .
+soul:creationType a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Creation ; rdfs:label "creationType (deprecated)" .
+
+soul:Resource a owl:Class ;
+    owl:deprecated true ;
+    dcterms:isReplacedBy soul:Note ;
+    rdfs:label "Resource (deprecated)" ;
+    rdfs:comment "DEPRECATED v0.9.0 — failed the why-test; a pointer to a document is a Note. Declared only so history replays." .
+soul:resourceId a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Resource ; rdfs:range xsd:string ; rdfs:label "resourceId (deprecated)" .
+soul:resourceType a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Resource ; rdfs:label "resourceType (deprecated)" .
+soul:url a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Resource ; rdfs:label "url (deprecated)" .
+
+soul:Decision a owl:Class ;
+    owl:deprecated true ;
+    dcterms:isReplacedBy soul:Note ;
+    rdfs:label "Decision (deprecated)" ;
+    rdfs:comment "DEPRECATED v0.9.0 — three instances fleet-wide; a decision worth keeping is a Note. Declared only so history replays." .
+soul:decisionId a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Decision ; rdfs:range xsd:string ; rdfs:label "decisionId (deprecated)" .
+soul:alternatives a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Decision ; rdfs:label "alternatives (deprecated)" .
+soul:rationale a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Decision ; rdfs:label "rationale (deprecated)" .
+soul:outcome a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Decision ; rdfs:label "outcome (deprecated)" .
+soul:OutcomeValue a rdfs:Datatype ; owl:deprecated true ; owl:oneOf ("pending" "implemented" "reverted" "superseded") .
+
+soul:Subagent a owl:Class ;
+    owl:deprecated true ;
+    rdfs:label "Subagent (deprecated)" ;
+    rdfs:comment "DEPRECATED v0.9.0 — a harness concern, not a soul one. No successor. Declared only so history replays." .
+soul:subagentId a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Subagent ; rdfs:range xsd:string ; rdfs:label "subagentId (deprecated)" .
+soul:subagentDescription a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Subagent ; rdfs:label "subagentDescription (deprecated)" .
+soul:subagentTools a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Subagent ; rdfs:label "subagentTools (deprecated)" .
+soul:subagentModel a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Subagent ; rdfs:label "subagentModel (deprecated)" .
+soul:subagentMaxTurns a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Subagent ; rdfs:label "subagentMaxTurns (deprecated)" .
+
+soul:Research a owl:Class ;
+    owl:deprecated true ;
+    dcterms:isReplacedBy soul:Exploration ;
+    rdfs:label "Research (deprecated)" ;
+    rdfs:comment "DEPRECATED v0.9.0 — absorbed into Exploration (one class for focused inquiry; the generic name won). Zero instances ever existed. Declared only so history replays." .
+soul:researchId a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Research ; rdfs:range xsd:string ; rdfs:label "researchId (deprecated)" .
+
+soul:Interest a owl:Class ;
+    owl:deprecated true ;
+    dcterms:isReplacedBy soul:Pursuit ;
+    rdfs:label "Interest (deprecated)" ;
+    rdfs:comment "DEPRECATED v0.9.0 — renamed Pursuit: a disposition became a commitment with direction. Declared only so history replays." .
+soul:interestId a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Interest ; rdfs:range xsd:string ; rdfs:label "interestId (deprecated)" .
+
+# --- retired at v0.8.x, deprecated retroactively (same law, same reason) ---
+
+soul:Mantra a owl:Class ; owl:deprecated true ;
+    rdfs:label "Mantra (deprecated)" ;
+    rdfs:comment "DEPRECATED v0.8.0 (never earned its place); re-declared v0.9.1 so any history replays." .
+soul:mantraId a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Mantra ; rdfs:range xsd:string ; rdfs:label "mantraId (deprecated)" .
+
+soul:Habit a owl:Class ; owl:deprecated true ;
+    rdfs:label "Habit (deprecated)" ;
+    rdfs:comment "DEPRECATED v0.8.0 (never used); re-declared v0.9.1 so any history replays." .
+soul:habitId a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Habit ; rdfs:range xsd:string ; rdfs:label "habitId (deprecated)" .
+soul:habitStatus a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Habit ; rdfs:label "habitStatus (deprecated)" .
+
+soul:Task a owl:Class ; owl:deprecated true ;
+    rdfs:label "Task (deprecated)" ;
+    rdfs:comment "DEPRECATED v0.8.0 (parked until real task management exists; harness/squad own PM). Resurrectable if the why-test ever names a consumer. Re-declared v0.9.1 so history replays." .
+soul:taskId a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Task ; rdfs:range xsd:string ; rdfs:label "taskId (deprecated)" .
+soul:taskStatus a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Task ; rdfs:label "taskStatus (deprecated)" .
+soul:TaskStatusValue a rdfs:Datatype ; owl:deprecated true ; owl:oneOf ("todo" "in-progress" "blocked" "done" "cancelled") .
+
+soul:Texture a owl:Class ; owl:deprecated true ;
+    dcterms:isReplacedBy <https://repolex.ai/ontology/copia/Texture> ;
+    rdfs:label "Texture (deprecated in soul)" ;
+    rdfs:comment "MOVED to copia at v0.8.0; the soul-namespace class is deprecated so pre-move history replays." .
+soul:textureId a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Texture ; rdfs:range xsd:string ; rdfs:label "textureId (deprecated in soul)" .
+
+soul:Dream a owl:Class ; owl:deprecated true ;
+    dcterms:isReplacedBy <https://repolex.ai/ontology/copia/Dream> ;
+    rdfs:label "Dream (deprecated in soul)" ;
+    rdfs:comment "MOVED to copia at v0.8.0; the soul-namespace class is deprecated so pre-move history replays." .
+soul:dreamId a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Dream ; rdfs:range xsd:string ; rdfs:label "dreamId (deprecated in soul)" .
+soul:dreamEigenimage a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Dream ; rdfs:label "dreamEigenimage (deprecated)" .
+soul:dreamConsumed a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Dream ; rdfs:label "dreamConsumed (deprecated)" .
+soul:dreamComposedAt a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Dream ; rdfs:label "dreamComposedAt (deprecated)" .
+soul:dreamComposedFor a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Dream ; rdfs:label "dreamComposedFor (deprecated)" .
+
+# WrittenFrom provenance family (removed v0.8.0) + the one-day supersededByFileId (v0.8.4->0.8.5)
+soul:WrittenFrom a owl:DatatypeProperty ; owl:deprecated true ; rdfs:label "WrittenFrom (deprecated)" .
+soul:memoryWrittenFrom a owl:DatatypeProperty ; owl:deprecated true ; rdfs:label "memoryWrittenFrom (deprecated)" .
+soul:journalWrittenFrom a owl:DatatypeProperty ; owl:deprecated true ; rdfs:label "journalWrittenFrom (deprecated)" .
+soul:noteWrittenFrom a owl:DatatypeProperty ; owl:deprecated true ; rdfs:label "noteWrittenFrom (deprecated)" .
+soul:explorationWrittenFrom a owl:DatatypeProperty ; owl:deprecated true ; rdfs:label "explorationWrittenFrom (deprecated)" .
+soul:decisionWrittenFrom a owl:DatatypeProperty ; owl:deprecated true ; rdfs:label "decisionWrittenFrom (deprecated)" .
+soul:friendWrittenFrom a owl:DatatypeProperty ; owl:deprecated true ; rdfs:label "friendWrittenFrom (deprecated)" .
+soul:researchWrittenFrom a owl:DatatypeProperty ; owl:deprecated true ; rdfs:label "researchWrittenFrom (deprecated)" .
+soul:textureWrittenFrom a owl:DatatypeProperty ; owl:deprecated true ; rdfs:label "textureWrittenFrom (deprecated)" .
+soul:dreamWrittenFrom a owl:DatatypeProperty ; owl:deprecated true ; rdfs:label "dreamWrittenFrom (deprecated)" .
+soul:taskWrittenFrom a owl:DatatypeProperty ; owl:deprecated true ; rdfs:label "taskWrittenFrom (deprecated)" .
+soul:supersededByFileId a owl:DatatypeProperty ; owl:deprecated true ; rdfs:label "supersededByFileId (deprecated)" ;
+    rdfs:comment "Shipped v0.8.4, pulled v0.8.5 same day (claim-level supersession beat document-level). Deprecated so the one-day window replays." .
