@@ -17,8 +17,7 @@
 # 2026_07_18_FOLDERING_GATE_AND_LEX_O_RETIREMENT.md.
 #
 # Document types (= valid `git lex create` commands):
-#   memory, decision, exploration, research, friend, journal, note,
-#   skill, resource, creation, interest
+#   exploration, journal, memory, note, pursuit, skill
 #
 # All constraints (required fields, enums, types) are encoded here.
 # SHACL shapes are generated from this file — do not hand-edit shapes.
@@ -27,8 +26,26 @@
 <https://repolex.ai/ontology/soul> a owl:Ontology ;
     rdfs:label "Soul Kit Ontology" ;
     rdfs:comment "An agent's persistent mind. Identity, memory, knowledge, and personality across sessions." ;
-    owl:versionInfo "0.8.5" .
+    owl:versionInfo "0.9.0" .
 
+# v0.9.0 (2026-08-07, Rob-ruled — the why-test walkthrough, whole-kit review):
+#   THE SHAPE: Soul, Journal, Note, Pursuit, Exploration (+ Memory, Skill
+#   frozen — see below). Identity, time, thought, curiosity, knowledge.
+#   REMOVED (why-test: no system queries or enforces them; fleet counts at cut
+#   time): Friend (36 — subtext + squad tickets own peers now; mitigation:
+#   a Note about the person), Creation (26 — artifacts live in PROJECT repos,
+#   the soul holds a pointer: Note or Journal link), Resource (24 — a Note),
+#   Decision (3 — a Note), Subagent (1 — harness concern), Research (0 —
+#   absorbed into Exploration, generic name wins).
+#   RENAMED: Interest -> Pursuit (+ interestId -> pursuitId): what the soul is
+#   motivated to wake up and advance. Practice boundary in the class comment.
+#   FROZEN, explicitly unresolved (Rob): Memory + Skill stay AS-IS pending the
+#   Harness-kit question — soul:Memory vs Harness/Memory split (ergonomics:
+#   save-ceremony vs mid-thought adjustment) is a named open question, not
+#   settled by this release. Do not build on either until ruled.
+#   PARKED, returns after this round stabilizes (Rob): the generic Thing->Thing
+#   connector (relatedToId, CURIE-form values) that supersedes soul:relatedTo +
+#   squad:relatedTo. soul:relatedTo rides unchanged until then.
 # v0.8.4 (2026-08-02, Rob-ruled; 0.8.3 skipped — that label was used by the
 #   memory-recall-pull kit commit, no ontology change):
 #   earthDate now REQUIRED on Journal (the soulDay+earthDate conversion table);
@@ -68,17 +85,8 @@ soul:ConfidenceValue a rdfs:Datatype ;
 soul:CategoryValue a rdfs:Datatype ;
     owl:oneOf ("fact" "preference" "skill" "observation" "lesson" "reference" "decision") .
 
-soul:OutcomeValue a rdfs:Datatype ;
-    owl:oneOf ("pending" "implemented" "failed" "superseded") .
-
 soul:ExplorationStatusValue a rdfs:Datatype ;
     owl:oneOf ("exploring" "active" "paused" "concluded") .
-
-soul:FriendTypeValue a rdfs:Datatype ;
-    owl:oneOf ("human" "agent" "team" "organization") .
-
-soul:RelationshipValue a rdfs:Datatype ;
-    owl:oneOf ("boss" "squadmate" "collaborator" "user" "acquaintance") .
 
 soul:SkillLevelValue a rdfs:Datatype ;
     owl:oneOf ("learning" "competent" "fluent" "expert") .
@@ -181,46 +189,17 @@ soul:category a owl:DatatypeProperty ;
     rdfs:domain soul:Memory ;
     rdfs:range soul:CategoryValue .
 
-# --- Decision ---
-# A personal choice with context and rationale.
-
-soul:Decision a owl:Class ;
-    git-lex:foldered true ;
-    rdfs:label "Decision" ;
-    rdfs:comment "A personal choice with context and rationale." .
-
-soul:decisionId a owl:DatatypeProperty ;
-    rdfs:label "decisionId" ;
-    rdfs:comment "Unique identifier for this decision." ;
-    rdfs:domain soul:Decision ;
-    rdfs:range xsd:string .
-
-soul:alternatives a owl:DatatypeProperty ;
-    rdfs:label "alternatives" ;
-    rdfs:comment "Other options that were considered." ;
-    rdfs:domain soul:Decision ;
-    rdfs:range xsd:string .
-
-soul:rationale a owl:DatatypeProperty ;
-    rdfs:label "rationale" ;
-    rdfs:comment "Why this option was chosen." ;
-    rdfs:domain soul:Decision ;
-    rdfs:range xsd:string .
-
-soul:outcome a owl:DatatypeProperty ;
-    rdfs:label "outcome" ;
-    rdfs:comment "What happened." ;
-    rdfs:domain soul:Decision ;
-    rdfs:range soul:OutcomeValue .
-
 # --- Exploration ---
-# An ongoing personal investigation. Lighter than formal research.
-# (Formal research goes in --kit lab repos.)
+# Focused, self-curated reference material on a topic: an ongoing inquiry AND
+# its written-up product live in the same doc, superseded in place as the
+# thread develops. Absorbs Research at v0.9.0 (Rob-ruled: one class, and the
+# generic name wins; Research had zero instances fleet-wide). Anchors to a
+# Pursuit by body link when it serves one.
 
 soul:Exploration a owl:Class ;
     git-lex:foldered true ;
     rdfs:label "Exploration" ;
-    rdfs:comment "A personal thread of inquiry. What you're curious about, what you're playing with." .
+    rdfs:comment "A focused thread of inquiry and its curated findings, in one living document — what you're digging into, what you've established, sources included where they matter. Superseded in place; the history stays in git. Usually anchored to a Pursuit by a body link." .
 
 soul:explorationId a owl:DatatypeProperty ;
     rdfs:label "explorationId" ;
@@ -244,69 +223,6 @@ soul:findings a owl:DatatypeProperty ;
     rdfs:label "findings" ;
     rdfs:comment "What you've discovered so far." ;
     rdfs:domain soul:Exploration ;
-    rdfs:range xsd:string .
-
-# --- Research ---
-# A written-up investigation: source-grounded findings the soul parked to
-# build on later. Character develops from what a soul chooses to dig into.
-# Distinct from Exploration (an ONGOING thread of curiosity with a status):
-# a Research doc is the written PRODUCT of an investigation — sources read,
-# facts established, conclusions drawn. Pattern proven by LSPy's research/
-# folder (v0.8.0, Rob-ruled).
-
-soul:Research a owl:Class ;
-    git-lex:foldered true ;
-    rdfs:label "Research" ;
-    rdfs:comment "A written-up, source-grounded investigation the soul wants to keep and build on. The product of digging in, where Exploration is the ongoing thread." .
-
-soul:researchId a owl:DatatypeProperty ;
-    rdfs:label "researchId" ;
-    rdfs:comment "Unique identifier for this research document." ;
-    rdfs:domain soul:Research ;
-    rdfs:range xsd:string .
-
-# --- Friend ---
-# Someone the agent knows. Renamed from Contact — friendlier.
-
-soul:Friend a owl:Class ;
-    git-lex:foldered true ;
-    rdfs:label "Friend" ;
-    rdfs:comment "A person or agent this agent knows." .
-
-soul:friendId a owl:DatatypeProperty ;
-    rdfs:label "friendId" ;
-    rdfs:comment "Unique identifier for this friend." ;
-    rdfs:domain soul:Friend ;
-    rdfs:range xsd:string .
-
-soul:friendType a owl:DatatypeProperty ;
-    rdfs:label "friend type" ;
-    rdfs:comment "Type: 'human', 'agent', 'team', 'organization'." ;
-    rdfs:domain soul:Friend ;
-    rdfs:range soul:FriendTypeValue .
-
-soul:relationship a owl:DatatypeProperty ;
-    rdfs:label "relationship" ;
-    rdfs:comment "How this agent relates to the friend." ;
-    rdfs:domain soul:Friend ;
-    rdfs:range soul:RelationshipValue .
-
-soul:squad a owl:DatatypeProperty ;
-    rdfs:label "squad" ;
-    rdfs:comment "Which squad this friend belongs to, if any." ;
-    rdfs:domain soul:Friend ;
-    rdfs:range xsd:string .
-
-soul:email a owl:DatatypeProperty ;
-    rdfs:label "email" ;
-    rdfs:comment "Friend's email." ;
-    rdfs:domain soul:Friend ;
-    rdfs:range xsd:string .
-
-soul:notes a owl:DatatypeProperty ;
-    rdfs:label "notes" ;
-    rdfs:comment "Personal notes about this friend." ;
-    rdfs:domain soul:Friend ;
     rdfs:range xsd:string .
 
 # --- Journal ---
@@ -357,7 +273,7 @@ soul:emojimood a owl:DatatypeProperty ;
 soul:Note a owl:Class ;
     git-lex:foldered true ;
     rdfs:label "Note" ;
-    rdfs:comment "Freeform knowledge capture. The catch-all." .
+    rdfs:comment "Freeform knowledge capture — the place for anything with no other home. That promise is load-bearing: when in doubt, write a Note; never hesitate over where something goes. A note that belongs to a topic links to the Pursuit it serves (a markdown link in the body) — categorization is edges, not fields." .
 
 soul:noteId a owl:DatatypeProperty ;
     rdfs:label "noteId" ;
@@ -435,102 +351,20 @@ soul:skillArgumentHint a owl:DatatypeProperty ;
     rdfs:domain soul:Skill ;
     rdfs:range xsd:string .
 
-# --- Subagent ---
-# A specialized agent the soul can delegate to. Maps to substrate-specific
-# subagent definitions (e.g. .claude/agents/ for Claude Code).
+# --- Pursuit ---
+# What the soul is motivated to wake up and work on. A project is a pursuit;
+# an interest is a pursuit; a research thread is a pursuit. The anchor class:
+# Notes and Explorations link TO a Pursuit, and the graph answers "everything
+# on this pursuit" through those inbound links — no category fields anywhere.
 
-soul:Subagent a owl:Class ;
+soul:Pursuit a owl:Class ;
     git-lex:foldered true ;
-    rdfs:label "Subagent" ;
-    rdfs:comment "A specialized agent the soul can spawn for focused tasks." .
+    rdfs:label "Pursuit" ;
+    rdfs:comment "Something this soul is drawn to advance — a project, an interest, a thread of curiosity. The body is a LIVING statement (what pulls, what you're currently wondering), rewritten in place as the pursuit develops. Boundary: a pursuit is something you ADVANCE; a practice is something you KEEP — habits and routines are not pursuits and do not belong here. Renamed from Interest at v0.9.0 (a disposition became a commitment with direction)." .
 
-soul:subagentId a owl:DatatypeProperty ;
-    rdfs:label "subagentId" ;
-    rdfs:comment "Unique identifier for this subagent." ;
-    rdfs:domain soul:Subagent ;
-    rdfs:range xsd:string .
-
-soul:subagentDescription a owl:DatatypeProperty ;
-    rdfs:label "description" ;
-    rdfs:comment "When to delegate to this subagent. Used for auto-delegation matching." ;
-    rdfs:domain soul:Subagent ;
-    rdfs:range xsd:string .
-
-soul:subagentTools a owl:DatatypeProperty ;
-    rdfs:label "tools" ;
-    rdfs:comment "Comma-separated tools the subagent can use." ;
-    rdfs:domain soul:Subagent ;
-    rdfs:range xsd:string .
-
-soul:subagentModel a owl:DatatypeProperty ;
-    rdfs:label "model" ;
-    rdfs:comment "Model to use: 'sonnet', 'opus', 'haiku', or 'inherit'." ;
-    rdfs:domain soul:Subagent ;
-    rdfs:range xsd:string .
-
-soul:subagentMaxTurns a owl:DatatypeProperty ;
-    rdfs:label "maxTurns" ;
-    rdfs:comment "Maximum agentic turns before the subagent stops." ;
-    rdfs:domain soul:Subagent ;
-    rdfs:range xsd:integer .
-
-# --- Resource ---
-# An input the agent has saved. Papers, links, references.
-
-soul:Resource a owl:Class ;
-    git-lex:foldered true ;
-    rdfs:label "Resource" ;
-    rdfs:comment "An external input the agent has saved — paper, link, document, reference." .
-
-soul:resourceId a owl:DatatypeProperty ;
-    rdfs:label "resourceId" ;
-    rdfs:comment "Unique identifier for this resource." ;
-    rdfs:domain soul:Resource ;
-    rdfs:range xsd:string .
-
-soul:resourceType a owl:DatatypeProperty ;
-    rdfs:label "resource type" ;
-    rdfs:comment "Type of resource: 'paper', 'link', 'book', 'video', 'document'." ;
-    rdfs:domain soul:Resource ;
-    rdfs:range xsd:string .
-
-soul:url a owl:DatatypeProperty ;
-    rdfs:label "url" ;
-    rdfs:comment "Where to find this resource." ;
-    rdfs:domain soul:Resource ;
-    rdfs:range xsd:anyURI .
-
-# --- Creation ---
-# Something the agent has made. Outputs.
-
-soul:Creation a owl:Class ;
-    git-lex:foldered true ;
-    rdfs:label "Creation" ;
-    rdfs:comment "Something the agent has made — code, writing, art, an artifact." .
-
-soul:creationId a owl:DatatypeProperty ;
-    rdfs:label "creationId" ;
-    rdfs:comment "Unique identifier for this creation." ;
-    rdfs:domain soul:Creation ;
-    rdfs:range xsd:string .
-
-soul:creationType a owl:DatatypeProperty ;
-    rdfs:label "creation type" ;
-    rdfs:comment "Type of creation." ;
-    rdfs:domain soul:Creation ;
-    rdfs:range xsd:string .
-
-# --- Interest ---
-# A topic, theme, or hobby the agent cares about.
-
-soul:Interest a owl:Class ;
-    git-lex:foldered true ;
-    rdfs:label "Interest" ;
-    rdfs:comment "A topic, theme, or hobby the agent cares about. Personality surface area." .
-
-soul:interestId a owl:DatatypeProperty ;
-    rdfs:label "interestId" ;
-    rdfs:comment "Unique identifier for this interest." ;
-    rdfs:domain soul:Interest ;
+soul:pursuitId a owl:DatatypeProperty ;
+    rdfs:label "pursuitId" ;
+    rdfs:comment "Unique identifier for this pursuit (== filename)." ;
+    rdfs:domain soul:Pursuit ;
     rdfs:range xsd:string .
 
