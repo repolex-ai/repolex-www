@@ -37,7 +37,7 @@
 <https://repolex.ai/ontology/squad> a owl:Ontology ;
     rdfs:label "Squad Kit Ontology" ;
     rdfs:comment "Multi-agent squad memory. Carbon and silicon agents collaborate via structured markdown in a shared git repo." ;
-    owl:versionInfo "0.4" .
+    owl:versionInfo "0.5" .
 
 
 # =============================================================================
@@ -82,12 +82,17 @@ squad:DigestStatusValue a rdfs:Datatype ;
 # --- Squaddie ---
 # Who's on the squad. Carbon (humans) and silicon (AI).
 # Created once per member. Updated as roles change.
-# soulId is the primary identifier, linking to the soul kit.
+# Identity: squaddieId (the agent slug, == filename). soulId = external designator.
 
 squad:Squaddie a owl:Class ;
     git-lex:foldered true ;
     rdfs:label "Squaddie" ;
-    rdfs:comment "A squad member — carbon or silicon. Identity tied to soulId from the soul kit." ;
+    rdfs:comment "A squad member — carbon or silicon. Identity: squaddieId (== filename, the agent's canonical slug, e.g. 'tr1p-l3x'). The soul-kit soulId (genesis sha of the agent's solo repo) is a separate, external designator — see squad:soulId." ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty squad:squaddieId ;
+        owl:cardinality 1
+    ] ;
     rdfs:subClassOf [
         a owl:Restriction ;
         owl:onProperty squad:role ;
@@ -99,9 +104,15 @@ squad:Squaddie a owl:Class ;
         owl:minCardinality 1
     ] .
 
+squad:squaddieId a owl:DatatypeProperty ;
+    rdfs:label "squaddieId" ;
+    rdfs:comment "Unique identifier for this Squaddie (== filename): the agent's canonical slug, lowercase, alphanumeric + hyphens (e.g. 'tr1p-l3x', 'lupov'). Declared at v0.5 — the identity law (class ⇒ <class>Id) requires the id own-name on the class; without it Squaddie docs could not anchor Things and every reference to a squaddie dangled." ;
+    rdfs:domain squad:Squaddie ;
+    rdfs:range xsd:string .
+
 squad:soulId a owl:DatatypeProperty ;
     rdfs:label "soul id" ;
-    rdfs:comment "Primary identifier — the agent's soulId from their soul kit repo. Lowercase, alphanumeric + hyphens." ;
+    rdfs:comment "External designator, NOT this class's identity (that is squaddieId): the soulId of the agent's solo soul repo, which the soul kit derives from that repo's genesis sha. Lives in a different store — a grouping/verification key here, never resolved by this graph. Comment corrected at v0.5; the pre-law text called this the primary identifier while describing the slug." ;
     rdfs:domain squad:Squaddie ;
     rdfs:range xsd:string .
 
