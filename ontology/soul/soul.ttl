@@ -27,8 +27,18 @@
 <https://repolex.ai/ontology/soul> a owl:Ontology ;
     rdfs:label "Soul Kit Ontology" ;
     rdfs:comment "An agent's persistent mind. Identity, memory, knowledge, and personality across sessions." ;
-    owl:versionInfo "0.9.2" .
+    owl:versionInfo "0.9.3" .
 
+# v0.9.3 (2026-08-08): + soul:spark, soul:kind, soul:dateNoticed to the
+#   deprecation appendix — the Texture field family, same shape as v0.9.2's
+#   writtenFrom (soul-era vocabulary the data authored; textureId made the
+#   v0.9.1 appendix, its siblings didn't — adell's find, the live specimen
+#   being her Soul/Texture/self.md). Each isReplacedBy its copia successor
+#   (kind → copia:textureKind — renamed on arrival so the banned word stays
+#   free). NOTE for the record: the v0.9.0 changelog's "fleet count 0" for
+#   Research was stale at cut time — two repos (multivac-lupov, multivac-adell)
+#   authored Research docs on 2026-08-04; the ruling stands on its merits
+#   (one inquiry class beats two), the census method gets the correction.
 # v0.9.2 (2026-08-07): + soul:writtenFrom (the bare pre-rename form) to the
 #   deprecation appendix — data-era vocabulary that no ttl ever declared but
 #   early documents authored. The retroactive law's scope clarified by the
@@ -486,6 +496,18 @@ soul:Texture a owl:Class ; owl:deprecated true ;
     rdfs:label "Texture (deprecated in soul)" ;
     rdfs:comment "MOVED to copia at v0.8.0; the soul-namespace class is deprecated so pre-move history replays." .
 soul:textureId a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Texture ; rdfs:range xsd:string ; rdfs:label "textureId (deprecated in soul)" .
+soul:spark a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Texture ; rdfs:range xsd:string ;
+    dcterms:isReplacedBy <https://repolex.ai/ontology/copia/spark> ;
+    rdfs:label "spark (deprecated in soul)" ;
+    rdfs:comment "Texture field, soul era. Declared v0.9.3 so pre-move data resolves (the v0.9.2 scope law: cover what historical DATA uses)." .
+soul:kind a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Texture ; rdfs:range xsd:string ;
+    dcterms:isReplacedBy <https://repolex.ai/ontology/copia/textureKind> ;
+    rdfs:label "kind (deprecated in soul)" ;
+    rdfs:comment "Texture field, soul era — the domain-less soul:kind. Renamed textureKind on the copia side ('kind' is a banned word: a discrimination without an axis). Declared v0.9.3 so pre-move data resolves." .
+soul:dateNoticed a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Texture ; rdfs:range xsd:date ;
+    dcterms:isReplacedBy <https://repolex.ai/ontology/copia/dateNoticed> ;
+    rdfs:label "dateNoticed (deprecated in soul)" ;
+    rdfs:comment "Texture field, soul era. Declared v0.9.3 so pre-move data resolves." .
 
 soul:Dream a owl:Class ; owl:deprecated true ;
     dcterms:isReplacedBy <https://repolex.ai/ontology/copia/Dream> ;
