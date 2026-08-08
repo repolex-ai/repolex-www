@@ -409,6 +409,17 @@ soul:pursuitId a owl:DatatypeProperty ;
 # DEPRECATE-NEVER-DELETE (lifecycle spec): a class deleted from this file
 # makes every historical fact under it unresolvable — asserts AND retractions.
 # Nothing below may be used for new documents; the save gate warns on sight.
+#
+# AUTHORING PROCEDURE — when retiring a class, STRIP `git-lex:foldered true`
+# as you move it down here. Declare it minimally: owl:deprecated, isReplacedBy,
+# label, comment. This is not cosmetic. git-lex's folder AUDIT gates on
+# `foldered AND NOT deprecated`, but its TEMPLATE EMITTER gates on `foldered`
+# alone — so a retired class that keeps the flag gets its folder recreated AND
+# a fresh key-list `__Class.md` written into it on every seat's next
+# kit-update, inviting new authorship into vocabulary we just spent a fleet
+# session evacuating. Until the emitter learns the deprecated clause (filed
+# with W4R3Z 2026-08-08, from w3blord's residue find), THIS COMMENT IS THE
+# ONLY THING HOLDING THE INVARIANT. Every entry below already complies.
 # =============================================================================
 
 # --- retired at v0.9.0 (the why-test walkthrough) ---
