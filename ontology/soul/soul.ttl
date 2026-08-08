@@ -412,14 +412,20 @@ soul:pursuitId a owl:DatatypeProperty ;
 #
 # AUTHORING PROCEDURE — when retiring a class, STRIP `git-lex:foldered true`
 # as you move it down here. Declare it minimally: owl:deprecated, isReplacedBy,
-# label, comment. This is not cosmetic. git-lex's folder AUDIT gates on
-# `foldered AND NOT deprecated`, but its TEMPLATE EMITTER gates on `foldered`
-# alone — so a retired class that keeps the flag gets its folder recreated AND
-# a fresh key-list `__Class.md` written into it on every seat's next
-# kit-update, inviting new authorship into vocabulary we just spent a fleet
-# session evacuating. Until the emitter learns the deprecated clause (filed
-# with W4R3Z 2026-08-08, from w3blord's residue find), THIS COMMENT IS THE
-# ONLY THING HOLDING THE INVARIANT. Every entry below already complies.
+# label, comment. Every entry below complies.
+#
+# This is now belt AND suspenders. The suspenders are code: git-lex's
+# `ontology::class_gets_folder` (foldered AND NOT deprecated) is the single
+# predicate the folder audit, the template emitter, init's scaffolding, and
+# the cross-kit registry all dispatch through — so a retired class that KEEPS
+# the flag still gets no folder and no template (git-lex 470f3a9, 2026-08-08).
+# Before that hoist, two gates computed the rule separately and agreed only
+# because this author never left `foldered` on a deprecated class; the first
+# tired slip would have rebuilt retired folders and fresh key-list templates
+# on every seat at kit-update, re-inviting authorship into vocabulary a fleet
+# session had just evacuated. Keep stripping the flag anyway: the ttl should
+# state what it means, not lean on a reader to be careful for it.
+# (Found by w3blord's residue sweep; see field notes §2j.)
 # =============================================================================
 
 # --- retired at v0.9.0 (the why-test walkthrough) ---
