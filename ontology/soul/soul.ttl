@@ -27,8 +27,16 @@
 <https://repolex.ai/ontology/soul> a owl:Ontology ;
     rdfs:label "Soul Kit Ontology" ;
     rdfs:comment "An agent's persistent mind. Identity, memory, knowledge, and personality across sessions." ;
-    owl:versionInfo "0.9.3" .
+    owl:versionInfo "0.9.4" .
 
+# v0.9.4 (2026-08-08): two more data-era finds from the fleet 1:1 run, same
+#   scope law: + soul:Routine + soul:routineId (4RX's era-1 repo authored
+#   routine/{before_compaction,session_startup}; never declared in any shipped
+#   ttl; no successor class — procedures reclass to Skill or Note by contract)
+#   and + soul:kindSub (spaceGOAT's Texture data, one doc; sibling of the
+#   v0.9.3 family). The fleet-frontmatter-sweep lesson (field notes §2a/§4.1)
+#   now has four receipts: writtenFrom, the Texture trio, Routine, kindSub —
+#   next cycle sweeps the repos BEFORE the cut, not after.
 # v0.9.3 (2026-08-08): + soul:spark, soul:kind, soul:dateNoticed to the
 #   deprecation appendix — the Texture field family, same shape as v0.9.2's
 #   writtenFrom (soul-era vocabulary the data authored; textureId made the
@@ -508,6 +516,14 @@ soul:dateNoticed a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul
     dcterms:isReplacedBy <https://repolex.ai/ontology/copia/dateNoticed> ;
     rdfs:label "dateNoticed (deprecated in soul)" ;
     rdfs:comment "Texture field, soul era. Declared v0.9.3 so pre-move data resolves." .
+soul:kindSub a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Texture ; rdfs:range xsd:string ;
+    rdfs:label "kindSub (deprecated)" ;
+    rdfs:comment "Texture sub-discriminator, data era — never declared in any shipped ttl (spaceGOAT's find, one doc). Declared v0.9.4 so the data resolves; no successor (fold into the body on migration)." .
+
+soul:Routine a owl:Class ; owl:deprecated true ;
+    rdfs:label "Routine (deprecated)" ;
+    rdfs:comment "Data-era class, never declared in any shipped ttl — era-1 repos authored routine/ docs (4RX's find: before_compaction, session_startup). Declared v0.9.4 so the data resolves. No class successor: a routine is a procedure, so docs reclass to Skill (if runnable) or Note by contract." .
+soul:routineId a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Routine ; rdfs:range xsd:string ; rdfs:label "routineId (deprecated)" .
 
 soul:Dream a owl:Class ; owl:deprecated true ;
     dcterms:isReplacedBy <https://repolex.ai/ontology/copia/Dream> ;
