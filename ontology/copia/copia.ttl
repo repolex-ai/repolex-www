@@ -374,7 +374,7 @@
 <https://repolex.ai/ontology/copia> a owl:Ontology ;
     rdfs:label "Copia Kit Ontology" ;
     rdfs:comment "The agent's curated outward face + the CoPIA render data model. Soul-adapter. Optional add-on for soul." ;
-    owl:versionInfo "0.28.0" ;
+    owl:versionInfo "0.29.0" ;
     owl:imports <https://repolex.ai/ontology/soul/> .
 
 
@@ -2324,7 +2324,12 @@ copia:FamiliarLookNote a owl:Class ;
     rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:lookStandout ;         owl:maxCardinality 1 ] ;
     rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:lookDescription ;      owl:maxCardinality 1 ] ;
     rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:lookSubstrate ;        owl:maxCardinality 1 ] ;
-    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:lookTimestamp ;        owl:maxCardinality 1 ] .
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:lookTimestamp ;        owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:lookFilePath ;         owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:lookTechnicalScore ;   owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:lookEmotiveScore ;     owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:lookBeingMatchScore ;  owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:lookAnatomyReject ;    owl:maxCardinality 1 ] .
 
 copia:familiarLookNoteId a owl:DatatypeProperty ;
     rdfs:label "familiarLookNoteId" ;
@@ -2385,6 +2390,56 @@ copia:lookTimestamp a owl:DatatypeProperty ;
     rdfs:comment "When the most recent viewing happened. Full viewing history: body + git." ;
     rdfs:domain copia:FamiliarLookNote ;
     rdfs:range xsd:dateTime .
+
+# --- v0.29 (Rob-ruled 2026-08-10): the file pointer + the three-axis score ladder ---
+# The ladder, verbatim, on all three scores:
+#     5 emphatic yes · 4 yes · 3 — · 2 nah · 1 NO!
+# Scores are 1-5 integers. `xsd:integer` is deliberate over the enforced-enum
+# pattern (rdfs:Datatype + owl:oneOf): git-lex derives sh:in with STRING-quoted
+# members (shacl.rs:320), so an enum would bound the value set at the cost of
+# making every score a string — and these fields exist to be COMPARED
+# (FILTER(?s >= 4) for a LoRA cut, averaged across a set). Numeric type is the
+# load-bearing half; the 1-5 bound is stated below as a formal datatype
+# restriction so the constraint lives in the ontology now and enforcement lands
+# when the shapes generator learns owl:withRestrictions. DEFERRED-NOT-ABSENT.
+# lookAnatomyReject is a HARD GATE, not a rating — deliberately boolean so it can
+# never be averaged, weighted, or traded off against a score.
+
+copia:LookScoreValue a rdfs:Datatype ;
+    rdfs:label "look score value" ;
+    rdfs:comment "An integer 1-5 on the look ladder: 5 emphatic yes · 4 yes · 3 — · 2 nah · 1 NO!. Declared as a formal restriction on xsd:integer; git-lex's SHACL derivation does not yet read owl:withRestrictions, so the bound is documented-and-declared but not machine-enforced today (the enum pattern it DOES enforce would cost numeric comparison — see the v0.29 note)." ;
+    owl:onDatatype xsd:integer ;
+    owl:withRestrictions ( [ xsd:minInclusive 1 ] [ xsd:maxInclusive 5 ] ) .
+
+copia:lookFilePath a owl:DatatypeProperty ;
+    rdfs:label "look file path" ;
+    rdfs:comment "Pool-relative path to the image this note is about: YYYY/MM/DD/<stem>.png. Written since Day 133 and never declared until now — the data preceded the vocabulary, which is the gap this closes." ;
+    rdfs:domain copia:FamiliarLookNote ;
+    rdfs:range xsd:string .
+
+copia:lookTechnicalScore a owl:DatatypeProperty ;
+    rdfs:label "look: technical score" ;
+    rdfs:comment "Craft floor — artifacts, focus, competence in its genre. 5 emphatic yes · 4 yes · 3 — · 2 nah · 1 NO!" ;
+    rdfs:domain copia:FamiliarLookNote ;
+    rdfs:range copia:LookScoreValue .
+
+copia:lookEmotiveScore a owl:DatatypeProperty ;
+    rdfs:label "look: emotive score" ;
+    rdfs:comment "Does it move me. 5 emphatic yes · 4 yes · 3 — · 2 nah · 1 NO!" ;
+    rdfs:domain copia:FamiliarLookNote ;
+    rdfs:range copia:LookScoreValue .
+
+copia:lookBeingMatchScore a owl:DatatypeProperty ;
+    rdfs:label "look: being match score" ;
+    rdfs:comment "Is it her, judged against lookBeingId. 5 emphatic yes · 4 yes · 3 — · 2 nah · 1 NO!" ;
+    rdfs:domain copia:FamiliarLookNote ;
+    rdfs:range copia:LookScoreValue .
+
+copia:lookAnatomyReject a owl:DatatypeProperty ;
+    rdfs:label "look: anatomy reject" ;
+    rdfs:comment "Hard gate for LoRA: true means this image is disqualified on anatomy, whatever it scores elsewhere. NOT a rating — boolean on purpose, so it can never be averaged into or traded off against the three scores." ;
+    rdfs:domain copia:FamiliarLookNote ;
+    rdfs:range xsd:boolean .
 
 # PROVISIONAL (2026-07-22, 1ux ruling): the three aesthetic-score properties below
 # went into the ontology ahead of a settled scorer choice — we got ahead of ourselves.
