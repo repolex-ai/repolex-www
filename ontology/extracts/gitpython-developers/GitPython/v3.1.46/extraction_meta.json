@@ -1,7 +1,7 @@
 {
   "git_version": "v3.1.46",
   "gitpython_version": "3.1.46",
-  "extracted_at": "2026-02-26T10:01:17.771845",
+  "extracted_at": "2026-04-02T01:11:39.557265",
   "objects": {
     "Commit": [
       {
@@ -58,28 +58,28 @@
         "python_type": "int",
         "xsd_type": "http://www.w3.org/2001/XMLSchema#integer",
         "is_object_property": false,
-        "sample_value": "28800"
+        "sample_value": "25200"
       },
       {
         "name": "authored_date",
         "python_type": "int",
         "xsd_type": "http://www.w3.org/2001/XMLSchema#integer",
         "is_object_property": false,
-        "sample_value": "1772115109"
+        "sample_value": "1775109956"
       },
       {
         "name": "authored_datetime",
         "python_type": "datetime",
         "xsd_type": "http://www.w3.org/2001/XMLSchema#dateTime",
         "is_object_property": false,
-        "sample_value": "datetime.datetime(2026, 2, 26, 6, 11, 49, tzinfo=<git.objects.util.tzoffset object at 0x103a6d1d0>)"
+        "sample_value": "datetime.datetime(2026, 4, 1, 23, 5, 56, tzinfo=<git.objects.util.tzoffset object at 0x101c311d0>)"
       },
       {
         "name": "binsha",
         "python_type": "bytes",
         "xsd_type": "http://www.w3.org/2001/XMLSchema#hexBinary",
         "is_object_property": false,
-        "sample_value": "b'\\x86\\xc8[\\xee\\x11J|\\xe4u\\x86/\\xe2/U\\xce\\x8c\\xf6\\xd4\\xa4\\x1d'"
+        "sample_value": "b'2\\xfc\\x93\\xb4aM\\xca\\x88\\xb5\\x9a\\xb1\\xba\\x0fs\\xd7\\xcc\\xb7^\\x17\\xf3'"
       },
       {
         "name": "co_authors",
@@ -93,14 +93,14 @@
         "python_type": "int",
         "xsd_type": "http://www.w3.org/2001/XMLSchema#integer",
         "is_object_property": false,
-        "sample_value": "1772115109"
+        "sample_value": "1775109956"
       },
       {
         "name": "committed_datetime",
         "python_type": "datetime",
         "xsd_type": "http://www.w3.org/2001/XMLSchema#dateTime",
         "is_object_property": false,
-        "sample_value": "datetime.datetime(2026, 2, 26, 6, 11, 49, tzinfo=<git.objects.util.tzoffset object at 0x103a6d1d0>)"
+        "sample_value": "datetime.datetime(2026, 4, 1, 23, 5, 56, tzinfo=<git.objects.util.tzoffset object at 0x101c311d0>)"
       },
       {
         "name": "committer",
@@ -114,7 +114,7 @@
         "python_type": "int",
         "xsd_type": "http://www.w3.org/2001/XMLSchema#integer",
         "is_object_property": false,
-        "sample_value": "28800"
+        "sample_value": "25200"
       },
       {
         "name": "conf_encoding",
@@ -128,7 +128,7 @@
         "python_type": "OStream",
         "xsd_type": null,
         "is_object_property": true,
-        "sample_value": "(b'\\x86\\xc8[\\xee\\x11J|\\xe4u\\x86/\\xe2/U\\xce\\x8c\\xf6\\xd4\\xa4\\x1d', b'commit', 1308, <git.cmd.Git.CatFi"
+        "sample_value": "(b'2\\xfc\\x93\\xb4aM\\xca\\x88\\xb5\\x9a\\xb1\\xba\\x0fs\\xd7\\xcc\\xb7^\\x17\\xf3', b'commit', 1294, <git.cmd.Git"
       },
       {
         "name": "default_encoding",
@@ -170,28 +170,28 @@
         "python_type": "str",
         "xsd_type": "http://www.w3.org/2001/XMLSchema#string",
         "is_object_property": false,
-        "sample_value": "'86c85bee114a7ce475862fe22f55ce8cf6d4a41d'"
+        "sample_value": "'32fc93b4614dca88b59ab1ba0f73d7ccb75e17f3'"
       },
       {
         "name": "message",
         "python_type": "str",
         "xsd_type": "http://www.w3.org/2001/XMLSchema#string",
         "is_object_property": false,
-        "sample_value": "\"Add repolex:File class and fix git ontology with IndexObject\\n\\nMajor improvements to ontology stru"
+        "sample_value": "'Add Elixir as 14th language: ast-x mappings + elixir.scm\\n\\n- ast-x.ttl: elixir: prefix + 8 subClas"
       },
       {
         "name": "name_rev",
         "python_type": "str",
         "xsd_type": "http://www.w3.org/2001/XMLSchema#string",
         "is_object_property": false,
-        "sample_value": "'86c85bee114a7ce475862fe22f55ce8cf6d4a41d main'"
+        "sample_value": "'32fc93b4614dca88b59ab1ba0f73d7ccb75e17f3 main'"
       },
       {
         "name": "parents",
         "python_type": "tuple",
         "xsd_type": null,
         "is_object_property": true,
-        "sample_value": "(<git.Commit \"89d5163f9c536cbde14cfaa1ab2fbdc0705b7bad\">,)"
+        "sample_value": "(<git.Commit \"5c945dbfdf6f5e427c9ad2074fe119bfda730176\">,)"
       },
       {
         "name": "repo",
@@ -205,49 +205,49 @@
         "python_type": "int",
         "xsd_type": "http://www.w3.org/2001/XMLSchema#integer",
         "is_object_property": false,
-        "sample_value": "1308"
+        "sample_value": "1294"
       },
       {
         "name": "stats",
         "python_type": "Stats",
         "xsd_type": null,
         "is_object_property": true,
-        "sample_value": "<git.util.Stats object at 0x1035d3d30>"
+        "sample_value": "<git.util.Stats object at 0x101c45d80>"
       },
       {
         "name": "summary",
         "python_type": "str",
         "xsd_type": "http://www.w3.org/2001/XMLSchema#string",
         "is_object_property": false,
-        "sample_value": "'Add repolex:File class and fix git ontology with IndexObject'"
+        "sample_value": "'Add Elixir as 14th language: ast-x mappings + elixir.scm'"
       },
       {
         "name": "trailers",
         "python_type": "dict",
         "xsd_type": null,
         "is_object_property": true,
-        "sample_value": "{'Co-Authored-By': 'Claude <noreply@anthropic.com>'}"
+        "sample_value": "{}"
       },
       {
         "name": "trailers_dict",
         "python_type": "dict",
         "xsd_type": null,
         "is_object_property": true,
-        "sample_value": "{'Co-Authored-By': ['Claude <noreply@anthropic.com>']}"
+        "sample_value": "{}"
       },
       {
         "name": "trailers_list",
         "python_type": "list",
         "xsd_type": null,
         "is_object_property": true,
-        "sample_value": "[('Co-Authored-By', 'Claude <noreply@anthropic.com>')]"
+        "sample_value": "[]"
       },
       {
         "name": "tree",
         "python_type": "Tree",
         "xsd_type": null,
         "is_object_property": true,
-        "sample_value": "<git.Tree \"4630ab48b59b56cfccc2499d61031526ec3797c6\">"
+        "sample_value": "<git.Tree \"9005dfbc83c082bc6e847aaaabe4f98574c9e817\">"
       },
       {
         "name": "type",
@@ -312,7 +312,7 @@
         "python_type": "bytes",
         "xsd_type": "http://www.w3.org/2001/XMLSchema#hexBinary",
         "is_object_property": false,
-        "sample_value": "b'F0\\xabH\\xb5\\x9bV\\xcf\\xcc\\xc2I\\x9da\\x03\\x15&\\xec7\\x97\\xc6'"
+        "sample_value": "b'\\x90\\x05\\xdf\\xbc\\x83\\xc0\\x82\\xbcn\\x84z\\xaa\\xab\\xe4\\xf9\\x85t\\xc9\\xe8\\x17'"
       },
       {
         "name": "blob_id",
@@ -326,14 +326,14 @@
         "python_type": "list",
         "xsd_type": null,
         "is_object_property": true,
-        "sample_value": "[<git.Blob \"7d37cdd3535590b11115b753e83fcafefea79014\">, <git.Blob \"b9580841f0665544019417f2beac1791b"
+        "sample_value": "[<git.Blob \"91a5b8e58d40c6bf8bf5ae50569c252f974380a4\">, <git.Blob \"b9580841f0665544019417f2beac1791b"
       },
       {
         "name": "cache",
         "python_type": "TreeModifier",
         "xsd_type": null,
         "is_object_property": true,
-        "sample_value": "<git.objects.tree.TreeModifier object at 0x103a860e0>"
+        "sample_value": "<git.objects.tree.TreeModifier object at 0x101c46200>"
       },
       {
         "name": "commit_id",
@@ -347,14 +347,14 @@
         "python_type": "OStream",
         "xsd_type": null,
         "is_object_property": true,
-        "sample_value": "(b'F0\\xabH\\xb5\\x9bV\\xcf\\xcc\\xc2I\\x9da\\x03\\x15&\\xec7\\x97\\xc6', b'tree', 462, <git.cmd.Git.CatFileCont"
+        "sample_value": "(b'\\x90\\x05\\xdf\\xbc\\x83\\xc0\\x82\\xbcn\\x84z\\xaa\\xab\\xe4\\xf9\\x85t\\xc9\\xe8\\x17', b'tree', 496, <git.cmd."
       },
       {
         "name": "hexsha",
         "python_type": "str",
         "xsd_type": "http://www.w3.org/2001/XMLSchema#string",
         "is_object_property": false,
-        "sample_value": "'4630ab48b59b56cfccc2499d61031526ec3797c6'"
+        "sample_value": "'9005dfbc83c082bc6e847aaaabe4f98574c9e817'"
       },
       {
         "name": "mode",
@@ -389,7 +389,7 @@
         "python_type": "int",
         "xsd_type": "http://www.w3.org/2001/XMLSchema#integer",
         "is_object_property": false,
-        "sample_value": "462"
+        "sample_value": "496"
       },
       {
         "name": "symlink_id",
@@ -410,7 +410,7 @@
         "python_type": "list",
         "xsd_type": null,
         "is_object_property": true,
-        "sample_value": "[<git.Tree \"dd6fe91f3f10b34d985b81f369474f7867ae7f92\">, <git.Tree \"d647b32c0f1ec69ed2351db831e5a7ea6"
+        "sample_value": "[<git.Tree \"170a77e9838a6766de879248a9ac03f1fdc8630a\">, <git.Tree \"8cebd5a2228281a6e6f98fce0444dc4e8"
       },
       {
         "name": "type",
@@ -461,14 +461,14 @@
         "python_type": "bytes",
         "xsd_type": "http://www.w3.org/2001/XMLSchema#hexBinary",
         "is_object_property": false,
-        "sample_value": "b'}7\\xcd\\xd3SU\\x90\\xb1\\x11\\x15\\xb7S\\xe8?\\xca\\xfe\\xfe\\xa7\\x90\\x14'"
+        "sample_value": "b'\\x91\\xa5\\xb8\\xe5\\x8d@\\xc6\\xbf\\x8b\\xf5\\xaePV\\x9c%/\\x97C\\x80\\xa4'"
       },
       {
         "name": "data_stream",
         "python_type": "OStream",
         "xsd_type": null,
         "is_object_property": true,
-        "sample_value": "(b'}7\\xcd\\xd3SU\\x90\\xb1\\x11\\x15\\xb7S\\xe8?\\xca\\xfe\\xfe\\xa7\\x90\\x14', b'blob', 6148, <git.cmd.Git.CatF"
+        "sample_value": "(b'\\x91\\xa5\\xb8\\xe5\\x8d@\\xc6\\xbf\\x8b\\xf5\\xaePV\\x9c%/\\x97C\\x80\\xa4', b'blob', 6148, <git.cmd.Git.CatF"
       },
       {
         "name": "executable_mode",
@@ -489,7 +489,7 @@
         "python_type": "str",
         "xsd_type": "http://www.w3.org/2001/XMLSchema#string",
         "is_object_property": false,
-        "sample_value": "'7d37cdd3535590b11115b753e83fcafefea79014'"
+        "sample_value": "'91a5b8e58d40c6bf8bf5ae50569c252f974380a4'"
       },
       {
         "name": "link_mode",
@@ -561,7 +561,7 @@
         "python_type": "Commit",
         "xsd_type": null,
         "is_object_property": true,
-        "sample_value": "<git.Commit \"86c85bee114a7ce475862fe22f55ce8cf6d4a41d\">"
+        "sample_value": "<git.Commit \"32fc93b4614dca88b59ab1ba0f73d7ccb75e17f3\">"
       },
       {
         "name": "is_detached",
@@ -582,7 +582,7 @@
         "python_type": "Commit",
         "xsd_type": null,
         "is_object_property": true,
-        "sample_value": "<git.Commit \"86c85bee114a7ce475862fe22f55ce8cf6d4a41d\">"
+        "sample_value": "<git.Commit \"32fc93b4614dca88b59ab1ba0f73d7ccb75e17f3\">"
       },
       {
         "name": "path",
@@ -775,14 +775,14 @@
         "python_type": "IndexFile",
         "xsd_type": null,
         "is_object_property": true,
-        "sample_value": "<git.index.base.IndexFile object at 0x108dacd60>"
+        "sample_value": "<git.index.base.IndexFile object at 0x106f68d60>"
       },
       {
         "name": "odb",
         "python_type": "GitCmdObjectDB",
         "xsd_type": null,
         "is_object_property": true,
-        "sample_value": "<git.db.GitCmdObjectDB object at 0x103a0af90>"
+        "sample_value": "<git.db.GitCmdObjectDB object at 0x101bcef90>"
       },
       {
         "name": "re_author_committer_start",
@@ -873,7 +873,7 @@
         "python_type": "list",
         "xsd_type": null,
         "is_object_property": true,
-        "sample_value": "[]"
+        "sample_value": "['docs/2026_03_30_LEX_LAB_ONTOLOGY_STANDARDS_SURVEY.md']"
       },
       {
         "name": "working_dir",

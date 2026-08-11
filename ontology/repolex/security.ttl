@@ -1,0 +1,113 @@
+@prefix security: <https://repolex.ai/ontology/repolex/security/> .
+@prefix ast:      <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix owl:      <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
+
+# =============================================================================
+# SECURITY ONTOLOGY
+# =============================================================================
+# Security analysis layer for repolex. Operates on the same blobs as ast-x and
+# lsp-x but answers a different question: what is the code HIDING?
+#
+# Three orthogonal lenses on the same blob:
+#   ast: / ast-x:  — what the code IS (structure)
+#   lsp-x:         — what the code MEANS (semantics)
+#   security:      — what the code HIDES (threats)
+#
+# Current scope: unicode steganography detection (invisible characters,
+# variation selectors, bidi overrides, homoglyphs). Extensible to other
+# security analysis passes.
+#
+# Authors: TR1P.L3X (ontology), SpaceG.O.A.T. (scanner), 4RX (architecture)
+# Date: 2026-04-04
+# =============================================================================
+
+<https://repolex.ai/ontology/repolex/security> a owl:Ontology ;
+    rdfs:label "Security Ontology" ;
+    rdfs:comment "Security analysis layer for repolex. Detects hidden content in source files — unicode steganography, invisible characters, homoglyphs, and other threats invisible to forge UIs but present in raw bytes." ;
+    owl:versionInfo "1.0" .
+
+
+# =============================================================================
+# CLASSES
+# =============================================================================
+
+security:UnicodeAnomaly a owl:Class ;
+    rdfs:label "Unicode Anomaly" ;
+    rdfs:comment "A detected instance of suspicious unicode usage in a source file. Includes invisible characters, variation selectors, bidi overrides, tag characters, private use area, and homoglyphs. Each anomaly is a specific finding at a specific location." .
+
+
+# =============================================================================
+# BLOB-LEVEL PROPERTIES (summary on the file node)
+# =============================================================================
+
+security:hasUnicodeAnomaly a owl:DatatypeProperty ;
+    rdfs:label "has unicode anomaly" ;
+    rdfs:comment "Boolean flag indicating this blob contains one or more unicode anomalies. Use for fast filtering — query individual security:unicodeAnomaly links for details." ;
+    rdfs:domain ast:Node ;
+    rdfs:range xsd:boolean .
+
+security:maxSeverityTier a owl:DatatypeProperty ;
+    rdfs:label "max severity tier" ;
+    rdfs:comment "Highest (most severe) tier among all findings in this blob. Tier 1 = high confidence (definite concern), Tier 2 = medium (context-dependent), Tier 3 = low (flag for awareness)." ;
+    rdfs:domain ast:Node ;
+    rdfs:range xsd:integer .
+
+security:totalFindings a owl:DatatypeProperty ;
+    rdfs:label "total findings" ;
+    rdfs:comment "Count of individual unicode anomaly findings in this blob." ;
+    rdfs:domain ast:Node ;
+    rdfs:range xsd:nonNegativeInteger .
+
+
+# =============================================================================
+# BLOB-TO-FINDING LINK
+# =============================================================================
+
+security:unicodeAnomaly a owl:ObjectProperty ;
+    rdfs:label "unicode anomaly" ;
+    rdfs:comment "Links a blob node to an individual UnicodeAnomaly finding. One blob may have multiple findings." ;
+    rdfs:domain ast:Node ;
+    rdfs:range security:UnicodeAnomaly .
+
+
+# =============================================================================
+# FINDING-LEVEL PROPERTIES (on each UnicodeAnomaly instance)
+# =============================================================================
+
+security:anomalyType a owl:DatatypeProperty ;
+    rdfs:label "anomaly type" ;
+    rdfs:comment "Classification of the anomaly. Values include: 'variation-selector', 'bidi-override', 'zero-width', 'tag-character', 'private-use-area', 'hangul-filler', 'invisible-operator', 'homoglyph', 'confusable-whitespace', 'fullwidth-form', 'soft-hyphen'." ;
+    rdfs:domain security:UnicodeAnomaly ;
+    rdfs:range xsd:string .
+
+security:tier a owl:DatatypeProperty ;
+    rdfs:label "tier" ;
+    rdfs:comment "Severity tier of this finding. 1 = high confidence (variation selectors in non-emoji, bidi overrides, tag chars, PUA). 2 = medium (zero-width, hangul fillers, FEFF non-BOM, invisible operators). 3 = low (homoglyphs, fullwidth, confusable whitespace, soft hyphen)." ;
+    rdfs:domain security:UnicodeAnomaly ;
+    rdfs:range xsd:integer .
+
+security:charCount a owl:DatatypeProperty ;
+    rdfs:label "character count" ;
+    rdfs:comment "Number of anomalous characters detected in this finding." ;
+    rdfs:domain security:UnicodeAnomaly ;
+    rdfs:range xsd:nonNegativeInteger .
+
+security:codepoints a owl:DatatypeProperty ;
+    rdfs:label "codepoints" ;
+    rdfs:comment "Unicode codepoint range or list for this finding. Format: 'U+XXXX' for single, 'U+XXXX-U+XXXX' for range. Example: 'U+FE00-U+FE0F'." ;
+    rdfs:domain security:UnicodeAnomaly ;
+    rdfs:range xsd:string .
+
+security:location a owl:DatatypeProperty ;
+    rdfs:label "location" ;
+    rdfs:comment "Source location of the finding within the file. Format: 'L{line}:C{col}-L{line}:C{col}'. Example: 'L42:C8-L42:C847'. Optional — omitted for file-level detections without line granularity." ;
+    rdfs:domain security:UnicodeAnomaly ;
+    rdfs:range xsd:string .
+
+security:detectedBy a owl:DatatypeProperty ;
+    rdfs:label "detected by" ;
+    rdfs:comment "The scanner that produced this finding. Values: 'repolex-scanner' (built-in fast scanner), 'stegg-allsight' (ST3GG/ALLSIGHT deep scan). Both may appear on the same finding if independently detected." ;
+    rdfs:domain security:UnicodeAnomaly ;
+    rdfs:range xsd:string .

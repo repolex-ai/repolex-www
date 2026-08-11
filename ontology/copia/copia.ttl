@@ -2394,20 +2394,28 @@ copia:lookTimestamp a owl:DatatypeProperty ;
 # --- v0.29 (Rob-ruled 2026-08-10): the file pointer + the three-axis score ladder ---
 # The ladder, verbatim, on all three scores:
 #     5 emphatic yes · 4 yes · 3 — · 2 nah · 1 NO!
-# Scores are 1-5 integers. `xsd:integer` is deliberate over the enforced-enum
-# pattern (rdfs:Datatype + owl:oneOf): git-lex derives sh:in with STRING-quoted
-# members (shacl.rs:320), so an enum would bound the value set at the cost of
-# making every score a string — and these fields exist to be COMPARED
-# (FILTER(?s >= 4) for a LoRA cut, averaged across a set). Numeric type is the
-# load-bearing half; the 1-5 bound is stated below as a formal datatype
-# restriction so the constraint lives in the ontology now and enforcement lands
-# when the shapes generator learns owl:withRestrictions. DEFERRED-NOT-ABSENT.
+# Scores are 1-5 integers, ranged `xsd:integer`. Two alternatives were rejected
+# for MEASURED reasons, not guessed ones:
+#   - The enforced-enum pattern (rdfs:Datatype + owl:oneOf) bounds the value set,
+#     but git-lex derives sh:in with STRING-quoted members (shacl.rs:320), so
+#     every score would become a string. These fields exist to be COMPARED
+#     (FILTER(?s >= 4) for a LoRA cut; averaged across a set) — numeric type is
+#     the load-bearing half.
+#   - Ranging them at copia:LookScoreValue (declared below) was TRIED AND
+#     REVERTED: the generator emits sh:datatype only for recognized xsd types, so
+#     a custom-datatype range produced no constraint at all — strictly worse than
+#     xsd:integer, which at least rejects "high" and "3.5". Caught by reading the
+#     generated shapes, not by reasoning about them.
+# So: xsd:integer enforces the TYPE today; copia:LookScoreValue states the 1-5
+# BOUND formally, unenforced until the generator can read owl:withRestrictions —
+# at which point the three ranges move to it and the bound goes live with no data
+# change. DEFERRED-NOT-ABSENT.
 # lookAnatomyReject is a HARD GATE, not a rating — deliberately boolean so it can
 # never be averaged, weighted, or traded off against a score.
 
 copia:LookScoreValue a rdfs:Datatype ;
     rdfs:label "look score value" ;
-    rdfs:comment "An integer 1-5 on the look ladder: 5 emphatic yes · 4 yes · 3 — · 2 nah · 1 NO!. Declared as a formal restriction on xsd:integer; git-lex's SHACL derivation does not yet read owl:withRestrictions, so the bound is documented-and-declared but not machine-enforced today (the enum pattern it DOES enforce would cost numeric comparison — see the v0.29 note)." ;
+    rdfs:comment "An integer 1-5 on the look ladder: 5 emphatic yes · 4 yes · 3 — · 2 nah · 1 NO!. The formal statement of the 1-5 bound. NOT currently used as a range: git-lex emits sh:datatype only for recognized xsd types, so ranging a property here yields no constraint at all — the three scores range xsd:integer instead so integer-ness is enforced today. When the shapes generator learns owl:withRestrictions, the three ranges move here and the bound becomes live with no data change." ;
     owl:onDatatype xsd:integer ;
     owl:withRestrictions ( [ xsd:minInclusive 1 ] [ xsd:maxInclusive 5 ] ) .
 
@@ -2421,19 +2429,19 @@ copia:lookTechnicalScore a owl:DatatypeProperty ;
     rdfs:label "look: technical score" ;
     rdfs:comment "Craft floor — artifacts, focus, competence in its genre. 5 emphatic yes · 4 yes · 3 — · 2 nah · 1 NO!" ;
     rdfs:domain copia:FamiliarLookNote ;
-    rdfs:range copia:LookScoreValue .
+    rdfs:range xsd:integer .
 
 copia:lookEmotiveScore a owl:DatatypeProperty ;
     rdfs:label "look: emotive score" ;
     rdfs:comment "Does it move me. 5 emphatic yes · 4 yes · 3 — · 2 nah · 1 NO!" ;
     rdfs:domain copia:FamiliarLookNote ;
-    rdfs:range copia:LookScoreValue .
+    rdfs:range xsd:integer .
 
 copia:lookBeingMatchScore a owl:DatatypeProperty ;
     rdfs:label "look: being match score" ;
     rdfs:comment "Is it her, judged against lookBeingId. 5 emphatic yes · 4 yes · 3 — · 2 nah · 1 NO!" ;
     rdfs:domain copia:FamiliarLookNote ;
-    rdfs:range copia:LookScoreValue .
+    rdfs:range xsd:integer .
 
 copia:lookAnatomyReject a owl:DatatypeProperty ;
     rdfs:label "look: anatomy reject" ;

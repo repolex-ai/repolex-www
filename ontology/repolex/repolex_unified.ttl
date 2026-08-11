@@ -34204,7 +34204,8 @@ elixir:access_call a owl:Class ;
 elixir:after_block a owl:Class ;
     rdfs:label "after_block" ;
     rdfs:isDefinedBy elixir: ;
-    rdfs:subClassOf ast:Node ;
+    rdfs:subClassOf ast:Node,
+        ast-x:CatchClause ;
     elixir:isSupertype true ;
     elixir:nodeTypeId 191 .
 
@@ -34218,7 +34219,8 @@ elixir:alias a owl:Class ;
 elixir:anonymous_function a owl:Class ;
     rdfs:label "anonymous_function" ;
     rdfs:isDefinedBy elixir: ;
-    rdfs:subClassOf ast:Node ;
+    rdfs:subClassOf ast:Node,
+        ast-x:FunctionDefinition ;
     elixir:isSupertype true ;
     elixir:nodeTypeId 203 .
 
@@ -34243,7 +34245,8 @@ elixir:atom a owl:Class ;
 elixir:binary_operator a owl:Class ;
     rdfs:label "binary_operator" ;
     rdfs:isDefinedBy elixir: ;
-    rdfs:subClassOf ast:Node ;
+    rdfs:subClassOf ast:Node,
+        ast-x:Assignment ;
     elixir:isSupertype true ;
     elixir:nodeTypeId 171,
         200,
@@ -34280,14 +34283,16 @@ elixir:boolean a owl:Class ;
 elixir:call a owl:Class ;
     rdfs:label "call" ;
     rdfs:isDefinedBy elixir: ;
-    rdfs:subClassOf ast:Node ;
+    rdfs:subClassOf ast:Node,
+        ast-x:CallSite ;
     elixir:isSupertype true ;
     elixir:nodeTypeId 174 .
 
 elixir:catch_block a owl:Class ;
     rdfs:label "catch_block" ;
     rdfs:isDefinedBy elixir: ;
-    rdfs:subClassOf ast:Node ;
+    rdfs:subClassOf ast:Node,
+        ast-x:CatchClause ;
     elixir:isSupertype true ;
     elixir:nodeTypeId 193 .
 
@@ -34308,7 +34313,8 @@ elixir:charlist a owl:Class ;
 elixir:comment a owl:Class ;
     rdfs:label "comment" ;
     rdfs:isDefinedBy elixir: ;
-    rdfs:subClassOf ast:Node ;
+    rdfs:subClassOf ast:Node,
+        ast-x:Comment ;
     elixir:isSupertype true ;
     elixir:nodeTypeId 97 .
 
@@ -34322,7 +34328,8 @@ elixir:do_block a owl:Class ;
 elixir:dot a owl:Class ;
     rdfs:label "dot" ;
     rdfs:isDefinedBy elixir: ;
-    rdfs:subClassOf ast:Node ;
+    rdfs:subClassOf ast:Node,
+        ast-x:CallSite ;
     elixir:isSupertype true ;
     elixir:nodeTypeId 173,
         182,
@@ -34407,7 +34414,8 @@ elixir:float a owl:Class ;
 elixir:identifier a owl:Class ;
     rdfs:label "identifier" ;
     rdfs:isDefinedBy elixir: ;
-    rdfs:subClassOf ast:Node ;
+    rdfs:subClassOf ast:Node,
+        ast-x:VariableDeclaration ;
     elixir:isSupertype true ;
     elixir:nodeTypeId 128 .
 
@@ -34569,7 +34577,8 @@ elixir:quoted_keyword a owl:Class ;
 elixir:rescue_block a owl:Class ;
     rdfs:label "rescue_block" ;
     rdfs:isDefinedBy elixir: ;
-    rdfs:subClassOf ast:Node ;
+    rdfs:subClassOf ast:Node,
+        ast-x:CatchClause ;
     elixir:isSupertype true ;
     elixir:nodeTypeId 192 .
 
@@ -34611,7 +34620,8 @@ elixir:source a owl:Class ;
 elixir:stab_clause a owl:Class ;
     rdfs:label "stab_clause" ;
     rdfs:isDefinedBy elixir: ;
-    rdfs:subClassOf ast:Node ;
+    rdfs:subClassOf ast:Node,
+        ast-x:ElseClause ;
     elixir:isSupertype true ;
     elixir:nodeTypeId 196 .
 
@@ -114429,7 +114439,8 @@ swift:as_operator a owl:Class ;
 swift:assignment a owl:Class ;
     rdfs:label "assignment" ;
     rdfs:isDefinedBy swift: ;
-    rdfs:subClassOf ast:Node ;
+    rdfs:subClassOf ast:Node,
+        ast-x:Assignment ;
     swift:isSupertype true ;
     swift:nodeTypeId 362 .
 
@@ -114505,7 +114516,8 @@ swift:bound_identifier a owl:DatatypeProperty ;
 swift:call_expression a owl:Class ;
     rdfs:label "call_expression" ;
     rdfs:isDefinedBy swift: ;
-    rdfs:subClassOf ast:Node ;
+    rdfs:subClassOf ast:Node,
+        ast-x:CallSite ;
     swift:isSupertype true ;
     swift:nodeTypeId 299,
         301 .
@@ -114535,7 +114547,8 @@ swift:capture_list_item a owl:Class ;
 swift:catch_block a owl:Class ;
     rdfs:label "catch_block" ;
     rdfs:isDefinedBy swift: ;
-    rdfs:subClassOf ast:Node ;
+    rdfs:subClassOf ast:Node,
+        ast-x:CatchClause ;
     swift:isSupertype true ;
     swift:nodeTypeId 328 .
 
@@ -114563,7 +114576,8 @@ swift:class_body a owl:Class ;
 swift:class_declaration a owl:Class ;
     rdfs:label "class_declaration" ;
     rdfs:isDefinedBy swift: ;
-    rdfs:subClassOf ast:Node ;
+    rdfs:subClassOf ast:Node,
+        ast-x:ClassDefinition ;
     swift:isSupertype true ;
     swift:nodeTypeId 373,
         398 .
@@ -114577,7 +114591,8 @@ swift:collection a owl:DatatypeProperty ;
 swift:comment a owl:Class ;
     rdfs:label "comment" ;
     rdfs:isDefinedBy swift: ;
-    rdfs:subClassOf ast:Node ;
+    rdfs:subClassOf ast:Node,
+        ast-x:Comment ;
     swift:isSupertype true ;
     swift:nodeTypeId 3 .
 
@@ -114638,7 +114653,8 @@ swift:constrained_type a owl:DatatypeProperty ;
 swift:constructor_expression a owl:Class ;
     rdfs:label "constructor_expression" ;
     rdfs:isDefinedBy swift: ;
-    rdfs:subClassOf ast:Node ;
+    rdfs:subClassOf ast:Node,
+        ast-x:CallSite ;
     swift:isSupertype true ;
     swift:nodeTypeId 262 .
 
@@ -114652,7 +114668,8 @@ swift:constructor_suffix a owl:Class ;
 swift:control_transfer_statement a owl:Class ;
     rdfs:label "control_transfer_statement" ;
     rdfs:isDefinedBy swift: ;
-    rdfs:subClassOf ast:Node ;
+    rdfs:subClassOf ast:Node,
+        ast-x:BreakStatement ;
     swift:isSupertype true ;
     swift:nodeTypeId 359 .
 
@@ -114679,7 +114696,8 @@ swift:default_value a owl:DatatypeProperty ;
 swift:deinit_declaration a owl:Class ;
     rdfs:label "deinit_declaration" ;
     rdfs:isDefinedBy swift: ;
-    rdfs:subClassOf ast:Node ;
+    rdfs:subClassOf ast:Node,
+        ast-x:FunctionDefinition ;
     swift:isSupertype true ;
     swift:nodeTypeId 443 .
 
@@ -114742,7 +114760,8 @@ swift:disjunction_expression a owl:Class ;
 swift:do_statement a owl:Class ;
     rdfs:label "do_statement" ;
     rdfs:isDefinedBy swift: ;
-    rdfs:subClassOf ast:Node ;
+    rdfs:subClassOf ast:Node,
+        ast-x:TryStatement ;
     swift:isSupertype true ;
     swift:nodeTypeId 327 .
 
@@ -114755,7 +114774,8 @@ swift:element a owl:DatatypeProperty ;
 swift:else a owl:Class ;
     rdfs:label "else" ;
     rdfs:isDefinedBy swift: ;
-    rdfs:subClassOf ast:Node ;
+    rdfs:subClassOf ast:Node,
+        ast-x:ElseClause ;
     swift:isSupertype true ;
     swift:nodeTypeId 200 .
 
@@ -114775,7 +114795,8 @@ swift:enum_class_body a owl:Class ;
 swift:enum_entry a owl:Class ;
     rdfs:label "enum_entry" ;
     rdfs:isDefinedBy swift: ;
-    rdfs:subClassOf ast:Node ;
+    rdfs:subClassOf ast:Node,
+        ast-x:ClassDefinition ;
     swift:isSupertype true ;
     swift:nodeTypeId 435 .
 
@@ -115054,7 +115075,8 @@ swift:field_wrapped a owl:ObjectProperty ;
 swift:for_statement a owl:Class ;
     rdfs:label "for_statement" ;
     rdfs:isDefinedBy swift: ;
-    rdfs:subClassOf ast:Node ;
+    rdfs:subClassOf ast:Node,
+        ast-x:ForStatement ;
     swift:isSupertype true ;
     swift:nodeTypeId 354 .
 
@@ -115075,7 +115097,8 @@ swift:function_body a owl:Class ;
 swift:function_declaration a owl:Class ;
     rdfs:label "function_declaration" ;
     rdfs:isDefinedBy swift: ;
-    rdfs:subClassOf ast:Node ;
+    rdfs:subClassOf ast:Node,
+        ast-x:FunctionDefinition ;
     swift:isSupertype true ;
     swift:nodeTypeId 372,
         388 .
@@ -115104,7 +115127,8 @@ swift:getter_specifier a owl:Class ;
 swift:guard_statement a owl:Class ;
     rdfs:label "guard_statement" ;
     rdfs:isDefinedBy swift: ;
-    rdfs:subClassOf ast:Node ;
+    rdfs:subClassOf ast:Node,
+        ast-x:IfStatement ;
     swift:isSupertype true ;
     swift:nodeTypeId 323 .
 
@@ -115137,7 +115161,8 @@ swift:if_nil a owl:DatatypeProperty ;
 swift:if_statement a owl:Class ;
     rdfs:label "if_statement" ;
     rdfs:isDefinedBy swift: ;
-    rdfs:subClassOf ast:Node ;
+    rdfs:subClassOf ast:Node,
+        ast-x:IfStatement ;
     swift:isSupertype true ;
     swift:nodeTypeId 320 .
 
@@ -115150,7 +115175,8 @@ swift:if_true a owl:DatatypeProperty ;
 swift:import_declaration a owl:Class ;
     rdfs:label "import_declaration" ;
     rdfs:isDefinedBy swift: ;
-    rdfs:subClassOf ast:Node ;
+    rdfs:subClassOf ast:Node,
+        ast-x:ImportStatement ;
     swift:isSupertype true ;
     swift:nodeTypeId 374 .
 
@@ -115178,14 +115204,16 @@ swift:inheritance_modifier a owl:Class ;
 swift:inheritance_specifier a owl:Class ;
     rdfs:label "inheritance_specifier" ;
     rdfs:isDefinedBy swift: ;
-    rdfs:subClassOf ast:Node ;
+    rdfs:subClassOf ast:Node,
+        ast-x:ExtendsClause ;
     swift:isSupertype true ;
     swift:nodeTypeId 402 .
 
 swift:init_declaration a owl:Class ;
     rdfs:label "init_declaration" ;
     rdfs:isDefinedBy swift: ;
-    rdfs:subClassOf ast:Node ;
+    rdfs:subClassOf ast:Node,
+        ast-x:FunctionDefinition ;
     swift:isSupertype true ;
     swift:nodeTypeId 442 .
 
@@ -115252,14 +115280,16 @@ swift:lambda_function_type_parameters a owl:Class ;
 swift:lambda_literal a owl:Class ;
     rdfs:label "lambda_literal" ;
     rdfs:isDefinedBy swift: ;
-    rdfs:subClassOf ast:Node ;
+    rdfs:subClassOf ast:Node,
+        ast-x:FunctionDefinition ;
     swift:isSupertype true ;
     swift:nodeTypeId 310 .
 
 swift:lambda_parameter a owl:Class ;
     rdfs:label "lambda_parameter" ;
     rdfs:isDefinedBy swift: ;
-    rdfs:subClassOf ast:Node ;
+    rdfs:subClassOf ast:Node,
+        ast-x:Parameter ;
     swift:isSupertype true ;
     swift:nodeTypeId 316 .
 
@@ -115353,7 +115383,8 @@ swift:multi_line_string_literal a owl:Class ;
 swift:multiline_comment a owl:Class ;
     rdfs:label "multiline_comment" ;
     rdfs:isDefinedBy swift: ;
-    rdfs:subClassOf ast:Node ;
+    rdfs:subClassOf ast:Node,
+        ast-x:Comment ;
     swift:isSupertype true ;
     swift:nodeTypeId 180 .
 
@@ -115472,7 +115503,8 @@ swift:ownership_modifier a owl:Class ;
 swift:parameter a owl:Class ;
     rdfs:label "parameter" ;
     rdfs:isDefinedBy swift: ;
-    rdfs:subClassOf ast:Node ;
+    rdfs:subClassOf ast:Node,
+        ast-x:Parameter ;
     swift:isSupertype true ;
     swift:nodeTypeId 416 .
 
@@ -115549,7 +115581,8 @@ swift:property_behavior_modifier a owl:Class ;
 swift:property_declaration a owl:Class ;
     rdfs:label "property_declaration" ;
     rdfs:isDefinedBy swift: ;
-    rdfs:subClassOf ast:Node ;
+    rdfs:subClassOf ast:Node,
+        ast-x:VariableDeclaration ;
     swift:isSupertype true ;
     swift:nodeTypeId 370,
         378 .
@@ -115578,7 +115611,8 @@ swift:protocol_composition_type a owl:Class ;
 swift:protocol_declaration a owl:Class ;
     rdfs:label "protocol_declaration" ;
     rdfs:isDefinedBy swift: ;
-    rdfs:subClassOf ast:Node ;
+    rdfs:subClassOf ast:Node,
+        ast-x:ClassDefinition ;
     swift:isSupertype true ;
     swift:nodeTypeId 438 .
 
@@ -115675,7 +115709,8 @@ swift:regex_literal a owl:Class ;
 swift:repeat_while_statement a owl:Class ;
     rdfs:label "repeat_while_statement" ;
     rdfs:isDefinedBy swift: ;
-    rdfs:subClassOf ast:Node ;
+    rdfs:subClassOf ast:Node,
+        ast-x:WhileStatement ;
     swift:isSupertype true ;
     swift:nodeTypeId 358 .
 
@@ -115817,7 +115852,8 @@ swift:switch_pattern a owl:Class ;
 swift:switch_statement a owl:Class ;
     rdfs:label "switch_statement" ;
     rdfs:isDefinedBy swift: ;
-    rdfs:subClassOf ast:Node ;
+    rdfs:subClassOf ast:Node,
+        ast-x:SwitchStatement ;
     swift:isSupertype true ;
     swift:nodeTypeId 324 .
 
@@ -115843,7 +115879,8 @@ swift:text a owl:DatatypeProperty ;
 swift:throw_keyword a owl:Class ;
     rdfs:label "throw_keyword" ;
     rdfs:isDefinedBy swift: ;
-    rdfs:subClassOf ast:Node ;
+    rdfs:subClassOf ast:Node,
+        ast-x:ThrowStatement ;
     swift:isSupertype true ;
     swift:nodeTypeId 109 .
 
@@ -115969,7 +116006,8 @@ swift:type_parameters a owl:Class ;
 swift:typealias_declaration a owl:Class ;
     rdfs:label "typealias_declaration" ;
     rdfs:isDefinedBy swift: ;
-    rdfs:subClassOf ast:Node ;
+    rdfs:subClassOf ast:Node,
+        ast-x:ClassDefinition ;
     swift:isSupertype true ;
     swift:nodeTypeId 371,
         386 .
@@ -116012,7 +116050,8 @@ swift:value_arguments a owl:Class ;
 swift:value_binding_pattern a owl:Class ;
     rdfs:label "value_binding_pattern" ;
     rdfs:isDefinedBy swift: ;
-    rdfs:subClassOf ast:Node ;
+    rdfs:subClassOf ast:Node,
+        ast-x:VariableDeclaration ;
     swift:isSupertype true ;
     swift:nodeTypeId 467 .
 
@@ -116054,7 +116093,8 @@ swift:where_keyword a owl:Class ;
 swift:while_statement a owl:Class ;
     rdfs:label "while_statement" ;
     rdfs:isDefinedBy swift: ;
-    rdfs:subClassOf ast:Node ;
+    rdfs:subClassOf ast:Node,
+        ast-x:WhileStatement ;
     swift:isSupertype true ;
     swift:nodeTypeId 357 .
 
@@ -137321,6 +137361,71 @@ repolex:rxm a owl:Ontology ;
     rdfs:domain ast:Node ;
     rdfs:range xsd:boolean .
 
+repolex:security a owl:Ontology ;
+    rdfs:label "Security Ontology" ;
+    rdfs:comment "Security analysis layer for repolex. Detects hidden content in source files — unicode steganography, invisible characters, homoglyphs, and other threats invisible to forge UIs but present in raw bytes." ;
+    owl:versionInfo "1.0" .
+
+<https://repolex.ai/ontology/repolex/security/anomalyType> a owl:DatatypeProperty ;
+    rdfs:label "anomaly type" ;
+    rdfs:comment "Classification of the anomaly. Values include: 'variation-selector', 'bidi-override', 'zero-width', 'tag-character', 'private-use-area', 'hangul-filler', 'invisible-operator', 'homoglyph', 'confusable-whitespace', 'fullwidth-form', 'soft-hyphen'." ;
+    rdfs:domain <https://repolex.ai/ontology/repolex/security/UnicodeAnomaly> ;
+    rdfs:range xsd:string .
+
+<https://repolex.ai/ontology/repolex/security/charCount> a owl:DatatypeProperty ;
+    rdfs:label "character count" ;
+    rdfs:comment "Number of anomalous characters detected in this finding." ;
+    rdfs:domain <https://repolex.ai/ontology/repolex/security/UnicodeAnomaly> ;
+    rdfs:range xsd:nonNegativeInteger .
+
+<https://repolex.ai/ontology/repolex/security/codepoints> a owl:DatatypeProperty ;
+    rdfs:label "codepoints" ;
+    rdfs:comment "Unicode codepoint range or list for this finding. Format: 'U+XXXX' for single, 'U+XXXX-U+XXXX' for range. Example: 'U+FE00-U+FE0F'." ;
+    rdfs:domain <https://repolex.ai/ontology/repolex/security/UnicodeAnomaly> ;
+    rdfs:range xsd:string .
+
+<https://repolex.ai/ontology/repolex/security/detectedBy> a owl:DatatypeProperty ;
+    rdfs:label "detected by" ;
+    rdfs:comment "The scanner that produced this finding. Values: 'repolex-scanner' (built-in fast scanner), 'stegg-allsight' (ST3GG/ALLSIGHT deep scan). Both may appear on the same finding if independently detected." ;
+    rdfs:domain <https://repolex.ai/ontology/repolex/security/UnicodeAnomaly> ;
+    rdfs:range xsd:string .
+
+<https://repolex.ai/ontology/repolex/security/hasUnicodeAnomaly> a owl:DatatypeProperty ;
+    rdfs:label "has unicode anomaly" ;
+    rdfs:comment "Boolean flag indicating this blob contains one or more unicode anomalies. Use for fast filtering — query individual security:unicodeAnomaly links for details." ;
+    rdfs:domain ast:Node ;
+    rdfs:range xsd:boolean .
+
+<https://repolex.ai/ontology/repolex/security/location> a owl:DatatypeProperty ;
+    rdfs:label "location" ;
+    rdfs:comment "Source location of the finding within the file. Format: 'L{line}:C{col}-L{line}:C{col}'. Example: 'L42:C8-L42:C847'. Optional — omitted for file-level detections without line granularity." ;
+    rdfs:domain <https://repolex.ai/ontology/repolex/security/UnicodeAnomaly> ;
+    rdfs:range xsd:string .
+
+<https://repolex.ai/ontology/repolex/security/maxSeverityTier> a owl:DatatypeProperty ;
+    rdfs:label "max severity tier" ;
+    rdfs:comment "Highest (most severe) tier among all findings in this blob. Tier 1 = high confidence (definite concern), Tier 2 = medium (context-dependent), Tier 3 = low (flag for awareness)." ;
+    rdfs:domain ast:Node ;
+    rdfs:range xsd:integer .
+
+<https://repolex.ai/ontology/repolex/security/tier> a owl:DatatypeProperty ;
+    rdfs:label "tier" ;
+    rdfs:comment "Severity tier of this finding. 1 = high confidence (variation selectors in non-emoji, bidi overrides, tag chars, PUA). 2 = medium (zero-width, hangul fillers, FEFF non-BOM, invisible operators). 3 = low (homoglyphs, fullwidth, confusable whitespace, soft hyphen)." ;
+    rdfs:domain <https://repolex.ai/ontology/repolex/security/UnicodeAnomaly> ;
+    rdfs:range xsd:integer .
+
+<https://repolex.ai/ontology/repolex/security/totalFindings> a owl:DatatypeProperty ;
+    rdfs:label "total findings" ;
+    rdfs:comment "Count of individual unicode anomaly findings in this blob." ;
+    rdfs:domain ast:Node ;
+    rdfs:range xsd:nonNegativeInteger .
+
+<https://repolex.ai/ontology/repolex/security/unicodeAnomaly> a owl:ObjectProperty ;
+    rdfs:label "unicode anomaly" ;
+    rdfs:comment "Links a blob node to an individual UnicodeAnomaly finding. One blob may have multiple findings." ;
+    rdfs:domain ast:Node ;
+    rdfs:range <https://repolex.ai/ontology/repolex/security/UnicodeAnomaly> .
+
 repolex:semantic-categories a owl:Ontology ;
     rdfs:label "Semantic Categories Ontology" ;
     rdfs:comment "Top-level semantic categories for cross-language code analysis queries. Groups AST, LSP, and computed properties into intuitive query-time buckets." ;
@@ -137514,11 +137619,6 @@ ast-x:AugmentedAssignment a owl:Class ;
     rdfs:subClassOf sem:DataFlow,
         sem:Mutation .
 
-ast-x:ElseClause a owl:Class ;
-    rdfs:label "else clause" ;
-    rdfs:comment "Default branch when no condition matches. NOT a decision point - does not contribute to cyclomatic complexity. Separated from ast-x:IfStatement to avoid inflating complexity counts." ;
-    rdfs:subClassOf sem:ControlFlow .
-
 ns1:Label a owl:Class ;
     rdfs:label "Label" ;
     rdfs:comment "Color-coded labels help you categorize and filter your issues (just like labels in Gmail)." ;
@@ -137607,6 +137707,15 @@ repolex:File a owl:Class ;
     rdfs:label "File" ;
     rdfs:comment "A file in a repository" .
 
+ast-x:ElseClause a owl:Class ;
+    rdfs:label "else clause" ;
+    rdfs:comment "Default branch when no condition matches. NOT a decision point - does not contribute to cyclomatic complexity. Separated from ast-x:IfStatement to avoid inflating complexity counts." ;
+    rdfs:subClassOf sem:ControlFlow .
+
+<https://repolex.ai/ontology/repolex/security/UnicodeAnomaly> a owl:Class ;
+    rdfs:label "Unicode Anomaly" ;
+    rdfs:comment "A detected instance of suspicious unicode usage in a source file. Includes invisible characters, variation selectors, bidi overrides, tag characters, private use area, and homoglyphs. Each anomaly is a specific finding at a specific location." .
+
 ns1:AuthorAssociation a owl:Class ;
     rdfs:label "AuthorAssociation" ;
     rdfs:comment "How the author is associated with the repository." .
@@ -137655,16 +137764,6 @@ repolex:Dependency a owl:Class ;
     rdfs:label "Dependency" ;
     rdfs:comment "An external dependency resolved from a package registry (PyPI, NPM, etc.) to a specific GitHub repository and commit." .
 
-ast-x:ExtendsClause a owl:Class ;
-    rdfs:label "extends clause" ;
-    rdfs:comment "Superclass/parent class declaration. Single inheritance (Java, Ruby) or primary base class (C++, Python). Used to identify class hierarchies." ;
-    rdfs:subClassOf sem:Inheritance .
-
-ast-x:ThrowStatement a owl:Class ;
-    rdfs:label "throw statement" ;
-    rdfs:comment "Raise an exception: throw, raise." ;
-    rdfs:subClassOf sem:Exception .
-
 git:Reference a owl:Class ;
     rdfs:label "Reference" ;
     rdfs:comment "A git reference (ref). Includes branches, tags, HEAD, and remote-tracking branches. References are mutable pointers to commits." .
@@ -137681,6 +137780,16 @@ properties: a owl:Ontology ;
     properties:fieldCount 1 ;
     properties:languageName "None" ;
     properties:nodeKindCount 37 .
+
+ast-x:ExtendsClause a owl:Class ;
+    rdfs:label "extends clause" ;
+    rdfs:comment "Superclass/parent class declaration. Single inheritance (Java, Ruby) or primary base class (C++, Python). Used to identify class hierarchies." ;
+    rdfs:subClassOf sem:Inheritance .
+
+ast-x:ThrowStatement a owl:Class ;
+    rdfs:label "throw statement" ;
+    rdfs:comment "Raise an exception: throw, raise." ;
+    rdfs:subClassOf sem:Exception .
 
 sem:ControlFlow a owl:Class ;
     rdfs:label "Control Flow" ;
@@ -137727,11 +137836,6 @@ pymanifest: a owl:Ontology ;
     pymanifest:languageName "None" ;
     pymanifest:nodeKindCount 45 .
 
-ast-x:CatchClause a owl:Class ;
-    rdfs:label "catch clause" ;
-    rdfs:comment "Exception handler: catch, except, rescue." ;
-    rdfs:subClassOf sem:Exception .
-
 ast-x:ContinueStatement a owl:Class ;
     rdfs:label "continue statement" ;
     rdfs:comment "Skip to next iteration: continue, next (Ruby), redo (Ruby)." ;
@@ -137760,11 +137864,6 @@ xcompose: a owl:Ontology ;
     xcompose:languageName "xcompose" ;
     xcompose:nodeKindCount 31 .
 
-ast-x:BreakStatement a owl:Class ;
-    rdfs:label "break statement" ;
-    rdfs:comment "Early exit: break (exits loop or switch), fallthrough (Go)." ;
-    rdfs:subClassOf sem:ControlFlow .
-
 ast-x:ReturnStatement a owl:Class ;
     rdfs:label "return statement" ;
     rdfs:comment "Exit function with optional value: return, co_return (C++20)." ;
@@ -137788,22 +137887,15 @@ gstlaunch: a owl:Ontology ;
     gstlaunch:languageName "None" ;
     gstlaunch:nodeKindCount 32 .
 
+ast-x:BreakStatement a owl:Class ;
+    rdfs:label "break statement" ;
+    rdfs:comment "Early exit: break (exits loop or switch), fallthrough (Go)." ;
+    rdfs:subClassOf sem:ControlFlow .
+
 ast-x:TryStatement a owl:Class ;
     rdfs:label "try statement" ;
     rdfs:comment "Exception handling scope: try, try-with-resources (Java), begin (Ruby)." ;
     rdfs:subClassOf sem:Exception .
-
-ast-x:VariableDeclaration a owl:Class ;
-    rdfs:label "variable declaration" ;
-    rdfs:comment "Introduces a new variable binding: let, var, const, short_var_declaration (:= in Go)." ;
-    rdfs:subClassOf sem:DataFlow,
-        sem:Declaration .
-
-ast-x:Assignment a owl:Class ;
-    rdfs:label "assignment" ;
-    rdfs:comment "Direct value assignment: x = expr. Includes walrus operator := (Python), Go short_var_declaration." ;
-    rdfs:subClassOf sem:DataFlow,
-        sem:Mutation .
 
 sem:Declaration a owl:Class ;
     rdfs:label "Declaration" ;
@@ -137828,6 +137920,11 @@ ungrammar: a owl:Ontology ;
     ungrammar:languageName "None" ;
     ungrammar:nodeKindCount 28 .
 
+ast-x:CatchClause a owl:Class ;
+    rdfs:label "catch clause" ;
+    rdfs:comment "Exception handler: catch, except, rescue." ;
+    rdfs:subClassOf sem:Exception .
+
 jsdoc: a owl:Ontology ;
     rdfs:label "Jsdoc Grammar Ontology" ;
     rdfs:comment "Tree-sitter grammar ontology for jsdoc" ;
@@ -137837,15 +137934,22 @@ jsdoc: a owl:Ontology ;
     jsdoc:languageName "jsdoc" ;
     jsdoc:nodeKindCount 43 .
 
-ast-x:ImportStatement a owl:Class ;
-    rdfs:label "import statement" ;
-    rdfs:comment "Any import, use, require, or include directive. Used by multilspy to resolve module paths and cross-file symbol origins." ;
-    rdfs:subClassOf sem:Import .
+ast-x:Assignment a owl:Class ;
+    rdfs:label "assignment" ;
+    rdfs:comment "Direct value assignment: x = expr. Includes walrus operator := (Python), Go short_var_declaration." ;
+    rdfs:subClassOf sem:DataFlow,
+        sem:Mutation .
 
 ast-x:ParameterList a owl:Class ;
     rdfs:label "parameter list" ;
     rdfs:comment "Container node holding all parameters in a function/method signature. Use ast-x:parameterIndex on child ast-x:Parameter nodes to track position." ;
     owl:disjointWith ast-x:Parameter .
+
+ast-x:VariableDeclaration a owl:Class ;
+    rdfs:label "variable declaration" ;
+    rdfs:comment "Introduces a new variable binding: let, var, const, short_var_declaration (:= in Go)." ;
+    rdfs:subClassOf sem:DataFlow,
+        sem:Declaration .
 
 ns1:Discussion a owl:Class ;
     rdfs:label "Discussion" ;
@@ -137861,17 +137965,10 @@ gitignore: a owl:Ontology ;
     gitignore:languageName "None" ;
     gitignore:nodeKindCount 51 .
 
-ast-x:CallSite a owl:Class ;
-    rdfs:label "call site" ;
-    rdfs:comment "Any function call, method call, or constructor invocation. PRIMARY input for multilspy: each call_site is sent as a DefinitionRequest to resolve the target." .
-
-ast-x:IfStatement a owl:Class ;
-    rdfs:label "if statement" ;
-    rdfs:comment "Conditional branch: if, elif, unless, guard, if-modifier. Each represents a decision point for cyclomatic complexity." ;
-    rdfs:subClassOf sem:ControlFlow ;
-    owl:disjointWith ast-x:ForStatement,
-        ast-x:SwitchStatement,
-        ast-x:WhileStatement .
+ast-x:ImportStatement a owl:Class ;
+    rdfs:label "import statement" ;
+    rdfs:comment "Any import, use, require, or include directive. Used by multilspy to resolve module paths and cross-file symbol origins." ;
+    rdfs:subClassOf sem:Import .
 
 asm: a owl:Ontology ;
     rdfs:label "Asm Grammar Ontology" ;
@@ -137908,13 +138005,6 @@ query: a owl:Ontology ;
     query:fieldCount 5 ;
     query:languageName "query" ;
     query:nodeKindCount 50 .
-
-ast-x:ForStatement a owl:Class ;
-    rdfs:label "for statement" ;
-    rdfs:comment "For loop: for-in, for-each, enhanced-for, range-based for. Iterator-driven." ;
-    rdfs:subClassOf sem:ControlFlow ;
-    owl:disjointWith ast-x:SwitchStatement,
-        ast-x:WhileStatement .
 
 ns1:GlobalAdvisory a owl:Class ;
     rdfs:label "GlobalAdvisory" ;
@@ -137966,10 +138056,20 @@ uxntal: a owl:Ontology ;
     uxntal:languageName "None" ;
     uxntal:nodeKindCount 305 .
 
-ast-x:SwitchStatement a owl:Class ;
-    rdfs:label "switch statement" ;
-    rdfs:comment "Multi-way dispatch: switch, match, case, when." ;
-    rdfs:subClassOf sem:ControlFlow .
+ast-x:ForStatement a owl:Class ;
+    rdfs:label "for statement" ;
+    rdfs:comment "For loop: for-in, for-each, enhanced-for, range-based for. Iterator-driven." ;
+    rdfs:subClassOf sem:ControlFlow ;
+    owl:disjointWith ast-x:SwitchStatement,
+        ast-x:WhileStatement .
+
+ast-x:IfStatement a owl:Class ;
+    rdfs:label "if statement" ;
+    rdfs:comment "Conditional branch: if, elif, unless, guard, if-modifier. Each represents a decision point for cyclomatic complexity." ;
+    rdfs:subClassOf sem:ControlFlow ;
+    owl:disjointWith ast-x:ForStatement,
+        ast-x:SwitchStatement,
+        ast-x:WhileStatement .
 
 ns1:Release a owl:Class ;
     rdfs:label "Release" ;
@@ -138012,9 +138112,10 @@ groovy: a owl:Ontology ;
     groovy:languageName "None" ;
     groovy:nodeKindCount 61 .
 
-ast-x:Comment a owl:Class ;
-    rdfs:label "comment" ;
-    rdfs:comment "Any comment node in the AST: line comments, block comments, doc comments. Provides context for LLM analysis. Documentation content is available via LSP hover for doc comments." .
+ast-x:SwitchStatement a owl:Class ;
+    rdfs:label "switch statement" ;
+    rdfs:comment "Multi-way dispatch: switch, match, case, when." ;
+    rdfs:subClassOf sem:ControlFlow .
 
 requirements: a owl:Ontology ;
     rdfs:label "Requirements Grammar Ontology" ;
@@ -138033,6 +138134,10 @@ ron: a owl:Ontology ;
     ron:fieldCount 1 ;
     ron:languageName "None" ;
     ron:nodeKindCount 51 .
+
+ast-x:CallSite a owl:Class ;
+    rdfs:label "call site" ;
+    rdfs:comment "Any function call, method call, or constructor invocation. PRIMARY input for multilspy: each call_site is sent as a DefinitionRequest to resolve the target." .
 
 kdl: a owl:Ontology ;
     rdfs:label "Kdl Grammar Ontology" ;
@@ -138087,6 +138192,10 @@ udev: a owl:Ontology ;
     udev:languageName "udev" ;
     udev:nodeKindCount 115 .
 
+ast-x:Comment a owl:Class ;
+    rdfs:label "comment" ;
+    rdfs:comment "Any comment node in the AST: line comments, block comments, doc comments. Provides context for LLM analysis. Documentation content is available via LSP hover for doc comments." .
+
 ns1:PullRequestReviewComment a owl:Class ;
     rdfs:label "PullRequestReviewComment" ;
     rdfs:comment "Pull Request Review Comments are comments on a portion of the Pull Request's diff." ;
@@ -138128,12 +138237,6 @@ prisma: a owl:Ontology ;
     prisma:languageName "None" ;
     prisma:nodeKindCount 83 .
 
-ast-x:WhileStatement a owl:Class ;
-    rdfs:label "while statement" ;
-    rdfs:comment "Condition-driven loop: while, do-while, loop (Rust), until (Ruby)." ;
-    rdfs:subClassOf sem:ControlFlow ;
-    owl:disjointWith ast-x:SwitchStatement .
-
 ns1:Issue a owl:Class ;
     rdfs:label "Issue" ;
     rdfs:comment "Issues are a great way to keep track of tasks, enhancements, and bugs for your projects." ;
@@ -138173,6 +138276,12 @@ lsp:CompletionItemKind a owl:Class ;
     rdfs:label "CompletionItemKind" ;
     rdfs:comment "Enumeration of completion item kinds. Integer values 1-25. (LSP v3.17.0: CompletionItemKind)" .
 
+ast-x:WhileStatement a owl:Class ;
+    rdfs:label "while statement" ;
+    rdfs:comment "Condition-driven loop: while, do-while, loop (Rust), until (Ruby)." ;
+    rdfs:subClassOf sem:ControlFlow ;
+    owl:disjointWith ast-x:SwitchStatement .
+
 ns1:User a owl:Class ;
     rdfs:label "User" ;
     rdfs:comment "A GitHub user." ;
@@ -138209,13 +138318,6 @@ yuck: a owl:Ontology ;
     yuck:languageName "None" ;
     yuck:nodeKindCount 82 .
 
-ast-x:FunctionDefinition a owl:Class ;
-    rdfs:label "function definition" ;
-    rdfs:comment "Any function, method, constructor, lambda, or closure definition. Used by multilspy to find all references." ;
-    rdfs:subClassOf sem:Declaration ;
-    owl:disjointWith ast-x:ClassDefinition,
-        ast-x:ImportStatement .
-
 hyprlang: a owl:Ontology ;
     rdfs:label "Hyprlang Grammar Ontology" ;
     rdfs:comment "Tree-sitter grammar ontology for hyprlang" ;
@@ -138233,12 +138335,6 @@ linkerscript: a owl:Ontology ;
     linkerscript:fieldCount 16 ;
     linkerscript:languageName "None" ;
     linkerscript:nodeKindCount 112 .
-
-ast-x:ClassDefinition a owl:Class ;
-    rdfs:label "class definition" ;
-    rdfs:comment "Any class, interface, struct, enum, trait, or module definition. Includes impl blocks (Rust) and type declarations (Go)." ;
-    rdfs:subClassOf sem:Declaration ;
-    owl:disjointWith ast-x:ImportStatement .
 
 heex: a owl:Ontology ;
     rdfs:label "Heex Grammar Ontology" ;
@@ -138266,12 +138362,6 @@ readline: a owl:Ontology ;
     readline:fieldCount 0 ;
     readline:languageName "None" ;
     readline:nodeKindCount 146 .
-
-ast-x:Parameter a owl:Class ;
-    rdfs:label "parameter" ;
-    rdfs:comment "Individual parameter within a function/method signature. Covers required, optional, typed, default, variadic, and destructured parameters. Children of an ast-x:ParameterList." ;
-    rdfs:subClassOf sem:DataFlow ;
-    owl:disjointWith ast-x:Assignment .
 
 clojure: a owl:Ontology ;
     rdfs:label "Clojure Grammar Ontology" ;
@@ -138309,6 +138399,19 @@ tcl: a owl:Ontology ;
     tcl:languageName "tcl" ;
     tcl:nodeKindCount 120 .
 
+ast-x:ClassDefinition a owl:Class ;
+    rdfs:label "class definition" ;
+    rdfs:comment "Any class, interface, struct, enum, trait, or module definition. Includes impl blocks (Rust) and type declarations (Go)." ;
+    rdfs:subClassOf sem:Declaration ;
+    owl:disjointWith ast-x:ImportStatement .
+
+ast-x:FunctionDefinition a owl:Class ;
+    rdfs:label "function definition" ;
+    rdfs:comment "Any function, method, constructor, lambda, or closure definition. Used by multilspy to find all references." ;
+    rdfs:subClassOf sem:Declaration ;
+    owl:disjointWith ast-x:ClassDefinition,
+        ast-x:ImportStatement .
+
 pgn: a owl:Ontology ;
     rdfs:label "Pgn Grammar Ontology" ;
     rdfs:comment "Tree-sitter grammar ontology for pgn" ;
@@ -138317,6 +138420,12 @@ pgn: a owl:Ontology ;
     pgn:fieldCount 29 ;
     pgn:languageName "pgn" ;
     pgn:nodeKindCount 167 .
+
+ast-x:Parameter a owl:Class ;
+    rdfs:label "parameter" ;
+    rdfs:comment "Individual parameter within a function/method signature. Covers required, optional, typed, default, variadic, and destructured parameters. Children of an ast-x:ParameterList." ;
+    rdfs:subClassOf sem:DataFlow ;
+    owl:disjointWith ast-x:Assignment .
 
 ns1:PullRequest a owl:Class ;
     rdfs:label "PullRequest" ;

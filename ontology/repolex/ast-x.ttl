@@ -19,6 +19,7 @@
 @prefix scala:      <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/scala/> .
 @prefix swift:      <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/swift/> .
 @prefix typescript: <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/typescript/> .
+@prefix elixir:     <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/lang/elixir/> .
 
 # =============================================================================
 # AST EXTENSION ONTOLOGY
@@ -34,7 +35,7 @@
 #   3. Language-specific subclass mappings (by language)
 #
 # Languages covered (multilspy supported):
-#   C++, C#, Dart, Go, Java, JavaScript, Kotlin, Python, Ruby, Rust, TypeScript
+#   C++, C#, Dart, Elixir, Go, Java, JavaScript, Kotlin, Python, Ruby, Rust, TypeScript
 # =============================================================================
 
 <https://repolex.ai/ontology/repolex/ast-extension> a owl:Ontology ;
@@ -752,6 +753,47 @@ swift:inheritance_specifier  rdfs:subClassOf ast-x:ExtendsClause .
 ## Comments
 swift:comment                rdfs:subClassOf ast-x:Comment .
 swift:multiline_comment      rdfs:subClassOf ast-x:Comment .
+
+
+# =============================================================================
+# ELIXIR MAPPINGS
+# =============================================================================
+# Elixir is functional — no classes/inheritance in the traditional sense.
+# Modules (defmodule) → ClassDefinition, Functions (def/defp) → FunctionDefinition.
+# Protocols → ClassDefinition (interface-like), defimpl → ClassDefinition.
+# Macros (defmacro/defmacrop) → FunctionDefinition (they generate functions).
+# Anonymous functions (fn -> end) → FunctionDefinition.
+#
+# Elixir's tree-sitter grammar represents def/defmodule/import etc. as `call`
+# nodes with specific target identifiers — the rdfs:subClassOf chain maps the
+# generic `call` node to ast-x: types via SCM pattern matching at parse time.
+# =============================================================================
+
+## Control Flow
+# Elixir uses case/cond/with for branching, not if/else_if chains.
+# `case` and `cond` are `call` nodes in the grammar but semantically
+# they are switch-like. `if` is a macro that becomes a `call` node too.
+# These mappings go through the generic call → specific match in the SCM.
+elixir:stab_clause           rdfs:subClassOf ast-x:ElseClause .
+elixir:catch_block           rdfs:subClassOf ast-x:CatchClause .
+elixir:rescue_block          rdfs:subClassOf ast-x:CatchClause .
+elixir:after_block           rdfs:subClassOf ast-x:CatchClause .
+
+## Dataflow
+elixir:binary_operator       rdfs:subClassOf ast-x:Assignment .
+elixir:identifier            rdfs:subClassOf ast-x:VariableDeclaration .
+
+## LSP
+# In Elixir, `call` is the workhorse node — def, defmodule, import, require,
+# alias, use, defstruct, defprotocol, defimpl, defmacro are ALL `call` nodes
+# with different target identifiers. The rdfs:subClassOf here maps the *grammar*
+# node type. The SCM queries handle disambiguation at parse time.
+elixir:call                  rdfs:subClassOf ast-x:CallSite .
+elixir:dot                   rdfs:subClassOf ast-x:CallSite .
+elixir:anonymous_function    rdfs:subClassOf ast-x:FunctionDefinition .
+
+## Comments
+elixir:comment               rdfs:subClassOf ast-x:Comment .
 
 
 # =============================================================================

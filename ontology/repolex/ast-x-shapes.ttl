@@ -1,0 +1,235 @@
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix ast-x: <https://repolex.ai/ontology/repolex/ast-extension/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+# =============================================================================
+# AST-X SHAPES — Layer 2
+# =============================================================================
+# Validates enriched AST nodes as emitted by ast.py after:
+#   1. RDFS reasoning (materializes ast-x: types from language subclassOf mappings)
+#   2. _enrich_metrics() (computes complexity, line counts, etc.)
+#   3. Aggregation (adds filePath, sourceUrl, sourceBlobNode)
+#
+# Applies to commit-URI nodes (post-aggregation output).
+# Targets: FunctionDefinition, ClassDefinition, CallSite, ImportStatement.
+#
+# These properties are computed — always present, never None.
+# Failures here indicate a regression in the parser pipeline, not missing data.
+# =============================================================================
+
+
+# --- FunctionDefinition ---
+# All metrics computed by _enrich_metrics() tree walk — guaranteed present.
+# filePath and sourceUrl added during aggregation — guaranteed present.
+
+ast-x:FunctionDefinitionShape a sh:NodeShape ;
+    sh:targetClass ast-x:FunctionDefinition ;
+    rdfs:comment "Enriched function node. All properties computed or aggregated — required." ;
+
+    sh:property [
+        sh:path ast-x:filePath ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "FunctionDefinition must have ast-x:filePath (added at aggregation time)." ;
+    ] ;
+
+    sh:property [
+        sh:path ast-x:sourceUrl ;
+        sh:datatype xsd:anyURI ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "FunctionDefinition must have ast-x:sourceUrl (computed from startRow at aggregation)." ;
+    ] ;
+
+    sh:property [
+        sh:path ast-x:sourceBlobNode ;
+        sh:nodeKind sh:IRI ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "FunctionDefinition must have ast-x:sourceBlobNode (IRI link to blob-URI node)." ;
+    ] ;
+
+    sh:property [
+        sh:path ast-x:lineCount ;
+        sh:datatype xsd:integer ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "FunctionDefinition must have ast-x:lineCount (computed by _enrich_metrics)." ;
+    ] ;
+
+    sh:property [
+        sh:path ast-x:cyclomaticComplexity ;
+        sh:datatype xsd:integer ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "FunctionDefinition must have ast-x:cyclomaticComplexity (computed by _enrich_metrics)." ;
+    ] ;
+
+    sh:property [
+        sh:path ast-x:nestingDepth ;
+        sh:datatype xsd:integer ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "FunctionDefinition must have ast-x:nestingDepth (computed by _enrich_metrics)." ;
+    ] ;
+
+    sh:property [
+        sh:path ast-x:parameterCount ;
+        sh:datatype xsd:integer ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "FunctionDefinition must have ast-x:parameterCount (computed by _enrich_metrics)." ;
+    ] ;
+
+    sh:property [
+        sh:path ast-x:returnCount ;
+        sh:datatype xsd:integer ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "FunctionDefinition must have ast-x:returnCount (computed by _enrich_metrics)." ;
+    ] ;
+
+    sh:property [
+        sh:path ast-x:branchCount ;
+        sh:datatype xsd:integer ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "FunctionDefinition must have ast-x:branchCount (computed by _enrich_metrics)." ;
+    ] ;
+
+    sh:property [
+        sh:path ast-x:loopCount ;
+        sh:datatype xsd:integer ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "FunctionDefinition must have ast-x:loopCount (computed by _enrich_metrics)." ;
+    ] ;
+
+    sh:property [
+        sh:path ast-x:exceptionHandlerCount ;
+        sh:datatype xsd:integer ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "FunctionDefinition must have ast-x:exceptionHandlerCount (computed by _enrich_metrics)." ;
+    ] .
+
+
+# --- ClassDefinition ---
+
+ast-x:ClassDefinitionShape a sh:NodeShape ;
+    sh:targetClass ast-x:ClassDefinition ;
+    rdfs:comment "Enriched class node. Metrics and aggregation properties required." ;
+
+    sh:property [
+        sh:path ast-x:filePath ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "ClassDefinition must have ast-x:filePath." ;
+    ] ;
+
+    sh:property [
+        sh:path ast-x:sourceUrl ;
+        sh:datatype xsd:anyURI ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "ClassDefinition must have ast-x:sourceUrl." ;
+    ] ;
+
+    sh:property [
+        sh:path ast-x:sourceBlobNode ;
+        sh:nodeKind sh:IRI ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "ClassDefinition must have ast-x:sourceBlobNode." ;
+    ] ;
+
+    sh:property [
+        sh:path ast-x:lineCount ;
+        sh:datatype xsd:integer ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "ClassDefinition must have ast-x:lineCount (computed by _enrich_metrics)." ;
+    ] ;
+
+    sh:property [
+        sh:path ast-x:methodCount ;
+        sh:datatype xsd:integer ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "ClassDefinition must have ast-x:methodCount (computed by _enrich_metrics)." ;
+    ] ;
+
+    sh:property [
+        sh:path ast-x:fieldCount ;
+        sh:datatype xsd:integer ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "ClassDefinition must have ast-x:fieldCount (computed by _enrich_metrics)." ;
+    ] .
+
+
+# --- CallSite ---
+# filePath and sourceUrl guaranteed at aggregation.
+# callTarget is LSP-dependent — optional here, validated in lsp-x-shapes.ttl.
+
+ast-x:CallSiteShape a sh:NodeShape ;
+    sh:targetClass ast-x:CallSite ;
+    rdfs:comment "Call site node. Position and aggregation properties required. LSP resolution optional." ;
+
+    sh:property [
+        sh:path ast-x:filePath ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "CallSite must have ast-x:filePath." ;
+    ] ;
+
+    sh:property [
+        sh:path ast-x:sourceUrl ;
+        sh:datatype xsd:anyURI ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "CallSite must have ast-x:sourceUrl." ;
+    ] ;
+
+    sh:property [
+        sh:path ast-x:sourceBlobNode ;
+        sh:nodeKind sh:IRI ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "CallSite must have ast-x:sourceBlobNode." ;
+    ] .
+
+
+# --- ImportStatement ---
+
+ast-x:ImportStatementShape a sh:NodeShape ;
+    sh:targetClass ast-x:ImportStatement ;
+    rdfs:comment "Import statement node. Position and aggregation properties required. LSP resolution optional." ;
+
+    sh:property [
+        sh:path ast-x:filePath ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "ImportStatement must have ast-x:filePath." ;
+    ] ;
+
+    sh:property [
+        sh:path ast-x:sourceUrl ;
+        sh:datatype xsd:anyURI ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "ImportStatement must have ast-x:sourceUrl." ;
+    ] ;
+
+    sh:property [
+        sh:path ast-x:sourceBlobNode ;
+        sh:nodeKind sh:IRI ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "ImportStatement must have ast-x:sourceBlobNode." ;
+    ] .

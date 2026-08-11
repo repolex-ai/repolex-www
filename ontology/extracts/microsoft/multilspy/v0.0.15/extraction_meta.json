@@ -1,7 +1,7 @@
 {
   "multilspy_version": "0.0.15",
   "lsp_spec_version": "3.17.0",
-  "extracted_at": "2026-02-26T10:01:18.668812",
+  "extracted_at": "2026-04-02T01:11:40.085635",
   "classes": [
     "Position",
     "Range",

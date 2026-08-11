@@ -1,0 +1,27 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - heading "repolex-viz" [level=1] [ref=e3]
+    - combobox [ref=e4]:
+      - option "TopQuadrant/shacl" [selected]
+    - button "call graph" [ref=e5] [cursor=pointer]
+    - button "complexity map" [ref=e6] [cursor=pointer]
+    - generic [ref=e7]: querying...
+  - generic [ref=e8]:
+    - generic [ref=e9]:
+      - img [ref=e10]
+      - generic [ref=e11]:
+        - generic [ref=e12]: ◈
+        - text: querying graph...
+    - generic [ref=e13]:
+      - generic [ref=e14]: node details
+      - generic [ref=e16]: click a node
+      - generic [ref=e17]:
+        - generic [ref=e18]: legend
+        - generic [ref=e19]: DataFlow dominant
+        - generic [ref=e21]: ControlFlow dominant
+        - generic [ref=e23]: Mutation dominant
+        - generic [ref=e25]: Unknown
+        - generic [ref=e27]:
+          - text: node size = line count
+          - text: node brightness = complexity
+          - text: scroll to zoom · drag to pan

@@ -1,0 +1,145 @@
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix ast-x: <https://repolex.ai/ontology/repolex/ast-extension/> .
+@prefix lsp-x: <https://repolex.ai/ontology/repolex/lsp-extension/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+# =============================================================================
+# LSP-X SHAPES — Layer 3
+# =============================================================================
+# Validates LSP enrichment properties when present.
+# These properties are NOT required — LSP resolution depends on server success.
+#
+# Purpose: audit mode, not blocking pre-commit.
+#   Run separately to measure LSP coverage and catch malformed LSP output.
+#   Do NOT include in the standard pre-commit validation chain.
+#
+# LSP server reliability (as of 2026-04):
+#   JDTLS (Java)         — solid, high resolution rate
+#   sourcekit-lsp (Swift) — hit-or-miss
+#   Metals (Scala)        — requires sbt compilation
+#   pylsp (Python)        — generally reliable
+# =============================================================================
+
+
+# --- CallSite LSP enrichment ---
+# When LSP resolves a call, these properties describe the target.
+# Shape validates their types when present — not their presence.
+
+ast-x:CallSiteLSPShape a sh:NodeShape ;
+    sh:targetClass ast-x:CallSite ;
+    rdfs:comment "LSP enrichment on CallSite nodes. Properties optional — validates shape when present." ;
+
+    sh:property [
+        sh:path lsp-x:callTarget ;
+        sh:nodeKind sh:IRI ;
+        sh:maxCount 1 ;
+        sh:message "lsp-x:callTarget must be an IRI (URI of the resolved FunctionDefinition node)." ;
+    ] ;
+
+    sh:property [
+        sh:path lsp-x:callTargetFile ;
+        sh:datatype xsd:string ;
+        sh:maxCount 1 ;
+        sh:message "lsp-x:callTargetFile must be a string (file path of resolved target)." ;
+    ] ;
+
+    sh:property [
+        sh:path lsp-x:callTargetLine ;
+        sh:datatype xsd:integer ;
+        sh:maxCount 1 ;
+        sh:message "lsp-x:callTargetLine must be an integer." ;
+    ] ;
+
+    sh:property [
+        sh:path lsp-x:callTargetName ;
+        sh:datatype xsd:string ;
+        sh:maxCount 1 ;
+        sh:message "lsp-x:callTargetName must be a string." ;
+    ] ;
+
+    sh:property [
+        sh:path lsp-x:resolutionSourceFile ;
+        sh:datatype xsd:string ;
+        sh:maxCount 1 ;
+        sh:message "lsp-x:resolutionSourceFile must be a string." ;
+    ] ;
+
+    sh:property [
+        sh:path lsp-x:resolutionTargetFile ;
+        sh:datatype xsd:string ;
+        sh:maxCount 1 ;
+        sh:message "lsp-x:resolutionTargetFile must be a string." ;
+    ] .
+
+
+# --- ImportStatement LSP enrichment ---
+
+ast-x:ImportStatementLSPShape a sh:NodeShape ;
+    sh:targetClass ast-x:ImportStatement ;
+    rdfs:comment "LSP enrichment on ImportStatement nodes. Properties optional — validates shape when present." ;
+
+    sh:property [
+        sh:path lsp-x:importTarget ;
+        sh:nodeKind sh:IRI ;
+        sh:maxCount 1 ;
+        sh:message "lsp-x:importTarget must be an IRI." ;
+    ] ;
+
+    sh:property [
+        sh:path lsp-x:importModule ;
+        sh:datatype xsd:string ;
+        sh:maxCount 1 ;
+        sh:message "lsp-x:importModule must be a string." ;
+    ] ;
+
+    sh:property [
+        sh:path lsp-x:importSymbol ;
+        sh:datatype xsd:string ;
+        sh:maxCount 1 ;
+        sh:message "lsp-x:importSymbol must be a string." ;
+    ] .
+
+
+# --- FunctionDefinition LSP aggregate counts ---
+# callsCount and calledByCount are derived from LSP resolution results.
+# Present when LSP ran; absent when LSP was skipped or failed entirely.
+
+ast-x:FunctionDefinitionLSPShape a sh:NodeShape ;
+    sh:targetClass ast-x:FunctionDefinition ;
+    rdfs:comment "LSP aggregate counts on FunctionDefinition. Optional — present only when LSP ran." ;
+
+    sh:property [
+        sh:path lsp-x:callsCount ;
+        sh:datatype xsd:integer ;
+        sh:maxCount 1 ;
+        sh:message "lsp-x:callsCount must be an integer." ;
+    ] ;
+
+    sh:property [
+        sh:path lsp-x:calledByCount ;
+        sh:datatype xsd:integer ;
+        sh:maxCount 1 ;
+        sh:message "lsp-x:calledByCount must be an integer." ;
+    ] .
+
+
+# --- ClassDefinition LSP aggregate counts ---
+
+ast-x:ClassDefinitionLSPShape a sh:NodeShape ;
+    sh:targetClass ast-x:ClassDefinition ;
+    rdfs:comment "LSP aggregate counts on ClassDefinition. Optional — present only when LSP ran." ;
+
+    sh:property [
+        sh:path lsp-x:inheritanceDepth ;
+        sh:datatype xsd:integer ;
+        sh:maxCount 1 ;
+        sh:message "lsp-x:inheritanceDepth must be an integer." ;
+    ] ;
+
+    sh:property [
+        sh:path lsp-x:childClassCount ;
+        sh:datatype xsd:integer ;
+        sh:maxCount 1 ;
+        sh:message "lsp-x:childClassCount must be an integer." ;
+    ] .

@@ -1,0 +1,68 @@
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix ast:   <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix ast-x: <https://repolex.ai/ontology/repolex/ast-extension/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+# =============================================================================
+# AST BASE SHAPES — Layer 1
+# =============================================================================
+# Validates raw AST nodes as emitted by the tree-sitter blob parser.
+# These properties are guaranteed on every ast:Node regardless of language.
+# Applies to blob-URI nodes (pre-aggregation).
+#
+# Regression contract: if any of these fail, the parser or SCM extractor broke.
+# =============================================================================
+
+ast:NodeShape a sh:NodeShape ;
+    sh:targetClass ast:Node ;
+    rdfs:comment "Every tree-sitter AST node must have position, type, and label." ;
+
+    sh:property [
+        sh:path ast:type ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "Every AST node must have exactly one ast:type (tree-sitter node type string)." ;
+    ] ;
+
+    sh:property [
+        sh:path ast:startRow ;
+        sh:datatype xsd:integer ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "Every AST node must have ast:startRow." ;
+    ] ;
+
+    sh:property [
+        sh:path ast:startCol ;
+        sh:datatype xsd:integer ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "Every AST node must have ast:startCol." ;
+    ] ;
+
+    sh:property [
+        sh:path ast:endRow ;
+        sh:datatype xsd:integer ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "Every AST node must have ast:endRow." ;
+    ] ;
+
+    sh:property [
+        sh:path ast:endCol ;
+        sh:datatype xsd:integer ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "Every AST node must have ast:endCol." ;
+    ] ;
+
+    sh:property [
+        sh:path rdfs:label ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "Every AST node must have rdfs:label (the name fragment)." ;
+    ] .

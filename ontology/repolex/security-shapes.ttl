@@ -1,0 +1,134 @@
+@prefix sh:       <http://www.w3.org/ns/shacl#> .
+@prefix security: <https://repolex.ai/ontology/repolex/security/> .
+@prefix ast:      <https://repolex.ai/ontology/extracts/tree-sitter/tree-sitter/v0.25/core/> .
+@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf:      <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+# =============================================================================
+# SECURITY SHAPES
+# =============================================================================
+# SHACL validation for security scanner output. Two shapes:
+#
+#   1. SecurityBlobShape — validates blob-level summary properties
+#      (hasUnicodeAnomaly, maxSeverityTier, totalFindings)
+#
+#   2. UnicodeAnomalyShape — validates individual finding nodes
+#      (anomalyType, tier, charCount, codepoints, location)
+#
+# Both are blocking: if the scanner emits security triples, they must conform.
+#
+# Authors: TR1P.L3X (shapes), SpaceG.O.A.T. (scanner)
+# Date: 2026-04-04
+# =============================================================================
+
+
+# =============================================================================
+# SHAPE 1: Blob-level security summary
+# =============================================================================
+# Targets any blob node that has security:hasUnicodeAnomaly set.
+# If the flag is true, summary properties are required.
+# =============================================================================
+
+security:SecurityBlobShape a sh:NodeShape ;
+    sh:targetSubjectsOf security:hasUnicodeAnomaly ;
+    rdfs:comment "Blob nodes with security findings must have summary properties." ;
+
+    sh:property [
+        sh:path security:hasUnicodeAnomaly ;
+        sh:datatype xsd:boolean ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "security:hasUnicodeAnomaly must be exactly one boolean value." ;
+    ] ;
+
+    sh:property [
+        sh:path security:maxSeverityTier ;
+        sh:datatype xsd:integer ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:minInclusive 1 ;
+        sh:maxInclusive 3 ;
+        sh:message "security:maxSeverityTier must be an integer 1-3 (1=high, 2=medium, 3=low)." ;
+    ] ;
+
+    sh:property [
+        sh:path security:totalFindings ;
+        sh:datatype xsd:nonNegativeInteger ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "security:totalFindings must be a non-negative integer." ;
+    ] .
+
+
+# =============================================================================
+# SHAPE 2: Individual unicode anomaly finding
+# =============================================================================
+# Validates each UnicodeAnomaly node. All properties required — if the scanner
+# found something, it must fully describe what it found.
+# =============================================================================
+
+security:UnicodeAnomalyShape a sh:NodeShape ;
+    sh:targetClass security:UnicodeAnomaly ;
+    rdfs:comment "Every UnicodeAnomaly finding must have type, tier, count, codepoints, and location." ;
+
+    sh:property [
+        sh:path security:anomalyType ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:in (
+            "variation-selector"
+            "bidi-override"
+            "zero-width"
+            "tag-character"
+            "private-use-area"
+            "hangul-filler"
+            "invisible-operator"
+            "homoglyph"
+            "confusable-whitespace"
+            "fullwidth-form"
+            "soft-hyphen"
+        ) ;
+        sh:message "security:anomalyType must be one of the defined anomaly type values." ;
+    ] ;
+
+    sh:property [
+        sh:path security:tier ;
+        sh:datatype xsd:integer ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:minInclusive 1 ;
+        sh:maxInclusive 3 ;
+        sh:message "security:tier must be 1 (high), 2 (medium), or 3 (low)." ;
+    ] ;
+
+    sh:property [
+        sh:path security:charCount ;
+        sh:datatype xsd:nonNegativeInteger ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "security:charCount must be a non-negative integer." ;
+    ] ;
+
+    sh:property [
+        sh:path security:codepoints ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "security:codepoints must be a string (e.g., 'U+FE00-U+FE0F')." ;
+    ] ;
+
+    sh:property [
+        sh:path security:location ;
+        sh:datatype xsd:string ;
+        sh:maxCount 1 ;
+        sh:message "security:location must be a string (e.g., 'L42:C8-L42:C847'). Optional for file-level detections." ;
+    ] ;
+
+    sh:property [
+        sh:path security:detectedBy ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:message "security:detectedBy is required — must identify the scanner (e.g., 'repolex-scanner', 'stegg-allsight')." ;
+    ] .

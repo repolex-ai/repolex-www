@@ -1,0 +1,12 @@
+[    1378ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8765/favicon.ico:0
+[   48979ms] Uncaught Error: node not found: https://repolex.ai/r/TopQuadrant/shacl/commit/8811f78129a3f3fe0f586610324b60d834944f16/src/main/java/org/topbraid/shacl/engine/ShapesGraph.java#candidates_163_26_163_54
+    at Yc (https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js:1:102582)
+    at h (https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js:1:232628)
+    at l.initialize (https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js:1:233060)
+    at p (https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js:1:236156)
+    at force (https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js:1:236802)
+    at renderForce (http://localhost:8765/:320:5)
+    at <anonymous> (http://localhost:8765/:537:17)
+    at eval (:0:44)
+    at evaluate (:303:15)
+    at <anonymous> (:0:43)
