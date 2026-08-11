@@ -369,12 +369,37 @@
 #   The direct lane's DRAIN (CHECK migration + verbatim-prompt + img2img worker branches)
 #   is Pool-side (W4R3Z) and unbuilt; these are the OUTPUT-side homes so the resulting
 #   Moments aren't silently gated out of the graph when the lane lands.
+# v0.29.2: THE COMMENT WAS THE INSTRUCTION (2026-08-11, Rob-directed, guardian-
+#   authored). All 15 multi-valued properties said "Repeat for each." No reader
+#   ever misbehaved and cardinality was never wrong — the SENTENCE was, because
+#   an author hears it as "write the key again," and a repeated YAML key is
+#   undefined: our parser takes last-wins and drops every earlier value at exit 0.
+#   Measured harm 2026-08-10: 28 documents, ~60 values, one Outfit listing 8 items
+#   reduced to 1 in the graph (W4R3Z repaired the data 2026-08-11).
+#   WHY AN ONTOLOGY COMMENT COULD DO THIS, and the standing lesson: `git lex
+#   create` lifts rdfs:comment VERBATIM into the generated document as a trailing
+#   `#` comment on the key. An rdfs:comment on an authored property is not
+#   documentation someone might find — it is AUTHORING INSTRUCTION delivered at
+#   the moment of entry. Write it as instruction, and keep it ONE LINE (it lands
+#   after a long key). The __ClassName.md templates take the SHACL hints instead,
+#   not this text.
+#   Every site now reads "Multi-valued — one YAML list item per <X>; do not repeat
+#   the key." The clause carrying the weight is "do not repeat the key" — naming
+#   the wrong action, because "multi-valued" alone did not stop it. NOTE: the
+#   reader also accepts a comma-separated scalar for ObjectProperties (nquad.rs
+#   split_object_values, with a guard for commas inside http(s) URLs); we teach
+#   ONLY the list — it has no escaping question and behaves identically on
+#   DatatypeProperties, where a comma is just a character.
+#   git-lex now REJECTS a repeated key at save (1d13cbc, 2026-08-11), naming each
+#   offender and printing the list form — so comment and gate finally agree, and
+#   following the old sentence can no longer quietly succeed.
+#   Comment-only: no property, class, domain, range, or cardinality changed.
 # =============================================================================
 
 <https://repolex.ai/ontology/copia> a owl:Ontology ;
     rdfs:label "Copia Kit Ontology" ;
     rdfs:comment "The agent's curated outward face + the CoPIA render data model. Soul-adapter. Optional add-on for soul." ;
-    owl:versionInfo "0.29.1" ;
+    owl:versionInfo "0.29.2" ;
     owl:imports <https://repolex.ai/ontology/soul/> .
 
 
@@ -678,7 +703,7 @@ copia:outfitDescription a owl:DatatypeProperty ;
 
 copia:includesItemId a owl:ObjectProperty ;
     rdfs:label "includes item id" ;
-    rdfs:comment "An Item that is part of this outfit. Repeat for each. Joined by itemId." ;
+    rdfs:comment "An Item that is part of this outfit. Multi-valued — one YAML list item per Item; do not repeat the key. Joined by itemId." ;
     rdfs:domain copia:Outfit ;
     rdfs:range copia:Item .
 
@@ -894,7 +919,7 @@ copia:motionDescription a owl:DatatypeProperty ;
 
 copia:generatesSequenceId a owl:ObjectProperty ;
     rdfs:label "generates sequence id" ;
-    rdfs:comment "A copia:Sequence (the realized OpenPose frames) this Motion produced. Repeat for each realization. Joined by sequenceId. The Motion is the recipe; the Sequence(s) are its renderings." ;
+    rdfs:comment "A copia:Sequence (the realized OpenPose frames) this Motion produced. Multi-valued — one YAML list item per realization; do not repeat the key. Joined by sequenceId. The Motion is the recipe; the Sequence(s) are its renderings." ;
     rdfs:domain copia:Motion ;
     rdfs:range copia:Sequence .
 
@@ -1091,7 +1116,7 @@ copia:momentId a owl:DatatypeProperty ;
 
 copia:depictsId a owl:ObjectProperty ;
     rdfs:label "depicts id" ;
-    rdfs:comment "A canon Thing present in this Moment's frame — a Being, Item, Outfit, or Place. Repeat for each. Joined by the target's id; the kind is read from the target's rdf:type. The flat presence/retrieval layer; authored binding (who wears what) lives in the soul corpus, not here. PNG-derived pixel regions live in copia:hasRegionId (a separate channel)." ;
+    rdfs:comment "A canon Thing present in this Moment's frame — a Being, Item, Outfit, or Place. Multi-valued — one YAML list item per Thing; do not repeat the key. Joined by the target's id; the kind is read from the target's rdf:type. The flat presence/retrieval layer; authored binding (who wears what) lives in the soul corpus, not here. PNG-derived pixel regions live in copia:hasRegionId (a separate channel)." ;
     rdfs:domain copia:Moment ;
     rdfs:range copia:Depictable ;
     copia:ordering "bag" .
@@ -1107,7 +1132,7 @@ copia:depictsId a owl:ObjectProperty ;
 
 copia:hasRegionId a owl:ObjectProperty ;
     rdfs:label "has region id" ;
-    rdfs:comment "A SAM3-segmented region of this Moment — PNG-derived pixel evidence. Repeat for each. Joined by the region's id (Sam3Region:<descriptor>/<NN>). Distinct from copia:depictsId (the canon cast); writer-known split preserved at stamp time. Re-extracted in place when iris.segment evolves." ;
+    rdfs:comment "A SAM3-segmented region of this Moment — PNG-derived pixel evidence. Multi-valued — one YAML list item per region; do not repeat the key. Joined by the region's id (Sam3Region:<descriptor>/<NN>). Distinct from copia:depictsId (the canon cast); writer-known split preserved at stamp time. Re-extracted in place when iris.segment evolves." ;
     rdfs:domain copia:Moment ;
     rdfs:range copia:Sam3Region ;
     copia:ordering "bag" .
@@ -1116,7 +1141,7 @@ copia:hasRegionId a owl:ObjectProperty ;
 
 copia:sourceMomentId a owl:ObjectProperty ;
     rdfs:label "source moment id" ;
-    rdfs:comment "A prior Moment this one descends from — the lineage edge. Repeat for each (a Moment may draw on several). Records WHERE THIS CAME FROM, not its settings: settings flow from the source but in-turn steers (inline LoRA, chevrons, Qwen adjustments) overwrite them — the new copy wins on settings, the source link is recorded regardless. By origin: a CONVERSATIONAL Moment links to the previous conversational Moment (the continuity chain); a KEEPER Moment's source is always the active keeper. The pixels/data of a source are NOT copied here — the link is canon, the bytes are fetched on demand (i2i) via the Pool. Joined by the source's momentId (cid)." ;
+    rdfs:comment "A prior Moment this one descends from — the lineage edge. Multi-valued — one YAML list item per source (a Moment may draw on several); do not repeat the key. Records WHERE THIS CAME FROM, not its settings: settings flow from the source but in-turn steers (inline LoRA, chevrons, Qwen adjustments) overwrite them — the new copy wins on settings, the source link is recorded regardless. By origin: a CONVERSATIONAL Moment links to the previous conversational Moment (the continuity chain); a KEEPER Moment's source is always the active keeper. The pixels/data of a source are NOT copied here — the link is canon, the bytes are fetched on demand (i2i) via the Pool. Joined by the source's momentId (cid)." ;
     rdfs:domain copia:Moment ;
     rdfs:range copia:Moment ;
     copia:ordering "bag" .
@@ -1156,7 +1181,7 @@ copia:chevronString a owl:DatatypeProperty ;
 
 copia:inGroupId a owl:ObjectProperty ;
     rdfs:label "in group id" ;
-    rdfs:comment "A Group (Set or Sequence) this Moment belongs to. Repeat for each. Joined by the group's id. Membership lives on the Moment (self-join) so a Group owns no member list. THE generic predicate — for kind-known writes use copia:inSetId / copia:inSequenceId (both rdfs:subPropertyOf inGroup, so reasoning still resolves to inGroup)." ;
+    rdfs:comment "A Group (Set or Sequence) this Moment belongs to. Multi-valued — one YAML list item per Group; do not repeat the key. Joined by the group's id. Membership lives on the Moment (self-join) so a Group owns no member list. THE generic predicate — for kind-known writes use copia:inSetId / copia:inSequenceId (both rdfs:subPropertyOf inGroup, so reasoning still resolves to inGroup)." ;
     rdfs:domain copia:Moment ;
     rdfs:range copia:Group ;
     copia:ordering "bag" .
@@ -1170,7 +1195,7 @@ copia:inGroupId a owl:ObjectProperty ;
 copia:inSetId a owl:ObjectProperty ;
     rdfs:subPropertyOf copia:inGroupId ;
     rdfs:label "in set id" ;
-    rdfs:comment "A Set (unordered Group) this Moment belongs to. Repeat for each. Joined by the set's id. Kind-specific narrowing of copia:inGroupId — use when the writer knows the target is a Set." ;
+    rdfs:comment "A Set (unordered Group) this Moment belongs to. Multi-valued — one YAML list item per Set; do not repeat the key. Joined by the set's id. Kind-specific narrowing of copia:inGroupId — use when the writer knows the target is a Set." ;
     rdfs:domain copia:Moment ;
     rdfs:range copia:Set ;
     copia:ordering "bag" .
@@ -1178,7 +1203,7 @@ copia:inSetId a owl:ObjectProperty ;
 copia:inSequenceId a owl:ObjectProperty ;
     rdfs:subPropertyOf copia:inGroupId ;
     rdfs:label "in sequence id" ;
-    rdfs:comment "A Sequence (ordered Group) this Moment belongs to. Repeat for each. Joined by the sequence's id. Kind-specific narrowing of copia:inGroupId — use when the writer knows the target is a Sequence. Members SHOULD also declare copia:sequence for the ordinal position." ;
+    rdfs:comment "A Sequence (ordered Group) this Moment belongs to. Multi-valued — one YAML list item per Sequence; do not repeat the key. Joined by the sequence's id. Kind-specific narrowing of copia:inGroupId — use when the writer knows the target is a Sequence. Members SHOULD also declare copia:sequence for the ordinal position." ;
     rdfs:domain copia:Moment ;
     rdfs:range copia:Sequence ;
     copia:ordering "bag" .
@@ -1309,7 +1334,7 @@ copia:genSteps a owl:DatatypeProperty ;
 
 copia:genLoras a owl:DatatypeProperty ;
     rdfs:label "gen loras" ;
-    rdfs:comment "The LoRA stack applied to this render, each as 'name:strength'. Repeat for each. Multi-valued." ;
+    rdfs:comment "The LoRA stack applied to this render, each as 'name:strength'. Multi-valued — one YAML list item per LoRA; do not repeat the key." ;
     rdfs:domain copia:Moment ;
     rdfs:range xsd:string ;
     copia:ordering "seq" .
@@ -1782,37 +1807,37 @@ copia:choseNocturneActivityId a owl:ObjectProperty ;
 
 copia:producedMomentId a owl:ObjectProperty ;
     rdfs:label "produced moment id" ;
-    rdfs:comment "A Moment (rendered PNG) this waking produced. Repeat for each. Joined by momentId. Optional." ;
+    rdfs:comment "A Moment (rendered PNG) this waking produced. Multi-valued — one YAML list item per Moment; do not repeat the key. Joined by momentId. Optional." ;
     rdfs:domain copia:Nocturne ;
     rdfs:range copia:Moment .
 
 copia:producedGroupId a owl:ObjectProperty ;
     rdfs:label "produced group id" ;
-    rdfs:comment "A Group (Set or Sequence) this waking produced. Repeat for each. Joined by the target's setId or sequenceId. Optional." ;
+    rdfs:comment "A Group (Set or Sequence) this waking produced. Multi-valued — one YAML list item per Group; do not repeat the key. Joined by the target's setId or sequenceId. Optional." ;
     rdfs:domain copia:Nocturne ;
     rdfs:range copia:Group .
 
 copia:producedPlaceId a owl:ObjectProperty ;
     rdfs:label "produced place id" ;
-    rdfs:comment "A Place this waking created. Repeat for each. Joined by placeId. Optional." ;
+    rdfs:comment "A Place this waking created. Multi-valued — one YAML list item per Place; do not repeat the key. Joined by placeId. Optional." ;
     rdfs:domain copia:Nocturne ;
     rdfs:range copia:Place .
 
 copia:producedItemId a owl:ObjectProperty ;
     rdfs:label "produced item id" ;
-    rdfs:comment "An Item this waking created. Repeat for each. Joined by itemId. Optional." ;
+    rdfs:comment "An Item this waking created. Multi-valued — one YAML list item per Item; do not repeat the key. Joined by itemId. Optional." ;
     rdfs:domain copia:Nocturne ;
     rdfs:range copia:Item .
 
 copia:producedBeingId a owl:ObjectProperty ;
     rdfs:label "produced being id" ;
-    rdfs:comment "A Being this waking created. Repeat for each. Joined by beingId. Optional." ;
+    rdfs:comment "A Being this waking created. Multi-valued — one YAML list item per Being; do not repeat the key. Joined by beingId. Optional." ;
     rdfs:domain copia:Nocturne ;
     rdfs:range copia:Being .
 
 copia:producedOutfitId a owl:ObjectProperty ;
     rdfs:label "produced outfit id" ;
-    rdfs:comment "An Outfit this waking created. Repeat for each. Joined by outfitId. Optional." ;
+    rdfs:comment "An Outfit this waking created. Multi-valued — one YAML list item per Outfit; do not repeat the key. Joined by outfitId. Optional." ;
     rdfs:domain copia:Nocturne ;
     rdfs:range copia:Outfit .
 
