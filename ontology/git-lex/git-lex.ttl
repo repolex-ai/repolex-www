@@ -28,19 +28,57 @@
 git-lex: a owl:Ontology ;
     rdfs:label "git-lex Core Ontology" ;
     rdfs:comment "The vocabulary git-lex authors about the markdown documents it tracks." ;
-    owl:versionInfo "0.8" .
+    owl:versionInfo "0.9" .
 
 # v0.8 (2026-08-02, Rob-ruled): File plane lands (inert until the re-anchor
 #   release) — git-lex:File class + derived git-lex:fileId; Document marked
 #   RETIRING (renamed to File on the train, emitter still types Document today).
+# v0.9 (2026-08-11, Rob-ruled, guardian-authored): THE THING PLANE GETS ITS CLASS,
+#   and five universal properties land on it — id, title, abstract, cue,
+#   relatedToId. Declared ONCE, here, in the only ontology every repo has.
+#   NOT per kit: soul:title and copia:title would be DIFFERENT predicates, so
+#   "find everything titled X" would need a UNION across every kit that ever
+#   declared one. We already carry that damage — soul:relatedTo and
+#   squad:relatedTo are two names for one idea (the soul one is this guardian's
+#   own early mistake). One declaration, one predicate, one query.
+#   THE KEYSTONE IS id. git-lex writes to two subjects, and which one a fact
+#   lands on is decided by whether an id anchors the document: with one, kit-
+#   dotted keys reach the Thing node; without one they fall back to the File node
+#   and die on rename (nquad.rs line_subject). So id is not the first of five
+#   items on a list — it is what lifts a document's facts onto something that
+#   persists, and the other four ride on it.
+#   VALUES ARE FULLY QUALIFIED — <namespace/Class/identifier>, e.g.
+#   <soul/Exploration/cross-lingual-invariance>. A relative IRI reference in
+#   angle brackets is legal Turtle and legal SPARQL, resolves against the base,
+#   and with NO base is a hard parse error rather than a silent guess. This is
+#   what makes relatedToId work across kits with no coordination and no
+#   collisions: <soul/Note/abc> and <otherkit/Note/abc> are simply different
+#   names. A bare id cannot do this — with an open target there is no single
+#   declared range to resolve it against. The trailing "Id" is the author's
+#   signal that the value takes this shape (Rob's rule: always relatedToId, or a
+#   typed relatedToJournalId where the class must be forced).
+#   DELIBERATELY NOT ADDED: tags (699 uses across 12 repos, and still no
+#   application reads it — cue covers retrieval better, and it contradicts the
+#   standing ruling that categorization is edges, not fields; popularity is a
+#   measurement, not a justification); type (954 uses — restates the class,
+#   already known from the key prefix and the folder); date and author (git holds
+#   both precisely, and storing them invites two sources of truth that will
+#   disagree). Dublin Core alignment on title/abstract was offered and declined
+#   (Rob, 2026-08-11); no distinction is drawn between hand-written and generated
+#   abstracts (same ruling).
+#   soul:relatedTo and squad:relatedTo ride unchanged until their data migrates.
+#   STATE ON ARRIVAL — this is declaration, not enforcement, on two counts.
+#   (1) Kits must add `rdfs:subClassOf git-lex:Thing` to their foldered classes
+#   (~41 across soul/squad/copia/ravel/autoknow) or nothing IS a Thing. (2) Even
+#   then, shacl.rs collects a class's properties by EXACT domain match
+#   (`p.domain == *class_iri`, shacl.rs:417) — it does not walk rdfs:subClassOf.
+#   Until it does, these five appear on the Thing shape alone and reach no per-
+#   class shape or template. Filed as the hierarchy-walk gap; the same exact-match
+#   assumption is why owl:unionOf domains are invisible too (#62).
 
 # =============================================================================
 # Classes
 # =============================================================================
-
-git-lex:Document a owl:Class ;
-    rdfs:label "Document" ;
-    rdfs:comment "A content file git-lex tracks. The primary unit of knowledge. Every tracked .md file is a Document. RETIRING: renamed to git-lex:File on the re-anchor release (Rob-ruled 2026-07-30, Thing & File identity model) — the current emitter still types against this class, so the rename rides the release train; File below is the ruled name, inert until then." .
 
 # --- The File plane (Thing & File identity model, Rob-ruled 2026-07-30) ---
 # Two planes: every file in the repo is a File (id = its repo-relative path);
@@ -52,12 +90,65 @@ git-lex:Document a owl:Class ;
 
 git-lex:File a owl:Class ;
     rdfs:label "File" ;
-    rdfs:comment "A file at a repo-relative path, through time. Its id IS the path, so a File node is an address, not a lifetime: content changes, deletions, and later unrelated files at the same path are all states of the address, recorded in history. IRI: git-lex/File/<path>. File-plane facts live here: prose links (wikilinks follow paths, by the path law) and free-form fm: frontmatter keys. Facts about the Thing a file expresses live on the Thing node instead (see fileId). Supersedes git-lex:Document at the re-anchor release." .
+    rdfs:comment "A file at a repo-relative path, through time. Its id IS the path, so a File node is an address, not a lifetime: content changes, deletions, and later unrelated files at the same path are all states of the address, recorded in history. IRI: git-lex/File/<path>. File-plane facts live here: prose links (wikilinks follow paths, by the path law) and free-form fm: frontmatter keys. Facts about the Thing a file expresses live on the Thing node instead (see fileId). Superseded git-lex:Document at the re-anchor release (Document retired with the train)." .
 
 git-lex:fileId a owl:ObjectProperty ;
     rdfs:label "fileId" ;
     rdfs:comment "DERIVED, never authored: the File currently expressing this Thing, stamped by git-lex at save from the file's position, re-derived on move. Emitted as an IRI edge to the File node (git-lex/File/<path>) so Thing-to-File-to-links joins need no string surgery — the same house pattern as every ...Id reference: the NAME describes the id the value derives from (a File's id is its path), the GRAPH object is the resolved node. This is the one connection between the planes; 'where has this Thing lived' is its temporal history. Domain open: any Thing carries it." ;
     rdfs:range git-lex:File .
+
+# --- The Thing plane: the class every authored entity is ---------------------
+# git-lex:File's counterpart. A File is an ADDRESS (id = repo-relative path,
+# dies on rename); a Thing is a LIFETIME (id = authored, survives moves). Every
+# foldered class in every kit is a Thing, and says so with
+# `rdfs:subClassOf git-lex:Thing`.
+#
+# WHY THE CLASS HAD TO COME FIRST (Rob-ruled 2026-08-11): the five universal
+# properties below belong to "everything," and before this class there was no
+# "everything" to attach them to — no class hierarchy existed anywhere in the
+# stack. The only alternative was declaring them with no domain, and we know
+# what that costs: soul:relatedTo is domain-open, the save gate's key resolution
+# walks rdfs:domain, and it therefore reports "key does not exist" about a
+# property plainly declared in front of it. Five domain-open universal
+# properties would have manufactured that false accusation across every kit at
+# once.
+
+git-lex:Thing a owl:Class ;
+    rdfs:label "Thing" ;
+    rdfs:comment "An ontology-defined entity a document expresses, as opposed to the file expressing it. Counterpart to git-lex:File: a File is an address (its id is a path, and dies on rename), a Thing is a lifetime (its id is authored, and survives moves). Every foldered class in every kit is a Thing. The universal authored properties — id, title, abstract, cue, relatedToId — have this as their domain." .
+
+git-lex:id a owl:ObjectProperty ;
+    rdfs:label "id" ;
+    rdfs:comment "AUTHORED — which Thing this document IS, written <namespace/Class/identifier>. Without it these facts bind to the file path and die on rename." ;
+    rdfs:domain git-lex:Thing .
+
+git-lex:title a owl:DatatypeProperty ;
+    rdfs:label "title" ;
+    rdfs:comment "One short name for this Thing — what a listing or a search result shows. Single-valued." ;
+    rdfs:domain git-lex:Thing ;
+    rdfs:range xsd:string .
+
+git-lex:abstract a owl:DatatypeProperty ;
+    rdfs:label "abstract" ;
+    rdfs:comment "A short summary of this Thing, for readers and listings. Single-valued." ;
+    rdfs:domain git-lex:Thing ;
+    rdfs:range xsd:string .
+
+git-lex:cue a owl:DatatypeProperty ;
+    rdfs:label "cue" ;
+    rdfs:comment "WHEN to reach for this Thing — a situation that should surface it, not a topic. Multi-valued — one YAML list item per situation; do not repeat the key." ;
+    rdfs:domain git-lex:Thing ;
+    rdfs:range xsd:string .
+
+git-lex:relatedToId a owl:ObjectProperty ;
+    rdfs:label "relatedToId" ;
+    rdfs:comment "Another Thing this one relates to, any class in any kit, written <namespace/Class/identifier>. Multi-valued — one YAML list item per target; do not repeat the key." ;
+    rdfs:domain git-lex:Thing .
+
+git-lex:Thing rdfs:subClassOf
+    [ a owl:Restriction ; owl:onProperty git-lex:id       ; owl:maxCardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty git-lex:title    ; owl:maxCardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty git-lex:abstract ; owl:maxCardinality 1 ] .
 
 git-lex:NamedGraph a owl:Class ;
     rdfs:subClassOf sd:NamedGraph ;

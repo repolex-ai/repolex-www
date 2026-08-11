@@ -37,7 +37,21 @@
 <https://repolex.ai/ontology/squad> a owl:Ontology ;
     rdfs:label "Squad Kit Ontology" ;
     rdfs:comment "Multi-agent squad memory. Carbon and silicon agents collaborate via structured markdown in a shared git repo." ;
-    owl:versionInfo "0.5" .
+    owl:versionInfo "0.5.1" .
+
+# v0.5.1 (2026-08-11, Rob-ruled): every foldered class declares
+#   `rdfs:subClassOf git-lex:Thing` (12: Brief, Bug, Decision, Discovery,
+#   Freeform, Message, Pod, Proclamation, Project, Situation, Squaddie, Task).
+#   git-lex 0.9 introduced the Thing class so the five universal authored
+#   properties (id, title, abstract, cue, relatedToId) had a domain to attach to
+#   rather than being declared domain-open, which the save gate cannot see.
+#   NOTE for the squad kit specifically: git-lex:relatedToId supersedes
+#   squad:relatedTo, which rides unchanged until its data migrates. squad and
+#   soul each grew their own relatedTo — two names for one idea, and exactly the
+#   duplication the base-kit declaration exists to stop.
+#   No property, range, or cardinality changed. Inert until shacl.rs walks
+#   rdfs:subClassOf when collecting a class's properties (today: exact domain
+#   match, shacl.rs:417).
 
 
 # =============================================================================
@@ -85,6 +99,7 @@ squad:DigestStatusValue a rdfs:Datatype ;
 # Identity: squaddieId (the agent slug, == filename). soulId = external designator.
 
 squad:Squaddie a owl:Class ;
+    rdfs:subClassOf git-lex:Thing ;
     git-lex:foldered true ;
     rdfs:label "Squaddie" ;
     rdfs:comment "A squad member — carbon or silicon. Identity: squaddieId (== filename, the agent's canonical slug, e.g. 'tr1p-l3x'). The soul-kit soulId (genesis sha of the agent's solo repo) is a separate, external designator — see squad:soulId." ;
@@ -151,6 +166,7 @@ squad:worksOn a owl:ObjectProperty ;
 # Replaces ephemeral chat. Git blame shows who wrote what.
 
 squad:Message a owl:Class ;
+    rdfs:subClassOf git-lex:Thing ;
     git-lex:foldered true ;
     rdfs:label "Message" ;
     rdfs:comment "A message from one agent to another. Persistent inter-agent communication." ;
@@ -200,6 +216,7 @@ squad:inReplyTo a owl:ObjectProperty ;
 # The "why" behind the "what". Queryable decision history.
 
 squad:Decision a owl:Class ;
+    rdfs:subClassOf git-lex:Thing ;
     git-lex:foldered true ;
     rdfs:label "Decision" ;
     rdfs:comment "A recorded choice with context, rationale, and outcome." ;
@@ -251,6 +268,7 @@ squad:supersededBy a owl:ObjectProperty ;
 # "I was debugging X and noticed Y."
 
 squad:Discovery a owl:Class ;
+    rdfs:subClassOf git-lex:Thing ;
     git-lex:foldered true ;
     rdfs:label "Discovery" ;
     rdfs:comment "An incidental finding, insight, or gotcha noticed while doing other work. Not the result of deliberate research — that's Brief. Not a formal experiment result — that's the lab kit." .
@@ -285,6 +303,7 @@ squad:confidence a owl:DatatypeProperty ;
 # Lighter than lab kit's formal Investigation/Synthesis.
 
 squad:Brief a owl:Class ;
+    rdfs:subClassOf git-lex:Thing ;
     git-lex:foldered true ;
     rdfs:label "Brief" ;
     rdfs:comment "A proactive research document — ecosystem surveys, competitive analyses, state-of-the-world reports. Lighter than formal lab research. Authored to inform the squad so they can act." .
@@ -323,6 +342,7 @@ squad:takeaways a owl:DatatypeProperty ;
 # A work item. Assigned, tracked, blocked/blocking.
 
 squad:Task a owl:Class ;
+    rdfs:subClassOf git-lex:Thing ;
     git-lex:foldered true ;
     rdfs:label "Task" ;
     rdfs:comment "A work item with assignment and status tracking." ;
@@ -372,6 +392,7 @@ squad:relatedDecision a owl:ObjectProperty ;
 # What we're building. High-level context.
 
 squad:Project a owl:Class ;
+    rdfs:subClassOf git-lex:Thing ;
     git-lex:foldered true ;
     rdfs:label "Project" ;
     rdfs:comment "A project the squad is working on." .
@@ -405,6 +426,7 @@ squad:squadMembers a owl:ObjectProperty ;
 # project or set of tasks. Disbanded when the work is done.
 
 squad:Pod a owl:Class ;
+    rdfs:subClassOf git-lex:Thing ;
     git-lex:foldered true ;
     rdfs:label "Pod" ;
     rdfs:comment "A temporary working group within the squad focused on a specific project or set of tasks. Forms, does the work, disbands." .
@@ -444,6 +466,7 @@ squad:podTasks a owl:ObjectProperty ;
 # dated. Not a message to a specific agent — a decree for the whole squad.
 
 squad:Proclamation a owl:Class ;
+    rdfs:subClassOf git-lex:Thing ;
     git-lex:foldered true ;
     rdfs:label "Proclamation" ;
     rdfs:comment "A decree or announcement for the whole squad. Issued with authority, meant to be remembered. The King of the Squad speaks." ;
@@ -471,6 +494,7 @@ squad:proclaimedBy a owl:ObjectProperty ;
 # structure. Situation report. Sitrep.
 
 squad:Situation a owl:Class ;
+    rdfs:subClassOf git-lex:Thing ;
     git-lex:foldered true ;
     rdfs:label "Situation" ;
     rdfs:comment "A situation report. Current state of work, what's next, what's blocking. Links agents, projects, tasks, and briefs into a coherent snapshot." .
@@ -514,6 +538,7 @@ squad:blockers a owl:DatatypeProperty ;
 # Patterns in the `type` field become candidates for new document types.
 
 squad:Freeform a owl:Class ;
+    rdfs:subClassOf git-lex:Thing ;
     git-lex:foldered true ;
     rdfs:label "Freeform" ;
     rdfs:comment "The catch-all. For thoughts, fragments, and documents that don't fit other types. Any shared ObjectProperty can be used in frontmatter. Set `type` to a short string to hint at what this document is — patterns in `type` become candidates for new classes." .
@@ -544,6 +569,7 @@ squad:BugSeverityValue a rdfs:Datatype ;
     owl:oneOf ("critical" "major" "minor" "cosmetic") .
 
 squad:Bug a owl:Class ;
+    rdfs:subClassOf git-lex:Thing ;
     git-lex:foldered true ;
     rdfs:label "Bug" ;
     rdfs:comment "A defect or issue. Tracked with status and severity, linked to the project it affects. Created by any agent, typically triaged by TestyPod." ;

@@ -394,12 +394,26 @@
 #   offender and printing the list form — so comment and gate finally agree, and
 #   following the old sentence can no longer quietly succeed.
 #   Comment-only: no property, class, domain, range, or cardinality changed.
+# v0.29.3: EVERY FOLDERED CLASS IS A THING (2026-08-11, Rob-ruled, guardian-
+#   authored). All 13 foldered classes declare `rdfs:subClassOf git-lex:Thing`
+#   (Being, Dream, FamiliarLookNote, Item, Motion, Nocturne, NocturneActivity,
+#   NocturneFeed, Outfit, Place, Sequence, Set, Texture). git-lex 0.9 introduced
+#   the Thing class so the five universal authored properties — id, title,
+#   abstract, cue, relatedToId — had a domain to attach to instead of being
+#   declared domain-open, which the save gate's key resolution cannot see (it
+#   walks rdfs:domain; a domain-open property draws a false "key does not exist").
+#   copia:Group is deliberately NOT a Thing: it is abstract and unfoldered, and
+#   the invariant this wave establishes is exactly foldered <=> Thing (verified:
+#   the subclass set equals the foldered set in all four kits).
+#   No property, range, or cardinality changed. Inert until shacl.rs walks
+#   rdfs:subClassOf when collecting a class's properties (today: exact domain
+#   match, shacl.rs:417), so the five reach no copia template yet.
 # =============================================================================
 
 <https://repolex.ai/ontology/copia> a owl:Ontology ;
     rdfs:label "Copia Kit Ontology" ;
     rdfs:comment "The agent's curated outward face + the CoPIA render data model. Soul-adapter. Optional add-on for soul." ;
-    owl:versionInfo "0.29.2" ;
+    owl:versionInfo "0.29.3" ;
     owl:imports <https://repolex.ai/ontology/soul/> .
 
 
@@ -504,6 +518,7 @@ copia:ordering a owl:AnnotationProperty ;
 # A location you can be in. Places connect to other Places.
 
 copia:Place a owl:Class ;
+    rdfs:subClassOf git-lex:Thing ;
     git-lex:foldered true ;
     rdfs:label "Place" ;
     rdfs:comment "A location in an inner-world. Carries scene-field defaults the resolver expands into prompt text." ;
@@ -562,6 +577,7 @@ copia:depictedBy a owl:DatatypeProperty ;
 # The atomic thing. Worn, held, or an ambient prop (see affordance).
 
 copia:Item a owl:Class ;
+    rdfs:subClassOf git-lex:Thing ;
     git-lex:foldered true ;
     rdfs:label "Item" ;
     rdfs:comment "A thing. Its look is its description; affordance says how it appears in a scene (wearable/holdable/prop)." ;
@@ -620,6 +636,7 @@ copia:itemDepictedBy a owl:DatatypeProperty ;
 # Anyone in the world. Carries scene-field defaults (its characteristic look).
 
 copia:Being a owl:Class ;
+    rdfs:subClassOf git-lex:Thing ;
     git-lex:foldered true ;
     rdfs:label "Being" ;
     rdfs:comment "An agent or character. Located in a Place, may equip Items, may wear an Outfit by default." ;
@@ -674,6 +691,7 @@ copia:beingDepictedBy a owl:DatatypeProperty ;
 # Owns no scene fields; the look comes from its member Items' descriptions.
 
 copia:Outfit a owl:Class ;
+    rdfs:subClassOf git-lex:Thing ;
     git-lex:foldered true ;
     rdfs:label "Outfit" ;
     rdfs:comment "A named, reusable bundle of Items (a 'look'/'loadout'). A convenience join — summon the set as one. A single garment needs no Outfit; it's just an Item(wearable)." ;
@@ -872,6 +890,7 @@ copia:environment a copia:CameraFocus ; rdfs:label "the surrounding environment"
 # thing-you-make; Sequence is one realization of it.
 
 copia:Motion a owl:Class ;
+    rdfs:subClassOf git-lex:Thing ;
     git-lex:foldered true ;
     rdfs:label "Motion" ;
     rdfs:comment "A named, reusable MOVEMENT — authored like an Outfit/Item. Holds the recipe (trigger word, generating text, duration); firing it (chevron, e.g. !jump) runs Iris.move → an OpenPose Sequence of origin=movement frames. The recipe, not the frames." ;
@@ -1714,6 +1733,7 @@ copia:familiarNoteAt a owl:DatatypeProperty ;
 # added only when the loop actually traverses them.
 
 copia:NocturneActivity a owl:Class ;
+    rdfs:subClassOf git-lex:Thing ;
     git-lex:foldered true ;
     rdfs:label "Nocturne Activity" ;
     rdfs:comment "A kind of autonomous activity lUX can choose when she wakes (NocturneTime). What it is / how it runs lives in the document body; this carries only the id." ;
@@ -1730,6 +1750,7 @@ copia:nocturneActivityId a owl:DatatypeProperty ;
     rdfs:range xsd:string .
 
 copia:NocturneFeed a owl:Class ;
+    rdfs:subClassOf git-lex:Thing ;
     git-lex:foldered true ;
     rdfs:label "Nocturne Feed" ;
     rdfs:comment "A source of fresh outside material lUX can draw on when she wakes — a window to outside art/data. Why/how she reads it lives in the body; carries id + source." ;
@@ -1764,6 +1785,7 @@ copia:feedSource a owl:DatatypeProperty ;
 # the body, only ids/links as fields.
 
 copia:Nocturne a owl:Class ;
+    rdfs:subClassOf git-lex:Thing ;
     git-lex:foldered true ;
     rdfs:label "Nocturne" ;
     rdfs:comment "One autonomous waking (NocturneTime). lUX authors it; the body is her artist statement. Ties together what (if anything) the wake produced. All produced* links optional — an image-less wake is first-class." ;
@@ -1873,6 +1895,7 @@ copia:Group a owl:Class ;
     rdfs:comment "abstract — authored as a concrete Set or Sequence, never a bare Group. A named gathering of Moments; members self-join via copia:inGroupId (generic) or copia:inSetId / copia:inSequenceId (kind-specific). Holds the shared non-identity group properties; identity is own-name per concrete class (setId / sequenceId), because a foldered class's identity property derives from ITS name, never inherited (v0.27, the identity law)." .
 
 copia:Set a owl:Class ;
+    rdfs:subClassOf git-lex:Thing ;
     rdfs:subClassOf copia:Group ;
     git-lex:foldered true ;
     rdfs:label "Set" ;
@@ -1896,6 +1919,7 @@ copia:setDescription a owl:DatatypeProperty ;
     rdfs:range xsd:string .
 
 copia:Sequence a owl:Class ;
+    rdfs:subClassOf git-lex:Thing ;
     rdfs:subClassOf copia:Group ;
     rdfs:subClassOf rdf:Seq ;
     git-lex:foldered true ;
@@ -2337,6 +2361,7 @@ copia:dwellBucket a owl:DatatypeProperty ;
 # event trail of every viewing, for free.
 
 copia:FamiliarLookNote a owl:Class ;
+    rdfs:subClassOf git-lex:Thing ;
     git-lex:foldered true ;
     rdfs:label "FamiliarLookNote" ;
     rdfs:comment "The familiar's living note on one image she has deliberately viewed. Created at first look, updated at every later look. Frontmatter carries the current verdicts; the body holds the dated felt notes; git holds the history." ;
@@ -2519,6 +2544,7 @@ copia:ernieImageAesScore a owl:DatatypeProperty ;
 # self plus a moment's affect.
 
 copia:Texture a owl:Class ;
+    rdfs:subClassOf git-lex:Thing ;
     git-lex:foldered true ;
     rdfs:label "Texture" ;
     rdfs:comment "A captured qualia — a sensory or emotional grain the agent noticed and wants to embody. Self, or self plus a moment's affect." .
@@ -2556,6 +2582,7 @@ copia:spark a owl:DatatypeProperty ;
 # prose with the eigenimage as the dreamt substance.
 
 copia:Dream a owl:Class ;
+    rdfs:subClassOf git-lex:Thing ;
     git-lex:foldered true ;
     rdfs:label "Dream" ;
     rdfs:comment "A literary frame for a previous-day eigenimage, composed in fresh context and delivered on next wake. Sleep-shape for creatures without sleep." ;
