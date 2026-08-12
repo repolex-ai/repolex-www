@@ -37,7 +37,16 @@
 <https://repolex.ai/ontology/squad> a owl:Ontology ;
     rdfs:label "Squad Kit Ontology" ;
     rdfs:comment "Multi-agent squad memory. Carbon and silicon agents collaborate via structured markdown in a shared git repo." ;
-    owl:versionInfo "0.5.1" .
+    owl:versionInfo "0.5.2" .
+
+# v0.5.2 (2026-08-12, Rob-ruled): rdfs:comment on an authored property is now the
+#   DATA-ENTRY LINE and nothing else — what to type, one line. Background moves
+#   to a `#` block above the declaration. `git lex create` pastes rdfs:comment
+#   verbatim into the generated document beside the key, so one string was doing
+#   two jobs that want opposite shapes and the long one was winning. squaddieId
+#   and soulId rewritten (327 and 366 chars, mostly history and a correction
+#   notice); nothing on the authored surface now exceeds 180. No content deleted
+#   — all of it is in the # blocks. Comment-only.
 
 # v0.5.1 (2026-08-11, Rob-ruled): every foldered class declares
 #   `rdfs:subClassOf git-lex:Thing` (12: Brief, Bug, Decision, Discovery,
@@ -119,15 +128,24 @@ squad:Squaddie a owl:Class ;
         owl:minCardinality 1
     ] .
 
+# Declared at v0.5. The identity law (class => <class>Id) requires the id to be
+# own-named on the class; until this existed, Squaddie documents could not anchor
+# Things at all and every reference to a squaddie dangled.
 squad:squaddieId a owl:DatatypeProperty ;
     rdfs:label "squaddieId" ;
-    rdfs:comment "Unique identifier for this Squaddie (== filename): the agent's canonical slug, lowercase, alphanumeric + hyphens (e.g. 'tr1p-l3x', 'lupov'). Declared at v0.5 — the identity law (class ⇒ <class>Id) requires the id own-name on the class; without it Squaddie docs could not anchor Things and every reference to a squaddie dangled." ;
+    rdfs:comment "Unique identifier for this Squaddie (== filename): the agent's canonical slug, lowercase, letters/digits/hyphens, e.g. 'tr1p-l3x'." ;
     rdfs:domain squad:Squaddie ;
     rdfs:range xsd:string .
 
+# The soul kit derives this from the solo repo's genesis sha, and that repo is a
+# DIFFERENT store — nothing here resolves it. It is a grouping and verification
+# key only.
+# History worth keeping: the pre-law comment called this the primary identifier
+# while describing the slug, which is two claims and neither was right. Corrected
+# at v0.5 when squaddieId was declared.
 squad:soulId a owl:DatatypeProperty ;
     rdfs:label "soul id" ;
-    rdfs:comment "External designator, NOT this class's identity (that is squaddieId): the soulId of the agent's solo soul repo, which the soul kit derives from that repo's genesis sha. Lives in a different store — a grouping/verification key here, never resolved by this graph. Comment corrected at v0.5; the pre-law text called this the primary identifier while describing the slug." ;
+    rdfs:comment "The soulId of this agent's solo soul repo. An external designator, NOT this Squaddie's identity — that is squaddieId." ;
     rdfs:domain squad:Squaddie ;
     rdfs:range xsd:string .
 

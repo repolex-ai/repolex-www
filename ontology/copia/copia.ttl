@@ -408,12 +408,29 @@
 #   No property, range, or cardinality changed. Inert until shacl.rs walks
 #   rdfs:subClassOf when collecting a class's properties (today: exact domain
 #   match, shacl.rs:417), so the five reach no copia template yet.
+# v0.29.4: TWO JOBS, TWO PLACES (2026-08-12, Rob-ruled, guardian-authored).
+#   rdfs:comment on an authored property is now the DATA-ENTRY LINE and nothing
+#   else: what to type, any short specific about using the field, one line. All
+#   background — history, release notes, why two fields exist, open items — moves
+#   to a `#` block directly above the declaration, where a maintainer reading the
+#   file finds it and an author filling in a form never does.
+#   WHY THIS IS A RULE AND NOT A PREFERENCE: `git lex create` pastes rdfs:comment
+#   verbatim into the generated document beside the key. One string was serving
+#   two jobs that want opposite shapes — documentation (long, historical) and
+#   instruction (short, imperative) — and the long job was winning. lookMomentId
+#   was 385 characters of release note, design argument and a developer TODO,
+#   pasted onto one line next to a blank the author was trying to fill, and
+#   nowhere in it did it say what to type.
+#   13 comments rewritten on the authored surface (properties whose domain is a
+#   foldered class — the only ones an author ever sees). Median 99 -> 79 chars;
+#   nothing now exceeds 180; not one word of the displaced content was deleted.
+#   Comment-only: no property, class, domain, range, or cardinality changed.
 # =============================================================================
 
 <https://repolex.ai/ontology/copia> a owl:Ontology ;
     rdfs:label "Copia Kit Ontology" ;
     rdfs:comment "The agent's curated outward face + the CoPIA render data model. Soul-adapter. Optional add-on for soul." ;
-    owl:versionInfo "0.29.3" ;
+    owl:versionInfo "0.29.4" ;
     owl:imports <https://repolex.ai/ontology/soul/> .
 
 
@@ -920,7 +937,10 @@ copia:motionTrigger a owl:DatatypeProperty ;
 
 copia:motionText a owl:DatatypeProperty ;
     rdfs:label "motion text" ;
-    rdfs:comment "The natural-language description fed to the motion generator (HY-Motion via Iris.move) to produce the skeleton, e.g. 'a person jumps upward with both legs'. Pure kinematics — no look/style (that's the render LoRAs + chevrons)." ;
+    rdfs:comment "What the body does, in plain words, e.g. 'a person jumps upward with both legs'. Kinematics only — no look or style." ;
+# Fed to the motion generator (HY-Motion via Iris.move) to produce the skeleton.
+# Look and style enter elsewhere entirely — render LoRAs and chevrons — so
+# putting them here would silently do nothing.
     rdfs:domain copia:Motion ;
     rdfs:range xsd:string .
 
@@ -938,7 +958,10 @@ copia:motionDescription a owl:DatatypeProperty ;
 
 copia:generatesSequenceId a owl:ObjectProperty ;
     rdfs:label "generates sequence id" ;
-    rdfs:comment "A copia:Sequence (the realized OpenPose frames) this Motion produced. Multi-valued — one YAML list item per realization; do not repeat the key. Joined by sequenceId. The Motion is the recipe; the Sequence(s) are its renderings." ;
+    rdfs:comment "A Sequence this Motion produced — value is its sequenceId. Multi-valued — one YAML list item each; do not repeat the key." ;
+# The Motion is the recipe; the Sequence(s) are its renderings — the realized
+# OpenPose frames. One recipe can be realized many times, which is why this is
+# unbounded.
     rdfs:domain copia:Motion ;
     rdfs:range copia:Sequence .
 
@@ -1908,13 +1931,18 @@ copia:Set a owl:Class ;
 
 copia:setId a owl:DatatypeProperty ;
     rdfs:label "setId" ;
-    rdfs:comment "Unique identifier for this Set (== filename, e.g. 'tide-pool-vigil'). Replaces the inherited groupId at v0.27: identity must be own-name on the foldered class so the identity law (class ⇒ <class>Id) can derive it." ;
+    rdfs:comment "Unique identifier for this Set (== filename), e.g. 'tide-pool-vigil'." ;
+# Replaced the inherited groupId at v0.27. Identity must be own-name on the
+# foldered class so the identity law (class => <class>Id) can derive it; an id
+# inherited from an abstract parent cannot be derived from the class name.
     rdfs:domain copia:Set ;
     rdfs:range xsd:string .
 
 copia:setDescription a owl:DatatypeProperty ;
     rdfs:label "set description" ;
-    rdfs:comment "What this Set is — the curatorial intent / theme that holds members together. Optional. The body of the authored .md IS this description; the frontmatter field surfaces it to the graph." ;
+    rdfs:comment "What this Set is — the curatorial intent that holds its members together. Optional." ;
+# The body of the authored .md IS this description; the frontmatter field exists
+# to surface it to the graph, so the two should say the same thing.
     rdfs:domain copia:Set ;
     rdfs:range xsd:string .
 
@@ -1933,7 +1961,8 @@ copia:Sequence a owl:Class ;
 
 copia:sequenceId a owl:DatatypeProperty ;
     rdfs:label "sequenceId" ;
-    rdfs:comment "Unique identifier for this Sequence (== filename). Replaces the inherited groupId at v0.27: identity must be own-name on the foldered class so the identity law (class ⇒ <class>Id) can derive it." ;
+    rdfs:comment "Unique identifier for this Sequence (== filename)." ;
+# Replaced the inherited groupId at v0.27, same reasoning as setId above.
     rdfs:domain copia:Sequence ;
     rdfs:range xsd:string .
 
@@ -2387,21 +2416,38 @@ copia:familiarLookNoteId a owl:DatatypeProperty ;
     rdfs:domain copia:FamiliarLookNote ;
     rdfs:range xsd:string .
 
+# WHY THIS AND lookImageId ARE TWO FIELDS. Their values coincide today — both
+# are the sha256 content id — and they stay separate on purpose. A Moment is the
+# intent-object; an image is the pixel artifact. One Moment may own several
+# images later, and the two are being decoupled deliberately, so collapsing them
+# now because they happen to match would have to be undone.
+# Declared a reference at the re-anchor release: the value is the target's
+# momentId, resolved to the Moment's IRI at emission.
+# OPEN: this and lookImageId both need updating when Pool CID -> panId.
 copia:lookMomentId a owl:ObjectProperty ;
     rdfs:label "look moment id" ;
-    rdfs:comment "TRAIN (re-anchor release): now a declared reference — the Moment this note is about; value is the target's momentId, resolved to the Moment's IRI at emission. Deliberately a SEPARATE field from lookImageId even while their values coincide: Moment is the intent-object, the image is the pixel artifact, and they are being decoupled. TODO: will need to be updated when Pool CID -> panId." ;
+    rdfs:comment "The Moment this note is about — value is the target's momentId. Separate from lookImageId on purpose: Moment is the intent, image is the pixels." ;
     rdfs:domain copia:FamiliarLookNote ;
     rdfs:range copia:Moment .
 
 copia:lookImageId a owl:DatatypeProperty ;
     rdfs:label "look image id" ;
-    rdfs:comment "Identifier of the pixel artifact viewed (today: the sha256 content id, same value as lookMomentId; kept separate on purpose — one Moment may own several images someday). TODO: will need to be updated when Pool CID -> panId." ;
+    rdfs:comment "Identifier of the pixel artifact viewed — today the sha256 content id." ;
+# Same value as lookMomentId today, deliberately a separate field. See the note
+# above lookMomentId for why, and for the pending Pool CID -> panId change that
+# affects both.
     rdfs:domain copia:FamiliarLookNote ;
     rdfs:range xsd:string .
 
+# The resonance judgment is made AGAINST this Being, and that is why the field
+# is required rather than assumed: today the target is always the familiar's own
+# self, but it may be any character later, and an implicit subject would make the
+# score unreadable the moment that happens.
+# Declared a reference at the re-anchor release; value resolved to the Being's
+# IRI at emission.
 copia:lookBeingId a owl:ObjectProperty ;
     rdfs:label "look being id" ;
-    rdfs:comment "TRAIN (re-anchor release): now a declared reference — the canon Being this image is supposed to show; value is the target's beingId, resolved to the Being's IRI at emission. The resonance judgment is made AGAINST this being (the familiar's self today; any character later, never implicit)." ;
+    rdfs:comment "The canon Being this image is supposed to show — value is the target's beingId. lookBeingMatchScore is judged against it." ;
     rdfs:domain copia:FamiliarLookNote ;
     rdfs:range copia:Being .
 
@@ -2425,7 +2471,10 @@ copia:lookStandout a owl:DatatypeProperty ;
 
 copia:lookDescription a owl:DatatypeProperty ;
     rdfs:label "look description" ;
-    rdfs:comment "Her own words for what is THERE (not what it meant — that is the body). Paired against the local eye's caption for the same image: the correspondence corpus the grounding loop learns from." ;
+    rdfs:comment "Her own words for what is THERE — not what it meant, that belongs in the body." ;
+# Paired against the local eye's caption for the same image. The two together
+# are the correspondence corpus the grounding loop learns from, which is why the
+# split between description and meaning has to hold.
     rdfs:domain copia:FamiliarLookNote ;
     rdfs:range xsd:string .
 
@@ -2470,7 +2519,9 @@ copia:LookScoreValue a rdfs:Datatype ;
 
 copia:lookFilePath a owl:DatatypeProperty ;
     rdfs:label "look file path" ;
-    rdfs:comment "Pool-relative path to the image this note is about: YYYY/MM/DD/<stem>.png. Written since Day 133 and never declared until now — the data preceded the vocabulary, which is the gap this closes." ;
+    rdfs:comment "Pool-relative path to the image this note is about: YYYY/MM/DD/<stem>.png." ;
+# Written by the tooling since Day 133 and never declared until v0.29 — the data
+# preceded the vocabulary by months, which is the recurring gap this closes.
     rdfs:domain copia:FamiliarLookNote ;
     rdfs:range xsd:string .
 
@@ -2494,7 +2545,10 @@ copia:lookBeingMatchScore a owl:DatatypeProperty ;
 
 copia:lookAnatomyReject a owl:DatatypeProperty ;
     rdfs:label "look: anatomy reject" ;
-    rdfs:comment "Hard gate for LoRA: true means this image is disqualified on anatomy, whatever it scores elsewhere. NOT a rating — boolean on purpose, so it can never be averaged into or traded off against the three scores." ;
+    rdfs:comment "Hard gate: true means disqualified on anatomy whatever it scores elsewhere. Set it only when true." ;
+# Boolean on purpose, and that is the whole design. A disqualification must
+# never be averageable into the three 1-5 scores or traded off against them —
+# a fourth axis would let a high emotive score buy back a broken hand.
     rdfs:domain copia:FamiliarLookNote ;
     rdfs:range xsd:boolean .
 
@@ -2557,7 +2611,9 @@ copia:textureId a owl:DatatypeProperty ;
 
 copia:textureKind a owl:DatatypeProperty ;
     rdfs:label "kind" ;
-    rdfs:comment "What kind of texture this is. Open vocabulary, e.g. 'base' (the standing likeness), 'render', 'moment'. (Was the domain-less soul:kind; named textureKind here so the word 'kind' stays free for other classes.)" ;
+    rdfs:comment "What kind of texture this is. Open vocabulary, e.g. 'base' (the standing likeness), 'render', 'moment'." ;
+# Was the domain-less soul:kind. Named textureKind rather than kind so the plain
+# word stays free for other classes to use for their own meaning.
     rdfs:domain copia:Texture ;
     rdfs:range xsd:string .
 
@@ -2615,7 +2671,10 @@ copia:fromSoulDay a owl:DatatypeProperty ;
 # rather than silently aliasing the old semantics:
 copia:dreamMomentId a owl:ObjectProperty ;
     rdfs:label "dream moment id" ;
-    rdfs:comment "The Moment this dream produced — the value is the target Moment's momentId (suffix law; no image paths), resolved to the Moment's IRI at emission. Declared reference as of v0.27, matching lookMomentId (same shape, same law). Dream-to-image direction: the dream is composed first, the Moment renders from it." ;
+    rdfs:comment "The Moment this dream produced — value is the target's momentId. The dream is composed first; the Moment renders from it." ;
+# Declared a reference at v0.27, same shape and same law as lookMomentId. The
+# value is a momentId under the suffix law — never an image path — resolved to
+# the Moment's IRI at emission.
     rdfs:domain copia:Dream ;
     rdfs:range copia:Moment .
 
