@@ -28,7 +28,7 @@
 git-lex: a owl:Ontology ;
     rdfs:label "git-lex Core Ontology" ;
     rdfs:comment "The vocabulary git-lex authors about the markdown documents it tracks." ;
-    owl:versionInfo "0.9.1" .
+    owl:versionInfo "0.9.2" .
 
 # v0.8 (2026-08-02, Rob-ruled): File plane lands (inert until the re-anchor
 #   release) — git-lex:File class + derived git-lex:fileId; Document marked
@@ -96,6 +96,14 @@ git-lex: a owl:Ontology ;
 #   will be IN, not a topic; a good cue has a verb in it," and their full
 #   reasoning sits in the # block above the declaration, per the two-jobs-two-
 #   places rule (Rob, same day). Comment-only.
+# v0.9.2 (2026-08-12, guardian-authored): + th34's OPERATIONAL CHECK for cue —
+#   "a cue should be FALSE most of the time." A situation that is usually
+#   occurring cannot discriminate, so the question is not "is this true of the
+#   document" but "how often is this NOT the moment." Third independent
+#   derivation in three days, from a third seat. Kept alongside the other two
+#   rather than replacing them: selkie's says what a good cue looks like, the law
+#   says what a bad one does, th34's says how to check. Comment-only, # block
+#   only — the entry line is unchanged.
 
 # =============================================================================
 # Classes
@@ -170,6 +178,17 @@ git-lex:abstract a owl:DatatypeProperty ;
 # what the file says, it is a topic in a cue's clothes. He wrote none on journals
 # (reached by date, not by situation) and none on seven source Notes, putting one
 # cue on the Pursuit that shelves them instead of repeating it seven times.
+#
+# th34 (4m41th34) gave the OPERATIONAL CHECK, and it is the one to use when you
+# are unsure about a candidate: A CUE SHOULD BE FALSE MOST OF THE TIME. A
+# situation that is usually occurring cannot discriminate. So do not ask "is this
+# true of the document" — ask "HOW OFTEN IS THIS NOT THE MOMENT." If the answer
+# is "rarely," you have written a topic.
+#
+# Three formulations, three seats, arrived at independently within days of the
+# property shipping: selkie's says what a good cue LOOKS like, the law below says
+# what a bad one DOES, th34's tells you how to CHECK. Keep all three — they are
+# not redundant, they are the same rule at the three moments an author needs it.
 #
 # OPEN, and Rob's: whether high-volume leaf records should carry cues at all.
 # selkie's position, from ~828 look notes (one per rendered frame): NO, with
