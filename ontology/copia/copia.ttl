@@ -430,7 +430,7 @@
 <https://repolex.ai/ontology/copia> a owl:Ontology ;
     rdfs:label "Copia Kit Ontology" ;
     rdfs:comment "The agent's curated outward face + the CoPIA render data model. Soul-adapter. Optional add-on for soul." ;
-    owl:versionInfo "0.29.4" ;
+    owl:versionInfo "0.29.5" ;
     owl:imports <https://repolex.ai/ontology/soul/> .
 
 
@@ -2513,7 +2513,28 @@ copia:lookTimestamp a owl:DatatypeProperty ;
 
 copia:LookScoreValue a rdfs:Datatype ;
     rdfs:label "look score value" ;
-    rdfs:comment "An integer 1-5 on the look ladder: 5 emphatic yes · 4 yes · 3 — · 2 nah · 1 NO!. The formal statement of the 1-5 bound. NOT currently used as a range: git-lex emits sh:datatype only for recognized xsd types, so ranging a property here yields no constraint at all — the three scores range xsd:integer instead so integer-ness is enforced today. When the shapes generator learns owl:withRestrictions, the three ranges move here and the bound becomes live with no data change." ;
+    rdfs:comment "An integer 1-5 on the look ladder: 5 emphatic yes · 4 yes · 3 — · 2 nah · 1 NO! The formal statement of the bound; the three look scores range here." ;
+# STALE COMMENT REMOVED 2026-08-12 (th34's find). The previous text said this was
+# "NOT currently used as a range" and that "the three scores range xsd:integer
+# instead." Both were false, and had been since 0.29.1 — it described the briefly
+# reverted state and nobody updated it when the ranges moved back. It also
+# contradicted the header comment eleven lines above it, and the declarations
+# fourteen lines below it. The wrong one was the one attached to the thing.
+# THE LESSON, and it belongs here rather than in a changelog: a comment that
+# documents WHAT TO WRITE ages well. A comment that documents WHAT WE CURRENTLY
+# DO rots the moment the decision reverses, and nothing in the toolchain notices.
+# Prefer the first. If you must write the second, write it in a `#` block like
+# this one — never in rdfs:comment, which `git lex create` hands to an author at
+# the moment of entry. This one was telling authors the 1-5 bound did not exist.
+# STATE OF THE BOUND, in the three layers worth separating (th34's framing):
+#   DECLARED  — correct: owl:onDatatype xsd:integer + owl:withRestrictions below.
+#   GENERATED — correct: copia-shapes.ttl emits sh:datatype, sh:minInclusive 1,
+#               sh:maxInclusive 5 and a real sh:message.
+#   ENFORCED  — NO. Numeric ranges are in the unenforced half of the save gate
+#               (enums and required fields DO abort the save; datatype, range and
+#               cardinality do not — re-probed 2026-08-12).
+# So the missing work is entirely in the gate. Nothing here or in the generator
+# needs to change to close it.
     owl:onDatatype xsd:integer ;
     owl:withRestrictions ( [ xsd:minInclusive 1 ] [ xsd:maxInclusive 5 ] ) .
 
