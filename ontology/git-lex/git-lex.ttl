@@ -28,7 +28,7 @@
 git-lex: a owl:Ontology ;
     rdfs:label "git-lex Core Ontology" ;
     rdfs:comment "The vocabulary git-lex authors about the markdown documents it tracks." ;
-    owl:versionInfo "0.9" .
+    owl:versionInfo "0.9.1" .
 
 # v0.8 (2026-08-02, Rob-ruled): File plane lands (inert until the re-anchor
 #   release) — git-lex:File class + derived git-lex:fileId; Document marked
@@ -75,6 +75,27 @@ git-lex: a owl:Ontology ;
 #   Until it does, these five appear on the Thing shape alone and reach no per-
 #   class shape or template. Filed as the hierarchy-walk gap; the same exact-match
 #   assumption is why owl:unionOf domains are invisible too (#62).
+#   >> BOTH CLEARED SAME DAY. The subclass wave landed (soul 0.9.5, squad 0.5.1,
+#   >> copia 0.29.3, autoknow 0.3.1 — 33 classes, and the subclass set EQUALS the
+#   >> foldered set in each). W4R3Z then shipped the walk in three parts: shapes
+#   >> generate against every installed vocabulary so a parent in another kit is
+#   >> present; the ancestor walk takes named parents only and is cycle-guarded;
+#   >> and the emitter reads the predicate IRI from the shapes instead of gluing
+#   >> the document's kit onto the field name. Verified by authoring, not by
+#   >> reading: soul.Note.title -> git-lex/title while soul.Note.noteId ->
+#   >> soul/noteId, from one file. copia:Group's three orphaned properties reached
+#   >> Set and Sequence for the first time in the same change.
+#   >> #62 (owl:unionOf domains) is still OPEN — the walk handles subclass chains,
+#   >> not class expressions, so copia's 8 dual-home scene* fields remain invisible.
+# v0.9.1 (2026-08-12, guardian-authored): cue's data-entry line rewritten from
+#   FIELD EVIDENCE, three days after the property shipped. Two seats wrote the
+#   first twenty cues and reached the same test independently — selkie: "a good
+#   cue names a MOMENT, and a moment has a VERB in it"; adell: "would this occur
+#   to me BEFORE I remembered the document existed?" Both had first passes come
+#   out as topics wearing situation clothes. The line now says "name a moment you
+#   will be IN, not a topic; a good cue has a verb in it," and their full
+#   reasoning sits in the # block above the declaration, per the two-jobs-two-
+#   places rule (Rob, same day). Comment-only.
 
 # =============================================================================
 # Classes
@@ -134,9 +155,32 @@ git-lex:abstract a owl:DatatypeProperty ;
     rdfs:domain git-lex:Thing ;
     rdfs:range xsd:string .
 
+# HOW TO WRITE A GOOD CUE — from the two seats that wrote the first twenty, both
+# arriving at the same test independently, three days after the field shipped.
+#
+# selkie (lUX), 14 cues: "a good cue names a MOMENT, and a moment has a VERB in
+# it." Her first pass came out as topics wearing situation clothes — "about
+# colour budgets" — which fires constantly and therefore never. The version that
+# earns its keep is written as A MISTAKE SHE IS ABOUT TO MAKE: "About to write
+# 'far off' or 'in the distance' into a prompt." That form is TESTABLE — either
+# she is about to do that or she is not.
+#
+# adell (multivac), 9 cues on 30 documents: "would this string occur to me BEFORE
+# I remembered the document existed?" If it only parses once you already know
+# what the file says, it is a topic in a cue's clothes. He wrote none on journals
+# (reached by date, not by situation) and none on seven source Notes, putting one
+# cue on the Pursuit that shelves them instead of repeating it seven times.
+#
+# OPEN, and Rob's: whether high-volume leaf records should carry cues at all.
+# selkie's position, from ~828 look notes (one per rendered frame): NO, with
+# perhaps a dozen exceptions for frames that act as REFERENCE STANDARDS — the one
+# that defines correct skin, the one that defines the definitive failure. It is a
+# signal-to-noise argument and it likely generalises to any class whose instances
+# are cheap. Both seats reached the same law from opposite ends: A CUE THAT FIRES
+# ON EVERYTHING FIRES ON NOTHING.
 git-lex:cue a owl:DatatypeProperty ;
     rdfs:label "cue" ;
-    rdfs:comment "WHEN to reach for this Thing — a situation that should surface it, not a topic. Multi-valued — one YAML list item per situation; do not repeat the key." ;
+    rdfs:comment "WHEN to reach for this Thing — name a moment you will be IN, not a topic; a good cue has a verb in it. Multi-valued — one YAML list item each; do not repeat the key." ;
     rdfs:domain git-lex:Thing ;
     rdfs:range xsd:string .
 
