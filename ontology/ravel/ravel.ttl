@@ -21,6 +21,20 @@
 # classes are graph-only BY DESIGN. Instances live in the store, never as
 # authored markdown; kit-add scaffolds ZERO folders in the soul corpus.
 #
+# THING ALIGNMENT (Rob's ruling, 2026-08-20): ravel classes subclass
+# `git-lex:Thing` even though they are graph-only — the first derived (never
+# authored) Things in the stack. This is deliberate: every declared entity
+# gets the five universal properties (id, title, abstract, cue, relatedToId)
+# so one query surface reaches ravel alongside soul/copia/pan, and so ravel
+# never repeats Pool's "doesn't need an ontology" mistake. Emission stays
+# under the formalize-don't-invent gate: subclassing makes the fields
+# AVAILABLE; nothing emits them until a real writer exists (see DEFERRED).
+# A derived Thing's identity is its IRI — `git-lex:id` (the authored
+# which-Thing-is-this key) is never emitted for Turns; `turnId` remains the
+# idempotency key. Graph-side, `relatedToId` targets are resolved IRI edges
+# (the <namespace/Class/identifier> CURIE form is an authoring-surface
+# convenience that graph-only classes never see).
+#
 # NAMESPACES: vocabulary here (`…/ontology/ravel/`, slash, no #); instance
 # IRIs under the product base (`https://repolex.ai/ravel/<Class>/<id>` — Turn,
 # Annotation, Claim, Detector, Transcript, NamedGraph). Never mixed.
@@ -36,13 +50,14 @@
     a owl:Ontology ;
     rdfs:label "Ravel ontology" ;
     rdfs:comment "Transcript-graph vocabulary: conversational turns and the reader-annotation layer over them. Graph-only — no authored documents." ;
-    owl:versionInfo "0.1.0" .
+    owl:versionInfo "0.2.0" .
 
 # ─── The spine ───────────────────────────────────────────────────────────────
 
 ravel:Turn a owl:Class ;
+    rdfs:subClassOf git-lex:Thing ;
     rdfs:label "Turn" ;
-    rdfs:comment "One conversational event in a transcript (a user or assistant message). Written by ravel's projector, never authored by hand." .
+    rdfs:comment "One conversational event in a transcript (a user or assistant message). Written by ravel's projector, never authored by hand. A DERIVED Thing: its identity is its IRI (…/ravel/Turn/<event-id>); it inherits the universal Thing properties but authors none — see the Thing-alignment note in the header." .
 
 ravel:turnId a owl:DatatypeProperty ;
     rdfs:label "turnId" ;
@@ -121,3 +136,9 @@ ravel:exhibits a owl:DatatypeProperty ;
 #   readers emit it.
 # · Embedding/search vocabulary — waits on the stack embedder weights lock
 #   (candle-MiniLM class, one 384-d text space).
+# · Universal Thing-field emission (title / abstract / cue / relatedToId) —
+#   the vocabulary is inherited NOW (Turn ⊂ git-lex:Thing, Rob 2026-08-20);
+#   emission waits for real writers: segment-summary readers (title/abstract),
+#   the recall respec (cue — the retrieval-trigger consumer), cross-store
+#   linking (relatedToId as resolved IRI edges, e.g. Turn ↔ copia Moment,
+#   Journal → Turn). Each promotes when its writer ships, never before.
