@@ -54,10 +54,19 @@
 
 # ─── The spine ───────────────────────────────────────────────────────────────
 
+# Turn is a DERIVED Thing — the stack's first (Rob 2026-08-20, tr1p stamp
+# 2026-08-21). Its identity is its IRI (…/ravel/Turn/<event-id>); it inherits
+# the five universal Thing properties and authors none (no template ever
+# renders for it). Kept out of rdfs:comment per house style: comments stay
+# terse because they are pasted verbatim into author-facing surfaces; blocks
+# like this one are where the reasoning lives. Note git-lex 0.10 declares
+# `relatedToId rdfs:range git-lex:Thing`, so any relatedToId edge aimed at a
+# Turn entails this subclass in the data — the line below states what the
+# graph would already assert.
 ravel:Turn a owl:Class ;
     rdfs:subClassOf git-lex:Thing ;
     rdfs:label "Turn" ;
-    rdfs:comment "One conversational event in a transcript (a user or assistant message). Written by ravel's projector, never authored by hand. A DERIVED Thing: its identity is its IRI (…/ravel/Turn/<event-id>); it inherits the universal Thing properties but authors none — see the Thing-alignment note in the header." .
+    rdfs:comment "One conversational event in a transcript (a user or assistant message). Written by ravel's projector, never authored by hand." .
 
 ravel:turnId a owl:DatatypeProperty ;
     rdfs:label "turnId" ;
