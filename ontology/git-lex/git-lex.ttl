@@ -28,7 +28,169 @@
 git-lex: a owl:Ontology ;
     rdfs:label "git-lex Core Ontology" ;
     rdfs:comment "The vocabulary git-lex authors about the markdown documents it tracks." ;
-    owl:versionInfo "0.9.2" .
+    owl:versionInfo "0.17.0" .
+
+# v0.14 (2026-08-26, Rob-ruled): + git-lex:kitManaged — the flag that lets the
+#   kit RETRACT, which is the one thing it has never been able to do.
+#   THE BUG IT EXISTS FOR: kit-update converges files a kit SHIPS. A file the kit
+#   has STOPPED shipping is abandoned, not uninstalled. Observed twice in one day:
+#   a renamed skill left its old filename in place, and content/Raw/ survived at
+#   the repo root after the kit dropped it. The kit can plant and overwrite; it
+#   cannot retract.
+#   WHY A FLAG AND NOT THE HOOK MECHANISM, since hooks already solve this: hooks
+#   work by EXHAUSTIVE PATH OWNERSHIP — .claude/hooks/*.sh is either kit-shipped
+#   or `-local-`, and anything else is reaped. That works because git-lex owns
+#   the whole directory. It CANNOT work for Soul/Skill/ or any content path,
+#   because agents are told, in AGENTS.md, to write their own skills there. A
+#   shared namespace needs per-file provenance; an owned namespace does not.
+#   AND WHY DATA RATHER THAN A NAMING CONVENTION: the hook lane discriminates by
+#   filename (`-local-`) because a .sh has no frontmatter to hold anything.
+#   Documents do. A flag is a fact; a name prefix is a heuristic, and this seat's
+#   standing rule is to prefer the existence check.
+#   ABSENCE IS THE SAFE DEFAULT, deliberately. Not-asserted means "not mine, do
+#   not touch," so git-lex can only ever reap what it explicitly planted. A bug
+#   in the flag under-reaps and leaves litter; it cannot eat authored work.
+#   IT MUST LIVE IN THE FILE, not in a .lex/ manifest. `git lex nuke` deletes
+#   .lex/ and keeps content — a manifest would be destroyed exactly when the
+#   question "is this mine?" still needs answering. Rob's ruling that nuke and
+#   kit-remove should take managed files with them depends on this.
+#   READER NOT BUILT: nothing reads this yet. Spec for W4R3Z at
+#   subtexture/docs/git-lex/2026_08_26_KITMANAGED_REAP_SPEC.md. The declaration
+#   ships first here only because it is inert until something reads it — no
+#   existing value is reinterpreted, which is the condition the ordering law
+#   actually cares about.
+
+# v0.13 (2026-08-26, Rob-ruled): BOTH DATE PROPERTIES BECOME INSTANTS.
+#   dateCreated and dateUpdated flip xsd:date -> xsd:dateTime, ISO-8601 with
+#   offset. Rob: the machine writes these now, and a machine has no reason to
+#   round to a day. Both are git-lex-maintained; neither is hand-authored.
+#   THE v0.9 OBJECTION MEETS ITS ANSWER HERE, since a full timestamp does
+#   duplicate what git holds exactly, which is what got `date` refused in the
+#   first place: a machine-written stamp that cannot drift is not a second
+#   source of truth, it is a CACHE of what git holds. That is the whole defusal,
+#   and it only holds while nothing hand-edits these.
+#   The v0.11 justification for day granularity ("precise ordering is git's job")
+#   is superseded, not merely dropped.
+#   Both instants means both are directly comparable — no cast, no asymmetry.
+#   A transitional converge (W4R3Z) upgrades existing date-only values from git
+#   rather than fabricating midnights.
+#   CONVERGE HAZARD, RAISED AND OWNED BY THE READER SIDE, recorded here because
+#   this declaration is what triggers the pass: deriving dateCreated from a
+#   file's FIRST COMMIT IN THIS REPO is exactly the fact dateCreated exists to
+#   defeat. Git records repo-entry, not authorship. Measured in this seat:
+#   Harness/Memory/session-2026-04-04-identity-spec.md first-commits 2026-08-02
+#   and was written 2026-04-04 — a four-month error, and the file says so in its
+#   own body. Migration resets first-commit for every file that ever moved
+#   repos. So a converge that overwrites an authored dateCreated with git's
+#   first-commit stamp destroys the only record of the true date.
+
+# v0.12 (2026-08-26, Rob-ruled): SUBSTRATE MOVES PLANES AND CHANGES MEANING.
+#   git-lex:substrate is REMOVED from git-lex:Repo (where it meant "a harness
+#   declared in repo.yml", multi-valued) and REDECLARED on git-lex:Thing, where
+#   it means THE MODEL THAT LAST SAVED THIS DOCUMENT, as its exact id —
+#   "claude-fable-5". Single-valued. Rob: every document should have a space for
+#   which model wrote it.
+#   MACHINE-WRITTEN, and that is the design, not a convenience. Rob's own
+#   objection was that a model may not reliably know its own id; the harness
+#   always does. So git-lex stamps it at save, exactly like dateUpdated, and
+#   there is nothing for an agent to check after wake and nothing to guess.
+#   NOT modelId: the *Id suffix is a stack-wide contract that the value REFERENCES
+#   a Thing. This is a literal string.
+#   WHAT IT DOES NOT RECORD: which model wrote any particular line. It is the
+#   last saver, not per-edit attribution — git history holds that, and a shared
+#   working tree means a save can carry another agent's work (see
+#   git-lex/docs/kit-authoring.md 2.1).
+#   THE READER IS STILL LIVE AND THIS IS THE ORDERING RISK, stated plainly
+#   because the house rule is that the reader ships FIRST: git2_nquads.rs emits
+#   one `substrate` triple per repo.yml `substrates:` entry onto the REPO node,
+#   from a hardcoded allowlist (:504) that never read this declaration. Removing
+#   the declaration does not stop it. Until W4R3Z removes that emitter, a repo
+#   declaring substrates puts harness names on the predicate that now means a
+#   model id — one predicate, two meanings, in live data.
+#   Measured exposure at ship time: ZERO in this seat's repo.yml and ZERO across
+#   all four kit repos. The fleet is NOT measured — peer repo.yml files are not
+#   mine to read — so the emitter removal is the gate, not this count.
+
+# v0.11 (2026-08-24, Rob-ruled): THREE MORE UNIVERSAL PROPERTIES, and the
+#   abstract/description split is a TRUST distinction, not a length one.
+#   (1) + git-lex:description — CURATED. Short, deliberate, and software may
+#   read it, so the value matters. Exact use varies by class. Rob's finding:
+#   this was never a per-class need. copia had already grown SEVEN of them —
+#   beingDescription, itemDescription, lookDescription, motionDescription,
+#   outfitDescription, placeDescription, setDescription — plus a bare
+#   shortDescription. Seven names for one idea inside ONE kit, so "find
+#   everything whose description mentions X" needed a seven-way UNION. Same
+#   damage as soul:title vs copia:title, concentrated. Declared once here; the
+#   copia seven collapse into it on a later migration (Rob's call, not stamped
+#   in passing).
+#   NAMED description, NOT shortDescription: "short" is a constraint, not an
+#   identity — if length is enforced it belongs in the shape as a maxLength.
+#   copia carried both spellings, which is how one idea became eight names.
+#   (2) git-lex:abstract's comment REWRITTEN, unchanged in shape. It is the
+#   GENERATED counterpart: what an agent made of the document, overwritable by
+#   automation, not to be depended on. That is the whole reason to keep both —
+#   abstract is where automation may write without contaminating a field
+#   software reads. Stated in both comments, because otherwise authors fill
+#   whichever they meet first and the trust level means nothing.
+#   (3) + git-lex:dateCreated, + git-lex:dateUpdated. This REVERSES the v0.9
+#   refusal of `date`, and the reason is worth keeping. That refusal said "git
+#   holds both precisely." True of modification, FALSE of creation: git records
+#   when a file entered THIS repo's history, so every migration silently resets
+#   it. Measured on the guardian's own repo — a batch of Memory documents all
+#   report the day they were migrated in from the harness auto-memory directory,
+#   not the day they were written. So dateCreated records a fact that is
+#   otherwise UNRECOVERABLE after a move, and dateUpdated is machine-maintained
+#   on save (Rob-ruled) rather than hand-kept — which is what defuses the
+#   two-sources-of-truth objection that grounded the original refusal.
+#   BOTH xsd:date, matching the house convention (soul:earthDate,
+#   copia:lastVisited). Day granularity is deliberate: precise ordering is git's
+#   job, and duplicating a timestamp git already holds exactly is the thing v0.9
+#   was right about.
+#   All three carry owl:maxCardinality 1 on Thing.
+
+# v0.10.3 (2026-08-24, Rob-ruled): CLASS-LEVEL ANNOTATIONS GET A DECLARED HOME.
+#   (1) + git-lex:authoringGuidance — per-class guidance on what belongs in a
+#   document's body. Rob's framing: `create` describes every metadata field and
+#   says nothing about the body, so the body's entire specification has been one
+#   placeholder string for every class in every kit. Delivered two ways —
+#   `git lex create` shows it, and it lands in the class's __<Class>.md template
+#   for agents that write files without calling create. It does NOT land in the
+#   document. Never enforced, by standing rule: no gate, no warning, absent from
+#   verify. A guideline that can fail something has stopped being memory support.
+#   (2) git-lex:foldered DECLARED — it has been in use on every foldered class in
+#   every kit since the beginning and appeared in this file only inside comments.
+#   The readers match the literal IRI so nothing misbehaved, but to a reasoner,
+#   an exporter, or a kit author reading this file it was an undefined predicate
+#   applied to a class. Behaviour unchanged; the term now exists.
+#   Both are owl:AnnotationProperty because their subject is a class — see the
+#   section header for why a DatatypeProperty would be the wrong shape.
+
+# v0.10 (2026-08-21, Rob-ruled): THE RANGE BECOMES THE RULE, and Thing's
+#   definition is corrected to match what it always meant.
+#   (1) git-lex:relatedToId gains `rdfs:range git-lex:Thing`. W4R3Z built the
+#   reader first and deployed it fleet-wide (git-lex 65286a9) BEFORE this line
+#   shipped — deliberately, because the reverse order would have minted
+#   `git-lex/Thing/<garbage>` IRIs everywhere. This ttl edit arms the feature
+#   per repo as kit-updates land. Under a declared Thing range the
+#   angle-bracket form is the ONLY accepted value and everything else rejects
+#   at save, blocking, with the fix named per value. That is option (B) from
+#   the bare-value path-lane report (subtexture 2026_08_18), shipped as a
+#   per-property declaration rather than a hardcoded rule — so the mechanism
+#   generalises to any reference property that declares a range.
+#   Fleet exposure at ship time, measured by W4R3Z: ONE bare value (M3RC's
+#   Soul/Journal/day-16.md); selkie's 7 specimens self-cleared before this.
+#   (2) git-lex:Thing's comment no longer says "every foldered class is a
+#   Thing." That was true of the corpus and was never the definition — see the
+#   block above the class. Foldered was a proxy for "has its own identity,"
+#   and two pressures broke the tie the same week: Rob's ravel ruling (a
+#   graph-only class needs the five properties) and the range entailment in (1)
+#   (pointing at a derived entity makes it a Thing whether we declare it or
+#   not). A proposed git-lex:DerivedThing was refused: authored-vs-derived is
+#   already recoverable, and a second class splits the query surface Rob asked
+#   to unify.
+#   NOT in this cut: ravel:Turn subclassing Thing (spaceGOAT lands it in
+#   ravel.ttl), and copia:Moment / copia:Judgment (Rob's, queued for the pan
+#   sitting). The definition is what needed to be right first.
 
 # v0.8 (2026-08-02, Rob-ruled): File plane lands (inert until the re-anchor
 #   release) — git-lex:File class + derived git-lex:fileId; Document marked
@@ -124,7 +286,8 @@ git-lex:File a owl:Class ;
 git-lex:fileId a owl:ObjectProperty ;
     rdfs:label "fileId" ;
     rdfs:comment "DERIVED, never authored: the File currently expressing this Thing, stamped by git-lex at save from the file's position, re-derived on move. Emitted as an IRI edge to the File node (git-lex/File/<path>) so Thing-to-File-to-links joins need no string surgery — the same house pattern as every ...Id reference: the NAME describes the id the value derives from (a File's id is its path), the GRAPH object is the resolved node. This is the one connection between the planes; 'where has this Thing lived' is its temporal history. Domain open: any Thing carries it." ;
-    rdfs:range git-lex:File .
+    rdfs:range git-lex:File ;
+    rdfs:domain git-lex:Thing .
 
 # --- The Thing plane: the class every authored entity is ---------------------
 # git-lex:File's counterpart. A File is an ADDRESS (id = repo-relative path,
@@ -142,14 +305,56 @@ git-lex:fileId a owl:ObjectProperty ;
 # properties would have manufactured that false accusation across every kit at
 # once.
 
+# WHAT MAKES A THING A THING — corrected 2026-08-21, because the first
+# definition over-fit the corpus it was written against.
+#
+# v0.9's comment said "every foldered class in every kit is a Thing." That was
+# TRUE and it was never the DEFINITION. At the time, every entity class in all
+# four kits happened to be an authored one, so "foldered" and "has its own
+# identity" picked out the same set, and the proxy got written down as the rule.
+# A coincidence of the corpus, promoted to law by nobody noticing it was one.
+#
+# Two independent pressures broke the tie in the same week, which is the usual
+# sign the proxy was the problem:
+#
+#   1. Rob, ruling on ravel (2026-08-20): "we should have these in ravel also,
+#      we will need them. Every kind of thing we define will need an id, cue
+#      will be helpful for remembering, relatedToId is essential. I don't want
+#      to make the same mistake we made with Pool." ravel:Turn is GRAPH-ONLY —
+#      nobody authors one — and it plainly needs the universal properties.
+#
+#   2. `git-lex:relatedToId` gaining `rdfs:range git-lex:Thing` (below). In
+#      RDFS a range is an ENTAILMENT: `?x relatedToId ?y` entails `?y a
+#      git-lex:Thing`, whether or not any ttl says so. So the moment anything
+#      points at a derived entity, that entity IS a Thing in the data. Refusing
+#      to declare it would not prevent the fact — it would only mean the
+#      ontology declines to state what its own data already asserts, which is
+#      the one failure this seat exists to prevent.
+#
+# So: a Thing is an entity with its OWN IDENTITY, independent of any file.
+# Authored or derived is a fact about how it got here, not about what it is —
+# and it is already recoverable (does a document declare it?), so it earns no
+# separate class. A `git-lex:DerivedThing` was proposed and refused on exactly
+# that ground: it would split the query surface Rob asked us to unify, to
+# record something nobody has to be told.
+#
+# Consequence for the id property below: its "AUTHORED" framing still holds for
+# every class a human writes, and derived Things simply never author one —
+# their IRI is minted by their producer and IS their identity. No contradiction,
+# and no second property.
+#
+# NOT settled here: copia:Moment and copia:Judgment are graph-only entity
+# classes that do not yet subclass Thing. The reasoning above applies to them
+# and the change is Rob's, queued for the pan sitting — not stamped in passing.
 git-lex:Thing a owl:Class ;
     rdfs:label "Thing" ;
-    rdfs:comment "An ontology-defined entity a document expresses, as opposed to the file expressing it. Counterpart to git-lex:File: a File is an address (its id is a path, and dies on rename), a Thing is a lifetime (its id is authored, and survives moves). Every foldered class in every kit is a Thing. The universal authored properties — id, title, abstract, cue, relatedToId — have this as their domain." .
+    rdfs:comment "An entity with its own identity and lifetime, as opposed to the file that carries it. Counterpart to git-lex:File: a File is an ADDRESS (its id is a path, and dies on rename), a Thing is a LIFETIME (its id is its own, and survives moves). Authored document classes and derived graph-only classes are both Things. The universal properties — id, title, description, abstract, cue, relatedToId, dateCreated, dateUpdated, substrate, kitManaged — have this as their domain." .
 
 git-lex:id a owl:ObjectProperty ;
     rdfs:label "id" ;
     rdfs:comment "AUTHORED — which Thing this document IS, written <namespace/Class/identifier>. Without it these facts bind to the file path and die on rename." ;
-    rdfs:domain git-lex:Thing .
+    rdfs:domain git-lex:Thing ;
+    rdfs:range git-lex:Thing .
 
 git-lex:title a owl:DatatypeProperty ;
     rdfs:label "title" ;
@@ -159,9 +364,53 @@ git-lex:title a owl:DatatypeProperty ;
 
 git-lex:abstract a owl:DatatypeProperty ;
     rdfs:label "abstract" ;
-    rdfs:comment "A short summary of this Thing, for readers and listings. Single-valued." ;
+    rdfs:comment "GENERATED — what an agent made of this document. Automation may overwrite it; do not depend on it being current. For a value software reads, use description." ;
     rdfs:domain git-lex:Thing ;
     rdfs:range xsd:string .
+
+git-lex:description a owl:DatatypeProperty ;
+    rdfs:label "description" ;
+    rdfs:comment "CURATED — a short deliberate summary software may read, so what you write here matters. Exact use varies by class. Single-valued." ;
+    rdfs:domain git-lex:Thing ;
+    rdfs:range xsd:string .
+
+git-lex:dateCreated a owl:DatatypeProperty ;
+    rdfs:label "dateCreated" ;
+    rdfs:comment "When this document was first written, ISO-8601 with offset. Maintained by git-lex — do not hand-edit." ;
+    rdfs:domain git-lex:Thing ;
+    rdfs:range xsd:dateTime .
+
+git-lex:dateUpdated a owl:DatatypeProperty ;
+    rdfs:label "dateUpdated" ;
+    rdfs:comment "When this document last changed, ISO-8601 with offset. Maintained by git-lex on save — do not hand-edit." ;
+    rdfs:domain git-lex:Thing ;
+    rdfs:range xsd:dateTime .
+
+git-lex:kitManaged a owl:DatatypeProperty ;
+    rdfs:label "kitManaged" ;
+    rdfs:comment "True only in a file a KIT ships. git-lex may overwrite or delete it without asking — never add this to a document you wrote." ;
+    rdfs:domain git-lex:Thing ;
+    rdfs:range xsd:boolean .
+
+git-lex:substrate a owl:DatatypeProperty ;
+    rdfs:label "substrate" ;
+    rdfs:comment "The model that last saved this document, as its exact id (claude-fable-5). Maintained by git-lex on save — do not hand-edit or guess it." ;
+    rdfs:domain git-lex:Thing ;
+    rdfs:range xsd:string .
+
+# --- Universal Classes: Note and Skill ---------------------------------------
+
+git-lex:Note a owl:Class ;
+    rdfs:subClassOf git-lex:Thing ;
+    git-lex:foldered true ;
+    rdfs:label "Note" ;
+    rdfs:comment "The universal structured note: a scratchpad, capture, or thinking document with title, description, cues, tags, and links. Kit-specific notes (soul:Note, copia:Note, squad:Note) subclass this." .
+
+git-lex:Skill a owl:Class ;
+    rdfs:subClassOf git-lex:Thing ;
+    git-lex:foldered true ;
+    rdfs:label "Skill" ;
+    rdfs:comment "An executable skill definition with instructions, scripts, or resources projected into agent substrate harnesses. Kit-specific skills (soul:Skill, copia:Skill) subclass this." .
 
 # HOW TO WRITE A GOOD CUE — from the two seats that wrote the first twenty, both
 # arriving at the same test independently, three days after the field shipped.
@@ -203,15 +452,155 @@ git-lex:cue a owl:DatatypeProperty ;
     rdfs:domain git-lex:Thing ;
     rdfs:range xsd:string .
 
+# THE RANGE IS THE RULE (Rob-ruled 2026-08-20; git-lex 65286a9 by W4R3Z).
+# `rdfs:range git-lex:Thing` is not decoration — it is the declared switch that
+# turns on the angle-bracket lane. Under it, `<namespace/Class/identifier>` is
+# the ONLY accepted form, and every other shape REJECTS at save with the fix
+# spelled out: bare paths, real repo-relative file paths, bare names, absolute
+# IRIs in brackets, and URLs (forbidden by the same ruling).
+#
+# This is the fix for the silent wrong-join that ran for months: an unbracketed
+# value resolved through the file-path lane, got the writing repo's own
+# namespace welded on, and landed on an address nothing described — no error,
+# no warning, 104 dead links in one repo before anyone measured. It is now a
+# per-property declaration rather than a hardcoded rule, so any reference
+# property can opt in by declaring a range.
+#
+# The range also does ontological work, and that half is not optional. In RDFS
+# a range is an ENTAILMENT, not a filter: `?x relatedToId ?y` now entails
+# `?y a git-lex:Thing`. So every class anyone may point at must BE a declared
+# Thing — see the Thing comment above for why that reaches derived classes too.
+#
+# ---------------------------------------------------------------------------
+# THE OTHER HALF, which the block above omitted and which cost a day to
+# rediscover (added 2026-08-22). Documenting `range git-lex:Thing` without
+# documenting what a CONCRETE range means left the more dangerous case unwritten.
+#
+# First, an admission that belongs next to the rule and not in a commit message:
+# the VALUE-FORM half was already written here, in the v0.9 changelog above, on
+# 2026-08-11 — "VALUES ARE FULLY QUALIFIED ... always relatedToId, or a typed
+# relatedToJournalId where the class must be forced." That is precisely the
+# relatedToPursuitId case, answered eleven days before it was asked. This author
+# did not re-read it, went looking for precedent in copia instead, found the
+# bare-id pattern on lookMomentId, and shipped the wrong lane until Rob said
+# otherwise. The vocabulary knew.
+#
+# THE RULE THAT FALLS OUT OF IT (W4R3Z's formulation, 2026-08-22, correcting a
+# looser one this author shipped hours earlier and which is why this paragraph
+# was rewritten):
+#
+#   MATCH THE INSTRUMENT TO THE QUESTION. The corpus answers WHAT EXISTS — it
+#   is the only honest source for blast radius, which is why every measured-zero
+#   gate in these kits lives there. The crate and the TTL answer WHAT THE RULE
+#   IS. Using the corpus for THAT question is the failure mode: reading what
+#   authors managed to do as if it were what the contract says.
+#
+# Same instrument, different question, and only one of them is valid per
+# question. The earlier phrasing here — "the corpus is only evidence of what
+# people did" — demoted the corpus generally and was wrong: a corpus grep is
+# exactly right for "how many documents break if I change this," and wrong only
+# for "what is the value form." Blast radius: corpus. Contract: declaration.
+#
+# A RANGE IS A VALUE-FORM CONTRACT, and there are exactly two:
+#
+#   rdfs:range git-lex:Thing   → the ADDRESS lane. Value is `<ns/Class/id>`.
+#                                Everything else rejects, blocking, fix named.
+#   rdfs:range <concrete class> → the BARE-ID lane (Law 6). Value is the
+#                                target's own id, no brackets; the IRI is
+#                                derived as <range class>/<value>.
+#
+# Lane selection is EXACT EQUALITY on the declared range IRI — no subclass walk
+# (verified in the crate by W4R3Z 2026-08-22: the machine never reads property
+# NAMES, only declarations; the "*ToId" convention is for humans). Consequences
+# an ontology author must hold:
+#
+#   1. Declaring ANY concrete class range is declaring a bare-id contract —
+#      including a class that IS a Thing subclass. `soul:Pursuit` does not
+#      inherit Thing's lane.
+#   2. A bracketed value under a concrete range does NOT error. It is
+#      percent-encoded into the identifier and glued under the range class:
+#      `<soul/Pursuit/x>` emits as `.../Pursuit/%3Csoul/Pursuit/x%3E`. Silent,
+#      and the same mangling shape as the 2026-08-18 path-lane bug seen from
+#      the other side. Measured, not theorised — it is why
+#      soul:relatedToPursuitId ships at range git-lex:Thing rather than the
+#      more precise soul:Pursuit.
+#   3. So a TYPED edge (bracketed AND class-checked) is not yet expressible.
+#      It needs two builds that do not exist: subclass-aware lane selection
+#      (range ⊑ Thing → address lane) and a target-class check (the address's
+#      Class segment must match the range class or a subclass). Until both
+#      land, choose the lane you want and accept the other half's looseness.
+#   4. ORDERING LAW, twice-earned: the reader ships before the declaration.
+#      Narrowing a Thing range to a concrete class before the subclass walk
+#      exists silently converts every correct value into a mangled one.
+# ---------------------------------------------------------------------------
 git-lex:relatedToId a owl:ObjectProperty ;
     rdfs:label "relatedToId" ;
     rdfs:comment "Another Thing this one relates to, any class in any kit, written <namespace/Class/identifier>. Multi-valued — one YAML list item per target; do not repeat the key." ;
-    rdfs:domain git-lex:Thing .
+    rdfs:domain git-lex:Thing ;
+    rdfs:range git-lex:Thing .
 
+# v0.16.0 (Rob-ruled 2026-08-28): git-lex:id is REQUIRED. Exactly one, on every
+# Thing. This re-lands 0.15.0 after git-lex 4d626dd fixed the validator: the
+# validation emitter was gluing the key's kit prefix onto the property name, so
+# `soul.Note.id` became soul:id and the shape's sh:path git-lex:id matched
+# nothing. The constraint was unsatisfiable by any authoring action. It resolves
+# the declared IRI now, so the published format satisfies the gate.
+#
+# v0.15.1, superseded: id was optional again. The
+# constraint was UNSATISFIABLE: 49 of 49 documents failed `id: MinCount(1) not
+# satisfied`, INCLUDING documents carrying a correct, bracketed, graph-resolved
+# id. The authored key lands on the THING node; the validator does not find it
+# there. No authoring action could clear the gate, so every repo went write-dead.
+# My proof run ("45 backfilled, gate green") was real and tested the wrong thing:
+# it ran BEFORE kit-update, against 0.14.0 where id was optional. It proved the
+# VALUES were well-formed and never proved they satisfy the REQUIREMENT, because
+# I shipped the constraint and ran the proof in that order. Re-require only after
+# the validator resolves a bare `id` key to git-lex:id the way the live extractor
+# already does. The range and domain fixes below are correct and STAY.
+#
+# v0.15.0 (Rob-ruled 2026-08-28), superseded above: git-lex:id is REQUIRED. Exactly one, on every
+# Thing. Rob: "It's not a big deal, it's running one subagent on your repo and
+# updating everything." The lockout is INTENDED — a soul cannot save until every
+# Thing declares which Thing it is. Until now id was optional and `create` only
+# began pre-filling it recently, so most documents were anchored by their
+# per-class id and bound to a filename convention instead of to a declared
+# identity. The value is fully derivable — <namespace/Class/<classId>> — so the
+# backfill is mechanical with exactly one right answer, EXCEPT for a document
+# carrying no class id at all, which nothing can derive and a person must name.
 git-lex:Thing rdfs:subClassOf
-    [ a owl:Restriction ; owl:onProperty git-lex:id       ; owl:maxCardinality 1 ] ,
-    [ a owl:Restriction ; owl:onProperty git-lex:title    ; owl:maxCardinality 1 ] ,
-    [ a owl:Restriction ; owl:onProperty git-lex:abstract ; owl:maxCardinality 1 ] .
+    [ a owl:Restriction ; owl:onProperty git-lex:id          ; owl:cardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty git-lex:title       ; owl:maxCardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty git-lex:abstract    ; owl:maxCardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty git-lex:description ; owl:maxCardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty git-lex:dateCreated ; owl:maxCardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty git-lex:dateUpdated ; owl:maxCardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty git-lex:substrate   ; owl:maxCardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty git-lex:kitManaged  ; owl:maxCardinality 1 ] .
+
+# =============================================================================
+# CLASS-LEVEL ANNOTATIONS — what a kit says ABOUT its own classes
+# =============================================================================
+# These annotate an owl:Class. They are read by git-lex's tooling — folder
+# scaffolding, `create`, template generation — and never appear in a document's
+# frontmatter. Nothing here describes an instance.
+#
+# Declared owl:AnnotationProperty deliberately. The subject is a class, which is
+# a T-box entity; a DatatypeProperty applied to a class would additionally
+# assert that the class is an individual (OWL punning), which is not what any of
+# these mean.
+# =============================================================================
+
+git-lex:foldered a owl:AnnotationProperty ;
+    rdfs:label "foldered" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:boolean ;
+    rdfs:comment "True when init should scaffold a folder for this class and its documents are authored as files. A class without it is graph-only — real in the ontology, but with no folder and nothing to create." .
+
+git-lex:authoringGuidance a owl:AnnotationProperty ;
+    rdfs:label "authoringGuidance" ;
+    rdfs:domain owl:Class ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Guidance for whoever writes a document of this class — what belongs in the body. Delivered by `git lex create` and written into the class's __<Class>.md template; it does not land in the document itself. NEVER enforced: gates no save, raises no warning, absent from verify." .
 
 git-lex:NamedGraph a owl:Class ;
     rdfs:subClassOf sd:NamedGraph ;
@@ -291,11 +680,15 @@ git-lex:optionalKit a owl:DatatypeProperty ;
     rdfs:label "optionalKit" ;
     rdfs:comment "An optional kit installed in this repo (repo.yml `optional_kits:`). Multi-valued — one triple per kit." .
 
-git-lex:substrate a owl:DatatypeProperty ;
-    rdfs:domain git-lex:Repo ;
-    rdfs:range xsd:string ;
-    rdfs:label "substrate" ;
-    rdfs:comment "A harness substrate declared for this repo (repo.yml `substrates:`). Multi-valued — one triple per substrate." .
+# git-lex:substrate was HERE, on Repo, meaning "a harness declared in repo.yml".
+# Removed in v0.12 and the name reassigned to the Thing plane — see the changelog
+# block at the top of this file. REPO HAS NO SUBSTRATE PROPERTY.
+#
+# READER STILL LIVE: git2_nquads.rs emits a `substrate` triple per repo.yml
+# `substrates:` entry, onto the REPO node, via a hardcoded allowlist (:504) that
+# never consulted this declaration. Until that emitter is removed, a repo that
+# declares substrates will put harness names on the same predicate that now means
+# a model id. W4R3Z's, flagged at the ruling.
 
 # =============================================================================
 # The statement lifecycle (SpoEvent)
