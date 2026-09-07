@@ -1,0 +1,85 @@
+# =============================================================================
+# pool.ttl — DRAFT v0.1 — Pool multimedia-store ontology
+# Namespace: https://repolex.ai/ontology/pool/   (trailing slash — matches the
+#            POOL_NS constant the Rust already commits to: src/lib.rs:37)
+# Author: w4r3z (Day 48, 2026-07-03).  Status: v0.1 — the HOME, minimal.
+#
+# WHY THIS EXISTS (Day 48, with Rob):
+#   Pool had NO ontology. Its model was encoded implicitly in Rust and worked, so
+#   the formal .ttl never got written — meanwhile CoPIA's copia.ttl became the
+#   de-facto Pool spec (saturated with cid/blob/region/vector concepts that are
+#   really Pool's). That is coupling debt. Weave is about to become a second
+#   graph-contributor, so the shared standard is now structural. This file
+#   establishes Pool's OWN language, in Pool's OWN repo, per the established
+#   pattern (weave/ontology/weave/weave.ttl, git-lex-kit-*/ontology/<kit>/…).
+#
+# GROUNDED IN REAL DATA, not the spec or memory: these are EXACTLY the pool:
+#   predicates the running code already emits (grep'd src/: pool:cid,
+#   pool:blobPath, pool:createdAt — added directly in Pool::put, see
+#   lib.rs:74-75). This file FORMALIZES what Pool already writes; it does not
+#   invent vocabulary.
+#
+# SCOPE (v0.1 — deliberately minimal, the HOME only):
+#   The generic core of a content-addressed multimedia store: an Object, its
+#   content id, its blob path, its creation time. NOTHING app-specific.
+#
+# NORTH STAR (2026_07_03_ENGINE_DECOUPLING_AND_STORAGE_LAYOUT.md):
+#   Pool is a STANDALONE product. Any multimedia app can sit on it, with or
+#   without CoPIA/git-lex. The dependency arrow is one-directional: consumers
+#   need Pool; Pool needs no one. So this ontology must NOT reference copia:,
+#   soul:, Moment, or any consumer concept. Pool does not know they exist.
+#
+# THE ASSOCIATION (how a consumer joins WITHOUT coupling):
+#   A consumer (e.g. CoPIA) co-stamps its OWN id on the same object, in its OWN
+#   namespace (copia:moment_id), alongside pool:cid. Two independent ids on one
+#   object; neither defined in terms of the other. The join is co-presence, not
+#   a shared identity and not a directed edge. pool.ttl declares only pool:cid;
+#   the consumer's id lives in the consumer's ontology.
+#
+# DEFERRED (Phase F of the decoupling spec — "home before furniture"):
+#   region / vector / embedding / caption / see are generic-to-multimedia and
+#   BELONG here eventually, but they currently live in copia.ttl (accreted there
+#   by default, no home to go to). Migrating them out is a separate, later pass;
+#   this file is only the home so that migration has somewhere to land.
+# =============================================================================
+
+@prefix pool: <https://repolex.ai/ontology/pool/> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+<https://repolex.ai/ontology/pool/>
+    a owl:Ontology ;
+    rdfs:label "Pool multimedia-store ontology" ;
+    rdfs:comment "The generic ontology of a content-addressed multimedia store with a graph and a SPARQL-gated vector index. Standalone: references no consumer application. v0.2 — pixel-domain cid (metadata-stable identity)." ;
+    owl:versionInfo "0.2.0" .
+
+# =============================================================================
+# CORE CLASS
+# =============================================================================
+
+pool:Object a owl:Class ;
+    rdfs:label "Pool object" ;
+    rdfs:comment "A single content-addressed item stored in Pool (an image, video, or any blob). Its identity is its content id (pool:cid). A consumer application may co-stamp its own id on the same object (e.g. copia:moment_id) — that is the association, and it does not make the Object depend on the consumer." .
+
+# =============================================================================
+# CORE PROPERTIES — exactly the pool: predicates Pool::put emits today
+# =============================================================================
+
+pool:cid a owl:DatatypeProperty ;
+    rdfs:label "content id" ;
+    rdfs:domain pool:Object ;
+    rdfs:comment "The object's content-addressed identity: sha256 of the PIXEL DATA, stable across metadata edits. CANONICAL (v0.2, Day 54, cross-repo contract w/ OpenIris eye.py:280): sha256 of the decoded pixel buffer normalized to 8-bit RGB (no alpha), row-major top-to-bottom, 3 bytes/pixel in R,G,B order. Palette expanded; grayscale replicated to R=G=B; alpha stripped; 16-bit downsampled to the high byte. Matches PIL Image.convert(\"RGB\").tobytes(). Pinned by tests/fixtures/pixelcid/. Because the address is the PIXELS, a recaption/re-see/pose-add leaves pool:cid UNCHANGED — metadata is annotation on a stable identity, so a metadata edit never rotates the cid or forces a filename rename. This is Pool's identity for the object — content-addressing is a STORAGE concept and belongs to Pool. A consumer's id (e.g. copia:momentId) is a SEPARATE, independent id in the consumer's namespace." .
+
+pool:blobPath a owl:DatatypeProperty ;
+    rdfs:label "blob path" ;
+    rdfs:domain pool:Object ;
+    rdfs:range xsd:string ;
+    rdfs:comment "The object's on-disk location within the Pool blob tree, relative to the Pool root. Emitted by Pool::put. The vector sidecar (.npy) mirrors this path — see embed-on-see contract." .
+
+pool:createdAt a owl:DatatypeProperty ;
+    rdfs:label "created at" ;
+    rdfs:domain pool:Object ;
+    rdfs:range xsd:dateTime ;
+    rdfs:comment "When the object was stored in Pool. Emitted by Pool::put. The canonical sort anchor for gallery/timeline reads (pool sorts by pool:createdAt, anchors on pool:cid)." .
