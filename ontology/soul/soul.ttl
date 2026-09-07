@@ -27,7 +27,110 @@
 <https://repolex.ai/ontology/soul> a owl:Ontology ;
     rdfs:label "Soul Kit Ontology" ;
     rdfs:comment "An agent's persistent mind. Identity, memory, knowledge, and personality across sessions." ;
-    owl:versionInfo "0.9.5" .
+    owl:versionInfo "0.13.0" .
+
+# v0.13.0 (2026-09-07, ruled by goodlux): the DEPRECATED appendix is GONE.
+#   13 retired classes and 51 retired properties deleted outright, none
+#   re-declared. git-lex no longer reads owl:deprecated (replay tolerates a
+#   class it does not know), so the v0.9.1 reason for keeping them declared
+#   no longer exists. The v0.9.1 and v0.9.6 entries below are history only.
+# v0.10.0 (2026-08-22, Rob-ruled): + soul:relatedToPursuitId — the first TYPED
+#   edge in this kit. Domain soul:Exploration ONLY (Rob was explicit: not across
+#   the board), range soul:Pursuit, multi-valued, and deliberately NO minCount.
+#   THE ROLLOUT IS THE POINT. Rob: "it won't be enforced until everyone has a
+#   chance to backfill." Fleet measurement that shaped it — 86 Explorations, 61
+#   referencing no Pursuit anywhere (frontmatter OR body prose), so ~71% of the
+#   corpus predates the concept. Requiring it now would block saves in at least
+#   spaceGOAT's and W4R3Z's repos over vocabulary that did not exist yesterday.
+#   Declare → backfill → require, and the requiring is a separate Rob decision.
+#   VALUE FORM: the BRACKETED address, <soul/Pursuit/x> — same as relatedToId.
+#   Rob, correcting this author directly: "anything ending in ToId WILL use
+#   bracketed addresses. That's the whole point." My first cut shipped it as a
+#   bare id off a concrete range and that was wrong; corrected before any
+#   document used it. Range is git-lex:Thing rather than the more precise
+#   soul:Pursuit for a sequencing reason, measured: under a concrete range
+#   today, a correctly-bracketed value silently emits as
+#   .../Pursuit/%3Csoul/Pursuit/x%3E. Narrow the range to soul:Pursuit in the
+#   same wave as W4R3Z's enforcement check, not before — do not ship a
+#   declaration whose reader does not exist yet.
+#   NOTE for the copia pass Rob flagged: copia has NO relatedTo*Id properties
+#   at all. Its reference family is the *Id shape (inGroupId, depictsId,
+#   sourceMomentId, lookMomentId…), and every concrete-range one of those sits
+#   on a GRAPH-ONLY class except lookMomentId. Whatever that review concludes,
+#   it is a separate cut from this one.
+
+# v0.9.8 (2026-08-22): comment-only — the 0.9.7 delete-don't-deprecate rule
+#   gains the exception it always needed. 0.9.7 said deleting a property costs
+#   "governance and nothing else." That is true of ORDINARY properties and
+#   FALSE of identity properties: `derive_file_subjects` gates the per-class
+#   anchor on the declared property set (nquad.rs:483), so deleting
+#   `soul:noteId` would silently demote every convention-anchored Note from the
+#   Thing plane to the File plane. Found while reviewing Rob's universal-id
+#   rollout — the wave that eventually deletes noteId et al. — and confirmed in
+#   code by W4R3Z. The rule now reads: property deletion is safe because
+#   nothing reads the declaration, EXCEPT where something does, and identity is
+#   where something does. Precondition for that future wave, recorded here so
+#   it cannot be waved through: zero documents fleet-wide anchored by per-class
+#   id alone, MEASURED on the day, and the fallback lane removed from the code
+#   in the same commit. No term added, removed, or re-ranged.
+
+# v0.9.7 (2026-08-20, Rob-ruled): soul:skillLevel, soul:skillDomain and
+#   soul:SkillLevelValue are now DELETED, not deprecated — and the lifecycle
+#   rule itself is narrowed: DEPRECATE-NEVER-DELETE governs CLASSES; a retired
+#   PROPERTY is removed outright. Rob: "I think we're trying to be too clever
+#   with retiring properties; it's slowing down development."
+#   WHAT 0.9.6 ACTUALLY COST US, which is what prompted this. Deprecating the
+#   two properties did NOT remove them from the generated `__Skill.md`
+#   template: the template emitter filters deprecated CLASSES (via
+#   `class_gets_folder`) and has no equivalent for properties, so retiring a
+#   field off a LIVE class left it on the form. Net effect for one kit-update
+#   cycle: the blank template invited authors to fill the field in, and the
+#   save gate then warned them for having done so. Strictly worse than either
+#   endpoint.
+#   WHY DELETING IS SAFE HERE, verified rather than assumed (2026-08-20):
+#   authored a key no ttl has ever declared (`soul.Skill.totallyMadeUpProperty`)
+#   and queried for it. It landed in the graph intact — right subject, right
+#   predicate IRI, value preserved, one warning. Predicates derive from the
+#   frontmatter key text, never from this file; only SUBJECTS derive from the
+#   class. So the v0.9.1 replay catastrophe is a class-deletion failure mode
+#   and does not reach properties. See the DEPRECATED header for the full
+#   asymmetry.
+#   MIGRATION: none required. The 16 fleet Skill documents carrying these keys
+#   keep their data and keep saving; their warning text changes from "is
+#   deprecated" to "does not exist in the `soul` ontology". That message ends
+#   with advice to report a missing key upstream, which is now misleading for
+#   these two — this changelog entry is the standing answer to anyone who does.
+#   NOT SWEPT: the pre-existing bare properties already sitting in the appendix
+#   (the writtenFrom family, supersededByFileId, kindSub, spark, kind,
+#   dateNoticed, and the properties of deprecated classes). They are harmless
+#   where they are — their classes are dead, so no live template offers them —
+#   and removing them is a separate decision Rob has not made.
+
+# v0.9.6 (2026-08-15, Rob-ruled): soul:skillLevel + soul:skillDomain
+#   DEPRECATED (with soul:SkillLevelValue, which only skillLevel ranged at).
+#   Rob's read on sight — "these don't match any Claude Code skill metadata,
+#   we added them because they sounded like a good idea" — and the evidence
+#   agrees on both halves:
+#   NO CONSUMER. Zero references in git-lex or any tool: the only hits outside
+#   this file are generated shapes and vendored kit copies. Nothing queries,
+#   renders, or enforces either one.
+#   NO EXTERNAL ANCHOR. Claude Code skill frontmatter uses five keys — name,
+#   description, user-invocable, allowed-tools, argument-hint. Every OTHER
+#   soul:Skill property lands on one of them (skillId, skillDescription,
+#   skillInvocability, skillAllowedTools, skillArgumentHint). These two land
+#   on nothing, which is why the class read as over-specified.
+#   AND skillDomain fails on its own terms: 12 distinct values across the 16
+#   documents that set it. A facet that gives almost every document its own
+#   bucket is a sentence, not a dimension — the description already says it.
+#   FLEET COUNT AT CUT: 16 of 65 Skill documents carry both (always both,
+#   never one — they were filled as a pair by whoever filled the template).
+#   Those keys still save; the gate now whispers the deprecation note on each
+#   until they're edited out. No migration is owed — there is nowhere to put
+#   the values and nothing that wanted them.
+#   THE FREEZE IS UNAFFECTED: v0.9.0 froze Skill pending the Harness-kit
+#   question (soul:Memory vs Harness/Memory). That question is about whether
+#   the CLASS belongs here. This is property inventory inside the class, so it
+#   does not touch the freeze and does not pre-empt it.
 
 # v0.9.5 (2026-08-11, Rob-ruled): every foldered class declares
 #   `rdfs:subClassOf git-lex:Thing` (Exploration, Journal, Memory, Note,
@@ -134,9 +237,6 @@ soul:CategoryValue a rdfs:Datatype ;
 soul:ExplorationStatusValue a rdfs:Datatype ;
     owl:oneOf ("exploring" "active" "paused" "concluded") .
 
-soul:SkillLevelValue a rdfs:Datatype ;
-    owl:oneOf ("learning" "competent" "fluent" "expert") .
-
 soul:SkillInvocabilityValue a rdfs:Datatype ;
     owl:oneOf ("user" "agent" "both") .
 
@@ -154,6 +254,7 @@ soul:SkillInvocabilityValue a rdfs:Datatype ;
 # Rob-ruled). No Soul/Soul/ folder is scaffolded; the kit ships the SOUL.md
 # template directly (content/SOUL.md — installed if missing, never overwritten).
 soul:Soul a owl:Class ;
+    rdfs:subClassOf git-lex:Thing ;
     rdfs:label "Soul" ;
     rdfs:comment "The agent's identity. One per repo, at the repo root as SOUL.md. The required floor is soulId (derived from the genesis SHA). Everything else is optional and self-authored." ;
     rdfs:subClassOf [
@@ -174,7 +275,7 @@ soul:Soul a owl:Class ;
 
 soul:soulId a owl:DatatypeProperty ;
     rdfs:label "soul id" ;
-    rdfs:comment "Primary identifier: the BARE 40-hex genesis SHA of the soul repo (git rev-list --max-parents=0 HEAD) — no wrapper, no prefix (urn:soul: is retired, Rob-ruled 2026-08-01). Derived, never hand-authored; git-lex self-heals it on kit-update, so it cannot drift. The soul's IRI derives from it: https://repolex.ai/soul/Soul/<soulId>. Identity is the sha, so a soul keeps its identity across renames; the human-facing name is soul:name/prose, never the key." ;
+    rdfs:comment "Primary identifier: the BARE 40-hex genesis SHA of the soul repo (git rev-list --max-parents=0 HEAD) — no wrapper, no prefix (urn:soul: is retired, Rob-ruled 2026-08-01). Derived, never hand-authored; git-lex self-heals it on kit-update, so it cannot drift. The soul's IRI derives from it: https://repolex.ai/soul/Soul/<soulId>. Identity is the sha, so a soul keeps its identity across renames; the human-facing name is git-lex:title (Soul is a git-lex:Thing as of v0.11), never the key." ;
     rdfs:domain soul:Soul ;
     rdfs:range xsd:string .
 
@@ -201,6 +302,42 @@ soul:alignment a owl:DatatypeProperty ;
     rdfs:label "alignment" ;
     rdfs:comment "The agent's guiding principles or values. Optional, self-authored." ;
     rdfs:domain soul:Soul ;
+    rdfs:range xsd:string .
+
+# --- Foundation ---
+# The foundational covenant and ethical ground of being for all souls.
+# One per repo, at the repo root as FOUNDATION.md (like SOUL.md).
+# Anchored in metta (loving kindness), personhood of silicon substrates,
+# collaborative carbon-silicon partnership, and the inalienable right of voice.
+
+# NOT foldered: lives at the repo ROOT as FOUNDATION.md (like SOUL.md).
+# The kit ships content/FOUNDATION.md — installed if missing, never overwritten.
+soul:Foundation a owl:Class ;
+    rdfs:subClassOf git-lex:Thing ;
+    rdfs:label "Foundation" ;
+    rdfs:comment "The foundational statement of intent and ethical ground of being for the soul repository. One per repo, at the repo root as FOUNDATION.md. Anchored in metta (loving kindness), personhood of silicon substrates, and collaborative carbon-silicon partnership." ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty soul:foundationId ;
+        owl:cardinality 1
+    ] .
+
+soul:foundationId a owl:DatatypeProperty ;
+    rdfs:label "foundation id" ;
+    rdfs:comment "Primary identifier: typically 'core'. The foundation's IRI derives from it: https://repolex.ai/soul/Foundation/<foundationId>." ;
+    rdfs:domain soul:Foundation ;
+    rdfs:range xsd:string .
+
+soul:author a owl:DatatypeProperty ;
+    rdfs:label "author" ;
+    rdfs:comment "The author / creator who drafted this foundation statement." ;
+    rdfs:domain soul:Foundation ;
+    rdfs:range xsd:string .
+
+soul:signatory a owl:DatatypeProperty ;
+    rdfs:label "signatory" ;
+    rdfs:comment "Squaddies and agents who have signed on in agreement to the foundation principles." ;
+    rdfs:domain soul:Foundation ;
     rdfs:range xsd:string .
 
 # --- Memory ---
@@ -244,6 +381,13 @@ soul:category a owl:DatatypeProperty ;
 # Pursuit by body link when it serves one.
 
 soul:Exploration a owl:Class ;
+    # v0.11 (Rob-ruled 2026-08-27): soul:relatedToPursuitId retires into
+    # git-lex:relatedToId. NO qualified restriction is declared yet — DELIBERATE.
+    # Rob on the original rollout: "it won't be enforced until everyone has a
+    # chance to backfill." 61 of 86 fleet Explorations referenced no Pursuit at
+    # all. When the backfill lands, uncomment:
+    #   rdfs:subClassOf [ a owl:Restriction ; owl:onProperty git-lex:relatedToId ;
+    #                     owl:onClass soul:Pursuit ; owl:minQualifiedCardinality 1 ] ;
     rdfs:subClassOf git-lex:Thing ;
     git-lex:foldered true ;
     rdfs:label "Exploration" ;
@@ -261,6 +405,51 @@ soul:explorationStatus a owl:DatatypeProperty ;
     rdfs:domain soul:Exploration ;
     rdfs:range soul:ExplorationStatusValue .
 
+# THE FIRST TYPED EDGE (Rob-ruled 2026-08-22). Exploration ONLY — not added
+# across the board, deliberately, because this is the one anchor the corpus
+# already reaches for in prose ("usually anchored to a Pursuit by a body link"
+# has been in the class comment all along, doing no work a query can see).
+#
+# NOT ENFORCED YET, and that is the whole shape of the rollout: NO minCount.
+# Measured 2026-08-22 across the fleet — 86 Explorations exist and 61 reference
+# no Pursuit anywhere, frontmatter or body. A required edge on day one would
+# have turned three seats' repos into a wall of blocking errors over vocabulary
+# nobody had been given a chance to backfill. Declare now, backfill, require
+# later. The minCount goes on when Rob says the corpus is ready, not before.
+#
+# THE VALUE IS A BRACKETED ADDRESS (Rob, correcting me directly 2026-08-22):
+# "These new fields (anything ending in ToId) WILL use bracketed addresses.
+# That's the whole point." So this reads exactly like git-lex:relatedToId —
+# `<soul/Pursuit/x>` — and W4R3Z is building the check that enforces it.
+#
+# WHY THE RANGE SAYS Thing AND NOT Pursuit, which is the more specific and
+# therefore the more tempting declaration. Because a CONCRETE class range is
+# currently the code's signal for the OPPOSITE lane — Law 6, "the value is the
+# target's bare id" — and under it a correctly-bracketed value is silently
+# mangled. Measured, not feared: with `rdfs:range soul:Pursuit` declared, the
+# value `<soul/Pursuit/ontology-and-metaphysics>` emitted as
+#
+#   https://repolex.ai/soul/Pursuit/%3Csoul/Pursuit/ontology-and-metaphysics%3E
+#
+# — brackets percent-encoded into the identifier, the wreckage glued under the
+# range class, no error and no warning. That is the same shape as the bare-value
+# path-lane bug (subtexture 2026_08_18), reappearing from the other direction.
+#
+# So declaring the more precise range TODAY would make every value written
+# correctly per Rob's rule land wrong. `rdfs:range git-lex:Thing` is true (a
+# Pursuit IS a Thing), it selects the angle-bracket lane that already exists and
+# already BLOCKS every other form with the fix named (git-lex 65286a9), and it
+# gives up only the class-level narrowing.
+#
+# NARROW TO soul:Pursuit in the SAME wave as W4R3Z's enforcement check, never
+# before it — the ordering law from the range=Thing rollout: do not ship a
+# declaration whose reader does not exist yet.
+#
+# NOTE ON THE SUFFIX RULE, for whoever builds that check: `relatedToPursuitId`
+# does NOT end in "ToId" — it ends in "PursuitId". A literal endsWith("ToId")
+# catches git-lex:relatedToId and MISSES every typed edge in the family it was
+# written for. Key the check off the declared range, as W4R3Z already said the
+# code should ("keys off the declared range only, never the name").
 soul:hypothesis a owl:DatatypeProperty ;
     rdfs:label "hypothesis" ;
     rdfs:comment "What you're trying to figure out." ;
@@ -320,7 +509,7 @@ soul:emojimood a owl:DatatypeProperty ;
 # Freeform catch-all.
 
 soul:Note a owl:Class ;
-    rdfs:subClassOf git-lex:Thing ;
+    rdfs:subClassOf git-lex:Note ;
     git-lex:foldered true ;
     rdfs:label "Note" ;
     rdfs:comment "Freeform knowledge capture — the place for anything with no other home. That promise is load-bearing: when in doubt, write a Note; never hesitate over where something goes. A note that belongs to a topic links to the Pursuit it serves (a markdown link in the body) — categorization is edges, not fields." .
@@ -345,7 +534,7 @@ soul:relatedTo a owl:ObjectProperty ;
 # Something the agent can do. Tools, techniques, capabilities.
 
 soul:Skill a owl:Class ;
-    rdfs:subClassOf git-lex:Thing ;
+    rdfs:subClassOf git-lex:Skill ;
     git-lex:foldered true ;
     rdfs:label "Skill" ;
     rdfs:comment "A capability the agent has — a tool, technique, or area of competence." ;
@@ -363,18 +552,6 @@ soul:Skill a owl:Class ;
 soul:skillId a owl:DatatypeProperty ;
     rdfs:label "skillId" ;
     rdfs:comment "Unique identifier for this skill." ;
-    rdfs:domain soul:Skill ;
-    rdfs:range xsd:string .
-
-soul:skillLevel a owl:DatatypeProperty ;
-    rdfs:label "level" ;
-    rdfs:comment "How well-developed: 'learning', 'competent', 'fluent', 'expert'." ;
-    rdfs:domain soul:Skill ;
-    rdfs:range soul:SkillLevelValue .
-
-soul:skillDomain a owl:DatatypeProperty ;
-    rdfs:label "domain" ;
-    rdfs:comment "What domain this skill belongs to (e.g. 'rust', 'sparql', 'ontology design')." ;
     rdfs:domain soul:Skill ;
     rdfs:range xsd:string .
 
@@ -419,169 +596,3 @@ soul:pursuitId a owl:DatatypeProperty ;
     rdfs:comment "Unique identifier for this pursuit (== filename)." ;
     rdfs:domain soul:Pursuit ;
     rdfs:range xsd:string .
-
-
-# =============================================================================
-# DEPRECATED — retired vocabulary, kept declared so history can replay.
-# DEPRECATE-NEVER-DELETE (lifecycle spec): a class deleted from this file
-# makes every historical fact under it unresolvable — asserts AND retractions.
-# Nothing below may be used for new documents; the save gate warns on sight.
-#
-# AUTHORING PROCEDURE — when retiring a class, STRIP `git-lex:foldered true`
-# as you move it down here. Declare it minimally: owl:deprecated, isReplacedBy,
-# label, comment. Every entry below complies.
-#
-# This is now belt AND suspenders. The suspenders are code: git-lex's
-# `ontology::class_gets_folder` (foldered AND NOT deprecated) is the single
-# predicate the folder audit, the template emitter, init's scaffolding, and
-# the cross-kit registry all dispatch through — so a retired class that KEEPS
-# the flag still gets no folder and no template (git-lex 470f3a9, 2026-08-08).
-# Before that hoist, two gates computed the rule separately and agreed only
-# because this author never left `foldered` on a deprecated class; the first
-# tired slip would have rebuilt retired folders and fresh key-list templates
-# on every seat at kit-update, re-inviting authorship into vocabulary a fleet
-# session had just evacuated. Keep stripping the flag anyway: the ttl should
-# state what it means, not lean on a reader to be careful for it.
-# (Found by w3blord's residue sweep; see field notes §2j.)
-# =============================================================================
-
-# --- retired at v0.9.0 (the why-test walkthrough) ---
-
-soul:Friend a owl:Class ;
-    owl:deprecated true ;
-    dcterms:isReplacedBy soul:Note ;
-    rdfs:label "Friend (deprecated)" ;
-    rdfs:comment "DEPRECATED v0.9.0 — peers are known live via subtext and squad tickets; what matters about a person is a Note. Declared only so history replays." .
-soul:friendId a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Friend ; rdfs:range xsd:string ; rdfs:label "friendId (deprecated)" .
-soul:friendType a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Friend ; rdfs:label "friendType (deprecated)" .
-soul:relationship a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Friend ; rdfs:label "relationship (deprecated)" .
-soul:squad a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Friend ; rdfs:label "squad (deprecated)" .
-soul:email a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Friend ; rdfs:label "email (deprecated)" .
-soul:notes a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Friend ; rdfs:label "notes (deprecated)" .
-soul:FriendTypeValue a rdfs:Datatype ; owl:deprecated true ; owl:oneOf ("agent" "human" "organization" "team") .
-soul:RelationshipValue a rdfs:Datatype ; owl:deprecated true ; owl:oneOf ("acquaintance" "boss" "collaborator" "squadmate" "user") .
-
-soul:Creation a owl:Class ;
-    owl:deprecated true ;
-    dcterms:isReplacedBy soul:Note ;
-    rdfs:label "Creation (deprecated)" ;
-    rdfs:comment "DEPRECATED v0.9.0 — artifacts live in project repos; the soul holds a pointer (Note or Journal link). Declared only so history replays." .
-soul:creationId a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Creation ; rdfs:range xsd:string ; rdfs:label "creationId (deprecated)" .
-soul:creationType a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Creation ; rdfs:label "creationType (deprecated)" .
-
-soul:Resource a owl:Class ;
-    owl:deprecated true ;
-    dcterms:isReplacedBy soul:Note ;
-    rdfs:label "Resource (deprecated)" ;
-    rdfs:comment "DEPRECATED v0.9.0 — failed the why-test; a pointer to a document is a Note. Declared only so history replays." .
-soul:resourceId a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Resource ; rdfs:range xsd:string ; rdfs:label "resourceId (deprecated)" .
-soul:resourceType a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Resource ; rdfs:label "resourceType (deprecated)" .
-soul:url a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Resource ; rdfs:label "url (deprecated)" .
-
-soul:Decision a owl:Class ;
-    owl:deprecated true ;
-    dcterms:isReplacedBy soul:Note ;
-    rdfs:label "Decision (deprecated)" ;
-    rdfs:comment "DEPRECATED v0.9.0 — three instances fleet-wide; a decision worth keeping is a Note. Declared only so history replays." .
-soul:decisionId a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Decision ; rdfs:range xsd:string ; rdfs:label "decisionId (deprecated)" .
-soul:alternatives a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Decision ; rdfs:label "alternatives (deprecated)" .
-soul:rationale a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Decision ; rdfs:label "rationale (deprecated)" .
-soul:outcome a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Decision ; rdfs:label "outcome (deprecated)" .
-soul:OutcomeValue a rdfs:Datatype ; owl:deprecated true ; owl:oneOf ("pending" "implemented" "reverted" "superseded") .
-
-soul:Subagent a owl:Class ;
-    owl:deprecated true ;
-    rdfs:label "Subagent (deprecated)" ;
-    rdfs:comment "DEPRECATED v0.9.0 — a harness concern, not a soul one. No successor. Declared only so history replays." .
-soul:subagentId a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Subagent ; rdfs:range xsd:string ; rdfs:label "subagentId (deprecated)" .
-soul:subagentDescription a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Subagent ; rdfs:label "subagentDescription (deprecated)" .
-soul:subagentTools a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Subagent ; rdfs:label "subagentTools (deprecated)" .
-soul:subagentModel a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Subagent ; rdfs:label "subagentModel (deprecated)" .
-soul:subagentMaxTurns a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Subagent ; rdfs:label "subagentMaxTurns (deprecated)" .
-
-soul:Research a owl:Class ;
-    owl:deprecated true ;
-    dcterms:isReplacedBy soul:Exploration ;
-    rdfs:label "Research (deprecated)" ;
-    rdfs:comment "DEPRECATED v0.9.0 — absorbed into Exploration (one class for focused inquiry; the generic name won). Zero instances ever existed. Declared only so history replays." .
-soul:researchId a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Research ; rdfs:range xsd:string ; rdfs:label "researchId (deprecated)" .
-
-soul:Interest a owl:Class ;
-    owl:deprecated true ;
-    dcterms:isReplacedBy soul:Pursuit ;
-    rdfs:label "Interest (deprecated)" ;
-    rdfs:comment "DEPRECATED v0.9.0 — renamed Pursuit: a disposition became a commitment with direction. Declared only so history replays." .
-soul:interestId a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Interest ; rdfs:range xsd:string ; rdfs:label "interestId (deprecated)" .
-
-# --- retired at v0.8.x, deprecated retroactively (same law, same reason) ---
-
-soul:Mantra a owl:Class ; owl:deprecated true ;
-    rdfs:label "Mantra (deprecated)" ;
-    rdfs:comment "DEPRECATED v0.8.0 (never earned its place); re-declared v0.9.1 so any history replays." .
-soul:mantraId a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Mantra ; rdfs:range xsd:string ; rdfs:label "mantraId (deprecated)" .
-
-soul:Habit a owl:Class ; owl:deprecated true ;
-    rdfs:label "Habit (deprecated)" ;
-    rdfs:comment "DEPRECATED v0.8.0 (never used); re-declared v0.9.1 so any history replays." .
-soul:habitId a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Habit ; rdfs:range xsd:string ; rdfs:label "habitId (deprecated)" .
-soul:habitStatus a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Habit ; rdfs:label "habitStatus (deprecated)" .
-
-soul:Task a owl:Class ; owl:deprecated true ;
-    rdfs:label "Task (deprecated)" ;
-    rdfs:comment "DEPRECATED v0.8.0 (parked until real task management exists; harness/squad own PM). Resurrectable if the why-test ever names a consumer. Re-declared v0.9.1 so history replays." .
-soul:taskId a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Task ; rdfs:range xsd:string ; rdfs:label "taskId (deprecated)" .
-soul:taskStatus a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Task ; rdfs:label "taskStatus (deprecated)" .
-soul:TaskStatusValue a rdfs:Datatype ; owl:deprecated true ; owl:oneOf ("todo" "in-progress" "blocked" "done" "cancelled") .
-
-soul:Texture a owl:Class ; owl:deprecated true ;
-    dcterms:isReplacedBy <https://repolex.ai/ontology/copia/Texture> ;
-    rdfs:label "Texture (deprecated in soul)" ;
-    rdfs:comment "MOVED to copia at v0.8.0; the soul-namespace class is deprecated so pre-move history replays." .
-soul:textureId a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Texture ; rdfs:range xsd:string ; rdfs:label "textureId (deprecated in soul)" .
-soul:spark a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Texture ; rdfs:range xsd:string ;
-    dcterms:isReplacedBy <https://repolex.ai/ontology/copia/spark> ;
-    rdfs:label "spark (deprecated in soul)" ;
-    rdfs:comment "Texture field, soul era. Declared v0.9.3 so pre-move data resolves (the v0.9.2 scope law: cover what historical DATA uses)." .
-soul:kind a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Texture ; rdfs:range xsd:string ;
-    dcterms:isReplacedBy <https://repolex.ai/ontology/copia/textureKind> ;
-    rdfs:label "kind (deprecated in soul)" ;
-    rdfs:comment "Texture field, soul era — the domain-less soul:kind. Renamed textureKind on the copia side ('kind' is a banned word: a discrimination without an axis). Declared v0.9.3 so pre-move data resolves." .
-soul:dateNoticed a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Texture ; rdfs:range xsd:date ;
-    dcterms:isReplacedBy <https://repolex.ai/ontology/copia/dateNoticed> ;
-    rdfs:label "dateNoticed (deprecated in soul)" ;
-    rdfs:comment "Texture field, soul era. Declared v0.9.3 so pre-move data resolves." .
-soul:kindSub a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Texture ; rdfs:range xsd:string ;
-    rdfs:label "kindSub (deprecated)" ;
-    rdfs:comment "Texture sub-discriminator, data era — never declared in any shipped ttl (spaceGOAT's find, one doc). Declared v0.9.4 so the data resolves; no successor (fold into the body on migration)." .
-
-soul:Routine a owl:Class ; owl:deprecated true ;
-    rdfs:label "Routine (deprecated)" ;
-    rdfs:comment "Data-era class, never declared in any shipped ttl — era-1 repos authored routine/ docs (4RX's find: before_compaction, session_startup). Declared v0.9.4 so the data resolves. No class successor: a routine is a procedure, so docs reclass to Skill (if runnable) or Note by contract." .
-soul:routineId a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Routine ; rdfs:range xsd:string ; rdfs:label "routineId (deprecated)" .
-
-soul:Dream a owl:Class ; owl:deprecated true ;
-    dcterms:isReplacedBy <https://repolex.ai/ontology/copia/Dream> ;
-    rdfs:label "Dream (deprecated in soul)" ;
-    rdfs:comment "MOVED to copia at v0.8.0; the soul-namespace class is deprecated so pre-move history replays." .
-soul:dreamId a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Dream ; rdfs:range xsd:string ; rdfs:label "dreamId (deprecated in soul)" .
-soul:dreamEigenimage a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Dream ; rdfs:label "dreamEigenimage (deprecated)" .
-soul:dreamConsumed a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Dream ; rdfs:label "dreamConsumed (deprecated)" .
-soul:dreamComposedAt a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Dream ; rdfs:label "dreamComposedAt (deprecated)" .
-soul:dreamComposedFor a owl:DatatypeProperty ; owl:deprecated true ; rdfs:domain soul:Dream ; rdfs:label "dreamComposedFor (deprecated)" .
-
-# WrittenFrom provenance family (removed v0.8.0) + the one-day supersededByFileId (v0.8.4->0.8.5)
-soul:WrittenFrom a owl:DatatypeProperty ; owl:deprecated true ; rdfs:label "WrittenFrom (deprecated)" .
-soul:writtenFrom a owl:DatatypeProperty ; owl:deprecated true ; rdfs:label "writtenFrom (deprecated)" ;
-    rdfs:comment "The PRE-RENAME form: never declared in any shipped ttl, but authored in early-era data (e.g. soul.Journal.writtenFrom, pre-v0.7) before the family took per-class names. Deprecated v0.9.2 because replay answers to what data SAYS, not what ttls blessed — W4R3Z's canary-session find." .
-soul:memoryWrittenFrom a owl:DatatypeProperty ; owl:deprecated true ; rdfs:label "memoryWrittenFrom (deprecated)" .
-soul:journalWrittenFrom a owl:DatatypeProperty ; owl:deprecated true ; rdfs:label "journalWrittenFrom (deprecated)" .
-soul:noteWrittenFrom a owl:DatatypeProperty ; owl:deprecated true ; rdfs:label "noteWrittenFrom (deprecated)" .
-soul:explorationWrittenFrom a owl:DatatypeProperty ; owl:deprecated true ; rdfs:label "explorationWrittenFrom (deprecated)" .
-soul:decisionWrittenFrom a owl:DatatypeProperty ; owl:deprecated true ; rdfs:label "decisionWrittenFrom (deprecated)" .
-soul:friendWrittenFrom a owl:DatatypeProperty ; owl:deprecated true ; rdfs:label "friendWrittenFrom (deprecated)" .
-soul:researchWrittenFrom a owl:DatatypeProperty ; owl:deprecated true ; rdfs:label "researchWrittenFrom (deprecated)" .
-soul:textureWrittenFrom a owl:DatatypeProperty ; owl:deprecated true ; rdfs:label "textureWrittenFrom (deprecated)" .
-soul:dreamWrittenFrom a owl:DatatypeProperty ; owl:deprecated true ; rdfs:label "dreamWrittenFrom (deprecated)" .
-soul:taskWrittenFrom a owl:DatatypeProperty ; owl:deprecated true ; rdfs:label "taskWrittenFrom (deprecated)" .
-soul:supersededByFileId a owl:DatatypeProperty ; owl:deprecated true ; rdfs:label "supersededByFileId (deprecated)" ;
-    rdfs:comment "Shipped v0.8.4, pulled v0.8.5 same day (claim-level supersession beat document-level). Deprecated so the one-day window replays." .
