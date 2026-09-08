@@ -24,16 +24,44 @@
 # one REFERENCE per output — an pan:Enrichment record naming the model, the
 # file, how many items it holds and when it was produced. Every path is
 # declared here; nothing is found by filesystem convention.
+#
+# WHAT BELONGS ON THE MEDIA OBJECT ITSELF (goodlux, 2026-09-08) — the test
+# every property on pan:Media / pan:Image has to pass, one of:
+#   (a) data Pan needs to function: the descriptions feed the embedding, the
+#       scene objects are the segmentation prompts;
+#   (b) information that should be to hand when viewing the file;
+#   (c) links out to other data — the per-stage references (pose, regions,
+#       vectors, the raw model answer);
+#   (d) anything that must be searchable by graph pattern on the object.
+# Everything else is a record of its own, reached through (c).
 # =============================================================================
 
 <https://repolex.ai/ontology/pan> a owl:Ontology ;
     rdfs:label "Pan media store ontology" ;
     rdfs:comment "Identity, location, timing and model-derived enrichment facts Pan records for stored media." ;
-    owl:versionInfo "0.3.3" .
+    owl:versionInfo "0.3.4" .
 
 # -----------------------------------------------------------------------------
 # CHANGELOG
 # -----------------------------------------------------------------------------
+# v0.3.4 (2026-09-08, ruled by goodlux after a night of reading stored files):
+#   (1) pan:shortDescription, pan:longDescription on pan:Media — any media
+#       gets described; the long one is what the embedding is built from.
+#   (2) pan:sceneObjects on pan:Image — one value per physical thing visible,
+#       the segmentation prompts. Image only: meaningless for audio or video.
+#   (3) The twelve scene fields (pan:sceneCamera … pan:sceneLocation) on
+#       pan:Image — the same names the caption prompt has asked for since
+#       September, now stored as facts instead of lines in a text blob.
+#   (4) pan:caption DELETED: the two descriptions replace it. The Caption
+#       record (pan:text) keeps the model's whole answer verbatim.
+#   Deliberately not done: a scene graph from the language model (objects
+#   with boxes, attributes, relationships). Tried on one image 2026-09-08:
+#   good names and relations, coarse boxes, a third of the objects SAM3
+#   finds. Descriptions + nouns → SAM3 gives better data; relationships can
+#   be read out of the long description later by any language model.
+#   Also not done: dc:description. Pan's own fields are visible in viewers
+#   now (ExifTool config declares every one), so the duplicate is dropped.
+#
 # v0.3.3 (2026-09-05, ruled by Rob looking at a stored file in a viewer):
 #   (1) pan:createdDate DELETED. A pan:Image is a git-lex:Thing, and when it
 #       came to be is the universal git-lex:dateCreated — Pan writes that, in
@@ -182,10 +210,99 @@ pan:height a owl:DatatypeProperty ;
     rdfs:domain git-lex:Thing ;
     rdfs:range xsd:integer .
 
-pan:caption a owl:DatatypeProperty ;
-    rdfs:label "caption" ;
-    rdfs:comment "The current caption TEXT — the most recent Caption record's text, for a reader who wants one line without following links." ;
+pan:shortDescription a owl:DatatypeProperty ;
+    rdfs:label "short description" ;
+    rdfs:comment "One sentence saying what this media shows. Written by the caption stage; do not write it by hand." ;
     rdfs:domain pan:Media ;
+    rdfs:range xsd:string .
+
+pan:longDescription a owl:DatatypeProperty ;
+    rdfs:label "long description" ;
+    rdfs:comment "A detailed, literal description of everything the media shows. The embedding is built from the image and this text together. Written by the caption stage." ;
+    rdfs:domain pan:Media ;
+    rdfs:range xsd:string .
+
+# One value per object, a bag: `?s pan:sceneObjects "hand"` finds every
+# image with a hand. In XMP it is an rdf:Bag; in the answer the caption
+# stage reads, it is a JSON list.
+pan:sceneObjects a owl:DatatypeProperty ;
+    rdfs:label "scene objects" ;
+    rdfs:comment "Every distinct physical thing visible, one value each (person, hand, hair, rock). The segmentation prompts. Repeat the value, not the key." ;
+    rdfs:domain pan:Image ;
+    rdfs:range xsd:string .
+
+# The scene fields: one short phrase each, asked of the caption model in the
+# same call as the descriptions. Image only.
+pan:sceneCamera a owl:DatatypeProperty ;
+    rdfs:label "scene camera" ;
+    rdfs:comment "camera angle: low angle, eye level, overhead. One short phrase." ;
+    rdfs:domain pan:Image ;
+    rdfs:range xsd:string .
+
+pan:sceneFraming a owl:DatatypeProperty ;
+    rdfs:label "scene framing" ;
+    rdfs:comment "shot framing: close-up, full body, wide. One short phrase." ;
+    rdfs:domain pan:Image ;
+    rdfs:range xsd:string .
+
+pan:scenePosture a owl:DatatypeProperty ;
+    rdfs:label "scene posture" ;
+    rdfs:comment "body posture: standing, hunched, seated. One short phrase." ;
+    rdfs:domain pan:Image ;
+    rdfs:range xsd:string .
+
+pan:sceneGaze a owl:DatatypeProperty ;
+    rdfs:label "scene gaze" ;
+    rdfs:comment "where the subject looks: at viewer, away, down. One short phrase." ;
+    rdfs:domain pan:Image ;
+    rdfs:range xsd:string .
+
+pan:sceneExpression a owl:DatatypeProperty ;
+    rdfs:label "scene expression" ;
+    rdfs:comment "facial expression: calm, alert, sad. One short phrase." ;
+    rdfs:domain pan:Image ;
+    rdfs:range xsd:string .
+
+pan:sceneAction a owl:DatatypeProperty ;
+    rdfs:label "scene action" ;
+    rdfs:comment "what is happening: reading, reaching, still. One short phrase." ;
+    rdfs:domain pan:Image ;
+    rdfs:range xsd:string .
+
+pan:sceneEnergy a owl:DatatypeProperty ;
+    rdfs:label "scene energy" ;
+    rdfs:comment "energy level: quiet, tense, dynamic. One short phrase." ;
+    rdfs:domain pan:Image ;
+    rdfs:range xsd:string .
+
+pan:sceneMood a owl:DatatypeProperty ;
+    rdfs:label "scene mood" ;
+    rdfs:comment "overall mood: serene, ominous, playful. One short phrase." ;
+    rdfs:domain pan:Image ;
+    rdfs:range xsd:string .
+
+pan:sceneLighting a owl:DatatypeProperty ;
+    rdfs:label "scene lighting" ;
+    rdfs:comment "lighting: soft dusk, harsh, backlit. One short phrase." ;
+    rdfs:domain pan:Image ;
+    rdfs:range xsd:string .
+
+pan:sceneStyle a owl:DatatypeProperty ;
+    rdfs:label "scene style" ;
+    rdfs:comment "visual style: painterly, photoreal, surreal. One short phrase." ;
+    rdfs:domain pan:Image ;
+    rdfs:range xsd:string .
+
+pan:sceneMedium a owl:DatatypeProperty ;
+    rdfs:label "scene medium" ;
+    rdfs:comment "medium: photo, oil, charcoal, 3D render. One short phrase." ;
+    rdfs:domain pan:Image ;
+    rdfs:range xsd:string .
+
+pan:sceneLocation a owl:DatatypeProperty ;
+    rdfs:label "scene location" ;
+    rdfs:comment "where: studio, cliffside, server room. One short phrase." ;
+    rdfs:domain pan:Image ;
     rdfs:range xsd:string .
 
 pan:importedFrom a owl:DatatypeProperty ;
@@ -221,7 +338,7 @@ pan:Pose a owl:Class ;
 pan:Caption a owl:Class ;
     rdfs:subClassOf git-lex:Thing ;
     rdfs:label "Caption" ;
-    rdfs:comment "One model's prose caption of an image. Several per image is normal — one per model, all kept. Re-captioning with the same model replaces that model's record." .
+    rdfs:comment "One model's whole answer about an image, verbatim (pan:text). Several per image is normal — one per model, all kept. Re-captioning with the same model replaces that model's record." .
 
 pan:Embedding a owl:Class ;
     rdfs:subClassOf git-lex:Thing ;
@@ -371,7 +488,7 @@ pan:overlayPath a owl:DatatypeProperty ;
 
 pan:text a owl:DatatypeProperty ;
     rdfs:label "text" ;
-    rdfs:comment "The caption prose." ;
+    rdfs:comment "The model's answer as it came back, unparsed." ;
     rdfs:domain pan:Caption ; rdfs:range xsd:string .
 
 pan:dim a owl:DatatypeProperty ;
