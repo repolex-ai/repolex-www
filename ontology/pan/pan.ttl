@@ -39,11 +39,40 @@
 <https://repolex.ai/ontology/pan> a owl:Ontology ;
     rdfs:label "Pan media store ontology" ;
     rdfs:comment "Identity, location, timing and model-derived enrichment facts Pan records for stored media." ;
-    owl:versionInfo "0.3.9" .
+    owl:versionInfo "0.4.1" .
 
 # -----------------------------------------------------------------------------
 # CHANGELOG
 # -----------------------------------------------------------------------------
+# v0.4.1 (2026-09-16, ruled by goodlux; pan issue #5): THE INSTANCE.
+#   + pan:Instance — one pand deployment as a node: its primary graph, an
+#     optional pan-ui cache graph, its storage root, its mode (managed or
+#     referenced), its source media format and its port. Six properties,
+#     named exactly as the expanded-scope doc of 2026-09-13 names them:
+#     pan:primaryGraph, pan:localGraph, pan:fsRoot, pan:sourceFormat,
+#     pan:instanceMode, pan:listenPort.
+#   Declared ahead of code: nothing in pand writes an Instance yet; pand will
+#   write one Instance node per daemon at start in a later release.
+#   Left open: how pan:Store relates to pan:Instance (a daemon serves many
+#   stores). No link is declared until that is ruled.
+# v0.4.0 (2026-09-16, ruled by goodlux): PHOTOSETS.
+#   (1) + pan:Photoset, a subclass of git-lex:Set (base kit 0.18.0): an
+#       unordered set of media a person curates. Each set has its own file on
+#       disk, photosets/<id>.xml, so the graph is rebuilt from files alone.
+#   (2) + pan:member — the file spelling of git-lex:member (Set → Media).
+#   (3) + pan:inPhotoset on pan:Media — one value per set the media belongs
+#       to; rides in the image XMP as a bag of <pan/Photoset/id>, so
+#       membership travels with the file.
+#   (4) + pan:description — the file spelling of git-lex:description, same
+#       pattern as pan:id and pan:createdDate (owl:equivalentProperty).
+#   (5) pan:createdDate domain widened from pan:Media to git-lex:Thing so a
+#       Photoset carries it.
+#   Deliberately not done: pan:sequence — one image in two sets has two
+#   positions, so a single integer on the image cannot express order; if
+#   order is ever wanted it is the order of pan:member values in the set's
+#   file. Also not done: pan:coverImage, pan:tag, pan:itemCount (not asked
+#   for; nothing reads them). The photoset file writer, the `pan photoset`
+#   commands and the rebuild pass are code, tracked in pan issue #4.
 # v0.3.9 (2026-09-16, ruled by goodlux): every Pan date is named <what>Date,
 #   type at the end, like producedDate and readyDate. pan:dateCreated is
 #   RENAMED pan:createdDate. The base kit renames its universals the same
@@ -431,8 +460,17 @@ pan:createdDate a owl:DatatypeProperty ;
     owl:equivalentProperty git-lex:createdDate ;
     rdfs:label "created date" ;
     rdfs:comment "When Pan created this record, RFC3339 system local time; the file spelling of git-lex:createdDate. Written by pand, never by hand." ;
-    rdfs:domain pan:Media ;
+    rdfs:domain git-lex:Thing ;
     rdfs:range xsd:dateTime .
+
+# The file spelling of git-lex:description (same pattern as pan:id): a Pan
+# file carries only pan and copia, so the universal is written under pan:.
+pan:description a owl:DatatypeProperty ;
+    owl:equivalentProperty git-lex:description ;
+    rdfs:label "description" ;
+    rdfs:comment "A short deliberate summary a person writes; the file spelling of git-lex:description. One value; overwrite it, do not repeat the key." ;
+    rdfs:domain git-lex:Thing ;
+    rdfs:range xsd:string .
 
 # --- curation: facts a person sets on the media (goodlux, 2026-09-16) ----------
 # Written by `pan set`, never by a model. They ride in the image's XMP so a
@@ -461,6 +499,90 @@ pan:isRejected a owl:DatatypeProperty ;
     rdfs:comment "true when a person rejected this media. Set or unset it; never write false to mean unknown." ;
     rdfs:domain pan:Media ;
     rdfs:range xsd:boolean .
+
+# -----------------------------------------------------------------------------
+# PHOTOSETS — sets of media a person curates (goodlux, 2026-09-16)
+# -----------------------------------------------------------------------------
+# A Photoset is a git-lex:Set (base kit 0.18.0). IRI <pan/Photoset/<id>>. It
+# is not a fact about any one image, so it has its own file on disk,
+# photosets/<id>.xml, beside the media; the graph is rebuilt from that file.
+# Membership is written twice, on purpose: the set lists its members
+# (pan:member, in the set's file) and each image lists its sets
+# (pan:inPhotoset, in the image's XMP), so the fact travels with the file
+# and the set is readable on its own. No ordering: one image in two sets has
+# two positions, so order, if ever wanted, is the order of pan:member values.
+# -----------------------------------------------------------------------------
+
+pan:Photoset a owl:Class ;
+    rdfs:subClassOf git-lex:Set ;
+    rdfs:label "Photoset" ;
+    rdfs:comment "An unordered set of Pan media a person curates; its own file photosets/<id>.xml on disk, from which the graph is rebuilt. Do not put an ordering on it." .
+
+pan:member a owl:ObjectProperty ;
+    owl:equivalentProperty git-lex:member ;
+    rdfs:label "member" ;
+    rdfs:comment "One media object in this set, written <pan/Image/id>; the file spelling of git-lex:member. Repeat the value, not the key." ;
+    rdfs:domain pan:Photoset ;
+    rdfs:range pan:Media .
+
+pan:inPhotoset a owl:ObjectProperty ;
+    rdfs:label "in photoset" ;
+    rdfs:comment "One set this media belongs to, written <pan/Photoset/id>. Repeat the value, not the key." ;
+    rdfs:domain pan:Media ;
+    rdfs:range pan:Photoset .
+
+# -----------------------------------------------------------------------------
+# THE INSTANCE (goodlux, 2026-09-16)
+# -----------------------------------------------------------------------------
+# One pand deployment as a node. A machine runs one daemon; the daemon serves
+# many stores. The Instance says where its primary graph is answered, where
+# a pan-ui cache graph sits if one exists, what root its files live under,
+# whether it manages media (copies bytes in, PNG only) or references media
+# in place, and which port it listens on. Declared ahead of code: pand will
+# write one Instance node per daemon at start in a later release. How a
+# pan:Store relates to its Instance is left open until ruled.
+# -----------------------------------------------------------------------------
+
+pan:Instance a owl:Class ;
+    rdfs:subClassOf git-lex:Thing ;
+    rdfs:label "Instance" ;
+    rdfs:comment "One pand deployment: its primary graph, an optional pan-ui cache graph, its storage root, its mode and its port. Written by pand at start; never authored." .
+
+pan:primaryGraph a owl:DatatypeProperty ;
+    rdfs:label "primary graph" ;
+    rdfs:comment "Endpoint URI or named graph of the primary persistent store. Do not put a file path here; that is pan:fsRoot." ;
+    rdfs:domain pan:Instance ;
+    rdfs:range xsd:string .
+
+pan:localGraph a owl:DatatypeProperty ;
+    rdfs:label "local graph" ;
+    rdfs:comment "The pan-ui local cache graph, in memory or ephemeral, when one exists. Absent means pan-ui reads the primary graph directly." ;
+    rdfs:domain pan:Instance ;
+    rdfs:range xsd:string .
+
+pan:fsRoot a owl:DatatypeProperty ;
+    rdfs:label "filesystem root" ;
+    rdfs:comment "Absolute storage root backing this instance: the media root when managed, the derived root when referenced. Absolute, never relative." ;
+    rdfs:domain pan:Instance ;
+    rdfs:range xsd:string .
+
+pan:sourceFormat a owl:DatatypeProperty ;
+    rdfs:label "source format" ;
+    rdfs:comment "MIME type of managed source media, image/png in the managed mode. Do not list several; a managed store has one." ;
+    rdfs:domain pan:Instance ;
+    rdfs:range xsd:string .
+
+pan:instanceMode a owl:DatatypeProperty ;
+    rdfs:label "instance mode" ;
+    rdfs:comment "managed (media copied into the store, PNG only) or referenced (media indexed where it lives). One of the two words, nothing else." ;
+    rdfs:domain pan:Instance ;
+    rdfs:range xsd:string .
+
+pan:listenPort a owl:DatatypeProperty ;
+    rdfs:label "listen port" ;
+    rdfs:comment "TCP port the daemon listens on. A number, not a URL." ;
+    rdfs:domain pan:Instance ;
+    rdfs:range xsd:integer .
 
 # -----------------------------------------------------------------------------
 # ENRICHMENT — what a model saw, where its output lives, when
@@ -679,6 +801,24 @@ pan:Media rdfs:subClassOf
     [ a owl:Restriction ; owl:onProperty pan:rating     ; owl:maxCardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:isPicked   ; owl:maxCardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:isRejected ; owl:maxCardinality 1 ] .
+
+# A Photoset: one id, one creation time (the universal, as on Media), at most
+# one description. Restrictions sit on the git-lex universals because the
+# SHACL generator reads owl:onProperty literally (see the Media block).
+pan:Photoset rdfs:subClassOf
+    [ a owl:Restriction ; owl:onProperty git-lex:id ; owl:cardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty git-lex:createdDate ; owl:cardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty git-lex:description ; owl:maxCardinality 1 ] .
+
+# An Instance: one id, one root, one mode, one port; the rest at most once.
+pan:Instance rdfs:subClassOf
+    [ a owl:Restriction ; owl:onProperty git-lex:id ; owl:cardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:fsRoot       ; owl:cardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:instanceMode ; owl:cardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:listenPort   ; owl:cardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:primaryGraph ; owl:maxCardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:localGraph   ; owl:maxCardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:sourceFormat ; owl:maxCardinality 1 ] .
 
 pan:Enrichment rdfs:subClassOf
     [ a owl:Restriction ; owl:onProperty git-lex:id ; owl:cardinality 1 ] ,
