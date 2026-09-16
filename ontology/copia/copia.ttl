@@ -10,6 +10,9 @@
 # =============================================================================
 # COPIA KIT ONTOLOGY
 # =============================================================================
+# v0.35.0 (2026-09-16) — locatedInPlaceId and wearsOutfitId pruned from Being.
+# Ruled by Rob. Both were stale default-assignment fields from an earlier
+# modeling pass; neither had code readers or current usage.
 #
 # v0.34.0 (2026-09-08) — PUNCTUM, THE REVIEW FIELDS, NOCTURNE AND MOTION REMOVED.
 # Decided by goodlux, 2026-09-08: the first two were more machinery than the
@@ -589,7 +592,7 @@
 <https://repolex.ai/ontology/copia> a owl:Ontology ;
     rdfs:label "Copia Kit Ontology" ;
     rdfs:comment "The agent's curated outward face + the CoPIA render data model. Soul-adapter. Optional add-on for soul." ;
-    owl:versionInfo "0.34.0" ;
+    owl:versionInfo "0.35.0" ;
     owl:imports <https://repolex.ai/ontology/soul/> .
 
 
@@ -772,7 +775,7 @@ copia:Being a owl:Class ;
     rdfs:subClassOf git-lex:Thing ;
     git-lex:foldered true ;
     rdfs:label "Being" ;
-    rdfs:comment "An agent or character. Located in a Place, may equip Items, may wear an Outfit by default." ;
+    rdfs:comment "An agent or character in the world. Carries visual and prose identity defaults." ;
     rdfs:subClassOf [
         a owl:Restriction ;
         owl:onProperty copia:beingId ;
@@ -796,18 +799,6 @@ copia:beingDescription a owl:DatatypeProperty ;
     rdfs:comment "Canonical prose identity. The scene* fields carry the structured defaults (characters/posture/expression/gaze)." ;
     rdfs:domain copia:Being ;
     rdfs:range xsd:string .
-
-copia:locatedInPlaceId a owl:ObjectProperty ;
-    rdfs:label "located in place id" ;
-    rdfs:comment "The Place this being is in by default. Joined by placeId." ;
-    rdfs:domain copia:Being ;
-    rdfs:range copia:Place .
-
-copia:wearsOutfitId a owl:ObjectProperty ;
-    rdfs:label "wears outfit id" ;
-    rdfs:comment "The Outfit this being wears by default (the realized per-render look is on the Moment). Joined by outfitId." ;
-    rdfs:domain copia:Being ;
-    rdfs:range copia:Outfit .
 
 copia:beingDepictedBy a owl:DatatypeProperty ;
     rdfs:label "being depicted by" ;
