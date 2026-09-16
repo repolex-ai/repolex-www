@@ -28,7 +28,34 @@
 git-lex: a owl:Ontology ;
     rdfs:label "git-lex Core Ontology" ;
     rdfs:comment "The vocabulary git-lex authors about the markdown documents it tracks." ;
-    owl:versionInfo "0.17.0" .
+    owl:versionInfo "0.18.0" .
+
+# v0.18 (2026-09-16, ruled by goodlux): DATE PROPERTIES ARE NAMED <what>Date,
+#   AND THE UNIVERSAL SET ARRIVES.
+#   (1) git-lex:dateCreated RENAMED git-lex:createdDate; git-lex:dateUpdated
+#   RENAMED git-lex:updatedDate. The rule, stated for the whole stack: a date
+#   property says WHAT the date is first and ends in "Date" (producedDate,
+#   readyDate, earthDate, createdDate, updatedDate). These two were the only
+#   universals spelled the other way round, and every kit that mirrors them as
+#   its own file spelling (pan:createdDate) was forced to carry the mismatch.
+#   Semantics, range (xsd:dateTime) and cardinality are unchanged; only the name.
+#   BOTH-SHAPES WINDOW, never a flag day (the standing rule since v0.13):
+#   git-lex's writer stamps whichever name the INSTALLED ontology declares, so
+#   a repo that has not run kit-update keeps getting the old key and never a
+#   value its own shapes reject. Its reader accepts the old key wherever the
+#   new one is declared, lands the value on the new predicate, and prints one
+#   warning per file naming the exact line to write. Remove the reader lane
+#   in git-lex once the fleet has re-saved (target: the release after this kit
+#   reaches every soul).
+#   (2) + git-lex:Set — an unordered collection of Things — and + git-lex:member,
+#   one member per value. A universal class, like Note and Skill: a kit that
+#   needs a collection subclasses it (pan:Photoset is the first). Graph-only by
+#   default: no `git-lex:foldered true`, so nothing is scaffolded; a kit's
+#   subclass decides whether its sets are authored files.
+#   DELIBERATELY NOT DONE: re-parenting copia:Set (today under copia:Group) onto
+#   git-lex:Set — copia's change, taken in its own sitting; migrating existing
+#   documents' frontmatter keys — the both-shapes window carries them until each
+#   is next saved.
 
 # v0.14 (2026-08-26, Rob-ruled): + git-lex:kitManaged — the flag that lets the
 #   kit RETRACT, which is the one thing it has never been able to do.
@@ -348,7 +375,7 @@ git-lex:fileId a owl:ObjectProperty ;
 # and the change is Rob's, queued for the pan sitting — not stamped in passing.
 git-lex:Thing a owl:Class ;
     rdfs:label "Thing" ;
-    rdfs:comment "An entity with its own identity and lifetime, as opposed to the file that carries it. Counterpart to git-lex:File: a File is an ADDRESS (its id is a path, and dies on rename), a Thing is a LIFETIME (its id is its own, and survives moves). Authored document classes and derived graph-only classes are both Things. The universal properties — id, title, description, abstract, cue, relatedToId, dateCreated, dateUpdated, substrate, kitManaged — have this as their domain." .
+    rdfs:comment "An entity with its own identity and lifetime, as opposed to the file that carries it. Counterpart to git-lex:File: a File is an ADDRESS (its id is a path, and dies on rename), a Thing is a LIFETIME (its id is its own, and survives moves). Authored document classes and derived graph-only classes are both Things. The universal properties — id, title, description, abstract, cue, relatedToId, createdDate, updatedDate, substrate, kitManaged — have this as their domain." .
 
 git-lex:id a owl:ObjectProperty ;
     rdfs:label "id" ;
@@ -374,14 +401,14 @@ git-lex:description a owl:DatatypeProperty ;
     rdfs:domain git-lex:Thing ;
     rdfs:range xsd:string .
 
-git-lex:dateCreated a owl:DatatypeProperty ;
-    rdfs:label "dateCreated" ;
+git-lex:createdDate a owl:DatatypeProperty ;
+    rdfs:label "createdDate" ;
     rdfs:comment "When this document was first written, ISO-8601 with offset. Maintained by git-lex — do not hand-edit." ;
     rdfs:domain git-lex:Thing ;
     rdfs:range xsd:dateTime .
 
-git-lex:dateUpdated a owl:DatatypeProperty ;
-    rdfs:label "dateUpdated" ;
+git-lex:updatedDate a owl:DatatypeProperty ;
+    rdfs:label "updatedDate" ;
     rdfs:comment "When this document last changed, ISO-8601 with offset. Maintained by git-lex on save — do not hand-edit." ;
     rdfs:domain git-lex:Thing ;
     rdfs:range xsd:dateTime .
@@ -411,6 +438,21 @@ git-lex:Skill a owl:Class ;
     git-lex:foldered true ;
     rdfs:label "Skill" ;
     rdfs:comment "An executable skill definition with instructions, scripts, or resources projected into agent substrate harnesses. Kit-specific skills (soul:Skill, copia:Skill) subclass this." .
+
+# git-lex:Set (v0.18): the universal unordered collection. Not foldered here —
+# whether a set is an authored file is the subclassing kit's decision (a kit
+# sets `git-lex:foldered true` on ITS subclass). copia:Set predates this and sits
+# under copia:Group; it may re-parent here later, in copia's own change.
+git-lex:Set a owl:Class ;
+    rdfs:subClassOf git-lex:Thing ;
+    rdfs:label "Set" ;
+    rdfs:comment "An unordered collection of Things. Subclass it for a kit's own kind of set (pan:Photoset); do not put an ordering on it." .
+
+git-lex:member a owl:ObjectProperty ;
+    rdfs:label "member" ;
+    rdfs:comment "One Thing that belongs to this Set, written <namespace/Class/id>. Repeat the value, not the key." ;
+    rdfs:domain git-lex:Set ;
+    rdfs:range git-lex:Thing .
 
 # HOW TO WRITE A GOOD CUE — from the two seats that wrote the first twenty, both
 # arriving at the same test independently, three days after the field shipped.
@@ -572,8 +614,8 @@ git-lex:Thing rdfs:subClassOf
     [ a owl:Restriction ; owl:onProperty git-lex:title       ; owl:maxCardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty git-lex:abstract    ; owl:maxCardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty git-lex:description ; owl:maxCardinality 1 ] ,
-    [ a owl:Restriction ; owl:onProperty git-lex:dateCreated ; owl:maxCardinality 1 ] ,
-    [ a owl:Restriction ; owl:onProperty git-lex:dateUpdated ; owl:maxCardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty git-lex:createdDate ; owl:maxCardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty git-lex:updatedDate ; owl:maxCardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty git-lex:substrate   ; owl:maxCardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty git-lex:kitManaged  ; owl:maxCardinality 1 ] .
 
