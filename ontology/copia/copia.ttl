@@ -1,4 +1,5 @@
 @prefix git-lex: <https://repolex.ai/ontology/git-lex/> .
+@prefix subtexture: <https://repolex.ai/ontology/subtexture/> .
 @prefix soul:  <https://repolex.ai/ontology/soul/> .
 @prefix copia: <https://repolex.ai/ontology/copia/> .
 @prefix owl:   <http://www.w3.org/2002/07/owl#> .
@@ -10,6 +11,10 @@
 # =============================================================================
 # COPIA KIT ONTOLOGY
 # =============================================================================
+# v0.36.0 (2026-09-16) — copia:Set re-parented onto subtexture:Set.
+# Ruled by Rob. copia:Set now stands on the universal unordered collection
+# defined in the subtexture base ontology.
+#
 # v0.35.0 (2026-09-16) — locatedInPlaceId and wearsOutfitId pruned from Being.
 # Ruled by Rob. Both were stale default-assignment fields from an earlier
 # modeling pass; neither had code readers or current usage.
@@ -592,7 +597,7 @@
 <https://repolex.ai/ontology/copia> a owl:Ontology ;
     rdfs:label "Copia Kit Ontology" ;
     rdfs:comment "The agent's curated outward face + the CoPIA render data model. Soul-adapter. Optional add-on for soul." ;
-    owl:versionInfo "0.35.0" ;
+    owl:versionInfo "0.36.0" ;
     owl:imports <https://repolex.ai/ontology/soul/> .
 
 
@@ -1738,6 +1743,7 @@ copia:Group a owl:Class ;
     rdfs:comment "abstract — authored as a concrete Set or Sequence, never a bare Group. A named gathering of Moments; members self-join via copia:inGroupId (generic) or copia:inSetId / copia:inSequenceId (kind-specific). Holds the shared non-identity group properties; identity is own-name per concrete class (setId / sequenceId), because a foldered class's identity property derives from ITS name, never inherited (v0.27, the identity law)." .
 
 copia:Set a owl:Class ;
+    rdfs:subClassOf subtexture:Set ;
     rdfs:subClassOf git-lex:Thing ;
     rdfs:subClassOf copia:Group ;
     git-lex:foldered true ;
