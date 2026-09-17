@@ -44,11 +44,24 @@
 <https://repolex.ai/ontology/pan> a owl:Ontology ;
     rdfs:label "Pan media store ontology" ;
     rdfs:comment "Identity, location, timing and model-derived enrichment facts Pan records for stored media." ;
-    owl:versionInfo "0.4.5" .
+    owl:versionInfo "0.4.6" .
 
 # -----------------------------------------------------------------------------
 # CHANGELOG
 # -----------------------------------------------------------------------------
+# v0.4.6 (2026-09-17, ruled by goodlux): PAN SPELLS EVERY FACT PAN:.
+#   (1) Pan spells every fact pan:, graph and file alike. The git-lex spelling
+#       was the 0.3.6 SHACL-generator workaround and the generator is being
+#       fixed to follow owl:equivalentProperty.
+#   (2) Cardinality restrictions on pan:Node, pan:Store, pan:Media, pan:Photoset,
+#       pan:Instance, pan:Enrichment, pan:Region, pan:Pose, pan:Caption,
+#       pan:Embedding, pan:Thumbnail, pan:Depth now restrict pan:id (was git-lex:id).
+#   (3) Cardinality restrictions on pan:Media and pan:Photoset now restrict
+#       pan:createdDate (was git-lex:createdDate).
+#   (4) Cardinality restriction on pan:Photoset now restricts pan:description
+#       (was git-lex:description).
+#   (5) No class parents change. pan:id retains owl:equivalentProperty
+#       subtexture:id, git-lex:id.
 # v0.4.5 (2026-09-16, ruled by goodlux; pan issue #24): MONOCULAR DEPTH ENRICHMENT.
 #   (1) + pan:depthData on pan:Image — reference to one depth run's output file
 #       holding its pan:Depth record. A plain Enrichment like poseData/captionData.
@@ -510,15 +523,13 @@ pan:sceneLocation a owl:DatatypeProperty ;
     rdfs:range xsd:string .
 
 # --- identity and time, as spelled inside a media file -------------------------
-# A media file carries only the pan and copia namespaces. So the two universal
-# facts every Thing has — which Thing it is, and when it came to be — are
-# written pan:id and pan:createdDate in the file and stored git-lex:id and
-# git-lex:createdDate in the graph. owl:equivalentProperty says they are ONE
-# property under two names: the sameAs ruling (goodlux, 2026-09-16) in the
-# form OWL gives properties. pand translates on read; nothing else changes.
-# pan:id is not media-only: every reference and record node (Enrichment,
-# Caption, Embedding, Pose, Region, Thumbnail) carries its own (goodlux,
-# 2026-09-16), so its domain is pan:Node.
+# A media file carries only the pan and copia namespaces. The graph stores the
+# pan: spelling, same as the file, pan:id being the universal via
+# owl:equivalentProperty. owl:equivalentProperty says they are ONE property under
+# two names: the sameAs ruling (goodlux, 2026-09-16) in the form OWL gives
+# properties. pan:id is not media-only: every reference and record node
+# (Enrichment, Caption, Embedding, Pose, Region, Thumbnail, Depth) carries its
+# own (goodlux, 2026-09-16), so its domain is pan:Node.
 
 pan:id a owl:ObjectProperty ;
     owl:equivalentProperty subtexture:id , git-lex:id ;
@@ -863,26 +874,27 @@ pan:depthMax a owl:DatatypeProperty ;
 # -----------------------------------------------------------------------------
 # CARDINALITY
 # -----------------------------------------------------------------------------
-# Every class requires exactly one identity. It is restricted as git-lex:id,
-# the universal the graph stores, because the SHACL generator reads
-# owl:onProperty literally and does not follow owl:equivalentProperty; in a
-# media file the same fact is spelled pan:id (see the identity block above).
+# Every class requires exactly one identity. It is restricted as pan:id, the
+# universal via owl:equivalentProperty; the graph stores the pan: spelling,
+# same as the file (goodlux, 2026-09-17). The git-lex spelling was the 0.3.6
+# SHACL-generator workaround, and the generator is being fixed to follow
+# owl:equivalentProperty.
 
 pan:Node rdfs:subClassOf
-    [ a owl:Restriction ; owl:onProperty git-lex:id ; owl:cardinality 1 ] .
+    [ a owl:Restriction ; owl:onProperty pan:id ; owl:cardinality 1 ] .
 
 pan:Store rdfs:subClassOf
-    [ a owl:Restriction ; owl:onProperty git-lex:id ; owl:cardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:id ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:mediaRoot ; owl:cardinality 1 ] .
 
 pan:Media rdfs:subClassOf
-    [ a owl:Restriction ; owl:onProperty git-lex:id ; owl:cardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:id ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:mediaPath  ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:mediaType  ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:sourceFile ; owl:cardinality 1 ] ,
     # When Pan created this record and its id (RFC3339, system local time):
-    # the universal git-lex:createdDate, inherited from git-lex:Thing (base kit 0.18.0).
-    [ a owl:Restriction ; owl:onProperty git-lex:createdDate ; owl:cardinality 1 ] ,
+    # pan:createdDate, the universal via owl:equivalentProperty.
+    [ a owl:Restriction ; owl:onProperty pan:createdDate ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:readyDate    ; owl:maxCardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:width      ; owl:maxCardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:height     ; owl:maxCardinality 1 ] ,
@@ -891,19 +903,16 @@ pan:Media rdfs:subClassOf
     [ a owl:Restriction ; owl:onProperty pan:isPicked   ; owl:maxCardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:isRejected ; owl:maxCardinality 1 ] .
 
-# A Photoset: one id, one creation time (the universal, as on Media), at most
-# one description. Restrictions sit on the git-lex universals because the
-# SHACL generator reads owl:onProperty literally (see the Media block); that
-# still holds under subtexture:Set, since git-lex:Thing is a subtexture:Thing
-# and the universals are bridged by owl:equivalentProperty in subtexture.ttl.
+# A Photoset: one id, one creation time, at most one description. Spelled pan:
+# as everywhere else in Pan.
 pan:Photoset rdfs:subClassOf
-    [ a owl:Restriction ; owl:onProperty git-lex:id ; owl:cardinality 1 ] ,
-    [ a owl:Restriction ; owl:onProperty git-lex:createdDate ; owl:cardinality 1 ] ,
-    [ a owl:Restriction ; owl:onProperty git-lex:description ; owl:maxCardinality 1 ] .
+    [ a owl:Restriction ; owl:onProperty pan:id ; owl:cardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:createdDate ; owl:cardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:description ; owl:maxCardinality 1 ] .
 
 # An Instance: one id, one root, one mode, one port; the rest at most once.
 pan:Instance rdfs:subClassOf
-    [ a owl:Restriction ; owl:onProperty git-lex:id ; owl:cardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:id ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:fsRoot       ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:instanceMode ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:listenPort   ; owl:cardinality 1 ] ,
@@ -912,7 +921,7 @@ pan:Instance rdfs:subClassOf
     [ a owl:Restriction ; owl:onProperty pan:sourceFormat ; owl:maxCardinality 1 ] .
 
 pan:Enrichment rdfs:subClassOf
-    [ a owl:Restriction ; owl:onProperty git-lex:id ; owl:cardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:id ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:model      ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:path       ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:producedDate ; owl:cardinality 1 ] .
@@ -922,7 +931,7 @@ pan:RegionData rdfs:subClassOf
     [ a owl:Restriction ; owl:onProperty pan:count      ; owl:cardinality 1 ] .
 
 pan:Region rdfs:subClassOf
-    [ a owl:Restriction ; owl:onProperty git-lex:id ; owl:cardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:id ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:model      ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:producedDate ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:descriptor ; owl:cardinality 1 ] ,
@@ -932,34 +941,34 @@ pan:Region rdfs:subClassOf
     [ a owl:Restriction ; owl:onProperty pan:maskPath   ; owl:maxCardinality 1 ] .
 
 pan:Pose rdfs:subClassOf
-    [ a owl:Restriction ; owl:onProperty git-lex:id ; owl:cardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:id ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:model       ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:producedDate  ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:keypoints   ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:overlayPath ; owl:maxCardinality 1 ] .
 
 pan:Caption rdfs:subClassOf
-    [ a owl:Restriction ; owl:onProperty git-lex:id ; owl:cardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:id ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:model      ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:producedDate ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:text       ; owl:cardinality 1 ] .
 
 pan:Embedding rdfs:subClassOf
-    [ a owl:Restriction ; owl:onProperty git-lex:id ; owl:cardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:id ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:model      ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:producedDate ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:dim        ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:vectorPath ; owl:cardinality 1 ] .
 
 pan:Thumbnail rdfs:subClassOf
-    [ a owl:Restriction ; owl:onProperty git-lex:id ; owl:cardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:id ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:path       ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:producedDate ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:width      ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:height     ; owl:cardinality 1 ] .
 
 pan:Depth rdfs:subClassOf
-    [ a owl:Restriction ; owl:onProperty git-lex:id ; owl:cardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:id ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:model        ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:producedDate ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:depthMapPath ; owl:cardinality 1 ] ,
