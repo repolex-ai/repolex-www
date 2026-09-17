@@ -11,6 +11,12 @@
 # =============================================================================
 # COPIA KIT ONTOLOGY
 # =============================================================================
+# v0.40.0 (2026-09-17) — copia:Group removed.
+# Ruled by Rob. copia:Group, its properties (copia:groupTitle,
+# copia:groupDepictedBy), and Moment property copia:inGroupId removed.
+# copia:Set and copia:Sequence stand on subtexture:Set and subtexture:Sequence;
+# copia:inSetId and copia:inSequenceId no longer subproperty inGroupId.
+#
 # v0.39.0 (2026-09-17) — copia:SubjectView and copia:subjectView removed.
 # Ruled by Rob. copia:SubjectView, its named individuals (front-view,
 # front-quarter-view, side-view, back-quarter-view, back-view, top-view,
@@ -178,11 +184,11 @@
 #     kit-update's "Folders: N/N match ontology" line. To re-derive instead of
 #     trusting it, kit-base's reference/check-kit-ontology.py reads the tag itself.
 #   Graph-only / vocabulary (NO tag, no folder): Moment · Depictable ·
-#     Group · Pose · Action   (vocab classes hold named individuals;
-#     Moment is PNG-born; Group/Depictable are abstract parents)
+#     Pose · Action   (vocab classes hold named individuals;
+#     Moment is PNG-born; Depictable is an abstract parent)
 #     Judgment · Verdict · Duel · Trace were REMOVED in v0.34.0; Camera* classes were
 #     REMOVED in v0.37.0; Sam3Region was REMOVED in v0.38.0; SubjectView was REMOVED
-#     in v0.39.0 — see the changelog.
+#     in v0.39.0; Group was REMOVED in v0.40.0 — see the changelog.
 #
 # THE MODEL (v0.4, spec: copia-studio/docs/2026_06_06_COPIA_DATA_MODEL_SPEC.md):
 #   CANON (authored, persisted, foldered): Place · Being · Item · Outfit.
@@ -617,7 +623,7 @@
 <https://repolex.ai/ontology/copia> a owl:Ontology ;
     rdfs:label "Copia Kit Ontology" ;
     rdfs:comment "The agent's curated outward face + the CoPIA render data model. Soul-adapter. Optional add-on for soul." ;
-    owl:versionInfo "0.39.0" ;
+    owl:versionInfo "0.40.0" ;
     owl:imports <https://repolex.ai/ontology/soul/> .
 
 
@@ -955,8 +961,8 @@ copia:Moment a owl:Class ;
     ] ;
     # --- single-valued (v0.7): owl:maxCardinality 1 marks the fields that take
     #     exactly one value. The copia Python layer reads these → scalar XMP.
-    #     Fields WITHOUT a maxCardinality restriction (depicts, inGroup,
-    #     sourceUuids) are multi-valued → rdf:Bag/Seq serialization.
+    #     Fields WITHOUT a maxCardinality restriction (depicts, inSetId,
+    #     inSequenceId, sourceUuids) are multi-valued → rdf:Bag/Seq serialization.
     rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:sequence ;       owl:maxCardinality 1 ] ;
     rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:promptFragment ; owl:maxCardinality 1 ] ;
     rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:seed ;           owl:maxCardinality 1 ] ;
@@ -1074,33 +1080,18 @@ copia:chevronString a owl:DatatypeProperty ;
     rdfs:domain copia:Moment ;
     rdfs:range xsd:string .
 
-# --- group membership (a Moment self-reports which Group(s) it's in) ---
-
-copia:inGroupId a owl:ObjectProperty ;
-    rdfs:label "in group id" ;
-    rdfs:comment "A Group (Set or Sequence) this Moment belongs to. Multi-valued — one YAML list item per Group; do not repeat the key. Joined by the group's id. Membership lives on the Moment (self-join) so a Group owns no member list. THE generic predicate — for kind-known writes use copia:inSetId / copia:inSequenceId (both rdfs:subPropertyOf inGroup, so reasoning still resolves to inGroup)." ;
-    rdfs:domain copia:Moment ;
-    rdfs:range copia:Group ;
-    copia:ordering "bag" .
-
-# v0.16: kind-specific membership predicates — writer-knows-the-kind preserved in
-# the XMP element name (`In Set:` vs `In Sequence:`) rather than deferred to a
-# reader type-filter. Both are rdfs:subPropertyOf inGroup; a query against inGroup
-# still sees both (under RDFS reasoning) or via UNION (under git-lex's stored
-# triples). Mirrors the depicts/hasRegion split.
+# --- set and sequence membership (a Moment self-reports which Set/Sequence it's in) ---
 
 copia:inSetId a owl:ObjectProperty ;
-    rdfs:subPropertyOf copia:inGroupId ;
     rdfs:label "in set id" ;
-    rdfs:comment "A Set (unordered Group) this Moment belongs to. Multi-valued — one YAML list item per Set; do not repeat the key. Joined by the set's id. Kind-specific narrowing of copia:inGroupId — use when the writer knows the target is a Set." ;
+    rdfs:comment "A Set this Moment belongs to. Multi-valued — one YAML list item per Set; do not repeat the key. Joined by the set's id." ;
     rdfs:domain copia:Moment ;
     rdfs:range copia:Set ;
     copia:ordering "bag" .
 
 copia:inSequenceId a owl:ObjectProperty ;
-    rdfs:subPropertyOf copia:inGroupId ;
     rdfs:label "in sequence id" ;
-    rdfs:comment "A Sequence (ordered Group) this Moment belongs to. Multi-valued — one YAML list item per Sequence; do not repeat the key. Joined by the sequence's id. Kind-specific narrowing of copia:inGroupId — use when the writer knows the target is a Sequence. Members SHOULD also declare copia:sequence for the ordinal position." ;
+    rdfs:comment "A Sequence this Moment belongs to. Multi-valued — one YAML list item per Sequence; do not repeat the key. Joined by the sequence's id. Members SHOULD also declare copia:sequence for the ordinal position." ;
     rdfs:domain copia:Moment ;
     rdfs:range copia:Sequence ;
     copia:ordering "bag" .
@@ -1460,40 +1451,17 @@ copia:sceneNarrative a owl:DatatypeProperty ;
 
 
 # =============================================================================
-# GROUP — a callable gathering of Moments (v0.7; v0.16 rename Bag→Set)
+# SET & SEQUENCE — gatherings of Moments (v0.7; v0.16 rename Bag→Set; v0.40 Group retired)
 # =============================================================================
-# A named group of Moments. The ONE real distinction is ORDER, so Group is the
-# abstract parent of exactly two concrete kinds:
-#   Set ⊂ Group         — unordered (a showcase, a study, a themed set)
-#   Sequence ⊂ Group, ⊂ rdf:Seq  — ordered (a storyline; members carry copia:sequence)
-# Finer kinds (Storyline, Showcase, …) are added as subclasses WHEN NEEDED, not
-# up front. A Group owns NO member list; Moments self-report via copia:inGroupId
-# (or the kind-specific copia:inSetId / copia:inSequenceId — both rdfs:subPropertyOf
-# inGroup). The rdf:Seq superclassing on Sequence is a public-RDF semantic claim
-# — inert in git-lex (which stores the literal subClassOf triple, no entailment),
-# meaningful to any RDF tool. Resolving "a Sequence IS-A Group" is an RDFS
-# reasoning step done Pool-side. Group is abstract (authored as Set/Sequence,
-# not bare Group).
-#
-# MIGRATION from v0.6 Collection: collectionId→groupId, collectionTitle→groupTitle,
-# collectionDepictedBy→groupDepictedBy; collectionStatus retired (v0.25);
-# collectionKind enum RETIRED (the class IS the kind). fromNocturne unchanged.
-# MIGRATION from v0.15 Bag→Set (v0.16): rename Copia/Bag/* folders → Copia/Set/*;
-# frontmatter copia.Bag.* → copia.Set.*; rdfs:subClassOf rdf:Bag dropped (the
-# symbolic claim no consumer in our stack used, and "Set ⊂ rdf:Bag" wouldn't read
-# right). The shared properties kept their Group domain until v0.27, when
-# groupId moved own-name (setId/sequenceId — identity law); groupTitle/
-# groupDepictedBy remain Group-domained (fromNocturneId left with Nocturne, v0.34).
-
-copia:Group a owl:Class ;
-    rdfs:subClassOf git-lex:Thing ;
-    rdfs:label "Group" ;
-    rdfs:comment "abstract — authored as a concrete Set or Sequence, never a bare Group. A named gathering of Moments; members self-join via copia:inGroupId (generic) or copia:inSetId / copia:inSequenceId (kind-specific). Holds the shared non-identity group properties; identity is own-name per concrete class (setId / sequenceId), because a foldered class's identity property derives from ITS name, never inherited (v0.27, the identity law)." .
+# Named gatherings of Moments. The distinction is ORDER:
+#   Set ⊂ subtexture:Set           — unordered (a showcase, a study, a themed set)
+#   Sequence ⊂ subtexture:Sequence — ordered (a storyline; members carry copia:sequence)
+# Moments self-report via copia:inSetId or copia:inSequenceId.
+# Group (abstract parent) and groupTitle/groupDepictedBy were retired in v0.40.0.
 
 copia:Set a owl:Class ;
     rdfs:subClassOf subtexture:Set ;
     rdfs:subClassOf git-lex:Thing ;
-    rdfs:subClassOf copia:Group ;
     git-lex:foldered true ;
     rdfs:label "Set" ;
     rdfs:comment "An UNORDERED group of Moments (a showcase, a study, a themed set). Members have no required order. Authored like Place/Item/Being/Outfit — Copia/Set/<setId>.md, body is the description. Renamed from copia:Bag at v0.16 (1ux's call) — the prior rdf:Bag superclass was symbolic-only and dropped with the rename." ;
@@ -1521,8 +1489,8 @@ copia:setDescription a owl:DatatypeProperty ;
     rdfs:range xsd:string .
 
 copia:Sequence a owl:Class ;
+    rdfs:subClassOf subtexture:Sequence ;
     rdfs:subClassOf git-lex:Thing ;
-    rdfs:subClassOf copia:Group ;
     rdfs:subClassOf rdf:Seq ;
     git-lex:foldered true ;
     rdfs:label "Sequence" ;
@@ -1538,23 +1506,6 @@ copia:sequenceId a owl:DatatypeProperty ;
     rdfs:comment "Unique identifier for this Sequence (== filename)." ;
 # Replaced the inherited groupId at v0.27, same reasoning as setId above.
     rdfs:domain copia:Sequence ;
-    rdfs:range xsd:string .
-
-# Shared NON-IDENTITY properties — declared once on Group, inherited by Set and
-# Sequence. groupId RETIRED v0.27 (identity moved own-name: setId / sequenceId).
-# Data migration: frontmatter copia.Set.groupId → copia.Set.setId,
-# copia.Sequence.groupId → copia.Sequence.sequenceId (values unchanged).
-
-copia:groupTitle a owl:DatatypeProperty ;
-    rdfs:label "group title" ;
-    rdfs:comment "Human-facing title of the group." ;
-    rdfs:domain copia:Group ;
-    rdfs:range xsd:string .
-
-copia:groupDepictedBy a owl:DatatypeProperty ;
-    rdfs:label "group depicted by" ;
-    rdfs:comment "URL or path to a cover/representative render for this group." ;
-    rdfs:domain copia:Group ;
     rdfs:range xsd:string .
 
 
