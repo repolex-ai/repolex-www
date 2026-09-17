@@ -44,11 +44,22 @@
 <https://repolex.ai/ontology/pan> a owl:Ontology ;
     rdfs:label "Pan media store ontology" ;
     rdfs:comment "Identity, location, timing and model-derived enrichment facts Pan records for stored media." ;
-    owl:versionInfo "0.4.6" .
+    owl:versionInfo "0.4.7" .
 
 # -----------------------------------------------------------------------------
 # CHANGELOG
 # -----------------------------------------------------------------------------
+# v0.4.7 (2026-09-17, ruled by goodlux): MEDIASET AND IMAGESET REFACTOR.
+#   (1) + pan:MediaSet a owl:Class ; rdfs:subClassOf subtexture:Set , pan:Node —
+#       an unordered set of Pan media of any kind (image, audio, video) a person
+#       curates; own file on disk; no ordering. Declared so media kinds get their
+#       own set classes (UI handlers differ per kind).
+#   (2) pan:Photoset RENAMED pan:ImageSet ; rdfs:subClassOf pan:MediaSet —
+#       a MediaSet holding only pan:Image (enforced at add time in code).
+#   (3) Cardinality restrictions (pan:id 1, pan:createdDate 1, pan:description max 1)
+#       placed on pan:MediaSet only; pan:ImageSet inherits them.
+#   (4) Section header and comments updated: imagesets/<id>.xml on disk,
+#       IRI <pan/ImageSet/<id>>.
 # v0.4.6 (2026-09-17, ruled by goodlux): PAN SPELLS EVERY FACT PAN:.
 #   (1) Pan spells every fact pan:, graph and file alike. The git-lex spelling
 #       was the 0.3.6 SHACL-generator workaround and the generator is being
@@ -583,22 +594,34 @@ pan:isRejected a owl:DatatypeProperty ;
     rdfs:range xsd:boolean .
 
 # -----------------------------------------------------------------------------
-# PHOTOSETS — sets of media a person curates (goodlux, 2026-09-16)
+# MEDIASETS & IMAGESETS — sets of media a person curates (goodlux, 2026-09-17)
 # -----------------------------------------------------------------------------
-# A Photoset is a subtexture:Set (base ontology 0.1.0). IRI <pan/Photoset/<id>>. It
-# is not a fact about any one image, so it has its own file on disk,
-# photosets/<id>.xml, beside the media; the graph is rebuilt from that file.
+# A MediaSet is a subtexture:Set (base ontology 0.1.0) and pan:Node. It is an
+# unordered set of Pan media of any kind (image, audio, video) a person curates;
+# its own file on disk; no ordering. No instances yet; declared so media kinds get
+# their own set classes (UI handlers differ per kind).
+#
+# An ImageSet is a pan:MediaSet holding only pan:Image. IRI <pan/ImageSet/<id>>.
+# It is not a fact about any one image, so it has its own file on disk,
+# imagesets/<id>.xml, beside the media; the graph is rebuilt from that file.
 # Membership is written once, on the image, with the universal: each image
-# carries pan:relatedToId <pan/Photoset/id> in its XMP, one value per set, so
+# carries pan:relatedToId <pan/ImageSet/id> in its XMP, one value per set, so
 # the fact travels with the file; the set's members are read from the images.
-# The set node carries id, description and createdDate. No ordering: one
-# image in two sets has two positions.
+# The code enforces the kind at add time, since membership is written on the
+# member and a set-side restriction cannot reach it. The set node carries id,
+# description and createdDate. No ordering: one image in two sets has two
+# positions.
 # -----------------------------------------------------------------------------
 
-pan:Photoset a owl:Class ;
+pan:MediaSet a owl:Class ;
     rdfs:subClassOf subtexture:Set , pan:Node ;
-    rdfs:label "Photoset" ;
-    rdfs:comment "An unordered set of Pan media a person curates; its own file photosets/<id>.xml on disk, from which the graph is rebuilt. Do not put an ordering on it." .
+    rdfs:label "MediaSet" ;
+    rdfs:comment "An unordered set of Pan media of any kind (image, audio, video) a person curates; own file on disk; no ordering." .
+
+pan:ImageSet a owl:Class ;
+    rdfs:subClassOf pan:MediaSet ;
+    rdfs:label "ImageSet" ;
+    rdfs:comment "An unordered set of Pan media holding only pan:Image; its own file imagesets/<id>.xml on disk, from which the graph is rebuilt. Do not put an ordering on it." .
 
 # -----------------------------------------------------------------------------
 # THE INSTANCE (goodlux, 2026-09-16)
@@ -903,9 +926,9 @@ pan:Media rdfs:subClassOf
     [ a owl:Restriction ; owl:onProperty pan:isPicked   ; owl:maxCardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:isRejected ; owl:maxCardinality 1 ] .
 
-# A Photoset: one id, one creation time, at most one description. Spelled pan:
-# as everywhere else in Pan.
-pan:Photoset rdfs:subClassOf
+# A MediaSet: one id, one creation time, at most one description. Spelled pan:
+# as everywhere else in Pan. pan:ImageSet inherits this block.
+pan:MediaSet rdfs:subClassOf
     [ a owl:Restriction ; owl:onProperty pan:id ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:createdDate ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:description ; owl:maxCardinality 1 ] .
