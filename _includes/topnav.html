@@ -2,6 +2,7 @@
     <a href="{{ '/' | relative_url }}" class="topnav-brand">repolex.ai</a>
     <div class="topnav-links">
         <a href="{{ '/web/' | relative_url }}" {% if page.url contains '/web/' %}class="current"{% endif %}>Web</a>
+        <a href="{{ '/ontology/' | relative_url }}" {% if page.url contains '/ontology/' %}class="current"{% endif %}>Ontology</a>
         <a href="{{ '/docs/' | relative_url }}" {% if page.layout == 'docs' or page.url contains '/docs/' %}class="current"{% endif %}>Docs</a>
         <a href="{{ '/blog' | relative_url }}" {% if page.layout == 'blog-sidebar' or page.layout == 'post-with-toc' or page.url contains '/blog/' %}class="current"{% endif %}>Blog</a>
         <a href="{{ '/repo-stories/' | relative_url }}" {% if page.layout == 'repo-story' or page.url contains '/repo-stories/' %}class="current"{% endif %}>Repo Stories</a>
