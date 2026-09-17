@@ -11,6 +11,12 @@
 # =============================================================================
 # COPIA KIT ONTOLOGY
 # =============================================================================
+# v0.39.0 (2026-09-17) — copia:SubjectView and copia:subjectView removed.
+# Ruled by Rob. copia:SubjectView, its named individuals (front-view,
+# front-quarter-view, side-view, back-quarter-view, back-view, top-view,
+# bottom-view), Moment property copia:subjectView, and cardinality restriction
+# on copia:Moment removed.
+#
 # v0.38.0 (2026-09-17) — Sam3Region and region properties removed.
 # Ruled by Rob. copia:Sam3Region, its four properties (copia:regionDescriptor,
 # copia:regionPolygon, copia:regionBbox, copia:regionScore), Moment properties
@@ -172,10 +178,11 @@
 #     kit-update's "Folders: N/N match ontology" line. To re-derive instead of
 #     trusting it, kit-base's reference/check-kit-ontology.py reads the tag itself.
 #   Graph-only / vocabulary (NO tag, no folder): Moment · Depictable ·
-#     Group · SubjectView · Pose · Action   (vocab classes hold named individuals;
+#     Group · Pose · Action   (vocab classes hold named individuals;
 #     Moment is PNG-born; Group/Depictable are abstract parents)
 #     Judgment · Verdict · Duel · Trace were REMOVED in v0.34.0; Camera* classes were
-#     REMOVED in v0.37.0; Sam3Region was REMOVED in v0.38.0 — see the changelog.
+#     REMOVED in v0.37.0; Sam3Region was REMOVED in v0.38.0; SubjectView was REMOVED
+#     in v0.39.0 — see the changelog.
 #
 # THE MODEL (v0.4, spec: copia-studio/docs/2026_06_06_COPIA_DATA_MODEL_SPEC.md):
 #   CANON (authored, persisted, foldered): Place · Being · Item · Outfit.
@@ -610,7 +617,7 @@
 <https://repolex.ai/ontology/copia> a owl:Ontology ;
     rdfs:label "Copia Kit Ontology" ;
     rdfs:comment "The agent's curated outward face + the CoPIA render data model. Soul-adapter. Optional add-on for soul." ;
-    owl:versionInfo "0.38.0" ;
+    owl:versionInfo "0.39.0" ;
     owl:imports <https://repolex.ai/ontology/soul/> .
 
 
@@ -884,24 +891,6 @@ copia:outfitDepictedBy a owl:DatatypeProperty ;
     rdfs:range xsd:string .
 
 
-# =============================================================================
-# SUBJECT VIEW — which aspect of the subject faces the camera (v0.11, Day 70)
-# =============================================================================
-# The SUBJECT cluster's facing axis: which way the subject faces.
-# Honest cardinals (front/back/side/quarters/top/bottom) — NOT a fake-precise degree
-# number; the render test showed Flux honors cardinals, not smooth azimuth.
-
-copia:SubjectView a owl:Class ;
-    rdfs:label "Subject View" ;
-    rdfs:comment "Which aspect of the subject faces the camera. The subject-facing axis. One per shot." .
-
-copia:front-view         a copia:SubjectView ; rdfs:label "front view" .
-copia:front-quarter-view a copia:SubjectView ; rdfs:label "three-quarter front view" .
-copia:side-view          a copia:SubjectView ; rdfs:label "side view" .
-copia:back-quarter-view  a copia:SubjectView ; rdfs:label "three-quarter back view" .
-copia:back-view          a copia:SubjectView ; rdfs:label "back view" .
-copia:top-view           a copia:SubjectView ; rdfs:label "seen from the top" .
-copia:bottom-view        a copia:SubjectView ; rdfs:label "seen from below" .
 
 
 # =============================================================================
@@ -993,8 +982,6 @@ copia:Moment a owl:Class ;
     # Cardinality is a (property, class) pair: this removal is Moment-only. ordering "bag".
     rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:sceneFraming ;   owl:maxCardinality 1 ] ;
     rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:sceneCamera ;    owl:maxCardinality 1 ] ;
-    # --- v0.11 subject-facing axis ---
-    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:subjectView ;    owl:maxCardinality 1 ] ;
     # --- v0.12 subject axes (one action + one pose per shot) ---
     rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:action ;         owl:maxCardinality 1 ] ;
     rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:pose ;           owl:maxCardinality 1 ] ;
@@ -1440,12 +1427,6 @@ copia:sceneCamera a owl:DatatypeProperty ;
     rdfs:domain copia:Moment ;
     rdfs:range xsd:string .
 
-# --- the subject-facing axis (v0.11)
-copia:subjectView a owl:ObjectProperty ;
-    rdfs:label "subject view" ;
-    rdfs:comment "Which aspect of the subject faces the camera — one copia:SubjectView individual. Per-render." ;
-    rdfs:domain copia:Moment ;
-    rdfs:range copia:SubjectView .
 
 copia:sceneEnergy a owl:DatatypeProperty ;
     rdfs:label "scene energy" ;
