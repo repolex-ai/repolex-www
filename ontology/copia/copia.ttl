@@ -11,6 +11,11 @@
 # =============================================================================
 # COPIA KIT ONTOLOGY
 # =============================================================================
+# v0.41.0 (2026-09-17) — copia:Sequence removed.
+# Ruled by Rob. copia:Sequence, its property (copia:sequenceId), Moment
+# properties copia:inSequenceId and copia:sequence, and cardinality restriction
+# on copia:Moment removed. copia:Set is retained.
+#
 # v0.40.0 (2026-09-17) — copia:Group removed.
 # Ruled by Rob. copia:Group, its properties (copia:groupTitle,
 # copia:groupDepictedBy), and Moment property copia:inGroupId removed.
@@ -623,7 +628,7 @@
 <https://repolex.ai/ontology/copia> a owl:Ontology ;
     rdfs:label "Copia Kit Ontology" ;
     rdfs:comment "The agent's curated outward face + the CoPIA render data model. Soul-adapter. Optional add-on for soul." ;
-    owl:versionInfo "0.40.0" ;
+    owl:versionInfo "0.41.0" ;
     owl:imports <https://repolex.ai/ontology/soul/> .
 
 
@@ -962,8 +967,7 @@ copia:Moment a owl:Class ;
     # --- single-valued (v0.7): owl:maxCardinality 1 marks the fields that take
     #     exactly one value. The copia Python layer reads these → scalar XMP.
     #     Fields WITHOUT a maxCardinality restriction (depicts, inSetId,
-    #     inSequenceId, sourceUuids) are multi-valued → rdf:Bag/Seq serialization.
-    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:sequence ;       owl:maxCardinality 1 ] ;
+    #     sourceUuids) are multi-valued → rdf:Bag/Seq serialization.
     rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:promptFragment ; owl:maxCardinality 1 ] ;
     rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:seed ;           owl:maxCardinality 1 ] ;
     rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:promptModel ;    owl:maxCardinality 1 ] ;
@@ -1080,7 +1084,7 @@ copia:chevronString a owl:DatatypeProperty ;
     rdfs:domain copia:Moment ;
     rdfs:range xsd:string .
 
-# --- set and sequence membership (a Moment self-reports which Set/Sequence it's in) ---
+# --- set membership (a Moment self-reports which Set it's in) ---
 
 copia:inSetId a owl:ObjectProperty ;
     rdfs:label "in set id" ;
@@ -1088,19 +1092,6 @@ copia:inSetId a owl:ObjectProperty ;
     rdfs:domain copia:Moment ;
     rdfs:range copia:Set ;
     copia:ordering "bag" .
-
-copia:inSequenceId a owl:ObjectProperty ;
-    rdfs:label "in sequence id" ;
-    rdfs:comment "A Sequence this Moment belongs to. Multi-valued — one YAML list item per Sequence; do not repeat the key. Joined by the sequence's id. Members SHOULD also declare copia:sequence for the ordinal position." ;
-    rdfs:domain copia:Moment ;
-    rdfs:range copia:Sequence ;
-    copia:ordering "bag" .
-
-copia:sequence a owl:DatatypeProperty ;
-    rdfs:label "sequence" ;
-    rdfs:comment "This Moment's ordinal position within a Sequence-group it's in (the comic-book/storyline case). Optional; absent = unordered membership." ;
-    rdfs:domain copia:Moment ;
-    rdfs:range xsd:integer .
 
 copia:promptFragment a owl:DatatypeProperty ;
     rdfs:label "prompt fragment" ;
@@ -1451,13 +1442,11 @@ copia:sceneNarrative a owl:DatatypeProperty ;
 
 
 # =============================================================================
-# SET & SEQUENCE — gatherings of Moments (v0.7; v0.16 rename Bag→Set; v0.40 Group retired)
+# SET — an unordered gathering of Moments (v0.7; v0.16 rename Bag→Set; v0.41 Sequence retired)
 # =============================================================================
-# Named gatherings of Moments. The distinction is ORDER:
-#   Set ⊂ subtexture:Set           — unordered (a showcase, a study, a themed set)
-#   Sequence ⊂ subtexture:Sequence — ordered (a storyline; members carry copia:sequence)
-# Moments self-report via copia:inSetId or copia:inSequenceId.
-# Group (abstract parent) and groupTitle/groupDepictedBy were retired in v0.40.0.
+# An unordered group of Moments (a showcase, a study, a themed set).
+# Moments self-report via copia:inSetId.
+# Group (abstract parent) was retired in v0.40.0; Sequence in v0.41.0.
 
 copia:Set a owl:Class ;
     rdfs:subClassOf subtexture:Set ;
@@ -1486,26 +1475,6 @@ copia:setDescription a owl:DatatypeProperty ;
 # The body of the authored .md IS this description; the frontmatter field exists
 # to surface it to the graph, so the two should say the same thing.
     rdfs:domain copia:Set ;
-    rdfs:range xsd:string .
-
-copia:Sequence a owl:Class ;
-    rdfs:subClassOf subtexture:Sequence ;
-    rdfs:subClassOf git-lex:Thing ;
-    rdfs:subClassOf rdf:Seq ;
-    git-lex:foldered true ;
-    rdfs:label "Sequence" ;
-    rdfs:comment "An ORDERED group of Moments (a storyline / comic). Members SHOULD declare copia:sequence." ;
-    rdfs:subClassOf [
-        a owl:Restriction ;
-        owl:onProperty copia:sequenceId ;
-        owl:cardinality 1
-    ] .
-
-copia:sequenceId a owl:DatatypeProperty ;
-    rdfs:label "sequenceId" ;
-    rdfs:comment "Unique identifier for this Sequence (== filename)." ;
-# Replaced the inherited groupId at v0.27, same reasoning as setId above.
-    rdfs:domain copia:Sequence ;
     rdfs:range xsd:string .
 
 
