@@ -44,12 +44,20 @@
 <https://repolex.ai/ontology/pan> a owl:Ontology ;
     rdfs:label "Pan media store ontology" ;
     rdfs:comment "Identity, location, timing and model-derived enrichment facts Pan records for stored media." ;
-    owl:versionInfo "0.4.4" .
+    owl:versionInfo "0.4.5" .
 
 # -----------------------------------------------------------------------------
 # CHANGELOG
 # -----------------------------------------------------------------------------
-# v0.4.4 (2026-09-16, ruled by Rob): PAN:NODE AND PROPERTY SCOPING.
+# v0.4.5 (2026-09-16, ruled by goodlux; pan issue #24): MONOCULAR DEPTH ENRICHMENT.
+#   (1) + pan:depthData on pan:Image — reference to one depth run's output file
+#       holding its pan:Depth record. A plain Enrichment like poseData/captionData.
+#   (2) + pan:Depth a owl:Class ; rdfs:subClassOf pan:Node — one monocular depth
+#       estimate: an 8-bit normalized depth map PNG for the whole image with its
+#       raw min/max range.
+#   (3) + pan:depthMapPath, pan:depthMin, pan:depthMax on pan:Depth. width/height
+#       and model/precision/provider/producedDate reuse existing pan:Node terms.
+# v0.4.4 (2026-09-16, ruled by goodlux): PAN:NODE AND PROPERTY SCOPING.
 #   (1) + pan:Node a owl:Class ; rdfs:subClassOf subtexture:Thing, git-lex:Thing.
 #       Abstract base class for all Pan nodes. Pan stands alone while bridging
 #       cleanly into subtexture:Thing.
@@ -682,6 +690,11 @@ pan:Thumbnail a owl:Class ;
     rdfs:label "Thumbnail" ;
     rdfs:comment "A reduced-size rendition Pan generated from the media." .
 
+pan:Depth a owl:Class ;
+    rdfs:subClassOf pan:Node ;
+    rdfs:label "Depth" ;
+    rdfs:comment "One monocular depth estimate: a normalized depth map for the whole image, with the range it was normalized from." .
+
 # --- references: media → one stage's output file -----------------------------
 
 pan:regionData a owl:ObjectProperty ;
@@ -692,6 +705,11 @@ pan:regionData a owl:ObjectProperty ;
 pan:poseData a owl:ObjectProperty ;
     rdfs:label "pose data" ;
     rdfs:comment "Reference to a pose-detection output file holding this image's poses." ;
+    rdfs:domain pan:Image ; rdfs:range pan:Enrichment .
+
+pan:depthData a owl:ObjectProperty ;
+    rdfs:label "depth data" ;
+    rdfs:comment "Reference to a depth-estimation output file holding this image's depth map." ;
     rdfs:domain pan:Image ; rdfs:range pan:Enrichment .
 
 pan:captionData a owl:ObjectProperty ;
@@ -825,6 +843,23 @@ pan:vectorPath a owl:DatatypeProperty ;
     rdfs:comment "Path to the .npy vector file, relative to pan:mediaRoot. The searchable copy lives in the index; this file is the rebuildable source." ;
     rdfs:domain pan:Embedding ; rdfs:range xsd:string .
 
+# --- Depth fields --------------------------------------------------------------
+
+pan:depthMapPath a owl:DatatypeProperty ;
+    rdfs:label "depth map path" ;
+    rdfs:comment "Path to the 8-bit normalized depth map PNG, relative to pan:mediaRoot. 0 = nearest, 255 = farthest." ;
+    rdfs:domain pan:Depth ; rdfs:range xsd:string .
+
+pan:depthMin a owl:DatatypeProperty ;
+    rdfs:label "depth min" ;
+    rdfs:comment "Lower bound of raw model depth the map was normalized from. Needed to compare maps." ;
+    rdfs:domain pan:Depth ; rdfs:range xsd:decimal .
+
+pan:depthMax a owl:DatatypeProperty ;
+    rdfs:label "depth max" ;
+    rdfs:comment "Upper bound of raw model depth the map was normalized from. Needed to compare maps." ;
+    rdfs:domain pan:Depth ; rdfs:range xsd:decimal .
+
 # -----------------------------------------------------------------------------
 # CARDINALITY
 # -----------------------------------------------------------------------------
@@ -922,3 +957,13 @@ pan:Thumbnail rdfs:subClassOf
     [ a owl:Restriction ; owl:onProperty pan:producedDate ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:width      ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:height     ; owl:cardinality 1 ] .
+
+pan:Depth rdfs:subClassOf
+    [ a owl:Restriction ; owl:onProperty git-lex:id ; owl:cardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:model        ; owl:cardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:producedDate ; owl:cardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:depthMapPath ; owl:cardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:depthMin     ; owl:cardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:depthMax     ; owl:cardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:width        ; owl:maxCardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:height       ; owl:maxCardinality 1 ] .
