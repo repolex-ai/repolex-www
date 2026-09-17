@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if page.title %}{{ page.title }} - {% endif %}repolex.ai</title>
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/wheel.css' | relative_url }}">
+</head>
+<body class="viz-body">
+    {% include topnav.html %}
+    {{ content }}
+    <script src="{{ '/assets/js/wheel.js' | relative_url }}"></script>
+</body>
+</html>
