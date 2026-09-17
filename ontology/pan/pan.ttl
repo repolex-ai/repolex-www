@@ -1,5 +1,6 @@
 @prefix pan:     <https://repolex.ai/ontology/pan/> .
 @prefix git-lex: <https://repolex.ai/ontology/git-lex/> .
+@prefix subtexture: <https://repolex.ai/ontology/subtexture/> .
 @prefix owl:     <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
@@ -11,6 +12,10 @@
 # and vector similarity. This file is the WHOLE of what Pan may say about a
 # stored object. Code implements this; it never adds to it — Rob ruled on
 # 2026-09-03 that the ontology comes first and every fact Pan emits is declared here.
+#
+# Pan's parents: subtexture (the base ontology, subtexture/ontology/
+# subtexture.ttl: Thing, Set, Sequence and the universals) and git-lex (the
+# kit layer: git-lex:Thing sits under subtexture:Thing).
 #
 # Published to git-lex as the kit `repolex-ai/git-lex-kit-pan` so a soul that
 # installs it can query its own media graph through git-lex and Syrinx.
@@ -39,11 +44,46 @@
 <https://repolex.ai/ontology/pan> a owl:Ontology ;
     rdfs:label "Pan media store ontology" ;
     rdfs:comment "Identity, location, timing and model-derived enrichment facts Pan records for stored media." ;
-    owl:versionInfo "0.4.1" .
+    owl:versionInfo "0.4.4" .
 
 # -----------------------------------------------------------------------------
 # CHANGELOG
 # -----------------------------------------------------------------------------
+# v0.4.4 (2026-09-16, ruled by Rob): PAN:NODE AND PROPERTY SCOPING.
+#   (1) + pan:Node a owl:Class ; rdfs:subClassOf subtexture:Thing, git-lex:Thing.
+#       Abstract base class for all Pan nodes. Pan stands alone while bridging
+#       cleanly into subtexture:Thing.
+#   (2) Every Pan class (pan:Store, pan:Media, pan:Instance, pan:Enrichment,
+#       pan:Region, pan:Pose, pan:Caption, pan:Embedding, pan:Thumbnail,
+#       pan:Photoset) subclasses pan:Node.
+#   (3) SCOPE PROPERTIES TO PAN: pan:id, pan:createdDate, pan:description,
+#       pan:width, pan:height, pan:model, pan:precision, pan:provider,
+#       pan:producedDate, pan:path domain moved from git-lex:Thing to pan:Node.
+#       These fields are scoped to Pan and no longer pollute the universal Thing.
+#   (4) pan:id retains owl:equivalentProperty subtexture:id, git-lex:id and
+#       rdfs:range git-lex:Thing (angle-bracket identifier shape).
+# v0.4.3 (2026-09-16, ruled by goodlux): THE SOURCE FILE.
+#   + pan:sourceFile on pan:Media — the file this source PNG was made from,
+#     relative to pan:mediaRoot. The managed store keeps ONE working format,
+#     PNG; a JPEG, WebP or TIFF that arrives is kept as delivered under
+#     img/original/ and never read again, and the PNG made from it is the
+#     source. sourceFile names that original. A PNG arrival points at the
+#     source itself, so the field is always present and one rule holds.
+#   Structural: written by pand at ingest, never by hand, refused by pan set.
+#   Not done: carrying the arrival's ICC/EXIF/XMP into the PNG (issue #23).
+# v0.4.2 (2026-09-16, ruled by goodlux): PHOTOSET EXTENDS subtexture:Set.
+#   (1) pan:Photoset rdfs:subClassOf subtexture:Set — the new base ontology
+#       (subtexture.ttl 0.1.0, 2026-09-16) declares Set and Sequence under
+#       subtexture:Thing; Pan extends the base directly, not git-lex:Set.
+#   (2) pan:member and pan:inPhotoset DELETED. Membership is the universal:
+#       the image carries pan:relatedToId <pan/Photoset/id> in its XMP (the
+#       file spelling of git-lex:relatedToId, one value per set). The
+#       Photoset node carries only id, description and createdDate; its
+#       members are read from the images.
+#   (3) The Photoset cardinality block keeps its restrictions on the git-lex
+#       universals: git-lex:Thing is under subtexture:Thing and the universals
+#       are bridged by owl:equivalentProperty in subtexture.ttl.
+#   Not done: nothing in git-lex-kit-base changes here.
 # v0.4.1 (2026-09-16, ruled by goodlux; pan issue #5): THE INSTANCE.
 #   + pan:Instance — one pand deployment as a node: its primary graph, an
 #     optional pan-ui cache graph, its storage root, its mode (managed or
@@ -280,6 +320,21 @@
 # -----------------------------------------------------------------------------
 
 # -----------------------------------------------------------------------------
+# THE BASE NODE
+# -----------------------------------------------------------------------------
+# pan:Node is the abstract root for all entities in the Pan media store.
+# Subclasses subtexture:Thing (and git-lex:Thing) so every Pan entity is a
+# subtexture Thing. Properties shared across Pan classes (pan:id, model,
+# dimensions, paths) have domain pan:Node, preventing them from polluting the
+# universal Thing across other kits.
+# -----------------------------------------------------------------------------
+
+pan:Node a owl:Class ;
+    rdfs:subClassOf subtexture:Thing , git-lex:Thing ;
+    rdfs:label "Node" ;
+    rdfs:comment "Abstract root entity for the Pan media store; sits under subtexture:Thing." .
+
+# -----------------------------------------------------------------------------
 # THE STORE
 # -----------------------------------------------------------------------------
 # One per .pan directory. IRI <pan/Store/<id>> where <id> is the soul's
@@ -288,7 +343,7 @@
 # -----------------------------------------------------------------------------
 
 pan:Store a owl:Class ;
-    rdfs:subClassOf git-lex:Thing ;
+    rdfs:subClassOf pan:Node ;
     rdfs:label "Store" ;
     rdfs:comment "One Pan store: the .pan directory of one soul or one bare store directory. Written by pand at open; never authored." .
 
@@ -303,7 +358,7 @@ pan:mediaRoot a owl:DatatypeProperty ;
 # -----------------------------------------------------------------------------
 
 pan:Media a owl:Class ;
-    rdfs:subClassOf git-lex:Thing ;
+    rdfs:subClassOf pan:Node ;
     rdfs:label "Media" ;
     rdfs:comment "A stored media object. Pan's facts and the producer's copia block ride in its XMP; everything it arrived with is kept. IRI <pan/Image/id>." .
 
@@ -324,23 +379,31 @@ pan:mediaType a owl:DatatypeProperty ;
     rdfs:domain pan:Media ;
     rdfs:range xsd:string .
 
+# The file the source was made from. Under img/original/ when the arrival was
+# not PNG; the source's own pan:mediaPath when it was. Always present.
+pan:sourceFile a owl:DatatypeProperty ;
+    rdfs:label "source file" ;
+    rdfs:comment "Path of the file this source was made from, relative to pan:mediaRoot; the source's own path when it arrived as PNG. Never an absolute path; never omitted." ;
+    rdfs:domain pan:Media ;
+    rdfs:range xsd:string .
+
 pan:readyDate a owl:DatatypeProperty ;
     rdfs:label "ready date" ;
     rdfs:comment "When every configured stage had a record for this object, RFC3339 local time. Absent = still in the pipeline; set once." ;
     rdfs:domain pan:Media ;
     rdfs:range xsd:dateTime .
 
-# width/height apply to Media AND Thumbnail; domain is the shared parent Thing.
+# width/height apply to Media AND Thumbnail; domain is the shared parent Node.
 pan:width a owl:DatatypeProperty ;
     rdfs:label "width" ;
     rdfs:comment "Pixel width." ;
-    rdfs:domain git-lex:Thing ;
+    rdfs:domain pan:Node ;
     rdfs:range xsd:integer .
 
 pan:height a owl:DatatypeProperty ;
     rdfs:label "height" ;
     rdfs:comment "Pixel height." ;
-    rdfs:domain git-lex:Thing ;
+    rdfs:domain pan:Node ;
     rdfs:range xsd:integer .
 
 pan:shortDescription a owl:DatatypeProperty ;
@@ -447,20 +510,20 @@ pan:sceneLocation a owl:DatatypeProperty ;
 # form OWL gives properties. pand translates on read; nothing else changes.
 # pan:id is not media-only: every reference and record node (Enrichment,
 # Caption, Embedding, Pose, Region, Thumbnail) carries its own (goodlux,
-# 2026-09-16), so its domain is git-lex:Thing.
+# 2026-09-16), so its domain is pan:Node.
 
 pan:id a owl:ObjectProperty ;
-    owl:equivalentProperty git-lex:id ;
+    owl:equivalentProperty subtexture:id , git-lex:id ;
     rdfs:label "id" ;
     rdfs:comment "Which Thing this node IS, written <pan/Class/id>; the file spelling of git-lex:id. On media and on every record and reference. Never write the bare token." ;
-    rdfs:domain git-lex:Thing ;
+    rdfs:domain pan:Node ;
     rdfs:range git-lex:Thing .
 
 pan:createdDate a owl:DatatypeProperty ;
-    owl:equivalentProperty git-lex:createdDate ;
+    owl:equivalentProperty subtexture:createdDate , git-lex:createdDate ;
     rdfs:label "created date" ;
     rdfs:comment "When Pan created this record, RFC3339 system local time; the file spelling of git-lex:createdDate. Written by pand, never by hand." ;
-    rdfs:domain git-lex:Thing ;
+    rdfs:domain pan:Node ;
     rdfs:range xsd:dateTime .
 
 # The file spelling of git-lex:description (same pattern as pan:id): a Pan
@@ -469,7 +532,7 @@ pan:description a owl:DatatypeProperty ;
     owl:equivalentProperty git-lex:description ;
     rdfs:label "description" ;
     rdfs:comment "A short deliberate summary a person writes; the file spelling of git-lex:description. One value; overwrite it, do not repeat the key." ;
-    rdfs:domain git-lex:Thing ;
+    rdfs:domain pan:Node ;
     rdfs:range xsd:string .
 
 # --- curation: facts a person sets on the media (goodlux, 2026-09-16) ----------
@@ -503,33 +566,20 @@ pan:isRejected a owl:DatatypeProperty ;
 # -----------------------------------------------------------------------------
 # PHOTOSETS — sets of media a person curates (goodlux, 2026-09-16)
 # -----------------------------------------------------------------------------
-# A Photoset is a git-lex:Set (base kit 0.18.0). IRI <pan/Photoset/<id>>. It
+# A Photoset is a subtexture:Set (base ontology 0.1.0). IRI <pan/Photoset/<id>>. It
 # is not a fact about any one image, so it has its own file on disk,
 # photosets/<id>.xml, beside the media; the graph is rebuilt from that file.
-# Membership is written twice, on purpose: the set lists its members
-# (pan:member, in the set's file) and each image lists its sets
-# (pan:inPhotoset, in the image's XMP), so the fact travels with the file
-# and the set is readable on its own. No ordering: one image in two sets has
-# two positions, so order, if ever wanted, is the order of pan:member values.
+# Membership is written once, on the image, with the universal: each image
+# carries pan:relatedToId <pan/Photoset/id> in its XMP, one value per set, so
+# the fact travels with the file; the set's members are read from the images.
+# The set node carries id, description and createdDate. No ordering: one
+# image in two sets has two positions.
 # -----------------------------------------------------------------------------
 
 pan:Photoset a owl:Class ;
-    rdfs:subClassOf git-lex:Set ;
+    rdfs:subClassOf subtexture:Set , pan:Node ;
     rdfs:label "Photoset" ;
     rdfs:comment "An unordered set of Pan media a person curates; its own file photosets/<id>.xml on disk, from which the graph is rebuilt. Do not put an ordering on it." .
-
-pan:member a owl:ObjectProperty ;
-    owl:equivalentProperty git-lex:member ;
-    rdfs:label "member" ;
-    rdfs:comment "One media object in this set, written <pan/Image/id>; the file spelling of git-lex:member. Repeat the value, not the key." ;
-    rdfs:domain pan:Photoset ;
-    rdfs:range pan:Media .
-
-pan:inPhotoset a owl:ObjectProperty ;
-    rdfs:label "in photoset" ;
-    rdfs:comment "One set this media belongs to, written <pan/Photoset/id>. Repeat the value, not the key." ;
-    rdfs:domain pan:Media ;
-    rdfs:range pan:Photoset .
 
 # -----------------------------------------------------------------------------
 # THE INSTANCE (goodlux, 2026-09-16)
@@ -544,7 +594,7 @@ pan:inPhotoset a owl:ObjectProperty ;
 # -----------------------------------------------------------------------------
 
 pan:Instance a owl:Class ;
-    rdfs:subClassOf git-lex:Thing ;
+    rdfs:subClassOf pan:Node ;
     rdfs:label "Instance" ;
     rdfs:comment "One pand deployment: its primary graph, an optional pan-ui cache graph, its storage root, its mode and its port. Written by pand at start; never authored." .
 
@@ -594,7 +644,7 @@ pan:listenPort a owl:DatatypeProperty ;
 # -----------------------------------------------------------------------------
 
 pan:Enrichment a owl:Class ;
-    rdfs:subClassOf git-lex:Thing ;
+    rdfs:subClassOf pan:Node ;
     rdfs:label "Enrichment" ;
     rdfs:comment "A reference to one stage's output file for one media object: which model, where the file is, when produced, and (pan:item) the records it holds. The image's own index of what exists for it." .
 
@@ -608,27 +658,27 @@ pan:RegionData a owl:Class ;
     rdfs:comment "The reference to one segmentation run's file of regions; the only reference that carries a count." .
 
 pan:Region a owl:Class ;
-    rdfs:subClassOf git-lex:Thing ;
+    rdfs:subClassOf pan:Node ;
     rdfs:label "Region" ;
     rdfs:comment "One segmented region: an outline around one detected thing, with the model's own word for it in pan:descriptor." .
 
 pan:Pose a owl:Class ;
-    rdfs:subClassOf git-lex:Thing ;
+    rdfs:subClassOf pan:Node ;
     rdfs:label "Pose" ;
     rdfs:comment "One detected body pose: a skeleton of keypoints for one figure." .
 
 pan:Caption a owl:Class ;
-    rdfs:subClassOf git-lex:Thing ;
+    rdfs:subClassOf pan:Node ;
     rdfs:label "Caption" ;
     rdfs:comment "One model's whole answer about an image, verbatim (pan:text). Several per image is normal — one per model, all kept. Re-captioning with the same model replaces that model's record." .
 
 pan:Embedding a owl:Class ;
-    rdfs:subClassOf git-lex:Thing ;
+    rdfs:subClassOf pan:Node ;
     rdfs:label "Embedding" ;
     rdfs:comment "A vector embedding: which model, what dimension, where the vector file is. The vector itself is never a graph literal." .
 
 pan:Thumbnail a owl:Class ;
-    rdfs:subClassOf git-lex:Thing ;
+    rdfs:subClassOf pan:Node ;
     rdfs:label "Thumbnail" ;
     rdfs:comment "A reduced-size rendition Pan generated from the media." .
 
@@ -673,44 +723,44 @@ pan:thumbnail a owl:ObjectProperty ;
 # 2026-09-16), see pan:id above. The producer writes it in the file; the graph
 # may carry either spelling and a reader treats them as one.
 pan:relatedToId a owl:ObjectProperty ;
-    owl:equivalentProperty git-lex:relatedToId ;
+    owl:equivalentProperty subtexture:relatedToId , git-lex:relatedToId ;
     rdfs:label "relatedToId" ;
     rdfs:comment "The Thing this media relates to (its Moment), written <ns/Class/id>; the file spelling of git-lex:relatedToId. Never the bare token." ;
     rdfs:domain pan:Media ; rdfs:range git-lex:Thing .
 
 # --- shared fields -------------------------------------------------------------
 # These apply to several pan classes (Enrichment, Region, Pose, Caption, …);
-# their domain is the shared parent Thing (pan:count excepted: RegionData only) and the cardinality block below says
+# their domain is the shared parent Node (pan:count excepted: RegionData only) and the cardinality block below says
 # which class carries which.
 
 pan:model a owl:DatatypeProperty ;
     rdfs:label "model" ;
     rdfs:comment "The model that produced this record, as configured for the endpoint that ran. Data, not identity." ;
-    rdfs:domain git-lex:Thing ;
+    rdfs:domain pan:Node ;
     rdfs:range xsd:string .
 
 pan:precision a owl:DatatypeProperty ;
     rdfs:label "precision" ;
     rdfs:comment "Numeric precision the model ran at (bf16-cuda, 8-bit), as the server reported it. Data; never part of the index name." ;
-    rdfs:domain git-lex:Thing ;
+    rdfs:domain pan:Node ;
     rdfs:range xsd:string .
 
 pan:provider a owl:DatatypeProperty ;
     rdfs:label "provider" ;
     rdfs:comment "Where the model ran (salad, phala, mac), as the server reported it. Data; never part of the index name." ;
-    rdfs:domain git-lex:Thing ;
+    rdfs:domain pan:Node ;
     rdfs:range xsd:string .
 
 pan:producedDate a owl:DatatypeProperty ;
     rdfs:label "produced date" ;
     rdfs:comment "When pand wrote this record, RFC3339 in system local time." ;
-    rdfs:domain git-lex:Thing ;
+    rdfs:domain pan:Node ;
     rdfs:range xsd:dateTime .
 
 pan:path a owl:DatatypeProperty ;
     rdfs:label "path" ;
     rdfs:comment "Location of the file this record refers to, relative to the store's pan:mediaRoot. Declared, never inferred." ;
-    rdfs:domain git-lex:Thing ;
+    rdfs:domain pan:Node ;
     rdfs:range xsd:string .
 
 pan:count a owl:DatatypeProperty ;
@@ -783,6 +833,9 @@ pan:vectorPath a owl:DatatypeProperty ;
 # owl:onProperty literally and does not follow owl:equivalentProperty; in a
 # media file the same fact is spelled pan:id (see the identity block above).
 
+pan:Node rdfs:subClassOf
+    [ a owl:Restriction ; owl:onProperty git-lex:id ; owl:cardinality 1 ] .
+
 pan:Store rdfs:subClassOf
     [ a owl:Restriction ; owl:onProperty git-lex:id ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:mediaRoot ; owl:cardinality 1 ] .
@@ -791,6 +844,7 @@ pan:Media rdfs:subClassOf
     [ a owl:Restriction ; owl:onProperty git-lex:id ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:mediaPath  ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:mediaType  ; owl:cardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:sourceFile ; owl:cardinality 1 ] ,
     # When Pan created this record and its id (RFC3339, system local time):
     # the universal git-lex:createdDate, inherited from git-lex:Thing (base kit 0.18.0).
     [ a owl:Restriction ; owl:onProperty git-lex:createdDate ; owl:cardinality 1 ] ,
@@ -804,7 +858,9 @@ pan:Media rdfs:subClassOf
 
 # A Photoset: one id, one creation time (the universal, as on Media), at most
 # one description. Restrictions sit on the git-lex universals because the
-# SHACL generator reads owl:onProperty literally (see the Media block).
+# SHACL generator reads owl:onProperty literally (see the Media block); that
+# still holds under subtexture:Set, since git-lex:Thing is a subtexture:Thing
+# and the universals are bridged by owl:equivalentProperty in subtexture.ttl.
 pan:Photoset rdfs:subClassOf
     [ a owl:Restriction ; owl:onProperty git-lex:id ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty git-lex:createdDate ; owl:cardinality 1 ] ,
