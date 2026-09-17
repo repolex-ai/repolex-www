@@ -11,6 +11,12 @@
 # =============================================================================
 # COPIA KIT ONTOLOGY
 # =============================================================================
+# v0.38.0 (2026-09-17) — Sam3Region and region properties removed.
+# Ruled by Rob. copia:Sam3Region, its four properties (copia:regionDescriptor,
+# copia:regionPolygon, copia:regionBbox, copia:regionScore), Moment properties
+# (copia:hasRegionId, copia:sam3ExtractedAt), and cardinality restrictions on
+# copia:Moment removed.
+#
 # v0.37.0 (2026-09-17) — Camera* classes and properties removed.
 # Ruled by Rob. copia:CameraAngle, copia:CameraDistance, copia:CameraLens,
 # copia:CameraFraming, and copia:CameraFocus, their named individuals,
@@ -165,11 +171,11 @@
 #     2026-08-26). The count is stated so drift is visible — it must match
 #     kit-update's "Folders: N/N match ontology" line. To re-derive instead of
 #     trusting it, kit-base's reference/check-kit-ontology.py reads the tag itself.
-#   Graph-only / vocabulary (NO tag, no folder): Moment · Depictable · Sam3Region ·
+#   Graph-only / vocabulary (NO tag, no folder): Moment · Depictable ·
 #     Group · SubjectView · Pose · Action   (vocab classes hold named individuals;
-#     Moment/Sam3Region are PNG-born; Group/Depictable are abstract parents)
+#     Moment is PNG-born; Group/Depictable are abstract parents)
 #     Judgment · Verdict · Duel · Trace were REMOVED in v0.34.0; Camera* classes were
-#     REMOVED in v0.37.0 — see the changelog.
+#     REMOVED in v0.37.0; Sam3Region was REMOVED in v0.38.0 — see the changelog.
 #
 # THE MODEL (v0.4, spec: copia-studio/docs/2026_06_06_COPIA_DATA_MODEL_SPEC.md):
 #   CANON (authored, persisted, foldered): Place · Being · Item · Outfit.
@@ -604,7 +610,7 @@
 <https://repolex.ai/ontology/copia> a owl:Ontology ;
     rdfs:label "Copia Kit Ontology" ;
     rdfs:comment "The agent's curated outward face + the CoPIA render data model. Soul-adapter. Optional add-on for soul." ;
-    owl:versionInfo "0.37.0" ;
+    owl:versionInfo "0.38.0" ;
     owl:imports <https://repolex.ai/ontology/soul/> .
 
 
@@ -938,54 +944,8 @@ copia:Place  rdfs:subClassOf copia:Depictable .
 copia:Being  rdfs:subClassOf copia:Depictable .
 copia:Item   rdfs:subClassOf copia:Depictable .
 copia:Outfit rdfs:subClassOf copia:Depictable .
-# v0.16: Sam3Region is NO LONGER a Depictable. It now rides copia:hasRegionId (its
-# own predicate), distinct from the canon cast that copia:depictsId holds. The
-# class itself is unchanged — only the link channel and the type-union changed.
 
 
-# =============================================================================
-# SAM3REGION — a segmented region of a Moment (GRAPH-ONLY, PNG-born)
-# v0.9.3 (Day 63). SAM3 text-segments a render into regions, each a generic visual
-# entity (rock/hand/sky) bound to WHERE it lives in the pixels. Like Moment, it's
-# graph-only (born from the PNG, never `git lex create`'d). A reading of the
-# rendered pixels (kin to caption), re-runnable. Heavy per-pixel masks live in a
-# lazy sidecar keyed by the region id; only the light facts below ride XMP.
-# v0.16 (Day 93): Regions ride their OWN predicate copia:hasRegionId (not depicts).
-# A region is no longer a Depictable — depicts is the canon-cast channel exclusively;
-# hasRegion is the pixel-evidence channel. Same shape, separate stamp-channel.
-# =============================================================================
-copia:Sam3Region a owl:Class ;
-    rdfs:subClassOf git-lex:Thing ;
-    rdfs:label "Sam3Region" ;
-    rdfs:comment "A SAM3-segmented region of a Moment — a generic visual entity (rock, hand, sky) bound to where it lives in the pixels. Reached from a Moment via copia:hasRegionId (v0.16; was copia:depictsId pre-v0.16). Graph-only (PNG-born, no .md). Identity: Sam3Region:<descriptor>/<NN>, per-descriptor per-Moment (rock/01, rock/02). Instance segmentation — one descriptor can yield many regions." ;
-    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:regionDescriptor ; owl:maxCardinality 1 ] ;
-    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:regionPolygon ;    owl:maxCardinality 1 ] ;
-    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:regionBbox ;       owl:maxCardinality 1 ] ;
-    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:regionScore ;      owl:maxCardinality 1 ] .
-
-copia:regionDescriptor a owl:DatatypeProperty ;
-    rdfs:label "region descriptor" ;
-    rdfs:comment "The singular noun this region IS (rock, hand, sky) — the SAM3 text query that found it. SINGULAR always (rock, never rocks) so corpus queries don't reconcile plurals." ;
-    rdfs:domain copia:Sam3Region ;
-    rdfs:range xsd:string .
-
-copia:regionPolygon a owl:DatatypeProperty ;
-    rdfs:label "region polygon" ;
-    rdfs:comment "Coarse vertex outline 'x0,y0;x1,y1;…' (~12-20 verts, Douglas-Peucker simplified from the SAM3 mask). Light enough for XMP; draws the outline with no disk hit. Pixel-exact work falls back to the sidecar RLE mask." ;
-    rdfs:domain copia:Sam3Region ;
-    rdfs:range xsd:string .
-
-copia:regionBbox a owl:DatatypeProperty ;
-    rdfs:label "region bbox" ;
-    rdfs:comment "Bounding box 'x0,y0,x1,y1' in pixels — the cheap locator + coarse crop." ;
-    rdfs:domain copia:Sam3Region ;
-    rdfs:range xsd:string .
-
-copia:regionScore a owl:DatatypeProperty ;
-    rdfs:label "region score" ;
-    rdfs:comment "SAM3 detection/grounding confidence (0–1)." ;
-    rdfs:domain copia:Sam3Region ;
-    rdfs:range xsd:decimal .
 
 
 # =============================================================================
@@ -1063,8 +1023,6 @@ copia:Moment a owl:Class ;
     rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:renderPrompt ;   owl:maxCardinality 1 ] ;
     rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:width ;          owl:maxCardinality 1 ] ;
     rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:height ;         owl:maxCardinality 1 ] ;
-    # --- v0.9.4 extraction marker ---
-    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:sam3ExtractedAt ;owl:maxCardinality 1 ] ;
     # --- v0.15 direct-lane provenance (one chevron, one pixel-seed per render) ---
     rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:chevronString ;  owl:maxCardinality 1 ] ;
     rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:pixelSourceMomentId ;    owl:maxCardinality 1 ] .
@@ -1075,37 +1033,18 @@ copia:momentId a owl:DatatypeProperty ;
     rdfs:domain copia:Moment ;
     rdfs:range xsd:string .
 
-# --- depicts (v0.7, narrowed v0.16): the CAST present in the frame ---
+# --- depicts (v0.7): the CAST present in the frame ---
 # Multi-valued (no maxCardinality restriction). Each value is a bare id of a
 # Depictable (Being/Item/Outfit/Place); the TYPE is recovered from the target's
 # own rdf:type, not carried on the link. Answers "which renders show &sylkie
 # &isis". The who-wears-what INTENT is NOT here — it lives in the soul corpus
 # (the authored Scene/canon). Serializes as an rdf:Bag (copia:ordering "bag").
-# v0.16: SAM3 regions moved to copia:hasRegionId (their own predicate). depicts is
-# now the canon-cast channel exclusively; legacy PNGs with regions in depicts
-# keep parsing but are migrated forward by re-extraction.
 
 copia:depictsId a owl:ObjectProperty ;
     rdfs:label "depicts id" ;
-    rdfs:comment "A canon Thing present in this Moment's frame — a Being, Item, Outfit, or Place. Multi-valued — one YAML list item per Thing; do not repeat the key. Joined by the target's id; the kind is read from the target's rdf:type. The flat presence/retrieval layer; authored binding (who wears what) lives in the soul corpus, not here. PNG-derived pixel regions live in copia:hasRegionId (a separate channel)." ;
+    rdfs:comment "A canon Thing present in this Moment's frame — a Being, Item, Outfit, or Place. Multi-valued — one YAML list item per Thing; do not repeat the key. Joined by the target's id; the kind is read from the target's rdf:type. The flat presence/retrieval layer; authored binding (who wears what) lives in the soul corpus, not here." ;
     rdfs:domain copia:Moment ;
     rdfs:range copia:Depictable ;
-    copia:ordering "bag" .
-
-# --- hasRegion (v0.16): the PNG-derived pixel-evidence channel ---
-# Multi-valued. Splits out the per-render SAM3 segmentation output from depicts
-# (the cast list) — same Moment, different consumer paths: depicts answers "what
-# canon Things appear here," hasRegion answers "what pixel regions did segmentation
-# find." Each value is a graph-only Sam3Region (no .md, PNG-born). XMP element
-# `Has Region:` shows the region ids grouped, separate from `Depicts:` — readable
-# at a glance. Re-extraction (when iris.segment evolves) is a clean replace of
-# this one predicate, not a surgical diff inside a typed union.
-
-copia:hasRegionId a owl:ObjectProperty ;
-    rdfs:label "has region id" ;
-    rdfs:comment "A SAM3-segmented region of this Moment — PNG-derived pixel evidence. Multi-valued — one YAML list item per region; do not repeat the key. Joined by the region's id (Sam3Region:<descriptor>/<NN>). Distinct from copia:depictsId (the canon cast); writer-known split preserved at stamp time. Re-extracted in place when iris.segment evolves." ;
-    rdfs:domain copia:Moment ;
-    rdfs:range copia:Sam3Region ;
     copia:ordering "bag" .
 
 # --- lineage (a Moment self-reports the prior Moment(s) it came from) ---
@@ -1401,20 +1340,6 @@ copia:height a owl:DatatypeProperty ;
     rdfs:domain copia:Moment ;
     rdfs:range xsd:integer .
 
-# --- sam3ExtractedAt (v0.9.4): the SAM3 extraction marker ---
-# Set by `pool extract-regions` after running iris.segment + writing the region
-# Descriptions for this Moment — REGARDLESS of how many regions were found.
-# Lets the command skip already-processed Moments AND distinguish "ran but found
-# nothing" (N=0 is a valid result) from "never ran" (no marker). A SPARQL
-# "Moments processed before <X>" query supports re-extraction triggers when
-# iris.segment evolves (new model, better polygon simplification, etc.) without
-# conflating with zero-region renders.
-
-copia:sam3ExtractedAt a owl:DatatypeProperty ;
-    rdfs:label "sam3 extracted at" ;
-    rdfs:comment "When SAM3 region extraction last ran on this Moment. Set by `pool extract-regions` after iris.segment completes — even when zero regions were found, so 'ran but empty' is distinguishable from 'never ran.' Re-extraction tools query for marker absence or marker-before-threshold." ;
-    rdfs:domain copia:Moment ;
-    rdfs:range xsd:dateTime .
 
 
 # =============================================================================
