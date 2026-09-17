@@ -56,9 +56,14 @@
 #       own set classes (UI handlers differ per kind).
 #   (2) pan:Photoset RENAMED pan:ImageSet ; rdfs:subClassOf pan:MediaSet —
 #       a MediaSet holding only pan:Image (enforced at add time in code).
-#   (3) Cardinality restrictions (pan:id 1, pan:createdDate 1, pan:description max 1)
-#       placed on pan:MediaSet only; pan:ImageSet inherits them.
-#   (4) Section header and comments updated: imagesets/<id>.xml on disk,
+#   (3) + pan:VideoSet, pan:AudioSet a owl:Class ; rdfs:subClassOf pan:MediaSet —
+#       stubs declared so the set hierarchy is complete before any UI reads it;
+#       not yet implemented (no pan:Video / pan:Audio media class exists yet
+#       and nothing writes one).
+#   (4) Cardinality restrictions (pan:id 1, pan:createdDate 1, pan:description max 1)
+#       placed on pan:MediaSet only; subclasses (ImageSet, VideoSet, AudioSet)
+#       inherit them.
+#   (5) Section header and comments updated: imagesets/<id>.xml on disk,
 #       IRI <pan/ImageSet/<id>>.
 # v0.4.6 (2026-09-17, ruled by goodlux): PAN SPELLS EVERY FACT PAN:.
 #   (1) Pan spells every fact pan:, graph and file alike. The git-lex spelling
@@ -622,6 +627,18 @@ pan:ImageSet a owl:Class ;
     rdfs:subClassOf pan:MediaSet ;
     rdfs:label "ImageSet" ;
     rdfs:comment "An unordered set of Pan media holding only pan:Image; its own file imagesets/<id>.xml on disk, from which the graph is rebuilt. Do not put an ordering on it." .
+
+# Stub: not yet implemented — no pan:Video media class exists yet and nothing writes one.
+pan:VideoSet a owl:Class ;
+    rdfs:subClassOf pan:MediaSet ;
+    rdfs:label "VideoSet" ;
+    rdfs:comment "Stub: an unordered set of Pan media holding only video; not yet implemented — no pan:Video media class exists yet and nothing writes one." .
+
+# Stub: not yet implemented — no pan:Audio media class exists yet and nothing writes one.
+pan:AudioSet a owl:Class ;
+    rdfs:subClassOf pan:MediaSet ;
+    rdfs:label "AudioSet" ;
+    rdfs:comment "Stub: an unordered set of Pan media holding only audio; not yet implemented — no pan:Audio media class exists yet and nothing writes one." .
 
 # -----------------------------------------------------------------------------
 # THE INSTANCE (goodlux, 2026-09-16)
