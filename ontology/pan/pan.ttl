@@ -847,7 +847,7 @@ pan:vectorPath a owl:DatatypeProperty ;
 
 pan:depthMapPath a owl:DatatypeProperty ;
     rdfs:label "depth map path" ;
-    rdfs:comment "Path to the 8-bit normalized depth map PNG, relative to pan:mediaRoot. 0 = nearest, 255 = farthest." ;
+    rdfs:comment "Path to the 8-bit normalized depth map PNG, relative to pan:mediaRoot. 255 = nearest, 0 = farthest." ;
     rdfs:domain pan:Depth ; rdfs:range xsd:string .
 
 pan:depthMin a owl:DatatypeProperty ;
