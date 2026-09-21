@@ -3,8 +3,9 @@
 @prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix owl:     <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
-@prefix sd:      <http://www.w3.org/ns/sparql-service-description#> .
+@prefix xsd:        <http://www.w3.org/2001/XMLSchema#> .
+@prefix sd:         <http://www.w3.org/ns/sparql-service-description#> .
+@prefix subtexture: <https://repolex.ai/ontology/subtexture/> .
 
 # =============================================================================
 # GIT-LEX CORE ONTOLOGY (git-lex:)
@@ -28,8 +29,13 @@
 git-lex: a owl:Ontology ;
     rdfs:label "git-lex Core Ontology" ;
     rdfs:comment "The vocabulary git-lex authors about the markdown documents it tracks." ;
-    owl:versionInfo "0.18.1" .
+    owl:versionInfo "0.18.2" .
 
+# v0.18.2 (2026-09-21, Rob-ruled): git-lex:NamedGraph EXTENDS subtexture:NamedGraph.
+#   (1) git-lex:NamedGraph rdfs:subClassOf subtexture:NamedGraph — the base
+#   ontology (subtexture.ttl 0.2.0, 2026-09-21) declares NamedGraph under
+#   sd:NamedGraph; git-lex extends the base directly alongside sd:NamedGraph.
+#
 # v0.18.1 (2026-09-16, ruled by goodlux): git-lex:Set AND git-lex:member REMOVED,
 #   ONE SITTING AFTER THEY ARRIVED. The universal collection now lives one layer
 #   down, in subtexture.ttl 0.1.0 (subtexture:Set, subtexture:Sequence), which
@@ -644,6 +650,7 @@ git-lex:authoringGuidance a owl:AnnotationProperty ;
     rdfs:comment "Guidance for whoever writes a document of this class — what belongs in the body. Delivered by `git lex create` and written into the class's __<Class>.md template; it does not land in the document itself. NEVER enforced: gates no save, raises no warning, absent from verify." .
 
 git-lex:NamedGraph a owl:Class ;
+    rdfs:subClassOf subtexture:NamedGraph ;
     rdfs:subClassOf sd:NamedGraph ;
     rdfs:label "NamedGraph" ;
     rdfs:comment "A named graph git-lex maintains in a repo's knowledge base. Instance IRIs are derived under the git-lex application slug and typed against this class in the default graph for zero-knowledge discovery. Note the two-resources distinction: the NamedGraph OBJECT (this IRI) is the queryable thing that describes the graph; the graph it names is carried via sd:name. Anchored to the W3C SPARQL Service Description sd:NamedGraph — the one external supertype git-lex adopts, because it is a real standard class, not an invented layer." .
