@@ -44,11 +44,224 @@
 <https://repolex.ai/ontology/pan> a owl:Ontology ;
     rdfs:label "Pan media store ontology" ;
     rdfs:comment "Identity, location, timing and model-derived enrichment facts Pan records for stored media." ;
-    owl:versionInfo "0.4.7" .
+    owl:versionInfo "0.4.17" .
 
 # -----------------------------------------------------------------------------
 # CHANGELOG
 # -----------------------------------------------------------------------------
+# v0.4.17 (2026-09-21, ruled by goodlux): WHAT THE IMAGE IS.
+#   Pan has hashed images since the store was written and never recorded the
+#   answer. The hash lived inside tests, proving that writing metadata leaves
+#   the image alone, and a stored file had no name for its own contents in the
+#   graph or in itself.
+#   + pan:imageSha256Hash on pan:Image. The sha256 of every block of the PNG
+#   except its XMP, each taken as it sits on disk: the header, the pixel data,
+#   the palette, the transparency, the colour profile, the generator's render
+#   chunk, every other text block, in file order. Nothing is decoded and
+#   nothing is normalised.
+#   The XMP is left out because Pan writes it. Pan rewrites that block every
+#   time a stage finishes, and a hash that moved whenever Pan touched its own
+#   metadata would say nothing about the image. Leaving it out fixes the hash
+#   from the moment the file is stored.
+#   On pan:Image, not pan:Media: the rule "everything but the XMP" is a rule
+#   about a PNG. What a video or an audio file would have to exclude to be
+#   stable under Pan's own writes is a different question, and belongs to
+#   whoever declares that hash.
+#   NOT an identity. Identity is pan:id, assigned once. This answers whether
+#   two files hold the same thing: the same image arriving again under another
+#   name, from another store, or shared back.
+#   Written at ingest by pand. A file whose blocks will not read is still
+#   stored and simply carries no hash.
+#   Removed with it: the rule that this hash match another program byte for
+#   byte. That rule came from Pool, where the hash WAS the identity and three
+#   languages had to agree on it; it is why alpha and the low byte of a 16-bit
+#   sample were being thrown away. Identity moved to an assigned pan:id and
+#   the rule should have gone then.
+#   Deliberately not done here: comparing an arrival's contents with the
+#   stored file's after a JPEG is converted. That stays in issue #23.
+# v0.4.16 (2026-09-20, ruled by goodlux): IS THE BODY RIGHT.
+#   0.4.15 added two scores and said anatomy was "a separate question and is
+#   not ruled". It is ruled now: a third score and critique on the same
+#   footing as the other two, asked for in the same caption call.
+#   (1) + pan:imageAnatomyScore on pan:Image — 0 to 100, pan:ScoreValue, the
+#       same scale and direction as the other two: HIGH is good. 100 is a body
+#       with nothing wrong with it; a low score is extra fingers, a second
+#       elbow, a limb that joins nowhere, a duplicated head.
+#   (2) + pan:imageAnatomyCritique — one sentence naming the defect it saw, or
+#       saying it saw none.
+#   A score rather than true/false, raised as an option on 2026-09-19 and
+#   settled here: generators fail anatomy by degree, so a threshold belongs to
+#   whoever is querying, not to the fact.
+#   The value applies to whatever body is in the frame — person or animal. An
+#   image with no body in it omits both keys, as any inapplicable key is
+#   omitted.
+# v0.4.15 (2026-09-19, ruled by goodlux): HOW GOOD IS THE IMAGE.
+#   The caption stage has described what is in an image since 0.3.4 and never
+#   said anything about how good it is. Specced on 2026-09-13 (Pan expanded
+#   scope, section 2.1) as part of the same single pass: the encoder has
+#   already turned the pixels into tokens, so four more fields cost about sixty
+#   output tokens instead of a second model run.
+#   (1) + pan:imageTechnicalScore, + pan:imageAestheticScore on pan:Image —
+#       0 to 100, declared as the bounded datatype pan:ScoreValue. Technical is
+#       the craft: focus, noise, blown highlights. Aesthetic is the appeal:
+#       composition, light, whether it is worth looking at.
+#   (2) + pan:imageTechnicalCritique, + pan:imageAestheticCritique — one
+#       sentence saying why each score is what it is. A number nobody can
+#       argue with is a number nobody can trust.
+#   (3) + pan:ScoreValue a rdfs:Datatype — xsd:decimal, 0 to 100 inclusive,
+#       the same shape pan:RatingValue already uses for a person's 0 to 5.
+#   The names are goodlux's, 2026-09-19: imageTechnicalScore,
+#   imageAestheticScore, imageTechnicalCritique, imageAestheticCritique, over
+#   the spec's aestheticTechnical / aestheticAppeal / technicalCritique /
+#   appealCritique, so the four line up with each other.
+#   Deliberately not done: a separate aesthetic model. Iris has one (ERNIE
+#   Image Aesthetics on the Mac) and it is not called: one pass, one model,
+#   four more keys in the prompt. Also not done: anything about anatomy — that
+#   is a separate question and is not ruled.
+# v0.4.14 (2026-09-19, ruled by goodlux): READY FOR WHAT?
+#   pan:readyDate RENAMED pan:enrichmentCompleteDate. The name said an object
+#   was "ready" without saying ready for what, and a reader had to find the
+#   code to learn that it means every configured enrichment stage has recorded
+#   a result for this object. That is what it has always meant and all it has
+#   ever meant; only the name changes.
+#   No alias for the old spelling: stored triples under pan:readyDate are test
+#   data, and pand writes the new name from here on.
+# v0.4.13 (2026-09-19, ruled by goodlux): ONE STRING, NOT A VOCABULARY.
+#   0.4.11 and 0.4.12 turned the PNG render chunk into a class with a property
+#   per setting, then into a class plus a name/value class for the settings a
+#   roster could not hold. Both were wrong for the same reason: they built
+#   Pan's ontology against one image generator's format, and that format is
+#   whatever its extensions decide it is — 94 distinct keys across the built-in
+#   ones alone, changing release to release.
+#   (1) + pan:renderRequestInformation on pan:Media — the whole chunk as one
+#       string, kept as written. The graph holds it so a reader need not open
+#       the file; Pan does not take it apart.
+#   (2) - pan:RenderRequest, - pan:RenderSetting, - pan:renderRequest,
+#       - pan:renderSetting, - pan:settingName, - pan:settingValue and all
+#       twenty-one render* properties. Deleted, not deprecated: nothing
+#       authored them and pand no longer writes them.
+#   Not searchable by field, deliberately. Finding every image from one seed
+#   means reading the string, and that is the trade: Pan stores media and runs
+#   perception, and is not a reader of any one generator's format.
+# v0.4.12 (2026-09-19, ruled by goodlux): THE RENDER REQUEST, READ FROM THE
+#   GENERATOR'S SOURCE RATHER THAN FROM SAMPLES.
+#   0.4.11 declared twelve settings guessed from one image. The generator's own
+#   code (sd-webui-forge-neo, modules/processing.py create_infotext and
+#   modules/infotext_utils.py parse_generation_parameters, read 2026-09-19)
+#   says the key set CANNOT be fixed: every script and extension adds its own
+#   through p.extra_generation_params, and the built-in ones alone contribute
+#   around fifty. A fixed roster would silently drop whatever it had not heard
+#   of. So:
+#   (1) + pan:RenderSetting a owl:Class ; rdfs:subClassOf pan:Node — one
+#       setting from the chunk that Pan declares no property for, holding
+#       pan:settingName (the key exactly as written, "Token merging ratio")
+#       and pan:settingValue. + pan:renderSetting links a RenderRequest to
+#       each. Nothing is dropped and no new vocabulary is needed when an
+#       extension invents a key.
+#   (2) The settings with a property of their own are the ones worth querying
+#       by name, and now match the generator's spellings: + renderDistilledCfgScale,
+#       renderVariationSeed, renderVariationSeedStrength, renderVaeEncoder,
+#       renderVaeDecoder, renderLoraHashes, renderDiffusionPrecision,
+#       renderHiresSteps, renderHiresCheckpoint. pan:renderModule takes
+#       `Module 1`, `Module 2`, … one value each.
+#   (3) - pan:renderScheduleType keeps its name; - the 0.4.11 guesses that the
+#       source does not write are gone.
+#   Parsing follows the generator exactly: the settings are the LAST line and
+#   only if three or more pairs parse from it; a value in double quotes is a
+#   JSON string, so a comma inside `Lora hashes: "a: 1, b: 2"` stays with its
+#   value; a value shaped 1536x1536 is two numbers; a setting whose value
+#   equals its key is written bare and is skipped.
+#   Deliberately not done: LoRAs as nodes of their own. `Lora hashes` is one
+#   string of name-to-hash pairs and stays one string until something needs to
+#   query LoRAs. Also not done: re-reading images stored before this version.
+# v0.4.11 (2026-09-19, ruled by goodlux): THE CALL THAT MADE THE IMAGE, AND
+#   THE REQUEST THAT FOUND THE REGIONS.
+#   (1) + pan:RenderRequest a owl:Class ; rdfs:subClassOf pan:Node — the
+#       generation call a diffusion user interface wrote into the PNG's
+#       `parameters` text chunk: prompt, negative prompt, steps, sampler,
+#       schedule type, CFG scale, seed, size, checkpoint and its hash, the
+#       modules, the random number source and the version. Pan has copied that
+#       chunk through untouched since 0.3.0 and never read it, so "every image
+#       with seed 1030317025" was a question the graph could not answer.
+#       + pan:renderRequest on pan:Media links the image to it.
+#   (2) + the fields: pan:renderPrompt, pan:renderNegativePrompt,
+#       pan:renderSteps, pan:renderSampler, pan:renderScheduleType,
+#       pan:renderCfgScale, pan:renderSeed, pan:renderModel,
+#       pan:renderModelHash, pan:renderModule (one per value),
+#       pan:renderRng, pan:renderVersion, pan:renderDenoisingStrength,
+#       pan:renderHiresUpscaler, pan:renderClipSkip. Width and height reuse
+#       pan:width / pan:height. + pan:renderParameters holds the WHOLE chunk
+#       verbatim, so a key Pan does not declare is not a key Pan has lost; a
+#       key earns its own property when someone needs to query it.
+#   (3) + the segmentation request, on pan:RegionData: pan:requestNouns (the
+#       comma-separated list Pan actually sent), pan:requestMinConfidence and
+#       pan:requestPolygonVerts (the two numbers the node was given). A noun
+#       that found nothing used to vanish — an image with no person region
+#       could not say whether Pan asked and the model found none, or whether
+#       Pan never asked. Now it can.
+#   Deliberately not done: no class for LoRAs or image-to-image inputs as
+#   nodes of their own. A LoRA arrives inside the settings line and is in
+#   pan:renderParameters; when something needs to query LoRAs it gets a
+#   property, or a class if it earns one. Also not done: reading the chunk
+#   from formats other than PNG, and re-reading images stored before this
+#   version (no unasked migration).
+# v0.4.10 (2026-09-19, ruled by goodlux): WHICH WAY THE SUBJECT FACES, WHICH
+#   PROMPT ASKED, AND WHERE THE SERVER'S OWN ANSWER WENT.
+#   (1) + pan:sceneSubjectOrientation on pan:Image — which way the main
+#       subject's body faces the camera: front, back, side, side-front,
+#       side-back. A thirteenth scene field, asked of the caption model in the
+#       same call as the others.
+#   (2) + pan:modelPromptPath on pan:Node — the prompt file that asked for an
+#       answer, as `custom/caption.md` or `default/caption.md`, relative to the
+#       prompts directory. Written on the media object AND on the pan:Caption
+#       record: the object says which prompt described it, and a second model
+#       or a second prompt is a second record naming its own. Prompts live in
+#       two folders from this version: `default/`, which pand rewrites only
+#       when the prompt it ships differs from what is on disk, and `custom/`,
+#       which Pan never writes. The config names which prompt a stage uses.
+#   (3) + pan:modelReplyPath on pan:Enrichment — the model server's own answer,
+#       saved whole beside the record. Pan already wrote these files for
+#       segmentation, depth and embedding; nothing in the graph named them, so
+#       a reader could not find them and a sweep could not tell them from
+#       litter. The reference's pan:path names the record; pan:modelReplyPath names
+#       the server's answer. At most one; absent when a stage saves none.
+#   Deliberately not done: no enumeration of the permitted scene values in
+#   OWL, and no validation in pand. The prompt lists the values the caption
+#   model may answer with (the coded gaze forms, gaze-looking-at-viewer and
+#   the rest, and the five orientations); Pan stores what comes back. Judging
+#   a model's answer is not the media store's job (goodlux, 2026-09-19).
+#   Also not done: storing the prompt TEXT, or a hash of it. The path is the
+#   pointer; versions are separate files. One name serves every stage's
+#   answer file, since a stage returns one.
+# v0.4.9 (2026-09-18, ruled by goodlux): A STORE ID IS SIX CHARACTERS.
+#   (1) The pan:Store section comment said the store's id is "the soul's
+#       genesis SHA". It is the FIRST SIX CHARACTERS of that SHA: 700c5b.
+#       That sentence is where a forty-character identifier got its authority,
+#       and pand wrote the whole hash into <pan/Store/...>, into the Instance's
+#       pan:primaryGraph endpoint, into every /stores/<id>/ route and into the
+#       log lines, while the media folder on disk was six characters all along.
+#       Long identifiers everywhere are the fault Pan was rewritten to undo.
+#   (2) A bare store's configured storage_id is cut the same way, so ~/.pan's
+#       forty zeros are the id 000000.
+#   Comment only: no class, property, domain, range or cardinality changes.
+#   Deliberately not done: no rule about which characters an id may contain
+#   (hex or otherwise) and no rejection of an id that is not a genesis hash —
+#   nobody has ruled on that, so the first six characters are taken as given.
+#   Code: pand cuts the id once, where a store is resolved, so nothing
+#   downstream can lengthen it; a caller naming a store by the whole SHA is
+#   still answered. A store node left behind under a long id is removed when
+#   the store is opened.
+# v0.4.8 (2026-09-18, ruled by goodlux): CAPTIONS ARE CAPTIONS.
+#   (1) pan:shortDescription RENAMED pan:shortCaption; pan:longDescription
+#       RENAMED pan:longCaption. A text the caption stage makes by captioning
+#       is a caption, not a description. "description" is git-lex's word
+#       (git-lex:description, a summary a person writes) and pan:description
+#       is its file spelling; the two names were colliding in meaning.
+#   Deliberately not done: pan:description is untouched; stored triples under
+#   the old names are not migrated (the stores were wiped on 2026-09-17 and
+#   the caption stage rewrites its facts on the next run). The caption prompt
+#   (~/.config/pan/prompts/caption.md) keys its JSON by these names and was
+#   changed with them.
 # v0.4.7 (2026-09-17, ruled by goodlux): MEDIASET AND IMAGESET REFACTOR.
 #   (1) + pan:MediaSet a owl:Class ; rdfs:subClassOf subtexture:Set , pan:Node —
 #       an unordered set of Pan media of any kind (image, audio, video) a person
@@ -374,9 +587,13 @@ pan:Node a owl:Class ;
 # -----------------------------------------------------------------------------
 # THE STORE
 # -----------------------------------------------------------------------------
-# One per .pan directory. IRI <pan/Store/<id>> where <id> is the soul's
-# genesis SHA (a repo store) or the configured store id (a bare store) — the
-# same identity git-lex, Horae and Syrinx already use for the soul.
+# One per .pan directory. IRI <pan/Store/<id>> where <id> is the FIRST SIX
+# CHARACTERS of the soul's genesis SHA (a repo store) or of the configured
+# store id (a bare store) — the same identity git-lex, Horae and Syrinx
+# already use for the soul, cut to six: 700c5b. Six characters everywhere
+# (goodlux, 2026-09-18): the IRI, the daemon's routes, the log lines and the
+# media folder on the volume are one value, and the whole hash appears
+# nowhere.
 # -----------------------------------------------------------------------------
 
 pan:Store a owl:Class ;
@@ -424,9 +641,33 @@ pan:sourceFile a owl:DatatypeProperty ;
     rdfs:domain pan:Media ;
     rdfs:range xsd:string .
 
-pan:readyDate a owl:DatatypeProperty ;
-    rdfs:label "ready date" ;
-    rdfs:comment "When every configured stage had a record for this object, RFC3339 local time. Absent = still in the pipeline; set once." ;
+# What the image IS: the sha256 of every block of the PNG except the XMP,
+# which Pan writes and rewrites. Everything else counts — pixels, palette,
+# transparency, colour profile, the generator's render chunk, every text
+# block. Identity stays pan:id; this answers "is this the same image", so
+# one reshared or re-delivered can be recognised (goodlux, 2026-09-21).
+pan:imageSha256Hash a owl:DatatypeProperty ;
+    rdfs:label "image sha256 hash" ;
+    rdfs:comment "sha256 of the whole image file except its XMP. Written by pand at ingest; not an identity and not settable by hand." ;
+    rdfs:domain pan:Image ;
+    rdfs:range xsd:string .
+
+# The request that made the image, kept whole and not taken apart. A
+# diffusion user interface writes its entire call into a PNG text chunk;
+# Pan copies that chunk into the stored file and also keeps its text here, so
+# the graph holds it without opening the file. Pan does not parse it: a field
+# per setting would tie this ontology to one generator's format, and that
+# format is whatever its extensions decide it is this week (goodlux,
+# 2026-09-19).
+pan:renderRequestInformation a owl:DatatypeProperty ;
+    rdfs:label "render request information" ;
+    rdfs:comment "The generation request the file arrived carrying, verbatim: prompt, sampler, seed, checkpoint and the rest as the generator wrote them. One string; do not parse it into the graph." ;
+    rdfs:domain pan:Media ;
+    rdfs:range xsd:string .
+
+pan:enrichmentCompleteDate a owl:DatatypeProperty ;
+    rdfs:label "enrichment complete date" ;
+    rdfs:comment "When every configured enrichment stage had recorded a result for this object, RFC3339 local time. Absent means a stage is still owed. Written once by pand, never by hand." ;
     rdfs:domain pan:Media ;
     rdfs:range xsd:dateTime .
 
@@ -443,15 +684,15 @@ pan:height a owl:DatatypeProperty ;
     rdfs:domain pan:Node ;
     rdfs:range xsd:integer .
 
-pan:shortDescription a owl:DatatypeProperty ;
-    rdfs:label "short description" ;
+pan:shortCaption a owl:DatatypeProperty ;
+    rdfs:label "short caption" ;
     rdfs:comment "One sentence saying what this media shows. Written by the caption stage; do not write it by hand." ;
     rdfs:domain pan:Media ;
     rdfs:range xsd:string .
 
-pan:longDescription a owl:DatatypeProperty ;
-    rdfs:label "long description" ;
-    rdfs:comment "A detailed, literal description of everything the media shows. The embedding is built from the image and this text together. Written by the caption stage." ;
+pan:longCaption a owl:DatatypeProperty ;
+    rdfs:label "long caption" ;
+    rdfs:comment "A detailed, literal caption of everything the media shows. The embedding is built from the image and this text together. Written by the caption stage." ;
     rdfs:domain pan:Media ;
     rdfs:range xsd:string .
 
@@ -538,6 +779,15 @@ pan:sceneLocation a owl:DatatypeProperty ;
     rdfs:domain pan:Image ;
     rdfs:range xsd:string .
 
+# Which way the body faces, not where the eyes go — sceneGaze is the eyes.
+# The permitted values live in the caption prompt, not here: the prompt is
+# what the model reads (goodlux, 2026-09-19).
+pan:sceneSubjectOrientation a owl:DatatypeProperty ;
+    rdfs:label "scene subject orientation" ;
+    rdfs:comment "which way the main subject's body faces the camera: front, back, side, side-front, side-back. One of those five." ;
+    rdfs:domain pan:Image ;
+    rdfs:range xsd:string .
+
 # --- identity and time, as spelled inside a media file -------------------------
 # A media file carries only the pan and copia namespaces. The graph stores the
 # pan: spelling, same as the file, pan:id being the universal via
@@ -570,11 +820,71 @@ pan:description a owl:DatatypeProperty ;
     rdfs:domain pan:Node ;
     rdfs:range xsd:string .
 
+# The prompt that asked for an answer. On the media object (which prompt
+# described this image) and on the Caption record beside it (which prompt
+# produced THIS answer), so a second model or a second prompt is a second
+# record naming its own. Two folders hold prompts: `default/`, rewritten from
+# the pand binary at every start, and `custom/`, which Pan never writes.
+pan:modelPromptPath a owl:DatatypeProperty ;
+    rdfs:label "prompt path" ;
+    rdfs:comment "The prompt file that asked for this answer, as full-caption.default.md, relative to the prompts directory. Written by pand; a changed prompt is a new file, never an edit." ;
+    rdfs:domain pan:Node ;
+    rdfs:range xsd:string .
+
+# --- how good the image is, as the caption model sees it (goodlux, 2026-09-19) --
+# Written by the caption stage in the same call as the captions and the scene
+# fields. Three numbers and the sentence behind each: a score with no reason
+# attached is a number nobody can argue with, and so a number nobody can
+# trust. These are the MODEL's judgement; pan:rating is a person's.
+
+pan:imageTechnicalScore a owl:DatatypeProperty ;
+    rdfs:label "image technical score" ;
+    rdfs:comment "How well made the image is, 0 to 100: focus, exposure, noise, artefacts. Written by the caption stage; do not set it by hand." ;
+    rdfs:domain pan:Image ;
+    rdfs:range pan:ScoreValue .
+
+pan:imageTechnicalCritique a owl:DatatypeProperty ;
+    rdfs:label "image technical critique" ;
+    rdfs:comment "One sentence saying why the technical score is what it is, naming what it saw." ;
+    rdfs:domain pan:Image ;
+    rdfs:range xsd:string .
+
+pan:imageAestheticScore a owl:DatatypeProperty ;
+    rdfs:label "image aesthetic score" ;
+    rdfs:comment "How good the image is to look at, 0 to 100: composition, light, whether it holds attention. Written by the caption stage; do not set it by hand." ;
+    rdfs:domain pan:Image ;
+    rdfs:range pan:ScoreValue .
+
+pan:imageAestheticCritique a owl:DatatypeProperty ;
+    rdfs:label "image aesthetic critique" ;
+    rdfs:comment "One sentence saying why the aesthetic score is what it is, naming what it saw." ;
+    rdfs:domain pan:Image ;
+    rdfs:range xsd:string .
+
+pan:imageAnatomyScore a owl:DatatypeProperty ;
+    rdfs:label "image anatomy score" ;
+    rdfs:comment "How anatomically correct the bodies are, 0 to 100, high is good: 100 has nothing wrong. Written by the caption stage; do not set it by hand." ;
+    rdfs:domain pan:Image ;
+    rdfs:range pan:ScoreValue .
+
+pan:imageAnatomyCritique a owl:DatatypeProperty ;
+    rdfs:label "image anatomy critique" ;
+    rdfs:comment "One sentence naming the anatomical defect the anatomy score is for, or saying none was seen." ;
+    rdfs:domain pan:Image ;
+    rdfs:range xsd:string .
+
 # --- curation: facts a person sets on the media (goodlux, 2026-09-16) ----------
 # Written by `pan set`, never by a model. They ride in the image's XMP so a
 # rating travels with the file; no second database. At most one value each.
 # Deliberately absent: a tag field — machine tags belong to git-lex or
 # subtexture, not to the media store.
+
+# 0 to 100, the scale the caption model is asked for. Same shape as
+# pan:RatingValue, different scale and different author: a score is the
+# model's judgement, a rating is a person's.
+pan:ScoreValue a rdfs:Datatype ;
+    owl:onDatatype xsd:decimal ;
+    owl:withRestrictions ( [ xsd:minInclusive 0 ] [ xsd:maxInclusive 100 ] ) .
 
 pan:RatingValue a rdfs:Datatype ;
     owl:onDatatype xsd:integer ;
@@ -832,6 +1142,34 @@ pan:path a owl:DatatypeProperty ;
     rdfs:domain pan:Node ;
     rdfs:range xsd:string .
 
+# The server's own answer, kept whole beside the record. pan:path names the
+# record; this names the answer the record was made from.
+pan:modelReplyPath a owl:DatatypeProperty ;
+    rdfs:label "model reply path" ;
+    rdfs:comment "Path to the model server's own answer, saved whole beside the record, relative to pan:mediaRoot. Absent when the stage saves no such file." ;
+    rdfs:domain pan:Enrichment ;
+    rdfs:range xsd:string .
+
+# --- what Pan asked a stage for (goodlux, 2026-09-19) --------------------------
+# The segmentation node is told which nouns to ground and how strict to be.
+# Without these a noun that found nothing left no trace, and an image with no
+# person region could not say whether Pan asked for one.
+
+pan:requestNouns a owl:DatatypeProperty ;
+    rdfs:label "request nouns" ;
+    rdfs:comment "The nouns Pan asked the segmenter to ground, comma-separated, exactly as sent. Includes the ones that found nothing." ;
+    rdfs:domain pan:RegionData ; rdfs:range xsd:string .
+
+pan:requestMinConfidence a owl:DatatypeProperty ;
+    rdfs:label "request minimum confidence" ;
+    rdfs:comment "The score a region had to beat to be returned. Regions below it were dropped by the node, not by Pan." ;
+    rdfs:domain pan:RegionData ; rdfs:range xsd:decimal .
+
+pan:requestPolygonVerts a owl:DatatypeProperty ;
+    rdfs:label "request polygon vertices" ;
+    rdfs:comment "How many vertices each outline was reduced to. A lower number is a coarser outline, not a different region." ;
+    rdfs:domain pan:RegionData ; rdfs:range xsd:integer .
+
 pan:count a owl:DatatypeProperty ;
     rdfs:label "count" ;
     rdfs:comment "How many regions the referenced segmentation file holds. Only on a RegionData reference; no other reference carries a count." ;
@@ -935,10 +1273,19 @@ pan:Media rdfs:subClassOf
     # When Pan created this record and its id (RFC3339, system local time):
     # pan:createdDate, the universal via owl:equivalentProperty.
     [ a owl:Restriction ; owl:onProperty pan:createdDate ; owl:cardinality 1 ] ,
-    [ a owl:Restriction ; owl:onProperty pan:readyDate    ; owl:maxCardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:enrichmentCompleteDate ; owl:maxCardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:width      ; owl:maxCardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:height     ; owl:maxCardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:thumbnail  ; owl:maxCardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:modelPromptPath ; owl:maxCardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:imageSha256Hash ; owl:maxCardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:renderRequestInformation ; owl:maxCardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:imageTechnicalScore ; owl:maxCardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:imageTechnicalCritique ; owl:maxCardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:imageAestheticScore ; owl:maxCardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:imageAestheticCritique ; owl:maxCardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:imageAnatomyScore ; owl:maxCardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:imageAnatomyCritique ; owl:maxCardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:rating     ; owl:maxCardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:isPicked   ; owl:maxCardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:isRejected ; owl:maxCardinality 1 ] .
@@ -964,11 +1311,19 @@ pan:Enrichment rdfs:subClassOf
     [ a owl:Restriction ; owl:onProperty pan:id ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:model      ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:path       ; owl:cardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:modelReplyPath  ; owl:maxCardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:producedDate ; owl:cardinality 1 ] .
 
-# The segmentation reference alone carries a count (goodlux, 2026-09-16).
+# The segmentation reference alone carries a count (goodlux, 2026-09-16), and
+# the request that produced it (goodlux, 2026-09-19).
 pan:RegionData rdfs:subClassOf
-    [ a owl:Restriction ; owl:onProperty pan:count      ; owl:cardinality 1 ] .
+    [ a owl:Restriction ; owl:onProperty pan:count      ; owl:cardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:requestNouns ; owl:maxCardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:requestMinConfidence ; owl:maxCardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:requestPolygonVerts ; owl:maxCardinality 1 ] .
+
+# One render request per image, with its prompt and the whole chunk it came
+# from; every setting at most once, except the modules.
 
 pan:Region rdfs:subClassOf
     [ a owl:Restriction ; owl:onProperty pan:id ; owl:cardinality 1 ] ,
@@ -991,6 +1346,7 @@ pan:Caption rdfs:subClassOf
     [ a owl:Restriction ; owl:onProperty pan:id ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:model      ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:producedDate ; owl:cardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:modelPromptPath ; owl:maxCardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:text       ; owl:cardinality 1 ] .
 
 pan:Embedding rdfs:subClassOf
