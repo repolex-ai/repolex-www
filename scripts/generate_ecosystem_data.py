@@ -43,8 +43,22 @@ def load_forx_db():
         LEFT JOIN tags t ON r.id = t.repo_id
         GROUP BY r.id
     """)
+    rows = cur.fetchall()
+
+    cur.execute("""
+        SELECT r.full_name, t.git_tag, t.completed_at
+        FROM tags t
+        JOIN repos r ON t.repo_id = r.id
+        WHERE t.status = 'complete'
+        ORDER BY t.id DESC
+    """)
+    latest_db_tags = {}
+    for fname, git_tag, comp_at in cur.fetchall():
+        if fname not in latest_db_tags:
+            latest_db_tags[fname] = (git_tag, comp_at)
+
     repos = {}
-    for row in cur.fetchall():
+    for row in rows:
         rid, org, name, storage, total, comp, inp, fail, pend = row
         full_name = f"{org}/{name}"
         comp = comp or 0
@@ -62,6 +76,8 @@ def load_forx_db():
         elif comp > 0 and inp > 0:
             status = "in_progress"
 
+        ltag, lcomp_at = latest_db_tags.get(full_name, (None, None))
+
         repos[full_name] = {
             "id": full_name,
             "org": org,
@@ -73,6 +89,8 @@ def load_forx_db():
             "failed_tags": fail,
             "pending_tags": pend,
             "total_tags": total or 0,
+            "latest_tag": ltag,
+            "parsed_at": lcomp_at,
         }
     con.close()
     return repos
@@ -88,18 +106,41 @@ def load_catalog():
         print(f"Warning: failed reading catalog.json: {e}")
         return {}
 
+    def commit_sort_key(c):
+        tag = c.get("tag") or ""
+        nums = tuple(int(x) for x in re.findall(r"\d+", tag))
+        parsed_at = c.get("parsed_at") or ""
+        return (nums, parsed_at)
+
     repos = {}
     for r in cat.get("repos", []):
         full_name = f"{r['org']}/{r['repo']}"
         parsed_commits = [c for c in r.get("commits", []) if c.get("status") == "parsed"]
-        latest_c = parsed_commits[0] if parsed_commits else None
-        total_size = sum(g.get("size_bytes", 0) for c in parsed_commits for g in c.get("graph_files", []))
-        
+
+        # Prioritize parsed commits with a dep graph
+        commits_with_dep = [
+            c for c in parsed_commits
+            if any(g.get("graph_type") == "dep" for g in (c.get("graph_files") or []))
+        ]
+
+        if commits_with_dep:
+            best_c = max(commits_with_dep, key=commit_sort_key)
+            tag_has_deps = True
+        elif parsed_commits:
+            best_c = max(parsed_commits, key=commit_sort_key)
+            tag_has_deps = False
+        else:
+            best_c = None
+            tag_has_deps = False
+
+        total_size = sum(g.get("size_bytes", 0) for c in parsed_commits for g in (c.get("graph_files") or []))
+
         repos[full_name] = {
             "parsed_count": r.get("parsed_count", 0),
             "pending_count": r.get("pending_count", 0),
-            "latest_tag": latest_c.get("tag") if latest_c else None,
-            "parsed_at": latest_c.get("parsed_at") if latest_c else None,
+            "latest_tag": best_c.get("tag") if best_c else None,
+            "tag_has_deps": tag_has_deps,
+            "parsed_at": best_c.get("parsed_at") if best_c else None,
             "graph_size_bytes": total_size,
         }
     return repos
@@ -402,8 +443,11 @@ def main():
         ecosystem_counts[ecosystem] = ecosystem_counts.get(ecosystem, 0) + 1
 
         storage = dbr.get("storage_repo") or f"repolex-forx/{org}-{name}".replace("_", "-")
-        tag = catr.get("latest_tag")
-        parsed_at = catr.get("parsed_at")
+        tag = catr.get("latest_tag") or dbr.get("latest_tag")
+        tag_has_deps = catr.get("tag_has_deps")
+        if tag_has_deps is None:
+            tag_has_deps = (repo_id in edge_sources)
+        parsed_at = catr.get("parsed_at") or dbr.get("parsed_at")
         graph_size = catr.get("graph_size_bytes", 0)
 
         nodes.append({
@@ -414,6 +458,7 @@ def main():
             "ecosystem": ecosystem,
             "storage_repo": storage,
             "tag": tag,
+            "tag_has_deps": bool(tag_has_deps),
             "parsed_at": parsed_at,
             "graph_size_bytes": graph_size,
             "out_degree": out_degree.get(repo_id, 0),
