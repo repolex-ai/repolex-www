@@ -736,10 +736,50 @@
         document.getElementById('insp-date').textContent = node.parsed_at ? node.parsed_at.slice(0, 10) : '—';
         document.getElementById('insp-quads').textContent = node.graph_size_bytes
             ? `${Math.round(node.graph_size_bytes / 1024 / 1024 * 10) / 10} MB` : '—';
+        renderPull(node);
         fillList('insp-out-list', 'insp-out-count', links.filter(l => l.source === node), l => l.target);
         fillList('insp-in-list', 'insp-in-count', links.filter(l => l.target === node), l => l.source);
         panel.classList.remove('empty');
         requestRender();
+    }
+
+    /** The rlex commands that put this repository's graph — and, when
+     *  asked, the graphs of everything it depends on — into a local store
+     *  (goodlux, 2026-09-24). `rlex sync` fetches the index that `download`
+     *  looks tags up in. `download` fetches AND loads into the local store
+     *  that `rlex query` and `rlex serve` read — checked by running one, which
+     *  printed "Loaded 10 files" — so no separate `load` step is printed. A
+     *  repository with no parsed
+     *  tag cannot be downloaded yet, and says so rather than printing a
+     *  command that would fail. */
+    function pullCommands(node, withDeps) {
+        const lines = ['rlex sync'];
+        const add = n => {
+            if (!n.tag || n.status === 'discovered') {
+                lines.push(`# ${n.id}: not parsed yet — nothing to download`);
+                return;
+            }
+            lines.push(`rlex download ${n.id} ${n.tag}`);
+        };
+        add(node);
+        if (withDeps) {
+            const deps = [...new Set(links.filter(l => l.source === node).map(l => l.target))];
+            if (deps.length) lines.push('', `# ${deps.length} ${deps.length === 1 ? 'dependency' : 'dependencies'}`);
+            deps.forEach(add);
+        }
+        lines.push('', `rlex serve --no-browser   # SPARQL on localhost:7878`);
+        return lines.join('\n');
+    }
+
+    function renderPull(node) {
+        const box = document.getElementById('pull-cmd');
+        const deps = document.getElementById('pull-with-deps');
+        const count = document.getElementById('pull-dep-count');
+        if (!box || !deps) return;
+        const n = new Set(links.filter(l => l.source === node).map(l => l.target)).size;
+        if (count) count.textContent = n ? `(${n})` : '(none)';
+        deps.disabled = n === 0;
+        box.textContent = pullCommands(node, deps.checked && n > 0);
     }
 
     /** The panel keeps its place; with nothing selected it says so there. */
@@ -876,6 +916,16 @@
 
         const playBtn = document.getElementById('btn-play-replay');
         if (playBtn) playBtn.addEventListener('click', toggleReplay);
+
+        const withDeps = document.getElementById('pull-with-deps');
+        if (withDeps) withDeps.addEventListener('change', () => selectedNode && renderPull(selectedNode));
+        const copy = document.getElementById('pull-copy');
+        if (copy) copy.addEventListener('click', () => {
+            const text = document.getElementById('pull-cmd').textContent;
+            const done = ok => { copy.textContent = ok ? 'copied' : 'select + copy'; setTimeout(() => (copy.textContent = 'copy'), 1500); };
+            if (navigator.clipboard) navigator.clipboard.writeText(text).then(() => done(true), () => done(false));
+            else done(false);
+        });
 
         const inspClose = document.getElementById('inspector-close');
         if (inspClose) inspClose.addEventListener('click', closeInspector);

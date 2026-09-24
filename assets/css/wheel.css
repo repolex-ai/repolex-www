@@ -349,6 +349,39 @@ main.canvas-container {
 .inspector-list-item:hover { background: #f4f4f5; color: #2563eb; }
 .inspector-list-empty { color: var(--wheel-ink-faint); font-style: italic; padding: 0.2rem 0.3rem; font-size: 11px; }
 
+/* --- pull it locally ------------------------------------------------------ */
+
+.pull-copy {
+    border: 1px solid var(--wheel-rule);
+    background: #ffffff;
+    border-radius: 3px;
+    font-family: inherit;
+    font-size: 10px;
+    padding: 0 0.4rem;
+    cursor: pointer;
+    color: var(--wheel-ink-soft);
+    text-transform: none;
+    letter-spacing: 0;
+}
+.pull-copy:hover { border-color: var(--wheel-ink); color: var(--wheel-ink); }
+.pull-deps { display: flex; align-items: center; gap: 0.35rem; font-size: 11px; margin-bottom: 0.35rem; cursor: pointer; }
+.pull-deps b { font-weight: normal; color: var(--wheel-ink-faint); }
+.pull-cmd {
+    margin: 0;
+    padding: 0.5rem 0.6rem;
+    background: #18181b;
+    color: #e4e4e7;
+    border-radius: 4px;
+    font-family: var(--wheel-font-mono);
+    font-size: 10.5px;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    word-break: break-all;
+    max-height: 12rem;
+    overflow-y: auto;
+    user-select: text;
+}
+
 /* Narrow windows: the panel goes under the wheel rather than squeezing it. */
 @media (max-width: 760px) {
     body.viz-body { overflow: auto; height: auto; }

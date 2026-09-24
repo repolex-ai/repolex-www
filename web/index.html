@@ -83,6 +83,15 @@ permalink: /web/
                     <span class="inspector-val"><a id="insp-storage" href="#" target="_blank" rel="noopener"></a></span>
                 </div>
 
+                <div class="pull">
+                    <div class="inspector-section-title">
+                        <span>Pull it locally with rlex</span>
+                        <button id="pull-copy" class="pull-copy" title="Copy these commands">copy</button>
+                    </div>
+                    <label class="pull-deps"><input type="checkbox" id="pull-with-deps" /> include what it depends on <b id="pull-dep-count"></b></label>
+                    <pre id="pull-cmd" class="pull-cmd"></pre>
+                </div>
+
                 <div>
                     <div class="inspector-section-title">
                         <span><i class="legend-line outbound"></i>Depends on</span>
