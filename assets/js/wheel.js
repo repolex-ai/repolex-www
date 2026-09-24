@@ -759,7 +759,8 @@
                 lines.push(`# ${n.id}: not parsed yet — nothing to download`);
                 return;
             }
-            lines.push(`rlex download ${n.id} ${n.tag}`);
+            lines.push(`rlex download ${n.id} ${n.tag}`
+                + (n.tag_has_deps === false ? '   # this tag has no dependency graph' : ''));
         };
         add(node);
         if (withDeps) {
