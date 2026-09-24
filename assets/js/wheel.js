@@ -2,78 +2,97 @@
  * Repolex Ecosystem Wheel
  * Circular Dependency Wheel with Fine Architectural Pencil Lines
  * Inspired by Selkie's git-lex viz
+ *
+ * Every repository repolex knows about, on one ring, grouped by language
+ * ecosystem, with its dependency links drawn as pencil lines across the
+ * middle. Built by kira (2026-09-17); reworked so the wheel is the whole
+ * page (goodlux, 2026-09-24):
+ *
+ *  - It always fits. There is no zoom and no pan: the ring is sized to its
+ *    area on load and on every resize, so there is nothing to get lost in
+ *    and no "fit view" to press.
+ *  - Clicking a language spreads it around the entire ring, so its links
+ *    open up across the full circle instead of bunching in one sector, and
+ *    every repository in it is named. Clicking it again, the "all languages"
+ *    button, or Escape folds it back.
+ *  - The side panel is fixed: controls, counts and the selected repository
+ *    keep their place instead of floating over the wheel.
  */
 
 (function () {
     'use strict';
 
-    // Configuration & Palettes
     const PALETTE = {
-        bg: '#ffffff',
         pencilRest: 'rgba(22, 26, 38, 0.10)',
         pencilDim: 'rgba(228, 231, 238, 0.22)',
-        outbound: 'rgba(217, 119, 6, 0.88)',     // Amber
-        inbound: 'rgba(37, 99, 235, 0.92)',      // Cobalt Blue
-        complete: '#16a34a',                     // Green
-        in_progress: '#d97706',                  // Amber / Yellow
-        failed: '#dc2626',                       // Red
-        discovered: '#94a3b8',                   // Slate
+        outbound: 'rgba(217, 119, 6, 0.88)',     // amber
+        inbound: 'rgba(37, 99, 235, 0.92)',      // cobalt
+        complete: '#16a34a',
+        in_progress: '#d97706',
+        failed: '#dc2626',
+        discovered: '#94a3b8',
         ring: '#0f172a',
         trackRing: 'rgba(0, 0, 0, 0.05)',
         clusterLabel: 'rgba(82, 82, 91, 0.85)',
     };
 
-    const ECOSYSTEM_ORDER = ['Cargo', 'PyPI', 'npm', 'RubyGems', 'Maven', 'Other'];
+    const ECOSYSTEM_ORDER = ['Cargo', 'PyPI', 'npm', 'Go', 'RubyGems', 'Maven', 'Other'];
     const ECOSYSTEM_NAMES = {
-        'Cargo': 'RUST / CARGO',
-        'PyPI': 'PYTHON / PYPI',
-        'npm': 'JS & TS / NPM',
-        'RubyGems': 'RUBY',
-        'Maven': 'JVM / MAVEN',
-        'Other': 'SYSTEMS & OTHER'
+        Cargo: 'RUST / CARGO',
+        PyPI: 'PYTHON / PYPI',
+        npm: 'JS & TS / NPM',
+        Go: 'GO',
+        RubyGems: 'RUBY',
+        Maven: 'JVM / MAVEN',
+        Other: 'SYSTEMS & OTHER',
     };
 
-    let canvas, ctx;
+    const FONT = 'Courier New, monospace';
+    const TENSION = 0.68;           // how hard links bend toward the centre
+    const GAP_SHARE = 0.045;        // share of the ring left as gaps between languages
+    const TWEEN_MS = 750;           // expand / fold animation
+    const REPLAY_MS = 14000;        // "play links" sweep
+    // Room outside the ring. Folded, only the language names sit there. A
+    // language spread round the whole ring names every repository, and those
+    // names need real room, so the ring shrinks to make it.
+    const MARGIN_FOLDED = 64;
+    const MARGIN_SPREAD = 130;
+
+    let canvas, ctx, stage;
     let rawData = null;
     let nodes = [];
     let links = [];
-    let nodeMap = new Map();
-    let clusterArcs = [];
+    const nodeMap = new Map();
+    let groups = [];                // [{ eco, label, nodes }]
+    let arcs = [];                  // sector arcs, animated with the nodes
 
-    // View & Camera State
     let dpr = 1;
-    let camera = { x: 0, y: 0, scale: 1.0 };
-    let isDragging = false;
-    let dragStart = { x: 0, y: 0 };
+    let width = 0, height = 0;
+    const center = { x: 0, y: 0 };
+    let radius = 300;
+    let margin = MARGIN_FOLDED;
+
     let hoveredNode = null;
     let selectedNode = null;
+    let hoveredEco = null;
+    let focusEco = null;            // the language spread round the ring, or null
     let searchFilter = '';
-    let statusFilters = {
-        complete: true,
-        in_progress: true,
-        failed: true,
-        discovered: true
-    };
-    let ecosystemFilter = 'All';
+    const statusFilters = { complete: true, in_progress: true, failed: true, discovered: true };
 
-    // Replay state
+    let tween = null;               // one layout animation at a time
     let isReplaying = false;
     let replayProgress = 1.0;
     let replayStart = 0;
-    const REPLAY_DURATION = 14000; // 14s sweep
-    let animFrameId = null;
 
-    // Radius parameters (calculated on layout)
-    let baseRadius = 380;
-    let center = { x: 0, y: 0 };
-    let tension = 0.68; // Hierarchical bundling tension
+    // ---------------------------------------------------------------- setup
 
     function init() {
         canvas = document.getElementById('wheel-canvas');
         if (!canvas) return;
         ctx = canvas.getContext('2d');
-
+        stage = canvas.parentElement;
         setupEvents();
+        new ResizeObserver(resize).observe(stage);
         resize();
         loadData();
     }
@@ -88,114 +107,75 @@
             .then(data => {
                 rawData = data;
                 processData();
-                fitCamera();
-                render();
+                applyLayout(false);
             })
             .catch(err => {
                 console.error('Ecosystem Wheel error:', err);
-                const bar = document.querySelector('.viz-stats');
+                const bar = document.getElementById('stat-summary');
                 if (bar) bar.innerHTML = `<span style="color:#dc2626">Failed loading data: ${err.message}</span>`;
             });
     }
 
     function processData() {
-        if (!rawData) return;
-
-        // Group nodes by ecosystem
         const grouped = {};
         for (const eco of ECOSYSTEM_ORDER) grouped[eco] = [];
-        grouped['Other'] = grouped['Other'] || [];
-
         for (const n of rawData.nodes) {
             const eco = ECOSYSTEM_ORDER.includes(n.ecosystem) ? n.ecosystem : 'Other';
+            n.group = eco;
+            n.angle = 0;
+            n.alpha = 1;
             grouped[eco].push(n);
         }
-
-        // Sort nodes within clusters
-        for (const eco of Object.keys(grouped)) {
+        // Most-connected first within a language, so the busy repositories
+        // sit together and their links read as one bundle.
+        for (const eco of ECOSYSTEM_ORDER) {
             grouped[eco].sort((a, b) => {
-                const connA = a.in_degree + a.out_degree;
-                const connB = b.in_degree + b.out_degree;
-                if (connB !== connA) return connB - connA;
-                return a.id.localeCompare(b.id);
+                const d = (b.in_degree + b.out_degree) - (a.in_degree + a.out_degree);
+                return d !== 0 ? d : a.id.localeCompare(b.id);
             });
         }
+        groups = ECOSYSTEM_ORDER
+            .filter(eco => grouped[eco].length)
+            .map(eco => ({ eco, label: ECOSYSTEM_NAMES[eco] || eco, nodes: grouped[eco] }));
 
-        // Arrange around circle with sector gaps
         nodes = [];
         nodeMap.clear();
-        clusterArcs = [];
-
-        const totalActiveNodes = Object.values(grouped).reduce((acc, list) => acc + list.length, 0);
-        if (totalActiveNodes === 0) return;
-
-        const gapAngle = (Math.PI * 2 * 0.045) / ECOSYSTEM_ORDER.length; // 2% gap per cluster
-        const availableAngle = Math.PI * 2 - (gapAngle * ECOSYSTEM_ORDER.length);
-
-        let currentAngle = -Math.PI / 2; // Start at top
-
-        for (const eco of ECOSYSTEM_ORDER) {
-            const list = grouped[eco];
-            if (list.length === 0) continue;
-
-            const clusterStart = currentAngle;
-            const clusterAngleSpan = (list.length / totalActiveNodes) * availableAngle;
-            const step = clusterAngleSpan / list.length;
-
-            for (let i = 0; i < list.length; i++) {
-                const n = list[i];
-                const angle = clusterStart + i * step + step / 2;
-                n.angle = angle;
+        for (const g of groups) {
+            for (const n of g.nodes) {
                 n.index = nodes.length;
                 nodes.push(n);
                 nodeMap.set(n.id, n);
             }
-
-            const clusterEnd = clusterStart + clusterAngleSpan;
-            clusterArcs.push({
-                ecosystem: eco,
-                label: ECOSYSTEM_NAMES[eco] || eco,
-                count: list.length,
-                startAngle: clusterStart,
-                endAngle: clusterEnd,
-                midAngle: (clusterStart + clusterEnd) / 2
-            });
-
-            currentAngle = clusterEnd + gapAngle;
         }
-
-        // Link references
         links = [];
         for (const l of rawData.links) {
             const s = nodeMap.get(l.source);
             const t = nodeMap.get(l.target);
-            if (s && t) {
-                links.push({
-                    source: s,
-                    target: t,
-                    package: l.package,
-                    ecosystem: l.ecosystem
-                });
-            }
+            if (s && t) links.push({ source: s, target: t, package: l.package });
         }
-
         updateUIStats();
     }
 
+    function formatCount(n) {
+        if (!n) return '0';
+        if (n >= 1e9) return (n / 1e9).toFixed(2) + 'B';
+        if (n >= 1e6) return (n / 1e6).toFixed(2) + 'M';
+        if (n >= 1e3) return (n / 1e3).toFixed(1) + 'K';
+        return String(n);
+    }
+
     function updateUIStats() {
-        if (!rawData) return;
         const meta = rawData.meta;
         const statsEl = document.getElementById('stat-summary');
         if (statsEl) {
+            const when = meta.generated_at ? meta.generated_at.slice(0, 10) : 'unknown';
             statsEl.innerHTML = `
                 <span class="figure"><b>${nodes.length}</b> repositories</span>
-                <span class="figure"><b>${links.length}</b> dependency edges</span>
-                <span class="figure"><b>118.65M</b> quads</span>
-                <span class="pulse-pill"><span class="pulse-dot"></span> <b>${meta.active_runners || 20}</b> runners active</span>
+                <span class="figure"><b>${links.length}</b> dependency links</span>
+                <span class="figure"><b>${formatCount(meta.total_quads)}</b> quads</span>
+                <span class="figure asof" title="The wheel is a snapshot. This is when it was taken.">snapshot of ${when}</span>
             `;
         }
-
-        // Update counts in filter pills
         const sc = meta.status_counts || {};
         const setTxt = (id, txt) => {
             const el = document.getElementById(id);
@@ -205,395 +185,467 @@
         setTxt('count-progress', sc.in_progress || 0);
         setTxt('count-failed', sc.failed || 0);
         setTxt('count-discovered', sc.discovered || 0);
+
+        const langs = document.getElementById('lang-list');
+        if (langs) {
+            langs.innerHTML = '';
+            for (const g of groups) {
+                const b = document.createElement('button');
+                b.className = 'lang-pill';
+                b.dataset.eco = g.eco;
+                b.innerHTML = `<span>${g.label}</span><b>${g.nodes.length}</b>`;
+                b.addEventListener('click', () => setFocus(focusEco === g.eco ? null : g.eco));
+                b.addEventListener('pointerenter', () => { hoveredEco = g.eco; requestRender(); });
+                b.addEventListener('pointerleave', () => { hoveredEco = null; requestRender(); });
+                langs.appendChild(b);
+            }
+        }
+    }
+
+    // ---------------------------------------------------------------- layout
+
+    /** Where every node and arc belongs, for the current focus. */
+    function targetLayout() {
+        const to = new Map();
+        const arcsTo = [];
+        const TAU = Math.PI * 2;
+        const top = -Math.PI / 2;
+
+        // The folded layout is always computed: it is where a spread
+        // language's neighbours stay while they fade, and what folding
+        // returns to.
+        const folded = new Map();
+        const total = nodes.length;
+        const gap = (TAU * GAP_SHARE) / groups.length;
+        const avail = TAU - gap * groups.length;
+        let cur = top;
+        const foldedArcs = [];
+        for (const g of groups) {
+            const span = (g.nodes.length / total) * avail;
+            const step = span / g.nodes.length;
+            g.nodes.forEach((n, i) => folded.set(n, cur + i * step + step / 2));
+            foldedArcs.push({ eco: g.eco, start: cur, end: cur + span });
+            cur += span + gap;
+        }
+
+        if (focusEco) {
+            // Spread in name order, not link order. Folded, the busiest
+            // repositories sit together so their links read as one bundle;
+            // spread, that same order piles every link into one corner of the
+            // ring. By name, the hubs land all the way round and their links
+            // cross the whole circle — and a name is easy to find.
+            const g = groups.find(x => x.eco === focusEco);
+            const byName = [...g.nodes].sort((a, b) => a.name.localeCompare(b.name) || a.id.localeCompare(b.id));
+            const step = TAU / byName.length;
+            byName.forEach((n, i) => to.set(n, { angle: top + i * step + step / 2, alpha: 1 }));
+            for (const n of nodes) if (n.group !== focusEco) to.set(n, { angle: folded.get(n), alpha: 0 });
+            for (const a of foldedArcs) {
+                arcsTo.push(a.eco === focusEco
+                    ? { eco: a.eco, start: top, end: top + TAU, alpha: 1 }
+                    : { ...a, alpha: 0 });
+            }
+        } else {
+            for (const n of nodes) to.set(n, { angle: folded.get(n), alpha: 1 });
+            for (const a of foldedArcs) arcsTo.push({ ...a, alpha: 1 });
+        }
+        return { to, arcsTo, margin: focusEco ? MARGIN_SPREAD : MARGIN_FOLDED };
+    }
+
+    /** Move to the layout for the current focus, animated or at once. */
+    function applyLayout(animate) {
+        const { to, arcsTo, margin: m } = targetLayout();
+        if (!animate || !arcs.length) {
+            for (const [n, t] of to) { n.angle = t.angle; n.alpha = t.alpha; }
+            arcs = arcsTo.map(a => ({ ...a }));
+            margin = m;
+            fitRadius();
+            tween = null;
+            requestRender();
+            return;
+        }
+        const from = new Map();
+        for (const n of nodes) from.set(n, { angle: n.angle, alpha: n.alpha });
+        tween = {
+            start: performance.now(), from, to,
+            arcsFrom: arcs.map(a => ({ ...a })), arcsTo,
+            marginFrom: margin, marginTo: m,
+        };
+        requestRender();
+    }
+
+    const ease = t => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
+    const lerp = (a, b, t) => a + (b - a) * t;
+
+    function stepTween(now) {
+        if (!tween) return;
+        const raw = Math.min(1, (now - tween.start) / TWEEN_MS);
+        const t = ease(raw);
+        for (const [n, to] of tween.to) {
+            const f = tween.from.get(n);
+            n.angle = lerp(f.angle, to.angle, t);
+            n.alpha = lerp(f.alpha, to.alpha, t);
+        }
+        arcs = tween.arcsTo.map((a, i) => {
+            const f = tween.arcsFrom[i] || a;
+            return {
+                eco: a.eco,
+                start: lerp(f.start, a.start, t),
+                end: lerp(f.end, a.end, t),
+                alpha: lerp(f.alpha, a.alpha, t),
+            };
+        });
+        margin = lerp(tween.marginFrom, tween.marginTo, t);
+        fitRadius();
+        if (raw >= 1) tween = null;
+    }
+
+    function fitRadius() {
+        radius = Math.max(60, Math.min(width, height) / 2 - margin);
     }
 
     function resize() {
-        const rect = canvas.getBoundingClientRect();
+        const rect = stage.getBoundingClientRect();
+        width = rect.width;
+        height = rect.height;
         dpr = Math.min(window.devicePixelRatio || 1, 2);
-        canvas.width = rect.width * dpr;
-        canvas.height = rect.height * dpr;
-
-        center.x = rect.width / 2;
-        center.y = rect.height / 2;
-        baseRadius = Math.min(rect.width, rect.height) * 0.38;
-
-        render();
+        canvas.width = Math.round(width * dpr);
+        canvas.height = Math.round(height * dpr);
+        center.x = width / 2;
+        center.y = height / 2;
+        fitRadius();
+        requestRender();
     }
 
-    function fitCamera() {
-        camera = { x: 0, y: 0, scale: 0.95 };
-        render();
+    function setFocus(eco) {
+        focusEco = eco;
+        const back = document.getElementById('btn-all-languages');
+        if (back) back.classList.toggle('hidden', !eco);
+        document.querySelectorAll('.lang-pill').forEach(b => b.classList.toggle('on', b.dataset.eco === eco));
+        // A selection in a language that is about to fade would leave its
+        // highlighted links pointing at nothing.
+        if (eco && selectedNode && selectedNode.group !== eco) closeInspector();
+        hoveredEco = null;
+        applyLayout(true);
     }
 
-    function getNodePos(node, radius) {
-        const r = radius || baseRadius;
-        return {
-            x: center.x + r * Math.cos(node.angle),
-            y: center.y + r * Math.sin(node.angle)
-        };
+    // ---------------------------------------------------------------- render
+
+    let frameQueued = false;
+    function requestRender() {
+        if (frameQueued) return;
+        frameQueued = true;
+        requestAnimationFrame(frame);
     }
 
-    function screenToWorld(sx, sy) {
-        return {
-            x: (sx - center.x - camera.x) / camera.scale + center.x,
-            y: (sy - center.y - camera.y) / camera.scale + center.y
-        };
+    /** One frame loop. It keeps running only while something moves: a
+     *  layout tween, the replay, or an in-progress repository's pulse. The
+     *  old loop was re-armed by every call to render, so each mouse move
+     *  started another chain of frames. */
+    function frame(now) {
+        frameQueued = false;
+        stepTween(now);
+        if (isReplaying) {
+            replayProgress = Math.min(1, (now - replayStart) / REPLAY_MS);
+            if (replayProgress >= 1) stopReplay();
+        }
+        render(now);
+        const pulsing = nodes.some(n => n.status === 'in_progress' && n.alpha > 0.05 && isNodeVisible(n));
+        if (tween || isReplaying || pulsing) requestRender();
+    }
+
+    function nodePos(n, r) {
+        const rr = r ?? radius;
+        return { x: center.x + rr * Math.cos(n.angle), y: center.y + rr * Math.sin(n.angle) };
     }
 
     function isNodeVisible(n) {
-        if (!statusFilters[n.status]) return false;
-        if (ecosystemFilter !== 'All' && n.ecosystem !== ecosystemFilter) return false;
-        return true;
+        return statusFilters[n.status] !== false;
     }
 
-    function isNodeDimmedBySearch(n) {
-        if (!searchFilter) return false;
+    function matchesSearch(n) {
+        if (!searchFilter) return true;
         const q = searchFilter.toLowerCase();
-        return !n.id.toLowerCase().includes(q) && !n.ecosystem.toLowerCase().includes(q);
+        return n.id.toLowerCase().includes(q) || n.ecosystem.toLowerCase().includes(q);
     }
 
-    function render() {
-        if (!ctx || !canvas) return;
+    function render(now) {
+        if (!ctx) return;
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        ctx.clearRect(0, 0, width, height);
+        if (!nodes.length) return;
 
-        ctx.save();
-        ctx.setTransform(1, 0, 0, 1, 0, 0);
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-        // Apply DPI and Camera
-        ctx.scale(dpr, dpr);
-        ctx.translate(center.x + camera.x, center.y + camera.y);
-        ctx.scale(camera.scale, camera.scale);
-        ctx.translate(-center.x, -center.y);
-
-        // 1. Draw concentric guide rings & sector brackets
-        drawBackdrop();
-
-        // 2. Determine highlight context
-        const activeNode = hoveredNode || selectedNode;
-        let connectedOut = new Set();
-        let connectedIn = new Set();
-
-        if (activeNode) {
+        const active = hoveredNode || selectedNode;
+        const out = new Set(), inc = new Set();
+        if (active) {
             for (const l of links) {
-                if (l.source === activeNode) connectedOut.add(l.target);
-                if (l.target === activeNode) connectedIn.add(l.source);
+                if (l.source === active) out.add(l.target);
+                if (l.target === active) inc.add(l.source);
             }
         }
-
-        // 3. Draw Dependency Pencil Lines
-        drawLinks(activeNode, connectedOut, connectedIn);
-
-        // 4. Draw Perimeter Nodes
-        drawNodes(activeNode, connectedOut, connectedIn);
-
-        // 5. Draw Labels
-        drawLabels(activeNode, connectedOut, connectedIn);
-
-        ctx.restore();
-
-        // If in-progress pulse animation or replay is running, request frame
-        if (isReplaying || (rawData && rawData.meta.status_counts && rawData.meta.status_counts.in_progress > 0)) {
-            animFrameId = requestAnimationFrame(render);
-        }
+        drawBackdrop();
+        drawLinks(active);
+        drawNodes(active, out, inc, now);
+        if (focusEco && !tween) drawSpreadLabels(active, out, inc);
+        drawFocusLabels(active, out, inc);
     }
 
     function drawBackdrop() {
-        // Faint perimeter track ring
         ctx.beginPath();
-        ctx.arc(center.x, center.y, baseRadius, 0, Math.PI * 2);
+        ctx.arc(center.x, center.y, radius, 0, Math.PI * 2);
         ctx.strokeStyle = PALETTE.trackRing;
         ctx.lineWidth = 1;
         ctx.stroke();
 
-        // Inner guide ring
-        ctx.beginPath();
-        ctx.arc(center.x, center.y, baseRadius * 0.45, 0, Math.PI * 2);
-        ctx.strokeStyle = 'rgba(0, 0, 0, 0.025)';
-        ctx.lineWidth = 0.75;
-        ctx.setLineDash([4, 4]);
-        ctx.stroke();
-        ctx.setLineDash([]);
-
-        // Sector arc brackets and headers
-        const arcR = baseRadius + 32;
-        ctx.font = '10px Courier New, monospace';
-        ctx.fillStyle = PALETTE.clusterLabel;
+        const arcR = radius + 22;
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
-
-        for (let idx = 0; idx < clusterArcs.length; idx++) {
-            const arc = clusterArcs[idx];
+        arcs.forEach((a, idx) => {
+            if (a.alpha < 0.02) return;
+            const hot = hoveredEco === a.eco;
+            ctx.globalAlpha = a.alpha;
             ctx.beginPath();
-            ctx.arc(center.x, center.y, arcR, arc.startAngle, arc.endAngle);
-            ctx.strokeStyle = 'rgba(0, 0, 0, 0.12)';
-            ctx.lineWidth = 1;
+            ctx.arc(center.x, center.y, arcR, a.start, a.end);
+            ctx.strokeStyle = hot ? 'rgba(0, 0, 0, 0.55)' : 'rgba(0, 0, 0, 0.12)';
+            ctx.lineWidth = hot ? 2 : 1;
             ctx.stroke();
+            ctx.globalAlpha = 1;
 
-            // Stagger radius for adjacent narrow sectors so text never overlaps
-            const labelR = arcR + 14 + (idx % 2 === 1 && (arc.endAngle - arc.startAngle) < 0.25 ? 16 : 0);
-            const midX = center.x + labelR * Math.cos(arc.midAngle);
-            const midY = center.y + labelR * Math.sin(arc.midAngle);
+            // Spread, the language is named in the side panel; its
+            // repository names take the rim.
+            if (focusEco) return;
 
+            const g = groups.find(x => x.eco === a.eco);
+            const mid = (a.start + a.end) / 2;
+            const narrow = (a.end - a.start) < 0.25;
+            const labelR = arcR + 14 + (idx % 2 === 1 && narrow ? 16 : 0);
             ctx.save();
-            ctx.translate(midX, midY);
-            let rot = arc.midAngle + Math.PI / 2;
-            if (arc.midAngle > 0 && arc.midAngle < Math.PI) {
-                rot += Math.PI; // Flip text so it reads upright
-            }
+            ctx.globalAlpha = a.alpha;
+            ctx.translate(center.x + labelR * Math.cos(mid), center.y + labelR * Math.sin(mid));
+            let rot = mid + Math.PI / 2;
+            const norm = ((mid % (2 * Math.PI)) + 2 * Math.PI) % (2 * Math.PI);
+            if (norm > 0 && norm < Math.PI) rot += Math.PI; // keep text upright
             ctx.rotate(rot);
-            ctx.fillText(`${arc.label} (${arc.count})`, 0, 0);
+            ctx.font = `${hot ? 'bold ' : ''}10px ${FONT}`;
+            ctx.fillStyle = hot ? '#09090b' : PALETTE.clusterLabel;
+            ctx.fillText(`${g.label} (${g.nodes.length})`, 0, 0);
             ctx.restore();
-        }
+        });
     }
 
-    function drawLinks(activeNode, connectedOut, connectedIn) {
-        const visibleLinks = [];
-        const limitIndex = isReplaying ? Math.floor(links.length * replayProgress) : links.length;
+    function curve(l) {
+        const p1 = nodePos(l.source), p2 = nodePos(l.target);
+        const cx = center.x * (1 - TENSION) + ((p1.x + p2.x) / 2) * TENSION;
+        const cy = center.y * (1 - TENSION) + ((p1.y + p2.y) / 2) * TENSION;
+        ctx.moveTo(p1.x, p1.y);
+        ctx.quadraticCurveTo(cx, cy, p2.x, p2.y);
+    }
 
-        for (let i = 0; i < limitIndex; i++) {
+    function drawLinks(active) {
+        const limit = isReplaying ? Math.floor(links.length * replayProgress) : links.length;
+        const shown = [];
+        for (let i = 0; i < limit; i++) {
             const l = links[i];
             if (!isNodeVisible(l.source) || !isNodeVisible(l.target)) continue;
-            visibleLinks.push(l);
+            const a = Math.min(l.source.alpha, l.target.alpha);
+            if (a >= 0.02) shown.push([l, a]);
         }
 
-        // Draw regular pencil lines first (unselected state)
-        if (!activeNode) {
-            ctx.beginPath();
-            ctx.strokeStyle = PALETTE.pencilRest;
-            ctx.lineWidth = 0.8;
-
-            for (const l of visibleLinks) {
-                const p1 = getNodePos(l.source);
-                const p2 = getNodePos(l.target);
-                const cx = center.x * (1 - tension) + ((p1.x + p2.x) / 2) * tension;
-                const cy = center.y * (1 - tension) + ((p1.y + p2.y) / 2) * tension;
-
-                ctx.moveTo(p1.x, p1.y);
-                ctx.quadraticCurveTo(cx, cy, p2.x, p2.y);
+        // One stroke per opacity band rather than one per link: links only
+        // differ in opacity while a language is fading in or out.
+        const strokeBatch = (items, style, w) => {
+            if (!items.length) return;
+            ctx.strokeStyle = style;
+            ctx.lineWidth = w;
+            const bands = new Map();
+            for (const [l, a] of items) {
+                const k = Math.round(a * 10);
+                if (!bands.has(k)) bands.set(k, []);
+                bands.get(k).push(l);
             }
-            ctx.stroke();
-        } else {
-            // Dimmed background lines
-            ctx.beginPath();
-            ctx.strokeStyle = PALETTE.pencilDim;
-            ctx.lineWidth = 0.6;
-
-            const activeOutLinks = [];
-            const activeInLinks = [];
-
-            for (const l of visibleLinks) {
-                if (l.source === activeNode) {
-                    activeOutLinks.push(l);
-                } else if (l.target === activeNode) {
-                    activeInLinks.push(l);
-                } else {
-                    const p1 = getNodePos(l.source);
-                    const p2 = getNodePos(l.target);
-                    const cx = center.x * (1 - tension) + ((p1.x + p2.x) / 2) * tension;
-                    const cy = center.y * (1 - tension) + ((p1.y + p2.y) / 2) * tension;
-                    ctx.moveTo(p1.x, p1.y);
-                    ctx.quadraticCurveTo(cx, cy, p2.x, p2.y);
-                }
-            }
-            ctx.stroke();
-
-            // Highlight Outbound dependencies - Amber
-            if (activeOutLinks.length > 0) {
+            for (const [k, ls] of bands) {
+                ctx.globalAlpha = k / 10;
                 ctx.beginPath();
-                ctx.strokeStyle = PALETTE.outbound;
-                ctx.lineWidth = 2.0;
-                for (const l of activeOutLinks) {
-                    const p1 = getNodePos(l.source);
-                    const p2 = getNodePos(l.target);
-                    const cx = center.x * (1 - tension) + ((p1.x + p2.x) / 2) * tension;
-                    const cy = center.y * (1 - tension) + ((p1.y + p2.y) / 2) * tension;
-                    ctx.moveTo(p1.x, p1.y);
-                    ctx.quadraticCurveTo(cx, cy, p2.x, p2.y);
-                }
+                for (const l of ls) curve(l);
                 ctx.stroke();
             }
+            ctx.globalAlpha = 1;
+        };
 
-            // Highlight Inbound dependents - Cobalt Blue
-            if (activeInLinks.length > 0) {
-                ctx.beginPath();
-                ctx.strokeStyle = PALETTE.inbound;
-                ctx.lineWidth = 2.0;
-                for (const l of activeInLinks) {
-                    const p1 = getNodePos(l.source);
-                    const p2 = getNodePos(l.target);
-                    const cx = center.x * (1 - tension) + ((p1.x + p2.x) / 2) * tension;
-                    const cy = center.y * (1 - tension) + ((p1.y + p2.y) / 2) * tension;
-                    ctx.moveTo(p1.x, p1.y);
-                    ctx.quadraticCurveTo(cx, cy, p2.x, p2.y);
-                }
-                ctx.stroke();
-            }
+        if (!active) {
+            strokeBatch(shown, PALETTE.pencilRest, focusEco ? 0.9 : 0.8);
+            return;
         }
+        strokeBatch(shown.filter(([l]) => l.source !== active && l.target !== active), PALETTE.pencilDim, 0.6);
+        strokeBatch(shown.filter(([l]) => l.source === active), PALETTE.outbound, 2);
+        strokeBatch(shown.filter(([l]) => l.target === active), PALETTE.inbound, 2);
     }
 
-    function drawNodes(activeNode, connectedOut, connectedIn) {
-        const time = performance.now() * 0.003;
-
+    function drawNodes(active, out, inc, now) {
+        const time = (now || performance.now()) * 0.003;
         for (const n of nodes) {
-            if (!isNodeVisible(n)) continue;
+            if (!isNodeVisible(n) || n.alpha < 0.02) continue;
+            const pos = nodePos(n);
+            const hit = matchesSearch(n);
+            const targeted = active ? (n === active || out.has(n) || inc.has(n)) : hit;
+            const dimmed = (active && !targeted) || (searchFilter && !hit && !targeted);
 
-            const pos = getNodePos(n);
-            const matchesSearch = !isNodeDimmedBySearch(n);
-            const isTargeted = activeNode ? (n === activeNode || connectedOut.has(n) || connectedIn.has(n)) : (searchFilter ? matchesSearch : true);
-            const isDimmed = (activeNode && !isTargeted) || (searchFilter && !matchesSearch && !isTargeted);
+            let r = (n.in_degree + n.out_degree) > 5 ? 3.4 : 2.2;
+            let fill = PALETTE[n.status] || PALETTE.discovered;
+            if (dimmed) { fill = 'rgba(212, 212, 216, 0.4)'; r = 1.6; }
+            else if (n === active) r = 5.2;
+            else if (out.has(n)) { r = 4.2; fill = PALETTE.outbound; }
+            else if (inc.has(n)) { r = 4.2; fill = PALETTE.inbound; }
 
-            let color = PALETTE[n.status] || PALETTE.discovered;
-            let radius = (n.in_degree + n.out_degree) > 5 ? 3.4 : 2.2;
-
-            if (isDimmed) {
-                ctx.fillStyle = 'rgba(212, 212, 216, 0.4)';
-                radius = 1.6;
-            } else if (n === activeNode) {
-                radius = 5.2;
-                ctx.fillStyle = color;
-            } else if (connectedOut.has(n)) {
-                radius = 4.2;
-                ctx.fillStyle = PALETTE.outbound;
-            } else if (connectedIn.has(n)) {
-                radius = 4.2;
-                ctx.fillStyle = PALETTE.inbound;
-            } else {
-                ctx.fillStyle = color;
-            }
-
-            // Draw dot
+            ctx.globalAlpha = n.alpha;
+            ctx.fillStyle = fill;
             ctx.beginPath();
-            ctx.arc(pos.x, pos.y, radius, 0, Math.PI * 2);
+            ctx.arc(pos.x, pos.y, r, 0, Math.PI * 2);
             ctx.fill();
 
-            // In-progress radar pulse wave
-            if (n.status === 'in_progress' && !isDimmed) {
-                const pulseR = radius + 3.0 + Math.sin(time + n.index) * 2.0;
+            if (n.status === 'in_progress' && !dimmed) {
                 ctx.beginPath();
-                ctx.arc(pos.x, pos.y, pulseR, 0, Math.PI * 2);
+                ctx.arc(pos.x, pos.y, r + 3 + Math.sin(time + n.index) * 2, 0, Math.PI * 2);
                 ctx.strokeStyle = 'rgba(217, 119, 6, 0.45)';
                 ctx.lineWidth = 1;
                 ctx.stroke();
             }
-
-            // Target ring for active node
-            if (n === activeNode) {
+            if (n === active) {
                 ctx.beginPath();
-                ctx.arc(pos.x, pos.y, radius + 3.5, 0, Math.PI * 2);
+                ctx.arc(pos.x, pos.y, r + 3.5, 0, Math.PI * 2);
                 ctx.strokeStyle = PALETTE.ring;
                 ctx.lineWidth = 1.2;
                 ctx.stroke();
             }
         }
+        ctx.globalAlpha = 1;
     }
 
-    function drawLabels(activeNode, connectedOut, connectedIn) {
-        ctx.textBaseline = "middle";
-
-        const toLabel = [];
-        for (const n of nodes) {
+    /** Spread round the ring, every repository gets its name, radially. The
+     *  font follows the spacing so neighbours never overlap, and names are
+     *  cut to the room outside the ring. */
+    function drawSpreadLabels(active, out, inc) {
+        const g = groups.find(x => x.eco === focusEco);
+        if (!g) return;
+        const spacing = (2 * Math.PI * radius) / g.nodes.length;
+        const size = Math.min(10, spacing * 0.9);
+        if (size < 5) return;
+        ctx.font = `${size}px ${FONT}`;
+        ctx.textBaseline = 'middle';
+        const room = MARGIN_SPREAD - 18;
+        for (const n of g.nodes) {
             if (!isNodeVisible(n)) continue;
-            const isFocus = n === activeNode;
-            const isConn = activeNode && (connectedOut.has(n) || connectedIn.has(n));
-            const show = isFocus || isConn || (searchFilter && !isNodeDimmedBySearch(n));
-            if (show) toLabel.push({ node: n, isFocus, isConn });
+            const involved = active && (n === active || out.has(n) || inc.has(n));
+            if (involved) continue; // named by drawFocusLabels, in colour
+            const dim = (active && !involved) || (searchFilter && !matchesSearch(n));
+            let text = n.name;
+            while (text.length > 3 && ctx.measureText(text).width > room) text = text.slice(0, -2);
+            if (text !== n.name) text += '…';
+            const p = nodePos(n, radius + 8);
+            const right = Math.cos(n.angle) >= 0;
+            ctx.save();
+            ctx.translate(p.x, p.y);
+            ctx.rotate(right ? n.angle : n.angle + Math.PI);
+            ctx.textAlign = right ? 'left' : 'right';
+            ctx.fillStyle = dim ? 'rgba(161, 161, 170, 0.45)' : 'rgba(63, 63, 70, 0.9)';
+            ctx.fillText(text, 0, 0);
+            ctx.restore();
         }
-        if (toLabel.length === 0) return;
+    }
 
-        toLabel.sort((a, b) => a.node.angle - b.node.angle);
+    /** Names for the repository under the pointer (or selected) and every
+     *  repository it links to, staggered so close neighbours stay legible. */
+    function drawFocusLabels(active, out, inc) {
+        const list = [];
+        for (const n of nodes) {
+            if (!isNodeVisible(n) || n.alpha < 0.5) continue;
+            const isFocus = n === active;
+            const isConn = active && (out.has(n) || inc.has(n));
+            const bySearch = !focusEco && searchFilter && matchesSearch(n);
+            if (isFocus || isConn || bySearch) list.push({ n, isFocus, isConn });
+        }
+        if (!list.length) return;
+        list.sort((a, b) => a.n.angle - b.n.angle);
 
-        let lastAngle = -999;
-        let staggerTier = 0;
-
-        for (const item of toLabel) {
-            const n = item.node;
-            const isFocus = item.isFocus;
-            const isConn = item.isConn;
-
-            if (Math.abs(n.angle - lastAngle) < 0.05) {
-                staggerTier = (staggerTier + 1) % 4;
-            } else {
-                staggerTier = 0;
-            }
-            lastAngle = n.angle;
-
-            const radialOffset = isFocus ? 12 : (12 + staggerTier * 22);
-            const basePos = getNodePos(n, baseRadius + 3);
-            const labelPos = getNodePos(n, baseRadius + radialOffset);
-            const isRight = Math.cos(n.angle) >= 0;
-
-            if (staggerTier > 0) {
+        ctx.textBaseline = 'middle';
+        let last = -999, tier = 0;
+        for (const { n, isFocus, isConn } of list) {
+            tier = Math.abs(n.angle - last) < 0.05 ? (tier + 1) % 4 : 0;
+            last = n.angle;
+            const off = isFocus ? 12 : 12 + tier * 22;
+            const base = nodePos(n, radius + 3);
+            const at = nodePos(n, radius + off);
+            const right = Math.cos(n.angle) >= 0;
+            if (tier > 0) {
                 ctx.beginPath();
-                ctx.moveTo(basePos.x, basePos.y);
-                ctx.lineTo(labelPos.x, labelPos.y);
-                ctx.strokeStyle = isConn ? (connectedIn.has(n) ? "rgba(37, 99, 235, 0.45)" : "rgba(217, 119, 6, 0.45)") : "rgba(0, 0, 0, 0.15)";
+                ctx.moveTo(base.x, base.y);
+                ctx.lineTo(at.x, at.y);
+                ctx.strokeStyle = isConn ? (inc.has(n) ? 'rgba(37, 99, 235, 0.45)' : 'rgba(217, 119, 6, 0.45)') : 'rgba(0, 0, 0, 0.15)';
                 ctx.lineWidth = 0.6;
                 ctx.stroke();
             }
-
-            ctx.textAlign = isRight ? "left" : "right";
-            const lx = labelPos.x + (isRight ? 4 : -4);
-            const ly = labelPos.y;
-
-            if (isFocus) {
-                ctx.font = "bold 11.5px Courier New, monospace";
-                ctx.fillStyle = "#09090b";
-                ctx.fillText(n.id, lx, ly);
-            } else if (isConn) {
-                ctx.font = "500 10px Courier New, monospace";
-                ctx.fillStyle = connectedIn.has(n) ? PALETTE.inbound : PALETTE.outbound;
-                ctx.fillText(n.id, lx, ly);
-            } else {
-                ctx.font = "10px Courier New, monospace";
-                ctx.fillStyle = "rgba(82, 82, 91, 0.85)";
-                ctx.fillText(n.name, lx, ly);
-            }
+            ctx.textAlign = right ? 'left' : 'right';
+            const lx = at.x + (right ? 4 : -4);
+            // A white halo keeps a name readable over the pencil lines.
+            ctx.lineWidth = 3;
+            ctx.strokeStyle = 'rgba(255, 255, 255, 0.9)';
+            let text = n.name, font = `10px ${FONT}`, fill = 'rgba(82, 82, 91, 0.85)';
+            if (isFocus) { text = n.id; font = `bold 11.5px ${FONT}`; fill = '#09090b'; }
+            else if (isConn) { text = n.id; font = `500 10px ${FONT}`; fill = inc.has(n) ? PALETTE.inbound : PALETTE.outbound; }
+            ctx.font = font;
+            ctx.strokeText(text, lx, at.y);
+            ctx.fillStyle = fill;
+            ctx.fillText(text, lx, at.y);
         }
     }
 
-    function pickNode(screenX, screenY) {
-        const world = screenToWorld(screenX, screenY);
-        const pickDistSq = (14 / camera.scale) * (14 / camera.scale);
+    // ---------------------------------------------------------------- picking
 
-        let best = null;
-        let bestDist = pickDistSq;
-
+    function pickNode(sx, sy) {
+        let best = null, bestD = 14 * 14;
         for (const n of nodes) {
-            if (!isNodeVisible(n)) continue;
-            const pos = getNodePos(n);
-            const dx = pos.x - world.x;
-            const dy = pos.y - world.y;
-            const d = dx * dx + dy * dy;
-            if (d < bestDist) {
-                bestDist = d;
-                best = n;
-            }
+            if (!isNodeVisible(n) || n.alpha < 0.5) continue;
+            const p = nodePos(n);
+            const d = (p.x - sx) ** 2 + (p.y - sy) ** 2;
+            if (d < bestD) { bestD = d; best = n; }
         }
         return best;
     }
 
-    function showTooltip(node, sx, sy) {
+    /** The language whose band outside the ring is under the pointer. */
+    function pickEco(sx, sy) {
+        const dx = sx - center.x, dy = sy - center.y;
+        const r = Math.hypot(dx, dy);
+        if (r < radius + 8 || r > radius + margin) return null;
+        if (focusEco) return focusEco;
+        const a = Math.atan2(dy, dx);
+        for (const arc of arcs) {
+            if (arc.alpha < 0.5) continue;
+            for (const k of [-1, 0, 1]) {
+                const aa = a + k * 2 * Math.PI;
+                if (aa >= arc.start && aa <= arc.end) return arc.eco;
+            }
+        }
+        return null;
+    }
+
+    // ---------------------------------------------------------------- side panel
+
+    function showTooltip(node, x, y) {
         const tip = document.getElementById('wheel-tooltip');
         if (!tip || !node) return;
-
-        const outCount = node.out_degree || 0;
-        const inCount = node.in_degree || 0;
         const statusLabel = {
-            complete: 'Complete',
-            in_progress: 'In Progress (Active Runner)',
-            failed: 'Failed',
-            discovered: 'Discovered'
+            complete: 'Complete', in_progress: 'In Progress (Active Runner)',
+            failed: 'Failed', discovered: 'Discovered',
         }[node.status] || node.status;
-
         tip.innerHTML = `
             <strong>${node.id}</strong>
             <div class="meta-line"><span>Status:</span> <b>${statusLabel}</b></div>
             <div class="meta-line"><span>Ecosystem:</span> <b>${node.ecosystem}</b> · <span>Tag:</span> <b>${node.tag || 'HEAD'}</b></div>
-            <div class="meta-line"><span>Depends on:</span> <b>${outCount}</b> · <span>Dependents:</span> <b>${inCount}</b></div>
+            <div class="meta-line"><span>Depends on:</span> <b>${node.out_degree || 0}</b> · <span>Dependents:</span> <b>${node.in_degree || 0}</b></div>
         `;
         tip.style.display = 'flex';
-        tip.style.left = `${sx}px`;
-        tip.style.top = `${sy}px`;
+        tip.style.left = `${x}px`;
+        tip.style.top = `${y}px`;
     }
 
     function hideTooltip() {
@@ -601,264 +653,175 @@
         if (tip) tip.style.display = 'none';
     }
 
+    function fillList(listId, countId, items, other) {
+        const list = document.getElementById(listId);
+        list.innerHTML = '';
+        document.getElementById(countId).textContent = items.length;
+        if (!items.length) {
+            list.innerHTML = '<li class="inspector-list-empty">None recorded</li>';
+            return;
+        }
+        for (const l of items) {
+            const target = other(l);
+            const li = document.createElement('li');
+            li.className = 'inspector-list-item';
+            const name = document.createElement('span');
+            name.textContent = target.id;
+            const pkg = document.createElement('span');
+            pkg.className = 'pkg';
+            pkg.textContent = l.package || '';
+            li.append(name, pkg);
+            li.onclick = e => {
+                e.stopPropagation();
+                // Following a link out of the spread language brings the
+                // whole ring back, or the repository would be invisible.
+                if (focusEco && target.group !== focusEco) setFocus(null);
+                openInspector(target);
+            };
+            list.appendChild(li);
+        }
+    }
+
     function openInspector(node) {
         selectedNode = node;
         const panel = document.getElementById('inspector-panel');
         if (!panel || !node) return;
-
         document.getElementById('insp-title').textContent = node.id;
         document.getElementById('insp-repo-link').href = `https://github.com/${node.id}`;
-        
         const badge = document.getElementById('insp-badge');
         badge.className = `inspector-status-badge ${node.status}`;
         badge.textContent = {
-            complete: 'Complete · Parsed',
-            in_progress: 'In Progress · Active Runner',
-            failed: 'Parse Error',
-            discovered: 'Pending Spider'
+            complete: 'Complete · Parsed', in_progress: 'In Progress · Active Runner',
+            failed: 'Parse Error', discovered: 'Pending Spider',
         }[node.status] || node.status;
-
         document.getElementById('insp-eco').textContent = node.ecosystem;
         document.getElementById('insp-tag').textContent = node.tag || 'HEAD';
-        document.getElementById('insp-storage').textContent = node.storage_repo || 'repolex-forx';
-        document.getElementById('insp-storage').href = `https://github.com/${node.storage_repo || 'repolex-forx'}`;
+        const storage = document.getElementById('insp-storage');
+        storage.textContent = node.storage_repo || '—';
+        storage.href = node.storage_repo ? `https://github.com/${node.storage_repo}` : '#';
         document.getElementById('insp-date').textContent = node.parsed_at ? node.parsed_at.slice(0, 10) : '—';
-        document.getElementById('insp-quads').textContent = node.graph_size_bytes ? `${Math.round(node.graph_size_bytes / 1024 / 1024 * 10) / 10} MB` : '184 KB';
-
-        // Outbound dependencies
-        const outList = document.getElementById('insp-out-list');
-        outList.innerHTML = '';
-        const deps = links.filter(l => l.source === node);
-        document.getElementById('insp-out-count').textContent = deps.length;
-        if (deps.length === 0) {
-            outList.innerHTML = '<li class="inspector-list-empty">No outbound dependencies recorded</li>';
-        } else {
-            for (const d of deps) {
-                const li = document.createElement('li');
-                li.className = 'inspector-list-item';
-                li.innerHTML = `<span>${d.target.id}</span><span style="color:#a1a1aa">${d.package}</span>`;
-                li.onclick = (e) => {
-                    e.stopPropagation();
-                    openInspector(d.target);
-                    render();
-                };
-                outList.appendChild(li);
-            }
-        }
-
-        // Inbound dependents
-        const inList = document.getElementById('insp-in-list');
-        inList.innerHTML = '';
-        const dependents = links.filter(l => l.target === node);
-        document.getElementById('insp-in-count').textContent = dependents.length;
-        if (dependents.length === 0) {
-            inList.innerHTML = '<li class="inspector-list-empty">No inbound dependents recorded</li>';
-        } else {
-            for (const d of dependents) {
-                const li = document.createElement('li');
-                li.className = 'inspector-list-item';
-                li.innerHTML = `<span>${d.source.id}</span><span style="color:#a1a1aa">${d.package}</span>`;
-                li.onclick = (e) => {
-                    e.stopPropagation();
-                    openInspector(d.source);
-                    render();
-                };
-                inList.appendChild(li);
-            }
-        }
-
-        panel.classList.remove('hidden');
-        render();
+        document.getElementById('insp-quads').textContent = node.graph_size_bytes
+            ? `${Math.round(node.graph_size_bytes / 1024 / 1024 * 10) / 10} MB` : '—';
+        fillList('insp-out-list', 'insp-out-count', links.filter(l => l.source === node), l => l.target);
+        fillList('insp-in-list', 'insp-in-count', links.filter(l => l.target === node), l => l.source);
+        panel.classList.remove('empty');
+        requestRender();
     }
 
+    /** The panel keeps its place; with nothing selected it says so there. */
     function closeInspector() {
         selectedNode = null;
         const panel = document.getElementById('inspector-panel');
-        if (panel) panel.classList.add('hidden');
-        render();
+        if (panel) panel.classList.add('empty');
+        requestRender();
     }
+
+    // ---------------------------------------------------------------- replay
 
     function toggleReplay() {
-        const btn = document.getElementById('btn-play-replay');
-        if (isReplaying) {
-            isReplaying = false;
-            replayProgress = 1.0;
-            if (btn) btn.innerHTML = '▶ Play Links';
-            render();
-            return;
-        }
-
+        if (isReplaying) { stopReplay(); return; }
         isReplaying = true;
         replayStart = performance.now();
-        if (btn) btn.innerHTML = '■ Stop';
-
-        function step(t) {
-            if (!isReplaying) return;
-            const elapsed = t - replayStart;
-            replayProgress = Math.min(1.0, elapsed / REPLAY_DURATION);
-            render();
-
-            if (replayProgress >= 1.0) {
-                isReplaying = false;
-                replayProgress = 1.0;
-                if (btn) btn.innerHTML = '▶ Play Links';
-                render();
-            } else {
-                requestAnimationFrame(step);
-            }
-        }
-        requestAnimationFrame(step);
+        const btn = document.getElementById('btn-play-replay');
+        if (btn) btn.textContent = '■ Stop';
+        requestRender();
     }
 
-    function setupEvents() {
-        window.addEventListener('resize', resize);
+    function stopReplay() {
+        isReplaying = false;
+        replayProgress = 1;
+        const btn = document.getElementById('btn-play-replay');
+        if (btn) btn.textContent = '▶ Play Links';
+        requestRender();
+    }
 
-        // Pointer interactions on canvas
-        canvas.addEventListener('pointerdown', e => {
-            isDragging = true;
-            dragStart = { x: e.clientX - camera.x, y: e.clientY - camera.y };
-            canvas.setPointerCapture(e.pointerId);
-        });
+    // ---------------------------------------------------------------- events
+
+    function setupEvents() {
+        const local = e => {
+            const r = canvas.getBoundingClientRect();
+            return { x: e.clientX - r.left, y: e.clientY - r.top };
+        };
 
         canvas.addEventListener('pointermove', e => {
-            const rect = canvas.getBoundingClientRect();
-            const sx = e.clientX - rect.left;
-            const sy = e.clientY - rect.top;
-
-            if (isDragging) {
-                camera.x = e.clientX - dragStart.x;
-                camera.y = e.clientY - dragStart.y;
-                hideTooltip();
-                render();
-                return;
-            }
-
-            const picked = pickNode(sx, sy);
-            if (picked !== hoveredNode) {
+            const { x, y } = local(e);
+            const picked = pickNode(x, y);
+            const eco = picked ? null : pickEco(x, y);
+            if (picked !== hoveredNode || eco !== hoveredEco) {
                 hoveredNode = picked;
-                if (picked) {
-                    showTooltip(picked, e.clientX, e.clientY);
-                } else {
-                    hideTooltip();
-                }
-                render();
-            } else if (picked) {
-                showTooltip(picked, e.clientX, e.clientY);
+                hoveredEco = eco;
+                requestRender();
             }
+            canvas.style.cursor = picked || eco ? 'pointer' : 'default';
+            if (picked) showTooltip(picked, x, y); else hideTooltip();
         });
 
-        canvas.addEventListener('pointerup', e => {
-            isDragging = false;
-            canvas.releasePointerCapture(e.pointerId);
-
-            const rect = canvas.getBoundingClientRect();
-            const sx = e.clientX - rect.left;
-            const sy = e.clientY - rect.top;
-            const clicked = pickNode(sx, sy);
-
-            if (clicked) {
-                openInspector(clicked);
-            } else if (e.clientX - dragStart.x === camera.x && e.clientY - dragStart.y === camera.y) {
-                closeInspector();
-            }
+        canvas.addEventListener('click', e => {
+            const { x, y } = local(e);
+            const node = pickNode(x, y);
+            if (node) { openInspector(node); return; }
+            const eco = pickEco(x, y);
+            if (eco) { setFocus(focusEco === eco ? null : eco); return; }
+            closeInspector();
         });
 
         canvas.addEventListener('pointerleave', () => {
             hoveredNode = null;
+            hoveredEco = null;
             hideTooltip();
-            render();
+            requestRender();
         });
 
-        // Wheel Zoom
-        canvas.addEventListener('wheel', e => {
-            e.preventDefault();
-            const zoomFactor = e.deltaY < 0 ? 1.08 : 0.92;
-            const nextScale = Math.max(0.3, Math.min(camera.scale * zoomFactor, 5.0));
-
-            const rect = canvas.getBoundingClientRect();
-            const mx = e.clientX - rect.left;
-            const my = e.clientY - rect.top;
-
-            const wx = (mx - center.x - camera.x) / camera.scale;
-            const wy = (my - center.y - camera.y) / camera.scale;
-
-            camera.scale = nextScale;
-            camera.x = mx - center.x - wx * nextScale;
-            camera.y = my - center.y - wy * nextScale;
-
-            render();
-        }, { passive: false });
-
-        // Search Input
         const searchInput = document.getElementById('viz-search-input');
         const clearBtn = document.getElementById('viz-search-clear');
+        const clearSearch = () => {
+            if (searchInput) searchInput.value = '';
+            searchFilter = '';
+            if (clearBtn) clearBtn.classList.remove('visible');
+            requestRender();
+        };
         if (searchInput) {
             searchInput.addEventListener('input', e => {
                 searchFilter = e.target.value.trim();
                 if (clearBtn) clearBtn.classList.toggle('visible', searchFilter.length > 0);
                 if (searchFilter) {
-                    const exact = nodes.find(n => n.id.toLowerCase() === searchFilter.toLowerCase() || n.name.toLowerCase() === searchFilter.toLowerCase());
-                    if (exact) openInspector(exact);
+                    const q = searchFilter.toLowerCase();
+                    const exact = nodes.find(n => n.id.toLowerCase() === q || n.name.toLowerCase() === q);
+                    if (exact) {
+                        if (focusEco && exact.group !== focusEco) setFocus(null);
+                        openInspector(exact);
+                    }
                 }
-                render();
+                requestRender();
             });
         }
-        if (clearBtn) {
-            clearBtn.addEventListener('click', () => {
-                if (searchInput) searchInput.value = '';
-                searchFilter = '';
-                clearBtn.classList.remove('visible');
-                render();
-            });
-        }
+        if (clearBtn) clearBtn.addEventListener('click', clearSearch);
 
-        // Status Filter Buttons
         document.querySelectorAll('.filter-pill[data-status]').forEach(btn => {
             btn.addEventListener('click', () => {
                 const s = btn.getAttribute('data-status');
                 statusFilters[s] = !statusFilters[s];
                 btn.classList.toggle('active', statusFilters[s]);
-                render();
+                requestRender();
             });
         });
 
-        // Ecosystem Pills
-        document.querySelectorAll('.eco-pill').forEach(btn => {
-            btn.addEventListener('click', () => {
-                document.querySelectorAll('.eco-pill').forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                ecosystemFilter = btn.getAttribute('data-eco');
-                render();
-            });
-        });
+        const back = document.getElementById('btn-all-languages');
+        if (back) back.addEventListener('click', () => setFocus(null));
 
-        // Zoom Buttons
-        const zoomIn = document.getElementById('btn-zoom-in');
-        if (zoomIn) zoomIn.addEventListener('click', () => { camera.scale = Math.min(camera.scale * 1.25, 5); render(); });
-        const zoomOut = document.getElementById('btn-zoom-out');
-        if (zoomOut) zoomOut.addEventListener('click', () => { camera.scale = Math.max(camera.scale * 0.8, 0.3); render(); });
-        const zoomReset = document.getElementById('btn-zoom-reset');
-        if (zoomReset) zoomReset.addEventListener('click', fitCamera);
-
-        // Replay Button
         const playBtn = document.getElementById('btn-play-replay');
         if (playBtn) playBtn.addEventListener('click', toggleReplay);
 
-        // Inspector Close
         const inspClose = document.getElementById('inspector-close');
         if (inspClose) inspClose.addEventListener('click', closeInspector);
 
-        // Escape Key
+        // Escape backs out one step at a time: the selection, then the
+        // search, then the spread language.
         window.addEventListener('keydown', e => {
-            if (e.key === 'Escape') {
-                closeInspector();
-                if (searchInput) {
-                    searchInput.value = '';
-                    searchFilter = '';
-                    if (clearBtn) clearBtn.classList.remove('visible');
-                }
-                render();
-            }
+            if (e.key !== 'Escape') return;
+            if (selectedNode) closeInspector();
+            else if (searchFilter) clearSearch();
+            else if (focusEco) setFocus(null);
         });
     }
 
@@ -867,5 +830,4 @@
     } else {
         init();
     }
-
 })();

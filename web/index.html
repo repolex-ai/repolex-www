@@ -4,86 +4,88 @@ title: Ecosystem Web
 permalink: /web/
 ---
 
+<!-- Two fixed zones: the wheel, which always fits its area, and a side
+     panel that holds every control and the selected repository. Nothing
+     floats over the wheel except the hover tooltip. -->
 <div class="viz-shell">
-    <!-- Top Bar: Monospace Stats & Filter Controls -->
-    <header class="viz-bar">
-        <div class="viz-stats" id="stat-summary">
-            <span class="figure"><b>727</b> repositories</span>
-            <span class="figure"><b>432</b> dependency edges</span>
-            <span class="figure"><b>118.65M</b> quads</span>
-            <span class="pulse-pill"><span class="pulse-dot"></span> <b>20</b> runners active</span>
-        </div>
-
-        <div class="viz-center-controls">
-            <div class="viz-search-wrap">
-                <span class="viz-search-icon">🔍</span>
-                <input type="text" id="viz-search-input" class="viz-search" placeholder="Filter repo or org (e.g. axum, tokio, pandas)..." autocomplete="off" spellcheck="false" />
-                <button id="viz-search-clear" class="viz-search-clear" title="Clear">✕</button>
-            </div>
-        </div>
-
-        <div class="viz-filters">
-            <button class="filter-pill active" data-status="complete" title="Filter Complete Repos">
-                <span class="filter-dot complete"></span> Complete (<span id="count-complete">518</span>)
-            </button>
-            <button class="filter-pill active" data-status="in_progress" title="Filter In-Progress Repos">
-                <span class="filter-dot progress"></span> In Progress (<span id="count-progress">20</span>)
-            </button>
-            <button class="filter-pill active" data-status="failed" title="Filter Failed Repos">
-                <span class="filter-dot failed"></span> Failed (<span id="count-failed">11</span>)
-            </button>
-            <button class="filter-pill active" data-status="discovered" title="Filter Discovered / Frontier Repos">
-                <span class="filter-dot discovered"></span> Frontier (<span id="count-discovered">178</span>)
-            </button>
-        </div>
-
-        <div class="viz-actions">
-            <button id="btn-play-replay" class="viz-btn" title="Sweep & animate dependency connections chronologically">▶ Play Links</button>
-            <button id="btn-zoom-reset" class="viz-btn" title="Reset View">Fit View</button>
-        </div>
-    </header>
-
-    <!-- Canvas Visualization Area -->
     <main class="canvas-container">
         <canvas id="wheel-canvas" data-src="{{ '/assets/data/ecosystem.json' | relative_url }}"></canvas>
-
-        <!-- Floating Tooltip -->
         <div id="wheel-tooltip" class="wheel-tooltip"></div>
+        <button id="btn-all-languages" class="all-languages hidden" title="Fold this language back into the wheel (Esc)">◀ all languages</button>
+    </main>
 
-        <!-- Floating Inspector Drawer ("The Repolex Demesne") -->
-        <aside id="inspector-panel" class="inspector-panel hidden">
+    <aside class="side-panel">
+        <section class="side-block">
+            <div class="viz-stats" id="stat-summary">
+                <span class="figure">loading…</span>
+            </div>
+        </section>
+
+        <section class="side-block">
+            <div class="viz-search-wrap">
+                <input type="text" id="viz-search-input" class="viz-search" placeholder="Filter repo or org…" autocomplete="off" spellcheck="false" />
+                <button id="viz-search-clear" class="viz-search-clear" title="Clear">✕</button>
+            </div>
+        </section>
+
+        <section class="side-block">
+            <h2 class="side-title">Languages <span class="hint">click to spread round the ring</span></h2>
+            <div id="lang-list" class="lang-list"></div>
+        </section>
+
+        <section class="side-block">
+            <h2 class="side-title">Status</h2>
+            <div class="viz-filters">
+                <button class="filter-pill active" data-status="complete">
+                    <span class="filter-dot complete"></span> Complete <b id="count-complete">0</b>
+                </button>
+                <button class="filter-pill active" data-status="in_progress">
+                    <span class="filter-dot progress"></span> In progress <b id="count-progress">0</b>
+                </button>
+                <button class="filter-pill active" data-status="failed">
+                    <span class="filter-dot failed"></span> Failed <b id="count-failed">0</b>
+                </button>
+                <button class="filter-pill active" data-status="discovered">
+                    <span class="filter-dot discovered"></span> Frontier <b id="count-discovered">0</b>
+                </button>
+            </div>
+            <button id="btn-play-replay" class="viz-btn" title="Draw the dependency links one after another">▶ Play Links</button>
+        </section>
+
+        <section id="inspector-panel" class="inspector-panel empty">
+            <p class="inspector-empty">Click a repository on the wheel.</p>
             <div class="inspector-header">
                 <div class="inspector-title-wrap">
-                    <span id="insp-title" class="inspector-repo-name">repo/name</span>
-                    <span id="insp-badge" class="inspector-status-badge complete">Complete · Parsed</span>
+                    <span id="insp-title" class="inspector-repo-name"></span>
+                    <span id="insp-badge" class="inspector-status-badge"></span>
                 </div>
-                <button id="inspector-close" class="inspector-close" title="Close Panel">×</button>
+                <button id="inspector-close" class="inspector-close" title="Clear selection (Esc)">×</button>
             </div>
 
             <div class="inspector-body">
                 <div class="inspector-grid">
-                    <span class="inspector-label">Ecosystem:</span>
-                    <span id="insp-eco" class="inspector-val">Cargo</span>
+                    <span class="inspector-label">Ecosystem</span>
+                    <span id="insp-eco" class="inspector-val"></span>
 
-                    <span class="inspector-label">Latest Tag:</span>
-                    <span id="insp-tag" class="inspector-val">HEAD</span>
+                    <span class="inspector-label">Latest tag</span>
+                    <span id="insp-tag" class="inspector-val"></span>
 
-                    <span class="inspector-label">Knowledge Graph:</span>
-                    <span id="insp-quads" class="inspector-val">24.5 MB</span>
+                    <span class="inspector-label">Graph size</span>
+                    <span id="insp-quads" class="inspector-val"></span>
 
-                    <span class="inspector-label">Parsed Date:</span>
-                    <span id="insp-date" class="inspector-val">2026-09-14</span>
+                    <span class="inspector-label">Parsed</span>
+                    <span id="insp-date" class="inspector-val"></span>
 
-                    <span class="inspector-label">GitHub Source:</span>
-                    <span class="inspector-val"><a id="insp-repo-link" href="#" target="_blank" rel="noopener">Upstream Repo ↗</a></span>
+                    <span class="inspector-label">Source</span>
+                    <span class="inspector-val"><a id="insp-repo-link" href="#" target="_blank" rel="noopener">GitHub ↗</a></span>
 
-                    <span class="inspector-label">Storage Fork:</span>
-                    <span class="inspector-val"><a id="insp-storage" href="#" target="_blank" rel="noopener">repolex-forx ↗</a></span>
+                    <span class="inspector-label">Storage</span>
+                    <span class="inspector-val"><a id="insp-storage" href="#" target="_blank" rel="noopener"></a></span>
                 </div>
 
                 <div>
                     <div class="inspector-section-title">
-                        <span>Dependencies (Outbound)</span>
+                        <span><i class="legend-line outbound"></i>Depends on</span>
                         <b id="insp-out-count">0</b>
                     </div>
                     <ul id="insp-out-list" class="inspector-list"></ul>
@@ -91,34 +93,12 @@ permalink: /web/
 
                 <div>
                     <div class="inspector-section-title">
-                        <span>Dependents (Inbound)</span>
+                        <span><i class="legend-line inbound"></i>Depended on by</span>
                         <b id="insp-in-count">0</b>
                     </div>
                     <ul id="insp-in-list" class="inspector-list"></ul>
                 </div>
             </div>
-        </aside>
-
-        <!-- Bottom Left Zoom Controls -->
-        <div class="zoom-controls">
-            <button id="btn-zoom-in" class="zoom-btn" title="Zoom In">+</button>
-            <button id="btn-zoom-out" class="zoom-btn" title="Zoom Out">−</button>
-        </div>
-
-        <!-- Bottom Right Legend -->
-        <div class="wheel-legend">
-            <div class="legend-item">
-                <span class="legend-line pencil"></span>
-                <span>Pencil Line: Cross-repo dependency</span>
-            </div>
-            <div class="legend-item">
-                <span class="legend-line outbound"></span>
-                <span>Amber Line: Outbound dependency</span>
-            </div>
-            <div class="legend-item">
-                <span class="legend-line inbound"></span>
-                <span>Cobalt Line: Inbound dependent</span>
-            </div>
-        </div>
-    </main>
+        </section>
+    </aside>
 </div>
