@@ -166,6 +166,28 @@ def load_sparql_dependencies():
     return edges, repo_eco
 
 
+def load_cached_links(path):
+    if not os.path.exists(path):
+        return [], {}
+    try:
+        with open(path) as f:
+            prev = json.load(f)
+        prev_links = prev.get("links", [])
+        prev_eco = {}
+        for l in prev_links:
+            if "source" in l and "ecosystem" in l:
+                prev_eco[l["source"]] = l["ecosystem"]
+            if "target" in l and "ecosystem" in l:
+                prev_eco[l["target"]] = l["ecosystem"]
+        for n in prev.get("nodes", []):
+            if n.get("id") and n.get("ecosystem") and n["ecosystem"] != "Other":
+                prev_eco[n["id"]] = n["ecosystem"]
+        return prev_links, prev_eco
+    except Exception as e:
+        print(f"Warning: could not read cached links from {path}: {e}")
+        return [], {}
+
+
 def infer_ecosystem(repo_id: str, known_eco: str | None) -> str:
     if known_eco:
         eco_map = {
@@ -179,51 +201,136 @@ def infer_ecosystem(repo_id: str, known_eco: str | None) -> str:
         return eco_map.get(known_eco.upper(), known_eco)
 
     org, name = repo_id.lower().split("/", 1) if "/" in repo_id else ("", repo_id.lower())
+
     # Rust / Cargo
-    if any(k in name for k in ["-rs", "rust", "cargo", "tree-sitter"]) or org in [
-        "rust-lang", "tokio-rs", "dtolnay", "hyperium", "serde-rs", "rayon-rs",
-        "tower-rs", "rustcrypto", "actix", "chronotope", "burntsushi", "alexcrichton", "diesel-rs"
-    ]:
+    if (
+        any(k in name for k in ["-rs", "rust", "cargo", "tree-sitter"])
+        or name.endswith(".rs")
+        or org in [
+            "rust-lang", "tokio-rs", "dtolnay", "hyperium", "serde-rs", "rayon-rs",
+            "tower-rs", "rustcrypto", "actix", "chronotope", "burntsushi", "alexcrichton", "diesel-rs",
+            "crossbeam-rs", "crossterm-rs", "eyre-rs", "ratatui", "repolex-ai", "rust-itertools",
+            "rust-rdf", "zkat", "paritytech", "katharostech", "dryrust", "faern", "sebastienrousseau",
+            "swc-project", "carllerche"
+        ]
+        or repo_id in ["JelteF/derive_more", "near/nearcore", "Tina-1300/crate"]
+    ):
         return "Cargo"
-    # Python / PyPI
-    if any(k in name for k in [
-        "py", "django", "flask", "numpy", "pandas", "torch", "scikit", "scipy", "pytest", "sphinx",
-        "jupyter", "starlette", "uvloop", "pydantic", "fastapi", "aiosignal", "multidict", "yarl",
-        "celery", "airflow", "requests", "pip", "setuptools", "wheel", "twine", "hypothesis",
-        "frozendict", "munch", "yolox", "prefect", "llama_index", "langchain", "coremltools"
-    ]) or org in [
-        "pypa", "psf", "pallets", "django", "encode", "tiangolo", "huggingface", "run-llama",
-        "langchain-ai", "prefecthq", "activestate", "human-signal", "anorov", "magicstack"
-    ]:
-        return "PyPI"
-    # JS / TS / npm
-    if any(k in name for k in [
-        "js", "ts", "webpack", "babel", "eslint", "prettier", "rollup", "vite", "react", "vue",
-        "svelte", "express", "fastify", "postcss", "tailwind", "lodash", "xml-parser",
-        "definitelytyped", "font-awesome", "angular", "next", "nuxt"
-    ]) or org in [
-        "browserify", "acornjs", "jquery", "expressjs", "trpc", "definitelytyped", "fortawesome",
-        "microsoft", "vercel", "facebook", "sindresorhus", "1337programming", "fridus", "nmfr",
-        "naturalintelligence"
-    ]:
-        return "npm"
-    # Java / JVM
-    if any(k in name for k in [
-        "java", "jvm", "maven", "gradle", "spring", "jena", "jelly", "scala", "clojure", "kotlin"
-    ]) or org in [
-        "apache", "jelly-rdf", "eclipse", "spring-projects", "quarkusio"
-    ]:
-        return "Maven"
-    # Ruby
-    if any(k in name for k in [
-        "ruby", "gem", "rails", "bundler", "jekyll", "sinatra", "rake", "rubocop", "asciidoctor"
-    ]) or org in [
-        "ruby", "rubygems", "rails", "asciidoctor"
-    ]:
-        return "RubyGems"
+
     # Go
-    if any(k in name for k in ["golang", "go-", "-go"]) or org in ["golang"]:
+    if (
+        any(k in name for k in ["golang", "go-", "-go"])
+        or name.endswith("/go")
+        or org in [
+            "golang", "bytedance", "cloudwego", "gin-gonic", "gin-contrib", "go-playground",
+            "modern-go", "json-iterator", "quic-go", "klauspost", "stretchr", "ugorji"
+        ]
+        or repo_id in [
+            "bytedance/gopkg", "bytedance/sonic", "cloudwego/base64x", "anthropics/anthropic-sdk-go",
+            "davecgh/go-spew", "goccy/go-yaml", "leodido/go-urn", "mattn/go-isatty", "pelletier/go-toml",
+            "pmezard/go-difflib", "quic-go/quic-go", "quic-go/qpack", "twitchyliquid64/golang-asm",
+            "kr/text", "gabriel-vasile/mimetype"
+        ]
+    ):
         return "Go"
+
+    # Python / PyPI
+    if (
+        any(k in name for k in [
+            "py", "django", "flask", "numpy", "pandas", "torch", "scikit", "scipy", "pytest", "sphinx",
+            "jupyter", "starlette", "uvloop", "pydantic", "fastapi", "aiosignal", "multidict", "yarl",
+            "celery", "airflow", "requests", "pip", "setuptools", "wheel", "twine", "hypothesis",
+            "frozendict", "munch", "yolox", "prefect", "llama_index", "langchain", "coremltools",
+            "asyncio", "httpx", "feedparser", "beautifulsoup", "pillow"
+        ])
+        or name.endswith(".py")
+        or org in [
+            "pypa", "psf", "pallets", "pallets-eco", "django", "encode", "tiangolo", "huggingface", "run-llama",
+            "langchain-ai", "prefecthq", "activestate", "human-signal", "humansignal", "anorov", "magicstack",
+            "nousresearch", "aio-libs", "agronholm", "alexmojaki", "andialbrecht", "berkerpeksag",
+            "boto", "cloudpipe", "dabeaz", "davidhalter", "deedy5", "erdewit", "explosion",
+            "gorakhargosh", "hukkin", "ipython", "jaraco", "jquast", "keleshev", "kennethreitz",
+            "kislyuk", "kvesteri", "lancedb", "laurent-laporte-pro", "lepture", "librosa", "lxml",
+            "m-bain", "mkdocstrings", "openai", "pexpect", "pixeltable", "praw-dev", "psycopg",
+            "pytest-dev", "python-cffi", "python-greenlet", "python-thread", "python-trio", "pytorch",
+            "requests", "samuelcolvin", "sdispater", "sphinx-contrib", "sphinx-doc", "sqlalchemy",
+            "tim-osterhus", "tkem", "tornadoweb", "willmcgugan", "wolever", "zopefoundation", "alinaschan"
+        ]
+        or repo_id in [
+            "alethiophile/qtoml", "alex/pretend", "florimondmanca/httpx-sse", "pedroburon/dotenv",
+            "rbarrois/confutils", "rbarrois/fslib", "rbarrois/tdparser", "rbarrois/uconf",
+            "seequent/properties", "testing-cabal/fixtures", "uiri/toml", "carpedm20/emoji",
+            "cdgriffith/puremagic", "di/id", "malthe/chameleon", "materialsproject/fireworks",
+            "orm011/pgserver", "NVIDIA/NeMo-Relay", "davidfraser/WSGIUtils",
+            "apple/corenet", "apple/ml-ane-transformers", "apple/ml-stable-diffusion",
+            "asimov-platform/llama-index-asimov"
+        ]
+    ):
+        return "PyPI"
+
+    # JS / TS / npm
+    if (
+        any(k in name for k in [
+            "js", "ts", "webpack", "babel", "eslint", "prettier", "rollup", "vite", "react", "vue",
+            "svelte", "express", "fastify", "postcss", "tailwind", "lodash", "xml-parser",
+            "definitelytyped", "font-awesome", "angular", "next", "nuxt", "typescript"
+        ])
+        or name.endswith(".js")
+        or name.endswith(".ts")
+        or org in [
+            "browserify", "acornjs", "jquery", "expressjs", "trpc", "definitelytyped", "fortawesome",
+            "microsoft", "vercel", "facebook", "sindresorhus", "1337programming", "fridus", "nmfr",
+            "naturalintelligence", "axios", "bcomnes", "bower", "colinhacks", "component", "cspotcode",
+            "cypress-io", "debug-js", "es-shims", "eslint", "evanw", "gruntjs", "jestjs", "jshttp",
+            "ladjs", "lerna", "listr2", "ljharb", "markedjs", "micromatch", "mrmlnc", "netlify",
+            "npm", "okonet", "open-cli-tools", "paulmillr", "pillarjs", "prettier", "remy", "rollup",
+            "sass", "standard-schema", "testing-library", "thinkmill", "tinylibs", "typicode",
+            "webpack-contrib", "webpack", "yargs", "afarkas", "alexbrazier", "alexgorbatchev",
+            "actions"
+        ]
+        or repo_id in [
+            "brianloveswords/buffer-crc32", "git-albertomarin/winpath", "gotwarlost/istanbul",
+            "huafu/bs-logger", "inspect-js/hasOwn", "inspect-js/is-core-module", "intesso/connect-livereload",
+            "isaacs/github-flavored-markdown", "jadejs/jade", "jaredhanson/utils-merge", "jharding/grunt-exec",
+            "jmreidy/grunt-browserify", "kinnison/marked-yaml", "mattstyles/grunt-banner", "mccormicka/string-argv",
+            "novemberborn/ignore-by-default", "onehealth/grunt-open", "senchalabs/connect", "snide/wyrm",
+            "stylus/stylus", "substack/node-browserify", "sverweij/dependency-cruiser", "tanstack/intent",
+            "tj/connect-redis", "tlvince/make-coverage-badge", "visionmedia/node-cookie-signature",
+            "anthropics/claude-code", "anthropics/claude-code-action", "anthropics/claude-code-base-action"
+        ]
+    ):
+        return "npm"
+
+    # Java / JVM / Maven
+    if (
+        any(k in name for k in [
+            "java", "jvm", "maven", "gradle", "spring", "jena", "jelly", "scala", "clojure", "kotlin"
+        ])
+        or org in [
+            "apache", "jelly-rdf", "eclipse", "spring-projects", "quarkusio", "topquadrant",
+            "antlr", "google", "junit-team", "qos-ch", "square", "twitter-archive", "hmrc"
+        ]
+        or repo_id in [
+            "google/gson", "junit-team/junit4", "qos-ch/slf4j", "square/okhttp", "square/okio",
+            "twitter-archive/diffy", "TopQuadrant/shacl", "apple/servicetalk", "hmrc/service-manager"
+        ]
+    ):
+        return "Maven"
+
+    # Ruby / RubyGems
+    if (
+        any(k in name for k in [
+            "ruby", "gem", "rails", "bundler", "jekyll", "sinatra", "rake", "rubocop", "asciidoctor"
+        ])
+        or name.endswith(".rb")
+        or org in [
+            "ruby", "rubygems", "rails", "asciidoctor", "bblimke", "chriseppstein", "ioquatix",
+            "jeremyevans", "lsegal", "macournoyer", "minitest", "rack", "socketry", "sorbet",
+            "soutaro", "thoughtbot"
+        ]
+        or repo_id in ["asimov-platform/asimov-universe.rb", "asimov-platform/asimov.rb"]
+    ):
+        return "RubyGems"
 
     return "Other"
 
@@ -233,6 +340,21 @@ def main():
     db_repos = load_forx_db()
     cat_repos = load_catalog()
     edges, repo_eco = load_sparql_dependencies()
+
+    if not edges:
+        print("⚠️  Warning: Oxigraph at localhost:7878 returned 0 edges (endpoint down or empty).")
+        cached_edges, cached_eco = load_cached_links(OUTPUT_PATH)
+        if cached_edges and "--allow-empty" not in sys.argv:
+            print(f"🔒 Safeguard: Preserving {len(cached_edges)} cached dependency links to avoid publishing an empty graph.")
+            edges = cached_edges
+            for k, v in cached_eco.items():
+                if k not in repo_eco:
+                    repo_eco[k] = v
+        elif "--allow-empty" not in sys.argv:
+            print("❌ Error: 0 dependency edges found and no cached links available to preserve.")
+            print("   Please start Oxigraph with: rlex serve --no-browser")
+            print("   Or pass --allow-empty to explicitly write an empty link dataset.")
+            sys.exit(1)
 
     print(f"DB repos: {len(db_repos)}, Catalog repos: {len(cat_repos)}, Oxigraph edges: {len(edges)}")
 
