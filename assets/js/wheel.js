@@ -240,8 +240,11 @@
             byName.forEach((n, i) => to.set(n, { angle: top + i * step + step / 2, alpha: 1 }));
             for (const n of nodes) if (n.group !== focusEco) to.set(n, { angle: folded.get(n), alpha: 0 });
             for (const a of foldedArcs) {
+                // The spread language's arc grows to the full circle as it
+                // fades: a closed ring around the names read as a second
+                // border, not as a language (goodlux, 2026-09-24).
                 arcsTo.push(a.eco === focusEco
-                    ? { eco: a.eco, start: top, end: top + TAU, alpha: 1 }
+                    ? { eco: a.eco, start: top, end: top + TAU, alpha: 0 }
                     : { ...a, alpha: 0 });
             }
         } else {
@@ -610,7 +613,10 @@
         if (focusEco && !tween) {
             const dx = sx - center.x, dy = sy - center.y;
             const r = Math.hypot(dx, dy);
-            if (r > radius - 24 && r < radius + margin) {
+            // Inward to 60% of the radius, so the pointer can come at a dot
+            // from inside the ring too. The middle stays neutral: a click
+            // there still clears the selection.
+            if (r > radius * 0.6 && r < radius + margin) {
                 const a = Math.atan2(dy, dx);
                 const wrap = d => Math.abs(Math.atan2(Math.sin(d), Math.cos(d)));
                 let best = null, bestD = Infinity;
@@ -744,6 +750,21 @@
         requestRender();
     }
 
+    /** Select the next or previous repository round the ring from the
+     *  current selection, or from the one under the pointer. */
+    function step(dir) {
+        const ring = nodes
+            .filter(n => isNodeVisible(n) && n.alpha > 0.5)
+            .sort((a, b) => a.angle - b.angle);
+        if (!ring.length) return;
+        const from = selectedNode || hoveredNode;
+        let i = from ? ring.indexOf(from) : -1;
+        i = i < 0 ? (dir > 0 ? 0 : ring.length - 1) : (i + dir + ring.length) % ring.length;
+        hoveredNode = null;
+        hideTooltip();
+        openInspector(ring[i]);
+    }
+
     // ---------------------------------------------------------------- replay
 
     function toggleReplay() {
@@ -792,6 +813,22 @@
             if (eco) { setFocus(focusEco === eco ? null : eco); return; }
             closeInspector();
         });
+
+        // The scroll wheel dials round the ring, one repository per notch,
+        // in the order they sit. A mouse notch arrives as one large delta and
+        // is one step; a trackpad sends many small ones, which are summed
+        // until they make a step. Reversing starts the sum over.
+        let dial = 0;
+        const NOTCH = 50;
+        canvas.addEventListener('wheel', e => {
+            e.preventDefault();
+            if (Math.sign(e.deltaY) !== Math.sign(dial)) dial = 0;
+            dial += e.deltaY;
+            if (Math.abs(dial) >= NOTCH) {
+                step(dial > 0 ? 1 : -1);
+                dial = 0;
+            }
+        }, { passive: false });
 
         canvas.addEventListener('pointerleave', () => {
             hoveredNode = null;
