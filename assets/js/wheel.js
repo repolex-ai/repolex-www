@@ -490,6 +490,7 @@
             const dimmed = (active && !targeted) || (searchFilter && !hit && !targeted);
 
             let r = (n.in_degree + n.out_degree) > 5 ? 3.4 : 2.2;
+            if (focusEco) r += 1;   // spread, there is room, and a bigger target
             let fill = PALETTE[n.status] || PALETTE.discovered;
             if (dimmed) { fill = 'rgba(212, 212, 216, 0.4)'; r = 1.6; }
             else if (n === active) r = 5.2;
@@ -547,6 +548,7 @@
             ctx.rotate(right ? n.angle : n.angle + Math.PI);
             ctx.textAlign = right ? 'left' : 'right';
             ctx.fillStyle = dim ? 'rgba(161, 161, 170, 0.45)' : 'rgba(63, 63, 70, 0.9)';
+            if (n === hoveredNode) ctx.fillStyle = '#09090b';
             ctx.fillText(text, 0, 0);
             ctx.restore();
         }
@@ -601,6 +603,25 @@
     // ---------------------------------------------------------------- picking
 
     function pickNode(sx, sy) {
+        // Spread, a repository owns its whole wedge — dot, name and the gap
+        // between — so it can be hit anywhere from just inside the ring out
+        // to the end of its name. Dots a few pixels apart were too hard to
+        // land on (goodlux, 2026-09-24).
+        if (focusEco && !tween) {
+            const dx = sx - center.x, dy = sy - center.y;
+            const r = Math.hypot(dx, dy);
+            if (r > radius - 24 && r < radius + margin) {
+                const a = Math.atan2(dy, dx);
+                const wrap = d => Math.abs(Math.atan2(Math.sin(d), Math.cos(d)));
+                let best = null, bestD = Infinity;
+                for (const n of nodes) {
+                    if (n.group !== focusEco || !isNodeVisible(n)) continue;
+                    const d = wrap(a - n.angle);
+                    if (d < bestD) { bestD = d; best = n; }
+                }
+                return best;
+            }
+        }
         let best = null, bestD = 14 * 14;
         for (const n of nodes) {
             if (!isNodeVisible(n) || n.alpha < 0.5) continue;
@@ -615,8 +636,11 @@
     function pickEco(sx, sy) {
         const dx = sx - center.x, dy = sy - center.y;
         const r = Math.hypot(dx, dy);
+        // Spread, the band outside the ring belongs to the repositories'
+        // names, so it no longer folds the language: a near miss on a name
+        // used to collapse the whole view.
+        if (focusEco) return null;
         if (r < radius + 8 || r > radius + margin) return null;
-        if (focusEco) return focusEco;
         const a = Math.atan2(dy, dx);
         for (const arc of arcs) {
             if (arc.alpha < 0.5) continue;
@@ -646,6 +670,10 @@
         tip.style.display = 'flex';
         tip.style.left = `${x}px`;
         tip.style.top = `${y}px`;
+        // Near the right or bottom edge the tip opens the other way, so it
+        // never runs under the side panel or off the screen.
+        tip.classList.toggle('flip-x', x > width - 340);
+        tip.classList.toggle('flip-y', y > height - 140);
     }
 
     function hideTooltip() {
