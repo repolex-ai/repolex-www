@@ -1,0 +1,180 @@
+# =============================================================================
+# SUBTEXTURE BASE ONTOLOGY
+# =============================================================================
+#
+# The foundational base ontology that sits under everything in the Subtexture
+# ecosystem (Pan, Ravel, git-lex, and the kits built above them).
+#
+# LAYER DISCIPLINE: this file is pure base. It declares ZERO application or kit
+# prefixes and never points upward at git-lex:, pan:, or ravel:. Each upper
+# ontology imports `subtexture:`, subclasses `subtexture:Thing` (or `Set` /
+# `NamedGraph`), keeps its own namespace in stored data, and bridges its
+# properties to `subtexture:*` via `owl:equivalentProperty` in its own file.
+#
+# CHANGELOG
+# -----------------------------------------------------------------------------
+# v0.3.0 (2026-11-16, ruled by goodlux): PURE BASE INVERSION & ALL EIGHT UNIVERSALS.
+#   (1) Pure base layering: removed `@prefix git-lex:`, removed the upward
+#       `git-lex:Thing` / `git-lex:NamedGraph` subclass axioms and `git-lex:*`
+#       `owl:equivalentProperty` bridges from this file, and re-ranged
+#       `subtexture:id` and `subtexture:relatedToId` from `git-lex:Thing` to
+#       `subtexture:Thing`. Each app owns its own namespace and declares its
+#       subclassing and `owl:equivalentProperty` bridges in its own ontology.
+#   (2) Eight universal Thing properties at the base: + `subtexture:title`,
+#       + `subtexture:description`, + `subtexture:abstract`, + `subtexture:cue`
+#       join `id`, `relatedToId`, `createdDate`, and `updatedDate` on
+#       `subtexture:Thing`. Document-carrier properties (`fileId`, `substrate`,
+#       `kitManaged`) remain up on `git-lex:Thing`.
+#   (3) Optional `id` at the base (`owl:maxCardinality 1`): `subtexture:Thing`
+#       relaxes `subtexture:id` from `owl:cardinality 1` to `owl:maxCardinality 1`
+#       alongside `title`, `description`, `abstract`, `createdDate`, and
+#       `updatedDate`. Derived Things whose subject IRI IS their identity
+#       (`ravel:Turn`, `ravel:Memory`) never emit a self-loop `id` triple;
+#       layers that emit an explicit `id` triple (`git-lex:Thing`, `pan:Node`)
+#       enforce `owl:cardinality 1` on their own class.
+#   (4) - `subtexture:Sequence`: deleted outright (zero instances anywhere;
+#       `copia:Sequence` retired in copia 0.41.0, Pan sets are unordered, and
+#       Ravel orders transcripts via `parentTurn` + `timestamp` and OptMem via
+#       integer `logStart` / `logEnd`). `subtexture:Set` and
+#       `subtexture:NamedGraph` remain.
+#   DELIBERATELY NOT DONE: adding a set-side `member` property on
+#   `subtexture:Set` (membership lives on the member via `relatedToId`);
+#   rewriting stored app graphs to emit `subtexture:*` predicates directly
+#   (each app owns its namespace and bridges via `owl:equivalentProperty`).
+#
+# v0.2.0 (2026-09-21, ruled by goodlux): NAMED GRAPH VOCABULARY.
+#   (1) + `subtexture:NamedGraph a owl:Class ; rdfs:subClassOf sd:NamedGraph` —
+#   the ecosystem-wide root for typed named graph descriptors in any Subtexture
+#   store (git-lex, Pan, Ravel, etc.), anchored to W3C SPARQL Service
+#   Description `sd:NamedGraph`.
+#
+# v0.1.0 (2026-09-16, ruled by goodlux): FIRST CUT.
+#   (1) + `subtexture:Thing` — the universal root entity with its own identity
+#   and lifetime, independent of the file or record that carries it.
+#   (2) Foundational properties on `subtexture:Thing`: `id`, `createdDate`,
+#   `updatedDate`, and `relatedToId`.
+#   (3) + `subtexture:Set` — an unordered collection of Things.
+# =============================================================================
+
+@prefix subtexture: <https://repolex.ai/ontology/subtexture/> .
+@prefix owl:        <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:        <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:       <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:        <http://www.w3.org/2001/XMLSchema#> .
+@prefix sd:         <http://www.w3.org/ns/sparql-service-description#> .
+
+<https://repolex.ai/ontology/subtexture> a owl:Ontology ;
+    rdfs:label "Subtexture Base Ontology" ;
+    rdfs:comment "The foundational base ontology for the Subtexture ecosystem: Thing, Set, NamedGraph, and the eight universal Thing properties." ;
+    owl:versionInfo "0.3.0" .
+
+
+# =============================================================================
+# 1. THE UNIVERSAL ENTITY (subtexture:Thing)
+# =============================================================================
+# A Thing is an entity with its own identity and lifetime, independent of any
+# file or carrier. Authored document classes (via git-lex:Thing) and derived
+# graph-only classes (Pan's pan:Node, Ravel's Turn and Memory) are all Things.
+#
+# Each application owns its own namespace in stored data (`pan:*`, `ravel:*`,
+# `git-lex:*`) and bridges its universal properties to `subtexture:*` via
+# `owl:equivalentProperty` in its own ontology file.
+# =============================================================================
+
+subtexture:Thing a owl:Class ;
+    rdfs:label "Thing" ;
+    rdfs:comment "Universal root entity with its own identity and lifetime, independent of any file or store." .
+
+
+# --- The Eight Universal Properties on Thing ---------------------------------
+
+subtexture:id a owl:ObjectProperty ;
+    rdfs:label "id" ;
+    rdfs:comment "Which Thing this node IS, written <namespace/Class/identifier>; never write a bare token." ;
+    rdfs:domain subtexture:Thing ;
+    rdfs:range subtexture:Thing .
+
+subtexture:title a owl:DatatypeProperty ;
+    rdfs:label "title" ;
+    rdfs:comment "One short display name for this Thing. Single-valued — overwrite it, do not repeat the key." ;
+    rdfs:domain subtexture:Thing ;
+    rdfs:range xsd:string .
+
+subtexture:description a owl:DatatypeProperty ;
+    rdfs:label "description" ;
+    rdfs:comment "CURATED — a short deliberate summary software may read. Single-valued — do not repeat the key." ;
+    rdfs:domain subtexture:Thing ;
+    rdfs:range xsd:string .
+
+subtexture:abstract a owl:DatatypeProperty ;
+    rdfs:label "abstract" ;
+    rdfs:comment "GENERATED — machine summary automation may overwrite; for a curated summary use description." ;
+    rdfs:domain subtexture:Thing ;
+    rdfs:range xsd:string .
+
+subtexture:cue a owl:DatatypeProperty ;
+    rdfs:label "cue" ;
+    rdfs:comment "WHEN to reach for this Thing — name a moment with a verb, not a topic; do not repeat the key." ;
+    rdfs:domain subtexture:Thing ;
+    rdfs:range xsd:string .
+
+subtexture:relatedToId a owl:ObjectProperty ;
+    rdfs:label "relatedToId" ;
+    rdfs:comment "Another Thing this one relates to, written <namespace/Class/identifier>; do not repeat the key." ;
+    rdfs:domain subtexture:Thing ;
+    rdfs:range subtexture:Thing .
+
+subtexture:createdDate a owl:DatatypeProperty ;
+    rdfs:label "createdDate" ;
+    rdfs:comment "When this Thing was first created, ISO-8601 dateTime with offset; do not write a bare date." ;
+    rdfs:domain subtexture:Thing ;
+    rdfs:range xsd:dateTime .
+
+subtexture:updatedDate a owl:DatatypeProperty ;
+    rdfs:label "updatedDate" ;
+    rdfs:comment "When this Thing last changed, ISO-8601 dateTime with offset; maintained by the writer, do not hand-edit." ;
+    rdfs:domain subtexture:Thing ;
+    rdfs:range xsd:dateTime .
+
+
+# =============================================================================
+# 2. COLLECTIONS
+# =============================================================================
+# Membership is written on the member via `relatedToId`, never as a set-side
+# `member` list, so membership travels with the member record.
+# =============================================================================
+
+subtexture:Set a owl:Class ;
+    rdfs:subClassOf subtexture:Thing ;
+    rdfs:label "Set" ;
+    rdfs:comment "An unordered collection of Things; link members from the member via relatedToId, never order it." .
+
+
+# =============================================================================
+# 3. GRAPHS
+# =============================================================================
+
+subtexture:NamedGraph a owl:Class ;
+    rdfs:subClassOf sd:NamedGraph ;
+    rdfs:label "NamedGraph" ;
+    rdfs:comment "A named graph descriptor resource in a Subtexture store, anchored to W3C sd:NamedGraph." .
+
+
+# =============================================================================
+# 4. CARDINALITY
+# =============================================================================
+# Single-valued universals carry `owl:maxCardinality 1` at the base (`cue` and
+# `relatedToId` are multi-valued, 0..*). `id` is `maxCardinality 1` here rather
+# than `cardinality 1` so derived Things whose subject IRI IS their identity
+# (`ravel:Turn`, `ravel:Memory`) need no redundant self-loop triple; layers
+# that write an explicit `id` triple (`git-lex:Thing`, `pan:Node`) tighten it
+# to `owl:cardinality 1` on their own class.
+# =============================================================================
+
+subtexture:Thing rdfs:subClassOf
+    [ a owl:Restriction ; owl:onProperty subtexture:id          ; owl:maxCardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty subtexture:title       ; owl:maxCardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty subtexture:description ; owl:maxCardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty subtexture:abstract    ; owl:maxCardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty subtexture:createdDate ; owl:maxCardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty subtexture:updatedDate ; owl:maxCardinality 1 ] .

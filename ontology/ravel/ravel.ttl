@@ -1,11 +1,11 @@
-@prefix git-lex: <https://repolex.ai/ontology/git-lex/> .
+@prefix subtexture: <https://repolex.ai/ontology/subtexture/> .
 @prefix ravel:   <https://repolex.ai/ontology/ravel/> .
 @prefix owl:     <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
 
 # =============================================================================
-# RAVEL ONTOLOGY (v0.1.0)
+# RAVEL ONTOLOGY
 # =============================================================================
 # Vocabulary for ravel, the transcript-graph engine: conversations (Claude Code
 # session logs and, later, other harness dialects) projected into RDF 1.2 and
@@ -17,20 +17,29 @@
 # ravel/docs/2026_06_29_CLAUDE_CODE_TRANSCRIPT_ONTOLOGY_DRAFT.ttl) is
 # DEFERRED, not absent — see the deferred block at the end.
 #
-# FOLDERING: no class in this file carries `git-lex:foldered true` — ravel
-# classes are graph-only BY DESIGN. Instances live in the store, never as
+# BASE (goodlux, 2026-11-16; ontology 0.7.0): ravel stands on the Subtexture
+# base ontology (subtexture.ttl 0.3.0, shipped beside this file as
+# ontology/subtexture/subtexture.ttl) and no longer refers to git-lex's
+# vocabulary at all. Each app owns its own namespace in stored data and
+# bridges to the base with owl:equivalentProperty in its own file: ravel
+# writes ravel:relatedToId, declared equivalent to subtexture:relatedToId.
+# No store runs a reasoner, so a query must name ravel:relatedToId itself.
+#
+# FOLDERING: ravel classes are graph-only BY DESIGN. Instances live in the store, never as
 # authored markdown; kit-add scaffolds ZERO folders in the soul corpus.
 #
-# THING ALIGNMENT (Rob's ruling, 2026-08-20): ravel classes subclass
-# `git-lex:Thing` even though they are graph-only — the first derived (never
-# authored) Things in the stack. This is deliberate: every declared entity
-# gets the five universal properties (id, title, abstract, cue, relatedToId)
+# THING ALIGNMENT (goodlux, 2026-08-20; re-based 2026-11-16): ravel classes
+# subclass `subtexture:Thing` even though they are graph-only — the first
+# derived (never authored) Things in the stack. This is deliberate: every declared entity
+# gets the base's universal properties (id, title, description, abstract, cue,
+# relatedToId, createdDate, updatedDate)
 # so one query surface reaches ravel alongside soul/copia/pan, and so ravel
 # never repeats Pool's "doesn't need an ontology" mistake. Emission stays
 # under the formalize-don't-invent gate: subclassing makes the fields
 # AVAILABLE; nothing emits them until a real writer exists (see DEFERRED).
-# A derived Thing's identity is its IRI — `git-lex:id` (the authored
-# which-Thing-is-this key) is never emitted for Turns; `turnId` remains the
+# A derived Thing's identity is its IRI — `subtexture:id` (the authored
+# which-Thing-is-this key, optional at the base) is never emitted for Turns
+# or Memories; `turnId` remains the
 # idempotency key. Graph-side, `relatedToId` targets are resolved IRI edges
 # (the <namespace/Class/identifier> CURIE form is an authoring-surface
 # convenience that graph-only classes never see).
@@ -50,21 +59,21 @@
     a owl:Ontology ;
     rdfs:label "Ravel ontology" ;
     rdfs:comment "Transcript-graph vocabulary: conversational turns and the reader-annotation layer over them. Graph-only — no authored documents." ;
-    owl:versionInfo "0.2.0" .
+    owl:versionInfo "0.7.0" .
 
 # ─── The spine ───────────────────────────────────────────────────────────────
 
-# Turn is a DERIVED Thing — the stack's first (Rob 2026-08-20, tr1p stamp
+# Turn is a DERIVED Thing — the stack's first (goodlux 2026-08-20, tr1p stamp
 # 2026-08-21). Its identity is its IRI (…/ravel/Turn/<event-id>); it inherits
-# the five universal Thing properties and authors none (no template ever
+# the universal Thing properties and authors none (no template ever
 # renders for it). Kept out of rdfs:comment per house style: comments stay
 # terse because they are pasted verbatim into author-facing surfaces; blocks
-# like this one are where the reasoning lives. Note git-lex 0.10 declares
-# `relatedToId rdfs:range git-lex:Thing`, so any relatedToId edge aimed at a
-# Turn entails this subclass in the data — the line below states what the
-# graph would already assert.
+# like this one are where the reasoning lives. relatedToId's range is
+# subtexture:Thing, so any relatedToId edge aimed at a Turn entails this
+# subclass in the data — the line below states what the graph would already
+# assert.
 ravel:Turn a owl:Class ;
-    rdfs:subClassOf git-lex:Thing ;
+    rdfs:subClassOf subtexture:Thing ;
     rdfs:label "Turn" ;
     rdfs:comment "One conversational event in a transcript (a user or assistant message). Written by ravel's projector, never authored by hand." .
 
@@ -88,7 +97,7 @@ ravel:role a owl:DatatypeProperty ;
 
 ravel:timestamp a owl:DatatypeProperty ;
     rdfs:label "timestamp" ;
-    rdfs:comment "When this turn happened. THE FEDERATION TIME ANCHOR: shared xsd:dateTime contract with pan:createdAt (and git2:xsdDateTimeDerived) — cross-store time-window joins depend on this staying xsd:dateTime. Do not 'improve' it." ;
+    rdfs:comment "When this turn happened. THE FEDERATION TIME ANCHOR: shared xsd:dateTime contract with pan:renderRequestDate and pan:mediaCreatedDate (and git2:xsdDateTimeDerived) — cross-store time-window joins depend on this staying xsd:dateTime. Do not 'improve' it." ;
     rdfs:domain ravel:Turn ;
     rdfs:range xsd:dateTime .
 
@@ -97,6 +106,42 @@ ravel:text a owl:DatatypeProperty ;
     rdfs:comment "The turn's concatenated text content, when any." ;
     rdfs:domain ravel:Turn ;
     rdfs:range xsd:string .
+
+ravel:model a owl:DatatypeProperty ;
+    rdfs:label "model" ;
+    rdfs:comment "The model that answered this turn, as the record itself reports it (Claude Code: the API's own message.model, e.g. 'claude-opus-5-5'). Absent when the record names none: human turns, harness-written replies, the Claude desktop export." ;
+    rdfs:domain ravel:Turn ;
+    rdfs:range xsd:string .
+
+ravel:modelSetting a owl:DatatypeProperty ;
+    rdfs:label "modelSetting" ;
+    rdfs:comment "The model setting in force for this turn, as the harness last announced it in this conversation (Antigravity's Model Selection notices, e.g. 'Gemini 4 Argon (Medium)'). A setting, not a report of what ran: a change made outside the conversation is not seen." ;
+    rdfs:domain ravel:Turn ;
+    rdfs:range xsd:string .
+
+# ─── Links and graphs (the Subtexture base, under ravel's own names) ─────────
+
+# The one link property. Emitted today only in the memory graph: a note to
+# each Turn it rests on, a merge to its two halves. The domain is the base
+# Thing, not ravel:Memory: a narrower domain on a property equivalent to
+# subtexture:relatedToId would type every linked Thing in the stack as a
+# Memory.
+ravel:relatedToId a owl:ObjectProperty ;
+    rdfs:label "relatedToId" ;
+    rdfs:comment "Another Thing this one relates to: in the memory graph, a note to each turn it was written from, and a merge to its two halves." ;
+    owl:equivalentProperty subtexture:relatedToId ;
+    rdfs:domain subtexture:Thing ;
+    rdfs:range subtexture:Thing .
+
+# Graph NAMES of this shape exist in every store
+# (https://repolex.ai/ravel/NamedGraph/<transcript id>, …/NamedGraph/memory-v1).
+# Descriptor nodes typed ravel:NamedGraph are NOT written yet: the class is
+# declared so ravel's graphs have a home under the base, and a writer
+# promotes it (see DEFERRED).
+ravel:NamedGraph a owl:Class ;
+    rdfs:subClassOf subtexture:NamedGraph ;
+    rdfs:label "NamedGraph" ;
+    rdfs:comment "One named graph in a soul's ravel store, one per transcript plus memory-v1; no node carries this type yet, so match graphs with GRAPH ?g and not by type." .
 
 # ─── The annotation layer (decorates oa:/prov: shapes) ──────────────────────
 
@@ -133,6 +178,80 @@ ravel:exhibits a owl:DatatypeProperty ;
     rdfs:comment "The world-claim predicate: <<( turn ravel:exhibits 'detection-slug' )>>. Appears ONLY inside unasserted RDF 1.2 triple terms (via rdf:reifies) — asserting it directly is a modeling error; the belief layer exists so the graph never asserts what a reader merely claims." ;
     rdfs:range xsd:string .
 
+# ─── The memory index (repolex-ai/ravel#15) ──────────────────────────────────
+
+# Memory is DERIVED, like Turn: OptMem's memory (github.com/VictorTaelin/OptMem),
+# exactly, as a graph. A soul's notes, in the order noted, form OptMem's log;
+# a note's OptMem identity is its position (logStart = logEnd = i). OptMem's
+# binary merge tree over the log gives the higher nodes: a block of 2^k notes
+# at an aligned position [logStart, logEnd] is one line merging its two
+# halves (memoryLevel k). Neighbours by position, never by topic or time.
+# Written by a model reliving the soul's turns in order, or by the soul as it
+# works (recorded in memoryModel); projected from the soul's
+# `.ravel/_ignore/optmem/` logs into the `memory-v1` named graph.
+#
+# Edges are ravel:relatedToId, ravel's name for the one link property
+# Subtexture uses (goodlux, 2026-10-06; own namespace 2026-11-16): a note to each Turn it rests on, a block to its two
+# halves. What an edge means is read off its target: a Turn is a source, a
+# Memory is a half.
+#
+# v0.5.0 (goodlux, 2026-10-13: OptMem's algorithm exactly, not something
+# similar): the tree is by log position, no longer by clock-hour windows;
+# logStart and logEnd added; windowStart/windowEnd now give the times of the
+# first and last note under a node.
+ravel:Memory a owl:Class ;
+    rdfs:subClassOf subtexture:Thing ;
+    rdfs:label "Memory" ;
+    rdfs:comment "One line of a soul's OptMem memory: a note (level 0), or the merge of an aligned block of 2^k notes (level k), linked to its two halves." .
+
+ravel:memoryId a owl:DatatypeProperty ;
+    rdfs:label "memoryId" ;
+    rdfs:comment "Unique identifier for this memory: 'm' plus a content hash for a note, OptMem's block id 'lo-hi' (inclusive positions, e.g. '16-31') for a block. Unique within the class." ;
+    rdfs:domain ravel:Memory ;
+    rdfs:range xsd:string .
+
+ravel:memoryText a owl:DatatypeProperty ;
+    rdfs:label "memoryText" ;
+    rdfs:comment "The memory's one line of text, at most 280 bytes (OptMem's ENTRY_CHARS)." ;
+    rdfs:domain ravel:Memory ;
+    rdfs:range xsd:string .
+
+ravel:memoryLevel a owl:DatatypeProperty ;
+    rdfs:label "memoryLevel" ;
+    rdfs:comment "0 for a note; k for the merge of a block of 2^k notes." ;
+    rdfs:domain ravel:Memory ;
+    rdfs:range xsd:integer .
+
+ravel:logStart a owl:DatatypeProperty ;
+    rdfs:label "logStart" ;
+    rdfs:comment "Position in the soul's OptMem log of the first note under this memory (its own position, for a note)." ;
+    rdfs:domain ravel:Memory ;
+    rdfs:range xsd:integer .
+
+ravel:logEnd a owl:DatatypeProperty ;
+    rdfs:label "logEnd" ;
+    rdfs:comment "Position in the soul's OptMem log of the last note under this memory, inclusive (its own position, for a note)." ;
+    rdfs:domain ravel:Memory ;
+    rdfs:range xsd:integer .
+
+ravel:windowStart a owl:DatatypeProperty ;
+    rdfs:label "windowStart" ;
+    rdfs:comment "Time of the first note under this memory: a note's earliest source turn." ;
+    rdfs:domain ravel:Memory ;
+    rdfs:range xsd:dateTime .
+
+ravel:windowEnd a owl:DatatypeProperty ;
+    rdfs:label "windowEnd" ;
+    rdfs:comment "Time of the last note under this memory (equal to windowStart for a note)." ;
+    rdfs:domain ravel:Memory ;
+    rdfs:range xsd:dateTime .
+
+ravel:memoryModel a owl:DatatypeProperty ;
+    rdfs:label "memoryModel" ;
+    rdfs:comment "The model id that wrote this line (e.g. 'claude-haiku-5-5')." ;
+    rdfs:domain ravel:Memory ;
+    rdfs:range xsd:string .
+
 # ─── DEFERRED (declared so absence reads as roadmap, not ignorance) ──────────
 # · sig_* — per-reader signal-leg property family (dynamic names, numeric legs
 #   typed xsd at emission). Needs a modeling ruling (property family vs
@@ -143,10 +262,13 @@ ravel:exhibits a owl:DatatypeProperty ;
 # · The full ClaudeCode transcript type-space (attachments, compaction
 #   prov:Activity, session metadata) — Day-39 draft; promotes term-by-term as
 #   readers emit it.
+# · ravel:NamedGraph descriptor nodes (sd:name and friends) — the class is
+#   declared, nothing is typed with it; promotes when a writer describes the
+#   store's graphs.
 # · Embedding/search vocabulary — waits on the stack embedder weights lock
 #   (candle-MiniLM class, one 384-d text space).
 # · Universal Thing-field emission (title / abstract / cue / relatedToId) —
-#   the vocabulary is inherited NOW (Turn ⊂ git-lex:Thing, Rob 2026-08-20);
+#   the vocabulary is inherited NOW (Turn ⊂ subtexture:Thing);
 #   emission waits for real writers: segment-summary readers (title/abstract),
 #   the recall respec (cue — the retrieval-trigger consumer), cross-store
 #   linking (relatedToId as resolved IRI edges, e.g. Turn ↔ copia Moment,

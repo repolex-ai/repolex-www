@@ -29,7 +29,25 @@
 git-lex: a owl:Ontology ;
     rdfs:label "git-lex Core Ontology" ;
     rdfs:comment "The vocabulary git-lex authors about the markdown documents it tracks." ;
-    owl:versionInfo "0.18.2" .
+    owl:versionInfo "0.19.0" .
+
+# v0.19.0 (2026-11-16, ruled by goodlux): SUBTEXTURE BASE INVERSION & BRIDGES.
+#   (1) git-lex:Thing rdfs:subClassOf subtexture:Thing — declared here in
+#   git-lex.ttl now that subtexture.ttl 0.3.0 is pure base (zero upward git-lex:
+#   references). Authored document classes subclass git-lex:Thing; graph-only
+#   stores (Pan, Ravel) subclass subtexture:Thing directly.
+#   (2) Each app owns its own namespace in stored data and bridges to
+#   subtexture:* via owl:equivalentProperty: git-lex:{id, title, description,
+#   abstract, cue, relatedToId, createdDate, updatedDate} each gain
+#   owl:equivalentProperty subtexture:*. Zero stored soul graph migrations.
+#   (3) git-lex:id and git-lex:relatedToId re-ranged from git-lex:Thing to
+#   subtexture:Thing (gated on git-lex 686cbf4, shipped first so both Thing
+#   roots select the <namespace/Class/id> bracketed address lane).
+#   (4) Document-carrier properties (fileId, substrate, kitManaged) remain
+#   git-lex's own on git-lex:Thing, and git-lex:Thing retains owl:cardinality 1
+#   on git-lex:id.
+#   (5) subtexture.ttl 0.3.0 ships in git-lex-kit-base at
+#   ontology/subtexture/subtexture.ttl, loaded automatically alongside git-lex/.
 
 # v0.18.2 (2026-09-21, Rob-ruled): git-lex:NamedGraph EXTENDS subtexture:NamedGraph.
 #   (1) git-lex:NamedGraph rdfs:subClassOf subtexture:NamedGraph — the base
@@ -394,40 +412,47 @@ git-lex:fileId a owl:ObjectProperty ;
 # classes that do not yet subclass Thing. The reasoning above applies to them
 # and the change is Rob's, queued for the pan sitting — not stamped in passing.
 git-lex:Thing a owl:Class ;
+    rdfs:subClassOf subtexture:Thing ;
     rdfs:label "Thing" ;
-    rdfs:comment "An entity with its own identity and lifetime, as opposed to the file that carries it. Counterpart to git-lex:File: a File is an ADDRESS (its id is a path, and dies on rename), a Thing is a LIFETIME (its id is its own, and survives moves). Authored document classes and derived graph-only classes are both Things. The universal properties — id, title, description, abstract, cue, relatedToId, createdDate, updatedDate, substrate, kitManaged — have this as their domain." .
+    rdfs:comment "An entity backed by a git-lex document, with its own identity and lifetime independent of the file path (`git-lex:File` is the address; `git-lex:Thing` is the lifetime). Sits under `subtexture:Thing`, bridging the eight universal properties via `owl:equivalentProperty` and adding document-carrier fields (`fileId`, `substrate`, `kitManaged`)." .
 
 git-lex:id a owl:ObjectProperty ;
+    owl:equivalentProperty subtexture:id ;
     rdfs:label "id" ;
     rdfs:comment "AUTHORED — which Thing this document IS, written <namespace/Class/identifier>. Without it these facts bind to the file path and die on rename." ;
     rdfs:domain git-lex:Thing ;
-    rdfs:range git-lex:Thing .
+    rdfs:range subtexture:Thing .
 
 git-lex:title a owl:DatatypeProperty ;
+    owl:equivalentProperty subtexture:title ;
     rdfs:label "title" ;
     rdfs:comment "One short name for this Thing — what a listing or a search result shows. Single-valued." ;
     rdfs:domain git-lex:Thing ;
     rdfs:range xsd:string .
 
 git-lex:abstract a owl:DatatypeProperty ;
+    owl:equivalentProperty subtexture:abstract ;
     rdfs:label "abstract" ;
     rdfs:comment "GENERATED — what an agent made of this document. Automation may overwrite it; do not depend on it being current. For a value software reads, use description." ;
     rdfs:domain git-lex:Thing ;
     rdfs:range xsd:string .
 
 git-lex:description a owl:DatatypeProperty ;
+    owl:equivalentProperty subtexture:description ;
     rdfs:label "description" ;
     rdfs:comment "CURATED — a short deliberate summary software may read, so what you write here matters. Exact use varies by class. Single-valued." ;
     rdfs:domain git-lex:Thing ;
     rdfs:range xsd:string .
 
 git-lex:createdDate a owl:DatatypeProperty ;
+    owl:equivalentProperty subtexture:createdDate ;
     rdfs:label "createdDate" ;
     rdfs:comment "When this document was first written, ISO-8601 with offset. Maintained by git-lex — do not hand-edit." ;
     rdfs:domain git-lex:Thing ;
     rdfs:range xsd:dateTime .
 
 git-lex:updatedDate a owl:DatatypeProperty ;
+    owl:equivalentProperty subtexture:updatedDate ;
     rdfs:label "updatedDate" ;
     rdfs:comment "When this document last changed, ISO-8601 with offset. Maintained by git-lex on save — do not hand-edit." ;
     rdfs:domain git-lex:Thing ;
@@ -494,6 +519,7 @@ git-lex:Skill a owl:Class ;
 # are cheap. Both seats reached the same law from opposite ends: A CUE THAT FIRES
 # ON EVERYTHING FIRES ON NOTHING.
 git-lex:cue a owl:DatatypeProperty ;
+    owl:equivalentProperty subtexture:cue ;
     rdfs:label "cue" ;
     rdfs:comment "WHEN to reach for this Thing — name a moment you will be IN, not a topic; a good cue has a verb in it. Multi-valued — one YAML list item each; do not repeat the key." ;
     rdfs:domain git-lex:Thing ;
@@ -581,10 +607,11 @@ git-lex:cue a owl:DatatypeProperty ;
 #      exists silently converts every correct value into a mangled one.
 # ---------------------------------------------------------------------------
 git-lex:relatedToId a owl:ObjectProperty ;
+    owl:equivalentProperty subtexture:relatedToId ;
     rdfs:label "relatedToId" ;
     rdfs:comment "Another Thing this one relates to, any class in any kit, written <namespace/Class/identifier>. Multi-valued — one YAML list item per target; do not repeat the key." ;
     rdfs:domain git-lex:Thing ;
-    rdfs:range git-lex:Thing .
+    rdfs:range subtexture:Thing .
 
 # v0.16.0 (Rob-ruled 2026-08-28): git-lex:id is REQUIRED. Exactly one, on every
 # Thing. This re-lands 0.15.0 after git-lex 4d626dd fixed the validator: the

@@ -1,5 +1,4 @@
 @prefix pan:     <https://repolex.ai/ontology/pan/> .
-@prefix git-lex: <https://repolex.ai/ontology/git-lex/> .
 @prefix subtexture: <https://repolex.ai/ontology/subtexture/> .
 @prefix owl:     <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
@@ -13,9 +12,9 @@
 # stored object. Code implements this; it never adds to it — Rob ruled on
 # 2026-09-03 that the ontology comes first and every fact Pan emits is declared here.
 #
-# Pan's parents: subtexture (the base ontology, subtexture/ontology/
-# subtexture.ttl: Thing, Set, Sequence and the universals) and git-lex (the
-# kit layer: git-lex:Thing sits under subtexture:Thing).
+# Pan's one parent is subtexture, the base ontology (ontology/subtexture.ttl,
+# shipped beside this file: Thing, Set, NamedGraph and the universals). Pan
+# names no other application's ontology.
 #
 # Published to git-lex as the kit `repolex-ai/git-lex-kit-pan` so a soul that
 # installs it can query its own media graph through git-lex and Syrinx.
@@ -25,7 +24,7 @@
 #
 # WHERE THE DATA LIVES (Rob, 2026-08-25, unchanged): bulk model output does
 # NOT ride inside the image. Each stage writes its own DATA FILE beside the
-# media (caption/, sam3/, pose/, vectors/, thumbnail/) and the image carries
+# media (caption/, segment/, pose/, depth/, face/, embed/) and the image carries
 # one REFERENCE per output — an pan:Enrichment record naming the model, the
 # file, how many items it holds and when it was produced. Every path is
 # declared here; nothing is found by filesystem convention.
@@ -44,11 +43,175 @@
 <https://repolex.ai/ontology/pan> a owl:Ontology ;
     rdfs:label "Pan media store ontology" ;
     rdfs:comment "Identity, location, timing and model-derived enrichment facts Pan records for stored media." ;
-    owl:versionInfo "0.4.17" .
+    owl:versionInfo "0.4.28" .
 
 # -----------------------------------------------------------------------------
 # CHANGELOG
 # -----------------------------------------------------------------------------
+# v0.4.28 (2026-11-16, ruled by goodlux): A TITLE.
+#   + pan:title on pan:Node, Pan's spelling of subtexture:title: one short
+#   line of text naming the Thing. At most one, never required. A person or
+#   a producer sets it like any other field: on media through
+#   `pan set … title=…` and POST /media/{id}/set, written into the file's
+#   XMP; on a set at creation and through the set's own set command, kept in
+#   the set's file. Needed first on sets, where the id has been doing a
+#   title's work.
+#   NOT done: pan:abstract and pan:cue. The base declares them; Pan keeps
+#   its captions, the photographer's word, and has no use for a cue. Nothing
+#   fills a title on its own, and no existing record gets one.
+# v0.4.27 (2026-11-16, ruled by goodlux): ONE PARENT, THE BASE.
+#   Each application owns its namespace and bridges to subtexture:* only;
+#   none names another application's ontology (subtexture.ttl 0.3.0).
+#   (1) pan:Node rdfs:subClassOf subtexture:Thing, and no longer git-lex:Thing.
+#   (2) pan:id, pan:relatedToId and pan:item range subtexture:Thing (was
+#       git-lex:Thing).
+#   (3) Bridges are to the base alone: pan:id, pan:createdDate and
+#       pan:relatedToId lose their git-lex: equivalents; pan:description is
+#       now equivalent to subtexture:description (was git-lex:description);
+#       pan:updatedDate gains the bridge to subtexture:updatedDate it never
+#       had.
+#   (4) The git-lex: prefix is gone from this file. Comments only: the
+#       sentence saying the SHACL generator was being fixed to follow
+#       owl:equivalentProperty is removed; it does.
+#   No stored fact changes: pand has written pan: predicates and pan: classes
+#   only since 0.4.6, and no record names a parent class.
+#   NOT done: pan:title, pan:abstract, pan:cue. The base declares all three;
+#   nothing in Pan writes one, and each is declared here when something does.
+# v0.4.26 (2026-11-12, ruled by goodlux): VIDEOSETS ARE WRITTEN.
+#   Clips made from Pan stills are arriving in numbers (LTX image-to-video,
+#   eight clips to a film), and each film needs its set. pan:VideoSet,
+#   declared as a stub in 0.4.7 and given its media class in 0.4.22, is now
+#   written by pand exactly as pan:ImageSet is: its own file
+#   VideoSet/<id>.nq, membership as pan:relatedToId <pan/VideoSet/id> on the
+#   clip, videos only (checked at every door: the videoset commands, the set
+#   route's relatedToId, and a file that arrives naming the set). Nothing new
+#   is declared; the class comment stops saying nothing writes one.
+#   NOT done: pan:AudioSet stays a stub (no pan:Audio). No ordering of a
+#   film's clips (the film file holds the order), as 0.4.22 said. A clip's
+#   link to the still it was made from is pan:relatedToId <pan/Image/id>,
+#   the universal, not a new property.
+# v0.4.25 (2026-11-12, ruled by goodlux): WHEN IT WAS ASKED FOR.
+#   pan:renderRequestDate: when the render of this media was requested. The
+#   one fact that joins a generated image or clip back to the conversational
+#   moment that asked for it, and the lag between asking, rendering and
+#   arriving in Pan can be long, so neither pan:mediaCreatedDate (when the
+#   file was made) nor pan:createdDate (when it reached Pan) stands in for
+#   it. This is information about the image and lives with the image; with
+#   it, no separate moments graph is needed to make the join. Declared on
+#   pan:Media, so a clip has it too; at most one; RFC3339 with a zone, like
+#   the other dates. Settable like every Media field (`pan put … 
+#   renderRequestDate=…`), and the THIRD pan: field a producer may write in
+#   an arriving file or through POST /media/{id}/xmp, beside pan:relatedToId
+#   and pan:mediaCreatedDate, checked the same way.
+#   NOT done: no renderCompleteDate (that is pan:mediaCreatedDate for a
+#   render), and still none of the wider render fields (model, seed,
+#   reference images, aspect ratio); that project stands as in 0.4.24.
+# v0.4.24 (2026-11-11, ruled by goodlux): THE PROMPT, ON ITS OWN.
+#   pan:renderPrompt: the prompt that asked for the media, as the person or
+#   agent gave it to the generator. Needed because a generator that is not
+#   the render queue (Gemini's native image generation, 2026-11-11) hands over
+#   a bare JPEG with no request record at all, and the prompt is the one
+#   thing every generated image has. Declared on pan:Media, so a clip has it
+#   too; at most one; settable like every Media field, and written into the
+#   file's XMP.
+#   NOT done: pan:renderRequestInformation stays exactly what it is, the
+#   generator's own request record verbatim when the file carries one, never
+#   taken apart and never the place for a prompt given by hand. Also not
+#   done: the fuller set of render fields (model, seed, reference images,
+#   aspect ratio) that most generated media share; that is its own project
+#   with a migration behind it, and renderPrompt is the one field it needs
+#   today.
+# v0.4.23 (2026-11-10, ruled by goodlux): NOTES ARE DESCRIPTIONS.
+#   pan:note (added in 0.4.22 the same morning) is REMOVED, never written.
+#   pan:description already is the place to say something about a Thing, on
+#   any record: a person's own words about an image, a video or a set. One
+#   field, not two with the same meaning. The pan-ui heading that shows a
+#   caption under the word "description" is a UI label, not this property;
+#   no stored record carries pan:description yet.
+# v0.4.22 (2026-11-10, ruled by goodlux): VIDEO, AND A PLACE FOR NOTES.
+#   Clips (about 10 MB, 5 to 15 s) and films (clips stitched together, about
+#   200 MB) are being made in numbers and need a home. What a stored video
+#   needs is almost all declared on pan:Media already: captions, rating, the
+#   flags, width and height, the thumbnail slot, mediaCreatedDate,
+#   relatedToId to the stills it was made from and to the clips a film holds.
+#   (1) + pan:Video a owl:Class ; rdfs:subClassOf pan:Media. IRI <pan/Video/id>.
+#       pan:VideoSet (stubbed since 0.4.7) now has its media class; nothing
+#       writes a Video yet, that is pand work to follow.
+#   (2) + pan:duration (seconds) and pan:frameRate on pan:Video, at most one
+#       each: what a player and a UI need and what is awkward to go back for.
+#   (3) + pan:note on pan:Media, at most one: arbitrary notes about the
+#       media, written by a person. Removed again in 0.4.23: pan:description
+#       is that field.
+#   Deliberately not done: no ordering of a film's clips (the film file holds
+#   the order; relatedToId links the clips, unordered). No audio facts. No
+#   video stages; the embed pass on video is a separate ask.
+# v0.4.21 (2026-11-09, ruled by goodlux): FACES.
+#   A face-detection pass (InsightFace buffalo_l behind Iris POST /percept/face,
+#   m3rc 2026-11-06) answers with every face in an image: where it is, five
+#   landmarks, head orientation, a confidence, and a 512-float identity vector
+#   (ArcFace, unit length, cosine = dot). Handled like pose: one record per
+#   face, all in one file, hung off one reference on the image.
+#   (1) + pan:Face a owl:Class ; rdfs:subClassOf pan:Node — one detected face.
+#   (2) + pan:faceData on pan:Image — the reference to one run's file.
+#   (3) + pan:landmarks (five points, 'x,y;…') and pan:headPose
+#       ('pitch,yaw,roll' degrees) on pan:Face.
+#   (4) pan:bbox, pan:score, pan:vectorPath and pan:dim move from one class
+#       each (Region, Region, Embedding, Embedding) to the shared parent
+#       pan:Node: a Face has a box, a score and a vector too. Same meaning,
+#       same spelling; no stored fact changes.
+#   (5) The identity vector is never a graph literal (as every embedding):
+#       it goes to a .npy beside the record, named by pan:vectorPath, and
+#       into its own search index named after the model, keyed by the Face
+#       record's id, so "faces like this one" is a search like any other.
+#   Deliberately not done: the model's age and sex guesses stay in the saved
+#   reply file only, out of the graph (rough on renders; a guess must not
+#   read as a fact). The 106-point and 68-point landmark sets stay in the
+#   reply file too (alignment data, not a question anyone asks the graph).
+#   A Face is not a person: nothing here says whose face it is; linking a
+#   face to a Being is a later ruling. No change to any existing record.
+# v0.4.20 (2026-11-06, ruled by goodlux): WHEN A RECORD LAST CHANGED.
+#   A rating, a pick, a caption or a pose changed the file and the graph and
+#   left no time anywhere: pan:createdDate is the record's birth, and
+#   pan:producedDate sits on each enrichment, not on the image. A reader that
+#   caches a store's images (pan-ui) could only learn that something changed
+#   by noticing the image count move.
+#   (1) + pan:updatedDate on pan:Node, at most one: when the node's own file
+#       was last written. pand writes it on every write of that file, by
+#       whichever route (set, unset, a stage's result, a producer's XMP add,
+#       a set's creation). Equal to pan:createdDate at ingest, so every new
+#       node carries it. Never sent by a producer.
+#   (2) Media and MediaSet restrictions: pan:updatedDate at most once.
+#   Deliberately not done: no marks-only date (one date, moved by any write;
+#   a reader that cares only about rating and the flags compares the values
+#   it holds). No backfill: an existing node gets the date the first time it
+#   is written from now on. No record of deletions.
+# v0.4.19 (2026-09-22, ruled by goodlux): WHEN THE MEDIA WAS MADE.
+#   pan:createdDate is when the Pan record was created. It has never meant
+#   when the media itself was made, and until now nothing in Pan held that.
+#   For media arriving from Horae the two are seconds apart; for the Pool
+#   corpus being migrated they are months apart.
+#   (1) + pan:mediaCreatedDate on pan:Media, at most one — when the media was
+#       made, as its own metadata says: a render time, a capture time. Image
+#       inherits it. Absent when the file carries no such date.
+#   (2) Comment only: pan:createdDate now says what it is not.
+#   Deliberately not done: no property for a previous store's identifier. The
+#   Pool content id does not come across; the migration keeps a mapping of
+#   where each file came from and where it landed, outside the graph.
+# v0.4.18 (2026-09-21, ruled by goodlux): THE GRAPH HAS A NAME.
+#   Every fact pand writes goes into one named graph, the same IRI in every
+#   store, decided on 2026-09-18 and left without a name until now. The name
+#   is <pan/NamedGraph/pan>: https://repolex.ai/pan/NamedGraph/pan.
+#   (1) + pan:NamedGraph a owl:Class ; rdfs:subClassOf subtexture:NamedGraph —
+#       the class that IRI is an instance of. subtexture:NamedGraph arrived in
+#       the base ontology 0.2.0 the same day.
+#   (2) Record files are N-Quads, `.nq`, and carry that IRI in the fourth
+#       column. A set's file is ImageSet/<id>.nq, the folder named for the
+#       class. Comments on pan:ImageSet and the MediaSet section follow.
+#   (3) Comments only: the pan:modelPromptPath section still described two
+#       prompt folders that were replaced by one flat folder on 2026-09-19,
+#       and a comment about render requests outlived the class it described.
+#   Deliberately not done: no property on pan:NamedGraph. The node's IRI is
+#   the graph's name, and nothing reads more than that.
 # v0.4.17 (2026-09-21, ruled by goodlux): WHAT THE IMAGE IS.
 #   Pan has hashed images since the store was written and never recorded the
 #   answer. The hash lived inside tests, proving that writing metadata leaves
@@ -573,16 +736,28 @@
 # THE BASE NODE
 # -----------------------------------------------------------------------------
 # pan:Node is the abstract root for all entities in the Pan media store.
-# Subclasses subtexture:Thing (and git-lex:Thing) so every Pan entity is a
-# subtexture Thing. Properties shared across Pan classes (pan:id, model,
+# Subclasses subtexture:Thing, so every Pan entity is a subtexture Thing. Properties shared across Pan classes (pan:id, model,
 # dimensions, paths) have domain pan:Node, preventing them from polluting the
 # universal Thing across other kits.
 # -----------------------------------------------------------------------------
 
 pan:Node a owl:Class ;
-    rdfs:subClassOf subtexture:Thing , git-lex:Thing ;
+    rdfs:subClassOf subtexture:Thing ;
     rdfs:label "Node" ;
     rdfs:comment "Abstract root entity for the Pan media store; sits under subtexture:Thing." .
+
+# -----------------------------------------------------------------------------
+# THE NAMED GRAPH
+# -----------------------------------------------------------------------------
+# One instance, the same in every store: <pan/NamedGraph/pan>. Every fact pand
+# writes is in it, and every record file names it in its fourth column
+# (goodlux, 2026-09-21).
+# -----------------------------------------------------------------------------
+
+pan:NamedGraph a owl:Class ;
+    rdfs:subClassOf subtexture:NamedGraph ;
+    rdfs:label "NamedGraph" ;
+    rdfs:comment "The named graph every Pan fact is written into: <pan/NamedGraph/pan>, the same in every store. Written by pand; never authored." .
 
 # -----------------------------------------------------------------------------
 # THE STORE
@@ -614,12 +789,29 @@ pan:mediaRoot a owl:DatatypeProperty ;
 pan:Media a owl:Class ;
     rdfs:subClassOf pan:Node ;
     rdfs:label "Media" ;
-    rdfs:comment "A stored media object. Pan's facts and the producer's copia block ride in its XMP; everything it arrived with is kept. IRI <pan/Image/id>." .
+    rdfs:comment "A stored media object. Pan's facts and the producer's copia block ride in its XMP; everything it arrived with is kept. IRI <pan/Image/id> or <pan/Video/id>." .
 
 pan:Image a owl:Class ;
     rdfs:subClassOf pan:Media ;
     rdfs:label "Image" ;
     rdfs:comment "Media whose bytes are a raster image. Region and pose enrichment are facts about pixels and are declared on Image, not Media." .
+
+pan:Video a owl:Class ;
+    rdfs:subClassOf pan:Media ;
+    rdfs:label "Video" ;
+    rdfs:comment "Media whose bytes are a moving picture (MP4 or MOV), with or without sound: a clip, or a film stitched from clips. IRI <pan/Video/id>." .
+
+pan:duration a owl:DatatypeProperty ;
+    rdfs:label "duration" ;
+    rdfs:comment "Running time in seconds, as the file says. pand reads it; never send it." ;
+    rdfs:domain pan:Video ;
+    rdfs:range xsd:decimal .
+
+pan:frameRate a owl:DatatypeProperty ;
+    rdfs:label "frame rate" ;
+    rdfs:comment "Frames per second, as the file says. pand reads it; never send it." ;
+    rdfs:domain pan:Video ;
+    rdfs:range xsd:decimal .
 
 pan:mediaPath a owl:DatatypeProperty ;
     rdfs:label "media path" ;
@@ -664,6 +856,18 @@ pan:renderRequestInformation a owl:DatatypeProperty ;
     rdfs:comment "The generation request the file arrived carrying, verbatim: prompt, sampler, seed, checkpoint and the rest as the generator wrote them. One string; do not parse it into the graph." ;
     rdfs:domain pan:Media ;
     rdfs:range xsd:string .
+
+pan:renderPrompt a owl:DatatypeProperty ;
+    rdfs:label "render prompt" ;
+    rdfs:comment "The prompt that asked for this media, as the person or agent gave it to the generator. One value; overwrite it, do not repeat the key. Not the generator's own request record: that is pan:renderRequestInformation." ;
+    rdfs:domain pan:Media ;
+    rdfs:range xsd:string .
+
+pan:renderRequestDate a owl:DatatypeProperty ;
+    rdfs:label "render request date" ;
+    rdfs:comment "When the render of this media was asked for, RFC3339 with a zone. One value; overwrite it, do not repeat the key. Not when the file was made (pan:mediaCreatedDate) and not when it reached Pan (pan:createdDate)." ;
+    rdfs:domain pan:Media ;
+    rdfs:range xsd:dateTime .
 
 pan:enrichmentCompleteDate a owl:DatatypeProperty ;
     rdfs:label "enrichment complete date" ;
@@ -798,33 +1002,59 @@ pan:sceneSubjectOrientation a owl:DatatypeProperty ;
 # own (goodlux, 2026-09-16), so its domain is pan:Node.
 
 pan:id a owl:ObjectProperty ;
-    owl:equivalentProperty subtexture:id , git-lex:id ;
+    owl:equivalentProperty subtexture:id ;
     rdfs:label "id" ;
-    rdfs:comment "Which Thing this node IS, written <pan/Class/id>; the file spelling of git-lex:id. On media and on every record and reference. Never write the bare token." ;
+    rdfs:comment "Which Thing this node IS, written <pan/Class/id>; Pan's spelling of subtexture:id. On media and on every record and reference. Never write the bare token." ;
     rdfs:domain pan:Node ;
-    rdfs:range git-lex:Thing .
+    rdfs:range subtexture:Thing .
 
 pan:createdDate a owl:DatatypeProperty ;
-    owl:equivalentProperty subtexture:createdDate , git-lex:createdDate ;
+    owl:equivalentProperty subtexture:createdDate ;
     rdfs:label "created date" ;
-    rdfs:comment "When Pan created this record, RFC3339 system local time; the file spelling of git-lex:createdDate. Written by pand, never by hand." ;
+    rdfs:comment "When the Pan record was created, RFC3339 system local time; Pan's spelling of subtexture:createdDate. Not when the media was made; that is pan:mediaCreatedDate." ;
     rdfs:domain pan:Node ;
     rdfs:range xsd:dateTime .
 
-# The file spelling of git-lex:description (same pattern as pan:id): a Pan
+# When the node's own file was last written, by any route. pand moves it;
+# a producer never sends it. Equal to pan:createdDate at ingest.
+pan:updatedDate a owl:DatatypeProperty ;
+    owl:equivalentProperty subtexture:updatedDate ;
+    rdfs:label "updated date" ;
+    rdfs:comment "When this record's own file was last written, RFC3339 system local time. pand writes it on every write of the file; never send it." ;
+    rdfs:domain pan:Node ;
+    rdfs:range xsd:dateTime .
+
+# When the media itself was made, as distinct from when Pan recorded it. Read
+# from the media's own metadata: a render time, a capture time.
+pan:mediaCreatedDate a owl:DatatypeProperty ;
+    rdfs:label "media created date" ;
+    rdfs:comment "When the media was made, as its own metadata says: a render time, a capture time. RFC3339 system local time. Absent when the file carries no such date." ;
+    rdfs:domain pan:Media ;
+    rdfs:range xsd:dateTime .
+
+# Pan's spelling of subtexture:title: the short line a listing shows. A
+# person's or a producer's words; pand never makes one up.
+pan:title a owl:DatatypeProperty ;
+    owl:equivalentProperty subtexture:title ;
+    rdfs:label "title" ;
+    rdfs:comment "One short line naming this Thing, as a listing shows it; Pan's spelling of subtexture:title. One value; overwrite it, do not repeat the key. Not the id, and not a caption." ;
+    rdfs:domain pan:Node ;
+    rdfs:range xsd:string .
+
+# Pan's spelling of subtexture:description (same pattern as pan:id): a Pan
 # file carries only pan and copia, so the universal is written under pan:.
 pan:description a owl:DatatypeProperty ;
-    owl:equivalentProperty git-lex:description ;
+    owl:equivalentProperty subtexture:description ;
     rdfs:label "description" ;
-    rdfs:comment "A short deliberate summary a person writes; the file spelling of git-lex:description. One value; overwrite it, do not repeat the key." ;
+    rdfs:comment "A short deliberate summary a person writes; Pan's spelling of subtexture:description. One value; overwrite it, do not repeat the key." ;
     rdfs:domain pan:Node ;
     rdfs:range xsd:string .
 
 # The prompt that asked for an answer. On the media object (which prompt
 # described this image) and on the Caption record beside it (which prompt
 # produced THIS answer), so a second model or a second prompt is a second
-# record naming its own. Two folders hold prompts: `default/`, rewritten from
-# the pand binary at every start, and `custom/`, which Pan never writes.
+# record naming its own. Prompts live in one flat folder; the one pand ships
+# says so in its name, full-caption.default.md.
 pan:modelPromptPath a owl:DatatypeProperty ;
     rdfs:label "prompt path" ;
     rdfs:comment "The prompt file that asked for this answer, as full-caption.default.md, relative to the prompts directory. Written by pand; a changed prompt is a new file, never an edit." ;
@@ -917,14 +1147,16 @@ pan:isRejected a owl:DatatypeProperty ;
 # their own set classes (UI handlers differ per kind).
 #
 # An ImageSet is a pan:MediaSet holding only pan:Image. IRI <pan/ImageSet/<id>>.
+# A VideoSet is the same shape for pan:Video, IRI <pan/VideoSet/<id>>, file
+# VideoSet/<id>.nq (written since 0.4.26). What follows holds for both.
 # It is not a fact about any one image, so it has its own file on disk,
-# imagesets/<id>.xml, beside the media; the graph is rebuilt from that file.
+# ImageSet/<id>.nq, in the store; the graph is rebuilt from that file.
 # Membership is written once, on the image, with the universal: each image
 # carries pan:relatedToId <pan/ImageSet/id> in its XMP, one value per set, so
 # the fact travels with the file; the set's members are read from the images.
 # The code enforces the kind at add time, since membership is written on the
 # member and a set-side restriction cannot reach it. The set node carries id,
-# description and createdDate. No ordering: one image in two sets has two
+# title, description and createdDate. No ordering: one image in two sets has two
 # positions.
 # -----------------------------------------------------------------------------
 
@@ -936,13 +1168,13 @@ pan:MediaSet a owl:Class ;
 pan:ImageSet a owl:Class ;
     rdfs:subClassOf pan:MediaSet ;
     rdfs:label "ImageSet" ;
-    rdfs:comment "An unordered set of Pan media holding only pan:Image; its own file imagesets/<id>.xml on disk, from which the graph is rebuilt. Do not put an ordering on it." .
+    rdfs:comment "An unordered set of Pan media holding only pan:Image; its own file ImageSet/<id>.nq on disk, from which the graph is rebuilt. Do not put an ordering on it." .
 
-# Stub: not yet implemented — no pan:Video media class exists yet and nothing writes one.
+# pan:Video exists since 0.4.22; VideoSets are written since 0.4.26.
 pan:VideoSet a owl:Class ;
     rdfs:subClassOf pan:MediaSet ;
     rdfs:label "VideoSet" ;
-    rdfs:comment "Stub: an unordered set of Pan media holding only video; not yet implemented — no pan:Video media class exists yet and nothing writes one." .
+    rdfs:comment "An unordered set of Pan media holding only pan:Video; its own file VideoSet/<id>.nq on disk, from which the graph is rebuilt. Do not put an ordering on it." .
 
 # Stub: not yet implemented — no pan:Audio media class exists yet and nothing writes one.
 pan:AudioSet a owl:Class ;
@@ -1056,6 +1288,11 @@ pan:Depth a owl:Class ;
     rdfs:label "Depth" ;
     rdfs:comment "One monocular depth estimate: a normalized depth map for the whole image, with the range it was normalized from." .
 
+pan:Face a owl:Class ;
+    rdfs:subClassOf pan:Node ;
+    rdfs:label "Face" ;
+    rdfs:comment "One detected face: its box, five landmarks, head orientation, confidence and identity vector. Not a person; nothing here says whose." .
+
 # --- references: media → one stage's output file -----------------------------
 
 pan:regionData a owl:ObjectProperty ;
@@ -1071,6 +1308,11 @@ pan:poseData a owl:ObjectProperty ;
 pan:depthData a owl:ObjectProperty ;
     rdfs:label "depth data" ;
     rdfs:comment "Reference to a depth-estimation output file holding this image's depth map." ;
+    rdfs:domain pan:Image ; rdfs:range pan:Enrichment .
+
+pan:faceData a owl:ObjectProperty ;
+    rdfs:label "face data" ;
+    rdfs:comment "Reference to a face-detection output file holding this image's faces; a run that found none still writes one." ;
     rdfs:domain pan:Image ; rdfs:range pan:Enrichment .
 
 pan:captionData a owl:ObjectProperty ;
@@ -1091,21 +1333,20 @@ pan:vectorData a owl:ObjectProperty ;
 pan:item a owl:ObjectProperty ;
     rdfs:label "item" ;
     rdfs:comment "One record this reference's file holds. Reach records through here; never link them from the image." ;
-    rdfs:domain pan:Enrichment ; rdfs:range git-lex:Thing .
+    rdfs:domain pan:Enrichment ; rdfs:range subtexture:Thing .
 
 pan:thumbnail a owl:ObjectProperty ;
     rdfs:label "thumbnail" ;
     rdfs:comment "The Thumbnail Pan made of this media." ;
     rdfs:domain pan:Media ; rdfs:range pan:Thumbnail .
 
-# The file spelling of git-lex:relatedToId — the same property (goodlux,
-# 2026-09-16), see pan:id above. The producer writes it in the file; the graph
-# may carry either spelling and a reader treats them as one.
+# Pan's spelling of subtexture:relatedToId, the same property (goodlux,
+# 2026-09-16), see pan:id above. The producer writes it in the file.
 pan:relatedToId a owl:ObjectProperty ;
-    owl:equivalentProperty subtexture:relatedToId , git-lex:relatedToId ;
+    owl:equivalentProperty subtexture:relatedToId ;
     rdfs:label "relatedToId" ;
-    rdfs:comment "The Thing this media relates to (its Moment), written <ns/Class/id>; the file spelling of git-lex:relatedToId. Never the bare token." ;
-    rdfs:domain pan:Media ; rdfs:range git-lex:Thing .
+    rdfs:comment "The Thing this media relates to (its Moment), written <ns/Class/id>; Pan's spelling of subtexture:relatedToId. Never the bare token." ;
+    rdfs:domain pan:Media ; rdfs:range subtexture:Thing .
 
 # --- shared fields -------------------------------------------------------------
 # These apply to several pan classes (Enrichment, Region, Pose, Caption, …);
@@ -1188,15 +1429,18 @@ pan:polygon a owl:DatatypeProperty ;
     rdfs:comment "Outline as 'x,y;x,y;…' in pixel coordinates." ;
     rdfs:domain pan:Region ; rdfs:range xsd:string .
 
+# bbox and score are shared since 0.4.21: a Region and a Face both have a
+# box and a confidence. Their domain is pan:Node; the cardinality blocks say
+# which class carries them.
 pan:bbox a owl:DatatypeProperty ;
     rdfs:label "bounding box" ;
     rdfs:comment "'x1,y1,x2,y2' in pixel coordinates." ;
-    rdfs:domain pan:Region ; rdfs:range xsd:string .
+    rdfs:domain pan:Node ; rdfs:range xsd:string .
 
 pan:score a owl:DatatypeProperty ;
     rdfs:label "score" ;
     rdfs:comment "Model confidence, 0..1." ;
-    rdfs:domain pan:Region ; rdfs:range xsd:decimal .
+    rdfs:domain pan:Node ; rdfs:range xsd:decimal .
 
 pan:maskPath a owl:DatatypeProperty ;
     rdfs:label "mask path" ;
@@ -1222,15 +1466,17 @@ pan:text a owl:DatatypeProperty ;
     rdfs:comment "The model's answer as it came back, unparsed." ;
     rdfs:domain pan:Caption ; rdfs:range xsd:string .
 
+# dim and vectorPath are shared since 0.4.21: an Embedding and a Face each
+# carry one vector. Domain pan:Node; the cardinality blocks say which class.
 pan:dim a owl:DatatypeProperty ;
     rdfs:label "dimension" ;
-    rdfs:comment "Length of the embedding vector." ;
-    rdfs:domain pan:Embedding ; rdfs:range xsd:integer .
+    rdfs:comment "Length of the vector." ;
+    rdfs:domain pan:Node ; rdfs:range xsd:integer .
 
 pan:vectorPath a owl:DatatypeProperty ;
     rdfs:label "vector path" ;
     rdfs:comment "Path to the .npy vector file, relative to pan:mediaRoot. The searchable copy lives in the index; this file is the rebuildable source." ;
-    rdfs:domain pan:Embedding ; rdfs:range xsd:string .
+    rdfs:domain pan:Node ; rdfs:range xsd:string .
 
 # --- Depth fields --------------------------------------------------------------
 
@@ -1249,14 +1495,24 @@ pan:depthMax a owl:DatatypeProperty ;
     rdfs:comment "Upper bound of raw model depth the map was normalized from. Needed to compare maps." ;
     rdfs:domain pan:Depth ; rdfs:range xsd:decimal .
 
+# --- Face fields ---------------------------------------------------------------
+
+pan:landmarks a owl:DatatypeProperty ;
+    rdfs:label "landmarks" ;
+    rdfs:comment "'x,y;…' five points in pixel coordinates, in the model's order: left eye, right eye, nose, mouth left, mouth right." ;
+    rdfs:domain pan:Face ; rdfs:range xsd:string .
+
+pan:headPose a owl:DatatypeProperty ;
+    rdfs:label "head pose" ;
+    rdfs:comment "'pitch,yaw,roll' in degrees, as the model reported them." ;
+    rdfs:domain pan:Face ; rdfs:range xsd:string .
+
 # -----------------------------------------------------------------------------
 # CARDINALITY
 # -----------------------------------------------------------------------------
 # Every class requires exactly one identity. It is restricted as pan:id, the
 # universal via owl:equivalentProperty; the graph stores the pan: spelling,
-# same as the file (goodlux, 2026-09-17). The git-lex spelling was the 0.3.6
-# SHACL-generator workaround, and the generator is being fixed to follow
-# owl:equivalentProperty.
+# same as the file (goodlux, 2026-09-17).
 
 pan:Node rdfs:subClassOf
     [ a owl:Restriction ; owl:onProperty pan:id ; owl:cardinality 1 ] .
@@ -1273,13 +1529,18 @@ pan:Media rdfs:subClassOf
     # When Pan created this record and its id (RFC3339, system local time):
     # pan:createdDate, the universal via owl:equivalentProperty.
     [ a owl:Restriction ; owl:onProperty pan:createdDate ; owl:cardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:mediaCreatedDate ; owl:maxCardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:enrichmentCompleteDate ; owl:maxCardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:updatedDate ; owl:maxCardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:title ; owl:maxCardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:width      ; owl:maxCardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:height     ; owl:maxCardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:thumbnail  ; owl:maxCardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:modelPromptPath ; owl:maxCardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:imageSha256Hash ; owl:maxCardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:renderRequestInformation ; owl:maxCardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:renderPrompt ; owl:maxCardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:renderRequestDate ; owl:maxCardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:imageTechnicalScore ; owl:maxCardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:imageTechnicalCritique ; owl:maxCardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:imageAestheticScore ; owl:maxCardinality 1 ] ,
@@ -1290,11 +1551,18 @@ pan:Media rdfs:subClassOf
     [ a owl:Restriction ; owl:onProperty pan:isPicked   ; owl:maxCardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:isRejected ; owl:maxCardinality 1 ] .
 
-# A MediaSet: one id, one creation time, at most one description. Spelled pan:
-# as everywhere else in Pan. pan:ImageSet inherits this block.
+# A MediaSet: one id, one creation time, at most one update time, one title
+# and one description. Spelled pan: as everywhere else in Pan. pan:ImageSet inherits
+# this block.
+pan:Video rdfs:subClassOf
+    [ a owl:Restriction ; owl:onProperty pan:duration  ; owl:maxCardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:frameRate ; owl:maxCardinality 1 ] .
+
 pan:MediaSet rdfs:subClassOf
     [ a owl:Restriction ; owl:onProperty pan:id ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:createdDate ; owl:cardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:updatedDate ; owl:maxCardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:title ; owl:maxCardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:description ; owl:maxCardinality 1 ] .
 
 # An Instance: one id, one root, one mode, one port; the rest at most once.
@@ -1321,9 +1589,6 @@ pan:RegionData rdfs:subClassOf
     [ a owl:Restriction ; owl:onProperty pan:requestNouns ; owl:maxCardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:requestMinConfidence ; owl:maxCardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:requestPolygonVerts ; owl:maxCardinality 1 ] .
-
-# One render request per image, with its prompt and the whole chunk it came
-# from; every setting at most once, except the modules.
 
 pan:Region rdfs:subClassOf
     [ a owl:Restriction ; owl:onProperty pan:id ; owl:cardinality 1 ] ,
@@ -1372,3 +1637,14 @@ pan:Depth rdfs:subClassOf
     [ a owl:Restriction ; owl:onProperty pan:depthMax     ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:width        ; owl:maxCardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:height       ; owl:maxCardinality 1 ] .
+
+pan:Face rdfs:subClassOf
+    [ a owl:Restriction ; owl:onProperty pan:id ; owl:cardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:model        ; owl:cardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:producedDate ; owl:cardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:bbox         ; owl:cardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:score        ; owl:cardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:landmarks    ; owl:cardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:headPose     ; owl:maxCardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:vectorPath   ; owl:cardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:dim          ; owl:cardinality 1 ] .

@@ -2,6 +2,7 @@
 @prefix subtexture: <https://repolex.ai/ontology/subtexture/> .
 @prefix soul:  <https://repolex.ai/ontology/soul/> .
 @prefix copia: <https://repolex.ai/ontology/copia/> .
+@prefix pan:   <https://repolex.ai/ontology/pan/> .
 @prefix owl:   <http://www.w3.org/2002/07/owl#> .
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
@@ -11,6 +12,45 @@
 # =============================================================================
 # COPIA KIT ONTOLOGY
 # =============================================================================
+# v0.44.0 (2026-11-09) — FamiliarLookNote keeps only what it judges.
+# Ruled by goodlux, 2026-11-09: simplified across the whole stack. GONE:
+# familiarLookNoteId (was required) — the identity is the universal git-lex:id,
+# required on every Thing since kit-base 0.15 (2026-08-28), and a per-class id
+# beside it broke the standard; lookMomentId (was required) — Pan's Image record
+# already names the Moment it was rendered from; lookBeingId — the Being a note
+# is about belongs in relatedToId, <copia/Being/<id>>, like the image, the
+# place, the outfit and the take. lookBeingMatchScore and lookFeelsLikeBeing are
+# judged against the Being named in relatedToId. Raised and overruled: a list
+# naming two Beings cannot say which one the score judges; accepted.
+# The lUX familiar, sole holder of the class, backfilled .id into the 1,530
+# notes that lacked it and removed both required fields from all 7,742 BEFORE
+# this cut, so no note was ever un-anchored. Five notes carry an .id that
+# differs from their filename; .id is the identity, the filename is an address.
+#
+# v0.43.0 (2026-11-09) — FamiliarLookNote names its image in relatedToId.
+# Ruled by goodlux, 2026-11-09, with the lUX familiar (the only holder of
+# FamiliarLookNotes: 7,742, all already in the new shape before this cut).
+# GONE: copia:lookImageId (was required) and copia:lookFilePath. Both were
+# Pool-era addresses — a content hash and a Pool-relative path — for a store
+# that no longer receives images. The image a note is about is now one of its
+# relatedToId targets, written <pan/Image/<id>>, the same way every other
+# Thing a note touches (Being, Place, Outfit, ScenarioTake) is named.
+# ADDED: a qualified restriction on git-lex:relatedToId — at least one target
+# of class pan:Image. The save gate refuses a FamiliarLookNote that names no
+# image, so a note can never again lose the picture it is about. Mechanism:
+# owl:onClass + owl:minQualifiedCardinality, which git-lex turns into a
+# sh:qualifiedValueShape matching "/Image/" in the target IRI (same form
+# Scenario and Brief already use for their Being/Place/Outfit edges).
+# DELIBERATELY NOT DONE at 0.43: lookMomentId, familiarLookNoteId and
+# lookBeingId were left for a separate ruling (0.44 resolves the last two).
+#
+# v0.42.0 (2026-11-02) — copia:renderRequestDate added.
+# Ruled by goodlux, 2026-11-02. When the render request landed in Horae's
+# queue: the moment a chevron or prompt asked for the picture, as distinct from
+# when the file was first saved (pan:mediaCreatedDate) or when Pan recorded it
+# (pan:createdDate). The name is a working one and is expected to change once
+# it is settled where Moments live.
+#
 # v0.41.0 (2026-09-17) — copia:Sequence removed.
 # Ruled by Rob. copia:Sequence, its property (copia:sequenceId), Moment
 # properties copia:inSequenceId and copia:sequence, and cardinality restriction
@@ -628,7 +668,7 @@
 <https://repolex.ai/ontology/copia> a owl:Ontology ;
     rdfs:label "Copia Kit Ontology" ;
     rdfs:comment "The agent's curated outward face + the CoPIA render data model. Soul-adapter. Optional add-on for soul." ;
-    owl:versionInfo "0.41.0" ;
+    owl:versionInfo "0.44.0" ;
     owl:imports <https://repolex.ai/ontology/soul/> .
 
 
@@ -972,6 +1012,7 @@ copia:Moment a owl:Class ;
     rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:seed ;           owl:maxCardinality 1 ] ;
     rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:promptModel ;    owl:maxCardinality 1 ] ;
     rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:renderTimestamp ;owl:maxCardinality 1 ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:renderRequestDate ; owl:maxCardinality 1 ] ;
     rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:sessionId ;      owl:maxCardinality 1 ] ;
     rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:sourceLines ;    owl:maxCardinality 1 ] ;
     rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:gitBranch ;      owl:maxCardinality 1 ] ;
@@ -1116,6 +1157,12 @@ copia:promptModel a owl:DatatypeProperty ;
 copia:renderTimestamp a owl:DatatypeProperty ;
     rdfs:label "render timestamp" ;
     rdfs:comment "When the Moment was rendered." ;
+    rdfs:domain copia:Moment ;
+    rdfs:range xsd:dateTime .
+
+copia:renderRequestDate a owl:DatatypeProperty ;
+    rdfs:label "render request date" ;
+    rdfs:comment "When the render request landed in Horae's queue: the moment the picture was asked for. RFC3339 with its zone. Not when the file was saved (pan:mediaCreatedDate) or recorded (pan:createdDate)." ;
     rdfs:domain copia:Moment ;
     rdfs:range xsd:dateTime .
 
@@ -1658,7 +1705,9 @@ copia:action a owl:ObjectProperty ;
 # ========== FAMILIAR LOOK NOTE — one image, one living note (v0.23) ==========
 # ONE note per image the familiar has ever deliberately viewed (hosted eye,
 # in-session, consented). First look creates the file; every later look updates
-# it. Canon: /Copia/FamiliarLookNote/<familiarLookNoteId>.md (git-lex:foldered).
+# it. Canon: /Copia/FamiliarLookNote/<id>.md (git-lex:foldered); identity is the
+# universal git-lex:id, and the image, Being, place, outfit and take are all
+# relatedToId targets (v0.43–0.44).
 # Frontmatter = CURRENT state (three loud binaries, no numeric ratings — 1ux
 # ruling); body = dated felt notes, accumulating; git history = the complete
 # event trail of every viewing, for free.
@@ -1668,62 +1717,23 @@ copia:FamiliarLookNote a owl:Class ;
     git-lex:foldered true ;
     rdfs:label "FamiliarLookNote" ;
     rdfs:comment "The familiar's living note on one image she has deliberately viewed. Created at first look, updated at every later look. Frontmatter carries the current verdicts; the body holds the dated felt notes; git holds the history." ;
-    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:familiarLookNoteId ; owl:cardinality 1 ] ;
-    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:lookMomentId ;       owl:cardinality 1 ] ;
-    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:lookImageId ;        owl:cardinality 1 ] ;
-    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:lookBeingId ;        owl:maxCardinality 1 ] ;
     rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:lookTechnicallySound ; owl:maxCardinality 1 ] ;
     rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:lookFeelsLikeBeing ;   owl:maxCardinality 1 ] ;
     rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:lookStandout ;         owl:maxCardinality 1 ] ;
     rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:lookDescription ;      owl:maxCardinality 1 ] ;
     rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:lookSubstrate ;        owl:maxCardinality 1 ] ;
     rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:lookTimestamp ;        owl:maxCardinality 1 ] ;
-    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:lookFilePath ;         owl:maxCardinality 1 ] ;
     rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:lookTechnicalScore ;   owl:maxCardinality 1 ] ;
     rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:lookEmotiveScore ;     owl:maxCardinality 1 ] ;
     rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:lookBeingMatchScore ;  owl:maxCardinality 1 ] ;
-    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:lookAnatomyReject ;    owl:maxCardinality 1 ] .
-
-copia:familiarLookNoteId a owl:DatatypeProperty ;
-    rdfs:label "familiarLookNoteId" ;
-    rdfs:comment "Unique identifier for this note." ;
-    rdfs:domain copia:FamiliarLookNote ;
-    rdfs:range xsd:string .
-
-# WHY THIS AND lookImageId ARE TWO FIELDS. Their values coincide today — both
-# are the sha256 content id — and they stay separate on purpose. A Moment is the
-# intent-object; an image is the pixel artifact. One Moment may own several
-# images later, and the two are being decoupled deliberately, so collapsing them
-# now because they happen to match would have to be undone.
-# Declared a reference at the re-anchor release: the value is the target's
-# momentId, resolved to the Moment's IRI at emission.
-# OPEN: this and lookImageId both need updating when Pool CID -> panId.
-copia:lookMomentId a owl:ObjectProperty ;
-    rdfs:label "look moment id" ;
-    rdfs:comment "The Moment this note is about — value is the target's momentId. Separate from lookImageId on purpose: Moment is the intent, image is the pixels." ;
-    rdfs:domain copia:FamiliarLookNote ;
-    rdfs:range copia:Moment .
-
-copia:lookImageId a owl:DatatypeProperty ;
-    rdfs:label "look image id" ;
-    rdfs:comment "Identifier of the pixel artifact viewed — today the sha256 content id." ;
-# Same value as lookMomentId today, deliberately a separate field. See the note
-# above lookMomentId for why, and for the pending Pool CID -> panId change that
-# affects both.
-    rdfs:domain copia:FamiliarLookNote ;
-    rdfs:range xsd:string .
-
-# The resonance judgment is made AGAINST this Being, and that is why the field
-# is required rather than assumed: today the target is always the familiar's own
-# self, but it may be any character later, and an implicit subject would make the
-# score unreadable the moment that happens.
-# Declared a reference at the re-anchor release; value resolved to the Being's
-# IRI at emission.
-copia:lookBeingId a owl:ObjectProperty ;
-    rdfs:label "look being id" ;
-    rdfs:comment "The canon Being this image is supposed to show — value is the target's beingId. lookBeingMatchScore is judged against it." ;
-    rdfs:domain copia:FamiliarLookNote ;
-    rdfs:range copia:Being .
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty copia:lookAnatomyReject ;    owl:maxCardinality 1 ] ;
+# THE IMAGE IS A relatedToId TARGET (v0.43). At least one <pan/Image/<id>>
+# in the note's relatedToId list, or the save is refused. This replaced the
+# lookImageId / lookFilePath pair: an address field that could silently go
+# stale when the store moved. git-lex checks the class out of the IRI path
+# ("/Image/"), not the target's existence — a dangling id still passes.
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty git-lex:relatedToId ;
+                      owl:onClass pan:Image ; owl:minQualifiedCardinality 1 ] .
 
 copia:lookTechnicallySound a owl:DatatypeProperty ;
     rdfs:label "look: technically sound" ;
@@ -1733,7 +1743,7 @@ copia:lookTechnicallySound a owl:DatatypeProperty ;
 
 copia:lookFeelsLikeBeing a owl:DatatypeProperty ;
     rdfs:label "look: feels like the being" ;
-    rdfs:comment "Current resonance call: does the figure in this image FEEL like the being it is supposed to show (lookBeingId) — recognition, not category. Only decidable while seeing." ;
+    rdfs:comment "Current resonance call: does the figure in this image FEEL like the Being named in relatedToId — recognition, not category. Only decidable while seeing." ;
     rdfs:domain copia:FamiliarLookNote ;
     rdfs:range xsd:boolean .
 
@@ -1764,7 +1774,8 @@ copia:lookTimestamp a owl:DatatypeProperty ;
     rdfs:domain copia:FamiliarLookNote ;
     rdfs:range xsd:dateTime .
 
-# --- v0.29 (Rob-ruled 2026-08-10): the file pointer + the three-axis score ladder ---
+# --- v0.29 (Rob-ruled 2026-08-10): the three-axis score ladder (the file pointer
+# declared here, lookFilePath, was removed in v0.43) ---
 # The ladder, verbatim, on all three scores:
 #     5 emphatic yes · 4 yes · 3 — · 2 nah · 1 NO!
 # Scores are 1-5 integers, ranged `xsd:integer`. Two alternatives were rejected
@@ -1812,14 +1823,6 @@ copia:LookScoreValue a rdfs:Datatype ;
     owl:onDatatype xsd:integer ;
     owl:withRestrictions ( [ xsd:minInclusive 1 ] [ xsd:maxInclusive 5 ] ) .
 
-copia:lookFilePath a owl:DatatypeProperty ;
-    rdfs:label "look file path" ;
-    rdfs:comment "Pool-relative path to the image this note is about: YYYY/MM/DD/<stem>.png." ;
-# Written by the tooling since Day 133 and never declared until v0.29 — the data
-# preceded the vocabulary by months, which is the recurring gap this closes.
-    rdfs:domain copia:FamiliarLookNote ;
-    rdfs:range xsd:string .
-
 copia:lookTechnicalScore a owl:DatatypeProperty ;
     rdfs:label "look: technical score" ;
     rdfs:comment "Craft floor — artifacts, focus, competence in its genre. 5 emphatic yes · 4 yes · 3 — · 2 nah · 1 NO!" ;
@@ -1834,7 +1837,7 @@ copia:lookEmotiveScore a owl:DatatypeProperty ;
 
 copia:lookBeingMatchScore a owl:DatatypeProperty ;
     rdfs:label "look: being match score" ;
-    rdfs:comment "Is it her, judged against lookBeingId. 5 emphatic yes · 4 yes · 3 — · 2 nah · 1 NO!" ;
+    rdfs:comment "Is it her, judged against the Being named in relatedToId. 5 emphatic yes · 4 yes · 3 — · 2 nah · 1 NO!" ;
     rdfs:domain copia:FamiliarLookNote ;
     rdfs:range copia:LookScoreValue .
 
