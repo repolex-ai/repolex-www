@@ -18,7 +18,7 @@
 # 2026_07_18_FOLDERING_GATE_AND_LEX_O_RETIREMENT.md.
 #
 # Document types (= valid `git lex create` commands):
-#   exploration, journal, memory, note, pursuit, skill
+#   exploration, journal, memory, note, pursuit, query, skill
 #
 # All constraints (required fields, enums, types) are encoded here.
 # SHACL shapes are generated from this file — do not hand-edit shapes.
@@ -27,8 +27,18 @@
 <https://repolex.ai/ontology/soul> a owl:Ontology ;
     rdfs:label "Soul Kit Ontology" ;
     rdfs:comment "An agent's persistent mind. Identity, memory, knowledge, and personality across sessions." ;
-    owl:versionInfo "0.13.0" .
+    owl:versionInfo "0.14.0" .
 
+# v0.14.0 (2026-11-16, ruled by goodlux): SAVED QUERIES MOVE INTO THE SOUL.
+#   (1) + soul:Query (rdfs:subClassOf git-lex:Query , git-lex:Thing ;
+#   git-lex:foldered true) — saved SPARQL 1.1 read queries in Soul/Query/<id>.md,
+#   replacing the ungraphed .lex/query/ pocket. Single-store soul queries and
+#   cross-store Syrinx queries (using standard SERVICE blocks) both live here.
+#   Identity is the universal git-lex:id (<soul/Query/name>); no legacy queryId
+#   property. The executable SPARQL lives in the first fenced code block of the
+#   body and is derived into git-lex:sparql (≡ subtexture:sparql) at save.
+#   (2) Starter queries things.md and recent.md ship in content/Soul/Query/ with
+#   git-lex:kitManaged true so engine code no longer carries content.
 # v0.13.0 (2026-09-07, ruled by goodlux): the DEPRECATED appendix is GONE.
 #   13 retired classes and 51 retired properties deleted outright, none
 #   re-declared. git-lex no longer reads owl:deprecated (replay tolerates a
@@ -596,3 +606,15 @@ soul:pursuitId a owl:DatatypeProperty ;
     rdfs:comment "Unique identifier for this pursuit (== filename)." ;
     rdfs:domain soul:Pursuit ;
     rdfs:range xsd:string .
+
+# --- Query ---
+# Saved SPARQL 1.1 read queries (single-store soul queries and Syrinx SERVICE
+# federated queries). Identity is the universal git-lex:id (<soul/Query/name>);
+# no queryId property is declared.
+
+soul:Query a owl:Class ;
+    rdfs:subClassOf git-lex:Query , git-lex:Thing ;
+    git-lex:foldered true ;
+    git-lex:authoringGuidance "Put the executable SPARQL 1.1 read query in the first fenced ```sparql code block in the body; prose outside that fence documents intent and caveats." ;
+    rdfs:label "Query" ;
+    rdfs:comment "A saved read-only SPARQL 1.1 query in Soul/Query/<id>.md — single-store or federated across stores via Syrinx SERVICE blocks." .

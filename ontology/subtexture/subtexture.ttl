@@ -13,6 +13,36 @@
 #
 # CHANGELOG
 # -----------------------------------------------------------------------------
+# v0.4.0 (2026-11-16, ruled by goodlux): QUERIES AND SMART SETS.
+#   (1) + `subtexture:Query` (`rdfs:subClassOf subtexture:Thing`) — a saved
+#       read-only SPARQL 1.1 query as a first-class Thing, inheriting `id`,
+#       `title`, `description`, `abstract`, `cue`, `relatedToId`, `createdDate`,
+#       and `updatedDate` from the base. Cross-store federated queries need no
+#       separate class or target property: an ordinary `Query` whose SPARQL text
+#       uses standard `SERVICE <https://repolex.ai/ontology/.../>` blocks is run
+#       by Syrinx and refused plainly by single-store daemons.
+#   (2) + `subtexture:sparql` (`owl:DatatypeProperty`, domain `subtexture:Query`,
+#       range `xsd:string`, `owl:maxCardinality 1` on `subtexture:Query`) — the
+#       executable SPARQL 1.1 query text verbatim, with zero parameters in v1.
+#       `maxCardinality 1` at the base allows document layers (`git-lex:Query`)
+#       to derive the triple from the markdown body fence without forcing a
+#       duplicate frontmatter key, while graph-only stores (`pan:Query`) tighten
+#       to `owl:cardinality 1` on their own class.
+#   (3) Smart sets via `relatedToId` (ruled by goodlux):
+#       - A `Set` that links a `Query` via `relatedToId` IS a smart set — no
+#         separate boolean flag that could drift out of step.
+#       - At most ONE `Query` per `Set` (`owl:maxQualifiedCardinality 1` on
+#         `subtexture:Set` over `subtexture:relatedToId` to `subtexture:Query`);
+#         a need one query cannot meet points to missing infrastructure rather
+#         than multiple queries on one set.
+#       - No mixing query-computed results and hand-added members in one `Set`;
+#         combine a smart set and a hand set via a collection `Set` (a `Set` of
+#         two or more `Set`s) instead.
+#   DELIBERATELY NOT DONE: query parameters in v1 (future parameterized queries
+#   should follow SHACL-AF pre-bound variable semantics rather than text
+#   substitution); target-store flags on `Query` (`SERVICE` blocks in the SPARQL
+#   text already state which engines a federated query touches).
+#
 # v0.3.0 (2026-11-16, ruled by goodlux): PURE BASE INVERSION & ALL EIGHT UNIVERSALS.
 #   (1) Pure base layering: removed `@prefix git-lex:`, removed the upward
 #       `git-lex:Thing` / `git-lex:NamedGraph` subclass axioms and `git-lex:*`
@@ -65,8 +95,8 @@
 
 <https://repolex.ai/ontology/subtexture> a owl:Ontology ;
     rdfs:label "Subtexture Base Ontology" ;
-    rdfs:comment "The foundational base ontology for the Subtexture ecosystem: Thing, Set, NamedGraph, and the eight universal Thing properties." ;
-    owl:versionInfo "0.3.0" .
+    rdfs:comment "The foundational base ontology for the Subtexture ecosystem: Thing, Set, Query, NamedGraph, and the universal Thing properties." ;
+    owl:versionInfo "0.4.0" .
 
 
 # =============================================================================
@@ -140,18 +170,44 @@ subtexture:updatedDate a owl:DatatypeProperty ;
 # =============================================================================
 # 2. COLLECTIONS
 # =============================================================================
-# Membership is written on the member via `relatedToId`, never as a set-side
-# `member` list, so membership travels with the member record.
+# Hand-curated membership is written on the member via `relatedToId`, never as
+# a set-side `member` list, so membership travels with the member record.
+#
+# Smart sets (ruled by goodlux): a Set that links a Query via `relatedToId` IS
+# a smart set, with at most ONE Query per Set (`owl:maxQualifiedCardinality 1`
+# below). Never mix query results and hand-added members in one Set; combine a
+# smart set and a hand set via a collection Set (a Set of Sets) instead.
 # =============================================================================
 
 subtexture:Set a owl:Class ;
     rdfs:subClassOf subtexture:Thing ;
     rdfs:label "Set" ;
-    rdfs:comment "An unordered collection of Things; link members from the member via relatedToId, never order it." .
+    rdfs:comment "An unordered collection of Things; link hand members from the member via relatedToId, or link at most one Query on the Set for a smart set." .
 
 
 # =============================================================================
-# 3. GRAPHS
+# 3. QUERIES
+# =============================================================================
+# A saved SPARQL 1.1 read query as a first-class Thing. Cross-store federated
+# queries use standard SPARQL `SERVICE <https://repolex.ai/ontology/.../>`
+# blocks inside `subtexture:sparql` (evaluated by Syrinx; refused plainly by
+# single-store daemons), requiring no separate subclass or target-store field.
+# =============================================================================
+
+subtexture:Query a owl:Class ;
+    rdfs:subClassOf subtexture:Thing ;
+    rdfs:label "Query" ;
+    rdfs:comment "A saved read-only SPARQL 1.1 query; single-store or federated via SERVICE blocks, zero parameters in v1." .
+
+subtexture:sparql a owl:DatatypeProperty ;
+    rdfs:label "sparql" ;
+    rdfs:comment "Executable SPARQL 1.1 query string verbatim, zero parameters; single-valued — do not repeat the key." ;
+    rdfs:domain subtexture:Query ;
+    rdfs:range xsd:string .
+
+
+# =============================================================================
+# 4. GRAPHS
 # =============================================================================
 
 subtexture:NamedGraph a owl:Class ;
@@ -161,14 +217,16 @@ subtexture:NamedGraph a owl:Class ;
 
 
 # =============================================================================
-# 4. CARDINALITY
+# 5. CARDINALITY
 # =============================================================================
 # Single-valued universals carry `owl:maxCardinality 1` at the base (`cue` and
 # `relatedToId` are multi-valued, 0..*). `id` is `maxCardinality 1` here rather
 # than `cardinality 1` so derived Things whose subject IRI IS their identity
 # (`ravel:Turn`, `ravel:Memory`) need no redundant self-loop triple; layers
 # that write an explicit `id` triple (`git-lex:Thing`, `pan:Node`) tighten it
-# to `owl:cardinality 1` on their own class.
+# to `owl:cardinality 1` on their own class. Likewise `sparql` is
+# `maxCardinality 1` at the base so document carriers (`git-lex:Query`) can
+# derive it from the markdown body fence without requiring a frontmatter key.
 # =============================================================================
 
 subtexture:Thing rdfs:subClassOf
@@ -178,3 +236,9 @@ subtexture:Thing rdfs:subClassOf
     [ a owl:Restriction ; owl:onProperty subtexture:abstract    ; owl:maxCardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty subtexture:createdDate ; owl:maxCardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty subtexture:updatedDate ; owl:maxCardinality 1 ] .
+
+subtexture:Set rdfs:subClassOf
+    [ a owl:Restriction ; owl:onProperty subtexture:relatedToId ; owl:onClass subtexture:Query ; owl:maxQualifiedCardinality 1 ] .
+
+subtexture:Query rdfs:subClassOf
+    [ a owl:Restriction ; owl:onProperty subtexture:sparql ; owl:maxCardinality 1 ] .

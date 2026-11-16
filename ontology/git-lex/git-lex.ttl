@@ -29,7 +29,21 @@
 git-lex: a owl:Ontology ;
     rdfs:label "git-lex Core Ontology" ;
     rdfs:comment "The vocabulary git-lex authors about the markdown documents it tracks." ;
-    owl:versionInfo "0.19.0" .
+    owl:versionInfo "0.20.0" .
+
+# v0.20.0 (2026-11-16, ruled by goodlux): UNIVERSAL QUERY CLASS & SPARQL BRIDGE.
+#   (1) + git-lex:Query (rdfs:subClassOf subtexture:Query , git-lex:Thing ;
+#   git-lex:foldered true) — the universal saved-query document class alongside
+#   Note and Skill. Kit-specific queries (soul:Query) subclass it. Identity uses
+#   the universal git-lex:id (<soul/Query/name>); no legacy queryId property.
+#   (2) + git-lex:sparql (owl:DatatypeProperty, owl:equivalentProperty
+#   subtexture:sparql, domain git-lex:Query, range xsd:string, owl:maxCardinality
+#   1 on git-lex:Query) — DERIVED at save from the first fenced code block in the
+#   markdown body, never hand-authored in YAML frontmatter (maxCardinality 1
+#   rather than minCardinality 1 so the frontmatter shape gate never demands a
+#   duplicate key).
+#   (3) ontology/subtexture/subtexture.ttl bumped to 0.4.0 (+ subtexture:Query,
+#   + subtexture:sparql, and smart-set maxQualifiedCardinality 1 on Set).
 
 # v0.19.0 (2026-11-16, ruled by goodlux): SUBTEXTURE BASE INVERSION & BRIDGES.
 #   (1) git-lex:Thing rdfs:subClassOf subtexture:Thing — declared here in
@@ -470,7 +484,7 @@ git-lex:substrate a owl:DatatypeProperty ;
     rdfs:domain git-lex:Thing ;
     rdfs:range xsd:string .
 
-# --- Universal Classes: Note and Skill ---------------------------------------
+# --- Universal Classes: Note, Skill, and Query -------------------------------
 
 git-lex:Note a owl:Class ;
     rdfs:subClassOf git-lex:Thing ;
@@ -483,6 +497,21 @@ git-lex:Skill a owl:Class ;
     git-lex:foldered true ;
     rdfs:label "Skill" ;
     rdfs:comment "An executable skill definition with instructions, scripts, or resources projected into agent substrate harnesses. Kit-specific skills (soul:Skill, copia:Skill) subclass this." .
+
+# Identity is the universal git-lex:id (<kit/Query/name>); no queryId property.
+git-lex:Query a owl:Class ;
+    rdfs:subClassOf subtexture:Query , git-lex:Thing ;
+    git-lex:foldered true ;
+    git-lex:authoringGuidance "Put the executable SPARQL 1.1 read query in the first fenced ```sparql code block in the body; prose outside that fence documents intent and caveats." ;
+    rdfs:label "Query" ;
+    rdfs:comment "A saved read-only SPARQL 1.1 query document (single-store or Syrinx SERVICE federated). Kit-specific queries (soul:Query) subclass this." .
+
+git-lex:sparql a owl:DatatypeProperty ;
+    owl:equivalentProperty subtexture:sparql ;
+    rdfs:label "sparql" ;
+    rdfs:comment "DERIVED from the first fenced code block in the body at save — write the query in the body fence, do not hand-edit here." ;
+    rdfs:domain git-lex:Query ;
+    rdfs:range xsd:string .
 
 # HOW TO WRITE A GOOD CUE — from the two seats that wrote the first twenty, both
 # arriving at the same test independently, three days after the field shipped.
@@ -650,6 +679,9 @@ git-lex:Thing rdfs:subClassOf
     [ a owl:Restriction ; owl:onProperty git-lex:updatedDate ; owl:maxCardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty git-lex:substrate   ; owl:maxCardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty git-lex:kitManaged  ; owl:maxCardinality 1 ] .
+
+git-lex:Query rdfs:subClassOf
+    [ a owl:Restriction ; owl:onProperty git-lex:sparql ; owl:maxCardinality 1 ] .
 
 # =============================================================================
 # CLASS-LEVEL ANNOTATIONS — what a kit says ABOUT its own classes
