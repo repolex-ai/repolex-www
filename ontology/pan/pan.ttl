@@ -43,11 +43,26 @@
 <https://repolex.ai/ontology/pan> a owl:Ontology ;
     rdfs:label "Pan media store ontology" ;
     rdfs:comment "Identity, location, timing and model-derived enrichment facts Pan records for stored media." ;
-    owl:versionInfo "0.4.28" .
+    owl:versionInfo "0.4.29" .
 
 # -----------------------------------------------------------------------------
 # CHANGELOG
 # -----------------------------------------------------------------------------
+# v0.4.29 (2026-11-17, ruled by goodlux): A QUERY, AND THE SET IT MAKES SMART.
+#   The base ontology (subtexture.ttl 0.4.0, shipped beside this file) gained
+#   a saved query and the rule that a set linking one query is a smart set.
+#   Pan declares its side. DECLARED AHEAD OF CODE, by goodlux's word: pand
+#   does not yet store or run a query, and no set links one.
+#   (1) + pan:Query a owl:Class ; rdfs:subClassOf subtexture:Query , pan:Node.
+#       One saved read-only SPARQL query. IRI <pan/Query/id>.
+#   (2) + pan:sparql on pan:Query, Pan's spelling of subtexture:sparql;
+#       exactly one.
+#   (3) pan:relatedToId: domain widened from pan:Media to pan:Node, so a set
+#       can carry the one link the base allows it, to its query. A MediaSet
+#       links at most one pan:Query.
+#   NOT done: no parameters on a query (the base has none in its first cut).
+#   No class for a set of sets. Nothing about how pand runs a query or
+#   answers a smart set's members; that is the build, pan issue #74.
 # v0.4.28 (2026-11-16, ruled by goodlux): A TITLE.
 #   + pan:title on pan:Node, Pan's spelling of subtexture:title: one short
 #   line of text naming the Thing. At most one, never required. A person or
@@ -1183,6 +1198,27 @@ pan:AudioSet a owl:Class ;
     rdfs:comment "Stub: an unordered set of Pan media holding only audio; not yet implemented — no pan:Audio media class exists yet and nothing writes one." .
 
 # -----------------------------------------------------------------------------
+# QUERIES (goodlux, 2026-11-17)
+# -----------------------------------------------------------------------------
+# A saved query as a Thing of its own, so it has an id, a title and a
+# description like everything else. A set that links one with pan:relatedToId
+# is a smart set: its members are what the query returns, and none are added
+# by hand. Declared ahead of code; nothing writes one yet.
+# -----------------------------------------------------------------------------
+
+pan:Query a owl:Class ;
+    rdfs:subClassOf subtexture:Query , pan:Node ;
+    rdfs:label "Query" ;
+    rdfs:comment "One saved read-only SPARQL query over this store. A set that links it is a smart set. Not yet written by pand." .
+
+pan:sparql a owl:DatatypeProperty ;
+    owl:equivalentProperty subtexture:sparql ;
+    rdfs:label "sparql" ;
+    rdfs:comment "The query text, a SPARQL 1.1 read query, as written; Pan's spelling of subtexture:sparql. One value; no parameters." ;
+    rdfs:domain pan:Query ;
+    rdfs:range xsd:string .
+
+# -----------------------------------------------------------------------------
 # THE INSTANCE (goodlux, 2026-09-16)
 # -----------------------------------------------------------------------------
 # One pand deployment as a node. A machine runs one daemon; the daemon serves
@@ -1345,8 +1381,8 @@ pan:thumbnail a owl:ObjectProperty ;
 pan:relatedToId a owl:ObjectProperty ;
     owl:equivalentProperty subtexture:relatedToId ;
     rdfs:label "relatedToId" ;
-    rdfs:comment "The Thing this media relates to (its Moment), written <ns/Class/id>; Pan's spelling of subtexture:relatedToId. Never the bare token." ;
-    rdfs:domain pan:Media ; rdfs:range subtexture:Thing .
+    rdfs:comment "A Thing this one relates to, written <ns/Class/id>: on media, its Moment, its set, the image it was made from; on a set, its one query. Pan's spelling of subtexture:relatedToId. Never the bare token." ;
+    rdfs:domain pan:Node ; rdfs:range subtexture:Thing .
 
 # --- shared fields -------------------------------------------------------------
 # These apply to several pan classes (Enrichment, Region, Pose, Caption, …);
@@ -1561,6 +1597,16 @@ pan:Video rdfs:subClassOf
 pan:MediaSet rdfs:subClassOf
     [ a owl:Restriction ; owl:onProperty pan:id ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:createdDate ; owl:cardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:updatedDate ; owl:maxCardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:title ; owl:maxCardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:description ; owl:maxCardinality 1 ] ,
+    # A set that links a query is a smart set, and it links one at most.
+    [ a owl:Restriction ; owl:onProperty pan:relatedToId ; owl:onClass pan:Query ; owl:maxQualifiedCardinality 1 ] .
+
+pan:Query rdfs:subClassOf
+    [ a owl:Restriction ; owl:onProperty pan:id ; owl:cardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:sparql ; owl:cardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:createdDate ; owl:maxCardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:updatedDate ; owl:maxCardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:title ; owl:maxCardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:description ; owl:maxCardinality 1 ] .
