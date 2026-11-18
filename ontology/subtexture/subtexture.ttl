@@ -13,6 +13,20 @@
 #
 # CHANGELOG
 # -----------------------------------------------------------------------------
+# v0.5.0 (2026-11-17, ruled by goodlux): PARAMETERIZED QUERIES.
+#   (1) + `subtexture:parameter` (`owl:DatatypeProperty`, domain
+#       `subtexture:Query`, range `xsd:string`, multi-valued `0..*`) — declares
+#       one query parameter per value using `name[:kind][=default]`, where
+#       `name` is the SPARQL variable name without `?`, `kind` is one of
+#       `string`, `integer`, `decimal`, `boolean`, `date`, `dateTime`, or `iri`
+#       (no `kind` means `string` always — never guessed from how a value
+#       looks; `iri` accepts `<ns/Class/id>` or bare `ns/Class/id`), and
+#       `=default` makes the parameter optional with that default value. Values
+#       are bound as typed RDF terms, never substituted as raw text.
+#   (2) Removed the v0.4.0 "zero parameters" constraint from `subtexture:Query`
+#       and `subtexture:sparql` comments; `subtexture:sparql` holds the query
+#       with parameters unbound.
+#
 # v0.4.0 (2026-11-16, ruled by goodlux): QUERIES AND SMART SETS.
 #   (1) + `subtexture:Query` (`rdfs:subClassOf subtexture:Thing`) — a saved
 #       read-only SPARQL 1.1 query as a first-class Thing, inheriting `id`,
@@ -96,7 +110,7 @@
 <https://repolex.ai/ontology/subtexture> a owl:Ontology ;
     rdfs:label "Subtexture Base Ontology" ;
     rdfs:comment "The foundational base ontology for the Subtexture ecosystem: Thing, Set, Query, NamedGraph, and the universal Thing properties." ;
-    owl:versionInfo "0.4.0" .
+    owl:versionInfo "0.5.0" .
 
 
 # =============================================================================
@@ -192,16 +206,24 @@ subtexture:Set a owl:Class ;
 # queries use standard SPARQL `SERVICE <https://repolex.ai/ontology/.../>`
 # blocks inside `subtexture:sparql` (evaluated by Syrinx; refused plainly by
 # single-store daemons), requiring no separate subclass or target-store field.
+# Parameters are declared via `subtexture:parameter` as `name[:kind][=default]`
+# and bound as typed RDF terms (never pasted as text).
 # =============================================================================
 
 subtexture:Query a owl:Class ;
     rdfs:subClassOf subtexture:Thing ;
     rdfs:label "Query" ;
-    rdfs:comment "A saved read-only SPARQL 1.1 query; single-store or federated via SERVICE blocks, zero parameters in v1." .
+    rdfs:comment "A saved read-only SPARQL 1.1 query; single-store or federated via SERVICE blocks, optionally parameterized via parameter." .
 
 subtexture:sparql a owl:DatatypeProperty ;
     rdfs:label "sparql" ;
-    rdfs:comment "Executable SPARQL 1.1 query string verbatim, zero parameters; single-valued — do not repeat the key." ;
+    rdfs:comment "Executable SPARQL 1.1 query string with parameters unbound; single-valued — overwrite it, do not repeat the key." ;
+    rdfs:domain subtexture:Query ;
+    rdfs:range xsd:string .
+
+subtexture:parameter a owl:DatatypeProperty ;
+    rdfs:label "parameter" ;
+    rdfs:comment "One query parameter as name[:kind][=default] (kinds: string, integer, decimal, boolean, date, dateTime, iri); multi-valued." ;
     rdfs:domain subtexture:Query ;
     rdfs:range xsd:string .
 

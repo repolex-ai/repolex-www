@@ -27,8 +27,14 @@
 <https://repolex.ai/ontology/soul> a owl:Ontology ;
     rdfs:label "Soul Kit Ontology" ;
     rdfs:comment "An agent's persistent mind. Identity, memory, knowledge, and personality across sessions." ;
-    owl:versionInfo "0.14.0" .
+    owl:versionInfo "0.14.1" .
 
+# v0.14.1 (2026-11-17, ruled by goodlux): QUERY PARAMETERS & STARTER DEDUP.
+#   (1) Updated soul:Query authoringGuidance for git-lex:parameter
+#   (name[:kind][=default], inherited from git-lex:Query in git-lex 0.21.0).
+#   (2) Scoped content/Soul/Query/recent.md to GRAPH NamedGraph/now and
+#   content/Soul/Query/things.md to COUNT(DISTINCT ?s) so gitlexd's
+#   LexHistoryGraph + NamedGraph/now pair no longer duplicates rows.
 # v0.14.0 (2026-11-16, ruled by goodlux): SAVED QUERIES MOVE INTO THE SOUL.
 #   (1) + soul:Query (rdfs:subClassOf git-lex:Query , git-lex:Thing ;
 #   git-lex:foldered true) — saved SPARQL 1.1 read queries in Soul/Query/<id>.md,
@@ -615,6 +621,6 @@ soul:pursuitId a owl:DatatypeProperty ;
 soul:Query a owl:Class ;
     rdfs:subClassOf git-lex:Query , git-lex:Thing ;
     git-lex:foldered true ;
-    git-lex:authoringGuidance "Put the executable SPARQL 1.1 read query in the first fenced ```sparql code block in the body; prose outside that fence documents intent and caveats." ;
+    git-lex:authoringGuidance "Put the executable SPARQL 1.1 read query in the first fenced ```sparql code block in the body; declare each parameter in parameter as name[:kind][=default] and use it in the query as ?name." ;
     rdfs:label "Query" ;
     rdfs:comment "A saved read-only SPARQL 1.1 query in Soul/Query/<id>.md — single-store or federated across stores via Syrinx SERVICE blocks." .

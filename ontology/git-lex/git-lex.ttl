@@ -29,7 +29,17 @@
 git-lex: a owl:Ontology ;
     rdfs:label "git-lex Core Ontology" ;
     rdfs:comment "The vocabulary git-lex authors about the markdown documents it tracks." ;
-    owl:versionInfo "0.20.0" .
+    owl:versionInfo "0.21.0" .
+
+# v0.21.0 (2026-11-17, ruled by goodlux): QUERY PARAMETERS.
+#   (1) + git-lex:parameter (owl:DatatypeProperty, owl:equivalentProperty
+#   subtexture:parameter, domain git-lex:Query, range xsd:string, multi-valued
+#   0..*) — declares one query parameter per value as name[:kind][=default]
+#   (kinds: string, integer, decimal, boolean, date, dateTime, iri; no kind =
+#   string always, never guessed; iri accepts <ns/Class/id> or bare
+#   ns/Class/id). Gated on git-lex 7c8f328 (shipped first).
+#   (2) Updated git-lex:Query authoringGuidance to cover parameter declaration.
+#   (3) ontology/subtexture/subtexture.ttl bumped to 0.5.0.
 
 # v0.20.0 (2026-11-16, ruled by goodlux): UNIVERSAL QUERY CLASS & SPARQL BRIDGE.
 #   (1) + git-lex:Query (rdfs:subClassOf subtexture:Query , git-lex:Thing ;
@@ -502,14 +512,21 @@ git-lex:Skill a owl:Class ;
 git-lex:Query a owl:Class ;
     rdfs:subClassOf subtexture:Query , git-lex:Thing ;
     git-lex:foldered true ;
-    git-lex:authoringGuidance "Put the executable SPARQL 1.1 read query in the first fenced ```sparql code block in the body; prose outside that fence documents intent and caveats." ;
+    git-lex:authoringGuidance "Put the executable SPARQL 1.1 read query in the first fenced ```sparql code block in the body; declare each parameter in parameter as name[:kind][=default] and use it in the query as ?name." ;
     rdfs:label "Query" ;
-    rdfs:comment "A saved read-only SPARQL 1.1 query document (single-store or Syrinx SERVICE federated). Kit-specific queries (soul:Query) subclass this." .
+    rdfs:comment "A saved read-only SPARQL 1.1 query document (single-store or Syrinx SERVICE federated). Kit-specific queries (soul:Query, copia:Query) subclass this." .
 
 git-lex:sparql a owl:DatatypeProperty ;
     owl:equivalentProperty subtexture:sparql ;
     rdfs:label "sparql" ;
     rdfs:comment "DERIVED from the first fenced code block in the body at save — write the query in the body fence, do not hand-edit here." ;
+    rdfs:domain git-lex:Query ;
+    rdfs:range xsd:string .
+
+git-lex:parameter a owl:DatatypeProperty ;
+    owl:equivalentProperty subtexture:parameter ;
+    rdfs:label "parameter" ;
+    rdfs:comment "One query parameter as name[:kind][=default] (kinds: string, integer, decimal, boolean, date, dateTime, iri); list one per item." ;
     rdfs:domain git-lex:Query ;
     rdfs:range xsd:string .
 

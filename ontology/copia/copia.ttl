@@ -12,6 +12,11 @@
 # =============================================================================
 # COPIA KIT ONTOLOGY
 # =============================================================================
+# v0.45.1 (2026-11-17) — copia:Query authoringGuidance updated for parameters.
+# Ruled by goodlux, 2026-11-17. Updated authoringGuidance on copia:Query to
+# document git-lex:parameter (name[:kind][=default], inherited from
+# git-lex:Query in git-lex 0.21.0).
+#
 # v0.45.0 (2026-11-17) — copia:Query added.
 # Ruled by goodlux, 2026-11-17. Saved SPARQL 1.1 read queries in
 # Copia/Query/<id>.md (single-store Copia queries and Syrinx SERVICE federated
@@ -677,7 +682,7 @@
 <https://repolex.ai/ontology/copia> a owl:Ontology ;
     rdfs:label "Copia Kit Ontology" ;
     rdfs:comment "The agent's curated outward face + the CoPIA render data model. Soul-adapter. Optional add-on for soul." ;
-    owl:versionInfo "0.45.0" ;
+    owl:versionInfo "0.45.1" ;
     owl:imports <https://repolex.ai/ontology/soul/> .
 
 
@@ -2288,6 +2293,6 @@ Anything about this firing - what departed from the brief, and why.
 copia:Query a owl:Class ;
     rdfs:subClassOf git-lex:Query , git-lex:Thing ;
     git-lex:foldered true ;
-    git-lex:authoringGuidance "Put the executable SPARQL 1.1 read query in the first fenced ```sparql code block in the body; prose outside that fence documents intent and caveats." ;
+    git-lex:authoringGuidance "Put the executable SPARQL 1.1 read query in the first fenced ```sparql code block in the body; declare each parameter in parameter as name[:kind][=default] and use it in the query as ?name." ;
     rdfs:label "Query" ;
     rdfs:comment "A saved read-only SPARQL 1.1 query in Copia/Query/<id>.md — single-store or federated across Copia and Pan via Syrinx SERVICE blocks." .
