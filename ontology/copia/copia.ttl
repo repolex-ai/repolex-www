@@ -12,6 +12,15 @@
 # =============================================================================
 # COPIA KIT ONTOLOGY
 # =============================================================================
+# v0.45.0 (2026-11-17) — copia:Query added.
+# Ruled by goodlux, 2026-11-17. Saved SPARQL 1.1 read queries in
+# Copia/Query/<id>.md (single-store Copia queries and Syrinx SERVICE federated
+# queries joining Copia with Pan). Subclasses git-lex:Query (and therefore
+# subtexture:Query) plus git-lex:Thing so git-lex derives git-lex:sparql
+# (equivalentProperty subtexture:sparql) from the first fenced code block in the
+# body at save. Identity is the universal git-lex:id (<copia/Query/id>); no
+# queryId property is declared.
+#
 # v0.44.0 (2026-11-09) — FamiliarLookNote keeps only what it judges.
 # Ruled by goodlux, 2026-11-09: simplified across the whole stack. GONE:
 # familiarLookNoteId (was required) — the identity is the universal git-lex:id,
@@ -668,7 +677,7 @@
 <https://repolex.ai/ontology/copia> a owl:Ontology ;
     rdfs:label "Copia Kit Ontology" ;
     rdfs:comment "The agent's curated outward face + the CoPIA render data model. Soul-adapter. Optional add-on for soul." ;
-    owl:versionInfo "0.44.0" ;
+    owl:versionInfo "0.45.0" ;
     owl:imports <https://repolex.ai/ontology/soul/> .
 
 
@@ -2267,3 +2276,18 @@ Anything about this firing - what departed from the brief, and why.
     owl:qualifiedCardinality 1
     ]
     .
+
+# --- Query ---
+# Saved SPARQL 1.1 read queries in Copia/Query/<id>.md (single-store Copia
+# queries or federated Syrinx SERVICE queries across git-lex and Pan).
+# Subclasses git-lex:Query (which itself subclasses subtexture:Query) and
+# git-lex:Thing so git-lex derives git-lex:sparql from the first fenced code
+# block in the body at save. Identity is the universal git-lex:id
+# (<copia/Query/id>); no queryId property is declared.
+
+copia:Query a owl:Class ;
+    rdfs:subClassOf git-lex:Query , git-lex:Thing ;
+    git-lex:foldered true ;
+    git-lex:authoringGuidance "Put the executable SPARQL 1.1 read query in the first fenced ```sparql code block in the body; prose outside that fence documents intent and caveats." ;
+    rdfs:label "Query" ;
+    rdfs:comment "A saved read-only SPARQL 1.1 query in Copia/Query/<id>.md — single-store or federated across Copia and Pan via Syrinx SERVICE blocks." .
