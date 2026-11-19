@@ -12,6 +12,36 @@
 # =============================================================================
 # COPIA KIT ONTOLOGY
 # =============================================================================
+# v0.46.0 (2026-11-18) — Action becomes a document; a Shotlist says its medium.
+# Ruled by goodlux, 2026-11-18 (to add to this ontology, and that clip motions
+# reuse copia:Action with a description and per-model wording, so one Action
+# serves stills and clips). Written by the lUX familiar; th34 told the same day.
+# CHANGED: copia:Action is now git-lex:foldered — soul documents live in
+# Copia/Action/<id>.md, identity is the universal git-lex:id (no actionId).
+# The eight kit individuals (lying … swimming) stand unchanged beside them.
+# ADDED on Action: copia:actionDescription (what she does, model-neutral) and
+# copia:actionPrompt (the wording that works for ONE model family, written
+# "FAMILY: words", the same family-tag form renderRule uses). Reader: the clip
+# writer and the still writer fetch them by saved query, as beingDescription is
+# fetched, so a motion that worked once is reused on purpose.
+# ADDED on Shotlist: copia:shotlistMedium, a strict enum (image | video).
+# Readers: the firing tool, which must refuse a video list, and the clip
+# enqueuer. Optional; absent means image, so no existing Shotlist changes.
+# FIXED: Shotlist authoringGuidance asked for a numbered list. The firing tool
+# sends every non-blank line under "## The lines" as a prompt, so a number
+# would ride into the prompt. It now says one prompt per line, no numbering.
+# FIXED: copia:suggestsPose said "repeat per pose"; with Action foldered that
+# sentence would reach authors, who hear it as "repeat the key". Reworded.
+# DELIBERATELY NOT DONE: no second class for clip motions (two classes would
+# both mean "what she is doing"); no renderRule on Action (renderRule stays on
+# Depictable by its own ruling); no property for the start position, the
+# length or the ratings of an Action (body sections until a query wants them);
+# no preferred Actions or Places on a Being (that is a query over ratings);
+# copia:shortDescription is left valid on Action though actionDescription now
+# does that job — retiring it there is a separate ruling. Not built yet: the
+# firing tool's refusal of a video list, and the enqueuer that reads one.
+# Design background: subtexture/docs/copia/2026_11_15_POSE_AND_ACTION_LANGUAGE.md
+#
 # v0.45.1 (2026-11-17) — copia:Query authoringGuidance updated for parameters.
 # Ruled by goodlux, 2026-11-17. Updated authoringGuidance on copia:Query to
 # document git-lex:parameter (name[:kind][=default], inherited from
@@ -682,7 +712,7 @@
 <https://repolex.ai/ontology/copia> a owl:Ontology ;
     rdfs:label "Copia Kit Ontology" ;
     rdfs:comment "The agent's curated outward face + the CoPIA render data model. Soul-adapter. Optional add-on for soul." ;
-    owl:versionInfo "0.45.1" ;
+    owl:versionInfo "0.46.0" ;
     owl:imports <https://repolex.ai/ontology/soul/> .
 
 
@@ -1651,14 +1681,41 @@ copia:dive-streamline a copia:Pose ; rdfs:label "dive-streamline" ;
 # the spine; the suggested poses are the leaves (refinements within the activity).
 # Searchable ("all swimming images"). Kit vocab; soul individuals when wanted.
 
+# v0.46 (goodlux, 2026-11-18): FOLDERED, so an Action can be a soul document as
+# well as a kit individual, and CROSS-MEDIA: the same Action serves a still (an
+# activity a frame shows) and a clip (a motion a clip carries). IDENTITY is the
+# universal git-lex:id, strategy (b) — deliberately no actionId.
 copia:Action a owl:Class ;
     rdfs:subClassOf git-lex:Thing ;
+    git-lex:foldered true ;
     rdfs:label "Action" ;
-    rdfs:comment "A named activity the subject is doing (lying, sitting, posing, dancing) — the SUBJECT cluster's verb axis and the spine of the subject model. Each Action curates its fitting poses via suggestsPose (many-to-many). Searchable. Kit vocab; soul individuals when wanted." .
+    rdfs:comment "One named thing a subject does: an activity a still shows (lying, posing) or a motion a clip carries (walking away, a slow dance). Plain words in actionDescription; the wording that works for one model family in actionPrompt. Each Action curates its fitting poses via suggestsPose. Kit vocabulary, and soul documents in Copia/Action/." ;
+    git-lex:authoringGuidance """
+## Starts from
+The position and the view the first frame must already be in. Say here if the Action needs clothes or an object.
+
+## Per model
+For each model family named in actionPrompt: what was learned making it work, dated. For a clip, the length in seconds.
+
+## Tried
+Where it has been used and how it was rated, newest first.
+""" .
+
+copia:actionDescription a owl:DatatypeProperty ;
+    rdfs:label "action description" ;
+    rdfs:comment "What she does, in plain words any model could take: ONE activity or motion. Model-tuned wording goes in actionPrompt." ;
+    rdfs:domain copia:Action ;
+    rdfs:range xsd:string .
+
+copia:actionPrompt a owl:DatatypeProperty ;
+    rdfs:label "action prompt" ;
+    rdfs:comment "Wording that works for ONE model family, quoted: \"LTX: she walks away\". One list item per family; do not repeat the key." ;
+    rdfs:domain copia:Action ;
+    rdfs:range xsd:string .
 
 copia:suggestsPose a owl:ObjectProperty ;
     rdfs:label "suggests pose" ;
-    rdfs:comment "A specific Pose that fits this Action — the curated short-list handed to Qwen when this action is set (the action->pose 'expansion'). Many-to-many; repeat per pose. Owned by the Action; the Pose stays context-free. A SUGGESTION not a constraint (explicit steer / Qwen can pick any pose)." ;
+    rdfs:comment "A Pose that fits this Action, as a bare id (supine). One list item per pose; do not repeat the key." ;
     rdfs:domain copia:Action ;
     rdfs:range copia:Pose .
 
@@ -2269,7 +2326,8 @@ Name the Brief this list was fired from in `relatedToId`, angle-bracket form:
 <copia/Brief/identifier>. There is no relatedToBriefId any more.
 
 ## The lines
-A numbered markdown list, one prompt per line, in the order fired. The list number is the shot number - it is how a frame that went wrong is traced back to the line that made it.
+One prompt per line, in the order fired, and nothing else: no numbering, no bullets, no code fence. The firing tool sends every non-blank line under this heading exactly as written. The shot number is the line's position.
+For a video list each line is `<pan image id> <seconds>s <action id>: <the clip paragraph>`, and each Action is also named in `relatedToId`.
 
 ## Notes
 Anything about this firing - what departed from the brief, and why.
@@ -2281,6 +2339,17 @@ Anything about this firing - what departed from the brief, and why.
     owl:qualifiedCardinality 1
     ]
     .
+
+# v0.46 (goodlux, 2026-11-18): a video shot list is the SAME class with one
+# strict enum saying so, not a second class. Absent means image.
+copia:MediumValue a rdfs:Datatype ;
+    owl:oneOf ( "image" "video" ) .
+
+copia:shotlistMedium a owl:DatatypeProperty ;
+    rdfs:label "shotlist medium" ;
+    rdfs:comment "One of: image, video. What the lines make. Leave it out for an image list. A list of clip lines MUST say video, or its lines are sent as picture prompts." ;
+    rdfs:domain copia:Shotlist ;
+    rdfs:range copia:MediumValue .
 
 # --- Query ---
 # Saved SPARQL 1.1 read queries in Copia/Query/<id>.md (single-store Copia

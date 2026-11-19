@@ -18,7 +18,7 @@
 # DEFERRED, not absent — see the deferred block at the end.
 #
 # BASE (goodlux, 2026-11-16; ontology 0.7.0): ravel stands on the Subtexture
-# base ontology (subtexture.ttl 0.3.0, shipped beside this file as
+# base ontology (subtexture.ttl 0.5.0, shipped beside this file as
 # ontology/subtexture/subtexture.ttl) and no longer refers to git-lex's
 # vocabulary at all. Each app owns its own namespace in stored data and
 # bridges to the base with owl:equivalentProperty in its own file: ravel
@@ -59,7 +59,7 @@
     a owl:Ontology ;
     rdfs:label "Ravel ontology" ;
     rdfs:comment "Transcript-graph vocabulary: conversational turns and the reader-annotation layer over them. Graph-only — no authored documents." ;
-    owl:versionInfo "0.7.0" .
+    owl:versionInfo "0.8.0" .
 
 # ─── The spine ───────────────────────────────────────────────────────────────
 
@@ -116,6 +116,42 @@ ravel:model a owl:DatatypeProperty ;
 ravel:modelSetting a owl:DatatypeProperty ;
     rdfs:label "modelSetting" ;
     rdfs:comment "The model setting in force for this turn, as the harness last announced it in this conversation (Antigravity's Model Selection notices, e.g. 'Gemini 4 Argon (Medium)'). A setting, not a report of what ran: a change made outside the conversation is not seen." ;
+    rdfs:domain ravel:Turn ;
+    rdfs:range xsd:string .
+
+# ─── The herdr sender line (claims, never proof) ─────────────────────────────
+
+# A peer's message reaches a soul through `herdr agent prompt`, which types it
+# into the pane; the harness files it as a turn with role 'user'. The squad's
+# send command puts one line first:
+#   --herdr v=1 from=<name> pane=<id> session=<id> soul=<40 hex>--
+# ravel reads it only as the first line of a 'user' turn and writes the four
+# properties below. Each is the sender's own typed word, signed by nothing, so
+# each is a plain literal: a soul IRI here would assert in the graph what a
+# line of text merely says. ravel:role is left as the dialect gave it.
+# (goodlux, 2026-11-18; line agreed with th34 and m4xx the same day.)
+
+ravel:claimedSender a owl:DatatypeProperty ;
+    rdfs:label "claimedSender" ;
+    rdfs:comment "The herdr name the sender of this turn gave for itself on the turn's herdr sender line. A claim, not proof; absent when the line gave none." ;
+    rdfs:domain ravel:Turn ;
+    rdfs:range xsd:string .
+
+ravel:claimedSenderPane a owl:DatatypeProperty ;
+    rdfs:label "claimedSenderPane" ;
+    rdfs:comment "The herdr pane id the sender of this turn gave for itself (e.g. 'w9:p1'). A claim, not proof." ;
+    rdfs:domain ravel:Turn ;
+    rdfs:range xsd:string .
+
+ravel:claimedSenderSession a owl:DatatypeProperty ;
+    rdfs:label "claimedSenderSession" ;
+    rdfs:comment "The harness session id the sender of this turn gave for itself: the id its own transcript is filed under. A claim, not proof." ;
+    rdfs:domain ravel:Turn ;
+    rdfs:range xsd:string .
+
+ravel:claimedSenderSoul a owl:DatatypeProperty ;
+    rdfs:label "claimedSenderSoul" ;
+    rdfs:comment "The first commit, all 40 characters, the sender of this turn gave as its soul. A claim, not proof; written only when it is exactly 40 hex characters." ;
     rdfs:domain ravel:Turn ;
     rdfs:range xsd:string .
 
