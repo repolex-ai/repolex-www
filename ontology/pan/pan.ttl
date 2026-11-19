@@ -43,11 +43,42 @@
 <https://repolex.ai/ontology/pan> a owl:Ontology ;
     rdfs:label "Pan media store ontology" ;
     rdfs:comment "Identity, location, timing and model-derived enrichment facts Pan records for stored media." ;
-    owl:versionInfo "0.4.29" .
+    owl:versionInfo "0.4.30" .
 
 # -----------------------------------------------------------------------------
 # CHANGELOG
 # -----------------------------------------------------------------------------
+# v0.4.30 (2026-11-17, asked for by goodlux): WHAT THE MAC ITSELF SEES.
+#   Iris serves four percepts from Apple's on-device Vision framework
+#   (iris a93749e): an aesthetics score with a utility flag, recognised text,
+#   labels from a fixed list, and an image-only similarity vector. Pan stores
+#   all four, each the way it already stores a stage's answer: one reference
+#   on the image, the records in the reference's file, the model as data.
+#   DECLARED AHEAD OF CODE: pand calls none of them yet. The names below are
+#   proposed and are goodlux's to change until something writes them.
+#   (1) + pan:Aesthetics, + pan:aestheticsData on pan:Image, + pan:aestheticScore
+#       and pan:isUtility on the record. A record, like pan:Depth, and not two
+#       more fields on the image: the score is on the judging model's own
+#       scale (Apple's is -1 to 1), a different judge on another machine gives
+#       a second record, and pan:imageAestheticScore stays what it is, the
+#       caption model's 0 to 100.
+#   (2) + pan:TextLine, + pan:textData on pan:Image. One record per line of
+#       text found: pan:text, pan:score (the confidence) and pan:bbox.
+#       pan:text widens from pan:Caption to pan:Node to carry it.
+#   (3) + pan:Label, + pan:labelData on pan:Image. One record per label at or
+#       above the threshold asked for: pan:descriptor and pan:score.
+#       pan:descriptor widens from pan:Region to pan:Node to carry it.
+#   (4) The similarity vector needs nothing new. It is a second embedding:
+#       pan:vectorData, a pan:Embedding record, a .npy, and a search index
+#       named after its model, apart from every other index.
+#   (5) + pan:modelRevision and pan:providerVersion on pan:Enrichment, at most
+#       one each. Apple's models change with the operating system, so a run
+#       says which revision of the request answered and which system build
+#       ran it.
+#   NOT done: no copy of the score or the flag on the image itself (two hops
+#   to reach; revisit if a filter needs it on the object). The threshold asked
+#   of the label request is not in the graph; it is in the saved reply. No
+#   existing record changes and no image is re-run.
 # v0.4.29 (2026-11-17, ruled by goodlux): A QUERY, AND THE SET IT MAKES SMART.
 #   The base ontology (subtexture.ttl 0.4.0, shipped beside this file) gained
 #   a saved query and the rule that a set linking one query is a smart set.
@@ -1329,6 +1360,21 @@ pan:Face a owl:Class ;
     rdfs:label "Face" ;
     rdfs:comment "One detected face: its box, five landmarks, head orientation, confidence and identity vector. Not a person; nothing here says whose." .
 
+pan:Aesthetics a owl:Class ;
+    rdfs:subClassOf pan:Node ;
+    rdfs:label "Aesthetics" ;
+    rdfs:comment "One model's judgement of how good an image is to look at, on that model's own scale, and whether it reads as a utility image. One per judging model." .
+
+pan:TextLine a owl:Class ;
+    rdfs:subClassOf pan:Node ;
+    rdfs:label "Text line" ;
+    rdfs:comment "One line of text a recognition model read in an image: the text, how sure the model was, and where it is. A render that imitates writing yields nonsense lines; keep the confidence." .
+
+pan:Label a owl:Class ;
+    rdfs:subClassOf pan:Node ;
+    rdfs:label "Label" ;
+    rdfs:comment "One label a classifier gave an image from its own fixed list, with its confidence. A hint, not a fact about what is in the image." .
+
 # --- references: media → one stage's output file -----------------------------
 
 pan:regionData a owl:ObjectProperty ;
@@ -1349,6 +1395,21 @@ pan:depthData a owl:ObjectProperty ;
 pan:faceData a owl:ObjectProperty ;
     rdfs:label "face data" ;
     rdfs:comment "Reference to a face-detection output file holding this image's faces; a run that found none still writes one." ;
+    rdfs:domain pan:Image ; rdfs:range pan:Enrichment .
+
+pan:aestheticsData a owl:ObjectProperty ;
+    rdfs:label "aesthetics data" ;
+    rdfs:comment "Reference to one aesthetics model's output file holding its pan:Aesthetics record. One per model." ;
+    rdfs:domain pan:Image ; rdfs:range pan:Enrichment .
+
+pan:textData a owl:ObjectProperty ;
+    rdfs:label "text data" ;
+    rdfs:comment "Reference to a text-recognition output file holding this image's pan:TextLine records; a run that found no text still writes one." ;
+    rdfs:domain pan:Image ; rdfs:range pan:Enrichment .
+
+pan:labelData a owl:ObjectProperty ;
+    rdfs:label "label data" ;
+    rdfs:comment "Reference to a classifier's output file holding this image's pan:Label records." ;
     rdfs:domain pan:Image ; rdfs:range pan:Enrichment .
 
 pan:captionData a owl:ObjectProperty ;
@@ -1427,6 +1488,21 @@ pan:modelReplyPath a owl:DatatypeProperty ;
     rdfs:domain pan:Enrichment ;
     rdfs:range xsd:string .
 
+# Which answer of a model that changes under one name. Apple's Vision models
+# ship with the operating system: the request has a revision number, and the
+# same revision on two system builds is not promised to be the same model.
+pan:modelRevision a owl:DatatypeProperty ;
+    rdfs:label "model revision" ;
+    rdfs:comment "The revision of the model or request that answered, as the server reported it (3). Absent when the server reports none." ;
+    rdfs:domain pan:Enrichment ;
+    rdfs:range xsd:string .
+
+pan:providerVersion a owl:DatatypeProperty ;
+    rdfs:label "provider version" ;
+    rdfs:comment "The version of what ran the model, as the server reported it: an operating system build, a runtime. Goes with pan:provider. Absent when the server reports none." ;
+    rdfs:domain pan:Enrichment ;
+    rdfs:range xsd:string .
+
 # --- what Pan asked a stage for (goodlux, 2026-09-19) --------------------------
 # The segmentation node is told which nouns to ground and how strict to be.
 # Without these a noun that found nothing left no trace, and an image with no
@@ -1455,10 +1531,11 @@ pan:count a owl:DatatypeProperty ;
 
 # --- Region fields -------------------------------------------------------------
 
+# Shared since 0.4.30: a Region and a Label each carry the model's own word.
 pan:descriptor a owl:DatatypeProperty ;
     rdfs:label "descriptor" ;
-    rdfs:comment "What the model called the thing in this region (person, keyboard) — the prompt it answered. Description, never identity." ;
-    rdfs:domain pan:Region ; rdfs:range xsd:string .
+    rdfs:comment "The model's own word for the thing: on a region, the prompt it answered (person, keyboard); on a label, the label from the classifier's list (computer_monitor). Description, never identity." ;
+    rdfs:domain pan:Node ; rdfs:range xsd:string .
 
 pan:polygon a owl:DatatypeProperty ;
     rdfs:label "polygon" ;
@@ -1497,10 +1574,11 @@ pan:overlayPath a owl:DatatypeProperty ;
 
 # --- Caption / Embedding fields ------------------------------------------------
 
+# Shared since 0.4.30: a Caption's whole answer, and one recognised line.
 pan:text a owl:DatatypeProperty ;
     rdfs:label "text" ;
-    rdfs:comment "The model's answer as it came back, unparsed." ;
-    rdfs:domain pan:Caption ; rdfs:range xsd:string .
+    rdfs:comment "Text exactly as the model gave it: on a caption, its whole answer, unparsed; on a text line, the line it read." ;
+    rdfs:domain pan:Node ; rdfs:range xsd:string .
 
 # dim and vectorPath are shared since 0.4.21: an Embedding and a Face each
 # carry one vector. Domain pan:Node; the cardinality blocks say which class.
@@ -1542,6 +1620,18 @@ pan:headPose a owl:DatatypeProperty ;
     rdfs:label "head pose" ;
     rdfs:comment "'pitch,yaw,roll' in degrees, as the model reported them." ;
     rdfs:domain pan:Face ; rdfs:range xsd:string .
+
+# --- Aesthetics fields ---------------------------------------------------------
+
+pan:aestheticScore a owl:DatatypeProperty ;
+    rdfs:label "aesthetic score" ;
+    rdfs:comment "How good the image is to look at, on the judging model's own scale (Apple's runs from -1 to 1). Compare only between records of one model. Not pan:imageAestheticScore, which is the caption model's 0 to 100." ;
+    rdfs:domain pan:Aesthetics ; rdfs:range xsd:decimal .
+
+pan:isUtility a owl:DatatypeProperty ;
+    rdfs:label "is utility" ;
+    rdfs:comment "true when the model took the image for one kept for its information and not its looks: a screenshot, a document, a receipt, a diagram. A fact of its own; a score of exactly 0 beside it is not a judgement." ;
+    rdfs:domain pan:Aesthetics ; rdfs:range xsd:boolean .
 
 # -----------------------------------------------------------------------------
 # CARDINALITY
@@ -1626,6 +1716,8 @@ pan:Enrichment rdfs:subClassOf
     [ a owl:Restriction ; owl:onProperty pan:model      ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:path       ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:modelReplyPath  ; owl:maxCardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:modelRevision   ; owl:maxCardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:providerVersion ; owl:maxCardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:producedDate ; owl:cardinality 1 ] .
 
 # The segmentation reference alone carries a count (goodlux, 2026-09-16), and
@@ -1694,3 +1786,25 @@ pan:Face rdfs:subClassOf
     [ a owl:Restriction ; owl:onProperty pan:headPose     ; owl:maxCardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:vectorPath   ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:dim          ; owl:cardinality 1 ] .
+
+pan:Aesthetics rdfs:subClassOf
+    [ a owl:Restriction ; owl:onProperty pan:id ; owl:cardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:model          ; owl:cardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:producedDate   ; owl:cardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:aestheticScore ; owl:cardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:isUtility      ; owl:maxCardinality 1 ] .
+
+pan:TextLine rdfs:subClassOf
+    [ a owl:Restriction ; owl:onProperty pan:id ; owl:cardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:model        ; owl:cardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:producedDate ; owl:cardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:text         ; owl:cardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:score        ; owl:maxCardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:bbox         ; owl:maxCardinality 1 ] .
+
+pan:Label rdfs:subClassOf
+    [ a owl:Restriction ; owl:onProperty pan:id ; owl:cardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:model        ; owl:cardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:producedDate ; owl:cardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:descriptor   ; owl:cardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:score        ; owl:cardinality 1 ] .
