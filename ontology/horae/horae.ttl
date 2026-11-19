@@ -1,0 +1,248 @@
+@prefix horae:      <https://repolex.ai/ontology/horae/> .
+@prefix subtexture: <https://repolex.ai/ontology/subtexture/> .
+@prefix owl:        <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:       <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:        <http://www.w3.org/2001/XMLSchema#> .
+
+# =============================================================================
+# HORAE ONTOLOGY — the async work queue's ontology
+# =============================================================================
+# What the Rust Horae (repolex-ai/horae2) records about each queued async item.
+# Code implements this ontology; it never adds undeclared predicates to it.
+#
+# Layering (same discipline as Pan and Ravel):
+#   - Own namespace (`horae:*`) in stored data — zero `subtexture:*` IRIs stored.
+#   - Two classes only: `horae:NamedGraph` (under `subtexture:NamedGraph` and
+#     `subtexture:DefaultGraph`) and `horae:QueueItem` (under `subtexture:Thing`).
+#   - Six universal Thing fields (`id`, `title`, `description`, `createdDate`,
+#     `updatedDate`, `relatedToId`) and three graph-access fields (`owner`,
+#     `visibility`, `readableBy`) bridged to their `subtexture:*` twins via
+#     `owl:equivalentProperty` so `calamus` rewrites base queries cleanly.
+#   - Graph-only: `horaed` writes every statement into `<soul>/.horae/_ignore/oxigraph`
+#     inside `<horae/NamedGraph/horae>` (`https://repolex.ai/{squad}/{user}/horae/NamedGraph/horae`);
+#     nothing is authored as markdown (`git-lex:foldered` is never used).
+#
+# CHANGELOG
+# -----------------------------------------------------------------------------
+# v0.1.0 (2026-11-19, ruled by goodlux; designed with nomia & tr1pl3x): FIRST RELEASE.
+#   (1) Two classes:
+#       + `horae:NamedGraph` (`⊑ subtexture:NamedGraph , subtexture:DefaultGraph`),
+#         described in the store's unnamed graph with `horae:owner`,
+#         `horae:visibility` (`"private"`), and `horae:readableBy`.
+#       + `horae:QueueItem` (`⊑ subtexture:Thing`) — one universal envelope for
+#         every async job in Horae (`process` enum: `image`, `clip`, `dream`),
+#         with job-specific inputs and multi-step checkpoints carried in JSON
+#         `horae:payload` and current pipeline stage in `horae:step` (`compose`,
+#         `render`, `deliver`).
+#   (2) Six universal `subtexture:Thing` bridges on `horae:QueueItem`: `id`,
+#       `title`, `description`, `createdDate`, `updatedDate`, `relatedToId`.
+#   (3) Queue control fields on `horae:QueueItem`:
+#       + `horae:process` (`image` | `clip` | `dream`)
+#       + `horae:status` (`queued` | `running` | `completed` | `failed` | `cancelled`)
+#       + `horae:step` (`compose` | `render` | `deliver`)
+#       + `horae:origin` (`direct` | `conversational` | `chevron` | `import`)
+#       + `horae:priority`, `horae:claimedDate`, `horae:claimedBy`,
+#         `horae:attempts`, `horae:lastError`, `horae:payload`.
+#   DELIBERATELY NOT DONE (ruled by goodlux):
+#     - No per-job subclasses (`RenderRequest`, `ClipRequest`, `DreamRequest`)
+#       and no `DreamStage` workflow nodes in the graph (`process` + `step` +
+#       `payload` keep the ontology fixed as new workflows arrive).
+#     - No custom `*Id` edge properties (`makerId`, `viaId`, `setId`,
+#       `startImageId`, `resultId`): every cross-entity link uses
+#       `horae:relatedToId` (the two-condition typed-edge law), and anyone
+#       authorized to write to a soul's queue may edit/cancel items in it (no dibs).
+#     - No ambiguous `"made"` status word: an item whose render finished while
+#       Pan is unreachable sits at `status = "queued"`, `step = "deliver"`.
+# =============================================================================
+
+<https://repolex.ai/ontology/horae> a owl:Ontology ;
+    rdfs:label "Horae Ontology" ;
+    rdfs:comment "Async work-queue ontology for Horae: queued items, status, pipeline step, priority, origin, and JSON payload." ;
+    owl:imports <https://repolex.ai/ontology/subtexture> ;
+    owl:versionInfo "0.1.0" .
+
+# -----------------------------------------------------------------------------
+# 1. CLASSES
+# -----------------------------------------------------------------------------
+
+horae:NamedGraph a owl:Class ;
+    rdfs:subClassOf subtexture:NamedGraph , subtexture:DefaultGraph ;
+    rdfs:label "NamedGraph" ;
+    rdfs:comment "The named graph every QueueItem lives in (`<horae/NamedGraph/horae>`), described in the store's unnamed graph and included in the default query view." .
+
+horae:QueueItem a owl:Class ;
+    rdfs:subClassOf subtexture:Thing ;
+    rdfs:label "Queue item" ;
+    rdfs:comment "One queued async work item in Horae (image, clip, or dream), carrying its queue envelope in the graph and job-specific inputs/checkpoints in payload." .
+
+# -----------------------------------------------------------------------------
+# 2. NAMED GRAPH ACCESS METADATA — bridged to subtexture 0.6.0
+# -----------------------------------------------------------------------------
+
+horae:owner a owl:ObjectProperty ;
+    owl:equivalentProperty subtexture:owner ;
+    rdfs:label "owner" ;
+    rdfs:comment "The Soul that owns this Horae queue graph (`<soul/Soul/{username}>`); always permitted access." ;
+    rdfs:domain horae:NamedGraph ;
+    rdfs:range subtexture:Thing .
+
+horae:visibility a owl:DatatypeProperty ;
+    owl:equivalentProperty subtexture:visibility ;
+    rdfs:label "visibility" ;
+    rdfs:comment "Access policy for this Horae graph: 'private' (owner only, default), 'shared', or 'public'." ;
+    rdfs:domain horae:NamedGraph ;
+    rdfs:range subtexture:VisibilityValue .
+
+horae:readableBy a owl:ObjectProperty ;
+    owl:equivalentProperty subtexture:readableBy ;
+    rdfs:label "readableBy" ;
+    rdfs:comment "A Soul or squad Thing permitted to read this Horae graph when visibility is 'shared'; multi-valued." ;
+    rdfs:domain horae:NamedGraph ;
+    rdfs:range subtexture:Thing .
+
+# -----------------------------------------------------------------------------
+# 3. UNIVERSAL THING BRIDGES ON QueueItem — bridged to subtexture
+# -----------------------------------------------------------------------------
+
+horae:id a owl:ObjectProperty ;
+    owl:equivalentProperty subtexture:id ;
+    rdfs:label "id" ;
+    rdfs:comment "The queue item's own address (`<horae/QueueItem/{id}>`), written by horaed." ;
+    rdfs:domain horae:QueueItem ;
+    rdfs:range subtexture:Thing .
+
+horae:title a owl:DatatypeProperty ;
+    owl:equivalentProperty subtexture:title ;
+    rdfs:label "title" ;
+    rdfs:comment "Short human-readable display label for this queue item; single-valued." ;
+    rdfs:domain horae:QueueItem ;
+    rdfs:range xsd:string .
+
+horae:description a owl:DatatypeProperty ;
+    owl:equivalentProperty subtexture:description ;
+    rdfs:label "description" ;
+    rdfs:comment "Optional requester notes or Horae annotations about this queue item; single-valued." ;
+    rdfs:domain horae:QueueItem ;
+    rdfs:range xsd:string .
+
+horae:createdDate a owl:DatatypeProperty ;
+    owl:equivalentProperty subtexture:createdDate ;
+    rdfs:label "createdDate" ;
+    rdfs:comment "When the item was first queued (ISO-8601 dateTime with offset; copied to pan:renderRequestDate on delivery)." ;
+    rdfs:domain horae:QueueItem ;
+    rdfs:range xsd:dateTime .
+
+horae:updatedDate a owl:DatatypeProperty ;
+    owl:equivalentProperty subtexture:updatedDate ;
+    rdfs:label "updatedDate" ;
+    rdfs:comment "When anything about this queue item last changed (ISO-8601 dateTime with offset; written by horaed)." ;
+    rdfs:domain horae:QueueItem ;
+    rdfs:range xsd:dateTime .
+
+horae:relatedToId a owl:ObjectProperty ;
+    owl:equivalentProperty subtexture:relatedToId ;
+    rdfs:label "relatedToId" ;
+    rdfs:comment "Related Things (`<copia/Moment/{id}>`, `<pan/Image/{id}>`, `<pan/Video/{id}>`, `<pan/VideoSet/{id}>`, `<copia/Dream/{id}>`); multi-valued." ;
+    rdfs:domain horae:QueueItem ;
+    rdfs:range subtexture:Thing .
+
+# -----------------------------------------------------------------------------
+# 4. QUEUE ENVELOPE FIELDS ON QueueItem
+# -----------------------------------------------------------------------------
+
+horae:ProcessValue a rdfs:Datatype ;
+    owl:oneOf ( "image" "clip" "dream" ) .
+
+horae:process a owl:DatatypeProperty ;
+    rdfs:label "process" ;
+    rdfs:comment "Which async worker process executes this item: 'image', 'clip', or 'dream'." ;
+    rdfs:domain horae:QueueItem ;
+    rdfs:range horae:ProcessValue .
+
+horae:StatusValue a rdfs:Datatype ;
+    owl:oneOf ( "queued" "running" "completed" "failed" "cancelled" ) .
+
+horae:status a owl:DatatypeProperty ;
+    rdfs:label "status" ;
+    rdfs:comment "Lifecycle state of this item: 'queued', 'running', 'completed', 'failed', or 'cancelled' (pair with step to see where it waits)." ;
+    rdfs:domain horae:QueueItem ;
+    rdfs:range horae:StatusValue .
+
+horae:StepValue a rdfs:Datatype ;
+    owl:oneOf ( "compose" "render" "deliver" ) .
+
+horae:step a owl:DatatypeProperty ;
+    rdfs:label "step" ;
+    rdfs:comment "Current pipeline step for this item: 'compose', 'render', or 'deliver'." ;
+    rdfs:domain horae:QueueItem ;
+    rdfs:range horae:StepValue .
+
+horae:OriginValue a rdfs:Datatype ;
+    owl:oneOf ( "direct" "conversational" "chevron" "import" ) .
+
+horae:origin a owl:DatatypeProperty ;
+    rdfs:label "origin" ;
+    rdfs:comment "How this item originated, for filtering: 'direct', 'conversational', 'chevron', or 'import'." ;
+    rdfs:domain horae:QueueItem ;
+    rdfs:range horae:OriginValue .
+
+horae:priority a owl:DatatypeProperty ;
+    rdfs:label "priority" ;
+    rdfs:comment "Queue priority lane (`0` most urgent; ties ordered by createdDate)." ;
+    rdfs:domain horae:QueueItem ;
+    rdfs:range xsd:integer .
+
+horae:claimedDate a owl:DatatypeProperty ;
+    rdfs:label "claimedDate" ;
+    rdfs:comment "When the active worker claim started (ISO-8601 dateTime with offset; cleared when claim ends)." ;
+    rdfs:domain horae:QueueItem ;
+    rdfs:range xsd:dateTime .
+
+horae:claimedBy a owl:DatatypeProperty ;
+    rdfs:label "claimedBy" ;
+    rdfs:comment "Worker and machine holding the active claim (e.g. 'clip/clxbox'); written by horaed." ;
+    rdfs:domain horae:QueueItem ;
+    rdfs:range xsd:string .
+
+horae:attempts a owl:DatatypeProperty ;
+    rdfs:label "attempts" ;
+    rdfs:comment "Count of failed execution attempts on this item so far." ;
+    rdfs:domain horae:QueueItem ;
+    rdfs:range xsd:integer .
+
+horae:lastError a owl:DatatypeProperty ;
+    rdfs:label "lastError" ;
+    rdfs:comment "Verbatim error message from the most recent failed attempt." ;
+    rdfs:domain horae:QueueItem ;
+    rdfs:range xsd:string .
+
+horae:payload a owl:DatatypeProperty ;
+    rdfs:label "payload" ;
+    rdfs:comment "JSON object holding job-specific inputs and intermediate step checkpoints so retries resume at step." ;
+    rdfs:domain horae:QueueItem ;
+    rdfs:range xsd:string .
+
+# -----------------------------------------------------------------------------
+# 5. CARDINALITY
+# -----------------------------------------------------------------------------
+
+horae:NamedGraph rdfs:subClassOf
+    [ a owl:Restriction ; owl:onProperty horae:owner      ; owl:maxCardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty horae:visibility ; owl:maxCardinality 1 ] .
+
+horae:QueueItem rdfs:subClassOf
+    [ a owl:Restriction ; owl:onProperty horae:id          ; owl:cardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty horae:process     ; owl:cardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty horae:status      ; owl:cardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty horae:createdDate ; owl:cardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty horae:title       ; owl:maxCardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty horae:description ; owl:maxCardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty horae:updatedDate ; owl:maxCardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty horae:step        ; owl:maxCardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty horae:origin      ; owl:maxCardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty horae:priority    ; owl:maxCardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty horae:claimedDate ; owl:maxCardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty horae:claimedBy   ; owl:maxCardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty horae:attempts    ; owl:maxCardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty horae:lastError   ; owl:maxCardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty horae:payload     ; owl:maxCardinality 1 ] .
