@@ -27,8 +27,19 @@
 <https://repolex.ai/ontology/soul> a owl:Ontology ;
     rdfs:label "Soul Kit Ontology" ;
     rdfs:comment "An agent's persistent mind. Identity, memory, knowledge, and personality across sessions." ;
-    owl:versionInfo "0.14.1" .
+    owl:versionInfo "0.15.0" .
 
+# v0.15.0 (2026-11-18, ruled by goodlux): CANONICAL SOUL USERNAME (SHORTNAME).
+#   + soul:username on soul:Soul (owl:maxCardinality 1 during backfill, moving
+#   to owl:cardinality 1 once all souls backfill; xsd:string matching
+#   ^[a-z0-9]+(-[a-z0-9]+)*$ with at least one non-hex char). Canonical
+#   lowercase handle for the soul (e.g. "4m41th34", "s3lk13", "w4r3z", "m4xx",
+#   "spacegoat", "3un0m14", "w3bl0rd", "tr1p-l3x"), matching the repo folder
+#   name under repos/{squad}/{user} and used as the {user} segment in Choice 1
+#   (Path B) instance IRIs (https://repolex.ai/{squad}/{user}/{ns}/{Class}/{id})
+#   and 4-segment same-squad references (<{user}/{ns}/{Class}/{id}>).
+#   See subtexture/docs/stack/2026_11_18_INSTANCE_IRI_IDENTITY_CHOICE1_VS_CHOICE3.md
+#   Sections 10-12.
 # v0.14.1 (2026-11-17, ruled by goodlux): QUERY PARAMETERS & STARTER DEDUP.
 #   (1) Updated soul:Query authoringGuidance for git-lex:parameter
 #   (name[:kind][=default], inherited from git-lex:Query in git-lex 0.21.0).
@@ -277,6 +288,10 @@ soul:Soul a owl:Class ;
         a owl:Restriction ;
         owl:onProperty soul:soulId ;
         owl:cardinality 1
+    ] , [
+        a owl:Restriction ;
+        owl:onProperty soul:username ;
+        owl:maxCardinality 1
     ] .
 
 # Identity floor (Minimal Identity Finalize, 2026-07-08, w4r3z+Rob → tr1p.lex):
@@ -292,6 +307,12 @@ soul:Soul a owl:Class ;
 soul:soulId a owl:DatatypeProperty ;
     rdfs:label "soul id" ;
     rdfs:comment "Primary identifier: the BARE 40-hex genesis SHA of the soul repo (git rev-list --max-parents=0 HEAD) — no wrapper, no prefix (urn:soul: is retired, Rob-ruled 2026-08-01). Derived, never hand-authored; git-lex self-heals it on kit-update, so it cannot drift. The soul's IRI derives from it: https://repolex.ai/soul/Soul/<soulId>. Identity is the sha, so a soul keeps its identity across renames; the human-facing name is git-lex:title (Soul is a git-lex:Thing as of v0.11), never the key." ;
+    rdfs:domain soul:Soul ;
+    rdfs:range xsd:string .
+
+soul:username a owl:DatatypeProperty ;
+    rdfs:label "username" ;
+    rdfs:comment "Canonical lowercase handle (a-z, 0-9, hyphens only, e.g. '4m41th34' or 's3lk13'; no dots or slashes) matching the repo folder; permanent once bound." ;
     rdfs:domain soul:Soul ;
     rdfs:range xsd:string .
 
