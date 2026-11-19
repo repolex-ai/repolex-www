@@ -170,10 +170,12 @@ ravel:relatedToId a owl:ObjectProperty ;
     rdfs:range subtexture:Thing .
 
 # Store-scoped NamedGraph descriptors in the Oxigraph store's unnamed graph
-# (https://repolex.ai/{squad}/{user}/ravel/NamedGraph/<transcript-id> and
-# …/NamedGraph/memory-v1), using the graph's own IRI as subject (no sd:name).
-# Both TranscriptGraph and MemoryGraph subclass subtexture:DefaultGraph so
-# queries with no GRAPH clause see all current transcripts and memory.
+# (https://repolex.ai/{squad}/{user}/ravel/NamedGraph/<id>), using the graph's
+# own IRI as subject (no sd:name). DECLARED AHEAD OF CODE (see DEFERRED):
+# raveld 0.9.11 still keeps the unnamed graph empty and static graph IRIs until
+# Phase 4's engine cutover. Both TranscriptGraph and MemoryGraph subclass
+# subtexture:DefaultGraph so queries with no GRAPH clause see all current
+# transcripts and memory once cut over.
 ravel:NamedGraph a owl:Class ;
     rdfs:subClassOf subtexture:NamedGraph ;
     rdfs:label "NamedGraph" ;
@@ -333,6 +335,12 @@ ravel:memoryModel a owl:DatatypeProperty ;
 # · The full ClaudeCode transcript type-space (attachments, compaction
 #   prov:Activity, session metadata) — Day-39 draft; promotes term-by-term as
 #   readers emit it.
+# · NamedGraph descriptor emission & store-scoped graph IRIs (v0.9.0, declared
+#   ahead of writer): ravel:TranscriptGraph, ravel:MemoryGraph, ravel:owner,
+#   ravel:visibility, ravel:readableBy, store-scoped
+#   https://repolex.ai/{squad}/{user}/ravel/NamedGraph/<id> names, and the
+#   DefaultGraph no-GRAPH view are declared here for Phase 4; raveld 0.9.11
+#   emits none of them yet (unnamed graph is empty across all 20 stores).
 # · Embedding/search vocabulary — waits on the stack embedder weights lock
 #   (candle-MiniLM class, one 384-d text space).
 # · Universal Thing-field emission (title / abstract / cue / relatedToId) —

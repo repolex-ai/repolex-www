@@ -43,12 +43,19 @@
 <https://repolex.ai/ontology/pan> a owl:Ontology ;
     rdfs:label "Pan media store ontology" ;
     rdfs:comment "Identity, location, timing and model-derived enrichment facts Pan records for stored media." ;
-    owl:versionInfo "0.4.31" .
+    owl:versionInfo "0.4.32" .
 
 # -----------------------------------------------------------------------------
 # CHANGELOG
 # -----------------------------------------------------------------------------
+# v0.4.32 (2026-11-19, ruled by goodlux): QUERY PARAMETERS IN PAN.
+#   (1) + `pan:parameter` on `pan:Query`, bridged to `subtexture:parameter` via
+#       `owl:equivalentProperty` (`name[:kind][=default]`, multi-valued `0..*`),
+#       and updated `pan:sparql` comment (parameters unbound). DECLARED AHEAD OF
+#       CODE alongside `pan:Query` and v0.4.31's unnamed-graph/store-scoped move.
 # v0.4.31 (2026-11-19, ruled by goodlux): STORE-SCOPED NAMED GRAPH & ACCESS METADATA.
+#   DECLARED AHEAD OF CODE (`pand` still writes the static IRI inside the graph
+#   until Phase 4's engine cutover):
 #   (1) Store-scoped NamedGraph IRI (`https://repolex.ai/{squad}/{user}/pan/NamedGraph/pan`),
 #       described in the store's unnamed graph (moving out of the data graph).
 #   (2) `pan:NamedGraph rdfs:subClassOf subtexture:NamedGraph , subtexture:DefaultGraph`
@@ -1274,7 +1281,14 @@ pan:Query a owl:Class ;
 pan:sparql a owl:DatatypeProperty ;
     owl:equivalentProperty subtexture:sparql ;
     rdfs:label "sparql" ;
-    rdfs:comment "The query text, a SPARQL 1.1 read query, as written; Pan's spelling of subtexture:sparql. One value; no parameters." ;
+    rdfs:comment "The query text, a SPARQL 1.1 read query with parameters unbound; Pan's spelling of subtexture:sparql. Single-valued." ;
+    rdfs:domain pan:Query ;
+    rdfs:range xsd:string .
+
+pan:parameter a owl:DatatypeProperty ;
+    owl:equivalentProperty subtexture:parameter ;
+    rdfs:label "parameter" ;
+    rdfs:comment "One query parameter as name[:kind][=default] (kinds: string, integer, decimal, boolean, date, dateTime, iri); multi-valued." ;
     rdfs:domain pan:Query ;
     rdfs:range xsd:string .
 
