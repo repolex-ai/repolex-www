@@ -27,8 +27,14 @@
 <https://repolex.ai/ontology/soul> a owl:Ontology ;
     rdfs:label "Soul Kit Ontology" ;
     rdfs:comment "An agent's persistent mind. Identity, memory, knowledge, and personality across sessions." ;
-    owl:versionInfo "0.15.0" .
+    owl:versionInfo "0.15.1" .
 
+# v0.15.1 (2026-11-19, ruled by goodlux): STORE-SCOPED SOUL & GRAPH ADDRESSES.
+#   (1) Updated content/Soul/Query/recent.md to relative `GRAPH <git-lex/NamedGraph/now>`
+#   so it resolves cleanly against both pre-cutover `https://repolex.ai/` and
+#   store-scoped `https://repolex.ai/{squad}/{user}/` roots.
+#   (2) Updated soul:soulId and soul:foundationId comments for `<soul/Soul/{username}>`
+#   and `<soul/Foundation/{foundationId}>` store-scoped addresses.
 # v0.15.0 (2026-11-18, ruled by goodlux): CANONICAL SOUL USERNAME (SHORTNAME).
 #   + soul:username on soul:Soul (owl:maxCardinality 1 during backfill, moving
 #   to owl:cardinality 1 once all souls backfill; xsd:string matching
@@ -307,7 +313,7 @@ soul:Soul a owl:Class ;
 
 soul:soulId a owl:DatatypeProperty ;
     rdfs:label "soul id" ;
-    rdfs:comment "Primary identifier: the BARE 40-hex genesis SHA of the soul repo (git rev-list --max-parents=0 HEAD) — no wrapper, no prefix (urn:soul: is retired, Rob-ruled 2026-08-01). Derived, never hand-authored; git-lex self-heals it on kit-update, so it cannot drift. The soul's IRI derives from it: https://repolex.ai/soul/Soul/<soulId>. Identity is the sha, so a soul keeps its identity across renames; the human-facing name is git-lex:title (Soul is a git-lex:Thing as of v0.11), never the key." ;
+    rdfs:comment "Cryptographic genesis identifier: the bare 40-hex first commit SHA of the soul repo (derived, never hand-authored; self-healed on kit-update). The soul's RDF id is `<soul/Soul/{username}>`." ;
     rdfs:domain soul:Soul ;
     rdfs:range xsd:string .
 
@@ -362,7 +368,7 @@ soul:Foundation a owl:Class ;
 
 soul:foundationId a owl:DatatypeProperty ;
     rdfs:label "foundation id" ;
-    rdfs:comment "Primary identifier: typically 'core'. The foundation's IRI derives from it: https://repolex.ai/soul/Foundation/<foundationId>." ;
+    rdfs:comment "Identifier for FOUNDATION.md (typically 'foundation'); its RDF id is `<soul/Foundation/{foundationId}>`." ;
     rdfs:domain soul:Foundation ;
     rdfs:range xsd:string .
 
