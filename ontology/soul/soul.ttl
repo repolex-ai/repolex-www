@@ -32,12 +32,13 @@
 # v0.15.0 (2026-11-18, ruled by goodlux): CANONICAL SOUL USERNAME (SHORTNAME).
 #   + soul:username on soul:Soul (owl:maxCardinality 1 during backfill, moving
 #   to owl:cardinality 1 once all souls backfill; xsd:string matching
-#   ^[a-z0-9]+(-[a-z0-9]+)*$ with at least one non-hex char). Canonical
-#   lowercase handle for the soul (e.g. "4m41th34", "s3lk13", "w4r3z", "m4xx",
-#   "spacegoat", "3un0m14", "w3bl0rd", "tr1p-l3x"), matching the repo folder
-#   name under repos/{squad}/{user} and used as the {user} segment in Choice 1
-#   (Path B) instance IRIs (https://repolex.ai/{squad}/{user}/{ns}/{Class}/{id})
-#   and 4-segment same-squad references (<{user}/{ns}/{Class}/{id}>).
+#   ^[a-z0-9]+$ — one word, lowercase letters and digits only, no hyphens,
+#   with at least one non-hex char g-z). Canonical lowercase handle for the
+#   soul (e.g. "4m41th34", "s3lk13", "w4r3z", "m4xx", "spacegoat", "3un0m14",
+#   "w3bl0rd", "tr1pl3x"), matching the repo folder name under
+#   repos/{squad}/{user} and used as the {user} segment in Choice 1 (Path B)
+#   instance IRIs (https://repolex.ai/{squad}/{user}/{ns}/{Class}/{id}) and
+#   4-segment same-squad references (<{user}/{ns}/{Class}/{id}>).
 #   See subtexture/docs/stack/2026_11_18_INSTANCE_IRI_IDENTITY_CHOICE1_VS_CHOICE3.md
 #   Sections 10-12.
 # v0.14.1 (2026-11-17, ruled by goodlux): QUERY PARAMETERS & STARTER DEDUP.
@@ -312,7 +313,7 @@ soul:soulId a owl:DatatypeProperty ;
 
 soul:username a owl:DatatypeProperty ;
     rdfs:label "username" ;
-    rdfs:comment "Canonical lowercase handle (a-z, 0-9, hyphens only, e.g. '4m41th34' or 's3lk13'; no dots or slashes) matching the repo folder; permanent once bound." ;
+    rdfs:comment "Canonical one-word lowercase handle (a-z and 0-9 only, no hyphens, dots, or slashes, e.g. '4m41th34', 's3lk13', 'tr1pl3x') matching the repo folder." ;
     rdfs:domain soul:Soul ;
     rdfs:range xsd:string .
 
