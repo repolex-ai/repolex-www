@@ -13,6 +13,27 @@
 #
 # CHANGELOG
 # -----------------------------------------------------------------------------
+# v0.6.0 (2026-11-19, ruled by goodlux): NAMED GRAPH DESCRIPTORS & ACCESS METADATA.
+#   (1) Store-scoped NamedGraph IRIs (https://repolex.ai/{squad}/{user}/{app}/NamedGraph/{id}):
+#       every named graph descriptor lives in its Oxigraph store's unnamed graph
+#       with the graph's own IRI as subject (no sd:name indirection).
+#   (2) Structural classes under `subtexture:NamedGraph`:
+#       + `subtexture:OntologyGraph` — T-box ontology graphs (left unrewritten
+#         by `calamus`).
+#       + `subtexture:DefaultGraph` — graphs included in the store's default
+#         view when a query carries no `GRAPH` clause.
+#   (3) Ownership & access properties on `subtexture:NamedGraph` (`owner` max 1,
+#       `visibility` max 1):
+#       + `subtexture:owner` (`owl:ObjectProperty`, range `subtexture:Thing`) —
+#         the Soul or entity that owns the graph (always allowed).
+#       + `subtexture:visibility` (`owl:DatatypeProperty`, range
+#         `subtexture:VisibilityValue` = `"private" | "shared" | "public"`) —
+#         `"private"` is the safe default when omitted; `"shared"` grants read
+#         access to `readableBy`; `"public"` is world-readable.
+#       + `subtexture:readableBy` (`owl:ObjectProperty`, multi-valued `0..*`) —
+#         Soul or squad IRIs permitted to read the graph when `visibility` is
+#         `"shared"`.
+#
 # v0.5.0 (2026-11-17, ruled by goodlux): PARAMETERIZED QUERIES.
 #   (1) + `subtexture:parameter` (`owl:DatatypeProperty`, domain
 #       `subtexture:Query`, range `xsd:string`, multi-valued `0..*`) — declares
@@ -110,7 +131,7 @@
 <https://repolex.ai/ontology/subtexture> a owl:Ontology ;
     rdfs:label "Subtexture Base Ontology" ;
     rdfs:comment "The foundational base ontology for the Subtexture ecosystem: Thing, Set, Query, NamedGraph, and the universal Thing properties." ;
-    owl:versionInfo "0.5.0" .
+    owl:versionInfo "0.6.0" .
 
 
 # =============================================================================
@@ -229,13 +250,52 @@ subtexture:parameter a owl:DatatypeProperty ;
 
 
 # =============================================================================
-# 4. GRAPHS
+# 4. GRAPHS & ACCESS METADATA
+# =============================================================================
+# Every Oxigraph store's unnamed graph holds one descriptor per named graph in
+# that store, using the store-scoped graph IRI itself as subject
+# (`https://repolex.ai/{squad}/{user}/{app}/NamedGraph/{id}`, no sd:name).
+# Structural role is expressed by subclassing (`OntologyGraph`, `DefaultGraph`);
+# ownership and read access are expressed via `owner`, `visibility` ('private'
+# default when omitted, 'shared', 'public'), and `readableBy`. Each engine
+# emits its own namespace terms and bridges upward here.
 # =============================================================================
 
 subtexture:NamedGraph a owl:Class ;
     rdfs:subClassOf sd:NamedGraph ;
     rdfs:label "NamedGraph" ;
-    rdfs:comment "A named graph descriptor resource in a Subtexture store, anchored to W3C sd:NamedGraph." .
+    rdfs:comment "A named graph descriptor in a Subtexture Oxigraph store's unnamed graph; its subject IRI IS the named graph IRI." .
+
+subtexture:OntologyGraph a owl:Class ;
+    rdfs:subClassOf subtexture:NamedGraph ;
+    rdfs:label "Ontology graph" ;
+    rdfs:comment "A named graph holding T-box ontology statements rather than A-box store data; query rewriters read it as written." .
+
+subtexture:DefaultGraph a owl:Class ;
+    rdfs:subClassOf subtexture:NamedGraph ;
+    rdfs:label "Default graph" ;
+    rdfs:comment "A named graph included in the store's default view for queries with no GRAPH clause." .
+
+subtexture:VisibilityValue a rdfs:Datatype ;
+    owl:oneOf ("private" "shared" "public") .
+
+subtexture:owner a owl:ObjectProperty ;
+    rdfs:label "owner" ;
+    rdfs:comment "The Soul or entity that owns this named graph; always permitted access." ;
+    rdfs:domain subtexture:NamedGraph ;
+    rdfs:range subtexture:Thing .
+
+subtexture:visibility a owl:DatatypeProperty ;
+    rdfs:label "visibility" ;
+    rdfs:comment "Access policy for this named graph: 'private' (owner only, default when omitted), 'shared' (owner plus readableBy), or 'public'." ;
+    rdfs:domain subtexture:NamedGraph ;
+    rdfs:range subtexture:VisibilityValue .
+
+subtexture:readableBy a owl:ObjectProperty ;
+    rdfs:label "readableBy" ;
+    rdfs:comment "A Soul or squad Thing permitted to read this named graph when visibility is 'shared'; multi-valued." ;
+    rdfs:domain subtexture:NamedGraph ;
+    rdfs:range subtexture:Thing .
 
 
 # =============================================================================
@@ -264,3 +324,7 @@ subtexture:Set rdfs:subClassOf
 
 subtexture:Query rdfs:subClassOf
     [ a owl:Restriction ; owl:onProperty subtexture:sparql ; owl:maxCardinality 1 ] .
+
+subtexture:NamedGraph rdfs:subClassOf
+    [ a owl:Restriction ; owl:onProperty subtexture:owner      ; owl:maxCardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty subtexture:visibility ; owl:maxCardinality 1 ] .

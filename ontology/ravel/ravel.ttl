@@ -17,13 +17,13 @@
 # ravel/docs/2026_06_29_CLAUDE_CODE_TRANSCRIPT_ONTOLOGY_DRAFT.ttl) is
 # DEFERRED, not absent — see the deferred block at the end.
 #
-# BASE (goodlux, 2026-11-16; ontology 0.7.0): ravel stands on the Subtexture
-# base ontology (subtexture.ttl 0.5.0, shipped beside this file as
-# ontology/subtexture/subtexture.ttl) and no longer refers to git-lex's
+# BASE (goodlux, 2026-11-16; ontology 0.7.0, updated 0.9.0): ravel stands on
+# the Subtexture base ontology (subtexture.ttl 0.6.0, shipped beside this file
+# as ontology/subtexture/subtexture.ttl) and no longer refers to git-lex's
 # vocabulary at all. Each app owns its own namespace in stored data and
 # bridges to the base with owl:equivalentProperty in its own file: ravel
-# writes ravel:relatedToId, declared equivalent to subtexture:relatedToId.
-# No store runs a reasoner, so a query must name ravel:relatedToId itself.
+# writes ravel:relatedToId (and ravel:{owner, visibility, readableBy} on named
+# graph descriptors), declared equivalent to subtexture:*.
 #
 # FOLDERING: ravel classes are graph-only BY DESIGN. Instances live in the store, never as
 # authored markdown; kit-add scaffolds ZERO folders in the soul corpus.
@@ -59,7 +59,7 @@
     a owl:Ontology ;
     rdfs:label "Ravel ontology" ;
     rdfs:comment "Transcript-graph vocabulary: conversational turns and the reader-annotation layer over them. Graph-only — no authored documents." ;
-    owl:versionInfo "0.8.0" .
+    owl:versionInfo "0.9.0" .
 
 # ─── The spine ───────────────────────────────────────────────────────────────
 
@@ -169,15 +169,50 @@ ravel:relatedToId a owl:ObjectProperty ;
     rdfs:domain subtexture:Thing ;
     rdfs:range subtexture:Thing .
 
-# Graph NAMES of this shape exist in every store
-# (https://repolex.ai/ravel/NamedGraph/<transcript id>, …/NamedGraph/memory-v1).
-# Descriptor nodes typed ravel:NamedGraph are NOT written yet: the class is
-# declared so ravel's graphs have a home under the base, and a writer
-# promotes it (see DEFERRED).
+# Store-scoped NamedGraph descriptors in the Oxigraph store's unnamed graph
+# (https://repolex.ai/{squad}/{user}/ravel/NamedGraph/<transcript-id> and
+# …/NamedGraph/memory-v1), using the graph's own IRI as subject (no sd:name).
+# Both TranscriptGraph and MemoryGraph subclass subtexture:DefaultGraph so
+# queries with no GRAPH clause see all current transcripts and memory.
 ravel:NamedGraph a owl:Class ;
     rdfs:subClassOf subtexture:NamedGraph ;
     rdfs:label "NamedGraph" ;
-    rdfs:comment "One named graph in a soul's ravel store, one per transcript plus memory-v1; no node carries this type yet, so match graphs with GRAPH ?g and not by type." .
+    rdfs:comment "A named graph in a soul's ravel store, described in the store's unnamed graph with the graph's own IRI as subject." .
+
+ravel:TranscriptGraph a owl:Class ;
+    rdfs:subClassOf ravel:NamedGraph , subtexture:DefaultGraph ;
+    rdfs:label "TranscriptGraph" ;
+    rdfs:comment "A named graph holding the turns of one conversation transcript, included in the store's default query view." .
+
+ravel:MemoryGraph a owl:Class ;
+    rdfs:subClassOf ravel:NamedGraph , subtexture:DefaultGraph ;
+    rdfs:label "MemoryGraph" ;
+    rdfs:comment "A named graph holding a soul's OptMem memory tree and links to source turns, included in the store's default query view." .
+
+ravel:owner a owl:ObjectProperty ;
+    owl:equivalentProperty subtexture:owner ;
+    rdfs:label "owner" ;
+    rdfs:comment "The Soul or entity that owns this ravel named graph; always permitted access." ;
+    rdfs:domain ravel:NamedGraph ;
+    rdfs:range subtexture:Thing .
+
+ravel:visibility a owl:DatatypeProperty ;
+    owl:equivalentProperty subtexture:visibility ;
+    rdfs:label "visibility" ;
+    rdfs:comment "Access policy for this ravel named graph: 'private' (owner only, default when omitted), 'shared' (owner plus readableBy), or 'public'." ;
+    rdfs:domain ravel:NamedGraph ;
+    rdfs:range subtexture:VisibilityValue .
+
+ravel:readableBy a owl:ObjectProperty ;
+    owl:equivalentProperty subtexture:readableBy ;
+    rdfs:label "readableBy" ;
+    rdfs:comment "A Soul or squad Thing permitted to read this ravel named graph when visibility is 'shared'; multi-valued." ;
+    rdfs:domain ravel:NamedGraph ;
+    rdfs:range subtexture:Thing .
+
+ravel:NamedGraph rdfs:subClassOf
+    [ a owl:Restriction ; owl:onProperty ravel:owner      ; owl:maxCardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty ravel:visibility ; owl:maxCardinality 1 ] .
 
 # ─── The annotation layer (decorates oa:/prov: shapes) ──────────────────────
 
@@ -298,9 +333,6 @@ ravel:memoryModel a owl:DatatypeProperty ;
 # · The full ClaudeCode transcript type-space (attachments, compaction
 #   prov:Activity, session metadata) — Day-39 draft; promotes term-by-term as
 #   readers emit it.
-# · ravel:NamedGraph descriptor nodes (sd:name and friends) — the class is
-#   declared, nothing is typed with it; promotes when a writer describes the
-#   store's graphs.
 # · Embedding/search vocabulary — waits on the stack embedder weights lock
 #   (candle-MiniLM class, one 384-d text space).
 # · Universal Thing-field emission (title / abstract / cue / relatedToId) —

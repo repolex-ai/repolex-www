@@ -43,11 +43,19 @@
 <https://repolex.ai/ontology/pan> a owl:Ontology ;
     rdfs:label "Pan media store ontology" ;
     rdfs:comment "Identity, location, timing and model-derived enrichment facts Pan records for stored media." ;
-    owl:versionInfo "0.4.30" .
+    owl:versionInfo "0.4.31" .
 
 # -----------------------------------------------------------------------------
 # CHANGELOG
 # -----------------------------------------------------------------------------
+# v0.4.31 (2026-11-19, ruled by goodlux): STORE-SCOPED NAMED GRAPH & ACCESS METADATA.
+#   (1) Store-scoped NamedGraph IRI (`https://repolex.ai/{squad}/{user}/pan/NamedGraph/pan`),
+#       described in the store's unnamed graph (moving out of the data graph).
+#   (2) `pan:NamedGraph rdfs:subClassOf subtexture:NamedGraph , subtexture:DefaultGraph`
+#       (aligning with `subtexture.ttl 0.6.0`, copied beside this file).
+#   (3) + `pan:owner`, `pan:visibility`, `pan:readableBy` on `pan:NamedGraph`,
+#       bridged to `subtexture:{owner, visibility, readableBy}` via
+#       `owl:equivalentProperty`.
 # v0.4.30 (2026-11-17, asked for by goodlux): WHAT THE MAC ITSELF SEES.
 #   Iris serves four percepts from Apple's on-device Vision framework
 #   (iris a93749e): an aesthetics score with a utility flag, recognised text,
@@ -795,15 +803,36 @@ pan:Node a owl:Class ;
 # -----------------------------------------------------------------------------
 # THE NAMED GRAPH
 # -----------------------------------------------------------------------------
-# One instance, the same in every store: <pan/NamedGraph/pan>. Every fact pand
-# writes is in it, and every record file names it in its fourth column
-# (goodlux, 2026-09-21).
+# One per Pan store: <pan/NamedGraph/pan> (`https://repolex.ai/{squad}/{user}/pan/NamedGraph/pan`),
+# described in the store's unnamed graph. Every data fact pand writes sits inside
+# that named graph, and every record file names it in its fourth column.
 # -----------------------------------------------------------------------------
 
 pan:NamedGraph a owl:Class ;
-    rdfs:subClassOf subtexture:NamedGraph ;
+    rdfs:subClassOf subtexture:NamedGraph , subtexture:DefaultGraph ;
     rdfs:label "NamedGraph" ;
-    rdfs:comment "The named graph every Pan fact is written into: <pan/NamedGraph/pan>, the same in every store. Written by pand; never authored." .
+    rdfs:comment "The named graph every Pan fact is written into (`<pan/NamedGraph/pan>`), described in the store's unnamed graph and included in the default query view. Written by pand; never authored." .
+
+pan:owner a owl:ObjectProperty ;
+    owl:equivalentProperty subtexture:owner ;
+    rdfs:label "owner" ;
+    rdfs:comment "The Soul or entity that owns this Pan named graph; always permitted access." ;
+    rdfs:domain pan:NamedGraph ;
+    rdfs:range subtexture:Thing .
+
+pan:visibility a owl:DatatypeProperty ;
+    owl:equivalentProperty subtexture:visibility ;
+    rdfs:label "visibility" ;
+    rdfs:comment "Access policy for this Pan named graph: 'private' (owner only, default when omitted), 'shared' (owner plus readableBy), or 'public'." ;
+    rdfs:domain pan:NamedGraph ;
+    rdfs:range subtexture:VisibilityValue .
+
+pan:readableBy a owl:ObjectProperty ;
+    owl:equivalentProperty subtexture:readableBy ;
+    rdfs:label "readableBy" ;
+    rdfs:comment "A Soul or squad Thing permitted to read this Pan named graph when visibility is 'shared'; multi-valued." ;
+    rdfs:domain pan:NamedGraph ;
+    rdfs:range subtexture:Thing .
 
 # -----------------------------------------------------------------------------
 # THE STORE
@@ -1808,3 +1837,7 @@ pan:Label rdfs:subClassOf
     [ a owl:Restriction ; owl:onProperty pan:producedDate ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:descriptor   ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:score        ; owl:cardinality 1 ] .
+
+pan:NamedGraph rdfs:subClassOf
+    [ a owl:Restriction ; owl:onProperty pan:owner      ; owl:maxCardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:visibility ; owl:maxCardinality 1 ] .

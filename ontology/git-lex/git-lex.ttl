@@ -29,7 +29,17 @@
 git-lex: a owl:Ontology ;
     rdfs:label "git-lex Core Ontology" ;
     rdfs:comment "The vocabulary git-lex authors about the markdown documents it tracks." ;
-    owl:versionInfo "0.21.0" .
+    owl:versionInfo "0.22.0" .
+
+# v0.22.0 (2026-11-19, ruled by goodlux): NAMED GRAPH DESCRIPTORS & ACCESS METADATA.
+#   (1) Store-scoped NamedGraph IRIs (https://repolex.ai/{squad}/{user}/git-lex/NamedGraph/{id}):
+#       git-lex:NamedGraph comment updated to drop the stale sd:name claim; the
+#       descriptor's subject IRI in the store's unnamed graph IS the named graph IRI.
+#   (2) + git-lex:OntologyGraph (rdfs:subClassOf git-lex:NamedGraph , subtexture:OntologyGraph)
+#       and + git-lex:CurrentGraph (rdfs:subClassOf git-lex:NamedGraph , subtexture:DefaultGraph).
+#   (3) + git-lex:owner, git-lex:visibility, git-lex:readableBy on git-lex:NamedGraph,
+#       bridged to subtexture:{owner, visibility, readableBy} via owl:equivalentProperty.
+#   (4) ontology/subtexture/subtexture.ttl bumped to 0.6.0.
 
 # v0.21.0 (2026-11-17, ruled by goodlux): QUERY PARAMETERS.
 #   (1) + git-lex:parameter (owl:DatatypeProperty, owl:equivalentProperty
@@ -729,12 +739,47 @@ git-lex:NamedGraph a owl:Class ;
     rdfs:subClassOf subtexture:NamedGraph ;
     rdfs:subClassOf sd:NamedGraph ;
     rdfs:label "NamedGraph" ;
-    rdfs:comment "A named graph git-lex maintains in a repo's knowledge base. Instance IRIs are derived under the git-lex application slug and typed against this class in the default graph for zero-knowledge discovery. Note the two-resources distinction: the NamedGraph OBJECT (this IRI) is the queryable thing that describes the graph; the graph it names is carried via sd:name. Anchored to the W3C SPARQL Service Description sd:NamedGraph — the one external supertype git-lex adopts, because it is a real standard class, not an invented layer." .
+    rdfs:comment "A named graph git-lex maintains in a repo's Oxigraph store (`https://repolex.ai/{squad}/{user}/git-lex/NamedGraph/{id}`). Described in the store's unnamed graph using the graph's own IRI as the subject (no sd:name indirection)." .
+
+git-lex:OntologyGraph a owl:Class ;
+    rdfs:subClassOf git-lex:NamedGraph , subtexture:OntologyGraph ;
+    rdfs:label "OntologyGraph" ;
+    rdfs:comment "The named graph holding the repository's merged kit ontologies (`NamedGraph/repo-ontology`); query rewriters read it as written." .
+
+git-lex:CurrentGraph a owl:Class ;
+    rdfs:subClassOf git-lex:NamedGraph , subtexture:DefaultGraph ;
+    rdfs:label "CurrentGraph" ;
+    rdfs:comment "The named graph holding the repository's current live statements (`NamedGraph/now`), included in the store's default query view." .
 
 git-lex:LexHistoryGraph a owl:Class ;
     rdfs:subClassOf git-lex:NamedGraph ;
     rdfs:label "LexHistoryGraph" ;
-    rdfs:comment "The one graph: a repo's statement history as a named graph — base facts alongside the SpoEvents that record their lifecycle. 'Now' is a view derived from it (see git-lex:SpoEvent). Each repo's store holds exactly one, named https://repolex.ai/git-lex/LexHistoryGraph (a per-store singleton — no instance segment needed). Distinct by name from the retired legacy history graph. Event ordering within the graph follows git2:ordinalDerived." .
+    rdfs:comment "The repository's statement history named graph — base facts alongside the SpoEvents that record their lifecycle (`NamedGraph/now` is the current view derived from it). Event ordering within the graph follows git2:ordinalDerived." .
+
+git-lex:owner a owl:ObjectProperty ;
+    owl:equivalentProperty subtexture:owner ;
+    rdfs:label "owner" ;
+    rdfs:comment "The Soul or entity that owns this named graph; maintained by git-lex in the unnamed graph." ;
+    rdfs:domain git-lex:NamedGraph ;
+    rdfs:range subtexture:Thing .
+
+git-lex:visibility a owl:DatatypeProperty ;
+    owl:equivalentProperty subtexture:visibility ;
+    rdfs:label "visibility" ;
+    rdfs:comment "Access policy for this named graph: 'private' (default when omitted), 'shared', or 'public'." ;
+    rdfs:domain git-lex:NamedGraph ;
+    rdfs:range subtexture:VisibilityValue .
+
+git-lex:readableBy a owl:ObjectProperty ;
+    owl:equivalentProperty subtexture:readableBy ;
+    rdfs:label "readableBy" ;
+    rdfs:comment "A Soul or squad Thing permitted to read this named graph when visibility is 'shared'; multi-valued." ;
+    rdfs:domain git-lex:NamedGraph ;
+    rdfs:range subtexture:Thing .
+
+git-lex:NamedGraph rdfs:subClassOf
+    [ a owl:Restriction ; owl:onProperty git-lex:owner      ; owl:maxCardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty git-lex:visibility ; owl:maxCardinality 1 ] .
 
 # =============================================================================
 # Properties
