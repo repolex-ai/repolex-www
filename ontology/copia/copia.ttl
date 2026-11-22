@@ -12,6 +12,19 @@
 # =============================================================================
 # COPIA KIT ONTOLOGY
 # =============================================================================
+# v0.47.0 (2026-11-22) — copia:Skill added.
+# Ruled by goodlux, 2026-11-22: kits keep their own skills, and skill properties
+# lift unprefixed onto git-lex:Skill (git-lex 0.23.0; reader shipped first in
+# git-lex fc68030 + dd66d05).
+# ADDED: copia:Skill (rdfs:subClassOf git-lex:Skill , git-lex:Thing ;
+# git-lex:foldered true) — CoPIA-specific executable skills in Copia/Skill/<id>.md,
+# projected alongside Soul/Skill/<id>.md into .claude/skills/ and .agents/skills/.
+# Identity is the universal git-lex:id (<copia/Skill/id>); summary is
+# git-lex:description; invocability, allowedTools, and argumentHint inherit from
+# git-lex:Skill. No skillId or skill* properties are declared.
+# DELIBERATELY NOT DONE: no minCardinality 1 on git-lex:description yet while
+# migrated Copia/Skill files backfill off skillDescription.
+#
 # v0.46.0 (2026-11-18) — Action becomes a document; a Shotlist says its medium.
 # Ruled by goodlux, 2026-11-18 (to add to this ontology, and that clip motions
 # reuse copia:Action with a description and per-model wording, so one Action
@@ -712,7 +725,7 @@
 <https://repolex.ai/ontology/copia> a owl:Ontology ;
     rdfs:label "Copia Kit Ontology" ;
     rdfs:comment "The agent's curated outward face + the CoPIA render data model. Soul-adapter. Optional add-on for soul." ;
-    owl:versionInfo "0.46.0" ;
+    owl:versionInfo "0.47.0" ;
     owl:imports <https://repolex.ai/ontology/soul/> .
 
 
@@ -2365,3 +2378,17 @@ copia:Query a owl:Class ;
     git-lex:authoringGuidance "Put the executable SPARQL 1.1 read query in the first fenced ```sparql code block in the body; declare each parameter in parameter as name[:kind][=default] and use it in the query as ?name." ;
     rdfs:label "Query" ;
     rdfs:comment "A saved read-only SPARQL 1.1 query in Copia/Query/<id>.md — single-store or federated across Copia and Pan via Syrinx SERVICE blocks." .
+
+# --- Skill ---
+# CoPIA-specific executable skills in Copia/Skill/<id>.md, projected alongside
+# Soul/Skill/<id>.md into substrate skill directories by git-lex. Identity is
+# the universal git-lex:id (<copia/Skill/id>); summary is git-lex:description;
+# invocability, allowedTools, and argumentHint inherit from git-lex:Skill.
+# No skillId or skill* properties are declared.
+
+copia:Skill a owl:Class ;
+    rdfs:subClassOf git-lex:Skill , git-lex:Thing ;
+    git-lex:foldered true ;
+    git-lex:authoringGuidance "State when to activate this CoPIA skill and what inputs or steps it runs; reference companion scripts/ or references/ paths when used." ;
+    rdfs:label "Skill" ;
+    rdfs:comment "A CoPIA-specific executable skill in Copia/Skill/<id>.md for shared visual creation workflows." .

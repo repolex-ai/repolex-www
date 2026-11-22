@@ -29,7 +29,22 @@
 git-lex: a owl:Ontology ;
     rdfs:label "git-lex Core Ontology" ;
     rdfs:comment "The vocabulary git-lex authors about the markdown documents it tracks." ;
-    owl:versionInfo "0.22.0" .
+    owl:versionInfo "0.23.0" .
+
+# v0.23.0 (2026-11-22, ruled by goodlux): SKILL PROPERTIES LIFTED & UNPREFIXED.
+#   (1) + git-lex:SkillInvocabilityValue (rdfs:Datatype, owl:oneOf ("user" "agent" "both")),
+#       + git-lex:invocability, + git-lex:allowedTools, + git-lex:argumentHint on
+#       git-lex:Skill (each owl:maxCardinality 1), plus git-lex:authoringGuidance on
+#       git-lex:Skill. Lifted from soul:Skill and unprefixed (skill* dropped) now that
+#       properties scope to their class via rdfs:domain git-lex:Skill in SHACL shapes
+#       and templates (copia:Skill alongside soul:Skill). Gated on git-lex fc68030
+#       (multi-folder Skill/ scan) and dd66d05 (new keys read first with skill* fallback).
+#   (2) DELIBERATELY NOT ADDED: skillId and skillDescription. Identity is the universal
+#       git-lex:id (<kit/Skill/name>, 147/147 existing soul skills already carry it),
+#       and summary text is the universal git-lex:description inherited from git-lex:Thing.
+#       DELIBERATELY NOT REQUIRED YET: no owl:minCardinality 1 on git-lex:description
+#       during backfill so repos holding unmigrated skillDescription lines are not
+#       walled out of git lex save.
 
 # v0.22.0 (2026-11-19, ruled by goodlux): NAMED GRAPH DESCRIPTORS & ACCESS METADATA.
 #   (1) Store-scoped NamedGraph IRIs (https://repolex.ai/{squad}/{user}/git-lex/NamedGraph/{id}):
@@ -512,11 +527,34 @@ git-lex:Note a owl:Class ;
     rdfs:label "Note" ;
     rdfs:comment "The universal structured note: a scratchpad, capture, or thinking document with title, description, cues, tags, and links. Kit-specific notes (soul:Note, copia:Note, squad:Note) subclass this." .
 
+# Identity is the universal git-lex:id (<kit/Skill/name>); summary is git-lex:description.
 git-lex:Skill a owl:Class ;
     rdfs:subClassOf git-lex:Thing ;
     git-lex:foldered true ;
+    git-lex:authoringGuidance "State when to activate this skill and what inputs or steps it runs; reference companion scripts/ or references/ paths when used." ;
     rdfs:label "Skill" ;
     rdfs:comment "An executable skill definition with instructions, scripts, or resources projected into agent substrate harnesses. Kit-specific skills (soul:Skill, copia:Skill) subclass this." .
+
+git-lex:SkillInvocabilityValue a rdfs:Datatype ;
+    owl:oneOf ( "user" "agent" "both" ) .
+
+git-lex:invocability a owl:DatatypeProperty ;
+    rdfs:label "invocability" ;
+    rdfs:comment "One of: user, agent, both. Who can invoke this skill ('user' slash command only, 'agent' auto-triggered only, or 'both', the default)." ;
+    rdfs:domain git-lex:Skill ;
+    rdfs:range git-lex:SkillInvocabilityValue .
+
+git-lex:allowedTools a owl:DatatypeProperty ;
+    rdfs:label "allowedTools" ;
+    rdfs:comment "Space-separated tool names this skill may run without confirmation (e.g. 'Read Glob Grep Bash'); single string, not a YAML list." ;
+    rdfs:domain git-lex:Skill ;
+    rdfs:range xsd:string .
+
+git-lex:argumentHint a owl:DatatypeProperty ;
+    rdfs:label "argumentHint" ;
+    rdfs:comment "Short usage hint shown beside the slash command during autocomplete (e.g. '[read|write|status]')." ;
+    rdfs:domain git-lex:Skill ;
+    rdfs:range xsd:string .
 
 # Identity is the universal git-lex:id (<kit/Query/name>); no queryId property.
 git-lex:Query a owl:Class ;
@@ -706,6 +744,11 @@ git-lex:Thing rdfs:subClassOf
     [ a owl:Restriction ; owl:onProperty git-lex:updatedDate ; owl:maxCardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty git-lex:substrate   ; owl:maxCardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty git-lex:kitManaged  ; owl:maxCardinality 1 ] .
+
+git-lex:Skill rdfs:subClassOf
+    [ a owl:Restriction ; owl:onProperty git-lex:invocability ; owl:maxCardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty git-lex:allowedTools ; owl:maxCardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty git-lex:argumentHint ; owl:maxCardinality 1 ] .
 
 git-lex:Query rdfs:subClassOf
     [ a owl:Restriction ; owl:onProperty git-lex:sparql ; owl:maxCardinality 1 ] .

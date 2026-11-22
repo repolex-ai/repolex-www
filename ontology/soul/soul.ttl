@@ -27,8 +27,23 @@
 <https://repolex.ai/ontology/soul> a owl:Ontology ;
     rdfs:label "Soul Kit Ontology" ;
     rdfs:comment "An agent's persistent mind. Identity, memory, knowledge, and personality across sessions." ;
-    owl:versionInfo "0.15.1" .
+    owl:versionInfo "0.16.0" .
 
+# v0.16.0 (2026-11-22, ruled by goodlux): SKILL PROPERTIES LIFTED TO git-lex:Skill.
+#   (1) GONE from soul:: soul:SkillInvocabilityValue, soul:skillId,
+#       soul:skillDescription, soul:skillInvocability, soul:skillAllowedTools, and
+#       soul:skillArgumentHint — deleted outright (not deprecated, per v0.13.0) so
+#       __Skill.md scaffolds only the clean inherited properties.
+#   (2) soul:Skill subclasses git-lex:Skill , git-lex:Thing and inherits universal
+#       git-lex:id (<soul/Skill/name> — verified 147/147 across all 15 squad stores
+#       before removal), git-lex:description, and git-lex:{invocability,
+#       allowedTools, argumentHint} from git-lex 0.23.0. Gated on git-lex dd66d05
+#       (new keys read first with skill* fallback).
+#   (3) Rewrote content/Soul/Skill/{journal,lex-base-write-ontology,search-your-soul}.md
+#       to soul.Skill.{id, description, invocability, allowedTools, argumentHint}
+#       plus soul.Skill.kitManaged: true.
+#   (4) DELIBERATELY NOT REQUIRED YET: no minCardinality 1 on git-lex:description
+#       until souls backfill existing Soul/Skill/*.md files off skillDescription.
 # v0.15.1 (2026-11-19, ruled by goodlux): STORE-SCOPED SOUL & GRAPH ADDRESSES.
 #   (1) Updated content/Soul/Query/recent.md to relative `GRAPH <git-lex/NamedGraph/now>`
 #   so it resolves cleanly against both pre-cutover `https://repolex.ai/` and
@@ -270,9 +285,6 @@ soul:CategoryValue a rdfs:Datatype ;
 
 soul:ExplorationStatusValue a rdfs:Datatype ;
     owl:oneOf ("exploring" "active" "paused" "concluded") .
-
-soul:SkillInvocabilityValue a rdfs:Datatype ;
-    owl:oneOf ("user" "agent" "both") .
 
 
 # =============================================================================
@@ -575,53 +587,17 @@ soul:relatedTo a owl:ObjectProperty ;
     rdfs:comment "Other documents this document references. Domain left open so any doc-type may relate." .
 
 # --- Skill ---
-# Something the agent can do. Tools, techniques, capabilities.
+# Something the agent can do. Identity is the universal git-lex:id
+# (<soul/Skill/name>); summary is git-lex:description; invocability,
+# allowedTools, and argumentHint inherit from git-lex:Skill. No skillId or
+# skill* properties are declared.
 
 soul:Skill a owl:Class ;
-    rdfs:subClassOf git-lex:Skill ;
+    rdfs:subClassOf git-lex:Skill , git-lex:Thing ;
     git-lex:foldered true ;
+    git-lex:authoringGuidance "State when to activate this skill and what inputs or steps it runs; reference companion scripts/ or references/ paths when used." ;
     rdfs:label "Skill" ;
-    rdfs:comment "A capability the agent has — a tool, technique, or area of competence." ;
-    rdfs:subClassOf [
-        a owl:Restriction ;
-        owl:onProperty soul:skillId ;
-        owl:minCardinality 1
-    ] ;
-    rdfs:subClassOf [
-        a owl:Restriction ;
-        owl:onProperty soul:skillDescription ;
-        owl:minCardinality 1
-    ] .
-
-soul:skillId a owl:DatatypeProperty ;
-    rdfs:label "skillId" ;
-    rdfs:comment "Unique identifier for this skill." ;
-    rdfs:domain soul:Skill ;
-    rdfs:range xsd:string .
-
-soul:skillDescription a owl:DatatypeProperty ;
-    rdfs:label "description" ;
-    rdfs:comment "What this skill does and when to use it." ;
-    rdfs:domain soul:Skill ;
-    rdfs:range xsd:string .
-
-soul:skillInvocability a owl:DatatypeProperty ;
-    rdfs:label "invocability" ;
-    rdfs:comment "Who can invoke this skill: 'user' (slash command), 'agent' (auto-triggered), 'both'." ;
-    rdfs:domain soul:Skill ;
-    rdfs:range soul:SkillInvocabilityValue .
-
-soul:skillAllowedTools a owl:DatatypeProperty ;
-    rdfs:label "allowedTools" ;
-    rdfs:comment "Space-separated list of tools the skill may use without confirmation." ;
-    rdfs:domain soul:Skill ;
-    rdfs:range xsd:string .
-
-soul:skillArgumentHint a owl:DatatypeProperty ;
-    rdfs:label "argumentHint" ;
-    rdfs:comment "Hint shown during autocomplete (e.g. '[read|write|status]')." ;
-    rdfs:domain soul:Skill ;
-    rdfs:range xsd:string .
+    rdfs:comment "A capability the agent has — an executable workflow, technique, or area of competence in Soul/Skill/<id>.md." .
 
 # --- Pursuit ---
 # What the soul is motivated to wake up and work on. A project is a pursuit;
