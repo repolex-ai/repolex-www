@@ -18,7 +18,7 @@
 # DEFERRED, not absent — see the deferred block at the end.
 #
 # BASE (goodlux, 2026-11-16; ontology 0.7.0, updated 0.9.0): ravel stands on
-# the Subtexture base ontology (subtexture.ttl 0.6.0, shipped beside this file
+# the Subtexture base ontology (subtexture.ttl 0.7.0, shipped beside this file
 # as ontology/subtexture/subtexture.ttl) and no longer refers to git-lex's
 # vocabulary at all. Each app owns its own namespace in stored data and
 # bridges to the base with owl:equivalentProperty in its own file: ravel
@@ -59,7 +59,7 @@
     a owl:Ontology ;
     rdfs:label "Ravel ontology" ;
     rdfs:comment "Transcript-graph vocabulary: conversational turns and the reader-annotation layer over them. Graph-only — no authored documents." ;
-    owl:versionInfo "0.9.2" .
+    owl:versionInfo "0.10.0" .
 
 # ─── The spine ───────────────────────────────────────────────────────────────
 
@@ -107,11 +107,14 @@ ravel:text a owl:DatatypeProperty ;
     rdfs:domain ravel:Turn ;
     rdfs:range xsd:string .
 
-ravel:model a owl:DatatypeProperty ;
-    rdfs:label "model" ;
-    rdfs:comment "The model that answered this turn, as the record itself reports it (Claude Code: the API's own message.model, e.g. 'claude-opus-5-5'). Absent when the record names none: human turns, harness-written replies, the Claude desktop export." ;
+# `ravel:model` was retired in 0.10.0 (goodlux, 2026-11-22): the model now
+# rides in the author, after the first `-on-`.
+ravel:author a owl:DatatypeProperty ;
+    rdfs:label "author" ;
+    rdfs:comment "Who wrote this turn: '{username}-on-{model}' for a reply whose record names the model that ran (e.g. 's3lk13-on-claude-fable-5-2', 'kira-on-gemini-4-neon-medium'), the bare '{username}' when it names none, and always bare for a person ('goodlux'). On a herdr message it is the user the sender line names, which is that sender's word and not proof. Absent when the record names no one: tool output, harness notices, a subagent's prompt. A model is never guessed. Usernames hold no dash, so the first '-on-' ends the username. Multi-valued." ;
     rdfs:domain ravel:Turn ;
-    rdfs:range xsd:string .
+    rdfs:range xsd:string ;
+    owl:equivalentProperty subtexture:author .
 
 ravel:modelSetting a owl:DatatypeProperty ;
     rdfs:label "modelSetting" ;
