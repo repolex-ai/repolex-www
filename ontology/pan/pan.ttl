@@ -43,11 +43,23 @@
 <https://repolex.ai/ontology/pan> a owl:Ontology ;
     rdfs:label "Pan media store ontology" ;
     rdfs:comment "Identity, location, timing and model-derived enrichment facts Pan records for stored media." ;
-    owl:versionInfo "0.4.32" .
+    owl:versionInfo "0.4.33" .
 
 # -----------------------------------------------------------------------------
 # CHANGELOG
 # -----------------------------------------------------------------------------
+# v0.4.33 (2026-11-22, ruled by goodlux): THE ENRICHMENT MODEL HAS ITS OWN NAME.
+#   (1) `pan:model` is renamed `pan:enrichmentModel`. Same domain (pan:Node),
+#       same range, same meaning: the model that produced an enrichment record.
+#       "model" alone also names the model that speaks, elsewhere in the stack,
+#       and the two are different things. pand writes the new name, and data
+#       already stored is rewritten to it (`pand rename-property`): the graph,
+#       the record files and the XMP in each media file. Nothing reads the old
+#       name; a store still holding it does not open.
+#   (2) `subtexture.ttl` 0.7.0 copied beside this file (adds the universal
+#       `subtexture:author`).
+#   DELIBERATELY NOT DONE: no `pan:author` yet. Which value existing media
+#   takes, and how a producer passes it in, is not decided.
 # v0.4.32 (2026-11-19, ruled by goodlux): QUERY PARAMETERS IN PAN.
 #   (1) + `pan:parameter` on `pan:Query`, bridged to `subtexture:parameter` via
 #       `owl:equivalentProperty` (`name[:kind][=default]`, multi-valued `0..*`),
@@ -531,7 +543,7 @@
 #       pan:Region, pan:Pose, pan:Caption, pan:Embedding, pan:Thumbnail,
 #       pan:Photoset) subclasses pan:Node.
 #   (3) SCOPE PROPERTIES TO PAN: pan:id, pan:createdDate, pan:description,
-#       pan:width, pan:height, pan:model, pan:precision, pan:provider,
+#       pan:width, pan:height, pan:enrichmentModel, pan:precision, pan:provider,
 #       pan:producedDate, pan:path domain moved from git-lex:Thing to pan:Node.
 #       These fields are scoped to Pan and no longer pollute the universal Thing.
 #   (4) pan:id retains owl:equivalentProperty subtexture:id, git-lex:id and
@@ -728,7 +740,7 @@
 #         precision and provider are data on the record, not part of the name):
 #   (1) pan:precision, pan:provider — data on a model-produced record saying
 #       how (bf16-cuda, 8-bit) and where (salad, phala, mac) the model ran.
-#       pan:model stays the functional label = the index name; two runs of
+#       pan:enrichmentModel stays the functional label = the index name; two runs of
 #       the same network at different precisions share it (cosine 0.998).
 #
 # v0.3.1 (2026-09-04, ruled by Rob to nomia and confirmed to w4r3z: Horae
@@ -788,7 +800,7 @@
 #
 # v0.2.0 (2026-08-26, Rob-ruled over six demo rounds): enrichment layer —
 #   Region/Pose/Caption/Embedding/Thumbnail as first-class nodes, model as
-#   DATA (pan:model) never as a name, data files beside the blob with one
+#   DATA (pan:enrichmentModel) never as a name, data files beside the blob with one
 #   reference each, pan:id replacing panId.
 # v0.1.0 (2026-07-16): identity + location + provenance.
 # -----------------------------------------------------------------------------
@@ -844,13 +856,11 @@ pan:readableBy a owl:ObjectProperty ;
 # -----------------------------------------------------------------------------
 # THE STORE
 # -----------------------------------------------------------------------------
-# One per .pan directory. IRI <pan/Store/<id>> where <id> is the FIRST SIX
-# CHARACTERS of the soul's genesis SHA (a repo store) or of the configured
-# store id (a bare store) — the same identity git-lex, Horae and Syrinx
-# already use for the soul, cut to six: 700c5b. Six characters everywhere
-# (goodlux, 2026-09-18): the IRI, the daemon's routes, the log lines and the
-# media folder on the volume are one value, and the whole hash appears
-# nowhere.
+# One per .pan directory. IRI <pan/Store/<id>> where <id> is the store's
+# name: the soul's user name (a repo store), s3lk13, or the configured
+# storage_id (any other store). pand addresses the store as org/name, the
+# org being the squad or `default` (goodlux, 2026-11-20); no hash and no cut
+# of one appears in the IRI, the daemon's routes or the log lines.
 # -----------------------------------------------------------------------------
 
 pan:Store a owl:Class ;
@@ -1349,7 +1359,7 @@ pan:listenPort a owl:DatatypeProperty ;
 # ENRICHMENT — what a model saw, where its output lives, when
 # -----------------------------------------------------------------------------
 # Every enrichment record is a first-class node with its own IRI
-# <pan/Region/x7q2mf>. The producing model is DATA (pan:model), never part of
+# <pan/Region/x7q2mf>. The producing model is DATA (pan:enrichmentModel), never part of
 # a class or property name — a new model must never mean new vocabulary (the
 # copia:qwen35vl9bCaption lesson: seven field names for one idea).
 # -----------------------------------------------------------------------------
@@ -1493,8 +1503,8 @@ pan:relatedToId a owl:ObjectProperty ;
 # their domain is the shared parent Node (pan:count excepted: RegionData only) and the cardinality block below says
 # which class carries which.
 
-pan:model a owl:DatatypeProperty ;
-    rdfs:label "model" ;
+pan:enrichmentModel a owl:DatatypeProperty ;
+    rdfs:label "enrichment model" ;
     rdfs:comment "The model that produced this record, as configured for the endpoint that ran. Data, not identity." ;
     rdfs:domain pan:Node ;
     rdfs:range xsd:string .
@@ -1756,7 +1766,7 @@ pan:Instance rdfs:subClassOf
 
 pan:Enrichment rdfs:subClassOf
     [ a owl:Restriction ; owl:onProperty pan:id ; owl:cardinality 1 ] ,
-    [ a owl:Restriction ; owl:onProperty pan:model      ; owl:cardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:enrichmentModel      ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:path       ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:modelReplyPath  ; owl:maxCardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:modelRevision   ; owl:maxCardinality 1 ] ,
@@ -1773,7 +1783,7 @@ pan:RegionData rdfs:subClassOf
 
 pan:Region rdfs:subClassOf
     [ a owl:Restriction ; owl:onProperty pan:id ; owl:cardinality 1 ] ,
-    [ a owl:Restriction ; owl:onProperty pan:model      ; owl:cardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:enrichmentModel      ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:producedDate ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:descriptor ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:polygon    ; owl:maxCardinality 1 ] ,
@@ -1783,21 +1793,21 @@ pan:Region rdfs:subClassOf
 
 pan:Pose rdfs:subClassOf
     [ a owl:Restriction ; owl:onProperty pan:id ; owl:cardinality 1 ] ,
-    [ a owl:Restriction ; owl:onProperty pan:model       ; owl:cardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:enrichmentModel       ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:producedDate  ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:keypoints   ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:overlayPath ; owl:maxCardinality 1 ] .
 
 pan:Caption rdfs:subClassOf
     [ a owl:Restriction ; owl:onProperty pan:id ; owl:cardinality 1 ] ,
-    [ a owl:Restriction ; owl:onProperty pan:model      ; owl:cardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:enrichmentModel      ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:producedDate ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:modelPromptPath ; owl:maxCardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:text       ; owl:cardinality 1 ] .
 
 pan:Embedding rdfs:subClassOf
     [ a owl:Restriction ; owl:onProperty pan:id ; owl:cardinality 1 ] ,
-    [ a owl:Restriction ; owl:onProperty pan:model      ; owl:cardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:enrichmentModel      ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:producedDate ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:dim        ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:vectorPath ; owl:cardinality 1 ] .
@@ -1811,7 +1821,7 @@ pan:Thumbnail rdfs:subClassOf
 
 pan:Depth rdfs:subClassOf
     [ a owl:Restriction ; owl:onProperty pan:id ; owl:cardinality 1 ] ,
-    [ a owl:Restriction ; owl:onProperty pan:model        ; owl:cardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:enrichmentModel        ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:producedDate ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:depthMapPath ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:depthMin     ; owl:cardinality 1 ] ,
@@ -1821,7 +1831,7 @@ pan:Depth rdfs:subClassOf
 
 pan:Face rdfs:subClassOf
     [ a owl:Restriction ; owl:onProperty pan:id ; owl:cardinality 1 ] ,
-    [ a owl:Restriction ; owl:onProperty pan:model        ; owl:cardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:enrichmentModel        ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:producedDate ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:bbox         ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:score        ; owl:cardinality 1 ] ,
@@ -1832,14 +1842,14 @@ pan:Face rdfs:subClassOf
 
 pan:Aesthetics rdfs:subClassOf
     [ a owl:Restriction ; owl:onProperty pan:id ; owl:cardinality 1 ] ,
-    [ a owl:Restriction ; owl:onProperty pan:model          ; owl:cardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:enrichmentModel          ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:producedDate   ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:aestheticScore ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:isUtility      ; owl:maxCardinality 1 ] .
 
 pan:TextLine rdfs:subClassOf
     [ a owl:Restriction ; owl:onProperty pan:id ; owl:cardinality 1 ] ,
-    [ a owl:Restriction ; owl:onProperty pan:model        ; owl:cardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:enrichmentModel        ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:producedDate ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:text         ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:score        ; owl:maxCardinality 1 ] ,
@@ -1847,7 +1857,7 @@ pan:TextLine rdfs:subClassOf
 
 pan:Label rdfs:subClassOf
     [ a owl:Restriction ; owl:onProperty pan:id ; owl:cardinality 1 ] ,
-    [ a owl:Restriction ; owl:onProperty pan:model        ; owl:cardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:enrichmentModel        ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:producedDate ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:descriptor   ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:score        ; owl:cardinality 1 ] .
