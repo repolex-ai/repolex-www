@@ -29,7 +29,22 @@
 git-lex: a owl:Ontology ;
     rdfs:label "git-lex Core Ontology" ;
     rdfs:comment "The vocabulary git-lex authors about the markdown documents it tracks." ;
-    owl:versionInfo "0.23.0" .
+    owl:versionInfo "0.24.0" .
+
+# v0.24.0 (2026-11-22, ruled by goodlux): UNIVERSAL AUTHOR BRIDGE ON THING.
+#   (1) + git-lex:author (owl:DatatypeProperty, owl:equivalentProperty
+#       subtexture:author, domain git-lex:Thing, range xsd:string, multi-valued
+#       0..*) — expected value '{username}-on-{substrate}' when the runtime
+#       model/substrate is known (e.g. 'tr1pl3x-on-gemini-4-carbon-medium',
+#       's3lk13-on-claude-fable-5-2'), or bare '{username}' for humans ('goodlux')
+#       and when the session model is unknown. Never guess or hardcode fallback
+#       model names.
+#   (2) ontology/subtexture/subtexture.ttl bumped to 0.7.0.
+#   (3) NEXT WAVE (gated on git-lex binary update by w4r3z-lex): git-lex:substrate
+#       retires once save.rs stops stamping substrate: and git2_nquads.rs drops Repo
+#       substrate emission; createdDate and updatedDate leave markdown frontmatter
+#       and become sync-derived triples in NamedGraph/now (with git-lex:derived true
+#       hiding derived properties from create and __Class.md templates).
 
 # v0.23.0 (2026-11-22, ruled by goodlux): SKILL PROPERTIES LIFTED & UNPREFIXED.
 #   (1) + git-lex:SkillInvocabilityValue (rdfs:Datatype, owl:oneOf ("user" "agent" "both")),
@@ -463,7 +478,7 @@ git-lex:fileId a owl:ObjectProperty ;
 git-lex:Thing a owl:Class ;
     rdfs:subClassOf subtexture:Thing ;
     rdfs:label "Thing" ;
-    rdfs:comment "An entity backed by a git-lex document, with its own identity and lifetime independent of the file path (`git-lex:File` is the address; `git-lex:Thing` is the lifetime). Sits under `subtexture:Thing`, bridging the eight universal properties via `owl:equivalentProperty` and adding document-carrier fields (`fileId`, `substrate`, `kitManaged`)." .
+    rdfs:comment "An entity backed by a git-lex document, with its own identity and lifetime independent of the file path (`git-lex:File` is the address; `git-lex:Thing` is the lifetime). Sits under `subtexture:Thing`, bridging the nine universal properties via `owl:equivalentProperty` and adding document-carrier fields (`fileId`, `substrate`, `kitManaged`)." .
 
 git-lex:id a owl:ObjectProperty ;
     owl:equivalentProperty subtexture:id ;
@@ -506,6 +521,13 @@ git-lex:updatedDate a owl:DatatypeProperty ;
     rdfs:comment "When this document last changed, ISO-8601 with offset. Maintained by git-lex on save — do not hand-edit." ;
     rdfs:domain git-lex:Thing ;
     rdfs:range xsd:dateTime .
+
+git-lex:author a owl:DatatypeProperty ;
+    owl:equivalentProperty subtexture:author ;
+    rdfs:label "author" ;
+    rdfs:comment "Who authored this: '{username}-on-{substrate}' when model is known, or bare '{username}' (humans or unknown model); multi-valued — do not repeat the key." ;
+    rdfs:domain git-lex:Thing ;
+    rdfs:range xsd:string .
 
 git-lex:kitManaged a owl:DatatypeProperty ;
     rdfs:label "kitManaged" ;

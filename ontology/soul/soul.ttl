@@ -27,8 +27,14 @@
 <https://repolex.ai/ontology/soul> a owl:Ontology ;
     rdfs:label "Soul Kit Ontology" ;
     rdfs:comment "An agent's persistent mind. Identity, memory, knowledge, and personality across sessions." ;
-    owl:versionInfo "0.16.0" .
+    owl:versionInfo "0.16.1" .
 
+# v0.16.1 (2026-11-22, ruled by goodlux): FOLD soul:author INTO git-lex:author.
+#   - Deleted soul:author on soul:Foundation now that git-lex:Thing declares
+#     multi-valued xsd:string git-lex:author (owl:equivalentProperty
+#     subtexture:author, git-lex 0.24.0 / subtexture 0.7.0). Existing
+#     soul.Foundation.author lines in FOUNDATION.md resolve directly onto
+#     inherited git-lex:author with zero document changes.
 # v0.16.0 (2026-11-22, ruled by goodlux): SKILL PROPERTIES LIFTED TO git-lex:Skill.
 #   (1) GONE from soul:: soul:SkillInvocabilityValue, soul:skillId,
 #       soul:skillDescription, soul:skillInvocability, soul:skillAllowedTools, and
@@ -381,12 +387,6 @@ soul:Foundation a owl:Class ;
 soul:foundationId a owl:DatatypeProperty ;
     rdfs:label "foundation id" ;
     rdfs:comment "Identifier for FOUNDATION.md (typically 'foundation'); its RDF id is `<soul/Foundation/{foundationId}>`." ;
-    rdfs:domain soul:Foundation ;
-    rdfs:range xsd:string .
-
-soul:author a owl:DatatypeProperty ;
-    rdfs:label "author" ;
-    rdfs:comment "The author / creator who drafted this foundation statement." ;
     rdfs:domain soul:Foundation ;
     rdfs:range xsd:string .
 

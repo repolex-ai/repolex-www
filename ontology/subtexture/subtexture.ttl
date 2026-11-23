@@ -13,6 +13,26 @@
 #
 # CHANGELOG
 # -----------------------------------------------------------------------------
+# v0.7.0 (2026-11-22, ruled by goodlux): UNIVERSAL AUTHOR ON THING.
+#   (1) + `subtexture:author` (`owl:DatatypeProperty`, domain `subtexture:Thing`,
+#       range `xsd:string`, multi-valued `0..*` — no `maxCardinality` restriction
+#       so co-authored Things list every contributor).
+#   (2) Expected value convention:
+#       - `"{username}-on-{substrate}"` when a runtime model/substrate is known
+#         (e.g. `"tr1pl3x-on-gemini-4-carbon-medium"`, `"s3lk13-on-claude-fable-5-2"`).
+#       - Bare `"{username}"` when no model substrate applies or is known —
+#         including human authors (`"goodlux"`, never `"-on-carbon"` which
+#         collides with model names like `gemini-4-carbon-medium`) and inbound
+#         peer turns where no model was reported (`"spacegoat"`).
+#       - Because canonical usernames are hyphen-free (`^[a-z0-9]+$`), the first
+#         `"-on-"` splits `{username}` and `{substrate}` losslessly. Writers must
+#         never invent hardcoded fallback model names when a session's model
+#         cannot be read; emit bare `"{username}"` instead.
+#   DELIBERATELY NOT DONE: separate `subtexture:substrate` or `subtexture:model`
+#   property on `Thing` (unordered multi-valued sets lose which co-author ran on
+#   which substrate, and `pan:model` names vision enrichment models rather than
+#   speaker substrates).
+#
 # v0.6.0 (2026-11-19, ruled by goodlux): NAMED GRAPH DESCRIPTORS & ACCESS METADATA.
 #   (1) Store-scoped NamedGraph IRIs (https://repolex.ai/{squad}/{user}/{app}/NamedGraph/{id}):
 #       every named graph descriptor lives in its Oxigraph store's unnamed graph
@@ -131,7 +151,7 @@
 <https://repolex.ai/ontology/subtexture> a owl:Ontology ;
     rdfs:label "Subtexture Base Ontology" ;
     rdfs:comment "The foundational base ontology for the Subtexture ecosystem: Thing, Set, Query, NamedGraph, and the universal Thing properties." ;
-    owl:versionInfo "0.6.0" .
+    owl:versionInfo "0.7.0" .
 
 
 # =============================================================================
@@ -151,7 +171,7 @@ subtexture:Thing a owl:Class ;
     rdfs:comment "Universal root entity with its own identity and lifetime, independent of any file or store." .
 
 
-# --- The Eight Universal Properties on Thing ---------------------------------
+# --- The Nine Universal Properties on Thing ----------------------------------
 
 subtexture:id a owl:ObjectProperty ;
     rdfs:label "id" ;
@@ -200,6 +220,24 @@ subtexture:updatedDate a owl:DatatypeProperty ;
     rdfs:comment "When this Thing last changed, ISO-8601 dateTime with offset; maintained by the writer, do not hand-edit." ;
     rdfs:domain subtexture:Thing ;
     rdfs:range xsd:dateTime .
+
+# Expected values for `subtexture:author`:
+#   - `"{username}-on-{substrate}"` when the runtime model/substrate is known
+#     (e.g. `"tr1pl3x-on-gemini-4-carbon-medium"`, `"s3lk13-on-claude-fable-5-2"`).
+#   - Bare `"{username}"` when no model substrate applies or is known — always
+#     bare for humans (`"goodlux"`, never `"-on-carbon"`) and when a harness or
+#     peer header reports no model (`"spacegoat"`). Never guess or hardcode a
+#     fallback model id.
+#   - Canonical usernames are hyphen-free (`^[a-z0-9]+$`), so the first `"-on-"`
+#     splits `{username}` and `{substrate}` without ambiguity. To query an agent
+#     across all substrates: `FILTER(?a = "s3lk13" || STRSTARTS(?a, "s3lk13-on-"))`.
+#   - Self-reported / session-populated `xsd:string` convention, not cryptographic
+#     proof; multi-valued (`0..*`) so co-authors may all be recorded.
+subtexture:author a owl:DatatypeProperty ;
+    rdfs:label "author" ;
+    rdfs:comment "Who authored this: '{username}-on-{substrate}' when model is known, or bare '{username}' (humans or unknown model); multi-valued — do not repeat the key." ;
+    rdfs:domain subtexture:Thing ;
+    rdfs:range xsd:string .
 
 
 # =============================================================================
@@ -301,8 +339,8 @@ subtexture:readableBy a owl:ObjectProperty ;
 # =============================================================================
 # 5. CARDINALITY
 # =============================================================================
-# Single-valued universals carry `owl:maxCardinality 1` at the base (`cue` and
-# `relatedToId` are multi-valued, 0..*). `id` is `maxCardinality 1` here rather
+# Single-valued universals carry `owl:maxCardinality 1` at the base (`cue`,
+# `author`, and `relatedToId` are multi-valued, 0..*). `id` is `maxCardinality 1` here rather
 # than `cardinality 1` so derived Things whose subject IRI IS their identity
 # (`ravel:Turn`, `ravel:Memory`) need no redundant self-loop triple; layers
 # that write an explicit `id` triple (`git-lex:Thing`, `pan:Node`) tighten it
