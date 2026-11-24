@@ -29,7 +29,18 @@
 git-lex: a owl:Ontology ;
     rdfs:label "git-lex Core Ontology" ;
     rdfs:comment "The vocabulary git-lex authors about the markdown documents it tracks." ;
-    owl:versionInfo "0.24.0" .
+    owl:versionInfo "0.25.0" .
+
+# v0.25.0 (2026-11-23, ruled by goodlux): RETIRE git-lex:substrate; SYNC-DERIVED DATES.
+#   (1) GONE: git-lex:substrate (deleted outright, along with its maxCardinality 1
+#       restriction on git-lex:Thing). Replaced by multi-valued git-lex:author
+#       ('{username}-on-{substrate}' or bare '{username}', added in 0.24.0). Gated
+#       on git-lex 4ded0db (save no longer stamps substrate, git2_nquads.rs no
+#       longer emits substrate on Repo, and strip_machine_lines.py removed the old
+#       date and substrate lines across all 15 squad souls).
+#   (2) Updated git-lex:createdDate and git-lex:updatedDate comments to state they
+#       are DERIVED at sync into NamedGraph/now from git commit history and never
+#       authored in markdown frontmatter.
 
 # v0.24.0 (2026-11-22, ruled by goodlux): UNIVERSAL AUTHOR BRIDGE ON THING.
 #   (1) + git-lex:author (owl:DatatypeProperty, owl:equivalentProperty
@@ -478,7 +489,7 @@ git-lex:fileId a owl:ObjectProperty ;
 git-lex:Thing a owl:Class ;
     rdfs:subClassOf subtexture:Thing ;
     rdfs:label "Thing" ;
-    rdfs:comment "An entity backed by a git-lex document, with its own identity and lifetime independent of the file path (`git-lex:File` is the address; `git-lex:Thing` is the lifetime). Sits under `subtexture:Thing`, bridging the nine universal properties via `owl:equivalentProperty` and adding document-carrier fields (`fileId`, `substrate`, `kitManaged`)." .
+    rdfs:comment "An entity backed by a git-lex document, with its own identity and lifetime independent of the file path (`git-lex:File` is the address; `git-lex:Thing` is the lifetime). Sits under `subtexture:Thing`, bridging the nine universal properties via `owl:equivalentProperty` and adding document-carrier fields (`fileId`, `kitManaged`)." .
 
 git-lex:id a owl:ObjectProperty ;
     owl:equivalentProperty subtexture:id ;
@@ -511,14 +522,14 @@ git-lex:description a owl:DatatypeProperty ;
 git-lex:createdDate a owl:DatatypeProperty ;
     owl:equivalentProperty subtexture:createdDate ;
     rdfs:label "createdDate" ;
-    rdfs:comment "When this document was first written, ISO-8601 with offset. Maintained by git-lex — do not hand-edit." ;
+    rdfs:comment "DERIVED at sync into NamedGraph/now from git commit history — when this document was first committed; never authored in frontmatter." ;
     rdfs:domain git-lex:Thing ;
     rdfs:range xsd:dateTime .
 
 git-lex:updatedDate a owl:DatatypeProperty ;
     owl:equivalentProperty subtexture:updatedDate ;
     rdfs:label "updatedDate" ;
-    rdfs:comment "When this document last changed, ISO-8601 with offset. Maintained by git-lex on save — do not hand-edit." ;
+    rdfs:comment "DERIVED at sync into NamedGraph/now from git commit history — when this document last changed (mechanical commits skipped); never authored in frontmatter." ;
     rdfs:domain git-lex:Thing ;
     rdfs:range xsd:dateTime .
 
@@ -534,12 +545,6 @@ git-lex:kitManaged a owl:DatatypeProperty ;
     rdfs:comment "True only in a file a KIT ships. git-lex may overwrite or delete it without asking — never add this to a document you wrote." ;
     rdfs:domain git-lex:Thing ;
     rdfs:range xsd:boolean .
-
-git-lex:substrate a owl:DatatypeProperty ;
-    rdfs:label "substrate" ;
-    rdfs:comment "The model that last saved this document, as its exact id (claude-fable-5). Maintained by git-lex on save — do not hand-edit or guess it." ;
-    rdfs:domain git-lex:Thing ;
-    rdfs:range xsd:string .
 
 # --- Universal Classes: Note, Skill, and Query -------------------------------
 
@@ -764,7 +769,6 @@ git-lex:Thing rdfs:subClassOf
     [ a owl:Restriction ; owl:onProperty git-lex:description ; owl:maxCardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty git-lex:createdDate ; owl:maxCardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty git-lex:updatedDate ; owl:maxCardinality 1 ] ,
-    [ a owl:Restriction ; owl:onProperty git-lex:substrate   ; owl:maxCardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty git-lex:kitManaged  ; owl:maxCardinality 1 ] .
 
 git-lex:Skill rdfs:subClassOf
@@ -914,15 +918,8 @@ git-lex:optionalKit a owl:DatatypeProperty ;
     rdfs:label "optionalKit" ;
     rdfs:comment "An optional kit installed in this repo (repo.yml `optional_kits:`). Multi-valued — one triple per kit." .
 
-# git-lex:substrate was HERE, on Repo, meaning "a harness declared in repo.yml".
-# Removed in v0.12 and the name reassigned to the Thing plane — see the changelog
-# block at the top of this file. REPO HAS NO SUBSTRATE PROPERTY.
-#
-# READER STILL LIVE: git2_nquads.rs emits a `substrate` triple per repo.yml
-# `substrates:` entry, onto the REPO node, via a hardcoded allowlist (:504) that
-# never consulted this declaration. Until that emitter is removed, a repo that
-# declares substrates will put harness names on the same predicate that now means
-# a model id. W4R3Z's, flagged at the ruling.
+# git-lex:substrate was retired from Repo in v0.12 (emitter removed in git-lex
+# 4ded0db) and retired from Thing in v0.25.0 in favour of git-lex:author.
 
 # =============================================================================
 # The statement lifecycle (SpoEvent)
