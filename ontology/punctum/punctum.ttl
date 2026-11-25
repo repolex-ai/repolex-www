@@ -1,0 +1,426 @@
+@prefix punctum:    <https://repolex.ai/ontology/punctum/> .
+@prefix subtexture: <https://repolex.ai/ontology/subtexture/> .
+@prefix owl:        <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:        <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:       <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:        <http://www.w3.org/2001/XMLSchema#> .
+
+# =============================================================================
+# PUNCTUM ONTOLOGY — standalone non-verbal preference engine
+# =============================================================================
+# What Punctum (repolex-ai/punctum) records about non-verbal preference trials,
+# standardized cross-judge experiments, and discovered coordinate regions across
+# Subtexture media stores. Code implements this ontology; it never emits
+# undeclared predicates.
+#
+# Layering (same discipline as Pan, Ravel, and Horae):
+#   - Own namespace (`punctum:*`) in stored data — zero `subtexture:*` IRIs stored.
+#   - Pan stays pure media storage and enrichment; Punctum references images by
+#     their canonical Pan IRIs (`https://repolex.ai/{squad}/{store}/pan/Image/{id}`).
+#   - Graph-only (`git-lex:foldered` is never used): `punctumd` appends trials
+#     to `<soul>/.punctum/_ignore/trials/*.nq` and projects them into Oxigraph
+#     at `<soul>/.punctum/_ignore/oxigraph` under `<punctum/NamedGraph/trials>`
+#     and `<punctum/NamedGraph/landscape>`.
+#   - Ephemeral per-image float scores (`globalScore`, `storePercentile`,
+#     `uncertainty`) live in binary sidecars (`models/<axis>/scores.bin`) and
+#     join into SPARQL at read time via `SERVICE punctum:score` so retraining
+#     every 10-15 trials never churns 250,000+ triples in RocksDB.
+#
+# CHANGELOG
+# -----------------------------------------------------------------------------
+# v0.1.0 (2026-11-24, ruled by goodlux; authored with tr1pl3x-on-gemini-4-carbon-medium): FIRST RELEASE.
+#   (1) Structural & universal bridges to `subtexture.ttl` 0.7.0:
+#       + `punctum:Thing`, `punctum:Set`, `punctum:Query`, `punctum:NamedGraph`
+#       + `id`, `title`, `description`, `abstract`, `cue`, `author`,
+#         `createdDate`, `updatedDate`, `relatedToId`, `sparql`, `parameter`,
+#         `owner`, `visibility`, `readableBy`.
+#   (2) Six domain classes under `punctum:Thing`:
+#       + `punctum:Axis` — preference dimension mapped (default `<punctum/Axis/punctum>`).
+#       + `punctum:Experiment` (`⊑ punctum:Set`) — frozen battery of `Stimulus`
+#         slates administered identically to humans, embodied souls, and bare
+#         zero-context substrates.
+#       + `punctum:Stimulus` — one prescribed candidate slate inside an `Experiment`.
+#       + `punctum:Run` — one judging session by an `author` under a `contextCondition`.
+#       + `punctum:Trial` — one immutable choice screen (`solo`, `duel`, `quad`).
+#       + `punctum:Region` — a discovered non-verbal 2,048-d coordinate cluster or
+#         sparse dictionary atom (`peak`, `gray-zone`, `valley`), endorsable
+#         visually without requiring English words.
+#   (3) Typed edges earned by the two-role rule:
+#       + `punctum:candidateId` and `punctum:winnerId` on `Trial` both target
+#         `pan:Image` Things in distinct roles (all candidates displayed vs. the
+#         chosen winner), so `relatedToId` alone cannot disambiguate them.
+#         All single-role links (`Trial -> Run`, `Trial -> Stimulus`, `Run -> Axis`,
+#         `Run -> Experiment`, `Stimulus -> Experiment`, `Region -> Axis`) use
+#         `punctum:relatedToId`.
+#   DELIBERATELY NOT DONE:
+#     - No banned property names (`kind`, `made`, `mode`).
+#     - No hardcoded raw point deltas (`+1`, `-0.33`) on `Trial`: Plackett-Luce
+#       and Bernoulli threshold estimators derive gradients from `candidateId`
+#       + `winnerId` + `trialOutcome` so new models can replay history cleanly.
+#     - No static per-image score triples stored in Oxigraph; `globalScore`,
+#       `storePercentile`, and `uncertainty` are virtual predicates served by
+#       `SERVICE punctum:score`.
+# =============================================================================
+
+<https://repolex.ai/ontology/punctum> a owl:Ontology ;
+    rdfs:label "Punctum Ontology" ;
+    rdfs:comment "Non-verbal preference trials, cross-judge experiments, coordinate gray-zone regions, and live SPARQL score joins across Subtexture media stores." ;
+    owl:imports <https://repolex.ai/ontology/subtexture> ;
+    owl:versionInfo "0.1.0" .
+
+# -----------------------------------------------------------------------------
+# 1. BASE CLASSES & NAMED GRAPH METADATA
+# -----------------------------------------------------------------------------
+
+punctum:NamedGraph a owl:Class ;
+    rdfs:subClassOf subtexture:NamedGraph , subtexture:DefaultGraph ;
+    rdfs:label "NamedGraph" ;
+    rdfs:comment "A named graph in a Punctum store (`<punctum/NamedGraph/trials>` or `<punctum/NamedGraph/landscape>`), described in the unnamed graph." .
+
+punctum:Thing a owl:Class ;
+    rdfs:subClassOf subtexture:Thing ;
+    rdfs:label "Thing" ;
+    rdfs:comment "Root class for every addressable entity in a Punctum store." .
+
+punctum:Set a owl:Class ;
+    rdfs:subClassOf subtexture:Set , punctum:Thing ;
+    rdfs:label "Set" ;
+    rdfs:comment "An unordered collection of Things in Punctum, or a smart set linking one Query via relatedToId." .
+
+punctum:Query a owl:Class ;
+    rdfs:subClassOf subtexture:Query , punctum:Thing ;
+    rdfs:label "Query" ;
+    rdfs:comment "A saved read-only SPARQL query in a Punctum store." .
+
+punctum:owner a owl:ObjectProperty ;
+    owl:equivalentProperty subtexture:owner ;
+    rdfs:label "owner" ;
+    rdfs:comment "The Soul that owns this Punctum named graph (`<soul/Soul/{username}>`)." ;
+    rdfs:domain punctum:NamedGraph ;
+    rdfs:range subtexture:Thing .
+
+punctum:visibility a owl:DatatypeProperty ;
+    owl:equivalentProperty subtexture:visibility ;
+    rdfs:label "visibility" ;
+    rdfs:comment "Access policy for this Punctum graph: one of private, shared, public." ;
+    rdfs:domain punctum:NamedGraph ;
+    rdfs:range subtexture:VisibilityValue .
+
+punctum:readableBy a owl:ObjectProperty ;
+    owl:equivalentProperty subtexture:readableBy ;
+    rdfs:label "readableBy" ;
+    rdfs:comment "Soul or squad IRIs permitted to read this graph when visibility is shared; do not repeat the key." ;
+    rdfs:domain punctum:NamedGraph ;
+    rdfs:range subtexture:Thing .
+
+# -----------------------------------------------------------------------------
+# 2. UNIVERSAL THING BRIDGES
+# -----------------------------------------------------------------------------
+
+punctum:id a owl:ObjectProperty ;
+    owl:equivalentProperty subtexture:id ;
+    rdfs:label "id" ;
+    rdfs:comment "Canonical self-address (`<punctum/{Class}/{id}>`); never write a bare token." ;
+    rdfs:domain punctum:Thing ;
+    rdfs:range subtexture:Thing .
+
+punctum:title a owl:DatatypeProperty ;
+    owl:equivalentProperty subtexture:title ;
+    rdfs:label "title" ;
+    rdfs:comment "Optional short human-readable label; single-valued, do not repeat the key." ;
+    rdfs:domain punctum:Thing ;
+    rdfs:range xsd:string .
+
+punctum:description a owl:DatatypeProperty ;
+    owl:equivalentProperty subtexture:description ;
+    rdfs:label "description" ;
+    rdfs:comment "Curated one-paragraph summary; single-valued, do not repeat the key." ;
+    rdfs:domain punctum:Thing ;
+    rdfs:range xsd:string .
+
+punctum:abstract a owl:DatatypeProperty ;
+    owl:equivalentProperty subtexture:abstract ;
+    rdfs:label "abstract" ;
+    rdfs:comment "Machine-generated summary automation may overwrite; single-valued." ;
+    rdfs:domain punctum:Thing ;
+    rdfs:range xsd:string .
+
+punctum:cue a owl:DatatypeProperty ;
+    owl:equivalentProperty subtexture:cue ;
+    rdfs:label "cue" ;
+    rdfs:comment "When to reach for this Thing; multi-valued, do not repeat the key." ;
+    rdfs:domain punctum:Thing ;
+    rdfs:range xsd:string .
+
+punctum:author a owl:DatatypeProperty ;
+    owl:equivalentProperty subtexture:author ;
+    rdfs:label "author" ;
+    rdfs:comment "Judge or creator as '{username}-on-{substrate}' or bare '{username}'; multi-valued, do not repeat the key." ;
+    rdfs:domain punctum:Thing ;
+    rdfs:range xsd:string .
+
+punctum:createdDate a owl:DatatypeProperty ;
+    owl:equivalentProperty subtexture:createdDate ;
+    rdfs:label "createdDate" ;
+    rdfs:comment "ISO-8601 dateTime with timezone offset when recorded; never write a bare date." ;
+    rdfs:domain punctum:Thing ;
+    rdfs:range xsd:dateTime .
+
+punctum:updatedDate a owl:DatatypeProperty ;
+    owl:equivalentProperty subtexture:updatedDate ;
+    rdfs:label "updatedDate" ;
+    rdfs:comment "ISO-8601 dateTime with timezone offset when last updated; maintained by punctumd." ;
+    rdfs:domain punctum:Thing ;
+    rdfs:range xsd:dateTime .
+
+punctum:relatedToId a owl:ObjectProperty ;
+    owl:equivalentProperty subtexture:relatedToId ;
+    rdfs:label "relatedToId" ;
+    rdfs:comment "Related Thing IRI (`<punctum/Run/{id}>`, `<punctum/Axis/{id}>`, `<punctum/Experiment/{id}>`, `<pan/ImageSet/{id}>`); do not repeat the key." ;
+    rdfs:domain punctum:Thing ;
+    rdfs:range subtexture:Thing .
+
+punctum:sparql a owl:DatatypeProperty ;
+    owl:equivalentProperty subtexture:sparql ;
+    rdfs:label "sparql" ;
+    rdfs:comment "Executable read-only SPARQL query string with parameters unbound; single-valued." ;
+    rdfs:domain punctum:Query ;
+    rdfs:range xsd:string .
+
+punctum:parameter a owl:DatatypeProperty ;
+    owl:equivalentProperty subtexture:parameter ;
+    rdfs:label "parameter" ;
+    rdfs:comment "Query parameter declaration as name[:type][=default]; multi-valued, do not repeat the key." ;
+    rdfs:domain punctum:Query ;
+    rdfs:range xsd:string .
+
+# -----------------------------------------------------------------------------
+# 3. DOMAIN CLASSES
+# -----------------------------------------------------------------------------
+
+punctum:Axis a owl:Class ;
+    rdfs:subClassOf punctum:Thing ;
+    rdfs:label "Axis" ;
+    rdfs:comment "A preference dimension mapped through non-verbal trials (default `<punctum/Axis/punctum>`)." .
+
+punctum:Experiment a owl:Class ;
+    rdfs:subClassOf punctum:Set , punctum:Thing ;
+    rdfs:label "Experiment" ;
+    rdfs:comment "A frozen, replayable battery of Stimulus slates administered identically across human, embodied-soul, and bare-substrate judges." .
+
+punctum:Stimulus a owl:Class ;
+    rdfs:subClassOf punctum:Thing ;
+    rdfs:label "Stimulus" ;
+    rdfs:comment "One prescribed candidate slate belonging to an Experiment via relatedToId." .
+
+punctum:Run a owl:Class ;
+    rdfs:subClassOf punctum:Thing ;
+    rdfs:label "Run" ;
+    rdfs:comment "One judging session by an author (open active-learning session or replay of an Experiment linked via relatedToId)." .
+
+punctum:Trial a owl:Class ;
+    rdfs:subClassOf punctum:Thing ;
+    rdfs:label "Trial" ;
+    rdfs:comment "One immutable choice screen presented during a Run: candidate images shown, presentation format, latency, and choice outcome." .
+
+punctum:Region a owl:Class ;
+    rdfs:subClassOf punctum:Thing ;
+    rdfs:label "Region" ;
+    rdfs:comment "A discovered non-verbal coordinate neighborhood or sparse dictionary atom in embedding space (peak, gray-zone, or valley)." .
+
+# -----------------------------------------------------------------------------
+# 4. RUN, STIMULUS & TRIAL PROPERTIES
+# -----------------------------------------------------------------------------
+
+punctum:ContextConditionValue a rdfs:Datatype ;
+    owl:oneOf ( "human" "embodied-soul" "bare-substrate" ) .
+
+punctum:contextCondition a owl:DatatypeProperty ;
+    rdfs:label "contextCondition" ;
+    rdfs:comment "Judge framing for comparative runs: one of human, embodied-soul, bare-substrate." ;
+    rdfs:domain punctum:Run ;
+    rdfs:range punctum:ContextConditionValue .
+
+punctum:stimulusOrder a owl:DatatypeProperty ;
+    rdfs:label "stimulusOrder" ;
+    rdfs:comment "Zero-based sequence index of this Stimulus within its Experiment." ;
+    rdfs:domain punctum:Stimulus ;
+    rdfs:range xsd:integer .
+
+punctum:TrialFormatValue a rdfs:Datatype ;
+    owl:oneOf ( "solo" "duel" "quad" ) .
+
+punctum:trialFormat a owl:DatatypeProperty ;
+    rdfs:label "trialFormat" ;
+    rdfs:comment "Presentation layout on screen: one of solo (1-up), duel (2-up), quad (4-up)." ;
+    rdfs:domain [ a owl:Class ; owl:unionOf ( punctum:Trial punctum:Stimulus ) ] ;
+    rdfs:range punctum:TrialFormatValue .
+
+punctum:TrialOutcomeValue a rdfs:Datatype ;
+    owl:oneOf ( "liked" "disliked" "selected" "none" "all" "skipped" ) .
+
+punctum:trialOutcome a owl:DatatypeProperty ;
+    rdfs:label "trialOutcome" ;
+    rdfs:comment "Choice result: one of liked, disliked, selected, none, all, skipped." ;
+    rdfs:domain punctum:Trial ;
+    rdfs:range punctum:TrialOutcomeValue .
+
+punctum:candidateId a owl:ObjectProperty ;
+    rdfs:label "candidateId" ;
+    rdfs:comment "Every candidate image shown on screen (`<pan/Image/{id}>`); multi-valued, do not repeat the key." ;
+    rdfs:domain [ a owl:Class ; owl:unionOf ( punctum:Trial punctum:Stimulus ) ] ;
+    rdfs:range subtexture:Thing .
+
+punctum:winnerId a owl:ObjectProperty ;
+    rdfs:label "winnerId" ;
+    rdfs:comment "The chosen winning image (`<pan/Image/{id}>`, bound on liked or selected; omitted otherwise)." ;
+    rdfs:domain punctum:Trial ;
+    rdfs:range subtexture:Thing .
+
+punctum:SamplingStrategyValue a rdfs:Datatype ;
+    owl:oneOf ( "explore" "gray-zone" "near-twin" "cross-store" "confirm" "retest" "experiment" ) .
+
+punctum:samplingStrategy a owl:DatatypeProperty ;
+    rdfs:label "samplingStrategy" ;
+    rdfs:comment "Why the sampler queued this screen: one of explore, gray-zone, near-twin, cross-store, confirm, retest, experiment." ;
+    rdfs:domain punctum:Trial ;
+    rdfs:range punctum:SamplingStrategyValue .
+
+punctum:decisionMilliseconds a owl:DatatypeProperty ;
+    rdfs:label "decisionMilliseconds" ;
+    rdfs:comment "Elapsed milliseconds from display to keystroke." ;
+    rdfs:domain punctum:Trial ;
+    rdfs:range xsd:integer .
+
+punctum:isAfk a owl:DatatypeProperty ;
+    rdfs:label "isAfk" ;
+    rdfs:comment "True when decisionMilliseconds exceeds the 30000 ms AFK ceiling." ;
+    rdfs:domain punctum:Trial ;
+    rdfs:range xsd:boolean .
+
+# RDF 1.2 triple-term annotations on <<( ?trial punctum:candidateId ?img )>>:
+
+punctum:slotIndex a owl:DatatypeProperty ;
+    rdfs:label "slotIndex" ;
+    rdfs:comment "Zero-based display slot on <<( ?trial punctum:candidateId ?img )>> to audit positional bias." ;
+    rdfs:domain rdf:Statement ;
+    rdfs:range xsd:integer .
+
+punctum:priorScore a owl:DatatypeProperty ;
+    rdfs:label "priorScore" ;
+    rdfs:comment "Predicted globalScore at display time on <<( ?trial punctum:candidateId ?img )>>." ;
+    rdfs:domain rdf:Statement ;
+    rdfs:range xsd:double .
+
+# -----------------------------------------------------------------------------
+# 5. NON-VERBAL LANDSCAPE REGION PROPERTIES
+# -----------------------------------------------------------------------------
+
+punctum:RegionRoleValue a rdfs:Datatype ;
+    owl:oneOf ( "peak" "gray-zone" "valley" "atom" ) .
+
+punctum:regionRole a owl:DatatypeProperty ;
+    rdfs:label "regionRole" ;
+    rdfs:comment "Landscape role: one of peak, gray-zone, valley, atom." ;
+    rdfs:domain punctum:Region ;
+    rdfs:range punctum:RegionRoleValue .
+
+punctum:TrendValue a rdfs:Datatype ;
+    owl:oneOf ( "waxing" "steady" "waning" ) .
+
+punctum:trend a owl:DatatypeProperty ;
+    rdfs:label "trend" ;
+    rdfs:comment "7-day vs 60-day temporal drift: one of waxing, steady, waning." ;
+    rdfs:domain punctum:Region ;
+    rdfs:range punctum:TrendValue .
+
+punctum:velocity a owl:DatatypeProperty ;
+    rdfs:label "velocity" ;
+    rdfs:comment "Relative short-window to long-window cluster mass ratio minus one (>0.25 waxing, <-0.25 waning)." ;
+    rdfs:domain punctum:Region ;
+    rdfs:range xsd:double .
+
+punctum:centroidPath a owl:DatatypeProperty ;
+    rdfs:label "centroidPath" ;
+    rdfs:comment "Relative path under .punctum/_ignore/ to the 2048-d float32 centroid or dictionary atom vector." ;
+    rdfs:domain punctum:Region ;
+    rdfs:range xsd:string .
+
+punctum:exemplarId a owl:ObjectProperty ;
+    rdfs:label "exemplarId" ;
+    rdfs:comment "Representative image near the center or straddling the ridge (`<pan/Image/{id}>`); do not repeat the key." ;
+    rdfs:domain punctum:Region ;
+    rdfs:range subtexture:Thing .
+
+punctum:endorsed a owl:DatatypeProperty ;
+    rdfs:label "endorsed" ;
+    rdfs:comment "True when a judge visually inspects this Region's exemplars post-hoc and endorses steering toward its coordinates." ;
+    rdfs:domain punctum:Region ;
+    rdfs:range xsd:boolean .
+
+punctum:positiveTerm a owl:DatatypeProperty ;
+    rdfs:label "positiveTerm" ;
+    rdfs:comment "Optional smoothed log-odds prompt or caption phrase enriched on the liked side; multi-valued." ;
+    rdfs:domain punctum:Region ;
+    rdfs:range xsd:string .
+
+punctum:negativeTerm a owl:DatatypeProperty ;
+    rdfs:label "negativeTerm" ;
+    rdfs:comment "Optional smoothed log-odds prompt or caption phrase enriched on the disliked side; multi-valued." ;
+    rdfs:domain punctum:Region ;
+    rdfs:range xsd:string .
+
+# -----------------------------------------------------------------------------
+# 6. VIRTUAL PREDICATES FOR `SERVICE punctum:score`
+# -----------------------------------------------------------------------------
+# Evaluated dynamically from in-memory binary score tables via Oxigraph's
+# DefaultServiceHandler; never materialized into RocksDB.
+
+punctum:globalScore a owl:DatatypeProperty ;
+    rdfs:label "globalScore" ;
+    rdfs:comment "Virtual SERVICE punctum:score predicate: predicted preference probability in [0, 1] across the global pool." ;
+    rdfs:domain subtexture:Thing ;
+    rdfs:range xsd:double .
+
+punctum:storePercentile a owl:DatatypeProperty ;
+    rdfs:label "storePercentile" ;
+    rdfs:comment "Virtual SERVICE punctum:score predicate: empirical rank in [0, 1] within the image's own squaddie Pan store." ;
+    rdfs:domain subtexture:Thing ;
+    rdfs:range xsd:double .
+
+punctum:uncertainty a owl:DatatypeProperty ;
+    rdfs:label "uncertainty" ;
+    rdfs:comment "Virtual SERVICE punctum:score predicate: gray-zone entropy / epistemic disagreement in [0, 1]." ;
+    rdfs:domain subtexture:Thing ;
+    rdfs:range xsd:double .
+
+# -----------------------------------------------------------------------------
+# 7. CARDINALITY
+# -----------------------------------------------------------------------------
+
+punctum:NamedGraph rdfs:subClassOf
+    [ a owl:Restriction ; owl:onProperty punctum:owner      ; owl:maxCardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty punctum:visibility ; owl:maxCardinality 1 ] .
+
+punctum:Run rdfs:subClassOf
+    [ a owl:Restriction ; owl:onProperty punctum:contextCondition ; owl:maxCardinality 1 ] .
+
+punctum:Stimulus rdfs:subClassOf
+    [ a owl:Restriction ; owl:onProperty punctum:stimulusOrder ; owl:cardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty punctum:trialFormat   ; owl:cardinality 1 ] .
+
+punctum:Trial rdfs:subClassOf
+    [ a owl:Restriction ; owl:onProperty punctum:trialFormat          ; owl:cardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty punctum:trialOutcome         ; owl:cardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty punctum:createdDate          ; owl:cardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty punctum:winnerId             ; owl:maxCardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty punctum:samplingStrategy     ; owl:maxCardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty punctum:decisionMilliseconds ; owl:maxCardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty punctum:isAfk                ; owl:maxCardinality 1 ] .
+
+punctum:Region rdfs:subClassOf
+    [ a owl:Restriction ; owl:onProperty punctum:regionRole   ; owl:cardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty punctum:trend        ; owl:maxCardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty punctum:velocity     ; owl:maxCardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty punctum:centroidPath ; owl:maxCardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty punctum:endorsed     ; owl:maxCardinality 1 ] .
