@@ -28,6 +28,9 @@
 #
 # CHANGELOG
 # -----------------------------------------------------------------------------
+# v0.1.1 (2026-11-25, requested by goodlux):
+#   + Added `"trio"` (3-up) to `punctum:TrialFormatValue` (`solo`, `duel`, `trio`, `quad`).
+#
 # v0.1.0 (2026-11-24, ruled by goodlux; authored with tr1pl3x-on-gemini-4-carbon-medium): FIRST RELEASE.
 #   (1) Structural & universal bridges to `subtexture.ttl` 0.7.0:
 #       + `punctum:Thing`, `punctum:Set`, `punctum:Query`, `punctum:NamedGraph`
@@ -66,7 +69,7 @@
     rdfs:label "Punctum Ontology" ;
     rdfs:comment "Non-verbal preference trials, cross-judge experiments, coordinate gray-zone regions, and live SPARQL score joins across Subtexture media stores." ;
     owl:imports <https://repolex.ai/ontology/subtexture> ;
-    owl:versionInfo "0.1.0" .
+    owl:versionInfo "0.1.1" .
 
 # -----------------------------------------------------------------------------
 # 1. BASE CLASSES & NAMED GRAPH METADATA
@@ -248,11 +251,11 @@ punctum:stimulusOrder a owl:DatatypeProperty ;
     rdfs:range xsd:integer .
 
 punctum:TrialFormatValue a rdfs:Datatype ;
-    owl:oneOf ( "solo" "duel" "quad" ) .
+    owl:oneOf ( "solo" "duel" "trio" "quad" ) .
 
 punctum:trialFormat a owl:DatatypeProperty ;
     rdfs:label "trialFormat" ;
-    rdfs:comment "Presentation layout on screen: one of solo (1-up), duel (2-up), quad (4-up)." ;
+    rdfs:comment "Presentation layout on screen: one of solo (1-up), duel (2-up), trio (3-up), quad (4-up)." ;
     rdfs:domain [ a owl:Class ; owl:unionOf ( punctum:Trial punctum:Stimulus ) ] ;
     rdfs:range punctum:TrialFormatValue .
 
