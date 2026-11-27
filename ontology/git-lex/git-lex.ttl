@@ -29,7 +29,17 @@
 git-lex: a owl:Ontology ;
     rdfs:label "git-lex Core Ontology" ;
     rdfs:comment "The vocabulary git-lex authors about the markdown documents it tracks." ;
-    owl:versionInfo "0.25.0" .
+    owl:versionInfo "0.26.0" .
+
+# v0.26.0 (2026-11-27, ruled by goodlux): QUERY SERVICE TARGET.
+#   (1) + git-lex:service (owl:DatatypeProperty, owl:equivalentProperty
+#       subtexture:service, domain git-lex:Query, range xsd:string,
+#       owl:cardinality 1 — required, exactly one) — names the service that runs
+#       the query (git-lex, pan, ravel, horae, punctum, or syrinx). syrinx marks
+#       a cross-store federated query using SERVICE blocks; every other value
+#       marks a plain single-store query.
+#   (2) Updated git-lex:Query authoringGuidance to cover service.
+#   (3) ontology/subtexture/subtexture.ttl bumped to 0.8.0.
 
 # v0.25.0 (2026-11-23, ruled by goodlux): RETIRE git-lex:substrate; SYNC-DERIVED DATES.
 #   (1) GONE: git-lex:substrate (deleted outright, along with its maxCardinality 1
@@ -587,7 +597,7 @@ git-lex:argumentHint a owl:DatatypeProperty ;
 git-lex:Query a owl:Class ;
     rdfs:subClassOf subtexture:Query , git-lex:Thing ;
     git-lex:foldered true ;
-    git-lex:authoringGuidance "Put the executable SPARQL 1.1 read query in the first fenced ```sparql code block in the body; declare each parameter in parameter as name[:kind][=default] and use it in the query as ?name." ;
+    git-lex:authoringGuidance "Set service to the service that runs the query (git-lex, pan, ravel, horae, punctum, or syrinx for federated SERVICE queries); put the executable SPARQL 1.1 read query in the first fenced ```sparql code block in the body; declare each parameter in parameter as name[:kind][=default] and use it in the query as ?name." ;
     rdfs:label "Query" ;
     rdfs:comment "A saved read-only SPARQL 1.1 query document (single-store or Syrinx SERVICE federated). Kit-specific queries (soul:Query, copia:Query) subclass this." .
 
@@ -595,6 +605,13 @@ git-lex:sparql a owl:DatatypeProperty ;
     owl:equivalentProperty subtexture:sparql ;
     rdfs:label "sparql" ;
     rdfs:comment "DERIVED from the first fenced code block in the body at save — write the query in the body fence, do not hand-edit here." ;
+    rdfs:domain git-lex:Query ;
+    rdfs:range xsd:string .
+
+git-lex:service a owl:DatatypeProperty ;
+    owl:equivalentProperty subtexture:service ;
+    rdfs:label "service" ;
+    rdfs:comment "Required. Which service runs this query: git-lex, pan, ravel, horae, punctum, or syrinx (cross-store federated query with SERVICE blocks)." ;
     rdfs:domain git-lex:Query ;
     rdfs:range xsd:string .
 
@@ -777,7 +794,8 @@ git-lex:Skill rdfs:subClassOf
     [ a owl:Restriction ; owl:onProperty git-lex:argumentHint ; owl:maxCardinality 1 ] .
 
 git-lex:Query rdfs:subClassOf
-    [ a owl:Restriction ; owl:onProperty git-lex:sparql ; owl:maxCardinality 1 ] .
+    [ a owl:Restriction ; owl:onProperty git-lex:sparql ; owl:maxCardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty git-lex:service ; owl:cardinality 1 ] .
 
 # =============================================================================
 # CLASS-LEVEL ANNOTATIONS — what a kit says ABOUT its own classes

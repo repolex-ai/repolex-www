@@ -13,6 +13,22 @@
 #
 # CHANGELOG
 # -----------------------------------------------------------------------------
+# v0.8.0 (2026-11-27, ruled by goodlux): QUERY SERVICE TARGET.
+#   (1) + `subtexture:service` (`owl:DatatypeProperty`, domain `subtexture:Query`,
+#       range `xsd:string`, `owl:cardinality 1` — required, exactly one).
+#       Values are the service names as in addresses and Syrinx `--engine`:
+#       `git-lex`, `pan`, `ravel`, `horae`, `punctum`, or `syrinx`.
+#       `syrinx` marks a cross-store federated query whose SPARQL text names
+#       each store in `SERVICE` blocks; every other value marks a plain
+#       single-store query with no `SERVICE` block.
+#   (2) Replaces the v0.4.0 "DELIBERATELY NOT DONE: target-store flags on Query"
+#       decision: a single-store query has no `SERVICE` block to say where it
+#       goes, and tools installed standalone without Syrinx need to know which
+#       service owns a saved Query stored in a git-lex repository.
+#   (3) Each app's own `Query` class declares its own `<app>:service` with an
+#       `owl:equivalentProperty subtexture:service` bridge (`git-lex:service`,
+#       `pan:service`, `punctum:service`, etc.).
+#
 # v0.7.0 (2026-11-22, ruled by goodlux): UNIVERSAL AUTHOR ON THING.
 #   (1) + `subtexture:author` (`owl:DatatypeProperty`, domain `subtexture:Thing`,
 #       range `xsd:string`, multi-valued `0..*` — no `maxCardinality` restriction
@@ -93,10 +109,10 @@
 #       - No mixing query-computed results and hand-added members in one `Set`;
 #         combine a smart set and a hand set via a collection `Set` (a `Set` of
 #         two or more `Set`s) instead.
-#   DELIBERATELY NOT DONE: query parameters in v1 (future parameterized queries
-#   should follow SHACL-AF pre-bound variable semantics rather than text
-#   substitution); target-store flags on `Query` (`SERVICE` blocks in the SPARQL
-#   text already state which engines a federated query touches).
+#   DELIBERATELY NOT DONE (in v0.4.0; revisited in v0.5.0 & v0.8.0): query
+#   parameters in v1 (added in v0.5.0); target-store flags on `Query` (revisited
+#   in v0.8.0 as `subtexture:service` because a single-store query has no
+#   `SERVICE` block to say where it goes).
 #
 # v0.3.0 (2026-11-16, ruled by goodlux): PURE BASE INVERSION & ALL EIGHT UNIVERSALS.
 #   (1) Pure base layering: removed `@prefix git-lex:`, removed the upward
@@ -151,7 +167,7 @@
 <https://repolex.ai/ontology/subtexture> a owl:Ontology ;
     rdfs:label "Subtexture Base Ontology" ;
     rdfs:comment "The foundational base ontology for the Subtexture ecosystem: Thing, Set, Query, NamedGraph, and the universal Thing properties." ;
-    owl:versionInfo "0.7.0" .
+    owl:versionInfo "0.8.0" .
 
 
 # =============================================================================
@@ -261,18 +277,25 @@ subtexture:Set a owl:Class ;
 # =============================================================================
 # 3. QUERIES
 # =============================================================================
-# A saved SPARQL 1.1 read query as a first-class Thing. Cross-store federated
-# queries use standard SPARQL `SERVICE <https://repolex.ai/ontology/.../>`
-# blocks inside `subtexture:sparql` (evaluated by Syrinx; refused plainly by
-# single-store daemons), requiring no separate subclass or target-store field.
-# Parameters are declared via `subtexture:parameter` as `name[:kind][=default]`
-# and bound as typed RDF terms (never pasted as text).
+# A saved SPARQL 1.1 read query as a first-class Thing. Every Query names the
+# one service that runs it via `subtexture:service` (`git-lex`, `pan`, `ravel`,
+# `horae`, `punctum`, or `syrinx`). `syrinx` marks a cross-store federated query
+# whose `subtexture:sparql` uses standard `SERVICE` blocks; every other value
+# marks a plain single-store query against that service. Parameters are declared
+# via `subtexture:parameter` as `name[:kind][=default]` and bound as typed RDF
+# terms (never pasted as text).
 # =============================================================================
 
 subtexture:Query a owl:Class ;
     rdfs:subClassOf subtexture:Thing ;
     rdfs:label "Query" ;
-    rdfs:comment "A saved read-only SPARQL 1.1 query; single-store or federated via SERVICE blocks, optionally parameterized via parameter." .
+    rdfs:comment "A saved read-only SPARQL 1.1 query naming its target service (single-store or syrinx federated via SERVICE blocks), optionally parameterized via parameter." .
+
+subtexture:service a owl:DatatypeProperty ;
+    rdfs:label "service" ;
+    rdfs:comment "Target service that runs this Query: one of git-lex, pan, ravel, horae, punctum, or syrinx (for cross-store SERVICE queries); required, single-valued." ;
+    rdfs:domain subtexture:Query ;
+    rdfs:range xsd:string .
 
 subtexture:sparql a owl:DatatypeProperty ;
     rdfs:label "sparql" ;
@@ -361,7 +384,8 @@ subtexture:Set rdfs:subClassOf
     [ a owl:Restriction ; owl:onProperty subtexture:relatedToId ; owl:onClass subtexture:Query ; owl:maxQualifiedCardinality 1 ] .
 
 subtexture:Query rdfs:subClassOf
-    [ a owl:Restriction ; owl:onProperty subtexture:sparql ; owl:maxCardinality 1 ] .
+    [ a owl:Restriction ; owl:onProperty subtexture:service ; owl:cardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty subtexture:sparql  ; owl:maxCardinality 1 ] .
 
 subtexture:NamedGraph rdfs:subClassOf
     [ a owl:Restriction ; owl:onProperty subtexture:owner      ; owl:maxCardinality 1 ] ,

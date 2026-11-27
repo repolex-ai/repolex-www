@@ -28,6 +28,15 @@
 #
 # CHANGELOG
 # -----------------------------------------------------------------------------
+# v0.2.0 (2026-11-27, ruled by goodlux): QUERY SERVICE TARGET.
+#   (1) + `punctum:service` (`owl:DatatypeProperty`, `owl:equivalentProperty
+#       subtexture:service`, domain `punctum:Query`, range `xsd:string`,
+#       `owl:cardinality 1` — required). Names the service that runs the query
+#       (`git-lex`, `pan`, `ravel`, `horae`, `punctum`, or `syrinx`).
+#   (2) Added explicit `punctum:Query` cardinality restrictions (`sparql` 1,
+#       `service` 1).
+#   (3) `subtexture.ttl` 0.8.0 copied beside this file.
+#
 # v0.1.1 (2026-11-25, requested by goodlux):
 #   + Added `"trio"` (3-up) to `punctum:TrialFormatValue` (`solo`, `duel`, `trio`, `quad`).
 #
@@ -69,7 +78,7 @@
     rdfs:label "Punctum Ontology" ;
     rdfs:comment "Non-verbal preference trials, cross-judge experiments, coordinate gray-zone regions, and live SPARQL score joins across Subtexture media stores." ;
     owl:imports <https://repolex.ai/ontology/subtexture> ;
-    owl:versionInfo "0.1.1" .
+    owl:versionInfo "0.2.0" .
 
 # -----------------------------------------------------------------------------
 # 1. BASE CLASSES & NAMED GRAPH METADATA
@@ -187,6 +196,13 @@ punctum:sparql a owl:DatatypeProperty ;
     owl:equivalentProperty subtexture:sparql ;
     rdfs:label "sparql" ;
     rdfs:comment "Executable read-only SPARQL query string with parameters unbound; single-valued." ;
+    rdfs:domain punctum:Query ;
+    rdfs:range xsd:string .
+
+punctum:service a owl:DatatypeProperty ;
+    owl:equivalentProperty subtexture:service ;
+    rdfs:label "service" ;
+    rdfs:comment "Required. Which service runs this query: git-lex, pan, ravel, horae, punctum, or syrinx (cross-store federated query with SERVICE blocks)." ;
     rdfs:domain punctum:Query ;
     rdfs:range xsd:string .
 
@@ -404,6 +420,10 @@ punctum:uncertainty a owl:DatatypeProperty ;
 punctum:NamedGraph rdfs:subClassOf
     [ a owl:Restriction ; owl:onProperty punctum:owner      ; owl:maxCardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty punctum:visibility ; owl:maxCardinality 1 ] .
+
+punctum:Query rdfs:subClassOf
+    [ a owl:Restriction ; owl:onProperty punctum:sparql  ; owl:cardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty punctum:service ; owl:cardinality 1 ] .
 
 punctum:Run rdfs:subClassOf
     [ a owl:Restriction ; owl:onProperty punctum:contextCondition ; owl:maxCardinality 1 ] .

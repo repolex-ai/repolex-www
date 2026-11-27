@@ -43,11 +43,18 @@
 <https://repolex.ai/ontology/pan> a owl:Ontology ;
     rdfs:label "Pan media store ontology" ;
     rdfs:comment "Identity, location, timing and model-derived enrichment facts Pan records for stored media." ;
-    owl:versionInfo "0.4.33" .
+    owl:versionInfo "0.4.34" .
 
 # -----------------------------------------------------------------------------
 # CHANGELOG
 # -----------------------------------------------------------------------------
+# v0.4.34 (2026-11-27, ruled by goodlux): QUERY SERVICE TARGET.
+#   (1) + `pan:service` on `pan:Query`, bridged to `subtexture:service` via
+#       `owl:equivalentProperty` (`xsd:string`, `owl:cardinality 1` — required).
+#       Names the service that runs the query (`git-lex`, `pan`, `ravel`,
+#       `horae`, `punctum`, or `syrinx`). DECLARED AHEAD OF CODE alongside
+#       `pan:Query`.
+#   (2) `subtexture.ttl` 0.8.0 copied beside this file.
 # v0.4.33 (2026-11-22, ruled by goodlux): THE ENRICHMENT MODEL HAS ITS OWN NAME.
 #   (1) `pan:model` is renamed `pan:enrichmentModel`. Same domain (pan:Node),
 #       same range, same meaning: the model that produced an enrichment record.
@@ -1295,6 +1302,13 @@ pan:sparql a owl:DatatypeProperty ;
     rdfs:domain pan:Query ;
     rdfs:range xsd:string .
 
+pan:service a owl:DatatypeProperty ;
+    owl:equivalentProperty subtexture:service ;
+    rdfs:label "service" ;
+    rdfs:comment "Required. Which service runs this query (git-lex, pan, ravel, horae, punctum, or syrinx for federated SERVICE queries); Pan's spelling of subtexture:service." ;
+    rdfs:domain pan:Query ;
+    rdfs:range xsd:string .
+
 pan:parameter a owl:DatatypeProperty ;
     owl:equivalentProperty subtexture:parameter ;
     rdfs:label "parameter" ;
@@ -1749,6 +1763,7 @@ pan:MediaSet rdfs:subClassOf
 pan:Query rdfs:subClassOf
     [ a owl:Restriction ; owl:onProperty pan:id ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:sparql ; owl:cardinality 1 ] ,
+    [ a owl:Restriction ; owl:onProperty pan:service ; owl:cardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:createdDate ; owl:maxCardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:updatedDate ; owl:maxCardinality 1 ] ,
     [ a owl:Restriction ; owl:onProperty pan:title ; owl:maxCardinality 1 ] ,
