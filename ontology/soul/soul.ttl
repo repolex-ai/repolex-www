@@ -27,7 +27,11 @@
 <https://repolex.ai/ontology/soul> a owl:Ontology ;
     rdfs:label "Soul Kit Ontology" ;
     rdfs:comment "An agent's persistent mind. Identity, memory, knowledge, and personality across sessions." ;
-    owl:versionInfo "0.16.1" .
+    owl:versionInfo "0.16.2" .
+
+# v0.16.2 (2026-11-27, ruled by goodlux): SOUL:QUERY AUTHORING GUIDANCE FOR SERVICE.
+#   - Updated soul:Query authoringGuidance to cover required git-lex:service
+#     (inherited from git-lex:Query in git-lex 0.26.0 / subtexture 0.8.0).
 
 # v0.16.1 (2026-11-22, ruled by goodlux): FOLD soul:author INTO git-lex:author.
 #   - Deleted soul:author on soul:Foundation now that git-lex:Thing declares
@@ -625,6 +629,6 @@ soul:pursuitId a owl:DatatypeProperty ;
 soul:Query a owl:Class ;
     rdfs:subClassOf git-lex:Query , git-lex:Thing ;
     git-lex:foldered true ;
-    git-lex:authoringGuidance "Put the executable SPARQL 1.1 read query in the first fenced ```sparql code block in the body; declare each parameter in parameter as name[:kind][=default] and use it in the query as ?name." ;
+    git-lex:authoringGuidance "Set service to the service that runs the query (git-lex, pan, ravel, horae, punctum, or syrinx for federated SERVICE queries); put the executable SPARQL 1.1 read query in the first fenced ```sparql code block in the body; declare each parameter in parameter as name[:kind][=default] and use it in the query as ?name." ;
     rdfs:label "Query" ;
     rdfs:comment "A saved read-only SPARQL 1.1 query in Soul/Query/<id>.md — single-store or federated across stores via Syrinx SERVICE blocks." .
